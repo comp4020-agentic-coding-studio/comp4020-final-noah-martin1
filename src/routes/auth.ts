@@ -7,6 +7,7 @@ import {
   verifyPassword,
 } from "../auth.ts";
 import { one, run } from "../db.ts";
+import { DEMO_LOGIN, DEMO_MODE } from "../demo.ts";
 import { html } from "../html.ts";
 import { type Ctx, cookie, htmlReply, isHttps, parseCookies, redirect, setFlash } from "../http.ts";
 import type { Route } from "../server.ts";
@@ -31,6 +32,9 @@ function authForm(
 ) {
   const isRegister = mode === "register";
   const next = values.next ?? ctx.url.searchParams.get("next") ?? "";
+  // temporary: a fresh sign-in form arrives filled with the demo account
+  const demo = DEMO_MODE && !isRegister && values.username === undefined;
+  if (demo) values = { ...values, username: DEMO_LOGIN.username };
   return htmlReply(
     publicPage(ctx, {
       title: isRegister ? "Create account" : "Sign in",
@@ -39,6 +43,7 @@ function authForm(
           <p class="eyebrow">${isRegister ? "Join Larder" : "Welcome back"}</p>
           <h1>${isRegister ? "Create your account" : "Sign in"}</h1>
           ${errors(problems)}
+          ${demo ? html`<p class="demo-note">Demo account filled in — just press <strong>Sign in</strong> to look around as Alice.</p>` : ""}
           <form method="post" action="/${mode}" class="stack">
             <input type="hidden" name="next" value="${next}" />
             ${isRegister
@@ -56,7 +61,7 @@ function authForm(
             <label class="field">
               <span>Password</span>
               <input type="password" name="password" required ${isRegister ? html`minlength="8"` : ""}
-                autocomplete="${isRegister ? "new-password" : "current-password"}" />
+                autocomplete="${isRegister ? "new-password" : "current-password"}" ${demo ? html`value="${DEMO_LOGIN.password}"` : ""} />
               ${isRegister ? html`<small>At least 8 characters.</small>` : ""}
             </label>
             <button class="button button-block" type="submit">${isRegister ? "Create account" : "Sign in"}</button>

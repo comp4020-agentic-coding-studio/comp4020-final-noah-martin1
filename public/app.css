@@ -1915,6 +1915,14 @@ input[type="radio"] {
   margin-bottom: 24px;
 }
 
+.demo-note {
+  margin-bottom: 20px;
+  padding: 10px 14px;
+  background: var(--accent-soft);
+  border-left: 3px solid var(--accent);
+  font-size: 14px;
+}
+
 .auth-switch {
   margin-top: 20px;
   padding-top: 20px;

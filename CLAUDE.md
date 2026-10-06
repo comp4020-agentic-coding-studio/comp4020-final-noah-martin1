@@ -36,6 +36,10 @@ something the brief, the marker or a user relies on.
   dark), sharp corners, hairline borders, one accent. New UI reuses existing
   classes before adding new ones, and is checked at 390px wide and with the
   keyboard.
+- **Demo mode is temporary.** `DEMO_MODE` in `src/demo.ts` seeds the demo
+  kitchen on boot and prefills sign-in with alice. Before the final
+  submission: set it to `false`, delete `spec/demo.test.ts`, and remove the
+  demo users from the live database.
 
 # How to run it
 

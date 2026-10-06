@@ -3,6 +3,7 @@ import { createServer } from "node:http";
 import { extname } from "node:path";
 import { userForSession } from "./auth.ts";
 import { db } from "./db.ts";
+import { DEMO_MODE, seedDemo } from "./demo.ts";
 import {
   type Ctx,
   cookie,
@@ -169,6 +170,8 @@ const server = createServer(async (req, res) => {
   send(res, reply, ctx.setCookies);
   console.log(`${ctx.method} ${ctx.url.pathname} ${reply.status} ${Date.now() - started}ms`);
 });
+
+if (DEMO_MODE) await seedDemo();
 
 server.listen(port, "0.0.0.0", () => {
   console.log(`listening on http://0.0.0.0:${port}`);
