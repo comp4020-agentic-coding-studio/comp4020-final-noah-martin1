@@ -1,20 +1,36 @@
 # Process overview
 
-<!-- TEMPLATE: replace everything in this file with your own account, this
-     comment included --- `pnpm check:evidence` fails while it's still here. -->
+## From brief to plan
 
-How you got from the brief to the harness, agentic workflow and stack behind
-this app, told however suits the work. The
-[final project brief](https://comp.anu.edu.au/courses/comp4020-agentic-coding-studio/assessments/final-project/#what-you-submit)
-says what it covers and how long it runs.
+I wanted to build something useful rather than decorative, so I brainstormed
+problems where several people act on the same state. I settled on cooking: a
+shared pantry goes stale, recipes are worth sharing, and "who's cooking right
+now" is real-time by nature. When the agent kept pushing a minimal version, I
+pushed back and had it plan the full platform instead. That plan lives in
+`CLAUDE.md`, with each phase mapped to a crit.
 
-Markers follow the links you give them; they don't trawl the repo for evidence
-you didn't point at. A link to the record is one whose text is the commit hash,
-and it can sit anywhere in a sentence:
-[`a1b2c3d`](https://github.com/YOUR-ORG/YOUR-REPO/commit/a1b2c3d) for one
-commit, or
-[`a1b2c3d...e4f5a6b`](https://github.com/YOUR-ORG/YOUR-REPO/compare/a1b2c3d...e4f5a6b)
-for a range.
+## Harness
 
-`pnpm check:evidence` checks that this comment is gone and that every commit you
-link exists in this repo. Whether the account is any good is the marker's call.
+`CLAUDE.md` starts with rules the agent must follow. Never break the two
+baked-in checks. Every visibility decision goes through one file. Escape all
+HTML. Never edit a shipped migration. Previews must say they're previews.
+Each invariant in the plan has a matching test in `spec/`, so the plan, the
+tests and the README make the same claims.
+
+## Stack
+
+Node 24 runs TypeScript directly, with no build step and no framework.
+SQLite sits on the Fly volume, which suits one machine with one disk. Pages
+are server-rendered and work without JavaScript. WebSockets come in crit 9.
+I kept it small so it fits the 256 MB machine and stays easy to reason about.
+
+## Workflow
+
+I used plan mode first, approved the plan, then let the agent build each
+slice end to end. I checked the work three ways: `pnpm check` (48 tests
+against the running app and the Docker image), screenshots at desktop and
+phone widths in light and dark mode, and clicking through with demo data. The
+tests caught a privacy bug where the autocomplete leaked other users'
+ingredient names. When I asked for every feature to have a page, real pages
+were built where the data already existed (shopping list, settings, cook
+mode), and the rest became previews with sample data.
