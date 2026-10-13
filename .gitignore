@@ -21,5 +21,6 @@ mise.local.toml
 # harness is CLAUDE.md (and any AGENTS.md), not this directory.
 .claude/
 
-# local SQLite database (the deployed one lives on the Fly volume)
-data/
+# local SQLite database (the deployed one lives on the Fly volume). Anchored
+# to the root: an unanchored data/ also swallowed src/data/catalogue.json
+/data/
