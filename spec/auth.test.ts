@@ -35,7 +35,9 @@ describe("accounts", () => {
     expect(res.finalUrl).toMatch(/^\/login/);
   });
 
-  it.each(["/feed", "/recipes", "/pantry", "/calendar", "/friends"])(
+  // Recipes and the global live map work without an account; everything
+  // personal still needs one.
+  it.each(["/feed", "/recipes/new", "/pantry", "/calendar", "/friends"])(
     "sends a signed-out visitor from %s to sign in",
     async (path) => {
       const res = await new Client().get(path);

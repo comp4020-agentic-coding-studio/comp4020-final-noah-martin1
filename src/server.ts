@@ -2,6 +2,7 @@ import { readFile } from "node:fs/promises";
 import { createServer } from "node:http";
 import { extname } from "node:path";
 import { userForSession } from "./auth.ts";
+import { seedCatalogue } from "./catalogue.ts";
 import { db } from "./db.ts";
 import { DEMO_MODE, seedDemo } from "./demo.ts";
 import {
@@ -23,6 +24,7 @@ import { routes as authRoutes } from "./routes/auth.ts";
 import { routes as calendarRoutes } from "./routes/calendar.ts";
 import { routes as cookRoutes } from "./routes/cook.ts";
 import { routes as friendRoutes } from "./routes/friends.ts";
+import { routes as globalRoutes } from "./routes/global.ts";
 import { routes as homeRoutes } from "./routes/home.ts";
 import { routes as householdRoutes } from "./routes/household.ts";
 import { routes as liveRoutes } from "./routes/live.ts";
@@ -31,6 +33,7 @@ import { routes as plannerRoutes } from "./routes/planner.ts";
 import { routes as profileRoutes } from "./routes/profile.ts";
 import { routes as readmeRoutes } from "./routes/readme.ts";
 import { routes as recipeRoutes } from "./routes/recipes.ts";
+import { routes as scheduleRoutes } from "./routes/schedule.ts";
 import { routes as settingsRoutes } from "./routes/settings.ts";
 import { routes as shoppingRoutes } from "./routes/shopping.ts";
 import { page } from "./views/layout.ts";
@@ -63,6 +66,8 @@ const table = [
   ...profileRoutes,
   ...householdRoutes,
   ...liveRoutes,
+  ...globalRoutes,
+  ...scheduleRoutes,
   ...plannerRoutes,
   ...settingsRoutes,
   ...readmeRoutes,
@@ -71,18 +76,28 @@ const table = [
 const STATIC_TYPES: Record<string, string> = {
   ".css": "text/css; charset=utf-8",
   ".js": "text/javascript; charset=utf-8",
+  ".mjs": "text/javascript; charset=utf-8",
   ".svg": "image/svg+xml",
   ".png": "image/png",
+  ".jpg": "image/jpeg",
+  ".webp": "image/webp",
+  ".json": "application/json; charset=utf-8",
 };
 
 async function serveStatic(pathname: string): Promise<Reply | null> {
   const name = pathname.slice("/assets/".length);
-  if (!/^[\w.-]+$/.test(name) || !(extname(name) in STATIC_TYPES)) return null;
+  // plain path segments only: no "..", no leading dots, nothing outside public/
+  if (!/^(?:[\w-]+\/)*[\w-][\w.-]*$/.test(name) || name.includes("..") || !(extname(name) in STATIC_TYPES)) return null;
   try {
     const body = await readFile(new URL(`../public/${name}`, import.meta.url));
+    // vendored libraries and textures never change under the same name
+    const immutable = name.startsWith("vendor/") || name.startsWith("textures/");
     return {
       status: 200,
-      headers: { "content-type": STATIC_TYPES[extname(name)], "cache-control": "no-cache" },
+      headers: {
+        "content-type": STATIC_TYPES[extname(name)],
+        "cache-control": immutable ? "public, max-age=86400" : "no-cache",
+      },
       body,
     };
   } catch {
@@ -171,6 +186,8 @@ const server = createServer(async (req, res) => {
   console.log(`${ctx.method} ${ctx.url.pathname} ${reply.status} ${Date.now() - started}ms`);
 });
 
+const catalogued = seedCatalogue();
+if (catalogued) console.log(`catalogue: added ${catalogued} recipes`);
 if (DEMO_MODE) await seedDemo();
 
 server.listen(port, "0.0.0.0", () => {

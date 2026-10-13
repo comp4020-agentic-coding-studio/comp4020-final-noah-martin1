@@ -55,7 +55,7 @@ export const routes: Route[] = [
         <section class="section">
           <h2 class="section-title">Recipes <span class="count">${recipes.length}</span></h2>
           ${recipes.length
-            ? html`<div class="grid">${recipes.map((r) => recipeCard(r, false))}</div>`
+            ? html`<div class="rx-grid">${recipes.map((r) => recipeCard(r))}</div>`
             : empty("No recipes to show", self ? "Recipes you write appear here." : "This person hasn't shared any recipes with you.")}
         </section>`;
       return htmlReply(page(ctx, { title: person.display_name, body }));

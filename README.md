@@ -50,6 +50,9 @@ Some of "good" is enforced by tests in `spec/` that run against the live app:
 - the shopping list is planned meals minus fresh pantry stock: expired items
   and cancelled meals don't count
 - forms posted from another site are refused
+- anyone can browse, search and cook public recipes without an account,
+  private recipes never show up in the results, and changing the servings
+  scales every quantity
 
 Other parts can only be judged: whether the pages are clear, whether the
 calendar is pleasant to plan with, whether the feed is worth reading.
@@ -60,9 +63,10 @@ Live features (household reservations, live cooking, the real-time feed) come
 in crit 9, and the budget-aware AI planner comes in crit 10. Their pages exist
 now as previews with sample data, each under a banner that says so (a test
 checks it), so the shape of the whole platform can be judged early without
-anything pretending to work. There's no shopping list export, no nutrition
-data and no images. Each of those would add scope without making the core
-loop (know what you have, cook it, share it) any better.
+anything pretending to work. There's no shopping list export, and a recipe's
+nutrition and cost are estimates from a small built-in food table, not a full
+nutrition database. Either would add scope without making the core loop
+(know what you have, cook it, share it) any better.
 
 ## Sources
 

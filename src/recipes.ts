@@ -14,6 +14,13 @@ export interface Recipe {
   dietary_tags: string[];
   created_at: string;
   updated_at: string;
+  image_url: string | null;
+  cuisine: string;
+  course: string;
+  prep_minutes: number | null;
+  // sum of the steps' timings
+  cook_minutes: number;
+  source: string | null;
   ingredient_count?: number;
   step_count?: number;
 }
@@ -24,6 +31,18 @@ export interface RecipeIngredient {
   quantity: number | null;
   unit: string;
   optional: number;
+  note: string;
+}
+
+export const COURSES = [
+  { key: "main", label: "Mains" },
+  { key: "breakfast", label: "Breakfast" },
+  { key: "starter", label: "Starters & sides" },
+  { key: "dessert", label: "Desserts" },
+] as const;
+
+export function totalMinutes(r: Pick<Recipe, "prep_minutes" | "cook_minutes">): number {
+  return (r.prep_minutes ?? 0) + r.cook_minutes;
 }
 
 export interface RecipeStep {
@@ -44,7 +63,8 @@ export interface RecipeInput {
 
 const SELECT = `SELECT r.*, u.username AS author_username, u.display_name AS author_name,
   (SELECT COUNT(*) FROM recipe_ingredients ri WHERE ri.recipe_id = r.id) AS ingredient_count,
-  (SELECT COUNT(*) FROM recipe_steps rs WHERE rs.recipe_id = r.id) AS step_count
+  (SELECT COUNT(*) FROM recipe_steps rs WHERE rs.recipe_id = r.id) AS step_count,
+  COALESCE(r.cook_minutes, (SELECT COALESCE(SUM(est_minutes), 0) FROM recipe_steps rs WHERE rs.recipe_id = r.id)) AS cook_minutes
   FROM recipes r JOIN users u ON u.id = r.author_id`;
 
 function hydrate(row: Record<string, unknown>): Recipe {
@@ -56,13 +76,44 @@ export function getRecipe(id: number): Recipe | undefined {
   return row ? hydrate(row) : undefined;
 }
 
+// Public catalogue recipes by exact title, for pages that refer to a dish by
+// name (the live globe's sample sessions).
+export function catalogueByTitle(titles: string[]): Map<string, Recipe> {
+  const out = new Map<string, Recipe>();
+  if (!titles.length) return out;
+  const rows = all<Record<string, unknown>>(
+    `${SELECT} WHERE r.source IS NOT NULL AND r.visibility = 'public' AND r.title IN (${titles.map(() => "?").join(", ")})`,
+    ...titles,
+  );
+  for (const row of rows) {
+    const r = hydrate(row);
+    out.set(r.title, r);
+  }
+  return out;
+}
+
 export function recipeIngredients(id: number): RecipeIngredient[] {
   return all<RecipeIngredient>(
-    `SELECT ri.ingredient_id, i.name, ri.quantity, ri.unit, ri.optional
+    `SELECT ri.ingredient_id, i.name, ri.quantity, ri.unit, ri.optional, ri.note
      FROM recipe_ingredients ri JOIN ingredients i ON i.id = ri.ingredient_id
      WHERE ri.recipe_id = ? ORDER BY ri.position`,
     id,
   );
+}
+
+// Ingredient lines for many recipes in one query, for tiles that show
+// nutrition and cost without a query per recipe.
+export function ingredientsFor(ids: number[]): Map<number, RecipeIngredient[]> {
+  const out = new Map<number, RecipeIngredient[]>(ids.map((id) => [id, []]));
+  if (!ids.length) return out;
+  const rows = all<RecipeIngredient & { recipe_id: number }>(
+    `SELECT ri.recipe_id, ri.ingredient_id, i.name, ri.quantity, ri.unit, ri.optional, ri.note
+     FROM recipe_ingredients ri JOIN ingredients i ON i.id = ri.ingredient_id
+     WHERE ri.recipe_id IN (${ids.map(() => "?").join(", ")}) ORDER BY ri.recipe_id, ri.position`,
+    ...ids,
+  );
+  for (const row of rows) out.get(row.recipe_id)?.push(row);
+  return out;
 }
 
 export function recipeSteps(id: number): RecipeStep[] {
@@ -78,7 +129,18 @@ interface ListOptions {
   excludeAuthorId?: number;
   query?: string;
   tag?: string;
+  course?: string;
+  cuisine?: string;
+  maxMinutes?: number;
+  excludeId?: number;
+  order?: "newest" | "featured";
   limit?: number;
+}
+
+export function cuisines(): string[] {
+  return all<{ cuisine: string }>(
+    "SELECT cuisine, COUNT(*) n FROM recipes WHERE visibility = 'public' AND cuisine != '' GROUP BY cuisine ORDER BY n DESC, cuisine",
+  ).map((r) => r.cuisine);
 }
 
 // Recipes the viewer may see, newest first. Visibility comes from
@@ -101,17 +163,54 @@ export function listVisibleRecipes(viewerId: number | null, opts: ListOptions = 
     params.push(opts.excludeAuthorId);
   }
   if (opts.query) {
-    where.push("(r.title LIKE ? OR r.description LIKE ?)");
-    params.push(`%${opts.query}%`, `%${opts.query}%`);
+    // title, description, cuisine, or any ingredient: "eggs" finds shakshuka
+    where.push(`(r.title LIKE ? OR r.description LIKE ? OR r.cuisine LIKE ? OR EXISTS (
+      SELECT 1 FROM recipe_ingredients qi JOIN ingredients qn ON qn.id = qi.ingredient_id
+      WHERE qi.recipe_id = r.id AND qn.name LIKE ?))`);
+    const like = `%${opts.query}%`;
+    params.push(like, like, like, like);
   }
   if (opts.tag) {
     where.push("EXISTS (SELECT 1 FROM json_each(r.dietary_tags) WHERE value = ?)");
     params.push(opts.tag);
   }
-  params.push(opts.limit ?? 100);
+  if (opts.course) {
+    where.push("r.course = ?");
+    params.push(opts.course);
+  }
+  if (opts.cuisine) {
+    where.push("r.cuisine = ?");
+    params.push(opts.cuisine);
+  }
+  if (opts.excludeId !== undefined) {
+    where.push("r.id != ?");
+    params.push(opts.excludeId);
+  }
+  if (opts.maxMinutes !== undefined) {
+    where.push(
+      "COALESCE(r.prep_minutes, 0) + COALESCE(r.cook_minutes, (SELECT COALESCE(SUM(est_minutes), 0) FROM recipe_steps ms WHERE ms.recipe_id = r.id)) <= ?",
+    );
+    params.push(opts.maxMinutes);
+  }
+  params.push(opts.limit ?? 200);
+  // "featured": photographed recipes first, then a stable shuffle so the
+  // browse page doesn't read as an alphabetical list
+  let order =
+    opts.order === "featured"
+      ? "(r.image_url IS NULL), ((r.id * 2654435761) % 1000), r.id"
+      : "r.created_at DESC, r.id DESC";
+  // a search ranks title matches first, then photographed recipes
+  const orderParams: string[] = [];
+  if (opts.query && opts.order !== "newest") {
+    order = `(r.title NOT LIKE ?), (r.image_url IS NULL), r.title`;
+    orderParams.push(`%${opts.query}%`);
+  }
+  const limit = params.pop()!;
   return all<Record<string, unknown>>(
-    `${SELECT} WHERE ${where.join(" AND ")} ORDER BY r.created_at DESC, r.id DESC LIMIT ?`,
+    `${SELECT} WHERE ${where.join(" AND ")} ORDER BY ${order} LIMIT ?`,
     ...params,
+    ...orderParams,
+    limit,
   ).map(hydrate);
 }
 
@@ -213,7 +312,7 @@ export interface PantryMatch {
   estCents: number;
 }
 
-export function pantryMatch(viewerId: number, ingredients: RecipeIngredient[]): PantryMatch {
+export function pantryMatch(viewerId: number, ingredients: Pick<RecipeIngredient, "ingredient_id" | "optional">[]): PantryMatch {
   const held = all<{ ingredient_id: number }>(
     `SELECT ingredient_id FROM inventory_items
      WHERE owner_type = 'user' AND owner_id = ? AND quantity > 0

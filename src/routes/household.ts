@@ -1,17 +1,20 @@
+import { money } from "../format.ts";
 import { type Html, html } from "../html.ts";
 import { type Ctx, htmlReply } from "../http.ts";
-import { HOUSE_ACTIVITY, HOUSE_WEEK, HOUSEHOLD, SHARED_PANTRY } from "../samples.ts";
+import { BUDGET_TICKER, HOUSE_ACTIVITY, HOUSE_WEEK, HOUSEHOLD, PANTRY_NUDGES, SHARED_PANTRY, SHOPPING_CLAIMS } from "../samples.ts";
 import type { Route } from "../server.ts";
 import { avatar, icon, page, pageHeader, previewBanner, subnav } from "../views/layout.ts";
 
-// Household section: a shared pantry and calendar for people who live
-// together. Preview only until crit 9 (CLAUDE.md phase 2, items 11–12); every
-// form sits in a disabled fieldset so nothing here pretends to save.
+// Household section: a shared pantry, calendar and shopping list for people
+// who live together. Preview only until crit 9 (CLAUDE.md phase 2, items
+// 11–12); every form sits in a disabled fieldset so nothing here pretends to
+// save.
 
 const TABS = [
   { href: "/household", label: "Overview" },
   { href: "/household/pantry", label: "Shared pantry" },
   { href: "/household/calendar", label: "House calendar" },
+  { href: "/household/shopping", label: "Shared shopping" },
   { href: "/household/members", label: "Members" },
 ];
 
@@ -76,16 +79,22 @@ function overview(): Html {
         </ul>
       </section>
       <section class="panel">
-        <header class="panel-head"><h2 class="panel-title">Use soon</h2></header>
+        <header class="panel-head"><h2 class="panel-title">Use soon · claim it</h2></header>
         <ul class="compact-list">
-          ${expiring.map((i) => html`<li><span class="grow">${i.name}</span><span class="pill pill-${i.state}">${i.expires}</span></li>`)}
+          ${expiring.map(
+            (i) => html`<li><span class="grow">${i.name}</span><span class="pill pill-${i.state}">${i.expires}</span><fieldset disabled class="bare inline"><button class="button button-small button-ghost" type="button">Use tonight</button></fieldset></li>`,
+          )}
         </ul>
+        <p class="hint">First to start cooking with it locks it — everyone else sees that live.</p>
       </section>
       <section class="panel dash-wide">
         <header class="panel-head"><h2 class="panel-title">House activity</h2></header>
         <ul class="feed">
           ${HOUSE_ACTIVITY.map(
             (a) => html`<li class="feed-item">${avatar(a.who, "sm")}<p class="grow"><strong>${a.who}</strong> ${a.what} <span class="muted">· ${a.when}</span></p></li>`,
+          )}
+          ${PANTRY_NUDGES.map(
+            (n) => html`<li class="feed-item">${avatar(n.who, "sm")}<p class="grow"><strong>${n.who}</strong> ${n.what} <span class="muted">· ${n.when}</span></p></li>`,
           )}
         </ul>
       </section>
@@ -129,6 +138,42 @@ function sharedPantry(): Html {
       </div>
     </section>
     <p class="hint">Reserving holds a quantity for a planned meal. If two people try to take the last unit at once, exactly one succeeds and the other sees it go instantly.</p>`;
+}
+
+function sharedShopping(): Html {
+  const spentPct = Math.min(100, Math.round((BUDGET_TICKER.spentCents / BUDGET_TICKER.budgetCents) * 100));
+  return html`
+    <section class="panel">
+      <header class="panel-head"><h2 class="panel-title">${BUDGET_TICKER.label}</h2></header>
+      <div class="budget">
+        <span class="meter ${spentPct > 100 ? "meter-over" : ""}" style="--p: ${spentPct}%"><span></span></span>
+        <small class="muted">${money(BUDGET_TICKER.spentCents)} claimed of ${money(BUDGET_TICKER.budgetCents)} budget</small>
+      </div>
+      <p class="hint">Updates live as housemates claim items, so nobody overspends without seeing it coming.</p>
+    </section>
+    <section class="panel panel-flush">
+      <div class="table-wrap">
+        <table class="table">
+          <thead><tr><th scope="col">Item</th><th scope="col">For</th><th scope="col" class="num">Est.</th><th scope="col">Claimed by</th><th scope="col"><span class="sr-only">Actions</span></th></tr></thead>
+          <tbody>
+            ${SHOPPING_CLAIMS.map(
+              (c) => html`<tr>
+                <td><span class="item-name">${c.item}</span></td>
+                <td class="muted">${c.forMeal}</td>
+                <td class="num mono">${c.estPrice}</td>
+                <td>${c.claimedBy ? html`<span class="badge">${c.claimedBy}</span>` : html`<span class="muted">Unclaimed</span>`}</td>
+                <td class="row-actions">
+                  <fieldset disabled class="bare inline">
+                    <button class="button button-small ${c.claimedBy ? "button-ghost" : ""}" type="button">${c.claimedBy ? "Unclaim" : "I've got this"}</button>
+                  </fieldset>
+                </td>
+              </tr>`,
+            )}
+          </tbody>
+        </table>
+      </div>
+    </section>
+    <p class="hint">Claiming an item hides the "I've got this" button for everyone else instantly, so two people don't buy the same thing.</p>`;
 }
 
 function houseCalendar(): Html {
@@ -217,6 +262,7 @@ export const routes: Route[] = [
   { method: "GET", path: "/household", auth: true, handler: (ctx) => shell(ctx, "/household", "Household", overview()) },
   { method: "GET", path: "/household/pantry", auth: true, handler: (ctx) => shell(ctx, "/household/pantry", "Shared pantry", sharedPantry()) },
   { method: "GET", path: "/household/calendar", auth: true, handler: (ctx) => shell(ctx, "/household/calendar", "House calendar", houseCalendar()) },
+  { method: "GET", path: "/household/shopping", auth: true, handler: (ctx) => shell(ctx, "/household/shopping", "Shared shopping", sharedShopping()) },
   { method: "GET", path: "/household/members", auth: true, handler: (ctx) => shell(ctx, "/household/members", "Members", members()) },
   { method: "GET", path: "/household/new", auth: true, handler: create },
 ];
