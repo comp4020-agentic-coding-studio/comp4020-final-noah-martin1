@@ -1,9 +1,11 @@
 import { all } from "./db.ts";
+import { estimate, priceSource } from "./nutrition.ts";
 import { canSeeRecipe } from "./visibility.ts";
 
 // The shopping list is arithmetic, not a guess: ingredients of the meals you
 // have planned in a date range, minus what your pantry holds (fresh only),
-// priced at what you last paid. The meal planner builds on this later.
+// priced at what you last paid, or else estimated for the amount from the
+// reference shelf prices (labelled as such, never a live price).
 
 export interface ShoppingLine {
   ingredient_id: number;
@@ -17,6 +19,9 @@ export interface ShoppingLine {
   // the pantry holds this ingredient, but in a different unit
   otherUnit: boolean;
   priceCents: number | null;
+  // "paid": the last price you entered for a pack; "est": reference estimate
+  priceKind: "paid" | "est" | null;
+  priceRef: { source: string; checked: string } | null;
   meals: string[];
 }
 
@@ -66,7 +71,7 @@ export function shoppingList(userId: number, from: string, to: string): Shopping
     const key = `${r.ingredient_id}|${unit}`;
     let line = lines.get(key);
     if (!line) {
-      line = { ingredient_id: r.ingredient_id, name: r.name, category: r.category, unit, need: 0, have: 0, toBuy: 0, otherUnit: false, priceCents: null, meals: [] };
+      line = { ingredient_id: r.ingredient_id, name: r.name, category: r.category, unit, need: 0, have: 0, toBuy: 0, otherUnit: false, priceCents: null, priceKind: null, priceRef: null, meals: [] };
       lines.set(key, line);
     }
     line.need = line.need === null || r.quantity === null ? null : line.need + r.quantity;
@@ -94,12 +99,21 @@ export function shoppingList(userId: number, from: string, to: string): Shopping
     const held = pantry.filter((p) => p.ingredient_id === line.ingredient_id);
     line.have = held.filter((p) => p.unit.trim().toLowerCase() === line.unit).reduce((s, p) => s + p.quantity, 0);
     line.otherUnit = held.some((p) => p.unit.trim().toLowerCase() !== line.unit);
-    line.priceCents = prices.get(line.ingredient_id) ?? null;
     if (line.need === null) {
       // no amount given: holding any is enough
       line.toBuy = held.length ? 0 : null;
     } else {
       line.toBuy = Math.max(0, Math.round((line.need - line.have) * 100) / 100);
+    }
+    const paid = prices.get(line.ingredient_id);
+    const est = line.toBuy ? estimate([{ name: line.name, quantity: line.toBuy, unit: line.unit }]) : null;
+    if (paid !== undefined) {
+      line.priceCents = paid;
+      line.priceKind = "paid";
+    } else if (est && est.counted && est.costCents > 0) {
+      line.priceCents = Math.max(1, Math.round(est.costCents));
+      line.priceKind = "est";
+      line.priceRef = priceSource(line.name);
     }
     // A unit mismatch (recipe wants g, pantry holds "pack") can't be
     // subtracted, so the line stays on the list with otherUnit flagged.

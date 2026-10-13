@@ -2,8 +2,10 @@ import { addDays, ago, freshness, money, qty, shortDate, today, weekday } from "
 import { type Html, html } from "../html.ts";
 import { type Ctx, htmlReply } from "../http.ts";
 import { listVisibleRecipes, type Recipe } from "../recipes.ts";
+import { recipeTile as recipeTileFor } from "./recipes.ts";
 import type { Route } from "../server.ts";
 import { friendIds } from "../visibility.ts";
+import { prefsFor } from "../prefs.ts";
 import { avatar, empty, icon, NAV_GROUPS, page, pageHeader, publicPage } from "../views/layout.ts";
 import { shoppingList } from "../shopping.ts";
 import { entriesBetween, type FriendMeal, friendMeals, mealChip } from "./calendar.ts";
@@ -34,10 +36,13 @@ export function feedItem(item: FeedItem): Html {
       ${avatar(r.author_name)}
       <div class="grow">
         <p><a href="/u/${r.author_username}" class="strong">${r.author_name}</a> shared a recipe <span class="muted">· ${ago(item.at)}</span></p>
-        <a class="feed-card" href="/recipes/${r.id}">
-          <strong>${r.title}</strong>
-          ${r.description ? html`<span class="clamp muted">${r.description}</span>` : ""}
-          <span class="tags">${r.dietary_tags.map((t) => html`<span class="tag">${t}</span>`)}</span>
+        <a class="feed-card ${r.image_url ? "feed-card-photo" : ""}" href="/recipes/${r.id}">
+          ${r.image_url ? html`<img src="${r.image_url}/medium" alt="" loading="lazy" decoding="async" />` : ""}
+          <span class="feed-card-text">
+            <strong>${r.title}</strong>
+            ${r.description ? html`<span class="clamp muted">${r.description}</span>` : ""}
+            <span class="tags">${r.dietary_tags.map((t) => html`<span class="tag">${t}</span>`)}</span>
+          </span>
         </a>
       </div>
     </li>`;
@@ -49,100 +54,212 @@ export function feedItem(item: FeedItem): Html {
       <p><a href="/u/${m.username}" class="strong">${m.display_name}</a> is planning
         <a href="/recipes/${m.recipe_id}">${m.title}</a> for ${m.meal} on ${weekday(m.date)} ${shortDate(m.date)}
         <span class="muted">· ${ago(item.at)}</span></p>
+      ${m.image_url
+        ? html`<a class="feed-meal" href="/recipes/${m.recipe_id}"><img src="${m.image_url}/small" alt="" loading="lazy" decoding="async" /><span>${weekday(m.date)}</span></a>`
+        : ""}
     </div>
   </li>`;
 }
 
+// The front door for visitors. Recipes and the live globe work without an
+// account, so the page leads with them and keeps sign-up as the quiet option.
 function landing(ctx: Ctx): Html {
-  const features: [string, string, string, string][] = [
-    ["pantry", "Pantry with expiry & prices", "Log what you have, when it goes off and what you paid. The soonest-to-expire rises to the top.", ""],
-    ["recipes", "Recipes that know your kitchen", "Every recipe shows what you already have, what's missing and what the gap costs.", ""],
-    ["calendar", "Meal calendar", "Plan the week, share it with friends, and see what they're cooking.", ""],
-    ["household", "Shared household", "One pantry for the house. Reserve ingredients live so nobody uses the last eggs you planned on.", "Crit 9"],
-    ["live", "Cook together, live", "See “Alice is cooking pad thai — step 4 of 7” as it happens, and cook along.", "Crit 9"],
-    ["planner", "Budget-aware planner", "Suggestions from what's expiring, what you can afford and what you like.", "Crit 10"],
+  const picks = listVisibleRecipes(null, { order: "featured", limit: 40 }).filter((r) => r.image_url);
+  const stack = picks.slice(0, 3);
+  const row = picks.slice(3, 11);
+  const total = listVisibleRecipes(null, { limit: 2000 }).length;
+  const features: [string, string, string, string, string][] = [
+    ["pantry", "A fridge you can see into", "A 3D fridge and pantry of what you actually have. Tap an item for when it goes off and which meals it's for.", "/pantry", "sage"],
+    ["recipes", "Recipes that know your kitchen", "Every recipe shows what you have, what's missing, what the gap costs, and its nutrition per serve.", "/recipes", "peach"],
+    ["calendar", "A week that plans itself", "Pick “$100 for the week”, “limit meat” or “what's in my fridge” and get a costed draft week in a tap.", "/calendar", "lavender"],
+    ["global", "Cook live, anywhere", "Go live while you cook and your pan appears on the globe. People can follow along and ask questions.", "/global", "butter"],
+    ["friends", "Friends, first", "See what friends are cooking on your calendar and at the top of the globe. Private stays private.", "/friends", "rose"],
+    ["household", "One kitchen for the house", "Share a pantry and calendar with housemates, claim the shopping and race to use what's expiring.", "/household", "sky"],
   ];
   return publicPage(ctx, {
     title: "Cook what you have",
+    mainClass: "main-landing",
     body: html`
-      <section class="hero">
-        <p class="eyebrow">Recipes · pantry · people</p>
-        <h1>Cook what you have.<br />Waste less. Cook with friends.</h1>
-        <p class="lede">Larder keeps your pantry, recipes and meal plans in one place — and shares them with the people you cook with.</p>
-        <div class="hero-actions">
-          <a class="button button-large" href="/register">Create an account</a>
-          <a class="button button-large button-ghost" href="/login">Sign in</a>
+      <section class="ld-hero">
+        <div class="ld-copy">
+          <p class="ld-eyebrow"><span class="live-dot" aria-hidden="true"></span> Recipes · pantry · people</p>
+          <h1>Cook what you have.<br /><span>Waste less.</span> Cook with friends.</h1>
+          <p class="lede">Larder keeps your fridge, recipes and meal plans in one calm place, and shares them with the people you cook with.</p>
+          <div class="ld-actions">
+            <a class="button button-large" href="/recipes">${icon("search", 18)} Browse ${total} recipes</a>
+            <a class="button button-large button-ghost" href="/global">${icon("global", 18)} See who's cooking</a>
+          </div>
+          <p class="ld-quiet">No account needed to browse or cook. <a href="/register">Join free</a> to save your kitchen.</p>
+        </div>
+        <div class="ld-stack" aria-hidden="true">
+          <div class="ld-tilt">
+          ${stack.map(
+            (r, i) => html`<a class="ld-card ld-card-${i}" href="/recipes/${r.id}" tabindex="-1">
+              <img src="${r.image_url}" alt="" />
+              <span class="ld-card-cap"><strong>${r.title}</strong><small>${r.cuisine || "Larder"}</small></span>
+            </a>`,
+          )}
+          </div>
+          <div class="ld-float ld-float-a">${icon("timer", 16)}<span><strong>Step 3 of 6</strong><small>Simmer 10 min</small></span></div>
+          <div class="ld-float ld-float-b"><span class="live-dot"></span><span><strong>Cooking live</strong><small>Melbourne</small></span></div>
         </div>
       </section>
-      <section class="feature-grid" aria-label="Features">
+
+      <section class="ld-features" aria-label="What Larder does">
         ${features.map(
-          ([ic, title, body, phase]) => html`<article class="feature">
-            <div class="feature-head">${icon(ic, 24)}${phase ? html`<span class="badge">${phase}</span>` : ""}</div>
+          ([ic, title, body, href, tone], i) => html`<a class="ld-feature" href="${href}" style="--tone: var(--${tone}); --i: ${i}">
+            <span class="ld-feature-icon">${icon(ic, 22)}</span>
             <h2>${title}</h2>
             <p>${body}</p>
-          </article>`,
+            <span class="ld-feature-go">${icon("arrow", 16)}</span>
+          </a>`,
         )}
+      </section>
+
+      ${row.length
+        ? html`<section class="ld-row" aria-labelledby="ld-row-h">
+            <header><h2 id="ld-row-h">Cooking tonight?</h2><a href="/recipes">All recipes ${icon("arrow", 14)}</a></header>
+            <div class="rx-grid">${row.map((r, i) => recipeTileFor(r, { i }))}</div>
+          </section>`
+        : ""}
+
+      <section class="ld-end">
+        <h2>Your kitchen, but it remembers.</h2>
+        <p>Free, no ads. Your pantry and plans are yours: private unless you share them.</p>
+        <div class="ld-actions">
+          <a class="button button-large" href="/register">Create a free account</a>
+          <a class="button button-large button-ghost" href="/login">Sign in</a>
+        </div>
       </section>`,
   });
 }
 
+// The signed-in home: tonight's meal front and centre, the week at a glance,
+// what needs using, money, and what friends are up to. Every card leads
+// somewhere you can act.
 function dashboard(ctx: Ctx): Html {
   const user = ctx.user!;
   const pantry = personalInventory(user.id);
-  const urgent = pantry.filter((it) => ["expired", "soon"].includes(freshness(it.expiry_date).state)).slice(0, 6);
+  const urgent = pantry
+    .filter((it) => ["expired", "soon"].includes(freshness(it.expiry_date).state))
+    .sort((a, b) => (a.expiry_date ?? "").localeCompare(b.expiry_date ?? ""));
+  const soon = urgent.filter((it) => freshness(it.expiry_date).state === "soon");
+  const expired = urgent.filter((it) => freshness(it.expiry_date).state === "expired");
   const now = today();
-  const upcoming = entriesBetween(user.id, user.id, now, addDays(now, 6)).filter((e) => e.status === "planned");
-  const feed = friendFeed(user.id, 5);
+  const week = entriesBetween(user.id, user.id, now, addDays(now, 6)).filter((e) => e.status !== "cancelled");
+  const upcoming = week.filter((e) => e.status === "planned");
+  const tonight = week.find((e) => e.date === now && e.meal === "dinner") ?? week.find((e) => e.date === now && e.status === "planned");
+  const next = tonight ?? upcoming[0];
+  const feed = friendFeed(user.id, 6);
   const shop = shoppingList(user.id, now, addDays(now, 6));
+  const budget = prefsFor(user.id).weekly_budget_cents;
   const hour = new Date().getHours();
   const greeting = hour < 12 ? "Good morning" : hour < 18 ? "Good afternoon" : "Good evening";
+  const first = user.display_name.split(" ")[0];
+  const value = pantry.reduce((s, it) => s + (it.price_cents ?? 0), 0);
+
+  const hero = next
+    ? html`<a class="hm-tonight" href="/recipes/${next.recipe_id}">
+        ${next.image_url ? html`<img src="${next.image_url}" alt="" />` : html`<div class="hm-tonight-fallback"></div>`}
+        <div class="hm-tonight-scrim"></div>
+        <div class="hm-tonight-body">
+          <span class="hm-chip">${next === tonight ? (next.meal === "dinner" ? "Tonight" : `Today · ${next.meal}`) : `${weekday(next.date)} · ${next.meal}`}</span>
+          <h2>${next.title}</h2>
+          <span class="hm-tonight-meta">${next.cuisine ? html`${next.cuisine} · ` : ""}serves ${next.servings}</span>
+        </div>
+        <span class="hm-tonight-go">${icon("cook", 18)} Cook it</span>
+      </a>`
+    : html`<div class="hm-tonight hm-tonight-empty">
+        <div class="hm-tonight-body">
+          <span class="hm-chip">Tonight</span>
+          <h2>Nothing planned yet</h2>
+          <p>Let Larder draft a week from your budget and what's in the fridge, or pick something yourself.</p>
+          <div class="hm-tonight-actions">
+            <a class="button" href="/calendar#plan">${icon("spark", 16)} Plan my week</a>
+            <a class="button button-ghost" href="/recipes">Browse recipes</a>
+          </div>
+        </div>
+      </div>`;
+
+  // seven little day cells, each with a thumbnail of its first meal
+  const days = Array.from({ length: 7 }, (_, i) => addDays(now, i));
+  const strip = html`<section class="hm-card hm-week" aria-labelledby="hm-week-h">
+    <header class="hm-head"><h2 id="hm-week-h">This week</h2><a href="/calendar">Calendar ${icon("arrow", 14)}</a></header>
+    <ol class="hm-days">
+      ${days.map((d, i) => {
+        const meals = week.filter((e) => e.date === d);
+        const m = meals.find((e) => e.meal === "dinner") ?? meals[0];
+        return html`<li class="${i === 0 ? "is-today" : ""}" style="--i: ${i}">
+          <a href="${m ? `/recipes/${m.recipe_id}` : `/calendar#add`}" title="${m ? m.title : `Plan ${weekday(d)}`}">
+            <span class="hm-dow">${i === 0 ? "Today" : weekday(d)}</span>
+            ${m?.image_url
+              ? html`<img src="${m.image_url}/small" alt="" loading="lazy" decoding="async" />`
+              : html`<span class="hm-day-empty">${m ? m.title.slice(0, 1) : "+"}</span>`}
+            <span class="hm-day-count">${meals.length ? `${meals.length} meal${meals.length === 1 ? "" : "s"}` : "Free"}</span>
+          </a>
+        </li>`;
+      })}
+    </ol>
+  </section>`;
+
+  const pct = budget ? Math.min(100, Math.round((shop.estCents / budget) * 100)) : 0;
+  const money_ = html`<section class="hm-card hm-shop" aria-labelledby="hm-shop-h">
+    <header class="hm-head"><h2 id="hm-shop-h">Shopping</h2><a href="/shopping">List ${icon("arrow", 14)}</a></header>
+    <p class="hm-big">${money(shop.estCents)}<small> to buy this week</small></p>
+    ${budget
+      ? html`<div class="hm-meter" role="img" aria-label="${pct}% of your ${money(budget)} budget"><span style="--p: ${pct}%"></span></div>
+          <p class="hm-note">${shop.estCents <= budget ? `${money(budget - shop.estCents)} under your ${money(budget)} budget` : `${money(shop.estCents - budget)} over your ${money(budget)} budget`}</p>`
+      : html`<p class="hm-note"><a href="/settings">Set a weekly budget</a> to track it here.</p>`}
+    <p class="hm-note">${shop.toBuy.length} item${shop.toBuy.length === 1 ? "" : "s"} for ${upcoming.length} planned meal${upcoming.length === 1 ? "" : "s"}${shop.unpriced ? ` · ${shop.unpriced} unpriced` : ""}</p>
+  </section>`;
+
+  const useSoon = html`<section class="hm-card hm-soon" aria-labelledby="hm-soon-h">
+    <header class="hm-head"><h2 id="hm-soon-h">Use soon</h2><a href="/pantry">Fridge ${icon("arrow", 14)}</a></header>
+    ${soon.length
+      ? html`<ul class="hm-soon-list">${soon.slice(0, 4).map((it) => {
+          const f = freshness(it.expiry_date);
+          return html`<li><span class="hm-soon-name">${it.name}</span><span class="pill pill-${f.state}">${f.label}</span>
+            <a class="hm-soon-find" href="/recipes?q=${encodeURIComponent(it.name)}" aria-label="Recipes with ${it.name}">${icon("search", 14)}</a></li>`;
+        })}</ul>`
+      : html`<p class="hm-note">Nothing goes off in the next few days.</p>`}
+    ${expired.length ? html`<p class="hm-note hm-bad">${expired.length} item${expired.length === 1 ? " has" : "s have"} expired. <a href="/pantry#add">Tidy up</a></p>` : ""}
+    <p class="hm-note">${pantry.length} items worth ${money(value)} in your kitchen</p>
+  </section>`;
+
+  const friends = html`<section class="hm-card hm-friends" aria-labelledby="hm-friends-h">
+    <header class="hm-head"><h2 id="hm-friends-h">From friends</h2><a href="/friends#activity">Friends ${icon("arrow", 14)}</a></header>
+    ${feed.length
+      ? html`<ul class="hm-rail">${feed.map((item) => {
+          const r = item.kind === "recipe" ? { id: item.recipe.id, title: item.recipe.title, img: item.recipe.image_url, who: item.recipe.author_name, what: "shared" }
+            : { id: item.meal.recipe_id, title: item.meal.title, img: item.meal.image_url, who: item.meal.display_name, what: `${weekday(item.meal.date)} ${item.meal.meal}` };
+          return html`<li><a href="/recipes/${r.id}">
+            <span class="hm-rail-img">${r.img ? html`<img src="${r.img}/medium" alt="" loading="lazy" decoding="async" />` : html`<span>${r.title.slice(0, 1)}</span>`}</span>
+            <span class="hm-rail-who">${avatar(r.who, "sm")}<span>${r.who.split(" ")[0]} · ${r.what}</span></span>
+            <strong>${r.title}</strong>
+          </a></li>`;
+        })}</ul>`
+      : empty("Quiet in here", "Add friends to see the recipes and meals they share.", html`<a class="button button-ghost" href="/friends">Find friends</a>`)}
+  </section>`;
 
   return html`
-    ${pageHeader(`${greeting}, ${user.display_name.split(" ")[0]}`, `${weekday(now)} ${shortDate(now)}`, html`<a class="button" href="/recipes/new">${icon("plus", 16)} New recipe</a>`)}
-    <div class="dash">
-      <section class="panel">
-        <header class="panel-head"><h2 class="panel-title">Use soon</h2><a href="/pantry">Pantry →</a></header>
-        ${urgent.length
-          ? html`<ul class="compact-list">${urgent.map((it) => {
-              const f = freshness(it.expiry_date);
-              return html`<li><span class="grow">${it.name}</span><span class="mono muted">${qty(it.quantity, it.unit)}</span><span class="pill pill-${f.state}">${f.label}</span></li>`;
-            })}</ul>`
-          : html`<p class="muted">Nothing expiring in the next 3 days.</p>`}
-      </section>
-
-      <section class="panel">
-        <header class="panel-head"><h2 class="panel-title">Next 7 days</h2><a href="/calendar">Calendar →</a></header>
-        ${upcoming.length
-          ? html`<ul class="compact-list">${upcoming.slice(0, 6).map(
-              (e) => html`<li><span class="mono muted w-day">${weekday(e.date)}</span><a class="grow" href="/recipes/${e.recipe_id}">${e.title}</a><span class="muted">${e.meal}</span></li>`,
-            )}</ul>`
-          : html`<p class="muted">No meals planned. <a href="/calendar">Plan one</a>.</p>`}
-      </section>
-
-      <section class="panel">
-        <header class="panel-head"><h2 class="panel-title">Shopping</h2><a href="/shopping">List →</a></header>
-        ${shop.toBuy.length
-          ? html`<p class="big-number mono">${shop.toBuy.length} <small>item${shop.toBuy.length === 1 ? "" : "s"}</small></p>
-              <p class="muted">≈ ${money(shop.estCents)} for this week's planned meals${shop.unpriced ? ` (+${shop.unpriced} unpriced)` : ""}.</p>`
-          : html`<p class="muted">${upcoming.length ? "Your pantry covers this week's meals." : "Plan meals to build a list."}</p>`}
-      </section>
-
-      ${livePreviewCard()}
-
-      <section class="panel">
-        <header class="panel-head"><h2 class="panel-title">Household</h2><span class="badge">Crit 9</span></header>
-        <p class="muted">Share a pantry and calendar with housemates, and reserve ingredients so nobody uses what you planned on.</p>
-        <a class="button button-ghost button-block" href="/household">Preview household</a>
-      </section>
-
-      <section class="panel dash-wide">
-        <header class="panel-head"><h2 class="panel-title">From friends</h2><a href="/feed">Feed →</a></header>
-        ${feed.length
-          ? html`<ul class="feed">${feed.map(feedItem)}</ul>`
-          : empty("Quiet in here", "Add friends to see the recipes and meals they share.", html`<a class="button button-ghost" href="/friends">Find friends</a>`)}
-      </section>
-    </div>
-    <p class="hint">Pantry value: ${money(pantry.reduce((s, it) => s + (it.price_cents ?? 0), 0))} across ${pantry.length} item${pantry.length === 1 ? "" : "s"}.</p>`;
+    <header class="hm-top">
+      <div>
+        <p class="hm-date">${weekday(now)} ${shortDate(now)}</p>
+        <h1>${greeting}, ${first}</h1>
+      </div>
+      <div class="hm-actions">
+        <a class="button button-ghost" href="/global">${icon("global", 16)} Live globe</a>
+        <a class="button" href="/recipes/new">${icon("plus", 16)} New recipe</a>
+      </div>
+    </header>
+    <div class="hm">
+      ${hero}
+      ${strip}
+      ${useSoon}
+      ${money_}
+      <div class="hm-live">${livePreviewCard(user.id)}</div>
+      ${friends}
+    </div>`;
 }
 
 // Everything in one list, for phones where the tab bar only fits five.
@@ -185,29 +302,10 @@ export const routes: Route[] = [
       htmlReply(ctx.user ? page(ctx, { title: "Home", active: "home", body: dashboard(ctx) }) : landing(ctx)),
   },
   {
+    // the feed is part of Friends now; old links still land in the right place
     method: "GET",
     path: "/feed",
     auth: true,
-    handler: (ctx) => {
-      const feed = friendFeed(ctx.user!.id);
-      const body = html`
-        ${pageHeader("Feed", "What your friends are sharing and planning.")}
-        <div class="feed-layout">
-          <section class="panel">
-            ${feed.length
-              ? html`<ul class="feed">${feed.map(feedItem)}</ul>`
-              : empty("Nothing yet", "When friends share recipes or plan shared meals, they show up here.", html`<a class="button button-ghost" href="/friends">Find friends</a>`)}
-          </section>
-          <aside>${livePreviewCard()}
-            <section class="panel"><h2 class="panel-title">Discover</h2>
-              <ul class="compact-list">${listVisibleRecipes(ctx.user!.id, { excludeAuthorId: ctx.user!.id, limit: 5 }).map(
-                (r) => html`<li><a class="grow" href="/recipes/${r.id}">${r.title}</a><span class="muted">${r.author_name}</span></li>`,
-              )}</ul>
-              <a href="/recipes?tab=discover">Browse all →</a>
-            </section>
-          </aside>
-        </div>`;
-      return htmlReply(page(ctx, { title: "Feed", active: "feed", body }));
-    },
+    handler: () => ({ status: 302, headers: { location: "/friends#activity" }, body: "" }),
   },
 ];

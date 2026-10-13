@@ -24,6 +24,17 @@ export interface Reply {
   status: number;
   headers: Record<string, string>;
   body: string | Buffer;
+  // a long-lived response (Server-Sent Events): called once the headers are
+  // written, and owns the response from then on (writes, ends, cleans up)
+  stream?: (res: ServerResponse) => void;
+}
+
+export function json(body: unknown, status = 200): Reply {
+  return {
+    status,
+    headers: { "content-type": "application/json; charset=utf-8", "cache-control": "no-store" },
+    body: JSON.stringify(body),
+  };
 }
 
 export function htmlReply(body: Html, status = 200): Reply {
@@ -116,5 +127,10 @@ export function send(res: ServerResponse, reply: Reply, cookies: string[]): void
   const headers: Record<string, string | string[]> = { ...reply.headers };
   if (cookies.length) headers["set-cookie"] = cookies;
   res.writeHead(reply.status, headers);
+  if (reply.stream) {
+    res.flushHeaders();
+    reply.stream(res);
+    return;
+  }
   res.end(reply.body);
 }

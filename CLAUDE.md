@@ -1,3 +1,53 @@
+# Rules for the agent
+
+These hold on every change; breaking one breaks something the brief, the
+marker or a user relies on. The product brief follows below them.
+
+- **Never break the two baked-in checks.** `/` answers 200 directly (no
+  redirect) and `/readme/` server-renders every README heading in order.
+  Don't edit or delete `spec/invariants.test.ts`.
+- **Every visibility decision goes through `src/visibility.ts`.** Routes never
+  write their own "who can see this" SQL. A hidden recipe, entry or cook
+  session answers 404, never 403, so strangers can't learn it exists.
+- **All HTML goes through the `html` tagged template** (`src/html.ts`), which
+  escapes by default. `raw()` is only for content we wrote, never anything a
+  user typed.
+- **Parameterised SQL only.** No user input concatenated into a query string.
+- **Schema changes are a new numbered file in `src/migrations/`.** Never edit
+  a migration that has shipped (001–003 have): the live database ran it.
+- **The only durable storage is `$DATA_DIR`** (`/data` on Fly).
+- **Every new invariant gets a spec test** in `spec/`, run over HTTP against a
+  running app (`pnpm check`). Run the spec against local or throwaway
+  instances only, never the live site: it registers users and leaves data.
+- **AI is advisory only.** Deterministic code decides what's suggested, what
+  something costs and what's in the pantry; a model only explains, matches
+  names or answers questions, and every page still works when it's slow, down
+  or unsupported by the browser.
+- **No secrets in the repo.** Keys live in Fly secrets or `mise.local.toml`.
+  Never touch `.claude/`.
+- **Prices and nutrition are estimates and say so.** Every reference price
+  carries its source and date; nothing claims to be a live supermarket price.
+- **Previews say they're previews.** Anything still showing sample data sits
+  under `previewBanner()` (`spec/navigation.test.ts` checks it). When a
+  feature becomes real, its samples are deleted.
+- **New sections join `NAV_GROUPS`** in `src/views/layout.ts`, which feeds the
+  sidebar, the mobile tab bar and `/more`.
+- **Look:** tokens live in `public/app.css` `:root` (light, and dark in browns
+  and greys); rounded, pastel, generous space; reuse classes before adding.
+  Check every UI change by screenshot at 1440px and 390px, light and dark, and
+  respect `prefers-reduced-motion`.
+- **Demo mode is temporary.** `DEMO_MODE` in `src/demo.ts` prefills sign-in
+  with alice. Before the final submission set it to `false`, delete
+  `spec/demo.test.ts`, and remove the demo users from the live database.
+
+# How to run it
+
+- `pnpm dev` — app on http://localhost:8080 with the database in `./data`
+- `pnpm check` — typecheck + every spec, against the running app
+- `pnpm check:evidence` — process evidence (CLAUDE.md, reflections, PROCESS.md)
+
+# Product brief
+
 **Features**
 
 - Accounts — register, log in, log out, persistent sessions

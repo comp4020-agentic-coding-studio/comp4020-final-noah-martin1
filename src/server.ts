@@ -183,7 +183,8 @@ const server = createServer(async (req, res) => {
   // a redirect carries a flash set during this request; don't clear it
   if (reply.status === 303) ctx.setCookies = ctx.setCookies.filter((c) => !c.startsWith("flash=;"));
   send(res, reply, ctx.setCookies);
-  console.log(`${ctx.method} ${ctx.url.pathname} ${reply.status} ${Date.now() - started}ms`);
+  // a stream is logged when it opens; it stays open long after this line
+  console.log(`${ctx.method} ${ctx.url.pathname} ${reply.status} ${Date.now() - started}ms${reply.stream ? " (stream)" : ""}`);
 });
 
 const catalogued = seedCatalogue();

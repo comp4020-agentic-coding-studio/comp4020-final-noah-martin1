@@ -32,6 +32,7 @@ const ICONS: Record<string, string> = {
   arrow: '<path d="M5 12h14M13 6l6 6-6 6"/>',
   back: '<path d="M19 12H5M11 6l-6 6 6 6"/>',
   close: '<path d="M6 6l12 12M18 6 6 18"/>',
+  spark: '<path d="M12 3.5 13.8 9a2 2 0 0 0 1.2 1.2l5.5 1.8-5.5 1.8a2 2 0 0 0-1.2 1.2L12 20.5 10.2 15a2 2 0 0 0-1.2-1.2L3.5 12 9 10.2A2 2 0 0 0 10.2 9Z"/>',
   bolt: '<path d="M13 3 5 13.5h6L10 21l8-10.5h-6L13 3Z"/>',
   basket: '<path d="M4 9.5h16l-1.6 9a2 2 0 0 1-2 1.5H7.6a2 2 0 0 1-2-1.5L4 9.5Z"/><path d="m8.5 9.5 3-5.5M15.5 9.5l-3-5.5"/>',
   print: '<path d="M7 9V4h10v5"/><rect x="4" y="9" width="16" height="7.5" rx="2"/><path d="M7 14h10v6H7z"/>',
@@ -79,13 +80,13 @@ export const NAV_GROUPS: { heading: string | null; items: NavItem[] }[] = [
     heading: null,
     items: [
       { key: "home", href: "/", label: "Home" },
-      { key: "feed", href: "/feed", label: "Feed" },
+      { key: "global", href: "/global", label: "Live globe" },
     ],
   },
   {
     heading: "Kitchen",
     items: [
-      { key: "pantry", href: "/pantry", label: "Pantry" },
+      { key: "pantry", href: "/pantry", label: "Fridge & pantry" },
       { key: "recipes", href: "/recipes", label: "Recipes" },
       { key: "calendar", href: "/calendar", label: "Calendar" },
       { key: "shopping", href: "/shopping", label: "Shopping list" },
@@ -95,21 +96,14 @@ export const NAV_GROUPS: { heading: string | null; items: NavItem[] }[] = [
     heading: "Together",
     items: [
       { key: "friends", href: "/friends", label: "Friends" },
-      { key: "household", href: "/household", label: "Household", phase: "Crit 9" },
-      { key: "live", href: "/live", label: "Live cooking", phase: "Crit 9" },
-      { key: "global", href: "/global", label: "Global live", phase: "Crit 9" },
-      { key: "schedule", href: "/schedule", label: "Schedule", phase: "Crit 9" },
+      { key: "household", href: "/household", label: "Household" },
     ],
-  },
-  {
-    heading: "Plan",
-    items: [{ key: "planner", href: "/planner", label: "Planner", phase: "Crit 10" }],
   },
 ];
 
 const TABS: NavItem[] = [
-  { key: "home", href: "/", label: "Home" },
-  { key: "pantry", href: "/pantry", label: "Pantry" },
+  { key: "global", href: "/global", label: "Live" },
+  { key: "pantry", href: "/pantry", label: "Fridge" },
   { key: "recipes", href: "/recipes", label: "Recipes" },
   { key: "calendar", href: "/calendar", label: "Calendar" },
   { key: "more", href: "/more", label: "More" },
@@ -121,13 +115,32 @@ interface PageOptions {
   body: Html;
   // extra class on <main>, e.g. for full-bleed pages
   mainClass?: string;
+  // extra tags for the end of <head>: a page's own module scripts, import map
+  headExtra?: Html;
 }
 
-function head(title: string): Html {
+// The saved theme ("light" | "dark", absent = follow the system) is applied
+// before first paint so dark mode never flashes light. Inline because it must
+// run before the stylesheet; it reads localStorage only, never user content.
+const THEME_BOOT = raw(
+  `<script>try{var t=localStorage.getItem("larder-theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script>`,
+);
+
+// Page-to-page cross-fades (and the recipe photo morph in app.js). The opt-in
+// sits inline at the top of the head so the browser sees it before the big
+// stylesheet arrives; reduced motion turns it off.
+export const VIEW_TRANSITIONS = raw(
+  `<style>@view-transition{navigation:auto}@media (prefers-reduced-motion:reduce){@view-transition{navigation:none}}</style>`,
+);
+
+function head(title: string, extra?: Html): Html {
   return html`<head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <meta name="theme-color" content="#f7f5f1" />
+    <meta name="theme-color" content="#f7f5f1" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#1a1714" media="(prefers-color-scheme: dark)" />
+    ${THEME_BOOT}
+    ${VIEW_TRANSITIONS}
     <title>${title} · Larder</title>
     <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -136,7 +149,16 @@ function head(title: string): Html {
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" />
     <link rel="stylesheet" href="/assets/app.css" />
     <script src="/assets/app.js" defer></script>
+    ${extra ?? ""}
   </head>`;
+}
+
+// Light / dark / follow-the-system, cycled by app.js and remembered per browser.
+export function themeToggle(): Html {
+  return html`<button class="icon-button theme-toggle" type="button" data-theme-toggle aria-label="Switch colour theme" title="Theme">
+    <svg class="icon theme-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M4.6 4.6l1.4 1.4M18 18l1.4 1.4M2.5 12h2M19.5 12h2M4.6 19.4 6 18M18 6l1.4-1.4"/></svg>
+    <svg class="icon theme-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z"/></svg>
+  </button>`;
 }
 
 function flash(ctx: Ctx): Html {
@@ -148,7 +170,7 @@ function brand(): Html {
 }
 
 // The signed-in shell: sidebar on wide screens, top bar + bottom tabs on phones.
-export function appPage(ctx: Ctx, { title, active, body, mainClass }: PageOptions): Html {
+export function appPage(ctx: Ctx, { title, active, body, mainClass, headExtra }: PageOptions): Html {
   const user = ctx.user!;
   const link = (n: NavItem) =>
     html`<a href="${n.href}" class="nav-link ${n.phase ? "nav-soon" : ""}" ${n.key === active ? raw('aria-current="page"') : ""}>${icon(n.key)}<span>${n.label}</span>${n.phase ? html`<small>${n.phase}</small>` : ""}</a>`;
@@ -157,7 +179,7 @@ export function appPage(ctx: Ctx, { title, active, body, mainClass }: PageOption
   const tab = (n: NavItem) =>
     html`<a href="${n.href}" class="nav-link" ${n.key === tabActive ? raw('aria-current="page"') : ""}>${icon(n.key)}<span>${n.label}</span></a>`;
   return html`<html lang="en-AU">
-    ${head(title)}
+    ${head(title, headExtra)}
     <body class="app">
       <a class="skip" href="#main">Skip to content</a>
       <aside class="sidebar">
@@ -169,6 +191,7 @@ export function appPage(ctx: Ctx, { title, active, body, mainClass }: PageOption
         </nav>
         <div class="sidebar-foot">
           <a class="me" href="/u/${user.username}">${avatar(user.display_name, "sm")}<span><strong>${user.display_name}</strong><small>@${user.username}</small></span></a>
+          ${themeToggle()}
           <a class="icon-button" href="/settings" title="Settings" aria-label="Settings" ${active === "settings" ? raw('aria-current="page"') : ""}>${icon("settings")}</a>
           <form method="post" action="/logout">
             <button class="icon-button" type="submit" title="Sign out" aria-label="Sign out">${icon("logout")}</button>
@@ -177,7 +200,7 @@ export function appPage(ctx: Ctx, { title, active, body, mainClass }: PageOption
       </aside>
       <header class="topbar">
         ${brand()}
-        <a class="me" href="/u/${user.username}" aria-label="Your profile">${avatar(user.display_name, "sm")}</a>
+        <span class="topbar-actions">${themeToggle()}<a class="me" href="/u/${user.username}" aria-label="Your profile">${avatar(user.display_name, "sm")}</a></span>
       </header>
       <main id="main" class="main ${mainClass ?? ""}">
         ${flash(ctx)}
@@ -192,11 +215,11 @@ export function appPage(ctx: Ctx, { title, active, body, mainClass }: PageOption
 
 // Signed-out pages: landing, sign in, register, and the parts of the site
 // that work without an account (recipes, the global live map, /readme/).
-export function publicPage(ctx: Ctx, { title, body, active, mainClass }: PageOptions): Html {
+export function publicPage(ctx: Ctx, { title, body, active, mainClass, headExtra }: PageOptions): Html {
   const link = (key: string, href: string, label: string, cls = "") =>
     html`<a href="${href}" class="${cls}" ${active === key ? raw('aria-current="page"') : ""}>${label}</a>`;
   return html`<html lang="en-AU">
-    ${head(title)}
+    ${head(title, headExtra)}
     <body class="public">
       <a class="skip" href="#main">Skip to content</a>
       <header class="public-bar">
@@ -205,6 +228,7 @@ export function publicPage(ctx: Ctx, { title, body, active, mainClass }: PageOpt
           ${link("recipes", "/recipes", "Recipes")}
           ${link("global", "/global", "Live now", "hide-sm")}
           ${link("about", "/readme/", "About", "hide-sm")}
+          ${themeToggle()}
           ${link("login", "/login", "Sign in")}
           <a class="button button-small" href="/register">Join free</a>
         </nav>

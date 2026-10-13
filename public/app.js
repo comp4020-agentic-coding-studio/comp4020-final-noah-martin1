@@ -2,6 +2,45 @@
 
 document.documentElement.classList.remove("no-js");
 
+// Theme: follow the system until someone picks. The toggle flips between
+// light and dark relative to what's showing; the choice is remembered per
+// browser. Pages with 3D scenes listen for "larder:theme" to relight.
+(() => {
+  const root = document.documentElement;
+  const media = window.matchMedia("(prefers-color-scheme: dark)");
+  const isDark = () => root.dataset.theme === "dark" || (root.dataset.theme !== "light" && media.matches);
+  const announce = () => window.dispatchEvent(new CustomEvent("larder:theme", { detail: { dark: isDark() } }));
+  media.addEventListener("change", () => {
+    if (!root.dataset.theme) announce();
+  });
+  document.addEventListener("click", (event) => {
+    const button = event.target instanceof Element ? event.target.closest("[data-theme-toggle]") : null;
+    if (!button) return;
+    const next = isDark() ? "light" : "dark";
+    // a soft cross-fade between palettes, skipped for reduced motion
+    root.classList.add("theme-fading");
+    setTimeout(() => root.classList.remove("theme-fading"), 500);
+    root.dataset.theme = next;
+    try {
+      // picking what the system already shows means "follow the system" again
+      if ((next === "dark") === media.matches) {
+        localStorage.removeItem("larder-theme");
+        delete root.dataset.theme;
+      } else localStorage.setItem("larder-theme", next);
+    } catch {}
+    announce();
+  });
+})();
+
+// On a phone the section tabs scroll sideways; start with the current one in view.
+for (const current of document.querySelectorAll('.subnav a[aria-current="page"]')) {
+  const strip = current.parentElement;
+  if (strip.scrollWidth <= strip.clientWidth) continue;
+  const tab = current.getBoundingClientRect();
+  const box = strip.getBoundingClientRect();
+  strip.scrollLeft += tab.left + tab.width / 2 - (box.left + box.width / 2);
+}
+
 // Confirm destructive forms: <form data-confirm="Delete this?">
 document.addEventListener("submit", (event) => {
   const form = event.target;
@@ -276,3 +315,51 @@ document.querySelectorAll("[data-shop-item]").forEach((box) => {
 });
 
 document.querySelector("[data-print]")?.addEventListener("click", () => window.print());
+
+// Opening a recipe: the tile's photo grows into the recipe page's big photo
+// (cross-document view transitions; other browsers just navigate). Only the
+// clicked tile gets the shared name, since one recipe can show twice on a page.
+(() => {
+  if (!("onpagereveal" in window) || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  window.addEventListener("pageswap", (event) => {
+    const to = event.activation?.entry?.url;
+    if (!event.viewTransition || !to) return;
+    const id = /\/recipes\/(\d+)\/?$/.exec(new URL(to).pathname)?.[1];
+    if (!id) return;
+    // a recipe page's own photo carries the name in CSS; hand it to the tile
+    document.querySelector(".rd-photo")?.style.setProperty("view-transition-name", "none");
+    const href = `a.rx-tile[href="/recipes/${id}"]`;
+    const tile = document.querySelector(`${href}[data-pressed] .rx-photo`) ?? document.querySelector(`${href} .rx-photo`);
+    if (tile) tile.style.viewTransitionName = "recipe-photo";
+  });
+  document.addEventListener("pointerdown", (event) => {
+    const tile = event.target instanceof Element ? event.target.closest("a.rx-tile") : null;
+    document.querySelectorAll("a.rx-tile[data-pressed]").forEach((t) => t !== tile && t.removeAttribute("data-pressed"));
+    tile?.setAttribute("data-pressed", "");
+  });
+  // coming back from the history cache, nothing keeps a stale name
+  window.addEventListener("pageshow", () => {
+    document.querySelectorAll(".rx-photo, .rd-photo").forEach((el) => el.style.removeProperty("view-transition-name"));
+  });
+})();
+
+// The landing page's photo stack leans gently toward the pointer.
+(() => {
+  const stack = document.querySelector(".ld-stack");
+  if (!stack || window.matchMedia("(prefers-reduced-motion: reduce), (hover: none)").matches) return;
+  let frame = 0;
+  stack.addEventListener("pointermove", (event) => {
+    const r = stack.getBoundingClientRect();
+    const x = (event.clientX - r.left) / r.width - 0.5;
+    const y = (event.clientY - r.top) / r.height - 0.5;
+    cancelAnimationFrame(frame);
+    frame = requestAnimationFrame(() => {
+      stack.style.setProperty("--rx", `${(-y * 7).toFixed(2)}deg`);
+      stack.style.setProperty("--ry", `${(x * 9).toFixed(2)}deg`);
+    });
+  });
+  stack.addEventListener("pointerleave", () => {
+    stack.style.setProperty("--rx", "0deg");
+    stack.style.setProperty("--ry", "0deg");
+  });
+})();

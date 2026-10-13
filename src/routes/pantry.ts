@@ -1,9 +1,10 @@
 import { all, catalogFor, ingredientId, one, run } from "../db.ts";
-import { freshness, money, parseIsoDate, qty } from "../format.ts";
-import { type Html, html } from "../html.ts";
+import { addDays, daysBetween, freshness, money, parseIsoDate, qty, shortDate, today, weekday } from "../format.ts";
+import { type Html, html, raw } from "../html.ts";
 import { type Ctx, HttpError, htmlReply, redirect, setFlash } from "../http.ts";
+import { shelfware } from "../kitchen.ts";
 import type { Route } from "../server.ts";
-import { empty, errors, icon, page, pageHeader } from "../views/layout.ts";
+import { empty, errors, icon, page } from "../views/layout.ts";
 
 export interface InventoryItem {
   id: number;
@@ -27,6 +28,65 @@ export function personalInventory(userId: number): InventoryItem[] {
      ORDER BY it.expiry_date IS NULL, it.expiry_date, i.name`,
     userId,
   );
+}
+
+// Which of the person's own upcoming planned meals use each ingredient, for
+// the fridge's "what's this for?" panel. Their own calendar only, so no
+// visibility question arises.
+function upcomingUses(userId: number, ingredientIds: number[]): Map<number, { date: string; meal: string; recipe_id: number; title: string }[]> {
+  const out = new Map<number, { date: string; meal: string; recipe_id: number; title: string }[]>();
+  if (!ingredientIds.length) return out;
+  const rows = all<{ ingredient_id: number; date: string; meal: string; recipe_id: number; title: string }>(
+    `SELECT DISTINCT ri.ingredient_id, c.date, c.meal, r.id AS recipe_id, r.title
+     FROM calendar_entries c
+     JOIN recipes r ON r.id = c.recipe_id
+     JOIN recipe_ingredients ri ON ri.recipe_id = r.id
+     WHERE c.owner_type = 'user' AND c.owner_id = ? AND c.status = 'planned'
+       AND c.date BETWEEN ? AND ?
+       AND ri.ingredient_id IN (${ingredientIds.map(() => "?").join(", ")})
+     ORDER BY c.date, CASE c.meal WHEN 'breakfast' THEN 0 WHEN 'lunch' THEN 1 ELSE 2 END`,
+    userId,
+    today(),
+    addDays(today(), 21),
+    ...ingredientIds,
+  );
+  for (const r of rows) {
+    const list = out.get(r.ingredient_id) ?? [];
+    list.push({ date: r.date, meal: r.meal, recipe_id: r.recipe_id, title: r.title });
+    out.set(r.ingredient_id, list);
+  }
+  return out;
+}
+
+function inDays(days: number): string {
+  if (days < 14) return `${days} days left`;
+  if (days < 60) return `about ${Math.round(days / 7)} weeks left`;
+  return `about ${Math.round(days / 30)} months left`;
+}
+
+// What the 3D scene draws: one entry per item, with its container and the
+// meals it's earmarked for. Escaped so no item name can close the tag.
+function scenePayload(userId: number, items: InventoryItem[]): string {
+  const uses = upcomingUses(userId, [...new Set(items.map((i) => i.ingredient_id))]);
+  const data = items.map((it) => {
+    const f = freshness(it.expiry_date);
+    const ware = shelfware(it.name, it.category);
+    return {
+      id: it.id,
+      name: it.name,
+      qty: qty(it.quantity, it.unit),
+      price: it.price_cents === null ? null : money(it.price_cents),
+      expiry: it.expiry_date ? `${weekday(it.expiry_date)} ${shortDate(it.expiry_date)}` : null,
+      fresh: f.state,
+      // the panel already shows the date, so say how long that is from now
+      freshLabel: f.state === "fresh" && it.expiry_date ? inDays(daysBetween(today(), it.expiry_date)) : f.label,
+      place: ware.place,
+      model: ware.model,
+      tint: ware.tint,
+      uses: (uses.get(it.ingredient_id) ?? []).map((u) => ({ ...u, day: `${weekday(u.date)} ${shortDate(u.date)}` })),
+    };
+  });
+  return JSON.stringify(data).replace(/</g, "\\u003c");
 }
 
 interface ItemInput {
@@ -104,16 +164,40 @@ function pantryPage(ctx: Ctx, values: Record<string, string> = {}, problems: str
   }
   const editing = Number(ctx.url.searchParams.get("edit"));
 
+  const inFridge = items.filter((it) => shelfware(it.name, it.category).place === "fridge").length;
   const body = html`
-    ${pageHeader("Pantry", "What's in your kitchen, what it cost, and what needs using first.")}
-    <dl class="stats">
-      <div><dt>Items</dt><dd>${items.length}</dd></div>
-      <div class="${counts.soon ? "stat-warn" : ""}"><dt>Use soon</dt><dd>${counts.soon}</dd></div>
-      <div class="${counts.expired ? "stat-bad" : ""}"><dt>Expired</dt><dd>${counts.expired}</dd></div>
-      <div><dt>Stock value</dt><dd>${money(value)}</dd></div>
-    </dl>
+    <section class="kx" data-kitchen data-view="fridge">
+      <header class="kx-hero">
+        <p class="eyebrow">Your kitchen</p>
+        <h1><span class="kx-title" data-kx-title>Fridge</span></h1>
+        <p class="lede">Hover anything to lift it off the shelf; tap it to see when it goes off and which meals it's for.</p>
+        <dl class="kx-stats">
+          <div><dt>Items</dt><dd>${items.length}</dd></div>
+          <div class="${counts.soon ? "kx-warn" : ""}"><dt>Use soon</dt><dd>${counts.soon}</dd></div>
+          <div class="${counts.expired ? "kx-bad" : ""}"><dt>Expired</dt><dd>${counts.expired}</dd></div>
+          <div><dt>Stock value</dt><dd>${money(value)}</dd></div>
+        </dl>
+      </header>
 
-    <section class="panel">
+      <div class="kx-stage" data-kx-stage>
+        <canvas aria-label="3D view of your fridge and pantry. Every item is also listed in the table below."></canvas>
+        <div class="kx-loading" aria-hidden="true"><span></span></div>
+        <div class="kx-switch" role="group" aria-label="Show">
+          <button type="button" class="kx-arrow kx-arrow-prev" data-kx-go="fridge" aria-label="Show the fridge">${icon("back", 18)}</button>
+          <span class="kx-dots" aria-hidden="true"><i data-dot="fridge"></i><i data-dot="pantry"></i></span>
+          <button type="button" class="kx-arrow kx-arrow-next" data-kx-go="pantry" aria-label="Show the pantry">${icon("arrow", 18)}</button>
+        </div>
+        <p class="kx-place-label" aria-hidden="true"><span data-kx-count-fridge>${inFridge} in the fridge</span><span data-kx-count-pantry>${items.length - inFridge} on the shelves</span></p>
+      </div>
+
+      <aside class="kx-panel" data-kx-panel hidden aria-live="polite">
+        <button class="kx-close" type="button" data-kx-close aria-label="Close">${icon("close", 18)}</button>
+        <div data-kx-panel-body></div>
+      </aside>
+    </section>
+    <script type="application/json" id="kitchen-data">${raw(scenePayload(user.id, items))}</script>
+
+    <section class="panel kx-add" id="add">
       <h2 class="panel-title">Add an item</h2>
       ${errors(problems)}
       <form method="post" action="/pantry" class="inline-form">
@@ -166,9 +250,19 @@ function pantryPage(ctx: Ctx, values: Record<string, string> = {}, problems: str
           </div>
         </section>`
       : empty("Your pantry is empty", "Add what you have — expiry dates drive the “use soon” list, and prices feed recipe cost estimates.")}
-    <p class="hint">${icon("household", 16)} Shared household pantries with live ingredient reservations arrive in crit 9.</p>`;
+    `;
 
-  return htmlReply(page(ctx, { title: "Pantry", active: "pantry", body }), status);
+  return htmlReply(
+    page(ctx, {
+      title: "Fridge & pantry",
+      active: "pantry",
+      body,
+      mainClass: "main-kitchen",
+      headExtra: html`<script type="importmap">${raw(JSON.stringify({ imports: { three: "/assets/vendor/three.module.min.js", "three/addons/": "/assets/vendor/addons/" } }))}</script>
+        <script type="module" src="/assets/kitchen.mjs"></script>`,
+    }),
+    status,
+  );
 }
 
 function ownItem(ctx: Ctx): number {

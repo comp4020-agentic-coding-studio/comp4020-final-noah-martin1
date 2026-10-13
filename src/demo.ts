@@ -4,18 +4,76 @@
 // while this is on. Turn it off (DEMO_MODE = false) before the final
 // submission; the seeded rows stay until deleted.
 import { hashPassword } from "./auth.ts";
-import { ingredientId, one, run } from "./db.ts";
+import { all, ingredientId, one, run } from "./db.ts";
 import { addDays, today, weekStart } from "./format.ts";
 import { acceptFriend, requestFriend } from "./friends.ts";
+import { seedHouseholdDemo } from "./household.ts";
 import { saveRecipe } from "./recipes.ts";
 
 export const DEMO_MODE = true;
 
 export const DEMO_LOGIN = { username: "alice", password: "password123" };
 
-// Creates the demo kitchen once; does nothing if alice already exists.
+// A believable week's shop for alice, so the fridge and pantry have
+// something to show: [name, qty, unit, days until expiry (null = none), cents].
+const ALICE_SHOP: [string, number, string, number | null, number | null][] = [
+  ["butter", 250, "g", 30, 450],
+  ["cheddar cheese", 500, "g", 21, 900],
+  ["greek yoghurt", 1000, "g", 6, 550],
+  ["orange juice", 2000, "ml", 7, 450],
+  ["chicken thigh", 600, "g", 3, 780],
+  ["salmon fillet", 300, "g", 2, 1100],
+  ["coriander", 1, "bunch", 4, 300],
+  ["capsicum", 2, "", 8, 300],
+  ["lemon", 3, "", 14, 240],
+  ["carrot", 5, "", 18, 200],
+  ["parmesan", 200, "g", 40, 800],
+  ["onion", 4, "", 30, 260],
+  ["garlic", 1, "bulb", 40, 150],
+  ["potato", 2000, "g", 30, 450],
+  ["olive oil", 750, "ml", null, 1200],
+  ["soy sauce", 500, "ml", null, 380],
+  ["peanut butter", 375, "g", 200, 450],
+  ["honey", 500, "g", null, 650],
+  ["coconut milk", 400, "ml", 500, 200],
+  ["chickpeas", 400, "g", 600, 120],
+  ["spaghetti", 500, "g", 400, 200],
+  ["plain flour", 1000, "g", 300, 180],
+  ["rice", 1000, "g", 400, 300],
+  ["bread", 1, "loaf", 4, 450],
+  ["ground cumin", 50, "g", null, 250],
+  ["paprika", 50, "g", null, 250],
+];
+
+function stock(owner: number, name: string, q: number, unit: string, expiresIn: number | null, cents: number | null): void {
+  run(
+    `INSERT INTO inventory_items (owner_type, owner_id, ingredient_id, quantity, unit, expiry_date, price_cents, added_by)
+     VALUES ('user', ?, ?, ?, ?, ?, ?, ?)`,
+    owner, ingredientId(name, unit), q, unit, expiresIn === null ? null : addDays(today(), expiresIn), cents, owner,
+  );
+}
+
+// Tops up alice's kitchen with ALICE_SHOP on databases seeded before it
+// existed. Adds only items she doesn't already hold, so it runs once.
+function topUpAlice(alice: number): void {
+  const held = new Set(
+    all<{ name: string }>(
+      `SELECT i.name FROM inventory_items it JOIN ingredients i ON i.id = it.ingredient_id
+       WHERE it.owner_type = 'user' AND it.owner_id = ?`,
+      alice,
+    ).map((r) => r.name),
+  );
+  for (const [name, q, unit, days, cents] of ALICE_SHOP) if (!held.has(name)) stock(alice, name, q, unit, days, cents);
+}
+
+// Creates the demo kitchen once; on later boots only tops up alice's shop.
 export async function seedDemo(): Promise<boolean> {
-  if (one("SELECT 1 FROM users WHERE username = ?", DEMO_LOGIN.username)) return false;
+  const existing = one<{ id: number }>("SELECT id FROM users WHERE username = ?", DEMO_LOGIN.username);
+  if (existing) {
+    topUpAlice(existing.id);
+    seedHouseholdDemo();
+    return false;
+  }
   const PASSWORD = DEMO_LOGIN.password;
   const hash = await hashPassword(PASSWORD);
   const user = (username: string, name: string) =>
@@ -125,6 +183,7 @@ export async function seedDemo(): Promise<boolean> {
   item(alice, "rolled oats", 750, "g", 120, 199);
   item(alice, "canned tomatoes", 800, "g", 400, 240);
   item(sam, "eggs", 6, "", 6, 450);
+  topUpAlice(alice);
 
   const plan = (owner: number, offset: number, meal: string, recipe: number, shared: number, status = "planned") =>
     run(
@@ -142,6 +201,7 @@ export async function seedDemo(): Promise<boolean> {
   plan(sam, 1, "dinner", shakshuka, 1);
   plan(bo, 3, "dinner", curry, 1);
 
+  seedHouseholdDemo();
   console.log("seeded demo users alice, sam, bo, jo");
   return true;
 }

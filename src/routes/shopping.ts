@@ -1,6 +1,7 @@
-import { addDays, money, qty, shortDate, today, weekday } from "../format.ts";
+import { addDays, money, monthLabel, qty, shortDate, today, weekday } from "../format.ts";
 import { type Html, html, raw } from "../html.ts";
 import { htmlReply } from "../http.ts";
+import { priceReference } from "../nutrition.ts";
 import { prefsFor } from "../prefs.ts";
 import type { Route } from "../server.ts";
 import { type ShoppingLine, shoppingList } from "../shopping.ts";
@@ -15,9 +16,31 @@ function line(l: ShoppingLine, checkable: boolean): Html {
     <span class="mono qty">${amount}</span>
     <span class="grow"><span class="item-name">${l.name}</span>
       <small class="muted block">for ${l.meals.join(", ")}${l.have > 0 && checkable ? ` · you have ${qty(l.have, l.unit)}` : ""}${l.otherUnit && checkable ? " · you hold some in another unit — check" : ""}</small></span>
-    ${checkable ? html`<span class="mono muted">${l.priceCents === null ? "—" : money(l.priceCents)}</span>` : ""}
+    ${checkable
+      ? html`<span class="hh-line-price mono" title="${priceTitle(l)}">${l.priceCents === null ? "—" : money(l.priceCents)}${l.priceKind ? html`<small>${l.priceKind === "paid" ? "paid" : "est."}</small>` : ""}</span>`
+      : ""}
   </li>`;
 }
+
+// Where a line's price came from (CLAUDE.md: every reference price carries
+// its source and date).
+function priceTitle(l: ShoppingLine): string {
+  if (l.priceKind === "paid") return "What you last paid for a pack of this";
+  if (l.priceKind === "est") {
+    return l.priceRef
+      ? `Estimate for this amount from a reference price: ${l.priceRef.source} (checked ${monthLabel(l.priceRef.checked)}). Not a live price.`
+      : "Estimate for this amount at typical Australian supermarket shelf prices. Not a live price.";
+  }
+  return "No price known";
+}
+
+// ", checked Oct 2026", from the newest month in the price table
+function referenceChecked(): string {
+  const label = monthLabel(priceReference().checked);
+  return label ? `, checked ${label}` : "";
+}
+
+const categoryTitle = (c: string) => (c === "other" ? "Everything else" : c.charAt(0).toUpperCase() + c.slice(1));
 
 export const routes: Route[] = [
   {
@@ -59,7 +82,7 @@ export const routes: Route[] = [
                 ${list.toBuy.length
                   ? [...groups].map(
                       ([category, lines]) => html`<section class="panel">
-                        <h2 class="panel-title">${category}</h2>
+                        <h2 class="panel-title">${categoryTitle(category)}</h2>
                         <ul class="shop-list">${lines.map((l) => line(l, true))}</ul>
                       </section>`,
                     )
@@ -80,9 +103,11 @@ export const routes: Route[] = [
                 </section>
                 <section class="panel">
                   <h2 class="panel-title">How it's worked out</h2>
-                  <p class="muted small">Amounts are summed across meals, then what you hold (unexpired, same unit) is subtracted. Prices are the last price you paid for each item, per pack. Ticks are remembered in this browser only.</p>
+                  <p class="muted small">Amounts are summed across meals, then what you hold (unexpired, same unit) is subtracted.
+                    <strong>paid</strong> is the last price you entered for a pack; <strong>est.</strong> is Larder's estimate for the amount needed, from reference shelf prices read at ALDI and Woolworths${referenceChecked()} (hover a price for its source). They're estimates, not live supermarket prices.
+                    Ticks are remembered in this browser only.</p>
                 </section>
-                <a class="button button-ghost button-block" href="/planner">${icon("planner", 16)} Suggest cheaper meals</a>
+                <a class="button button-ghost button-block" href="/calendar#plan">${icon("spark", 16)} Plan a cheaper week</a>
               </aside>
             </div>`}`;
       return htmlReply(page(ctx, { title: "Shopping list", active: "shopping", body }));

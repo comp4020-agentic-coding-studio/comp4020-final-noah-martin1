@@ -10,7 +10,9 @@ describe("navigation", () => {
     const { client } = await registered();
     const home = new JSDOM(await (await client.get("/")).text()).window.document;
     const links = [...home.querySelectorAll<HTMLAnchorElement>(".sidebar nav a")];
-    expect(links.length).toBeGreaterThanOrEqual(10);
+    // the core sections are all one click away
+    const hrefs = links.map((a) => a.getAttribute("href"));
+    for (const core of ["/", "/global", "/pantry", "/recipes", "/calendar", "/shopping", "/friends"]) expect(hrefs).toContain(core);
 
     for (const link of links) {
       const res = await client.get(link.getAttribute("href")!);
@@ -29,13 +31,30 @@ describe("navigation", () => {
     for (const href of sidebar) expect(listed).toContain(href);
   });
 
-  it.each(["/household/pantry", "/household/calendar", "/household/members", "/household/new", "/live/1", "/live/1/along", "/planner/week"])(
-    "%s opens and is marked as a preview",
-    async (path) => {
-      const { client } = await registered();
-      const res = await client.get(path);
-      expect(res.status).toBe(200);
-      expect(await res.text()).toContain("Preview with sample data");
-    },
-  );
+  // the planner and the shared schedule now live inside the calendar
+  it.each(["/planner", "/planner/week", "/schedule"])("%s leads to the calendar", async (path) => {
+    const { client } = await registered();
+    const res = await client.get(path);
+    expect(res.status).toBe(200);
+    expect(res.finalUrl).toMatch(/^\/calendar/);
+  });
+
+  // live cooking is real now and lives on the globe
+  it.each(["/live", "/live/1", "/live/1/along"])("%s leads to the globe", async (path) => {
+    const { client } = await registered();
+    const res = await client.get(path);
+    expect(res.status).toBe(200);
+    expect(res.finalUrl).toMatch(/^\/global/);
+  });
+
+  // households are real now: no sample data, and someone outside one is shown
+  // how to start or join one (the details are in household.test.ts)
+  it("/household is real, not a preview", async () => {
+    const { client } = await registered();
+    const res = await client.get("/household");
+    expect(res.status).toBe(200);
+    const body = await res.text();
+    expect(body).not.toContain("Preview with sample data");
+    expect(body).toMatch(/invite code/i);
+  });
 });

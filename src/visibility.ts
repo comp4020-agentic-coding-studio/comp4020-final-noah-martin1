@@ -48,6 +48,37 @@ export function visibleRecipeSql(viewerId: number | null): { where: string; para
   };
 }
 
+// A live cook session is visible to its cook always; otherwise its own
+// setting decides (public: anyone, signed in or not; friends: accepted
+// friends; private: nobody else) AND the recipe being cooked must be visible
+// to the viewer, so going live never leaks a private recipe. Ended sessions
+// are filtered by the caller (src/live.ts), not here.
+export interface SessionVisibility {
+  user_id: number;
+  visibility: string;
+  recipe_author_id: number;
+  recipe_visibility: string;
+}
+
+export function canSeeSession(viewerId: number | null, s: SessionVisibility, friends?: Set<number>): boolean {
+  if (viewerId !== null && viewerId === s.user_id) return true;
+  const isFriend = (id: number) => viewerId !== null && (friends ? friends.has(id) : areFriends(viewerId, id));
+  const recipeOk =
+    s.recipe_visibility === "public" ||
+    (viewerId !== null && viewerId === s.recipe_author_id) ||
+    (s.recipe_visibility === "friends" && isFriend(s.recipe_author_id));
+  if (!recipeOk) return false;
+  if (s.visibility === "public") return true;
+  return s.visibility === "friends" && isFriend(s.user_id);
+}
+
+// The same rule as a reusable test for one viewer over many sessions (the
+// globe, the live stream): looks their friends up once, not per session.
+export function sessionViewer(viewerId: number | null): (s: SessionVisibility) => boolean {
+  const friends = new Set(viewerId === null ? [] : friendIds(viewerId));
+  return (s) => canSeeSession(viewerId, s, friends);
+}
+
 // A personal calendar entry is visible to its owner, and to accepted friends
 // only when marked shared AND the recipe itself is visible to them, so sharing
 // a meal never leaks the title of a private recipe.

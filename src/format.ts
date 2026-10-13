@@ -63,6 +63,12 @@ export function weekday(iso: string): string {
   return d ? DAYS[d.getDay()] : "";
 }
 
+// "2026-10" → "Oct 2026", for when a reference price was checked
+export function monthLabel(ym: string): string {
+  const [y, m] = ym.split("-").map(Number);
+  return y && m >= 1 && m <= 12 ? `${MONTHS[m - 1]} ${y}` : "";
+}
+
 export type Freshness = "expired" | "soon" | "fresh" | "none";
 
 export const SOON_DAYS = 3;

@@ -1,0 +1,2522 @@
+{
+ "milk": {
+  "cents": 17,
+  "source": "ALDI shelf price: Farmdale Full Cream Milk 2L, $3.39",
+  "checked": "2026-10"
+ },
+ "butter": {
+  "cents": 160,
+  "source": "ALDI shelf price: Pure Valley Salted Butter 250g, $3.99",
+  "checked": "2026-10"
+ },
+ "eggs": {
+  "cents": 96,
+  "source": "Woolworths shelf price: 12 Extra Large Free Range Eggs 700g, $6.70",
+  "checked": "2026-10"
+ },
+ "chicken thigh": {
+  "cents": 145,
+  "source": "Woolworths shelf price: RSPCA Approved Thigh Fillets 1.2–1.8kg, $14.50/kg",
+  "checked": "2026-10"
+ },
+ "chicken breast": {
+  "cents": 110,
+  "source": "Woolworths shelf price: RSPCA Approved Breast Fillet 1.5–2.2kg, $11/kg",
+  "checked": "2026-10"
+ },
+ "beef mince": {
+  "cents": 154,
+  "source": "Woolworths shelf price: Beef Mince 500g, $7.70",
+  "checked": "2026-10"
+ },
+ "plain flour": {
+  "cents": 12,
+  "source": "ALDI shelf price: White Mill Plain Flour 2kg, $2.39",
+  "checked": "2026-10"
+ },
+ "self-raising flour": {
+  "cents": 12,
+  "source": "ALDI shelf price: White Mill Self Raising Flour 2kg, $2.39",
+  "checked": "2026-10"
+ },
+ "sugar": {
+  "cents": 13,
+  "source": "ALDI shelf price: White Mill White Sugar 2kg, $2.59",
+  "checked": "2026-10"
+ },
+ "salmon fillet": {
+  "cents": 340,
+  "source": "Woolworths shelf price: Tasmanian Atlantic Salmon Fillets skin on, $6.80/200g",
+  "checked": "2026-10"
+ },
+ "rice": {
+  "cents": 17,
+  "source": "Woolworths shelf price: Essentials Long Grain Rice 5kg, $8.50",
+  "checked": "2026-10"
+ },
+ "canned tomatoes": {
+  "cents": 24,
+  "source": "Woolworths shelf price: Essentials Diced Tomatoes 400g, $0.95",
+  "checked": "2026-10"
+ },
+ "cheddar cheese": {
+  "cents": 93,
+  "source": "Woolworths shelf price: Cheddar Cheese Block 1kg, $9.30",
+  "checked": "2026-10"
+ },
+ "prawns": {
+  "cents": 350,
+  "source": "Woolworths shelf price: Raw Prawns Deveined 500g, $17.50",
+  "checked": "2026-10"
+ },
+ "lamb leg": {
+  "cents": 150,
+  "source": "Woolworths shelf price: Lamb Leg Roast 750g–1.7kg, $15/kg",
+  "checked": "2026-10"
+ },
+ "spaghetti": {
+  "cents": 18,
+  "source": "ALDI shelf price: Cucina Spaghetti 500g, $0.89",
+  "checked": "2026-10"
+ },
+ "coconut milk": {
+  "cents": 42,
+  "source": "ALDI shelf price: Asia Green Garden Coconut Milk 400ml, $1.69",
+  "checked": "2026-10"
+ },
+ "cream": {
+  "cents": 87,
+  "source": "Woolworths shelf price: Thickened Cream 600mL, $5.20",
+  "checked": "2026-10"
+ },
+ "greek yoghurt": {
+  "cents": 42,
+  "source": "Woolworths shelf price: Natural Greek Style Yoghurt 1kg, $4.20",
+  "checked": "2026-10"
+ },
+ "bacon": {
+  "cents": 176,
+  "source": "Woolworths shelf price: Middle Bacon 250g, $4.40",
+  "checked": "2026-10"
+ },
+ "mozzarella": {
+  "cents": 166,
+  "source": "Woolworths shelf price: Mozzarella Shredded Cheese 500g, $8.30",
+  "checked": "2026-10"
+ },
+ "parmesan": {
+  "cents": 345,
+  "source": "Woolworths shelf price: Parmesan Cheese Block 200g, $6.90",
+  "checked": "2026-10"
+ },
+ "chickpeas": {
+  "cents": 35,
+  "source": "Woolworths shelf price: La Gina Chickpeas 400g, $1.40",
+  "checked": "2026-10"
+ },
+ "vegetable oil": {
+  "cents": 30,
+  "source": "Woolworths shelf price: Canola Oil 2L, $6.00",
+  "checked": "2026-10"
+ },
+ "rolled oats": {
+  "cents": 21,
+  "source": "Woolworths shelf price: Australian Rolled Oats 1.5kg, $3.20",
+  "checked": "2026-10"
+ },
+ "porridge oats": {
+  "cents": 21,
+  "source": "Woolworths shelf price: Australian Rolled Oats 1.5kg, $3.20",
+  "checked": "2026-10"
+ },
+ "lemon": {
+  "cents": 138,
+  "source": "Woolworths shelf price: Lemon loose, $1.38 each (~100g)",
+  "checked": "2026-10"
+ },
+ "banana": {
+  "cents": 39,
+  "source": "Woolworths shelf price: Bananas, $3.90/kg",
+  "checked": "2026-10"
+ },
+ "capsicum": {
+  "cents": 69,
+  "source": "Woolworths shelf price: Capsicum, $6.90/kg",
+  "checked": "2026-10"
+ },
+ "onion": {
+  "cents": 30,
+  "source": "Woolworths shelf price: Brown Onions Bag 1kg, $3.00",
+  "checked": "2026-10"
+ },
+ "potato": {
+  "cents": 35,
+  "source": "Woolworths shelf price: Washed Potatoes Bag 2kg, $7.00",
+  "checked": "2026-10"
+ },
+ "carrot": {
+  "cents": 25,
+  "source": "Woolworths shelf price: Australian Carrots 1kg, $2.50",
+  "checked": "2026-10"
+ },
+ "olive oil": {
+  "cents": 140,
+  "source": "Woolworths shelf price: Extra Virgin Spanish Olive Oil 1L, $14",
+  "checked": "2026-10"
+ },
+ "garlic": {
+  "cents": 315,
+  "source": "ALDI shelf price: Garlic loose, $29.99/kg",
+  "checked": "2026-10"
+ },
+ "ginger": {
+  "cents": 330,
+  "source": "Woolworths shelf price: Ginger fresh, $33/kg",
+  "checked": "2026-10"
+ },
+ "spring onion": {
+  "cents": 300,
+  "source": "Woolworths shelf price: Spring Onion Bunch, $3.00 (~100g)",
+  "checked": "2026-10"
+ },
+ "coriander": {
+  "cents": 600,
+  "source": "Woolworths shelf price: Fresh Herb Coriander Bunch, $3.60 (~60g)",
+  "checked": "2026-10"
+ },
+ "chicken stock": {
+  "cents": 20,
+  "source": "Woolworths shelf price: Chicken Liquid Stock 1L, $2.00",
+  "checked": "2026-10"
+ },
+ "soy sauce": {
+  "cents": 132,
+  "source": "Woolworths shelf price: Kikkoman Soy Sauce 600mL, $7.90",
+  "checked": "2026-10"
+ },
+ "lime": {
+  "cents": 300,
+  "source": "Woolworths shelf price: Lime fresh, $2.06 each (~70g)",
+  "checked": "2026-10"
+ },
+ "ground cumin": {
+  "cents": 670,
+  "source": "Woolworths shelf price: Cumin Ground 30g, $2.00",
+  "checked": "2026-10"
+ },
+ "chuck steak": {
+  "cents": 195,
+  "source": "Woolworths shelf price: Beef Chuck Steak 380–800g, $19.50/kg",
+  "checked": "2026-10"
+ },
+ "pork shoulder": {
+  "cents": 99,
+  "source": "Woolworths shelf price: Pork Shoulder Roast Boneless, $9.90/kg",
+  "checked": "2026-10"
+ },
+ "sausages": {
+  "cents": 118,
+  "source": "Woolworths shelf price: 10 Beef Sausages 550g, $6.50",
+  "checked": "2026-10"
+ },
+ "peas": {
+  "cents": 25,
+  "source": "Woolworths shelf price: Essentials Frozen Peas 1kg, $2.50",
+  "checked": "2026-10"
+ },
+ "broccoli": {
+  "cents": 59,
+  "source": "Woolworths shelf price: Broccoli, $5.90/kg",
+  "checked": "2026-10"
+ },
+ "tofu": {
+  "cents": 62,
+  "source": "Woolworths shelf price: Macro Firm Tofu 450g, $2.80",
+  "checked": "2026-10"
+ },
+ "honey": {
+  "cents": 125,
+  "source": "Woolworths shelf price: Pure Australian Honey Pail 1kg, $12.50",
+  "checked": "2026-10"
+ },
+ "baking powder": {
+  "cents": 185,
+  "source": "Woolworths shelf price: McKenzie's Baking Powder 300g, $5.55",
+  "checked": "2026-10"
+ },
+ "vanilla extract": {
+  "cents": 500,
+  "source": "Woolworths shelf price: Vanilla Extract 200mL, $10.00",
+  "checked": "2026-10"
+ },
+ "tomato": {
+  "cents": 97,
+  "source": "Woolworths shelf price: Truss Tomatoes, $0.97 each (~100g)",
+  "checked": "2026-10"
+ },
+ "cinnamon": {
+  "cents": 1250,
+  "source": "Woolworths shelf price: MasterFoods Ground Cinnamon 28g, $3.50",
+  "checked": "2026-10"
+ },
+ "chicken": {
+  "cents": 90,
+  "source": "Typical Woolworths price (whole chicken, typical $/kg)",
+  "checked": "2026-10"
+ },
+ "chicken legs": {
+  "cents": 75,
+  "source": "Typical Woolworths price (chicken drumsticks/marylands, typical $/kg)",
+  "checked": "2026-10"
+ },
+ "chicken drumsticks": {
+  "cents": 65,
+  "source": "Typical Woolworths price (chicken drumsticks, typical $/kg)",
+  "checked": "2026-10"
+ },
+ "chicken wings": {
+  "cents": 75,
+  "source": "Typical Woolworths price (chicken wings, typical $/kg)",
+  "checked": "2026-10"
+ },
+ "chicken livers": {
+  "cents": 70,
+  "source": "Typical Woolworths price (chicken livers 500g tub)",
+  "checked": "2026-10"
+ },
+ "beef": {
+  "cents": 230,
+  "source": "Typical Woolworths price (beef stir-fry/diced steak, typical $/kg)",
+  "checked": "2026-10"
+ },
+ "beef shin": {
+  "cents": 180,
+  "source": "Typical Woolworths price (beef osso bucco/shin, typical $/kg)",
+  "checked": "2026-10"
+ },
+ "beef brisket": {
+  "cents": 200,
+  "source": "Typical Woolworths price (beef brisket, typical $/kg)",
+  "checked": "2026-10"
+ },
+ "beef fillet": {
+  "cents": 550,
+  "source": "Typical Woolworths price (beef eye fillet, typical $/kg)",
+  "checked": "2026-10"
+ },
+ "sirloin steak": {
+  "cents": 380,
+  "source": "Typical Woolworths price (beef porterhouse (sirloin) steak, typical $/kg)",
+  "checked": "2026-10"
+ },
+ "flank steak": {
+  "cents": 260,
+  "source": "Typical Woolworths price (beef flank/skirt steak, typical $/kg)",
+  "checked": "2026-10"
+ },
+ "beef schnitzel": {
+  "cents": 200,
+  "source": "Typical Woolworths price (beef schnitzel, typical $/kg)",
+  "checked": "2026-10"
+ },
+ "oxtail": {
+  "cents": 180,
+  "source": "Typical Woolworths price (beef oxtail, typical $/kg)",
+  "checked": "2026-10"
+ },
+ "veal": {
+  "cents": 300,
+  "source": "Typical Woolworths price (veal schnitzel, typical $/kg)",
+  "checked": "2026-10"
+ },
+ "lamb": {
+  "cents": 240,
+  "source": "Typical Woolworths price (lamb diced/shoulder, typical $/kg)",
+  "checked": "2026-10"
+ },
+ "lamb leg steaks": {
+  "cents": 280,
+  "source": "Typical Woolworths price (lamb leg steaks, typical $/kg)",
+  "checked": "2026-10"
+ },
+ "lamb mince": {
+  "cents": 180,
+  "source": "Typical Woolworths price (lamb mince 500g)",
+  "checked": "2026-10"
+ },
+ "lamb chops": {
+  "cents": 280,
+  "source": "Typical Woolworths price (lamb loin chops, typical $/kg)",
+  "checked": "2026-10"
+ },
+ "lamb shanks": {
+  "cents": 160,
+  "source": "Typical Woolworths price (lamb shanks, typical $/kg)",
+  "checked": "2026-10"
+ },
+ "lamb kidney": {
+  "cents": 120,
+  "source": "Typical Woolworths price (lamb kidneys, butcher typical)",
+  "checked": "2026-10"
+ },
+ "goat": {
+  "cents": 220,
+  "source": "Typical Woolworths price (goat meat diced, butcher typical)",
+  "checked": "2026-10"
+ },
+ "pork": {
+  "cents": 160,
+  "source": "Typical Woolworths price (pork loin steaks, typical $/kg)",
+  "checked": "2026-10"
+ },
+ "pork mince": {
+  "cents": 130,
+  "source": "Typical Woolworths price (pork mince 500g)",
+  "checked": "2026-10"
+ },
+ "pork chops": {
+  "cents": 150,
+  "source": "Typical Woolworths price (pork loin chops, typical $/kg)",
+  "checked": "2026-10"
+ },
+ "pork belly": {
+  "cents": 180,
+  "source": "Typical Woolworths price (pork belly, typical $/kg)",
+  "checked": "2026-10"
+ },
+ "pork fillet": {
+  "cents": 200,
+  "source": "Typical Woolworths price (pork fillet, typical $/kg)",
+  "checked": "2026-10"
+ },
+ "pork ribs": {
+  "cents": 150,
+  "source": "Typical Woolworths price (pork spare ribs, typical $/kg)",
+  "checked": "2026-10"
+ },
+ "ham": {
+  "cents": 250,
+  "source": "Typical Woolworths price (shaved leg ham, deli typical)",
+  "checked": "2026-10"
+ },
+ "prosciutto": {
+  "cents": 700,
+  "source": "Typical Woolworths price (prosciutto 100g pack)",
+  "checked": "2026-10"
+ },
+ "chorizo": {
+  "cents": 250,
+  "source": "Typical Woolworths price (chorizo 250g)",
+  "checked": "2026-10"
+ },
+ "smoked sausage": {
+  "cents": 200,
+  "source": "Typical Woolworths price (kabana/kielbasa, typical)",
+  "checked": "2026-10"
+ },
+ "black pudding": {
+  "cents": 250,
+  "source": "Typical Woolworths price (black pudding, deli typical)",
+  "checked": "2026-10"
+ },
+ "italian fennel sausages": {
+  "cents": 180,
+  "source": "Typical Woolworths price (Italian-style pork sausages)",
+  "checked": "2026-10"
+ },
+ "turkey mince": {
+  "cents": 170,
+  "source": "Typical Woolworths price (turkey mince 500g)",
+  "checked": "2026-10"
+ },
+ "turkey": {
+  "cents": 200,
+  "source": "Typical Woolworths price (turkey breast, typical $/kg)",
+  "checked": "2026-10"
+ },
+ "duck legs": {
+  "cents": 330,
+  "source": "Typical Woolworths price (duck marylands 2 pack)",
+  "checked": "2026-10"
+ },
+ "frog legs": {
+  "cents": 400,
+  "source": "Typical Woolworths price (frozen frog legs, specialty grocer)",
+  "checked": "2026-10"
+ },
+ "white fish": {
+  "cents": 300,
+  "source": "Typical Woolworths price (white fish fillets (basa/hoki), typical $/kg)",
+  "checked": "2026-10"
+ },
+ "smoked salmon": {
+  "cents": 600,
+  "source": "Typical Woolworths price (smoked salmon 100g)",
+  "checked": "2026-10"
+ },
+ "tuna": {
+  "cents": 150,
+  "source": "Typical Woolworths price (tuna in springwater 425g)",
+  "checked": "2026-10"
+ },
+ "mussels": {
+  "cents": 120,
+  "source": "Typical Woolworths price (live mussels 1kg)",
+  "checked": "2026-10"
+ },
+ "clams": {
+  "cents": 250,
+  "source": "Typical Woolworths price (clams/vongole 1kg)",
+  "checked": "2026-10"
+ },
+ "squid": {
+  "cents": 220,
+  "source": "Typical Woolworths price (squid tubes, typical $/kg)",
+  "checked": "2026-10"
+ },
+ "anchovy fillet": {
+  "cents": 900,
+  "source": "Typical Woolworths price (anchovy fillets 45g jar)",
+  "checked": "2026-10"
+ },
+ "salt cod": {
+  "cents": 400,
+  "source": "Typical Woolworths price (salt cod (bacalao), specialty grocer)",
+  "checked": "2026-10"
+ },
+ "smoked haddock": {
+  "cents": 350,
+  "source": "Typical Woolworths price (smoked cod/haddock fillets)",
+  "checked": "2026-10"
+ },
+ "haddock": {
+  "cents": 330,
+  "source": "Typical Woolworths price (white fish fillets, typical $/kg)",
+  "checked": "2026-10"
+ },
+ "cod": {
+  "cents": 330,
+  "source": "Typical Woolworths price (cod fillets, typical $/kg)",
+  "checked": "2026-10"
+ },
+ "sea bass": {
+  "cents": 400,
+  "source": "Typical Woolworths price (barramundi fillets (sea bass substitute))",
+  "checked": "2026-10"
+ },
+ "barramundi": {
+  "cents": 380,
+  "source": "Typical Woolworths price (barramundi fillets, typical $/kg)",
+  "checked": "2026-10"
+ },
+ "snapper": {
+  "cents": 450,
+  "source": "Typical Woolworths price (snapper fillets, typical $/kg)",
+  "checked": "2026-10"
+ },
+ "trout": {
+  "cents": 300,
+  "source": "Typical Woolworths price (rainbow trout, typical $/kg)",
+  "checked": "2026-10"
+ },
+ "sardines": {
+  "cents": 150,
+  "source": "Typical Woolworths price (sardines in oil 110g)",
+  "checked": "2026-10"
+ },
+ "mackerel": {
+  "cents": 200,
+  "source": "Typical Woolworths price (mackerel fillets in oil 125g)",
+  "checked": "2026-10"
+ },
+ "herring": {
+  "cents": 250,
+  "source": "Typical Woolworths price (herring fillets jar)",
+  "checked": "2026-10"
+ },
+ "monkfish": {
+  "cents": 450,
+  "source": "Typical Woolworths price (firm white fish fillets)",
+  "checked": "2026-10"
+ },
+ "hake": {
+  "cents": 300,
+  "source": "Typical Woolworths price (hake fillets, typical $/kg)",
+  "checked": "2026-10"
+ },
+ "crab meat": {
+  "cents": 600,
+  "source": "Typical Woolworths price (crab meat 170g can)",
+  "checked": "2026-10"
+ },
+ "lobster": {
+  "cents": 900,
+  "source": "Typical Woolworths price (frozen lobster tail)",
+  "checked": "2026-10"
+ },
+ "oysters": {
+  "cents": 500,
+  "source": "Typical Woolworths price (oysters dozen)",
+  "checked": "2026-10"
+ },
+ "conch": {
+  "cents": 400,
+  "source": "Typical Woolworths price (frozen conch, specialty grocer)",
+  "checked": "2026-10"
+ },
+ "seafood mix": {
+  "cents": 220,
+  "source": "Typical Woolworths price (frozen marinara mix 500g)",
+  "checked": "2026-10"
+ },
+ "dried shrimp": {
+  "cents": 600,
+  "source": "Typical Woolworths price (dried shrimp 100g, Asian grocer)",
+  "checked": "2026-10"
+ },
+ "egg yolks": {
+  "cents": 330,
+  "source": "Typical Woolworths price (one whole free range egg per yolk (Woolworths 12 XL 700g, $6.70))",
+  "checked": "2026-10"
+ },
+ "egg whites": {
+  "cents": 170,
+  "source": "Typical Woolworths price (one whole free range egg per white (Woolworths 12 XL 700g, $6.70))",
+  "checked": "2026-10"
+ },
+ "buttermilk": {
+  "cents": 30,
+  "source": "Typical Woolworths price (buttermilk 600mL)",
+  "checked": "2026-10"
+ },
+ "plant milk": {
+  "cents": 30,
+  "source": "Typical Woolworths price (soy/almond milk 1L)",
+  "checked": "2026-10"
+ },
+ "ghee": {
+  "cents": 250,
+  "source": "Typical Woolworths price (ghee 400g)",
+  "checked": "2026-10"
+ },
+ "vegan butter": {
+  "cents": 140,
+  "source": "Typical Woolworths price (dairy-free spread 500g)",
+  "checked": "2026-10"
+ },
+ "creme fraiche": {
+  "cents": 120,
+  "source": "Typical Woolworths price (crème fraîche 200mL)",
+  "checked": "2026-10"
+ },
+ "sour cream": {
+  "cents": 80,
+  "source": "Typical Woolworths price (sour cream 300mL)",
+  "checked": "2026-10"
+ },
+ "cream cheese": {
+  "cents": 120,
+  "source": "Typical Woolworths price (cream cheese block 250g)",
+  "checked": "2026-10"
+ },
+ "mascarpone": {
+  "cents": 220,
+  "source": "Typical Woolworths price (mascarpone 250g)",
+  "checked": "2026-10"
+ },
+ "ricotta": {
+  "cents": 110,
+  "source": "Typical Woolworths price (fresh ricotta 375g)",
+  "checked": "2026-10"
+ },
+ "cottage cheese": {
+  "cents": 90,
+  "source": "Typical Woolworths price (cottage cheese 250g)",
+  "checked": "2026-10"
+ },
+ "yoghurt": {
+  "cents": 42,
+  "source": "Typical Woolworths price (natural yoghurt 1kg)",
+  "checked": "2026-10"
+ },
+ "fromage frais": {
+  "cents": 90,
+  "source": "Typical Woolworths price (fromage frais/quark 500g)",
+  "checked": "2026-10"
+ },
+ "pecorino": {
+  "cents": 450,
+  "source": "Typical Woolworths price (pecorino romano wedge)",
+  "checked": "2026-10"
+ },
+ "gruyère": {
+  "cents": 500,
+  "source": "Typical Woolworths price (gruyère wedge)",
+  "checked": "2026-10"
+ },
+ "feta": {
+  "cents": 150,
+  "source": "Typical Woolworths price (Australian feta 200g)",
+  "checked": "2026-10"
+ },
+ "goat's cheese": {
+  "cents": 400,
+  "source": "Typical Woolworths price (goat's cheese log 150g)",
+  "checked": "2026-10"
+ },
+ "swiss cheese": {
+  "cents": 200,
+  "source": "Typical Woolworths price (Swiss cheese slices)",
+  "checked": "2026-10"
+ },
+ "gouda": {
+  "cents": 200,
+  "source": "Typical Woolworths price (gouda wedge)",
+  "checked": "2026-10"
+ },
+ "brie": {
+  "cents": 250,
+  "source": "Typical Woolworths price (brie 200g)",
+  "checked": "2026-10"
+ },
+ "stilton": {
+  "cents": 500,
+  "source": "Typical Woolworths price (stilton/blue wedge)",
+  "checked": "2026-10"
+ },
+ "manchego": {
+  "cents": 500,
+  "source": "Typical Woolworths price (manchego wedge)",
+  "checked": "2026-10"
+ },
+ "halloumi": {
+  "cents": 300,
+  "source": "Typical Woolworths price (halloumi 180g)",
+  "checked": "2026-10"
+ },
+ "monterey jack cheese": {
+  "cents": 180,
+  "source": "Typical Woolworths price (shredded Mexican-style cheese)",
+  "checked": "2026-10"
+ },
+ "shredded mexican cheese": {
+  "cents": 180,
+  "source": "Typical Woolworths price (shredded Mexican-style cheese)",
+  "checked": "2026-10"
+ },
+ "cheese": {
+  "cents": 93,
+  "source": "Typical Woolworths price (priced as cheddar block 1kg)",
+  "checked": "2026-10"
+ },
+ "paneer": {
+  "cents": 250,
+  "source": "Typical Woolworths price (paneer 200g)",
+  "checked": "2026-10"
+ },
+ "condensed milk": {
+  "cents": 70,
+  "source": "Typical Woolworths price (sweetened condensed milk 395g)",
+  "checked": "2026-10"
+ },
+ "evaporated milk": {
+  "cents": 60,
+  "source": "Typical Woolworths price (evaporated milk 375mL)",
+  "checked": "2026-10"
+ },
+ "dulce de leche": {
+  "cents": 150,
+  "source": "Typical Woolworths price (caramel/dulce de leche 395g)",
+  "checked": "2026-10"
+ },
+ "ice cream": {
+  "cents": 60,
+  "source": "Typical Woolworths price (vanilla ice cream 2L)",
+  "checked": "2026-10"
+ },
+ "custard": {
+  "cents": 50,
+  "source": "Typical Woolworths price (dairy custard 1L)",
+  "checked": "2026-10"
+ },
+ "clotted cream": {
+  "cents": 300,
+  "source": "Typical Woolworths price (clotted cream 170g)",
+  "checked": "2026-10"
+ },
+ "jasmine rice": {
+  "cents": 30,
+  "source": "Typical Woolworths price (jasmine rice 5kg)",
+  "checked": "2026-10"
+ },
+ "basmati rice": {
+  "cents": 35,
+  "source": "Typical Woolworths price (basmati rice 5kg)",
+  "checked": "2026-10"
+ },
+ "sushi rice": {
+  "cents": 60,
+  "source": "Typical Woolworths price (sushi rice 1kg)",
+  "checked": "2026-10"
+ },
+ "paella rice": {
+  "cents": 80,
+  "source": "Typical Woolworths price (paella/arborio rice 1kg)",
+  "checked": "2026-10"
+ },
+ "arborio rice": {
+  "cents": 60,
+  "source": "Typical Woolworths price (arborio rice 1kg)",
+  "checked": "2026-10"
+ },
+ "glutinous rice": {
+  "cents": 60,
+  "source": "Typical Woolworths price (glutinous rice 1kg, Asian grocer)",
+  "checked": "2026-10"
+ },
+ "pudding rice": {
+  "cents": 50,
+  "source": "Typical Woolworths price (short-grain rice 1kg)",
+  "checked": "2026-10"
+ },
+ "brown rice": {
+  "cents": 40,
+  "source": "Typical Woolworths price (brown rice 2kg)",
+  "checked": "2026-10"
+ },
+ "rice noodles": {
+  "cents": 70,
+  "source": "Typical Woolworths price (rice stick noodles 375g)",
+  "checked": "2026-10"
+ },
+ "noodles": {
+  "cents": 60,
+  "source": "Typical Woolworths price (egg noodles 375g)",
+  "checked": "2026-10"
+ },
+ "egg noodles": {
+  "cents": 60,
+  "source": "Typical Woolworths price (egg noodles 375g)",
+  "checked": "2026-10"
+ },
+ "udon noodles": {
+  "cents": 70,
+  "source": "Typical Woolworths price (fresh udon 3 x 200g)",
+  "checked": "2026-10"
+ },
+ "fettuccine": {
+  "cents": 50,
+  "source": "Typical Woolworths price (fettuccine 500g)",
+  "checked": "2026-10"
+ },
+ "linguine pasta": {
+  "cents": 40,
+  "source": "Typical Woolworths price (linguine 500g)",
+  "checked": "2026-10"
+ },
+ "rigatoni": {
+  "cents": 40,
+  "source": "Typical Woolworths price (rigatoni 500g)",
+  "checked": "2026-10"
+ },
+ "penne rigate": {
+  "cents": 30,
+  "source": "Typical Woolworths price (penne 500g)",
+  "checked": "2026-10"
+ },
+ "macaroni": {
+  "cents": 30,
+  "source": "Typical Woolworths price (macaroni 500g)",
+  "checked": "2026-10"
+ },
+ "farfalle": {
+  "cents": 35,
+  "source": "Typical Woolworths price (farfalle 500g)",
+  "checked": "2026-10"
+ },
+ "vermicelli pasta": {
+  "cents": 50,
+  "source": "Typical Woolworths price (vermicelli pasta 500g)",
+  "checked": "2026-10"
+ },
+ "lasagne sheets": {
+  "cents": 70,
+  "source": "Typical Woolworths price (instant lasagne sheets 250g)",
+  "checked": "2026-10"
+ },
+ "couscous": {
+  "cents": 50,
+  "source": "Typical Woolworths price (couscous 500g)",
+  "checked": "2026-10"
+ },
+ "bulgur wheat": {
+  "cents": 70,
+  "source": "Typical Woolworths price (burghul 500g)",
+  "checked": "2026-10"
+ },
+ "quinoa": {
+  "cents": 150,
+  "source": "Typical Woolworths price (quinoa 500g)",
+  "checked": "2026-10"
+ },
+ "buckwheat": {
+  "cents": 120,
+  "source": "Typical Woolworths price (buckwheat kernels 500g)",
+  "checked": "2026-10"
+ },
+ "cornmeal": {
+  "cents": 50,
+  "source": "Typical Woolworths price (polenta 500g)",
+  "checked": "2026-10"
+ },
+ "semolina": {
+  "cents": 50,
+  "source": "Typical Woolworths price (semolina 500g)",
+  "checked": "2026-10"
+ },
+ "bread flour": {
+  "cents": 20,
+  "source": "Typical Woolworths price (bread & pizza flour 2kg)",
+  "checked": "2026-10"
+ },
+ "wholemeal flour": {
+  "cents": 20,
+  "source": "Typical Woolworths price (wholemeal plain flour 1kg)",
+  "checked": "2026-10"
+ },
+ "rice flour": {
+  "cents": 60,
+  "source": "Typical Woolworths price (rice flour 500g)",
+  "checked": "2026-10"
+ },
+ "chickpea flour": {
+  "cents": 80,
+  "source": "Typical Woolworths price (besan flour 500g)",
+  "checked": "2026-10"
+ },
+ "rye flour": {
+  "cents": 80,
+  "source": "Typical Woolworths price (rye flour 1kg)",
+  "checked": "2026-10"
+ },
+ "buckwheat flour": {
+  "cents": 120,
+  "source": "Typical Woolworths price (buckwheat flour 500g)",
+  "checked": "2026-10"
+ },
+ "cassava flour": {
+  "cents": 150,
+  "source": "Typical Woolworths price (tapioca/cassava flour 500g)",
+  "checked": "2026-10"
+ },
+ "ground almonds": {
+  "cents": 300,
+  "source": "Typical Woolworths price (almond meal 400g)",
+  "checked": "2026-10"
+ },
+ "cornflour": {
+  "cents": 40,
+  "source": "Typical Woolworths price (cornflour 300g)",
+  "checked": "2026-10"
+ },
+ "potato starch": {
+  "cents": 60,
+  "source": "Typical Woolworths price (potato starch 500g)",
+  "checked": "2026-10"
+ },
+ "starch": {
+  "cents": 40,
+  "source": "Typical Woolworths price (cornflour 300g)",
+  "checked": "2026-10"
+ },
+ "tapioca": {
+  "cents": 100,
+  "source": "Typical Woolworths price (tapioca pearls 500g)",
+  "checked": "2026-10"
+ },
+ "breadcrumbs": {
+  "cents": 60,
+  "source": "Typical Woolworths price (panko/breadcrumbs 250g)",
+  "checked": "2026-10"
+ },
+ "bread": {
+  "cents": 50,
+  "source": "Typical Woolworths price (white sandwich loaf 650g)",
+  "checked": "2026-10"
+ },
+ "bread rolls": {
+  "cents": 70,
+  "source": "Typical Woolworths price (bread rolls 6 pack)",
+  "checked": "2026-10"
+ },
+ "baguette": {
+  "cents": 120,
+  "source": "Typical Woolworths price (baguette 250g)",
+  "checked": "2026-10"
+ },
+ "ciabatta": {
+  "cents": 120,
+  "source": "Typical Woolworths price (ciabatta loaf)",
+  "checked": "2026-10"
+ },
+ "pita bread": {
+  "cents": 80,
+  "source": "Typical Woolworths price (pita bread 6 pack)",
+  "checked": "2026-10"
+ },
+ "naan bread": {
+  "cents": 120,
+  "source": "Typical Woolworths price (naan 4 pack)",
+  "checked": "2026-10"
+ },
+ "english muffins": {
+  "cents": 100,
+  "source": "Typical Woolworths price (English muffins 6 pack)",
+  "checked": "2026-10"
+ },
+ "flour tortilla": {
+  "cents": 90,
+  "source": "Typical Woolworths price (flour tortillas 8 pack)",
+  "checked": "2026-10"
+ },
+ "corn tortillas": {
+  "cents": 90,
+  "source": "Typical Woolworths price (corn tortillas 10 pack)",
+  "checked": "2026-10"
+ },
+ "puff pastry": {
+  "cents": 110,
+  "source": "Typical Woolworths price (puff pastry sheets 1kg)",
+  "checked": "2026-10"
+ },
+ "shortcrust pastry": {
+  "cents": 100,
+  "source": "Typical Woolworths price (shortcrust pastry sheets 1kg)",
+  "checked": "2026-10"
+ },
+ "filo pastry": {
+  "cents": 150,
+  "source": "Typical Woolworths price (filo pastry 375g)",
+  "checked": "2026-10"
+ },
+ "digestive biscuits": {
+  "cents": 70,
+  "source": "Typical Woolworths price (plain sweet/digestive biscuits 250g)",
+  "checked": "2026-10"
+ },
+ "meringue nests": {
+  "cents": 250,
+  "source": "Typical Woolworths price (meringue nests 100g)",
+  "checked": "2026-10"
+ },
+ "wonton skin": {
+  "cents": 150,
+  "source": "Typical Woolworths price (wonton wrappers 250g)",
+  "checked": "2026-10"
+ },
+ "egg rolls": {
+  "cents": 150,
+  "source": "Typical Woolworths price (spring roll pastry 250g)",
+  "checked": "2026-10"
+ },
+ "rice paper sheets": {
+  "cents": 250,
+  "source": "Typical Woolworths price (rice paper 200g)",
+  "checked": "2026-10"
+ },
+ "yeast": {
+  "cents": 500,
+  "source": "Typical Woolworths price (dry yeast 7g sachets)",
+  "checked": "2026-10"
+ },
+ "gelatine": {
+  "cents": 1000,
+  "source": "Typical Woolworths price (gelatine leaves 10 pack)",
+  "checked": "2026-10"
+ },
+ "bicarbonate of soda": {
+  "cents": 150,
+  "source": "Typical Woolworths price (bicarbonate of soda 500g)",
+  "checked": "2026-10"
+ },
+ "cream of tartar": {
+  "cents": 600,
+  "source": "Typical Woolworths price (cream of tartar 100g)",
+  "checked": "2026-10"
+ },
+ "custard powder": {
+  "cents": 120,
+  "source": "Typical Woolworths price (custard powder 300g)",
+  "checked": "2026-10"
+ },
+ "kidney beans": {
+  "cents": 35,
+  "source": "Typical Woolworths price (red kidney beans 400g can)",
+  "checked": "2026-10"
+ },
+ "black beans": {
+  "cents": 40,
+  "source": "Typical Woolworths price (black beans 400g can)",
+  "checked": "2026-10"
+ },
+ "cannellini beans": {
+  "cents": 35,
+  "source": "Typical Woolworths price (cannellini beans 400g can)",
+  "checked": "2026-10"
+ },
+ "butter beans": {
+  "cents": 40,
+  "source": "Typical Woolworths price (butter beans 400g can)",
+  "checked": "2026-10"
+ },
+ "borlotti beans": {
+  "cents": 35,
+  "source": "Typical Woolworths price (borlotti beans 400g can)",
+  "checked": "2026-10"
+ },
+ "pinto beans": {
+  "cents": 40,
+  "source": "Typical Woolworths price (pinto beans 400g can)",
+  "checked": "2026-10"
+ },
+ "black-eyed peas": {
+  "cents": 50,
+  "source": "Typical Woolworths price (dried black-eyed beans 500g)",
+  "checked": "2026-10"
+ },
+ "baked beans": {
+  "cents": 30,
+  "source": "Typical Woolworths price (baked beans 420g)",
+  "checked": "2026-10"
+ },
+ "refried beans": {
+  "cents": 60,
+  "source": "Typical Woolworths price (refried beans 435g)",
+  "checked": "2026-10"
+ },
+ "brown lentils": {
+  "cents": 50,
+  "source": "Typical Woolworths price (dried lentils 500g)",
+  "checked": "2026-10"
+ },
+ "red lentils": {
+  "cents": 50,
+  "source": "Typical Woolworths price (red lentils 500g)",
+  "checked": "2026-10"
+ },
+ "toor dal": {
+  "cents": 60,
+  "source": "Typical Woolworths price (toor dal 1kg, Indian grocer)",
+  "checked": "2026-10"
+ },
+ "yellow split peas": {
+  "cents": 40,
+  "source": "Typical Woolworths price (split peas 500g)",
+  "checked": "2026-10"
+ },
+ "broad beans": {
+  "cents": 60,
+  "source": "Typical Woolworths price (frozen broad beans 500g)",
+  "checked": "2026-10"
+ },
+ "soya bean": {
+  "cents": 80,
+  "source": "Typical Woolworths price (frozen edamame 500g)",
+  "checked": "2026-10"
+ },
+ "silken tofu": {
+  "cents": 80,
+  "source": "Typical Woolworths price (silken tofu 300g)",
+  "checked": "2026-10"
+ },
+ "marinated tofu": {
+  "cents": 160,
+  "source": "Typical Woolworths price (marinated tofu 200g)",
+  "checked": "2026-10"
+ },
+ "tempeh": {
+  "cents": 200,
+  "source": "Typical Woolworths price (tempeh 300g)",
+  "checked": "2026-10"
+ },
+ "peanuts": {
+  "cents": 100,
+  "source": "Typical Woolworths price (roasted peanuts 375g)",
+  "checked": "2026-10"
+ },
+ "peanut butter": {
+  "cents": 100,
+  "source": "Typical Woolworths price (peanut butter 375g)",
+  "checked": "2026-10"
+ },
+ "cashews": {
+  "cents": 300,
+  "source": "Typical Woolworths price (cashews 375g)",
+  "checked": "2026-10"
+ },
+ "almonds": {
+  "cents": 250,
+  "source": "Typical Woolworths price (almonds 400g)",
+  "checked": "2026-10"
+ },
+ "walnuts": {
+  "cents": 300,
+  "source": "Typical Woolworths price (walnuts 400g)",
+  "checked": "2026-10"
+ },
+ "pecan nuts": {
+  "cents": 450,
+  "source": "Typical Woolworths price (pecans 200g)",
+  "checked": "2026-10"
+ },
+ "pistachios": {
+  "cents": 450,
+  "source": "Typical Woolworths price (shelled pistachios 250g)",
+  "checked": "2026-10"
+ },
+ "hazelnuts": {
+  "cents": 400,
+  "source": "Typical Woolworths price (hazelnuts 200g)",
+  "checked": "2026-10"
+ },
+ "pine nuts": {
+  "cents": 700,
+  "source": "Typical Woolworths price (pine nuts 100g)",
+  "checked": "2026-10"
+ },
+ "chestnuts": {
+  "cents": 200,
+  "source": "Typical Woolworths price (cooked chestnuts 200g)",
+  "checked": "2026-10"
+ },
+ "sesame seed": {
+  "cents": 150,
+  "source": "Typical Woolworths price (sesame seeds 200g)",
+  "checked": "2026-10"
+ },
+ "poppy seeds": {
+  "cents": 250,
+  "source": "Typical Woolworths price (poppy seeds 100g)",
+  "checked": "2026-10"
+ },
+ "desiccated coconut": {
+  "cents": 120,
+  "source": "Typical Woolworths price (desiccated coconut 250g)",
+  "checked": "2026-10"
+ },
+ "tahini": {
+  "cents": 150,
+  "source": "Typical Woolworths price (tahini 375g)",
+  "checked": "2026-10"
+ },
+ "marzipan": {
+  "cents": 250,
+  "source": "Typical Woolworths price (marzipan 200g)",
+  "checked": "2026-10"
+ },
+ "hummus": {
+  "cents": 120,
+  "source": "Typical Woolworths price (hummus 200g)",
+  "checked": "2026-10"
+ },
+ "red onion": {
+  "cents": 45,
+  "source": "Typical Woolworths price (red onions 1kg)",
+  "checked": "2026-10"
+ },
+ "shallot": {
+  "cents": 150,
+  "source": "Typical Woolworths price (eschalots, typical $/kg)",
+  "checked": "2026-10"
+ },
+ "leek": {
+  "cents": 80,
+  "source": "Typical Woolworths price (leek each)",
+  "checked": "2026-10"
+ },
+ "sweet potato": {
+  "cents": 50,
+  "source": "Typical Woolworths price (sweet potato, typical $/kg)",
+  "checked": "2026-10"
+ },
+ "baby potatoes": {
+  "cents": 60,
+  "source": "Typical Woolworths price (baby potatoes 1kg)",
+  "checked": "2026-10"
+ },
+ "cherry tomatoes": {
+  "cents": 110,
+  "source": "Typical Woolworths price (cherry tomatoes 250g punnet)",
+  "checked": "2026-10"
+ },
+ "vine tomatoes": {
+  "cents": 118,
+  "source": "Typical Woolworths price (truss tomato punnet 500g)",
+  "checked": "2026-10"
+ },
+ "passata": {
+  "cents": 35,
+  "source": "Typical Woolworths price (passata 700g)",
+  "checked": "2026-10"
+ },
+ "tomato puree": {
+  "cents": 120,
+  "source": "Typical Woolworths price (tomato paste 140g)",
+  "checked": "2026-10"
+ },
+ "sun-dried tomatoes": {
+  "cents": 300,
+  "source": "Typical Woolworths price (sun-dried tomatoes 270g jar)",
+  "checked": "2026-10"
+ },
+ "chilli": {
+  "cents": 250,
+  "source": "Typical Woolworths price (red chillies, typical $/kg)",
+  "checked": "2026-10"
+ },
+ "dried chillies": {
+  "cents": 900,
+  "source": "Typical Woolworths price (dried chillies 50g)",
+  "checked": "2026-10"
+ },
+ "ancho chillies": {
+  "cents": 900,
+  "source": "Typical Woolworths price (dried chillies 50g)",
+  "checked": "2026-10"
+ },
+ "scotch bonnet": {
+  "cents": 350,
+  "source": "Typical Woolworths price (habanero/hot chillies, typical $/kg)",
+  "checked": "2026-10"
+ },
+ "jalapeño": {
+  "cents": 250,
+  "source": "Typical Woolworths price (jalapeños, typical $/kg)",
+  "checked": "2026-10"
+ },
+ "roasted capsicum": {
+  "cents": 150,
+  "source": "Typical Woolworths price (roasted capsicum 280g jar)",
+  "checked": "2026-10"
+ },
+ "aubergine": {
+  "cents": 60,
+  "source": "Typical Woolworths price (eggplant, typical $/kg)",
+  "checked": "2026-10"
+ },
+ "courgette": {
+  "cents": 60,
+  "source": "Typical Woolworths price (zucchini, typical $/kg)",
+  "checked": "2026-10"
+ },
+ "mushrooms": {
+  "cents": 140,
+  "source": "Typical Woolworths price (cup mushrooms, typical $/kg)",
+  "checked": "2026-10"
+ },
+ "oyster mushrooms": {
+  "cents": 300,
+  "source": "Typical Woolworths price (oyster mushrooms 150g)",
+  "checked": "2026-10"
+ },
+ "shiitake mushrooms": {
+  "cents": 400,
+  "source": "Typical Woolworths price (shiitake mushrooms 100g)",
+  "checked": "2026-10"
+ },
+ "spinach": {
+  "cents": 150,
+  "source": "Typical Woolworths price (baby spinach 120g)",
+  "checked": "2026-10"
+ },
+ "kale": {
+  "cents": 150,
+  "source": "Typical Woolworths price (kale bunch)",
+  "checked": "2026-10"
+ },
+ "chinese broccoli": {
+  "cents": 120,
+  "source": "Typical Woolworths price (gai lan bunch)",
+  "checked": "2026-10"
+ },
+ "pak choi": {
+  "cents": 120,
+  "source": "Typical Woolworths price (bok choy bunch)",
+  "checked": "2026-10"
+ },
+ "pak choy": {
+  "cents": 120,
+  "source": "Typical Woolworths price (bok choy bunch)",
+  "checked": "2026-10"
+ },
+ "cabbage": {
+  "cents": 25,
+  "source": "Typical Woolworths price (cabbage, typical $/kg)",
+  "checked": "2026-10"
+ },
+ "chinese cabbage": {
+  "cents": 40,
+  "source": "Typical Woolworths price (wombok, typical $/kg)",
+  "checked": "2026-10"
+ },
+ "lettuce": {
+  "cents": 80,
+  "source": "Typical Woolworths price (iceberg lettuce each)",
+  "checked": "2026-10"
+ },
+ "little gem lettuce": {
+  "cents": 150,
+  "source": "Typical Woolworths price (baby cos 2 pack)",
+  "checked": "2026-10"
+ },
+ "rocket": {
+  "cents": 300,
+  "source": "Typical Woolworths price (rocket 120g)",
+  "checked": "2026-10"
+ },
+ "celery": {
+  "cents": 30,
+  "source": "Typical Woolworths price (celery bunch)",
+  "checked": "2026-10"
+ },
+ "celeriac": {
+  "cents": 60,
+  "source": "Typical Woolworths price (celeriac, typical $/kg)",
+  "checked": "2026-10"
+ },
+ "fennel bulb": {
+  "cents": 100,
+  "source": "Typical Woolworths price (fennel each)",
+  "checked": "2026-10"
+ },
+ "butternut squash": {
+  "cents": 40,
+  "source": "Typical Woolworths price (butternut pumpkin, typical $/kg)",
+  "checked": "2026-10"
+ },
+ "squash": {
+  "cents": 40,
+  "source": "Typical Woolworths price (pumpkin, typical $/kg)",
+  "checked": "2026-10"
+ },
+ "pumpkin": {
+  "cents": 40,
+  "source": "Typical Woolworths price (pumpkin, typical $/kg)",
+  "checked": "2026-10"
+ },
+ "jerusalem artichokes": {
+  "cents": 150,
+  "source": "Typical Woolworths price (Jerusalem artichokes, typical $/kg)",
+  "checked": "2026-10"
+ },
+ "asparagus": {
+  "cents": 400,
+  "source": "Typical Woolworths price (asparagus bunch)",
+  "checked": "2026-10"
+ },
+ "green beans": {
+  "cents": 100,
+  "source": "Typical Woolworths price (green beans, typical $/kg)",
+  "checked": "2026-10"
+ },
+ "snow peas": {
+  "cents": 200,
+  "source": "Typical Woolworths price (snow peas, typical $/kg)",
+  "checked": "2026-10"
+ },
+ "sugar snap peas": {
+  "cents": 200,
+  "source": "Typical Woolworths price (sugar snap peas, typical $/kg)",
+  "checked": "2026-10"
+ },
+ "bean sprouts": {
+  "cents": 80,
+  "source": "Typical Woolworths price (bean sprouts 250g)",
+  "checked": "2026-10"
+ },
+ "sweetcorn": {
+  "cents": 50,
+  "source": "Typical Woolworths price (frozen corn kernels 1kg)",
+  "checked": "2026-10"
+ },
+ "corn cob": {
+  "cents": 60,
+  "source": "Typical Woolworths price (corn cob each)",
+  "checked": "2026-10"
+ },
+ "creamed corn": {
+  "cents": 50,
+  "source": "Typical Woolworths price (creamed corn 420g)",
+  "checked": "2026-10"
+ },
+ "cucumber": {
+  "cents": 40,
+  "source": "Typical Woolworths price (Lebanese cucumber, typical $/kg)",
+  "checked": "2026-10"
+ },
+ "avocado": {
+  "cents": 120,
+  "source": "Typical Woolworths price (avocado each)",
+  "checked": "2026-10"
+ },
+ "beetroot": {
+  "cents": 50,
+  "source": "Typical Woolworths price (beetroot, typical $/kg)",
+  "checked": "2026-10"
+ },
+ "cooked beetroot": {
+  "cents": 80,
+  "source": "Typical Woolworths price (sliced beetroot 450g can)",
+  "checked": "2026-10"
+ },
+ "parsnip": {
+  "cents": 70,
+  "source": "Typical Woolworths price (parsnips, typical $/kg)",
+  "checked": "2026-10"
+ },
+ "turnip": {
+  "cents": 60,
+  "source": "Typical Woolworths price (turnips, typical $/kg)",
+  "checked": "2026-10"
+ },
+ "swede": {
+  "cents": 60,
+  "source": "Typical Woolworths price (swedes, typical $/kg)",
+  "checked": "2026-10"
+ },
+ "radish": {
+  "cents": 150,
+  "source": "Typical Woolworths price (radish bunch)",
+  "checked": "2026-10"
+ },
+ "daikon": {
+  "cents": 40,
+  "source": "Typical Woolworths price (daikon, typical $/kg)",
+  "checked": "2026-10"
+ },
+ "water chestnut": {
+  "cents": 100,
+  "source": "Typical Woolworths price (water chestnuts 227g can)",
+  "checked": "2026-10"
+ },
+ "bamboo shoots": {
+  "cents": 80,
+  "source": "Typical Woolworths price (bamboo shoots 227g can)",
+  "checked": "2026-10"
+ },
+ "cassava": {
+  "cents": 60,
+  "source": "Typical Woolworths price (frozen cassava 1kg)",
+  "checked": "2026-10"
+ },
+ "plantain": {
+  "cents": 80,
+  "source": "Typical Woolworths price (plantain, specialty grocer)",
+  "checked": "2026-10"
+ },
+ "yam": {
+  "cents": 80,
+  "source": "Typical Woolworths price (yam, specialty grocer)",
+  "checked": "2026-10"
+ },
+ "green papaya": {
+  "cents": 60,
+  "source": "Typical Woolworths price (green papaya, Asian grocer)",
+  "checked": "2026-10"
+ },
+ "dill pickles": {
+  "cents": 80,
+  "source": "Typical Woolworths price (dill pickles 500g jar)",
+  "checked": "2026-10"
+ },
+ "sauerkraut": {
+  "cents": 100,
+  "source": "Typical Woolworths price (sauerkraut 500g jar)",
+  "checked": "2026-10"
+ },
+ "black olives": {
+  "cents": 200,
+  "source": "Typical Woolworths price (pitted black olives 350g)",
+  "checked": "2026-10"
+ },
+ "pitted black olives": {
+  "cents": 200,
+  "source": "Typical Woolworths price (pitted black olives 350g)",
+  "checked": "2026-10"
+ },
+ "green olives": {
+  "cents": 200,
+  "source": "Typical Woolworths price (green olives 350g)",
+  "checked": "2026-10"
+ },
+ "capers": {
+  "cents": 400,
+  "source": "Typical Woolworths price (capers 100g)",
+  "checked": "2026-10"
+ },
+ "galangal": {
+  "cents": 400,
+  "source": "Typical Woolworths price (galangal, Asian grocer)",
+  "checked": "2026-10"
+ },
+ "lemongrass": {
+  "cents": 300,
+  "source": "Typical Woolworths price (lemongrass stalks)",
+  "checked": "2026-10"
+ },
+ "stir-fry vegetables": {
+  "cents": 80,
+  "source": "Typical Woolworths price (frozen stir-fry vegetables 1kg)",
+  "checked": "2026-10"
+ },
+ "mixed vegetables": {
+  "cents": 50,
+  "source": "Typical Woolworths price (frozen mixed vegetables 1kg)",
+  "checked": "2026-10"
+ },
+ "lemon juice": {
+  "cents": 80,
+  "source": "Typical Woolworths price (lemon juice 250mL)",
+  "checked": "2026-10"
+ },
+ "lime juice": {
+  "cents": 40,
+  "source": "Woolworths shelf price: Citrus Juice Lime Bottle 250mL, $1.00",
+  "checked": "2026-10"
+ },
+ "lemon zest": {
+  "cents": 138,
+  "source": "Typical Woolworths price (priced as whole lemons)",
+  "checked": "2026-10"
+ },
+ "orange": {
+  "cents": 50,
+  "source": "Typical Woolworths price (navel oranges, typical $/kg)",
+  "checked": "2026-10"
+ },
+ "orange juice": {
+  "cents": 25,
+  "source": "Typical Woolworths price (orange juice 2L)",
+  "checked": "2026-10"
+ },
+ "orange zest": {
+  "cents": 50,
+  "source": "Typical Woolworths price (priced as whole oranges)",
+  "checked": "2026-10"
+ },
+ "apple": {
+  "cents": 50,
+  "source": "Typical Woolworths price (apples, typical $/kg)",
+  "checked": "2026-10"
+ },
+ "braeburn apples": {
+  "cents": 50,
+  "source": "Typical Woolworths price (apples, typical $/kg)",
+  "checked": "2026-10"
+ },
+ "pear": {
+  "cents": 50,
+  "source": "Typical Woolworths price (pears, typical $/kg)",
+  "checked": "2026-10"
+ },
+ "peach": {
+  "cents": 70,
+  "source": "Typical Woolworths price (peaches, typical $/kg)",
+  "checked": "2026-10"
+ },
+ "mango": {
+  "cents": 100,
+  "source": "Typical Woolworths price (mango each)",
+  "checked": "2026-10"
+ },
+ "pineapple": {
+  "cents": 50,
+  "source": "Typical Woolworths price (pineapple each)",
+  "checked": "2026-10"
+ },
+ "rhubarb": {
+  "cents": 150,
+  "source": "Typical Woolworths price (rhubarb bunch)",
+  "checked": "2026-10"
+ },
+ "figs": {
+  "cents": 400,
+  "source": "Typical Woolworths price (fresh figs punnet)",
+  "checked": "2026-10"
+ },
+ "cherries": {
+  "cents": 150,
+  "source": "Typical Woolworths price (frozen cherries 500g)",
+  "checked": "2026-10"
+ },
+ "apricot": {
+  "cents": 200,
+  "source": "Typical Woolworths price (dried apricots 500g)",
+  "checked": "2026-10"
+ },
+ "dried apricots": {
+  "cents": 200,
+  "source": "Typical Woolworths price (dried apricots 500g)",
+  "checked": "2026-10"
+ },
+ "raisins": {
+  "cents": 100,
+  "source": "Typical Woolworths price (raisins/sultanas 500g)",
+  "checked": "2026-10"
+ },
+ "dates": {
+  "cents": 150,
+  "source": "Typical Woolworths price (pitted dates 500g)",
+  "checked": "2026-10"
+ },
+ "prunes": {
+  "cents": 150,
+  "source": "Typical Woolworths price (pitted prunes 500g)",
+  "checked": "2026-10"
+ },
+ "dried cranberries": {
+  "cents": 200,
+  "source": "Typical Woolworths price (dried cranberries 170g)",
+  "checked": "2026-10"
+ },
+ "mixed peel": {
+  "cents": 150,
+  "source": "Typical Woolworths price (mixed peel 250g)",
+  "checked": "2026-10"
+ },
+ "glacé cherries": {
+  "cents": 250,
+  "source": "Typical Woolworths price (glacé cherries 200g)",
+  "checked": "2026-10"
+ },
+ "blackberries": {
+  "cents": 500,
+  "source": "Typical Woolworths price (blackberries 125g punnet)",
+  "checked": "2026-10"
+ },
+ "blueberries": {
+  "cents": 500,
+  "source": "Typical Woolworths price (blueberries 125g punnet)",
+  "checked": "2026-10"
+ },
+ "raspberries": {
+  "cents": 600,
+  "source": "Typical Woolworths price (raspberries 125g punnet)",
+  "checked": "2026-10"
+ },
+ "strawberries": {
+  "cents": 300,
+  "source": "Typical Woolworths price (strawberries 250g punnet)",
+  "checked": "2026-10"
+ },
+ "mixed berries": {
+  "cents": 120,
+  "source": "Typical Woolworths price (frozen mixed berries 1kg)",
+  "checked": "2026-10"
+ },
+ "passionfruit pulp": {
+  "cents": 300,
+  "source": "Typical Woolworths price (passionfruit pulp 170g can)",
+  "checked": "2026-10"
+ },
+ "pomegranate": {
+  "cents": 150,
+  "source": "Typical Woolworths price (pomegranate each)",
+  "checked": "2026-10"
+ },
+ "sesame oil": {
+  "cents": 250,
+  "source": "Typical Woolworths price (sesame oil 150mL)",
+  "checked": "2026-10"
+ },
+ "coconut oil": {
+  "cents": 150,
+  "source": "Typical Woolworths price (coconut oil 300mL)",
+  "checked": "2026-10"
+ },
+ "lard": {
+  "cents": 100,
+  "source": "Typical Woolworths price (lard 250g)",
+  "checked": "2026-10"
+ },
+ "suet": {
+  "cents": 200,
+  "source": "Typical Woolworths price (beef suet, butcher typical)",
+  "checked": "2026-10"
+ },
+ "shortening": {
+  "cents": 100,
+  "source": "Typical Woolworths price (vegetable shortening/Copha 250g)",
+  "checked": "2026-10"
+ },
+ "goose fat": {
+  "cents": 400,
+  "source": "Typical Woolworths price (goose/duck fat 320g jar)",
+  "checked": "2026-10"
+ },
+ "coconut cream": {
+  "cents": 55,
+  "source": "Typical Woolworths price (coconut cream 400mL)",
+  "checked": "2026-10"
+ },
+ "beef stock": {
+  "cents": 20,
+  "source": "Typical Woolworths price (liquid beef stock 1L)",
+  "checked": "2026-10"
+ },
+ "vegetable stock": {
+  "cents": 20,
+  "source": "Typical Woolworths price (liquid vegetable stock 1L)",
+  "checked": "2026-10"
+ },
+ "fish stock": {
+  "cents": 40,
+  "source": "Typical Woolworths price (liquid fish stock 500mL)",
+  "checked": "2026-10"
+ },
+ "stock cube": {
+  "cents": 3000,
+  "source": "Typical Woolworths price (stock cubes 10 x 10g ~$3)",
+  "checked": "2026-10"
+ },
+ "dark soy sauce": {
+  "cents": 150,
+  "source": "Typical Woolworths price (dark soy sauce 500mL)",
+  "checked": "2026-10"
+ },
+ "fish sauce": {
+  "cents": 70,
+  "source": "Typical Woolworths price (fish sauce 700mL)",
+  "checked": "2026-10"
+ },
+ "oyster sauce": {
+  "cents": 80,
+  "source": "Typical Woolworths price (oyster sauce 510g)",
+  "checked": "2026-10"
+ },
+ "hoisin sauce": {
+  "cents": 100,
+  "source": "Typical Woolworths price (hoisin sauce 250mL)",
+  "checked": "2026-10"
+ },
+ "plum sauce": {
+  "cents": 100,
+  "source": "Typical Woolworths price (plum sauce 275mL)",
+  "checked": "2026-10"
+ },
+ "sweet chilli sauce": {
+  "cents": 80,
+  "source": "Typical Woolworths price (sweet chilli sauce 500mL)",
+  "checked": "2026-10"
+ },
+ "hot sauce": {
+  "cents": 150,
+  "source": "Typical Woolworths price (chilli/hot sauce 150mL)",
+  "checked": "2026-10"
+ },
+ "worcestershire sauce": {
+  "cents": 100,
+  "source": "Typical Woolworths price (Worcestershire sauce 250mL)",
+  "checked": "2026-10"
+ },
+ "tomato ketchup": {
+  "cents": 50,
+  "source": "Typical Woolworths price (tomato sauce 500mL)",
+  "checked": "2026-10"
+ },
+ "barbecue sauce": {
+  "cents": 60,
+  "source": "Typical Woolworths price (barbecue sauce 500mL)",
+  "checked": "2026-10"
+ },
+ "mayonnaise": {
+  "cents": 100,
+  "source": "Typical Woolworths price (mayonnaise 440g)",
+  "checked": "2026-10"
+ },
+ "mustard": {
+  "cents": 150,
+  "source": "Typical Woolworths price (Dijon mustard 200g)",
+  "checked": "2026-10"
+ },
+ "mustard powder": {
+  "cents": 600,
+  "source": "Typical Woolworths price (mustard powder 55g)",
+  "checked": "2026-10"
+ },
+ "white vinegar": {
+  "cents": 20,
+  "source": "Typical Woolworths price (white vinegar 2L)",
+  "checked": "2026-10"
+ },
+ "white wine vinegar": {
+  "cents": 60,
+  "source": "Typical Woolworths price (white wine vinegar 500mL)",
+  "checked": "2026-10"
+ },
+ "red wine vinegar": {
+  "cents": 60,
+  "source": "Typical Woolworths price (red wine vinegar 500mL)",
+  "checked": "2026-10"
+ },
+ "rice vinegar": {
+  "cents": 70,
+  "source": "Typical Woolworths price (rice vinegar 500mL)",
+  "checked": "2026-10"
+ },
+ "apple cider vinegar": {
+  "cents": 60,
+  "source": "Typical Woolworths price (apple cider vinegar 500mL)",
+  "checked": "2026-10"
+ },
+ "sherry vinegar": {
+  "cents": 150,
+  "source": "Typical Woolworths price (sherry vinegar 250mL)",
+  "checked": "2026-10"
+ },
+ "malt vinegar": {
+  "cents": 40,
+  "source": "Typical Woolworths price (malt vinegar 750mL)",
+  "checked": "2026-10"
+ },
+ "balsamic vinegar": {
+  "cents": 150,
+  "source": "Typical Woolworths price (balsamic vinegar 250mL)",
+  "checked": "2026-10"
+ },
+ "mirin": {
+  "cents": 120,
+  "source": "Typical Woolworths price (mirin 250mL)",
+  "checked": "2026-10"
+ },
+ "sake": {
+  "cents": 150,
+  "source": "Typical Woolworths price (cooking sake 750mL)",
+  "checked": "2026-10"
+ },
+ "shaoxing wine": {
+  "cents": 80,
+  "source": "Typical Woolworths price (Shaoxing cooking wine 640mL)",
+  "checked": "2026-10"
+ },
+ "dry sherry": {
+  "cents": 150,
+  "source": "Typical Woolworths price (sherry 750mL)",
+  "checked": "2026-10"
+ },
+ "dry white wine": {
+  "cents": 120,
+  "source": "Typical Woolworths price (cask/bottle dry white wine)",
+  "checked": "2026-10"
+ },
+ "white wine": {
+  "cents": 120,
+  "source": "Typical Woolworths price (cask/bottle white wine)",
+  "checked": "2026-10"
+ },
+ "red wine": {
+  "cents": 120,
+  "source": "Typical Woolworths price (cask/bottle red wine)",
+  "checked": "2026-10"
+ },
+ "beer": {
+  "cents": 60,
+  "source": "Typical Woolworths price (lager 375mL)",
+  "checked": "2026-10"
+ },
+ "cider": {
+  "cents": 80,
+  "source": "Typical Woolworths price (apple cider 375mL)",
+  "checked": "2026-10"
+ },
+ "brandy": {
+  "cents": 400,
+  "source": "Typical Woolworths price (brandy 700mL)",
+  "checked": "2026-10"
+ },
+ "rum": {
+  "cents": 450,
+  "source": "Typical Woolworths price (dark rum 700mL)",
+  "checked": "2026-10"
+ },
+ "orange liqueur": {
+  "cents": 600,
+  "source": "Typical Woolworths price (orange liqueur 700mL)",
+  "checked": "2026-10"
+ },
+ "ginger cordial": {
+  "cents": 80,
+  "source": "Typical Woolworths price (ginger cordial 750mL)",
+  "checked": "2026-10"
+ },
+ "tamarind paste": {
+  "cents": 150,
+  "source": "Typical Woolworths price (tamarind puree 200g)",
+  "checked": "2026-10"
+ },
+ "shrimp paste": {
+  "cents": 300,
+  "source": "Typical Woolworths price (shrimp paste 200g, Asian grocer)",
+  "checked": "2026-10"
+ },
+ "doubanjiang": {
+  "cents": 200,
+  "source": "Typical Woolworths price (chilli bean paste 300g, Asian grocer)",
+  "checked": "2026-10"
+ },
+ "gochujang": {
+  "cents": 250,
+  "source": "Typical Woolworths price (gochujang 500g)",
+  "checked": "2026-10"
+ },
+ "fermented black beans": {
+  "cents": 200,
+  "source": "Typical Woolworths price (salted black beans 200g)",
+  "checked": "2026-10"
+ },
+ "thai green curry paste": {
+  "cents": 300,
+  "source": "Typical Woolworths price (Thai green curry paste 195g)",
+  "checked": "2026-10"
+ },
+ "thai red curry paste": {
+  "cents": 300,
+  "source": "Typical Woolworths price (Thai red curry paste 195g)",
+  "checked": "2026-10"
+ },
+ "red curry paste": {
+  "cents": 300,
+  "source": "Typical Woolworths price (Thai red curry paste 195g)",
+  "checked": "2026-10"
+ },
+ "panang curry paste": {
+  "cents": 300,
+  "source": "Typical Woolworths price (panang curry paste 195g)",
+  "checked": "2026-10"
+ },
+ "massaman curry paste": {
+  "cents": 300,
+  "source": "Typical Woolworths price (massaman curry paste 195g)",
+  "checked": "2026-10"
+ },
+ "madras paste": {
+  "cents": 250,
+  "source": "Typical Woolworths price (madras curry paste 283g)",
+  "checked": "2026-10"
+ },
+ "red pepper paste": {
+  "cents": 250,
+  "source": "Typical Woolworths price (red pepper paste 300g, Turkish grocer)",
+  "checked": "2026-10"
+ },
+ "harissa": {
+  "cents": 300,
+  "source": "Typical Woolworths price (harissa paste 190g)",
+  "checked": "2026-10"
+ },
+ "galangal paste": {
+  "cents": 400,
+  "source": "Typical Woolworths price (galangal paste jar)",
+  "checked": "2026-10"
+ },
+ "ginger paste": {
+  "cents": 250,
+  "source": "Typical Woolworths price (minced ginger 200g)",
+  "checked": "2026-10"
+ },
+ "ginger garlic paste": {
+  "cents": 250,
+  "source": "Typical Woolworths price (ginger-garlic paste 300g)",
+  "checked": "2026-10"
+ },
+ "salsa": {
+  "cents": 100,
+  "source": "Typical Woolworths price (tomato salsa 300g)",
+  "checked": "2026-10"
+ },
+ "soured cream and chive dip": {
+  "cents": 150,
+  "source": "Typical Woolworths price (sour cream & chive dip 200g)",
+  "checked": "2026-10"
+ },
+ "pesto": {
+  "cents": 300,
+  "source": "Typical Woolworths price (basil pesto 190g)",
+  "checked": "2026-10"
+ },
+ "horseradish": {
+  "cents": 300,
+  "source": "Typical Woolworths price (horseradish cream 175g)",
+  "checked": "2026-10"
+ },
+ "jam": {
+  "cents": 80,
+  "source": "Typical Woolworths price (jam 500g)",
+  "checked": "2026-10"
+ },
+ "raspberry jam": {
+  "cents": 80,
+  "source": "Typical Woolworths price (raspberry jam 500g)",
+  "checked": "2026-10"
+ },
+ "golden syrup": {
+  "cents": 60,
+  "source": "Typical Woolworths price (golden syrup 500g)",
+  "checked": "2026-10"
+ },
+ "maple syrup": {
+  "cents": 400,
+  "source": "Typical Woolworths price (pure maple syrup 250mL)",
+  "checked": "2026-10"
+ },
+ "molasses": {
+  "cents": 80,
+  "source": "Typical Woolworths price (treacle/molasses 500g)",
+  "checked": "2026-10"
+ },
+ "black treacle": {
+  "cents": 80,
+  "source": "Typical Woolworths price (treacle 500g)",
+  "checked": "2026-10"
+ },
+ "brown sugar": {
+  "cents": 25,
+  "source": "Typical Woolworths price (brown sugar 1kg)",
+  "checked": "2026-10"
+ },
+ "palm sugar": {
+  "cents": 100,
+  "source": "Typical Woolworths price (palm sugar 250g)",
+  "checked": "2026-10"
+ },
+ "icing sugar": {
+  "cents": 30,
+  "source": "Typical Woolworths price (icing sugar mixture 500g)",
+  "checked": "2026-10"
+ },
+ "dark chocolate": {
+  "cents": 250,
+  "source": "Typical Woolworths price (dark cooking chocolate 200g)",
+  "checked": "2026-10"
+ },
+ "milk chocolate": {
+  "cents": 200,
+  "source": "Typical Woolworths price (milk chocolate 200g)",
+  "checked": "2026-10"
+ },
+ "white chocolate": {
+  "cents": 250,
+  "source": "Typical Woolworths price (white chocolate melts 375g)",
+  "checked": "2026-10"
+ },
+ "chocolate chips": {
+  "cents": 250,
+  "source": "Typical Woolworths price (choc bits 200g)",
+  "checked": "2026-10"
+ },
+ "cocoa powder": {
+  "cents": 300,
+  "source": "Typical Woolworths price (Cocoa Powder 375g)",
+  "checked": "2026-10"
+ },
+ "marshmallows": {
+  "cents": 150,
+  "source": "Typical Woolworths price (marshmallows 280g)",
+  "checked": "2026-10"
+ },
+ "almond extract": {
+  "cents": 1500,
+  "source": "Typical Woolworths price (almond essence 50mL)",
+  "checked": "2026-10"
+ },
+ "vanilla pod": {
+  "cents": 6000,
+  "source": "Typical Woolworths price (vanilla bean 1 pack (~5g))",
+  "checked": "2026-10"
+ },
+ "coffee": {
+  "cents": 400,
+  "source": "Typical Woolworths price (ground coffee 200g)",
+  "checked": "2026-10"
+ },
+ "parsley": {
+  "cents": 450,
+  "source": "Typical Woolworths price (parsley bunch)",
+  "checked": "2026-10"
+ },
+ "basil": {
+  "cents": 500,
+  "source": "Typical Woolworths price (basil bunch)",
+  "checked": "2026-10"
+ },
+ "mint": {
+  "cents": 500,
+  "source": "Typical Woolworths price (mint bunch)",
+  "checked": "2026-10"
+ },
+ "dill": {
+  "cents": 500,
+  "source": "Typical Woolworths price (dill bunch)",
+  "checked": "2026-10"
+ },
+ "chives": {
+  "cents": 500,
+  "source": "Typical Woolworths price (chives bunch)",
+  "checked": "2026-10"
+ },
+ "thyme": {
+  "cents": 900,
+  "source": "Typical Woolworths price (thyme punnet)",
+  "checked": "2026-10"
+ },
+ "rosemary": {
+  "cents": 900,
+  "source": "Typical Woolworths price (rosemary punnet)",
+  "checked": "2026-10"
+ },
+ "sage": {
+  "cents": 900,
+  "source": "Typical Woolworths price (sage punnet)",
+  "checked": "2026-10"
+ },
+ "tarragon": {
+  "cents": 900,
+  "source": "Typical Woolworths price (tarragon punnet)",
+  "checked": "2026-10"
+ },
+ "oregano": {
+  "cents": 900,
+  "source": "Typical Woolworths price (dried oregano 10g)",
+  "checked": "2026-10"
+ },
+ "dried oregano": {
+  "cents": 900,
+  "source": "Typical Woolworths price (dried oregano 10g)",
+  "checked": "2026-10"
+ },
+ "marjoram": {
+  "cents": 1000,
+  "source": "Typical Woolworths price (dried marjoram 10g)",
+  "checked": "2026-10"
+ },
+ "savory": {
+  "cents": 1000,
+  "source": "Typical Woolworths price (dried savory, specialty)",
+  "checked": "2026-10"
+ },
+ "dried mint": {
+  "cents": 1000,
+  "source": "Typical Woolworths price (dried mint 10g)",
+  "checked": "2026-10"
+ },
+ "dried dill": {
+  "cents": 1000,
+  "source": "Typical Woolworths price (dried dill 10g)",
+  "checked": "2026-10"
+ },
+ "italian seasoning": {
+  "cents": 800,
+  "source": "Typical Woolworths price (Italian herbs 10g)",
+  "checked": "2026-10"
+ },
+ "bay leaf": {
+  "cents": 2000,
+  "source": "Typical Woolworths price (bay leaves 5g)",
+  "checked": "2026-10"
+ },
+ "lime leaves": {
+  "cents": 2000,
+  "source": "Typical Woolworths price (kaffir lime leaves 5g)",
+  "checked": "2026-10"
+ },
+ "bouquet garni": {
+  "cents": 2000,
+  "source": "Typical Woolworths price (bouquet garni sachets)",
+  "checked": "2026-10"
+ },
+ "black pepper": {
+  "cents": 600,
+  "source": "Typical Woolworths price (ground black pepper 50g)",
+  "checked": "2026-10"
+ },
+ "black peppercorns": {
+  "cents": 600,
+  "source": "Typical Woolworths price (black peppercorns 50g)",
+  "checked": "2026-10"
+ },
+ "salt": {
+  "cents": 10,
+  "source": "Typical Woolworths price (table salt 1kg)",
+  "checked": "2026-10"
+ },
+ "cumin seeds": {
+  "cents": 600,
+  "source": "Typical Woolworths price (cumin seeds 30g)",
+  "checked": "2026-10"
+ },
+ "ground coriander": {
+  "cents": 600,
+  "source": "Typical Woolworths price (ground coriander 30g)",
+  "checked": "2026-10"
+ },
+ "coriander seeds": {
+  "cents": 600,
+  "source": "Typical Woolworths price (coriander seeds 30g)",
+  "checked": "2026-10"
+ },
+ "turmeric": {
+  "cents": 600,
+  "source": "Typical Woolworths price (ground turmeric 30g)",
+  "checked": "2026-10"
+ },
+ "paprika": {
+  "cents": 600,
+  "source": "Typical Woolworths price (paprika 40g)",
+  "checked": "2026-10"
+ },
+ "smoked paprika": {
+  "cents": 700,
+  "source": "Typical Woolworths price (smoked paprika 40g)",
+  "checked": "2026-10"
+ },
+ "cayenne pepper": {
+  "cents": 700,
+  "source": "Typical Woolworths price (cayenne pepper 30g)",
+  "checked": "2026-10"
+ },
+ "chilli powder": {
+  "cents": 600,
+  "source": "Typical Woolworths price (chilli powder 30g)",
+  "checked": "2026-10"
+ },
+ "red chilli flakes": {
+  "cents": 700,
+  "source": "Typical Woolworths price (chilli flakes 30g)",
+  "checked": "2026-10"
+ },
+ "garam masala": {
+  "cents": 700,
+  "source": "Typical Woolworths price (garam masala 30g)",
+  "checked": "2026-10"
+ },
+ "curry powder": {
+  "cents": 600,
+  "source": "Typical Woolworths price (curry powder 50g)",
+  "checked": "2026-10"
+ },
+ "cinnamon stick": {
+  "cents": 1250,
+  "source": "Typical Woolworths price (cinnamon sticks 15g)",
+  "checked": "2026-10"
+ },
+ "cardamom": {
+  "cents": 1500,
+  "source": "Typical Woolworths price (cardamom pods 20g)",
+  "checked": "2026-10"
+ },
+ "cloves": {
+  "cents": 1200,
+  "source": "Typical Woolworths price (whole cloves 20g)",
+  "checked": "2026-10"
+ },
+ "allspice": {
+  "cents": 1000,
+  "source": "Typical Woolworths price (ground allspice 30g)",
+  "checked": "2026-10"
+ },
+ "nutmeg": {
+  "cents": 1200,
+  "source": "Typical Woolworths price (ground nutmeg 30g)",
+  "checked": "2026-10"
+ },
+ "star anise": {
+  "cents": 1500,
+  "source": "Typical Woolworths price (star anise 15g)",
+  "checked": "2026-10"
+ },
+ "fennel seeds": {
+  "cents": 700,
+  "source": "Typical Woolworths price (fennel seeds 30g)",
+  "checked": "2026-10"
+ },
+ "caraway seeds": {
+  "cents": 800,
+  "source": "Typical Woolworths price (caraway seeds 30g)",
+  "checked": "2026-10"
+ },
+ "fenugreek": {
+  "cents": 700,
+  "source": "Typical Woolworths price (fenugreek seeds 30g)",
+  "checked": "2026-10"
+ },
+ "mustard seeds": {
+  "cents": 600,
+  "source": "Typical Woolworths price (mustard seeds 40g)",
+  "checked": "2026-10"
+ },
+ "sichuan pepper": {
+  "cents": 1500,
+  "source": "Typical Woolworths price (Sichuan pepper 30g, Asian grocer)",
+  "checked": "2026-10"
+ },
+ "saffron": {
+  "cents": 150000,
+  "source": "Typical Woolworths price (saffron 0.1g)",
+  "checked": "2026-10"
+ },
+ "chinese five spice powder": {
+  "cents": 800,
+  "source": "Typical Woolworths price (Chinese five spice 30g)",
+  "checked": "2026-10"
+ },
+ "mixed spice": {
+  "cents": 800,
+  "source": "Typical Woolworths price (mixed spice 30g)",
+  "checked": "2026-10"
+ },
+ "ras el hanout": {
+  "cents": 1000,
+  "source": "Typical Woolworths price (ras el hanout 30g)",
+  "checked": "2026-10"
+ },
+ "sumac": {
+  "cents": 1000,
+  "source": "Typical Woolworths price (sumac 40g)",
+  "checked": "2026-10"
+ },
+ "harissa spice": {
+  "cents": 800,
+  "source": "Typical Woolworths price (harissa spice blend 30g)",
+  "checked": "2026-10"
+ },
+ "cajun": {
+  "cents": 800,
+  "source": "Typical Woolworths price (Cajun seasoning 40g)",
+  "checked": "2026-10"
+ },
+ "jerk seasoning": {
+  "cents": 800,
+  "source": "Typical Woolworths price (jerk seasoning 40g)",
+  "checked": "2026-10"
+ },
+ "all-purpose seasoning": {
+  "cents": 325,
+  "source": "Woolworths shelf price: MasterFoods All Purpose Seasoning 200g, $6.50",
+  "checked": "2026-10"
+ },
+ "sazon seasoning": {
+  "cents": 1000,
+  "source": "Typical Woolworths price (sazón seasoning, specialty grocer)",
+  "checked": "2026-10"
+ },
+ "annatto": {
+  "cents": 1000,
+  "source": "Typical Woolworths price (annatto/achiote, specialty grocer)",
+  "checked": "2026-10"
+ },
+ "ground ginger": {
+  "cents": 700,
+  "source": "Typical Woolworths price (ground ginger 30g)",
+  "checked": "2026-10"
+ },
+ "garlic powder": {
+  "cents": 500,
+  "source": "Typical Woolworths price (garlic powder 50g)",
+  "checked": "2026-10"
+ },
+ "onion powder": {
+  "cents": 500,
+  "source": "Typical Woolworths price (onion powder 50g)",
+  "checked": "2026-10"
+ },
+ "celery salt": {
+  "cents": 500,
+  "source": "Typical Woolworths price (celery salt 50g)",
+  "checked": "2026-10"
+ },
+ "juniper berries": {
+  "cents": 1500,
+  "source": "Typical Woolworths price (juniper berries 20g)",
+  "checked": "2026-10"
+ },
+ "falafel": {
+  "cents": 200,
+  "source": "Typical Woolworths price (falafel 8 pack)",
+  "checked": "2026-10"
+ },
+ "pasta": {
+  "cents": 30,
+  "source": "Typical Woolworths price (dried pasta 500g)",
+  "checked": "2026-10"
+ },
+ "dried hominy": {
+  "cents": 150,
+  "source": "Typical Woolworths price (dried white corn, Latin grocer)",
+  "checked": "2026-10"
+ },
+ "tempura flour": {
+  "cents": 120,
+  "source": "Typical Woolworths price (tempura batter mix 500g)",
+  "checked": "2026-10"
+ },
+ "taco shells": {
+  "cents": 200,
+  "source": "Typical Woolworths price (taco shells 12 pack)",
+  "checked": "2026-10"
+ },
+ "kataifi pastry": {
+  "cents": 200,
+  "source": "Typical Woolworths price (kataifi pastry 375g, Middle Eastern grocer)",
+  "checked": "2026-10"
+ },
+ "chocolate sandwich biscuits": {
+  "cents": 120,
+  "source": "Typical Woolworths price (chocolate cream biscuits 300g)",
+  "checked": "2026-10"
+ },
+ "spring roll wrappers": {
+  "cents": 150,
+  "source": "Typical Woolworths price (spring roll pastry 250g)",
+  "checked": "2026-10"
+ },
+ "vine leaves": {
+  "cents": 200,
+  "source": "Typical Woolworths price (vine leaves in brine 400g jar)",
+  "checked": "2026-10"
+ },
+ "aioli": {
+  "cents": 150,
+  "source": "Typical Woolworths price (aioli 240g)",
+  "checked": "2026-10"
+ },
+ "vinaigrette": {
+  "cents": 80,
+  "source": "Typical Woolworths price (French dressing 250mL)",
+  "checked": "2026-10"
+ },
+ "espresso": {
+  "cents": 20,
+  "source": "Typical Woolworths price (brewed espresso (from ground coffee))",
+  "checked": "2026-10"
+ },
+ "fruit syrup": {
+  "cents": 150,
+  "source": "Typical Woolworths price (fruit syrup, specialty)",
+  "checked": "2026-10"
+ },
+ "food colouring": {
+  "cents": 1500,
+  "source": "Typical Woolworths price (food colouring 20mL)",
+  "checked": "2026-10"
+ },
+ "taco seasoning": {
+  "cents": 600,
+  "source": "Typical Woolworths price (taco seasoning 30g sachet)",
+  "checked": "2026-10"
+ },
+ "water": {
+  "cents": 0,
+  "source": "Typical Woolworths price (tap water)",
+  "checked": "2026-10"
+ }
+}

@@ -34,3 +34,26 @@ tests caught a privacy bug where the autocomplete leaked other users'
 ingredient names. When I asked for every feature to have a page, real pages
 were built where the data already existed (shopping list, settings, cook
 mode), and the rest became previews with sample data.
+
+## Making it real
+
+For the last stretch I rewrote the brief in `CLAUDE.md` page by page (the
+globe, the calendar, the fridge and pantry, recipes) and asked for every
+preview to become a working feature. The agent split the work: separate
+background agents built live cooking, the household and the recipe catalogue
+in parallel, each owning its own files and migration, while the main session
+built the 3D kitchen, merged the planner and schedule into the calendar,
+folded the feed into Friends, and redesigned the home and landing pages. Each
+agent reported back with what it tested; the main session ran `pnpm check`
+after every merge.
+
+The AI is deliberately small. Answers come from rules over your data, and a
+free model running in the browser only rewords them. Testing several models
+and precisions showed the small ones invent swaps, so the page drops any
+reply that names a food the checked answer didn't.
+
+Every visual change was screenshotted at desktop and phone width, light and
+dark, and compared against the brief's "Apple / Pinterest" bar. Screenshots
+caught a side panel covering the fridge, an outline invisible on cream,
+mobile overflow in the top bar, and a page transition that only worked on
+some pages because the opt-in loaded too late.

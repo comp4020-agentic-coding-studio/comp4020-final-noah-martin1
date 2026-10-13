@@ -246,9 +246,6 @@ function start() {
   scene.add(shadow);
 
   /* ---------- markers: a chunky little skillet over a flame, steaming ---------- */
-  const markers = [];
-  const panGroup = new THREE.Group();
-  world.add(panGroup);
 
   // pastel enamel shells, one per pan so the map reads as a sprinkle of colour
   // (picked a step richer than the UI pastels: the lighting softens them)
@@ -367,68 +364,72 @@ function start() {
   const stemMat = new THREE.MeshBasicMaterial({ color: 0xffffff, transparent: true, opacity: 0.85 });
   const LIFT = S * 1.15; // how far the icon floats above the surface
 
-  // Cooks in neighbouring cities (Tel Aviv and Amman, London and Dublin)
-  // would stack their pans on one another. Nudge the floating icons apart
-  // until none overlap, pulling each gently back toward home; its stem
-  // still lands on the true spot, like a pin in a crowded map.
-  const homes = data.map((s) => latLngToVec(s.lat, s.lng).normalize());
-  const spots = homes.map((v) => v.clone());
-  {
-    const MIN = S * 2.9;
-    const push = new THREE.Vector3();
-    for (let it = 0; it < 160; it++) {
-      for (let a = 0; a < spots.length; a++)
-        for (let b = a + 1; b < spots.length; b++) {
-          const d = spots[a].distanceTo(spots[b]);
-          if (d >= MIN) continue;
-          push.subVectors(spots[a], spots[b]);
-          // two cooks at the very same spot: split them along a fixed bearing
-          if (push.lengthSq() < 1e-10) push.set(Math.cos(a + b), 0, Math.sin(a + b));
-          push.normalize().multiplyScalar((MIN - d) * 0.5);
-          spots[a].add(push).normalize();
-          spots[b].sub(push).normalize();
-        }
-      spots.forEach((v, i) => v.lerp(homes[i], 0.015).normalize());
-    }
+
+  /* ---------- clustering ----------
+     Pans keep the same size on screen at every zoom, so how far apart two
+     cooks must be (as an angle on the globe) to get their own pans grows with
+     the camera's height. Closer than that, they share ONE pan with a count,
+     placed at their middle; clicking it flies down until they separate. At
+     the closest zoom, cooks who still overlap (two people who both picked
+     London) fan out around the spot, each pinned back to it by a stem. */
+  const HOME_DIST = 5.2;
+  const MIN_DIST = 2.05;
+  const MAX_DIST = 7;
+  const page = root.closest("[data-gl]");
+  let lastZoomed = null;
+  const CLUSTER_K = 0.031; // radians of separation per unit of camera height
+  const GROUP_RANK = { mine: 0, friends: 1, live: 2, demo: 3 };
+  // ground ring colours: you, friends, real live cooks, demo cooks
+  const RING = { mine: 0x5b8f72, friends: 0x9a8be0, live: 0xef6b5b, demo: 0xffffff };
+
+  const markers = [];
+  const byId = new Map();
+  const panGroup = new THREE.Group();
+  world.add(panGroup);
+  let shellIndex = 0;
+  let clusters = [];
+  let clusterDirty = true;
+  let clusterAt = 0;
+
+  const pins = root.querySelector("[data-pins]");
+  const tip = document.createElement("div");
+  tip.className = "gl-tip";
+  tip.hidden = true;
+  pins?.append(tip);
+
+  function heightFactor(d) {
+    return (d - RADIUS) / (HOME_DIST - RADIUS);
+  }
+  function separation(d) {
+    return CLUSTER_K * (d - RADIUS);
   }
 
-  function makePan(session, i) {
-    const up = homes[i];
-    const spot = spots[i];
+  function makePan(session) {
+    const i = shellIndex++;
+    const home = latLngToVec(session.lat, session.lng).normalize();
 
     // ground anchor: lies on the surface, holds the beacon and footprint
     const ground = new THREE.Group();
-    ground.position.copy(up.clone().multiplyScalar(RADIUS * 1.003));
-    ground.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), up);
     panGroup.add(ground);
     const foot = new THREE.Mesh(footGeo, new THREE.MeshBasicMaterial({ map: footTex, transparent: true, depthWrite: false }));
     foot.rotation.x = -Math.PI / 2;
     ground.add(foot);
-    // the stem runs from the true spot up to wherever the icon floats
-    const from = up.clone().multiplyScalar(RADIUS * 1.003);
-    const to = spot.clone().multiplyScalar(RADIUS * 1.003 + LIFT * 0.8);
     const stem = new THREE.Mesh(stemGeo, stemMat.clone());
-    stem.position.copy(from).add(to).multiplyScalar(0.5);
-    stem.scale.y = from.distanceTo(to);
-    stem.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), to.clone().sub(from).normalize());
     panGroup.add(stem);
 
     // the icon itself: floats above the point, turned upright to the viewer
     const g = new THREE.Group();
-    g.position.copy(spot.clone().multiplyScalar(RADIUS * 1.003 + LIFT));
     g.scale.setScalar(0.001);
-
     const inner = new THREE.Group();
     g.add(inner);
     inner.position.y = S * 0.42;
 
-    // enamel outside, dark seasoned iron inside — the pastel reads from afar
+    // enamel outside, cream enamel inside — the pastel reads from afar
     const shell = new THREE.Mesh(
       shellGeo,
       new THREE.MeshPhysicalMaterial({ color: SHELLS[i % SHELLS.length], roughness: 0.28, clearcoat: 1, clearcoatRoughness: 0.12, sheen: 0.4, sheenColor: 0xffffff, side: THREE.FrontSide }),
     );
     inner.add(shell);
-    // cream enamel inside, like a good French casserole
     const innerWall = new THREE.Mesh(shellGeo, creamMat);
     innerWall.scale.setScalar(0.985);
     inner.add(innerWall);
@@ -470,17 +471,16 @@ function start() {
     inner.rotation.y = (i * 1.7) % (Math.PI * 2);
 
     // the stove: a dark iron trivet, with a ring of little flames licking up
-    // at the pan's base
     const stove = new THREE.Group();
     stove.position.y = -S * 0.36;
     const burner = new THREE.Mesh(burnerGeo, burnerMat);
     burner.rotation.x = Math.PI / 2;
     stove.add(burner);
     for (let k = 0; k < 2; k++) {
-      const bar = new THREE.Mesh(trivetGeo, burnerMat);
-      bar.rotation.y = k * (Math.PI / 2) + Math.PI / 4;
-      bar.position.y = S * 0.05;
-      stove.add(bar);
+      const tb = new THREE.Mesh(trivetGeo, burnerMat);
+      tb.rotation.y = k * (Math.PI / 2) + Math.PI / 4;
+      tb.position.y = S * 0.05;
+      stove.add(tb);
     }
     const flames = new THREE.Group();
     const tongues = [];
@@ -494,7 +494,6 @@ function start() {
     }
     stove.add(flames);
     g.add(stove);
-    // a warm glow under the pan, so the flames light the scene around them
     const flame = new THREE.Sprite(new THREE.SpriteMaterial({ map: flameTex, depthWrite: false, transparent: true, opacity: 0.6 }));
     flame.scale.set(S * 1.4, S * 0.9, 1);
     flame.position.y = -S * 0.22;
@@ -510,31 +509,176 @@ function start() {
       puffs.push(p);
     }
 
-    // a soft white ring on the ground, pulsing like a beacon
+    // a soft ring on the ground, pulsing like a beacon; its colour says who
     const ring = new THREE.Mesh(halo, ringMat.clone());
     ring.rotation.x = -Math.PI / 2;
     ring.position.y = S * 0.01;
     ground.add(ring);
+    // friends and you get a second, steady ring so they read at a glance
+    const band = new THREE.Mesh(halo, ringMat.clone());
+    band.rotation.x = -Math.PI / 2;
+    band.position.y = S * 0.012;
+    band.scale.setScalar(0.92);
+    ground.add(band);
 
     // an invisible, generous hit target so pans are easy to tap
     const hit = new THREE.Mesh(new THREE.SphereGeometry(S * 1.6, 10, 8), new THREE.MeshBasicMaterial({ visible: false }));
     hit.position.y = S * 0.5;
-    hit.userData.session = session;
     g.add(hit);
 
-    g.userData = { session, inner, flame, tongues, puffs, ring, hit, up, ground, foot, stem, hover: 0, active: 0, phase: i * 0.9 };
+    const label = document.createElement("span");
+    label.className = "gl-pin";
+    label.hidden = true;
+    pins?.append(label);
+
+    g.userData = {
+      session, inner, flame, tongues, puffs, ring, band, hit, ground, foot, stem, label, home,
+      cur: home.clone(), gcur: home.clone(), tgt: home.clone(), gtgt: home.clone(),
+      show: 0, showTarget: 1, hover: 0, active: 0, phase: i * 0.9, dim: 1, vis: 0, grow: 0,
+      cluster: null, removing: false, labelKey: "",
+    };
+    hit.userData.marker = g;
     panGroup.add(g);
     markers.push(g);
+    byId.set(session.id, g);
+    styleMarker(g);
+    return g;
   }
-  data.forEach(makePan);
+
+  // colours and tags that follow the session's group (you, friend, live, demo)
+  function styleMarker(m) {
+    const u = m.userData;
+    u.ring.material.color.set(RING[u.session.group] ?? 0xffffff);
+    u.band.visible = u.session.group === "mine" || u.session.group === "friends";
+    u.band.material.color.set(RING[u.session.group] ?? 0xffffff);
+    u.stem.material.color.set(u.band.visible ? RING[u.session.group] : 0xffffff);
+  }
+
+  function disposeMarker(m) {
+    const u = m.userData;
+    panGroup.remove(m, u.ground, u.stem);
+    u.label.remove();
+    m.traverse((o) => {
+      if (o.material && o.material !== creamMat && o.material !== ironMat && o.material !== handleMat && o.material !== woodMat && o.material !== burnerMat && o.material !== flameMat) o.material.dispose?.();
+    });
+    u.foot.material.dispose();
+    u.ring.material.dispose();
+    u.band.material.dispose();
+    u.stem.material.dispose();
+    u.hit.geometry.dispose();
+    markers.splice(markers.indexOf(m), 1);
+    if (byId.get(u.session.id) === m) byId.delete(u.session.id);
+  }
+
+  data.filter((s) => s.lat !== null && s.lng !== null).forEach(makePan);
+
+  // Leader clustering over the pans that are shown: highest-priority cook
+  // first (you, friends, live, demo), gathering everyone within the current
+  // separation; then clusters whose centres still overlap are merged.
+  function recluster() {
+    const sep = separation(dist);
+    const spread = dist <= MIN_DIST * 1.08;
+    const pool = markers
+      .filter((m) => !m.userData.removing && (!shownIds || shownIds.has(m.userData.session.id)))
+      .sort((a, b) => GROUP_RANK[a.userData.session.group] - GROUP_RANK[b.userData.session.group] || String(a.userData.session.id).localeCompare(String(b.userData.session.id)));
+    const taken = new Set();
+    let list = [];
+    for (const m of pool) {
+      if (taken.has(m)) continue;
+      const members = [m];
+      taken.add(m);
+      for (const o of pool) {
+        if (taken.has(o)) continue;
+        if (m.userData.home.angleTo(o.userData.home) < sep) {
+          members.push(o);
+          taken.add(o);
+        }
+      }
+      list.push({ members, center: centre(members) });
+    }
+    for (let merged = true; merged; ) {
+      merged = false;
+      outer: for (let a = 0; a < list.length; a++)
+        for (let b = a + 1; b < list.length; b++) {
+          if (list[a].center.angleTo(list[b].center) < sep * 0.92) {
+            list[a].members.push(...list[b].members);
+            list[a].center = centre(list[a].members);
+            list.splice(b, 1);
+            merged = true;
+            break outer;
+          }
+        }
+    }
+    list = list.filter((c) => c.members.length > 1);
+    for (const c of list) {
+      c.members.sort((a, b) => GROUP_RANK[a.userData.session.group] - GROUP_RANK[b.userData.session.group]);
+      c.rep = c.members[0];
+      c.spread = spread;
+      c.id = c.members.map((m) => m.userData.session.id).sort().join("|");
+    }
+    clusters = list;
+    const inCluster = new Map();
+    for (const c of list) for (const m of c.members) inCluster.set(m, c);
+    for (const m of markers) {
+      const u = m.userData;
+      const c = inCluster.get(m) ?? null;
+      u.cluster = c;
+      const filteredOut = !!shownIds && !shownIds.has(u.session.id);
+      if (u.removing) {
+        u.showTarget = 0;
+      } else if (!c) {
+        u.tgt.copy(u.home);
+        u.gtgt.copy(u.home);
+        u.showTarget = filteredOut ? 0 : 1;
+      } else if (c.spread) {
+        const k = c.members.indexOf(m);
+        u.tgt.copy(fanOut(c.center, k, c.members.length, sep));
+        u.gtgt.copy(u.home);
+        u.showTarget = 1;
+      } else {
+        u.tgt.copy(c.center);
+        u.gtgt.copy(c.center);
+        u.showTarget = m === c.rep ? 1 : 0;
+      }
+    }
+    clusterDirty = false;
+    clusterAt = dist;
+    needsRender = true;
+    // a cluster that just split (or formed) under the mouse: retell the tip
+    if (hovered) setHover(hovered.userData.showTarget ? hovered : null, true);
+  }
+
+  function centre(members) {
+    const v = new THREE.Vector3();
+    for (const m of members) v.add(m.userData.home);
+    return v.normalize();
+  }
+
+  // a sunflower spiral around a spot: even spacing for any number of cooks
+  function fanOut(center, k, n, sep) {
+    const e1 = new THREE.Vector3().crossVectors(Math.abs(center.y) > 0.95 ? new THREE.Vector3(1, 0, 0) : new THREE.Vector3(0, 1, 0), center).normalize();
+    const e2 = new THREE.Vector3().crossVectors(center, e1);
+    const r = sep * 0.62 * Math.sqrt(k + (n <= 1 ? 0 : 0.6));
+    const a = k * 2.39996 + 0.5;
+    return center.clone().addScaledVector(e1, Math.cos(a) * r).addScaledVector(e2, Math.sin(a) * r).normalize();
+  }
+
+  // how close the camera must come for a cluster's cooks to separate
+  function distToSeparate(members) {
+    let min = Infinity;
+    for (let a = 0; a < members.length; a++)
+      for (let b = a + 1; b < members.length; b++) min = Math.min(min, members[a].userData.home.angleTo(members[b].userData.home));
+    const d = RADIUS + (min * 0.86) / CLUSTER_K;
+    return THREE.MathUtils.clamp(d, MIN_DIST, Math.max(MIN_DIST, dist * 0.8));
+  }
 
   /* ---------- interaction: drag with inertia, zoom, click ---------- */
-  let rotX = 0.35;
-  let rotY = -0.4;
+  let rotX = 0.42;
+  let rotY = Math.PI * 1.36;
   let velX = 0;
   let velY = 0.0;
   let targetRot = null;
-  let dist = 5.2;
+  let dist = HOME_DIST;
   let targetDist = dist;
   let dragging = false;
   let moved = 0;
@@ -544,13 +688,18 @@ function start() {
   let hovered = null;
   let selected = null;
   let needsRender = true;
+  let shownIds = null;
   const pointers = new Map();
   let pinchStart = 0;
 
-  // open facing the busiest stretch of the map (Europe, Africa, the Middle
-  // East), tilted so the northern hemisphere's cities sit nicely in view
-  rotY = Math.PI * 1.36;
-  rotX = 0.42;
+  // open facing your own pan or a friend's, if they're on the map; otherwise
+  // the busiest stretch of the map (Europe, Africa, the Middle East)
+  const first = markers.find((m) => m.userData.session.group === "mine" || m.userData.session.group === "friends");
+  if (first) {
+    const r = rotationFor(first.userData.home, HOME_DIST);
+    rotX = THREE.MathUtils.clamp(r.x, -0.9, 0.9);
+    rotY = r.y;
+  }
 
   const raycaster = new THREE.Raycaster();
   const ndc = new THREE.Vector2();
@@ -559,9 +708,11 @@ function start() {
     const r = canvas.getBoundingClientRect();
     ndc.set(((clientX - r.left) / r.width) * 2 - 1, -((clientY - r.top) / r.height) * 2 + 1);
     raycaster.setFromCamera(ndc, camera);
-    const hits = raycaster.intersectObjects([earth, ...markers.map((m) => m.userData.hit)], false);
-    const first = hits[0];
-    return first && first.object.userData.session ? first.object.parent : null;
+    // three.js raycasts invisible objects too, so only offer pans on show
+    const targets = markers.filter((m) => m.visible && m.userData.vis > 0.4 && m.userData.show > 0.5).map((m) => m.userData.hit);
+    const hits = raycaster.intersectObjects([earth, ...targets], false);
+    const firstHit = hits[0];
+    return firstHit && firstHit.object.userData.marker ? firstHit.object.userData.marker : null;
   }
 
   canvas.addEventListener("pointerdown", (e) => {
@@ -585,7 +736,7 @@ function start() {
     if (pointers.size === 2) {
       const [a, b] = [...pointers.values()];
       const d = Math.hypot(a.clientX - b.clientX, a.clientY - b.clientY);
-      if (pinchStart) targetDist = THREE.MathUtils.clamp(targetDist * (pinchStart / d), 2.6, 7);
+      if (pinchStart) targetDist = THREE.MathUtils.clamp(targetDist * (pinchStart / d), MIN_DIST, MAX_DIST);
       pinchStart = d;
       needsRender = true;
       return;
@@ -596,7 +747,8 @@ function start() {
       lastX = e.clientX;
       lastY = e.clientY;
       moved += Math.abs(dx) + Math.abs(dy);
-      const k = 0.0048 * (dist / 5.2);
+      // the closer the camera, the slower the spin, so a drag follows the hand
+      const k = 0.0048 * ((dist - 0.9) / (HOME_DIST - 0.9));
       velY = dx * k;
       velX = dy * k;
       rotY += velY;
@@ -604,25 +756,17 @@ function start() {
       lastInteraction = performance.now();
       needsRender = true;
     } else {
-      const m = pick(e.clientX, e.clientY);
-      if (m !== hovered) {
-        hovered = m;
-        canvas.style.cursor = m ? "pointer" : "";
-        needsRender = true;
-      }
+      setHover(pick(e.clientX, e.clientY));
     }
   });
+  canvas.addEventListener("pointerleave", () => setHover(null));
   function endDrag(e) {
     pointers.delete(e.pointerId);
     if (pointers.size < 2) pinchStart = 0;
     if (!dragging) return;
     dragging = false;
     root.classList.remove("grabbing");
-    if (moved < 6) {
-      const m = pick(e.clientX, e.clientY);
-      if (m) select(m.userData.session.id, true);
-      else select(null, true);
-    }
+    if (moved < 6) activate(pick(e.clientX, e.clientY));
   }
   canvas.addEventListener("pointerup", endDrag);
   canvas.addEventListener("pointercancel", endDrag);
@@ -630,43 +774,149 @@ function start() {
     "wheel",
     (e) => {
       e.preventDefault();
-      targetDist = THREE.MathUtils.clamp(targetDist * (1 + e.deltaY * 0.0012), 2.6, 7);
+      targetDist = THREE.MathUtils.clamp(targetDist * (1 + e.deltaY * 0.0012), MIN_DIST, MAX_DIST);
       lastInteraction = performance.now();
       needsRender = true;
     },
     { passive: false },
   );
 
-  // turn the globe so a session sits front and centre
-  function focusOn(session) {
-    const v = latLngToVec(session.lat, session.lng).normalize();
+  // a clustered pan zooms in; a single pan opens its card
+  function activate(m) {
+    if (!m) return select(null, true);
+    const c = m.userData.cluster;
+    if (c && !c.spread) return zoomInto(c);
+    select(m.userData.session.id, true);
+  }
+
+  function zoomInto(c) {
+    const d = distToSeparate(c.members);
+    focusOn(c.center, d);
+    selected = null;
+    lastInteraction = performance.now();
+    root.dispatchEvent(new CustomEvent("globe:cluster", { detail: { ids: c.members.map((m) => m.userData.session.id) }, bubbles: true }));
+  }
+
+  function setHover(m, force = false) {
+    if (m === hovered && !force) return;
+    hovered = m;
+    canvas.style.cursor = m ? "pointer" : "";
+    if (!m) {
+      tip.hidden = true;
+      return;
+    }
+    const u = m.userData;
+    const c = u.cluster && !u.cluster.spread ? u.cluster : null;
+    tip.replaceChildren();
+    const strong = document.createElement("strong");
+    const small = document.createElement("small");
+    if (c) {
+      const places = [...new Set(c.members.map((x) => x.userData.session.city).filter(Boolean))];
+      strong.textContent = `${c.members.length} people cooking`;
+      small.textContent = `${places.slice(0, 3).join(" · ")}${places.length > 3 ? ` +${places.length - 3}` : ""} — click to zoom in`;
+    } else {
+      strong.textContent = u.session.recipe;
+      small.textContent = `${u.session.cook}${u.session.city ? ` · ${u.session.city}` : ""} · step ${u.session.step}/${u.session.steps}`;
+    }
+    tip.append(strong, small);
+    tip.hidden = false;
+    needsRender = true;
+  }
+
+  // the rotation that puts a point on the globe front and centre
+  function rotationFor(v, d) {
     const lng = Math.atan2(v.z, -v.x);
     const ty = -lng - Math.PI / 2 + Math.PI;
-    const tx = Math.asin(THREE.MathUtils.clamp(v.y, -1, 1)) * 0.92;
+    // from afar, sit a touch below centre so the north reads; up close, dead centre
+    const tx = Math.asin(THREE.MathUtils.clamp(v.y, -1, 1)) * (d < 3 ? 1 : 0.92);
+    return { x: tx, y: ty };
+  }
+
+  function focusOn(v, d) {
+    targetDist = d;
+    const r = rotationFor(v, d);
     // shortest way round
-    let dy = ((ty - rotY) % (Math.PI * 2) + Math.PI * 3) % (Math.PI * 2) - Math.PI;
-    targetRot = { x: tx, y: rotY + dy };
-    targetDist = Math.min(targetDist, 4.2);
+    const dy = ((r.y - rotY) % (Math.PI * 2) + Math.PI * 3) % (Math.PI * 2) - Math.PI;
+    targetRot = { x: THREE.MathUtils.clamp(r.x, -1.2, 1.2), y: rotY + dy };
+    needsRender = true;
   }
 
   function select(id, fromGlobe) {
-    selected = markers.find((m) => m.userData.session.id === id) ?? null;
-    if (selected) focusOn(selected.userData.session);
+    const m = id === null ? null : byId.get(id) ?? null;
+    selected = m;
+    if (m) {
+      // a cook hidden in a cluster: come close enough to pick them out
+      const c = m.userData.cluster;
+      focusOn(m.userData.home, c && !c.spread ? distToSeparate(c.members) : Math.min(targetDist, 4.2));
+    }
     lastInteraction = performance.now();
     needsRender = true;
     if (fromGlobe) root.dispatchEvent(new CustomEvent("globe:select", { detail: { id }, bubbles: true }));
   }
+
   root.addEventListener("globe:focus", (e) => select(e.detail.id, false));
-  let shownIds = null;
   root.addEventListener("globe:filter", (e) => {
     shownIds = e.detail.ids ? new Set(e.detail.ids) : null;
-    needsRender = true;
+    clusterDirty = true;
   });
 
+  // live updates from globe-ui.mjs: a cook goes live, moves on a step, ends
+  root.addEventListener("globe:upsert", (e) => {
+    const s = e.detail.marker;
+    const m = byId.get(s.id);
+    if (s.lat === null || s.lng === null) {
+      if (m) m.userData.removing = true;
+      clusterDirty = true;
+      return;
+    }
+    if (m && !m.userData.removing) {
+      const moved = m.userData.session.lat !== s.lat || m.userData.session.lng !== s.lng;
+      m.userData.session = s;
+      if (moved) m.userData.home.copy(latLngToVec(s.lat, s.lng).normalize());
+      styleMarker(m);
+      if (moved) clusterDirty = true;
+      if (hovered === m) {
+        hovered = null;
+        setHover(m);
+      }
+    } else {
+      if (m) disposeMarker(m);
+      makePan(s);
+      clusterDirty = true;
+    }
+  });
+  root.addEventListener("globe:remove", (e) => {
+    const m = byId.get(e.detail.id);
+    if (!m) return;
+    m.userData.removing = true;
+    if (selected === m) selected = null;
+    if (hovered === m) setHover(null);
+    clusterDirty = true;
+  });
+
+  // + / − / whole-globe buttons, for anyone without a wheel or a pinch
+  root.querySelectorAll("[data-zoom]").forEach((b) =>
+    b.addEventListener("click", () => {
+      const how = b.dataset.zoom;
+      if (how === "in") targetDist = Math.max(MIN_DIST, RADIUS + (targetDist - RADIUS) * 0.55);
+      if (how === "out") targetDist = Math.min(MAX_DIST, RADIUS + (targetDist - RADIUS) * 1.8);
+      if (how === "reset") {
+        targetDist = HOME_DIST;
+        targetRot = { x: 0.42, y: rotY };
+      }
+      lastInteraction = performance.now();
+      needsRender = true;
+    }),
+  );
+
   /* ---------- resize ---------- */
+  let viewW = 1;
+  let viewH = 1;
   function resize() {
     const w = root.clientWidth;
     const h = root.clientHeight;
+    viewW = w;
+    viewH = h;
     renderer.setSize(w, h, false);
     camera.aspect = w / h;
     // keep the globe a comfortable size on tall phones; on wider screens set
@@ -687,97 +937,226 @@ function start() {
   const tmp = new THREE.Vector3();
   const iconPos = new THREE.Vector3();
   const camDir = new THREE.Vector3();
-  const camLocal = new THREE.Vector3();
-  const leanUp = new THREE.Vector3();
   const leanQ = new THREE.Quaternion();
   const invWorld = new THREE.Quaternion();
   const Y_AXIS = new THREE.Vector3(0, 1, 0);
+  const from = new THREE.Vector3();
+  const to = new THREE.Vector3();
+  const screen = new THREE.Vector3();
   // world-space: pan up = screen up, tipped toward the viewer by 30°
   const screenUpright = new THREE.Quaternion().setFromEuler(new THREE.Euler(0.52, 0, 0));
+
+  function project(v) {
+    screen.copy(v).project(camera);
+    return [(screen.x * 0.5 + 0.5) * viewW, (-screen.y * 0.5 + 0.5) * viewH];
+  }
+
+  function labelFor(m) {
+    const u = m.userData;
+    const c = u.cluster;
+    if (c && !c.spread && m === c.rep) {
+      const friends = c.members.filter((x) => x.userData.session.group === "friends" || x.userData.session.group === "mine");
+      const who = friends.length ? `${friends[0].userData.session.cook}${c.members.length > 1 ? ` +${c.members.length - 1}` : ""}` : `${c.members.length} cooking`;
+      return { key: `c:${c.id}:${who}`, text: who, cls: `gl-pin gl-pin-cluster${friends.length ? " gl-pin-friendly" : ""}` };
+    }
+    if (u.session.group === "mine") return { key: "mine", text: "You", cls: "gl-pin gl-pin-mine" };
+    if (u.session.group === "friends") return { key: `f:${u.session.cook}`, text: u.session.cook, cls: "gl-pin gl-pin-friend" };
+    if (u.session.kind === "live" && !(c && !c.spread)) return { key: "live", text: "Live", cls: "gl-pin gl-pin-live" };
+    return null;
+  }
+
+  // Tags that would sit on top of each other: the more important one stays
+  // (you, then friends, then bigger clusters, then whoever's nearer), the
+  // other fades out until the globe turns or zooms them apart, like the
+  // labels on a map.
+  const tagged = [];
+  const placed = [];
+  const RANK = { mine: 3, friends: 2 };
+  function placeLabels(dt) {
+    const rank = (m) => {
+      const u = m.userData;
+      const c = u.cluster && !u.cluster.spread && u.cluster.rep === m ? u.cluster.members.length : 1;
+      return (RANK[u.session.group] ?? 0) * 100 + c + u.labZ;
+    };
+    tagged.sort((a, b) => rank(b) - rank(a));
+    placed.length = 0;
+    const k = reduce ? 1 : Math.min(1, dt * 9);
+    for (const m of tagged) {
+      const u = m.userData;
+      const l = u.labX - u.labW / 2 - 3;
+      const r = u.labX + u.labW / 2 + 3;
+      const top = u.labY - u.labH - 3;
+      const bottom = u.labY + 3;
+      const clear = !placed.some((p) => l < p[2] && r > p[0] && top < p[3] && bottom > p[1]);
+      if (clear) placed.push([l, top, r, bottom]);
+      u.labFade = (u.labFade ?? 0) + ((clear ? 1 : 0) - (u.labFade ?? 0)) * k;
+      u.label.style.transform = `translate(${u.labX.toFixed(1)}px, ${u.labY.toFixed(1)}px) translate(-50%, -100%)`;
+      u.label.style.opacity = String(Math.min(1, (u.vis - 0.25) * 2.5) * u.labFade);
+    }
+    tagged.length = 0;
+  }
 
   function frame() {
     const dt = Math.min(clock.getDelta(), 0.05);
     const t = clock.elapsedTime;
     const idle = performance.now() - lastInteraction > 3200;
+    const ease = reduce ? 1 : Math.min(1, dt * 4.2);
 
     if (targetRot) {
-      rotX += (targetRot.x - rotX) * Math.min(1, dt * 4.2);
-      rotY += (targetRot.y - rotY) * Math.min(1, dt * 4.2);
+      rotX += (targetRot.x - rotX) * ease;
+      rotY += (targetRot.y - rotY) * ease;
       if (Math.abs(targetRot.x - rotX) + Math.abs(targetRot.y - rotY) < 0.0005) targetRot = null;
     } else if (!dragging) {
-      // inertia, then a slow drift once idle
+      // inertia, then a slow drift once idle (only from afar: up close it
+      // would carry the cooks you zoomed in on out of view)
       rotY += velY;
       rotX = THREE.MathUtils.clamp(rotX + velX, -1.2, 1.2);
       velX *= 0.93;
       velY *= 0.93;
-      if (idle && !selected && !reduce) rotY += dt * 0.045;
-      rotX += (0.32 - rotX) * (idle ? dt * 0.25 : 0);
+      if (idle && !selected && !reduce && dist > 3.6) {
+        rotY += dt * 0.045;
+        rotX += (0.32 - rotX) * dt * 0.25;
+      }
     }
-    dist += (targetDist - dist) * Math.min(1, dt * 5);
+    dist += (targetDist - dist) * (reduce ? 1 : Math.min(1, dt * 5));
     camera.position.set(0, 0, dist);
+    // zoomed in past the whole-globe view: the headline steps back so the
+    // map has the screen
+    const zoomed = dist < HOME_DIST - 0.6;
+    if (zoomed !== lastZoomed) {
+      lastZoomed = zoomed;
+      page?.classList.toggle("gl-zoomed", zoomed);
+    }
+    if (clusterDirty || Math.abs(Math.log(dist / clusterAt)) > 0.035) recluster();
 
     world.rotation.set(rotX, rotY, 0, "XYZ");
     earthMat.uniforms.uTime.value = t;
     cloudMat.uniforms.uTime.value = reduce ? 0 : t;
     clouds.rotation.y = reduce ? 0 : t * 0.008;
 
-    // markers: lean toward the viewer, bob, steam, pulse, scale on
-    // hover/selection, fade on the far side
     camDir.copy(camera.position).normalize();
     world.updateMatrixWorld();
     invWorld.copy(world.quaternion).invert();
-    camLocal.copy(camDir).applyQuaternion(invWorld);
-    for (const m of markers) {
+    leanQ.copy(invWorld).multiply(screenUpright);
+    const hf = heightFactor(dist);
+    const horizon = RADIUS / dist;
+    const zSil = (RADIUS * RADIUS) / dist;
+    const rSil = RADIUS * Math.sqrt(Math.max(0, 1 - horizon * horizon));
+    const follow = reduce ? 1 : Math.min(1, dt * 6);
+
+    for (let n = markers.length - 1; n >= 0; n--) {
+      const m = markers[n];
       const u = m.userData;
-      // Each pan stands like an icon: upright on screen, seen from about 30°
-      // above, wherever it sits on the globe. Build that orientation in
-      // camera space, then express it in the globe's local space.
-      leanQ.copy(invWorld).multiply(screenUpright);
-      m.quaternion.slerp(leanQ, Math.min(1, dt * 10));
+      u.cur.lerp(u.tgt, follow).normalize();
+      u.gcur.lerp(u.gtgt, follow).normalize();
+      u.show += (u.showTarget - u.show) * Math.min(1, dt * (u.showTarget > u.show ? 7 : 9));
+      if (u.removing && u.show < 0.02) {
+        disposeMarker(m);
+        continue;
+      }
       const isHover = m === hovered;
       const isSel = m === selected;
+      const isRep = !!u.cluster && !u.cluster.spread && u.cluster.rep === m;
       u.hover += ((isHover ? 1 : 0) - u.hover) * Math.min(1, dt * 10);
       u.active += ((isSel ? 1 : 0) - u.active) * Math.min(1, dt * 8);
-      tmp.copy(u.up).applyQuaternion(world.quaternion);
+
+      // each pan stands like an icon: upright on screen, seen from 30° above
+      m.quaternion.slerp(leanQ, Math.min(1, dt * 10));
+      const lift = RADIUS * 1.003 + LIFT * hf;
+      m.position.copy(u.cur).multiplyScalar(lift);
+
+      // fade on the far side of the horizon, and before an icon would hang
+      // out past the globe's silhouette into empty space
+      tmp.copy(u.cur).applyQuaternion(world.quaternion);
       const facing = tmp.dot(camDir);
-      u.dim = (u.dim ?? 1) + ((shownIds && !shownIds.has(u.session.id) ? 0 : 1) - (u.dim ?? 1)) * Math.min(1, dt * 6);
-      // fade out on the far side, and before an icon would hang out past
-      // the globe's silhouette into empty space (icons stand screen-up, so
-      // measure from a little above their centre)
       m.getWorldPosition(iconPos);
-      const off = Math.hypot(iconPos.x, iconPos.y + S * 0.6) / RADIUS;
-      const vis = THREE.MathUtils.smoothstep(facing, 0.15, 0.35) * (1 - THREE.MathUtils.smoothstep(off, 0.74, 0.88)) * u.dim;
+      const off = (Math.hypot(iconPos.x, iconPos.y + S * 0.6 * hf) * (dist - zSil)) / (Math.max(0.01, dist - iconPos.z) * rSil);
+      u.vis = THREE.MathUtils.smoothstep(facing, horizon + 0.05, horizon + 0.2) * (1 - THREE.MathUtils.smoothstep(off, 0.8, 0.95)) * u.show;
+
       // pans pop in with a little spring the first time they're seen
-      u.grow = Math.min(1, (u.grow ?? 0) + dt * 1.6);
-      const pop = u.grow >= 1 ? 1 : 1 - Math.pow(1 - u.grow, 3) * Math.cos(u.grow * 9);
-      const scale = (1 + u.hover * 0.22 + u.active * 0.35) * (0.55 + vis * 0.45) * pop;
-      m.scale.setScalar(Math.max(0.001, scale));
-      m.visible = vis > 0.01;
-      u.ground.visible = vis > 0.01;
-      u.stem.visible = vis > 0.01;
-      u.foot.material.opacity = vis;
-      u.stem.material.opacity = vis * 0.85;
-      u.hit.visible = vis > 0.4;
+      u.grow = Math.min(1, u.grow + dt * 1.6);
+      const pop = reduce || u.grow >= 1 ? 1 : 1 - Math.pow(1 - u.grow, 3) * Math.cos(u.grow * 9);
+      const scale = hf * (isRep ? 1.22 : 1) * (1 + u.hover * 0.22 + u.active * 0.35) * (0.55 + u.vis * 0.45) * pop * u.show;
+      m.scale.setScalar(Math.max(0.0001, scale));
+      const on = u.vis > 0.01;
+      m.visible = on;
+
+      // ground ring and footprint at the true spot (or the cluster's middle)
+      u.ground.position.copy(u.gcur).multiplyScalar(RADIUS * 1.003);
+      u.ground.quaternion.setFromUnitVectors(Y_AXIS, u.gcur);
+      u.ground.scale.setScalar(hf * (isRep ? 1.25 : 1));
+      u.ground.visible = on;
+      u.foot.material.opacity = u.vis;
+
+      // the stem runs from the ground spot up to wherever the icon floats
+      from.copy(u.gcur).multiplyScalar(RADIUS * 1.003);
+      to.copy(u.cur).multiplyScalar(RADIUS * 1.003 + LIFT * hf * 0.8);
+      const len = from.distanceTo(to);
+      u.stem.visible = on && len > 1e-5;
+      if (u.stem.visible) {
+        u.stem.position.copy(from).add(to).multiplyScalar(0.5);
+        u.stem.scale.set(hf, len, hf);
+        u.stem.quaternion.setFromUnitVectors(Y_AXIS, tmp.copy(to).sub(from).normalize());
+        u.stem.material.opacity = u.vis * 0.85;
+      }
+
       const bob = reduce ? 0 : Math.sin(t * 2.2 + u.phase) * S * 0.06;
       u.inner.position.y = S * 0.42 + bob + u.hover * S * 0.12;
       u.inner.rotation.x = reduce ? 0 : Math.sin(t * 1.3 + u.phase) * 0.05;
       u.inner.rotation.z = reduce ? 0 : Math.sin(t * 1.6 + u.phase) * 0.05;
-      u.flame.material.opacity = vis * (0.5 + Math.sin(t * 13 + u.phase) * 0.12);
+      u.flame.material.opacity = u.vis * (0.5 + Math.sin(t * 13 + u.phase) * 0.12);
       u.tongues.forEach((tg, k) => {
         const f = reduce ? 1 : 0.8 + Math.sin(t * (11 + k) + u.phase + k * 1.7) * 0.22;
         tg.scale.set(1, f, 1);
       });
+      // a busy cluster steams a little faster
+      const steamRate = isRep ? 0.5 : 0.34;
       for (const p of u.puffs) {
-        const k = reduce ? 0.5 : (t * 0.34 + p.userData.offset) % 1;
+        const k = reduce ? 0.5 : (t * steamRate + p.userData.offset) % 1;
         p.position.set(Math.sin(k * 6 + u.phase) * S * 0.4, S * (0.85 + k * 2.6), Math.cos(k * 5 + u.phase) * S * 0.25);
         const s = S * (0.7 + k * 1.6);
         p.scale.set(s, s, 1);
-        p.material.opacity = vis * Math.sin(k * Math.PI) * 0.9;
+        p.material.opacity = u.vis * Math.sin(k * Math.PI) * 0.9;
       }
       const pulse = reduce ? 0.4 : (t * 0.7 + u.phase * 0.2) % 1;
       u.ring.scale.setScalar(1 + pulse * 1.4 + u.active * 0.6);
-      u.ring.material.opacity = vis * (1 - pulse) * (0.55 + u.active * 0.45);
-      u.ring.material.color.set(isSel ? 0xef6b5b : 0xffffff);
+      u.ring.material.opacity = u.vis * (1 - pulse) * (0.55 + u.active * 0.45);
+      u.band.material.opacity = u.vis * 0.9;
+      if (isSel) u.ring.material.color.set(0xef6b5b);
+      else u.ring.material.color.set(RING[u.session.group] ?? 0xffffff);
+
+      // the name tag or count badge, drawn in HTML above the pan
+      const lab = u.vis > 0.25 ? labelFor(m) : null;
+      if (!lab) {
+        if (!u.label.hidden) u.label.hidden = true;
+        u.labFade = 0;
+      } else {
+        u.label.hidden = false;
+        if (u.labelKey !== lab.key) {
+          u.labelKey = lab.key;
+          u.label.className = lab.cls;
+          u.label.textContent = lab.text;
+          u.labW = u.label.offsetWidth || 60;
+          u.labH = u.label.offsetHeight || 22;
+        }
+        tmp.copy(iconPos);
+        tmp.y += S * 1.55 * scale + 0.002;
+        const [x, y] = project(tmp);
+        u.labX = x;
+        u.labY = y;
+        u.labZ = iconPos.z;
+        tagged.push(m);
+      }
+    }
+    placeLabels(dt);
+
+    if (hovered && !tip.hidden) {
+      if (!markers.includes(hovered) || hovered.userData.vis < 0.2) setHover(null);
+      else {
+        hovered.getWorldPosition(iconPos);
+        const [x, y] = project(iconPos);
+        tip.style.transform = `translate(${x.toFixed(1)}px, ${(y + 18).toFixed(1)}px) translate(-50%, 0)`;
+      }
     }
 
     renderer.render(scene, camera);

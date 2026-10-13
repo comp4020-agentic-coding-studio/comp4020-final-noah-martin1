@@ -1,8 +1,9 @@
-import { catalogFor } from "../db.ts";
-import { DIETARY_TAGS, money, today } from "../format.ts";
+import { type Answer, answerFor, suggestions } from "../assistant.ts";
+import { all, catalogFor } from "../db.ts";
+import { DIETARY_TAGS, money, monthLabel, today } from "../format.ts";
 import { type Html, html, raw } from "../html.ts";
-import { type Ctx, HttpError, htmlReply, redirect, setFlash } from "../http.ts";
-import { estimate, perServing } from "../nutrition.ts";
+import { type Ctx, HttpError, htmlReply, redirect, setFlash, text } from "../http.ts";
+import { estimate, perServing, priceReference } from "../nutrition.ts";
 import {
   COURSES,
   cuisines,
@@ -264,6 +265,12 @@ function browsePage(ctx: Ctx): Html {
 
 const MACRO_COLOURS = { protein: "#e9a07a", carbs: "#e8c76a", fat: "#a99be0" };
 
+// "checked Oct 2026", from the newest month in the price table
+function checkedLabel(): string {
+  const label = monthLabel(priceReference().checked);
+  return label ? `, checked ${label}` : "";
+}
+
 function nutritionCard(lines: RecipeIngredient[], servings: number): Html {
   const total = estimate(lines);
   const n = perServing(total, servings);
@@ -307,7 +314,7 @@ function nutritionCard(lines: RecipeIngredient[], servings: number): Html {
       <div><small>Cost per serve</small><strong>${money(Math.round(n.costCents))}</strong></div>
       <div style="text-align: right"><small>Whole recipe</small><strong data-scale-cost data-base="${Math.round(total.costCents)}">${money(Math.round(total.costCents))}</strong></div>
     </div>
-    <p class="estimate-note">Worked out automatically from ${total.counted} of ${total.total} ingredients at typical Australian supermarket prices. Seasonings to taste aren't counted.</p>
+    <p class="estimate-note">Worked out automatically from ${total.counted} of ${total.total} ingredients at ALDI and Woolworths reference prices${checkedLabel()}. Seasonings to taste aren't counted.</p>
   </section>`;
 }
 
@@ -363,6 +370,53 @@ function planCard(ctx: Ctx, recipe: Recipe): Html {
   </section>`;
 }
 
+// "Ask about this recipe". Without JavaScript the form reloads the page with
+// the checked answer; with it, the answer arrives in place and an optional
+// on-device model (public/assistant.mjs) rewords it.
+function answerBody(a: Answer): Html {
+  return html`<p class="ask-headline">${a.headline}</p>
+    ${a.lines.length ? html`<ul class="ask-lines">${a.lines.map((l) => html`<li>${l}</li>`)}</ul>` : ""}`;
+}
+
+// Every known food word, and the ones this answer is allowed to mention: the
+// page drops a model reply that names a food outside the checked facts.
+let FOOD_WORDS: string[] | null = null;
+function foodGuard(allowedText: string): { foods: string[]; allowed: string[] } {
+  FOOD_WORDS ??= [
+    ...new Set(
+      all<{ name: string }>("SELECT name FROM ingredients")
+        .flatMap((i) => i.name.toLowerCase().split(/[^a-z]+/))
+        .concat(["tempeh", "seitan", "trout", "cod", "bass", "tuna", "beef", "pork", "lamb", "chicken", "turkey", "tofu", "lentils", "quinoa"])
+        .filter((w) => w.length > 2 && !["and", "the", "for", "with", "fresh", "dried", "ground", "whole", "large", "small", "fine", "plain", "free", "range", "extra", "virgin"].includes(w)),
+    ),
+  ];
+  const t = allowedText.toLowerCase();
+  return { foods: FOOD_WORDS, allowed: FOOD_WORDS.filter((w) => t.includes(w)) };
+}
+
+function askCard(ctx: Ctx, recipe: Recipe, lines: RecipeIngredient[]): Html {
+  const q = (ctx.url.searchParams.get("ask") ?? "").slice(0, 200);
+  const answer = q ? answerFor(recipe, lines, q, ctx.user?.id ?? null) : null;
+  return html`<section class="rd-card ask" id="ask" aria-labelledby="ask-h" data-ask="${recipe.id}">
+    <div class="rd-card-head">
+      <h2 id="ask-h"><span class="ask-spark" aria-hidden="true">${icon("spark", 16)}</span>Ask a question</h2>
+    </div>
+    <form class="ask-form" method="get" action="/recipes/${recipe.id}#ask" data-ask-form>
+      <label class="sr-only" for="ask-q">Your question</label>
+      <input id="ask-q" name="ask" maxlength="200" autocomplete="off" placeholder="Swap an ingredient, feed 6…" value="${q}" />
+      <button class="button button-small" type="submit">Ask</button>
+    </form>
+    <div class="ask-chips">${suggestions(lines).map((s) => html`<button type="button" class="rx-chip" data-ask-chip>${s}</button>`)}</div>
+    <div class="ask-answer" aria-live="polite" data-ask-answer ${answer ? "" : raw("hidden")}>${answer ? answerBody(answer) : ""}</div>
+    <div class="ask-ai" data-ask-ai hidden>
+      <button type="button" class="ask-ai-toggle" data-ask-ai-toggle aria-pressed="false">
+        <span class="ask-ai-dot"></span><span data-ask-ai-label>Say it in plain words with the on-device assistant</span>
+      </button>
+      <p class="ask-ai-note muted small">A small free model (Qwen2.5 0.5B, about 1 GB, downloaded once and cached) runs on your device's GPU. Nothing you type leaves this device for it, and it only rewords the checked answer above.</p>
+    </div>
+  </section>`;
+}
+
 function recipeDetail(ctx: Ctx, recipe: Recipe): Html {
   const lines = recipeIngredients(recipe.id);
   const steps = recipeSteps(recipe.id);
@@ -376,10 +430,10 @@ function recipeDetail(ctx: Ctx, recipe: Recipe): Html {
     order: "featured",
     limit: 6,
   });
-  const fill = more.length < 6
+  const fill = more.length < 5
     ? listVisibleRecipes(ctx.user?.id ?? null, { course: recipe.course || undefined, excludeId: recipe.id, order: "featured", limit: 12 })
         .filter((r) => !more.some((m) => m.id === r.id))
-        .slice(0, 6 - more.length)
+        .slice(0, 5 - more.length)
     : [];
   const [fallback] = tone(recipe.title);
 
@@ -452,13 +506,15 @@ function recipeDetail(ctx: Ctx, recipe: Recipe): Html {
           </div>
           <a class="button button-large" href="/recipes/${recipe.id}/cook">Cook step by step ${icon("arrow", 18)}</a>
         </section>
+
+        ${askCard(ctx, recipe, lines)}
       </div>
     </div>
 
     ${more.length + fill.length
       ? html`<section class="more-like">
           <div class="rx-meta-row"><h2>You might also like</h2><a class="muted small" href="/recipes${recipe.course ? `?course=${recipe.course}` : ""}">See all →</a></div>
-          <div class="rx-grid">${[...more, ...fill].map((r, i) => recipeTile(r, { i }))}</div>
+          <div class="rx-grid more-like-grid">${[...more, ...fill].slice(0, 5).map((r, i) => recipeTile(r, { i }))}</div>
         </section>`
       : ""}
   </article>`;
@@ -598,7 +654,30 @@ export const routes: Route[] = [
     path: "/recipes/:id",
     handler: (ctx) => {
       const recipe = visibleRecipe(ctx);
-      return htmlReply(page(ctx, { title: recipe.title, active: "recipes", body: recipeDetail(ctx, recipe) }));
+      return htmlReply(
+        page(ctx, {
+          title: recipe.title,
+          active: "recipes",
+          body: recipeDetail(ctx, recipe),
+          headExtra: html`<script type="module" src="/assets/assistant.mjs"></script>`,
+        }),
+      );
+    },
+  },
+  {
+    // the checked answer as JSON, for the in-page assistant
+    method: "GET",
+    path: "/recipes/:id/ask",
+    handler: (ctx) => {
+      const recipe = visibleRecipe(ctx);
+      const q = (ctx.url.searchParams.get("q") ?? "").slice(0, 200);
+      if (!q.trim()) return text("Ask a question.", 400);
+      const a = answerFor(recipe, recipeIngredients(recipe.id), q, ctx.user?.id ?? null);
+      return {
+        status: 200,
+        headers: { "content-type": "application/json; charset=utf-8", "cache-control": "no-store" },
+        body: JSON.stringify({ ...a, html: answerBody(a).value, guard: foodGuard(a.facts + " " + q) }),
+      };
     },
   },
   {
