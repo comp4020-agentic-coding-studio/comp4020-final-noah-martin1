@@ -417,6 +417,30 @@ function askCard(ctx: Ctx, recipe: Recipe, lines: RecipeIngredient[]): Html {
   </section>`;
 }
 
+// The how-to video. A catalogue recipe shows only the one TheMealDB links to
+// that meal and YouTube confirmed embeddable (src/videos.ts); an author's own
+// link is labelled as theirs. With neither, say so rather than guess.
+function videoCard(recipe: Recipe): Html {
+  const id = recipe.video_id;
+  if (id && (recipe.video_status === "verified" || recipe.video_status === "user")) {
+    const watch = `https://www.youtube.com/watch?v=${id}`;
+    return html`<section class="rd-card rd-video" aria-labelledby="video-h">
+      <div class="rd-card-head"><h2 id="video-h">Watch it made</h2></div>
+      <div class="rd-video-frame">
+        <iframe src="https://www.youtube-nocookie.com/embed/${id}" title="${recipe.video_title ?? `Video for ${recipe.title}`}" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>
+      </div>
+      <p class="estimate-note">${recipe.video_status === "verified"
+        ? html`Video linked to this recipe by TheMealDB · checked ${recipe.video_checked ?? ""}${recipe.video_channel ? html` · ${recipe.video_channel}` : ""}. We confirmed it exists, can be embedded and is titled for this dish. We can't watch it: its amounts and units may differ from the metric quantities above.`
+        : html`Added by the recipe's author — not checked against the recipe.`}
+        <a href="${watch}" rel="noopener noreferrer" target="_blank">Can't see it? Open on YouTube</a></p>
+    </section>`;
+  }
+  return html`<section class="rd-card rd-video" aria-labelledby="video-h">
+    <div class="rd-card-head"><h2 id="video-h">Watch it made</h2></div>
+    <p class="muted small">No matching video available for this recipe.</p>
+  </section>`;
+}
+
 function recipeDetail(ctx: Ctx, recipe: Recipe): Html {
   const lines = recipeIngredients(recipe.id);
   const steps = recipeSteps(recipe.id);
@@ -498,6 +522,8 @@ function recipeDetail(ctx: Ctx, recipe: Recipe): Html {
           </ol>
         </section>
 
+        ${videoCard(recipe)}
+
         <section class="cook-cta">
           <div class="cook-cta-art">${icon("cook", 32)}</div>
           <div>
@@ -575,6 +601,9 @@ function recipeForm(ctx: Ctx, input: Partial<RecipeInput>, problems: string[], r
                 </div>
               </fieldset>
             </div>
+            <label class="field"><span>YouTube video (optional)</span>
+              <input name="video_url" type="url" maxlength="200" inputmode="url" placeholder="https://www.youtube.com/watch?v=…" value="${input.video_id ? `https://www.youtube.com/watch?v=${input.video_id}` : ""}" />
+              <small>Shown on the recipe page, labelled as yours. Make sure it's the same dish.</small></label>
             <fieldset class="field">
               <legend>Dietary tags</legend>
               <div class="chips">

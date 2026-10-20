@@ -4,6 +4,7 @@ import { extname } from "node:path";
 import { userForSession } from "./auth.ts";
 import { seedCatalogue } from "./catalogue.ts";
 import { db } from "./db.ts";
+import { seedVideos } from "./video-seed.ts";
 import { DEMO_MODE, seedDemo } from "./demo.ts";
 import {
   type Ctx,
@@ -189,6 +190,8 @@ const server = createServer(async (req, res) => {
 
 const catalogued = seedCatalogue();
 if (catalogued) console.log(`catalogue: added ${catalogued} recipes`);
+const videos = seedVideos();
+if (videos) console.log(`videos: updated ${videos} catalogue recipes`);
 if (DEMO_MODE) await seedDemo();
 
 server.listen(port, "0.0.0.0", () => {

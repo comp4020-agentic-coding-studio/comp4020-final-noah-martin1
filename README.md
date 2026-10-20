@@ -109,6 +109,14 @@ without making the core loop (know what you have, cook it, share it) better.
   duplicated were left out (33 in all). Ingredient names, amounts and steps
   were cleaned into metric units and short steps; brand names in titles were
   made generic.
+- **Recipe videos:** a catalogue recipe shows only the video TheMealDB itself
+  links to that meal (`strYoutube`), and only if YouTube's oEmbed endpoint
+  confirms it exists and can be embedded and its title shares the dish's key
+  words (`scripts/fetch-videos.ts`, `src/videos.ts`; results with the check
+  date in `src/data/videos.json`). We can't watch videos, so this does not
+  prove every amount agrees with the metric-converted recipe, and the page says
+  so. Recipes with no passing video say none is available. A video an author
+  adds themselves is labelled as theirs and not checked.
 - **Nutrition:** calories, protein, carbs and fat per 100 g for about 500
   ingredients (`src/nutrition.ts`), rounded from USDA FoodData Central
   reference values, with dry goods at uncooked values. 94.6% of ingredient

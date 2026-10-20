@@ -1,5 +1,6 @@
 import { all, ingredientId, one, run, transaction } from "./db.ts";
 import { DIETARY_TAGS } from "./format.ts";
+import { parseYouTubeId } from "./videos.ts";
 import { visibleRecipeSql } from "./visibility.ts";
 
 export interface Recipe {
@@ -21,6 +22,11 @@ export interface Recipe {
   // sum of the steps' timings
   cook_minutes: number;
   source: string | null;
+  video_id: string | null;
+  video_title: string | null;
+  video_channel: string | null;
+  video_checked: string | null;
+  video_status: "verified" | "unavailable" | "rejected" | "user" | null;
   ingredient_count?: number;
   step_count?: number;
 }
@@ -59,6 +65,8 @@ export interface RecipeInput {
   dietary_tags: string[];
   ingredients: { name: string; quantity: number | null; unit: string; optional: boolean }[];
   steps: { text: string; est_minutes: number | null }[];
+  // undefined: leave the recipe's video alone; null: remove it; string: attach this id
+  video_id?: string | null;
 }
 
 const SELECT = `SELECT r.*, u.username AS author_username, u.display_name AS author_name,
@@ -259,10 +267,33 @@ export function parseRecipeForm(form: URLSearchParams): { input: RecipeInput; pr
   });
   if (!steps.length) problems.push("Add at least one step.");
 
+  // Optional. Blank clears it; anything else must be a YouTube video address.
+  let video_id: string | null | undefined;
+  if (form.has("video_url")) {
+    const raw = (form.get("video_url") ?? "").trim();
+    if (raw === "") video_id = null;
+    else {
+      video_id = parseYouTubeId(raw);
+      if (!video_id) problems.push("The video link must be a YouTube video address, like https://www.youtube.com/watch?v=…");
+    }
+  }
+
   return {
-    input: { title, description, servings, visibility, dietary_tags: tags, ingredients, steps },
+    input: { title, description, servings, visibility, dietary_tags: tags, ingredients, steps, video_id },
     problems,
   };
+}
+
+// An author's own link: kept as theirs ("user"), never presented as checked.
+function setVideo(recipeId: number, videoId: string | null): void {
+  if (videoId === null) {
+    run("UPDATE recipes SET video_id = NULL, video_title = NULL, video_channel = NULL, video_checked = NULL, video_status = NULL WHERE id = ?", recipeId);
+  } else {
+    run(
+      "UPDATE recipes SET video_id = ?, video_title = NULL, video_channel = NULL, video_checked = NULL, video_status = 'user' WHERE id = ?",
+      videoId, recipeId,
+    );
+  }
 }
 
 export function saveRecipe(authorId: number, input: RecipeInput, recipeId?: number): number {
@@ -275,12 +306,14 @@ export function saveRecipe(authorId: number, input: RecipeInput, recipeId?: numb
          VALUES (?, ?, ?, ?, ?, ?)`,
         authorId, input.title, input.description, input.servings, input.visibility, tags,
       ).id;
+      if (input.video_id) setVideo(id, input.video_id);
     } else {
       run(
         `UPDATE recipes SET title = ?, description = ?, servings = ?, visibility = ?, dietary_tags = ?,
          updated_at = datetime('now') WHERE id = ? AND author_id = ?`,
         input.title, input.description, input.servings, input.visibility, tags, id, authorId,
       );
+      if (input.video_id !== undefined) setVideo(id, input.video_id);
       run("DELETE FROM recipe_ingredients WHERE recipe_id = ?", id);
       run("DELETE FROM recipe_steps WHERE recipe_id = ?", id);
     }
