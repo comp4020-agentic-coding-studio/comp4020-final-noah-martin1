@@ -95,3 +95,24 @@ describe("recipe videos", () => {
     expect((await new Client().get(`/recipes/${id}`)).status).toBe(404);
   });
 });
+
+describe("videoMatches: same dish, different words", () => {
+  it.each([
+    ["Ma Po Tofu", "How to Make Mapo Tofu (Mabo Dofu Recipe)"],
+    ["Lasagne", "The Best Meat Lasagna Recipe"],
+    ["Bang bang prawn salad", "Bang Bang Shrimp Salad"],
+    ["Beef pho", "Legit Vietnamese Pho At Home"],
+    ["Borsch", "Classic Ukrainian Borscht Recipe"],
+    ["Baba Ghanoush", "Baba Ganoush (creamy eggplant dip)"],
+    ["Spanish Tortilla", "Ultimate Spanish Omelette"],
+  ])("%s ≈ %s", (recipe, video) => expect(videoMatches(recipe, video)).toBe(true));
+
+  it.each([
+    ["Double cheeseburger with special sauce", "How to make a McDonald's Big Mac"],
+    ["Beef and Mustard Pie", "James Martin Home Comforts 17/02/14"],
+    ["Chicken Couscous", "Tasty Turkish Couscous"],
+    ["Fennel Dauphinoise", "Potato and Courgette Dauphinoise"],
+    ["Stuffed Lamb Tomatoes", "Rice-Stuffed Baked Tomatoes"],
+    ["Dundee cake", "Traditional English Christmas Cake"],
+  ])("%s is not %s", (recipe, video) => expect(videoMatches(recipe, video)).toBe(false));
+});

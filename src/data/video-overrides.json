@@ -1,0 +1,71 @@
+{
+ "_note": "Per-recipe decisions after a person read each recipe beside its video's title (2026-10-21). They win over videoMatches when scripts/rejudge-videos.ts runs.",
+ "themealdb:53327": {
+  "status": "rejected",
+  "reason": "the video is a Brazilian coconut chicken, a different dish"
+ },
+ "themealdb:52864": {
+  "status": "rejected",
+  "reason": "the video's rotolo is spinach and mushroom, without chestnut"
+ },
+ "themealdb:53243": {
+  "status": "rejected",
+  "reason": "the video makes fried spring rolls, not spiralized fresh rolls"
+ },
+ "themealdb:52779": {
+  "status": "rejected",
+  "reason": "the video is a bakery brand film, not a recipe"
+ },
+ "themealdb:52780": {
+  "status": "rejected",
+  "reason": "the video's chicken gratin isn't confirmed to be a potato gratin"
+ },
+ "themealdb:53112": {
+  "status": "rejected",
+  "reason": "the video is a fried meat stew (mchuzi wa nyama ya kukaanga); the method may differ"
+ },
+ "themealdb:52809": {
+  "status": "rejected",
+  "reason": "the video makes only the masala paste, not the fish"
+ },
+ "themealdb:53278": {
+  "status": "rejected",
+  "reason": "the video is hummus with roasted eggplant, not the grill"
+ },
+ "themealdb:52796": {
+  "status": "rejected",
+  "reason": "the video is a pasta primavera without the Alfredo sauce"
+ },
+ "themealdb:53245": {
+  "status": "rejected",
+  "reason": "a generic noodle salad; can't confirm it's this recipe"
+ },
+ "themealdb:52972": {
+  "status": "rejected",
+  "reason": "the video is a lamb stew with chickpeas (mermez); a soup and a stew differ"
+ },
+ "themealdb:53033": {
+  "status": "rejected",
+  "reason": "the video is takikomi gohan (mixed rice); plain gohan differs"
+ },
+ "themealdb:53221": {
+  "status": "verified",
+  "reason": "kept: maamoul cookies for Eid are this recipe"
+ },
+ "themealdb:53412": {
+  "status": "verified",
+  "reason": "the video is mish e lakra, the same cabbage and meat stew"
+ },
+ "themealdb:53347": {
+  "status": "verified",
+  "reason": "the video is a rum raisin ice cream"
+ },
+ "themealdb:53410": {
+  "status": "verified",
+  "reason": "the video is tave me presha e oriz, the same leek and rice bake"
+ },
+ "themealdb:53115": {
+  "status": "verified",
+  "reason": "pickled red onions are this recipe"
+ }
+}
