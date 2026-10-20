@@ -1,3 +1,4 @@
+import { JSDOM } from "jsdom";
 import { describe, expect, it } from "vitest";
 import { registered } from "./helpers.ts";
 
@@ -29,6 +30,28 @@ describe("pantry", () => {
     const res = await client.post("/pantry", { name: "milk", unit: "ml", expiry_date: "", ...fields });
     expect(res.status).toBe(422);
     expect(await (await client.get("/pantry")).text()).toContain("Your pantry is empty");
+  });
+
+  // Adding works from the fridge screen itself: its side panel holds a real
+  // form posting to the same route, and without JS the button is a plain
+  // link down to the form below the scene.
+  it("the fridge screen has its own add form, which saves like the one below", async () => {
+    const { client } = await registered();
+    const page = new JSDOM(await (await client.get("/pantry")).text()).window.document;
+    const button = page.querySelector("[data-kitchen] a[data-kx-add]");
+    expect(button?.getAttribute("href")).toBe("#add");
+    expect(page.querySelector("#add form[action='/pantry']")).not.toBeNull();
+
+    const form = page.querySelector("[data-kitchen] form[data-kx-add-form]");
+    expect(form?.getAttribute("method")).toBe("post");
+    expect(form?.getAttribute("action")).toBe("/pantry");
+    const names = [...(form?.querySelectorAll("[name]") ?? [])].map((f) => f.getAttribute("name"));
+    expect(names).toEqual(expect.arrayContaining(["name", "quantity", "unit", "expiry_date", "price"]));
+
+    const res = await client.post("/pantry", { name: "Greek yoghurt", quantity: "500", unit: "g", expiry_date: "2030-01-01", price: "5.20" });
+    expect(res.status).toBe(200);
+    const scene = new JSDOM(await res.text()).window.document.getElementById("kitchen-data")?.textContent ?? "[]";
+    expect(JSON.parse(scene)).toEqual([expect.objectContaining({ name: "greek yoghurt", place: "fridge", qty: expect.stringContaining("500") })]);
   });
 
   it("one person's pantry is invisible to and unchangeable by another", async () => {

@@ -4,6 +4,8 @@
 // with DOM events: globe:select / globe:cluster (from it) and globe:focus /
 // globe:filter / globe:upsert / globe:remove (to it). Also runs the single
 // session page (/global/:id), which has a card but no globe.
+import { tickClocks } from "./localclock.mjs";
+
 const root = document.querySelector("[data-gl]");
 const stage = document.querySelector("[data-globe]");
 const data = JSON.parse(document.getElementById("globe-data")?.textContent ?? "[]");
@@ -124,6 +126,19 @@ function start() {
     return t.content.firstElementChild;
   };
 
+  // A step change arrives as fresh markup; carry each progress bar's old
+  // width over and let it slide to the new one instead of jumping.
+  const barsOf = (el) => [...(el?.querySelectorAll(".progress") ?? [])];
+  function slideBars(before, after) {
+    after.forEach((bar, i) => {
+      const was = before[i]?.style.getPropertyValue("--p");
+      const now = bar.style.getPropertyValue("--p");
+      if (!was || was === now) return;
+      bar.style.setProperty("--p", was);
+      requestAnimationFrame(() => requestAnimationFrame(() => bar.style.setProperty("--p", now)));
+    });
+  }
+
   const inflight = new Map();
   async function refresh(id, v) {
     if (v && versions.get(id) === v) return;
@@ -158,7 +173,9 @@ function start() {
       const existing = rowFor(id);
       if (existing && existing.parentElement === list) {
         row.querySelector("[data-session]")?.classList.toggle("active", open === id);
+        const was = barsOf(existing);
         existing.replaceWith(row);
+        slideBars(was, barsOf(row));
       } else {
         existing?.remove();
         list?.prepend(row);
@@ -172,7 +189,9 @@ function start() {
       for (const [part, markup] of Object.entries(card.parts)) {
         const el = current.querySelector(`[data-part="${part}"]`);
         if (el && el.innerHTML !== markup) {
+          const was = barsOf(el).map((b) => b.cloneNode());
           el.innerHTML = markup;
+          slideBars(was, barsOf(el));
           if (part === "step" && before && before.step !== card.marker.step) {
             el.classList.remove("bump");
             void el.offsetWidth;
@@ -321,6 +340,13 @@ function start() {
 
   apply();
   connect();
+
+  // each cook's local time ("7:42 pm · dinner") ticks over on the minute
+  const tick = () => {
+    tickClocks(root);
+    setTimeout(tick, 60000 - (Date.now() % 60000) + 50);
+  };
+  setTimeout(tick, 60000 - (Date.now() % 60000) + 50);
 
   // a shared link (#live-104) opens straight onto that session
   if (!solo) {

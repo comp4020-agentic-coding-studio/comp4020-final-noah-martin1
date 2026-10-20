@@ -286,6 +286,43 @@ describe("live cooking: one page", () => {
     expect(one.headers.get("location")).toBe("/global#live-42");
   });
 
+  it("every cook carries their local time, and demo cooks only cook in waking hours", async () => {
+    type Marker = { id: string; city: string; offset: number | null };
+    const at = async (iso: string) =>
+      ((await (await new Client().get(`/global/sessions.json?at=${encodeURIComponent(iso)}`)).json()) as { sessions: Marker[] }).sessions.filter((s) => s.id.startsWith("demo-"));
+    const hourThere = (iso: string, offset: number) => (((new Date(iso).getUTCHours() * 60 + new Date(iso).getUTCMinutes() + offset) % 1440) + 1440) % 1440 / 60;
+    const seen = new Set<string>();
+    // four moments a quarter of a day apart: someone's awake at each, and
+    // nobody's shown cooking between 11 pm and 6 am their time
+    for (const iso of ["2026-10-16T00:00:00Z", "2026-10-16T06:00:00Z", "2026-10-16T12:00:00Z", "2026-10-16T18:00:00Z"]) {
+      const cooks = await at(iso);
+      expect(cooks.length, iso).toBeGreaterThan(0);
+      for (const c of cooks) {
+        expect(typeof c.offset, `${c.city} has a time zone`).toBe("number");
+        const h = hourThere(iso, c.offset!);
+        expect(h >= 6 && h < 23, `${c.city} at ${iso} is ${h.toFixed(1)}h local`).toBe(true);
+        seen.add(c.id);
+      }
+    }
+    // and over a day the cast changes as the evening moves west
+    const morning = new Set((await at("2026-10-16T00:00:00Z")).map((c) => c.id));
+    const evening = new Set((await at("2026-10-16T12:00:00Z")).map((c) => c.id));
+    expect([...morning].some((id) => !evening.has(id))).toBe(true);
+    expect(seen.size).toBeGreaterThan(morning.size);
+  });
+
+  it("the globe page says each cook's local time and mealtime", async () => {
+    const cook = await registered("cook");
+    // London's zone, whatever the clock says: the page shows its offset and a meal
+    const id = await goLive(cook, await createRecipe(cook.client, `Clock ${cook.username}`, "public"), "public", "london");
+    const card = (await (await cook.client.request(`/global/${id}/card`, { headers: { accept: "application/json" } })).json()) as { marker: { offset: number }; detail: string };
+    expect([0, 60]).toContain(card.marker.offset);
+    expect(card.detail).toMatch(/class="gl-local gl-local-(breakfast|lunch|afternoon|dinner|late|night)" data-local="(0|60)" data-meal><time>\d{1,2}:\d{2} (am|pm)<\/time> there <span>/);
+    const page = await (await new Client().get("/global")).text();
+    expect(page).toContain("data-daylight");
+    await postJson(cook.client, `/live/${id}/end`);
+  });
+
   it("demo cooks stay under the preview banner, and real ones carry no caveat", async () => {
     const cook = await registered("cook");
     const id = await goLive(cook, await createRecipe(cook.client, `Real ${cook.username}`, "public"), "public");

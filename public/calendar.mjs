@@ -34,8 +34,12 @@ async function go(url, { push = true, kind = "nav" } = {}) {
     planButton?.removeAttribute("aria-busy");
   }
   if (pending !== controller) return;
+  settleFlip?.();
+  // a week-to-week move turns the day cards over instead of cross-fading
+  const dir = kind === "nav" && !reduced.matches ? flipDirection(region("grid"), region("grid", doc)) : 0;
   const swap = () => {
     for (const name of REGIONS) {
+      if (dir && name === "grid") continue;
       const next = region(name, doc);
       const current = region(name);
       if (next && current) current.replaceWith(next);
@@ -44,9 +48,17 @@ async function go(url, { push = true, kind = "nav" } = {}) {
     document.title = doc.title;
   };
   if (push) history.pushState({ cal: true }, "", url);
-  if (document.startViewTransition && !reduced.matches && kind === "nav") document.startViewTransition(swap);
-  else swap();
-  centreToday();
+  // the pager is redrawn with the header; keep keyboard focus on the arrow
+  const pagerDir = document.activeElement?.closest?.(".cal-pager [data-dir]")?.getAttribute("data-dir");
+  if (dir) {
+    flipWeek(region("grid"), region("grid", doc), dir);
+    swap();
+  } else {
+    if (document.startViewTransition && !reduced.matches && kind === "nav") document.startViewTransition(swap);
+    else swap();
+    centreToday();
+  }
+  if (pagerDir) document.querySelector(`.cal-pager [data-dir="${pagerDir}"]`)?.focus({ preventScroll: true });
   if (kind === "plan") {
     const result = document.querySelector(".cal-plan");
     if (result && result.getBoundingClientRect().top > window.innerHeight * 0.8) {
@@ -193,12 +205,82 @@ function syncQuick(doc) {
   searchNow();
 }
 
+/* ---------------- week change: the day cards flip over ---------------- */
+
+// +1 going forward in time, -1 going back, 0 when the move isn't between two
+// different weeks (month view, or the same week again)
+function flipDirection(current, next) {
+  if (!current?.matches(".cal-week") || !next?.matches(".cal-week")) return 0;
+  if (current.children.length !== next.children.length) return 0;
+  const first = (grid) => grid.querySelector(".cal-dnum")?.id ?? "";
+  const a = first(current);
+  const b = first(next);
+  return a === b ? 0 : b > a ? 1 : -1;
+}
+
+// Each card turns away on its own axis, one after another, and the new day
+// turns in on its back with a small overshoot, like a flip-board: columns
+// (desktop) turn sideways, stacked rows (phones) flip over top to bottom. A
+// second week change mid-flip settles this one at once first.
+let settleFlip = null;
+
+function flipWeek(current, next, dir) {
+  const olds = [...current.children];
+  const news = [...next.children];
+  const placed = new Set();
+  const outs = [];
+  // no entrance animations mid-flip: the turn is the entrance (and the old
+  // meals would otherwise replay their rise-in as the loading shimmer ends)
+  for (const card of [...olds, ...news]) card.classList.add("is-flipped");
+  // keep the scroll on today (phones), measured on the cards still showing
+  centreToday(news.findIndex((c) => c.classList.contains("is-today")));
+  // hold the row's height while cards change, then ease to the new week's
+  const from = current.offsetHeight;
+  current.style.minHeight = `${from}px`;
+  const place = (i) => {
+    if (placed.has(i)) return;
+    placed.add(i);
+    olds[i].replaceWith(news[i]);
+    if (placed.size === olds.length) {
+      current.replaceWith(next);
+      next.replaceChildren(...news);
+      const to = next.offsetHeight;
+      if (to < from - 1) next.animate([{ height: `${from}px` }, { height: `${to}px` }], { duration: 320, easing: "cubic-bezier(0.2, 0.8, 0.2, 1)" });
+      settleFlip = null;
+    }
+    return news[i];
+  };
+  const axis = olds[0] && olds[0].offsetWidth > olds[0].offsetHeight ? "X" : "Y";
+  const turn = (deg) => `perspective(1100px) rotate${axis}(${axis === "X" ? -deg : deg}deg)`;
+  olds.forEach((card, i) => {
+    const out = card.animate(
+      [{ transform: turn(0) }, { transform: turn(-90 * dir), opacity: 0.55 }],
+      { duration: 200, delay: i * 40, easing: "cubic-bezier(0.55, 0, 0.8, 0.3)", fill: "forwards" },
+    );
+    outs.push(out);
+    out.finished.then(() => {
+      const card = place(i);
+      card?.animate(
+        [{ transform: turn(90 * dir), opacity: 0.55 }, { transform: turn(0), opacity: 1 }],
+        { duration: 440, easing: "cubic-bezier(0.3, 1.35, 0.55, 1)" },
+      );
+    }, () => {});
+  });
+  settleFlip = () => {
+    outs.forEach((a) => a.cancel());
+    olds.forEach((_, i) => place(i));
+  };
+}
+
 /* ---------------- phones: open the week on today ---------------- */
 
-function centreToday() {
+// `at` is the column to show (today's, or -1 for none) when the cards in the
+// grid are about to be replaced; otherwise it's read from the grid
+function centreToday(at) {
   const week = document.querySelector(".cal-week");
-  const todayCol = week?.querySelector(".cal-day.is-today");
   if (!week || week.scrollWidth <= week.clientWidth + 4) return;
+  const cols = [...week.children];
+  const todayCol = at === undefined ? week.querySelector(".cal-day.is-today") : cols[at];
   const pad = parseFloat(getComputedStyle(week).paddingLeft) || 0;
   week.scrollLeft = todayCol ? todayCol.offsetLeft - pad : 0;
 }

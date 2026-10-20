@@ -119,9 +119,17 @@ without making the core loop (know what you have, cook it, share it) better.
   (October 2026). 54 staples are shelf prices from named ALDI and Woolworths
   listings; the rest are labelled typical everyday prices. Neither store has
   a public price API, so prices are references, not live.
-- **Globe:** coastlines from [Natural Earth](https://www.naturalearthdata.com/)
-  (public domain), drawn with [three.js](https://threejs.org/) (MIT, licence
-  in `public/vendor/THREE-LICENSE`).
+- **Globe:** NASA imagery, all public domain, from
+  [NASA Visible Earth](https://visibleearth.nasa.gov/): Blue Marble Next
+  Generation (October, topography and bathymetry; Reto Stöckli, NASA Earth
+  Observatory) by day, Black Marble 2016 city lights by night, GEBCO_08
+  elevation for the relief, and the Blue Marble cloud composite.
+  `scripts/build-earth.py` turns the downloads into the WebP textures in
+  `public/textures/`. The sun's position comes from the standard
+  low-precision solar formulas, so day, night and dusk sit where they really
+  are right now; each cook's local time uses their city's IANA time zone.
+  Drawn with [three.js](https://threejs.org/) (MIT, licence in
+  `public/vendor/THREE-LICENSE`).
 - **On-device assistant:** [Qwen2.5-0.5B-Instruct](https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct)
   (Apache-2.0) via [transformers.js](https://github.com/huggingface/transformers.js)
   (Apache-2.0), loaded only when a visitor switches it on.

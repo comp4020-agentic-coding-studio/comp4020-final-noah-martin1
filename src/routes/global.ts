@@ -3,6 +3,7 @@ import type { IncomingMessage, ServerResponse } from "node:http";
 import { ago } from "../format.ts";
 import { type Html, html, raw } from "../html.ts";
 import { type Ctx, HttpError, htmlReply, json, type Reply, redirect, setFlash } from "../http.ts";
+import { type LocalTime, localTime, MEAL_LABEL } from "../localtime.ts";
 import {
   answerQuestion,
   askQuestion,
@@ -71,6 +72,8 @@ export interface GlobeSession {
   questions: ThreadItem[];
   visibility: "public" | "friends" | "private";
   v: string;
+  // what time it is where they are ("7:42 pm", dinner), when that's known
+  local: LocalTime | null;
   // signed-in viewers: how many of this recipe's ingredients they have
   have?: number;
   total?: number;
@@ -133,20 +136,29 @@ function realSessions(viewer: Viewer, rows: CookSession[] = openSessions().filte
       questions: questionsFor(s.id).map((q) => ({ who: q.asker_name, text: q.text, answer: q.answer ?? undefined, when: ago(q.asked_at) })),
       visibility: s.visibility,
       v: sessionVersion(s),
+      local: localTime(s.city, s.lat, s.lng),
     };
     return withPantry(g, viewer.id, ing);
   });
 }
 
+// Demo cooks keep sensible hours: nobody's shown making carbonara at 3 am
+// local time. Over a day the globe's cooks move west with the evening.
+export function awakeAt(local: LocalTime | null): boolean {
+  return !local || (local.hour >= 6 && local.hour < 23);
+}
+
 // Sample cooks joined to their real catalogue recipes; a sample whose recipe
-// isn't in the catalogue is skipped, so a link is never dead.
-function demoSessions(viewerId: number | null): GlobeSession[] {
+// isn't in the catalogue is skipped, so a link is never dead. Only those for
+// whom it's a waking hour are cooking (`now` is for the spec).
+function demoSessions(viewerId: number | null, now = new Date()): GlobeSession[] {
   const recipes = catalogueByTitle([...new Set(GLOBAL_SESSIONS.map((s) => s.recipe))]);
   const lines = ingredientsFor([...recipes.values()].map((r) => r.id));
   const out: GlobeSession[] = [];
   for (const s of GLOBAL_SESSIONS) {
     const r = recipes.get(s.recipe);
-    if (!r) continue;
+    const local = localTime(s.city, s.lat, s.lng, now);
+    if (!r || !awakeAt(local)) continue;
     const steps = recipeSteps(r.id).map((x) => x.text);
     const ing = lines.get(r.id) ?? [];
     const g: GlobeSession = {
@@ -175,14 +187,15 @@ function demoSessions(viewerId: number | null): GlobeSession[] {
       questions: s.questions as SampleGlobalSession["questions"],
       visibility: "public",
       v: "demo",
+      local,
     };
     out.push(withPantry(g, viewerId, ing));
   }
   return out;
 }
 
-function allSessions(viewer: Viewer): GlobeSession[] {
-  return [...realSessions(viewer), ...demoSessions(viewer.id)].sort((a, b) => GROUP_ORDER[a.group] - GROUP_ORDER[b.group]);
+function allSessions(viewer: Viewer, now?: Date): GlobeSession[] {
+  return [...realSessions(viewer), ...demoSessions(viewer.id, now)].sort((a, b) => GROUP_ORDER[a.group] - GROUP_ORDER[b.group]);
 }
 
 // How many people are cooking each recipe right now, worldwide (sessions
@@ -203,6 +216,13 @@ function tag(s: GlobeSession): Html {
     : html`<span class="gl-tag gl-tag-demo" title="Sample data">Demo</span>`;
 }
 
+// "7:42 pm there" with a "dinner" pill, kept ticking by the page (data-local holds the
+// zone's offset from UTC in minutes)
+function clock(s: GlobeSession, withMeal = true): Html {
+  if (!s.local) return html``;
+  return html`<span class="gl-local gl-local-${s.local.meal}" data-local="${s.local.offset}" ${withMeal ? raw("data-meal") : ""}><time>${s.local.time}</time>${withMeal ? html` there <span>${MEAL_LABEL[s.local.meal]}</span>` : ""}</span>`;
+}
+
 function place(s: GlobeSession): string {
   return s.city ? (s.country && !s.city.startsWith("near ") ? `${s.city}, ${s.country}` : s.city) : "Location not shared";
 }
@@ -213,7 +233,7 @@ function row(s: GlobeSession): Html {
       <span class="gl-thumb">${s.image ? html`<img src="${s.image}/small" alt="" loading="lazy" />` : html`<span class="gl-thumb-fallback">${s.recipe.slice(0, 1)}</span>`}<span class="live-dot"></span></span>
       <span class="gl-row-text">
         <strong>${s.recipe}</strong>
-        <small>${s.group === "mine" ? "You" : firstName(s.cook)} · ${s.city || "on the move"}</small>
+        <small>${s.group === "mine" ? "You" : firstName(s.cook)} · ${s.city || "on the move"}${s.local ? html` · ${clock(s, false)}` : ""}</small>
         <span class="gl-row-step"><span class="progress" style="--p: ${pct(s)}%"><span></span></span><em>Step ${s.step}/${s.steps.length}</em></span>
       </span>
       <span class="gl-row-side">${tag(s)}${s.help ? html`<span class="gl-help-dot" title="Asking for help">?</span>` : ""}</span>
@@ -222,7 +242,7 @@ function row(s: GlobeSession): Html {
 }
 
 function metaPart(s: GlobeSession): Html {
-  return html`<span>${icon("users", 14)} Cooking for ${s.serves}</span><span>${icon("live", 14)} <b data-watch-count="${s.id}">${s.watching}</b> watching</span>${s.cuisine ? html`<span>${s.cuisine}</span>` : ""}`;
+  return html`${s.local ? html`<span>${icon("clock", 14)} ${clock(s)}</span>` : ""}<span>${icon("users", 14)} Cooking for ${s.serves}</span><span>${icon("live", 14)} <b data-watch-count="${s.id}">${s.watching}</b> watching</span>${s.cuisine ? html`<span>${s.cuisine}</span>` : ""}`;
 }
 
 function stepPart(s: GlobeSession): Html {
@@ -345,6 +365,8 @@ function marker(s: GlobeSession) {
     help: !!s.help,
     step: s.step,
     steps: s.steps.length,
+    // minutes from UTC where they are, for the globe's local-time label
+    offset: s.local?.offset ?? null,
     v: s.v,
   };
 }
@@ -392,7 +414,7 @@ function globePage(ctx: Ctx): Html {
 
   return html`
     <section class="gl" data-gl data-stream="/global/stream" ${signedIn ? raw("data-signed-in") : ""}>
-      <div class="gl-stage" data-globe data-mask="/assets/textures/earth-mask.png">
+      <div class="gl-stage" data-globe data-textures="/assets/textures/">
         <canvas aria-label="Globe of people cooking live around the world. Use the list to browse sessions."></canvas>
         <div class="gl-pins" data-pins aria-hidden="false"></div>
         <div class="gl-zoom" role="group" aria-label="Zoom">
@@ -407,6 +429,7 @@ function globePage(ctx: Ctx): Html {
         <p class="eyebrow"><span class="live-dot"></span> <span><b data-stat="live">${real.length}</b> cooking live${demo.length ? ` · ${demo.length} demo cooks` : ""}</span></p>
         <h1>Cooking, live,<br />all over the world.</h1>
         <p class="lede">Spin the globe and tap a pan to see what someone's making, the step they're on, and ask them anything. Friends show up first.</p>
+        <p class="gl-daylight" data-daylight>${icon("clock", 14)} <span class="gl-daylight-long">The globe is lit as it is right now: day where the sun is up, city lights where it's night, so you can see who's cooking lunch and who's cooking dinner.</span><span class="gl-daylight-short">Lit live: lunch in daylight, dinner by city lights</span></p>
         <dl class="gl-stats">
           <div><dt>Live now</dt><dd data-stat="live">${real.length}</dd></div>
           <div><dt>Countries</dt><dd>${countries}</dd></div>
@@ -740,7 +763,11 @@ export const routes: Route[] = [
     // the same sessions the page shows, for scripts and the spec
     method: "GET",
     path: "/global/sessions.json",
-    handler: (ctx) => json({ sessions: allSessions(viewerFor(ctx)).map(marker) }),
+    handler: (ctx) => {
+      // ?at=<ISO time> asks who'd be cooking then (demo cooks keep local hours)
+      const at = new Date(ctx.url.searchParams.get("at") ?? "");
+      return json({ sessions: allSessions(viewerFor(ctx), Number.isNaN(at.getTime()) ? undefined : at).map(marker) });
+    },
   },
   { method: "POST", path: "/global/watch", handler: watch },
   {

@@ -1,9 +1,11 @@
-// The live globe: a pastel Earth built from Natural Earth coastlines, with a
-// little steaming pan wherever someone is cooking right now. Drag to spin,
-// scroll or pinch to zoom, click a pan to open its card. Progressive: the
-// page lists every session without this script.
+// The live globe: the real Earth from NASA imagery, lit by the sun as it is
+// right now (day, night and city lights), with a little steaming pan
+// wherever someone is cooking. Drag to spin, scroll or pinch to zoom, click a
+// pan to open its card. Progressive: the page lists every session without
+// this script.
 import * as THREE from "three";
 import { RoomEnvironment } from "three/addons/environments/RoomEnvironment.js";
+import { localAt } from "./localclock.mjs";
 
 const RADIUS = 1;
 const root = document.querySelector("[data-globe]");
@@ -41,27 +43,158 @@ function start() {
   const camera = new THREE.PerspectiveCamera(32, 1, 0.1, 100);
   camera.position.set(0, 0, 5.2);
 
-  // lights: a warm key from the upper left, a cool fill, soft ambient
-  scene.add(new THREE.HemisphereLight(0xfffaf2, 0xdfe8f5, 1.1));
-  const sun = new THREE.DirectionalLight(0xfff3e2, 1.6);
-  sun.position.set(-3, 2.2, 3.5);
+  // The sun is where it really is: the point on Earth it's overhead right
+  // now (worked out from the clock below), in the globe's own frame, so day,
+  // night and the dusk line between them turn with the world as you spin it.
+  // The pans are lit by a key light that follows the same sun, plus a soft
+  // fill so the ones on the night side still read as little objects.
+  scene.add(new THREE.HemisphereLight(0xfffaf2, 0xdfe8f5, 0.9));
+  const sun = new THREE.DirectionalLight(0xfff3e2, 1.5);
   scene.add(sun);
+  const sunLocal = new THREE.Vector3(1, 0, 0); // in the globe's frame
+  const sunWorld = new THREE.Vector3(1, 0, 0);
 
   const world = new THREE.Group();
   scene.add(world);
 
-  /* ---------- earth ---------- */
-  const mask = new THREE.TextureLoader().load(root.dataset.mask, () => (needsRender = true));
-  mask.colorSpace = THREE.NoColorSpace;
-  mask.anisotropy = renderer.capabilities.getMaxAnisotropy();
-  mask.wrapS = THREE.RepeatWrapping;
+  /* ---------- earth: NASA imagery, lit by the real sun ---------- */
+  // Blue Marble by day, Black Marble's city lights by night, a normal map from
+  // GEBCO elevation for relief (water in its blue), and the cloud cover. See
+  // scripts/build-earth.py and README Sources.
+  const loader = new THREE.TextureLoader();
+  const base = root.dataset.textures ?? "/assets/textures/";
+  const maxAniso = renderer.capabilities.getMaxAnisotropy();
+  let pending = 4;
+  const loaded = () => {
+    if (--pending === 0) root.classList.add("ready");
+  };
+  function tex(name, color) {
+    const t = loader.load(base + name, loaded, undefined, loaded);
+    t.colorSpace = color ? THREE.SRGBColorSpace : THREE.NoColorSpace;
+    t.anisotropy = maxAniso;
+    t.wrapS = THREE.RepeatWrapping;
+    return t;
+  }
+  const dayTex = tex("earth-day.webp", true);
+  const nightTex = tex("earth-night.webp", true);
+  const reliefTex = tex("earth-relief.webp", false);
+  const cloudTex = tex("earth-clouds.webp", false);
 
   const earthMat = new THREE.ShaderMaterial({
     uniforms: {
-      uMask: { value: mask },
-      uSun: { value: sun.position.clone().normalize() },
-      uTime: { value: 0 },
+      uDay: { value: dayTex },
+      uNight: { value: nightTex },
+      uRelief: { value: reliefTex },
+      uClouds: { value: cloudTex },
+      uSun: { value: sunWorld },
+      uCloudShift: { value: 0 },
+      uDark: { value: 0 },
     },
+    vertexShader: /* glsl */ `
+      varying vec2 vUv;
+      varying vec3 vNormalW;
+      varying vec3 vViewDir;
+      varying vec3 vEast;
+      varying vec3 vNorth;
+      void main() {
+        vUv = uv;
+        vec4 wp = modelMatrix * vec4(position, 1.0);
+        vNormalW = normalize(mat3(modelMatrix) * normal);
+        // east and north on the sphere, for reading the relief map
+        vec3 eastL = normalize(vec3(-position.z, 0.0, position.x) + vec3(1e-5, 0.0, 0.0));
+        vEast = normalize(mat3(modelMatrix) * -eastL);
+        vNorth = normalize(cross(vNormalW, vEast));
+        vViewDir = normalize(cameraPosition - wp.xyz);
+        gl_Position = projectionMatrix * viewMatrix * wp;
+      }`,
+    fragmentShader: /* glsl */ `
+      uniform sampler2D uDay;
+      uniform sampler2D uNight;
+      uniform sampler2D uRelief;
+      uniform sampler2D uClouds;
+      uniform vec3 uSun;
+      uniform float uCloudShift;
+      uniform float uDark;
+      varying vec2 vUv;
+      varying vec3 vNormalW;
+      varying vec3 vViewDir;
+      varying vec3 vEast;
+      varying vec3 vNorth;
+
+      vec3 srgb(vec3 c) { return pow(c, vec3(2.2)); }
+
+      void main() {
+        vec3 day = texture2D(uDay, vUv).rgb;
+        // relief map: the elevation normal's x/y in red/green, water in blue
+        vec3 relief = texture2D(uRelief, vUv).rgb;
+        float water = relief.b;
+        vec3 lights = texture2D(uNight, vUv).rgb;
+
+        // relief: the elevation normal map tilts the surface for the light
+        vec3 Ng = normalize(vNormalW);
+        vec2 tn = relief.rg * 2.0 - 1.0;
+        vec3 N = normalize(Ng + (vEast * tn.x + vNorth * tn.y) * 0.9 * (1.0 - water));
+
+        // a gentle grade toward the site's palette: seas a clearer blue,
+        // land a touch warmer and lighter, so it sits beside the pastel UI
+        // without turning into a cartoon
+        vec3 sea = mix(day, day * vec3(0.78, 1.0, 1.12) + srgb(vec3(0.05, 0.13, 0.22)), 0.6);
+        vec3 land = pow(day, vec3(0.92)) * vec3(1.04, 1.02, 0.96);
+        vec3 albedo = mix(land, sea, water);
+
+        // where the sun is. Day fades into night over a wide, soft band, as
+        // it does seen from orbit: the ground dims gradually from late
+        // afternoon through dusk, rather than switching off at a line
+        float sunDot = dot(Ng, uSun);
+        float dayAmt = smoothstep(-0.2, 0.45, sunDot);
+        // sunlight on the day side, the relief shading it; a little warmer
+        // only very near the edge, with no coloured band
+        float diffuse = max(dot(N, uSun), 0.0);
+        vec3 sunCol = mix(srgb(vec3(1.0, 0.94, 0.88)), vec3(1.0), smoothstep(0.0, 0.3, sunDot));
+        vec3 lit = albedo * sunCol * (0.22 + 1.05 * diffuse);
+
+        // cloud shadows on the ground beneath them
+        float cs = texture2D(uClouds, vUv + vec2(uCloudShift, 0.0)).r;
+        lit *= 1.0 - cs * 0.35 * dayAmt;
+
+        // sunlight glinting off the oceans: a soft sheen with a brighter core
+        vec3 H = normalize(uSun + vViewDir);
+        float nh = max(dot(Ng, H), 0.0);
+        float spec = pow(nh, 220.0) * 0.55 + pow(nh, 28.0) * 0.07;
+        lit += srgb(vec3(1.0, 0.95, 0.88)) * spec * water * smoothstep(0.0, 0.3, sunDot);
+
+        // the night side is the same Earth in shadow: darker, cooler and
+        // less saturated, oceans a deep blue and land a dim blue-grey that
+        // still shows its shape
+        float lum = dot(albedo, vec3(0.3, 0.59, 0.11));
+        vec3 shade = mix(vec3(lum), albedo, 0.4) * vec3(0.55, 0.7, 1.2);
+        // (linear values: deep sea ≈ #0a1448 on screen, land ≈ #1e2638)
+        vec3 night = shade * 0.07 + mix(vec3(0.002, 0.006, 0.062), vec3(0.008, 0.012, 0.032), 1.0 - water);
+        night *= mix(1.0, 0.8, uDark);
+        // city lights come on as the evening deepens: small, soft and a warm
+        // white (the texture is amber; this pulls it back toward white)
+        float cityOn = 1.0 - smoothstep(-0.18, 0.04, sunDot);
+        night += lights * vec3(1.0, 1.02, 1.2) * (0.9 + lights.r * 1.6) * cityOn;
+
+        vec3 col = mix(night, lit, dayAmt);
+
+        // the atmosphere's blue rim, all the way round: brighter by day,
+        // still a fine blue line on the night side
+        float fres = 1.0 - max(dot(Ng, vViewDir), 0.0);
+        col += srgb(vec3(0.45, 0.68, 1.0)) * pow(fres, 3.0) * (0.32 + 0.5 * dayAmt);
+
+        gl_FragColor = vec4(col, 1.0);
+        #include <colorspace_fragment>
+      }`,
+  });
+  const earth = new THREE.Mesh(new THREE.SphereGeometry(RADIUS, 192, 128), earthMat);
+  world.add(earth);
+
+  /* ---------- clouds: the real cloud cover, drifting slowly east ---------- */
+  const cloudMat = new THREE.ShaderMaterial({
+    transparent: true,
+    depthWrite: false,
+    uniforms: { uClouds: { value: cloudTex }, uSun: { value: sunWorld }, uCloudShift: earthMat.uniforms.uCloudShift },
     vertexShader: /* glsl */ `
       varying vec2 vUv;
       varying vec3 vNormalW;
@@ -74,158 +207,100 @@ function start() {
         gl_Position = projectionMatrix * viewMatrix * wp;
       }`,
     fragmentShader: /* glsl */ `
-      uniform sampler2D uMask;
+      uniform sampler2D uClouds;
       uniform vec3 uSun;
-      uniform float uTime;
+      uniform float uCloudShift;
       varying vec2 vUv;
       varying vec3 vNormalW;
       varying vec3 vViewDir;
-
-      // colours are authored in sRGB (what a designer would pick) and
-      // converted to linear for lighting
       vec3 srgb(vec3 c) { return pow(c, vec3(2.2)); }
-
-      vec3 ramp(float lat, float n, float inland) {
-        // pastel biomes by latitude: mint tropics, sage temperate, peachy
-        // deserts, lilac-grey tundra, soft snow caps
-        vec3 snow   = srgb(vec3(0.97, 0.97, 0.99));
-        vec3 tundra = srgb(vec3(0.82, 0.84, 0.90));
-        vec3 sage   = srgb(vec3(0.58, 0.78, 0.62));
-        vec3 mint   = srgb(vec3(0.48, 0.80, 0.64));
-        vec3 forest = srgb(vec3(0.42, 0.70, 0.55));
-        vec3 sand   = srgb(vec3(0.98, 0.84, 0.62));
-        vec3 peach  = srgb(vec3(0.99, 0.74, 0.62));
-        float a = abs(lat);
-        vec3 c = mix(mint, forest, n * 0.6);
-        c = mix(c, sage, smoothstep(0.18, 0.45, a));
-        // drier interiors around the subtropics turn sandy and peachy
-        float dry = smoothstep(0.12, 0.24, a) * (1.0 - smoothstep(0.38, 0.50, a));
-        c = mix(c, mix(sand, peach, smoothstep(0.35, 0.75, n)), dry * smoothstep(0.08, 0.55, inland) * 0.95);
-        c = mix(c, tundra, smoothstep(0.62, 0.72, a));
-        c = mix(c, snow, smoothstep(0.75, 0.84, a));
-        return c * (0.92 + n * 0.14);
-      }
-
       void main() {
-        vec4 m = texture2D(uMask, vUv);
-        float land = smoothstep(0.38, 0.62, m.r);
-        float dist = (m.g - 0.5) * 2.0;        // -1 deep sea .. 0 coast .. 1 inland
-        float n = m.b;
-        float lat = (vUv.y - 0.5) * 2.0;        // -1 south pole .. 1 north pole
-
-        vec3 deep = srgb(vec3(0.47, 0.68, 0.88));
-        vec3 mid = srgb(vec3(0.60, 0.79, 0.93));
-        vec3 shallow = srgb(vec3(0.74, 0.90, 0.95));
-        // the distance field only reaches a little way out to sea, so the
-        // deep-to-mid blend uses latitude-smoothed values instead of noise
-        vec3 ocean = mix(deep, mid, 0.35 + 0.25 * (1.0 - abs(lat)));
-        ocean = mix(ocean, shallow, smoothstep(-0.42, -0.02, dist) * 0.85);
-        // a pale line of surf right at the shore
-        ocean = mix(ocean, srgb(vec3(0.94, 0.98, 0.99)), smoothstep(-0.07, -0.005, dist) * 0.8);
-        // icy seas near the poles
-        ocean = mix(ocean, srgb(vec3(0.86, 0.92, 0.97)), smoothstep(0.82, 0.94, abs(lat)));
-
-        vec3 ground = ramp(lat, n, smoothstep(0.0, 0.9, dist));
-        // a soft beach where land meets water
-        ground = mix(srgb(vec3(0.99, 0.92, 0.80)), ground, smoothstep(0.0, 0.06, dist));
-        // inland terrain gets a touch of relief from the noise channel
-        ground *= 0.94 + smoothstep(0.1, 1.0, dist) * (n - 0.5) * 0.16;
-        vec3 col = mix(ocean, ground, land);
-
+        float c = texture2D(uClouds, vUv + vec2(uCloudShift, 0.0)).r;
         vec3 N = normalize(vNormalW);
-        float diff = dot(N, uSun);
-        // soft, studio-like shading: a broad key light that never goes dark
-        float key = smoothstep(-0.55, 0.95, diff);
-        vec3 lit = col * mix(vec3(0.62, 0.66, 0.80), vec3(1.10, 1.06, 1.0), key);
-        // a soft sheen on the water, none on land
-        vec3 H = normalize(uSun + vViewDir);
-        float spec = pow(max(dot(N, H), 0.0), 90.0) * (1.0 - land) * 0.28;
-        // a thin, bright limb that melts into the halo
-        float fres = 1.0 - max(dot(N, vViewDir), 0.0);
-        vec3 outCol = lit + spec + srgb(vec3(0.84, 0.92, 1.0)) * pow(fres, 3.4) * 0.65;
-        gl_FragColor = vec4(outCol, 1.0);
+        float sunDot = dot(N, uSun);
+        float day = smoothstep(-0.2, 0.45, sunDot);
+        // white by day, fading with the ground into a soft blue-grey at
+        // night, where they still show
+        vec3 col = mix(srgb(vec3(0.2, 0.24, 0.38)), vec3(1.0), day);
+        float a = c * mix(0.55, 0.9, day);
+        // thinner toward the limb, so the edge of the globe stays crisp
+        a *= smoothstep(0.0, 0.3, max(dot(N, vViewDir), 0.0));
+        gl_FragColor = vec4(col * (0.82 + 0.18 * max(sunDot, 0.0)), a);
         #include <colorspace_fragment>
       }`,
   });
-  const earth = new THREE.Mesh(new THREE.SphereGeometry(RADIUS, 160, 120), earthMat);
-  world.add(earth);
-
-  /* ---------- clouds: soft wisps drifting just above the surface ---------- */
-  const cloudMat = new THREE.ShaderMaterial({
-    transparent: true,
-    depthWrite: false,
-    uniforms: { uTime: { value: 0 }, uSun: earthMat.uniforms.uSun },
-    vertexShader: /* glsl */ `
-      varying vec3 vPos;
-      varying vec3 vNormalW;
-      varying vec3 vViewDir;
-      void main() {
-        vPos = position;
-        vec4 wp = modelMatrix * vec4(position, 1.0);
-        vNormalW = normalize(mat3(modelMatrix) * normal);
-        vViewDir = normalize(cameraPosition - wp.xyz);
-        gl_Position = projectionMatrix * viewMatrix * wp;
-      }`,
-    fragmentShader: /* glsl */ `
-      uniform float uTime;
-      uniform vec3 uSun;
-      varying vec3 vPos;
-      varying vec3 vNormalW;
-      varying vec3 vViewDir;
-      float hash(vec3 p) { p = fract(p * 0.3183099 + 0.1); p *= 17.0; return fract(p.x * p.y * p.z * (p.x + p.y + p.z)); }
-      float noise(vec3 x) {
-        vec3 i = floor(x); vec3 f = fract(x); f = f * f * (3.0 - 2.0 * f);
-        return mix(mix(mix(hash(i), hash(i + vec3(1,0,0)), f.x), mix(hash(i + vec3(0,1,0)), hash(i + vec3(1,1,0)), f.x), f.y),
-                   mix(mix(hash(i + vec3(0,0,1)), hash(i + vec3(1,0,1)), f.x), mix(hash(i + vec3(0,1,1)), hash(i + vec3(1,1,1)), f.x), f.y), f.z);
-      }
-      float fbm(vec3 p) { float v = 0.0, a = 0.5; for (int i = 0; i < 5; i++) { v += a * noise(p); p *= 2.03; a *= 0.5; } return v; }
-      void main() {
-        // stretched along the latitude lines, so clouds read as soft streaks
-        vec3 q = normalize(vPos);
-        vec3 p = vec3(q.x * 2.2, q.y * 6.5, q.z * 2.2) + vec3(uTime * 0.012, 0.0, uTime * 0.006);
-        float c = fbm(p + fbm(p * 1.4) * 0.8);
-        float a = smoothstep(0.58, 0.82, c) * 0.32;
-        vec3 N = normalize(vNormalW);
-        float facing = max(dot(N, vViewDir), 0.0);
-        a *= smoothstep(0.0, 0.35, facing);
-        float light = clamp(dot(N, uSun) * 0.5 + 0.6, 0.55, 1.0);
-        gl_FragColor = vec4(vec3(1.0) * light, a);
-        #include <colorspace_fragment>
-      }`,
-  });
-  const clouds = new THREE.Mesh(new THREE.SphereGeometry(RADIUS * 1.018, 96, 72), cloudMat);
+  const clouds = new THREE.Mesh(new THREE.SphereGeometry(RADIUS * 1.006, 128, 96), cloudMat);
   world.add(clouds);
 
-  /* ---------- atmosphere: a soft halo hugging the limb ---------- */
-  const atmo = new THREE.Mesh(
-    new THREE.SphereGeometry(RADIUS * 1.16, 96, 72),
-    new THREE.ShaderMaterial({
-      transparent: true,
-      depthWrite: false,
-      side: THREE.BackSide,
-      blending: THREE.AdditiveBlending,
-      vertexShader: /* glsl */ `
-        varying vec3 vNormal;
-        varying vec3 vView;
-        void main() {
-          vNormal = normalize(normalMatrix * normal);
-          vec4 mv = modelViewMatrix * vec4(position, 1.0);
-          vView = normalize(-mv.xyz);
-          gl_Position = projectionMatrix * mv;
-        }`,
-      fragmentShader: /* glsl */ `
-        varying vec3 vNormal;
-        varying vec3 vView;
-        void main() {
-          // a narrow halo just outside the limb, fading fast into the page
-          float d = dot(vNormal, vView);
-          float glow = pow(clamp(1.0 + d * 1.6, 0.0, 1.0), 5.0);
-          gl_FragColor = vec4(vec3(0.55, 0.74, 0.96) * glow * 0.75, glow * 0.55);
-        }`,
-    }),
-  );
+  /* ---------- atmosphere: a blue halo, brightest in daylight ---------- */
+  const atmoMat = new THREE.ShaderMaterial({
+    transparent: true,
+    depthWrite: false,
+    side: THREE.BackSide,
+    blending: THREE.AdditiveBlending,
+    uniforms: { uSun: { value: sunWorld }, uDark: earthMat.uniforms.uDark },
+    vertexShader: /* glsl */ `
+      varying vec3 vNormal;
+      varying vec3 vView;
+      varying vec3 vNormalW;
+      void main() {
+        vNormal = normalize(normalMatrix * normal);
+        vNormalW = normalize(mat3(modelMatrix) * normal);
+        vec4 mv = modelViewMatrix * vec4(position, 1.0);
+        vView = normalize(-mv.xyz);
+        gl_Position = projectionMatrix * mv;
+      }`,
+    fragmentShader: /* glsl */ `
+      uniform vec3 uSun;
+      uniform float uDark;
+      varying vec3 vNormal;
+      varying vec3 vView;
+      varying vec3 vNormalW;
+      void main() {
+        // a narrow blue halo just outside the limb, fading fast into the
+        // page; brightest over the day side, fainter but still there at night
+        float d = dot(vNormal, vView);
+        float glow = pow(clamp(1.0 + d * 1.6, 0.0, 1.0), 5.0);
+        float sunDot = dot(normalize(vNormalW), uSun);
+        float lit = smoothstep(-0.4, 0.4, sunDot);
+        vec3 col = vec3(0.5, 0.72, 1.0);
+        float k = glow * (0.45 + 0.55 * lit) * mix(1.0, 0.8, uDark);
+        gl_FragColor = vec4(col * k * 0.8, k * 0.55);
+      }`,
+  });
+  const atmo = new THREE.Mesh(new THREE.SphereGeometry(RADIUS * 1.16, 96, 72), atmoMat);
   atmo.scale.setScalar(0.94);
-  scene.add(atmo);
+  world.add(atmo);
+
+  /* ---------- the sun's position, from the clock ---------- */
+  // The subsolar point (where the sun is straight overhead) for a moment,
+  // from the standard low-precision solar formulas: good to a fraction of a
+  // degree, far finer than the terminator's soft edge.
+  function subsolar(date) {
+    const n = date.getTime() / 86400000 - 10957.5; // days since J2000
+    const rad = Math.PI / 180;
+    const L = 280.46 + 0.9856474 * n;
+    const g = (357.528 + 0.9856003 * n) * rad;
+    const lambda = (L + 1.915 * Math.sin(g) + 0.02 * Math.sin(2 * g)) * rad;
+    const eps = (23.439 - 0.0000004 * n) * rad;
+    const dec = Math.asin(Math.sin(eps) * Math.sin(lambda));
+    const ra = Math.atan2(Math.cos(eps) * Math.sin(lambda), Math.cos(lambda));
+    const gmst = (280.46061837 + 360.98564736629 * n) % 360;
+    const lng = ((((ra / rad - gmst) % 360) + 540) % 360) - 180;
+    return { lat: dec / rad, lng };
+  }
+  // ?sun=2026-06-21T12:00Z (or data-sun-at) shows another moment, for
+  // checking the lighting; otherwise it's now, kept up to date each minute
+  const sunAt = new URLSearchParams(location.search).get("sun") ?? root.dataset.sunAt;
+  const fixedAt = sunAt && !Number.isNaN(new Date(sunAt).getTime()) ? new Date(sunAt) : null;
+  const now = () => fixedAt ?? new Date();
+  function placeSun() {
+    const { lat, lng } = subsolar(now());
+    sunLocal.copy(latLngToVec(lat, lng)).normalize();
+    root.dispatchEvent(new CustomEvent("globe:sun", { detail: { lat, lng, at: now() }, bubbles: true }));
+  }
+  placeSun();
+  setInterval(placeSun, 60000);
 
   // a soft contact shadow under the globe, so it floats above the page
   const shadowCanvas = document.createElement("canvas");
@@ -286,22 +361,51 @@ function start() {
     t.colorSpace = THREE.SRGBColorSpace;
     return t;
   }
+  // a wisp of steam: a few soft lobes clumped together, so a puff reads as
+  // vapour rather than a ball (each puff also turns slowly as it rises).
+  // Each lobe has a faint blue-grey underside, like an illustrated cloud, so
+  // white steam still reads against the pale pastel land.
   function steamTexture() {
     const c = document.createElement("canvas");
-    c.width = c.height = 64;
+    c.width = c.height = 128;
     const g = c.getContext("2d");
-    const grad = g.createRadialGradient(32, 32, 0, 32, 32, 32);
-    grad.addColorStop(0, "rgba(255,255,255,0.95)");
-    grad.addColorStop(0.5, "rgba(255,255,255,0.45)");
-    grad.addColorStop(1, "rgba(255,255,255,0)");
+    const lobes = [[64, 70, 30], [44, 58, 22], [84, 54, 24], [62, 40, 20], [76, 82, 18]];
+    const blob = (x, y, r, inner, outer) => {
+      const grad = g.createRadialGradient(x, y, 0, x, y, r);
+      grad.addColorStop(0, inner);
+      grad.addColorStop(0.65, outer);
+      grad.addColorStop(1, "rgba(255,255,255,0)");
+      g.fillStyle = grad;
+      g.beginPath();
+      g.arc(x, y, r, 0, Math.PI * 2);
+      g.fill();
+    };
+    for (const [x, y, r] of lobes) blob(x + 3, y + 4, r + 2, "rgba(140,160,188,0.42)", "rgba(140,160,188,0.18)");
+    for (const [x, y, r] of lobes) blob(x - 1, y - 1, r, "rgba(255,255,255,0.95)", "rgba(255,255,255,0.4)");
+    const t = new THREE.CanvasTexture(c);
+    t.colorSpace = THREE.SRGBColorSpace;
+    return t;
+  }
+  // the warm halo behind a cook who's asked for help
+  function glowTexture() {
+    const c = document.createElement("canvas");
+    c.width = c.height = 128;
+    const g = c.getContext("2d");
+    const grad = g.createRadialGradient(64, 64, 0, 64, 64, 64);
+    grad.addColorStop(0, "rgba(255,150,96,1)");
+    grad.addColorStop(0.4, "rgba(255,128,92,0.78)");
+    grad.addColorStop(0.7, "rgba(250,112,92,0.3)");
+    grad.addColorStop(1, "rgba(250,112,92,0)");
     g.fillStyle = grad;
-    g.fillRect(0, 0, 64, 64);
+    g.fillRect(0, 0, 128, 128);
     const t = new THREE.CanvasTexture(c);
     t.colorSpace = THREE.SRGBColorSpace;
     return t;
   }
   const flameTex = flameTexture();
   const steamTex = steamTexture();
+  const glowTex = glowTexture();
+  const STEAM_PUFFS = 5;
 
   // shared geometry for every marker
   const S = 0.062; // overall marker scale relative to the globe
@@ -360,6 +464,7 @@ function start() {
     return t;
   })();
   const footGeo = new THREE.PlaneGeometry(S * 1.6, S * 1.6);
+  const glowGeo = new THREE.PlaneGeometry(S, S);
   const stemGeo = new THREE.CylinderGeometry(S * 0.035, S * 0.035, 1, 8);
   const stemMat = new THREE.MeshBasicMaterial({ color: 0xffffff, transparent: true, opacity: 0.85 });
   const LIFT = S * 1.15; // how far the icon floats above the surface
@@ -500,14 +605,23 @@ function start() {
     flame.renderOrder = -1;
     g.add(flame);
 
-    // three puffs of steam that rise, drift and fade on a loop
+    // wisps of steam that curl up, swell, turn and thin out on a loop
     const puffs = [];
-    for (let k = 0; k < 3; k++) {
+    for (let k = 0; k < STEAM_PUFFS; k++) {
       const p = new THREE.Sprite(new THREE.SpriteMaterial({ map: steamTex, depthWrite: false, transparent: true, opacity: 0 }));
-      p.userData.offset = k / 3 + (i % 5) * 0.07;
+      p.userData.offset = k / STEAM_PUFFS + (i % 5) * 0.07;
+      p.userData.spin = (k % 2 ? 1 : -1) * (0.6 + (k % 3) * 0.25);
       g.add(p);
       puffs.push(p);
     }
+
+    // a warm pool of light that breathes on the ground under the pan while
+    // the cook is asking for help (it lies on the surface like the beacon
+    // ring, so the globe never clips it)
+    const glow = new THREE.Mesh(glowGeo, new THREE.MeshBasicMaterial({ map: glowTex, depthWrite: false, transparent: true, opacity: 0 }));
+    glow.rotation.x = -Math.PI / 2;
+    glow.position.y = S * 0.008;
+    glow.visible = false;
 
     // a soft ring on the ground, pulsing like a beacon; its colour says who
     const ring = new THREE.Mesh(halo, ringMat.clone());
@@ -515,6 +629,7 @@ function start() {
     ring.position.y = S * 0.01;
     ground.add(ring);
     // friends and you get a second, steady ring so they read at a glance
+    ground.add(glow);
     const band = new THREE.Mesh(halo, ringMat.clone());
     band.rotation.x = -Math.PI / 2;
     band.position.y = S * 0.012;
@@ -532,9 +647,9 @@ function start() {
     pins?.append(label);
 
     g.userData = {
-      session, inner, flame, tongues, puffs, ring, band, hit, ground, foot, stem, label, home,
+      session, inner, flame, tongues, puffs, glow, ring, band, hit, ground, foot, stem, label, home,
       cur: home.clone(), gcur: home.clone(), tgt: home.clone(), gtgt: home.clone(),
-      show: 0, showTarget: 1, hover: 0, active: 0, phase: i * 0.9, dim: 1, vis: 0, grow: 0,
+      show: 0, showTarget: 1, hover: 0, active: 0, phase: i * 0.9, dim: 1, vis: 0, grow: 0, help: 0,
       cluster: null, removing: false, labelKey: "",
     };
     hit.userData.marker = g;
@@ -562,6 +677,7 @@ function start() {
       if (o.material && o.material !== creamMat && o.material !== ironMat && o.material !== handleMat && o.material !== woodMat && o.material !== burnerMat && o.material !== flameMat) o.material.dispose?.();
     });
     u.foot.material.dispose();
+    u.glow.material.dispose();
     u.ring.material.dispose();
     u.band.material.dispose();
     u.stem.material.dispose();
@@ -693,10 +809,19 @@ function start() {
   let pinchStart = 0;
 
   // open facing your own pan or a friend's, if they're on the map; otherwise
-  // the busiest stretch of the map (Europe, Africa, the Middle East)
+  // facing a line between day and night, so both show: the evening side
+  // (the dinner rush, lights coming on) unless more cooks are where dawn is
+  // breaking. Centred a few hours inside daylight, the terminator lands just
+  // off-centre.
   const first = markers.find((m) => m.userData.session.group === "mine" || m.userData.session.group === "friends");
-  if (first) {
-    const r = rotationFor(first.userData.home, HOME_DIST);
+  function twilightFacing() {
+    const noon = subsolar(now()).lng;
+    const sides = [noon + 75, noon - 75].map((lng) => latLngToVec(20, lng).normalize());
+    const near = (v) => markers.filter((m) => m.userData.home.dot(v) > Math.cos(THREE.MathUtils.degToRad(70))).length;
+    return near(sides[1]) > near(sides[0]) ? sides[1] : sides[0];
+  }
+  {
+    const r = rotationFor(first ? first.userData.home : twilightFacing(), HOME_DIST);
     rotX = THREE.MathUtils.clamp(r.x, -0.9, 0.9);
     rotY = r.y;
   }
@@ -816,7 +941,8 @@ function start() {
       small.textContent = `${places.slice(0, 3).join(" · ")}${places.length > 3 ? ` +${places.length - 3}` : ""} — click to zoom in`;
     } else {
       strong.textContent = u.session.recipe;
-      small.textContent = `${u.session.cook}${u.session.city ? ` · ${u.session.city}` : ""} · step ${u.session.step}/${u.session.steps}`;
+      const local = typeof u.session.offset === "number" ? localAt(u.session.offset) : null;
+      small.textContent = `${u.session.cook}${u.session.city ? ` · ${u.session.city}` : ""}${local ? ` · ${local.label}, ${local.time}` : ""} · step ${u.session.step}/${u.session.steps}`;
     }
     tip.append(strong, small);
     tip.hidden = false;
@@ -934,6 +1060,12 @@ function start() {
   /* ---------- loop ---------- */
   const clock = new THREE.Clock();
   const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  // steam and the help glow sit a little softer against the dark theme
+  const darkQuery = window.matchMedia("(prefers-color-scheme: dark)");
+  const isDark = () => {
+    const th = document.documentElement.dataset.theme;
+    return th === "dark" || (th !== "light" && darkQuery.matches);
+  };
   const tmp = new THREE.Vector3();
   const iconPos = new THREE.Vector3();
   const camDir = new THREE.Vector3();
@@ -1001,6 +1133,7 @@ function start() {
     const t = clock.elapsedTime;
     const idle = performance.now() - lastInteraction > 3200;
     const ease = reduce ? 1 : Math.min(1, dt * 4.2);
+    const dark = isDark();
 
     if (targetRot) {
       rotX += (targetRot.x - rotX) * ease;
@@ -1030,12 +1163,18 @@ function start() {
     if (clusterDirty || Math.abs(Math.log(dist / clusterAt)) > 0.035) recluster();
 
     world.rotation.set(rotX, rotY, 0, "XYZ");
-    earthMat.uniforms.uTime.value = t;
-    cloudMat.uniforms.uTime.value = reduce ? 0 : t;
-    clouds.rotation.y = reduce ? 0 : t * 0.008;
+    world.updateMatrixWorld();
+    // the sun is fixed to the Earth's surface (it's overhead at one point),
+    // so it turns with the globe; the pans' key light comes from it too, with
+    // a floor so the ones in the night still catch some light
+    sunWorld.copy(sunLocal).applyQuaternion(world.quaternion);
+    sun.position.copy(sunWorld).multiplyScalar(6);
+    sun.intensity = 0.7 + Math.max(0, sunWorld.dot(camera.position) / dist) * 0.9;
+    earthMat.uniforms.uDark.value = dark ? 1 : 0;
+    // the weather drifts east, slowly enough to feel alive, not busy
+    if (!reduce) earthMat.uniforms.uCloudShift.value = (t * 0.0016) % 1;
 
     camDir.copy(camera.position).normalize();
-    world.updateMatrixWorld();
     invWorld.copy(world.quaternion).invert();
     leanQ.copy(invWorld).multiply(screenUpright);
     const hf = heightFactor(dist);
@@ -1109,14 +1248,37 @@ function start() {
         const f = reduce ? 1 : 0.8 + Math.sin(t * (11 + k) + u.phase + k * 1.7) * 0.22;
         tg.scale.set(1, f, 1);
       });
-      // a busy cluster steams a little faster
-      const steamRate = isRep ? 0.5 : 0.34;
-      for (const p of u.puffs) {
-        const k = reduce ? 0.5 : (t * steamRate + p.userData.offset) % 1;
-        p.position.set(Math.sin(k * 6 + u.phase) * S * 0.4, S * (0.85 + k * 2.6), Math.cos(k * 5 + u.phase) * S * 0.25);
-        const s = S * (0.7 + k * 1.6);
-        p.scale.set(s, s, 1);
-        p.material.opacity = u.vis * Math.sin(k * Math.PI) * 0.9;
+      // steam: each wisp rises from the pan, curling out and swelling as it
+      // goes, fading in quickly and thinning away slowly. A busy cluster, or
+      // a cook asking for help, steams a little faster. Reduced motion keeps
+      // two still wisps so the pan still reads as hot.
+      const steamRate = isRep ? 0.42 : 0.3;
+      u.puffs.forEach((p, k) => {
+        const life = reduce ? [0.25, 0.55][k] ?? -1 : (t * steamRate * (1 + u.help * 0.4) + p.userData.offset) % 1;
+        if (life < 0) {
+          p.visible = false;
+          return;
+        }
+        p.visible = true;
+        const curl = life * 5.5 + u.phase + k;
+        const drift = S * (0.12 + life * 0.42);
+        p.position.set(Math.sin(curl) * drift, S * (0.8 + life * 2.9), Math.cos(curl * 0.8) * drift * 0.6);
+        const s = S * (0.85 + life * 2.4);
+        p.scale.set(s, s * 1.1, 1);
+        p.material.rotation = reduce ? k : p.userData.spin * life * 1.6 + k;
+        const fade = Math.min(1, life / 0.18) * Math.pow(1 - life, 1.4);
+        p.material.opacity = Math.min(1, u.vis * fade * (dark ? 0.85 : 1.15));
+      });
+      // help glow: on the cook's own pan, or a cluster's pan if anyone in it
+      // has asked; eases in and out, then breathes slowly while it's on
+      const asking = isRep ? u.cluster.members.some((x) => x.userData.session.help) : !!u.session.help;
+      u.help += ((asking ? 1 : 0) - u.help) * Math.min(1, dt * (reduce ? 60 : 3));
+      u.glow.visible = on && u.help > 0.01;
+      if (u.glow.visible) {
+        const breath = reduce ? 0.5 : 0.5 + Math.sin(t * 2.1 + u.phase) * 0.5;
+        const gs = (4.2 + breath * 1.1) * (0.6 + u.help * 0.4);
+        u.glow.scale.set(gs, gs, 1);
+        u.glow.material.opacity = u.vis * u.help * (0.7 + breath * 0.3) * (dark ? 0.85 : 1);
       }
       const pulse = reduce ? 0.4 : (t * 0.7 + u.phase * 0.2) % 1;
       u.ring.scale.setScalar(1 + pulse * 1.4 + u.active * 0.6);
@@ -1162,6 +1324,5 @@ function start() {
     renderer.render(scene, camera);
     requestAnimationFrame(frame);
   }
-  root.classList.add("ready");
   requestAnimationFrame(frame);
 }

@@ -177,6 +177,7 @@ function pantryPage(ctx: Ctx, values: Record<string, string> = {}, problems: str
           <div class="${counts.expired ? "kx-bad" : ""}"><dt>Expired</dt><dd>${counts.expired}</dd></div>
           <div><dt>Stock value</dt><dd>${money(value)}</dd></div>
         </dl>
+        <p class="kx-actions"><a class="button kx-add-btn" href="#add" data-kx-add>${icon("plus", 16)} Add an item</a></p>
       </header>
 
       <div class="kx-stage" data-kx-stage>
@@ -187,12 +188,27 @@ function pantryPage(ctx: Ctx, values: Record<string, string> = {}, problems: str
           <span class="kx-dots" aria-hidden="true"><i data-dot="fridge"></i><i data-dot="pantry"></i></span>
           <button type="button" class="kx-arrow kx-arrow-next" data-kx-go="pantry" aria-label="Show the pantry">${icon("arrow", 18)}</button>
         </div>
+        <p class="kx-toast" data-kx-toast role="status"></p>
         <p class="kx-place-label" aria-hidden="true"><span data-kx-count-fridge>${inFridge} in the fridge</span><span data-kx-count-pantry>${items.length - inFridge} on the shelves</span></p>
       </div>
 
       <aside class="kx-panel" data-kx-panel hidden aria-live="polite">
         <button class="kx-close" type="button" data-kx-close aria-label="Close">${icon("close", 18)}</button>
         <div data-kx-panel-body></div>
+        <form method="post" action="/pantry" class="kx-add-form" data-kx-add-form hidden>
+          <p class="kx-panel-kind">Just been shopping?</p>
+          <h2>Add an item</h2>
+          <p class="kx-panel-qty">It finds its own spot: a fridge shelf, the door, the crisper or the pantry.</p>
+          <div data-kx-add-errors></div>
+          <div class="kx-fields">${itemFields({}, "kx")}</div>
+          <div class="kx-quick" role="group" aria-label="Expires in">
+            <span>Expires in</span>
+            ${[[3, "3 days"], [7, "1 week"], [14, "2 weeks"], [30, "1 month"]].map(
+              ([days, label]) => html`<button type="button" data-days="${days}" aria-pressed="false">${label}</button>`,
+            )}
+          </div>
+          <button class="button button-block" type="submit">${icon("plus", 16)} Add to my kitchen</button>
+        </form>
       </aside>
     </section>
     <script type="application/json" id="kitchen-data">${raw(scenePayload(user.id, items))}</script>
@@ -216,7 +232,7 @@ function pantryPage(ctx: Ctx, values: Record<string, string> = {}, problems: str
                 ${items.map((it) => {
                   const f = freshness(it.expiry_date);
                   if (it.id === editing) {
-                    return html`<tr class="editing"><td colspan="5">
+                    return html`<tr class="editing" id="item-${it.id}"><td colspan="5">
                       <form method="post" action="/pantry/${it.id}" class="inline-form">
                         ${itemFields(
                           {
@@ -232,7 +248,7 @@ function pantryPage(ctx: Ctx, values: Record<string, string> = {}, problems: str
                         <button class="button" type="submit">Save</button>
                       </form></td></tr>`;
                   }
-                  return html`<tr class="row-${f.state}">
+                  return html`<tr class="row-${f.state}" id="item-${it.id}">
                     <td><span class="item-name">${it.name}</span><small class="muted">${it.category}</small></td>
                     <td class="num mono">${qty(it.quantity, it.unit)}</td>
                     <td><span class="pill pill-${f.state}">${f.label}</span></td>

@@ -1975,7 +1975,7 @@ input[type="radio"] {
   width: var(--p);
   border-radius: inherit;
   background: var(--accent);
-  transition: width 400ms var(--ease);
+  transition: width 700ms var(--ease);
 }
 
 .live-steps .done p {
@@ -3994,16 +3994,18 @@ fieldset.bare.inline {
   margin: 0 auto;
 }
 
+/* each step's segment fills left to right as you reach it (and drains
+   right to left going back), so the bar reads as one continuous sweep */
 .cm-progress span {
   flex: 1;
   height: 5px;
   border-radius: var(--pill);
-  background: var(--surface-3);
-  transition: background-color 300ms var(--ease);
+  background: linear-gradient(var(--accent), var(--accent)) left / 0% 100% no-repeat var(--surface-3);
+  transition: background-size 420ms var(--ease);
 }
 
 .cm-progress span.on {
-  background: var(--accent);
+  background-size: 100% 100%;
 }
 
 .cm-tools {
@@ -4841,6 +4843,63 @@ body.cooking {
   max-width: 34ch;
 }
 
+/* "the globe is lit as it is right now" */
+.gl-daylight {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  max-width: 36ch;
+  margin-top: 14px;
+  font-size: 13px;
+  line-height: 1.45;
+  color: var(--ink-3);
+}
+
+.gl-daylight .icon {
+  flex: none;
+  margin-top: 2px;
+}
+
+.gl-daylight-short {
+  display: none;
+}
+
+/* a cook's local time, "7:42 pm · dinner", tinted by the meal */
+.gl-local {
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.gl-local[data-meal] > span {
+  padding: 1px 8px;
+  border-radius: var(--pill);
+  background: var(--meal-bg, var(--surface-2));
+  color: var(--meal-ink, var(--ink-2));
+  font-weight: 550;
+}
+
+.gl-local-breakfast {
+  --meal-bg: var(--butter);
+  --meal-ink: var(--butter-ink);
+}
+
+.gl-local-lunch,
+.gl-local-afternoon {
+  --meal-bg: var(--sky);
+  --meal-ink: var(--sky-ink);
+}
+
+.gl-local-dinner {
+  --meal-bg: var(--peach);
+  --meal-ink: var(--peach-ink);
+}
+
+.gl-local-late,
+.gl-local-night {
+  --meal-bg: var(--lavender);
+  --meal-ink: var(--lavender-ink);
+}
+
 .gl-stats {
   display: flex;
   gap: 8px;
@@ -5416,8 +5475,36 @@ body.cooking {
   }
 
   .gl-hero .lede,
-  .gl-stats {
+  .gl-stats,
+  .gl-daylight-long {
     display: none;
+  }
+
+  /* on a phone the explainer shrinks to a one-line chip above the globe */
+  .gl-daylight {
+    display: inline-flex;
+    align-items: center;
+    max-width: 100%;
+    margin-top: 10px;
+    padding: 5px 12px 5px 10px;
+    border-radius: var(--pill);
+    background: var(--glass);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow: var(--shadow-xs);
+    font-size: 12px;
+    color: var(--ink-2);
+  }
+
+  .gl-daylight .icon {
+    margin-top: 0;
+  }
+
+  .gl-daylight-short {
+    display: inline;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .gl-panel,
@@ -5943,6 +6030,123 @@ body.cooking {
   margin-top: 22px;
 }
 
+/* adding an item happens in the same panel, with the scene still in view */
+.kx-actions {
+  margin-top: 14px;
+}
+
+.kx-add-btn {
+  height: 46px;
+  padding: 0 22px;
+  box-shadow: var(--shadow);
+}
+
+.kx-panel .kx-add-form h2 {
+  text-transform: none;
+}
+
+.kx-add-form .form-errors {
+  margin: 16px 0 0;
+}
+
+.kx-fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px 12px;
+  margin-top: 20px;
+}
+
+.kx-fields .grow-2 {
+  grid-column: 1 / -1;
+}
+
+.kx-fields input:not([type="checkbox"], [type="radio"], [type="range"]),
+.kx-fields .input-prefix {
+  background-color: var(--surface);
+}
+
+.kx-fields .input-prefix input {
+  background-color: transparent;
+}
+
+.kx-quick {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin-top: 12px;
+}
+
+.kx-quick span {
+  flex: none;
+  margin-right: 4px;
+  white-space: nowrap;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ink-3);
+}
+
+.kx-quick button {
+  height: 30px;
+  padding: 0 12px;
+  border: 0;
+  border-radius: var(--pill);
+  background: var(--surface);
+  color: var(--ink-2);
+  font: 550 12.5px var(--font);
+  cursor: pointer;
+  box-shadow: var(--shadow-xs);
+  transition: background-color 160ms var(--ease), color 160ms var(--ease), transform 180ms var(--spring);
+}
+
+.kx-quick button:active {
+  transform: scale(0.95);
+}
+
+.kx-quick button[aria-pressed="true"] {
+  background: var(--sage);
+  color: var(--accent-hover);
+}
+
+.kx-add-form > .button {
+  height: 48px;
+  margin-top: 22px;
+}
+
+/* "Added eggs in the fridge door": a pill that rises over the switcher */
+.kx-toast {
+  position: absolute;
+  left: 50%;
+  bottom: 104px;
+  z-index: 4;
+  width: max-content;
+  max-width: calc(100% - 32px);
+  padding: 10px 18px;
+  border-radius: var(--pill);
+  background: var(--glass);
+  backdrop-filter: saturate(1.4) blur(20px);
+  -webkit-backdrop-filter: saturate(1.4) blur(20px);
+  box-shadow: var(--shadow);
+  font-size: 13.5px;
+  font-weight: 600;
+  text-align: center;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, 10px) scale(0.97);
+  transition: opacity 260ms var(--ease), transform 420ms var(--spring), left 560ms var(--spring);
+}
+
+.kx-toast.show {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+@media (min-width: 901px) {
+  .kx.panel-open .kx-toast {
+    left: calc(50% - 190px);
+  }
+}
+
 .main-kitchen > .panel,
 .main-kitchen > .empty,
 .main-kitchen > .form-errors,
@@ -5985,6 +6189,19 @@ body.cooking {
     font-size: 40px;
   }
 
+  /* on a phone the button sits up beside the eyebrow, clear of the fridge */
+  .kx-actions {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+  }
+
+  .kx-add-btn {
+    height: 38px;
+    padding: 0 16px;
+  }
+
   .kx-panel {
     top: auto;
     left: 12px;
@@ -6001,6 +6218,43 @@ body.cooking {
 
   .kx-place-label {
     bottom: 82px;
+  }
+
+  .kx-toast {
+    bottom: 88px;
+  }
+
+  /* the add form as a compact sheet: everything down to the button in view */
+  .kx-panel.adding {
+    max-height: 82%;
+    padding: 20px 18px;
+  }
+
+  .kx-add-form .kx-panel-qty {
+    display: none;
+  }
+
+  .kx-panel .kx-add-form h2 {
+    font-size: 24px;
+  }
+
+  .kx-fields {
+    gap: 10px;
+    margin-top: 14px;
+  }
+
+  .kx-quick {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .kx-quick button {
+    flex: none;
+  }
+
+  .kx-add-form > .button {
+    margin-top: 16px;
   }
 
   .kx.panel-open .kx-switch,
@@ -6511,6 +6765,12 @@ body.cooking {
     opacity: 0;
     transform: translateY(12px);
   }
+}
+
+/* a card turned over on a week change: the flip is its entrance */
+.cal-day.is-flipped,
+.cal-day.is-flipped .cal-tile {
+  animation: none;
 }
 
 .cal-day-head {

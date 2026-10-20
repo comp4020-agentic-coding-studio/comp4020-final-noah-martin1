@@ -37,6 +37,27 @@ function isDark() {
 const ease = (t) => 1 - Math.pow(1 - t, 3);
 const easeInOut = (t) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
 
+// An item landing on its shelf, `s` seconds after its turn (null once it has
+// settled). It falls in from a little above (accelerating, fading up from
+// small so it never pops through the shelf above), squashes on contact, then
+// rocks on its base like a jar set down a bit too briskly: a damped swing
+// that's wider for squat things than tall ones.
+const FALL = 0.32;
+function landing(s, u) {
+  if (s < 0) return { entered: 0, drop: 0.35, scale: 0.001, squash: 0, rock: 0 };
+  const settle = 1.25;
+  if (s >= FALL + settle) return null;
+  if (s < FALL) {
+    const k = s / FALL;
+    return { entered: k, drop: 0.35 * (1 - k * k), scale: 0.55 + 0.45 * ease(Math.min(1, k * 1.6)), squash: 0, rock: 0 };
+  }
+  const a = s - FALL;
+  const squash = 0.09 * Math.exp(-a * 16) * Math.cos(a * 34);
+  const amp = Math.min(0.2, 0.05 / Math.max(0.25, u.tall));
+  const rock = amp * Math.exp(-a * 4.2) * Math.sin(a * 17);
+  return { entered: 1, drop: 0, scale: 1, squash, rock };
+}
+
 function start() {
   const canvas = stage.querySelector("canvas");
   const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true, powerPreference: "high-performance" });
@@ -580,7 +601,11 @@ function start() {
     );
     hit.position.set((bb.min.x + bb.max.x) / 2, bb.min.y + (size.y + 0.2) / 2, (bb.min.z + bb.max.z) / 2);
     holder.add(hit);
-    holder.userData = { item, baseY: y, lift: 0, hover: 0, sel: 0, mesh, hit, entered: 0, delay: 0 };
+    // which way it rocks when it lands, and how far from its middle to the
+    // edge it rocks on (so tall bottles tip less than squat tubs)
+    const rockDir = Math.sin(item.id * 78.233) > 0 ? 1 : -1;
+    const halfW = Math.max(0.04, size.x / 2);
+    holder.userData = { item, baseY: y, lift: 0, hover: 0, sel: 0, mesh, hit, entered: 0, delay: 0, landAt: null, rockDir, halfW, tall: size.y };
     // expiring soon: a small glowing dot floats above it (measured in the
     // holder's own space, before it joins the scene)
     if (item.fresh === "soon" || item.fresh === "expired") {
@@ -596,25 +621,44 @@ function start() {
     return holder;
   }
 
-  // lay a row of items along a shelf, left to right, packing by footprint
-  function layRow(list, parent, xMin, xMax, y, zFront, zBack) {
-    let x = xMin;
-    let row = 0;
-    const placed = [];
-    for (const item of list) {
-      const w = (BUILD[item.model] ?? BUILD.jar)(item.tint, item)[1];
-      if (x + w > xMax) {
-        x = xMin;
-        row++;
-        if (row > 1) return list.slice(placed.length);
-      }
-      const z = row === 0 ? zFront : zBack;
-      const h = addItem(item, parent, x + w / 2, y, z, (Math.sin(item.id * 12.9898) * 0.25));
-      h.userData.delay = placed.length * 0.06 + row * 0.1;
-      placed.push(item);
-      x += w + 0.06;
+  // A lane is one shelf: items pack along it left to right by footprint, a
+  // front row then a back row. It remembers where the next one goes, so an
+  // item added later drops into the gap rather than reshuffling the shelf.
+  const lane = (name, parent, xMin, xMax, y, zFront, zBack) => ({ name, parent, xMin, xMax, y, zFront, zBack, x: xMin, row: 0, n: 0 });
+  const footprint = (item) => (BUILD[item.model] ?? BUILD.jar)(item.tint, item)[1];
+  // (a hair of slack, so an item that exactly fills a row still counts)
+  const inRow = (ln, w) => ln.x + w <= ln.xMax + 0.01;
+  const room = (ln, w) => inRow(ln, w) || ln.row === 0;
+  function place(item, ln) {
+    const w = footprint(item);
+    if (!inRow(ln, w)) {
+      if (ln.row === 1) return null;
+      ln.x = ln.xMin;
+      ln.row = 1;
     }
-    return [];
+    const z = ln.row === 0 ? ln.zFront : ln.zBack;
+    const h = addItem(item, ln.parent, ln.x + w / 2, ln.y, z, (Math.sin(item.id * 12.9898) * 0.25));
+    h.userData.delay = ln.n * 0.06 + ln.row * 0.1;
+    h.userData.lane = ln;
+    ln.n++;
+    ln.x += w + 0.06;
+    return h;
+  }
+  function layRow(list, ln) {
+    for (const item of list) if (!place(item, ln)) return;
+  }
+  // door bins: alternate left and right doors, three bins each
+  let bi = 0;
+  function placeInDoor(item) {
+    if (bi >= 12) return null;
+    const door = doors[bi % 2];
+    const bin = door.bins[Math.floor(bi / 2) % 3];
+    const slot = Math.floor(bi / 6);
+    const x = -0.18 + slot * 0.32;
+    const h = addItem(item, bin, x * -door.side, 0.01, -0.02, door.side * 0.2);
+    h.userData.delay = 0.3 + bi * 0.05;
+    bi++;
+    return h;
   }
 
   // sort: door candidates first to the door; produce to the crisper; the rest
@@ -623,42 +667,52 @@ function start() {
   const crisperQueue = fridgeItems.filter((i) => i.model === "veg" || i.model === "leafy");
   let shelfQueue = fridgeItems.filter((i) => !DOOR_MODELS.has(i.model) && i.model !== "veg" && i.model !== "leafy");
 
-  // door bins: alternate left and right doors, three bins each
-  let bi = 0;
-  const overflow = [];
-  for (const item of doorQueue) {
-    const door = doors[bi % 2];
-    const bin = door.bins[Math.floor(bi / 2) % 3];
-    if (bi >= 12) {
-      overflow.push(item);
-      continue;
-    }
-    const slot = Math.floor(bi / 6);
-    const x = -0.18 + slot * 0.32;
-    const h = addItem(item, bin, x * -door.side, 0.01, -0.02, door.side * 0.2);
-    h.userData.delay = 0.3 + bi * 0.05;
-    bi++;
-  }
+  const overflow = doorQueue.filter((item) => !placeInDoor(item));
   shelfQueue = [...shelfQueue, ...overflow];
 
   // crisper: produce sits in the drawer, just behind its frosted front
-  layRow(crisperQueue, fridge, -W / 2 + 0.12, W / 2 - 0.12, FOOT + T + 0.02, -0.38, -0.72);
+  const crisperLane = lane("in the crisper", fridge, -W / 2 + 0.12, W / 2 - 0.12, FOOT + T + 0.02, -0.38, -0.72);
+  layRow(crisperQueue, crisperLane);
   // shelves: spread the rest across the three shelves, tallest at the top
+  const SHELF_NAMES = ["bottom", "middle", "top"];
+  const shelfLanes = SHELVES.map((y, si) => lane(`on the ${SHELF_NAMES[si]} shelf`, fridge, -W / 2 + 0.12, W / 2 - 0.12, y + 0.002, -0.36, -0.74));
   const perShelf = Math.ceil(shelfQueue.length / 3) || 1;
-  [SHELVES[0], SHELVES[1], SHELVES[2]].forEach((y, si) => {
-    const chunk = shelfQueue.slice(si * perShelf, (si + 1) * perShelf);
-    layRow(chunk, fridge, -W / 2 + 0.12, W / 2 - 0.12, y + 0.002, -0.36, -0.74);
-  });
+  shelfLanes.forEach((ln, si) => layRow(shelfQueue.slice(si * perShelf, (si + 1) * perShelf), ln));
 
   // pantry shelves: heavy things low (sacks, cans), jars and boxes up high
   const order = { sack: 0, can: 1, veg: 1, loaf: 2, box: 2, bottle: 3, jar: 3, spice: 4 };
   const sortedPantry = [...pantryItems].sort((a, b) => (order[a.model] ?? 3) - (order[b.model] ?? 3));
   const perPShelf = Math.ceil(sortedPantry.length / 4) || 1;
-  const pantryLevels = [0.68, ...PANTRY_SHELVES.map((y) => y + 0.035)];
-  pantryLevels.forEach((y, si) => {
-    const chunk = sortedPantry.slice(si * perPShelf, (si + 1) * perPShelf);
-    layRow(chunk, pantry, -PW / 2 + 0.15, si === 0 ? PW / 2 - 0.55 : PW / 2 - 0.15, y, -0.25, -0.45);
-  });
+  const PANTRY_NAMES = ["on the pantry bench", "on the bottom pantry shelf", "on the middle pantry shelf", "on the top pantry shelf"];
+  const pantryLanes = [0.68, ...PANTRY_SHELVES.map((y) => y + 0.035)].map((y, si) =>
+    lane(PANTRY_NAMES[si], pantry, -PW / 2 + 0.15, si === 0 ? PW / 2 - 0.55 : PW / 2 - 0.15, y, -0.25, -0.45),
+  );
+  pantryLanes.forEach((ln, si) => layRow(sortedPantry.slice(si * perPShelf, (si + 1) * perPShelf), ln));
+
+  // Somewhere for an item added from the panel, by the same rules: door
+  // things to the door, produce to the crisper, the rest to a shelf. A spot
+  // in a front row beats any back row, so the new arrival is seen landing;
+  // in the pantry, nearer the level its weight says beats further.
+  function shelve(item) {
+    const w = footprint(item);
+    const front = (ln) => ln.row === 0 && inRow(ln, w);
+    const pick = (lanes) => lanes.find(front) ?? lanes.find((ln) => room(ln, w));
+    if (item.place === "fridge") {
+      if (DOOR_MODELS.has(item.model)) {
+        const h = placeInDoor(item);
+        if (h) return h;
+      }
+      // produce goes in the crisper while it has room in either row (its
+      // frosted front hides both alike); the rest to the emptiest shelf
+      const produce = item.model === "veg" || item.model === "leafy";
+      if (produce && room(crisperLane, w)) return place(item, crisperLane);
+      const ln = pick([...shelfLanes].sort((a, b) => a.x - b.x));
+      return ln ? place(item, ln) : null;
+    }
+    const want = Math.round(((order[item.model] ?? 3) * 3) / 4);
+    const ln = pick([...pantryLanes].sort((a, b) => Math.abs(pantryLanes.indexOf(a) - want) - Math.abs(pantryLanes.indexOf(b) - want)));
+    return ln ? place(item, ln) : null;
+  }
 
   /* ---------- post: outline on hover/selection ---------- */
   const composer = new EffectComposer(renderer);
@@ -703,24 +757,33 @@ function start() {
   const parallax = new THREE.Vector2();
   const parallaxT = new THREE.Vector2();
 
-  function go(next) {
+  // `keep` leaves the side panel open (adding an item carries you over to
+  // wherever it went) and skips the pantry's welcome landing, so the new
+  // arrival is the only thing that drops in
+  function go(next, keep = false) {
     if (next === view && !travel) return;
     view = next;
     openTarget = next === "fridge" ? 1 : 0;
     travel = { from: camPos.clone(), to: VIEWS[next].pos.clone(), fromLook: camLook.clone(), toLook: VIEWS[next].look.clone(), t: 0 };
+    // the pantry's jars land again as you arrive, just before the slide ends
+    if (next === "pantry" && !keep) {
+      const now = clock.elapsedTime;
+      for (const h of pickables) if (h.parent === pantry) h.userData.landAt = now + 0.75 + h.userData.delay * 0.6;
+    }
     root.dataset.view = next;
     root.querySelector("[data-kx-title]").textContent = next === "fridge" ? "Fridge" : "Pantry";
     history.replaceState(null, "", next === "pantry" ? "#pantry" : location.pathname + location.search);
-    closePanel();
+    // an open item would be left behind; the add form comes along
+    if (!keep && !adding()) closePanel();
   }
   root.querySelectorAll("[data-kx-go]").forEach((b) => b.addEventListener("click", () => go(b.dataset.kxGo)));
   root.dataset.view = view;
   root.querySelector("[data-kx-title]").textContent = view === "fridge" ? "Fridge" : "Pantry";
   window.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closePanel();
     if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement || e.target instanceof HTMLSelectElement) return;
     if (e.key === "ArrowRight") go("pantry");
     if (e.key === "ArrowLeft") go("fridge");
-    if (e.key === "Escape") closePanel();
   });
   // swipe on phones
   let touchX = null;
@@ -771,8 +834,10 @@ function start() {
     if (h) openPanel(h);
     else closePanel();
   });
+  // items just added stay outlined while they land, so the eye finds them
+  const arrivals = new Set();
   function syncOutline() {
-    outline.selectedObjects = [hovered, selected].filter(Boolean).map((h) => h.userData.mesh);
+    outline.selectedObjects = [hovered, selected, ...arrivals].filter(Boolean).map((h) => h.userData.mesh);
   }
 
   /* ---------- side panel ---------- */
@@ -803,6 +868,16 @@ function start() {
         <a class="button button-soft button-small" href="/pantry?edit=${it.id}#item-${it.id}">Edit</a>
         <a class="button button-ghost button-small" href="/calendar">Open calendar</a>
       </div>`;
+    showPanel(false);
+  }
+  // the panel holds either an item's details or the add form; reopening
+  // within the close transition cancels the pending hide
+  let panelSeq = 0;
+  function showPanel(adding) {
+    panelSeq++;
+    panelBody.hidden = adding;
+    addForm.hidden = !adding;
+    panel.classList.toggle("adding", adding);
     panel.hidden = false;
     shiftTarget = 0.13;
     requestAnimationFrame(() => panel.classList.add("open"));
@@ -810,16 +885,152 @@ function start() {
   }
   function closePanel() {
     if (!selected && panel.hidden) return;
+    const wasAdding = addForm.contains(document.activeElement);
     selected = null;
     syncOutline();
     shiftTarget = -0.16;
     panel.classList.remove("open");
     root.classList.remove("panel-open");
+    const seq = panelSeq;
     setTimeout(() => {
-      if (!selected) panel.hidden = true;
+      if (seq === panelSeq) panel.hidden = true;
     }, 320);
+    if (wasAdding) addButton.focus({ preventScroll: true });
   }
   root.querySelector("[data-kx-close]")?.addEventListener("click", closePanel);
+
+  /* ---------- adding an item, without leaving the scene ---------- */
+  // The panel's form posts to the same route as the form below the scene.
+  // The server decides where the item lives; the reply's scene data says, and
+  // the new item drops onto its shelf (the camera slides over if it belongs
+  // on the other side). Without JS or WebGL the button is a link to that form.
+  const addForm = root.querySelector("[data-kx-add-form]");
+  const addButton = root.querySelector("[data-kx-add]");
+  const addErrors = addForm.querySelector("[data-kx-add-errors]");
+  const nameInput = addForm.querySelector('[name="name"]');
+  const expiryInput = addForm.querySelector('[name="expiry_date"]');
+  const quick = [...addForm.querySelectorAll("[data-days]")];
+  const toast = stage.querySelector("[data-kx-toast]");
+  const narrow = window.matchMedia("(max-width: 900px)");
+
+  const adding = () => !panel.hidden && panel.classList.contains("open") && !addForm.hidden;
+  function openAdd() {
+    selected = null;
+    syncOutline();
+    showPanel(true);
+    setTimeout(() => nameInput.focus({ preventScroll: true }), reduce ? 0 : 120);
+  }
+  addButton.addEventListener("click", (e) => {
+    e.preventDefault();
+    openAdd();
+  });
+
+  const localIso = (d) => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+  const press = (b) => quick.forEach((q) => q.setAttribute("aria-pressed", String(q === b)));
+  for (const b of quick) {
+    b.addEventListener("click", () => {
+      const on = b.getAttribute("aria-pressed") !== "true";
+      const d = new Date();
+      d.setDate(d.getDate() + Number(b.dataset.days));
+      expiryInput.value = on ? localIso(d) : "";
+      press(on ? b : null);
+    });
+  }
+  expiryInput.addEventListener("input", () => press(null));
+
+  let toastTimer;
+  function say(message) {
+    toast.textContent = message;
+    toast.classList.add("show");
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => toast.classList.remove("show"), 3600);
+  }
+
+  const where = (h) => h.userData.lane?.name ?? "in the fridge door";
+
+  function arrive(item) {
+    const h = shelve(item);
+    if (!h) {
+      say(`Added ${item.name}. The shelves are full, so it's in the list below.`);
+      return;
+    }
+    const away = item.place !== view;
+    if (away) go(item.place, true);
+    // arriving at the fridge, wait for the doors to swing most of the way
+    h.userData.landAt = clock.elapsedTime + (!away ? 0.15 : item.place === "fridge" ? 1.45 : 0.95);
+    arrivals.add(h);
+    syncOutline();
+    setTimeout(() => {
+      arrivals.delete(h);
+      syncOutline();
+    }, away ? 3400 : 2600);
+    say(`Added ${item.name} ${where(h)}.`);
+  }
+
+  // the stats, the counts under the switcher and everything below the scene
+  // (the form, the table) come from the fresh page, so they all agree
+  function refresh(doc) {
+    const stats = doc.querySelector(".kx-stats");
+    if (stats) root.querySelector(".kx-stats").replaceChildren(...stats.childNodes);
+    for (const key of ["data-kx-count-fridge", "data-kx-count-pantry"]) {
+      const fresh = doc.querySelector(`[${key}]`);
+      if (fresh) root.querySelector(`[${key}]`).textContent = fresh.textContent;
+    }
+    const mark = document.getElementById("kitchen-data");
+    const next = doc.getElementById("kitchen-data");
+    mark.textContent = next.textContent;
+    while (mark.nextSibling) mark.nextSibling.remove();
+    const below = [];
+    for (let n = next.nextSibling; n; n = n.nextSibling) below.push(n);
+    mark.after(...below);
+  }
+
+  addForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    if (addForm.dataset.busy) return;
+    addForm.dataset.busy = "1";
+    const submit = addForm.querySelector('button[type="submit"]');
+    submit.disabled = true;
+    try {
+      let res;
+      try {
+        res = await fetch(addForm.action, {
+          method: "POST",
+          body: new URLSearchParams(new FormData(addForm)),
+          headers: { "content-type": "application/x-www-form-urlencoded", accept: "text/html" },
+        });
+      } catch {
+        addForm.submit(); // offline or blocked: post it the ordinary way
+        return;
+      }
+      const doc = new DOMParser().parseFromString(await res.text(), "text/html");
+      if (res.status === 422) {
+        addErrors.replaceChildren(...(doc.querySelector(".kx-add .form-errors") ? [doc.querySelector(".kx-add .form-errors")] : []));
+        addErrors.querySelector(".form-errors")?.setAttribute("tabindex", "-1");
+        addErrors.querySelector(".form-errors")?.focus();
+        return;
+      }
+      const data = doc.getElementById("kitchen-data");
+      // signed out meanwhile, or anything else unexpected: go where it went
+      if (!res.ok || !data) {
+        location.assign(res.url);
+        return;
+      }
+      addErrors.replaceChildren();
+      const added = JSON.parse(data.textContent).filter((it) => !itemsById.has(it.id));
+      refresh(doc);
+      for (const item of added) arrive(item);
+      addForm.reset();
+      press(null);
+      // a phone's panel covers the lower shelves, so get out of the way to
+      // let the item be seen landing; on a wide screen stay ready for the next
+      if (narrow.matches) closePanel();
+      else nameInput.focus({ preventScroll: true });
+    } finally {
+      delete addForm.dataset.busy;
+      submit.disabled = false;
+    }
+  });
 
   /* ---------- theme: in dark mode it's night, the fridge light is on ---------- */
   let dark = isDark();
@@ -939,19 +1150,31 @@ function start() {
     camera.position.set(camPos.x + px, camPos.y - py, camPos.z);
     camera.lookAt(camLook.x + px * 0.3, camLook.y - py * 0.3, camLook.z);
 
-    // items: pop in after the doors open, then lift on hover / selection
+    // items: drop onto their shelf after the doors open (the pantry's land
+    // again each time you arrive), squash a touch, rock on their base and
+    // settle; then lift on hover / selection
     for (const h of pickables) {
       const u = h.userData;
-      const startAt = h.parent === pantry ? 0.25 : 0.55;
-      u.entered = reduce ? 1 : Math.min(1, Math.max(0, (t - startAt - u.delay) / 0.5));
-      const pop = u.entered >= 1 ? 1 : ease(u.entered) * (1 + Math.sin(u.entered * Math.PI) * 0.12);
+      if (u.landAt === null) u.landAt = (h.parent === pantry ? 0.25 : 0.55) + u.delay;
+      const land = reduce ? null : landing(t - u.landAt, u);
+      u.entered = land ? land.entered : 1;
       u.hover += ((h === hovered ? 1 : 0) - u.hover) * Math.min(1, dt * 10);
       u.sel += ((h === selected ? 1 : 0) - u.sel) * Math.min(1, dt * 8);
       const lift = Math.max(u.hover, u.sel);
       const bob = reduce ? 0 : Math.sin(t * 2.4 + u.item.id) * 0.012 * lift;
-      u.mesh.position.y = lift * 0.14 + bob;
-      if (u.dot) u.dot.position.y = u.dotY + lift * 0.14;
-      h.scale.setScalar(Math.max(0.001, pop * (1 + lift * 0.06)));
+      const drop = land ? land.drop : 0;
+      u.mesh.position.y = lift * 0.14 + bob + drop;
+      if (u.dot) u.dot.position.y = u.dotY + lift * 0.14 + drop;
+      const s = (land ? land.scale : 1) * (1 + lift * 0.06);
+      const squash = land ? land.squash : 0;
+      h.scale.set(Math.max(0.001, s * (1 + squash * 0.5)), Math.max(0.001, s * (1 - squash)), Math.max(0.001, s * (1 + squash * 0.5)));
+      // rock about the bottom edge it tips onto: turn, then shift so that
+      // edge stays planted on the shelf (meshes sit with their base at y = 0)
+      const rock = land ? land.rock * u.rockDir : 0;
+      const e = Math.sign(rock) * u.halfW;
+      u.mesh.rotation.z = rock;
+      u.mesh.position.x = e * (1 - Math.cos(rock));
+      u.mesh.position.y -= e * Math.sin(rock);
       h.rotation.z = reduce ? 0 : Math.sin(t * 1.8 + u.item.id) * 0.025 * lift;
       if (u.dot) {
         u.dot.scale.setScalar(1 + Math.sin(t * 4 + u.item.id) * 0.18);
