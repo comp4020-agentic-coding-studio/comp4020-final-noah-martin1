@@ -170,7 +170,7 @@ function pantryPage(ctx: Ctx, values: Record<string, string> = {}, problems: str
       <header class="kx-hero">
         <p class="eyebrow">Your kitchen</p>
         <h1><span class="kx-title" data-kx-title>Fridge</span></h1>
-        <p class="lede">Hover anything to lift it off the shelf; tap it to see when it goes off and which meals it's for.</p>
+        <p class="lede">Hover anything to lift it off the shelf and see when it goes off and which meals it's for; click or tap to keep it open.</p>
         <dl class="kx-stats">
           <div><dt>Items</dt><dd>${items.length}</dd></div>
           <div class="${counts.soon ? "kx-warn" : ""}"><dt>Use soon</dt><dd>${counts.soon}</dd></div>

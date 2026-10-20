@@ -5882,6 +5882,108 @@ body.cooking {
   transform: none;
 }
 
+/* Hovering an item peeks at its details in a compact card on the empty left,
+   under the headline. It never moves the scene, so nothing shifts beneath the
+   pointer, and it stays clear of the fridge/pantry switch at the bottom. A
+   click or tap pins the full panel on the right instead. */
+@media (min-width: 901px) {
+  .kx-panel.peek {
+    top: auto;
+    right: auto;
+    left: 48px;
+    bottom: 120px;
+    width: 300px;
+    max-height: calc(100% - 330px);
+    padding: 22px 20px 18px;
+    transform: translateY(10px) scale(0.985);
+  }
+
+  .kx-panel.peek.open {
+    transform: none;
+  }
+
+  .kx-panel.peek .kx-close {
+    display: none;
+  }
+
+  .kx-panel.peek .kx-panel-kind {
+    margin-top: 0;
+  }
+
+  .kx-panel.peek h2 {
+    font-size: 26px;
+  }
+
+  /* the card takes the place of the blurb, stats and button while it shows */
+  .kx-hero .lede,
+  .kx-hero .kx-stats,
+  .kx-hero .kx-actions {
+    transition: opacity 220ms var(--ease);
+  }
+
+  .kx.peek-open .kx-hero .lede,
+  .kx.peek-open .kx-hero .kx-stats,
+  .kx.peek-open .kx-hero .kx-actions {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+.kx-panel [data-kx-panel-body].swap {
+  animation: kx-swap 260ms var(--ease);
+}
+
+@keyframes kx-swap {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+}
+
+/* every item as a real button for keyboard and screen readers: out of sight
+   until one has focus, then a small chip names it (the item is outlined in
+   the scene as well) */
+.kx-browse {
+  position: absolute;
+  left: 50%;
+  top: 14px;
+  z-index: 4;
+  display: flex;
+  justify-content: center;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.kx-browse-item {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+  padding: 0;
+}
+
+.kx-browse-item:focus-visible {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  clip-path: none;
+  padding: 8px 16px;
+  border-radius: var(--pill);
+  background: var(--glass);
+  color: var(--ink);
+  font: inherit;
+  font-weight: 600;
+  box-shadow: var(--shadow), 0 0 0 2px var(--accent);
+  pointer-events: auto;
+  animation: kx-swap 200ms var(--ease);
+}
+
 .kx-close {
   position: absolute;
   top: 16px;
@@ -6270,8 +6372,19 @@ body.cooking {
 
 @media (prefers-reduced-motion: reduce) {
   .kx-title,
-  .kx-arrow-next {
+  .kx-arrow-next,
+  .kx-panel [data-kx-panel-body].swap,
+  .kx-browse-item:focus-visible {
     animation: none !important;
+  }
+
+  .kx-panel,
+  .kx-panel.peek,
+  .kx-hero .lede,
+  .kx-hero .kx-stats,
+  .kx-hero .kx-actions {
+    transition: opacity 120ms linear !important;
+    transform: none !important;
   }
 }
 
