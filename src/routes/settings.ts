@@ -4,7 +4,11 @@ import { DEMO_LOGIN, DEMO_MODE } from "../demo.ts";
 import { DIETARY_TAGS } from "../format.ts";
 import { html, raw } from "../html.ts";
 import { type Ctx, htmlReply, redirect, setFlash } from "../http.ts";
+import { ACTION_LABEL, activityFor, logActivity } from "../activity.ts";
+import { CITIES, CITY_BY_KEY } from "../live.ts";
 import { prefsFor } from "../prefs.ts";
+
+const REGIONS = [...new Set(CITIES.map((c) => c.region))];
 import type { Route } from "../server.ts";
 import { errors, page, pageHeader } from "../views/layout.ts";
 
@@ -18,11 +22,12 @@ function settingsPage(ctx: Ctx, problems: string[] = [], passwordProblems: strin
   const user = ctx.user!;
   const prefs = prefsFor(user.id);
   const budget = prefs.weekly_budget_cents === null ? "" : (prefs.weekly_budget_cents / 100).toFixed(2);
+  const trail = activityFor(user.id, 25);
   const body = html`
     ${pageHeader("Settings", "Your profile, what you eat, what you spend, and who sees what by default.")}
     <div class="settings">
       <nav class="settings-nav" aria-label="Settings sections">
-        <a href="#profile">Profile</a><a href="#food">Food & budget</a><a href="#privacy">Privacy</a><a href="#account">Account</a>
+        <a href="#profile">Profile</a><a href="#food">Food & budget</a><a href="#privacy">Privacy</a><a href="#live">Cooking live</a><a href="#activity">Your activity</a><a href="#account">Account</a>
       </nav>
       <div class="side-stack">
         <form method="post" action="/settings" class="side-stack">
@@ -56,8 +61,30 @@ function settingsPage(ctx: Ctx, problems: string[] = [], passwordProblems: strin
             </fieldset>
             <p class="muted small">Your pantry is always private. Planned meals are shared with friends only when you tick “share”.</p>
           </section>
+          <section class="panel stack" id="live">
+            <h2 class="panel-title">Cooking live</h2>
+            <input type="hidden" name="live_fields" value="1" />
+            <label class="check-inline"><input type="checkbox" name="auto_live" value="1" ${prefs.auto_live ? raw("checked") : ""} /> <span>Go live automatically when I start cooking</span></label>
+            <p class="muted small">Your pan appears for ${prefs.default_visibility === "public" ? "everyone on the globe" : prefs.default_visibility === "friends" ? "your friends" : "only you"} (your default above, never wider than the recipe allows) and you can turn it off with one tap while cooking. Untick to never start live by yourself.</p>
+            <label class="field"><span>Where an automatic session appears</span>
+              <select name="live_city">
+                <option value="" ${prefs.live_city === "" ? raw("selected") : ""}>Not on the map (listed only)</option>
+                ${REGIONS.map((region) => html`<optgroup label="${region}">${CITIES.filter((c) => c.region === region).map((c) => html`<option value="${c.key}" ${prefs.live_city === c.key ? raw("selected") : ""}>${c.name}${c.country !== c.name ? `, ${c.country}` : ""}</option>`)}</optgroup>`)}
+              </select>
+              <small>A city centre only. It also updates when you pick a city in Go live. Your device location is never used automatically.</small></label>
+          </section>
           <div class="form-actions"><button class="button" type="submit">Save settings</button></div>
         </form>
+
+        <section class="panel stack" id="activity">
+          <h2 class="panel-title">Your activity</h2>
+          <p class="muted small">What you've done in Larder, as the server recorded it. Kept so problems can be traced; it never holds passwords or what you typed in questions.</p>
+          ${trail.length
+            ? html`<ol class="activity-list">${trail.map(
+                (a) => html`<li class="activity-${a.outcome}"><time class="mono muted" datetime="${a.at}">${a.at.slice(0, 16).replace("T", " ")} UTC</time><span>${ACTION_LABEL[a.action] ?? a.action}${a.subject ? html`: <strong>${a.subject}</strong>` : ""}${a.outcome !== "ok" ? html` <span class="pill pill-${a.outcome === "failed" ? "expired" : "soon"}">${a.outcome}</span>` : ""}</span></li>`,
+              )}</ol>`
+            : html`<p class="muted">Nothing yet.</p>`}
+        </section>
 
         <form method="post" action="/settings/password" class="panel stack" id="account">
           <h2 class="panel-title">Change password</h2>
@@ -95,13 +122,29 @@ export const routes: Route[] = [
         else budgetCents = Math.round(Number(budgetRaw) * 100);
       }
       if (!VIS.some(([v]) => v === visibility)) problems.push("Choose a default visibility.");
+      // the live section is only changed when the form that shows it is sent
+      const before = prefsFor(ctx.user!.id);
+      const liveFields = form.get("live_fields") === "1";
+      const autoLive = liveFields ? form.get("auto_live") === "1" : before.auto_live;
+      const liveCity = liveFields ? (form.get("live_city") ?? "") : before.live_city;
+      if (liveCity !== "" && !CITY_BY_KEY.has(liveCity)) problems.push("Choose a city from the list, or not on the map.");
       if (problems.length) return settingsPage(ctx, problems, [], 422);
 
       run(
         `UPDATE users SET display_name = ?, dietary_prefs = ?, dislikes = ?, default_servings = ?,
-         weekly_budget_cents = ?, default_visibility = ? WHERE id = ?`,
-        displayName, JSON.stringify(diet), dislikes, servings, budgetCents, visibility, ctx.user!.id,
+         weekly_budget_cents = ?, default_visibility = ?, auto_live = ?, live_city = ? WHERE id = ?`,
+        displayName, JSON.stringify(diet), dislikes, servings, budgetCents, visibility, autoLive ? 1 : 0, liveCity, ctx.user!.id,
       );
+      logActivity({
+        actor: ctx.user,
+        action: "settings.update",
+        detail: {
+          budget_changed: budgetCents !== before.weekly_budget_cents,
+          visibility,
+          auto_live: autoLive,
+          live_city: liveCity || "none",
+        },
+      });
       setFlash(ctx, "Settings saved.");
       return redirect("/settings");
     },

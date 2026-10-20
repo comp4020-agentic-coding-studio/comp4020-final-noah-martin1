@@ -102,11 +102,57 @@ function start() {
     for (let k = shown(); k < liveStep && next; k++) next.click();
   }
 
+  /* ---------- the banner: live status in words, and the off switch ---------- */
+  const banner = document.querySelector("[data-live-banner]");
+  const bannerText = banner?.querySelector("[data-live-banner-text]");
+  const offForm = banner?.querySelector("[data-live-off]");
+  const WHO = { public: "everyone on the globe", friends: "your friends", private: "only you" };
+  function showLive(info) {
+    if (!banner) return;
+    banner.classList.add("is-live");
+    bannerText.innerHTML = "";
+    const strong = document.createElement("strong");
+    strong.textContent = "You're live";
+    bannerText.append(strong, ` — ${WHO[info.visibility] ?? "your friends"} can follow your steps · ${info.city || "not on the map"}.`);
+    if (offForm) {
+      offForm.hidden = false;
+      offForm.action = `/live/${info.id}/end`;
+    }
+  }
+  function showOff(text) {
+    if (!banner) return;
+    banner.classList.remove("is-live");
+    bannerText.innerHTML = "";
+    const strong = document.createElement("strong");
+    strong.textContent = "Not live.";
+    bannerText.append(strong, ` ${text}`);
+    if (offForm) offForm.hidden = true;
+  }
+  offForm?.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    if (session === null) return;
+    await post(`/live/${session}/end`, { reason: "ended" }).catch(() => null);
+    done("ended");
+    showOff("You turned it off. Watchers no longer see your steps; keep cooking.");
+    restoreGoLive();
+    say("Live is off for this session.");
+  });
+
+  // the Go live sheet, kept so it can come back after turning live off
+  const goliveTemplate = box.querySelector("[data-golive]")?.cloneNode(true) ?? null;
+  function restoreGoLive() {
+    if (!goliveTemplate || box.querySelector("[data-golive]")) return;
+    const sheet = goliveTemplate.cloneNode(true);
+    box.append(sheet);
+    wireGoLive(sheet.querySelector("[data-golive-form]"));
+  }
+
   /* ---------- on air ---------- */
   function goneLive(id, info) {
     session = id;
     ended = false;
     box.dataset.session = String(id);
+    showLive({ ...info, id });
     const golive = box.querySelector("[data-golive]");
     golive?.remove();
     if (onair) {
@@ -126,8 +172,12 @@ function start() {
 
   function done(reason) {
     ended = true;
+    session = null;
+    box.dataset.session = "";
     stream?.close();
     clearInterval(beatTimer);
+    if (reason === "finished") showOff("Your live session ended when you finished. Thanks for cooking with everyone.");
+    else if (reason === "lost") showOff("Your live session ended.");
     if (onair) onair.hidden = true;
     if (lookback) lookback.hidden = true;
     const note = document.querySelector("[data-done-live]");
@@ -141,8 +191,9 @@ function start() {
   }
 
   /* ---------- go live ---------- */
-  const form = box.querySelector("[data-golive-form]");
-  if (form) {
+  wireGoLive(box.querySelector("[data-golive-form]"));
+  function wireGoLive(form) {
+    if (!form) return;
     const city = form.querySelector("[data-city]");
     const where = form.querySelector("[data-where]");
     const lat = form.querySelector("[data-lat]");
@@ -207,6 +258,33 @@ function start() {
       }
     });
   }
+
+  /* ---------- live by default ---------- */
+  // Cook mode goes live as it opens, unless the person turned that off
+  // (the server checks the preference again and decides who can see it).
+  if (box.hasAttribute("data-auto-live") && session === null) {
+    post("/live/auto", { recipe_id: box.dataset.recipe, serves: box.dataset.serves ?? "", step: String(Math.min(shown(), stepCount)) })
+      .then((r) => {
+        if (r.ok && r.body.ok) {
+          liveStep = r.body.step ?? 1;
+          goneLive(r.body.id, r.body);
+          if (!r.body.already) say(r.body.visibility === "public" ? "You're live on the globe. Turn it off any time." : r.body.visibility === "friends" ? "You're live for friends. Turn it off any time." : "You're live, just for you.", "good");
+        } else if (r.body.reason === "elsewhere") showOff(`You're live with ${r.body.elsewhere} in another tab.`);
+        else showOff(r.body.reason === "off" ? "Automatic live is off in settings." : "Tap Go live to share your steps.");
+      })
+      .catch(() => showOff("Couldn't reach Larder to go live. Tap Go live to try again."));
+  } else if (session === null && banner && bannerText.textContent.includes("Going live")) {
+    showOff("Tap Go live to share your steps.");
+  }
+
+  // Leaving cook mode ends the session, so nobody's left "live" on the globe
+  // after closing the page. A reload comes straight back (live by default),
+  // and if the beacon is lost the 45-minute idle rule still ends it.
+  window.addEventListener("pagehide", (e) => {
+    if (session === null || ended || e.persisted) return;
+    const body = new URLSearchParams({ reason: "left" });
+    navigator.sendBeacon?.(`/live/${session}/end`, body);
+  });
 
   /* ---------- help, end ---------- */
   onair?.querySelector("[data-help-form]")?.addEventListener("submit", async (e) => {

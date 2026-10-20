@@ -161,3 +161,143 @@ export function dataAge(): { generatedAt: string | null } {
   const g = loadProducts().generatedAt;
   return { generatedAt: g || null };
 }
+
+/* ---------------- like for like ---------------- */
+
+// A product is a fair buy for an ingredient only when it is that ingredient,
+// not something made with it: "Lemon & Pepper Tuna" isn't lemons, "Garlic
+// Naan" isn't garlic, ground coriander isn't a coriander bunch. The rule:
+// every word of the product name must be one of the ingredient's own words
+// or a qualifier (brand, grade, pack, origin). Any other food word, or a
+// form the recipe didn't ask for (dried, ground, canned...), makes it a
+// different product. Deterministic and checked in spec/products.test.ts.
+
+// Words that describe a product without changing what it is.
+const QUALIFIERS = new Set(
+  [
+    "woolworths", "essentials", "macro", "organic", "the", "odd", "bunch", "market", "value", "fare", "aldi", "brand",
+    "australian", "australia", "grown", "aussie", "local", "premium", "select", "selection", "classic", "original", "originals",
+    "traditional", "gourmet", "pure", "natural", "real", "quality", "finest", "everyday", "farmers", "own", "farm", "farms",
+    "fresh", "free", "range", "barn", "laid", "cage", "rspca", "approved", "grass", "fed", "lean", "extra", "regular",
+    "large", "small", "medium", "x", "xl", "jumbo", "mini", "baby", "whole", "half", "family", "bulk", "value", "pack",
+    "pk", "bag", "box", "tub", "jar", "bottle", "punnet", "tray", "loose", "prepacked", "pre", "packed", "net", "each",
+    "ea", "pcs", "piece", "pieces", "block", "fillet", "fillets", "full", "cream", "light", "lite", "skim", "reduced",
+    "salt", "salted", "unsalted", "fat", "low", "no", "added", "white", "brown", "red", "yellow", "green", "golden",
+    "long", "grain", "short", "fine", "coarse", "plain", "virgin", "vine", "truss", "washed", "brushed",
+    "and", "with", "of", "in", "for", "co", "company", "kitchen", "pantry", "home", "style", "range", "standard",
+    "deveined", "peeled", "tail", "off", "on", "skin", "boneless", "skinless", "cutlets", "thigh", "breast",
+    "stonemill", "farmdale", "remano", "imperial", "lodge", "pure", "valley", "jindurra", "station", "emporium",
+    "cucina", "matta", "colway", "portview", "ocean", "royale", "westacre", "dairy", "mill", "white", "asia", "garden",
+    "hoyt", "hoyts", "masterfoods", "mckenzie", "mckenzies", "sunrice", "san", "remo", "bega", "western", "star",
+    "pace", "lantern", "alley", "pandaroo", "annalisa", "la", "gina", "campbell", "campbells", "edgell", "inner",
+    "goodness", "always", "olive", "tree", "valcom", "chef", "chefs", "s", "g", "kg", "ml", "l", "dozen", "count",
+    "pail", "squeeze", "twist", "handypack", "multipack", "sachet", "carton", "pouch", "can", "tin", "duo", "trio",
+    "prepack", "loose", "iodised", "table", "cooking", "blended", "spanish", "italian", "greek", "thickened", "pouring",
+    "continental", "flat", "curly", "iceberg", "cos", "royal", "gala", "pink", "lady", "granny", "smith", "navel",
+    "valencia", "jap", "kent", "butternut", "dutch", "cream", "creamy", "longlife", "life", "uht", "homogenised",
+    "pasteurised", "unhomogenised", "lactose", "a", "permeate", "club", "vintage", "tasty", "mild", "sharp", "aged",
+    "thai", "jasmine", "basmati", "sushi", "arborio", "medium", "calrose", "wholemeal", "self", "raising", "bread",
+    "unbleached", "triple", "sifted", "caster", "raw", "icing", "demerara", "dark", "soft", "light", "rolled",
+    "quick", "instant", "steel", "cut", "chunky", "smooth", "crunchy", "natural", "spring", "onion", "bunch",
+  ].map(stem),
+);
+
+// Forms that make it a different buy unless the ingredient says so.
+const FORMS = new Set(
+  [
+    "dried", "dry", "ground", "powder", "powdered", "canned", "tinned", "can", "diced", "crushed", "chopped", "minced",
+    "frozen", "sliced", "grated", "shredded", "shaved", "smoked", "roasted", "roast", "cooked", "marinated", "pickled",
+    "flaked", "flake", "puree", "concentrate", "syrup", "seed", "seeds", "leaf", "leaves", "juice", "zest", "essence",
+    "extract", "flavour", "flavoured", "infused", "spray", "grinder", "crumbed", "stuffed", "kyiv", "kiev",
+    "parmigiana", "gyoza", "hargow", "dumpling", "dumplings", "naan", "aioli", "rissoles", "tuna", "tea",
+    "triangles", "pastizzis", "agnolotti", "spanakopita", "crispbread", "squid", "salmon", "rocket", "mix", "mixed",
+    "chargrilled", "grilled", "fried", "crispy", "sushi", "mandarin", "murcott", "wheat", "flake", "flakes", "crystallised",
+    "uncrystallised", "scroll", "cookies", "biscuit", "bar", "bars", "loaf", "perform", "protein", "yopro",
+    "smoothie", "yoghurt", "yogurt", "muffin", "cake", "bread", "chips", "chip", "lollies", "flavour",
+  ].map(stem),
+);
+
+// Not food at all: the retailers' search returns these for herb and fruit
+// names (lime hand wash, bay leaf bath mats).
+const NOT_FOOD = new Set(
+  [
+    "wash", "hand", "soap", "detergent", "dishwashing", "liquid", "laundry", "cleaner", "spray", "paint", "candle",
+    "mat", "towel", "cotton", "gsm", "plush", "luxurious", "shampoo", "conditioner", "body", "lotion", "fragrance",
+    "diffuser", "refill", "seedling", "seeds", "plant", "pot", "yates", "jelly", "water", "rush", "cordial", "soft",
+    "drink", "sparkling", "kombucha", "vodka", "gin", "beer", "wine", "lolly", "lollies", "gum", "mints", "toy",
+  ].map(stem),
+);
+
+// Forms an ingredient may come in and still be the same buy.
+const FORM_OK: Record<string, string[]> = {
+  "canned tomatoes": ["diced", "crushed", "chopped", "whole", "peeled", "can", "canned", "tinned"],
+  garlic: ["minced", "crushed"],
+  ginger: ["minced", "crushed"],
+  parmesan: ["grated", "shaved", "cheese", "block"],
+  "ground cumin": ["ground"],
+  "ground coriander": ["ground"],
+  "ground ginger": ["ground"],
+  cinnamon: ["ground", "quill"],
+  "black pepper": ["ground", "whole", "peppercorn"],
+  peas: ["frozen"],
+  "mixed vegetables": ["frozen", "mixed"],
+  sweetcorn: ["frozen", "canned", "kernel"],
+  chickpeas: ["can", "canned"],
+  "kidney beans": ["can", "canned"],
+  "black beans": ["can", "canned"],
+  "cannellini beans": ["can", "canned"],
+  "coconut milk": ["can"],
+  "chicken stock": ["liquid"],
+  "beef stock": ["liquid"],
+  "vegetable stock": ["liquid"],
+  mozzarella: ["shredded", "grated", "cheese"],
+  "cheddar cheese": ["grated", "shredded", "block"],
+  tuna: ["can", "canned", "chunk", "springwater", "brine", "oil"],
+};
+
+// Words that change what a dairy, herb or seafood item is when they come
+// first ("sour cream", "garlic prawns", "jalapeno chilli").
+const MODIFIERS = new Set(["sour", "jalapeno", "jalapeño", "birdseye", "habanero", "smoked", "whipped", "clotted", "double"].map(stem));
+// Food words that are only ever brand names in front of a product.
+const BRAND_WORDS = new Set(["wings", "gem", "bird", "bare", "farmer", "harvest", "golden", "maharajah", "choice"].map(stem));
+
+let foodWords: Set<string> | null = null;
+function allFoodWords(): Set<string> {
+  if (foodWords) return foodWords;
+  foodWords = new Set<string>();
+  for (const k of Object.keys(loadProducts().products)) for (const w of tokens(k)) foodWords.add(w);
+  return foodWords;
+}
+
+export function isEquivalent(ingredient: string, productName: string): boolean {
+  const key = ingredient.toLowerCase().trim();
+  const ok = new Set((FORM_OK[key] ?? []).map(stem));
+  // an allowed form word in the ingredient's own name ("canned") needn't be
+  // in the product's ("Diced Tomatoes 400g" is a can of tomatoes)
+  const core = tokens(ingredient).filter((w) => !ok.has(w)).join(" ");
+  if (!core || !matchesIngredient(core, productName)) return false;
+  const want = new Set(tokens(ingredient));
+  const food = allFoodWords();
+  const words = tokens(productName);
+  // the first of the ingredient's own words: anything unknown before it is
+  // read as a brand ("White Wings Plain Flour"); unknown words after it are
+  // what the product is made into ("... Spinach Triangles")
+  const firstOwn = words.findIndex((w) => want.has(w));
+  for (const [i, w] of words.entries()) {
+    if (want.has(w) || ok.has(w)) continue;
+    if (NOT_FOOD.has(w) || FORMS.has(w)) return false;
+    if (QUALIFIERS.has(w)) continue;
+    // before the ingredient's own words, other words are the brand ("White
+    // Wings", "Gem of the West"), unless they name a different food that the
+    // product is mainly made of (checked by the words that follow)
+    if (i < firstOwn && !food.has(w) && !MODIFIERS.has(w)) continue;
+    if (i < firstOwn && BRAND_WORDS.has(w)) continue;
+    return false;
+  }
+  return true;
+}
+
+// The products that are fair like-for-like buys for this ingredient.
+export function equivalentProducts(ingredientName: string): Product[] {
+  return productsFor(ingredientName).filter((p) => isEquivalent(ingredientName, p.name));
+}

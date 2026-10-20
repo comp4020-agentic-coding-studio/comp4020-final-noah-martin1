@@ -1,8 +1,10 @@
 import { type Answer, answerFor, suggestions } from "../assistant.ts";
 import { all, catalogFor } from "../db.ts";
-import { DIETARY_TAGS, money, monthLabel, today } from "../format.ts";
+import { DIETARY_TAGS, money, monthLabel, qty, sized, today } from "../format.ts";
 import { type Html, html, raw } from "../html.ts";
-import { type Ctx, HttpError, htmlReply, redirect, setFlash, text } from "../http.ts";
+import { logActivity } from "../activity.ts";
+import { type Ctx, HttpError, htmlReply, json, redirect, setFlash, text } from "../http.ts";
+import { checkImage, loadImage, MAX_IMAGE_BYTES, ownedImage, readMultipart, saveImage } from "../images.ts";
 import { estimate, perServing, priceReference } from "../nutrition.ts";
 import {
   COURSES,
@@ -22,6 +24,9 @@ import {
   totalMinutes,
 } from "../recipes.ts";
 import { prefsFor } from "../prefs.ts";
+import { recipePurchase } from "../pricing.ts";
+import { usableStock } from "../shopping.ts";
+import { packLine } from "./shopping.ts";
 import type { Route } from "../server.ts";
 import { canSeeRecipe } from "../visibility.ts";
 import { avatar, errors, icon, page, pageHeader, tone } from "../views/layout.ts";
@@ -71,7 +76,9 @@ export function recipeTile(r: Recipe, opts: { i?: number; live?: number; costCen
   return html`<a class="rx-tile" href="/recipes/${r.id}" style="--i: ${Math.min(opts.i ?? 0, 24)}">
     <div class="rx-photo">
       ${r.image_url
-        ? html`<img src="${r.image_url}/medium" srcset="${r.image_url}/medium 350w, ${r.image_url}/large 500w, ${r.image_url} 700w" sizes="(max-width: 900px) 45vw, 240px" alt="" loading="lazy" decoding="async" />`
+        ? sized(r.image_url, "medium") === r.image_url
+          ? html`<img src="${r.image_url}" alt="" loading="lazy" decoding="async" />`
+          : html`<img src="${sized(r.image_url, "medium")}" srcset="${sized(r.image_url, "medium")} 350w, ${sized(r.image_url, "large")} 500w, ${r.image_url} 700w" sizes="(max-width: 900px) 45vw, 240px" alt="" loading="lazy" decoding="async" />`
         : html`<div class="rx-photo-fallback" style="--fallback: ${fallback}"><span>${r.title.slice(0, 1)}</span></div>`}
       <div class="rx-badges">
         ${opts.live ? html`<span class="rx-glass rx-glass-live"><span class="live-dot"></span>${opts.live} cooking</span>` : html`<span></span>`}
@@ -271,6 +278,30 @@ function checkedLabel(): string {
   return label ? `, checked ${label}` : "";
 }
 
+// What it would cost at the checkout to cook the recipe as written, after the
+// viewer's usable pantry (an empty one for visitors): whole packs, through
+// the shopping list's engine.
+function purchaseCard(ctx: Ctx, recipe: Recipe, lines: RecipeIngredient[]): Html {
+  const viewer = ctx.user?.id ?? null;
+  const stock = viewer === null ? [] : usableStock("user", viewer);
+  const plan = recipePurchase(viewer, lines, 1, stock, recipe.title);
+  const priced = plan.toBuy.filter((l) => l.pack);
+  return html`<section class="rd-card rd-buy" aria-labelledby="buy-h">
+    <div class="rd-card-head"><h2 id="buy-h">To cook it as written</h2><span class="muted small">${recipe.servings} serves</span></div>
+    <dl class="shop-split">
+      <div><dt>At the checkout</dt><dd class="mono" data-recipe-purchase="${plan.purchaseCents}">${money(plan.purchaseCents)}</dd><small>${priced.length} whole pack${priced.length === 1 ? "" : "s"}${viewer ? ", after your pantry" : ""}</small></div>
+      <div><dt>Recipe uses</dt><dd class="mono">${money(plan.consumptionCents)}</dd><small>the share of those packs in the dish</small></div>
+    </dl>
+    ${plan.toBuy.length
+      ? html`<details class="rd-buy-list"><summary>What you'd buy</summary><ul class="shop-list">${plan.toBuy.map(
+          (l) => html`<li class="shop-line"><span class="mono qty">${l.toBuy === null ? "some" : qty(l.toBuy, l.unit === "each" ? "" : l.unit)}</span><span class="grow"><span class="item-name">${l.name}</span>${packLine(l.pack, l.consumptionCents, l.sharesPack, l.unitClash)}</span><span class="hh-line-price mono">${l.pack ? money(l.pack.costCents) : l.sharesPack ? "incl." : "—"}</span></li>`,
+        )}</ul></details>`
+      : html`<p class="estimate-note">Your pantry covers everything.</p>`}
+    ${plan.unpriced ? html`<p class="estimate-note">${plan.unpriced} ingredient${plan.unpriced === 1 ? " has" : "s have"} no pack price, so ${plan.unpriced === 1 ? "it isn't" : "they aren't"} in the checkout total.</p>` : ""}
+    ${viewer ? "" : html`<p class="estimate-note"><a href="/register">Join free</a> and this counts what's already in your kitchen.</p>`}
+  </section>`;
+}
+
 function nutritionCard(lines: RecipeIngredient[], servings: number): Html {
   const total = estimate(lines);
   const n = perServing(total, servings);
@@ -312,9 +343,9 @@ function nutritionCard(lines: RecipeIngredient[], servings: number): Html {
     </div>
     <div class="cost-row">
       <div><small>Cost per serve</small><strong>${money(Math.round(n.costCents))}</strong></div>
-      <div style="text-align: right"><small>Whole recipe</small><strong data-scale-cost data-base="${Math.round(total.costCents)}">${money(Math.round(total.costCents))}</strong></div>
+      <div style="text-align: right"><small>Ingredients used</small><strong data-scale-cost data-base="${Math.round(total.costCents)}">${money(Math.round(total.costCents))}</strong></div>
     </div>
-    <p class="estimate-note">Worked out automatically from ${total.counted} of ${total.total} ingredients at ALDI and Woolworths reference prices${checkedLabel()}. Seasonings to taste aren't counted.</p>
+    <p class="estimate-note">The value of the amounts the recipe uses, from ${total.counted} of ${total.total} ingredients at dated ALDI and Woolworths reference prices${checkedLabel()}. It's not what you'd spend at the shop: packs come whole (see “To cook it as written”). Seasonings to taste aren't counted.</p>
   </section>`;
 }
 
@@ -341,7 +372,7 @@ function ingredientsCard(ctx: Ctx, recipe: Recipe, lines: RecipeIngredient[]): H
       })}
     </ul>
     ${match
-      ? html`<p class="estimate-note">${match.missing === 0 ? "You have everything for this one." : `You're missing ${match.missing} ingredient${match.missing === 1 ? "" : "s"}${match.priced ? `, about ${money(match.estCents)} at what you last paid` : ""}.`}</p>`
+      ? html`<p class="estimate-note">${match.missing === 0 ? "You have everything for this one." : `You're missing ${match.missing} ingredient${match.missing === 1 ? "" : "s"}.`}</p>`
       : ""}
   </section>`;
 }
@@ -503,6 +534,7 @@ function recipeDetail(ctx: Ctx, recipe: Recipe): Html {
       <aside class="rd-side">
         ${ingredientsCard(ctx, recipe, lines)}
         ${nutritionCard(lines, recipe.servings)}
+        ${purchaseCard(ctx, recipe, lines)}
         ${planCard(ctx, recipe)}
       </aside>
 
@@ -567,6 +599,38 @@ function stepRow(step?: RecipeInput["steps"][number]): Html {
   </div>`;
 }
 
+// The recipe form arrives as multipart (a photo chosen without JavaScript)
+// or url-encoded (the page uploaded the photo first and sends its reference).
+// Either way the recipe ends with a photo this author owns, or the one it
+// already has; anything else is refused before anything is saved.
+async function readRecipeForm(ctx: Ctx, existing?: Recipe): Promise<{ input: RecipeInput; problems: string[] }> {
+  const multipart = (ctx.req.headers["content-type"] ?? "").startsWith("multipart/form-data");
+  let form: URLSearchParams;
+  let file: { filename: string; bytes: Buffer } | undefined;
+  if (multipart) {
+    const m = await readMultipart(ctx.req);
+    form = m.fields;
+    file = m.files.get("image");
+  } else form = await ctx.form();
+  const parsed = parseRecipeForm(form);
+  const ref = (form.get("image_ref") ?? "").trim();
+  const user = ctx.user!;
+  if (file) {
+    const check = checkImage(file.bytes);
+    if (check.ok) parsed.input.image_url = saveImage(user.id, file.bytes, check);
+    else {
+      parsed.problems.push(check.problem);
+      logActivity({ actor: user, action: "recipe.image_rejected", outcome: "denied", subject: parsed.input.title, detail: { reason: check.problem, bytes: file.bytes.length } });
+    }
+  } else if (ref && ownedImage(user.id, ref)) parsed.input.image_url = ref;
+  else if (ref && existing && ref === existing.image_url) parsed.input.image_url = ref;
+  else if (ref) parsed.problems.push("That photo couldn't be found. Choose it again.");
+  if (!parsed.input.image_url && !existing?.image_url) {
+    if (!parsed.problems.some((p) => /photo/i.test(p))) parsed.problems.push("Add a photo of the dish. Every recipe needs one.");
+  }
+  return parsed;
+}
+
 function recipeForm(ctx: Ctx, input: Partial<RecipeInput>, problems: string[], recipeId?: number, status = 200) {
   const ingredients = input.ingredients?.length ? input.ingredients : [undefined, undefined, undefined];
   const steps = input.steps?.length ? input.steps : [undefined, undefined];
@@ -582,7 +646,23 @@ function recipeForm(ctx: Ctx, input: Partial<RecipeInput>, problems: string[], r
         <nav class="crumbs" aria-label="Breadcrumb"><a href="/recipes">Recipes</a><span>/</span><span>${editing ? "Edit" : "New recipe"}</span></nav>
         ${pageHeader(editing ? "Edit recipe" : "Write a recipe", "Use the ingredient names you stock — calories, macros and cost are worked out automatically, and the recipe links to your pantry.")}
         ${errors(problems)}
-        <form method="post" action="${editing ? `/recipes/${recipeId}/edit` : "/recipes/new"}" class="form-grid">
+        <form method="post" action="${editing ? `/recipes/${recipeId}/edit` : "/recipes/new"}" class="form-grid" enctype="multipart/form-data" data-recipe-form>
+          <section class="panel stack rx-photo-field" data-photo-field>
+            <h2 class="panel-title">Photo</h2>
+            <div class="rx-photo-pick">
+              <div class="rx-photo-preview" data-photo-preview>
+                ${input.image_url
+                  ? html`<img src="${input.image_url}" alt="The recipe's photo" />`
+                  : html`<span class="rx-photo-empty">${icon("plus", 22)}<span>No photo yet</span></span>`}
+              </div>
+              <div class="stack">
+                <label class="field"><span>${input.image_url ? "Replace the photo" : "Photo of the dish"} <small class="muted">(required)</small></span>
+                  <input type="file" name="image" accept="image/jpeg,image/png,image/webp" data-photo-input ${input.image_url ? "" : raw("required")} aria-describedby="photo-help" /></label>
+                <input type="hidden" name="image_ref" value="${input.image_url ?? ""}" data-photo-ref />
+                <p class="muted small" id="photo-help" data-photo-status aria-live="polite">JPEG, PNG or WebP, up to 5 MB, at least 200 × 150 pixels. Use your own photo of the dish.</p>
+              </div>
+            </div>
+          </section>
           <section class="panel stack">
             <h2 class="panel-title">Basics</h2>
             <label class="field"><span>Title</span>
@@ -644,6 +724,47 @@ function recipeForm(ctx: Ctx, input: Partial<RecipeInput>, problems: string[], r
 
 export const routes: Route[] = [
   {
+    // the page uploads a chosen photo straight away and keeps the reference
+    method: "POST",
+    path: "/images",
+    auth: true,
+    handler: async (ctx) => {
+      const type = ctx.req.headers["content-type"] ?? "";
+      const chunks: Buffer[] = [];
+      let size = 0;
+      for await (const chunk of ctx.req) {
+        size += (chunk as Buffer).length;
+        if (size > MAX_IMAGE_BYTES) {
+          logActivity({ actor: ctx.user, action: "recipe.image_rejected", outcome: "denied", detail: { reason: "too large" } });
+          return json({ error: "That photo is over 5 MB. Try a smaller one." }, 413);
+        }
+        chunks.push(chunk as Buffer);
+      }
+      const bytes = Buffer.concat(chunks);
+      if (!type.startsWith("image/")) return json({ error: "That file isn't a JPEG, PNG or WebP photo." }, 415);
+      const check = checkImage(bytes);
+      if (!check.ok) {
+        logActivity({ actor: ctx.user, action: "recipe.image_rejected", outcome: "denied", detail: { reason: check.problem, bytes: bytes.length } });
+        return json({ error: check.problem }, 422);
+      }
+      return json({ url: saveImage(ctx.user!.id, bytes, check), width: check.width, height: check.height });
+    },
+  },
+  {
+    method: "GET",
+    path: "/images/:id",
+    handler: (ctx) => {
+      const id = Number(ctx.params.id);
+      const img = Number.isSafeInteger(id) ? loadImage(id) : undefined;
+      if (!img) throw new HttpError(404, "There's no image at this address.");
+      return {
+        status: 200,
+        headers: { "content-type": img.mime, "cache-control": "public, max-age=31536000, immutable", "x-content-type-options": "nosniff" },
+        body: Buffer.from(img.bytes),
+      };
+    },
+  },
+  {
     method: "GET",
     path: "/recipes",
     handler: (ctx) => {
@@ -671,9 +792,10 @@ export const routes: Route[] = [
     path: "/recipes/new",
     auth: true,
     handler: async (ctx) => {
-      const { input, problems } = parseRecipeForm(await ctx.form());
+      const { input, problems } = await readRecipeForm(ctx);
       if (problems.length) return recipeForm(ctx, input, problems, undefined, 422);
       const id = saveRecipe(ctx.user!.id, input);
+      logActivity({ actor: ctx.user, action: "recipe.create", subject: input.title, detail: { recipe: id, visibility: input.visibility, ingredients: input.ingredients.length, steps: input.steps.length } });
       setFlash(ctx, "Recipe published.");
       return redirect(`/recipes/${id}`);
     },
@@ -717,6 +839,7 @@ export const routes: Route[] = [
       const recipe = ownRecipe(ctx);
       const input: RecipeInput = {
         ...recipe,
+        image_url: recipe.image_url ?? undefined,
         ingredients: recipeIngredients(recipe.id).map((i) => ({ ...i, optional: !!i.optional })),
         steps: recipeSteps(recipe.id),
       };
@@ -729,9 +852,10 @@ export const routes: Route[] = [
     auth: true,
     handler: async (ctx) => {
       const recipe = ownRecipe(ctx);
-      const { input, problems } = parseRecipeForm(await ctx.form());
-      if (problems.length) return recipeForm(ctx, input, problems, recipe.id, 422);
+      const { input, problems } = await readRecipeForm(ctx, recipe);
+      if (problems.length) return recipeForm(ctx, { ...input, image_url: input.image_url ?? recipe.image_url ?? undefined }, problems, recipe.id, 422);
       saveRecipe(ctx.user!.id, input, recipe.id);
+      logActivity({ actor: ctx.user, action: "recipe.update", subject: input.title, detail: { recipe: recipe.id, visibility: input.visibility, photo_changed: !!input.image_url && input.image_url !== recipe.image_url } });
       setFlash(ctx, "Recipe saved.");
       return redirect(`/recipes/${recipe.id}`);
     },
@@ -743,6 +867,7 @@ export const routes: Route[] = [
     handler: (ctx) => {
       const recipe = ownRecipe(ctx);
       deleteRecipe(recipe.id, ctx.user!.id);
+      logActivity({ actor: ctx.user, action: "recipe.delete", subject: recipe.title, detail: { recipe: recipe.id } });
       setFlash(ctx, `Deleted “${recipe.title}”.`);
       return redirect("/recipes");
     },

@@ -19,6 +19,11 @@ export class Client {
     }
   }
 
+  // a cookie the page's own script would set (the time zone, say)
+  setCookie(name: string, value: string): void {
+    this.jar.set(name, encodeURIComponent(value));
+  }
+
   private cookieHeader(): string {
     return [...this.jar].map(([k, v]) => `${k}=${v}`).join("; ");
   }
@@ -79,9 +84,25 @@ export async function befriend(a: { client: Client; username: string }, b: { cli
   if (res.status !== 200) throw new Error(`friendship ${a.username}–${b.username} failed: ${res.status}`);
 }
 
+// A small, valid 320 × 240 PNG: every recipe needs a photo.
+export const DISH_PNG = Buffer.from(
+  "iVBORw0KGgoAAAANSUhEUgAAAUAAAADwCAIAAAD+Tyo8AAACEUlEQVR42u3TQQkAAAgEwesfxSTGMYId/AkDk2BhM13AU5EADAwYGDAwGBgwMGBgwMBgYMDAgIHBwICBAQMDBgYDAwYGDAwYGAwMGBgwMBgYMDBgYMDAYGDAwICBAQODgQEDAwYGAwMGBgwMGBgMDBgYMDAYWAUwMGBgwMBgYMDAgIEBA4OBAQMDBgYDAwYGDAwYGAwMGBgwMGBgMDBgYMDAYGDAwICBAQODgQEDAwYGDAwGBgwMGBgMDBgYMDBgYDAwYGDAwGBgwMCAgQEDg4EBAwMGBgwMBgYMDBgYDAwYGDAwYGAwMGBgwMCAgcHAgIEBA4OBAQMDBgYMDAYGDAwYGDAwGBgwMGBgMDBgYMDAgIHBwICBAQODgQEDAwYGDAwGBgwMGBgwMBgYMDBgYDAwYGDAwICBwcCAgQEDAwYGAwMGBgwMBgYMDBgYMDAYGDAwYGAwsApgYMDAgIHBwICBAQMDBgYDAwYGDAwGBgwMGBgwMBgYMDBgYMDAYGDAwICBwcCAgQEDAwYGAwMGBgwMGBgMDBgYMDAYGDAwYGDAwGBgwMCAgcHAgIEBAwMGBgMDBgYMDBgYDAwYGDAwGBgwMGBgwMBgYMDAgIEBA4OBAQMDBgYDAwYGDAwYGAwMGBgwMGBgMDBgYMDAYGDAwICBAQODgQEDAwYGAwMGBgwMGBgMDBgYMDBgYDAwYGDgbgExTQHmrarPiQAAAABJRU5ErkJggg==",
+  "base64",
+);
+
+// Uploads a photo the way the recipe form's script does; returns its /images/<id>.
+export async function uploadPhoto(client: Client, bytes: Buffer = DISH_PNG, type = "image/png"): Promise<string> {
+  const res = await client.request("/images", { method: "POST", headers: { "content-type": type, accept: "application/json" }, body: new Uint8Array(bytes) });
+  const body = (await res.json()) as { url?: string; error?: string };
+  if (!res.ok || !body.url) throw new Error(`photo upload failed: ${res.status} ${body.error}`);
+  return body.url;
+}
+
 // Creates a recipe and returns its id, read from the redirect to /recipes/:id.
 export async function createRecipe(client: Client, title: string, visibility: "public" | "friends" | "private") {
+  const image_ref = await uploadPhoto(client);
   const res = await client.post("/recipes/new", {
+    image_ref,
     title,
     description: "A test recipe",
     servings: "2",

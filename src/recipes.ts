@@ -1,4 +1,5 @@
 import { all, ingredientId, one, run, transaction } from "./db.ts";
+import { stockParams, stockSql } from "./expiry.ts";
 import { DIETARY_TAGS } from "./format.ts";
 import { parseYouTubeId } from "./videos.ts";
 import { visibleRecipeSql } from "./visibility.ts";
@@ -67,6 +68,10 @@ export interface RecipeInput {
   steps: { text: string; est_minutes: number | null }[];
   // undefined: leave the recipe's video alone; null: remove it; string: attach this id
   video_id?: string | null;
+  // the photo: an upload of the author's (/images/<id>) or, for seeded
+  // recipes, a catalogue photo URL. Required: the database refuses a recipe
+  // without one (migration 006).
+  image_url?: string;
 }
 
 const SELECT = `SELECT r.*, u.username AS author_username, u.display_name AS author_name,
@@ -302,16 +307,16 @@ export function saveRecipe(authorId: number, input: RecipeInput, recipeId?: numb
     const tags = JSON.stringify(input.dietary_tags);
     if (id === undefined) {
       id = run(
-        `INSERT INTO recipes (author_id, title, description, servings, visibility, dietary_tags)
-         VALUES (?, ?, ?, ?, ?, ?)`,
-        authorId, input.title, input.description, input.servings, input.visibility, tags,
+        `INSERT INTO recipes (author_id, title, description, servings, visibility, dietary_tags, image_url)
+         VALUES (?, ?, ?, ?, ?, ?, ?)`,
+        authorId, input.title, input.description, input.servings, input.visibility, tags, input.image_url ?? null,
       ).id;
       if (input.video_id) setVideo(id, input.video_id);
     } else {
       run(
         `UPDATE recipes SET title = ?, description = ?, servings = ?, visibility = ?, dietary_tags = ?,
-         updated_at = datetime('now') WHERE id = ? AND author_id = ?`,
-        input.title, input.description, input.servings, input.visibility, tags, id, authorId,
+         image_url = COALESCE(?, image_url), updated_at = datetime('now') WHERE id = ? AND author_id = ?`,
+        input.title, input.description, input.servings, input.visibility, tags, input.image_url ?? null, id, authorId,
       );
       if (input.video_id !== undefined) setVideo(id, input.video_id);
       run("DELETE FROM recipe_ingredients WHERE recipe_id = ?", id);
@@ -334,49 +339,23 @@ export function saveRecipe(authorId: number, input: RecipeInput, recipeId?: numb
 }
 
 // What the viewer's own pantry says about a recipe: which ingredients they
-// hold (fresh, not expired) and what the rest would cost at the prices they
-// last paid. Deterministic on purpose: the AI planner in a later phase builds
-// on this rather than replacing it (CLAUDE.md invariant 6).
+// hold as usable stock (src/expiry.ts decides what counts). Costs are
+// src/pricing.ts's job.
 export interface PantryMatch {
   have: Set<number>;
   missing: number;
-  // how many of the missing ingredients have a known price
-  priced: number;
-  estCents: number;
 }
 
 export function pantryMatch(viewerId: number, ingredients: Pick<RecipeIngredient, "ingredient_id" | "optional">[]): PantryMatch {
   const held = all<{ ingredient_id: number }>(
     `SELECT ingredient_id FROM inventory_items
-     WHERE owner_type = 'user' AND owner_id = ? AND quantity > 0
-       AND (expiry_date IS NULL OR expiry_date >= date('now', 'localtime'))`,
+     WHERE owner_type = 'user' AND owner_id = ? AND ${stockSql("")}`,
     viewerId,
+    ...stockParams(),
   );
   const have = new Set(held.map((h) => h.ingredient_id));
-  // price per item row as entered (a pack price), latest known per ingredient
-  const prices = new Map<number, number>();
-  for (const row of all<{ ingredient_id: number; price_cents: number }>(
-    `SELECT ingredient_id, price_cents FROM inventory_items
-     WHERE owner_type = 'user' AND owner_id = ? AND price_cents IS NOT NULL
-     ORDER BY updated_at`,
-    viewerId,
-  )) prices.set(row.ingredient_id, row.price_cents);
-
-  let missing = 0;
-  let est = 0;
-  let priced = 0;
-  for (const ing of ingredients) {
-    if (ing.optional) continue;
-    if (!have.has(ing.ingredient_id)) {
-      missing++;
-      const p = prices.get(ing.ingredient_id);
-      if (p !== undefined) {
-        est += p;
-        priced++;
-      }
-    }
-  }
-  return { have, missing, priced, estCents: est };
+  const missing = ingredients.filter((i) => !i.optional && !have.has(i.ingredient_id)).length;
+  return { have, missing };
 }
 
 export function deleteRecipe(id: number, authorId: number): boolean {

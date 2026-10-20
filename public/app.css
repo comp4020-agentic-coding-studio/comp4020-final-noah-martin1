@@ -12976,3 +12976,314 @@ form[data-hh-busy] button {
   height: 100%;
   border: 0;
 }
+
+/* ---------------- what to cook now (home, nothing planned) ---------------- */
+.hm-suggest {
+  display: grid;
+  align-content: end;
+  min-height: 420px;
+}
+.hm-suggest .hm-tonight-body {
+  padding-bottom: 12px;
+}
+.hm-suggest h2 a {
+  color: inherit;
+  text-decoration: none;
+}
+.hm-suggest h2 a:hover,
+.hm-suggest h2 a:focus-visible {
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  text-decoration-thickness: 2px;
+}
+.hm-suggest-why {
+  margin-top: 12px;
+  font-size: 15px;
+  font-weight: 600;
+}
+.hm-suggest-have {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 6px;
+  align-items: center;
+  margin-top: 6px;
+  font-size: 14px;
+  opacity: 0.92;
+}
+.hm-suggest-need {
+  opacity: 0.85;
+}
+.hm-suggest-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 4px 28px 26px;
+}
+.hm-suggest-actions form {
+  display: contents;
+}
+.button-glass {
+  background: rgb(255 255 255 / 0.2);
+  color: #fff;
+  border: 1px solid rgb(255 255 255 / 0.32);
+  backdrop-filter: blur(14px) saturate(1.4);
+  -webkit-backdrop-filter: blur(14px) saturate(1.4);
+}
+.button-glass:hover {
+  background: rgb(255 255 255 / 0.32);
+}
+.hm-suggest-foot {
+  margin: 0 28px 24px;
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  background: rgb(255 255 255 / 0.9);
+  color: #1c1814;
+  font-size: 13.5px;
+}
+.hm-suggest-foot a {
+  color: inherit;
+  font-weight: 650;
+}
+@media (max-width: 720px) {
+  .hm-suggest {
+    min-height: 460px;
+  }
+  .hm-suggest-actions {
+    padding: 4px 20px 20px;
+  }
+  .hm-suggest-foot {
+    margin: 0 20px 20px;
+  }
+}
+
+/* ---------------- "Do you still have this?" ---------------- */
+.grace {
+  border: 1px solid color-mix(in srgb, var(--warn) 30%, var(--line));
+  background: color-mix(in srgb, var(--warn-soft) 60%, var(--surface));
+  margin-bottom: 20px;
+}
+.grace-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 12px;
+  display: grid;
+  gap: 10px;
+}
+.grace-list li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 12px;
+  padding: 10px 12px;
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+}
+.grace-list .grow {
+  flex: 1 1 260px;
+}
+.grace-form {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+.grace-form input[type="date"] {
+  padding: 6px 8px;
+  border-radius: var(--radius-xs);
+  border: 1px solid var(--line-strong);
+  background: var(--surface);
+  color: var(--ink);
+  font: inherit;
+  font-size: 13px;
+}
+.pill-kept {
+  background: var(--sky);
+  color: var(--sky-ink);
+}
+
+/* ---------------- packs on the shopping list ---------------- */
+.shop-pack {
+  display: grid;
+  gap: 2px;
+  margin-top: 6px;
+  font-size: 13px;
+}
+.shop-pack-name a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-color: var(--line-strong);
+  text-underline-offset: 3px;
+}
+.shop-pack-name a:hover {
+  text-decoration-color: currentColor;
+}
+.shop-store {
+  display: inline-block;
+  padding: 1px 7px;
+  margin-right: 4px;
+  border-radius: var(--pill);
+  background: var(--surface-3);
+  color: var(--ink-2);
+  font-size: 11.5px;
+  font-weight: 650;
+  vertical-align: 1px;
+}
+.shop-store-woolworths {
+  background: var(--sage);
+  color: var(--good);
+}
+.shop-store-aldi {
+  background: var(--sky);
+  color: var(--sky-ink);
+}
+.shop-store-you {
+  background: var(--butter);
+  color: var(--butter-ink);
+}
+.shop-src,
+.shop-why {
+  color: var(--ink-3);
+  font-size: 12px;
+}
+.shop-why {
+  color: var(--ink-2);
+}
+.shop-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 4px 0 10px;
+}
+.shop-split div {
+  display: grid;
+  gap: 2px;
+}
+.shop-split dt {
+  font-size: 12.5px;
+  color: var(--ink-2);
+}
+.shop-split dd {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+.shop-split small {
+  color: var(--ink-3);
+  font-size: 12px;
+}
+.rd-buy-list summary {
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  margin: 6px 0;
+}
+.rd-buy-list .shop-line {
+  padding: 10px 0;
+}
+
+/* ---------------- recipe photo field ---------------- */
+.rx-photo-pick {
+  display: grid;
+  grid-template-columns: minmax(140px, 220px) 1fr;
+  gap: 18px;
+  align-items: start;
+}
+.rx-photo-preview {
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--surface-2);
+  border: 1px dashed var(--line-strong);
+  display: grid;
+  place-items: center;
+  transition: opacity 200ms var(--ease);
+}
+.rx-photo-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.rx-photo-preview.is-loading {
+  opacity: 0.6;
+}
+.rx-photo-empty {
+  display: grid;
+  justify-items: center;
+  gap: 6px;
+  color: var(--ink-3);
+  font-size: 13px;
+}
+.photo-bad {
+  color: var(--bad) !important;
+  font-weight: 600;
+}
+@media (max-width: 560px) {
+  .rx-photo-pick {
+    grid-template-columns: 1fr;
+  }
+  .shop-split {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------------- cook mode: live status, always in words ---------------- */
+.js-only { display: none; }
+html:not(.no-js) .js-only { display: inline; }
+html:not(.no-js) .no-js-only { display: none; }
+.cm-banner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 auto 12px;
+  max-width: 1100px;
+  width: calc(100% - 32px);
+  padding: 8px 10px 8px 14px;
+  border-radius: var(--pill);
+  background: var(--surface-2);
+  color: var(--ink-2);
+  font-size: 14px;
+  transition: background 240ms var(--ease), color 240ms var(--ease);
+}
+.cm-banner-dot {
+  flex: none;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--ink-3);
+}
+.cm-banner.is-live {
+  background: color-mix(in srgb, var(--live) 14%, var(--surface));
+  color: var(--ink);
+}
+.cm-banner.is-live .cm-banner-dot {
+  background: var(--live);
+  box-shadow: 0 0 0 0 color-mix(in srgb, var(--live) 60%, transparent);
+  animation: cm-banner-pulse 1.8s var(--ease) infinite;
+}
+.cm-banner-text {
+  flex: 1;
+  margin: 0;
+}
+.cm-banner form {
+  margin: 0;
+}
+.cm-banner-off {
+  background: var(--surface);
+  color: var(--ink);
+  border: 1px solid var(--line-strong);
+}
+.cm-banner-off:hover {
+  border-color: var(--live);
+}
+@keyframes cm-banner-pulse {
+  70% { box-shadow: 0 0 0 8px transparent; }
+  100% { box-shadow: 0 0 0 0 transparent; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cm-banner.is-live .cm-banner-dot { animation: none; }
+}
+@media (max-width: 560px) {
+  .cm-banner {
+    border-radius: var(--radius);
+    font-size: 13px;
+  }
+}

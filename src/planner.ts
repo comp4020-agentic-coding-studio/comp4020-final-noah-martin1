@@ -1,6 +1,9 @@
 import { all } from "./db.ts";
-import { addDays, daysBetween, money, parseIsoDate, weekday } from "./format.ts";
+import { stockParams, stockSql } from "./expiry.ts";
+import { addDays, daysBetween, money, parseIsoDate, today, weekday } from "./format.ts";
 import { estimate } from "./nutrition.ts";
+import { type Need, type PackOption, packOptions, purchasePlan, type Stock } from "./pricing.ts";
+import { usableStock } from "./shopping.ts";
 import { type Prefs, prefsFor } from "./prefs.ts";
 import { ingredientsFor, listVisibleRecipes, pantryMatch, type Recipe, type RecipeIngredient } from "./recipes.ts";
 import { canSeeRecipe, friendIds } from "./visibility.ts";
@@ -86,13 +89,33 @@ function proteinOf(names: string[]): string {
 /* ---------------- cost ---------------- */
 
 export interface Costed {
-  // the whole dish at the servings you cook for, cents
+  // consumption cost of the whole dish at the servings you cook for, cents
   fullCents: number;
-  // minus the ingredients already in your pantry
+  // checkout cost of the whole packs this dish needs on its own, after usable
+  // pantry stock, plus a labelled reference estimate for any line with no
+  // pack price (never counted as free)
   toBuyCents: number;
+  // the part of toBuyCents that is an estimate for unpriced lines
+  estimatedCents: number;
+  unpriced: number;
+  // consumption cost of what the dish uses beyond the pantry
+  usesCents: number;
   held: string[];
   counted: number;
   total: number;
+}
+
+export type OptionCache = Map<number, PackOption[]>;
+
+export function cachedOptions(userId: number, cache: OptionCache = new Map()): (id: number, name: string) => PackOption[] {
+  return (id, name) => {
+    let o = cache.get(id);
+    if (!o) {
+      o = packOptions(userId, id, name);
+      cache.set(id, o);
+    }
+    return o;
+  };
 }
 
 // How much of a recipe you cook: your usual servings over the recipe's.
@@ -100,21 +123,46 @@ export function servingsFactor(prefs: Pick<Prefs, "default_servings">, recipeSer
   return Math.max(1, prefs.default_servings) / Math.max(1, recipeServings);
 }
 
-// Estimated cost of a recipe's required ingredients, scaled, and what's left
-// to buy after the pantry (`have`, from pantryMatch). Estimates only: the
-// reference prices live in nutrition.ts and the pages say so.
-export function costLines(lines: RecipeIngredient[], factor: number, have: Set<number>): Costed {
+// A recipe's costs at `factor` × its servings, against usable stock, through
+// the same package engine as the shopping list (src/pricing.ts).
+export function costLines(
+  lines: RecipeIngredient[],
+  factor: number,
+  stock: Stock[],
+  options: (id: number, name: string) => PackOption[],
+): Costed {
   const required = lines.filter((l) => !l.optional);
   const scale = (l: RecipeIngredient) => ({ name: l.name, unit: l.unit, quantity: l.quantity === null ? null : l.quantity * factor });
   const full = estimate(required.map(scale));
-  const buy = estimate(required.filter((l) => !have.has(l.ingredient_id)).map(scale));
+  const needs: Need[] = required.map((l) => ({ ingredient_id: l.ingredient_id, name: l.name, category: "", quantity: scale(l).quantity, unit: l.unit, meal: "" }));
+  const plan = purchasePlan(needs, stock, options);
+  const coveredIds = new Set(plan.covered.map((c) => c.ingredient_id));
   return {
     fullCents: Math.round(full.costCents),
-    toBuyCents: Math.round(buy.costCents),
-    held: required.filter((l) => have.has(l.ingredient_id)).map((l) => l.name),
+    toBuyCents: plan.purchaseCents + plan.unpricedEstCents,
+    estimatedCents: plan.unpricedEstCents,
+    unpriced: plan.unpriced,
+    usesCents: plan.consumptionCents,
+    held: required.filter((l) => coveredIds.has(l.ingredient_id)).map((l) => l.name),
     counted: full.counted,
     total: full.total,
   };
+}
+
+// The checkout cost of several recipes bought together: shared ingredients
+// pooled before packs are chosen, so one bag of flour serves two dinners.
+export function weekPurchase(
+  recipes: { lines: RecipeIngredient[]; factor: number; title: string }[],
+  stock: Stock[],
+  options: (id: number, name: string) => PackOption[],
+): { purchaseCents: number; estimatedCents: number; unpriced: number; consumptionCents: number } {
+  const needs: Need[] = recipes.flatMap((r) =>
+    r.lines
+      .filter((l) => !l.optional)
+      .map((l) => ({ ingredient_id: l.ingredient_id, name: l.name, category: "", quantity: l.quantity === null ? null : l.quantity * r.factor, unit: l.unit, meal: r.title })),
+  );
+  const plan = purchasePlan(needs, stock, options);
+  return { purchaseCents: plan.purchaseCents + plan.unpricedEstCents, estimatedCents: plan.unpricedEstCents, unpriced: plan.unpriced, consumptionCents: plan.consumptionCents };
 }
 
 /* ---------------- the kitchen: everything personal the planner reads ---------------- */
@@ -123,6 +171,8 @@ export interface Kitchen {
   userId: number;
   prefs: Prefs;
   have: Set<number>;
+  stock: Stock[];
+  options: (id: number, name: string) => PackOption[];
   // fresh pantry items with a date, earliest expiry per ingredient
   expiring: Map<number, { name: string; expiry: string }>;
   // recipe id → times on the calendar (planned, cooking or cooked)
@@ -138,10 +188,12 @@ export function kitchenFor(userId: number): Kitchen {
   for (const row of all<{ ingredient_id: number; name: string; expiry_date: string }>(
     `SELECT it.ingredient_id, i.name, MIN(it.expiry_date) AS expiry_date
      FROM inventory_items it JOIN ingredients i ON i.id = it.ingredient_id
-     WHERE it.owner_type = 'user' AND it.owner_id = ? AND it.quantity > 0
-       AND it.expiry_date IS NOT NULL AND it.expiry_date >= date('now', 'localtime')
+     WHERE it.owner_type = 'user' AND it.owner_id = ? AND ${stockSql("it")}
+       AND it.expiry_date IS NOT NULL AND it.expiry_date >= ?
      GROUP BY it.ingredient_id`,
     userId,
+    ...stockParams(),
+    today(),
   )) expiring.set(row.ingredient_id, { name: row.name, expiry: row.expiry_date });
 
   const history = new Map<number, number>();
@@ -158,7 +210,7 @@ export function kitchenFor(userId: number): Kitchen {
     history.set(row.recipe_id, row.n);
     if (row.cuisine) cuisines.set(row.cuisine, (cuisines.get(row.cuisine) ?? 0) + row.n);
   }
-  return { userId, prefs, have, expiring, history, cuisines };
+  return { userId, prefs, have, stock: usableStock("user", userId), options: cachedOptions(userId), expiring, history, cuisines };
 }
 
 export function dislikesOf(prefs: Prefs): string[] {
@@ -200,7 +252,7 @@ export function candidatesFor(k: Kitchen): Candidate[] {
     const ls = lines.get(recipe.id) ?? [];
     const names = ls.map((l) => l.name.toLowerCase());
     if (avoid.some((a) => names.some((n) => n.includes(a)))) continue;
-    const cost = costLines(ls, servingsFactor(k.prefs, recipe.servings), k.have);
+    const cost = costLines(ls, servingsFactor(k.prefs, recipe.servings), k.stock, k.options);
     if (cost.counted < 2 || cost.fullCents <= 0) continue;
     out.push({
       recipe,
@@ -602,7 +654,15 @@ export function generatePlan(userId: number, req: PlanRequest): Plan {
     picks.push({ date, recipe: c.recipe, toBuyCents: c.cost.toBuyCents, fullCents: c.cost.fullCents, reasons: texts.slice(0, 2), meat: c.meat });
   });
 
-  const totalCents = picks.reduce((s, p) => s + p.toBuyCents, 0);
+  // bought together, shared ingredients are pooled: never more than the sum
+  // of the picks bought one by one, which is what the ceiling was kept under
+  const week = weekPurchase(
+    chosen.filter((c): c is Candidate => !!c).map((c) => ({ lines: c.lines, factor: servingsFactor(k.prefs, c.recipe.servings), title: c.recipe.title })),
+    k.stock,
+    k.options,
+  );
+  const totalCents = week.purchaseCents;
+  if (week.estimatedCents) notes.push(`Includes about ${money(week.estimatedCents)} of estimates for ${week.unpriced} ingredient${week.unpriced === 1 ? "" : "s"} with no pack price.`);
   if (!pool.length) notes.push("Nothing in the catalogue fits your diet and dislikes together. Loosen one in settings to get suggestions.");
   else if (open.length && enforce !== null) {
     notes.push(`Only ${picks.length} dinner${picks.length === 1 ? "" : "s"} fit in ${money(enforce)}, so ${open.length === 1 ? "one night is" : `${open.length} nights are`} left open.`);

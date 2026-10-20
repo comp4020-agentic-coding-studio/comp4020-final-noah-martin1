@@ -1,8 +1,9 @@
 import { all, one, run, transaction } from "../db.ts";
-import { addDays, money, parseIsoDate, shortDate, today, weekday, weekStart } from "../format.ts";
+import { addDays, money, parseIsoDate, shortDate, sized, today, weekday, weekStart } from "../format.ts";
 import { type Html, html, raw } from "../html.ts";
 import { type Ctx, HttpError, htmlReply, redirect, setFlash } from "../http.ts";
 import {
+  cachedOptions,
   type Costed,
   costLines,
   generatePlan,
@@ -12,7 +13,9 @@ import {
   type Plan,
   type PlanRequest,
   servingsFactor,
+  weekPurchase,
 } from "../planner.ts";
+import { usableStock } from "../shopping.ts";
 import { prefsFor } from "../prefs.ts";
 import { getRecipe, ingredientsFor, listVisibleRecipes, pantryMatch, type Recipe, totalMinutes } from "../recipes.ts";
 import type { Route } from "../server.ts";
@@ -230,27 +233,39 @@ function calHref(s: CalState, change: Partial<CalState> = {}, hash = ""): string
 
 interface Money {
   byEntry: Map<number, Costed>;
+  // per day: the ingredients that day's meals use beyond the pantry
+  // (consumption cost), since packs are bought for the week, not the day
   byDay: Map<string, number>;
+  // checkout cost of the whole packs for the still-planned meals, shared
+  // ingredients pooled across the week, after usable pantry stock
   totalCents: number;
+  estimatedCents: number;
+  unpriced: number;
+  usesCents: number;
 }
 
-// What the week's own meals cost: each recipe scaled to the servings you cook
-// for, minus what your pantry already holds. Cancelled meals cost nothing.
+// What the week's own meals cost, through the shopping list's engine.
+// Cooked and cancelled meals no longer need buying.
 function weekMoney(userId: number, entries: CalendarEntry[]): Money {
   const prefs = prefsFor(userId);
-  const { have } = pantryMatch(userId, []);
+  const stock = usableStock("user", userId);
+  const options = cachedOptions(userId);
   const lines = ingredientsFor([...new Set(entries.map((e) => e.recipe_id))]);
   const byEntry = new Map<number, Costed>();
   const byDay = new Map<string, number>();
-  let totalCents = 0;
+  let usesCents = 0;
+  const toBuy: { lines: typeof lines extends Map<number, infer V> ? V : never; factor: number; title: string }[] = [];
   for (const e of entries) {
-    const c = costLines(lines.get(e.recipe_id) ?? [], servingsFactor(prefs, e.servings), have);
+    const factor = servingsFactor(prefs, e.servings);
+    const c = costLines(lines.get(e.recipe_id) ?? [], factor, stock, options);
     byEntry.set(e.id, c);
-    if (e.status === "cancelled") continue;
-    byDay.set(e.date, (byDay.get(e.date) ?? 0) + c.toBuyCents);
-    totalCents += c.toBuyCents;
+    if (e.status !== "planned") continue;
+    byDay.set(e.date, (byDay.get(e.date) ?? 0) + c.usesCents);
+    usesCents += c.usesCents;
+    toBuy.push({ lines: lines.get(e.recipe_id) ?? [], factor, title: e.title });
   }
-  return { byEntry, byDay, totalCents };
+  const week = weekPurchase(toBuy, stock, options);
+  return { byEntry, byDay, totalCents: week.purchaseCents, estimatedCents: week.estimatedCents, unpriced: week.unpriced, usesCents };
 }
 
 /* ---------------- friends overlay ---------------- */
@@ -278,7 +293,7 @@ function firstName(name: string): string {
 
 function photo(url: string | null, size: "small" | "medium"): string | null {
   if (!url) return null;
-  return /themealdb\.com/.test(url) ? `${url}/${size}` : url;
+  return sized(url, size);
 }
 
 function thumb(url: string | null, title: string, size: "small" | "medium" = "medium"): Html {
@@ -301,7 +316,7 @@ function tile(e: CalendarEntry, cost: Costed | undefined, i: number, returnTo: s
           ${e.status !== "planned"
             ? html`<span class="cal-status">${e.status === "completed" ? icon("check", 12) : ""}${STATUS_LABEL[e.status]}</span>`
             : cost && cost.counted
-              ? html`<span class="mono">${cost.toBuyCents ? money(cost.toBuyCents) : "In pantry"}</span>`
+              ? html`<span class="mono" title="Bought on its own: whole packs after your pantry">${cost.toBuyCents ? money(cost.toBuyCents) : "In pantry"}</span>`
               : ""}
           ${e.shared ? html`<span class="cal-shared" title="Shared with friends">${icon("users", 13)}<span class="sr-only">Shared with friends</span></span>` : ""}
         </span>
@@ -410,7 +425,7 @@ function budgetCard(userId: number, days: string[], money_: Money, returnTo: str
   return html`<section class="cal-budget" data-cal-region="budget" aria-label="Week budget">
     <div class="cal-budget-main">
       <p class="cal-label">${icon("basket", 16)} This week's shop</p>
-      <p class="cal-big"><span class="tnum">${money(spend)}</span> <small>planned</small></p>
+      <p class="cal-big"><span class="tnum">${money(spend)}</span> <small>at the checkout</small></p>
       ${budget !== null
         ? html`<div class="cal-meter ${over ? "cal-meter-over" : ""}" role="meter" aria-label="Planned spend against your weekly budget" aria-valuemin="0" aria-valuemax="${budget}" aria-valuenow="${Math.min(spend, budget)}" aria-valuetext="${money(spend)} of ${money(budget)}"><span style="--p: ${pct}%"></span></div>
             <p class="cal-budget-note">${over ? html`<strong class="cal-over">${money(spend - budget)} over</strong>` : html`<strong>${money(budget - spend)} left</strong>`} of ${money(budget)} budget</p>`
@@ -419,7 +434,7 @@ function budgetCard(userId: number, days: string[], money_: Money, returnTo: str
     <ol class="cal-bars" aria-label="Spend by day">
       ${days.map((d) => {
         const v = money_.byDay.get(d) ?? 0;
-        return html`<li class="${d === now ? "is-today" : ""}" title="${weekday(d)} ${shortDate(d)}: ${money(v)} to buy">
+        return html`<li class="${d === now ? "is-today" : ""}" title="${weekday(d)} ${shortDate(d)}: uses ${money(v)} of groceries">
           <span class="cal-bar-val mono">${v ? `$${Math.round(v / 100)}` : ""}</span>
           <span class="cal-bar"><span style="--h: ${v ? Math.max(6, Math.round((v / peak) * 100)) : 0}%"></span></span>
           <span class="cal-bar-day">${weekday(d).slice(0, 1)}<span class="sr-only">${weekday(d).slice(1)} ${money(v)}</span></span>
@@ -432,7 +447,7 @@ function budgetCard(userId: number, days: string[], money_: Money, returnTo: str
         <span class="input-prefix"><span>$</span><input name="weekly_budget" inputmode="decimal" placeholder="e.g. 100" value="${budget === null ? "" : (budget / 100).toFixed(2)}" aria-label="Weekly grocery budget in dollars" /></span></label>
       <button class="button button-small button-soft" type="submit">Save</button>
     </form>
-    <p class="cal-fine">Estimates at typical Australian supermarket shelf prices (Larder's reference list), scaled to ${prefsFor(userId).default_servings} serves, minus what's in your pantry. Not live prices.</p>
+    <p class="cal-fine">The whole packs this week's planned meals need, scaled to ${prefsFor(userId).default_servings} serves, after what's in your pantry, with shared ingredients bought once (the same total as your <a href="/shopping">shopping list</a>). The meals themselves use ${money(money_.usesCents)} of it; daily bars show what each day uses.${money_.estimatedCents ? ` Includes about ${money(money_.estimatedCents)} of estimates for ${money_.unpriced} item${money_.unpriced === 1 ? "" : "s"} with no pack price.` : ""} Shelf prices from Woolworths and ALDI as last read, and prices you paid; not live.</p>
   </section>`;
 }
 
@@ -471,7 +486,7 @@ function weekGrid(
           ${items.map((it) => it.render())}
           <a class="cal-add" href="${calHref(s, {}, "")}&day=${d}#quick-add" data-quick-open="${d}" aria-label="Add a meal on ${weekday(d)} ${shortDate(d)}">${icon("plus", 15)}<span>${items.length ? "Add" : "Add a meal"}</span></a>
         </div>
-        <footer class="cal-day-foot" title="Estimated groceries for this day's meals, after your pantry"><span>Groceries</span><span class="mono">${spend ? money(spend) : "—"}</span></footer>
+        <footer class="cal-day-foot" title="What this day's meals use beyond your pantry (a share of the packs bought for the week)"><span>Uses</span><span class="mono">${spend ? money(spend) : "—"}</span></footer>
       </section>`;
     })}
   </div>`;
@@ -541,14 +556,15 @@ function quickChoices(userId: number, q: string): { recipes: Recipe[]; heading: 
 function quickResults(s: CalState, userId: number, returnTo: string): Html {
   const { recipes, heading } = quickChoices(userId, s.q);
   const prefs = prefsFor(userId);
-  const { have } = pantryMatch(userId, []);
+  const stock = usableStock("user", userId);
+  const options = cachedOptions(userId);
   const lines = ingredientsFor(recipes.map((r) => r.id));
   const when = `${s.day === today() ? "Today" : `${weekday(s.day)} ${shortDate(s.day)}`}, ${s.meal}`;
   return html`<div class="cal-results" data-quick-results aria-live="polite">
     <p class="cal-results-head"><span>${heading}</span><span class="cal-when">${icon("calendar", 13)}<span data-when>${when}</span></span></p>
     ${recipes.length
       ? html`<ul>${recipes.map((r, i) => {
-          const c = costLines(lines.get(r.id) ?? [], servingsFactor(prefs, r.servings), have);
+          const c = costLines(lines.get(r.id) ?? [], servingsFactor(prefs, r.servings), stock, options);
           const minutes = totalMinutes(r);
           return html`<li class="cal-result" style="--i: ${i}">
             <a class="cal-result-photo" href="/recipes/${r.id}" tabindex="-1" aria-hidden="true">${thumb(r.image_url, r.title, "small")}</a>
@@ -662,7 +678,7 @@ function plannerPanel(s: CalState, userId: number, plan: Plan | null, returnTo: 
         <summary>How picks are made</summary>
         <p>Fixed rules decide every pick, so the same choices give the same week; no AI chooses what you eat. Only recipes you can see, that fit every diet tag you follow and avoid your dislikes, are considered. Then each choice you tick adds a rule:</p>
         <dl>${INTERESTS.map((x) => html`<div><dt>${x.key === "budget" ? "$ for the week" : x.label}</dt><dd>${HOW[x.key]}</dd></div>`)}</dl>
-        <p>Costs are estimates at typical Australian supermarket prices, scaled to the ${prefs.default_servings} serves you cook for. Your past weeks also give cuisines you plan often a small lift.</p>
+        <p>Each dinner's cost is the whole packs it needs bought on its own, after your pantry, scaled to the ${prefs.default_servings} serves you cook for; the week's total pools shared ingredients, so it's never more than the dinners added up. Your past weeks also give cuisines you plan often a small lift.</p>
       </details>
     </div>
     ${plan && p ? planResult(s, plan, p, returnTo) : ""}
@@ -681,7 +697,7 @@ function planResult(s: CalState, plan: Plan, p: PlanParams, returnTo: string): H
     <div class="cal-plan-summary">
       <div class="cal-plan-sum-text">
         <p class="cal-label">Your draft week</p>
-        <p class="cal-plan-total"><span class="tnum">${money(plan.totalCents)}</span> <small>to buy for ${plan.picks.length} dinner${plan.picks.length === 1 ? "" : "s"}</small></p>
+        <p class="cal-plan-total"><span class="tnum">${money(plan.totalCents)}</span> <small>at the checkout for ${plan.picks.length} dinner${plan.picks.length === 1 ? "" : "s"}</small></p>
         ${plan.budgetCents !== null
           ? html`<div class="cal-meter cal-meter-plan" role="meter" aria-label="Draft week cost against budget" aria-valuemin="0" aria-valuemax="${plan.budgetCents}" aria-valuenow="${plan.totalCents}" aria-valuetext="${money(plan.totalCents)} of ${money(plan.budgetCents)}"><span style="--p: ${pct}%"></span></div>
               <p class="cal-budget-note"><strong>${money(plan.budgetCents - plan.totalCents)} under</strong> your ${money(plan.budgetCents)}</p>`
@@ -713,7 +729,7 @@ function planResult(s: CalState, plan: Plan, p: PlanParams, returnTo: string): H
           <a class="cal-pick-photo" href="/recipes/${pick.recipe.id}" tabindex="-1" aria-hidden="true">
             ${thumb(pick.recipe.image_url, pick.recipe.title)}
             <span class="cal-pick-day">${weekday(d)} ${shortDate(d)}</span>
-            <span class="cal-pick-cost">${money(pick.toBuyCents)}<small> to buy</small></span>
+            <span class="cal-pick-cost">${money(pick.toBuyCents)}<small> on its own</small></span>
           </a>
           <div class="cal-pick-body">
             <h3><a href="/recipes/${pick.recipe.id}">${pick.recipe.title}</a></h3>
@@ -761,8 +777,8 @@ function calendarPage(ctx: Ctx, s: CalState): Html {
     : null;
   const weekDays = Array.from({ length: 7 }, (_, i) => addDays(s.start, i));
   const weekEntries = entries.filter((e) => e.date >= weekDays[0] && e.date <= weekDays[6] && e.status !== "cancelled");
-  const weekSpend = weekDays.reduce((sum, d) => sum + (money_.byDay.get(d) ?? 0), 0);
-  const summary = html`${weekEntries.length} meal${weekEntries.length === 1 ? "" : "s"} planned${weekSpend ? html` · ${money(weekSpend)} to buy` : ""}${ghosts.length ? html` · ${ghosts.length} from friends` : ""}`;
+  const weekSpend = s.view === "month" ? 0 : money_.totalCents;
+  const summary = html`${weekEntries.length} meal${weekEntries.length === 1 ? "" : "s"} planned${weekSpend ? html` · ${money(weekSpend)} at the checkout` : ""}${ghosts.length ? html` · ${ghosts.length} from friends` : ""}`;
   // the budget card always speaks for one week: the one shown, or this week in month view
   const budgetDays = s.view === "month" ? Array.from({ length: 7 }, (_, i) => addDays(weekStart(s.month.slice(0, 7) === now.slice(0, 7) ? now : s.month), i)) : weekDays;
   const budgetMoney: Money =

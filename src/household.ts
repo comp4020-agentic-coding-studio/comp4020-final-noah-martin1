@@ -1,8 +1,10 @@
 import { randomInt } from "node:crypto";
 import { all, ingredientId, normaliseIngredient, one, run, transaction } from "./db.ts";
 import { addDays, money, parseIsoDate, qty, SOON_DAYS, shortDate, today, weekday } from "./format.ts";
+import { listedParams, listedSql, stockParams, stockSql } from "./expiry.ts";
 import { HttpError } from "./http.ts";
-import { estimate, priceSource } from "./nutrition.ts";
+import { type Need, packOptions, type PlanLine, purchasePlan } from "./pricing.ts";
+import { usableStock } from "./shopping.ts";
 import { catalogueByTitle, getRecipe, ingredientsFor } from "./recipes.ts";
 import { canSeeRecipe } from "./visibility.ts";
 
@@ -483,9 +485,10 @@ function hydrateItem(r: ItemRow): HouseItem {
 export function houseItems(viewerId: number): HouseItem[] {
   const house = requireHouse(viewerId);
   return all<ItemRow>(
-    `${ITEM_SELECT} WHERE it.owner_type = 'household' AND it.owner_id = ?
+    `${ITEM_SELECT} WHERE it.owner_type = 'household' AND it.owner_id = ? AND ${listedSql("it")}
      ORDER BY it.expiry_date IS NULL, it.expiry_date, i.name`,
     house.id,
+    ...listedParams(),
   ).map(hydrateItem);
 }
 
@@ -494,7 +497,7 @@ export function houseItems(viewerId: number): HouseItem[] {
 export function houseItem(viewerId: number, itemId: number): HouseItem {
   const house = requireHouse(viewerId);
   const row = Number.isInteger(itemId)
-    ? one<ItemRow>(`${ITEM_SELECT} WHERE it.id = ? AND it.owner_type = 'household' AND it.owner_id = ?`, itemId, house.id)
+    ? one<ItemRow>(`${ITEM_SELECT} WHERE it.id = ? AND it.owner_type = 'household' AND it.owner_id = ? AND it.removed_at IS NULL`, itemId, house.id)
     : undefined;
   if (!row) throw new HttpError(404, "That item isn't in your household's pantry.");
   return hydrateItem(row);
@@ -529,9 +532,10 @@ export function updateItem(viewerId: number, itemId: number, input: ItemInput): 
   transaction(() => {
     const ing = ingredientId(input.name, input.unit);
     run(
-      `UPDATE inventory_items SET ingredient_id = ?, quantity = ?, unit = ?, expiry_date = ?, price_cents = ?, updated_at = datetime('now')
+      `UPDATE inventory_items SET ingredient_id = ?, quantity = ?, unit = ?, expiry_date = ?, price_cents = ?, updated_at = datetime('now'),
+       kept_at = CASE WHEN expiry_date IS ? THEN kept_at ELSE NULL END
        WHERE id = ? AND owner_type = 'household' AND owner_id = ?`,
-      ing, input.quantity, input.unit, input.expiry_date, input.price_cents, itemId, house.id,
+      ing, input.quantity, input.unit, input.expiry_date, input.price_cents, input.expiry_date, itemId, house.id,
     );
     log(house.id, viewerId, "updated", { subject: normaliseIngredient(input.name) });
     // only an edit that brings an ingredient into stock can unlock a meal
@@ -555,9 +559,10 @@ export function personalItems(viewerId: number): { id: number; name: string; qua
   return all(
     `SELECT it.id, i.name, it.quantity, it.unit, it.expiry_date
      FROM inventory_items it JOIN ingredients i ON i.id = it.ingredient_id
-     WHERE it.owner_type = 'user' AND it.owner_id = ?
+     WHERE it.owner_type = 'user' AND it.owner_id = ? AND ${listedSql("it")}
      ORDER BY it.expiry_date IS NULL, it.expiry_date, i.name`,
     viewerId,
+    ...listedParams(),
   );
 }
 
@@ -569,7 +574,7 @@ export function moveFromPersonal(viewerId: number, personalItemId: number): stri
     ? one<{ id: number; ingredient_id: number; name: string; quantity: number; unit: string; expiry_date: string | null }>(
         `SELECT it.id, it.ingredient_id, i.name, it.quantity, it.unit, it.expiry_date
          FROM inventory_items it JOIN ingredients i ON i.id = it.ingredient_id
-         WHERE it.id = ? AND it.owner_type = 'user' AND it.owner_id = ?`,
+         WHERE it.id = ? AND it.owner_type = 'user' AND it.owner_id = ? AND it.removed_at IS NULL`,
         personalItemId,
         viewerId,
       )
@@ -596,7 +601,7 @@ export function moveFromPersonal(viewerId: number, personalItemId: number): stri
 export function expiryRace(viewerId: number): HouseItem[] {
   const house = requireHouse(viewerId);
   return all<ItemRow>(
-    `${ITEM_SELECT} WHERE it.owner_type = 'household' AND it.owner_id = ? AND it.quantity > 0
+    `${ITEM_SELECT} WHERE it.owner_type = 'household' AND it.owner_id = ? AND it.quantity > 0 AND it.removed_at IS NULL
        AND it.expiry_date BETWEEN ? AND ?
      ORDER BY it.expiry_date, i.name`,
     house.id,
@@ -785,22 +790,7 @@ export function houseUsuals(viewerId: number, limit = 4): number[] {
 
 /* ---------------- the shared shopping list ---------------- */
 
-export interface HouseLine {
-  ingredient_id: number;
-  name: string;
-  category: string;
-  unit: string;
-  need: number | null;
-  have: number;
-  toBuy: number | null;
-  otherUnit: boolean;
-  meals: string[];
-  priceCents: number | null;
-  // "est": Larder's reference shelf price for the amount; "paid": the last
-  // price a housemate entered for a pack of it
-  priceSource: "est" | "paid" | null;
-  // for "est": where the reference price was read and the month ("2026-10")
-  priceRef: { source: string; checked: string } | null;
+export interface HouseLine extends PlanLine {
   claim: Claim | null;
 }
 
@@ -811,7 +801,9 @@ export interface HouseList {
   covered: HouseLine[];
   meals: { date: string; meal: string; title: string; recipe_id: number }[];
   hiddenMeals: number;
-  estCents: number;
+  // whole packs at the checkout, and what the meals use of them
+  purchaseCents: number;
+  consumptionCents: number;
   unpriced: number;
   claimedCents: number;
   claimedLines: number;
@@ -820,10 +812,11 @@ export interface HouseList {
 
 export const LIST_DAYS = 7;
 
-// The same arithmetic as the personal list (src/shopping.ts) over the house:
-// ingredients of planned house meals for the next week, minus the house
-// pantry's fresh stock in the same unit. Priced as estimates, never as live
-// supermarket prices.
+// The same engine as the personal list (src/pricing.ts) over the house:
+// planned house meals for the next week at their recipe's servings, summed
+// per ingredient, minus the house pantry's usable stock, bought in whole
+// packs. Prices any member recorded count for the house, so everyone sees
+// the same total.
 export function houseShopping(viewerId: number): HouseList {
   const house = requireHouse(viewerId);
   const from = today();
@@ -846,39 +839,17 @@ export function houseShopping(viewerId: number): HouseList {
   );
   const hiddenEntries = new Set<number>();
   const meals = new Map<number, HouseList["meals"][number]>();
-  const lines = new Map<string, HouseLine>();
+  const needs: Need[] = [];
   for (const r of rows) {
     if (!canSeeRecipe(viewerId, { author_id: r.author_id, visibility: r.visibility })) {
       hiddenEntries.add(r.entry_id);
       continue;
     }
     meals.set(r.entry_id, { date: r.date, meal: r.meal, title: r.title, recipe_id: r.recipe_id });
-    const unit = r.unit.trim().toLowerCase();
-    const key = `${r.ingredient_id}|${unit}`;
-    let line = lines.get(key);
-    if (!line) {
-      line = {
-        ingredient_id: r.ingredient_id, name: r.name, category: r.category, unit, need: 0, have: 0, toBuy: 0,
-        otherUnit: false, meals: [], priceCents: null, priceSource: null, priceRef: null, claim: null,
-      };
-      lines.set(key, line);
-    }
-    line.need = line.need === null || r.quantity === null ? null : line.need + r.quantity;
-    if (!line.meals.includes(r.title)) line.meals.push(r.title);
+    needs.push({ ingredient_id: r.ingredient_id, name: r.name, category: r.category, quantity: r.quantity, unit: r.unit, meal: r.title });
   }
-
-  const stock = all<{ ingredient_id: number; quantity: number; unit: string }>(
-    `SELECT ingredient_id, quantity, unit FROM inventory_items
-     WHERE owner_type = 'household' AND owner_id = ? AND quantity > 0
-       AND (expiry_date IS NULL OR expiry_date >= date('now', 'localtime'))`,
-    house.id,
-  );
-  const paid = new Map<number, number>();
-  for (const p of all<{ ingredient_id: number; price_cents: number }>(
-    `SELECT ingredient_id, price_cents FROM inventory_items
-     WHERE owner_type = 'household' AND owner_id = ? AND price_cents IS NOT NULL ORDER BY updated_at`,
-    house.id,
-  )) paid.set(p.ingredient_id, p.price_cents);
+  const members = all<{ user_id: number }>("SELECT user_id FROM household_members WHERE household_id = ?", house.id).map((m) => m.user_id);
+  const plan = purchasePlan(needs, usableStock("household", house.id), (id, name) => packOptions(members, id, name));
   const claims = new Map<number, Claim>();
   for (const c of all<{ ingredient_id: number; claimed_by: number; display_name: string; claimed_at: string }>(
     `SELECT c.ingredient_id, c.claimed_by, u.display_name, c.claimed_at
@@ -886,49 +857,26 @@ export function houseShopping(viewerId: number): HouseList {
     house.id,
   )) claims.set(c.ingredient_id, { user_id: c.claimed_by, name: c.display_name, at: c.claimed_at });
 
-  const toBuy: HouseLine[] = [];
-  const covered: HouseLine[] = [];
-  let estCents = 0;
-  let unpriced = 0;
   let claimedCents = 0;
   let claimedLines = 0;
-  for (const line of lines.values()) {
-    const held = stock.filter((s) => s.ingredient_id === line.ingredient_id);
-    line.have = held.filter((s) => s.unit.trim().toLowerCase() === line.unit).reduce((n, s) => n + s.quantity, 0);
-    line.otherUnit = held.some((s) => s.unit.trim().toLowerCase() !== line.unit);
-    line.toBuy = line.need === null ? (held.length ? 0 : null) : Math.max(0, Math.round((line.need - line.have) * 100) / 100);
-    if (line.toBuy === 0) {
-      covered.push(line);
-      continue;
-    }
-    const est = line.toBuy === null ? null : estimate([{ name: line.name, quantity: line.toBuy, unit: line.unit }]);
-    if (est && est.counted && est.costCents > 0) {
-      line.priceCents = Math.max(1, Math.round(est.costCents));
-      line.priceSource = "est";
-      line.priceRef = priceSource(line.name);
-    } else if (paid.has(line.ingredient_id)) {
-      line.priceCents = paid.get(line.ingredient_id)!;
-      line.priceSource = "paid";
-    }
-    line.claim = claims.get(line.ingredient_id) ?? null;
-    if (line.priceCents === null) unpriced++;
-    else estCents += line.priceCents;
-    if (line.claim) {
+  const toBuy: HouseLine[] = plan.toBuy.map((l) => {
+    const claim = claims.get(l.ingredient_id) ?? null;
+    if (claim) {
       claimedLines++;
-      claimedCents += line.priceCents ?? 0;
+      claimedCents += l.pack?.costCents ?? 0;
     }
-    toBuy.push(line);
-  }
-  const byCategory = (a: HouseLine, b: HouseLine) => a.category.localeCompare(b.category) || a.name.localeCompare(b.name);
+    return { ...l, claim };
+  });
   return {
     from,
     to,
-    toBuy: toBuy.sort(byCategory),
-    covered: covered.sort(byCategory),
+    toBuy,
+    covered: plan.covered.map((l) => ({ ...l, claim: null })),
     meals: [...meals.values()],
     hiddenMeals: hiddenEntries.size,
-    estCents,
-    unpriced,
+    purchaseCents: plan.purchaseCents,
+    consumptionCents: plan.consumptionCents,
+    unpriced: plan.unpriced,
     claimedCents,
     claimedLines,
     budgetCents: house.weekly_budget_cents,
@@ -1041,11 +989,11 @@ function freshHeld(ownerType: "user" | "household", ownerId: number, except: num
   return new Set(
     all<{ ingredient_id: number }>(
       `SELECT ingredient_id FROM inventory_items
-       WHERE owner_type = ? AND owner_id = ? AND quantity > 0
-         AND (expiry_date IS NULL OR expiry_date >= date('now', 'localtime'))
+       WHERE owner_type = ? AND owner_id = ? AND ${stockSql("")}
          AND id NOT IN (${ids.map(() => "?").join(", ")})`,
       ownerType,
       ownerId,
+      ...stockParams(),
       ...ids,
     ).map((r) => r.ingredient_id),
   );

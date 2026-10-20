@@ -43,7 +43,9 @@ describe("week planner", () => {
     const { picks, total } = await planFor(client, { i: ["budget", "mix", "season"], budget, nights: "7", seed });
     const cap = Math.round(Number(budget) * 100);
     expect(total).toBeLessThanOrEqual(cap);
-    expect(picks.reduce((s, p) => s + p.cents, 0)).toBe(total);
+    // bought together, shared ingredients are pooled into the same packs, so
+    // the week never costs more than its dinners bought one by one
+    expect(total).toBeLessThanOrEqual(picks.reduce((s, p) => s + p.cents, 0));
     for (const p of picks) expect(p.cents).toBeLessThanOrEqual(cap);
   });
 

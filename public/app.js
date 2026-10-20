@@ -2,6 +2,15 @@
 
 document.documentElement.classList.remove("no-js");
 
+// The browser's time zone, so "what to cook now" means breakfast at 8 am
+// where you are. Only the zone name ("Australia/Sydney"); nothing finer.
+try {
+  const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+  if (tz && !document.cookie.split("; ").includes(`tz=${encodeURIComponent(tz)}`)) {
+    document.cookie = `tz=${encodeURIComponent(tz)}; path=/; max-age=31536000; samesite=lax`;
+  }
+} catch {}
+
 // Theme: follow the system until someone picks. The toggle flips between
 // light and dark relative to what's showing; the choice is remembered per
 // browser. Pages with 3D scenes listen for "larder:theme" to relight.
@@ -362,4 +371,66 @@ document.querySelector("[data-print]")?.addEventListener("click", () => window.p
     stack.style.setProperty("--rx", "0deg");
     stack.style.setProperty("--ry", "0deg");
   });
+})();
+
+// Recipe photo: upload the chosen file straight away, show it, and send its
+// reference with the form instead of the file. Without this script the form
+// posts the file itself (multipart) and the server checks it the same way.
+(function () {
+  const field = document.querySelector("[data-photo-field]");
+  if (!field) return;
+  const form = field.closest("form");
+  const input = field.querySelector("[data-photo-input]");
+  const ref = field.querySelector("[data-photo-ref]");
+  const preview = field.querySelector("[data-photo-preview]");
+  const status = field.querySelector("[data-photo-status]");
+  const help = status.textContent;
+  let uploading = null;
+
+  function say(text, bad) {
+    status.textContent = text;
+    status.classList.toggle("photo-bad", !!bad);
+  }
+
+  input.addEventListener("change", () => {
+    const file = input.files && input.files[0];
+    if (!file) return;
+    if (!/^image\/(jpeg|png|webp)$/.test(file.type)) return say("That file isn't a JPEG, PNG or WebP photo.", true);
+    if (file.size > 5 * 1024 * 1024) return say("That photo is over 5 MB. Try a smaller one.", true);
+    const url = URL.createObjectURL(file);
+    preview.innerHTML = "";
+    const img = document.createElement("img");
+    img.src = url;
+    img.alt = "The photo you chose";
+    preview.append(img);
+    preview.classList.add("is-loading");
+    say("Uploading…");
+    uploading = fetch("/images", { method: "POST", body: file, headers: { "content-type": file.type, accept: "application/json" } })
+      .then(async (res) => {
+        const body = await res.json().catch(() => ({}));
+        if (!res.ok) throw new Error(body.error || "That photo couldn't be uploaded.");
+        ref.value = body.url;
+        input.required = false;
+        say(`Photo added (${body.width} × ${body.height}).`);
+        return true;
+      })
+      .catch((err) => {
+        ref.value = ref.defaultValue;
+        say(err.message === "Failed to fetch" ? "Couldn't reach Larder. The photo will upload with the form instead." : err.message, true);
+        return false;
+      })
+      .finally(() => preview.classList.remove("is-loading"));
+  });
+
+  form.addEventListener("submit", async (e) => {
+    if (!uploading) return;
+    e.preventDefault();
+    const ok = await uploading;
+    uploading = null;
+    // uploaded: send the reference, not the file again
+    if (ok) input.disabled = true;
+    else if (!input.files.length) return;
+    form.submit();
+  });
+  if (!ref.value) status.textContent = help;
 })();

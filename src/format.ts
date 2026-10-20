@@ -109,3 +109,9 @@ export const DIETARY_TAGS = [
   "quick",
   "budget",
 ] as const;
+
+// A recipe photo at a size. TheMealDB serves /small, /medium and /large
+// variants; uploads and local images have one size.
+export function sized(url: string, size: "small" | "medium" | "large"): string {
+  return /^https:\/\/www\.themealdb\.com\//.test(url) ? `${url}/${size}` : url;
+}

@@ -4,6 +4,7 @@
 // model, or a slow one, this answer stands on its own (CLAUDE.md: AI is
 // advisory and the page works when the model is down).
 
+import { stockParams, stockSql } from "./expiry.ts";
 import { all } from "./db.ts";
 import type { Recipe, RecipeIngredient } from "./recipes.ts";
 import { pantryMatch } from "./recipes.ts";
@@ -27,9 +28,9 @@ const STOCK = /\b(chicken|beef) (stock|broth)\b/;
 function pantryNames(viewerId: number): string[] {
   return all<{ name: string }>(
     `SELECT i.name FROM inventory_items inv JOIN ingredients i ON i.id = inv.ingredient_id
-     WHERE inv.owner_type = 'user' AND inv.owner_id = ? AND inv.quantity > 0
-       AND (inv.expiry_date IS NULL OR inv.expiry_date >= date('now', 'localtime'))`,
+     WHERE inv.owner_type = 'user' AND inv.owner_id = ? AND ${stockSql("inv")}`,
     viewerId,
+    ...stockParams(),
   ).map((r) => r.name.toLowerCase());
 }
 

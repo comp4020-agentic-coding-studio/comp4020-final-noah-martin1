@@ -1,15 +1,16 @@
-import { addDays, ago, freshness, money, qty, shortDate, today, weekday } from "../format.ts";
+import { addDays, ago, freshness, money, qty, shortDate, sized, today, weekday } from "../format.ts";
 import { type Html, html } from "../html.ts";
-import { type Ctx, htmlReply } from "../http.ts";
-import { listVisibleRecipes, type Recipe } from "../recipes.ts";
-import { recipeTile as recipeTileFor } from "./recipes.ts";
+import { type Ctx, htmlReply, parseCookies } from "../http.ts";
+import { localHour, PERIOD_LABEL, suggestNow, validZone } from "../suggest.ts";
+import { listVisibleRecipes, type Recipe, totalMinutes } from "../recipes.ts";
+import { duration, recipeTile as recipeTileFor } from "./recipes.ts";
 import type { Route } from "../server.ts";
 import { friendIds } from "../visibility.ts";
 import { prefsFor } from "../prefs.ts";
 import { avatar, empty, icon, NAV_GROUPS, page, pageHeader, publicPage } from "../views/layout.ts";
 import { shoppingList } from "../shopping.ts";
 import { entriesBetween, type FriendMeal, friendMeals, mealChip } from "./calendar.ts";
-import { personalInventory } from "./pantry.ts";
+import { gracePrompt, type InventoryItem, personalInventory } from "./pantry.ts";
 import { livePreviewCard } from "./live.ts";
 
 type FeedItem = { kind: "recipe"; at: string; recipe: Recipe } | { kind: "meal"; at: string; meal: FriendMeal };
@@ -37,7 +38,7 @@ export function feedItem(item: FeedItem): Html {
       <div class="grow">
         <p><a href="/u/${r.author_username}" class="strong">${r.author_name}</a> shared a recipe <span class="muted">· ${ago(item.at)}</span></p>
         <a class="feed-card ${r.image_url ? "feed-card-photo" : ""}" href="/recipes/${r.id}">
-          ${r.image_url ? html`<img src="${r.image_url}/medium" alt="" loading="lazy" decoding="async" />` : ""}
+          ${r.image_url ? html`<img src="${sized(r.image_url, "medium")}" alt="" loading="lazy" decoding="async" />` : ""}
           <span class="feed-card-text">
             <strong>${r.title}</strong>
             ${r.description ? html`<span class="clamp muted">${r.description}</span>` : ""}
@@ -55,7 +56,7 @@ export function feedItem(item: FeedItem): Html {
         <a href="/recipes/${m.recipe_id}">${m.title}</a> for ${m.meal} on ${weekday(m.date)} ${shortDate(m.date)}
         <span class="muted">· ${ago(item.at)}</span></p>
       ${m.image_url
-        ? html`<a class="feed-meal" href="/recipes/${m.recipe_id}"><img src="${m.image_url}/small" alt="" loading="lazy" decoding="async" /><span>${weekday(m.date)}</span></a>`
+        ? html`<a class="feed-meal" href="/recipes/${m.recipe_id}"><img src="${sized(m.image_url, "small")}" alt="" loading="lazy" decoding="async" /><span>${weekday(m.date)}</span></a>`
         : ""}
     </div>
   </li>`;
@@ -134,6 +135,60 @@ function landing(ctx: Ctx): Html {
   });
 }
 
+// Nothing planned: a recipe for the meal it's time for, from what's in the
+// kitchen when there's anything there (src/suggest.ts decides). Every action
+// is a plain link or form, so it works without JavaScript.
+function suggestionCard(ctx: Ctx, pantry: InventoryItem[]): Html {
+  const user = ctx.user!;
+  const hour = localHour(validZone(parseCookies(ctx.req.headers.cookie).tz));
+  const skip = Number(ctx.url.searchParams.get("skip"));
+  const s = suggestNow(user.id, pantry, hour, { exclude: Number.isInteger(skip) && skip > 0 ? [skip] : [] });
+  const empty = !pantry.length;
+  if (!s) {
+    return html`<div class="hm-tonight hm-tonight-empty">
+      <div class="hm-tonight-body">
+        <span class="hm-chip">Nothing planned</span>
+        <h2>What are we cooking?</h2>
+        <p>Browse the recipes, or let Larder draft a week from your budget.</p>
+        <div class="hm-tonight-actions">
+          <a class="button" href="/calendar#plan">${icon("spark", 16)} Plan my week</a>
+          <a class="button button-ghost" href="/recipes">Browse recipes</a>
+        </div>
+      </div>
+    </div>`;
+  }
+  const r = s.recipe;
+  const meal = s.period === "late" ? "dinner" : s.period;
+  const minutes = totalMinutes(r);
+  return html`<section class="hm-tonight hm-suggest" aria-labelledby="hm-suggest-h" data-suggest="${r.id}" data-period="${s.period}">
+    <img src="${r.image_url}" alt="" />
+    <div class="hm-tonight-scrim"></div>
+    <div class="hm-tonight-body">
+      <span class="hm-chip">Nothing planned · idea for ${PERIOD_LABEL[s.period]}</span>
+      <h2 id="hm-suggest-h"><a href="/recipes/${r.id}">${r.title}</a></h2>
+      <span class="hm-tonight-meta">${[minutes ? duration(minutes) : "", r.cuisine, `serves ${r.servings}`].filter(Boolean).join(" · ")}</span>
+      <p class="hm-suggest-why">${s.reason}.</p>
+      ${s.fromKitchen
+        ? html`<p class="hm-suggest-have">${icon("check", 14)} You have ${s.uses.map((u) => u.name).join(", ")}${s.missing.length ? html`<span class="hm-suggest-need"> · you'd need ${s.missing.slice(0, 4).join(", ")}${s.missing.length > 4 ? ` and ${s.missing.length - 4} more` : ""}</span>` : html`<span> · nothing else needed</span>`}</p>`
+        : ""}
+    </div>
+    <div class="hm-suggest-actions">
+      <a class="button button-accent" href="/recipes/${r.id}/cook">${icon("cook", 16)} Start cooking</a>
+      <form method="post" action="/calendar">
+        <input type="hidden" name="recipe_id" value="${r.id}" />
+        <input type="hidden" name="date" value="${today()}" />
+        <input type="hidden" name="meal" value="${meal}" />
+        <input type="hidden" name="return_to" value="/" />
+        <button class="button button-glass" type="submit">${icon("calendar", 16)} Add to today</button>
+      </form>
+      <a class="button button-glass" href="/?skip=${r.id}" aria-label="Show another idea">Another idea</a>
+    </div>
+    ${empty
+      ? html`<p class="hm-suggest-foot">Your fridge looks empty here, which usually just means it isn't filled in yet. <a href="/pantry#add">Add what you have</a> and ideas will use it.</p>`
+      : ""}
+  </section>`;
+}
+
 // The signed-in home: tonight's meal front and centre, the week at a glance,
 // what needs using, money, and what friends are up to. Every card leads
 // somewhere you can act.
@@ -169,17 +224,7 @@ function dashboard(ctx: Ctx): Html {
         </div>
         <span class="hm-tonight-go">${icon("cook", 18)} Cook it</span>
       </a>`
-    : html`<div class="hm-tonight hm-tonight-empty">
-        <div class="hm-tonight-body">
-          <span class="hm-chip">Tonight</span>
-          <h2>Nothing planned yet</h2>
-          <p>Let Larder draft a week from your budget and what's in the fridge, or pick something yourself.</p>
-          <div class="hm-tonight-actions">
-            <a class="button" href="/calendar#plan">${icon("spark", 16)} Plan my week</a>
-            <a class="button button-ghost" href="/recipes">Browse recipes</a>
-          </div>
-        </div>
-      </div>`;
+    : suggestionCard(ctx, pantry);
 
   // seven little day cells, each with a thumbnail of its first meal
   const days = Array.from({ length: 7 }, (_, i) => addDays(now, i));
@@ -193,7 +238,7 @@ function dashboard(ctx: Ctx): Html {
           <a href="${m ? `/recipes/${m.recipe_id}` : `/calendar#add`}" title="${m ? m.title : `Plan ${weekday(d)}`}">
             <span class="hm-dow">${i === 0 ? "Today" : weekday(d)}</span>
             ${m?.image_url
-              ? html`<img src="${m.image_url}/small" alt="" loading="lazy" decoding="async" />`
+              ? html`<img src="${sized(m.image_url, "small")}" alt="" loading="lazy" decoding="async" />`
               : html`<span class="hm-day-empty">${m ? m.title.slice(0, 1) : "+"}</span>`}
             <span class="hm-day-count">${meals.length ? `${meals.length} meal${meals.length === 1 ? "" : "s"}` : "Free"}</span>
           </a>
@@ -202,13 +247,13 @@ function dashboard(ctx: Ctx): Html {
     </ol>
   </section>`;
 
-  const pct = budget ? Math.min(100, Math.round((shop.estCents / budget) * 100)) : 0;
+  const pct = budget ? Math.min(100, Math.round((shop.purchaseCents / budget) * 100)) : 0;
   const money_ = html`<section class="hm-card hm-shop" aria-labelledby="hm-shop-h">
     <header class="hm-head"><h2 id="hm-shop-h">Shopping</h2><a href="/shopping">List ${icon("arrow", 14)}</a></header>
-    <p class="hm-big">${money(shop.estCents)}<small> to buy this week</small></p>
+    <p class="hm-big">${money(shop.purchaseCents)}<small> at the checkout this week</small></p>
     ${budget
       ? html`<div class="hm-meter" role="img" aria-label="${pct}% of your ${money(budget)} budget"><span style="--p: ${pct}%"></span></div>
-          <p class="hm-note">${shop.estCents <= budget ? `${money(budget - shop.estCents)} under your ${money(budget)} budget` : `${money(shop.estCents - budget)} over your ${money(budget)} budget`}</p>`
+          <p class="hm-note">${shop.purchaseCents <= budget ? `${money(budget - shop.purchaseCents)} under your ${money(budget)} budget` : `${money(shop.purchaseCents - budget)} over your ${money(budget)} budget`}</p>`
       : html`<p class="hm-note"><a href="/settings">Set a weekly budget</a> to track it here.</p>`}
     <p class="hm-note">${shop.toBuy.length} item${shop.toBuy.length === 1 ? "" : "s"} for ${upcoming.length} planned meal${upcoming.length === 1 ? "" : "s"}${shop.unpriced ? ` · ${shop.unpriced} unpriced` : ""}</p>
   </section>`;
@@ -222,7 +267,7 @@ function dashboard(ctx: Ctx): Html {
             <a class="hm-soon-find" href="/recipes?q=${encodeURIComponent(it.name)}" aria-label="Recipes with ${it.name}">${icon("search", 14)}</a></li>`;
         })}</ul>`
       : html`<p class="hm-note">Nothing goes off in the next few days.</p>`}
-    ${expired.length ? html`<p class="hm-note hm-bad">${expired.length} item${expired.length === 1 ? " has" : "s have"} expired. <a href="/pantry#add">Tidy up</a></p>` : ""}
+    ${expired.length ? html`<p class="hm-note hm-bad">${expired.length} item${expired.length === 1 ? "" : "s"} past ${expired.length === 1 ? "its" : "their"} date. <a href="/#still-have">Still have ${expired.length === 1 ? "it" : "them"}?</a></p>` : ""}
     <p class="hm-note">${pantry.length} items worth ${money(value)} in your kitchen</p>
   </section>`;
 
@@ -233,7 +278,7 @@ function dashboard(ctx: Ctx): Html {
           const r = item.kind === "recipe" ? { id: item.recipe.id, title: item.recipe.title, img: item.recipe.image_url, who: item.recipe.author_name, what: "shared" }
             : { id: item.meal.recipe_id, title: item.meal.title, img: item.meal.image_url, who: item.meal.display_name, what: `${weekday(item.meal.date)} ${item.meal.meal}` };
           return html`<li><a href="/recipes/${r.id}">
-            <span class="hm-rail-img">${r.img ? html`<img src="${r.img}/medium" alt="" loading="lazy" decoding="async" />` : html`<span>${r.title.slice(0, 1)}</span>`}</span>
+            <span class="hm-rail-img">${r.img ? html`<img src="${sized(r.img, "medium")}" alt="" loading="lazy" decoding="async" />` : html`<span>${r.title.slice(0, 1)}</span>`}</span>
             <span class="hm-rail-who">${avatar(r.who, "sm")}<span>${r.who.split(" ")[0]} · ${r.what}</span></span>
             <strong>${r.title}</strong>
           </a></li>`;
@@ -252,6 +297,7 @@ function dashboard(ctx: Ctx): Html {
         <a class="button" href="/recipes/new">${icon("plus", 16)} New recipe</a>
       </div>
     </header>
+    ${gracePrompt(pantry, "/")}
     <div class="hm">
       ${hero}
       ${strip}

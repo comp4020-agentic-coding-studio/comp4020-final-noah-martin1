@@ -2,7 +2,10 @@ import { all, catalogFor, ingredientId, one, run } from "../db.ts";
 import { addDays, daysBetween, freshness, money, parseIsoDate, qty, shortDate, today, weekday } from "../format.ts";
 import { type Html, html, raw } from "../html.ts";
 import { type Ctx, HttpError, htmlReply, redirect, setFlash } from "../http.ts";
+import { logActivity } from "../activity.ts";
+import { expiryState, listedParams, listedSql, removalDate } from "../expiry.ts";
 import { shelfware } from "../kitchen.ts";
+import { recordPaidPrice } from "../pricing.ts";
 import type { Route } from "../server.ts";
 import { empty, errors, icon, page } from "../views/layout.ts";
 
@@ -16,18 +19,34 @@ export interface InventoryItem {
   expiry_date: string | null;
   price_cents: number | null;
   updated_at: string;
+  kept_at: string | null;
 }
 
 export function personalInventory(userId: number): InventoryItem[] {
   // soonest expiry first; undated items last
   return all<InventoryItem>(
     `SELECT it.id, it.ingredient_id, i.name, i.category, it.quantity, it.unit, it.expiry_date,
-            it.price_cents, it.updated_at
+            it.price_cents, it.updated_at, it.kept_at
      FROM inventory_items it JOIN ingredients i ON i.id = it.ingredient_id
-     WHERE it.owner_type = 'user' AND it.owner_id = ?
+     WHERE it.owner_type = 'user' AND it.owner_id = ? AND ${listedSql("it")}
      ORDER BY it.expiry_date IS NULL, it.expiry_date, i.name`,
     userId,
+    ...listedParams(),
   );
+}
+
+// Expired yesterday and not answered yet: the owner is asked once, on the
+// pantry page and the home page, whether they still have it.
+export function graceItems(items: InventoryItem[]): InventoryItem[] {
+  return items.filter((it) => expiryState(it) === "grace");
+}
+
+// The label an item wears: an expired item someone kept says so.
+export function itemFreshness(it: Pick<InventoryItem, "expiry_date" | "kept_at">): { state: "expired" | "soon" | "fresh" | "none" | "kept"; label: string } {
+  const f = freshness(it.expiry_date);
+  if (f.state === "expired" && it.kept_at) return { state: "kept", label: "Past date · kept" };
+  if (f.state === "expired") return { state: "expired", label: `${f.label} · still have it?` };
+  return f;
 }
 
 // Which of the person's own upcoming planned meals use each ingredient, for
@@ -69,7 +88,7 @@ function inDays(days: number): string {
 function scenePayload(userId: number, items: InventoryItem[]): string {
   const uses = upcomingUses(userId, [...new Set(items.map((i) => i.ingredient_id))]);
   const data = items.map((it) => {
-    const f = freshness(it.expiry_date);
+    const f = itemFreshness(it);
     const ware = shelfware(it.name, it.category);
     return {
       id: it.id,
@@ -80,6 +99,8 @@ function scenePayload(userId: number, items: InventoryItem[]): string {
       fresh: f.state,
       // the panel already shows the date, so say how long that is from now
       freshLabel: f.state === "fresh" && it.expiry_date ? inDays(daysBetween(today(), it.expiry_date)) : f.label,
+      // the grace day: the panel asks "Do you still have this?" and says when it goes
+      grace: expiryState(it) === "grace" ? { removes: `${weekday(removalDate(it.expiry_date!))} ${shortDate(removalDate(it.expiry_date!))}` } : null,
       place: ware.place,
       model: ware.model,
       tint: ware.tint,
@@ -150,6 +171,34 @@ function itemFields(values: Record<string, string>, idPrefix: string): Html {
       <span class="input-prefix"><span>$</span><input name="price" inputmode="decimal" placeholder="0.00" value="${values.price ?? ""}" /></span></label>`;
 }
 
+// "Do you still have this?" for items in their grace day. One card, one
+// answer per item; once answered (or once the day passes) it's gone.
+export function gracePrompt(items: InventoryItem[], returnTo = "/pantry"): Html {
+  const due = graceItems(items);
+  if (!due.length) return html``;
+  return html`<section class="panel grace" id="still-have" aria-labelledby="grace-h">
+    <h2 class="panel-title" id="grace-h">Do you still have ${due.length === 1 ? "this" : "these"}?</h2>
+    <p class="muted small">${due.length === 1 ? "It" : "They"} passed ${due.length === 1 ? "its" : "their"} expiry date yesterday. Unless you say you still have ${due.length === 1 ? "it" : "them"}, ${due.length === 1 ? "it leaves" : "they leave"} your kitchen tomorrow, and ${due.length === 1 ? "isn't" : "aren't"} counted for recipes or shopping in the meantime.</p>
+    <ul class="grace-list">
+      ${due.map(
+        (it) => html`<li>
+          <span class="grow"><span class="item-name">${it.name}</span> <small class="muted">${qty(it.quantity, it.unit)} · expired ${shortDate(it.expiry_date!)} · removed ${weekday(removalDate(it.expiry_date!))} ${shortDate(removalDate(it.expiry_date!))} if not kept</small></span>
+          <form method="post" action="/pantry/${it.id}/keep" class="grace-form">
+            <input type="hidden" name="return_to" value="${returnTo}" />
+            <label class="sr-only" for="grace-date-${it.id}">New expiry date for ${it.name} (optional)</label>
+            <input id="grace-date-${it.id}" type="date" name="expiry_date" min="${today()}" />
+            <button class="button button-small" type="submit">I still have it</button>
+          </form>
+          <form method="post" action="/pantry/${it.id}/gone">
+            <input type="hidden" name="return_to" value="${returnTo}" />
+            <button class="button button-small button-ghost" type="submit">It's gone</button>
+          </form>
+        </li>`,
+      )}
+    </ul>
+  </section>`;
+}
+
 function pantryPage(ctx: Ctx, values: Record<string, string> = {}, problems: string[] = [], status = 200) {
   const user = ctx.user!;
   const items = personalInventory(user.id);
@@ -157,7 +206,7 @@ function pantryPage(ctx: Ctx, values: Record<string, string> = {}, problems: str
   const counts = { expired: 0, soon: 0 };
   let value = 0;
   for (const it of items) {
-    const f = freshness(it.expiry_date).state;
+    const f = itemFreshness(it).state;
     if (f === "expired") counts.expired++;
     if (f === "soon") counts.soon++;
     value += it.price_cents ?? 0;
@@ -213,6 +262,8 @@ function pantryPage(ctx: Ctx, values: Record<string, string> = {}, problems: str
     </section>
     <script type="application/json" id="kitchen-data">${raw(scenePayload(user.id, items))}</script>
 
+    ${gracePrompt(items)}
+
     <section class="panel kx-add" id="add">
       <h2 class="panel-title">Add an item</h2>
       ${errors(problems)}
@@ -230,7 +281,7 @@ function pantryPage(ctx: Ctx, values: Record<string, string> = {}, problems: str
               <thead><tr><th scope="col">Item</th><th scope="col" class="num">Qty</th><th scope="col">Expiry</th><th scope="col" class="num">Price</th><th scope="col"><span class="sr-only">Actions</span></th></tr></thead>
               <tbody>
                 ${items.map((it) => {
-                  const f = freshness(it.expiry_date);
+                  const f = itemFreshness(it);
                   if (it.id === editing) {
                     return html`<tr class="editing" id="item-${it.id}"><td colspan="5">
                       <form method="post" action="/pantry/${it.id}" class="inline-form">
@@ -284,10 +335,19 @@ function pantryPage(ctx: Ctx, values: Record<string, string> = {}, problems: str
 function ownItem(ctx: Ctx): number {
   const id = Number(ctx.params.id);
   const row = Number.isInteger(id)
-    ? one("SELECT 1 FROM inventory_items WHERE id = ? AND owner_type = 'user' AND owner_id = ?", id, ctx.user!.id)
+    ? one("SELECT 1 FROM inventory_items WHERE id = ? AND owner_type = 'user' AND owner_id = ? AND removed_at IS NULL", id, ctx.user!.id)
     : undefined;
   if (!row) throw new HttpError(404, "That pantry item doesn't exist.");
   return id;
+}
+
+function itemName(id: number): string {
+  return one<{ name: string }>("SELECT i.name FROM inventory_items it JOIN ingredients i ON i.id = it.ingredient_id WHERE it.id = ?", id)?.name ?? "";
+}
+
+function back(form: URLSearchParams): string {
+  const to = form.get("return_to") ?? "";
+  return to.startsWith("/") && !to.startsWith("//") ? to : "/pantry";
 }
 
 export const routes: Route[] = [
@@ -304,17 +364,20 @@ export const routes: Route[] = [
     handler: async (ctx) => {
       const { input, values, problems } = parseItem(await ctx.form());
       if (problems.length) return pantryPage(ctx, values, problems, 422);
-      run(
+      const ing = ingredientId(input.name, input.unit);
+      const { id } = run(
         `INSERT INTO inventory_items (owner_type, owner_id, ingredient_id, quantity, unit, expiry_date, price_cents, added_by)
          VALUES ('user', ?, ?, ?, ?, ?, ?, ?)`,
         ctx.user!.id,
-        ingredientId(input.name, input.unit),
+        ing,
         input.quantity,
         input.unit,
         input.expiry_date,
         input.price_cents,
         ctx.user!.id,
       );
+      const recorded = recordPaidPrice(ctx.user!.id, ing, id, input);
+      logActivity({ actor: ctx.user, action: "pantry.add", subject: input.name, detail: { item: id, expiry: input.expiry_date, priced: input.price_cents !== null, price_recorded: recorded } });
       setFlash(ctx, `Added ${input.name}.`);
       return redirect("/pantry");
     },
@@ -327,16 +390,22 @@ export const routes: Route[] = [
       const id = ownItem(ctx);
       const { input, values, problems } = parseItem(await ctx.form());
       if (problems.length) return pantryPage(ctx, values, problems, 422);
+      const ing = ingredientId(input.name, input.unit);
+      // a new expiry date governs again: "kept" applied to the old one
       run(
         `UPDATE inventory_items SET ingredient_id = ?, quantity = ?, unit = ?, expiry_date = ?, price_cents = ?,
+         kept_at = CASE WHEN expiry_date IS ? THEN kept_at ELSE NULL END,
          updated_at = datetime('now') WHERE id = ?`,
-        ingredientId(input.name, input.unit),
+        ing,
         input.quantity,
         input.unit,
         input.expiry_date,
         input.price_cents,
+        input.expiry_date,
         id,
       );
+      recordPaidPrice(ctx.user!.id, ing, id, input);
+      logActivity({ actor: ctx.user, action: "pantry.update", subject: input.name, detail: { item: id, expiry: input.expiry_date } });
       setFlash(ctx, `Updated ${input.name}.`);
       return redirect("/pantry");
     },
@@ -346,9 +415,51 @@ export const routes: Route[] = [
     path: "/pantry/:id/delete",
     auth: true,
     handler: (ctx) => {
-      run("DELETE FROM inventory_items WHERE id = ?", ownItem(ctx));
+      const id = ownItem(ctx);
+      const name = itemName(id);
+      run("UPDATE inventory_items SET removed_at = datetime('now'), removed_reason = 'gone' WHERE id = ?", id);
+      logActivity({ actor: ctx.user, action: "pantry.remove", subject: name, detail: { item: id } });
       setFlash(ctx, "Item removed.");
       return redirect("/pantry");
+    },
+  },
+  {
+    // "I still have it": with a new date, that date governs; without one the
+    // item is kept past its date and never removed for it
+    method: "POST",
+    path: "/pantry/:id/keep",
+    auth: true,
+    handler: async (ctx) => {
+      const id = ownItem(ctx);
+      const form = await ctx.form();
+      const date = (form.get("expiry_date") ?? "").trim();
+      const name = itemName(id);
+      if (date) {
+        if (!parseIsoDate(date) || date < today()) {
+          setFlash(ctx, "A new expiry date has to be today or later.");
+          return redirect(back(form));
+        }
+        run("UPDATE inventory_items SET expiry_date = ?, kept_at = NULL, updated_at = datetime('now') WHERE id = ?", date, id);
+      } else {
+        run("UPDATE inventory_items SET kept_at = datetime('now'), updated_at = datetime('now') WHERE id = ?", id);
+      }
+      logActivity({ actor: ctx.user, action: "pantry.keep", subject: name, detail: { item: id, new_expiry: date || null } });
+      setFlash(ctx, date ? `Kept ${name} — it now expires ${shortDate(date)}.` : `Kept ${name}. It won't be removed automatically.`);
+      return redirect(back(form));
+    },
+  },
+  {
+    method: "POST",
+    path: "/pantry/:id/gone",
+    auth: true,
+    handler: async (ctx) => {
+      const id = ownItem(ctx);
+      const form = await ctx.form();
+      const name = itemName(id);
+      run("UPDATE inventory_items SET removed_at = datetime('now'), removed_reason = 'gone' WHERE id = ?", id);
+      logActivity({ actor: ctx.user, action: "pantry.gone", subject: name, detail: { item: id } });
+      setFlash(ctx, `Removed ${name}.`);
+      return redirect(back(form));
     },
   },
 ];

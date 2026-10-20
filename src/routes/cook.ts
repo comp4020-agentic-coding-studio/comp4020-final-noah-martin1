@@ -48,7 +48,7 @@ const BURST: [number, number, string, number][] = Array.from({ length: 18 }, (_,
 });
 
 function shell(ctx: Ctx, title: string, body: Html): Html {
-  return html`<html lang="en-AU">
+  return html`<html lang="en-AU" class="no-js">
     <head>
       <meta charset="utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
@@ -143,6 +143,26 @@ function goLive(ctx: Ctx, recipe: Recipe, serves: number, elsewhere: CookSession
   </details>`;
 }
 
+// Always says whether you're live, in words, and gives the one-tap way to
+// stop (or start). With JavaScript, cook mode goes live by itself on open
+// unless you turned that off in settings.
+function liveBanner(userId: number, live: CookSession | undefined, recipe: Recipe): Html {
+  const prefs = prefsFor(userId);
+  const who = (v: string) => (v === "public" ? "everyone on the globe" : v === "friends" ? "your friends" : "only you");
+  return html`<div class="cm-banner ${live ? "is-live" : ""}" data-live-banner role="status" aria-live="polite">
+    <span class="cm-banner-dot" aria-hidden="true"></span>
+    <p class="cm-banner-text" data-live-banner-text>${live
+      ? html`<strong>You're live</strong> — ${who(live.visibility)} can follow your steps${live.city ? html` · ${live.city}` : " · not on the map"}.`
+      : prefs.auto_live
+        ? html`<strong>Not live.</strong> <span class="no-js-only">Tap Go live to share your steps.</span><span class="js-only">Going live…</span>`
+        : html`<strong>Not live.</strong> Automatic live is off in <a href="/settings#live">settings</a>.`}</p>
+    <form method="post" action="/live/${live?.id ?? 0}/end" data-live-off ${live ? "" : raw("hidden")}>
+      <input type="hidden" name="return_to" value="/recipes/${recipe.id}/cook" />
+      <button class="button button-small cm-banner-off" type="submit" aria-label="Turn live off for this cooking session">Turn live off</button>
+    </form>
+  </div>`;
+}
+
 // While live: the on-air pill (watchers), and a sheet with the globe link,
 // a help request and the end button.
 function onAir(live: CookSession | undefined, recipeId: number): Html {
@@ -228,7 +248,7 @@ export const routes: Route[] = [
           <a class="cm-close" href="/recipes/${recipe.id}" aria-label="Leave cook mode">${icon("close", 20)}</a>
           <div class="cm-title"><small>Cooking${scale !== 1 ? ` for ${serves}` : ""}</small><strong>${recipe.title}</strong></div>
           <div class="cm-progress" aria-hidden="true">${steps.map((_, i) => html`<span class="${i === 0 ? "on" : ""}"></span>`)}</div>
-          <div class="cm-tools" data-live-root data-recipe="${recipe.id}" data-session="${liveHere?.id ?? ""}" data-live-step="${liveHere?.current_step ?? 1}" data-step-count="${steps.length}">
+          <div class="cm-tools" data-live-root data-recipe="${recipe.id}" data-session="${liveHere?.id ?? ""}" data-live-step="${liveHere?.current_step ?? 1}" data-step-count="${steps.length}" data-serves="${serves}" ${ctx.user && prefsFor(ctx.user.id).auto_live && !liveHere && !elsewhere ? raw("data-auto-live") : ""}>
             ${along
               ? html`<a class="cm-along" href="/global#live-${along.id}" data-along="${along.id}" data-along-steps="${along.step_count}" title="Cooking along with ${along.display_name}">
                   ${avatar(along.display_name, "sm")}<span><small>${along.display_name.split(" ")[0]} is on</small><b data-along-step>step ${along.current_step} of ${along.step_count}</b></span>
@@ -240,6 +260,7 @@ export const routes: Route[] = [
           </div>
         </header>
 
+        ${ctx.user ? liveBanner(ctx.user.id, liveHere, recipe) : ""}
         <div class="cm-stage">
           <section class="cm-card" aria-live="polite">
             <p class="cm-lookback" data-lookback hidden>Looking back · watchers still see step <b data-lookback-step></b></p>

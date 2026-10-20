@@ -6,6 +6,7 @@ import { seedCatalogue } from "./catalogue.ts";
 import { db } from "./db.ts";
 import { seedVideos } from "./video-seed.ts";
 import { DEMO_MODE, seedDemo } from "./demo.ts";
+import { startExpirySweep } from "./expiry.ts";
 import {
   type Ctx,
   cookie,
@@ -193,6 +194,7 @@ if (catalogued) console.log(`catalogue: added ${catalogued} recipes`);
 const videos = seedVideos();
 if (videos) console.log(`videos: updated ${videos} catalogue recipes`);
 if (DEMO_MODE) await seedDemo();
+startExpirySweep();
 
 server.listen(port, "0.0.0.0", () => {
   console.log(`listening on http://0.0.0.0:${port}`);

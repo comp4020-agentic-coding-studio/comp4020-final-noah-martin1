@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 525" role="img" aria-label="A bowl, drawn as a placeholder photo">
+  <rect width="700" height="525" fill="#f3e9dc"/>
+  <circle cx="350" cy="250" r="150" fill="#fbf6ef"/>
+  <path d="M215 250a135 135 0 0 0 270 0z" fill="#e9c79f"/>
+  <ellipse cx="350" cy="250" rx="135" ry="26" fill="#f6e2c6"/>
+  <circle cx="310" cy="244" r="12" fill="#f2d16b"/>
+  <circle cx="352" cy="240" r="10" fill="#f2d16b"/>
+  <circle cx="390" cy="248" r="11" fill="#f2d16b"/>
+  <path d="M470 150c30 20 40 60 20 90" stroke="#c9a77f" stroke-width="10" fill="none" stroke-linecap="round"/>
+</svg>

@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { dataAge, loadProducts, matchesIngredient, parseSize, productsFor } from "../src/products.ts";
+import { dataAge, loadProducts, matchesIngredient, parseSize, productsFor, equivalentProducts, isEquivalent } from "../src/products.ts";
 
 describe("parseSize", () => {
   it("normalises mass and volume", () => {
@@ -74,5 +74,47 @@ describe("the committed product data", () => {
       }
     }
     expect(n).toBeGreaterThan(0);
+  });
+});
+
+describe("like-for-like products", () => {
+  it.each([
+    ["lemon", "Woolworths Lemon & Pepper Tuna 95g"],
+    ["garlic", "BAKERS LIFE Garlic Naan 2 Pack 250g"],
+    ["garlic", "COLWAY Garlic Aioli 260g"],
+    ["onion", "PORTVIEW Tomato & Onion Tuna 95g"],
+    ["prawns", "URBAN EATS Prawn Gyoza 750g"],
+    ["prawns", "Just Caught Garlic Prawns 500g"],
+    ["coriander", "Hoyt's Coriander Ground 25g"],
+    ["cream", "Woolworths Sour Cream 300mL"],
+    ["cream", "FARMDALE Full Cream Milk 3L"],
+    ["chicken breast", "FARMWOOD Chicken Breast Kyiv 2 Pack 350g"],
+    ["lime", "Bosisto's Desert Lime & Eucalyptus Hand Wash 500mL"],
+    ["bay leaf", "2PK Christy Sovereign Bath Mat Combed Cotton 1000GSM Plush Luxurious Bay Leaf"],
+    ["spinach", "Borg's Triangles Spinach & Ricotta 360g"],
+    ["tomato", "Woolworths Essentials Diced Tomatoes 400g"],
+  ])("%s is not %s", (ingredient, product) => {
+    expect(isEquivalent(ingredient, product)).toBe(false);
+  });
+
+  it.each([
+    ["plain flour", "White Wings Plain Flour 2kg"],
+    ["plain flour", "WHITE MILL Plain Flour 2kg"],
+    ["onion", "Woolworths Brown Onions Bag 2kg"],
+    ["lemon", "Lemons 5 Pack"],
+    ["eggs", "Woolworths 12 Pack Extra Large Cage Free Eggs 700g"],
+    ["canned tomatoes", "Woolworths Essentials Diced Tomatoes 400g"],
+    ["garlic", "Woolworths Minced Garlic 500g"],
+    ["parmesan", "Perfect Italiano Parmesan Cheese Grated 250g"],
+    ["coriander", "Coriander Bunch"],
+    ["milk", "Woolworths Full Cream Milk 2L"],
+  ])("%s can be bought as %s", (ingredient, product) => {
+    expect(isEquivalent(ingredient, product)).toBe(true);
+  });
+
+  it("every product offered for an ingredient passes the like-for-like rule", () => {
+    for (const name of ["plain flour", "onion", "lemon", "prawns", "cream", "garlic", "milk", "rice"]) {
+      for (const p of equivalentProducts(name)) expect(isEquivalent(name, p.name), `${name} → ${p.name}`).toBe(true);
+    }
   });
 });

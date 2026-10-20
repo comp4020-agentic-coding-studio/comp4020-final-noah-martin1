@@ -10,6 +10,12 @@ import { acceptFriend, requestFriend } from "./friends.ts";
 import { seedHouseholdDemo } from "./household.ts";
 import { saveRecipe } from "./recipes.ts";
 
+// Demo recipes borrow the catalogue photo of the same dish (TheMealDB), so
+// they look like what they are; none is presented as someone's own photo.
+function catalogueImage(title: string): string {
+  return one<{ image_url: string }>("SELECT image_url FROM recipes WHERE source IS NOT NULL AND title = ?", title)?.image_url ?? "/assets/recipe-placeholder.svg";
+}
+
 export const DEMO_MODE = true;
 
 export const DEMO_LOGIN = { username: "alice", password: "password123" };
@@ -92,6 +98,7 @@ export async function seedDemo(): Promise<boolean> {
 
   const padThai = saveRecipe(alice, {
     title: "Weeknight pad thai",
+    image_url: catalogueImage("Pad Thai"),
     description: "Sweet, sour and salty in twenty-five minutes. Tofu keeps it cheap; swap in prawns when they're on special.",
     servings: 2,
     visibility: "friends",
@@ -114,6 +121,7 @@ export async function seedDemo(): Promise<boolean> {
 
   const shakshuka = saveRecipe(sam, {
     title: "Shakshuka",
+    image_url: catalogueImage("Shakshuka"),
     description: "Eggs poached in spiced tomato. Breakfast, lunch or dinner.",
     servings: 2,
     visibility: "public",
@@ -134,6 +142,7 @@ export async function seedDemo(): Promise<boolean> {
 
   const curry = saveRecipe(bo, {
     title: "Chicken & coconut curry",
+    image_url: catalogueImage("Panang chicken curry"),
     description: "A one-pot curry that uses up whatever greens are wilting.",
     servings: 4,
     visibility: "friends",
@@ -154,6 +163,7 @@ export async function seedDemo(): Promise<boolean> {
 
   const oats = saveRecipe(alice, {
     title: "Overnight oats",
+    image_url: "/assets/recipe-placeholder.svg",
     description: "Five minutes the night before.",
     servings: 1,
     visibility: "private",

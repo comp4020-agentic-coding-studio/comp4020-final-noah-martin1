@@ -644,6 +644,23 @@ function priceOf(name: string): Price | undefined {
   return key ? PRICES[key] : undefined;
 }
 
+// What's known about converting this ingredient between mass, volume and
+// count. Only what the food table states for it: a density is given only for
+// liquids whose density is listed, and a weight per item only where one is.
+// Callers must not convert without these (CLAUDE.md pricing rules).
+export function conversionFor(name: string): { density?: number; each?: number; cupGrams?: number } {
+  const ref = lookup(name);
+  const cup = CUP_GRAMS[name.toLowerCase().trim()];
+  return { density: ref?.density, each: ref?.each, cupGrams: cup };
+}
+
+// The reference price row for an ingredient, with its source text, so the
+// package parser can read the shelf size and price it was taken from.
+export function referencePrice(name: string): { centsPer100: number; source: string; checked: string } | null {
+  const p = priceOf(name);
+  return p ? { centsPer100: p.cents, source: p.source, checked: p.checked } : null;
+}
+
 // Where an ingredient's reference price comes from, for pages that cite it.
 export function priceSource(name: string): { source: string; checked: string } | null {
   const p = priceOf(name);

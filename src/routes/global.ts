@@ -1,6 +1,6 @@
 import { randomBytes } from "node:crypto";
 import type { IncomingMessage, ServerResponse } from "node:http";
-import { ago } from "../format.ts";
+import { ago, sized } from "../format.ts";
 import { type Html, html, raw } from "../html.ts";
 import { type Ctx, HttpError, htmlReply, json, type Reply, redirect, setFlash } from "../http.ts";
 import { type LocalTime, localTime, MEAL_LABEL } from "../localtime.ts";
@@ -230,7 +230,7 @@ function place(s: GlobeSession): string {
 function row(s: GlobeSession): Html {
   return html`<li data-row="${s.id}">
     <button class="gl-row gl-row-${s.group}" type="button" data-session="${s.id}">
-      <span class="gl-thumb">${s.image ? html`<img src="${s.image}/small" alt="" loading="lazy" />` : html`<span class="gl-thumb-fallback">${s.recipe.slice(0, 1)}</span>`}<span class="live-dot"></span></span>
+      <span class="gl-thumb">${s.image ? html`<img src="${sized(s.image, "small")}" alt="" loading="lazy" />` : html`<span class="gl-thumb-fallback">${s.recipe.slice(0, 1)}</span>`}<span class="live-dot"></span></span>
       <span class="gl-row-text">
         <strong>${s.recipe}</strong>
         <small>${s.group === "mine" ? "You" : firstName(s.cook)} · ${s.city || "on the move"}${s.local ? html` · ${clock(s, false)}` : ""}</small>

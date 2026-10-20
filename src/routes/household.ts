@@ -1,3 +1,4 @@
+import { packLine } from "./shopping.ts";
 import { catalogFor } from "../db.ts";
 import { addDays, ago, freshness, money, monthLabel, parseIsoDate, qty, shortDate, today, weekday, weekStart } from "../format.ts";
 import {
@@ -50,7 +51,6 @@ import {
 } from "../household.ts";
 import { type Html, html, raw } from "../html.ts";
 import { type Ctx, htmlReply, json, redirect, setFlash } from "../http.ts";
-import { priceReference } from "../nutrition.ts";
 import { getRecipe, listVisibleRecipes, type Recipe, totalMinutes } from "../recipes.ts";
 import type { Route } from "../server.ts";
 import { avatar, empty, errors, icon, page, subnav, tone } from "../views/layout.ts";
@@ -260,7 +260,7 @@ function activityFeed(list: Activity[]): Html {
 // budget, and how much of it housemates have already claimed.
 function ticker(list: HouseList, opts: { form: boolean; link?: boolean }): Html {
   const budget = list.budgetCents;
-  const est = list.estCents;
+  const est = list.purchaseCents;
   const pct = budget ? Math.min(100, Math.round((est / Math.max(1, budget)) * 100)) : 0;
   const claimedPct = budget ? Math.min(pct, Math.round((list.claimedCents / Math.max(1, budget)) * 100)) : est ? Math.round((list.claimedCents / est) * 100) : 0;
   const over = budget !== null && est > budget;
@@ -270,8 +270,8 @@ function ticker(list: HouseList, opts: { form: boolean; link?: boolean }): Html 
       <p class="cal-label" id="ticker-h">${icon("basket", 16)} This week's house shop</p>
       ${opts.link ? html`<a href="/household/shopping">List →</a>` : ""}
     </header>
-    <p class="hh-ticker-big"><span class="tnum">${money(est)}</span> <small>estimated${list.unpriced ? ` + ${list.unpriced} unpriced` : ""}</small></p>
-    <div class="hh-meter ${over ? "is-over" : ""}" role="meter" aria-label="Estimated shop against the house budget"
+    <p class="hh-ticker-big"><span class="tnum">${money(est)}</span> <small>at the checkout, whole packs${list.unpriced ? ` + ${list.unpriced} unpriced` : ""}</small></p>
+    <div class="hh-meter ${over ? "is-over" : ""}" role="meter" aria-label="Checkout estimate against the house budget"
       aria-valuemin="0" aria-valuemax="${budget ?? Math.max(est, 1)}" aria-valuenow="${budget ? Math.min(est, budget) : est}"
       aria-valuetext="${money(est)}${budget ? ` of ${money(budget)}` : ""}">
       <span class="hh-meter-total" style="--p: ${budget ? pct : 100}%"></span>
@@ -681,30 +681,13 @@ function lineControl(l: HouseLine, me: number): Html {
   return html`<form method="post" action="${action("claim")}" data-hh-action><button class="button button-small button-soft hh-gotit" type="submit" aria-label="I'll buy the ${l.name}">I've got this</button></form>`;
 }
 
-// ", checked Oct 2026", from the newest month in the price table
-function referenceChecked(): string {
-  const label = monthLabel(priceReference().checked);
-  return label ? `, checked ${label}` : "";
-}
-
-// Where a line's price came from, said plainly (CLAUDE.md: every reference
-// price carries its source and date).
-function priceTitle(l: HouseLine): string {
-  if (l.priceSource === "paid") return "What a housemate last paid for a pack of this";
-  if (l.priceSource === "est") {
-    return l.priceRef
-      ? `Estimate for this amount from a reference price: ${l.priceRef.source} (checked ${monthLabel(l.priceRef.checked)}). Not a live price.`
-      : "Estimate for this amount at typical Australian supermarket shelf prices. Not a live price.";
-  }
-  return "No price known";
-}
-
 function shopLine(l: HouseLine, me: number): Html {
   return html`<li class="hh-line ${l.claim ? (l.claim.user_id === me ? "is-mine" : "is-claimed") : ""}">
-    <span class="mono qty">${l.toBuy === null ? "some" : qty(l.toBuy, l.unit)}</span>
+    <span class="mono qty">${l.toBuy === null ? "some" : qty(l.toBuy, l.unit === "each" ? "" : l.unit)}</span>
     <span class="grow"><span class="item-name">${l.name}</span>
-      <small class="muted block">for ${l.meals.join(", ")}${l.have > 0 ? ` · house has ${qty(l.have, l.unit)}` : ""}${l.otherUnit ? " · some in another unit, check the pantry" : ""}</small></span>
-    <span class="hh-line-price mono" title="${priceTitle(l)}">${l.priceCents === null ? "—" : money(l.priceCents)}${l.priceSource ? html`<small>${l.priceSource === "paid" ? "paid" : "est."}</small>` : ""}</span>
+      <small class="muted block">for ${l.meals.join(", ")}${l.have > 0 ? ` · house has ${qty(l.have, l.unit === "each" ? "" : l.unit)}` : ""}${l.otherUnit ? " · some in another unit, check the pantry" : ""}</small>
+      ${packLine(l.pack, l.consumptionCents, l.sharesPack, l.unitClash)}</span>
+    <span class="hh-line-price mono">${l.pack ? money(l.pack.costCents) : l.sharesPack ? "incl." : "—"}${l.pack ? html`<small>${l.pack.count === null ? "by weight" : l.pack.count === 1 ? "1 pack" : `${l.pack.count} packs`}</small>` : ""}</span>
     <span class="hh-line-act">${lineControl(l, me)}</span>
   </li>`;
 }
@@ -758,9 +741,9 @@ function shoppingPage(ctx: Ctx) {
           : ""}
         <section class="panel">
           <h2 class="panel-title">How it's worked out</h2>
-          <p class="muted small">Amounts are summed across the week's planned house meals, then the shared pantry's unexpired stock in the same unit is subtracted.
-            Prices marked <strong>est.</strong> are Larder's estimates for the amount needed, from reference shelf prices read at ALDI and Woolworths${referenceChecked()} (hover a price for its source); <strong>paid</strong> is the last price a housemate entered for a pack.
-            They're estimates, not live supermarket prices.</p>
+          <p class="muted small">Amounts are summed across the week's planned house meals, then the shared pantry's usable stock (unexpired, in a comparable unit) is subtracted, and the rest is bought in whole packs.
+            Each line names the pack it recommends: the cheapest that covers the amount among Woolworths and ALDI shelf prices and prices a housemate recorded. The total is the checkout cost of those packs; the meals themselves use ${money(list.consumptionCents)} of it.
+            Shelf prices are what the store's site showed when Larder last read them, not live prices.</p>
         </section>
       </aside>
     </div>`;

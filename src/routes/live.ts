@@ -9,11 +9,15 @@ import {
   heartbeat,
   isLive,
   liveSessions,
+  openSessionFor,
   placeFromForm,
   questionsFor,
   setHelp,
   startSession,
 } from "../live.ts";
+import { logActivity } from "../activity.ts";
+import { run } from "../db.ts";
+import { prefsFor } from "../prefs.ts";
 import { getRecipe, recipeSteps } from "../recipes.ts";
 import type { Route } from "../server.ts";
 import { canSeeRecipe, friendIds, sessionViewer, type Visibility } from "../visibility.ts";
@@ -99,7 +103,12 @@ async function start(ctx: Ctx): Promise<Reply> {
   const place = placeFromForm(form);
   if (!place) return fail("We couldn't read that location. Choose a city instead.");
 
-  const { id, visibility: stored } = startSession(user.id, { recipe, stepCount: steps.length, serves, visibility, place });
+  const { id, visibility: stored, replaced } = startSession(user.id, { recipe, stepCount: steps.length, serves, visibility, place });
+  // the city someone picks is where an automatic session appears next time
+  // (a device location is never remembered)
+  if (where === "city" && CITY_BY_KEY.has(city)) run("UPDATE users SET live_city = ? WHERE id = ?", city, user.id);
+  else if (city === "none") run("UPDATE users SET live_city = '' WHERE id = ?", user.id);
+  logActivity({ actor: user, action: "live.start", subject: recipe.title, detail: { session: id, recipe: recipe.id, visibility: stored, city: s_city(place), replaced: replaced.length } });
   // going live part-way through: catch the session up to where the cook is
   const at = Number(form.get("step"));
   if (Number.isInteger(at) && at > 1 && at <= steps.length) advanceStep(id, user.id, at);
@@ -109,6 +118,39 @@ async function start(ctx: Ctx): Promise<Reply> {
   }
   setFlash(ctx, stored === "public" ? "You're live on the globe." : stored === "friends" ? "You're live — friends can watch." : "You're live, just for you.");
   return redirect(`${back}?serves=${serves}`);
+}
+
+function s_city(place: { city: string }): string {
+  return place.city || "not on the map";
+}
+
+// Cook mode opened: go live automatically, unless the person turned that
+// off. Never wider than they've chosen: their default visibility, narrowed
+// to the recipe's; on the map only at the city they last picked by hand,
+// otherwise listed but not pinned. Already live with this recipe: nothing.
+async function auto(ctx: Ctx): Promise<Reply> {
+  const form = await ctx.form();
+  const user = ctx.user!;
+  const recipe = getRecipe(Number(form.get("recipe_id")));
+  if (!recipe || !canSeeRecipe(user.id, recipe)) return json({ error: "not-found" }, 404);
+  const prefs = prefsFor(user.id);
+  if (!prefs.auto_live) return json({ ok: false, reason: "off" });
+  const steps = recipeSteps(recipe.id);
+  if (!steps.length) return json({ ok: false, reason: "no-steps" });
+  const open = openSessionFor(user.id);
+  if (open && open.recipe_id === recipe.id) return json({ ok: true, id: open.id, step: open.current_step, visibility: open.visibility, city: open.city, already: true });
+  // live with something else in another tab: leave it, offer the switch
+  if (open) return json({ ok: false, reason: "elsewhere", elsewhere: open.recipe_title });
+  const servesIn = Number(form.get("serves"));
+  const serves = Number.isInteger(servesIn) && servesIn >= 1 && servesIn <= 50 ? servesIn : recipe.servings;
+  const c = CITY_BY_KEY.get(prefs.live_city);
+  const place = c ? { city: c.name, country: c.country, lat: c.lat, lng: c.lng } : { city: "", country: "", lat: null, lng: null };
+  const { id, visibility } = startSession(user.id, { recipe, stepCount: steps.length, serves, visibility: prefs.default_visibility, place });
+  const at = Number(form.get("step"));
+  if (Number.isInteger(at) && at > 1 && at <= steps.length) advanceStep(id, user.id, at);
+  const s = getSession(id)!;
+  logActivity({ actor: user, action: "live.auto_start", subject: recipe.title, detail: { session: id, recipe: recipe.id, visibility, city: s_city(place) } });
+  return json({ ok: true, id, step: s.current_step, visibility, city: s.city, auto: true });
 }
 
 async function step(ctx: Ctx): Promise<Reply> {
@@ -132,10 +174,14 @@ async function beat(ctx: Ctx): Promise<Reply> {
 async function end(ctx: Ctx): Promise<Reply> {
   const form = await ctx.form();
   const id = sessionId(ctx);
-  const reason = form.get("reason") === "finished" ? "finished" : "ended";
+  const reason = form.get("reason") === "finished" ? "finished" : form.get("reason") === "left" ? "ended" : "ended";
+  const before = getSession(id);
   if (!endSession(id, ctx.user!.id, reason)) {
     if (wantsJson(ctx)) return json({ error: "not-found" }, 404);
     throw notFound();
+  }
+  if (before && !before.ended_at) {
+    logActivity({ actor: ctx.user, action: "live.end", subject: before.recipe_title, detail: { session: id, reason: form.get("reason") ?? "ended", step: before.current_step, steps: before.step_count } });
   }
   if (wantsJson(ctx)) return json({ ok: true });
   setFlash(ctx, "Live session ended.");
@@ -171,6 +217,7 @@ export const routes: Route[] = [
   // the live list joined the globe: friends first, everyone else after
   { method: "GET", path: "/live", handler: () => found("/global") },
   { method: "POST", path: "/live/start", auth: true, handler: start },
+  { method: "POST", path: "/live/auto", auth: true, handler: auto },
   { method: "GET", path: "/live/:id", handler: (ctx) => found(`/global#live-${sessionId(ctx) || ctx.params.id.replace(/[^\w-]/g, "")}`) },
   // cooking along starts from the session's card, which knows the recipe
   { method: "GET", path: "/live/:id/along", handler: (ctx) => found(`/global#live-${sessionId(ctx) || ctx.params.id.replace(/[^\w-]/g, "")}`) },
