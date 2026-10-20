@@ -186,6 +186,12 @@ function start() {
 
   function lost(message) {
     if (ended) return;
+    if (!retried && box.hasAttribute("data-auto-pref") && !mode.classList.contains("finished")) {
+      retried = true;
+      done("quiet");
+      autoStart();
+      return;
+    }
     done("lost");
     say(message, "warn");
   }
@@ -262,8 +268,11 @@ function start() {
   /* ---------- live by default ---------- */
   // Cook mode goes live as it opens, unless the person turned that off
   // (the server checks the preference again and decides who can see it).
-  if (box.hasAttribute("data-auto-live") && session === null) {
-    post("/live/auto", { recipe_id: box.dataset.recipe, serves: box.dataset.serves ?? "", step: String(Math.min(shown(), stepCount)) })
+  // the previous page's leave beacon can land after this page loaded and end
+  // the session it shows; with automatic live on, quietly go live again once
+  let retried = false;
+  function autoStart() {
+    return post("/live/auto", { recipe_id: box.dataset.recipe, serves: box.dataset.serves ?? "", step: String(Math.min(shown(), stepCount)) })
       .then((r) => {
         if (r.ok && r.body.ok) {
           liveStep = r.body.step ?? 1;
@@ -273,6 +282,9 @@ function start() {
         else showOff(r.body.reason === "off" ? "Automatic live is off in settings." : "Tap Go live to share your steps.");
       })
       .catch(() => showOff("Couldn't reach Larder to go live. Tap Go live to try again."));
+  }
+  if (box.hasAttribute("data-auto-live") && session === null) {
+    autoStart();
   } else if (session === null && banner && bannerText.textContent.includes("Going live")) {
     showOff("Tap Go live to share your steps.");
   }

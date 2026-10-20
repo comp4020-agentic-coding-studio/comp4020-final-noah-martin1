@@ -71,6 +71,21 @@ Some of "good" is enforced by tests in `spec/` that run against the live app:
 - a household is its members and no one else: outsiders get a 404 for every
   household page and write, a person is in one household at a time, a new
   invite code stops the old one working, and the last one out closes it
+- the shopping list buys whole packs: needs are summed across meals, usable
+  stock subtracted, and 200 g of flour from an empty pantry is a whole bag;
+  checkout cost and the value the recipes use are shown apart, a price you
+  paid is never replaced by a higher shelf price, and unknown prices are
+  never treated as free
+- expired food gets one grace day ("Do you still have this?") and then
+  leaves the kitchen by itself; it stops counting as stock on the day after
+  its date
+- every recipe someone writes has a photo, checked by its bytes, on every
+  way of saving it
+- cook mode goes live by default within your own visibility setting, never
+  on the map unless you picked a city, and turns off with one tap or for good
+  in settings
+- the server logs who did what (never passwords or what people typed), and
+  each person sees their own trail in settings
 - in a household only items about to go off can be claimed for "use tonight",
   each shopping item has one claimer at a time, a house meal must be a recipe
   every member can open, and adding stock that completes a planned meal
@@ -95,9 +110,8 @@ leaves your device for it, and every page works without it.
 The globe mixes real live cooks with a layer of demo cooks so it's never
 empty; the demo layer is tagged and sits under a "preview with sample data"
 banner (a test checks real sessions carry no caveat). There's no shopping
-list export, and a recipe's nutrition and cost are estimates from a built-in
-food and price table, not a full nutrition database or live supermarket
-prices. Q&A translation is shown only for demo cooks. Each would add scope
+list export. Nutrition is an estimate from a built-in food table, and shelf
+prices are read when the refresh script runs, not continuously. Q&A translation is shown only for demo cooks. Each would add scope
 without making the core loop (know what you have, cook it, share it) better.
 
 ## Sources
@@ -122,11 +136,21 @@ without making the core loop (know what you have, cook it, share it) better.
   reference values, with dry goods at uncooked values. 94.6% of ingredient
   lines in the catalogue are counted; "salt to taste" can't be. Every figure
   is labelled an estimate.
-- **Prices:** 504 Australian supermarket reference prices in
-  `src/data/prices.json`, each with its source and the month it was checked
-  (October 2026). 54 staples are shelf prices from named ALDI and Woolworths
-  listings; the rest are labelled typical everyday prices. Neither store has
-  a public price API, so prices are references, not live.
+- **Prices:** Woolworths and ALDI shelf prices, pack sizes and product links
+  in `src/data/products.json`, read by `scripts/refresh-prices.ts` from
+  Woolworths' public product search and ALDI's category pages (paths their
+  robots.txt allows) and stamped with when they were read; every price says
+  so, and none is called live. 504 dated reference prices in
+  `src/data/prices.json` cover consumption estimates and gaps. The rules are
+  in `docs/product/pricing.md`.
+- **Videos:** the YouTube link TheMealDB gives each meal, kept when YouTube
+  says it exists and can be embedded and its title names the dish
+  (`scripts/fetch-videos.ts`, checked 20 October 2026; a few decisions made by
+  reading each recipe beside its video are in `src/data/video-overrides.json`).
+  420 recipes have one; the rest say no matching video is available.
+- **Logs:** `activity_log` in the database and one JSON line per event on
+  stdout (`fly logs`); `node scripts/activity.ts --follow` reads it, and
+  accounts in `ADMIN_USERNAMES` get a live feed at `/admin/activity`.
 - **Globe:** NASA imagery, all public domain, from
   [NASA Visible Earth](https://visibleearth.nasa.gov/): Blue Marble Next
   Generation (October, topography and bathymetry; Reto Stöckli, NASA Earth

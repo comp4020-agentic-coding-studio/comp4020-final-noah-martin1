@@ -13469,3 +13469,5 @@ html:not(.no-js) .no-js-only { display: none; }
   background: rgb(20 16 12 / 0.45);
 }
 .hm-suggest .button { text-shadow: none; }
+.cm-stage:has(> .cm-banner) { grid-template-rows: auto minmax(0, 1fr); }
+.cm-stage > .cm-banner { grid-column: 1 / -1; width: 100%; max-width: none; margin: 0; align-self: start; }

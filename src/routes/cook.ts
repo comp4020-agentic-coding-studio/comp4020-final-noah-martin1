@@ -248,7 +248,7 @@ export const routes: Route[] = [
           <a class="cm-close" href="/recipes/${recipe.id}" aria-label="Leave cook mode">${icon("close", 20)}</a>
           <div class="cm-title"><small>Cooking${scale !== 1 ? ` for ${serves}` : ""}</small><strong>${recipe.title}</strong></div>
           <div class="cm-progress" aria-hidden="true">${steps.map((_, i) => html`<span class="${i === 0 ? "on" : ""}"></span>`)}</div>
-          <div class="cm-tools" data-live-root data-recipe="${recipe.id}" data-session="${liveHere?.id ?? ""}" data-live-step="${liveHere?.current_step ?? 1}" data-step-count="${steps.length}" data-serves="${serves}" ${ctx.user && prefsFor(ctx.user.id).auto_live && !liveHere && !elsewhere ? raw("data-auto-live") : ""}>
+          <div class="cm-tools" data-live-root data-recipe="${recipe.id}" data-session="${liveHere?.id ?? ""}" data-live-step="${liveHere?.current_step ?? 1}" data-step-count="${steps.length}" data-serves="${serves}" ${ctx.user && prefsFor(ctx.user.id).auto_live && !liveHere && !elsewhere ? raw("data-auto-live") : ""} ${ctx.user && prefsFor(ctx.user.id).auto_live ? raw("data-auto-pref") : ""}>
             ${along
               ? html`<a class="cm-along" href="/global#live-${along.id}" data-along="${along.id}" data-along-steps="${along.step_count}" title="Cooking along with ${along.display_name}">
                   ${avatar(along.display_name, "sm")}<span><small>${along.display_name.split(" ")[0]} is on</small><b data-along-step>step ${along.current_step} of ${along.step_count}</b></span>
@@ -260,8 +260,8 @@ export const routes: Route[] = [
           </div>
         </header>
 
-        ${ctx.user ? liveBanner(ctx.user.id, liveHere, recipe) : ""}
         <div class="cm-stage">
+          ${ctx.user ? liveBanner(ctx.user.id, liveHere, recipe) : ""}
           <section class="cm-card" aria-live="polite">
             <p class="cm-lookback" data-lookback hidden>Looking back · watchers still see step <b data-lookback-step></b></p>
             <ol class="cm-steps">

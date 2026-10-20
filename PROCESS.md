@@ -57,3 +57,20 @@ dark, and compared against the brief's "Apple / Pinterest" bar. Screenshots
 caught a side panel covering the fridge, an outline invisible on cream,
 mobile overflow in the top bar, and a page transition that only worked on
 some pages because the opt-in loaded too late.
+
+## Refining it (crit 10)
+
+The last stretch was a list of ten fixes and features. I asked for them in
+one go and for the agent to follow `CLAUDE.md` without checking back. It
+split the work: background agents in their own worktrees took the 3D fridge,
+the recipe videos and the retailer product scrape, each with a fixed
+interface to code against, while the main session rebuilt pricing around
+whole-pack purchases and added expiry, photos, live-by-default, home
+suggestions and the activity log. Every agent's branch was read before it
+was merged, and that review caught the scraped data's weak point: a
+"contains the word" match that offered lemon-pepper tuna for lemons and bath
+mats for bay leaves. A like-for-like rule with its own tests fixed it.
+Screenshots at both widths caught a live banner that broke the cook page's
+grid on phones, and an unreadable suggestion over bright photos. A spec that
+only failed at one UTC hour got pushed once; since then every commit waits
+for the full check to pass.
