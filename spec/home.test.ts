@@ -13,13 +13,15 @@ function doc(markup: string): Document {
 
 // A time zone where it's currently the given local hour, so the spec
 // doesn't depend on when it runs.
+// Etc/GMT±N zones cover every whole-hour offset from −12 to +14 (their sign
+// is inverted: Etc/GMT-10 is UTC+10).
 function zoneAtHour(hour: number): string {
-  const utc = new Date().getUTCHours();
-  for (const z of ["Pacific/Kiritimati", "Pacific/Auckland", "Australia/Sydney", "Asia/Tokyo", "Asia/Shanghai", "Asia/Bangkok", "Asia/Dhaka", "Asia/Kolkata", "Asia/Karachi", "Asia/Dubai", "Europe/Moscow", "Europe/Athens", "Europe/Paris", "Europe/London", "Atlantic/Azores", "America/Noronha", "America/Sao_Paulo", "America/Halifax", "America/New_York", "America/Chicago", "America/Denver", "America/Los_Angeles", "America/Anchorage", "Pacific/Honolulu", "Pacific/Pago_Pago"]) {
+  for (let offset = -12; offset <= 14; offset++) {
+    const z = offset === 0 ? "Etc/GMT" : `Etc/GMT${offset > 0 ? "-" : "+"}${Math.abs(offset)}`;
     const h = Number(new Intl.DateTimeFormat("en-AU", { timeZone: z, hour: "numeric", hourCycle: "h23" }).format(new Date()));
     if (h === hour) return z;
   }
-  throw new Error(`no zone at hour ${hour} (UTC ${utc})`);
+  throw new Error(`no zone at hour ${hour}`);
 }
 
 async function homeAt(client: Client, hour: number): Promise<Document> {
