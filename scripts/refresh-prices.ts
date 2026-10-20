@@ -6,7 +6,7 @@
 // /shop/search or /results?). If a retailer blocks us part-way, what was read
 // is kept and the block is recorded under stats.blocked.
 import { readFileSync, writeFileSync } from "node:fs";
-import { matchesIngredient, type Product, type ProductData, parseSize, type Retailer, unitPrice } from "../src/products.ts";
+import { isEquivalent, matchesIngredient, type Product, type ProductData, parseSize, type Retailer, unitPrice } from "../src/products.ts";
 
 const UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36";
 const OUT = new URL("../src/data/products.json", import.meta.url);
@@ -125,9 +125,12 @@ async function aldiCatalogue(): Promise<AldiTile[]> {
 
 /* ---------------- main ---------------- */
 
-function best(list: Product[]): Product[] {
+// The cheapest few per retailer, like-for-like matches first so a cheap
+// "Lemon & Pepper Tuna" never pushes real lemons out of the list.
+function best(name: string, list: Product[]): Product[] {
   const byUrl = new Map(list.map((p) => [p.url, p]));
-  return [...byUrl.values()].sort((a, b) => unitPrice(a) - unitPrice(b)).slice(0, PER_RETAILER);
+  const sorted = [...byUrl.values()].sort((a, b) => Number(isEquivalent(name, b.name)) - Number(isEquivalent(name, a.name)) || unitPrice(a) - unitPrice(b));
+  return sorted.slice(0, PER_RETAILER);
 }
 
 const started = Date.now();
@@ -168,7 +171,7 @@ for (const [i, name] of names.entries()) {
       a.push({ retailer: "aldi", name: t.name, url: t.url, priceCents: t.priceCents, size, checkedAt: now, available: true });
     }
   }
-  const picked = [...best(w), ...best(a)];
+  const picked = [...best(name, w), ...best(name, a)];
   if (picked.length) products[name] = picked;
   if (i % 50 === 0) console.log(`${i}/${names.length}`);
 }
@@ -186,4 +189,6 @@ const data: ProductData = {
   },
 };
 writeFileSync(OUT, `${JSON.stringify(data, null, 1)}\n`);
-console.log(JSON.stringify(data.stats), `${Math.round((Date.now() - started) / 1000)}s`);
+// the same structured line the app logs, so a refresh shows up the same way
+const line = { level: blocked.length ? "error" : "info", event: blocked.length ? "prices.refresh_failed" : "prices.refresh", who: "operator", outcome: blocked.length ? "failed" : "ok", seconds: Math.round((Date.now() - started) / 1000), ...data.stats, blocked: blocked.join(",") || null };
+(blocked.length ? console.error : console.log)(JSON.stringify(line));

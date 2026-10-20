@@ -1,3 +1,4 @@
+import { logActivity } from "../activity.ts";
 import { randomBytes } from "node:crypto";
 import type { IncomingMessage, ServerResponse } from "node:http";
 import { ago, sized } from "../format.ts";
@@ -585,6 +586,8 @@ async function ask(ctx: Ctx): Promise<Reply> {
   const s = visibleSession(ctx, viewer);
   const form = await ctx.form();
   const r = askQuestion(s.id, ctx.user!.id, form.get("text") ?? "");
+  // the question's text is the asker's own words: logged by id, not quoted
+  logActivity({ actor: ctx.user, action: "live.question", outcome: r.ok ? "ok" : "denied", subject: s.recipe_title, detail: { session: s.id, question: r.ok ? r.question.id : null, problem: r.ok ? null : r.problem } });
   if (!r.ok) {
     if (r.problem === "not-found") throw new HttpError(404, "That cooking session has ended or never existed.");
     const status = r.problem === "ended" ? 410 : r.problem === "too-soon" ? 429 : 422;
@@ -601,6 +604,7 @@ async function answer(ctx: Ctx): Promise<Reply> {
   const id = realId(ctx.params.id);
   const form = await ctx.form();
   const r = answerQuestion(id ?? 0, ctx.user!.id, Number(form.get("question")), form.get("text") ?? "");
+  logActivity({ actor: ctx.user, action: "live.answer", outcome: r.ok ? "ok" : "denied", detail: { session: id, question: Number(form.get("question")) || null, problem: r.ok ? null : r.problem } });
   if (!r.ok) {
     if (r.problem === "not-found") throw new HttpError(404, "That cooking session has ended or never existed.");
     const message = r.problem === "ended" ? "This session has ended." : r.problem === "empty" ? "Type an answer first." : `Keep it under ${QUESTION_MAX} characters.`;

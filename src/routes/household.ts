@@ -1,3 +1,4 @@
+import { logActivity } from "../activity.ts";
 import { packLine } from "./shopping.ts";
 import { catalogFor } from "../db.ts";
 import { addDays, ago, freshness, money, monthLabel, parseIsoDate, qty, shortDate, today, weekday, weekStart } from "../format.ts";
@@ -877,6 +878,7 @@ export const routes: Route[] = [
         setFlash(ctx, "You're already in a household. Leave it first (Members tab) to start another.");
         return redirect("/household/members");
       }
+      logActivity({ actor: ctx.user, action: "household.create", subject: name.trim() });
       setFlash(ctx, `Welcome to ${name.trim()}. Give housemates the invite code below to bring them in.`);
       return redirect("/household/members#invite");
     },
@@ -888,6 +890,8 @@ export const routes: Route[] = [
     handler: async (ctx) => {
       const code = (await ctx.form()).get("code") ?? "";
       const result = joinHousehold(ctx.user!.id, code);
+      // the invite code is a secret: never logged
+      logActivity({ actor: ctx.user, action: "household.join", outcome: result.ok ? "ok" : "denied", subject: result.ok ? result.house.name : "", detail: { problem: result.ok ? null : result.problem } });
       if (result.ok) {
         setFlash(ctx, `You've joined ${result.house.name}.`);
         return redirect("/household");
@@ -909,6 +913,7 @@ export const routes: Route[] = [
     auth: true,
     handler: (ctx) => {
       const r = leaveHousehold(ctx.user!.id);
+      if (r.left) logActivity({ actor: ctx.user, action: "household.leave", subject: r.name, detail: { closed: !!r.deleted } });
       if (r.left) setFlash(ctx, r.deleted ? `You left and closed ${r.name}.` : `You left ${r.name}.`);
       return redirect("/household");
     },

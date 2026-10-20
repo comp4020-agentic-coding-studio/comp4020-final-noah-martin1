@@ -1,3 +1,4 @@
+import { logActivity } from "../activity.ts";
 import {
   createSession,
   destroySession,
@@ -110,6 +111,7 @@ export const routes: Route[] = [
         await hashPassword(password),
       );
       signIn(ctx, id);
+      logActivity({ actor: { id, username }, action: "auth.register" });
       setFlash(ctx, `Welcome to Larder, ${displayName}.`);
       return redirect(safeNext(values.next));
     },
@@ -132,9 +134,12 @@ export const routes: Route[] = [
         username,
       );
       if (!user || !(await verifyPassword(password, user.password_hash))) {
+        // the name tried, never the password; unknown names are cut short
+        logActivity({ action: "auth.login_failed", outcome: "denied", subject: username.slice(0, 24), detail: { known_user: !!user } });
         return authForm(ctx, "login", { username, next }, ["Username or password is incorrect."], 401);
       }
       signIn(ctx, user.id);
+      logActivity({ actor: { id: user.id, username }, action: "auth.login" });
       return redirect(safeNext(next));
     },
   },
@@ -142,6 +147,7 @@ export const routes: Route[] = [
     method: "POST",
     path: "/logout",
     handler: (ctx) => {
+      if (ctx.user) logActivity({ actor: ctx.user, action: "auth.logout" });
       destroySession(parseCookies(ctx.req.headers.cookie).sid);
       ctx.setCookies.push(cookie("sid", "", { maxAge: 0, secure: isHttps(ctx.req) }));
       setFlash(ctx, "Signed out.");

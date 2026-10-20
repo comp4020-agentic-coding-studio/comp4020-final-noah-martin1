@@ -1,3 +1,4 @@
+import { logActivity } from "../activity.ts";
 import { addDays, ago, today } from "../format.ts";
 import { type Html, html } from "../html.ts";
 import { type Ctx, HttpError, htmlReply, redirect, setFlash } from "../http.ts";
@@ -166,6 +167,7 @@ export const routes: Route[] = [
     handler: (ctx) => {
       const p = target(ctx);
       const outcome = requestFriend(ctx.user!.id, p.id);
+      logActivity({ actor: ctx.user, action: outcome === "accepted" ? "friends.accept" : "friends.request", outcome: outcome === "self" ? "denied" : "ok", subject: p.username, detail: { result: outcome } });
       const messages = {
         sent: `Friend request sent to ${p.display_name}.`,
         accepted: `You and ${p.display_name} are now friends.`,
@@ -184,8 +186,10 @@ export const routes: Route[] = [
     handler: (ctx) => {
       const p = target(ctx);
       if (!acceptFriend(ctx.user!.id, p.id)) {
+        logActivity({ actor: ctx.user, action: "friends.accept", outcome: "denied", subject: p.username, detail: { reason: "no request" } });
         throw new HttpError(403, "There's no request from that person for you to accept.");
       }
+      logActivity({ actor: ctx.user, action: "friends.accept", subject: p.username });
       setFlash(ctx, `You and ${p.display_name} are now friends.`);
       return redirect("/friends");
     },
@@ -197,6 +201,7 @@ export const routes: Route[] = [
     handler: (ctx) => {
       const p = target(ctx);
       removeFriendship(ctx.user!.id, p.id);
+      logActivity({ actor: ctx.user, action: "friends.remove", subject: p.username });
       return redirect("/friends");
     },
   },

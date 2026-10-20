@@ -1,3 +1,4 @@
+import { logActivity } from "../activity.ts";
 import { all, one, run, transaction } from "../db.ts";
 import { addDays, money, parseIsoDate, shortDate, sized, today, weekday, weekStart } from "../format.ts";
 import { type Html, html, raw } from "../html.ts";
@@ -803,6 +804,10 @@ function calendarPage(ctx: Ctx, s: CalState): Html {
     </div>`;
 }
 
+function entryTitle(id: number): string {
+  return one<{ title: string }>("SELECT r.title FROM calendar_entries c JOIN recipes r ON r.id = c.recipe_id WHERE c.id = ?", id)?.title ?? "";
+}
+
 function ownEntry(ctx: Ctx): number {
   const id = Number(ctx.params.id);
   const row = Number.isInteger(id)
@@ -877,6 +882,7 @@ export const routes: Route[] = [
         ctx.user!.id,
         form.get("shared") === "1" ? 1 : 0,
       );
+      logActivity({ actor: ctx.user, action: "calendar.plan", subject: recipe.title, detail: { recipe: recipe.id, date, meal, shared: form.get("shared") === "1" } });
       setFlash(ctx, `Planned ${recipe.title} for ${weekday(date)} ${shortDate(date)}.`);
       return redirect(backTo(form, date));
     },
@@ -913,6 +919,7 @@ export const routes: Route[] = [
         }
       });
       const first = picks.map((p) => p.date).sort()[0];
+      logActivity({ actor: ctx.user, action: "calendar.plan", subject: `${picks.length} dinners from the planner`, detail: { count: picks.length, from: first } });
       setFlash(ctx, `Added ${picks.length} dinner${picks.length === 1 ? "" : "s"} to your calendar. Your shopping list is updated.`);
       return redirect(backTo(form, first));
     },
@@ -929,6 +936,7 @@ export const routes: Route[] = [
       const cents = raw === "" ? null : dollarsToCents(raw);
       if (raw !== "" && cents === null) throw new HttpError(422, "Budget must be a dollar amount like 80 or 80.50.");
       run("UPDATE users SET weekly_budget_cents = ? WHERE id = ?", cents, ctx.user!.id);
+      logActivity({ actor: ctx.user, action: "settings.update", subject: "weekly budget", detail: { budget_cents: cents } });
       setFlash(ctx, cents === null ? "Weekly budget cleared." : `Weekly budget set to ${money(cents)}.`);
       return redirect(back(form));
     },
@@ -943,6 +951,7 @@ export const routes: Route[] = [
       const status = form.get("status") ?? "";
       if (!(STATUSES as readonly string[]).includes(status)) throw new HttpError(422, "Unknown status.");
       run("UPDATE calendar_entries SET status = ? WHERE id = ?", status, id);
+      logActivity({ actor: ctx.user, action: "calendar.status", subject: entryTitle(id), detail: { entry: id, status } });
       return redirect(back(form));
     },
   },
@@ -964,6 +973,7 @@ export const routes: Route[] = [
     handler: async (ctx) => {
       const id = ownEntry(ctx);
       const form = await ctx.form();
+      logActivity({ actor: ctx.user, action: "calendar.remove", subject: entryTitle(id), detail: { entry: id } });
       run("DELETE FROM calendar_entries WHERE id = ?", id);
       setFlash(ctx, "Removed from calendar.");
       return redirect(back(form));

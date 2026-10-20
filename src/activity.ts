@@ -118,4 +118,7 @@ export const ACTION_LABEL: Record<string, string> = {
   "friends.request": "Sent a friend request",
   "friends.accept": "Accepted a friend",
   "household.join": "Joined a household",
+  "household.create": "Started a household",
+  "household.leave": "Left a household",
+  "friends.remove": "Removed a friend",
 };

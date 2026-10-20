@@ -106,7 +106,7 @@ async function start(ctx: Ctx): Promise<Reply> {
   const { id, visibility: stored, replaced } = startSession(user.id, { recipe, stepCount: steps.length, serves, visibility, place });
   // the city someone picks is where an automatic session appears next time
   // (a device location is never remembered)
-  if (where === "city" && CITY_BY_KEY.has(city)) run("UPDATE users SET live_city = ? WHERE id = ?", city, user.id);
+  if ((where ?? "city") === "city" && CITY_BY_KEY.has(city)) run("UPDATE users SET live_city = ? WHERE id = ?", city, user.id);
   else if (city === "none") run("UPDATE users SET live_city = '' WHERE id = ?", user.id);
   logActivity({ actor: user, action: "live.start", subject: recipe.title, detail: { session: id, recipe: recipe.id, visibility: stored, city: s_city(place), replaced: replaced.length } });
   // going live part-way through: catch the session up to where the cook is

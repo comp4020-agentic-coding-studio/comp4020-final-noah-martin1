@@ -22,6 +22,7 @@ import {
   text,
 } from "./http.ts";
 import { html } from "./html.ts";
+import { routes as adminRoutes } from "./routes/admin.ts";
 import { routes as authRoutes } from "./routes/auth.ts";
 import { routes as calendarRoutes } from "./routes/calendar.ts";
 import { routes as cookRoutes } from "./routes/cook.ts";
@@ -73,6 +74,7 @@ const table = [
   ...plannerRoutes,
   ...settingsRoutes,
   ...readmeRoutes,
+  ...adminRoutes,
 ].map((r) => ({ ...r, regex: compile(r.path) }));
 
 const STATIC_TYPES: Record<string, string> = {
@@ -178,6 +180,7 @@ const server = createServer(async (req, res) => {
     if (err instanceof HttpError) {
       reply = errorPage(ctx, err.status, err.message);
     } else {
+      console.error(JSON.stringify({ level: "error", event: "request.failed", method: ctx.method, path: ctx.url.pathname, who: ctx.user ? `${ctx.user.username}#${ctx.user.id}` : "guest", error: err instanceof Error ? err.message : String(err) }));
       console.error(err);
       reply = errorPage(ctx, 500, "The server hit an error. It has been logged.");
     }
@@ -185,8 +188,13 @@ const server = createServer(async (req, res) => {
   // a redirect carries a flash set during this request; don't clear it
   if (reply.status === 303) ctx.setCookies = ctx.setCookies.filter((c) => !c.startsWith("flash=;"));
   send(res, reply, ctx.setCookies);
-  // a stream is logged when it opens; it stays open long after this line
-  console.log(`${ctx.method} ${ctx.url.pathname} ${reply.status} ${Date.now() - started}ms${reply.stream ? " (stream)" : ""}`);
+  // one line per request, with who made it; a stream is logged when it
+  // opens. Static assets and health checks would drown the story, so only
+  // their failures are logged.
+  const quiet = ctx.url.pathname.startsWith("/assets/") || ctx.url.pathname === "/healthz";
+  if (!quiet || reply.status >= 400) {
+    console.log(`${ctx.method} ${ctx.url.pathname} ${reply.status} ${Date.now() - started}ms ${ctx.user ? `${ctx.user.username}#${ctx.user.id}` : "guest"}${reply.stream ? " (stream)" : ""}`);
+  }
 });
 
 const catalogued = seedCatalogue();

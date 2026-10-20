@@ -13287,3 +13287,43 @@ html:not(.no-js) .no-js-only { display: none; }
     font-size: 13px;
   }
 }
+
+/* ---------------- activity (settings trail, operator feed) ---------------- */
+.activity-list,
+.act-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+}
+.activity-list li {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 10px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 14px;
+}
+.activity-list li:last-child { border-bottom: 0; }
+.act-row {
+  display: grid;
+  grid-template-columns: 70px 120px minmax(0, 1fr) minmax(0, 1.2fr);
+  gap: 12px;
+  align-items: baseline;
+  padding: 9px 18px;
+  border-bottom: 1px solid var(--line);
+  font-size: 14px;
+}
+.act-row:last-child { border-bottom: 0; }
+.act-who { font-weight: 650; overflow: hidden; text-overflow: ellipsis; }
+.act-facts { color: var(--ink-3); font-size: 12px; overflow-wrap: anywhere; }
+.act-denied { background: color-mix(in srgb, var(--warn-soft) 50%, transparent); }
+.act-failed { background: color-mix(in srgb, var(--bad-soft) 60%, transparent); }
+.act-new { animation: act-in 600ms var(--ease); }
+@keyframes act-in { from { background: var(--accent-soft); } }
+@media (prefers-reduced-motion: reduce) { .act-new { animation: none; } }
+@media (max-width: 720px) {
+  .act-row { grid-template-columns: 64px 1fr; }
+  .act-facts { grid-column: 1 / -1; }
+  .activity-list li { grid-template-columns: 1fr; gap: 2px; }
+}
