@@ -12,6 +12,7 @@ import { EffectComposer } from "three/addons/postprocessing/EffectComposer.js";
 import { RenderPass } from "three/addons/postprocessing/RenderPass.js";
 import { OutlinePass } from "three/addons/postprocessing/OutlinePass.js";
 import { OutputPass } from "three/addons/postprocessing/OutputPass.js";
+import { dropFor, fitScale, liftFor, newLane, orderStack, rotatedExtent, takeSlot } from "./kitchen-layout.mjs";
 
 const root = document.querySelector("[data-kitchen]");
 const stage = root?.querySelector("[data-kx-stage]");
@@ -160,7 +161,7 @@ function start() {
 
   // shelves: glass panes with a soft edge, plus a crisper drawer at the bottom
   const SHELVES = [FOOT + T + 0.62, FOOT + T + 1.3, FOOT + T + 1.98]; // tops of shelves
-  const shelfTops = [FOOT + T, ...SHELVES]; // the cavity floor holds the drawer
+  const DRAWER_TOP = FOOT + T + 0.005; // the cavity floor holds the drawer
   for (const y of SHELVES) {
     const pane = new THREE.Mesh(new THREE.BoxGeometry(W - 0.04, 0.02, D - T - 0.06), glass);
     pane.position.set(0, y - 0.01, -D / 2 - 0.0);
@@ -468,10 +469,11 @@ function start() {
         for (let i = 0; i < 3; i++) {
           const c = new THREE.Mesh(new THREE.ConeGeometry(0.035, 0.32, 14), tinted(colour));
           c.rotation.z = Math.PI / 2;
-          c.position.set(0, 0.04 + i * 0.05, (i - 1) * 0.06);
+          c.rotation.y = (i - 1) * 0.12;
+          c.position.set((i - 1) * 0.015, 0.035, (i - 1) * 0.078);
           const top = new THREE.Mesh(new THREE.ConeGeometry(0.03, 0.08, 6), tinted("#7fb08a"));
           top.rotation.z = -Math.PI / 2;
-          top.position.set(0.19, 0.04 + i * 0.05, (i - 1) * 0.06);
+          top.position.set(0.19 + (i - 1) * 0.015, 0.035, (i - 1) * 0.078 + (i - 1) * 0.022);
           g.add(c, top);
         }
         return [g, 0.4];
@@ -577,40 +579,67 @@ function start() {
   const pickables = [];
   const itemsById = new Map();
 
-  function addItem(item, parent, x, y, z, rotY = 0) {
+  // What a model measures at rest (footprint and height), built once per look,
+  // so the shelves pack by the real size rather than a hand-typed width.
+  const sizes = new Map();
+  function measure(item) {
+    const key = item.model + (item.model === "veg" || item.model === "tray" ? `|${item.name}` : "");
+    let m = sizes.get(key);
+    if (!m) {
+      const [g] = (BUILD[item.model] ?? BUILD.jar)(item.tint, item);
+      const size = new THREE.Box3().setFromObject(g).getSize(new THREE.Vector3());
+      m = { w: size.x, d: size.z, h: size.y };
+      sizes.set(key, m);
+    }
+    return m;
+  }
+
+  // The builders only roughly centre a model and sit it on y = 0 (a bevel dips
+  // under, a wedge of cheese is lopsided). So each is measured, shifted so its
+  // footprint is centred and its lowest point rests exactly on the shelf, and
+  // shrunk a little if the shelf above would otherwise cut through it.
+  // `free` is the headroom above the shelf.
+  function addItem(item, parent, x, y, z, rotY = 0, free = Infinity) {
     const builder = BUILD[item.model] ?? BUILD.jar;
-    const [mesh] = builder(item.tint, item);
-    mesh.traverse((o) => {
+    const [raw] = builder(item.tint, item);
+    const meshes = [];
+    raw.traverse((o) => {
       if (o.isMesh) {
         o.castShadow = true;
         o.receiveShadow = true;
         o.userData.itemId = item.id;
+        meshes.push(o);
       }
     });
+    const bb = new THREE.Box3().setFromObject(raw);
+    const size = bb.getSize(new THREE.Vector3());
+    raw.position.set(-(bb.min.x + bb.max.x) / 2, -bb.min.y, -(bb.min.z + bb.max.z) / 2);
+    // `mesh` is what hover lifts and rocks; `raw` inside it carries the offset
+    const mesh = new THREE.Group();
+    mesh.add(raw);
     const holder = new THREE.Group();
     holder.position.set(x, y, z);
     holder.rotation.y = rotY;
     holder.add(mesh);
-    // hit-test against a still box that covers the item at rest AND lifted,
-    // so lifting on hover never pulls it out from under the pointer
-    const bb = new THREE.Box3().setFromObject(mesh);
-    const size = bb.getSize(new THREE.Vector3());
+    const fit = fitScale(size.y, free);
+    const { lift, grow } = liftFor(size.y * fit, free);
+    // A still box around the item and the room it rises into, for a pointer
+    // that lands just beside it; the real geometry is tested first.
     const hit = new THREE.Mesh(
-      new THREE.BoxGeometry(size.x + 0.04, size.y + 0.2, size.z + 0.04),
+      new THREE.BoxGeometry(size.x + 0.03, size.y + lift / fit + 0.03, size.z + 0.03),
       new THREE.MeshBasicMaterial({ visible: false }),
     );
-    hit.position.set((bb.min.x + bb.max.x) / 2, bb.min.y + (size.y + 0.2) / 2, (bb.min.z + bb.max.z) / 2);
+    hit.position.set(0, (size.y + lift / fit) / 2, 0);
     holder.add(hit);
     // which way it rocks when it lands, and how far from its middle to the
     // edge it rocks on (so tall bottles tip less than squat tubs)
     const rockDir = Math.sin(item.id * 78.233) > 0 ? 1 : -1;
     const halfW = Math.max(0.04, size.x / 2);
-    holder.userData = { item, baseY: y, lift: 0, hover: 0, sel: 0, mesh, hit, entered: 0, delay: 0, landAt: null, rockDir, halfW, tall: size.y };
-    // expiring soon: a small glowing dot floats above it (measured in the
-    // holder's own space, before it joins the scene)
+    holder.userData = { item, baseY: y, lift: 0, hover: 0, sel: 0, mesh, hit, meshes, entered: 0, delay: 0, landAt: null, rockDir, halfW, tall: size.y * fit, fit, free, liftMax: lift, grow };
+    // expiring soon: a small glowing dot floats above it
     if (item.fresh === "soon" || item.fresh === "expired") {
       const dot = new THREE.Mesh(new THREE.SphereGeometry(0.024, 16, 12), new THREE.MeshBasicMaterial({ color: item.fresh === "expired" ? 0xef6b5b : 0xf2b04c }));
-      dot.position.set((bb.min.x + bb.max.x) / 2, bb.max.y + 0.06, (bb.min.z + bb.max.z) / 2);
+      dot.position.set(0, size.y + 0.06 / fit, 0);
       holder.userData.dotY = dot.position.y;
       holder.add(dot);
       holder.userData.dot = dot;
@@ -621,48 +650,63 @@ function start() {
     return holder;
   }
 
-  // A lane is one shelf: items pack along it left to right by footprint, a
-  // front row then a back row. It remembers where the next one goes, so an
-  // item added later drops into the gap rather than reshuffling the shelf.
-  const lane = (name, parent, xMin, xMax, y, zFront, zBack) => ({ name, parent, xMin, xMax, y, zFront, zBack, x: xMin, row: 0, n: 0 });
-  const footprint = (item) => (BUILD[item.model] ?? BUILD.jar)(item.tint, item)[1];
-  // (a hair of slack, so an item that exactly fills a row still counts)
-  const inRow = (ln, w) => ln.x + w <= ln.xMax + 0.01;
-  const room = (ln, w) => inRow(ln, w) || ln.row === 0;
+  // A lane is one shelf. public/kitchen-layout.mjs packs it: items stand on
+  // their measured footprint (turned as they're turned), in a front row and a
+  // staggered back row that never overlap, inside zNear..zFar. `free` is the
+  // headroom up to whatever is overhead, so nothing is made to stand through
+  // the shelf above it.
+  const lane = (name, parent, xMin, xMax, y, zNear, zFar, free) => newLane({ name, parent, xMin, xMax, y, zNear, zFar, free });
+  const jitter = (item) => Math.sin(item.id * 12.9898) * 0.12;
+  function spot(item) {
+    const m = measure(item);
+    const rot = jitter(item);
+    const e = rotatedExtent(m.w, m.d, rot);
+    return { m, rot, w: e.x, d: e.z };
+  }
+  // fits if it stands on this lane without being squashed noticeably
+  function fitsLane(item, ln) {
+    const s = spot(item);
+    return fitScale(s.m.h, ln.free) >= 0.8 && !!takeSlot(ln, s.w, s.d, true);
+  }
   function place(item, ln) {
-    const w = footprint(item);
-    if (!inRow(ln, w)) {
-      if (ln.row === 1) return null;
-      ln.x = ln.xMin;
-      ln.row = 1;
-    }
-    const z = ln.row === 0 ? ln.zFront : ln.zBack;
-    const h = addItem(item, ln.parent, ln.x + w / 2, ln.y, z, (Math.sin(item.id * 12.9898) * 0.25));
-    h.userData.delay = ln.n * 0.06 + ln.row * 0.1;
+    if (!fitsLane(item, ln)) return null;
+    const s = spot(item);
+    const slot = takeSlot(ln, s.w, s.d);
+    const h = addItem(item, ln.parent, slot.x, ln.y, slot.z, s.rot, ln.free);
+    h.userData.delay = slot.index * 0.06 + slot.row * 0.1;
     h.userData.lane = ln;
-    ln.n++;
-    ln.x += w + 0.06;
     return h;
   }
-  function layRow(list, ln) {
-    for (const item of list) if (!place(item, ln)) return;
+  // Lay a list out over several lanes: each item tries its preferred lane
+  // first, then the rest in turn. One that fits nowhere stays in the list
+  // below the scene rather than being squeezed in.
+  function layAll(list, lanes, preferred) {
+    for (const [i, item] of list.entries()) {
+      const from = preferred(item, i);
+      const order = lanes.map((_, k) => lanes[(from + k) % lanes.length]);
+      const ln = order.find((l) => fitsLane(item, l));
+      if (ln) place(item, ln);
+    }
   }
-  // door bins: alternate left and right doors, three bins each
+  // door bins: alternate left and right doors, three bins each. The bin's base
+  // is a thin tray, so an item stands on its top face, with the next bin's
+  // tray as the ceiling.
   let bi = 0;
+  const BIN_FLOOR = 0.0075;
   function placeInDoor(item) {
     if (bi >= 12) return null;
     const door = doors[bi % 2];
     const bin = door.bins[Math.floor(bi / 2) % 3];
     const slot = Math.floor(bi / 6);
     const x = -0.18 + slot * 0.32;
-    const h = addItem(item, bin, x * -door.side, 0.01, -0.02, door.side * 0.2);
+    const h = addItem(item, bin, x * -door.side, BIN_FLOOR + 0.0005, -0.02, door.side * 0.2, 0.68);
     h.userData.delay = 0.3 + bi * 0.05;
     bi++;
     return h;
   }
 
   // sort: door candidates first to the door; produce to the crisper; the rest
-  // by height onto shelves (tall at the back)
+  // onto the shelves (tall things where there's headroom, the rest spread out)
   const doorQueue = fridgeItems.filter((i) => DOOR_MODELS.has(i.model));
   const crisperQueue = fridgeItems.filter((i) => i.model === "veg" || i.model === "leafy");
   let shelfQueue = fridgeItems.filter((i) => !DOOR_MODELS.has(i.model) && i.model !== "veg" && i.model !== "leafy");
@@ -670,33 +714,47 @@ function start() {
   const overflow = doorQueue.filter((item) => !placeInDoor(item));
   shelfQueue = [...shelfQueue, ...overflow];
 
-  // crisper: produce sits in the drawer, just behind its frosted front
-  const crisperLane = lane("in the crisper", fridge, -W / 2 + 0.12, W / 2 - 0.12, FOOT + T + 0.02, -0.38, -0.72);
-  layRow(crisperQueue, crisperLane);
+  // crisper: produce sits on the drawer's floor, just behind its frosted front
+  const crisperLane = lane("in the crisper", fridge, -W / 2 + 0.14, W / 2 - 0.14, DRAWER_TOP, -0.16, -0.82, SHELVES[0] - 0.02 - DRAWER_TOP);
+  const overCrisper = [];
+  for (const item of crisperQueue) if (!place(item, crisperLane)) overCrisper.push(item);
   // shelves: spread the rest across the three shelves, tallest at the top
   const SHELF_NAMES = ["bottom", "middle", "top"];
-  const shelfLanes = SHELVES.map((y, si) => lane(`on the ${SHELF_NAMES[si]} shelf`, fridge, -W / 2 + 0.12, W / 2 - 0.12, y + 0.002, -0.36, -0.74));
-  const perShelf = Math.ceil(shelfQueue.length / 3) || 1;
-  shelfLanes.forEach((ln, si) => layRow(shelfQueue.slice(si * perShelf, (si + 1) * perShelf), ln));
+  const CEILING = FOOT + T + H - 0.06;
+  const shelfLanes = SHELVES.map((y, si) =>
+    lane(`on the ${SHELF_NAMES[si]} shelf`, fridge, -W / 2 + 0.12, W / 2 - 0.12, y + 0.002, -0.17, -0.84, (si < 2 ? SHELVES[si + 1] - 0.02 : CEILING) - (y + 0.002)),
+  );
+  layAll([...shelfQueue, ...overCrisper], shelfLanes, (item, i) => (measure(item).h > 0.45 ? 2 : i % 3));
 
   // pantry shelves: heavy things low (sacks, cans), jars and boxes up high
   const order = { sack: 0, can: 1, veg: 1, loaf: 2, box: 2, bottle: 3, jar: 3, spice: 4 };
   const sortedPantry = [...pantryItems].sort((a, b) => (order[a.model] ?? 3) - (order[b.model] ?? 3));
-  const perPShelf = Math.ceil(sortedPantry.length / 4) || 1;
   const PANTRY_NAMES = ["on the pantry bench", "on the bottom pantry shelf", "on the middle pantry shelf", "on the top pantry shelf"];
-  const pantryLanes = [0.68, ...PANTRY_SHELVES.map((y) => y + 0.035)].map((y, si) =>
-    lane(PANTRY_NAMES[si], pantry, -PW / 2 + 0.15, si === 0 ? PW / 2 - 0.55 : PW / 2 - 0.15, y, -0.25, -0.45),
+  const BOARD_TOP = 0.035;
+  const pantryTops = [0.68, ...PANTRY_SHELVES.map((y) => y + BOARD_TOP)];
+  const pantryLanes = pantryTops.map((y, si) =>
+    lane(
+      PANTRY_NAMES[si],
+      pantry,
+      -PW / 2 + 0.15,
+      si === 0 ? PW / 2 - 0.55 : PW / 2 - 0.15,
+      y + 0.0015,
+      -0.12,
+      -0.58,
+      si < 3 ? PANTRY_SHELVES[si] - BOARD_TOP - y - 0.0015 : Infinity,
+    ),
   );
-  pantryLanes.forEach((ln, si) => layRow(sortedPantry.slice(si * perPShelf, (si + 1) * perPShelf), ln));
+  const pantryStart = (item) => Math.round(((order[item.model] ?? 3) * 3) / 4);
+  layAll(sortedPantry, pantryLanes, pantryStart);
 
   // Somewhere for an item added from the panel, by the same rules: door
   // things to the door, produce to the crisper, the rest to a shelf. A spot
   // in a front row beats any back row, so the new arrival is seen landing;
   // in the pantry, nearer the level its weight says beats further.
   function shelve(item) {
-    const w = footprint(item);
-    const front = (ln) => ln.row === 0 && inRow(ln, w);
-    const pick = (lanes) => lanes.find(front) ?? lanes.find((ln) => room(ln, w));
+    const fits = (ln) => fitsLane(item, ln);
+    const front = (ln) => ln.row === 0 && fits(ln);
+    const pick = (lanes) => lanes.find(front) ?? lanes.find(fits);
     if (item.place === "fridge") {
       if (DOOR_MODELS.has(item.model)) {
         const h = placeInDoor(item);
@@ -705,11 +763,11 @@ function start() {
       // produce goes in the crisper while it has room in either row (its
       // frosted front hides both alike); the rest to the emptiest shelf
       const produce = item.model === "veg" || item.model === "leafy";
-      if (produce && room(crisperLane, w)) return place(item, crisperLane);
+      if (produce && fits(crisperLane)) return place(item, crisperLane);
       const ln = pick([...shelfLanes].sort((a, b) => a.x - b.x));
       return ln ? place(item, ln) : null;
     }
-    const want = Math.round(((order[item.model] ?? 3) * 3) / 4);
+    const want = pantryStart(item);
     const ln = pick([...pantryLanes].sort((a, b) => Math.abs(pantryLanes.indexOf(a) - want) - Math.abs(pantryLanes.indexOf(b) - want)));
     return ln ? place(item, ln) : null;
   }
@@ -772,6 +830,7 @@ function start() {
     }
     root.dataset.view = next;
     root.querySelector("[data-kx-title]").textContent = next === "fridge" ? "Fridge" : "Pantry";
+    buildBrowse();
     history.replaceState(null, "", next === "pantry" ? "#pantry" : location.pathname + location.search);
     // an open item would be left behind; the add form comes along
     if (!keep && !adding()) closePanel();
@@ -796,58 +855,175 @@ function start() {
   });
 
   /* ---------- interaction ---------- */
+  // Picking tests an item's real meshes first, so what you can see is what
+  // you get: a carrot showing beside a milk carton is the carrot, not the
+  // carton's padded box. An item the ray only grazes (its padded box, or
+  // hidden behind another) comes after, and clicking the same spot again
+  // steps through them. The keyboard list below reaches every item too.
   const raycaster = new THREE.Raycaster();
   const pointer = new THREE.Vector2(-9, -9);
   let hovered = null;
   let selected = null;
+  let pinned = false; // a click or tap keeps the panel; hover alone only peeks
+  let lastPoint = null;
+  // how far the fridge doors have swung (0 shut, 1 open): items behind a shut
+  // door can't be reached, so the pointer never lights up something it can't see
+  let doorSwing = 0;
+  const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)");
+  const wideScreen = window.matchMedia("(min-width: 901px)");
 
   function holderOf(obj) {
     while (obj && !pickables.includes(obj)) obj = obj.parent;
     return obj ?? null;
   }
-  function pick(cx, cy) {
+  // every item under the pointer, best first
+  function stackAt(cx, cy) {
     const r = canvas.getBoundingClientRect();
     pointer.set(((cx - r.left) / r.width) * 2 - 1, -((cy - r.top) / r.height) * 2 + 1);
     raycaster.setFromCamera(pointer, camera);
-    const hits = raycaster.intersectObjects(pickables.map((p) => p.userData.hit), false);
-    return hits.length ? holderOf(hits[0].object) : null;
+    const mine = pickables.filter((p) => p.userData.item.place === "pantry" || doorSwing > 0.3);
+    const exact = new Map();
+    for (const h of raycaster.intersectObjects(mine.flatMap((p) => p.userData.meshes), false)) {
+      const id = h.object.userData.itemId;
+      if (!exact.has(id)) exact.set(id, h.distance);
+    }
+    const hits = [];
+    for (const h of raycaster.intersectObjects(mine.map((p) => p.userData.hit), false)) {
+      const holder = holderOf(h.object);
+      hits.push({ id: holder.userData.item.id, exact: exact.get(holder.userData.item.id) ?? null, proxy: h.distance });
+    }
+    return orderStack(hits).map((id) => itemsById.get(id));
+  }
+  function pick(cx, cy) {
+    const stack = stackAt(cx, cy);
+    // a lifted item keeps the pointer while it stays over its own box, so the
+    // hover doesn't flutter at its edges as it rises
+    if (hovered && stack.includes(hovered) && !stack.slice(0, stack.indexOf(hovered)).some((h) => h.userData.item.id !== hovered.userData.item.id && exactFirst(h, cx, cy))) return hovered;
+    return stack[0] ?? null;
+  }
+  // true when the ray meets this item's own meshes (not just its padded box)
+  function exactFirst(h, cx, cy) {
+    const r = canvas.getBoundingClientRect();
+    pointer.set(((cx - r.left) / r.width) * 2 - 1, -((cy - r.top) / r.height) * 2 + 1);
+    raycaster.setFromCamera(pointer, camera);
+    return raycaster.intersectObjects(h.userData.meshes, false).length > 0;
+  }
+
+  let peekTimer = 0;
+  let leaveTimer = 0;
+  function setHover(h) {
+    if (h === hovered) return;
+    hovered = h;
+    canvas.style.cursor = h ? "pointer" : "";
+    syncOutline();
+    clearTimeout(peekTimer);
+    if (!peekOk()) return;
+    if (h) {
+      clearTimeout(leaveTimer);
+      // quick enough to feel immediate, slow enough that sweeping across
+      // the shelf doesn't strobe the panel
+      peekTimer = setTimeout(() => peek(h), panel.hidden || !panel.classList.contains("open") ? 110 : 60);
+    } else {
+      scheduleLeave();
+    }
+  }
+  const peekOk = () => finePointer.matches && wideScreen.matches && !pinned && !adding();
+  function scheduleLeave() {
+    clearTimeout(leaveTimer);
+    if (pinned) return;
+    leaveTimer = setTimeout(() => {
+      if (!pinned && !hovered && !panel.matches(":hover") && !panel.contains(document.activeElement)) closePanel();
+    }, 380);
   }
   canvas.addEventListener("pointermove", (e) => {
     const r = canvas.getBoundingClientRect();
     parallaxT.set(((e.clientX - r.left) / r.width - 0.5) * 2, ((e.clientY - r.top) / r.height - 0.5) * 2);
     if (e.pointerType === "touch") return;
-    const h = pick(e.clientX, e.clientY);
-    if (h !== hovered) {
-      hovered = h;
-      canvas.style.cursor = h ? "pointer" : "";
-      syncOutline();
-    }
+    lastPoint = { x: e.clientX, y: e.clientY };
+    if (moveQueued) return;
+    moveQueued = true;
+    requestAnimationFrame(() => {
+      moveQueued = false;
+      if (lastPoint) setHover(pick(lastPoint.x, lastPoint.y));
+    });
   });
+  let moveQueued = false;
   canvas.addEventListener("pointerleave", () => {
-    hovered = null;
+    lastPoint = null;
     parallaxT.set(0, 0);
-    canvas.style.cursor = "";
-    syncOutline();
+    setHover(null);
   });
+  // clicking the same spot again steps to the next item under it
+  let lastClick = null;
   canvas.addEventListener("click", (e) => {
-    const h = pick(e.clientX, e.clientY);
-    if (h) openPanel(h);
-    else closePanel();
+    const stack = stackAt(e.clientX, e.clientY);
+    const again = lastClick && Math.hypot(lastClick.x - e.clientX, lastClick.y - e.clientY) < 8 && stack.includes(selected);
+    lastClick = { x: e.clientX, y: e.clientY };
+    const h = again && stack.length > 1 ? stack[(stack.indexOf(selected) + 1) % stack.length] : stack[0];
+    if (h) openPanel(h, true);
+    else {
+      lastClick = null;
+      closePanel();
+    }
   });
   // items just added stay outlined while they land, so the eye finds them
   const arrivals = new Set();
   function syncOutline() {
-    outline.selectedObjects = [hovered, selected, ...arrivals].filter(Boolean).map((h) => h.userData.mesh);
+    outline.selectedObjects = [hovered, selected, focusRing, ...arrivals].filter(Boolean).map((h) => h.userData.mesh);
   }
+  let focusRing = null;
+
+  // The same items as real buttons, for keyboard and screen readers: tab in,
+  // arrow between them, Enter keeps one open. They stay visually tucked away
+  // until focused, so the scene is the interface for everyone else.
+  const browse = document.createElement("div");
+  browse.className = "kx-browse";
+  browse.setAttribute("role", "group");
+  browse.setAttribute("aria-label", "Items in view. Press Enter to open one.");
+  stage.append(browse);
+  function buildBrowse() {
+    browse.replaceChildren(
+      ...pickables
+        .filter((h) => (h.userData.item.place === "pantry") === (view === "pantry"))
+        .map((h) => {
+          const b = document.createElement("button");
+          b.type = "button";
+          b.className = "kx-browse-item";
+          b.dataset.id = String(h.userData.item.id);
+          b.textContent = `${h.userData.item.name}, ${h.userData.item.qty}`;
+          b.addEventListener("focus", () => {
+            focusRing = h;
+            syncOutline();
+            if (!pinned) peek(h);
+          });
+          b.addEventListener("blur", () => {
+            if (focusRing === h) focusRing = null;
+            syncOutline();
+          });
+          b.addEventListener("click", () => openPanel(h, true));
+          return b;
+        }),
+    );
+  }
+  browse.addEventListener("keydown", (e) => {
+    const bs = [...browse.querySelectorAll("button")];
+    const i = bs.indexOf(document.activeElement);
+    const next = e.key === "ArrowRight" || e.key === "ArrowDown" ? 1 : e.key === "ArrowLeft" || e.key === "ArrowUp" ? -1 : 0;
+    if (!next || i < 0) return;
+    e.preventDefault();
+    e.stopPropagation();
+    bs[(i + next + bs.length) % bs.length].focus();
+  });
 
   /* ---------- side panel ---------- */
   const panel = root.querySelector("[data-kx-panel]");
   const panelBody = root.querySelector("[data-kx-panel-body]");
   const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
-  function openPanel(h) {
-    selected = h;
-    syncOutline();
+  let shownId = null;
+  function fillPanel(h) {
     const it = h.userData.item;
+    if (shownId === it.id) return;
+    shownId = it.id;
     const freshClass = { expired: "kx-pill-bad", soon: "kx-pill-warn", fresh: "kx-pill-good", none: "" }[it.fresh] ?? "";
     panelBody.innerHTML = `
       <p class="kx-panel-kind">${esc(it.place === "fridge" ? "In the fridge" : "On the shelf")}</p>
@@ -868,29 +1044,53 @@ function start() {
         <a class="button button-soft button-small" href="/pantry?edit=${it.id}#item-${it.id}">Edit</a>
         <a class="button button-ghost button-small" href="/calendar">Open calendar</a>
       </div>`;
-    showPanel(false);
+    panelBody.classList.remove("swap");
+    void panelBody.offsetWidth;
+    panelBody.classList.add("swap");
+  }
+  // A click or tap keeps the panel (and slides the scene aside for it); hover
+  // only peeks, in a card on the empty left that never moves the scene, so
+  // nothing shifts under the pointer.
+  function openPanel(h, keep) {
+    clearTimeout(peekTimer);
+    clearTimeout(leaveTimer);
+    pinned = keep;
+    selected = keep ? h : null;
+    syncOutline();
+    fillPanel(h);
+    showPanel(false, keep);
+  }
+  function peek(h) {
+    if (!peekOk() || h !== hovered && h !== focusRing) return;
+    openPanel(h, false);
   }
   // the panel holds either an item's details or the add form; reopening
   // within the close transition cancels the pending hide
   let panelSeq = 0;
-  function showPanel(adding) {
+  function showPanel(adding, keep = true) {
     panelSeq++;
     panelBody.hidden = adding;
     addForm.hidden = !adding;
     panel.classList.toggle("adding", adding);
+    panel.classList.toggle("peek", !keep && !adding);
     panel.hidden = false;
-    shiftTarget = 0.13;
+    if (keep || adding) shiftTarget = 0.13;
     requestAnimationFrame(() => panel.classList.add("open"));
-    root.classList.add("panel-open");
+    root.classList.toggle("panel-open", keep || adding);
+    root.classList.toggle("peek-open", !keep && !adding);
   }
   function closePanel() {
-    if (!selected && panel.hidden) return;
+    clearTimeout(peekTimer);
+    clearTimeout(leaveTimer);
+    if (!selected && panel.hidden && !pinned) return;
     const wasAdding = addForm.contains(document.activeElement);
     selected = null;
+    pinned = false;
+    shownId = null;
     syncOutline();
     shiftTarget = -0.16;
     panel.classList.remove("open");
-    root.classList.remove("panel-open");
+    root.classList.remove("panel-open", "peek-open");
     const seq = panelSeq;
     setTimeout(() => {
       if (seq === panelSeq) panel.hidden = true;
@@ -898,6 +1098,14 @@ function start() {
     if (wasAdding) addButton.focus({ preventScroll: true });
   }
   root.querySelector("[data-kx-close]")?.addEventListener("click", closePanel);
+  // moving from an item onto its panel keeps it open; leaving both closes it
+  panel.addEventListener("pointerenter", () => clearTimeout(leaveTimer));
+  panel.addEventListener("pointerleave", () => {
+    if (!pinned) scheduleLeave();
+  });
+  panel.addEventListener("focusout", () => {
+    if (!pinned) scheduleLeave();
+  });
 
   /* ---------- adding an item, without leaving the scene ---------- */
   // The panel's form posts to the same route as the form below the scene.
@@ -956,6 +1164,7 @@ function start() {
     }
     const away = item.place !== view;
     if (away) go(item.place, true);
+    else buildBrowse();
     // arriving at the fridge, wait for the doors to swing most of the way
     h.userData.landAt = clock.elapsedTime + (!away ? 0.15 : item.place === "fridge" ? 1.45 : 0.95);
     arrivals.add(h);
@@ -1095,6 +1304,29 @@ function start() {
   resize();
 
   /* ---------- loop ---------- */
+  buildBrowse();
+  root.dataset.placed = String(pickables.length);
+  // where each item is on screen, for the browser spec (specs read it, nothing else does)
+  window.__kitchen = {
+    screenOf(id) {
+      const h = itemsById.get(id);
+      if (!h) return null;
+      camera.updateMatrixWorld();
+      const p = new THREE.Box3().setFromObject(h.userData.mesh).getCenter(new THREE.Vector3()).project(camera);
+      const r = canvas.getBoundingClientRect();
+      return { x: r.left + ((p.x + 1) / 2) * r.width, y: r.top + ((1 - p.y) / 2) * r.height };
+    },
+    stackAt: (x, y) => stackAt(x, y).map((h) => h.userData.item.name),
+    bounds(id) {
+      const h = itemsById.get(id);
+      const b = new THREE.Box3().setFromObject(h.userData.mesh);
+      const pw = new THREE.Vector3();
+      h.parent.getWorldPosition(pw);
+      return { min: b.min.toArray(), max: b.max.toArray(), lane: h.userData.lane?.name ?? "door" };
+    },
+    ids: () => pickables.map((h) => h.userData.item.id),
+    doors: () => doorSwing,
+  };
   const clock = new THREE.Clock();
   // the doors swing open as the page arrives (items then pop onto shelves),
   // close behind you as you slide over to the pantry, and open again when
@@ -1114,6 +1346,7 @@ function start() {
     else if (opening < openTarget) opening = Math.min(openTarget, opening + dt / 1.6);
     else if (opening > openTarget && (!travel || travel.t > 0.18)) opening = Math.max(openTarget, opening - dt / 0.9);
     const swing = easeInOut(Math.max(0, (opening - 0.08) / 0.92));
+    doorSwing = swing;
     // each door turns outward about its hinge: left door anticlockwise seen
     // from above (negative y), right door clockwise
     for (const d of doors) d.hinge.rotation.y = d.side * swing * openAngle;
@@ -1161,11 +1394,16 @@ function start() {
       u.hover += ((h === hovered ? 1 : 0) - u.hover) * Math.min(1, dt * 10);
       u.sel += ((h === selected ? 1 : 0) - u.sel) * Math.min(1, dt * 8);
       const lift = Math.max(u.hover, u.sel);
-      const bob = reduce ? 0 : Math.sin(t * 2.4 + u.item.id) * 0.012 * lift;
-      const drop = land ? land.drop : 0;
-      u.mesh.position.y = lift * 0.14 + bob + drop;
-      if (u.dot) u.dot.position.y = u.dotY + lift * 0.14 + drop;
-      const s = (land ? land.scale : 1) * (1 + lift * 0.06);
+      // rising and growing on hover stop short of the shelf above (liftMax and
+      // grow were worked out from the headroom when the item was placed)
+      // (the holder is scaled by `fit`, so heights worked out in shelf units
+      // are divided by it to be set on the mesh inside)
+      const rise = (lift * u.liftMax) / u.fit;
+      const bob = reduce ? 0 : (Math.sin(t * 2.4 + u.item.id) * Math.min(0.012, u.liftMax * 0.3) * lift) / u.fit;
+      const drop = land ? dropFor(land.drop, u.tall, u.free) / u.fit : 0;
+      u.mesh.position.y = rise + bob + drop;
+      if (u.dot) u.dot.position.y = u.dotY + rise + drop;
+      const s = u.fit * (land ? land.scale : 1) * (1 + lift * u.grow);
       const squash = land ? land.squash : 0;
       h.scale.set(Math.max(0.001, s * (1 + squash * 0.5)), Math.max(0.001, s * (1 - squash)), Math.max(0.001, s * (1 + squash * 0.5)));
       // rock about the bottom edge it tips onto: turn, then shift so that
@@ -1179,6 +1417,12 @@ function start() {
       if (u.dot) {
         u.dot.scale.setScalar(1 + Math.sin(t * 4 + u.item.id) * 0.18);
       }
+    }
+
+    // the scene moving under a still pointer (doors swinging, the panel
+    // nudging the camera) changes what's beneath it: look again
+    if (lastPoint && (travel || Math.abs(shiftTarget - shift) > 0.002 || (opening > 0 && opening < 1))) {
+      setHover(pick(lastPoint.x, lastPoint.y));
     }
 
     composer.render();
