@@ -208,8 +208,9 @@ function dashboard(ctx: Ctx): Html {
   const feed = friendFeed(user.id, 6);
   const shop = shoppingList(user.id, now, addDays(now, 6));
   const budget = prefsFor(user.id).weekly_budget_cents;
-  const hour = new Date().getHours();
-  const greeting = hour < 12 ? "Good morning" : hour < 18 ? "Good afternoon" : "Good evening";
+  // the person's own hour (browser time zone), the same one the suggestion uses
+  const hour = localHour(validZone(parseCookies(ctx.req.headers.cookie).tz));
+  const greeting = hour < 5 ? "Up late" : hour < 12 ? "Good morning" : hour < 18 ? "Good afternoon" : "Good evening";
   const first = user.display_name.split(" ")[0];
   const value = pantry.reduce((s, it) => s + (it.price_cents ?? 0), 0);
 

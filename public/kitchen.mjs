@@ -1024,16 +1024,27 @@ function start() {
     const it = h.userData.item;
     if (shownId === it.id) return;
     shownId = it.id;
-    const freshClass = { expired: "kx-pill-bad", soon: "kx-pill-warn", fresh: "kx-pill-good", none: "" }[it.fresh] ?? "";
+    const freshClass = { expired: "kx-pill-bad", soon: "kx-pill-warn", fresh: "kx-pill-good", kept: "", none: "" }[it.fresh] ?? "";
+    // the grace day: ask, right here, whether it's still in the kitchen
+    const grace = it.grace
+      ? `<div class="kx-grace" role="group" aria-label="Do you still have ${esc(it.name)}?">
+          <p><strong>Do you still have this?</strong> It passed its date. Unless you keep it, it leaves your kitchen on ${esc(it.grace.removes)}.</p>
+          <div class="kx-grace-actions">
+            <form method="post" action="/pantry/${it.id}/keep"><input type="hidden" name="return_to" value="/pantry" /><button class="button button-small" type="submit">I still have it</button></form>
+            <form method="post" action="/pantry/${it.id}/gone"><input type="hidden" name="return_to" value="/pantry" /><button class="button button-small button-ghost" type="submit">It's gone</button></form>
+          </div>
+        </div>`
+      : "";
     panelBody.innerHTML = `
       <p class="kx-panel-kind">${esc(it.place === "fridge" ? "In the fridge" : "On the shelf")}</p>
       <h2>${esc(it.name)}</h2>
       <p class="kx-panel-qty">${esc(it.qty)}${it.price ? ` · paid ${esc(it.price)}` : ""}</p>
       <div class="kx-expiry ${freshClass}">
-        <span class="kx-expiry-label">${it.fresh === "none" ? "No expiry date" : it.fresh === "expired" ? "Expired" : "Use by"}</span>
+        <span class="kx-expiry-label">${it.fresh === "none" ? "No expiry date" : it.fresh === "expired" || it.fresh === "kept" ? "Expired" : "Use by"}</span>
         <strong>${esc(it.expiry ?? "—")}</strong>
         <span class="kx-expiry-note">${esc(it.freshLabel)}</span>
       </div>
+      ${grace}
       <h3>Planned for</h3>
       ${it.uses.length
         ? `<ul class="kx-uses">${it.uses

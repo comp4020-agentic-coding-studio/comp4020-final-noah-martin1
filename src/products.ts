@@ -213,7 +213,7 @@ const FORMS = new Set(
     "triangles", "pastizzis", "agnolotti", "spanakopita", "crispbread", "squid", "salmon", "rocket", "mix", "mixed",
     "chargrilled", "grilled", "fried", "crispy", "sushi", "mandarin", "murcott", "wheat", "flake", "flakes", "crystallised",
     "uncrystallised", "scroll", "cookies", "biscuit", "bar", "bars", "loaf", "perform", "protein", "yopro",
-    "smoothie", "yoghurt", "yogurt", "muffin", "cake", "bread", "chips", "chip", "lollies", "flavour",
+    "smoothie", "yoghurt", "yogurt", "muffin", "rope", "ropes", "roll", "straps", "gummies", "lolly", "cake", "bread", "chips", "chip", "lollies", "flavour",
   ].map(stem),
 );
 

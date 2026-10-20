@@ -93,6 +93,7 @@ describe("like-for-like products", () => {
     ["bay leaf", "2PK Christy Sovereign Bath Mat Combed Cotton 1000GSM Plush Luxurious Bay Leaf"],
     ["spinach", "Borg's Triangles Spinach & Ricotta 360g"],
     ["tomato", "Woolworths Essentials Diced Tomatoes 400g"],
+    ["mixed berries", "DOMINION NATURALS Ropes Mixed Berry 8 Pack 160g"],
   ])("%s is not %s", (ingredient, product) => {
     expect(isEquivalent(ingredient, product)).toBe(false);
   });
