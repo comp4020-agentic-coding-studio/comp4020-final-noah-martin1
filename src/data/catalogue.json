@@ -8939,184 +8939,208 @@
  },
  {
   "source": "themealdb:52960",
-  "title": "Salmon Avocado Salad",
-  "description": "Seared salmon, creamy avocado and crisp leaves — ready in fifteen minutes.",
-  "servings": 2,
+  "title": "Salmon avocado salad",
+  "description": "Pan-fried salmon fillets on a salad of avocado, cucumber and mixed leaves, dressed with a mint, lime and honey dressing.",
+  "servings": 4,
   "cuisine": "British",
   "category": "Seafood",
   "image": "https://www.themealdb.com/images/media/meals/1549542994.jpg",
-  "prep_minutes": 15,
-  "cook_minutes": 5,
+  "prep_minutes": 10,
+  "cook_minutes": 8,
   "ingredients": [
    {
     "name": "salmon fillet",
-    "quantity": 300,
+    "quantity": 400,
     "unit": "g",
-    "note": ""
+    "note": "4 skinless fillets, about 100 g each"
    },
    {
-    "name": "avocado",
-    "quantity": 1,
+    "name": "olive oil",
+    "quantity": null,
     "unit": "",
-    "note": ""
-   },
-   {
-    "name": "cucumber",
-    "quantity": 1,
-    "unit": "",
-    "note": ""
-   },
-   {
-    "name": "spinach",
-    "quantity": 100,
-    "unit": "g",
-    "note": ""
+    "note": "a little extra, to rub on the salmon"
    },
    {
     "name": "mint",
     "quantity": 4,
     "unit": "tbsp",
-    "note": ""
+    "note": "chopped, for the dressing"
    },
    {
     "name": "lime",
     "quantity": 1,
     "unit": "",
-    "note": "zest and juice"
+    "note": "zest of 1 and juice of limes for the dressing; number of limes juiced is garbled in the source"
    },
    {
     "name": "honey",
     "quantity": 2,
     "unit": "tsp",
-    "note": ""
+    "note": "clear honey, for the dressing"
    },
    {
     "name": "olive oil",
     "quantity": 3,
     "unit": "tbsp",
-    "note": ""
+    "note": "for the dressing"
+   },
+   {
+    "name": "avocado",
+    "quantity": 3,
+    "unit": "",
+    "note": "halved, stoned, peeled and sliced"
+   },
+   {
+    "name": "cucumber",
+    "quantity": 1,
+    "unit": "",
+    "note": "halved, quartered lengthways and sliced"
+   },
+   {
+    "name": "mixed salad leaves",
+    "quantity": 400,
+    "unit": "g",
+    "note": "1 bag"
    }
   ],
   "steps": [
    {
-    "text": "Season the salmon, then rub with oil. Mix the dressing ingredients together. Halve, stone, peel and slice the avocados. Halve and quarter the cucumber lengthways, then cut into slices.",
+    "text": "Season the salmon fillets and rub them with a little oil.",
     "minutes": null
    },
    {
-    "text": "Divide salad, avocado and cucumber between four plates, then drizzle with half the dressing.",
+    "text": "Mix the mint, lime zest and juice, honey and olive oil together for the dressing.",
     "minutes": null
    },
    {
-    "text": "Heat a non-stick pan. Add the salmon and fry for 3-4 mins on each side until crisp but still moist inside. Put a salmon fillet on top of each salad and drizzle over the remaining dressing. Serve warm.",
-    "minutes": 4
+    "text": "Halve, stone, peel and slice the avocados. Cut the cucumber in half and then into quarters lengthways, and slice.",
+    "minutes": null
+   },
+   {
+    "text": "Divide the salad leaves, avocado and cucumber between four plates and drizzle with half the dressing.",
+    "minutes": null
+   },
+   {
+    "text": "Heat a non-stick pan and fry the salmon for 3-4 minutes on each side, until crisp outside but still moist inside.",
+    "minutes": 8
+   },
+   {
+    "text": "Put a salmon fillet on top of each salad, drizzle with the rest of the dressing and serve warm.",
+    "minutes": null
    }
   ]
  },
  {
   "source": "themealdb:52841",
-  "title": "Creamy Tomato Soup",
-  "description": "Velvety tomato soup made for dunking.",
-  "servings": 4,
-  "cuisine": "British",
+  "title": "Creamy tomato soup",
+  "description": "A small-batch smooth tomato soup made from fresh tomatoes, onion, garlic and carrot, sieved and finished with a spoonful of cream.",
+  "servings": 2,
+  "cuisine": "Indian",
   "category": "Starter",
   "image": "https://www.themealdb.com/images/media/meals/stpuws1511191310.jpg",
-  "prep_minutes": 20,
-  "cook_minutes": 35,
+  "prep_minutes": 2,
+  "cook_minutes": 20,
   "ingredients": [
    {
-    "name": "olive oil",
-    "quantity": 3,
-    "unit": "tbsp",
+    "name": "butter",
+    "quantity": 1,
+    "unit": "tsp",
     "note": ""
    },
    {
     "name": "onion",
-    "quantity": 2,
+    "quantity": 0.5,
     "unit": "",
-    "note": "chopped"
+    "note": "finely chopped"
    },
    {
-    "name": "celery",
+    "name": "garlic",
     "quantity": 2,
-    "unit": "stick",
-    "note": ""
-   },
-   {
-    "name": "carrot",
-    "quantity": 300,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "potato",
-    "quantity": 500,
-    "unit": "g",
+    "unit": "clove",
     "note": ""
    },
    {
     "name": "bay leaf",
-    "quantity": 4,
+    "quantity": 1,
     "unit": "",
-    "note": ""
+    "note": "removed before blending"
    },
    {
-    "name": "tomato puree",
-    "quantity": 5,
-    "unit": "tbsp",
-    "note": ""
+    "name": "tomato",
+    "quantity": 3,
+    "unit": "",
+    "note": "chopped"
+   },
+   {
+    "name": "carrot",
+    "quantity": 0.5,
+    "unit": "",
+    "note": "chopped"
+   },
+   {
+    "name": "salt",
+    "quantity": 0.75,
+    "unit": "tsp",
+    "note": "½ tsp while cooking the tomatoes, ¼ tsp added at the end"
+   },
+   {
+    "name": "water",
+    "quantity": 1,
+    "unit": "cup",
+    "note": "½ cup to boil the tomatoes, ½ cup or more added after sieving; the recipe's ingredient list says 1 cup"
    },
    {
     "name": "sugar",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": ""
+   },
+   {
+    "name": "black pepper",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": "crushed"
+   },
+   {
+    "name": "cream",
     "quantity": 2,
     "unit": "tbsp",
-    "note": ""
+    "note": "stirred in at the end; extra cream to garnish"
    },
    {
-    "name": "white vinegar",
-    "quantity": 2,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "canned tomatoes",
-    "quantity": 1500,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "passata",
-    "quantity": 500,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "vegetable stock",
-    "quantity": 3,
+    "name": "mint",
+    "quantity": null,
     "unit": "",
-    "note": ""
-   },
-   {
-    "name": "milk",
-    "quantity": 400,
-    "unit": "ml",
-    "note": ""
+    "note": "leaf, to garnish"
    }
   ],
   "steps": [
    {
-    "text": "Put the oil, onions, celery, carrots, potatoes and bay leaves in a big casserole dish, or two saucepans. Fry gently until the onions are softened – about 10-15 mins. Fill the kettle and boil it.",
-    "minutes": 15
-   },
-   {
-    "text": "Stir in the tomato purée, sugar, vinegar, chopped tomatoes and passata, then crumble in the stock cubes. Add 1 litre boiling water and bring to a simmer. Cover and simmer for 15 mins until the potato is tender, then remove the bay leaves.",
-    "minutes": 15
-   },
-   {
-    "text": "Purée with a stick blender (or ladle into a blender in batches) until very smooth. Season to taste and add a pinch more sugar if it needs it. The soup can now be cooled and chilled for up to 2 days, or frozen for up to 3 months.",
+    "text": "Heat the butter in a pan and saute the onion, garlic and bay leaf.",
     "minutes": null
    },
    {
-    "text": "To serve, reheat the soup, stirring in the milk – try not to let it boil. Serve in small bowls with cheesy sausage rolls.",
+    "text": "Add the chopped tomatoes, carrot and 1/2 tsp salt and saute for a minute, until the tomatoes change colour.",
+    "minutes": 1
+   },
+   {
+    "text": "Add 1/2 cup water, cover and boil for about 10 minutes until the tomatoes are soft and mushy.",
+    "minutes": 10
+   },
+   {
+    "text": "Remove the bay leaf and let the mixture cool, then blend it to a smooth paste without adding water.",
+    "minutes": null
+   },
+   {
+    "text": "Sieve the paste, discarding the residue, and stir in another 1/2 cup water, or more to adjust the thickness.",
+    "minutes": null
+   },
+   {
+    "text": "Bring the soup to a boil and mix in the sugar, crushed pepper and 1/4 tsp more salt.",
+    "minutes": null
+   },
+   {
+    "text": "Turn off the heat and stir in the cream. Serve garnished with a mint leaf and a little more cream.",
     "minutes": null
    }
   ]
@@ -9124,137 +9148,137 @@
  {
   "source": "themealdb:52854",
   "title": "Pancakes",
-  "description": "Light, fluffy pancakes with all the toppings.",
+  "description": "Simple American-style pancakes from a flour, milk, egg and baking powder batter, cooked on a lightly oiled griddle or frying pan.",
   "servings": 4,
   "cuisine": "American",
-  "category": "Dessert",
+  "category": "Breakfast",
   "image": "https://www.themealdb.com/images/media/meals/rwuyqx1511383174.jpg",
   "prep_minutes": 10,
-  "cook_minutes": 15,
+  "cook_minutes": 10,
   "ingredients": [
    {
     "name": "plain flour",
-    "quantity": 100,
-    "unit": "g",
+    "quantity": 1,
+    "unit": "cup",
+    "note": "all-purpose"
+   },
+   {
+    "name": "sugar",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": "white"
+   },
+   {
+    "name": "baking powder",
+    "quantity": 2,
+    "unit": "tsp",
+    "note": "the narrator says tablespoons, but the description and written recipe correct this to teaspoons"
+   },
+   {
+    "name": "salt",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "or to taste"
+   },
+   {
+    "name": "milk",
+    "quantity": 1,
+    "unit": "cup",
     "note": ""
    },
    {
     "name": "eggs",
-    "quantity": 2,
+    "quantity": 1,
     "unit": "",
-    "note": "large"
-   },
-   {
-    "name": "milk",
-    "quantity": 300,
-    "unit": "ml",
-    "note": ""
+    "note": "beaten"
    },
    {
     "name": "vegetable oil",
-    "quantity": 1,
+    "quantity": 2,
     "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "sugar",
-    "quantity": null,
-    "unit": "",
-    "note": "to serve"
-   },
-   {
-    "name": "raspberries",
-    "quantity": null,
-    "unit": "",
-    "note": "to serve"
-   },
-   {
-    "name": "blueberries",
-    "quantity": null,
-    "unit": "",
-    "note": "to serve"
+    "note": "in the batter, plus a little to oil the pan"
    }
   ],
   "steps": [
    {
-    "text": "Put the flour, eggs, milk, 1 tbsp oil and a pinch of salt into a bowl or large jug, then whisk to a smooth batter. Set aside for 30 mins to rest if you have time, or start cooking straight away.",
-    "minutes": 30
+    "text": "Mix the flour, sugar, baking powder and salt in a large bowl and make a well in the centre.",
+    "minutes": null
    },
    {
-    "text": "Set a medium frying pan or crêpe pan over a medium heat and carefully wipe it with some oiled kitchen paper. When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.",
-    "minutes": 1
+    "text": "Pour in the milk, beaten egg and oil and mix until the batter is smooth.",
+    "minutes": null
    },
    {
-    "text": "Serve with lemon wedges and sugar, or your favourite filling. Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.",
+    "text": "Heat a griddle or frying pan over medium-high heat and oil it lightly.",
+    "minutes": null
+   },
+   {
+    "text": "Pour or scoop about 1/4 cup of batter per pancake onto the griddle.",
+    "minutes": null
+   },
+   {
+    "text": "Cook for 1-2 minutes, until small bubbles form in the centre and the edges are brown and dry, then flip.",
+    "minutes": 2
+   },
+   {
+    "text": "Cook until browned on the other side, then repeat with the remaining batter and serve hot.",
     "minutes": null
    }
   ]
  },
  {
   "source": "themealdb:52855",
-  "title": "Banana Pancakes",
-  "description": "Naturally sweet banana pancakes, simple enough for any morning.",
+  "title": "Banana pancakes",
+  "description": "Small, delicate two-ingredient pancakes made from mashed ripe banana and beaten eggs, fried in a little coconut oil.",
   "servings": 2,
   "cuisine": "American",
   "category": "Dessert",
   "image": "https://www.themealdb.com/images/media/meals/sywswr1511383814.jpg",
-  "prep_minutes": 10,
-  "cook_minutes": 10,
+  "prep_minutes": 5,
+  "cook_minutes": 5,
   "ingredients": [
    {
     "name": "banana",
     "quantity": 1,
     "unit": "",
-    "note": "large"
+    "note": "ripe, mashed"
    },
    {
     "name": "eggs",
     "quantity": 2,
     "unit": "",
-    "note": "medium"
+    "note": "beaten in"
    },
    {
-    "name": "baking powder",
-    "quantity": 1,
-    "unit": "pinch",
-    "note": ""
-   },
-   {
-    "name": "vanilla extract",
+    "name": "coconut oil",
     "quantity": null,
     "unit": "",
-    "note": "to sprinkle"
-   },
-   {
-    "name": "vegetable oil",
-    "quantity": 1,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "pecan nuts",
-    "quantity": 25,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "raspberries",
-    "quantity": 60,
-    "unit": "g",
-    "note": ""
+    "note": "a little, for the pan (the written recipe says oil or butter)"
    }
   ],
   "steps": [
    {
-    "text": "In a bowl, mash the banana with a fork until it resembles a thick purée. Stir in the eggs, baking powder and vanilla.",
+    "text": "Mash the banana in a large bowl until fairly smooth; a few lumps are fine.",
     "minutes": null
    },
    {
-    "text": "Heat a large non-stick frying pan or pancake pan over a medium heat and brush with half the oil. Using half the batter, spoon two pancakes into the pan, cook for 1-2 mins each side, then tip onto a plate.",
-    "minutes": 2
+    "text": "Beat in the eggs until the batter is smooth and small bubbles appear. A fork, whisk or blender all work.",
+    "minutes": null
    },
    {
-    "text": "Repeat the process with the remaining oil and batter. Top the pancakes with the pecans and raspberries.",
+    "text": "Heat a little coconut oil in a large frying pan.",
+    "minutes": null
+   },
+   {
+    "text": "Drop 2 tablespoons of batter per pancake into the hot pan and keep them small, as they are very delicate.",
+    "minutes": null
+   },
+   {
+    "text": "Cook until bubbles appear on the surface, then flip and cook through on both sides.",
+    "minutes": 5
+   },
+   {
+    "text": "Serve plain or topped with ice cream, cream, maple syrup or honey.",
     "minutes": null
    }
   ]
@@ -9954,131 +9978,145 @@
  {
   "source": "themealdb:53046",
   "title": "Portuguese custard tarts",
-  "description": "Flaky pastry cups filled with blistered, creamy custard.",
-  "servings": 12,
+  "description": "Pastéis de nata made with a laminated butter dough rolled into a log, sliced and pressed into a tin, filled with a cinnamon sugar-syrup custard and baked very hot until blistered.",
+  "servings": 24,
   "cuisine": "Portuguese",
   "category": "Dessert",
   "image": "https://www.themealdb.com/images/media/meals/vmz7gl1614350221.jpg",
-  "prep_minutes": 20,
-  "cook_minutes": 25,
+  "prep_minutes": 60,
+  "cook_minutes": 10,
   "ingredients": [
    {
     "name": "plain flour",
-    "quantity": 2,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "icing sugar",
-    "quantity": 2,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "puff pastry",
-    "quantity": 375,
+    "quantity": 290,
     "unit": "g",
-    "note": ""
+    "note": "for the pastry"
+   },
+   {
+    "name": "salt",
+    "quantity": 0.25,
+    "unit": "tsp",
+    "note": "for the pastry"
+   },
+   {
+    "name": "water",
+    "quantity": 210,
+    "unit": "ml",
+    "note": "for the pastry"
+   },
+   {
+    "name": "butter",
+    "quantity": 240,
+    "unit": "g",
+    "note": "unsalted, very soft, spread over the dough in three layers"
+   },
+   {
+    "name": "plain flour",
+    "quantity": null,
+    "unit": "",
+    "note": "extra, for dusting and rolling the dough"
+   },
+   {
+    "name": "plain flour",
+    "quantity": 40,
+    "unit": "g",
+    "note": "for the custard"
+   },
+   {
+    "name": "milk",
+    "quantity": 50,
+    "unit": "ml",
+    "note": "whisked with the flour for the custard"
+   },
+   {
+    "name": "water",
+    "quantity": 165,
+    "unit": "ml",
+    "note": "for the sugar syrup"
    },
    {
     "name": "sugar",
-    "quantity": 250,
+    "quantity": 240,
     "unit": "g",
-    "note": ""
+    "note": "caster, for the sugar syrup"
    },
    {
-    "name": "lemon zest",
-    "quantity": 2,
-    "unit": "",
-    "note": "strips"
-   },
-   {
-    "name": "cinnamon",
+    "name": "cinnamon stick",
     "quantity": 1,
-    "unit": "stick",
-    "note": ""
+    "unit": "",
+    "note": "removed from the syrup at 100 C"
    },
    {
-    "name": "eggs",
-    "quantity": 2,
-    "unit": "",
+    "name": "milk",
+    "quantity": 250,
+    "unit": "ml",
+    "note": "brought to the boil and poured over the flour paste"
+   },
+   {
+    "name": "vanilla extract",
+    "quantity": 0.5,
+    "unit": "tsp",
     "note": ""
    },
    {
     "name": "egg yolks",
-    "quantity": 4,
+    "quantity": 6,
     "unit": "",
-    "note": ""
+    "note": "large"
    },
    {
-    "name": "cornflour",
-    "quantity": 50,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "milk",
-    "quantity": 500,
-    "unit": "ml",
-    "note": ""
-   },
-   {
-    "name": "vanilla extract",
+    "name": "icing sugar",
     "quantity": null,
     "unit": "",
-    "note": "pod of"
+    "note": "to serve, sprinkled on top"
    },
    {
     "name": "cinnamon",
     "quantity": null,
     "unit": "",
-    "note": "to serve"
+    "note": "ground, to serve"
    }
   ],
   "steps": [
    {
-    "text": "Roll the pastry",
+    "text": "Mix the flour, salt and water with a dough hook for a couple of minutes into a very sticky dough that pulls away from the bowl. Scrape it onto a heavily floured surface, shape into a rough square, flour the top, wrap in cling film and rest for 10 minutes.",
+    "minutes": 10
+   },
+   {
+    "text": "Roll the dough into a 16 x 16 inch (about 40 cm) square and brush off excess flour. Dot a third of the soft butter over two thirds of it, leaving a gap at the edges, fold the buttered third over the middle, then fold the plain third over the top.",
     "minutes": null
    },
    {
-    "text": "Mix the flour and icing sugar, and use this to dust the work surface. Roll the pastry out to make a 45 x 30cm rectangle. Roll up lengthways to create a long sausage shape. Cutting pastry into rounds",
+    "text": "Turn the strip 90 degrees, roll it to a 16 x 16 inch (about 40 cm) square again and repeat the buttering and folding with a second third of the butter.",
     "minutes": null
    },
    {
-    "text": "Cut the pastry into 24 wheels, about 1-2cm thick. Roll out each pastry portion",
+    "text": "Roll to an 18 x 21 inch (about 46 x 53 cm) rectangle, trim the edges and spread the last of the butter over the whole sheet. Roll it up tightly into a log, trim the ends and cut it in half; each half makes 12 pastries. Wrap in cling film and chill for at least 2 hours, ideally overnight.",
+    "minutes": 120
+   },
+   {
+    "text": "For the custard, whisk the 40 g flour with the 50 ml milk until smooth. Heat the water, caster sugar and cinnamon stick over low heat, without stirring, to 100 C, and bring the 250 ml milk to the boil in another pan.",
     "minutes": null
    },
    {
-    "text": "Roll each wheel lightly with the rolling pin to fit 2 x 12-hole non-stick fairy cake tins. Press pastry into the tin",
+    "text": "Pour the boiling milk onto the flour paste, whisking, and add the vanilla. Remove the cinnamon stick from the syrup and pour the syrup in a steady stream into the milk mixture, whisking.",
     "minutes": null
    },
    {
-    "text": "Press the pastry circles into the tins and mould into the tins to make thin cases. Chill until needed. Make the infused syrup",
-    "minutes": null
+    "text": "Stir for 10-15 minutes until warm rather than hot, then whisk in the egg yolks and strain through a sieve into a jug. Cover and set aside; the video uses only half of it.",
+    "minutes": 12
    },
    {
-    "text": "Heat the oven to 220C/fan 200C/gas 7. Make a sugar syrup by bringing the sugar, 200ml water, lemon zest and cinnamon stick to the boil. Reduce until syrupy, allow to cool, then remove the cinnamon and lemon.",
-    "minutes": null
-   },
-   {
-    "text": "Whisk the eggs, egg yolks and cornflour until smooth in another large pan. Making custard",
-    "minutes": null
-   },
-   {
-    "text": "Heat the milk and vanilla pod seeds in a separate pan until just below the boil. Gradually pour the hot milk over the eggs and cornflour, then cook on a low heat, continually whisking. Add syrup to custard",
-    "minutes": null
-   },
-   {
-    "text": "Add the cooled sugar syrup to the custard and whisk until thickened slightly. Pour custard into the tins",
-    "minutes": null
-   },
-   {
-    "text": "Pour the custard through a sieve. Pour into the pastry cases and bake for 15 minutes until the pastry is golden and the custard has darkened. cool and dust with icing sugar",
+    "text": "Cut a chilled log into 12 slices, about 2.5-4 cm thick, and put one in each hole of a lightly greased 12-hole cupcake tin. Leave at room temperature for 10-15 minutes to soften.",
     "minutes": 15
    },
    {
-    "text": "Cool completely in the tins then sift over icing sugar and ground cinnamon to serve.",
+    "text": "With wet thumbs and fingers, press each slice into a disc and draw it up the sides to form a cup, keeping the base from getting too thin. Fill about three-quarters full with custard.",
     "minutes": null
+   },
+   {
+    "text": "Bake in an oven at its highest setting (280 C in the video) for 8-9 minutes, watching closely, until the tops are blistered and dark. Serve with icing sugar and cinnamon sprinkled on top.",
+    "minutes": 9
    }
   ]
  },

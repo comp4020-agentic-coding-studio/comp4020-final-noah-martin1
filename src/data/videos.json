@@ -487,33 +487,33 @@
   "videoId": "FJiu2S0Xap0",
   "title": "Salmon avocado and cucumber salad",
   "channel": "Salad Recipes",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-28",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:52841": {
   "videoId": "lBhwjjUiFk4",
   "title": "tomato soup recipe | creamy tomato soup recipe",
   "channel": "Hebbars Kitchen",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-28",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:52854": {
   "videoId": "LWuuCndtJr0",
   "title": "How to Make the Easiest Pancakes | Allrecipes",
   "channel": "Allrecipes",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-28",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:52855": {
   "videoId": "kSKtb2Sv-_U",
   "title": "How To Make Easy 2 Ingredient Banana Pancakes - Video Recipe",
   "channel": "Yummy Inspirations",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-28",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:52962": {
   "videoId": "Woiiet4vQ58",
@@ -567,9 +567,9 @@
   "videoId": "lWLCxui1Mw8",
   "title": "How to Make Pastéis de Nata AKA Portuguese Custard Tarts | Cupcake Jemma",
   "channel": "CupcakeJemma",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-28",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:52791": {
   "videoId": "K6m34euQPMo",
