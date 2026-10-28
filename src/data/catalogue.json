@@ -47058,31 +47058,31 @@
  {
   "source": "themealdb:53125",
   "title": "Karbonader (Lean Beef Patties) with Caramelized Onions",
-  "description": "A Norwegian dish of beef mince and nutmeg — serves 4, ready in under half an hour.",
-  "servings": 4,
+  "description": "Norwegian lean beef patties seasoned with nutmeg and grated onion, browned in butter and served with caramelised onions.",
+  "servings": 6,
   "cuisine": "Norwegian",
   "category": "Beef",
   "image": "https://www.themealdb.com/images/media/meals/0bpjb11763075817.jpg",
-  "prep_minutes": 15,
+  "prep_minutes": 5,
   "cook_minutes": 10,
   "ingredients": [
    {
     "name": "onion",
     "quantity": 2,
     "unit": "",
-    "note": ""
+    "note": "half of one grated for the patties, the rest sliced"
    },
    {
     "name": "butter",
     "quantity": 1,
     "unit": "tbsp",
-    "note": ""
+    "note": "for the onions"
    },
    {
     "name": "beef mince",
-    "quantity": 455,
+    "quantity": 450,
     "unit": "g",
-    "note": ""
+    "note": "lean, 5% fat"
    },
    {
     "name": "salt",
@@ -47103,10 +47103,10 @@
     "note": ""
    },
    {
-    "name": "cornflour",
+    "name": "potato starch",
     "quantity": 0.5,
     "unit": "tbsp",
-    "note": ""
+    "note": "or cornflour"
    },
    {
     "name": "water",
@@ -47118,28 +47118,28 @@
     "name": "butter",
     "quantity": 2,
     "unit": "tbsp",
-    "note": ""
+    "note": "for frying the patties"
    }
   ],
   "steps": [
    {
-    "text": "Grate half an onion and set aside. Slice the rest of the onions and fry in butter on low/medium heat until caramelized.",
+    "text": "Grate half an onion and set it aside. Slice the remaining onions and fry them in 1 tbsp butter over low-medium heat until caramelised.",
     "minutes": null
    },
    {
-    "text": "In a bowl, mix together ground beef, grated onion, salt, pepper, nutmeg, potato/corn starch, and water.",
+    "text": "In a bowl, mix the beef mince with the grated onion, salt, pepper, nutmeg, potato starch (or cornflour) and water.",
     "minutes": null
    },
    {
-    "text": "Form into a sausage and cut 6 patties. Using a knife make a light grid pattern in each patty.",
+    "text": "Shape the mixture into a sausage and cut it into 6 patties. Score a light grid pattern into each patty with a knife.",
     "minutes": null
    },
    {
-    "text": "Brown both sides of the karbonader in butter on high heat, then turn down to low heat and fry for another 2 – 3 minutes.",
+    "text": "Brown both sides of the patties in 2 tbsp butter over high heat, then turn the heat to low and fry for another 2 to 3 minutes.",
     "minutes": 3
    },
    {
-    "text": "Serve the karbonader and onions with potatoes, stewed peas, and brown sauce for dinner, or on a slice of bread for lunch or a snack.",
+    "text": "Serve the patties with the caramelised onions, potatoes, stewed peas and brown sauce, or on a slice of bread.",
     "minutes": null
    }
   ]
@@ -53253,32 +53253,62 @@
  },
  {
   "source": "themealdb:52876",
-  "title": "Minced Beef Pie",
-  "description": "A British dish of beef mince, tomato puree and mushrooms — serves 8, about an hour start to finish.",
-  "servings": 8,
+  "title": "Individual minced steak pies",
+  "description": "Small shortcrust pies filled with minced steak, onion and peas in a thick beef-stock gravy, baked until crisp and golden.",
+  "servings": 3,
   "cuisine": "British",
   "category": "Beef",
-  "image": "https://www.themealdb.com/images/media/meals/xwutvy1511555540.jpg",
-  "prep_minutes": 15,
-  "cook_minutes": 35,
+  "image": "https://i.ytimg.com/vi/QY47h-uqq5g/hqdefault.jpg",
+  "prep_minutes": 60,
+  "cook_minutes": 70,
   "ingredients": [
    {
-    "name": "vegetable oil",
-    "quantity": 2,
-    "unit": "tbsp",
-    "note": ""
+    "name": "plain flour",
+    "quantity": 250,
+    "unit": "g",
+    "note": "for the pastry"
    },
    {
-    "name": "beef mince",
-    "quantity": 500,
+    "name": "butter",
+    "quantity": 125,
     "unit": "g",
-    "note": ""
+    "note": "chilled, cubed, for the pastry"
+   },
+   {
+    "name": "egg yolks",
+    "quantity": 2,
+    "unit": "",
+    "note": "medium, for the pastry"
+   },
+   {
+    "name": "water",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "chilled, for the pastry, plus a little more if needed"
+   },
+   {
+    "name": "salt",
+    "quantity": 1,
+    "unit": "pinch",
+    "note": "for the pastry; more to season the filling"
+   },
+   {
+    "name": "vegetable oil",
+    "quantity": null,
+    "unit": "",
+    "note": "for frying; amount not given"
    },
    {
     "name": "onion",
     "quantity": 1,
     "unit": "",
-    "note": "chopped"
+    "note": "small, finely chopped"
+   },
+   {
+    "name": "beef mince",
+    "quantity": 500,
+    "unit": "g",
+    "note": "lean steak mince"
    },
    {
     "name": "tomato puree",
@@ -53288,73 +53318,77 @@
    },
    {
     "name": "plain flour",
-    "quantity": 1.5,
+    "quantity": 1,
     "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "mushrooms",
-    "quantity": 75,
-    "unit": "g",
-    "note": ""
+    "note": "for the filling"
    },
    {
     "name": "beef stock",
-    "quantity": 250,
+    "quantity": 200,
     "unit": "ml",
     "note": ""
    },
    {
     "name": "worcestershire sauce",
-    "quantity": 1,
+    "quantity": 3,
     "unit": "dash",
-    "note": ""
+    "note": "a few dashes"
    },
    {
-    "name": "shortcrust pastry",
-    "quantity": 400,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "egg yolks",
-    "quantity": 1,
+    "name": "black pepper",
+    "quantity": null,
     "unit": "",
-    "note": ""
+    "note": "to season; salt too"
+   },
+   {
+    "name": "peas",
+    "quantity": 100,
+    "unit": "g",
+    "note": "frozen; the page lists them under the pastry but the method stirs them into the cooled filling"
+   },
+   {
+    "name": "eggs",
+    "quantity": null,
+    "unit": "",
+    "note": "beaten, for the egg wash; amount not given"
    }
   ],
   "steps": [
    {
-    "text": "Preheat the oven to 200C/400F/Gas 6.",
+    "text": "Rub the flour, salt and chilled butter together with your fingertips until the mixture looks like breadcrumbs. Add the egg yolks and chilled water and bring it together gently, adding a little more water if needed.",
     "minutes": null
    },
    {
-    "text": "Heat the oil in a deep frying pan and fry the beef mince for 4-5 minutes, breaking it up with a wooden spoon as it browns.",
-    "minutes": 5
+    "text": "Knead the pastry briefly on a floured surface into a shiny ball, wrap it in cling film and chill for at least 45 minutes.",
+    "minutes": 45
    },
    {
-    "text": "Add the onion and cook for 2-3 minutes, then stir in the tomato purée and cook for 2-3 more minutes.",
-    "minutes": 3
-   },
-   {
-    "text": "Stir in the flour and cook for a further minute, then add the chopped mushrooms, the stout or beef stock and a couple of dashes of Worcestershire sauce.",
+    "text": "Heat the oil in a large frying pan and fry the onion until it starts to soften. Add the mince and fry, moving it all the time, until completely browned.",
     "minutes": null
    },
    {
-    "text": "Bring to the boil, then reduce the heat, cover the pan with a lid and leave to simmer for 20 minutes. Set aside and leave to cool, then turn the meat mixture into a one litre pie dish.",
+    "text": "Stir in the tomato puree and cook for a few minutes, then add the flour and cook for 1 minute. Pour in the stock and a few shakes of Worcestershire sauce.",
+    "minutes": 4
+   },
+   {
+    "text": "Season, turn the heat down and simmer for about 20 minutes until the sauce has reduced and thickened. Turn off the heat and leave the filling to cool.",
     "minutes": 20
    },
    {
-    "text": "Roll out the pastry on a floured work surface until it is slightly larger than the pie dish. Gently drape the pastry over the dish, pressing firmly onto the edges. Trim, then shape the edges into a fluted shape.",
+    "text": "Heat the oven to 200°C (180°C fan). Divide the pastry into 6 pieces and roll 3 of them to 2 mm thick to line the pie tins, pressing it in with about 1 cm overhanging the edge.",
     "minutes": null
    },
    {
-    "text": "Cut some leaf shapes out of the pastry trimmings and decorate the top of the pie, sticking them to the pastry with the beaten egg yolk.",
+    "text": "Roll the other 3 pieces a little thicker for the lids. Mix the peas into the cooled filling and divide it between the lined tins.",
     "minutes": null
    },
    {
-    "text": "Make three or four slits in the pastry to allow the steam to escape, then brush the pie with the rest of the beaten egg yolk and bake in the oven for 20-25 minutes, or until golden-brown. To serve, slice into wedges.",
-    "minutes": 25
+    "text": "Brush egg wash around the overhanging pastry, put the lids on, trim and crimp the edges. Brush the tops with more egg wash.",
+    "minutes": null
+   },
+   {
+    "text": "Bake for 30 to 40 minutes until crisp and golden. Rest for 10 minutes, then lift the pies out of the tins and serve warm.",
+    "minutes": 30
    }
   ]
  },
@@ -63399,66 +63433,128 @@
  },
  {
   "source": "themealdb:53204",
-  "title": "Red curry chicken kebabs",
-  "description": "A Thai curry with chicken breast, coconut milk and capsicum — serves 2, ready in under half an hour.",
-  "servings": 2,
+  "title": "Thai curry chicken skewers with curry sauce",
+  "description": "Boneless chicken thigh pieces marinated in Thai curry paste, soy and garlic, grilled on skewers and served with a quick coconut curry sauce.",
+  "servings": 10,
   "cuisine": "Thai",
   "category": "Chicken",
-  "image": "https://www.themealdb.com/images/media/meals/prjve31763486864.jpg",
-  "prep_minutes": 10,
-  "cook_minutes": 10,
+  "image": "https://i.ytimg.com/vi/XJscdFRT8_8/hqdefault.jpg",
+  "prep_minutes": 65,
+  "cook_minutes": 15,
   "ingredients": [
    {
-    "name": "chicken breast",
+    "name": "chicken thigh",
+    "quantity": 450,
+    "unit": "g",
+    "note": "boneless, trimmed, cut into 1-inch pieces"
+   },
+   {
+    "name": "soy sauce",
+    "quantity": 4,
+    "unit": "tbsp",
+    "note": "for the marinade"
+   },
+   {
+    "name": "sesame oil",
     "quantity": 2,
-    "unit": "",
-    "note": ""
+    "unit": "tsp",
+    "note": "for the marinade"
    },
    {
     "name": "thai red curry paste",
+    "quantity": 4,
+    "unit": "tbsp",
+    "note": "red or green; for the marinade"
+   },
+   {
+    "name": "vegetable oil",
     "quantity": 2,
     "unit": "tbsp",
-    "note": ""
+    "note": "canola, for the marinade; extra to brush the skewers"
+   },
+   {
+    "name": "brown sugar",
+    "quantity": 2,
+    "unit": "tsp",
+    "note": "for the marinade"
+   },
+   {
+    "name": "garlic",
+    "quantity": 4,
+    "unit": "clove",
+    "note": "large, grated"
+   },
+   {
+    "name": "ginger",
+    "quantity": 7.5,
+    "unit": "cm",
+    "note": "grated (3 inch)"
+   },
+   {
+    "name": "salt",
+    "quantity": 0.25,
+    "unit": "tsp",
+    "note": "for the marinade"
+   },
+   {
+    "name": "black pepper",
+    "quantity": 0.25,
+    "unit": "tsp",
+    "note": "for the marinade"
+   },
+   {
+    "name": "bamboo skewers",
+    "quantity": 10,
+    "unit": "",
+    "note": "equipment, not eaten; soaked in water for 30 minutes"
    },
    {
     "name": "coconut milk",
+    "quantity": 0.5,
+    "unit": "cup",
+    "note": "for the sauce"
+   },
+   {
+    "name": "chicken stock",
+    "quantity": 0.5,
+    "unit": "cup",
+    "note": "or water, for the sauce"
+   },
+   {
+    "name": "parsley",
     "quantity": 2,
     "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "capsicum",
-    "quantity": 1,
-    "unit": "",
-    "note": "chopped"
-   },
-   {
-    "name": "courgette",
-    "quantity": 1,
-    "unit": "",
-    "note": "chopped"
-   },
-   {
-    "name": "red onion",
-    "quantity": 1,
-    "unit": "",
-    "note": "cut thin wedges"
-   },
-   {
-    "name": "lime",
-    "quantity": null,
-    "unit": "",
-    "note": "to serve"
+    "note": "freshly chopped, for the sauce"
    }
   ],
   "steps": [
    {
-    "text": "Fire up the barbecue or heat a griddle pan to high. Tip chicken, curry paste and coconut milk into a bowl, then mix well until the chicken is evenly coated. Thread vegetables and chicken onto skewers.",
+    "text": "Trim the chicken, pat it dry and cut it into 1-inch pieces in a non-metal bowl. Soak the skewers in water for 30 minutes.",
+    "minutes": 30
+   },
+   {
+    "text": "Mix the soy sauce, sesame oil, curry paste, canola oil, brown sugar, garlic, ginger, salt and pepper into a marinade. Pour half over the chicken and keep the rest for the sauce.",
     "minutes": null
    },
    {
-    "text": "Cook the skewers on the barbecue or griddle for 5-8 mins, turning every so often, until the chicken is cooked through and charred. Serve with herby rice, salad and a lime half to squeeze over.",
-    "minutes": 8
+    "text": "Marinate the chicken for an hour on the counter, or up to 8 hours in the fridge.",
+    "minutes": 60
+   },
+   {
+    "text": "For the sauce, put the reserved marinade in a pan over medium heat with the coconut milk and stock. Simmer for 2 to 3 minutes until thick, then stir in the parsley and pour into a sauce boat.",
+    "minutes": 3
+   },
+   {
+    "text": "Thread the chicken onto the skewers without crowding it.",
+    "minutes": null
+   },
+   {
+    "text": "Heat a grill pan over medium-high heat and brush the skewers with oil. Cook a few at a time, 3 minutes on the first side until they release from the pan.",
+    "minutes": 3
+   },
+   {
+    "text": "Turn and cook for 2 to 3 more minutes on the other side (chicken thigh skewers take about 8 to 10 minutes in total). Serve immediately with the sauce.",
+    "minutes": 3
    }
   ]
  },
@@ -68190,71 +68286,115 @@
  },
  {
   "source": "themealdb:53371",
-  "title": "Sichuan Style Stir-Fried Chinese Long Beans",
-  "description": "A Chinese dish of green beans, dried chillies and sichuan pepper — serves 2, ready in under half an hour.",
+  "title": "Sichuan dry-fried green beans",
+  "description": "Green beans fried until blistered and charred, then tossed with ground pork, chilli, garlic, ginger, Shaoxing wine and soy sauce.",
   "servings": 2,
   "cuisine": "Chinese",
-  "category": "Vegetarian",
-  "image": "https://www.themealdb.com/images/media/meals/i0610h1765659464.jpg",
-  "prep_minutes": 15,
-  "cook_minutes": 5,
+  "category": "Side",
+  "image": "https://i.ytimg.com/vi/GH4bUpSFcUo/hqdefault.jpg",
+  "prep_minutes": 10,
+  "cook_minutes": 20,
   "ingredients": [
    {
-    "name": "green beans",
-    "quantity": 225,
-    "unit": "g",
-    "note": ""
+    "name": "shaoxing wine",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": "or dry sherry"
    },
    {
-    "name": "vegetable oil",
+    "name": "soy sauce",
     "quantity": 1,
     "unit": "tbsp",
     "note": ""
    },
    {
-    "name": "dried chillies",
-    "quantity": 6,
-    "unit": "",
+    "name": "sugar",
+    "quantity": 1,
+    "unit": "tsp",
     "note": ""
+   },
+   {
+    "name": "vegetable oil",
+    "quantity": 3,
+    "unit": "tbsp",
+    "note": "2 tbsp for the beans, 1 tbsp for the pork"
+   },
+   {
+    "name": "green beans",
+    "quantity": 450,
+    "unit": "g",
+    "note": "tough ends removed"
+   },
+   {
+    "name": "pork mince",
+    "quantity": 220,
+    "unit": "g",
+    "note": "ground pork, optional"
+   },
+   {
+    "name": "pickled mustard greens",
+    "quantity": 3,
+    "unit": "tbsp",
+    "note": "Sichuan pickled mustard greens (sui mi ya cai), optional"
+   },
+   {
+    "name": "salt",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": "or to taste"
    },
    {
     "name": "sichuan pepper",
     "quantity": 1,
     "unit": "tsp",
+    "note": "whole peppercorns"
+   },
+   {
+    "name": "dried chillies",
+    "quantity": 3,
+    "unit": "",
     "note": ""
    },
    {
-    "name": "salt",
-    "quantity": 0.25,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "sugar",
-    "quantity": 0.5,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "sesame oil",
+    "name": "garlic",
     "quantity": 1,
     "unit": "tbsp",
-    "note": ""
+    "note": "minced"
    },
    {
-    "name": "soy sauce",
-    "quantity": null,
-    "unit": "",
-    "note": "a splash"
+    "name": "ginger",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "minced"
    }
   ],
   "steps": [
    {
-    "text": "Chinese long beans can be found in both green and purple varieties. Both have similar flavors and textures, and either kind can be used for this recipe.",
+    "text": "Pat the beans dry so they don't splatter.",
     "minutes": null
    },
    {
-    "text": "If you don't have a wok, use a sturdy, large sauté pan that has at least a two-inch lip.",
+    "text": "Heat 2 tbsp oil in a large nonstick pan over medium-high heat. Add the beans and a pinch of salt and spread them out, flipping every 15 seconds or so.",
+    "minutes": null
+   },
+   {
+    "text": "Cook until the surface is brown and withered, 6 to 8 minutes (10 to 12 for softer beans). Lower the heat if the pan smokes too much, then move the beans to a plate.",
+    "minutes": 8
+   },
+   {
+    "text": "Add the remaining 1 tbsp oil, the pork and pickled mustard greens (both optional) and the Sichuan peppercorns. Cook, chopping the pork into small pieces.",
+    "minutes": null
+   },
+   {
+    "text": "When the pork is cooked on the surface, add the dried chillies, garlic and ginger and stir for a few seconds until fragrant.",
+    "minutes": null
+   },
+   {
+    "text": "Return the beans and swirl in the Shaoxing wine, soy sauce and sugar. Cook and stir until the sauce is mostly absorbed, 1 to 2 minutes.",
+    "minutes": 2
+   },
+   {
+    "text": "Turn the heat to low, taste and add salt if needed, then serve hot.",
     "minutes": null
    }
   ]
@@ -68931,88 +69071,132 @@
  },
  {
   "source": "themealdb:53260",
-  "title": "Slow-roast lamb with cinnamon, fennel & citrus",
-  "description": "A Turkish dish of lamb leg, lemon and honey — serves 8, a slow cook that's worth the wait.",
+  "title": "Braised lamb shoulder with fennel and orange",
+  "description": "Deboned lamb shoulder browned and braised with fennel, onion, garlic, white wine, orange, cinnamon and tomatoes, then finished with a reduced sauce.",
   "servings": 8,
-  "cuisine": "Turkish",
+  "cuisine": "Mediterranean",
   "category": "Lamb",
-  "image": "https://www.themealdb.com/images/media/meals/gr4lo51763791826.jpg",
-  "prep_minutes": 15,
-  "cook_minutes": 320,
+  "image": "https://i.ytimg.com/vi/4_mbvxabtJc/hqdefault.jpg",
+  "prep_minutes": 20,
+  "cook_minutes": 190,
   "ingredients": [
    {
-    "name": "lamb leg",
+    "name": "lamb shoulder",
     "quantity": 1,
     "unit": "",
-    "note": ""
+    "note": "deboned, fat trimmed; weight not stated"
    },
    {
-    "name": "lemon",
-    "quantity": 1,
+    "name": "salt",
+    "quantity": null,
     "unit": "",
-    "note": "zest and juice"
+    "note": "kosher, to season"
+   },
+   {
+    "name": "black pepper",
+    "quantity": null,
+    "unit": "",
+    "note": "freshly ground, to season"
    },
    {
     "name": "olive oil",
-    "quantity": 4,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "honey",
     "quantity": 2,
     "unit": "tbsp",
     "note": ""
    },
    {
-    "name": "cinnamon",
+    "name": "fennel bulb",
     "quantity": 1,
-    "unit": "tbsp",
-    "note": ""
+    "unit": "",
+    "note": "coarsely chopped"
    },
    {
-    "name": "fennel seeds",
+    "name": "onion",
     "quantity": 1,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "ground cumin",
-    "quantity": 1,
-    "unit": "tbsp",
-    "note": ""
+    "unit": "",
+    "note": "medium, coarsely chopped"
    },
    {
     "name": "garlic",
+    "quantity": 1,
+    "unit": "bulb",
+    "note": "head halved crosswise"
+   },
+   {
+    "name": "white wine",
+    "quantity": 1,
+    "unit": "cup",
+    "note": "dry"
+   },
+   {
+    "name": "orange",
+    "quantity": 1,
+    "unit": "",
+    "note": "with the peel, cut into pieces"
+   },
+   {
+    "name": "bay leaf",
+    "quantity": 2,
+    "unit": "leaf",
+    "note": ""
+   },
+   {
+    "name": "cinnamon stick",
+    "quantity": 1,
+    "unit": "",
+    "note": ""
+   },
+   {
+    "name": "canned tomatoes",
+    "quantity": 1,
+    "unit": "can",
+    "note": "14.5 oz (410 g) peeled whole"
+   },
+   {
+    "name": "chicken stock",
     "quantity": 3,
-    "unit": "clove",
-    "note": "crushed"
+    "unit": "cup",
+    "note": "low sodium chicken broth"
+   },
+   {
+    "name": "pomegranate molasses",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": "optional"
    }
   ],
   "steps": [
    {
-    "text": "Put the lamb into a large food bag with all the juice and marinate overnight.",
+    "text": "Heat the oven to 160°C. Pat the lamb dry and season with salt and pepper.",
     "minutes": null
    },
    {
-    "text": "The next day, take the lamb out of the fridge 1 hr before you want to cook it. Heat oven to 220C/200C fan/gas 7. Take the lamb out of the marinade (reserve remaining marinade) and pat dry.",
-    "minutes": 60
+    "text": "Heat the oil in a Dutch oven or heavy pot over medium heat and brown the lamb on all sides, 6 to 8 minutes. Move it to a plate.",
+    "minutes": 8
    },
    {
-    "text": "Rub with half the oil and roast for 15-20 mins until browned. Remove lamb and reduce oven to 160C/140C fan/gas 3.",
+    "text": "Cook the fennel, onion and garlic in the same pot, stirring often, until golden and softened, 6 to 8 minutes.",
+    "minutes": 8
+   },
+   {
+    "text": "Add the wine and bring to a boil, scraping up the browned bits. Simmer until reduced by half, 6 to 8 minutes.",
+    "minutes": 8
+   },
+   {
+    "text": "Add the orange, bay leaves, cinnamon, tomatoes, broth and the lamb. Braise until the lamb is fork tender, 1.5 to 2 hours (assumed to be in the 160°C oven: the page heats the oven but does not say where this step happens).",
+    "minutes": 90
+   },
+   {
+    "text": "Lift the lamb onto a clean plate. Strain the cooking liquid through a fine sieve into a bowl and return it to the pot.",
+    "minutes": null
+   },
+   {
+    "text": "Boil the liquid, then simmer for 20 to 30 minutes until thick and velvety.",
     "minutes": 20
    },
    {
-    "text": "Mix the zests, remaining oil, honey, spices and garlic with plenty of seasoning. Lay a large sheet of baking parchment on a large sheet of foil. Sit the lamb leg on top, rub all over with the paste and pull up the sides of the foil.",
+    "text": "Stir in the pomegranate molasses if using, return the lamb to the pot and turn it in the sauce until heated through.",
     "minutes": null
-   },
-   {
-    "text": "Drizzle marinade into base, and scrunch foil to seal.",
-    "minutes": null
-   },
-   {
-    "text": "Roast for 4 hrs, until very tender. Rest, still wrapped, for 30 mins. Unwrap and serve with juices.",
-    "minutes": 240
    }
   ]
  },
@@ -69592,71 +69776,133 @@
  },
  {
   "source": "themealdb:53177",
-  "title": "Spaghetti with Spanish flavours",
-  "description": "A Spanish dish of chorizo, spaghetti and capsicum — serves 4, ready in under half an hour.",
-  "servings": 4,
+  "title": "One-pan spaghetti with a smoky tomato sauce",
+  "description": "Dry spaghetti cooked directly in a pan of smoked-paprika tomato sauce and vegetable broth with saffron, finished with grated manchego and parsley.",
+  "servings": 2,
   "cuisine": "Spanish",
-  "category": "Pork",
-  "image": "https://www.themealdb.com/images/media/meals/vpcqn01763335688.jpg",
-  "prep_minutes": 10,
-  "cook_minutes": 15,
+  "category": "Pasta",
+  "image": "https://i.ytimg.com/vi/BukrisTBv00/hqdefault.jpg",
+  "prep_minutes": 5,
+  "cook_minutes": 25,
   "ingredients": [
-   {
-    "name": "chorizo",
-    "quantity": 80,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "spaghetti",
-    "quantity": 300,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "parsley",
-    "quantity": 20,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "capsicum",
-    "quantity": 2,
-    "unit": "",
-    "note": ""
-   },
    {
     "name": "olive oil",
     "quantity": 2,
     "unit": "tbsp",
-    "note": ""
+    "note": "extra virgin"
    },
    {
-    "name": "parmesan",
-    "quantity": 50,
+    "name": "onion",
+    "quantity": 1,
+    "unit": "",
+    "note": "finely diced"
+   },
+   {
+    "name": "garlic",
+    "quantity": 5,
+    "unit": "clove",
+    "note": "roughly chopped"
+   },
+   {
+    "name": "smoked paprika",
+    "quantity": 2,
+    "unit": "tsp",
+    "note": "sweet smoked Spanish paprika"
+   },
+   {
+    "name": "passata",
+    "quantity": 410,
     "unit": "g",
-    "note": ""
+    "note": "the page's 14.5 oz can of (US) plain tomato sauce, not Australian ketchup-style tomato sauce"
+   },
+   {
+    "name": "canned tomatoes",
+    "quantity": 1,
+    "unit": "can",
+    "note": "diced, 14.5 oz (410 g)"
+   },
+   {
+    "name": "thyme",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "dried"
+   },
+   {
+    "name": "salt",
+    "quantity": 1,
+    "unit": "pinch",
+    "note": "sea salt, more to season"
+   },
+   {
+    "name": "black pepper",
+    "quantity": null,
+    "unit": "",
+    "note": "to season"
+   },
+   {
+    "name": "sugar",
+    "quantity": 1,
+    "unit": "dash",
+    "note": "white"
+   },
+   {
+    "name": "vegetable stock",
+    "quantity": 475,
+    "unit": "ml",
+    "note": "vegetable broth (2 cups)"
+   },
+   {
+    "name": "saffron",
+    "quantity": 0.25,
+    "unit": "tsp",
+    "note": "threads"
+   },
+   {
+    "name": "spaghetti",
+    "quantity": 225,
+    "unit": "g",
+    "note": "uncooked"
+   },
+   {
+    "name": "manchego",
+    "quantity": 1,
+    "unit": "handful",
+    "note": "finely grated, to serve"
+   },
+   {
+    "name": "parsley",
+    "quantity": 1,
+    "unit": "handful",
+    "note": "finely chopped, to serve"
    }
   ],
   "steps": [
    {
-    "text": "Put a pan of water on over a high heat to boil. Meanwhile, snip the chorizo into strips with scissors, and chop the parsley and peppers (check for stray seeds first).",
+    "text": "Heat the olive oil in a large fry pan over medium heat for about 4 minutes. Meanwhile finely dice the onion and roughly chop the garlic.",
+    "minutes": 4
+   },
+   {
+    "text": "Add the onion and garlic and cook for about 4 minutes, until the onion is translucent. Stir in the smoked paprika.",
+    "minutes": 4
+   },
+   {
+    "text": "Add the tomato sauce, diced tomatoes, thyme, a pinch of salt, black pepper and a dash of sugar. Stir and simmer for about 4 minutes until slightly thickened.",
+    "minutes": 4
+   },
+   {
+    "text": "Add the vegetable broth and saffron, turn the heat to high and bring to a boil.",
     "minutes": null
    },
    {
-    "text": "When the water is boiling briskly, add the spaghetti with a good measure of salt, stir and return to the boil. Cook for 3 minutes.",
-    "minutes": 3
+    "text": "Add the dry spaghetti and stir every minute so it doesn't stick. After about 8 minutes, when most of the broth has been absorbed, cover the pan and lower the heat to low-medium.",
+    "minutes": 8
    },
    {
-    "text": "In a large frying pan, heat the oil, add the chorizo and peppers and plenty of black pepper. Cook for a minute or so, until heated through and the juices are stained red from the paprika in the chorizo.",
-    "minutes": null
+    "text": "Simmer for 3 to 4 minutes, until virtually no broth is left. Take the pan off the heat and toss the spaghetti in the sauce.",
+    "minutes": 4
    },
    {
-    "text": "Scoop half a mugful of pasta water from the pan, drain the remainder and tip the spaghetti into the frying pan.",
-    "minutes": null
-   },
-   {
-    "text": "Add the parsley and parmesan, toss well and splash in the pasta water, to moisten. Hand round extra parmesan at the table.",
+    "text": "Finely grate manchego over the spaghetti and sprinkle with chopped parsley.",
     "minutes": null
    }
   ]
@@ -70197,93 +70443,113 @@
  },
  {
   "source": "themealdb:53182",
-  "title": "Spanish seafood rice",
-  "description": "A Spanish dish of capsicum, paella rice and seafood mix — serves 4, on the table in about 45 minutes.",
-  "servings": 4,
+  "title": "Spanish seafood rice (arroz a banda)",
+  "description": "Alicante-style rice cooked in fish broth with saffron, squid, prawns, garlic and grated tomato, finished with a toasted socarrat base and lemon.",
+  "servings": 2,
   "cuisine": "Spanish",
   "category": "Seafood",
-  "image": "https://www.themealdb.com/images/media/meals/c6ghxm1763335584.jpg",
-  "prep_minutes": 15,
-  "cook_minutes": 30,
+  "image": "https://i.ytimg.com/vi/jA-G6k1wT9M/hqdefault.jpg",
+  "prep_minutes": 10,
+  "cook_minutes": 35,
   "ingredients": [
    {
     "name": "olive oil",
-    "quantity": 1,
-    "unit": "tbsp",
-    "note": ""
+    "quantity": 0.25,
+    "unit": "cup",
+    "note": "extra virgin (60 ml)"
    },
    {
-    "name": "onion",
+    "name": "squid",
     "quantity": 1,
     "unit": "",
-    "note": "chopped"
+    "note": "cleaned tube, patted dry and cut into bite-sized pieces; weight not stated"
    },
    {
-    "name": "capsicum",
-    "quantity": 1,
+    "name": "prawns",
+    "quantity": 12,
     "unit": "",
-    "note": ""
-   },
-   {
-    "name": "capsicum",
-    "quantity": 1,
-    "unit": "",
-    "note": ""
+    "note": "raw jumbo, peeled and deveined, cut into bite-sized pieces; weight not stated"
    },
    {
     "name": "garlic",
+    "quantity": 5,
+    "unit": "clove",
+    "note": "roughly chopped"
+   },
+   {
+    "name": "tomato",
     "quantity": 2,
     "unit": "",
-    "note": "sliced"
+    "note": "finely grated"
    },
    {
-    "name": "paella rice",
-    "quantity": 250,
-    "unit": "g",
-    "note": ""
+    "name": "smoked paprika",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "sweet smoked Spanish paprika"
    },
    {
-    "name": "vegetable stock",
-    "quantity": 800,
+    "name": "fish stock",
+    "quantity": 720,
     "unit": "ml",
-    "note": ""
+    "note": "fish broth (3 cups)"
    },
    {
     "name": "saffron",
-    "quantity": 1,
-    "unit": "pinch",
-    "note": ""
+    "quantity": 0.25,
+    "unit": "tsp",
+    "note": "threads"
    },
    {
-    "name": "seafood mix",
-    "quantity": 400,
+    "name": "paella rice",
+    "quantity": 200,
     "unit": "g",
-    "note": ""
+    "note": "Spanish round rice (1 cup)"
    },
    {
     "name": "lemon",
-    "quantity": 0.5,
+    "quantity": 1,
     "unit": "",
-    "note": "juiced"
+    "note": "cut into wedges, to serve"
    },
    {
-    "name": "parsley",
+    "name": "salt",
     "quantity": 1,
-    "unit": "handful",
-    "note": ""
+    "unit": "pinch",
+    "note": "sea salt, plus more to season the oil and tomato"
    }
   ],
   "steps": [
    {
-    "text": "Heat the oil in a large saucepan and soften the onion for 6-7 mins. Add the pepper and garlic, cook for 2 mins more, then stir in the paella rice and cook for 1 min, stirring to coat.",
-    "minutes": 7
+    "text": "Roughly chop the garlic and finely grate the tomatoes. Pat the squid tube and prawns dry, then cut both into bite-sized pieces.",
+    "minutes": null
    },
    {
-    "text": "Pour in the stock, add the saffron and bring to the boil. Cook, uncovered, at a gentle bubble, for 20 mins, stirring occasionally until the rice is tender.",
-    "minutes": 20
+    "text": "Heat a paella pan over medium heat, add the olive oil and after 1 minute season it with sea salt.",
+    "minutes": 1
    },
    {
-    "text": "Stir in the seafood and lemon juice and cook for 2 mins or until piping hot and completely cooked through. Serve in warm bowls scattered with the parsley.",
+    "text": "Add the squid and prawns and cook for 1 to 2 minutes, then add the garlic for 1 minute. Stir in the paprika quickly.",
+    "minutes": 3
+   },
+   {
+    "text": "Add the grated tomato and a little salt and simmer without stirring for 3 to 4 minutes, until slightly thickened.",
+    "minutes": 4
+   },
+   {
+    "text": "Add the fish broth and saffron, raise the heat to medium-high and bring to a boil. Add the rice, give it one last stir and simmer without stirring.",
+    "minutes": null
+   },
+   {
+    "text": "After 9 to 10 minutes, when most of the broth is absorbed but some is left, lower to low-medium and simmer 4 to 5 minutes until the broth is gone.",
+    "minutes": 15
+   },
+   {
+    "text": "Raise the heat back to medium for 2 to 3 minutes to form the socarrat on the base. Take the pan off the heat and cover with a dish cloth.",
+    "minutes": 3
+   },
+   {
+    "text": "After a couple of minutes uncover the pan and serve with lemon wedges.",
     "minutes": 2
    }
   ]
@@ -72683,114 +72949,116 @@
  },
  {
   "source": "themealdb:53008",
-  "title": "Stuffed Lamb Tomatoes",
-  "description": "A Greek dish of lamb, tomato and tomato puree — serves 4, about an hour start to finish.",
-  "servings": 4,
-  "cuisine": "Greek",
+  "title": "Herby lamb-stuffed tomatoes",
+  "description": "Hollowed tomatoes packed with a loose lemony mixture of ground lamb, onion, garlic and herbs, baked in a blended tomato sauce.",
+  "servings": 5,
+  "cuisine": "Mediterranean",
   "category": "Lamb",
-  "image": "https://www.themealdb.com/images/media/meals/u55lbp1585564013.jpg",
-  "prep_minutes": 20,
+  "image": "https://i.ytimg.com/vi/L0vojEfIKWg/hqdefault.jpg",
+  "prep_minutes": 40,
   "cook_minutes": 30,
   "ingredients": [
    {
-    "name": "tomato",
-    "quantity": 4,
-    "unit": "",
-    "note": "large"
-   },
-   {
-    "name": "sugar",
-    "quantity": 1,
-    "unit": "pinch",
-    "note": ""
-   },
-   {
-    "name": "olive oil",
-    "quantity": 4,
-    "unit": "tbsp",
-    "note": ""
+    "name": "lamb mince",
+    "quantity": 225,
+    "unit": "g",
+    "note": "ground lamb (1/2 lb)"
    },
    {
     "name": "onion",
     "quantity": 1,
     "unit": "",
-    "note": "chopped"
+    "note": "small, diced (about 3/4 cup)"
    },
    {
     "name": "garlic",
-    "quantity": 2,
-    "unit": "",
+    "quantity": 3,
+    "unit": "clove",
     "note": "finely chopped"
    },
    {
-    "name": "lamb",
-    "quantity": 200,
-    "unit": "g",
-    "note": ""
+    "name": "parsley",
+    "quantity": 0.33,
+    "unit": "cup",
+    "note": "chopped, for the lamb mixture"
    },
    {
-    "name": "cinnamon",
+    "name": "dried oregano",
     "quantity": 1,
-    "unit": "tbsp",
+    "unit": "tsp",
     "note": ""
    },
    {
-    "name": "tomato puree",
+    "name": "dried mint",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": ""
+   },
+   {
+    "name": "lemon juice",
     "quantity": 2,
     "unit": "tbsp",
-    "note": "chopped"
-   },
-   {
-    "name": "rice",
-    "quantity": 50,
-    "unit": "g",
     "note": ""
    },
    {
-    "name": "chicken stock",
-    "quantity": 100,
-    "unit": "ml",
-    "note": ""
+    "name": "salt",
+    "quantity": 1.5,
+    "unit": "tsp",
+    "note": "1 tsp in the lamb mixture, 1/2 tsp in the sauce"
    },
    {
-    "name": "dill",
-    "quantity": 4,
+    "name": "tomato",
+    "quantity": 5,
+    "unit": "",
+    "note": "medium-sized"
+   },
+   {
+    "name": "olive oil",
+    "quantity": 2,
     "unit": "tbsp",
-    "note": ""
+    "note": "for the tomato sauce"
    },
    {
     "name": "parsley",
-    "quantity": 2,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "mint",
     "quantity": 1,
     "unit": "tbsp",
-    "note": ""
+    "note": "chopped, for the sauce"
+   },
+   {
+    "name": "parsley",
+    "quantity": null,
+    "unit": "",
+    "note": "chopped, to garnish; amount not given"
    }
   ],
   "steps": [
    {
-    "text": "Heat oven to 180C/160C fan/gas 4. Slice the tops off the tomatoes and reserve. Scoop out most of the pulp with a teaspoon, being careful not to break the skin. Finely chop the pulp, and keep any juices.",
+    "text": "Heat the oven to 190°C (375°F).",
     "minutes": null
    },
    {
-    "text": "Sprinkle the insides of the tomatoes with a little sugar to take away the acidity, then place them on a baking tray.",
+    "text": "Gently mix the lamb, onion, garlic, 1/3 cup parsley, oregano, mint, lemon juice and 1 tsp salt with your fingers into a loose mixture and set aside.",
     "minutes": null
    },
    {
-    "text": "Heat 2 tbsp olive oil in a large frying pan, add the onion and garlic, then gently cook for about 10 mins until soft but not coloured. Add the lamb, cinnamon and tomato purée, turn up the heat, then fry until the meat is browned.",
-    "minutes": 10
-   },
-   {
-    "text": "Add the tomato pulp and juice, the rice and the stock. Season generously. Bring to the boil, then simmer for 15 mins or until the rice is tender and the liquid has been absorbed. Set aside to cool a little, then stir in the herbs.",
-    "minutes": 15
-   },
-   {
-    "text": "Stuff the tomatoes up to the brim, top tomatoes with their lids, drizzle with 2 tbsp more olive oil, sprinkle 3 tbsp water into the tray, then bake for 35 mins. Serve with salad and crusty bread, hot or cold.",
+    "text": "Cut the tops off the tomatoes and keep them. Scoop out the flesh over a bowl to hollow the tomatoes.",
     "minutes": null
+   },
+   {
+    "text": "Blend the scooped-out flesh with the olive oil, 1 tbsp parsley and 1/2 tsp salt until smooth.",
+    "minutes": null
+   },
+   {
+    "text": "Lightly pack the lamb mixture into the hollowed tomatoes.",
+    "minutes": null
+   },
+   {
+    "text": "Stand the stuffed tomatoes in a Dutch oven or baking dish with their tops back on and pour the tomato sauce into the bottom of the dish. Cover with a lid and bake for 30 minutes.",
+    "minutes": 30
+   },
+   {
+    "text": "Cool for at least 20 minutes so the tomatoes don't break. Serve in a bowl on a little of the sauce, sprinkled with chopped parsley.",
+    "minutes": 20
    }
   ]
  },
@@ -76427,86 +76695,126 @@
  },
  {
   "source": "themealdb:53213",
-  "title": "Thai-style fish broth with greens",
-  "description": "A Thai soup of fish sauce, white fish and rice noodles — serves 2, on the table in about 45 minutes.",
-  "servings": 2,
+  "title": "Thai fish soup",
+  "description": "A coconut-milk and vegetable-broth soup flavoured with lemongrass, kaffir lime leaves and fish sauce, finished with shrimp, salmon and vegetables.",
+  "servings": 4,
   "cuisine": "Thai",
   "category": "Seafood",
-  "image": "https://www.themealdb.com/images/media/meals/a2ec961763587756.jpg",
-  "prep_minutes": 15,
-  "cook_minutes": 15,
+  "image": "https://i.ytimg.com/vi/rRwnwCd5om8/hqdefault.jpg",
+  "prep_minutes": 10,
+  "cook_minutes": 20,
   "ingredients": [
    {
-    "name": "rice noodles",
-    "quantity": 100,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "chicken stock",
-    "quantity": 500,
-    "unit": "ml",
-    "note": ""
-   },
-   {
-    "name": "thai red curry paste",
+    "name": "vegetable oil",
     "quantity": 1,
     "unit": "tbsp",
-    "note": ""
+    "note": "cooking oil"
+   },
+   {
+    "name": "garlic",
+    "quantity": 1,
+    "unit": "clove",
+    "note": "finely minced"
+   },
+   {
+    "name": "ginger",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "grated fresh"
+   },
+   {
+    "name": "red onion",
+    "quantity": 0.25,
+    "unit": "",
+    "note": "very thinly sliced"
+   },
+   {
+    "name": "chilli",
+    "quantity": 0.5,
+    "unit": "",
+    "note": "red, sliced; optional"
+   },
+   {
+    "name": "lemongrass",
+    "quantity": 1,
+    "unit": "",
+    "note": "stalk, bottom part only, bruised; lemon or lime peel can substitute"
    },
    {
     "name": "lime leaves",
     "quantity": 4,
+    "unit": "leaf",
+    "note": "kaffir, torn; lemon or lime peel can substitute"
+   },
+   {
+    "name": "coconut milk",
+    "quantity": 1,
+    "unit": "can",
+    "note": "14 oz (400 ml)"
+   },
+   {
+    "name": "vegetable stock",
+    "quantity": 1,
+    "unit": "cup",
+    "note": "vegetable broth"
+   },
+   {
+    "name": "lime",
+    "quantity": 0.5,
     "unit": "",
-    "note": ""
+    "note": "juice only, to taste"
    },
    {
     "name": "fish sauce",
     "quantity": 1,
     "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "white fish",
-    "quantity": 200,
-    "unit": "g",
-    "note": ""
+    "note": "to taste"
    },
    {
     "name": "prawns",
-    "quantity": 100,
+    "quantity": 170,
     "unit": "g",
-    "note": ""
+    "note": "shrimp, peeled and deveined (6 oz)"
    },
    {
-    "name": "pak choi",
-    "quantity": 2,
+    "name": "salmon fillet",
+    "quantity": 225,
+    "unit": "g",
+    "note": "cut into 1-inch chunks (8 oz)"
+   },
+   {
+    "name": "mixed vegetables",
+    "quantity": null,
     "unit": "",
-    "note": ""
+    "note": "such as bok choy, spinach, snow peas, kale, tomatoes or bell pepper; amount not given"
    },
    {
     "name": "coriander",
     "quantity": 1,
-    "unit": "handful",
-    "note": ""
+    "unit": "tbsp",
+    "note": "minced"
    }
   ],
   "steps": [
    {
-    "text": "Cook the noodles following pack instructions. Refresh in cold water and drain well.",
+    "text": "Heat the oil in a wok or soup pot over medium-high heat and swirl to coat.",
     "minutes": null
    },
    {
-    "text": "Put the stock in a large saucepan and stir in the curry paste, lime leaves, fish sauce and 250ml cold water. Bring to a simmer and cook for 5 mins.",
-    "minutes": 5
-   },
-   {
-    "text": "Cut the fish into roughly 3cm cubes and add to the pan. Return to a simmer, then cook for 2 mins uncovered.",
+    "text": "Add the garlic, ginger, red onion, chilli, lemongrass and kaffir lime leaves and cook gently for about 2 minutes to release their aromas.",
     "minutes": 2
    },
    {
-    "text": "Stir in the noodles, prawns and pak choi, and simmer for 2-3 mins or until the fish and prawns are just cooked. Serve in bowls scattered with coriander.",
-    "minutes": 3
+    "text": "Pour in the coconut milk and broth and simmer for 15 minutes.",
+    "minutes": 15
+   },
+   {
+    "text": "Remove and discard the lemongrass and kaffir lime leaves (or the lemon/lime peel if used). Season the broth with fish sauce and lime juice to taste.",
+    "minutes": null
+   },
+   {
+    "text": "Add the shrimp, salmon, vegetables and coriander and cook for 3 to 4 minutes, until the seafood is cooked through.",
+    "minutes": 4
    }
   ]
  },

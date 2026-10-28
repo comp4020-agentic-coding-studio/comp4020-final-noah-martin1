@@ -3101,9 +3101,9 @@
   "videoId": "HDWgGMJqvgw",
   "title": "Making Norwegian Karbonader",
   "channel": "Scandinavian Cookbook",
-  "status": "rejected",
-  "reason": "video title doesn't match the dish",
-  "checked": "2026-10-20"
+  "checked": "2026-10-28",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53445": {
   "videoId": null,
@@ -3517,9 +3517,9 @@
   "videoId": "QY47h-uqq5g",
   "title": "Individual Minced Steak Pies",
   "channel": "Geoff Cooper",
-  "status": "rejected",
-  "reason": "video title doesn't match the dish",
-  "checked": "2026-10-20"
+  "checked": "2026-10-28",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53304": {
   "videoId": "4agkoGMcL2w",
@@ -4197,9 +4197,9 @@
   "videoId": "XJscdFRT8_8",
   "title": "Thai Curry Chicken Skewers with Curry Sauce",
   "channel": "Veena Azmanov Kitchen",
-  "status": "rejected",
-  "reason": "video title doesn't match the dish",
-  "checked": "2026-10-20"
+  "checked": "2026-10-28",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53115": {
   "videoId": "3z2jTcsL28g",
@@ -4256,12 +4256,10 @@
   "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52816": {
-  "videoId": "HkywCtna9t0",
-  "title": "Roasted Eggplant with Tahini-Almond Sauce",
-  "channel": "Prep + Rally",
+  "videoId": null,
+  "checked": "2026-10-28",
   "status": "rejected",
-  "reason": "video title doesn't match the dish",
-  "checked": "2026-10-20"
+  "reason": "The video (Prep + Rally, 'Roasted Eggplant with Tahini-Almond Sauce') has no recipe in its description, only a link to dinidelivers.com that no longer resolves (DNS fails; an archive copy was rate-limited), and it is a tahini-almond sauce version without the catalogue's lentils; two YouTube searches found no embeddable video of the lentil, pine nut and tahini eggplant dish with a written recipe."
  },
  "themealdb:52901": {
   "videoId": "tY3taZO3Aro",
@@ -4532,12 +4530,12 @@
   "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53371": {
-  "videoId": "7mzLphZJ3xc",
-  "title": "Szechuan (Sichuan) Green Beans - Indo Chinese Recipe | Show Me The Curry",
-  "channel": "ShowMeTheCurry.com",
-  "status": "rejected",
-  "reason": "video title doesn't match the dish",
-  "checked": "2026-10-20"
+  "videoId": "GH4bUpSFcUo",
+  "title": "How to Make Sichuan Dry Fried Green Beans (Recipe) 干煸四季豆",
+  "channel": "Omnivore's Cookbook",
+  "checked": "2026-10-28",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53369": {
   "videoId": "bSLv5vFn5Z0",
@@ -4587,9 +4585,9 @@
   "videoId": "4_mbvxabtJc",
   "title": "Recipe Video: Braised Lamb Shoulder with Fennel and Orange",
   "channel": "White Oak Pastures Farm",
-  "status": "rejected",
-  "reason": "video title doesn't match the dish",
-  "checked": "2026-10-20"
+  "checked": "2026-10-28",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53302": {
   "videoId": null,
@@ -4639,9 +4637,9 @@
   "videoId": "BukrisTBv00",
   "title": "One-Pan Spaghetti with a Smoky Tomato Sauce | Easy & Delicious Recipe",
   "channel": "Spain on a Fork",
-  "status": "rejected",
-  "reason": "video title doesn't match the dish",
-  "checked": "2026-10-20"
+  "checked": "2026-10-28",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53181": {
   "videoId": null,
@@ -4687,9 +4685,9 @@
   "videoId": "jA-G6k1wT9M",
   "title": "The FAMOUS Rice Dish from Alicante Spain | Arroz a Banda Recipe",
   "channel": "Spain on a Fork",
-  "status": "rejected",
-  "reason": "video title doesn't match the dish",
-  "checked": "2026-10-20"
+  "checked": "2026-10-28",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53176": {
   "videoId": "OG9zuXJht7I",
@@ -4862,12 +4860,12 @@
   "checked": "2026-10-20"
  },
  "themealdb:53008": {
-  "videoId": "KfJp-QfrCz4",
-  "title": "Rice-Stuffed Baked Tomatoes by Cooking with Manuela",
-  "channel": "Manuela Mazzocco",
-  "status": "rejected",
-  "reason": "video title doesn't match the dish",
-  "checked": "2026-10-20"
+  "videoId": "L0vojEfIKWg",
+  "title": "Herby Lamb-Stuffed Tomatoes Recipe",
+  "channel": "Original Recipes by Tasting Table",
+  "checked": "2026-10-28",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:52931": {
   "videoId": "uVQ66jiL-Dc",
@@ -5155,9 +5153,9 @@
   "videoId": "rRwnwCd5om8",
   "title": "Thai Fish Soup Recipe",
   "channel": "Steamy (Test) Kitchen",
-  "status": "rejected",
-  "reason": "video title doesn't match the dish",
-  "checked": "2026-10-20"
+  "checked": "2026-10-28",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53202": {
   "videoId": "KQ-dl8fuBlQ",
