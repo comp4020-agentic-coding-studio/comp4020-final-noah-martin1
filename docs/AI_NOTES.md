@@ -45,6 +45,22 @@ Things learned the hard way while matching catalogue recipes to YouTube videos.
 - Agents killed by a network error leave records that validate but may be
   incomplete; review them as possibly half-finished.
 
+## Australian grocery names
+
+- American "tomato sauce" is passata here: in Australia "tomato sauce" means
+  ketchup, so keeping the name prices the wrong product.
+- Rename only to the same food. Stout can be "beer" (note "Guinness or
+  stout"), and calamansi can be lime juice when the source offers lime. But
+  cake flour is not plain flour: leave a different food unpriced rather than
+  mispriced.
+- Check counted produce and volumes against how the app prices them: "3
+  cabbage leaves" priced as 1.5 g, "1 cup basil" as 250 g and "1/3 cup
+  coriander" as 2 bunches were all real catches. Use the source's weight when
+  it gives one, or a handful/bunch unit.
+- Mark deep-frying and shallow-frying oil "for deep-frying"/"for frying" so it
+  isn't charged as eaten, and don't list a homemade paste a second time as a
+  bought jar.
+
 ## Cost
 
 - Sonnet transcribes a recipe for about $0.16, against about $1.10 on Opus,

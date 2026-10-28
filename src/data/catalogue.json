@@ -20241,167 +20241,149 @@
  {
   "source": "themealdb:53018",
   "title": "Bigos (Hunters Stew)",
-  "description": "A Polish stew of bacon, smoked sausage and pork — serves 4, a slow cook that's worth the wait.",
-  "servings": 4,
+  "description": "A Polish hunter's stew of fresh cabbage, sauerkraut, pork, bacon and smoked sausage with dried mushrooms and red wine, braised slowly in stages and best reheated the next day.",
+  "servings": 12,
   "cuisine": "Polish",
   "category": "Pork",
   "image": "https://www.themealdb.com/images/media/meals/md8w601593348504.jpg",
-  "prep_minutes": 30,
+  "prep_minutes": 40,
   "cook_minutes": 200,
   "ingredients": [
    {
-    "name": "bacon",
-    "quantity": 2,
-    "unit": "",
-    "note": "sliced"
+    "name": "dried mushrooms",
+    "quantity": 40,
+    "unit": "g",
+    "note": "soaked overnight in warm water, washed, juice kept and strained; large ones cut in thin strips"
    },
    {
-    "name": "smoked sausage",
-    "quantity": 455,
+    "name": "cabbage",
+    "quantity": 1,
+    "unit": "kg",
+    "note": "fresh white cabbage, cut in thin strips"
+   },
+   {
+    "name": "vegetable oil",
+    "quantity": 4,
+    "unit": "tbsp",
+    "note": "2 tbsp for the cabbage, 2 tbsp for browning the pork"
+   },
+   {
+    "name": "sauerkraut",
+    "quantity": 1300,
     "unit": "g",
     "note": ""
    },
    {
     "name": "pork",
-    "quantity": 455,
+    "quantity": 800,
     "unit": "g",
+    "note": "boneless, cut into small pieces"
+   },
+   {
+    "name": "cloves",
+    "quantity": 4,
+    "unit": "",
     "note": ""
    },
    {
-    "name": "plain flour",
-    "quantity": 0.25,
-    "unit": "cup",
+    "name": "juniper berries",
+    "quantity": 10,
+    "unit": "",
     "note": ""
    },
    {
-    "name": "garlic",
-    "quantity": 3,
+    "name": "black peppercorns",
+    "quantity": 10,
+    "unit": "",
+    "note": ""
+   },
+   {
+    "name": "allspice",
+    "quantity": 5,
+    "unit": "",
+    "note": "berries"
+   },
+   {
+    "name": "bay leaf",
+    "quantity": 2,
+    "unit": "",
+    "note": ""
+   },
+   {
+    "name": "bacon",
+    "quantity": 300,
+    "unit": "g",
+    "note": "smoked, chopped"
+   },
+   {
+    "name": "onion",
+    "quantity": 2,
     "unit": "",
     "note": "chopped"
    },
    {
-    "name": "onion",
-    "quantity": 1,
-    "unit": "",
-    "note": "diced"
-   },
-   {
-    "name": "mushrooms",
-    "quantity": 1.5,
-    "unit": "cup",
-    "note": ""
-   },
-   {
-    "name": "cabbage",
-    "quantity": 4,
-    "unit": "cup",
-    "note": ""
-   },
-   {
-    "name": "sauerkraut",
-    "quantity": 1,
-    "unit": "jar",
-    "note": ""
+    "name": "smoked sausage",
+    "quantity": 300,
+    "unit": "g",
+    "note": "sliced"
    },
    {
     "name": "red wine",
-    "quantity": 0.25,
-    "unit": "cup",
+    "quantity": 150,
+    "unit": "ml",
+    "note": "dry"
+   },
+   {
+    "name": "honey",
+    "quantity": 1,
+    "unit": "tbsp",
     "note": ""
    },
    {
-    "name": "bay leaf",
+    "name": "black pepper",
     "quantity": 1,
+    "unit": "tsp",
+    "note": "ground"
+   },
+   {
+    "name": "salt",
+    "quantity": null,
     "unit": "",
-    "note": ""
-   },
-   {
-    "name": "basil",
-    "quantity": 1,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "marjoram",
-    "quantity": 1,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "paprika",
-    "quantity": 1,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "caraway seeds",
-    "quantity": 0.125,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "hot sauce",
-    "quantity": 1,
-    "unit": "dash",
-    "note": ""
-   },
-   {
-    "name": "beef stock",
-    "quantity": 5,
-    "unit": "cup",
-    "note": ""
-   },
-   {
-    "name": "tomato puree",
-    "quantity": 2,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "canned tomatoes",
-    "quantity": 1,
-    "unit": "cup",
-    "note": ""
-   },
-   {
-    "name": "worcestershire sauce",
-    "quantity": 1,
-    "unit": "dash",
-    "note": ""
+    "note": "to taste"
    }
   ],
   "steps": [
    {
-    "text": "Preheat the oven to 180°C (350°F) (175 degrees C).",
+    "text": "The night before, soak the dried mushrooms in warm water. Wash them well, strain and keep the soaking juice, and cut large ones into thin strips.",
     "minutes": null
    },
    {
-    "text": "Heat a large pot over medium heat. Add the bacon and kielbasa; cook and stir until the bacon has rendered its fat and sausage is lightly browned. Use a slotted spoon to remove the meat and transfer to a large casserole or Dutch oven.",
-    "minutes": null
+    "text": "Heat 2 tbsp oil in a large stockpot, add the thinly cut fresh cabbage and fry over medium heat for 5 minutes.",
+    "minutes": 5
    },
    {
-    "text": "Coat the cubes of pork lightly with flour and fry them in the bacon drippings over medium-high heat until golden brown. Use a slotted spoon to transfer the pork to the casserole.",
-    "minutes": null
+    "text": "Add the sauerkraut and the mushrooms with their strained juice. Cover and braise over low heat for 1 hour, stirring now and then.",
+    "minutes": 60
    },
    {
-    "text": "Add the garlic, onion, carrots, fresh mushrooms, cabbage and sauerkraut. Reduce heat to medium; cook and stir until the carrots are soft, about 10 minutes. Do not let the vegetables brown.",
+    "text": "Fry the pork pieces in a pan with 2 tbsp oil over low heat until golden all over, about 10 minutes.",
     "minutes": 10
    },
    {
-    "text": "Deglaze the pan by pouring in the red wine and stirring to loosen all of the bits of food and flour that are stuck to the bottom.",
-    "minutes": null
+    "text": "Add the pork to the pot with the cloves, juniper berries, peppercorns, allspice and bay leaves, and braise on low for another hour.",
+    "minutes": 60
    },
    {
-    "text": "Season with the bay leaf, basil, marjoram, paprika, salt, pepper, caraway seeds and cayenne pepper; cook for 1 minute.",
-    "minutes": null
+    "text": "In the pan, fry the chopped bacon for 5 minutes, add the onion and fry 3 minutes, then add the sliced sausage and fry 2 minutes more.",
+    "minutes": 10
    },
    {
-    "text": "Mix in the dried mushrooms, hot pepper sauce, Worcestershire sauce, beef stock, tomato paste and tomatoes. Heat through just until boiling. Pour the vegetables and all of the liquid into the casserole dish with the meat. Cover with a lid.",
-    "minutes": null
+    "text": "Add the bacon, onion and sausage to the pot with the red wine, honey and black pepper. Simmer over low heat for 1 hour, then salt to taste.",
+    "minutes": 60
    },
    {
-    "text": "Bake in the preheated oven for 2 1/2 to 3 hours, until meat is very tender.",
-    "minutes": 180
+    "text": "Take off the heat and let the bigos cool. Reheat to serve; it keeps a week in the fridge and improves on reheating.",
+    "minutes": null
    }
   ]
  },
@@ -21063,161 +21045,101 @@
  },
  {
   "source": "themealdb:52891",
-  "title": "Blackberry Fool",
-  "description": "A British sweet made with hazelnuts, lemon and blackberries — makes 12, about an hour start to finish.",
-  "servings": 12,
+  "title": "Summer berry fool",
+  "description": "Strawberries and raspberries pureed with a little gelatin, folded through whipped cream and sour cream and layered with fresh berries in glasses, topped with crushed crackers and mint.",
+  "servings": 6,
   "cuisine": "British",
   "category": "Dessert",
-  "image": "https://www.themealdb.com/images/media/meals/rpvptu1511641092.jpg",
-  "prep_minutes": 20,
-  "cook_minutes": 40,
+  "image": "https://i.ytimg.com/vi/43mEtMTBccE/hqdefault.jpg",
+  "prep_minutes": 30,
+  "cook_minutes": 6,
   "ingredients": [
    {
-    "name": "hazelnuts",
-    "quantity": 50,
+    "name": "strawberries",
+    "quantity": 900,
     "unit": "g",
-    "note": ""
+    "note": "hulled, divided (about 6 cups)"
    },
    {
-    "name": "butter",
-    "quantity": 125,
+    "name": "raspberries",
+    "quantity": 340,
     "unit": "g",
-    "note": ""
+    "note": "divided"
    },
    {
     "name": "sugar",
-    "quantity": 150,
-    "unit": "g",
+    "quantity": 0.75,
+    "unit": "cup",
+    "note": "divided: 1/2 cup for the puree, 2 tbsp for the berries, 2 tbsp for the cream"
+   },
+   {
+    "name": "gelatine",
+    "quantity": 2,
+    "unit": "tsp",
+    "note": "unflavoured"
+   },
+   {
+    "name": "cream",
+    "quantity": 1,
+    "unit": "cup",
+    "note": "heavy cream, whipped"
+   },
+   {
+    "name": "sour cream",
+    "quantity": 0.25,
+    "unit": "cup",
     "note": ""
    },
    {
-    "name": "lemon",
-    "quantity": null,
-    "unit": "",
-    "note": "grated"
-   },
-   {
-    "name": "plain flour",
-    "quantity": 150,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "baking powder",
+    "name": "vanilla extract",
     "quantity": 0.5,
     "unit": "tsp",
     "note": ""
    },
    {
-    "name": "blackberries",
-    "quantity": 600,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "sugar",
-    "quantity": 75,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "sugar",
-    "quantity": 2,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "lemon juice",
-    "quantity": 1,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "cream",
-    "quantity": 300,
-    "unit": "ml",
-    "note": ""
-   },
-   {
-    "name": "yoghurt",
-    "quantity": 100,
-    "unit": "ml",
-    "note": ""
+    "name": "wholemeal crackers",
+    "quantity": 4,
+    "unit": "",
+    "note": "crushed fine (about 1/4 cup), to serve"
    },
    {
     "name": "mint",
-    "quantity": null,
-    "unit": "",
-    "note": "to garnish"
+    "quantity": 6,
+    "unit": "sprig",
+    "note": "to garnish, optional"
    }
   ],
   "steps": [
    {
-    "text": "For the biscuits, preheat the oven to 200C/180C (fan)/Gas 6 and line two large baking trays with baking parchment. Scatter the nuts over a baking tray and roast in the oven for 6-8 minutes, or until golden-brown.",
-    "minutes": 8
-   },
-   {
-    "text": "Watch them carefully so that they don’t have a chance to burn. Remove from the oven, tip onto a board and leave to cool.",
+    "text": "Blend half the strawberries, half the raspberries and 1/2 cup sugar until smooth, about 1 minute, and strain the puree through a fine sieve.",
     "minutes": null
    },
    {
-    "text": "Put the butter and sugar in a large bowl and beat with a wooden spoon until light and creamy. Roughly chop the cooled nuts and add to the creamed butter and sugar, along with the lemon zest, flour and baking powder.",
+    "text": "Stir 1/2 cup of the puree with the gelatine in a small bowl and leave for at least 5 minutes. Heat the remaining 2 cups puree until it bubbles, 4 to 6 minutes, then stir in the gelatine until dissolved.",
+    "minutes": 11
+   },
+   {
+    "text": "Cover the gelatine-puree and chill until cold, about 2 hours.",
+    "minutes": 120
+   },
+   {
+    "text": "Meanwhile chop the remaining strawberries into small pieces, toss with the remaining raspberries and 2 tbsp sugar, and leave for 1 hour.",
+    "minutes": 60
+   },
+   {
+    "text": "Whip the cream with the sour cream, vanilla and 2 tbsp sugar until stiff peaks form. Set aside 1/3 cup of the whipped cream for topping.",
     "minutes": null
    },
    {
-    "text": "Stir well until the mixture comes together and forms a ball – you may need to use your hands.",
+    "text": "Whisk the chilled puree smooth, mix two-thirds into the whipped cream, then fold in the rest gently, leaving streaks of puree.",
     "minutes": null
    },
    {
-    "text": "Divide the biscuit dough into 24 even pieces and roll into small balls. Place the balls the prepared baking trays, spaced well apart to allow for spreading.",
+    "text": "Drain the sugared berries and divide two-thirds among six tall glasses. Spoon in the puree-cream mixture and top with the remaining berries.",
     "minutes": null
    },
    {
-    "text": "Press the biscuits to flatten to around 1cm/½in thick. Bake the biscuits, one tray at a time, for 12 minutes or until very pale golden-brown. Leave to cool on the trays.",
-    "minutes": 12
-   },
-   {
-    "text": "They will be very soft when you take them out of the oven, but will crisp as they cool.",
-    "minutes": null
-   },
-   {
-    "text": "Store in an airtight tin and eat within five days.",
-    "minutes": null
-   },
-   {
-    "text": "For the fool, rinse the blackberries in a colander to wash away any dust or dirt. Put the blackberries in a non-stick saucepan and sprinkle over the caster sugar.",
-    "minutes": null
-   },
-   {
-    "text": "Stir in the lemon juice and heat gently for two minutes, or until the blackberries begin to soften and release their juices. Remove and reserve 12 blackberries for decoration and continue cooking the rest.",
-    "minutes": null
-   },
-   {
-    "text": "Simmer the blackberries very gently for 15 minutes, stirring regularly until very soft and squidgy.",
-    "minutes": 15
-   },
-   {
-    "text": "Remove from the heat and press the berries and juice through a sieve over a bowl, using the bottom of a ladle to help you extract as much of the purée as possible. Leave the purée to cool and discard the seeds.",
-    "minutes": null
-   },
-   {
-    "text": "You should end up with around 325ml/11fl oz of purée.",
-    "minutes": null
-   },
-   {
-    "text": "Put the cream and yoghurt in a large bowl and whip with an electric whisk until soft peaks form when the whisk is removed from the bowl – the acidity of the fruit will thicken the cream further, so don’t take it too far.",
-    "minutes": null
-   },
-   {
-    "text": "When the purée is completely cold, adjust the sweetness to taste by adding more sugar if needed. Pour it into the bowl with the whipped cream and yoghurt and stir just once or twice until very lightly combined.",
-    "minutes": null
-   },
-   {
-    "text": "Spoon the blackberry fool into individual wide, glass dishes – or one large, single bowl. It should look quite marbled, so don’t over-stir it. Scatter a few tiny mint leaves on top and decorate with the reserved blackberries.",
-    "minutes": null
-   },
-   {
-    "text": "Sprinkle with a little sugar if you like and serve with the hazelnut biscuits.",
+    "text": "Top each glass with the reserved whipped cream, sprinkle with crushed crackers and garnish with mint. Serve immediately.",
     "minutes": null
    }
   ]
@@ -21539,231 +21461,231 @@
  {
   "source": "themealdb:53311",
   "title": "Borsch",
-  "description": "An Ukrainian dish of beef shin, kidney beans and potato — serves 8, worth the couple of hours it takes.",
-  "servings": 8,
+  "description": "A Ukrainian beetroot soup of grated beets, potato, carrot, celery, onion and cannellini beans in chicken broth, finished with vinegar, garlic and fresh dill.",
+  "servings": 10,
   "cuisine": "Ukrainian",
-  "category": "Beef",
+  "category": "Miscellaneous",
   "image": "https://www.themealdb.com/images/media/meals/804v1j1764367088.jpg",
-  "prep_minutes": 25,
-  "cook_minutes": 95,
+  "prep_minutes": 30,
+  "cook_minutes": 40,
   "ingredients": [
    {
-    "name": "beef shin",
-    "quantity": 1000,
-    "unit": "g",
-    "note": ""
+    "name": "beetroot",
+    "quantity": 3,
+    "unit": "",
+    "note": "medium, peeled and grated"
    },
    {
-    "name": "onion",
-    "quantity": 1,
-    "unit": "",
-    "note": ""
+    "name": "olive oil",
+    "quantity": 4,
+    "unit": "tbsp",
+    "note": "divided: 2 tbsp for the beets, 2 tbsp for the onion mixture"
    },
    {
-    "name": "bay leaf",
-    "quantity": 1,
-    "unit": "",
+    "name": "chicken stock",
+    "quantity": 8,
+    "unit": "cup",
+    "note": "reduced-sodium; the video used more water than broth, the written recipe uses 8 cups"
+   },
+   {
+    "name": "water",
+    "quantity": 2,
+    "unit": "cup",
     "note": ""
    },
    {
     "name": "potato",
-    "quantity": 2500,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "vegetable oil",
-    "quantity": 2,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "onion",
-    "quantity": 1,
+    "quantity": 3,
     "unit": "",
-    "note": "diced"
+    "note": "medium Yukon, peeled and cut into bite-sized pieces"
    },
    {
     "name": "carrot",
-    "quantity": 1,
+    "quantity": 2,
     "unit": "",
-    "note": ""
+    "note": "peeled and thinly sliced (the video description lists them grated)"
    },
    {
-    "name": "beetroot",
-    "quantity": 200,
-    "unit": "g",
-    "note": ""
+    "name": "celery",
+    "quantity": 2,
+    "unit": "",
+    "note": "ribs, trimmed and finely chopped"
    },
    {
     "name": "capsicum",
     "quantity": 1,
     "unit": "",
-    "note": "chopped"
+    "note": "small red, finely chopped; optional"
    },
    {
-    "name": "canned tomatoes",
-    "quantity": 200,
-    "unit": "g",
-    "note": ""
+    "name": "onion",
+    "quantity": 1,
+    "unit": "",
+    "note": "medium, finely chopped"
    },
    {
-    "name": "prunes",
-    "quantity": 6,
+    "name": "tomato ketchup",
+    "quantity": 4,
+    "unit": "tbsp",
+    "note": "or 3 tbsp tomato sauce"
+   },
+   {
+    "name": "cannellini beans",
+    "quantity": 1,
+    "unit": "can",
+    "note": "white, with their juice"
+   },
+   {
+    "name": "bay leaf",
+    "quantity": 2,
     "unit": "",
     "note": ""
    },
    {
-    "name": "cabbage",
-    "quantity": 0.5,
-    "unit": "",
-    "note": ""
+    "name": "white vinegar",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": "2-3 tbsp, or to taste"
    },
    {
-    "name": "kidney beans",
-    "quantity": 400,
-    "unit": "g",
-    "note": ""
+    "name": "salt",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "sea salt, or to taste"
    },
    {
-    "name": "creme fraiche",
-    "quantity": 100,
-    "unit": "ml",
-    "note": ""
+    "name": "black pepper",
+    "quantity": 0.25,
+    "unit": "tsp",
+    "note": "freshly ground"
+   },
+   {
+    "name": "garlic",
+    "quantity": 1,
+    "unit": "clove",
+    "note": "large, pressed"
    },
    {
     "name": "dill",
-    "quantity": 1,
-    "unit": "bunch",
-    "note": ""
-   },
-   {
-    "name": "bread",
-    "quantity": null,
-    "unit": "",
-    "note": "to serve"
+    "quantity": 3,
+    "unit": "tbsp",
+    "note": "chopped"
    }
   ],
   "steps": [
    {
-    "text": "To make the stock, put the meat, whole onion, bay leaf and 2 litres of lightly salted cold water in a large saucepan.",
+    "text": "Peel and grate the beets, finely chop the celery, onion and pepper, and slice the carrots and potatoes, keeping the potatoes in cold water until needed.",
     "minutes": null
    },
    {
-    "text": "Cook over a very low heat for 1 hr 30 mins or until the beef shin is soft and falls apart easily – this can take up to 3 hrs. Skim off the scum with a spoon from time to time.",
-    "minutes": 60
+    "text": "Heat 2 tbsp olive oil in a large soup pot over medium-high heat and saute the grated beets for 10 minutes, stirring, until softened.",
+    "minutes": 10
    },
    {
-    "text": "Break up any larger pieces of beef into the broth, remove the whole onion and discard.",
-    "minutes": null
-   },
-   {
-    "text": "Add the potatoes to the borscht, season well with salt and pepper and cook for 10-15 mins until tender. Meanwhile, heat the sunflower oil in a large, deep frying pan.",
+    "text": "Add the chicken broth and water, then the potatoes and carrots, and cook 10 to 15 minutes until easily pierced with a fork.",
     "minutes": 15
    },
    {
-    "text": "Add the diced onion and carrot, and cook over a medium heat, stirring, until the carrot is soft and is about to start caramelising.",
-    "minutes": null
+    "text": "Meanwhile, saute the onion, celery and red pepper in 2 tbsp olive oil in a large skillet for 7 to 8 minutes until soft and lightly golden. Stir in the ketchup for 30 seconds, then add it to the soup pot.",
+    "minutes": 8
    },
    {
-    "text": "Add the beetroot and cook for around 5 mins, stirring occasionally.",
-    "minutes": 5
-   },
-   {
-    "text": "Add the red pepper, if using, and cook for another 2 mins, then add the tomatoes and prunes, stir, then increase the heat and boil to reduce slightly, before adding everything to the borscht.",
-    "minutes": 2
-   },
-   {
-    "text": "Add the shredded cabbage and the kidney beans, and cook for 7-10 mins or until tender. Serve with a dollop of sour cream or crème fraîche, lots of chopped dill and some crusty bread.",
-    "minutes": 10
+    "text": "When the potatoes and carrots are soft, add the beans with their juice, bay leaves, vinegar, salt, pepper, garlic and dill. Simmer 2 to 3 minutes and adjust the salt and vinegar to taste.",
+    "minutes": 3
    }
   ]
  },
  {
   "source": "themealdb:53385",
   "title": "Boterkoek (Dutch Butter Cake)",
-  "description": "A Dutch sweet made with dulce de leche and dark chocolate — serves 8, ready in under half an hour.",
-  "servings": 8,
+  "description": "A dense, very buttery Dutch cake of melted butter, flour, two sugars and egg, baked in two pans and pressed down twice during baking.",
+  "servings": 16,
   "cuisine": "Dutch",
   "category": "Dessert",
   "image": "https://www.themealdb.com/images/media/meals/tkwxmv1777540463.jpg",
-  "prep_minutes": 10,
-  "cook_minutes": 5,
+  "prep_minutes": 15,
+  "cook_minutes": 30,
   "ingredients": [
    {
     "name": "butter",
-    "quantity": 200,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "sugar",
-    "quantity": 200,
-    "unit": "g",
-    "note": ""
+    "quantity": null,
+    "unit": "",
+    "note": "for greasing the cake pans"
    },
    {
     "name": "plain flour",
-    "quantity": 250,
+    "quantity": null,
+    "unit": "",
+    "note": "for dusting the cake pans"
+   },
+   {
+    "name": "butter",
+    "quantity": 400,
     "unit": "g",
-    "note": ""
+    "note": "unsalted, melted over low heat"
+   },
+   {
+    "name": "self-raising flour",
+    "quantity": 500,
+    "unit": "g",
+    "note": "sifted"
+   },
+   {
+    "name": "caster sugar",
+    "quantity": 200,
+    "unit": "g",
+    "note": "superfine, sifted"
+   },
+   {
+    "name": "sugar",
+    "quantity": 180,
+    "unit": "g",
+    "note": "sifted"
    },
    {
     "name": "salt",
     "quantity": 1,
-    "unit": "",
-    "note": ""
-   },
-   {
-    "name": "dulce de leche",
-    "quantity": 200,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "dark chocolate",
-    "quantity": 75,
-    "unit": "g",
+    "unit": "pinch",
     "note": ""
    },
    {
     "name": "eggs",
-    "quantity": 1,
+    "quantity": 2,
     "unit": "",
-    "note": "beaten"
+    "note": "one separated; the page also brushes egg white on top but does not say how much is held back"
    }
   ],
   "steps": [
    {
-    "text": "Preheat the oven to 180°C/350°F (conventional oven).",
+    "text": "Heat the oven to 175°C (160°C fan). Butter two cake pans fully and dust them with flour.",
     "minutes": null
    },
    {
-    "text": "Place the softened butter and sugar in the bowl of a stand mixer and whisk until creamy.",
+    "text": "Separate one egg: yolk in one bowl, white in another, and crack the second egg into the bowl with the yolk.",
     "minutes": null
    },
    {
-    "text": "Add the flour and salt and knead by hand until you have a smooth dough. Divide into two pieces.",
+    "text": "Melt the butter over low heat. Sift the flour, caster sugar, sugar and a pinch of salt into a large bowl, add the melted butter and mix by hand until combined.",
     "minutes": null
    },
    {
-    "text": "Line the base of a square or round cake tin with baking parchment (not a springform tin) and place the first half of the pastry on top. Flatten with your fingers and a spoon.",
+    "text": "Mix in one egg yolk with a little white, then the remaining white and second yolk, by hand until fully combined.",
     "minutes": null
    },
    {
-    "text": "Using a teaspoon, sprinkle dollops of dulce de leche over the base. Sprinkle with the chopped chocolate and cover with the second half of the pastry.",
+    "text": "Split the dough between the two pans and press it in evenly. Beat egg white until smooth (the page does not say how much is held back) and brush it over both cakes.",
     "minutes": null
    },
    {
-    "text": "This is a bit trickier, but if you don’t get it right, don’t worry, it’ll be fine once it’s baked! Brush the pastry with the beaten egg.",
-    "minutes": null
+    "text": "Bake 15 minutes, then press the dough down with the back of a spoon. Bake 10 minutes more and press down again.",
+    "minutes": 25
    },
    {
-    "text": "Bake in the oven for about 30 minutes or until golden brown. It will be wobbly. That's because butter cake only firms up when it cools.",
-    "minutes": 30
+    "text": "Bake 5 minutes more and press down once more. Take out when golden brown, otherwise leave in a little longer.",
+    "minutes": 5
    },
    {
-    "text": "Cut into small pieces when it has cooled completely!",
+    "text": "Let the cakes cool fully, then cut small wedges or squares to serve with coffee.",
     "minutes": null
    }
   ]
@@ -21771,99 +21693,121 @@
  {
   "source": "themealdb:52914",
   "title": "Boulangère Potatoes",
-  "description": "A French side of potato and thyme — serves 4, about an hour start to finish.",
+  "description": "Sliced potatoes restacked over slow-cooked buttery Lyonnaise onions, covered with chicken stock and baked until tender, with the stock reduced around them.",
   "servings": 4,
   "cuisine": "French",
   "category": "Side",
   "image": "https://www.themealdb.com/images/media/meals/qywups1511796761.jpg",
-  "prep_minutes": 10,
-  "cook_minutes": 65,
+  "prep_minutes": 30,
+  "cook_minutes": 100,
   "ingredients": [
    {
     "name": "onion",
-    "quantity": 2,
+    "quantity": 6,
     "unit": "",
-    "note": "finely chopped"
+    "note": "Italian white, thinly sliced, for the Lyonnaise onions"
    },
    {
-    "name": "thyme",
-    "quantity": 1,
-    "unit": "sprig",
-    "note": "fresh"
+    "name": "butter",
+    "quantity": 125,
+    "unit": "g",
+    "note": "for the Lyonnaise onions; the list says 1 pack of butter overall but names only 125 g, and the potatoes are also dotted with diced butter"
    },
    {
-    "name": "olive oil",
-    "quantity": 2,
-    "unit": "tbsp",
-    "note": ""
+    "name": "salt",
+    "quantity": 5,
+    "unit": "g",
+    "note": "Maldon, for the onions"
+   },
+   {
+    "name": "sherry vinegar",
+    "quantity": 25,
+    "unit": "g",
+    "note": "listed with the Lyonnaise onions; the written method does not say when it goes in"
    },
    {
     "name": "potato",
-    "quantity": 1500,
+    "quantity": 1000,
     "unit": "g",
-    "note": ""
+    "note": "Charlotte, sliced about 5 mm thick"
    },
    {
-    "name": "vegetable stock",
-    "quantity": 425,
-    "unit": "g",
-    "note": ""
+    "name": "salt",
+    "quantity": null,
+    "unit": "",
+    "note": "Maldon sea salt, to season the potatoes only, to taste"
+   },
+   {
+    "name": "chicken stock",
+    "quantity": 1,
+    "unit": "l",
+    "note": "brown chicken stock, enough to cover; top up if needed"
+   },
+   {
+    "name": "bay leaf",
+    "quantity": 3,
+    "unit": "",
+    "note": "listed in the ingredients; the written method does not say where they go"
    }
   ],
   "steps": [
    {
-    "text": "Heat oven to 200C/fan 180C/gas 6. Fry the onions and thyme sprigs in the oil until softened and lightly coloured (about 5 mins).",
-    "minutes": 5
-   },
-   {
-    "text": "Spread a layer of potatoes over the base of a 1.5-litre oiled gratin dish. Sprinkle over a few onions (see picture, above) and continue layering, finishing with a layer of potatoes.",
+    "text": "Slice the onions thinly. Sweat them in a wide pan over medium heat with the Maldon salt until soft.",
     "minutes": null
    },
    {
-    "text": "Pour over the stock and bake for 50-60 mins until the potatoes are cooked and the top is golden and crisp.",
+    "text": "Add the 125 g butter and keep cooking for about an hour, until the onions are very soft and golden brown. Take off the heat and set aside. The source lists 25 g sherry vinegar with the onions but does not say when it goes in.",
     "minutes": 60
+   },
+   {
+    "text": "Slice the potatoes about 5 mm thick, then restack each potato in its original order, discarding the end pieces.",
+    "minutes": null
+   },
+   {
+    "text": "Spread the Lyonnaise onions evenly over the base of a cast iron pan, and arrange the potato stacks around the edge on top of the onions.",
+    "minutes": null
+   },
+   {
+    "text": "Season only the potatoes generously with Maldon sea salt and dot them with diced butter (the source gives no amount). Pour in enough chicken stock to cover; the source lists 3 bay leaves but does not say where they go.",
+    "minutes": null
+   },
+   {
+    "text": "Bake at 180°C fan for about 40 minutes, checking every 10 minutes and lowering the heat if the potatoes colour too quickly. Top up with more stock if needed.",
+    "minutes": 40
+   },
+   {
+    "text": "Cook until the potatoes are tender and the stock has reduced around them, then serve.",
+    "minutes": null
    }
   ]
  },
  {
   "source": "themealdb:53036",
   "title": "Boxty Breakfast",
-  "description": "An Irish dish of bacon, potato and spring onion — serves 4, about an hour start to finish.",
+  "description": "Irish potato pancakes made from mashed and raw grated potato, flour and buttermilk, fried in butter and served with bacon and fried eggs for a full Irish-style breakfast.",
   "servings": 4,
   "cuisine": "Irish",
-  "category": "Pork",
+  "category": "Breakfast",
   "image": "https://www.themealdb.com/images/media/meals/naqyel1608588563.jpg",
-  "prep_minutes": 15,
-  "cook_minutes": 50,
+  "prep_minutes": 10,
+  "cook_minutes": 20,
   "ingredients": [
    {
     "name": "potato",
-    "quantity": 4,
-    "unit": "",
-    "note": "large"
+    "quantity": 250,
+    "unit": "g",
+    "note": "mashed"
    },
    {
-    "name": "spring onion",
-    "quantity": 1,
-    "unit": "bunch",
-    "note": ""
+    "name": "potato",
+    "quantity": 250,
+    "unit": "g",
+    "note": "peeled, raw, grated (rooster)"
    },
    {
     "name": "plain flour",
-    "quantity": 100,
+    "quantity": 250,
     "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "egg whites",
-    "quantity": 1,
-    "unit": "",
-    "note": ""
-   },
-   {
-    "name": "milk",
-    "quantity": 150,
-    "unit": "ml",
     "note": ""
    },
    {
@@ -21873,67 +21817,77 @@
     "note": ""
    },
    {
-    "name": "butter",
-    "quantity": 3,
-    "unit": "tbsp",
-    "note": ""
+    "name": "buttermilk",
+    "quantity": 300,
+    "unit": "ml",
+    "note": "added little by little (the method says milk)"
    },
    {
-    "name": "vegetable oil",
-    "quantity": 2,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "cherry tomatoes",
+    "name": "spring onion",
     "quantity": 6,
     "unit": "",
-    "note": ""
+    "note": "finely sliced, optional"
+   },
+   {
+    "name": "cheddar cheese",
+    "quantity": 100,
+    "unit": "g",
+    "note": "Irish, grated, optional; sprinkled on after turning"
+   },
+   {
+    "name": "salt",
+    "quantity": null,
+    "unit": "",
+    "note": "sea salt, to taste"
+   },
+   {
+    "name": "black pepper",
+    "quantity": null,
+    "unit": "",
+    "note": "ground, to taste"
+   },
+   {
+    "name": "butter",
+    "quantity": null,
+    "unit": "",
+    "note": "to fry"
    },
    {
     "name": "bacon",
-    "quantity": 12,
+    "quantity": null,
     "unit": "",
-    "note": ""
+    "note": "cooked, to serve"
    },
    {
     "name": "eggs",
-    "quantity": 6,
+    "quantity": null,
     "unit": "",
-    "note": ""
+    "note": "fried, to serve"
    }
   ],
   "steps": [
    {
-    "text": "Before you start, put your oven on its lowest setting, ready to keep things warm. Peel the potatoes, grate 2 of them, then set aside. Cut the other 2 into large chunks, then boil for 10-15 mins or until tender.",
-    "minutes": 15
-   },
-   {
-    "text": "Meanwhile, squeeze as much of the liquid from the grated potatoes as you can using a clean tea towel. Mash the boiled potatoes, then mix with the grated potato, spring onions and flour.",
+    "text": "Put the mashed potato, grated raw potato, flour, bicarbonate of soda and spring onions in a large bowl and mix until evenly combined.",
     "minutes": null
    },
    {
-    "text": "Whisk the egg white in a large bowl until it holds soft peaks. Fold in the buttermilk, then add the bicarbonate of soda. Fold into the potato mix.",
+    "text": "Add the buttermilk a little at a time until the mixture is a wet, dropping consistency. Season with sea salt and black pepper.",
     "minutes": null
    },
    {
-    "text": "Heat a large non-stick frying pan over a medium heat, then add 1 tbsp butter and some of the oil. Drop 3-4 spoonfuls of the potato mixture into the pan, then gently cook for 3-5 mins on each side until golden and crusty.",
-    "minutes": 5
+    "text": "Heat a non-stick frying pan over medium-high heat with a little butter. When it foams, spoon in heaped tablespoons of the mixture and fry 3 to 4 minutes on each side until golden brown.",
+    "minutes": 8
    },
    {
-    "text": "Keep warm on a plate in the oven while you cook the next batch, adding more butter and oil to the pan before you do so. You will get 16 crumpet-size boxty from the mix.",
+    "text": "After turning, add a little grated cheese to each pancake and let it melt, if you like.",
     "minutes": null
    },
    {
-    "text": "Can be made the day ahead, drained on kitchen paper, then reheated in a low oven for 20 mins.",
-    "minutes": 20
+    "text": "Lift onto a plate lined with kitchen paper and repeat with the rest, keeping the cooked ones warm in a low oven.",
+    "minutes": null
    },
    {
-    "text": "Heat the grill to medium and put the tomatoes in a heavy-based pan. Add a good knob of butter and a little oil, then fry for about 5 mins until softened. Grill the bacon, then pile onto a plate and keep warm.",
-    "minutes": 5
-   },
-   {
-    "text": "Stack up the boxty, bacon and egg, and serve the tomatoes on the side.",
+    "text": "Serve with cooked bacon and fried eggs for a full Irish-style breakfast.",
     "minutes": null
    }
   ]
@@ -24681,68 +24635,88 @@
  },
  {
   "source": "themealdb:52976",
-  "title": "Cashew Ghoriba Biscuits",
-  "description": "A Tunisian sweet made with cashews, egg yolks and orange blossom water — makes 12, on the table in about 45 minutes.",
+  "title": "Moroccan almond ghriyba",
+  "description": "Moroccan almond cookies of ground blanched almonds, icing sugar and egg yolks with vanilla and orange blossom water, rolled in icing sugar and baked in the oven's leftover heat. Makes about 38 cookies.",
   "servings": 12,
-  "cuisine": "Tunisian",
+  "cuisine": "Moroccan",
   "category": "Dessert",
-  "image": "https://www.themealdb.com/images/media/meals/t3r3ka1560461972.jpg",
-  "prep_minutes": 10,
-  "cook_minutes": 20,
+  "image": "https://i.ytimg.com/vi/IqXEZUk4hWI/hqdefault.jpg",
+  "prep_minutes": 30,
+  "cook_minutes": 15,
   "ingredients": [
    {
-    "name": "cashews",
-    "quantity": 250,
+    "name": "almonds",
+    "quantity": 500,
     "unit": "g",
-    "note": ""
+    "note": "raw, blanched and skinned"
    },
    {
     "name": "icing sugar",
-    "quantity": 100,
+    "quantity": 250,
     "unit": "g",
-    "note": ""
+    "note": "save some for rolling the cookies"
    },
    {
     "name": "egg yolks",
-    "quantity": 2,
+    "quantity": 6,
     "unit": "",
+    "note": "added one at a time"
+   },
+   {
+    "name": "butter",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": "melted"
+   },
+   {
+    "name": "salt",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": ""
+   },
+   {
+    "name": "vanilla extract",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": ""
+   },
+   {
+    "name": "baking powder",
+    "quantity": 2,
+    "unit": "tsp",
     "note": ""
    },
    {
     "name": "orange blossom water",
     "quantity": 2,
     "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "icing sugar",
-    "quantity": null,
-    "unit": "",
-    "note": "to glaze"
-   },
-   {
-    "name": "almonds",
-    "quantity": 100,
-    "unit": "g",
-    "note": ""
+    "note": "the page's intro says it is used to shape the cookies; the directions do not say when it goes in"
    }
   ],
   "steps": [
    {
-    "text": "Preheat the oven at 180 C / Gas 4. Line a baking tray with greaseproof paper.",
+    "text": "Cover the almonds with boiling water and soak 10 to 15 minutes. Drain and rub off the skins, then dry the almonds completely on a towel for a few hours or overnight.",
+    "minutes": 15
+   },
+   {
+    "text": "Turn the oven to broil (top heat) to preheat.",
     "minutes": null
    },
    {
-    "text": "In a bowl, mix the cashews and icing sugar. Add the egg yolks and orange blossom water and mix to a smooth homogeneous paste.",
+    "text": "Process the almonds with the icing sugar (keeping some back for rolling) to a thick paste. Add the salt, vanilla and melted butter.",
     "minutes": null
    },
    {
-    "text": "Take lumps of the cashew paste and shape into small balls. Roll the balls in icing sugar and transfer to the baking tray. Push an almond in the centre of each ghribia.",
+    "text": "Mix in the egg yolks one at a time by hand, then the baking powder. The directions do not say when the orange blossom water goes in; the page intro says it is used to shape the cookies.",
     "minutes": null
    },
    {
-    "text": "Bake until the biscuits are lightly golden, about 20 minutes. Keep an eye on them, they burn quickly.",
-    "minutes": 20
+    "text": "Roll the dough into fairly big balls, roll each in icing sugar and place on a baking sheet lined with baking paper.",
+    "minutes": null
+   },
+   {
+    "text": "Put the tray on the bottom rack, turn the oven off, and bake the cookies in the leftover heat for about 15 minutes, checking from 12. They should puff up and stay white, not brown.",
+    "minutes": 15
    }
   ]
  },
@@ -25370,107 +25344,97 @@
  {
   "source": "themealdb:53310",
   "title": "Challah",
-  "description": "A Polish side of bread flour and poppy seeds — makes 10, worth the couple of hours it takes.",
-  "servings": 10,
-  "cuisine": "Polish",
+  "description": "Two six-strand braided challah loaves made from an egg-and-oil dough, proofed twice, brushed twice with egg wash and baked until golden.",
+  "servings": 12,
+  "cuisine": "Jewish",
   "category": "Side",
   "image": "https://www.themealdb.com/images/media/meals/fm01ky1764366365.jpg",
-  "prep_minutes": 10,
-  "cook_minutes": 120,
+  "prep_minutes": 25,
+  "cook_minutes": 30,
   "ingredients": [
    {
-    "name": "bread flour",
-    "quantity": 500,
-    "unit": "g",
+    "name": "water",
+    "quantity": 210,
+    "unit": "ml",
+    "note": "warm"
+   },
+   {
+    "name": "salt",
+    "quantity": 1.5,
+    "unit": "tsp",
     "note": ""
    },
    {
     "name": "sugar",
-    "quantity": 70,
+    "quantity": 50,
     "unit": "g",
-    "note": ""
+    "note": "or honey (about 1/6 cup honey)"
    },
    {
-    "name": "yeast",
-    "quantity": 10,
-    "unit": "g",
+    "name": "vegetable oil",
+    "quantity": 3,
+    "unit": "tbsp",
     "note": ""
    },
    {
     "name": "eggs",
     "quantity": 2,
     "unit": "",
-    "note": "beaten"
-   },
-   {
-    "name": "vegetable oil",
-    "quantity": 70,
-    "unit": "ml",
     "note": ""
    },
    {
-    "name": "poppy seeds",
-    "quantity": 1,
-    "unit": "tbsp",
+    "name": "yeast",
+    "quantity": 2,
+    "unit": "tsp",
     "note": ""
+   },
+   {
+    "name": "plain flour",
+    "quantity": 550,
+    "unit": "g",
+    "note": ""
+   },
+   {
+    "name": "eggs",
+    "quantity": null,
+    "unit": "",
+    "note": "beaten, for the egg wash (applied twice), optional"
+   },
+   {
+    "name": "sesame seed",
+    "quantity": null,
+    "unit": "",
+    "note": "to garnish, optional"
    }
   ],
   "steps": [
    {
-    "text": "Combine the yeast, a pinch of the sugar and a couple tablespoons of lukewarm water in a small bowl. Stir to dissolve the yeast, then leave for 10 mins until foamy.",
+    "text": "Combine the warm water, salt, sugar, oil, eggs and yeast in a bowl. Add the flour and mix to a shaggy dough.",
+    "minutes": null
+   },
+   {
+    "text": "Knead on a clean surface for 9 to 10 minutes until soft and smooth. Put it in a bowl and cover.",
     "minutes": 10
    },
    {
-    "text": "Meanwhile, combine the flour, the remaining sugar and 2 tsp fine salt in a large bowl. Make a well in the centre, then add half the beaten egg, the yeast mixture and the oil.",
+    "text": "Leave in a warm place for 45 to 60 minutes until risen (first proof).",
+    "minutes": 45
+   },
+   {
+    "text": "Punch the dough down and divide into 2 equal parts, then each into 6 pieces. Roll into balls and rest covered for 5 to 8 minutes.",
+    "minutes": 5
+   },
+   {
+    "text": "Roll each ball into a strand about 20 cm, then stretch and roll to about 30 cm. Braid six strands into each loaf, as shown in the video.",
     "minutes": null
    },
    {
-    "text": "Pour in 200ml lukewarm water (it should feel slightly warm to the touch) and stir with a spoon, then mix using one hand, keeping the other clean while you bring the dough together.",
-    "minutes": null
+    "text": "Brush with egg wash, cover and proof for 90 to 120 minutes. Brush again with egg wash and sprinkle with sesame seeds.",
+    "minutes": 90
    },
    {
-    "text": "If there are a lot of very dry bits, gradually add a little water to just bring it together – you don't want it to get too wet and sticky. The dough should be moist, but not soggy.",
-    "minutes": null
-   },
-   {
-    "text": "Once the dough has come together, turn it out onto a lightly floured surface. Knead using both hands for 10 mins until smooth and a bit springy. If it gets very sticky, add a very small amount of flour – as little as possible.",
-    "minutes": 10
-   },
-   {
-    "text": "A dough scraper is useful if the dough is sticking to the work surface. Stretch the sides of the dough down and pull together to form a ball. Lightly oil a bowl, then lightly roll the dough ball around the bowl so it's coated in the oil.",
-    "minutes": null
-   },
-   {
-    "text": "Cover with a clean tea towel and leave in a warm place for 1 hr, or until dough has doubled in size.",
-    "minutes": 60
-   },
-   {
-    "text": "Line a baking sheet with baking parchment. Turn the dough out onto a clean work surface and divide into three equal pieces, weighing for accuracy, if you like.",
-    "minutes": null
-   },
-   {
-    "text": "Roll each piece into a long sausage shape about 25cm long, tapering them slightly at both ends. Lay the pieces out in front of you, parallel to one another with a couple centimetres between each.",
-    "minutes": null
-   },
-   {
-    "text": "Bring the sausages together at the top end, then plait them down the length, tucking in the ends when you reach the bottom. Carefully transfer the loaf to the prepared baking sheet and loosely cover with a clean tea towel.",
-    "minutes": null
-   },
-   {
-    "text": "Leave to rise until puffy and billowy, about 40 mins.",
-    "minutes": 40
-   },
-   {
-    "text": "Meanwhile, heat the oven to 200C/180C fan/gas 6. Gently brush the rest of the beaten egg all over the challah, getting it into all the crevices, and sprinkle with the poppy or sesame seeds, if using.",
-    "minutes": null
-   },
-   {
-    "text": "Bake on a middle shelf of the oven for 25-30 mins, until the loaf is golden brown underneath and sounds hollow when tapped. Check after about 15 mins – if the top of the loaf has started to get too dark, cover it with foil.",
-    "minutes": 30
-   },
-   {
-    "text": "Leave to cool on a wire rack, then serve.",
-    "minutes": null
+    "text": "Bake at 180°C for 28 to 30 minutes until golden brown.",
+    "minutes": 28
    }
   ]
  },
@@ -28523,190 +28487,162 @@
  {
   "source": "themealdb:53365",
   "title": "Chinese Orange Chicken",
-  "description": "A Chinese dish of chicken thigh, orange and orange juice — serves 4, about an hour start to finish.",
+  "description": "Chicken pieces coated in cornflour and shallow-fried until crisp, tossed in a glossy orange sauce with ginger, garlic and zest, and served over rice.",
   "servings": 4,
   "cuisine": "Chinese",
   "category": "Chicken",
   "image": "https://www.themealdb.com/images/media/meals/s73ytv1765567838.jpg",
-  "prep_minutes": 30,
-  "cook_minutes": 30,
+  "prep_minutes": 20,
+  "cook_minutes": 15,
   "ingredients": [
    {
-    "name": "orange",
-    "quantity": 1,
-    "unit": "",
-    "note": "zested"
-   },
-   {
-    "name": "orange juice",
-    "quantity": 0.25,
-    "unit": "cup",
-    "note": ""
+    "name": "chicken thigh",
+    "quantity": 600,
+    "unit": "g",
+    "note": "boneless skinless thighs or breast, cut into 2.5 cm pieces"
    },
    {
     "name": "soy sauce",
-    "quantity": 0.25,
-    "unit": "cup",
-    "note": ""
-   },
-   {
-    "name": "water",
-    "quantity": 0.25,
-    "unit": "cup",
-    "note": ""
-   },
-   {
-    "name": "rice vinegar",
-    "quantity": 0.333,
-    "unit": "cup",
-    "note": ""
-   },
-   {
-    "name": "cornflour",
-    "quantity": 1,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "sesame oil",
-    "quantity": 1,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "sugar",
-    "quantity": 0.5,
-    "unit": "cup",
-    "note": ""
-   },
-   {
-    "name": "chicken thigh",
-    "quantity": 650,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "eggs",
     "quantity": 2,
-    "unit": "",
-    "note": "large"
+    "unit": "tbsp",
+    "note": "light, for the chicken"
    },
    {
-    "name": "salt",
-    "quantity": 1,
+    "name": "ginger",
+    "quantity": 0.5,
     "unit": "tsp",
-    "note": ""
+    "note": "finely grated, optional, for the chicken"
    },
    {
-    "name": "black pepper",
-    "quantity": 0.25,
+    "name": "white pepper",
+    "quantity": 0.125,
     "unit": "tsp",
-    "note": ""
+    "note": "black pepper can substitute"
    },
    {
     "name": "cornflour",
-    "quantity": 0.5,
-    "unit": "cup",
-    "note": ""
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": "mixed through the chicken"
    },
    {
-    "name": "plain flour",
-    "quantity": 0.5,
+    "name": "cornflour",
+    "quantity": 0.75,
     "unit": "cup",
-    "note": ""
+    "note": "for the crispy coating"
    },
    {
     "name": "vegetable oil",
-    "quantity": null,
-    "unit": "",
-    "note": "for deep-frying, about 2 cup"
+    "quantity": 0.75,
+    "unit": "cup",
+    "note": "3/4 to 1 cup, for frying (shallow, about 0.5 cm deep); most is poured off, only 2 tbsp stays in the pan"
+   },
+   {
+    "name": "orange zest",
+    "quantity": 2,
+    "unit": "tsp",
+    "note": "from 1 orange, stirred in at the end"
+   },
+   {
+    "name": "orange juice",
+    "quantity": 1,
+    "unit": "cup",
+    "note": "squeezed or fresh bottled, for the sauce"
+   },
+   {
+    "name": "cornflour",
+    "quantity": 1.5,
+    "unit": "tbsp",
+    "note": "for the sauce"
+   },
+   {
+    "name": "shaoxing wine",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": "Chinese cooking wine, for the sauce"
+   },
+   {
+    "name": "rice vinegar",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": "white vinegar can substitute, for the sauce"
+   },
+   {
+    "name": "sugar",
+    "quantity": 90,
+    "unit": "g",
+    "note": "white; written as 1/3 cup + 2 tbsp (about 90 g), for the sauce"
+   },
+   {
+    "name": "soy sauce",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": "light, for the sauce"
+   },
+   {
+    "name": "salt",
+    "quantity": 0.25,
+    "unit": "tsp",
+    "note": "cooking salt, for the sauce"
+   },
+   {
+    "name": "ginger",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "finely grated, for the sauce"
    },
    {
     "name": "garlic",
     "quantity": 2,
     "unit": "clove",
-    "note": "chopped"
-   },
-   {
-    "name": "shallot",
-    "quantity": 1,
-    "unit": "",
-    "note": "chopped"
-   },
-   {
-    "name": "spring onion",
-    "quantity": null,
-    "unit": "",
-    "note": "sliced"
-   },
-   {
-    "name": "sesame seed",
-    "quantity": null,
-    "unit": "",
-    "note": "to garnish"
+    "note": "finely minced"
    },
    {
     "name": "rice",
     "quantity": null,
     "unit": "",
-    "note": "to serve"
+    "note": "white rice, to serve"
+   },
+   {
+    "name": "spring onion",
+    "quantity": 1,
+    "unit": "",
+    "note": "finely sliced, to garnish, optional"
+   },
+   {
+    "name": "sesame seed",
+    "quantity": null,
+    "unit": "",
+    "note": "white, to garnish, optional"
    }
   ],
   "steps": [
    {
-    "text": "Whisk together sauce ingredients in a medium bowl. Set aside.",
+    "text": "For the sauce, whisk the cornflour and soy sauce until lump free, then whisk in the orange juice, Chinese cooking wine, rice vinegar, sugar, salt and ginger. Leave out the garlic and zest for now.",
     "minutes": null
    },
    {
-    "text": "Cut chicken into about 1-inch cubes. Whisk eggs with salt and black pepper in a bowl and add chicken. Stir together.",
+    "text": "Mix the chicken with the soy sauce, ginger, white pepper and 2 tbsp cornflour until sticky. Add the 3/4 cup cornflour and toss to coat each piece.",
     "minutes": null
    },
    {
-    "text": "In a separate bowl, whisk together flour and cornstarch. Remove chicken from eggs with a slotted spoon or tongs, letting excess egg drain off, then transfer to cornstarch mixture and coat well.",
+    "text": "Pick up a few pieces at a time, press them in your fist to bind the coating, and put them in a colander. Shake the colander so the loose cornflour falls through.",
     "minutes": null
    },
    {
-    "text": "Add oil to a large 10- to 12-inch skillet. Heat over medium-high heat until it reaches 180°C (350°F) If you don’t have a thermometer, you can also test the temperature by sprinkling in some flour.",
+    "text": "Heat the oil on high in a large non-stick pan until the chicken sizzles at once. Cook half the chicken, uncrowded, about 1 1/2 minutes on each side until deep golden and crisp, then drain on paper towel and repeat with the rest.",
+    "minutes": 6
+   },
+   {
+    "text": "Pour out all but 2 tbsp oil and scrape out loose bits. Return to medium-high heat and cook the garlic for 20 to 30 seconds until light golden.",
     "minutes": null
    },
    {
-    "text": "If the oil is hot enough, it should fizzle immediately.",
-    "minutes": null
+    "text": "Whisk the sauce again and pour it in. Simmer 1 to 2 minutes until thick and glossy like honey, then stir in the orange zest.",
+    "minutes": 2
    },
    {
-    "text": "Once oil is hot, fry the chicken in two batches. The oil might not completely cover the chicken—that’s okay. Cook for 3 to 4 minutes. Flip the chicken pieces and cook until the chicken is cooked through, about 3 to 4 more minutes.",
-    "minutes": 4
-   },
-   {
-    "text": "Total cook time is about 6 to 8 minutes.",
-    "minutes": 8
-   },
-   {
-    "text": "Remove fried chicken cubes and transfer to a plate lined with paper towels, so the chicken can drain. Repeat until all the chicken is cooked.",
-    "minutes": null
-   },
-   {
-    "text": "Once chicken is done, pour out hot oil and wipe pan clean. Add a fresh tablespoon of oil along with chopped garlic and shallot. Cook for a minute and then add the sauce. Simmer the sauce until it starts to thicken.",
-    "minutes": null
-   },
-   {
-    "text": "Once the sauce is lightly bubbling, add fried chicken and toss together to coat. The sauce should continue to thicken and stick to the chicken. Let simmer for a minute or two more.",
-    "minutes": null
-   },
-   {
-    "text": "Serve orange chicken over cooked white rice, garnished with sesame seeds and fresh scallions.",
-    "minutes": null
-   },
-   {
-    "text": "Did you love this recipe? Let us know with a rating and review!",
-    "minutes": null
-   },
-   {
-    "text": "LEFTOVERS! The orange chicken keeps well in the fridge for 5 days. Reheat in a skillet with a splash of water over low heat.",
-    "minutes": null
-   },
-   {
-    "text": "Freeze the orange chicken for up to 3 months, but be sure to thaw it before reheating so the chicken doesn’t clump together.",
+    "text": "Return the chicken to the pan and toss quickly to coat. Serve over rice with sliced spring onion and sesame seeds.",
     "minutes": null
    }
   ]
@@ -30160,69 +30096,101 @@
  },
  {
   "source": "themealdb:53168",
-  "title": "Chorizo & chickpea soup",
-  "description": "A Spanish soup of chorizo, chickpeas and canned tomatoes — serves 4, ready in under half an hour.",
-  "servings": 4,
+  "title": "Chorizo chickpea stew",
+  "description": "A quick Spanish-style stew of golden chorizo, garlic, thyme and smoked paprika simmered with crushed tomato, chickpeas and chicken stock until thick, served with crusty bread.",
+  "servings": 2,
   "cuisine": "Spanish",
   "category": "Pork",
   "image": "https://www.themealdb.com/images/media/meals/kggfo91763288633.jpg",
-  "prep_minutes": 10,
-  "cook_minutes": 10,
+  "prep_minutes": 7,
+  "cook_minutes": 20,
   "ingredients": [
    {
-    "name": "canned tomatoes",
-    "quantity": 400,
-    "unit": "g",
+    "name": "olive oil",
+    "quantity": 1.5,
+    "unit": "tbsp",
     "note": ""
    },
    {
     "name": "chorizo",
-    "quantity": 110,
+    "quantity": 250,
     "unit": "g",
-    "note": ""
+    "note": "2 pieces, cut into 8 mm slices"
    },
    {
-    "name": "cabbage",
-    "quantity": 140,
-    "unit": "g",
-    "note": ""
+    "name": "garlic",
+    "quantity": 2,
+    "unit": "clove",
+    "note": "minced"
    },
    {
-    "name": "red chilli flakes",
-    "quantity": null,
+    "name": "thyme",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": "dried"
+   },
+   {
+    "name": "smoked paprika",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": "normal paprika can substitute"
+   },
+   {
+    "name": "bay leaf",
+    "quantity": 1,
     "unit": "",
-    "note": "to sprinkle"
+    "note": "fresh if possible"
+   },
+   {
+    "name": "canned tomatoes",
+    "quantity": 400,
+    "unit": "g",
+    "note": "crushed, 1 can"
    },
    {
     "name": "chickpeas",
     "quantity": 400,
     "unit": "g",
-    "note": "can"
+    "note": "1 can, drained"
    },
    {
     "name": "chicken stock",
     "quantity": 1,
-    "unit": "",
+    "unit": "cup",
+    "note": "low sodium"
+   },
+   {
+    "name": "salt",
+    "quantity": 0.25,
+    "unit": "tsp",
     "note": ""
    },
    {
-    "name": "bread",
-    "quantity": null,
-    "unit": "",
-    "note": "to serve"
+    "name": "black pepper",
+    "quantity": 0.25,
+    "unit": "tsp",
+    "note": ""
    }
   ],
   "steps": [
    {
-    "text": "Put a medium pan on the heat and tip in the tomatoes, followed by a can of water. While the tomatoes are heating, quickly chop the chorizo into chunky pieces (removing any skin) and shred the cabbage.",
+    "text": "Heat the olive oil in a large saucepan over medium-high heat. Add the chorizo and cook about 3 minutes until golden.",
+    "minutes": 3
+   },
+   {
+    "text": "Add the garlic, thyme, smoked paprika and bay leaf and stir for 1 minute.",
+    "minutes": 1
+   },
+   {
+    "text": "Add the crushed tomato, chickpeas, stock, salt and pepper. Stir and bring to a simmer, then turn the heat down to medium-low so it simmers very gently.",
     "minutes": null
    },
    {
-    "text": "Pile the chorizo and cabbage into the pan with the chilli flakes and chickpeas, then crumble in the stock cube. Stir well, cover and leave to bubble over a high heat for 6 mins or until the cabbage is just tender.",
-    "minutes": 6
+    "text": "Cook uncovered for 15 minutes, stirring regularly so the base doesn't catch, until the sauce has reduced and thickened.",
+    "minutes": 15
    },
    {
-    "text": "Ladle into bowls and eat with crusty or garlic bread.",
+    "text": "Discard the bay leaf and serve, ideally with crusty bread.",
     "minutes": null
    }
   ]
