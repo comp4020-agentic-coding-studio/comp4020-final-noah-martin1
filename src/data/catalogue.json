@@ -5351,109 +5351,119 @@
  },
  {
   "source": "themealdb:52823",
-  "title": "Salmon Prawn Risotto",
-  "description": "Creamy risotto studded with salmon and prawns.",
-  "servings": 4,
+  "title": "Salmon and prawn risotto",
+  "description": "Risotto made with poached salmon and prawns, finished with butter, parsley and a squeeze of lemon, with optional strips of smoked salmon on top.",
+  "servings": 3,
   "cuisine": "Italian",
   "category": "Seafood",
-  "image": "https://www.themealdb.com/images/media/meals/xxrxux1503070723.jpg",
-  "prep_minutes": 15,
-  "cook_minutes": 10,
+  "image": "https://i.ytimg.com/vi/KXD-U34Kv3c/hqdefault.jpg",
+  "prep_minutes": 10,
+  "cook_minutes": 40,
   "ingredients": [
+   {
+    "name": "salmon fillet",
+    "quantity": 350,
+    "unit": "g",
+    "note": "poached"
+   },
    {
     "name": "butter",
     "quantity": 50,
     "unit": "g",
-    "note": ""
+    "note": "half to sauté, half stirred in at the end"
    },
    {
-    "name": "onion",
+    "name": "shallot",
     "quantity": 1,
     "unit": "",
-    "note": "finely chopped"
+    "note": "medium, chopped (or half a mild onion)"
    },
    {
     "name": "rice",
-    "quantity": 150,
+    "quantity": 400,
     "unit": "g",
-    "note": ""
+    "note": "arborio"
    },
    {
     "name": "white wine",
-    "quantity": 125,
+    "quantity": 150,
     "unit": "ml",
-    "note": ""
+    "note": "dry"
    },
    {
     "name": "vegetable stock",
-    "quantity": 1000,
-    "unit": "ml",
-    "note": "hot"
-   },
-   {
-    "name": "lemon",
-    "quantity": null,
-    "unit": "",
-    "note": "the juice and zest of one"
+    "quantity": 1,
+    "unit": "l",
+    "note": "about 1 litre, hot; vegetable or fish stock (the method tops the poaching water up to 1.25 l in total with stock)"
    },
    {
     "name": "prawns",
-    "quantity": 240,
-    "unit": "g",
-    "note": "large"
-   },
-   {
-    "name": "salmon fillet",
-    "quantity": 150,
+    "quantity": 75,
     "unit": "g",
     "note": ""
    },
    {
-    "name": "asparagus",
-    "quantity": 100,
-    "unit": "g",
-    "note": "tips blanched briefly in boiling water"
+    "name": "salt",
+    "quantity": null,
+    "unit": "",
+    "note": "to taste"
    },
    {
     "name": "black pepper",
     "quantity": null,
     "unit": "",
-    "note": "ground"
+    "note": "freshly ground, to taste"
    },
    {
-    "name": "parmesan",
-    "quantity": 50,
-    "unit": "g",
-    "note": "shavings"
+    "name": "lemon",
+    "quantity": null,
+    "unit": "",
+    "note": "wedges to squeeze, to serve"
+   },
+   {
+    "name": "parsley",
+    "quantity": null,
+    "unit": "",
+    "note": "chopped, to serve"
+   },
+   {
+    "name": "smoked salmon",
+    "quantity": 2,
+    "unit": "slice",
+    "note": "2–3 slices, cut into thin strips, optional, to serve"
    }
   ],
   "steps": [
    {
-    "text": "Melt the butter in a thick-based pan and gently cook the onion without colour until it is soft.",
+    "text": "Fill a wide pan with about 2 cm of boiling water, add the salmon fillets in one layer and poach for 10 minutes. Cover, take off the heat and set aside.",
+    "minutes": 10
+   },
+   {
+    "text": "Melt 25 g of the butter in a large pan and soften the chopped shallot for about 5 minutes.",
+    "minutes": 5
+   },
+   {
+    "text": "Stir in the rice for a minute or two, then add the white wine and cook until it is absorbed.",
+    "minutes": 2
+   },
+   {
+    "text": "Lift the salmon out of its poaching water, make the water up to 1.25 litres with stock, and keep it warm over a low heat.",
     "minutes": null
    },
    {
-    "text": "Add the rice and stir to coat all the grains in the butter",
+    "text": "Add the stock to the rice a ladleful at a time over a low heat, stirring until each is absorbed, until most of the stock is in and the rice is almost tender.",
     "minutes": null
    },
    {
-    "text": "Add the wine and cook gently stirring until it is absorbed",
+    "text": "Flake in the salmon in large chunks, discarding skin and bones, and add the prawns and the last of the stock. Cook gently, stirring, until the stock is absorbed and the fish is piping hot.",
     "minutes": null
    },
    {
-    "text": "Gradually add the hot stock, stirring until each addition is absorbed. Keep stirring until the rice is tender",
-    "minutes": null
+    "text": "Off the heat, stir in the remaining 25 g butter, cover and rest for 2 minutes. Season to taste.",
+    "minutes": 2
    },
    {
-    "text": "Season with the lemon juice and zest, and pepper to taste. (there will probably be sufficient saltiness from the salmon to not need to add salt) Stir gently to heat through",
-    "minutes": null
-   },
-   {
-    "text": "Serve scattered with the Parmesan and seasonal vegetables.",
-    "minutes": null
-   },
-   {
-    "text": "Grill the salmon and gently place onto the risotto with the prawns and asparagus",
+    "text": "Serve with parsley, a squeeze of lemon and smoked salmon strips if using.",
     "minutes": null
    }
   ]
@@ -8245,37 +8255,109 @@
  },
  {
   "source": "themealdb:52852",
-  "title": "Tuna Nicoise",
-  "description": "A composed salad of tuna, egg, beans, olives and potatoes.",
-  "servings": 2,
+  "title": "Tuna salad niçoise",
+  "description": "A niçoise salad of canned tuna, lettuce, green beans, new potatoes, tomatoes, olives and boiled eggs, dressed with a lemon, Dijon and anchovy vinaigrette.",
+  "servings": 4,
   "cuisine": "French",
   "category": "Seafood",
-  "image": "https://www.themealdb.com/images/media/meals/yypwwq1511304979.jpg",
-  "prep_minutes": 15,
-  "cook_minutes": 35,
+  "image": "https://i.ytimg.com/vi/Y9lG7TJIRDY/hqdefault.jpg",
+  "prep_minutes": 10,
+  "cook_minutes": 15,
   "ingredients": [
    {
-    "name": "potato",
-    "quantity": 450,
-    "unit": "g",
-    "note": ""
+    "name": "garlic",
+    "quantity": 2,
+    "unit": "clove",
+    "note": "medium, finely grated, for the vinaigrette"
+   },
+   {
+    "name": "anchovy paste",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "1–2 tsp, for the vinaigrette"
+   },
+   {
+    "name": "lemon juice",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": "for the vinaigrette"
+   },
+   {
+    "name": "dijon mustard",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "for the vinaigrette"
+   },
+   {
+    "name": "lemon zest",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "for the vinaigrette"
+   },
+   {
+    "name": "salt",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": "kosher, for the vinaigrette"
+   },
+   {
+    "name": "black pepper",
+    "quantity": 0.25,
+    "unit": "tsp",
+    "note": "for the vinaigrette"
    },
    {
     "name": "olive oil",
+    "quantity": 0.33,
+    "unit": "cup",
+    "note": "extra virgin, for the vinaigrette"
+   },
+   {
+    "name": "tuna",
     "quantity": 2,
-    "unit": "tbsp",
-    "note": ""
+    "unit": "can",
+    "note": "high-quality, packed in olive oil, drained"
+   },
+   {
+    "name": "lettuce",
+    "quantity": 1,
+    "unit": "",
+    "note": "head of leaf lettuce, ripped into large pieces"
+   },
+   {
+    "name": "tomato",
+    "quantity": 4,
+    "unit": "",
+    "note": "cut into wedges"
+   },
+   {
+    "name": "black olives",
+    "quantity": 0.5,
+    "unit": "cup",
+    "note": "pitted niçoise"
+   },
+   {
+    "name": "green beans",
+    "quantity": 2,
+    "unit": "cup",
+    "note": "stem ends trimmed"
+   },
+   {
+    "name": "baby potatoes",
+    "quantity": 2,
+    "unit": "cup",
+    "note": "new potatoes"
+   },
+   {
+    "name": "red onion",
+    "quantity": 0.5,
+    "unit": "",
+    "note": "thinly sliced"
    },
    {
     "name": "eggs",
     "quantity": 4,
     "unit": "",
-    "note": ""
-   },
-   {
-    "name": "red wine vinegar",
-    "quantity": 1,
-    "unit": "tbsp",
     "note": ""
    },
    {
@@ -8285,41 +8367,41 @@
     "note": ""
    },
    {
-    "name": "vegetable oil",
-    "quantity": 50,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "red onion",
-    "quantity": 0.5,
+    "name": "black pepper",
+    "quantity": null,
     "unit": "",
-    "note": ""
+    "note": "a sprinkle, to garnish"
    },
    {
-    "name": "spinach",
-    "quantity": 100,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "tuna",
-    "quantity": 400,
-    "unit": "g",
-    "note": ""
+    "name": "sea salt flakes",
+    "quantity": null,
+    "unit": "",
+    "note": "a sprinkle, to garnish"
    }
   ],
   "steps": [
    {
-    "text": "Heat oven to 200C/fan 180C/gas 6. Toss the potatoes with 2 tsp oil and some seasoning. Tip onto a large baking tray, then roast for 20 mins, stirring halfway, until crisp, golden and cooked through.",
-    "minutes": 20
+    "text": "Whisk the garlic, anchovy paste, lemon juice, Dijon, lemon zest, salt and pepper in a bowl. Slowly drizzle in the olive oil while whisking until the dressing is combined.",
+    "minutes": null
    },
    {
-    "text": "Meanwhile, put eggs in a small pan of water, bring to the boil, then simmer for 8-10 mins, depending on how you like them cooked. Plunge into a bowl of cold water to cool for a few mins. Peel away the shells, then cut into halves.",
-    "minutes": 10
+    "text": "Boil the green beans for 1 minute, drain and chill in an ice-water bath. Dry them and set aside.",
+    "minutes": 1
    },
    {
-    "text": "In a large salad bowl, whisk together the remaining oil, red wine vinegar, capers and chopped tomatoes. Season, tip in the onion, spinach, tuna and potatoes, then gently toss together. Top with the eggs, then serve straight away.",
+    "text": "Boil the new potatoes until soft, about 15 minutes. Cool in cold water, pat dry and halve or quarter them.",
+    "minutes": 15
+   },
+   {
+    "text": "Boil the eggs for about 8 minutes, cool in cold water, then peel and cut into quarters.",
+    "minutes": 8
+   },
+   {
+    "text": "Spread the lettuce over a large platter and arrange the tuna, beans, potatoes, tomatoes, olives and red onion in groups on top. Tuck in the eggs.",
+    "minutes": null
+   },
+   {
+    "text": "Scatter the capers, black pepper and sea salt flakes over the top. Drizzle with some of the vinaigrette and serve at once with the rest on the side, plus warm baguette if you like.",
     "minutes": null
    }
   ]
@@ -8649,104 +8731,70 @@
  },
  {
   "source": "themealdb:52872",
-  "title": "Spanish Tortilla",
-  "description": "A thick, golden omelette of slow-cooked potato and onion.",
+  "title": "Spanish tortilla",
+  "description": "A Spanish potato omelette: sliced potatoes fried slowly in olive oil, mixed into beaten eggs and cooked on low heat, flipped once so both sides set.",
   "servings": 4,
   "cuisine": "Spanish",
   "category": "Vegetarian",
   "image": "https://www.themealdb.com/images/media/meals/quuxsx1511476154.jpg",
-  "prep_minutes": 15,
-  "cook_minutes": 60,
+  "prep_minutes": 10,
+  "cook_minutes": 35,
   "ingredients": [
    {
-    "name": "onion",
-    "quantity": 1,
-    "unit": "",
-    "note": "sliced"
-   },
-   {
-    "name": "olive oil",
-    "quantity": 4,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "butter",
-    "quantity": 25,
-    "unit": "g",
-    "note": ""
-   },
-   {
     "name": "potato",
-    "quantity": 400,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "garlic",
-    "quantity": 6,
-    "unit": "clove",
-    "note": ""
+    "quantity": 2,
+    "unit": "",
+    "note": "large Yukon gold, peeled and thinly sliced"
    },
    {
     "name": "eggs",
-    "quantity": 8,
+    "quantity": 6,
     "unit": "",
-    "note": ""
-   },
-   {
-    "name": "parsley",
-    "quantity": 1,
-    "unit": "handful",
-    "note": ""
-   },
-   {
-    "name": "baguette",
-    "quantity": 1,
-    "unit": "",
-    "note": ""
-   },
-   {
-    "name": "vine tomatoes",
-    "quantity": 4,
-    "unit": "",
-    "note": ""
+    "note": "large, beaten with salt and pepper"
    },
    {
     "name": "olive oil",
+    "quantity": 0.33,
+    "unit": "cup",
+    "note": "extra virgin, for frying the potatoes"
+   },
+   {
+    "name": "salt",
     "quantity": null,
     "unit": "",
-    "note": "drizzle"
+    "note": "fine sea salt, to taste"
+   },
+   {
+    "name": "black pepper",
+    "quantity": null,
+    "unit": "",
+    "note": "freshly cracked, to taste"
    }
   ],
   "steps": [
    {
-    "text": "Put a large non-stick frying pan on a low heat. Cook the onion slowly in the oil and butter until soft but not brown – this should take about 15 mins.",
-    "minutes": 15
-   },
-   {
-    "text": "Add the potatoes, cover the pan and cook for a further 15-20 mins, stirring occasionally to make sure they fry evenly.",
-    "minutes": 20
-   },
-   {
-    "text": "When the potatoes are soft and the onion is shiny, crush 2 garlic cloves and stir in, followed by the beaten eggs.",
+    "text": "Peel the potatoes, rinse and dry them, and slice each one thinly. Beat the eggs in a large bowl with sea salt and black pepper.",
     "minutes": null
    },
    {
-    "text": "Put the lid back on the pan and leave the tortilla to cook gently. After 20 mins, the edges and base should be golden, the top set but the middle still a little wobbly.",
-    "minutes": 20
-   },
-   {
-    "text": "To turn it over, slide it onto a plate and put another plate on top, turn the whole thing over and slide it back into the pan to finish cooking.",
+    "text": "Heat the olive oil in a good nonstick pan over medium heat. After 2 minutes add the potato slices and stir now and then so they cook evenly.",
     "minutes": null
    },
    {
-    "text": "Once cooked, transfer to a plate and serve the tortilla warm or cold, scattered with the chopped parsley.",
+    "text": "After about 15 minutes season the potatoes with salt and pepper. Cook for around 25 minutes in total until they are perfectly cooked, then turn off the heat.",
+    "minutes": 25
+   },
+   {
+    "text": "Tip the potatoes into the beaten eggs and mix well.",
     "minutes": null
    },
    {
-    "text": "To accompany, take slices of warmed baguette, stab all over with a fork and rub with the remaining garlic, pile on grated tomatoes and season with sea salt and a drizzle of olive oil.",
-    "minutes": null
+    "text": "In the same pan on a low heat, add the egg and potato mixture. Run a spatula round the edge so it does not stick and shake the pan now and then.",
+    "minutes": 4
+   },
+   {
+    "text": "After 4 minutes, put a plate bigger than the pan on top, flip the pan over and slide the uncooked side back in. Cook another 4 minutes, pressing the edges in with a spatula for a rounded shape, then slide onto a plate.",
+    "minutes": 4
    }
   ]
  },
@@ -16686,187 +16734,107 @@
  },
  {
   "source": "themealdb:52894",
-  "title": "Battenberg Cake",
-  "description": "A British sweet made with self-raising flour, almonds and food colouring — makes 24, on the table in about 45 minutes.",
-  "servings": 24,
+  "title": "Battenberg cake",
+  "description": "A vanilla sponge baked in yellow and pink halves, cut and stacked into a checkerboard with apricot jam, then wrapped in marzipan.",
+  "servings": 10,
   "cuisine": "British",
   "category": "Dessert",
   "image": "https://www.themealdb.com/images/media/meals/ywwrsp1511720277.jpg",
-  "prep_minutes": 30,
-  "cook_minutes": 10,
+  "prep_minutes": 40,
+  "cook_minutes": 30,
   "ingredients": [
    {
     "name": "butter",
-    "quantity": 175,
+    "quantity": 200,
     "unit": "g",
-    "note": ""
+    "note": "unsalted, softened"
    },
    {
     "name": "sugar",
-    "quantity": 175,
+    "quantity": 200,
     "unit": "g",
-    "note": ""
+    "note": "caster"
    },
    {
-    "name": "self-raising flour",
-    "quantity": 140,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "almonds",
-    "quantity": 50,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "baking powder",
-    "quantity": 0.5,
+    "name": "vanilla extract",
+    "quantity": 2,
     "unit": "tsp",
     "note": ""
    },
    {
     "name": "eggs",
-    "quantity": 3,
+    "quantity": 4,
     "unit": "",
-    "note": "medium"
-   },
-   {
-    "name": "vanilla extract",
-    "quantity": 0.5,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "almond extract",
-    "quantity": 0.25,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "butter",
-    "quantity": 175,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "sugar",
-    "quantity": 175,
-    "unit": "g",
-    "note": ""
+    "note": "free range"
    },
    {
     "name": "self-raising flour",
-    "quantity": 140,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "almonds",
-    "quantity": 50,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "baking powder",
-    "quantity": 0.5,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "eggs",
-    "quantity": 3,
-    "unit": "",
-    "note": "medium"
-   },
-   {
-    "name": "vanilla extract",
-    "quantity": 0.5,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "almond extract",
-    "quantity": 0.25,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "food colouring",
-    "quantity": 0.5,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "apricot",
     "quantity": 200,
     "unit": "g",
     "note": ""
    },
    {
-    "name": "marzipan",
-    "quantity": 1000,
-    "unit": "g",
+    "name": "baking powder",
+    "quantity": 2,
+    "unit": "tsp",
     "note": ""
    },
    {
-    "name": "icing sugar",
+    "name": "food colouring",
     "quantity": null,
     "unit": "",
-    "note": "for dusting"
+    "note": "pink, a little, to taste"
+   },
+   {
+    "name": "icing sugar",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": "2–3 tbsp, for dusting"
+   },
+   {
+    "name": "marzipan",
+    "quantity": 500,
+    "unit": "g",
+    "note": "yellow; about 450 g rolled out, the rest for decoration"
+   },
+   {
+    "name": "jam",
+    "quantity": 4,
+    "unit": "tbsp",
+    "note": "apricot"
    }
   ],
   "steps": [
    {
-    "text": "Heat oven to 180C/160C fan/gas 4 and line the base and sides of a 20cm square tin with baking parchment (the easiest way is to cross 2 x 20cm-long strips over the base).",
+    "text": "Butter a 20 cm square cake tin and line it with greaseproof paper, leaving a buttered folded divider up the middle so the two colours of mix stay separate. Heat the oven to 190°C (fan 170°C).",
     "minutes": null
    },
    {
-    "text": "To make the almond sponge, put the butter, sugar, flour, ground almonds, baking powder, eggs, vanilla and almond extract in a large bowl. Beat with an electric whisk until the mix comes together smoothly.",
+    "text": "Beat the butter, caster sugar and vanilla until pale and fluffy. Beat in the eggs one at a time with a little of the flour, then sift in the rest of the flour and baking powder and fold together.",
     "minutes": null
    },
    {
-    "text": "Scrape into the tin, spreading to the corners, and bake for 25-30 mins – when you poke in a skewer, it should come out clean. Cool in the tin for 10 mins, then transfer to a wire rack to finish cooling while you make the second sponge.",
+    "text": "Spoon half the mixture into one side of the tin. Mix a little pink food colouring into the other half and spoon it into the other side.",
+    "minutes": null
+   },
+   {
+    "text": "Bake for 25–30 minutes until the sponge is cooked and evenly risen. Cool in the tin for a few minutes, then turn out onto a wire rack to cool completely.",
     "minutes": 30
    },
    {
-    "text": "For the pink sponge, line the tin as above. Mix all the ingredients together as above, but don’t add the almond extract. Fold in some pink food colouring. Then scrape it all into the tin and bake as before. Cool.",
+    "text": "Stack one sponge on the other, trim the edges so the pieces are even, then cut each sponge in half lengthways to give four equal strips.",
     "minutes": null
    },
    {
-    "text": "To assemble, heat the jam in a small pan until runny, then sieve. Barely trim two opposite edges from the almond sponge, then well trim a third edge.",
+    "text": "On a surface dusted with icing sugar, roll about 450 g of the marzipan into a rectangle around 40 x 20 cm. Keep the remainder for decoration.",
     "minutes": null
    },
    {
-    "text": "Roughly measure the height of the sponge, then cutting from the well-trimmed edge, use a ruler to help you cut 4 slices each the same width as the sponge height. Discard or nibble leftover sponge. Repeat with pink cake.",
+    "text": "Stick the four strips together in a checkerboard with jam, brush jam over the top and sides, and set the cake on the marzipan. Wrap the marzipan up and over the cake and seal it along the top.",
     "minutes": null
    },
    {
-    "text": "Take 2 x almond slices and 2 x pink slices and trim so they are all the same length.",
-    "minutes": null
-   },
-   {
-    "text": "Roll out one marzipan block on a surface lightly dusted with icing sugar to just over 20cm wide, then keep rolling lengthways until the marzipan is roughly 0.5cm thick.",
-    "minutes": null
-   },
-   {
-    "text": "Brush with apricot jam, then lay a pink and an almond slice side by side at one end of the marzipan, brushing jam in between to stick sponges, and leaving 4cm clear marzipan at the end.",
-    "minutes": null
-   },
-   {
-    "text": "Brush more jam on top of the sponges, then sandwich remaining 2 slices on top, alternating colours to give a checkerboard effect. Trim the marzipan to the length of the cakes.",
-    "minutes": null
-   },
-   {
-    "text": "Carefully lift up the marzipan and smooth over the cake with your hands, but leave a small marzipan fold along the bottom edge before you stick it to the first side.",
-    "minutes": null
-   },
-   {
-    "text": "Trim opposite side to match size of fold, then crimp edges using fingers and thumb (or, more simply, press with prongs of fork). If you like, mark the 10 slices using the prongs of a fork.",
-    "minutes": null
-   },
-   {
-    "text": "Assemble second Battenberg and keep in an airtight box or well wrapped in cling film for up to 3 days. Can be frozen for up to a month.",
+    "text": "Turn the cake seam-side down and trim the marzipan so both ends show the checkerboard. Mark a pattern on top with a fork, and shape a rose from a little pink-tinted marzipan to decorate. Slice and serve with tea.",
     "minutes": null
    }
   ]
@@ -17198,289 +17166,271 @@
  },
  {
   "source": "themealdb:52878",
-  "title": "Beef and Oyster pie",
-  "description": "A British dish of beef, bacon and shallot — serves 8, a slow cook that's worth the wait.",
-  "servings": 8,
+  "title": "Beef and Guinness oyster pie",
+  "description": "A beef pie in a Guinness and roux gravy with carrots, potatoes and peas, topped with puff pastry; raw oysters are slid in at the table to steam.",
+  "servings": 4,
   "cuisine": "British",
   "category": "Beef",
   "image": "https://www.themealdb.com/images/media/meals/wrssvt1511556563.jpg",
-  "prep_minutes": 20,
-  "cook_minutes": 165,
+  "prep_minutes": 30,
+  "cook_minutes": 50,
   "ingredients": [
    {
-    "name": "beef",
-    "quantity": 900,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "olive oil",
-    "quantity": 3,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "shallot",
-    "quantity": 3,
+    "name": "onion",
+    "quantity": 1,
     "unit": "",
-    "note": ""
+    "note": "medium, finely chopped"
+   },
+   {
+    "name": "butter",
+    "quantity": 4,
+    "unit": "tbsp",
+    "note": "for caramelising the onion"
+   },
+   {
+    "name": "mixed herbs",
+    "quantity": null,
+    "unit": "",
+    "note": "a tied bundle of rosemary, oregano and thyme"
    },
    {
     "name": "garlic",
-    "quantity": 2,
-    "unit": "clove",
-    "note": "minced"
-   },
-   {
-    "name": "bacon",
-    "quantity": 125,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "thyme",
     "quantity": 1,
-    "unit": "tbsp",
-    "note": "chopped"
+    "unit": "clove",
+    "note": "crushed"
    },
    {
-    "name": "bay leaf",
-    "quantity": 2,
-    "unit": "",
-    "note": ""
-   },
-   {
-    "name": "beer",
-    "quantity": 330,
-    "unit": "ml",
-    "note": ""
-   },
-   {
-    "name": "beef stock",
-    "quantity": 400,
-    "unit": "ml",
-    "note": ""
-   },
-   {
-    "name": "cornflour",
-    "quantity": 2,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "oysters",
-    "quantity": 8,
-    "unit": "",
-    "note": ""
-   },
-   {
-    "name": "plain flour",
-    "quantity": 400,
+    "name": "beef",
+    "quantity": 450,
     "unit": "g",
-    "note": ""
+    "note": "cut into bite-size cubes"
    },
    {
     "name": "salt",
+    "quantity": null,
+    "unit": "",
+    "note": "to taste"
+   },
+   {
+    "name": "black pepper",
+    "quantity": null,
+    "unit": "",
+    "note": "to taste"
+   },
+   {
+    "name": "cayenne pepper",
     "quantity": 1,
     "unit": "pinch",
     "note": ""
    },
    {
     "name": "butter",
-    "quantity": 250,
-    "unit": "g",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": "for the roux"
+   },
+   {
+    "name": "plain flour",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": "for the roux"
+   },
+   {
+    "name": "beer",
+    "quantity": 355,
+    "unit": "ml",
+    "note": "Guinness or other stout"
+   },
+   {
+    "name": "carrot",
+    "quantity": 2,
+    "unit": "cup",
+    "note": "chopped"
+   },
+   {
+    "name": "potato",
+    "quantity": 2,
+    "unit": "cup",
+    "note": "chopped bite size"
+   },
+   {
+    "name": "peas",
+    "quantity": 1,
+    "unit": "cup",
     "note": ""
    },
    {
-    "name": "eggs",
-    "quantity": null,
+    "name": "puff pastry",
+    "quantity": 2,
     "unit": "",
-    "note": "to glaze"
+    "note": "sheets"
+   },
+   {
+    "name": "egg yolks",
+    "quantity": 1,
+    "unit": "",
+    "note": "for the egg wash"
+   },
+   {
+    "name": "mustard",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "for the egg wash"
+   },
+   {
+    "name": "oysters",
+    "quantity": 8,
+    "unit": "",
+    "note": "raw, on the shell, slid into the pie at the table"
    }
   ],
   "steps": [
    {
-    "text": "Season the beef cubes with salt and black pepper. Heat a tablespoon of oil in the frying pan and fry the meat over a high heat.",
+    "text": "Caramelise the chopped onion in 4 tbsp butter with the herb bundle until golden brown.",
     "minutes": null
    },
    {
-    "text": "Do this in three batches so that you don’t overcrowd the pan, transferring the meat to a large flameproof casserole dish once it is browned all over. Add extra oil if the pan seems dry.",
+    "text": "Add the garlic and the beef cubes, seasoned with salt, pepper and a pinch of cayenne, and brown them on all sides.",
     "minutes": null
    },
    {
-    "text": "In the same pan, add another tablespoon of oil and cook the shallots for 4-5 minutes, then add the garlic and fry for 30 seconds. Add the bacon and fry until slightly browned.",
-    "minutes": 5
-   },
-   {
-    "text": "Transfer the onion and bacon mixture to the casserole dish and add the herbs. Preheat the oven to 180C/350F/Gas 4.",
+    "text": "Push the meat to the edges, melt 2 tbsp butter in the middle and stir in 2 tbsp flour to make a roux. Mix the meat and onion through the roux, then slowly pour in the Guinness, stirring.",
     "minutes": null
    },
    {
-    "text": "Pour the stout into the frying pan and bring to the boil, stirring to lift any stuck-on browned bits from the bottom of the pan. Pour the stout over the beef in the casserole dish and add the stock.",
+    "text": "Add the carrots and potatoes, cover, and cook until they soften and the sauce thickens. Stir in the peas, switch off the heat and remove the herb bundle.",
     "minutes": null
    },
    {
-    "text": "Cover the casserole and place it in the oven for 1½-2 hours, or until the beef is tender and the sauce is reduced.",
-    "minutes": 120
-   },
-   {
-    "text": "Skim off any surface fat, taste and add salt and pepper if necessary, then stir in the cornflour paste. Put the casserole dish on the hob – don’t forget that it will be hot – and simmer for 1-2 minutes, stirring, until thickened. Leave to cool.",
-    "minutes": 2
-   },
-   {
-    "text": "Increase the oven to 200C/400F/Gas 6. To make the pastry, put the flour and salt in a very large bowl. Grate the butter and stir it into the flour in three batches.",
+    "text": "Heat the oven to 200°C. Roll out the puff pastry and cut it to fit the tops of the baking dishes, keeping the scraps for a trim.",
     "minutes": null
    },
    {
-    "text": "Gradually add 325ml/11fl oz cold water – you may not need it all – and stir with a round-bladed knife until the mixture just comes together.",
+    "text": "Fill the dishes with the beef mixture, lay the pastry on top and decorate the edges with pastry strips. Brush with the egg yolk and mustard wash.",
     "minutes": null
    },
    {
-    "text": "Knead the pastry lightly into a ball on a lightly floured surface and set aside 250g/9oz for the pie lid.",
-    "minutes": null
+    "text": "Bake for about 20 minutes until the crust is golden.",
+    "minutes": 20
    },
    {
-    "text": "Roll the rest of the pastry out until about 2cm/¾in larger than the dish you’re using. Line the dish with the pastry then pile in the filling, tucking the oysters in as well. Brush the edge of the pastry with beaten egg.",
+    "text": "At the table, cut into the pastry and slide a raw oyster into each pie. Leave a few minutes so the oyster steams in the hot filling.",
     "minutes": null
-   },
-   {
-    "text": "Roll the remaining pastry until slightly larger than your dish and gently lift over the filling, pressing the edges firmly to seal, then trim with a sharp knife. Brush with beaten egg to glaze.",
-    "minutes": null
-   },
-   {
-    "text": "Put the dish on a baking tray and bake for 25-30 minutes, or until the pastry is golden-brown and the filling is bubbling.",
-    "minutes": 30
    }
   ]
  },
  {
   "source": "themealdb:53071",
-  "title": "Beef Asado",
-  "description": "A Filipino dish of beef, tomato puree and lemon — serves 8, about an hour start to finish.",
-  "servings": 8,
+  "title": "Beef asado",
+  "description": "A Filipino braise of beef marinated in soy sauce, calamansi and pepper, simmered in tomato sauce with potatoes and green capsicum, and thickened with liver spread.",
+  "servings": 2,
   "cuisine": "Filipino",
   "category": "Beef",
   "image": "https://www.themealdb.com/images/media/meals/pkopc31683207947.jpg",
-  "prep_minutes": 20,
-  "cook_minutes": 55,
+  "prep_minutes": 75,
+  "cook_minutes": 45,
   "ingredients": [
    {
     "name": "beef",
-    "quantity": 1500,
+    "quantity": 250,
     "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "stock cube",
-    "quantity": 1,
-    "unit": "",
-    "note": ""
-   },
-   {
-    "name": "tomato puree",
-    "quantity": 225,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "water",
-    "quantity": 3,
-    "unit": "cup",
-    "note": ""
+    "note": "cut into pieces"
    },
    {
     "name": "soy sauce",
-    "quantity": 6,
-    "unit": "tbsp",
-    "note": ""
+    "quantity": 0.5,
+    "unit": "cup",
+    "note": "for the marinade"
    },
    {
-    "name": "white wine vinegar",
-    "quantity": 1,
+    "name": "lime juice",
+    "quantity": 2,
     "unit": "tbsp",
-    "note": ""
+    "note": "calamansi extract in the video; lime juice is the supermarket equivalent"
    },
    {
     "name": "black pepper",
-    "quantity": 2,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "bay leaf",
-    "quantity": 4,
-    "unit": "",
-    "note": ""
-   },
-   {
-    "name": "lemon",
-    "quantity": 0.5,
-    "unit": "",
-    "note": ""
-   },
-   {
-    "name": "passata",
-    "quantity": 2,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "butter",
-    "quantity": 3,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "olive oil",
-    "quantity": 0.5,
-    "unit": "cup",
-    "note": ""
-   },
-   {
-    "name": "onion",
     "quantity": 1,
+    "unit": "tsp",
+    "note": ""
+   },
+   {
+    "name": "vegetable oil",
+    "quantity": null,
     "unit": "",
-    "note": "chopped"
+    "note": "for sautéing, amount not stated"
    },
    {
     "name": "garlic",
     "quantity": 4,
     "unit": "clove",
     "note": ""
+   },
+   {
+    "name": "onion",
+    "quantity": 1,
+    "unit": "",
+    "note": "small"
+   },
+   {
+    "name": "tomato sauce",
+    "quantity": 120,
+    "unit": "ml",
+    "note": "4 oz"
+   },
+   {
+    "name": "water",
+    "quantity": 2.5,
+    "unit": "cup",
+    "note": ""
+   },
+   {
+    "name": "potato",
+    "quantity": 2,
+    "unit": "",
+    "note": "medium, cut into pieces"
+   },
+   {
+    "name": "capsicum",
+    "quantity": 1,
+    "unit": "",
+    "note": "small, green"
+   },
+   {
+    "name": "liver spread",
+    "quantity": 85,
+    "unit": "g",
+    "note": ""
    }
   ],
   "steps": [
    {
-    "text": "Combine beef, crushed peppercorn, soy sauce, vinegar, dried bay leaves, lemon, and tomato sauce. Mix well. Marinate beef for at least 30 minutes.",
+    "text": "Put the beef in a bowl with the soy sauce, calamansi extract and black pepper. Mix so every piece is coated, then marinate in the fridge for 1 hour, or up to 4 hours.",
+    "minutes": 60
+   },
+   {
+    "text": "Heat oil in a pan over medium heat. Sauté the garlic, add the onion and cook until the onion is soft and translucent.",
+    "minutes": null
+   },
+   {
+    "text": "Add the marinated beef with its marinade and stir so the pieces cook evenly. Bring to the boil.",
+    "minutes": null
+   },
+   {
+    "text": "Stir in the tomato sauce, then add the water.",
+    "minutes": null
+   },
+   {
+    "text": "Cover and simmer for about 30 minutes, until the beef is tender.",
     "minutes": 30
    },
    {
-    "text": "Put the marinated beef in a cooking pot along with remaining marinade. Add water. Let boil.",
+    "text": "Add the potatoes and green bell pepper, then mash the liver spread into the sauce to dissolve it and thicken it.",
     "minutes": null
    },
    {
-    "text": "Add Knorr Beef Cube. Stir. Cover the pot and cook for 40 minutes in low heat.",
-    "minutes": 40
-   },
-   {
-    "text": "Turn the beef over. Add tomato paste. Continue cooking until beef tenderizes. Set aside.",
-    "minutes": null
-   },
-   {
-    "text": "Heat oil in a pan. Fry the potato until it browns. Turn over and continue frying the opposite side. Remove from the pan and place on a clean plate. Do the same with the carrots.",
-    "minutes": null
-   },
-   {
-    "text": "Save 3 tablespoons of cooking oil from the pan where the potato was fried. Saute onion and garlic until onion softens.",
-    "minutes": null
-   },
-   {
-    "text": "Pour-in the sauce from the beef stew. Let boil. Add the beef. Cook for 2 minutes.",
-    "minutes": 2
-   },
-   {
-    "text": "Add butter and let it melt. Continue cooking until the sauce reduces to half.",
-    "minutes": null
+    "text": "Boil for a few minutes until the potatoes are cooked, then turn off the heat and serve.",
+    "minutes": 5
    }
   ]
  },
@@ -18050,156 +18000,168 @@
  },
  {
   "source": "themealdb:53317",
-  "title": "Beef Empanadas",
-  "description": "An Uruguayan dish of lard, tomato and red onion — serves 8, about an hour start to finish.",
-  "servings": 8,
-  "cuisine": "Uruguayan",
+  "title": "Beef empanadas",
+  "description": "Baked empanadas filled with ground beef, potato, carrot, celery and peas spiced with cumin, chilli powder and cinnamon, in a butter pastry brushed with egg.",
+  "servings": 12,
+  "cuisine": "Latin American",
   "category": "Beef",
   "image": "https://www.themealdb.com/images/media/meals/dxpc7j1764370714.jpg",
-  "prep_minutes": 25,
-  "cook_minutes": 35,
+  "prep_minutes": 30,
+  "cook_minutes": 45,
   "ingredients": [
    {
-    "name": "lard",
-    "quantity": 60,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "water",
-    "quantity": 340,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "salt",
+    "name": "olive oil",
     "quantity": 1,
-    "unit": "tsp",
-    "note": ""
+    "unit": "tbsp",
+    "note": "for the filling"
    },
    {
-    "name": "plain flour",
-    "quantity": 600,
+    "name": "beef mince",
+    "quantity": 225,
     "unit": "g",
-    "note": ""
+    "note": "ground chuck, 85/15"
    },
    {
-    "name": "tomato",
-    "quantity": 3,
-    "unit": "",
-    "note": ""
+    "name": "potato",
+    "quantity": 180,
+    "unit": "g",
+    "note": "peeled, finely diced (about 1 cup, 2 potatoes in the video)"
+   },
+   {
+    "name": "onion",
+    "quantity": 0.75,
+    "unit": "cup",
+    "note": "yellow, finely diced (one onion in the video)"
+   },
+   {
+    "name": "carrot",
+    "quantity": 0.33,
+    "unit": "cup",
+    "note": "finely diced"
+   },
+   {
+    "name": "celery",
+    "quantity": 0.33,
+    "unit": "cup",
+    "note": "finely diced"
    },
    {
     "name": "garlic",
-    "quantity": 1,
+    "quantity": 3,
     "unit": "clove",
-    "note": ""
+    "note": "minced"
    },
    {
-    "name": "red onion",
-    "quantity": 1,
-    "unit": "",
-    "note": "large"
-   },
-   {
-    "name": "spring onion",
-    "quantity": 1,
-    "unit": "bunch",
-    "note": ""
-   },
-   {
-    "name": "sirloin steak",
-    "quantity": 750,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "dried oregano",
+    "name": "tomato paste",
     "quantity": 1,
     "unit": "tbsp",
     "note": ""
    },
    {
-    "name": "paprika",
+    "name": "chilli powder",
     "quantity": 1,
     "unit": "tsp",
     "note": ""
    },
    {
-    "name": "red chilli flakes",
-    "quantity": 1,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "parsley",
+    "name": "ground cumin",
     "quantity": 1,
     "unit": "tsp",
     "note": ""
    },
    {
     "name": "salt",
-    "quantity": null,
-    "unit": "",
-    "note": "to taste"
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "for the filling"
+   },
+   {
+    "name": "cinnamon",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": "ground"
    },
    {
     "name": "black pepper",
-    "quantity": null,
-    "unit": "",
-    "note": "to taste"
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": "ground"
+   },
+   {
+    "name": "peas",
+    "quantity": 0.5,
+    "unit": "cup",
+    "note": "frozen"
+   },
+   {
+    "name": "plain flour",
+    "quantity": 360,
+    "unit": "g",
+    "note": "all-purpose, for the dough (3 cups)"
+   },
+   {
+    "name": "salt",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": "for the dough"
+   },
+   {
+    "name": "butter",
+    "quantity": 170,
+    "unit": "g",
+    "note": "cold, unsalted, cut into small pieces"
    },
    {
     "name": "eggs",
-    "quantity": 3,
+    "quantity": 1,
     "unit": "",
-    "note": ""
+    "note": "large, for the dough"
+   },
+   {
+    "name": "water",
+    "quantity": 80,
+    "unit": "ml",
+    "note": "for the dough"
    },
    {
     "name": "eggs",
-    "quantity": null,
+    "quantity": 1,
     "unit": "",
-    "note": "a splash"
-   },
-   {
-    "name": "chimichurri sauce",
-    "quantity": null,
-    "unit": "",
-    "note": "a drizzle"
+    "note": "beaten, for the egg wash"
    }
   ],
   "steps": [
    {
-    "text": "For the dough place lard, warm water and salt in a large kneading bowl and stir. Add flour and oregano and either knead five miutes by hand or with the kneading function of your machine.",
+    "text": "Finely chop the potato, carrot, celery and onion, and mince the garlic. Small pieces matter, so nothing crunchy sticks out of the pastry.",
     "minutes": null
    },
    {
-    "text": "Let rest covered for at least half an hour or overnight in the fridge.",
-    "minutes": 60
+    "text": "Heat the oil in a large pan over medium heat. Cook the beef with the potato, onion, carrot and celery, breaking the meat up, for about 8 minutes until browned and the vegetables are soft.",
+    "minutes": 8
    },
    {
-    "text": "For the filling place tomatoes for about 30 seconds in boiling water, then cool with cold water and peel of skin and cut into cubes. Press garlic through garlic press, cut onions into cubes.",
+    "text": "Stir in the garlic, tomato paste, chilli powder, cumin, salt, cinnamon and pepper and cook for 2 minutes. Add the peas, cook 1 more minute, then take off the heat and let it cool.",
+    "minutes": 3
+   },
+   {
+    "text": "Heat the oven to 190°C. For the dough, pulse the flour and salt in a food processor, add the cold butter and pulse until crumbly, then add the egg and water and pulse until it forms a ball. Cut it in half.",
     "minutes": null
    },
    {
-    "text": "Simmer garlic and onions in some olive oil until translucent. Take out onions and garlic and brown the meat at high heat from all sides. Season with all herbs and add the onions, garlic and tomatoes.",
+    "text": "Roll out half the dough thinly on a lightly floured surface and cut 15 cm (6 inch) circles, re-rolling the scraps. Repeat with the other half, to make about 12.",
     "minutes": null
    },
    {
-    "text": "Let simmer for a few minutes, add salt, pepper and additional spices to taste. You can prepare the meat the night before, chill in fridge if doing so. Boil eggs and also cut into cubes and mix with prepared meat.",
+    "text": "Put about 2 tablespoons of filling in the middle of each circle, fold over and seal the edge by crimping or pressing with a fork. Wet the edge with water if it will not stick.",
     "minutes": null
    },
    {
-    "text": "Cut dough into half and roll out one half thinnly on floured surface. Cut out circles about 12-15cm in diameter. Mine have a diameter of 12.5 cm.",
+    "text": "Place the empanadas on a lined baking sheet and brush them with beaten egg.",
     "minutes": null
    },
    {
-    "text": "Place about 2-4 teaspoons of filling on one circle, put a bit of water all around the edges and fold over the other half so that you get half moons. Be sure to seal the edges with a fork. Repeat until you have no dough and filling left.",
-    "minutes": null
-   },
-   {
-    "text": "Meanwhile preheat oven to 200 degrees Celsius. Brush empanadas with egg wash and bake about 8 empanadas on a baking sheet lined with parchment paper for about 25min or until golden. Serve warm with chimichurri sauce.",
-    "minutes": 25
+    "text": "Bake at 190°C for 30–35 minutes until golden brown. Cool a few minutes before eating.",
+    "minutes": 30
    }
   ]
  },

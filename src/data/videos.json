@@ -282,12 +282,12 @@
   "reason": "The current video (Kitchen Daddy, 45dpOfESxr8) is a different dish (red onion, red pepper, rosemary, red wine and crushed tomato; no fennel, olives or pesto), gives no amount for the rigatoni and has no written recipe. Searches for a fennel sausage rigatoni with pesto found only different dishes (cream sauce, orecchiette, sausage meatballs) or videos without a written recipe, none verifiable as the same dish."
  },
  "themealdb:52823": {
-  "videoId": "V2PMvBv52IE",
-  "title": "Salmon and Prawn Rissotto",
-  "channel": "cookwithtim",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "videoId": "KXD-U34Kv3c",
+  "title": "Salmon and prawn Risotto",
+  "channel": "Recipes Made Easy",
+  "checked": "2026-10-28",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53014": {
   "videoId": "Mt5lgUZRoUg",
@@ -420,12 +420,12 @@
   "transcribed": true
  },
  "themealdb:52852": {
-  "videoId": "3_UAxkx0u6U",
-  "title": "TUNA NICOISE RECIPE - SORTED",
-  "channel": "Sorted Food",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "videoId": "Y9lG7TJIRDY",
+  "title": "The ultimate TUNA SALAD NICOISE recipe!",
+  "channel": "Weekend at the Cottage",
+  "checked": "2026-10-28",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53151": {
   "videoId": "vNBuXsTY15E",
@@ -452,12 +452,12 @@
   "transcribed": true
  },
  "themealdb:52872": {
-  "videoId": "JceGMNG7rpU",
-  "title": "Ultimate Spanish Omelette | Omar Allibhoy",
-  "channel": "Jamie Oliver",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "videoId": "G9V2A4U55A4",
+  "title": "The Authentic Spanish Tortilla de Patatas Potato Omelette",
+  "channel": "Spain on a Fork",
+  "checked": "2026-10-28",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:52802": {
   "videoId": "2sX4fCgg-UI",
@@ -1005,9 +1005,9 @@
   "videoId": "aB41Q7kDZQ0",
   "title": "Battenberg cake",
   "channel": "Co-op",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-28",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:52848": {
   "videoId": "B0YX0yPX4Wo",
@@ -1037,17 +1037,17 @@
   "videoId": "ONX74yP6JnI",
   "title": "BEEF AND GUINNESS OYSTER PIE",
   "channel": "Whisk and Dine",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-28",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53071": {
   "videoId": "lNlK8DVhXXA",
   "title": "How to Cook Beef Asado Recipe - English",
   "channel": "PagkaingPinoyTV",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-28",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:52997": {
   "videoId": null,
@@ -1083,9 +1083,9 @@
   "videoId": "RRNVLC6IAv4",
   "title": "How to Make Empanadas | So Delicious and Easy!",
   "channel": "Preppy Kitchen",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-28",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53421": {
   "videoId": "3oWgjFhQQW0",
