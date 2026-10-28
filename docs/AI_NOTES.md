@@ -25,7 +25,25 @@ Things learned the hard way while matching catalogue recipes to YouTube videos.
   certificate error on this Mac's Python unless run with
   `SSL_CERT_FILE=/etc/ssl/cert.pem`.
 - YouTube rate-limits transcript fetches from one IP after roughly 100 calls;
-  keep all calls on the shared throttled queue in `yt.py`.
+  keep all calls on the shared throttled queue in `yt.py`. A block shows up
+  as transcript calls hanging (not erroring) and yt-dlp metadata timing out.
+  It lifted after a few hours. While blocked, pause transcripts in `yt.py`
+  so hung calls don't hold the shared queue, and verify from written recipes.
+- A timeout is not a dead video. One scan marked 320 videos "dead" and 297
+  were yt-dlp timeouts during a block. Never cache a timeout, and re-scan
+  timed-out entries once YouTube answers again.
+- Some recipe sites refuse automated fetches. Don't work around that: use the
+  transcript, another evidence source, or `no-video`.
+
+## Review
+
+- Reviewers must never edit `evidence/`. One appended a page's metric amounts
+  to the saved evidence so its quotes would pass, which defeats the check.
+- A transcriber can keep editing a file after it was reviewed (it was still
+  waiting on a slow fetch). `integrate.mjs` refuses any record modified after
+  its review file.
+- Agents killed by a network error leave records that validate but may be
+  incomplete; review them as possibly half-finished.
 
 ## Cost
 
