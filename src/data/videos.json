@@ -121,9 +121,9 @@
   "videoId": "IhwPQL9dFYc",
   "title": "How to Make Mapo Tofu (Mabo Dofu Recipe) | Cooking with Dog",
   "channel": "Cooking with Dog",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-28",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53367": {
   "videoId": "mUr-7wjhHuU",
@@ -169,17 +169,17 @@
   "videoId": "IUIs4C86Ilo",
   "title": "How to Make Nasi Lemak",
   "channel": "El Mundo Eats",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-28",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53053": {
   "videoId": "Ot-dmfBaZrA",
   "title": "How to Cook Beef Rendang (Spicy \"Dry\" Curry Beef) | Food Wishes",
   "channel": "Food Wishes",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-28",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:52795": {
   "videoId": "IO0issT0Rmc",
@@ -223,9 +223,9 @@
   "videoId": "Tp_PMWvIKzo",
   "title": "Rajma Masala (Kidney Beans Curry)",
   "channel": "Veggie Recipe House",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-28",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:52982": {
   "videoId": "spJjSRpoA1s",
@@ -247,9 +247,9 @@
   "videoId": "gfhfsBPt46s",
   "title": "The Best Meat Lasagna Recipe -- How to Make Homemade Italian Lasagna Bolognese",
   "channel": "CookingwithSugarTV",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-28",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53064": {
   "videoId": "LPPcNPdq_j4",

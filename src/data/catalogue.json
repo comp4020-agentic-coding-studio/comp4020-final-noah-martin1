@@ -2045,61 +2045,91 @@
  {
   "source": "themealdb:52947",
   "title": "Ma Po Tofu",
-  "description": "Silky tofu in a numbing, spicy pork and bean sauce.",
-  "servings": 4,
+  "description": "Diced firm tofu simmered with stir-fried pork, doubanjiang and sweet bean sauce, thickened with potato starch and finished with garlic chives.",
+  "servings": 2,
   "cuisine": "Chinese",
-  "category": "Beef",
+  "category": "Pork",
   "image": "https://www.themealdb.com/images/media/meals/1525874812.jpg",
-  "prep_minutes": 25,
-  "cook_minutes": 25,
+  "prep_minutes": 30,
+  "cook_minutes": 10,
   "ingredients": [
    {
     "name": "tofu",
-    "quantity": 450,
+    "quantity": 350,
     "unit": "g",
-    "note": ""
+    "note": "firm, drained 20 minutes and cut in 3/4 inch cubes"
    },
    {
-    "name": "beef mince",
-    "quantity": 100,
+    "name": "garlic",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "finely chopped"
+   },
+   {
+    "name": "ginger",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "cut into fine strips then chopped"
+   },
+   {
+    "name": "chives",
+    "quantity": 30,
     "unit": "g",
-    "note": ""
+    "note": "garlic chives (nira), cut in half inch pieces"
+   },
+   {
+    "name": "chicken stock",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": "Chinese-style granulated, dissolved in the hot water"
+   },
+   {
+    "name": "water",
+    "quantity": 150,
+    "unit": "ml",
+    "note": "hot, for the stock"
+   },
+   {
+    "name": "potato starch",
+    "quantity": 2,
+    "unit": "tsp",
+    "note": "dissolved in the water below"
+   },
+   {
+    "name": "water",
+    "quantity": 1.33,
+    "unit": "tbsp",
+    "note": "to dissolve the potato starch"
    },
    {
     "name": "sesame oil",
-    "quantity": 0.5,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "doubanjiang",
-    "quantity": 1.5,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "fermented black beans",
-    "quantity": 0.5,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "capsicum",
     "quantity": 1,
     "unit": "tbsp",
     "note": ""
    },
    {
-    "name": "salt",
-    "quantity": 0.5,
-    "unit": "tsp",
+    "name": "pork mince",
+    "quantity": 100,
+    "unit": "g",
     "note": ""
    },
    {
-    "name": "sichuan pepper",
+    "name": "doubanjiang",
     "quantity": 0.5,
-    "unit": "tsp",
-    "note": ""
+    "unit": "tbsp",
+    "note": "chilli bean paste"
+   },
+   {
+    "name": "sweet bean sauce",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "tian mian jiang"
+   },
+   {
+    "name": "sake",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": "1 tbsp with the pork, 1 tbsp with the stock"
    },
    {
     "name": "soy sauce",
@@ -2108,90 +2138,54 @@
     "note": ""
    },
    {
-    "name": "water",
-    "quantity": 400,
-    "unit": "ml",
-    "note": ""
-   },
-   {
-    "name": "olive oil",
-    "quantity": 2,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "spring onion",
-    "quantity": 2,
+    "name": "sichuan pepper",
+    "quantity": null,
     "unit": "",
-    "note": "chopped"
+    "note": "to taste, to serve"
    },
    {
-    "name": "spring onion",
-    "quantity": 4,
+    "name": "rice",
+    "quantity": null,
     "unit": "",
-    "note": ""
-   },
-   {
-    "name": "garlic",
-    "quantity": 2,
-    "unit": "clove",
-    "note": "chopped"
-   },
-   {
-    "name": "ginger",
-    "quantity": 4,
-    "unit": "",
-    "note": "sliced"
-   },
-   {
-    "name": "water",
-    "quantity": 2.5,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "cornflour",
-    "quantity": 1,
-    "unit": "tbsp",
-    "note": ""
+    "note": "steamed, to serve (the video's list has steamed rice with millet)"
    }
   ],
   "steps": [
    {
-    "text": "Add a small pinch of salt and sesame oil to minced beef. Mix well and set aside.",
+    "text": "Wrap the tofu in a thick paper towel, weigh it down with a dish and drain it for 20 minutes.",
+    "minutes": 20
+   },
+   {
+    "text": "Chop the garlic, cut the ginger into fine strips and chop them, and cut the garlic chives into half-inch pieces.",
     "minutes": null
    },
    {
-    "text": "Mix 1 tablespoon of cornstarch with 2 and ½ tablespoons of water in a small bowl to make water starch.",
+    "text": "Dissolve the chicken stock granules in 150 ml hot water. Dissolve the potato starch in twice its volume of water.",
     "minutes": null
    },
    {
-    "text": "Cut tofu into square cubes (around 2cms). Bring a large amount of water to a boil and then add a pinch of salt. Slide the tofu in and cook for 1 minute. Move out and drain.",
+    "text": "Halve the drained tofu horizontally, then cut it into 3/4 inch cubes.",
     "minutes": null
    },
    {
-    "text": "Get a wok and heat up around 2 tablespoons of oil, fry the minced meat until crispy. Transfer out beef out and leave the oil in.",
+    "text": "Heat the sesame oil and stir-fry the pork over high heat, breaking it up, until fully cooked. Add the garlic and ginger on medium heat and fry until fragrant.",
     "minutes": null
    },
    {
-    "text": "Fry doubanjiang for 1 minute over slow fire and then add garlic, scallion white, ginger and fermented black beans to cook for 30 seconds until aroma. Then mix pepper flakes in.",
+    "text": "Push the pork aside and fry the doubanjiang and sweet bean sauce on the hot pan surface over low heat, stirring constantly. Mix them through the pork, then add 1 tbsp sake and stir until the moisture is gone.",
     "minutes": null
    },
    {
-    "text": "Add water to the seasonings and bring to boil over high fire. Gently slide the tofu cubes. Slow the heat after boiling and then simmer for 6-8 minutes. Then add chopped garlic greens.",
-    "minutes": 8
+    "text": "Add the stock, soy sauce and 1 tbsp sake. Add the tofu, bring to the boil on high, then simmer on medium-low for 2 to 3 minutes.",
+    "minutes": 3
    },
    {
-    "text": "Stir the water starch and then pour half of the mixture to the simmering pot. Wait for around 30 seconds and then pour the other half. You can slightly taste the tofu and add pinch of salt if not salty enough.",
+    "text": "Stir in the garlic chives. Lift the pan off the heat, pour in the starch mixture while swirling, and mix gently so the tofu doesn't break.",
     "minutes": null
    },
    {
-    "text": "By the way, if you feel it is too spicy, add some sugar can milder the taste. But be carefully as the broth is very hot at this point.",
-    "minutes": null
-   },
-   {
-    "text": "Transfer out when almost all the seasonings stick to tofu cubes. Sprinkle Szechuan peppercorn powder (to taste)and chopped garlic greens if using. Serve immediately with steamed rice.",
-    "minutes": null
+    "text": "Heat on high for about 30 seconds until thickened, then serve with Sichuan pepper, on its own or over rice.",
+    "minutes": 1
    }
   ]
  },
@@ -2993,150 +2987,276 @@
  {
   "source": "themealdb:53051",
   "title": "Nasi lemak",
-  "description": "Malaysia's national dish: coconut rice with sambal, egg, peanuts and cucumber.",
-  "servings": 4,
+  "description": "Coconut milk rice served with spicy anchovy sambal, spiced fried chicken, hard-boiled eggs, cucumber and peanuts.",
+  "servings": 8,
   "cuisine": "Malaysian",
-  "category": "Seafood",
+  "category": "Miscellaneous",
   "image": "https://www.themealdb.com/images/media/meals/wai9bw1619788844.jpg",
-  "prep_minutes": 25,
-  "cook_minutes": 65,
+  "prep_minutes": 40,
+  "cook_minutes": 60,
   "ingredients": [
    {
-    "name": "coconut milk",
+    "name": "lemongrass",
     "quantity": 2,
-    "unit": "cup",
-    "note": ""
-   },
-   {
-    "name": "water",
-    "quantity": 2,
-    "unit": "cup",
-    "note": ""
-   },
-   {
-    "name": "ginger paste",
-    "quantity": 0.25,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "ginger",
-    "quantity": 1,
     "unit": "",
-    "note": ""
-   },
-   {
-    "name": "bay leaf",
-    "quantity": 1,
-    "unit": "",
-    "note": ""
-   },
-   {
-    "name": "rice",
-    "quantity": 2,
-    "unit": "cup",
-    "note": ""
-   },
-   {
-    "name": "eggs",
-    "quantity": 4,
-    "unit": "",
-    "note": ""
-   },
-   {
-    "name": "cucumber",
-    "quantity": 1,
-    "unit": "",
-    "note": ""
-   },
-   {
-    "name": "peanuts",
-    "quantity": 1,
-    "unit": "cup",
-    "note": ""
-   },
-   {
-    "name": "anchovy fillet",
-    "quantity": 110,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "vegetable oil",
-    "quantity": 2,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "onion",
-    "quantity": 1,
-    "unit": "",
-    "note": ""
+    "note": "cut, for the chicken paste"
    },
    {
     "name": "garlic",
-    "quantity": 3,
+    "quantity": 4,
     "unit": "clove",
-    "note": ""
+    "note": "for the chicken paste"
+   },
+   {
+    "name": "ginger",
+    "quantity": 1.25,
+    "unit": "cm",
+    "note": "for the chicken paste; recipe says 1/2 inch"
+   },
+   {
+    "name": "turmeric",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "ground, for the chicken"
+   },
+   {
+    "name": "sugar",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "for the chicken"
+   },
+   {
+    "name": "salt",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "for the chicken"
+   },
+   {
+    "name": "ground coriander",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "for the chicken"
+   },
+   {
+    "name": "fennel seeds",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "ground, for the chicken"
+   },
+   {
+    "name": "ground cumin",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "for the chicken"
+   },
+   {
+    "name": "chicken thigh",
+    "quantity": 4,
+    "unit": "",
+    "note": "legs or thighs, or 2-3 breasts"
+   },
+   {
+    "name": "coconut milk",
+    "quantity": 0.25,
+    "unit": "cup",
+    "note": "for the chicken marinade"
+   },
+   {
+    "name": "eggs",
+    "quantity": 1,
+    "unit": "",
+    "note": "large, lightly beaten, to coat the chicken"
+   },
+   {
+    "name": "rice flour",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": "to coat the chicken"
+   },
+   {
+    "name": "dried anchovies",
+    "quantity": 100,
+    "unit": "g",
+    "note": "dried anchovies (ikan bilis), for the sambal; not tinned fillets"
+   },
+   {
+    "name": "red onion",
+    "quantity": 2,
+    "unit": "",
+    "note": "sliced, for the sambal"
+   },
+   {
+    "name": "dried chillies",
+    "quantity": 50,
+    "unit": "g",
+    "note": "cut small, seeds removed, for the sambal"
    },
    {
     "name": "shallot",
     "quantity": 3,
     "unit": "",
-    "note": ""
+    "note": "roughly cut, for the sambal"
    },
    {
-    "name": "chilli powder",
-    "quantity": 2,
+    "name": "garlic",
+    "quantity": 4,
+    "unit": "clove",
+    "note": "for the sambal"
+   },
+   {
+    "name": "ginger",
+    "quantity": 1.25,
+    "unit": "cm",
+    "note": "for the sambal; recipe says 1/2 inch"
+   },
+   {
+    "name": "shrimp paste",
+    "quantity": 1.25,
+    "unit": "cm",
+    "note": "recipe says 1/2 inch piece"
+   },
+   {
+    "name": "vegetable oil",
+    "quantity": null,
+    "unit": "",
+    "note": "for frying the chicken, anchovies and onion; amount not given"
+   },
+   {
+    "name": "salt",
+    "quantity": 1,
     "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "anchovy fillet",
-    "quantity": 110,
-    "unit": "g",
-    "note": ""
+    "note": "for the sambal"
    },
    {
     "name": "sugar",
     "quantity": 3,
     "unit": "tbsp",
-    "note": ""
+    "note": "for the sambal"
    },
    {
     "name": "tamarind paste",
-    "quantity": 0.333,
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": "tamarind juice, or lemon/lime juice"
+   },
+   {
+    "name": "water",
+    "quantity": null,
+    "unit": "",
+    "note": "a splash to loosen the sambal paste, and for soaking the rice; amount not given"
+   },
+   {
+    "name": "basmati rice",
+    "quantity": 2,
     "unit": "cup",
-    "note": ""
+    "note": "soaked 30 minutes and drained"
+   },
+   {
+    "name": "coconut milk",
+    "quantity": 3,
+    "unit": "cup",
+    "note": "canned, for the rice"
+   },
+   {
+    "name": "water",
+    "quantity": 1,
+    "unit": "cup",
+    "note": "for the rice"
+   },
+   {
+    "name": "pandan leaves",
+    "quantity": 1,
+    "unit": "",
+    "note": "knotted"
+   },
+   {
+    "name": "shallot",
+    "quantity": 1,
+    "unit": "",
+    "note": "thinly sliced, for the rice"
+   },
+   {
+    "name": "ginger",
+    "quantity": 5,
+    "unit": "cm",
+    "note": "matchsticks, for the rice; recipe says 2 inch"
+   },
+   {
+    "name": "garlic",
+    "quantity": 4,
+    "unit": "clove",
+    "note": "thinly sliced, for the rice"
+   },
+   {
+    "name": "lemongrass",
+    "quantity": 1,
+    "unit": "",
+    "note": "cut in 2 inch lengths, for the rice"
+   },
+   {
+    "name": "salt",
+    "quantity": 2,
+    "unit": "tsp",
+    "note": "for the rice"
+   },
+   {
+    "name": "eggs",
+    "quantity": null,
+    "unit": "",
+    "note": "hard-boiled, to serve; amount not given"
+   },
+   {
+    "name": "cucumber",
+    "quantity": null,
+    "unit": "",
+    "note": "sliced, to serve"
+   },
+   {
+    "name": "peanuts",
+    "quantity": null,
+    "unit": "",
+    "note": "to serve"
    }
   ],
   "steps": [
    {
-    "text": "In a medium saucepan over medium heat, stir together coconut milk, water, ground ginger, ginger root, salt, bay leaf, and rice. Cover, and bring to a boil. Reduce heat, and simmer for 20 to 30 minutes, or until done.",
+    "text": "Soak the basmati rice in water for 30 minutes, then drain it just before using.",
     "minutes": 30
    },
    {
-    "text": "Place eggs in a saucepan, and cover with cold water. Bring water to a boil, and immediately remove from heat. Cover, and let eggs stand in hot water for 10 to 12 minutes. Remove eggs from hot water, cool, peel and slice in half. Slice cucumber.",
-    "minutes": 12
+    "text": "Pound or blend the lemongrass, garlic and ginger to a paste. Marinate the chicken with it and the remaining chicken spices, salt, sugar and coconut milk for at least 4 hours or overnight.",
+    "minutes": 240
    },
    {
-    "text": "Meanwhile, in a large skillet or wok, heat 1 cup vegetable oil over medium-high heat. Stir in peanuts and cook briefly, until lightly browned. Remove peanuts with a slotted spoon and place on paper towels to soak up excess grease.",
+    "text": "Coat the marinated chicken with the beaten egg and rice flour. Fry in hot oil on medium heat until golden and cooked through, then drain on paper towel.",
     "minutes": null
    },
    {
-    "text": "Return skillet to stove. Stir in the contents of one package anchovies; cook briefly, turning, until crisp. Remove with a slotted spoon and place on paper towels. Discard oil. Wipe out skillet.",
+    "text": "For the sambal, blend the chilli, shallots, garlic, shrimp paste and ginger with a splash of water into a paste.",
     "minutes": null
    },
    {
-    "text": "Heat 2 tablespoons oil in the skillet. Stir in the onion, garlic, and shallots; cook until fragrant, about 1 or 2 minutes. Mix in the chile paste, and cook for 10 minutes, stirring occasionally.",
-    "minutes": 10
+    "text": "Fry the anchovies in oil until crisp and set aside. Fry the sliced onions until soft and golden at the edges and set aside.",
+    "minutes": null
    },
    {
-    "text": "If the chile paste is too dry, add a small amount of water. Stir in remaining anchovies; cook for 5 minutes. Stir in salt, sugar, and tamarind juice; simmer until sauce is thick, about 5 minutes.",
-    "minutes": 5
+    "text": "Cook the blended chilli paste with a splash of water for 15-20 minutes, stirring now and then, until reduced and thick.",
+    "minutes": 15
    },
    {
-    "text": "Serve the onion and garlic sauce over the warm rice, and top with peanuts, fried anchovies, cucumbers, and eggs.",
+    "text": "Season the sambal with salt, sugar and tamarind juice to a balance of sweet, sour and salty. Stir in the fried anchovies and onion and turn off the heat.",
+    "minutes": null
+   },
+   {
+    "text": "For the rice, bring the coconut milk, water, pandan, shallot, ginger, garlic, lemongrass and salt to the boil. Add the drained rice and return to a simmer.",
+    "minutes": null
+   },
+   {
+    "text": "Cover and cook on low heat for 20 minutes, then rest off the heat for 10 minutes and fluff.",
+    "minutes": 30
+   },
+   {
+    "text": "Serve the rice with the sambal, fried chicken, hard-boiled eggs, cucumber slices and peanuts.",
     "minutes": null
    }
   ]
@@ -3144,103 +3264,175 @@
  {
   "source": "themealdb:53053",
   "title": "Beef Rendang",
-  "description": "Beef slow-cooked in coconut and spices until dark, dry and intensely flavoured.",
-  "servings": 6,
-  "cuisine": "Malaysian",
+  "description": "Beef chuck cooked uncovered for about four hours in a blended shallot, ginger and chilli paste with coconut milk, tamarind and lemongrass until the sauce reduces into the meat.",
+  "servings": 4,
+  "cuisine": "Indonesian",
   "category": "Beef",
   "image": "https://www.themealdb.com/images/media/meals/bc8v651619789840.jpg",
-  "prep_minutes": 20,
-  "cook_minutes": 125,
+  "prep_minutes": 30,
+  "cook_minutes": 240,
   "ingredients": [
    {
-    "name": "beef",
-    "quantity": 455,
-    "unit": "g",
+    "name": "shallot",
+    "quantity": 4,
+    "unit": "",
+    "note": "sliced, or red onion"
+   },
+   {
+    "name": "garlic",
+    "quantity": 6,
+    "unit": "clove",
+    "note": "peeled"
+   },
+   {
+    "name": "ginger",
+    "quantity": 4,
+    "unit": "cm",
+    "note": "peeled and sliced; recipe says 1.5 inch piece"
+   },
+   {
+    "name": "galangal",
+    "quantity": 4,
+    "unit": "cm",
+    "note": "or use more ginger; recipe says 1.5 inch piece"
+   },
+   {
+    "name": "chilli",
+    "quantity": 1,
+    "unit": "",
+    "note": "red Fresno"
+   },
+   {
+    "name": "green chilli",
+    "quantity": 2,
+    "unit": "",
+    "note": "Serrano"
+   },
+   {
+    "name": "salt",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "kosher, plus more to taste"
+   },
+   {
+    "name": "red chilli flakes",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "1-2 tbsp depending on heat"
+   },
+   {
+    "name": "ground coriander",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": ""
+   },
+   {
+    "name": "turmeric",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": "ground"
+   },
+   {
+    "name": "cardamom",
+    "quantity": 0.125,
+    "unit": "tsp",
+    "note": "ground"
+   },
+   {
+    "name": "nutmeg",
+    "quantity": 0.125,
+    "unit": "tsp",
     "note": ""
    },
    {
     "name": "vegetable oil",
-    "quantity": 5,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "cinnamon stick",
-    "quantity": 1,
-    "unit": "",
-    "note": ""
-   },
-   {
-    "name": "cloves",
-    "quantity": 3,
-    "unit": "",
-    "note": ""
-   },
-   {
-    "name": "star anise",
-    "quantity": 3,
-    "unit": "",
-    "note": ""
-   },
-   {
-    "name": "cardamom",
-    "quantity": 3,
-    "unit": "",
-    "note": ""
-   },
-   {
-    "name": "coconut cream",
-    "quantity": 1,
-    "unit": "cup",
-    "note": ""
-   },
-   {
-    "name": "water",
-    "quantity": 1,
-    "unit": "cup",
-    "note": ""
-   },
-   {
-    "name": "tamarind paste",
     "quantity": 2,
     "unit": "tbsp",
     "note": ""
    },
    {
-    "name": "lime",
-    "quantity": 6,
-    "unit": "",
-    "note": ""
+    "name": "chuck steak",
+    "quantity": 1135,
+    "unit": "g",
+    "note": "chuck, cut in 2 inch (5 cm) pieces"
    },
    {
-    "name": "sugar",
+    "name": "lemongrass",
+    "quantity": 0.5,
+    "unit": "",
+    "note": "stalk, lighter part, bruised and cut in pieces"
+   },
+   {
+    "name": "coconut milk",
+    "quantity": 1,
+    "unit": "can",
+    "note": "full fat; can size not stated"
+   },
+   {
+    "name": "brown sugar",
     "quantity": 1,
     "unit": "tbsp",
+    "note": "generous"
+   },
+   {
+    "name": "tamarind paste",
+    "quantity": 2,
+    "unit": "tsp",
     "note": ""
    },
    {
-    "name": "shallot",
-    "quantity": 5,
+    "name": "water",
+    "quantity": null,
     "unit": "",
-    "note": ""
+    "note": "to rinse the coconut milk can, plus more as needed"
+   },
+   {
+    "name": "rice",
+    "quantity": null,
+    "unit": "",
+    "note": "steamed, to serve"
+   },
+   {
+    "name": "coriander",
+    "quantity": null,
+    "unit": "",
+    "note": "chopped, to garnish"
+   },
+   {
+    "name": "lime",
+    "quantity": null,
+    "unit": "",
+    "note": "fresh, to serve"
    }
   ],
   "steps": [
    {
-    "text": "Chop the spice paste ingredients and then blend it in a food processor until fine.",
+    "text": "Cut the beef into 2 inch pieces and set aside.",
     "minutes": null
    },
    {
-    "text": "Heat the oil in a stew pot, add the spice paste, cinnamon, cloves, star anise, and cardamom and stir-fry until aromatic. Add the beef and the pounded lemongrass and stir for 1 minute.",
+    "text": "Blitz the shallots, garlic, ginger, galangal, chillies, salt, chilli flakes, coriander, turmeric, cardamom and nutmeg in a food processor until finely ground.",
     "minutes": null
    },
    {
-    "text": "Add the coconut milk, tamarind juice, water, and simmer on medium heat, stirring frequently until the meat is almost cooked. Add the kaffir lime leaves, kerisik (toasted coconut), sugar or palm sugar, stirring to blend well with the meat.",
+    "text": "Cook the paste in the oil in a large saute pan over medium heat for 7 to 8 minutes, until most of the moisture has gone. A little browning is fine.",
+    "minutes": 8
+   },
+   {
+    "text": "Add the beef without browning it, then the coconut milk, tamarind and brown sugar. Rinse the coconut milk can with water and add that too.",
     "minutes": null
    },
    {
-    "text": "Lower the heat to low, cover the lid, and simmer for 1 to 1 1/2 hours or until the meat is really tender and the gravy has dried up. Add more salt and sugar to taste. Serve immediately with steamed rice and save some for overnight.",
-    "minutes": 120
+    "text": "Bring to a simmer on medium-high. Bruise the lemongrass with the back of a knife, cut it in pieces and add it.",
+    "minutes": null
+   },
+   {
+    "text": "Cook uncovered on about medium heat for around 4 hours, stirring more often as it thickens, until the liquid has reduced into the beef and the meat is fork tender. Add water if it dries out before the beef is tender, or raise the heat if there is too much liquid when the beef is ready.",
+    "minutes": 240
+   },
+   {
+    "text": "Serve with steamed rice, topped with chopped coriander and a squeeze of fresh lime. It improves if rested overnight in the fridge.",
+    "minutes": null
    }
   ]
  },
@@ -4016,97 +4208,145 @@
  {
   "source": "themealdb:52868",
   "title": "Kidney Bean Curry",
-  "description": "A hearty, budget-friendly bean curry made for rice nights.",
+  "description": "Rajma masala: kidney beans pressure-cooked, then simmered in an onion, tomato, ginger-garlic and spice masala and garnished with coriander.",
   "servings": 4,
   "cuisine": "Indian",
   "category": "Vegetarian",
   "image": "https://www.themealdb.com/images/media/meals/sywrsu1511463066.jpg",
   "prep_minutes": 15,
-  "cook_minutes": 20,
+  "cook_minutes": 50,
   "ingredients": [
    {
-    "name": "vegetable oil",
+    "name": "kidney beans",
     "quantity": 1,
+    "unit": "cup",
+    "note": "dried, soaked overnight and drained"
+   },
+   {
+    "name": "water",
+    "quantity": 4,
+    "unit": "cup",
+    "note": "fresh, to boil the beans"
+   },
+   {
+    "name": "salt",
+    "quantity": null,
+    "unit": "",
+    "note": "to taste, in the beans and in the masala"
+   },
+   {
+    "name": "vegetable oil",
+    "quantity": 2,
     "unit": "tbsp",
+    "note": "2 to 3 tbsp"
+   },
+   {
+    "name": "cumin seeds",
+    "quantity": 1,
+    "unit": "tsp",
     "note": ""
    },
    {
     "name": "onion",
     "quantity": 1,
     "unit": "",
-    "note": "finely chopped"
+    "note": "big, made into a paste"
    },
    {
-    "name": "garlic",
+    "name": "ginger garlic paste",
+    "quantity": null,
+    "unit": "",
+    "note": "amount not stated"
+   },
+   {
+    "name": "tomato",
     "quantity": 2,
-    "unit": "clove",
+    "unit": "",
+    "note": "medium, pureed"
+   },
+   {
+    "name": "green chilli",
+    "quantity": 1,
+    "unit": "",
     "note": "chopped"
    },
    {
-    "name": "ginger",
-    "quantity": 1,
-    "unit": "tbsp",
-    "note": "grated"
-   },
-   {
-    "name": "coriander",
-    "quantity": 1,
-    "unit": "handful",
-    "note": ""
-   },
-   {
-    "name": "ground cumin",
+    "name": "garam masala",
     "quantity": 1,
     "unit": "tsp",
     "note": ""
+   },
+   {
+    "name": "rajma masala",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "spice mix from an Indian grocery"
    },
    {
     "name": "paprika",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": "or to taste"
+   },
+   {
+    "name": "ground coriander",
     "quantity": 1,
     "unit": "tsp",
     "note": ""
    },
    {
-    "name": "garam masala",
-    "quantity": 2,
+    "name": "turmeric",
+    "quantity": 1,
     "unit": "tsp",
-    "note": ""
+    "note": "powder"
    },
    {
-    "name": "canned tomatoes",
-    "quantity": 400,
-    "unit": "g",
-    "note": ""
+    "name": "asafoetida",
+    "quantity": 1,
+    "unit": "pinch",
+    "note": "added to the beans; transcript spells it 'esapa', taken to be asafoetida (hing)"
    },
    {
-    "name": "kidney beans",
-    "quantity": 400,
-    "unit": "g",
-    "note": ""
+    "name": "water",
+    "quantity": 0.25,
+    "unit": "cup",
+    "note": "for the masala"
    },
    {
-    "name": "basmati rice",
+    "name": "coriander",
     "quantity": null,
     "unit": "",
-    "note": "to serve"
+    "note": "cilantro, to garnish"
    }
   ],
   "steps": [
    {
-    "text": "Heat the oil in a large frying pan over a low-medium heat. Add the onion and a pinch of salt and cook slowly, stirring occasionally, until softened and just starting to colour.",
+    "text": "Boil the soaked, drained kidney beans in 4 cups of fresh water in a pressure cooker with salt and a pinch of asafoetida for about three whistles. Lower the heat and cook another 15 to 20 minutes until soft.",
+    "minutes": 20
+   },
+   {
+    "text": "Heat the oil in a pan and add the cumin seeds until they sizzle.",
     "minutes": null
    },
    {
-    "text": "Add the garlic, ginger and coriander stalks and cook for a further 2 mins, until fragrant.",
-    "minutes": 2
+    "text": "Add the onion paste with the ginger and garlic paste and saute until the onion is golden brown.",
+    "minutes": null
    },
    {
-    "text": "Add the spices to the pan and cook for another 1 min, by which point everything should smell aromatic. Tip in the chopped tomatoes and kidney beans in their water, then bring to the boil.",
+    "text": "Add the tomato puree and green chilli with a little salt, and cook for 6 to 7 minutes until the paste is thick and the oil separates.",
+    "minutes": 7
+   },
+   {
+    "text": "Add the garam masala, rajma masala, coriander, paprika and turmeric, then 1/4 cup water, and cook for 30 to 40 seconds.",
     "minutes": 1
    },
    {
-    "text": "Turn down the heat and simmer for 15 mins until the curry is nice and thick. Season to taste, then serve with the basmati rice and the coriander leaves.",
-    "minutes": 15
+    "text": "Add the cooked kidney beans and cook in the masala for 7 to 8 minutes.",
+    "minutes": 8
+   },
+   {
+    "text": "Garnish with coriander and serve with roti, chapati, naan or rice.",
+    "minutes": null
    }
   ]
  },
@@ -4341,141 +4581,195 @@
  {
   "source": "themealdb:52844",
   "title": "Lasagne",
-  "description": "Layers of ragu, pasta and bubbling cheese. Worth every minute.",
-  "servings": 6,
+  "description": "Baked lasagne with a beef, veal and sausage bolognese, a ricotta and parmesan filling and mozzarella on top.",
+  "servings": 8,
   "cuisine": "Italian",
   "category": "Pasta",
   "image": "https://www.themealdb.com/images/media/meals/wtsvxx1511296896.jpg",
-  "prep_minutes": 20,
-  "cook_minutes": 60,
+  "prep_minutes": 40,
+  "cook_minutes": 110,
   "ingredients": [
+   {
+    "name": "lasagne sheets",
+    "quantity": 450,
+    "unit": "g",
+    "note": "dried, cooked al dente"
+   },
+   {
+    "name": "beef mince",
+    "quantity": 225,
+    "unit": "g",
+    "note": "half of the sauce batch, which makes two lasagnas"
+   },
+   {
+    "name": "veal",
+    "quantity": 225,
+    "unit": "g",
+    "note": "ground, half of the sauce batch, which makes two lasagnas"
+   },
+   {
+    "name": "sausages",
+    "quantity": 225,
+    "unit": "g",
+    "note": "pork, removed from casing, half of the sauce batch, which makes two lasagnas"
+   },
    {
     "name": "olive oil",
     "quantity": 1,
     "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "bacon",
-    "quantity": 2,
-    "unit": "",
-    "note": ""
+    "note": "half of the sauce batch, which makes two lasagnas; plus extra to toss the noodles (amount not stated)"
    },
    {
     "name": "onion",
-    "quantity": 1,
+    "quantity": 0.5,
     "unit": "",
-    "note": "finely chopped"
-   },
-   {
-    "name": "celery",
-    "quantity": 1,
-    "unit": "stick",
-    "note": ""
-   },
-   {
-    "name": "carrot",
-    "quantity": 1,
-    "unit": "",
-    "note": "medium"
+    "note": "medium, chopped; half of the sauce batch, which makes two lasagnas"
    },
    {
     "name": "garlic",
     "quantity": 2,
     "unit": "clove",
-    "note": "chopped"
+    "note": "finely chopped; half of the sauce batch, which makes two lasagnas"
    },
    {
-    "name": "beef mince",
-    "quantity": 500,
-    "unit": "g",
-    "note": ""
+    "name": "celery",
+    "quantity": 0.5,
+    "unit": "stick",
+    "note": "finely chopped; half of the sauce batch, which makes two lasagnas"
+   },
+   {
+    "name": "carrot",
+    "quantity": 0.5,
+    "unit": "",
+    "note": "peeled, finely chopped; half of the sauce batch, which makes two lasagnas"
    },
    {
     "name": "tomato puree",
-    "quantity": 1,
-    "unit": "tbsp",
-    "note": ""
+    "quantity": 85,
+    "unit": "g",
+    "note": "tomato paste, half of a 6 oz (170 g) can; half of the sauce batch, which makes two lasagnas"
    },
    {
     "name": "canned tomatoes",
     "quantity": 800,
     "unit": "g",
-    "note": ""
+    "note": "crushed, one 28 oz can (half of the two cans); half of the sauce batch, which makes two lasagnas"
    },
    {
-    "name": "honey",
+    "name": "red wine",
+    "quantity": 0.5,
+    "unit": "cup",
+    "note": "half of the sauce batch, which makes two lasagnas"
+   },
+   {
+    "name": "beef stock",
     "quantity": 1,
-    "unit": "tbsp",
-    "note": ""
+    "unit": "cup",
+    "note": "half of the sauce batch, which makes two lasagnas"
    },
    {
-    "name": "lasagne sheets",
-    "quantity": 500,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "creme fraiche",
-    "quantity": 400,
-    "unit": "ml",
-    "note": ""
-   },
-   {
-    "name": "mozzarella",
-    "quantity": 125,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "parmesan",
-    "quantity": 50,
-    "unit": "g",
-    "note": ""
+    "name": "bay leaf",
+    "quantity": 1,
+    "unit": "",
+    "note": "dried; half of the sauce batch, which makes two lasagnas"
    },
    {
     "name": "basil",
+    "quantity": 0.25,
+    "unit": "cup",
+    "note": "fresh chopped, or 1 tsp dried; half of the sauce batch, which makes two lasagnas"
+   },
+   {
+    "name": "salt",
     "quantity": null,
     "unit": "",
-    "note": "to serve"
+    "note": "to taste, for the sauce and filling"
+   },
+   {
+    "name": "black pepper",
+    "quantity": null,
+    "unit": "",
+    "note": "freshly ground, to taste"
+   },
+   {
+    "name": "sugar",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": "half of the sauce batch, which makes two lasagnas"
+   },
+   {
+    "name": "red chilli flakes",
+    "quantity": null,
+    "unit": "",
+    "note": "optional sprinkle"
+   },
+   {
+    "name": "ricotta",
+    "quantity": 900,
+    "unit": "g",
+    "note": "whole milk, 2 lb container"
+   },
+   {
+    "name": "parmesan",
+    "quantity": 0.5,
+    "unit": "cup",
+    "note": "grated, for the filling, plus extra to sprinkle"
+   },
+   {
+    "name": "parsley",
+    "quantity": 0.5,
+    "unit": "cup",
+    "note": "fresh chopped"
+   },
+   {
+    "name": "eggs",
+    "quantity": 2,
+    "unit": "",
+    "note": "for the filling"
+   },
+   {
+    "name": "mozzarella",
+    "quantity": 450,
+    "unit": "g",
+    "note": "shredded, 16 oz block"
    }
   ],
   "steps": [
    {
-    "text": "Heat the oil in a large saucepan. Use kitchen scissors to snip the bacon into small pieces, or use a sharp knife to chop it on a chopping board. Add the bacon to the pan and cook for just a few mins until starting to turn golden.",
+    "text": "Make the sauce: heat the oil in a pot, brown the sausage until crumbled, then add the beef and veal and brown them chunky with salt and pepper. (The creator's sauce makes two lasagnas; the amounts here are half, for the one lasagna assembled below.)",
     "minutes": null
    },
    {
-    "text": "Add the onion, celery and carrot, and cook over a medium heat for 5 mins, stirring occasionally, until softened.",
+    "text": "Add the onion, garlic, celery and carrot and saute for 3-4 minutes until soft.",
+    "minutes": 4
+   },
+   {
+    "text": "Turn up the heat, add the wine and scrape the pan, simmer 2 minutes, then add the stock, tomatoes, tomato paste, basil, bay leaves, sugar and chilli flakes if using. Simmer uncovered on low for about 1 hour until thick.",
+    "minutes": 62
+   },
+   {
+    "text": "Meanwhile heat the oven to 175 C. Boil the noodles about 5 minutes until al dente, drain, rinse cold and toss with a little olive oil.",
     "minutes": 5
    },
    {
-    "text": "Add the garlic and cook for 1 min, then tip in the mince and cook, stirring and breaking it up with a wooden spoon, for about 6 mins until browned all over.",
-    "minutes": 6
-   },
-   {
-    "text": "Stir in the tomato purée and cook for 1 min, mixing in well with the beef and vegetables. Tip in the chopped tomatoes. Fill each can half full with water to rinse out any tomatoes left in the can, and add to the pan.",
-    "minutes": 1
-   },
-   {
-    "text": "Add the honey and season to taste. Simmer for 20 mins.",
-    "minutes": 20
-   },
-   {
-    "text": "Heat oven to 200C/180C fan/gas 6. To assemble the lasagne, ladle a little of the ragu sauce into the bottom of the roasting tin or casserole dish, spreading the sauce all over the base.",
+    "text": "Mix the ricotta, parmesan, parsley and eggs with a little salt and pepper.",
     "minutes": null
    },
    {
-    "text": "Place 2 sheets of lasagne on top of the sauce overlapping to make it fit, then repeat with more sauce and another layer of pasta. Repeat with a further 2 layers of sauce and pasta, finishing with a layer of pasta.",
+    "text": "In a greased 9x13 inch dish layer sauce, noodles, half the ricotta, a third of the mozzarella and some parmesan. Repeat with sauce, noodles in the opposite direction, the remaining ricotta, another third of the mozzarella and parmesan.",
     "minutes": null
    },
    {
-    "text": "Put the crème fraîche in a bowl and mix with 2 tbsp water to loosen it and make a smooth pourable sauce. Pour this over the top of the pasta, then top with the mozzarella.",
+    "text": "Finish with sauce, a final layer of noodles, more sauce and a sprinkle of parmesan.",
     "minutes": null
    },
    {
-    "text": "Sprinkle Parmesan over the top and bake for 25–30 mins until golden and bubbling. Serve scattered with basil, if you like.",
-    "minutes": 30
+    "text": "Cover with foil and bake about 40 minutes until hot and bubbling.",
+    "minutes": 40
+   },
+   {
+    "text": "Uncover, add the remaining mozzarella and bake 10-15 minutes more until melted and browned. Cool 20-30 minutes before slicing.",
+    "minutes": 15
    }
   ]
  },
