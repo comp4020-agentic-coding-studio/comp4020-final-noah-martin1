@@ -780,12 +780,10 @@
   "checked": "2026-10-20"
  },
  "themealdb:53334": {
-  "videoId": "Tb1PPOyqthA",
-  "title": "Así se hace la AREPA DE PABELLÓN 🇻🇪  #arepas #arepapower #arepasvenezolanas #diamundialdelaarepa",
-  "channel": "Cocinando de Torito",
+  "videoId": null,
+  "checked": "2026-10-28",
   "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "reason": "The only evidence is the video description, which gives amounts for just the beef (250 g), black beans (250 g), beef stock and bicarbonate. The arepa itself (recipe elsewhere), fried plantain, grated cheese and all the sofrito ingredients have no amounts, so the dish's main amounts cannot be verified."
  },
  "themealdb:53329": {
   "videoId": "bSWoRyWI6Fo",
@@ -799,9 +797,9 @@
   "videoId": "AFJm15R4YYw",
   "title": "How to Make Arnhemse Meisjes: Thin, Crunchy Dutch Butter Cookies from Arnhem",
   "channel": "Toine’s Kitchen 🇳🇱",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-28",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53406": {
   "videoId": null,
@@ -813,9 +811,9 @@
   "videoId": "f-waAIrn2iA",
   "title": "How to make Arroz al Horno (Spanish-Style Oven Baked Rice)",
   "channel": "The Spanish Radish",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-28",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53147": {
   "videoId": "nFFp0ebOlOo",
@@ -853,9 +851,9 @@
   "videoId": "JbcrpAHmk3s",
   "title": "Warm Banana Tapioca Pudding (Chè Chuối Chưng)",
   "channel": "A Global Kitchen",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-28",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53127": {
   "videoId": "fE85ioKQ7ew",
@@ -875,9 +873,9 @@
   "videoId": "9ytR28QK6I8",
   "title": "Oven Roasted Ayam Percik | Malaysian grilled coconut spiced chicken",
   "channel": "Nomadette Eats",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-28",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53094": {
   "videoId": "Mz-ZVfOA_ig",

@@ -13371,88 +13371,58 @@
  {
   "source": "themealdb:53392",
   "title": "Arnhemse meisjes",
-  "description": "A Dutch sweet made with puff pastry, vanilla sugar and lime — serves 4, on the table in about 45 minutes.",
-  "servings": 4,
+  "description": "Thin, crisp Dutch cookies made from a folded sheet of puff pastry, cut into rounds and rolled out in sugar, then chilled and baked until caramelised.",
+  "servings": 24,
   "cuisine": "Dutch",
   "category": "Dessert",
   "image": "https://www.themealdb.com/images/media/meals/y4t9zg1777628842.jpg",
-  "prep_minutes": 10,
-  "cook_minutes": 30,
+  "prep_minutes": 15,
+  "cook_minutes": 15,
   "ingredients": [
    {
     "name": "puff pastry",
-    "quantity": 5,
-    "unit": "slice",
-    "note": ""
-   },
-   {
-    "name": "vanilla sugar",
-    "quantity": 100,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "cinnamon",
-    "quantity": 0.5,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "cardamom",
-    "quantity": 0.5,
-    "unit": "",
-    "note": ""
-   },
-   {
-    "name": "lime",
     "quantity": 1,
     "unit": "",
-    "note": "zested"
+    "note": "sheet, 23 x 30.5 cm"
+   },
+   {
+    "name": "sugar",
+    "quantity": null,
+    "unit": "",
+    "note": "generous amount for the work surface and coating; amount not given"
    }
   ],
   "steps": [
    {
-    "text": "Take your puff pastry from the freezer and defrost.",
+    "text": "Fold the puff pastry sheet over itself into three even layers, about 1 cm thick in total.",
     "minutes": null
    },
    {
-    "text": "Sprinkle some flour on the kitchen counter. Stack the sheets of puff pastry on top of each other and roll them out with a rolling pin. You want those five sheets to end up being as thin as one sheet.",
+    "text": "Cut as many 3 cm rounds as you can from the folded dough, placing the cutter close together because the trimmings can't really be reused.",
     "minutes": null
    },
    {
-    "text": "Using a round or oval form press into the puff pastry and try to be as economical doing that as possible. You want to have as many cookies as you can.",
+    "text": "Sprinkle sugar generously over the work surface. Put a dough round on it, sprinkle a little more sugar on top, and roll in one direction into an oval about 8 cm long, flipping it halfway.",
     "minutes": null
    },
    {
-    "text": "Mix the vanilla sugar with the cinnamon, cardemom and limezest in a little bowl.",
+    "text": "Lay each oval on a baking tray lined with baking paper and repeat with the remaining rounds.",
     "minutes": null
    },
    {
-    "text": "Remove the flour from the counter and sprinkle with a bit of the sugar mix.",
+    "text": "Chill the tray in the fridge for at least 30 minutes so the cookies hold their shape.",
+    "minutes": 30
+   },
+   {
+    "text": "Preheat the oven to 190°C.",
     "minutes": null
    },
    {
-    "text": "Brush your puff pastry with a little bit of eggwash and than dip into the sugar mix and roll them softly to press the sugar in.",
-    "minutes": null
+    "text": "Bake for 15 to 18 minutes until golden and the sugar has caramelised. Watch them, because the sugar can burn quickly.",
+    "minutes": 15
    },
    {
-    "text": "Put your sugary puff pastry on a baking sheet (greased or with baking paper) and leave the dough to rest for about 20 to 25 minutes. this will make the cookies even crisper.",
-    "minutes": 25
-   },
-   {
-    "text": "Preheat the oven in the meantime to 180 C and put the baking tray in the oven.",
-    "minutes": null
-   },
-   {
-    "text": "Bake the cookies golden brown in about 25 minutes and make sure the sugar is caramelised nicely.",
-    "minutes": 25
-   },
-   {
-    "text": "And voila, Girls from Arnhem with an Almeerse twist.",
-    "minutes": null
-   },
-   {
-    "text": "Voila, Arnhemse Meisjes met een Almeerse twist.",
+    "text": "Move the cookies straight to a wire rack and let them cool completely; left on the tray, the sugar underneath overcooks.",
     "minutes": null
    }
   ]
@@ -13519,137 +13489,153 @@
  {
   "source": "themealdb:53156",
   "title": "Arroz al horno (baked rice)",
-  "description": "A Spanish dish of pork belly, bacon and black pudding — makes 12, about an hour start to finish.",
-  "servings": 12,
+  "description": "Valencian oven-baked rice with pancetta, bacon and morcilla, cooked in a tomato, onion and pepper sofrito, topped with rosemary and finished with lemon and parsley.",
+  "servings": 8,
   "cuisine": "Spanish",
   "category": "Pork",
-  "image": "https://www.themealdb.com/images/media/meals/qt4i0n1763256454.jpg",
-  "prep_minutes": 20,
+  "image": "https://i.ytimg.com/vi/f-waAIrn2iA/hqdefault.jpg",
+  "prep_minutes": 10,
   "cook_minutes": 45,
   "ingredients": [
    {
     "name": "olive oil",
-    "quantity": 2,
+    "quantity": 3,
     "unit": "tbsp",
-    "note": ""
+    "note": "extra virgin, half for the meats and half for the sofrito"
    },
    {
-    "name": "pork belly",
-    "quantity": 800,
+    "name": "pancetta",
+    "quantity": 400,
     "unit": "g",
-    "note": ""
+    "note": "sliced about 3 mm thick"
    },
    {
-    "name": "black pudding",
-    "quantity": 150,
+    "name": "bacon",
+    "quantity": 200,
     "unit": "g",
-    "note": ""
+    "note": "large lardons, 2.5 cm cubes"
    },
    {
     "name": "bacon",
     "quantity": 100,
     "unit": "g",
-    "note": ""
+    "note": "fine smoked bacon or lardons, diced"
+   },
+   {
+    "name": "black pudding",
+    "quantity": 2,
+    "unit": "",
+    "note": "morcilla sausages, whole or cut in 2.5 cm pieces"
    },
    {
     "name": "onion",
     "quantity": 1,
     "unit": "",
-    "note": "chopped"
-   },
-   {
-    "name": "capsicum",
-    "quantity": 2,
-    "unit": "",
-    "note": ""
-   },
-   {
-    "name": "tomato",
-    "quantity": 1,
-    "unit": "",
-    "note": "chopped"
+    "note": "large, diced"
    },
    {
     "name": "garlic",
-    "quantity": 8,
-    "unit": "",
-    "note": ""
-   },
-   {
-    "name": "paprika",
-    "quantity": 4,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "red chilli flakes",
-    "quantity": 0.5,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "cannellini beans",
-    "quantity": 200,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "chicken stock",
-    "quantity": 1500,
-    "unit": "ml",
-    "note": ""
-   },
-   {
-    "name": "thyme",
     "quantity": 6,
+    "unit": "clove",
+    "note": "diced"
+   },
+   {
+    "name": "capsicum",
+    "quantity": 1,
     "unit": "",
-    "note": "parts"
+    "note": "red, cut in 1 cm strips"
+   },
+   {
+    "name": "tomato",
+    "quantity": 2,
+    "unit": "",
+    "note": "grated, skin removed"
+   },
+   {
+    "name": "smoked paprika",
+    "quantity": 2,
+    "unit": "tsp",
+    "note": "heaped"
+   },
+   {
+    "name": "salt",
+    "quantity": null,
+    "unit": "",
+    "note": "to taste"
+   },
+   {
+    "name": "black pepper",
+    "quantity": null,
+    "unit": "",
+    "note": "cracked, to taste"
    },
    {
     "name": "paella rice",
-    "quantity": 375,
-    "unit": "g",
+    "quantity": 2,
+    "unit": "cup",
+    "note": "bomba rice"
+   },
+   {
+    "name": "lemon",
+    "quantity": 2,
+    "unit": "",
+    "note": "half a lemon's juice in the rice, the rest squeezed over to serve"
+   },
+   {
+    "name": "chicken stock",
+    "quantity": 1,
+    "unit": "l",
     "note": ""
    },
    {
-    "name": "lemon juice",
+    "name": "rosemary",
+    "quantity": 2,
+    "unit": "sprig",
+    "note": "2–3 sprigs"
+   },
+   {
+    "name": "parsley",
     "quantity": 1,
-    "unit": "",
-    "note": ""
+    "unit": "handful",
+    "note": "fresh flat-leaf, chopped, to garnish"
    }
   ],
   "steps": [
    {
-    "text": "Heat oven to 200C/180C/gas 6. Heat half the oil in a deep frying or sauté pan (or shallow casserole dish) measuring around 30cm in diameter.",
+    "text": "Preheat the oven to 180°C. Heat half the olive oil in a large flat pan over medium-high heat and fry the pancetta until golden. Remove, let it cool, and cut it into 1.25 cm pieces.",
     "minutes": null
    },
    {
-    "text": "Over a high heat, colour the pork belly slices on each side in several batches, then transfer to a bowl.",
+    "text": "In the same pan fry the large bacon lardons and diced bacon for 3 to 4 minutes, then set aside with the pancetta.",
+    "minutes": 4
+   },
+   {
+    "text": "Fry the morcilla, whole or in 2.5 cm pieces, for 3 to 4 minutes and set it aside with the other cooked meat.",
+    "minutes": 4
+   },
+   {
+    "text": "Scrape up the browned bits and lower the heat to medium. Add the rest of the oil and the onion and fry for 4 minutes until it begins to turn golden.",
+    "minutes": 4
+   },
+   {
+    "text": "Add the garlic and red pepper and cook for 3 minutes. Stir in the grated tomato and smoked paprika, season, and cook on medium for another 5 minutes until everything softens.",
+    "minutes": 8
+   },
+   {
+    "text": "Add the rice and mix it through the sofrito. Add about half the cooked meat, half the stock and the juice of half a lemon, and level the rice into an even layer.",
     "minutes": null
    },
    {
-    "text": "Add the remaining oil to the pan and lower the heat to medium, then add the black pudding and bacon and fry all over for several mins. Remove with a slotted spoon.",
-    "minutes": null
+    "text": "Turn the heat to high and slowly add the rest of the stock until everything is covered and bubbling. Arrange the remaining meat on top and cook for 5 to 6 minutes.",
+    "minutes": 5
    },
    {
-    "text": "Fry the onion and peppers for around 10 mins until soft and pale gold, then add the tomato and cook until soft.",
-    "minutes": 10
-   },
-   {
-    "text": "Add the garlic, smoked paprika and chilli flakes and cook for another 2 mins, then put the pork, black pudding and bacon back in the pan. Add the beans, stock and whichever herb you're using, and bring everything to the boil.",
-    "minutes": 2
-   },
-   {
-    "text": "Sprinkle the rice around the pork belly, pushing it underneath the stock. Let the stock come to the boil again, season well, then transfer to the oven (leave it uncovered).",
-    "minutes": null
-   },
-   {
-    "text": "Cook for 20 mins without stirring, then check to see how the rice is doing. The rice should be tender and the stock absorbed. If it’s not ready, put back in the oven for another 5 mins, then check again. Taste for seasoning.",
+    "text": "Take it off the heat, add the rosemary sprigs, and bake in the 180°C oven for 20 to 25 minutes (move it to an ovenproof dish first if the pan isn't ovenproof).",
     "minutes": 20
    },
    {
-    "text": "Squeeze lemon juice over the top and drizzle over some extra virgin olive oil just before serving, if you like.",
-    "minutes": null
+    "text": "Rest for 5 minutes, then serve with chopped parsley and a squeeze of lemon juice.",
+    "minutes": 5
    }
   ]
  },
@@ -14056,88 +14042,98 @@
  },
  {
   "source": "themealdb:53425",
-  "title": "Authentic Laos Tapioca Pudding with Bananas",
-  "description": "A Lao sweet made with tapioca, coconut milk and banana — serves 8, on the table in about 45 minutes.",
-  "servings": 8,
-  "cuisine": "Lao",
+  "title": "Warm banana tapioca pudding (chè chuối chưng)",
+  "description": "Small tapioca pearls simmered in coconut milk with pandan, sugar and sliced ripe bananas, served warm with toasted sesame seeds and peanuts.",
+  "servings": 4,
+  "cuisine": "Vietnamese",
   "category": "Dessert",
   "image": "https://www.themealdb.com/images/media/meals/5pmn0g1779813285.jpg",
-  "prep_minutes": 15,
+  "prep_minutes": 10,
   "cook_minutes": 30,
   "ingredients": [
    {
     "name": "water",
-    "quantity": 1,
+    "quantity": 1.5,
     "unit": "cup",
-    "note": ""
-   },
-   {
-    "name": "water",
-    "quantity": 4,
-    "unit": "cup",
-    "note": ""
+    "note": "to cook the tapioca"
    },
    {
     "name": "tapioca",
-    "quantity": 3,
-    "unit": "tbsp",
-    "note": ""
+    "quantity": 50,
+    "unit": "g",
+    "note": "small pearls"
    },
    {
     "name": "coconut milk",
-    "quantity": 420,
-    "unit": "ml",
-    "note": "jar"
+    "quantity": 1,
+    "unit": "can",
+    "note": "400 ml, unsweetened"
    },
    {
     "name": "sugar",
-    "quantity": 2,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "banana",
     "quantity": 3,
-    "unit": "cup",
-    "note": ""
-   },
-   {
-    "name": "water",
-    "quantity": 4,
-    "unit": "cup",
+    "unit": "tbsp",
     "note": ""
    },
    {
     "name": "salt",
-    "quantity": null,
+    "quantity": 0.25,
+    "unit": "tsp",
+    "note": ""
+   },
+   {
+    "name": "pandan leaves",
+    "quantity": 2,
     "unit": "",
-    "note": "to taste"
+    "note": "or ¼ tsp vanilla extract"
+   },
+   {
+    "name": "banana",
+    "quantity": 3,
+    "unit": "",
+    "note": "ripe, medium to large, about 454 g"
+   },
+   {
+    "name": "sesame seed",
+    "quantity": 1.5,
+    "unit": "tsp",
+    "note": "toasted, to serve"
+   },
+   {
+    "name": "peanuts",
+    "quantity": 1.5,
+    "unit": "tbsp",
+    "note": "roasted, unsalted, roughly chopped, to garnish"
    }
   ],
   "steps": [
    {
-    "text": "In a bowl of warm water, add tapioca pearls and allow them to soak for 20 minutes.",
-    "minutes": 20
-   },
-   {
-    "text": "Prepare bananas by peeling them and cutting them into ½ inch slices. Set the slices aside.",
+    "text": "Toast the sesame seeds and set them aside.",
     "minutes": null
    },
    {
-    "text": "On a stove, pour in 4 cups of water and bring it to a boil. Add in the banana slices.",
+    "text": "Bring 1½ cups water to a boil in a medium saucepan, sprinkle in the tapioca pearls and stir. Partly cover, reduce to low and simmer for about 15 minutes, stirring every couple of minutes, until most pearls are soft and translucent.",
+    "minutes": 15
+   },
+   {
+    "text": "Pour in the coconut milk, sugar and salt. Add the pandan leaves, tied in a knot or torn in half, raise the heat slightly and simmer a few minutes, stirring now and then, until the sugar dissolves.",
     "minutes": null
    },
    {
-    "text": "After 20 minutes, drain the tapioca pearls in cold water to allow the pearls to separate from each other.",
-    "minutes": 20
+    "text": "Peel the bananas and slice them crosswise about 2.5 cm thick. Add to the pan and stir to coat in the coconut milk.",
+    "minutes": null
    },
    {
-    "text": "Add the tapioca pearls into the the pot. Allow to simmer for 3 minutes or until the tapioca pearls turn clear.",
-    "minutes": 3
+    "text": "Simmer gently for 3 to 5 minutes, stirring carefully so the bananas don't turn mushy, until slightly softened.",
+    "minutes": 4
    },
    {
-    "text": "Next, add in sugar and pour in the coconut cream. Stir the ingredients gently for 3 minutes to incorporate the flavors. Add salt to taste.",
-    "minutes": 3
+    "text": "Turn off the heat, cover, and leave for about 15 minutes so the pandan flavour infuses.",
+    "minutes": 15
+   },
+   {
+    "text": "Serve warm, sprinkled with the toasted sesame seeds and chopped peanuts.",
+    "minutes": null
    }
   ]
  },
@@ -14318,129 +14314,163 @@
  {
   "source": "themealdb:53050",
   "title": "Ayam Percik",
-  "description": "A Malaysian dish of chicken thigh, shallot and cayenne pepper — serves 4, worth the couple of hours it takes.",
+  "description": "Chicken marinated in a spiced onion, garlic and ginger paste, roasted, then coated in a coconut cream and chilli percik sauce and finished under the grill.",
   "servings": 4,
   "cuisine": "Malaysian",
   "category": "Chicken",
   "image": "https://www.themealdb.com/images/media/meals/020z181619788503.jpg",
-  "prep_minutes": 20,
-  "cook_minutes": 75,
+  "prep_minutes": 30,
+  "cook_minutes": 50,
   "ingredients": [
    {
     "name": "chicken thigh",
-    "quantity": 6,
-    "unit": "",
-    "note": ""
+    "quantity": 1200,
+    "unit": "g",
+    "note": "thighs and drumsticks, about 4 pieces"
    },
    {
-    "name": "shallot",
-    "quantity": 16,
+    "name": "onion",
+    "quantity": 1,
     "unit": "",
-    "note": ""
-   },
-   {
-    "name": "ginger",
-    "quantity": 1.5,
-    "unit": "",
-    "note": ""
+    "note": "about 100 g, or about 5 shallots; for the marinade"
    },
    {
     "name": "garlic",
-    "quantity": 6,
-    "unit": "",
-    "note": ""
+    "quantity": 4,
+    "unit": "clove",
+    "note": "4–5; for the marinade"
    },
    {
-    "name": "cayenne pepper",
-    "quantity": 8,
-    "unit": "",
-    "note": ""
+    "name": "ginger",
+    "quantity": 20,
+    "unit": "g",
+    "note": "about 1 inch; for the marinade"
    },
    {
-    "name": "turmeric",
+    "name": "salt",
     "quantity": 2,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "ground cumin",
-    "quantity": 1.5,
-    "unit": "",
-    "note": ""
-   },
-   {
-    "name": "coriander",
-    "quantity": 1.5,
-    "unit": "",
-    "note": ""
-   },
-   {
-    "name": "fennel bulb",
-    "quantity": 1.5,
-    "unit": "",
-    "note": ""
-   },
-   {
-    "name": "tamarind paste",
-    "quantity": 2,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "coconut milk",
-    "quantity": 1,
-    "unit": "can",
-    "note": ""
+    "unit": "tsp",
+    "note": "for the marinade"
    },
    {
     "name": "sugar",
-    "quantity": 1,
+    "quantity": 2,
     "unit": "tsp",
-    "note": ""
+    "note": "for the marinade"
    },
    {
-    "name": "water",
+    "name": "turmeric",
     "quantity": 1,
-    "unit": "cup",
-    "note": ""
+    "unit": "tsp",
+    "note": "powder, for the marinade"
+   },
+   {
+    "name": "coriander seeds",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "for the marinade"
+   },
+   {
+    "name": "fennel seeds",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "for the marinade"
+   },
+   {
+    "name": "onion",
+    "quantity": 1,
+    "unit": "",
+    "note": "about 100 g, or about 5 shallots; for the sauce base paste"
+   },
+   {
+    "name": "garlic",
+    "quantity": 4,
+    "unit": "clove",
+    "note": "4–5; for the sauce base paste"
+   },
+   {
+    "name": "ginger",
+    "quantity": 20,
+    "unit": "g",
+    "note": "about 1 inch; for the sauce base paste"
+   },
+   {
+    "name": "lemongrass",
+    "quantity": 3,
+    "unit": "",
+    "note": "stalks, inner white core; for the sauce base paste"
+   },
+   {
+    "name": "candlenuts",
+    "quantity": 6,
+    "unit": "",
+    "note": "or hazelnuts or cashews; for the sauce base paste"
+   },
+   {
+    "name": "vegetable oil",
+    "quantity": null,
+    "unit": "",
+    "note": "for frying the paste; amount not given"
+   },
+   {
+    "name": "chilli paste",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": "dried chilli paste; creator's page says 2 tbsp, description says 4 tbsp (1–2 for less heat)"
+   },
+   {
+    "name": "tamarind paste",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "or juice from 1 tbsp tamarind pulp"
+   },
+   {
+    "name": "brown sugar",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "or coconut or palm sugar"
+   },
+   {
+    "name": "salt",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "for the sauce, or to taste"
+   },
+   {
+    "name": "coconut cream",
+    "quantity": 200,
+    "unit": "ml",
+    "note": "for the sauce"
    }
   ],
   "steps": [
    {
-    "text": "In a blender, add the ingredients for the spice paste and blend until smooth.",
+    "text": "Blend the onion, garlic, ginger, salt, sugar, turmeric, coriander seeds and fennel into a marinade paste and massage it onto the chicken. Marinate for at least 1 hour, or overnight for the best flavour.",
+    "minutes": 60
+   },
+   {
+    "text": "For the sauce, blend the second batch of onion, garlic and ginger with the lemongrass core and candlenuts into a base paste.",
     "minutes": null
    },
    {
-    "text": "Over medium heat, pour the spice paste in a skillet or pan and fry for 10 minutes until fragrant. Add water or oil 1 tablespoon at a time if the paste becomes too dry. Don't burn the paste. Lower the fire slightly if needed.",
-    "minutes": 10
-   },
-   {
-    "text": "Add the cloves, cardamom, tamarind pulp, coconut milk, water, sugar and salt. Turn the heat up and bring the mixture to boil. Turn the heat to medium low and simmer for 10 minutes. Stir occasionally. It will reduce slightly.",
-    "minutes": 10
-   },
-   {
-    "text": "This is the marinade/sauce, so taste and adjust seasoning if necessary. Don't worry if it's slightly bitter. It will go away when roasting.",
+    "text": "Fry the base paste in oil until fragrant, then add the dried chilli paste. Stir-fry over low heat until the paste is drier and darker and the oil breaks and turns red.",
     "minutes": null
    },
    {
-    "text": "When the marinade/sauce has cooled, pour everything over the chicken and marinate overnight to two days. Preheat the oven to 220°C (425°F)",
+    "text": "Stir in the tamarind, brown sugar, salt and coconut cream. Stir until well mixed and the sauce bubbles, then take it off the heat.",
     "minutes": null
    },
    {
-    "text": "Remove the chicken from the marinade. Spoon the marinade onto a greased (or aluminum lined) baking sheet.",
+    "text": "Lay the marinated chicken in a pan and roast in a preheated 180°C oven for 30 to 35 minutes.",
+    "minutes": 35
+   },
+   {
+    "text": "Take the chicken out and dip or slather it all over with the percik sauce.",
     "minutes": null
    },
    {
-    "text": "Lay the chicken on top of the sauce (make sure the chicken covers the sauce and the sauce isn't exposed or it'll burn) and spread the remaining marinade on the chicken.",
-    "minutes": null
-   },
-   {
-    "text": "Roast for 35-45 minutes or until internal temp of the thickest part of chicken is at least 80°C (175°F)",
-    "minutes": 45
-   },
-   {
-    "text": "Let chicken rest for 5 minutes. Brush the chicken with some of the oil. Serve chicken with the sauce over steamed rice (or coconut rice).",
-    "minutes": 5
+    "text": "Switch the oven to grill and cook the chicken for another 15 minutes, until charred to your liking and the sauce turns a deeper golden colour.",
+    "minutes": 15
    }
   ]
  },
