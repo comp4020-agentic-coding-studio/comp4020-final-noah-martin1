@@ -3731,9 +3731,9 @@
   "videoId": "DIhxk-98Hz8",
   "title": "How to Make Jamaican Oxtail with Broad Beans | Stew Recipes | Allrecipes.com",
   "channel": "Allrecipes",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-28",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53487": {
   "videoId": null,
@@ -3828,12 +3828,12 @@
   "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52861": {
-  "videoId": "QSTsturcyL0",
-  "title": "Peanut Butter Cheesecake",
-  "channel": "Chelsea",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "videoId": "mOVUc8A2YIk",
+  "title": "No-Bake Peanut Butter Cheesecake Recipe",
+  "channel": "The Cooking Foodie",
+  "checked": "2026-10-28",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:52916": {
   "videoId": "8U1tKWKDeWA",
@@ -3864,12 +3864,12 @@
   "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53019": {
-  "videoId": "lyqDmUroZrI",
-  "title": "How to make pierogi (Polish dumplings) video - Allrecipes.co.uk",
-  "channel": "Allrecipes UK | Ireland",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "videoId": "dA-IGCYftn8",
+  "title": "How to make Pierogi Ruskie - Polish Dumplings",
+  "channel": "RecipeTin Eats",
+  "checked": "2026-10-28",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:52837": {
   "videoId": "wqZzLAPmr9k",
@@ -3952,12 +3952,10 @@
   "checked": "2026-10-20"
  },
  "themealdb:53022": {
-  "videoId": "EZS4ev2crHc",
-  "title": "Polish PANCAKES - NALEŚNIKI - How to make Polish food.",
-  "channel": "Polish Your Kitchen",
+  "videoId": null,
+  "checked": "2026-10-28",
   "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "reason": "The only evidence is the Polish Foodies page for ZlCC65Oj0BU, which gives amounts but just three method lines (mix batter, heat pan with 3 drops of oil, fry thin) and itself points readers elsewhere for the real detail; there is no filling and no rest/flip/serving method, and transcripts are paused. The old video (Polish Your Kitchen) also had no usable recipe text, so the dish cannot be verified from saved evidence."
  },
  "themealdb:53297": {
   "videoId": "wTqashUAid8",
@@ -3971,9 +3969,9 @@
   "videoId": "91FM8lHEGbQ",
   "title": "Pork and Sauerkraut Goulash (Segedin)",
   "channel": "Jernej Kitchen",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-28",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:52847": {
   "videoId": "MEdHMTD0VCA",
@@ -4107,9 +4105,9 @@
   "videoId": "miqfHkE6rJY",
   "title": "EPIC SPANISH TAPAS: Seared Shrimp with Romesco Sauce",
   "channel": "Spain on a Fork",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-28",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53410": {
   "videoId": "se2DU0httvg",
@@ -4151,9 +4149,9 @@
   "videoId": "CxHTj_6sU_A",
   "title": "The Easiest Salt & Pepper Squid | 5-Minute Recipe | Easy Asian Home Cooking",
   "channel": "Adam Liaw",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-28",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53383": {
   "videoId": "AbJNVnkndS4",
@@ -4277,9 +4275,9 @@
   "videoId": "N1aJ3nEYXyg",
   "title": "How to Make Rocky Road Fudge Dessert",
   "channel": "Six Sisters' Stuff",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-28",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53024": {
   "videoId": "VAR10T9mfhU",
@@ -4310,12 +4308,10 @@
   "checked": "2026-10-20"
  },
  "themealdb:53020": {
-  "videoId": "AU60fxyxXGw",
-  "title": "Polish CHICKEN SOUP - ROSÓŁ with HOMEMADE NOODLES; How to make Polish food by Polish Your Kitchen",
-  "channel": "Polish Your Kitchen",
+  "videoId": null,
+  "checked": "2026-10-28",
   "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "reason": "Polish Your Kitchen video AU60fxyxXGw (34 min) has no recipe in its description and its linked page (polishyourkitchen.com/polish-chicken-soup-rosol/) returned no ingredients or method when fetched; transcripts are blocked. Other rosol videos checked (Polish Foodies, Manny's Made at Home, The Headless Chef, John Gora) give ingredient lists without amounts or no method, so none was verifiable."
  },
  "themealdb:53052": {
   "videoId": "cl4YH8wblRs",

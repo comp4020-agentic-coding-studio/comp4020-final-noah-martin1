@@ -56506,32 +56506,32 @@
  },
  {
   "source": "themealdb:52943",
-  "title": "Oxtail with broad beans",
-  "description": "A Jamaican dish of oxtail, broad beans and spring onion — serves 4, about an hour start to finish.",
+  "title": "Jamaican oxtail with broad beans",
+  "description": "Oxtail browned with onion, ginger, scotch bonnet and thyme, pressure-cooked, then finished with broad beans and allspice in a cornflour-thickened sauce.",
   "servings": 4,
   "cuisine": "Jamaican",
   "category": "Beef",
   "image": "https://www.themealdb.com/images/media/meals/1520083578.jpg",
-  "prep_minutes": 20,
-  "cook_minutes": 35,
+  "prep_minutes": 30,
+  "cook_minutes": 45,
   "ingredients": [
    {
     "name": "oxtail",
     "quantity": 450,
     "unit": "g",
-    "note": ""
+    "note": "cut into pieces"
    },
    {
     "name": "onion",
     "quantity": 1,
     "unit": "",
-    "note": "chopped"
+    "note": "large, chopped"
    },
    {
     "name": "spring onion",
     "quantity": 1,
     "unit": "",
-    "note": ""
+    "note": "thinly sliced"
    },
    {
     "name": "garlic",
@@ -56543,7 +56543,7 @@
     "name": "ginger",
     "quantity": 1,
     "unit": "tsp",
-    "note": ""
+    "note": "minced fresh"
    },
    {
     "name": "scotch bonnet",
@@ -56560,55 +56560,77 @@
    {
     "name": "thyme",
     "quantity": 1,
-    "unit": "",
-    "note": "chopped"
+    "unit": "sprig",
+    "note": "fresh, chopped"
+   },
+   {
+    "name": "salt",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": ""
+   },
+   {
+    "name": "black pepper",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": ""
    },
    {
     "name": "vegetable oil",
     "quantity": 2,
     "unit": "tbsp",
-    "note": ""
+    "note": "for browning"
    },
    {
     "name": "water",
-    "quantity": 350,
-    "unit": "ml",
-    "note": ""
+    "quantity": 1.5,
+    "unit": "cup",
+    "note": "for the pressure cooker"
    },
    {
     "name": "broad beans",
-    "quantity": 200,
-    "unit": "g",
-    "note": ""
+    "quantity": 1,
+    "unit": "cup",
+    "note": "canned fava beans, drained"
+   },
+   {
+    "name": "allspice",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "whole berries"
    },
    {
     "name": "cornflour",
     "quantity": 1,
     "unit": "tbsp",
-    "note": ""
+    "note": "cornstarch, to thicken"
    },
    {
     "name": "water",
     "quantity": 2,
     "unit": "tbsp",
-    "note": ""
+    "note": "to dissolve the cornflour"
    }
   ],
   "steps": [
    {
-    "text": "Toss the oxtail with the onion, spring onion, garlic, ginger, chilli, soy sauce, thyme, salt and pepper. Heat the vegetable oil in a large frying pan over medium-high heat.",
+    "text": "Toss the oxtail with the onion, spring onion, garlic, ginger, scotch bonnet, soy sauce, thyme, salt and pepper.",
     "minutes": null
    },
    {
-    "text": "Brown the oxtail in the pan until browned all over, about 10 minutes. Place into a pressure cooker, and pour in 375ml water. Cook at pressure for 25 minutes, then remove from heat, and remove the lid according to manufacturer's directions.",
+    "text": "Heat the oil in a large frying pan over medium-high heat and brown the oxtail all over, about 10 minutes.",
+    "minutes": 10
+   },
+   {
+    "text": "Transfer to a pressure cooker, pour in the water and cook at pressure for 25 minutes. Take off the heat and release the lid following the manufacturer's directions.",
     "minutes": 25
    },
    {
-    "text": "Add the broad beans and pimento berries, and bring to a simmer over medium-high heat. Dissolve the cornflour in 2 tablespoons water, and stir into the simmering oxtail.",
+    "text": "Add the broad beans and allspice berries and bring to a simmer over medium-high heat.",
     "minutes": null
    },
    {
-    "text": "Cook and stir a few minutes until the sauce has thickened, and the broad beans are tender.",
+    "text": "Dissolve the cornflour in 2 tablespoons water, stir it into the simmering oxtail, and cook and stir for a few minutes until the sauce thickens and the beans are tender.",
     "minutes": null
    }
   ]
@@ -57938,107 +57960,97 @@
  },
  {
   "source": "themealdb:52861",
-  "title": "Peanut Butter Cheesecake",
-  "description": "An American sweet made with peanut cookies, gelatine and ricotta — serves 8, ready in under half an hour.",
-  "servings": 8,
+  "title": "No-bake peanut butter cheesecake",
+  "description": "A no-bake peanut butter cheesecake on a crushed biscuit base, set in the fridge and topped with a dark chocolate ganache. It uses no gelatine.",
+  "servings": 12,
   "cuisine": "American",
   "category": "Dessert",
-  "image": "https://www.themealdb.com/images/media/meals/qtuuys1511387068.jpg",
-  "prep_minutes": 15,
+  "image": "https://i.ytimg.com/vi/mOVUc8A2YIk/hqdefault.jpg",
+  "prep_minutes": 30,
   "cook_minutes": 5,
   "ingredients": [
    {
+    "name": "digestive biscuits",
+    "quantity": 270,
+    "unit": "g",
+    "note": "or graham crackers, for the base"
+   },
+   {
     "name": "butter",
-    "quantity": 50,
+    "quantity": 100,
     "unit": "g",
-    "note": ""
+    "note": "melted, for the base"
    },
    {
-    "name": "peanut cookies",
-    "quantity": 175,
+    "name": "cream cheese",
+    "quantity": 525,
     "unit": "g",
-    "note": ""
+    "note": "for the filling"
    },
    {
-    "name": "gelatine",
-    "quantity": 5,
-    "unit": "",
-    "note": ""
-   },
-   {
-    "name": "ricotta",
-    "quantity": 500,
+    "name": "icing sugar",
+    "quantity": 187,
     "unit": "g",
-    "note": ""
+    "note": "powdered sugar"
    },
    {
     "name": "peanut butter",
-    "quantity": 175,
+    "quantity": 250,
     "unit": "g",
     "note": ""
    },
    {
-    "name": "golden syrup",
-    "quantity": 175,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "milk",
-    "quantity": 150,
-    "unit": "ml",
+    "name": "vanilla extract",
+    "quantity": 1,
+    "unit": "tsp",
     "note": ""
    },
    {
     "name": "cream",
-    "quantity": 275,
+    "quantity": 120,
     "unit": "ml",
-    "note": ""
+    "note": "heavy cream, for the filling"
    },
    {
-    "name": "brown sugar",
-    "quantity": 2,
-    "unit": "tbsp",
-    "note": ""
+    "name": "cream",
+    "quantity": 160,
+    "unit": "ml",
+    "note": "heavy cream, for the ganache"
    },
    {
-    "name": "peanut brittle",
-    "quantity": null,
-    "unit": "",
-    "note": "crushed"
+    "name": "dark chocolate",
+    "quantity": 125,
+    "unit": "g",
+    "note": "chopped, for the ganache"
    }
   ],
   "steps": [
    {
-    "text": "Oil and line a 20cm round loose- bottomed cake tin with cling film, making it as smooth as possible. Melt the butter in a pan.",
+    "text": "Blitz the biscuits to crumbs in a food processor, add the melted butter and process again until combined. Press into the base of a 23 cm springform tin and chill while you make the filling.",
     "minutes": null
    },
    {
-    "text": "Crush the biscuits by bashing them in a bag with a rolling pin, then stir them into the butter until very well coated. Press the mixture firmly into the base of the tin and chill.",
+    "text": "Beat the cream cheese and icing sugar until smooth and creamy. Add the peanut butter and vanilla and beat again until smooth.",
     "minutes": null
    },
    {
-    "text": "Soak the gelatine in water while you make the filling. Tip the ricotta into a bowl, then beat in the peanut butter and syrup.",
-    "minutes": null
+    "text": "Add the 120 ml cream and beat for 2-3 minutes more until smooth.",
+    "minutes": 3
    },
    {
-    "text": "Ricotta has a slightly grainy texture so blitz until smooth with a stick blender for a smoother texture if you prefer.",
-    "minutes": null
+    "text": "Pour the filling into the tin and refrigerate for at least 6 hours or overnight (it can also be frozen).",
+    "minutes": 360
    },
    {
-    "text": "Take the soaked gelatine from the water and squeeze dry. Put it into a pan with the milk and heat very gently until the gelatine dissolves. Beat into the peanut mixture, then tip onto the biscuit base. Chill until set.",
-    "minutes": null
+    "text": "For the ganache, bring the 160 ml cream to a simmer, take it off the heat and add the chopped chocolate. Leave for 1 minute, then stir until smooth.",
+    "minutes": 1
    },
    {
-    "text": "To freeze, leave in the tin and as soon as it is solid, cover the surface with cling film, then wrap the tin with cling film and foil.",
-    "minutes": null
+    "text": "Cool the ganache slightly and pour it over the cheesecake, in the tin or after unmoulding. Refrigerate at least 1 hour before serving.",
+    "minutes": 60
    },
    {
-    "text": "To defrost, thaw in the fridge overnight.",
-    "minutes": null
-   },
-   {
-    "text": "To serve, carefully remove from the tin. Whisk the cream with the sugar until it holds its shape, then spread on top of the cheesecake and scatter with the peanut brittle.",
+    "text": "There is no gelatine, so the cake is not very stable; freezing it for 1 hour before serving helps it hold its shape.",
     "minutes": null
    }
   ]
@@ -58437,110 +58449,156 @@
  },
  {
   "source": "themealdb:53019",
-  "title": "Pierogi (Polish Dumplings)",
-  "description": "A Polish side of sauerkraut, potato and sour cream — makes 10, on the table in about 45 minutes.",
-  "servings": 10,
+  "title": "Pierogi ruskie (Polish potato and cheese dumplings)",
+  "description": "Pierogi with a dough of butter, water and egg, filled with mashed potato and cheddar, boiled and tossed in onion butter with sour cream.",
+  "servings": 6,
   "cuisine": "Polish",
-  "category": "Side",
-  "image": "https://www.themealdb.com/images/media/meals/45xxr21593348847.jpg",
-  "prep_minutes": 15,
-  "cook_minutes": 15,
+  "category": "Vegetarian",
+  "image": "https://i.ytimg.com/vi/dA-IGCYftn8/hqdefault.jpg",
+  "prep_minutes": 45,
+  "cook_minutes": 40,
   "ingredients": [
    {
-    "name": "butter",
-    "quantity": 2,
-    "unit": "tbsp",
-    "note": ""
+    "name": "plain flour",
+    "quantity": 300,
+    "unit": "g",
+    "note": "for the dough"
    },
    {
-    "name": "onion",
-    "quantity": 0.333,
-    "unit": "cup",
-    "note": ""
-   },
-   {
-    "name": "sauerkraut",
-    "quantity": 1.5,
-    "unit": "cup",
-    "note": ""
+    "name": "salt",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "for the dough"
    },
    {
     "name": "butter",
-    "quantity": 3,
-    "unit": "tbsp",
-    "note": ""
+    "quantity": 50,
+    "unit": "g",
+    "note": "for the dough"
    },
    {
-    "name": "onion",
+    "name": "water",
     "quantity": 0.5,
     "unit": "cup",
-    "note": ""
-   },
-   {
-    "name": "potato",
-    "quantity": 2,
-    "unit": "cup",
-    "note": ""
+    "note": "for the dough"
    },
    {
     "name": "eggs",
-    "quantity": 3,
-    "unit": "",
-    "note": ""
-   },
-   {
-    "name": "sour cream",
     "quantity": 1,
-    "unit": "pack",
-    "note": ""
+    "unit": "",
+    "note": "large, whisked, for the dough"
    },
    {
-    "name": "plain flour",
-    "quantity": 3,
-    "unit": "cup",
-    "note": ""
+    "name": "potato",
+    "quantity": 500,
+    "unit": "g",
+    "note": "peeled, sliced 1 cm thick, for the filling"
+   },
+   {
+    "name": "salt",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "for boiling the potatoes"
+   },
+   {
+    "name": "butter",
+    "quantity": 30,
+    "unit": "g",
+    "note": "for the filling"
+   },
+   {
+    "name": "cheddar cheese",
+    "quantity": 100,
+    "unit": "g",
+    "note": "shredded; or quark"
    },
    {
     "name": "salt",
     "quantity": 0.25,
     "unit": "tsp",
-    "note": ""
+    "note": "for the filling"
    },
    {
-    "name": "baking powder",
+    "name": "black pepper",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": "for the filling"
+   },
+   {
+    "name": "butter",
+    "quantity": 30,
+    "unit": "g",
+    "note": "for the onion butter"
+   },
+   {
+    "name": "onion",
+    "quantity": 1,
+    "unit": "",
+    "note": "finely diced"
+   },
+   {
+    "name": "salt",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": "for the onion butter"
+   },
+   {
+    "name": "salt",
     "quantity": 1,
     "unit": "tbsp",
-    "note": ""
+    "note": "for the boiling water"
+   },
+   {
+    "name": "butter",
+    "quantity": 75,
+    "unit": "g",
+    "note": "for tossing the pierogi: 25 g per batch of 10, three batches"
+   },
+   {
+    "name": "sour cream",
+    "quantity": null,
+    "unit": "",
+    "note": "to serve"
+   },
+   {
+    "name": "parsley",
+    "quantity": null,
+    "unit": "",
+    "note": "to garnish"
    }
   ],
   "steps": [
    {
-    "text": "To prepare the sauerkraut filling, melt the butter in a skillet over medium heat. Stir in the onion, and cook until translucent, about 5 minutes. Add the drained sauerkraut and cook for an additional 5 minutes.",
+    "text": "Boil the sliced potatoes in salted water until soft, then mash with the butter, cheddar, salt and pepper. Spread out on a tray, cover with cling wrap touching the surface and cool fully.",
+    "minutes": 15
+   },
+   {
+    "text": "Melt the butter in the water, then make a well in the flour and salt and pour it in with the whisked egg. Mix, turn out and knead for 5 minutes until smooth.",
     "minutes": 5
    },
    {
-    "text": "Season to taste with salt and pepper, then remove to a plate to cool.",
+    "text": "Wrap the dough and rest it for 30 minutes.",
+    "minutes": 30
+   },
+   {
+    "text": "Roll the dough 3 mm thick and cut 7.5 cm rounds. Put 1 tablespoon of filling on each, brush the edge with water, fold over and pinch firmly to seal.",
     "minutes": null
    },
    {
-    "text": "For the mashed potato filling, melt the butter in a skillet over medium heat. Stir in the onion, and cook until translucent, about 5 minutes. Stir into the mashed potatoes, and season with salt and white pepper.",
+    "text": "Fry the diced onion and salt in 30 g butter for 10 minutes until golden, and set aside.",
+    "minutes": 10
+   },
+   {
+    "text": "Boil 10 pierogi at a time in a large pot of salted water for 5 minutes, until they float. Scoop out a mugful of the water, then lift out the pierogi.",
     "minutes": 5
    },
    {
-    "text": "To make the dough, beat together the eggs and sour cream until smooth. Sift together the flour, salt, and baking powder; stir into the sour cream mixture until dough comes together.",
-    "minutes": null
+    "text": "For each batch of 10, melt 25 g butter in a skillet, add the pierogi, a third of the onion butter and 2 tablespoons of the cooking water, and toss for 1 minute until coated.",
+    "minutes": 1
    },
    {
-    "text": "Knead the dough on a lightly floured surface until firm and smooth. Divide the dough in half, then roll out one half to 1/8 inch thickness. Cut into 3 inch rounds using a biscuit cutter.",
+    "text": "Serve with sour cream and a sprinkle of parsley. Uncooked pierogi can be frozen and cooked from frozen.",
     "minutes": null
-   },
-   {
-    "text": "Place a small spoonful of the mashed potato filling into the center of each round. Moisten the edges with water, fold over, and press together with a fork to seal. Repeat procedure with the remaining dough and the sauerkraut filling.",
-    "minutes": null
-   },
-   {
-    "text": "Bring a large pot of lightly salted water to a boil. Add perogies and cook for 3 to 5 minutes or until pierogi float to the top. Remove with a slotted spoon.",
-    "minutes": 5
    }
   ]
  },
@@ -59955,111 +60013,117 @@
  },
  {
   "source": "themealdb:53301",
-  "title": "Pork & sauerkraut goulash",
-  "description": "A Polish stew of pork shoulder, lard and sauerkraut — serves 4, worth the couple of hours it takes.",
-  "servings": 4,
+  "title": "Pork and sauerkraut goulash (Segedin)",
+  "description": "A one-pot stew of diced pork shoulder, onion, paprika and sauerkraut, simmered for an hour and served with sour cream.",
+  "servings": 6,
   "cuisine": "Polish",
   "category": "Pork",
   "image": "https://www.themealdb.com/images/media/meals/cyuhwp1764362103.jpg",
-  "prep_minutes": 20,
-  "cook_minutes": 70,
+  "prep_minutes": 10,
+  "cook_minutes": 60,
   "ingredients": [
    {
     "name": "lard",
     "quantity": 3,
     "unit": "tbsp",
-    "note": ""
+    "note": "or canola oil"
    },
    {
     "name": "onion",
-    "quantity": 4,
+    "quantity": 3,
     "unit": "",
-    "note": "chopped"
-   },
-   {
-    "name": "cumin seeds",
-    "quantity": 1,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "pork shoulder",
-    "quantity": 800,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "garlic",
-    "quantity": 4,
-    "unit": "clove",
-    "note": "crushed"
-   },
-   {
-    "name": "plain flour",
-    "quantity": 2,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "paprika",
-    "quantity": 2,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "beef stock",
-    "quantity": 1500,
-    "unit": "ml",
-    "note": ""
+    "note": "diced"
    },
    {
     "name": "bay leaf",
-    "quantity": 4,
-    "unit": "",
+    "quantity": 2,
+    "unit": "leaf",
+    "note": "removed before serving"
+   },
+   {
+    "name": "pork shoulder",
+    "quantity": 1,
+    "unit": "kg",
+    "note": "cut into pieces about 1 cm"
+   },
+   {
+    "name": "garlic",
+    "quantity": 3,
+    "unit": "clove",
+    "note": "diced"
+   },
+   {
+    "name": "paprika",
+    "quantity": 1.5,
+    "unit": "tbsp",
     "note": ""
+   },
+   {
+    "name": "caraway seeds",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": "ground (caraway powder)"
+   },
+   {
+    "name": "tomato puree",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "tomato paste, optional"
+   },
+   {
+    "name": "salt",
+    "quantity": null,
+    "unit": "",
+    "note": "to taste"
+   },
+   {
+    "name": "black pepper",
+    "quantity": null,
+    "unit": "",
+    "note": "to taste"
    },
    {
     "name": "sauerkraut",
-    "quantity": 400,
-    "unit": "g",
+    "quantity": 1,
+    "unit": "kg",
     "note": ""
    },
    {
-    "name": "cream",
-    "quantity": 200,
+    "name": "water",
+    "quantity": 1200,
     "unit": "ml",
-    "note": ""
+    "note": "or stock"
    },
    {
     "name": "sour cream",
-    "quantity": 4,
-    "unit": "tbsp",
-    "note": ""
+    "quantity": 100,
+    "unit": "g",
+    "note": "to serve"
    }
   ],
   "steps": [
    {
-    "text": "Heat the lard in a saucepan over a medium heat and fry the finely chopped onion until golden, around 5-8 mins. Tip in the cumin and pork, and fry for 10 mins all over until browned. Add the garlic, season well and scatter over the flour.",
-    "minutes": 10
+    "text": "Heat the lard or oil in a large lidded pot over medium heat and fry the diced onion for 6-8 minutes.",
+    "minutes": 8
    },
    {
-    "text": "Cook for about a minute, then add the paprika and cook for 1 min more.",
+    "text": "Add the bay leaves and the pork cut into 1 cm pieces, and fry on high heat for about 5 minutes until golden brown.",
+    "minutes": 5
+   },
+   {
+    "text": "Add the garlic, paprika, caraway, salt and pepper, and the tomato paste if using, and cook for a minute.",
     "minutes": 1
    },
    {
-    "text": "Pour in half of the stock, add the bay leaves, and simmer with the lid on over a low heat for 30 mins.",
-    "minutes": 30
-   },
-   {
-    "text": "Add the sauerkraut, remaining stock and a drizzle of the sauerkraut pickling juices. Simmer with the lid for 30 mins, stirring occasionally, until the meat is tender. Stir in the cream and simmer for 5 mins to combine the flavours.",
-    "minutes": 30
-   },
-   {
-    "text": "Season to taste, the serve garnished with a spoonful of soured cream.",
+    "text": "Add the sauerkraut and the water or stock and bring to the boil.",
     "minutes": null
    },
    {
-    "text": "This recipe has been provided by Apetit Online and not been re-tested by us.",
+    "text": "Cover, reduce to medium-low and simmer for 1 hour.",
+    "minutes": 60
+   },
+   {
+    "text": "Remove the bay leaves, divide between six plates and top with sour cream. Serve with a side dish of your choice.",
     "minutes": null
    }
   ]
@@ -62057,113 +62121,123 @@
  },
  {
   "source": "themealdb:53174",
-  "title": "Prawns with Romesco sauce",
-  "description": "A Spanish dish of prawns, capsicum and chilli — serves 4, on the table in about 45 minutes.",
-  "servings": 4,
+  "title": "Seared prawns with romesco sauce",
+  "description": "Jumbo prawns seared for two minutes and served around a romesco sauce of roasted peppers, tomato, toasted nuts and olive oil.",
+  "servings": 2,
   "cuisine": "Spanish",
   "category": "Seafood",
   "image": "https://www.themealdb.com/images/media/meals/u03xhi1763308917.jpg",
   "prep_minutes": 15,
-  "cook_minutes": 15,
+  "cook_minutes": 10,
   "ingredients": [
    {
-    "name": "capsicum",
-    "quantity": 1,
+    "name": "roasted capsicum",
+    "quantity": 4,
     "unit": "",
-    "note": ""
+    "note": "jarred roasted red peppers, for the romesco"
+   },
+   {
+    "name": "tomato puree",
+    "quantity": 0.25,
+    "unit": "cup",
+    "note": "canned tomato concentrate, for the romesco"
    },
    {
     "name": "garlic",
-    "quantity": 3,
-    "unit": "",
-    "note": "large"
-   },
-   {
-    "name": "chilli",
     "quantity": 1,
-    "unit": "",
-    "note": "large"
-   },
-   {
-    "name": "tomato",
-    "quantity": 1,
-    "unit": "",
-    "note": "large"
-   },
-   {
-    "name": "hazelnuts",
-    "quantity": 10,
-    "unit": "",
-    "note": ""
+    "unit": "clove",
+    "note": "for the romesco"
    },
    {
     "name": "almonds",
-    "quantity": 10,
+    "quantity": 8,
     "unit": "",
-    "note": ""
+    "note": "raw blanched marcona, toasted"
    },
    {
-    "name": "parsley",
-    "quantity": 3,
-    "unit": "sprig",
-    "note": ""
-   },
-   {
-    "name": "bread",
-    "quantity": 1,
+    "name": "hazelnuts",
+    "quantity": 8,
     "unit": "",
-    "note": "sliced"
-   },
-   {
-    "name": "olive oil",
-    "quantity": 120,
-    "unit": "ml",
-    "note": ""
+    "note": "raw, toasted"
    },
    {
     "name": "red wine vinegar",
-    "quantity": 2,
-    "unit": "tbsp",
+    "quantity": 0.5,
+    "unit": "tsp",
     "note": ""
    },
    {
+    "name": "olive oil",
+    "quantity": 0.25,
+    "unit": "cup",
+    "note": "extra virgin, for the romesco"
+   },
+   {
+    "name": "salt",
+    "quantity": 1,
+    "unit": "pinch",
+    "note": "sea salt, for the romesco"
+   },
+   {
+    "name": "black pepper",
+    "quantity": 1,
+    "unit": "pinch",
+    "note": "for the romesco"
+   },
+   {
     "name": "prawns",
-    "quantity": 400,
-    "unit": "g",
-    "note": ""
+    "quantity": 15,
+    "unit": "",
+    "note": "raw jumbo, peeled and deveined"
+   },
+   {
+    "name": "olive oil",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "extra virgin, for searing"
+   },
+   {
+    "name": "salt",
+    "quantity": 1,
+    "unit": "pinch",
+    "note": "sea salt, to season the prawns"
+   },
+   {
+    "name": "black pepper",
+    "quantity": 1,
+    "unit": "pinch",
+    "note": "to season the prawns"
+   },
+   {
+    "name": "parsley",
+    "quantity": null,
+    "unit": "",
+    "note": "freshly chopped, to garnish"
    }
   ],
   "steps": [
    {
-    "text": "Prepare ahead - halve the pepper lengthways and remove the seeds and stalk. Line a grill pan with foil and put the pepper halves, skin side up, on the grill pan with the whole garlic cloves, chilli and tomato.",
+    "text": "Dry-roast the hazelnuts and almonds in a small pan over medium heat for about 4 minutes, stirring constantly so they toast evenly without burning. Set aside.",
+    "minutes": 4
+   },
+   {
+    "text": "Put the roasted peppers, tomato concentrate, garlic, toasted nuts, vinegar, 1/4 cup olive oil, salt and pepper in a food processor.",
     "minutes": null
    },
    {
-    "text": "Grill for 2 minutes, turn the tomato, then grill for a further 2 minutes. Remove the tomato with a large spoon, then peel, quarter and remove the seeds. Then chop the tomato roughly.",
-    "minutes": 2
-   },
-   {
-    "text": "Continue grilling the pepper, chilli and garlic for 4-5 minutes, until the pepper and chilli skins have blackened and the garlic is starting to soften (the garlic skin will start to split when it is ready).",
-    "minutes": 5
-   },
-   {
-    "text": "When cool enough to handle, peel and halve the chilli, and scrape out and discard the seeds. Peel the pepper and roughly chop both the pepper and chilli.",
-    "minutes": null
-   },
-   {
-    "text": "Spread nuts over the foil and grill until toasted. Finely chop the nuts and parsley in a food processor. Tip into a small bowl.",
-    "minutes": null
-   },
-   {
-    "text": "Heat 3 tablespoons of oil in a frying pan, add the pepper, garlic and chilli and fry for 3 minutes. Tear up the bread and add to the pan, turning it in the oil until lightly browned.",
+    "text": "Run it on low speed for about 3 minutes until combined, then set aside.",
     "minutes": 3
    },
    {
-    "text": "Pulse in food processor with the tomatoes, salt, vinegar and oil until roughly chopped. Tip into a bowl. Leave to cool and store in fridge for up to 3 days.",
+    "text": "Pat the prawns dry with paper towels and season with salt and pepper.",
     "minutes": null
    },
    {
-    "text": "On the day add the nuts and parsley to the sauce and mix. Serve in a small bowl on a plate with the peeled prawns. Supply cocktail sticks for spearing the prawns.",
+    "text": "Heat a pan over medium-high heat with a generous tablespoon of olive oil. After 1 minute, add the prawns seasoned side down, flip after 1 minute and take off the heat after 2 minutes in total.",
+    "minutes": 2
+   },
+   {
+    "text": "Spoon the romesco into a small bowl on a plate, arrange the prawns around it and sprinkle with chopped parsley.",
     "minutes": null
    }
   ]
@@ -62725,71 +62799,105 @@
  },
  {
   "source": "themealdb:53108",
-  "title": "Quick salt & pepper squid",
-  "description": "An Australian dish of squid, chinese five spice powder and sesame oil — serves 2, ready in under half an hour.",
+  "title": "Salt and pepper squid",
+  "description": "Squid tubes scored, dusted in flour and potato starch, deep-fried, then stir-fried briefly with garlic, chilli and spring onion and seasoned with salt and pepper.",
   "servings": 2,
-  "cuisine": "Australian",
+  "cuisine": "Chinese",
   "category": "Seafood",
   "image": "https://www.themealdb.com/images/media/meals/cp74zo1762341241.jpg",
   "prep_minutes": 10,
-  "cook_minutes": 5,
+  "cook_minutes": 10,
   "ingredients": [
    {
     "name": "squid",
-    "quantity": 400,
+    "quantity": 500,
     "unit": "g",
-    "note": ""
+    "note": "tubes, cleaned"
+   },
+   {
+    "name": "plain flour",
+    "quantity": 0.25,
+    "unit": "cup",
+    "note": "for dusting"
+   },
+   {
+    "name": "potato starch",
+    "quantity": 0.25,
+    "unit": "cup",
+    "note": "or cornflour, for dusting"
    },
    {
     "name": "vegetable oil",
-    "quantity": 3,
-    "unit": "tbsp",
-    "note": ""
+    "quantity": 2,
+    "unit": "l",
+    "note": "for deep-frying (about 2 L, not all absorbed)"
    },
    {
-    "name": "chinese five spice powder",
+    "name": "vegetable oil",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "clean oil, for stir-frying"
+   },
+   {
+    "name": "garlic",
+    "quantity": 4,
+    "unit": "clove",
+    "note": "peeled, roughly chopped"
+   },
+   {
+    "name": "chilli",
+    "quantity": 1,
+    "unit": "",
+    "note": "large red, sliced"
+   },
+   {
+    "name": "spring onion",
+    "quantity": 2,
+    "unit": "",
+    "note": "sliced"
+   },
+   {
+    "name": "salt",
     "quantity": 0.5,
     "unit": "tsp",
     "note": ""
    },
    {
-    "name": "sesame oil",
-    "quantity": 1,
-    "unit": "dash",
-    "note": ""
-   },
-   {
-    "name": "coriander",
-    "quantity": 1,
-    "unit": "sprig",
-    "note": "fresh"
-   },
-   {
-    "name": "sweet chilli sauce",
+    "name": "black pepper",
     "quantity": null,
     "unit": "",
-    "note": "a drizzle"
+    "note": "freshly ground, to taste"
+   },
+   {
+    "name": "lemon",
+    "quantity": null,
+    "unit": "",
+    "note": "wedges, to serve"
    }
   ],
   "steps": [
    {
-    "text": "Ask the fishmonger to clean the squid; little ones often come ready-cleaned. Using kitchen scissors, cut open the body and open out. Wash well, then pat dry. If you have a large squid, cut the body into four portions, roughly square. Small squid can just be opened up.",
+    "text": "Score the squid in a cross-hatch pattern without cutting all the way through, cut into bite-sized pieces and toss in the flour and potato starch.",
     "minutes": null
    },
    {
-    "text": "Using the tip of a very sharp knife, score the top in a neat criss-cross. Brush with oil and set aside while you heat the barbecue or griddle until ready to cook.",
+    "text": "Heat the oil in a wok to 180°C.",
     "minutes": null
    },
    {
-    "text": "Mix together 2 tsp sea salt, Chinese five-spice and 1 tsp freshly ground black pepper. Sprinkle on both sides of the squid just before cooking, according to taste. You may not need it all.",
+    "text": "Shake off excess flour and deep-fry the squid in batches for about 3 minutes until golden brown. Drain well.",
+    "minutes": 3
+   },
+   {
+    "text": "Pour off the oil, brush out the wok and return it to medium heat with about 1 tbsp clean oil.",
     "minutes": null
    },
    {
-    "text": "Heat the griddle pan to hot and cook about 1 min each side, until it starts to curl. Remove with tongs to a serving plate and drizzle with a little sesame oil.",
-    "minutes": 1
+    "text": "Fry the garlic, chilli and spring onion for about 2 minutes until fragrant and lightly browned.",
+    "minutes": 2
    },
    {
-    "text": "To serve, garnish with coriander leaves and serve with small bowls of sweet chilli sauce to dip into.",
+    "text": "Return the squid, season well with salt and plenty of black pepper, toss to combine and serve with lemon wedges.",
     "minutes": null
    }
   ]
@@ -64417,81 +64525,59 @@
  },
  {
   "source": "themealdb:52786",
-  "title": "Rocky Road Fudge",
-  "description": "An American sweet made with marshmallows, chocolate chips and peanut butter — makes 12, ready in under half an hour.",
-  "servings": 12,
+  "title": "Rocky road fudge",
+  "description": "A microwave fudge of milk chocolate chips and sweetened condensed milk, folded with mini marshmallows and chopped peanuts and set in the fridge.",
+  "servings": 24,
   "cuisine": "American",
   "category": "Dessert",
   "image": "https://www.themealdb.com/images/media/meals/vtxyxv1483567157.jpg",
   "prep_minutes": 10,
-  "cook_minutes": 5,
+  "cook_minutes": 3,
   "ingredients": [
    {
-    "name": "marshmallows",
-    "quantity": 2,
-    "unit": "cup",
-    "note": ""
+    "name": "chocolate chips",
+    "quantity": 340,
+    "unit": "g",
+    "note": "milk chocolate; semi-sweet also works"
    },
    {
-    "name": "chocolate chips",
+    "name": "condensed milk",
+    "quantity": 1,
+    "unit": "can",
+    "note": "sweetened, 14 oz (about 395 g) can"
+   },
+   {
+    "name": "marshmallows",
     "quantity": 3,
     "unit": "cup",
-    "note": ""
-   },
-   {
-    "name": "peanut butter",
-    "quantity": 0.5,
-    "unit": "cup",
-    "note": ""
-   },
-   {
-    "name": "vanilla extract",
-    "quantity": 1,
-    "unit": "tsp",
-    "note": ""
+    "note": "mini"
    },
    {
     "name": "peanuts",
-    "quantity": 1.25,
+    "quantity": 1.5,
     "unit": "cup",
-    "note": ""
+    "note": "finely chopped"
    }
   ],
   "steps": [
    {
-    "text": "Line an 8-inch-square baking pan with wax paper or foil, and coat with non-stick spray.",
+    "text": "Line a 9x13 inch (23x33 cm) baking pan with baking paper and lightly spray with cooking spray.",
     "minutes": null
    },
    {
-    "text": "Pour ½ cup of the miniature marshmallows into the bottom of the lined baking dish.",
+    "text": "Put the chocolate chips and condensed milk in a large bowl and microwave for about 60 seconds. Stir, then keep microwaving in 15-second bursts, stirring each time, until completely melted and smooth.",
+    "minutes": 2
+   },
+   {
+    "text": "Fold in the marshmallows and peanuts until fully mixed through.",
     "minutes": null
    },
    {
-    "text": "In a microwave-safe bowl, combine the chocolate chips and peanut butter. Microwave the chocolate mixture in 20-second intervals, stirring in between each interval, until the chocolate is melted.",
-    "minutes": null
+    "text": "Press the mixture into the pan and refrigerate for about 60 minutes to set (the freezer is faster).",
+    "minutes": 60
    },
    {
-    "text": "Add the vanilla extract and stir well, until smooth.",
-    "minutes": null
-   },
-   {
-    "text": "Reserve 2 tablespoons of the chopped almonds or peanuts, and set aside.",
-    "minutes": null
-   },
-   {
-    "text": "Fold 1 ½ cups of the miniature marshmallows and the remaining chopped nuts into the chocolate mixture.",
-    "minutes": null
-   },
-   {
-    "text": "Transfer the chocolate mixture into the prepared pan and spread into an even layer. Immediately top with the reserved chopped nuts and the mallow bits or additional miniature marshmallows, if using. Refrigerate for 4 hours, or until set.",
-    "minutes": 240
-   },
-   {
-    "text": "Remove the fudge and wax paper from the pan. Carefully peel all of wax paper from the fudge.",
-    "minutes": null
-   },
-   {
-    "text": "Cut the fudge into bite-sized pieces and serve.",
+    "text": "Lift the fudge out of the pan and cut it into squares.",
     "minutes": null
    }
   ]
