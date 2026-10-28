@@ -11443,77 +11443,113 @@
  {
   "source": "themealdb:53262",
   "title": "Adana kebab",
-  "description": "A Turkish dish of lamb mince, capsicum and red pepper paste — serves 4, on the table in about 45 minutes.",
+  "description": "Hand-minced lamb and lamb tail fat seasoned only with salt and paprika, moulded onto flat skewers and grilled over charcoal. Served on lavash with onion salad, roasted tomatoes and chillies.",
   "servings": 4,
   "cuisine": "Turkish",
   "category": "Lamb",
   "image": "https://www.themealdb.com/images/media/meals/04axct1763793018.jpg",
-  "prep_minutes": 10,
-  "cook_minutes": 25,
+  "prep_minutes": 30,
+  "cook_minutes": 8,
   "ingredients": [
    {
-    "name": "capsicum",
-    "quantity": 2,
-    "unit": "",
-    "note": "large"
-   },
-   {
-    "name": "lamb mince",
-    "quantity": 800,
+    "name": "lamb",
+    "quantity": 500,
     "unit": "g",
-    "note": ""
+    "note": "belly, ribs or top round; sinew removed"
    },
    {
-    "name": "red pepper paste",
-    "quantity": 3,
-    "unit": "tbsp",
-    "note": ""
+    "name": "lamb fat",
+    "quantity": 50,
+    "unit": "g",
+    "note": "tail fat, 50–100 g depending on the fat in the meat"
    },
    {
-    "name": "red chilli flakes",
+    "name": "salt",
     "quantity": 1,
-    "unit": "tbsp",
-    "note": ""
+    "unit": "tsp",
+    "note": "about 5 g"
    },
    {
-    "name": "vegetable oil",
-    "quantity": 3,
-    "unit": "tbsp",
-    "note": ""
+    "name": "paprika",
+    "quantity": 2,
+    "unit": "tsp",
+    "note": "about 5 g"
+   },
+   {
+    "name": "capsicum",
+    "quantity": 1,
+    "unit": "",
+    "note": "optional; medium red pepper, finely chopped and squeezed dry"
+   },
+   {
+    "name": "pita bread",
+    "quantity": null,
+    "unit": "",
+    "note": "lavash, to serve"
+   },
+   {
+    "name": "onion",
+    "quantity": null,
+    "unit": "",
+    "note": "chopped, to serve"
+   },
+   {
+    "name": "tomato",
+    "quantity": null,
+    "unit": "",
+    "note": "roasted on the grill, to serve"
+   },
+   {
+    "name": "chilli",
+    "quantity": null,
+    "unit": "",
+    "note": "colour not stated; roasted on the grill, to serve"
    }
   ],
   "steps": [
    {
-    "text": "Finely chop the peppers in a food processor, then tip them in a sieve and press into the sieve so that the peppers release all of their juices.",
+    "text": "Remove the sinew and connective tissue from the lamb and cut it into smaller pieces. Rest it in the fridge overnight, then freeze it for 30 minutes before chopping.",
+    "minutes": 30
+   },
+   {
+    "text": "If the meat is lean (for example leg), chop in lamb tail fat so the total fat is 15–30%.",
     "minutes": null
    },
    {
-    "text": "Tip into a bowl along with the mince, red pepper paste, pul biber, 1½ tsp flaky sea salt, and 2 tbsp of the oil.",
+    "text": "Mince the meat and fat with a large cleaver or mezzaluna, being careful to cut rather than smash it.",
     "minutes": null
    },
    {
-    "text": "Mix together, kneading well for at least 2-3 mins. If you need to, wet your hands with cold water to prevent the mixture from sticking. The mixture should be sticky when ready. Cover and chill for at least 2 hrs, or up to 12 hrs.",
-    "minutes": 120
-   },
-   {
-    "text": "When ready to cook, heat the grill to high or an oven to 220C/200C fan/gas 6. Divide the mixture into 12 equal portions, around 85g each. If you’d like to skewer them, divide into 8 equal portions and roll into balls.",
+    "text": "Add 1 tsp salt and 2 tsp paprika, plus the chopped, squeezed red pepper if using. Mix gently and keep chopping until everything is combined.",
     "minutes": null
    },
    {
-    "text": "Using wet hands, thread the balls onto the end of the skewers, massaging the mixture down the skewers in between the palms of your hands, until evenly distributed.",
+    "text": "Divide the mixture into 120–150 g portions and cool them in the fridge. Chill the skewers too, so the kebabs hold on them.",
     "minutes": null
    },
    {
-    "text": "Ensure that the mixture is fully wrapped tightly around the skewers without any exposed metal. Alternatively, lay them on a large baking tray lined with parchment paper if cooking in the oven, or foil if cooking under the grill.",
+    "text": "With wet fingers, push each portion onto a large flat skewer, pressing gently to spread it evenly and sealing the ends. Keep the skewered kebabs in the fridge or freezer for 20–30 minutes.",
+    "minutes": 25
+   },
+   {
+    "text": "Light the charcoal grill and roast the tomatoes and chillies first.",
     "minutes": null
    },
    {
-    "text": "Shape into 20cm-long köfte. Wet your fingers with a little cold water and make indents all along the köfte for the traditional shape.",
+    "text": "When the charcoal is medium hot, grill the kebabs, turning them after 30–60 seconds once the underside has set so the meat doesn't fall off.",
     "minutes": null
    },
    {
-    "text": "Gently brush each köfte with the remaining 1 tbsp oil and cook under the grill, on the top shelf for 10-12 mins, turning regularly, or cook in the oven for 16-18 mins, until crispy on the outside and juicy in the middle.",
-    "minutes": 18
+    "text": "After 2–3 minutes, when the fat starts dripping, lift the kebabs off and rest them on lavash to soak up the excess fat, which also stops flare-ups.",
+    "minutes": 3
+   },
+   {
+    "text": "Finish grilling, turning often, for 3–4 minutes a side (6–8 minutes in total).",
+    "minutes": 8
+   },
+   {
+    "text": "Serve on a large platter over lavash with onion salad, roasted tomatoes and chillies.",
+    "minutes": null
    }
   ]
  },
@@ -11827,131 +11863,205 @@
  {
   "source": "themealdb:53169",
   "title": "Ajo blanco",
-  "description": "A Spanish starter of bread, almonds and red wine vinegar — serves 4, ready in under half an hour.",
-  "servings": 4,
+  "description": "Chilled Spanish almond and garlic soup: blanched almonds, soaked baguette, olive oil and red wine vinegar blended smooth and chilled, served with peeled green grapes.",
+  "servings": 2,
   "cuisine": "Spanish",
   "category": "Starter",
   "image": "https://www.themealdb.com/images/media/meals/5jdtie1763289302.jpg",
-  "prep_minutes": 10,
-  "cook_minutes": 10,
+  "prep_minutes": 15,
+  "cook_minutes": 120,
   "ingredients": [
    {
-    "name": "bread",
-    "quantity": 150,
-    "unit": "g",
-    "note": ""
+    "name": "baguette",
+    "quantity": 4,
+    "unit": "slice",
+    "note": "soaked in water"
+   },
+   {
+    "name": "water",
+    "quantity": 2,
+    "unit": "cup",
+    "note": "cold; 2 cups in the ingredient list: 1 cup for soaking the bread, 1 cup to blend"
    },
    {
     "name": "almonds",
-    "quantity": 200,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "olive oil",
-    "quantity": 50,
-    "unit": "ml",
-    "note": ""
+    "quantity": 0.5,
+    "unit": "cup",
+    "note": "blanched, soaked 1 hour and drained"
    },
    {
     "name": "garlic",
     "quantity": 1,
-    "unit": "",
-    "note": ""
+    "unit": "clove",
+    "note": "peeled"
    },
    {
     "name": "red wine vinegar",
-    "quantity": 1.5,
-    "unit": "tbsp",
+    "quantity": 1,
+    "unit": "tsp",
     "note": ""
+   },
+   {
+    "name": "olive oil",
+    "quantity": 3,
+    "unit": "tbsp",
+    "note": "extra virgin, plus a little to drizzle"
+   },
+   {
+    "name": "salt",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": "sea salt"
+   },
+   {
+    "name": "green grapes",
+    "quantity": 10,
+    "unit": "",
+    "note": "seedless, halved and skinned, to garnish"
    }
   ],
   "steps": [
    {
-    "text": "Tip the bread into a bowl and pour over 350ml water. Leave to soak for 10 mins.",
+    "text": "Soak the 4 slices of baguette in 1 cup of cold water for about 10 minutes.",
     "minutes": 10
    },
    {
-    "text": "Blend the ingredients together with 350ml water and 1 tsp salt.",
+    "text": "Put the almonds, soaked bread, garlic, red wine vinegar, olive oil, 1/2 tsp sea salt and 1 cup cold water in a tall container.",
     "minutes": null
    },
    {
-    "text": "Let the soup cool in the fridge for 1 hr or so, then serve with a drizzle of oil and some black pepper.",
-    "minutes": 60
+    "text": "Blend with a hand mixer for about 3 minutes, until a smooth purée.",
+    "minutes": 3
+   },
+   {
+    "text": "Cover and chill in the fridge for at least 2 hours.",
+    "minutes": 120
+   },
+   {
+    "text": "Halve about 10 seedless green grapes and peel off the skins.",
+    "minutes": null
+   },
+   {
+    "text": "Stir the chilled soup and pour into 2 shallow bowls. Top with the grapes and a drizzle of extra virgin olive oil.",
+    "minutes": null
    }
   ]
  },
  {
   "source": "themealdb:53138",
   "title": "Alfajores",
-  "description": "An Argentinian sweet made with egg yolks, lemon zest and dulce de leche — makes 10, on the table in about 45 minutes.",
-  "servings": 10,
+  "description": "Argentine cornflour (maicena) sandwich biscuits: a crumbly, pale dough baked briefly, filled with dulce de leche and rolled in desiccated coconut.",
+  "servings": 20,
   "cuisine": "Argentinian",
   "category": "Dessert",
   "image": "https://www.themealdb.com/images/media/meals/a4kgf21763075288.jpg",
-  "prep_minutes": 15,
-  "cook_minutes": 20,
+  "prep_minutes": 50,
+  "cook_minutes": 8,
   "ingredients": [
    {
-    "name": "plain flour",
-    "quantity": 300,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "cornflour",
-    "quantity": 200,
-    "unit": "g",
-    "note": ""
-   },
-   {
     "name": "butter",
-    "quantity": 200,
+    "quantity": 100,
     "unit": "g",
-    "note": ""
+    "note": "softened"
    },
    {
-    "name": "sugar",
+    "name": "icing sugar",
     "quantity": 100,
     "unit": "g",
     "note": ""
    },
    {
-    "name": "egg yolks",
+    "name": "eggs",
     "quantity": 2,
     "unit": "",
     "note": ""
    },
    {
-    "name": "lemon zest",
+    "name": "brandy",
     "quantity": 1,
-    "unit": "tsp",
+    "unit": "tbsp",
+    "note": "optional, cognac"
+   },
+   {
+    "name": "vanilla extract",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "vanilla essence"
+   },
+   {
+    "name": "lemon",
+    "quantity": 0.5,
+    "unit": "",
+    "note": "zest only"
+   },
+   {
+    "name": "plain flour",
+    "quantity": 100,
+    "unit": "g",
+    "note": "type 0000, plus extra for dusting"
+   },
+   {
+    "name": "cornflour",
+    "quantity": 200,
+    "unit": "g",
+    "note": "maicena"
+   },
+   {
+    "name": "baking powder",
+    "quantity": 10,
+    "unit": "g",
+    "note": ""
+   },
+   {
+    "name": "salt",
+    "quantity": 1,
+    "unit": "pinch",
     "note": ""
    },
    {
     "name": "dulce de leche",
-    "quantity": null,
-    "unit": "",
-    "note": ""
+    "quantity": 400,
+    "unit": "g",
+    "note": "ideally the thick 'repostero' type, for the filling"
    },
    {
     "name": "desiccated coconut",
     "quantity": null,
     "unit": "",
-    "note": "to sprinkle"
+    "note": "for rolling the edges (c/n, as needed)"
    }
   ],
   "steps": [
    {
-    "text": "Make the Dough: Cream butter and sugar. Add egg yolks and lemon zest. Gradually mix in flour and cornstarch to form a dough. Chill for 1 hour.",
-    "minutes": 60
+    "text": "Beat the softened butter with the icing sugar until creamy, then beat in the eggs.",
+    "minutes": null
    },
    {
-    "text": "Bake the Cookies: Roll out the dough, cut into circles, and bake at 180°C (350°F) for 12-15 minutes. Let cool.",
-    "minutes": 15
+    "text": "Add the cognac, vanilla and lemon zest and beat again until combined.",
+    "minutes": null
    },
    {
-    "text": "Assemble: Spread dulce de leche on one cookie, then sandwich with another. Roll the edges in coconut flakes.",
+    "text": "Gradually sift in the flour, cornflour, baking powder and salt. Mix until a smooth, even dough forms.",
+    "minutes": null
+   },
+   {
+    "text": "Wrap the dough in cling film and chill for about 30 minutes so it is easy to work.",
+    "minutes": 30
+   },
+   {
+    "text": "Dust the bench and dough with flour and roll the dough to about 5 mm thick. Cut out 5 cm rounds and place them on a baking tray. Preheat the oven to 180°C.",
+    "minutes": null
+   },
+   {
+    "text": "Bake at 180°C for 5–8 minutes. The biscuits should be cooked but still pale, and small cracks on top are normal. Cool completely.",
+    "minutes": 8
+   },
+   {
+    "text": "Pipe or spread dulce de leche on the underside of one biscuit, about as thick as the biscuit, and press a second one on top.",
+    "minutes": null
+   },
+   {
+    "text": "Roll the edges of each alfajor in desiccated coconut until well coated.",
     "minutes": null
    }
   ]
@@ -12664,84 +12774,120 @@
  {
   "source": "themealdb:53049",
   "title": "Apam balik",
-  "description": "A Malaysian sweet made with peanut butter — makes 20, ready in under half an hour.",
-  "servings": 20,
+  "description": "A thin, crispy Malaysian peanut pancake from a rested plain and rice flour batter, cooked in a small pan with sugar, roasted peanuts, sweetcorn and butter, then folded in half.",
+  "servings": 4,
   "cuisine": "Malaysian",
   "category": "Dessert",
   "image": "https://www.themealdb.com/images/media/meals/adxcbq1619787919.jpg",
-  "prep_minutes": 15,
-  "cook_minutes": 5,
+  "prep_minutes": 40,
+  "cook_minutes": 10,
   "ingredients": [
    {
-    "name": "milk",
-    "quantity": 200,
-    "unit": "ml",
-    "note": ""
-   },
-   {
-    "name": "vegetable oil",
-    "quantity": 60,
-    "unit": "ml",
-    "note": ""
-   },
-   {
-    "name": "eggs",
-    "quantity": 2,
-    "unit": "",
-    "note": ""
-   },
-   {
     "name": "plain flour",
-    "quantity": 1600,
+    "quantity": 90,
     "unit": "g",
-    "note": ""
+    "note": "for the batter"
    },
    {
-    "name": "baking powder",
-    "quantity": 3,
+    "name": "rice flour",
+    "quantity": 50,
+    "unit": "g",
+    "note": "for the batter"
+   },
+   {
+    "name": "sugar",
+    "quantity": 30,
+    "unit": "g",
+    "note": "for the batter"
+   },
+   {
+    "name": "bicarbonate of soda",
+    "quantity": 0.25,
     "unit": "tsp",
     "note": ""
    },
    {
     "name": "salt",
-    "quantity": 0.5,
+    "quantity": 0.25,
     "unit": "tsp",
     "note": ""
    },
    {
-    "name": "butter",
-    "quantity": 25,
-    "unit": "g",
-    "note": ""
+    "name": "baking powder",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "1 tsp is the creator's written (corrected) amount; she marks this line 'Error on video'"
+   },
+   {
+    "name": "eggs",
+    "quantity": 1,
+    "unit": "",
+    "note": "room temperature, about 65 g with shell"
+   },
+   {
+    "name": "water",
+    "quantity": 120,
+    "unit": "ml",
+    "note": "120 gm in the recipe"
+   },
+   {
+    "name": "vegetable oil",
+    "quantity": null,
+    "unit": "",
+    "note": "for greasing the pan"
    },
    {
     "name": "sugar",
-    "quantity": 45,
-    "unit": "g",
-    "note": ""
+    "quantity": null,
+    "unit": "",
+    "note": "granulated, to taste, for the filling"
    },
    {
-    "name": "peanut butter",
-    "quantity": 3,
-    "unit": "tbsp",
-    "note": ""
+    "name": "peanuts",
+    "quantity": null,
+    "unit": "",
+    "note": "roasted and chopped, to taste, for the filling"
+   },
+   {
+    "name": "sweetcorn",
+    "quantity": null,
+    "unit": "",
+    "note": "or creamed corn, to taste, for the filling"
+   },
+   {
+    "name": "butter",
+    "quantity": null,
+    "unit": "",
+    "note": "unsalted, to taste, for the filling"
    }
   ],
   "steps": [
    {
-    "text": "Mix milk, oil and egg together. Sift flour, baking powder and salt into the mixture. Stir well until all ingredients are combined evenly.",
+    "text": "Whisk all the batter ingredients (both flours, sugar, bicarbonate of soda, salt, baking powder, egg and water) together just until combined with no lumps.",
     "minutes": null
    },
    {
-    "text": "Spread some batter onto the pan. Spread a thin layer of batter to the side of the pan. Cover the pan for 30-60 seconds until small air bubbles appear.",
+    "text": "Cover tightly with cling film and rest the batter for 30 minutes in a warm, draught-free place. Whisk again before using, adding a splash of water if it is too thick.",
+    "minutes": 30
+   },
+   {
+    "text": "Lightly oil a small non-stick pan (about 5 inches) over moderate heat. When hot, pour in the batter to coat the pan, using the back of a small round bowl to spread it evenly. Use less batter for a thinner pancake.",
     "minutes": null
    },
    {
-    "text": "Add butter, cream corn, crushed peanuts and sugar onto the pancake. Fold the pancake into half once the bottom surface is browned.",
+    "text": "Cook for about 1 minute, until the batter sets and small bubbles form.",
+    "minutes": 1
+   },
+   {
+    "text": "Sprinkle on plenty of granulated sugar, then the chopped roasted peanuts, then several teaspoons of sweetcorn, with the unsalted butter.",
     "minutes": null
    },
    {
-    "text": "Cut into wedges and best eaten when it is warm.",
+    "text": "Keep cooking until the pancake is light golden, then loosen the edges with a palette knife.",
+    "minutes": null
+   },
+   {
+    "text": "Fold the pancake in half, move it to a plate and serve warm.",
     "minutes": null
    }
   ]

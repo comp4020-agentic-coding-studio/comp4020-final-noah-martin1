@@ -644,12 +644,12 @@
   "checked": "2026-10-20"
  },
  "themealdb:53262": {
-  "videoId": "Wj7sXu9B_ME",
-  "title": "TURKISH ADANA KEBAB RECIPE | TURKISH KEBAB WITHOUT GRILL || by Aqsa's Cuisine",
-  "channel": "Aqsa's Cuisine",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "videoId": "Ej3B4g_PxsQ",
+  "title": "How Authentic ADANA KEBAB is Made - Turkey's Most Famous Kebab",
+  "channel": "Hungry Man Kitchen",
+  "checked": "2026-10-28",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53373": {
   "videoId": "XnA-wcVb4l0",
@@ -674,20 +674,20 @@
   "checked": "2026-10-20"
  },
  "themealdb:53169": {
-  "videoId": "AS2mSRtWyW0",
-  "title": "Ajoblanco",
-  "channel": "CanalCandido",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "videoId": "MGUeIe1THGQ",
+  "title": "White Garlic Soup Recipe - Ajo Blanco",
+  "channel": "Spain on a Fork",
+  "checked": "2026-10-28",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53138": {
-  "videoId": "9WR40GHpsyo",
-  "title": "Alfajores de Maicena | Muy Fáciles y Deliciosos",
-  "channel": "Cocina Para Todos",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "videoId": "s8tm2U4dOdY",
+  "title": "ALFAJORES de MAICENA - CUKit!",
+  "channel": "CUKit!",
+  "checked": "2026-10-28",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53284": {
   "videoId": null,
@@ -734,12 +734,12 @@
   "checked": "2026-10-20"
  },
  "themealdb:53049": {
-  "videoId": "6R8ffRRJcrg",
-  "title": "Apam Balik Pasar Malam yang Lembut, Gebu dan Berongga",
-  "channel": "Che Nom",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "videoId": "IjnQI34VcSs",
+  "title": "Homemade Crispy Thin Apam Balik/Min Chiang Kueh/Asian Pancake(自家制脆皮薄- 曼煎粿/煎弄包/亚洲煎饼)",
+  "channel": "Kenix’s Kitchen",
+  "checked": "2026-10-28",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53380": {
   "videoId": "vZy-7UyPdjM",
@@ -784,12 +784,10 @@
   "reason": "The only evidence is the video description, which gives amounts for just the beef (250 g), black beans (250 g), beef stock and bicarbonate. The arepa itself (recipe elsewhere), fried plantain, grated cheese and all the sofrito ingredients have no amounts, so the dish's main amounts cannot be verified."
  },
  "themealdb:53329": {
-  "videoId": "bSWoRyWI6Fo",
-  "title": "¡La Arepa Pelúa Más Rica! 🇻🇪 Receta Venezolana Fácil con Carne Mechada 🫓😋",
-  "channel": "Mi Receta a Tu Cocina",
+  "videoId": null,
+  "checked": "2026-10-28",
   "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "reason": "Retried: the current video (bSWoRyWI6Fo, Mi Receta a Tu Cocina) has no recipe in its description and its transcript is still blocked (IpBlocked). Replacement searches found only videos with ingredient-only descriptions (Ñam Ñam Cooking vN8hq7j8eVs, Dulce Colmena fsNN8gnPhCI, Adye Cocina 3kg4GdedPHU) or a 187-view short (Cocina con Marilyn p13YGpIGhDY) whose description has a method but no cheese or amounts for the filling, so nothing reputable could be verified."
  },
  "themealdb:53392": {
   "videoId": "AFJm15R4YYw",
