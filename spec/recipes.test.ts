@@ -1,6 +1,11 @@
+import { readFileSync } from "node:fs";
 import { JSDOM } from "jsdom";
 import { describe, expect, it } from "vitest";
 import { Client, createRecipe, registered } from "./helpers.ts";
+
+const catalogue: { title: string; servings: number; ingredients: { name: string; quantity: number | null; unit: string }[] }[] = JSON.parse(
+  readFileSync(new URL("../src/data/catalogue.json", import.meta.url), "utf8"),
+);
 
 // The recipe catalogue is the part of the site anyone can use: browse,
 // search and read without an account. Private recipes stay private.
@@ -47,10 +52,13 @@ describe("recipes", () => {
     const guest = new Client();
     const doc = new JSDOM(await (await guest.get("/recipes?q=pad+thai")).text()).window.document;
     const href = doc.querySelector<HTMLAnchorElement>("a.rx-tile")!.getAttribute("href")!;
+    // the noodles in grams, from the catalogue, so this tests scaling, not one version of the recipe
+    const padThai = catalogue.find((r) => r.title === "Pad Thai")!;
+    const noodles = padThai.ingredients.find((i) => i.name === "rice noodles" && i.unit === "g")!.quantity!;
     const base = await (await guest.get(`${href}/cook`)).text();
-    const doubled = await (await guest.get(`${href}/cook?serves=4`)).text();
+    const doubled = await (await guest.get(`${href}/cook?serves=${padThai.servings * 2}`)).text();
     expect(base).toContain("Step 1 of");
-    expect(base).toContain("125 g");
-    expect(doubled).toContain("250 g");
+    expect(base).toContain(`${noodles} g`);
+    expect(doubled).toContain(`${noodles * 2} g`);
   });
 });

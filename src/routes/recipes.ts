@@ -11,6 +11,7 @@ import {
   cuisines,
   deleteRecipe,
   getRecipe,
+  hasShownVideo,
   ingredientsFor,
   listVisibleRecipes,
   pantryMatch,
@@ -145,6 +146,7 @@ interface BrowseState {
   tag: string;
   course: string;
   cuisine: string;
+  video: boolean;
   mine: boolean;
 }
 
@@ -157,6 +159,7 @@ function browseState(ctx: Ctx): BrowseState {
     tag: (DIETARY_TAGS as readonly string[]).includes(tag) ? tag : "",
     course: COURSES.some((c) => c.key === course) ? course : "",
     cuisine: (p.get("cuisine") ?? "").slice(0, 40),
+    video: p.get("video") === "1",
     mine: p.get("tab") === "mine" && !!ctx.user,
   };
 }
@@ -169,6 +172,7 @@ function hrefWith(s: BrowseState, change: Partial<BrowseState>): string {
   if (next.course) p.set("course", next.course);
   if (next.tag) p.set("tag", next.tag);
   if (next.cuisine) p.set("cuisine", next.cuisine);
+  if (next.video) p.set("video", "1");
   const qs = p.toString();
   return qs ? `/recipes?${qs}` : "/recipes";
 }
@@ -186,6 +190,7 @@ function results(ctx: Ctx, s: BrowseState): { recipes: Recipe[]; grid: Html } {
     maxMinutes: s.tag === "quick" ? 30 : undefined,
     course: s.course,
     cuisine: s.cuisine,
+    video: s.video,
     order: s.mine && !s.q ? "newest" : "featured",
   });
   const lines = ingredientsFor(recipes.map((r) => r.id));
@@ -207,7 +212,7 @@ function results(ctx: Ctx, s: BrowseState): { recipes: Recipe[]; grid: Html } {
 function browsePage(ctx: Ctx): Html {
   const s = browseState(ctx);
   const { recipes, grid } = results(ctx, s);
-  const filtered = !!(s.q || s.tag || s.course || s.cuisine);
+  const filtered = !!(s.q || s.tag || s.course || s.cuisine || s.video);
   const topCuisines = cuisines().slice(0, 9);
   const heading = s.mine
     ? "Your recipes"
@@ -219,7 +224,9 @@ function browsePage(ctx: Ctx): Html {
           ? `${s.cuisine} recipes`
           : s.tag
             ? QUICK_FILTERS.find((f) => f.key === s.tag)?.label ?? "Recipes"
-            : "Popular this week";
+            : s.video
+              ? "Recipes with a video"
+              : "Popular this week";
   return html`
     <section class="rx-hero">
       <div class="rx-hero-row">
@@ -244,15 +251,17 @@ function browsePage(ctx: Ctx): Html {
         ${s.course ? html`<input type="hidden" name="course" value="${s.course}" />` : ""}
         ${s.tag ? html`<input type="hidden" name="tag" value="${s.tag}" />` : ""}
         ${s.cuisine ? html`<input type="hidden" name="cuisine" value="${s.cuisine}" />` : ""}
+        ${s.video ? html`<input type="hidden" name="video" value="1" />` : ""}
         <input type="search" name="q" value="${s.q}" placeholder="Try “pad thai”, “eggs” or “chickpeas”" aria-label="Search recipes" autocomplete="off" />
         <button class="button" type="submit">Search</button>
       </form>
     </section>
 
     <nav class="rx-filters" aria-label="Filter recipes">
-      ${chip("All", hrefWith(s, { course: "", tag: "", cuisine: "" }), !s.course && !s.tag && !s.cuisine)}
+      ${chip("All", hrefWith(s, { course: "", tag: "", cuisine: "", video: false }), !s.course && !s.tag && !s.cuisine && !s.video)}
       ${COURSES.map((c) => chip(c.label, hrefWith(s, { course: s.course === c.key ? "" : c.key }), s.course === c.key))}
       <span class="rx-divider" aria-hidden="true"></span>
+      ${chip("Has video", hrefWith(s, { video: !s.video }), s.video, "var(--rose)")}
       ${QUICK_FILTERS.map((f) => chip(f.label, hrefWith(s, { tag: s.tag === f.key ? "" : f.key }), s.tag === f.key, f.dot))}
       <span class="rx-divider" aria-hidden="true"></span>
       ${topCuisines.map((c) => chip(c, hrefWith(s, { cuisine: s.cuisine === c ? "" : c }), s.cuisine === c))}
@@ -448,12 +457,13 @@ function askCard(ctx: Ctx, recipe: Recipe, lines: RecipeIngredient[]): Html {
   </section>`;
 }
 
-// The how-to video. A catalogue recipe shows only the one TheMealDB links to
-// that meal and YouTube confirmed embeddable (src/videos.ts); an author's own
-// link is labelled as theirs. With neither, say so rather than guess.
+// The how-to video. A catalogue recipe shows a video only when its
+// ingredients and steps were written from that video and checked against it
+// (src/data/videos.json); an author's own link is labelled as theirs. With
+// neither, say so rather than guess.
 function videoCard(recipe: Recipe): Html {
   const id = recipe.video_id;
-  if (id && (recipe.video_status === "verified" || recipe.video_status === "user")) {
+  if (id && hasShownVideo(recipe)) {
     const watch = `https://www.youtube.com/watch?v=${id}`;
     return html`<section class="rd-card rd-video" aria-labelledby="video-h">
       <div class="rd-card-head"><h2 id="video-h">Watch it made</h2></div>
@@ -461,7 +471,7 @@ function videoCard(recipe: Recipe): Html {
         <iframe src="https://www.youtube-nocookie.com/embed/${id}" title="${recipe.video_title ?? `Video for ${recipe.title}`}" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>
       </div>
       <p class="estimate-note">${recipe.video_status === "verified"
-        ? html`Video linked to this recipe by TheMealDB · checked ${recipe.video_checked ?? ""}${recipe.video_channel ? html` · ${recipe.video_channel}` : ""}. We confirmed it exists, can be embedded and is titled for this dish. We can't watch it: its amounts and units may differ from the metric quantities above.`
+        ? html`Video${recipe.video_channel ? html` by ${recipe.video_channel}` : ""}. The ingredients and steps above were transcribed from it (its transcript or the creator's written recipe) and checked a second time against that source · ${recipe.video_checked ?? ""}. Amounts are converted to metric.`
         : html`Added by the recipe's author — not checked against the recipe.`}
         <a href="${watch}" rel="noopener noreferrer" target="_blank">Can't see it? Open on YouTube</a></p>
     </section>`;

@@ -1,8 +1,10 @@
 // Pure helpers only (no database), so scripts and specs can import them.
-// Recipe videos. A catalogue recipe's video is the one TheMealDB itself links
-// to that exact meal, kept only if YouTube says it exists and can be embedded
-// and its title shares the dish's key words (scripts/fetch-videos.ts). We
-// can't watch videos, so "verified" means that, not that every quantity agrees.
+// Recipe videos. A catalogue video is "verified" only when the recipe's
+// ingredients and steps were transcribed from that video (its transcript or
+// the creator's written recipe for it) and a second pass checked them against
+// that source; src/data/videos.json records each one. A title match alone
+// (videoMatches, scripts/fetch-videos.ts) only finds candidates: those are
+// stored as "rejected" until checked, so the page never shows them.
 
 export type VideoStatus = "verified" | "unavailable" | "rejected" | "user";
 
@@ -101,5 +103,8 @@ export interface CatalogueVideo {
   checked: string;
   status: "verified" | "rejected" | "unavailable";
   reason?: string;
+  // the recipe was transcribed from this video and checked against it; only
+  // these may be "verified", and the fetch scripts leave them alone
+  transcribed?: true;
 }
 

@@ -1,4 +1,5 @@
 import { readFileSync } from "node:fs";
+import { JSDOM } from "jsdom";
 import { describe, expect, it } from "vitest";
 import { parseYouTubeId, videoMatches } from "../src/videos.ts";
 import { Client, createRecipe, registered } from "./helpers.ts";
@@ -27,12 +28,13 @@ describe("video matching", () => {
   });
 });
 
+const catalogueId = async (title: string) => {
+  const html = await (await new Client().get(`/recipes?q=${encodeURIComponent(title)}`)).text();
+  return Number(html.match(/href="\/recipes\/(\d+)"/)?.[1]);
+};
+
 describe("recipe videos", () => {
   const recipePage = async (client: Client, id: number) => (await client.get(`/recipes/${id}`)).text();
-  const catalogueId = async (title: string) => {
-    const html = await (await new Client().get(`/recipes?q=${encodeURIComponent(title)}`)).text();
-    return Number(html.match(/href="\/recipes\/(\d+)"/)?.[1]);
-  };
 
   it("a catalogue recipe with a verified video embeds exactly that video, labelled with its provenance", async () => {
     const hit = catalogue.find((r) => videos[r.source]?.status === "verified");
@@ -40,7 +42,7 @@ describe("recipe videos", () => {
     const id = await catalogueId(hit!.title);
     const page = await recipePage(new Client(), id);
     expect(page).toContain(`https://www.youtube-nocookie.com/embed/${videos[hit!.source].videoId}`);
-    expect(page).toContain("linked to this recipe by TheMealDB");
+    expect(page).toContain("transcribed from it");
     expect(page).toContain("Open on YouTube");
   });
 
@@ -93,6 +95,58 @@ describe("recipe videos", () => {
     const { client } = await registered("vid");
     const id = await createRecipe(client, "Secret", "private");
     expect((await new Client().get(`/recipes/${id}`)).status).toBe(404);
+  });
+});
+
+describe("the Has video filter", () => {
+  const ids = (markup: string) => [...new JSDOM(markup).window.document.querySelectorAll<HTMLAnchorElement>("a.rx-tile")].map((a) => a.getAttribute("href")!);
+
+  it("lists only recipes whose page shows a video, for a guest, and every one opens to it", async () => {
+    const guest = new Client();
+    const res = await guest.get("/recipes?video=1");
+    expect(res.status).toBe(200);
+    const page = await res.text();
+    const hrefs = ids(page);
+    const shown = Object.values(videos).filter((v) => v.status === "verified").length;
+    expect(hrefs.length).toBe(Math.min(shown, 200));
+    expect(page).toContain("Recipes with a video");
+    expect(page).toMatch(/aria-pressed="true"[^>]*>(?:<span[^>]*><\/span>)?Has video/);
+    for (const href of hrefs.slice(0, 5)) expect(await (await guest.get(href)).text()).toContain("youtube-nocookie.com/embed/");
+  });
+
+  it("a recipe without a shown video is left out, and the filter keeps the other filters and the search", async () => {
+    const guest = new Client();
+    const miss = catalogue.find((r) => videos[r.source] && videos[r.source].status !== "verified")!;
+    const missHref = `/recipes/${await catalogueId(miss.title)}`;
+    const missQ = encodeURIComponent(miss.title);
+    // found by its own title without the filter, gone with it
+    expect(ids(await (await guest.get(`/recipes?q=${missQ}`)).text())).toContain(missHref);
+    expect(ids(await (await guest.get(`/recipes?video=1&q=${missQ}`)).text())).not.toContain(missHref);
+    expect(ids(await (await guest.get(`/recipes?video=1&q=${missQ}&partial=1`)).text())).not.toContain(missHref);
+
+    const hit = catalogue.find((r) => videos[r.source]?.status === "verified")!;
+    const word = hit.title.split(" ")[0];
+    const searched = await (await guest.get(`/recipes?video=1&q=${encodeURIComponent(word)}`)).text();
+    expect(ids(searched)).toContain(`/recipes/${await catalogueId(hit.title)}`);
+    expect(searched).toContain('<input type="hidden" name="video" value="1" />');
+    expect(searched).toContain("video=1");
+  });
+
+  it("an author's own public video counts, and a private one never shows to strangers", async () => {
+    const { client } = await registered("vidf");
+    const base = { description: "d", servings: "2", ing_name: ["eggs"], ing_qty: ["3"], ing_unit: [""], step_text: ["Whisk."], step_minutes: [""] };
+    const pub = await createRecipe(client, "Filterable omelette", "public");
+    await client.post(`/recipes/${pub}/edit`, { ...base, title: "Filterable omelette", visibility: "public", video_url: "https://youtu.be/F86GfZIph8o" });
+    const priv = await createRecipe(client, "Hidden omelette", "private");
+    await client.post(`/recipes/${priv}/edit`, { ...base, title: "Hidden omelette", visibility: "private", video_url: "https://youtu.be/F86GfZIph8o" });
+
+    const noVideo = await createRecipe(client, "Plain omelette", "public");
+
+    const guest = await (await new Client().get("/recipes?video=1&q=omelette")).text();
+    expect(ids(guest)).toContain(`/recipes/${pub}`);
+    expect(ids(guest)).not.toContain(`/recipes/${priv}`);
+    expect(ids(guest)).not.toContain(`/recipes/${noVideo}`);
+    expect(ids(await (await client.get("/recipes?video=1&q=omelette")).text())).toContain(`/recipes/${priv}`);
   });
 });
 

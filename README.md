@@ -81,6 +81,13 @@ Some of "good" is enforced by tests in `spec/` that run against the live app:
   its date
 - every recipe someone writes has a photo, checked by its bytes, on every
   way of saving it
+- a catalogue recipe shows a video only if its recipe was transcribed from
+  that video, and the "Has video" filter lists exactly the recipes whose page
+  shows one (never a private recipe to someone who can't open it); a revised
+  catalogue recipe updates in place on the next boot,
+  keeping its id, but not while someone is cooking it; plant foods named after
+  dairy ("vegan butter", "coconut milk", "butter beans") don't cost a recipe
+  its vegan tag
 - cook mode goes live by default within your own visibility setting, never
   on the map unless you picked a city, and turns off with one tap or for good
   in settings
@@ -122,15 +129,19 @@ without making the core loop (know what you have, cook it, share it) better.
   Meals without a photo, with fewer than 4 ingredients or 2 usable steps, or
   duplicated were left out (33 in all). Ingredient names, amounts and steps
   were cleaned into metric units and short steps; brand names in titles were
-  made generic.
-- **Recipe videos:** a catalogue recipe shows only the video TheMealDB itself
-  links to that meal (`strYoutube`), and only if YouTube's oEmbed endpoint
-  confirms it exists and can be embedded and its title shares the dish's key
-  words (`scripts/fetch-videos.ts`, `src/videos.ts`; results with the check
-  date in `src/data/videos.json`). We can't watch videos, so this does not
-  prove every amount agrees with the metric-converted recipe, and the page says
-  so. Recipes with no passing video say none is available. A video an author
-  adds themselves is labelled as theirs and not checked.
+  made generic. 51 of them were since rewritten to match their
+  video (see Recipe videos).
+- **Recipe videos:** a catalogue recipe shows a video only when its
+  ingredients and steps were transcribed from that video and then checked a
+  second time against the same source. The source is the video's own
+  transcript, or the creator's written recipe for that video (linked from its
+  description), or a full recipe in the description. Where TheMealDB's video
+  had no amounts or was a different dish, a video of the same dish with a
+  written recipe replaced it. Amounts are converted to metric. A title match
+  alone (`scripts/fetch-videos.ts`) only finds candidates and never shows a
+  video. Every other recipe says no matching video is available, and keeps
+  TheMealDB's text. A video an author adds themselves is labelled as theirs and
+  not checked.
 - **Nutrition:** calories, protein, carbs and fat per 100 g for about 500
   ingredients (`src/nutrition.ts`), rounded from USDA FoodData Central
   reference values, with dry goods at uncooked values. 94.6% of ingredient
@@ -143,11 +154,11 @@ without making the core loop (know what you have, cook it, share it) better.
   so, and none is called live. 504 dated reference prices in
   `src/data/prices.json` cover consumption estimates and gaps. The rules are
   in `docs/product/pricing.md`.
-- **Videos:** the YouTube link TheMealDB gives each meal, kept when YouTube
-  says it exists and can be embedded and its title names the dish
-  (`scripts/fetch-videos.ts`, checked 20 October 2026; a few decisions made by
-  reading each recipe beside its video are in `src/data/video-overrides.json`).
-  420 recipes have one; the rest say no matching video is available.
+- **Videos:** YouTube cooking videos with the channel named on every recipe
+  page. For each one, the recipe was transcribed from the video's transcript or
+  the creator's own written recipe and checked again by a second pass on 21
+  October 2026 (`src/data/videos.json`, `transcribed: true`). 51
+  recipes have one; the rest say no matching video is available.
 - **Logs:** `activity_log` in the database and one JSON line per event on
   stdout (`fly logs`); `node scripts/activity.ts --follow` reads it, and
   accounts in `ADMIN_USERNAMES` get a live feed at `/admin/activity`.

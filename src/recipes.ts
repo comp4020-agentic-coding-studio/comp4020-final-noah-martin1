@@ -32,6 +32,14 @@ export interface Recipe {
   step_count?: number;
 }
 
+// A recipe page embeds a video only when it's a catalogue video checked
+// against the recipe, or one the author added. The "Has video" filter uses
+// the same rule in SQL, so every result opens to a video.
+export const SHOWN_VIDEO_SQL = "(r.video_id IS NOT NULL AND r.video_status IN ('verified', 'user'))";
+export function hasShownVideo(r: Pick<Recipe, "video_id" | "video_status">): boolean {
+  return !!r.video_id && (r.video_status === "verified" || r.video_status === "user");
+}
+
 export interface RecipeIngredient {
   ingredient_id: number;
   name: string;
@@ -145,6 +153,8 @@ interface ListOptions {
   course?: string;
   cuisine?: string;
   maxMinutes?: number;
+  // only recipes whose page shows a video
+  video?: boolean;
   excludeId?: number;
   order?: "newest" | "featured";
   limit?: number;
@@ -195,6 +205,7 @@ export function listVisibleRecipes(viewerId: number | null, opts: ListOptions = 
     where.push("r.cuisine = ?");
     params.push(opts.cuisine);
   }
+  if (opts.video) where.push(SHOWN_VIDEO_SQL);
   if (opts.excludeId !== undefined) {
     where.push("r.id != ?");
     params.push(opts.excludeId);

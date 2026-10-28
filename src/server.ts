@@ -198,7 +198,7 @@ const server = createServer(async (req, res) => {
 });
 
 const catalogued = seedCatalogue();
-if (catalogued) console.log(`catalogue: added ${catalogued} recipes`);
+if (catalogued) console.log(`catalogue: added or revised ${catalogued} recipes`);
 const videos = seedVideos();
 if (videos) console.log(`videos: updated ${videos} catalogue recipes`);
 if (DEMO_MODE) await seedDemo();

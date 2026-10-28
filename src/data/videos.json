@@ -1,73 +1,83 @@
 {
  "themealdb:53191": {
-  "videoId": "F86GfZIph8o",
-  "title": "How to Make Authentic Pad Thai in 5 Mins! + Pad Thai Sauce Recipe",
-  "channel": "Pailin's Kitchen",
+  "videoId": "oPXfLnb8pFo",
+  "title": "How I Make Pad Thai Street-food-style | Marion's Kitchen",
+  "channel": "Marion Grasby",
+  "checked": "2026-10-21",
   "status": "verified",
-  "checked": "2026-10-20"
+  "transcribed": true
  },
  "themealdb:52774": {
-  "videoId": "Ohy1DELF4is",
-  "title": "Authentic Pad See Ew Recipe - Hot Thai Kitchen",
-  "channel": "Pailin's Kitchen",
+  "videoId": "1AkNy7FfvxE",
+  "title": "Pad See Ew",
+  "channel": "RecipeTin Eats",
+  "checked": "2026-10-21",
   "status": "verified",
-  "checked": "2026-10-20"
+  "transcribed": true
  },
  "themealdb:52814": {
   "videoId": "LIbKVpBQKJI",
   "title": "Thai Green Curry Recipe แกงเขียวหวาน - Hot Thai Kitchen",
   "channel": "Pailin's Kitchen",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52827": {
-  "videoId": "mVxgZSCU9_g",
-  "title": "Thai Beef Massaman Curry Recipe - SORTED",
-  "channel": "Sorted Food",
+  "videoId": "XSqzJjBo8QQ",
+  "title": "Massaman Curry",
+  "channel": "RecipeTin Eats",
+  "checked": "2026-10-21",
   "status": "verified",
-  "checked": "2026-10-20"
+  "transcribed": true
  },
  "themealdb:53192": {
   "videoId": "dYZHzK7YfYI",
   "title": "Thai Panang Chicken Curry | Thai Panang Curry Recipe with Chicken | Panang Curry with Chicken",
   "channel": "Satyam's Kitchen",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53207": {
   "videoId": "2BbIZwmIP7Q",
   "title": "Authentic Tom Kha Gai Thai BEST EVER Coconut Chicken Soup",
   "channel": "Seonkyoung Longest",
+  "checked": "2026-10-21",
   "status": "verified",
-  "checked": "2026-10-20"
+  "transcribed": true
  },
  "themealdb:53193": {
-  "videoId": "eJ3w2iJB4x8",
-  "title": "Drunken Noodles in 3 Minutes! Authentic Pad Kee Mao Recipe ผัดขี้เมา",
-  "channel": "Pailin's Kitchen",
+  "videoId": "LyYBUsAhUUU",
+  "title": "Thai Drunken Noodles (Pad Kee Mao)",
+  "channel": "RecipeTin Eats",
+  "checked": "2026-10-21",
   "status": "verified",
-  "checked": "2026-10-20"
+  "transcribed": true
  },
  "themealdb:53201": {
-  "videoId": "fF4GpyiZL8Q",
-  "title": "Stir-fried Chicken with Chillies and Basil",
-  "channel": "Sanjeev Kapoor Khazana ",
+  "videoId": "entMQMVK4go",
+  "title": "Thai Chilli Basil Chicken",
+  "channel": "RecipeTin Eats",
+  "checked": "2026-10-21",
   "status": "verified",
-  "checked": "2026-10-20"
+  "transcribed": true
  },
  "themealdb:53034": {
   "videoId": "voE-MBJqBVk",
   "title": "How to Make Katsudon | カツ丼 | Japanese Pork Cutlet Rice Bowl",
   "channel": "Adam Liaw",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52820": {
-  "videoId": "MWzxDFRtVbc",
-  "title": "Japanese Chicken Katsu Curry | Gizzi Erskine",
-  "channel": "Jamie Oliver",
+  "videoId": "WfRbviqgiSA",
+  "title": "How To Make Chicken Katsu Curry",
+  "channel": "Nick's Kitchen",
+  "checked": "2026-10-21",
   "status": "verified",
-  "checked": "2026-10-20"
+  "transcribed": true
  },
  "themealdb:52831": {
   "videoId": "XivddFddthc",
@@ -76,116 +86,132 @@
   "checked": "2026-10-20"
  },
  "themealdb:52773": {
-  "videoId": "4MpYuaJsvRw",
-  "title": "Teriyaki Salmon with Soba Noodle Salad | Gordon Ramsay",
-  "channel": "Gordon Ramsay",
+  "videoId": "cd22ICdsXHQ",
+  "title": "The BEST Baked Salmon Recipe (Honey Teriyaki)",
+  "channel": "Divas Can Cook",
+  "checked": "2026-10-21",
   "status": "verified",
-  "checked": "2026-10-20"
+  "transcribed": true
  },
  "themealdb:52871": {
   "videoId": "5Iy0MCowSvA",
   "title": "How To Make Yaki Udon (Stir Fried Udon Noodles) (Recipe) 焼きうどんの作り方 （レシピ）",
   "channel": "Just One Cookbook",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52952": {
-  "videoId": "ZT9LSsNXXe0",
-  "title": "HOUSE SPECIAL LO MEIN RECIPE | Easy Lo Mein Sauce",
-  "channel": "Simply Mamá Cooks",
+  "videoId": "Ch6y83CATLs",
+  "title": "CHEAPER AND BETTER THAN TAKEOUT - Beef Lo Mein Recipe (牛肉捞面)",
+  "channel": "Souped Up Recipes",
+  "checked": "2026-10-21",
   "status": "verified",
-  "checked": "2026-10-20"
+  "transcribed": true
  },
  "themealdb:52945": {
   "videoId": "QqdcCHQlOe0",
   "title": "SUPER EASY Kung Pao Chicken Recipe 宫保鸡 One Pot Chinese Chicken Recipe • Spicy Chinese Food",
   "channel": "Spice N' Pans",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52947": {
   "videoId": "IhwPQL9dFYc",
   "title": "How to Make Mapo Tofu (Mabo Dofu Recipe) | Cooking with Dog",
   "channel": "Cooking with Dog",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53367": {
   "videoId": "mUr-7wjhHuU",
   "title": "Chicken Fried Rice",
   "channel": "Cook! Stacey Cook",
+  "checked": "2026-10-21",
   "status": "verified",
-  "checked": "2026-10-20"
+  "transcribed": true
  },
  "themealdb:52948": {
-  "videoId": "9h9No18ZyCI",
-  "title": "Chinese Fried Wontons Recipe Video",
-  "channel": "Steamy (Test) Kitchen",
+  "videoId": "5_wXk_pE3Co",
+  "title": "Fried Wonton Recipe– The BEST You've EVER Tasted!",
+  "channel": "CiCi Li, Asian Home Cooking",
+  "checked": "2026-10-21",
   "status": "verified",
-  "checked": "2026-10-20"
+  "transcribed": true
  },
  "themealdb:53366": {
   "videoId": "BBABeZjlRM8",
   "title": "Beef And Broccoli Stir Fry |  Beef Stir Fry With Vegetables",
   "channel": "Cook! Stacey Cook",
+  "checked": "2026-10-21",
   "status": "verified",
-  "checked": "2026-10-20"
+  "transcribed": true
  },
  "themealdb:53238": {
-  "videoId": "WlosNFMCnE4",
-  "title": "Legit Vietnamese Pho At Home",
-  "channel": "Joshua Weissman",
+  "videoId": "9Sg21AHuO4A",
+  "title": "Vietnamese Pho recipe",
+  "channel": "RecipeTin Eats",
+  "checked": "2026-10-21",
   "status": "verified",
-  "checked": "2026-10-20"
+  "transcribed": true
  },
  "themealdb:52821": {
   "videoId": "OcarztU8cYo",
   "title": "Spicy King Prawn laksa",
   "channel": "Haste's Kitchen",
+  "checked": "2026-10-21",
   "status": "verified",
-  "checked": "2026-10-20"
+  "transcribed": true
  },
  "themealdb:53051": {
   "videoId": "IUIs4C86Ilo",
   "title": "How to Make Nasi Lemak",
   "channel": "El Mundo Eats",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53053": {
   "videoId": "Ot-dmfBaZrA",
   "title": "How to Cook Beef Rendang (Spicy \"Dry\" Curry Beef) | Food Wishes",
   "channel": "Food Wishes",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52795": {
   "videoId": "IO0issT0Rmc",
   "title": "How To Make Chicken Handi | Popular Chicken Curry Recipe | Curries And Stories With Neelam",
   "channel": "Get Curried",
+  "checked": "2026-10-21",
   "status": "verified",
-  "checked": "2026-10-20"
+  "transcribed": true
  },
  "themealdb:52806": {
-  "videoId": "-CKvt1KNU74",
-  "title": "Tandoori Chicken without oven | Perfect Camping Recipe | How To Make Chicken Tandoori | Varun",
-  "channel": "Get Curried",
+  "videoId": "iy2KE8PIH_E",
+  "title": "Tandoori Chicken",
+  "channel": "RecipeTin Eats",
+  "checked": "2026-10-21",
   "status": "verified",
-  "checked": "2026-10-20"
+  "transcribed": true
  },
  "themealdb:52785": {
-  "videoId": "J4D855Q9-jg",
-  "title": "Dal Fry With Tadka | Easy Punjabi Dal Recipe | Homemade Indian Dal Recipe By Ruchi Bharani",
-  "channel": "Rajshri Food",
+  "videoId": "3XTSCbZfEgM",
+  "title": "Dhaba Style Dal Fry | दाल फ्राई | Easy Dal Fry recipe | traditonal Dal Tadka |Chef Ranveer Brar",
+  "channel": "Chef Ranveer Brar",
+  "checked": "2026-10-21",
   "status": "verified",
-  "checked": "2026-10-20"
+  "transcribed": true
  },
  "themealdb:52808": {
   "videoId": "NZVo32n7iS8",
   "title": "Lamb Rogan Josh recipe | Morrisons",
   "channel": "Morrisons",
+  "checked": "2026-10-21",
   "status": "verified",
-  "checked": "2026-10-20"
+  "transcribed": true
  },
  "themealdb:52865": {
   "videoId": "wlseYNqwLNs",
@@ -197,66 +223,71 @@
   "videoId": "Tp_PMWvIKzo",
   "title": "Rajma Masala (Kidney Beans Curry)",
   "channel": "Veggie Recipe House",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52982": {
-  "videoId": "_T6jkRvhlkk",
-  "title": "CARBONARA PERFETTA: la ricetta di GialloZafferano",
-  "channel": "GialloZafferano",
-  "status": "rejected",
-  "reason": "video title doesn't match the dish",
-  "checked": "2026-10-20"
+  "videoId": "spJjSRpoA1s",
+  "title": "HOW TO MAKE the REAL ITALIAN CARBONARA - Original recipe",
+  "channel": "Giallozafferano Italian Recipes",
+  "checked": "2026-10-21",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:52770": {
-  "videoId": "-gF8d-fitkU",
-  "title": "Easy Bolognese Recipe | Jamie Oliver",
-  "channel": "Jamie Oliver",
+  "videoId": "yShBC-G-jrQ",
+  "title": "Spaghetti Bolognese",
+  "channel": "RecipeTin Eats",
+  "checked": "2026-10-21",
   "status": "verified",
-  "checked": "2026-10-20"
+  "transcribed": true
  },
  "themealdb:52844": {
   "videoId": "gfhfsBPt46s",
   "title": "The Best Meat Lasagna Recipe -- How to Make Homemade Italian Lasagna Bolognese",
   "channel": "CookingwithSugarTV",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53064": {
   "videoId": "LPPcNPdq_j4",
   "title": "Chicken Fettuccine Alfredo Recipe - Easy Dinner",
   "channel": "Natashas Kitchen",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52771": {
   "videoId": "1IszT_guI08",
   "title": "Spicy penne Arrabiata",
   "channel": "Keerthana Cooks",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52839": {
   "videoId": "SC17Mc70Db0",
   "title": "How To Cook Fresh Prawn And Chilli Linguine",
   "channel": "Scoff",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52783": {
-  "videoId": "45dpOfESxr8",
-  "title": "Italian Sausage Rigatoni | Kitchen Daddy",
-  "channel": "Kitchen Daddy",
+  "videoId": null,
+  "checked": "2026-10-21",
   "status": "rejected",
-  "reason": "video title doesn't match the dish",
-  "checked": "2026-10-20"
+  "reason": "The current video (Kitchen Daddy, 45dpOfESxr8) is a different dish (red onion, red pepper, rosemary, red wine and crushed tomato; no fennel, olives or pesto), gives no amount for the rigatoni and has no written recipe. Searches for a fennel sausage rigatoni with pesto found only different dishes (cream sauce, orecchiette, sausage meatballs) or videos without a written recipe, none verifiable as the same dish."
  },
  "themealdb:52823": {
   "videoId": "V2PMvBv52IE",
   "title": "Salmon and Prawn Rissotto",
   "channel": "cookwithtim",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53014": {
   "videoId": "Mt5lgUZRoUg",
@@ -265,60 +296,68 @@
   "checked": "2026-10-20"
  },
  "themealdb:52963": {
-  "videoId": "C-3_jYrfdBU",
-  "title": "Shakshuka Recipe | Now Cook It",
-  "channel": "Sorted Food",
+  "videoId": "hsYgYOihP8c",
+  "title": "Shakshuka (Middle Eastern Eggs)",
+  "channel": "RecipeTin Eats",
+  "checked": "2026-10-21",
   "status": "verified",
-  "checked": "2026-10-20"
+  "transcribed": true
  },
  "themealdb:53006": {
   "videoId": "8U_29i9Qp5U",
   "title": "How to Make Greek Moussaka",
   "channel": "The Cooking Foodie",
+  "checked": "2026-10-21",
   "status": "verified",
-  "checked": "2026-10-20"
+  "transcribed": true
  },
  "themealdb:53011": {
-  "videoId": "akcrkXYr61M",
-  "title": "CHICKEN QUINOA SALAD - Perfect for Hot Summer Days!!!",
-  "channel": "Kendra Lee",
+  "videoId": "XlOz0Qu5IrQ",
+  "title": "Greek Grilled Chicken and Quinoa Salad",
+  "channel": "Scrambled Chefs Recipes",
+  "checked": "2026-10-21",
   "status": "verified",
-  "checked": "2026-10-20"
+  "transcribed": true
  },
  "themealdb:53009": {
-  "videoId": "krR4rhjR75Y",
-  "title": "Greek Lamb Souvlaki Recipe",
-  "channel": "Mr Skewer",
+  "videoId": "dq9uKgj-1_U",
+  "title": "Greek Lamb Souvlaki",
+  "channel": "RecipeTin Eats",
+  "checked": "2026-10-21",
   "status": "verified",
-  "checked": "2026-10-20"
+  "transcribed": true
  },
  "themealdb:53091": {
   "videoId": "wt8nApxP5fE",
   "title": "Best Falafel Pita Sandwich Recipe With Salad & Sauce",
   "channel": "Clove and Cumin",
+  "checked": "2026-10-21",
   "status": "verified",
-  "checked": "2026-10-20"
+  "transcribed": true
  },
  "themealdb:53028": {
   "videoId": "3lxUIeKDgic",
   "title": "Homemade Chicken Shawarma",
   "channel": "Dimitra's Dishes",
+  "checked": "2026-10-21",
   "status": "verified",
-  "checked": "2026-10-20"
+  "transcribed": true
  },
  "themealdb:52843": {
   "videoId": "bR5Cqu84S_k",
   "title": "LAMB TAGINE RECIPE - SORTED",
   "channel": "Sorted Food",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53027": {
   "videoId": "y0d2ZMZBW4Y",
   "title": "How to Make KOSHARI | Egyptian Koshari Street Food Recipe | Koshari Recipe by Varun | Kushari",
   "channel": "Rajshri Food",
+  "checked": "2026-10-21",
   "status": "verified",
-  "checked": "2026-10-20"
+  "transcribed": true
  },
  "themealdb:52870": {
   "videoId": "LGY3V7EGpT0",
@@ -327,19 +366,20 @@
   "checked": "2026-10-20"
  },
  "themealdb:52819": {
-  "videoId": "N4EdUt0Ou48",
-  "title": "Cajun Fish Tacos",
-  "channel": "Mum's Lounge",
+  "videoId": "NOMziLydxAI",
+  "title": "Blackened Fish Tacos with Creamy Cilantro Lime Sauce",
+  "channel": "MOMables - Laura Fuentes",
+  "checked": "2026-10-21",
   "status": "verified",
-  "checked": "2026-10-20"
+  "transcribed": true
  },
  "themealdb:52826": {
-  "videoId": "z4kSoJgsu6Y",
-  "title": "Slow & Low Chilli Con Carne | Jamie Oliver",
-  "channel": "Jamie Oliver",
-  "status": "rejected",
-  "reason": "video title doesn't match the dish",
-  "checked": "2026-10-20"
+  "videoId": "7ScQgkXob7o",
+  "title": "Slow Braised Chilli Beef | Waitrose",
+  "channel": "Waitrose & Partners",
+  "checked": "2026-10-21",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53067": {
   "videoId": null,
@@ -351,78 +391,89 @@
   "videoId": "BFdQUgAFtGU",
   "title": "Ratatouille Recipe | Sorted Food",
   "channel": "Sorted Food",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52832": {
   "videoId": "_ise46LADBs",
   "title": "Coq Au Vin - Chicken Braised In Red Wine  | Classic French Recipes",
   "channel": "French Cooking Academy",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52904": {
   "videoId": "SQnr4Z-7rok",
   "title": "How To Make Beef Bourguignon. TheScottReaProject..",
   "channel": "Scott Rea",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52903": {
-  "videoId": "-DLDMQucqDI",
-  "title": "Classic French Onion Soup | French Guy Cooking",
-  "channel": "Jamie Oliver",
+  "videoId": "gx1RzvN5eRA",
+  "title": "French Onion Soup",
+  "channel": "RecipeTin Eats",
+  "checked": "2026-10-21",
   "status": "verified",
-  "checked": "2026-10-20"
+  "transcribed": true
  },
  "themealdb:52852": {
   "videoId": "3_UAxkx0u6U",
   "title": "TUNA NICOISE RECIPE - SORTED",
   "channel": "Sorted Food",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53151": {
   "videoId": "vNBuXsTY15E",
   "title": "Authentic Spanish Seafood Paella Recipe - Colab With Best Bites Forever",
   "channel": "Spain on a Fork",
+  "checked": "2026-10-21",
   "status": "verified",
-  "checked": "2026-10-20"
+  "transcribed": true
  },
  "themealdb:53172": {
   "videoId": "2Hup2nypG2w",
   "title": "The Authentic Patatas Bravas Served in Madrid Spain",
   "channel": "Spain on a Fork",
+  "checked": "2026-10-21",
   "status": "verified",
-  "checked": "2026-10-20"
+  "transcribed": true
  },
  "themealdb:53144": {
   "videoId": "2tZlO8vNMtk",
   "title": "Gambas al ajillo: la receta de mi madre",
   "channel": "Las Recetas de MJ",
+  "checked": "2026-10-21",
   "status": "verified",
-  "checked": "2026-10-20"
+  "transcribed": true
  },
  "themealdb:52872": {
   "videoId": "JceGMNG7rpU",
   "title": "Ultimate Spanish Omelette | Omar Allibhoy",
   "channel": "Jamie Oliver",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52802": {
   "videoId": "2sX4fCgg-UI",
   "title": "How to make an easy fish pie",
   "channel": "Good Food",
+  "checked": "2026-10-21",
   "status": "verified",
-  "checked": "2026-10-20"
+  "transcribed": true
  },
  "themealdb:52822": {
-  "videoId": "t1dWkDrC330",
-  "title": "How To Make The Best Toad In The Hole.TheScottReaProject",
-  "channel": "Scott Rea",
+  "videoId": "5xrwwIKlto8",
+  "title": "How to make toad-in-the-hole",
+  "channel": "Good Food",
+  "checked": "2026-10-21",
   "status": "verified",
-  "checked": "2026-10-20"
+  "transcribed": true
  },
  "themealdb:52784": {
   "videoId": "pKmqawK2Tqs",
@@ -436,85 +487,97 @@
   "videoId": "FJiu2S0Xap0",
   "title": "Salmon avocado and cucumber salad",
   "channel": "Salad Recipes",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52841": {
   "videoId": "lBhwjjUiFk4",
   "title": "tomato soup recipe | creamy tomato soup recipe",
   "channel": "Hebbars Kitchen",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52854": {
   "videoId": "LWuuCndtJr0",
   "title": "How to Make the Easiest Pancakes | Allrecipes",
   "channel": "Allrecipes",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52855": {
   "videoId": "kSKtb2Sv-_U",
   "title": "How To Make Easy 2 Ingredient Banana Pancakes - Video Recipe",
   "channel": "Yummy Inspirations",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52962": {
   "videoId": "Woiiet4vQ58",
   "title": "Eggs Benedict with Smoked Salmon",
   "channel": "Mobile Home Gourmet",
+  "checked": "2026-10-21",
   "status": "verified",
-  "checked": "2026-10-20"
+  "transcribed": true
  },
  "themealdb:52859": {
   "videoId": "q4Rz7tUkX9A",
   "title": "Key Lime Pie - Food Wishes",
   "channel": "Food Wishes",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52858": {
   "videoId": "tspdJ6hxqnc",
   "title": "The Best New York Cheesecake Recipe | Emojoie Cuisine",
   "channel": "Emojoie",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52883": {
-  "videoId": "Wytv3bjqJII",
-  "title": "STICKY TOFFEE PUDDING RECIPE - SORTED",
-  "channel": "Sorted Food",
+  "videoId": "vIG37JV393Y",
+  "title": "Sticky Date Pudding (aka Sticky Toffee Pudding)",
+  "channel": "RecipeTin Eats",
+  "checked": "2026-10-21",
   "status": "verified",
-  "checked": "2026-10-20"
+  "transcribed": true
  },
  "themealdb:52776": {
   "videoId": "dsJtgmAhFF4",
   "title": "How to Make the Most Amazing Chocolate Cake",
   "channel": "The Stay At Home Chef",
+  "checked": "2026-10-21",
   "status": "verified",
-  "checked": "2026-10-20"
+  "transcribed": true
  },
  "themealdb:52909": {
   "videoId": "8xDM8U6h9Pw",
   "title": "Tarte Tatin - Recette en vidéo",
   "channel": "Meilleur du Chef",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53046": {
   "videoId": "lWLCxui1Mw8",
   "title": "How to Make Pastéis de Nata AKA Portuguese Custard Tarts | Cupcake Jemma",
   "channel": "CupcakeJemma",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52791": {
-  "videoId": "43WgiNq54L8",
-  "title": "Jamie Oliver - Eton Mess",
-  "channel": "Publicasity",
+  "videoId": "K6m34euQPMo",
+  "title": "Strawberry Eton Mess (Easy, No-Bake Dessert)",
+  "channel": "Natashas Kitchen",
+  "checked": "2026-10-21",
   "status": "verified",
-  "checked": "2026-10-20"
+  "transcribed": true
  },
  "themealdb:52893": {
   "videoId": "4vhcOwVBDO4",
@@ -523,46 +586,52 @@
   "checked": "2026-10-20"
  },
  "themealdb:52860": {
-  "videoId": "Pi89PqsAaAg",
-  "title": "Cadbury – Chocolate Raspberry Brownies",
-  "channel": "Cadbury",
+  "videoId": "M_5DICK7TJI",
+  "title": "Raspberry Chocolate Brownies - Best Ever Brownies Recipe",
+  "channel": "Home Cooking Adventure",
+  "checked": "2026-10-21",
   "status": "verified",
-  "checked": "2026-10-20"
+  "transcribed": true
  },
  "themealdb:53111": {
-  "videoId": "1nAVbfQVWRQ",
-  "title": "Julie Goodwin Cooks Anzac Biscuits",
-  "channel": "Julie Goodwin",
+  "videoId": "SQCDFQlk7b8",
+  "title": "How to make perfect Anzac biscuits with CWA judge | ANZAC Day | ABC Australia",
+  "channel": "ABC Australia",
+  "checked": "2026-10-21",
   "status": "verified",
-  "checked": "2026-10-20"
+  "transcribed": true
  },
  "themealdb:53104": {
   "videoId": "CbHWqzw4Qxg",
   "title": "Lamingtons Recipe | Australian Classic Dessert",
   "channel": "The Cooking Foodie",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53099": {
-  "videoId": "pSupybydA_U",
-  "title": "Aussie Burger Recipe!",
-  "channel": "Ballistic BBQ",
+  "videoId": "CZItH4gQjAQ",
+  "title": "Aussie Burger with \"The Lot\" [Pineapple, beetroot, bacon, egg and more!]",
+  "channel": "Wandercooks",
+  "checked": "2026-10-21",
   "status": "verified",
-  "checked": "2026-10-20"
+  "transcribed": true
  },
  "themealdb:53161": {
   "videoId": "CiY6ZOYRMI4",
   "title": "The Best One-Pot Chicken Chorizo Rice (Easy & Delicious)! 🍗🍚- Chef Simon Gault👨‍🍳",
   "channel": "Simon Gault",
+  "checked": "2026-10-21",
   "status": "verified",
-  "checked": "2026-10-20"
+  "transcribed": true
  },
  "themealdb:53240": {
   "videoId": "l8wuWeNy3J4",
   "title": "Cashew Tofu Stir Fry | Healthy & Quick Meal | Tofu Stir Fry | Thai Cashew Tofu",
   "channel": "Healthy Indian Recipes",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52828": {
   "videoId": "Q3qcQcENzbU",
@@ -580,22 +649,25 @@
   "videoId": "Wj7sXu9B_ME",
   "title": "TURKISH ADANA KEBAB RECIPE | TURKISH KEBAB WITHOUT GRILL || by Aqsa's Cuisine",
   "channel": "Aqsa's Cuisine",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53373": {
   "videoId": "XnA-wcVb4l0",
   "title": "EASY Air Fryer Egg Rolls",
   "channel": "Preppy Kitchen",
+  "checked": "2026-10-21",
   "status": "verified",
-  "checked": "2026-10-20"
+  "transcribed": true
  },
  "themealdb:53158": {
-  "videoId": "kzLaw6PG2UY",
-  "title": "Patatas Bravas Air Fryer Recipe (Classic Tapas)",
-  "channel": "Let's Cook With Leigh",
+  "videoId": "HbwjftD22lU",
+  "title": "Better Than Takeout: Crispy Air Fryer Patatas Bravas Step by Step",
+  "channel": "Cooking With Emily",
+  "checked": "2026-10-21",
   "status": "verified",
-  "checked": "2026-10-20"
+  "transcribed": true
  },
  "themealdb:53525": {
   "videoId": null,
@@ -607,15 +679,17 @@
   "videoId": "AS2mSRtWyW0",
   "title": "Ajoblanco",
   "channel": "CanalCandido",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53138": {
   "videoId": "9WR40GHpsyo",
   "title": "Alfajores de Maicena | Muy Fáciles y Deliciosos",
   "channel": "Cocina Para Todos",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53284": {
   "videoId": null,
@@ -624,26 +698,24 @@
   "checked": "2026-10-20"
  },
  "themealdb:53282": {
-  "videoId": "mF2ND56szUQ",
-  "title": "ALGERIAN WARM AND SPICY CARROT SALAD🌶️🔥🥕",
-  "channel": "Algerian flavours by Houda",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "videoId": null,
+  "checked": "2026-10-21",
+  "status": "rejected",
+  "reason": "No verifiable cooking video with a usable recipe. The CountryReports replacement (qb6KbZeM9W4, 18 views) is auto-generated recipe text beside clip-art of a plate and pan, with no carrots shown, and its recipe has no amount for the lemon juice that dresses the carrots. Houda's original video gives no carrot quantity. Other results are a French video without amounts or an app-promo slideshow."
  },
  "themealdb:53288": {
-  "videoId": "JXrS1doDnNg",
-  "title": "🇩🇿 Algerian Tomato Pepper Salad- Ifelfel Th’Tomatiche, Hmiss or Ch’lita",
-  "channel": "My Excellent Degustations",
+  "videoId": null,
+  "checked": "2026-10-21",
   "status": "rejected",
-  "reason": "video title doesn't match the dish",
-  "checked": "2026-10-20"
+  "reason": "No verifiable cooking video. The 'Vegan Food Recipes' replacement (_kD-6VZGWwI) is a slideshow of one still photo with Allrecipes recipe text cards over it, and its description is that recipe pasted under a spam link. No cooking is shown. The original My Excellent Degustations video gives no amounts and its recipe page returns an empty body."
  },
  "themealdb:53281": {
   "videoId": "IRadJQNLvPs",
   "title": "How to Make Kefta-Style Meatballs | Beef Recipe | Allrecipes.com",
   "channel": "Allrecipes",
+  "checked": "2026-10-21",
   "status": "verified",
-  "checked": "2026-10-20"
+  "transcribed": true
  },
  "themealdb:53529": {
   "videoId": null,
@@ -667,8 +739,9 @@
   "videoId": "6R8ffRRJcrg",
   "title": "Apam Balik Pasar Malam yang Lembut, Gebu dan Berongga",
   "channel": "Che Nom",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53380": {
   "videoId": "vZy-7UyPdjM",
@@ -710,22 +783,25 @@
   "videoId": "Tb1PPOyqthA",
   "title": "Así se hace la AREPA DE PABELLÓN 🇻🇪  #arepas #arepapower #arepasvenezolanas #diamundialdelaarepa",
   "channel": "Cocinando de Torito",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53329": {
   "videoId": "bSWoRyWI6Fo",
   "title": "¡La Arepa Pelúa Más Rica! 🇻🇪 Receta Venezolana Fácil con Carne Mechada 🫓😋",
   "channel": "Mi Receta a Tu Cocina",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53392": {
   "videoId": "AFJm15R4YYw",
   "title": "How to Make Arnhemse Meisjes: Thin, Crunchy Dutch Butter Cookies from Arnhem",
   "channel": "Toine’s Kitchen 🇳🇱",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53406": {
   "videoId": null,
@@ -737,15 +813,17 @@
   "videoId": "f-waAIrn2iA",
   "title": "How to make Arroz al Horno (Spanish-Style Oven Baked Rice)",
   "channel": "The Spanish Radish",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53147": {
   "videoId": "nFFp0ebOlOo",
   "title": "ARROZ CON CALAMARES. Y Gambas, una receta completa. #nuberosaylila",
   "channel": "La Cocina de Nube Rosa y Lila",
+  "checked": "2026-10-21",
   "status": "verified",
-  "checked": "2026-10-20"
+  "transcribed": true
  },
  "themealdb:53522": {
   "videoId": null,
@@ -754,40 +832,38 @@
   "checked": "2026-10-20"
  },
  "themealdb:53133": {
-  "videoId": "q5f6Z6i1hQ8",
-  "title": "Mastering Argentine Asado | Perfect Picanha Steak & Entraña on the Grill!",
-  "channel": "Argentine Asado",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "videoId": null,
+  "checked": "2026-10-21",
+  "status": "rejected",
+  "reason": "Current video (Argentine Asado, q5f6Z6i1hQ8) grills picanha and entraña with pork sausages and gives no amounts for the main ingredients, not the catalogue's chuck steak, chorizo and black pudding. Searches found no asado video with a written recipe or spoken amounts; transcripts were blocked."
  },
  "themealdb:53278": {
-  "videoId": "P5LD03XptB8",
-  "title": "Hommus with Roasted Eggplant",
-  "channel": "everydaygourmettv",
+  "videoId": null,
+  "checked": "2026-10-21",
   "status": "rejected",
-  "reason": "the video is hummus with roasted eggplant, not the grill",
-  "checked": "2026-10-20"
+  "reason": "Current video (Hommus with Roasted Eggplant, everydaygourmettv) is hummus topped with roasted eggplant and pickled onion, a different dish (no crumb-coated aubergine grills, no walnut salad); searches found no embeddable video of aubergine and hummus grills with a written recipe."
  },
  "themealdb:53267": {
-  "videoId": "8ws2Ohy__CQ",
-  "title": "Warm Aubergine, Tomato & Couscous Salad with Feta  #ainsleycouscous #ainsleyharriott #easymeals",
-  "channel": "Ainsley Harriott & Food Co.",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "videoId": null,
+  "checked": "2026-10-21",
+  "status": "rejected",
+  "reason": "No verifiable cooking video. The 'Salad Recipes' replacement (zRP1DuIhEWQ) is not a cooking video: its storyboard shows one still photo of the finished salad for all 93 s with the written recipe scrolling over it. The original Ainsley Harriott video uses a branded couscous packet with no amounts. Searches found only different eggplant-couscous salads (Israeli couscous with shallots and basil; walnuts and peppers; a vegan version with avocado)."
  },
  "themealdb:53425": {
   "videoId": "JbcrpAHmk3s",
   "title": "Warm Banana Tapioca Pudding (Chè Chuối Chưng)",
   "channel": "A Global Kitchen",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53127": {
   "videoId": "fE85ioKQ7ew",
   "title": "Classic Norwegian Kransekake Recipe",
   "channel": "Scandinavian Cookbook",
+  "checked": "2026-10-21",
   "status": "verified",
-  "checked": "2026-10-20"
+  "transcribed": true
  },
  "themealdb:53107": {
   "videoId": null,
@@ -799,15 +875,17 @@
   "videoId": "9ytR28QK6I8",
   "title": "Oven Roasted Ayam Percik | Malaysian grilled coconut spiced chicken",
   "channel": "Nomadette Eats",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53094": {
   "videoId": "Mz-ZVfOA_ig",
   "title": "Baba Ganoush (creamy eggplant dip)",
   "channel": "Nico's Recipes",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53396": {
   "videoId": null,
@@ -831,8 +909,9 @@
   "videoId": "-84Zz2EP4h4",
   "title": "Baingan Bharta Recipe | Roasted Eggplant  | Eggplant Recipe | Baingan Bharta by Kabitaskitchen",
   "channel": "Kabita's Kitchen",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53456": {
   "videoId": null,
@@ -844,8 +923,9 @@
   "videoId": "ZrVAFmPQaZ0",
   "title": "How To Bake Barbados  Coconut Sweet Bread",
   "channel": "Tinaraine",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53559": {
   "videoId": null,
@@ -857,8 +937,9 @@
   "videoId": "xvPR2Tfw5k0",
   "title": "Fennel Smoked Salmon - Hot-Smoked Salmon Recipe with Fennel and Tomatoes",
   "channel": "Food Wishes",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53548": {
   "videoId": null,
@@ -870,8 +951,9 @@
   "videoId": "1ahpSTf_Pvk",
   "title": "Jamie’s Bakewell Tart | Jamie Oliver - AD",
   "channel": "Jamie Oliver",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53279": {
   "videoId": "yK_sSFDvsT0",
@@ -891,8 +973,9 @@
   "videoId": "Na-6-lzs2wU",
   "title": "Bang Bang Shrimp Salad",
   "channel": "Tastefully Balanced",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53451": {
   "videoId": null,
@@ -912,8 +995,9 @@
   "videoId": "T3mBULRIcY8",
   "title": "Michelin Baked BBQ Pork Buns At Home | Marion's Kitchen",
   "channel": "Marion Grasby",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53103": {
   "videoId": null,
@@ -925,22 +1009,25 @@
   "videoId": "aB41Q7kDZQ0",
   "title": "Battenberg cake",
   "channel": "Co-op",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52848": {
   "videoId": "B0YX0yPX4Wo",
   "title": "Sausage & Butterbean Casserole | Healthy Family Dinner Recipe",
   "channel": "My Fussy Eater (Ciara Attwell)",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52928": {
   "videoId": "2G07UOqU2e8",
   "title": "How to Make Beavertails",
   "channel": "steve45ca",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52874": {
   "videoId": "nMyBC9staMU",
@@ -954,15 +1041,17 @@
   "videoId": "ONX74yP6JnI",
   "title": "BEEF AND GUINNESS OYSTER PIE",
   "channel": "Whisk and Dine",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53071": {
   "videoId": "lNlK8DVhXXA",
   "title": "How to Cook Beef Asado Recipe - English",
   "channel": "PagkaingPinoyTV",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52997": {
   "videoId": null,
@@ -982,29 +1071,33 @@
   "videoId": "yI7hTz0ft5k",
   "title": "Beef Caldereta | Kalderetang Baka",
   "channel": "Kawaling Pinoy",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52873": {
   "videoId": "6NgheY-r5t0",
   "title": "James Martin - How To Make Beef Stew and Dumplings",
   "channel": "Wahl UK",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53317": {
   "videoId": "RRNVLC6IAv4",
   "title": "How to Make Empanadas | So Delicious and Easy!",
   "channel": "Preppy Kitchen",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53421": {
   "videoId": "3oWgjFhQQW0",
   "title": "How to make Cambodian beef Lok Lak​, ឡុកឡាក់​, Lok Lak Sach Kor   Khmer Beef Salad",
   "channel": "Bunthai Y",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53359": {
   "videoId": null,
@@ -1016,8 +1109,9 @@
   "videoId": "jxW3Lj8VjyE",
   "title": "Beef Mechado Recipe | Beef Stew | Mechadong Baka | Easy to Follow Recipe",
   "channel": "Get Cookin'",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53469": {
   "videoId": null,
@@ -1047,22 +1141,25 @@
   "videoId": "ly1UeAjydEg",
   "title": "How To Make The Easiest Homemade Sauerkraut | Fermented Cabbage with Beetroot | Heghineh",
   "channel": "Heghineh Cooking Show",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53313": {
   "videoId": "pRLuLYQnPiM",
   "title": "Beet Latkes",
   "channel": "CkwstvOliveaKingston",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53316": {
   "videoId": "HzQT0rHKCWM",
   "title": "Beetroot Pancakes",
   "channel": "SoDelicious",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53463": {
   "videoId": null,
@@ -1100,22 +1197,25 @@
   "videoId": "Oqg_cO4s8ik",
   "title": "Bigos - Polish Hunter's Stew Recipe",
   "channel": "Food Wishes",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53300": {
   "videoId": "Oqg_cO4s8ik",
   "title": "Bigos - Polish Hunter's Stew Recipe",
   "channel": "Food Wishes",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53069": {
   "videoId": "xOQON5_S7as",
   "title": "How To Cook  Filipino Beef Steak ( BISTEK TAGALOG )",
   "channel": "Mommy Chocco",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52979": {
   "videoId": "q8AKfYUtDuM",
@@ -1147,8 +1247,9 @@
   "videoId": "kniRGjDLFrQ",
   "title": "Fresh Berry Fool - How to Make a Berry Fool - Easy Summer Dessert Recipe",
   "channel": "Food Wishes",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53080": {
   "videoId": "GsB8ZI5vREA",
@@ -1162,15 +1263,17 @@
   "videoId": "7tq5JvO88E0",
   "title": "Lemon & Blueberry Friands",
   "channel": "Geoff Cooper",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53401": {
   "videoId": "bvrUPtEs_Uk",
   "title": "Bolani with Potato Filling",
   "channel": "My Food Twist",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53438": {
   "videoId": "WovQkxxrUeE",
@@ -1184,36 +1287,41 @@
   "videoId": "6CXgPVw_-0g",
   "title": "Classic Ukrainian Borscht Recipe",
   "channel": "Natashas Kitchen",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53385": {
   "videoId": "IwAfFVjPVl4",
   "title": "Dutch Boterkoek Recept  | Boterkoek | Dutch Butter Cake Recipe",
   "channel": "PY's Kitchen",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52914": {
   "videoId": "gcXPruv1Mjg",
   "title": "Boulangere Potatoes recipe",
   "channel": "Stevescooking",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53036": {
   "videoId": "80W0mCFDIP0",
   "title": "How to make... Irish POTATO PANCAKES | Breakfast BOXTY! 🍳",
   "channel": "Donal Skehan",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53305": {
   "videoId": "RNrZpQaj5us",
   "title": "BRAISED CABBAGE ROLLS | SHERSON LIAN",
   "channel": "Sherson Lian",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53485": {
   "videoId": null,
@@ -1255,8 +1363,9 @@
   "videoId": "BoD0TIO9nE4",
   "title": "Breakfast Potato Recipe Share if you Like!!",
   "channel": "Shawn Phillips",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52913": {
   "videoId": "FzNPPD8lbWg",
@@ -1276,22 +1385,25 @@
   "videoId": "_gFB1fkNhXs",
   "title": "Jamaican Brown Stew Chicken Recipe Video",
   "channel": "Cook Like A Jamaican",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53126": {
   "videoId": "VuLnP0Yu84o",
   "title": "Brun Lapskaus: Norwegian Beef & Vegetable Root Stew",
   "channel": "Scandinavian Cookbook",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53190": {
   "videoId": "IPF_VpH7FzI",
   "title": "SLOVAKIA | Bryndzove Halusky #recipes #food",
   "channel": "Tales From The Road",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52961": {
   "videoId": "6dzd6Ra6sb4",
@@ -1317,15 +1429,17 @@
   "videoId": "YsJXZwE5pdY",
   "title": "The Art of Making Burek",
   "channel": "Chris Konesky",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53077": {
   "videoId": "lTjlbqGc_Y8",
   "title": "How to make Russian Schi Soup | Sour Cabbage Soup Recipe",
   "channel": "AllasYummyFood",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53488": {
   "videoId": null,
@@ -1337,8 +1451,9 @@
   "videoId": "eIDgcvpAvf8",
   "title": "How to make Restaurant Style Cacik - Turkish Tzatziki",
   "channel": "Middle Eats",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53544": {
   "videoId": null,
@@ -1350,15 +1465,17 @@
   "videoId": "n1fRCk-zTRM",
   "title": "Jamaican Callaloo and Saltfish Recipe | Traditional Recipe ",
   "channel": "Cooking With Janiel",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52939": {
   "videoId": "bCr3GasJWwE",
   "title": "Jamaican Callaloo Recipe Video",
   "channel": "Cook Like A Jamaican",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53428": {
   "videoId": null,
@@ -1370,22 +1487,25 @@
   "videoId": "_LsP1TP4P9Q",
   "title": "Recipe: Cambodian Stir-fried Morning Glory with Pork, Fermented Soybeans, and Garlic",
   "channel": "Mitzie Mee",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52923": {
   "videoId": "WUpaOGghOdo",
   "title": "🇨🇦 How To Make A Canadian Butter Tart 🇨🇦",
   "channel": "Glen And Friends Cooking",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53141": {
   "videoId": "MSyvKDBXuKQ",
   "title": "CARBONADA Criolla | Receta Tradicional Argentina - CUKit!",
   "channel": "Cuk-it!",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53576": {
   "videoId": null,
@@ -1397,15 +1517,17 @@
   "videoId": "asjZ7iTrGKA",
   "title": "Carrot Cake Recipe -  Chef Tips",
   "channel": "Chef Tips",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52976": {
   "videoId": "IqXEZUk4hWI",
   "title": "Moroccan Almond Cookies - Ghriyba",
   "channel": "Healthier each meal",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53564": {
   "videoId": null,
@@ -1423,8 +1545,9 @@
   "videoId": "3fK4zsa2AYM",
   "title": "Cassava Pizza: Delicious, Gluten-free, And Easier Than You Think!",
   "channel": "eatahfood",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53507": {
   "videoId": null,
@@ -1450,50 +1573,57 @@
   "videoId": "EHKNu93MSx4",
   "title": "Recette chakchouka tunisienne  -  وصفة  الشكشوكة التونسية",
   "channel": "Eya's corner",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53310": {
   "videoId": "RAYv3n4q-Wc",
   "title": "How to Make Challah Bread | Best Challah Bread Recipe | Easy Challah Bread Recipe |",
   "channel": "Bincy Chris",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53290": {
   "videoId": "UphcO5hC9rU",
   "title": "How to make Cheese Borek- Easy Cheese Borek recipe with phyllo dough- Crispy!",
   "channel": "Nora’s International Cooking",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53442": {
   "videoId": "_RC2m-VGdP0",
   "title": "Mozzarella Cheese Sticks With Cheetos Crunchy #cooking  #food #recipe",
   "channel": "Cuisine Share",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52898": {
   "videoId": "i_zemP3yBKw",
   "title": "How to Make Chelsea Buns | Baking Mad",
   "channel": "Silver Spoon",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53016": {
   "videoId": "1WDesu7bUDM",
   "title": "Chick-fil-A Chicken Sandwich - But Homemade... & WAY Better! | SAM THE COOKING GUY 4K",
   "channel": "SAM THE COOKING GUY",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52846": {
   "videoId": "bXKWu4GojNI",
   "title": "Chicken & mushroom hot-pot",
   "channel": "Foodiful",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52796": {
   "videoId": "qCIbq8HywpQ",
@@ -1507,22 +1637,25 @@
   "videoId": "2ehdHb1rcAQ",
   "title": "Chicken and potato roti recipe /aloo paratha/how to make potato roti",
   "channel": "The Hot and Cold Kitchen",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52934": {
   "videoId": "emfm6TwsVhg",
   "title": "\"Poulet Basquaise\". Traditional French Chicken Recipe.Take. 2 #SRP",
   "channel": "Scott Rea",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52956": {
   "videoId": "kqEfk801E94",
   "title": "Chicken Congee - Rice Porridge - jok",
   "channel": "Sue and Gambo",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52850": {
   "videoId": "GZQGy9oscVk",
@@ -1550,8 +1683,9 @@
   "videoId": "xr-CpPE_lNk",
   "title": "How To Make Chicken And Leek Pie | Waitrose",
   "channel": "Waitrose & Partners",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53531": {
   "videoId": null,
@@ -1581,8 +1715,9 @@
   "videoId": "U33HYUr-0Fw",
   "title": "Chicken Marengo Recipe (Adventures in Chicken Part 3)",
   "channel": "Titli's Busy Kitchen",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52879": {
   "videoId": "tiG-xlmeyjg",
@@ -1626,8 +1761,9 @@
   "videoId": "nI2Sm4B3gWU",
   "title": "Spanish Chickpea & Chorizo Stew | Potaje de Garbanzos y Chorizo Recipe",
   "channel": "Spain on a Fork",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53516": {
   "videoId": null,
@@ -1651,29 +1787,33 @@
   "videoId": "MNrNHToyvtI",
   "title": "Ginger and Chili Lamb Chops",
   "channel": "Vijaya Selvaraju",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53365": {
   "videoId": "-222Dutomek",
   "title": "Orange Chicken",
   "channel": "Preppy Kitchen",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53372": {
   "videoId": "Wn8ox93Qhus",
   "title": "🍅  Tomato + Egg 🥚 = The BEST Stir Fry?!",
   "channel": "Made With Lau",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52910": {
   "videoId": "5dAW9HQgtCk",
   "title": "chinon apple tarts recipe",
   "channel": "What Woman Needs",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53319": {
   "videoId": "tX3fN9AG_ik",
@@ -1687,64 +1827,73 @@
   "videoId": "0PXbbL1QdaA",
   "title": "Chivito Uruguayo. Clásico y Popular by Hugo Soca.",
   "channel": "Día de Cocina",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52856": {
   "videoId": "fDpoT0jvg4Y",
   "title": "Chocolate Pecan Pie Recipe - Pecan Pie with Semi-Sweet Chocolate Chips",
   "channel": "Food Wishes",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53320": {
   "videoId": "ucBoYab5tXY",
   "title": "Chocolate Alfajores Cookies - The Scran Line",
   "channel": "The Scran Line",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52853": {
   "videoId": "wuZffe60q4M",
   "title": "Avocado Chocolate Mousse Recipe",
   "channel": "Recipes by Carina",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52966": {
   "videoId": "qsk_At_gjv0",
   "title": "Chocolate Caramel Rice Crispy Treats",
   "channel": "Donal Skehan",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53170": {
   "videoId": "J45Y5olZCuo",
   "title": "Churros with Chocolate Sauce + Salted Caramel  | Churros con Chocolate y Dulce de Leche",
   "channel": "The Mad Table",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53101": {
   "videoId": "8TzqUo8PCLg",
   "title": "Chocolate Coconut Squares",
   "channel": "Gordana’s Kitchen",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53324": {
   "videoId": "Cdo14aXSHrA",
   "title": "Chocolate Dulce de Leche Empanadas - Gemma's Bigger Bolder Baking Ep  82",
   "channel": "Bigger Bolder Baking with Gemma Stafford",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52905": {
   "videoId": "FWqfkUEWOTg",
   "title": "Chocolate Soufflé - How to Make Chocolate Soufflé for Two",
   "channel": "Food Wishes",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53289": {
   "videoId": "2z6IldJl_lQ",
@@ -1758,8 +1907,9 @@
   "videoId": "I_oZ8r6VxL4",
   "title": "This Spanish Chickpea and Chorizo Soup Is Pure Comfort in a Bowl",
   "channel": "High Protein Recipes with Scott Baptie",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53157": {
   "videoId": "PfAjfn5dYHE",
@@ -1773,8 +1923,9 @@
   "videoId": "RFlENguMJNA",
   "title": "The best Tomato Salad and Chorizo by Jamie Oliver",
   "channel": "Jamie Oliver",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53159": {
   "videoId": "K2Ba5BWYXUU",
@@ -1794,8 +1945,9 @@
   "videoId": "34yeL8TstO0",
   "title": "Christmas Cake Recipe - Easy Fruit Cake that's beautifully moist!",
   "channel": "Kitchen Sanctuary",
+  "checked": "2026-10-21",
   "status": "verified",
-  "checked": "2026-10-20"
+  "transcribed": true
  },
  "themealdb:52788": {
   "videoId": "OaqvGvEiwzU",
@@ -1815,8 +1967,9 @@
   "videoId": "kpsZQTVVjdk",
   "title": "Chtitha batata - Algerian potato stew | Video recipe",
   "channel": "Allrecipes UK | Ireland",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53528": {
   "videoId": null,
@@ -1828,43 +1981,49 @@
   "videoId": "453mpKHVaBs",
   "title": "How to Make Churros",
   "channel": "Preppy Kitchen",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53116": {
   "videoId": "wNiyp89pTi0",
   "title": "The Best Cinnamon Buns | Richard Bertinet | Gozney Master",
   "channel": "Gozney",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53462": {
   "videoId": "LZ6ra2I0Edo",
   "title": "Cinnamon roll cookies! Full recipe on my Instagram @Tabiibakes #baking #cookies #cinnamonroll",
   "channel": "Tabi",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52840": {
   "videoId": "fEN_fm6kX6k",
   "title": "Homemade Clam Chowder Recipe - Laura Vitale - Laura in the Kitchen Episode 413",
   "channel": "Laura in the Kitchen",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53154": {
   "videoId": "IoRuT7TxDAo",
   "title": "Cinco De Mayo: How To Make Spicy Clam, Chorizo And White Bean Soup | Recipes | Well Done",
   "channel": "Well Done",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52988": {
   "videoId": "Pb_lJxL1vtk",
   "title": "How to make a traditional Christmas Pudding - part 1",
   "channel": "GoodtoKnow",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53555": {
   "videoId": null,
@@ -1876,8 +2035,9 @@
   "videoId": "PM9TZPUJTiU",
   "title": "Professional Baker Teaches You How To Make TOURTIERE!",
   "channel": "Oh Yum with Anna Olson",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53446": {
   "videoId": null,
@@ -1953,22 +2113,25 @@
   "videoId": "Bxjz-q2hioA",
   "title": "How to make Jamaican Corned Beef & Cabbage! | Deddy's Kitchen",
   "channel": "Deddy's Kitchen",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53096": {
   "videoId": "SPr_UnCrYPg",
   "title": "Best Corned Beef Hash Recipe with Canned Corned beef",
   "channel": "Chef Buck",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53291": {
   "videoId": "KVnfEBh-rUk",
   "title": "Cornes de gazelle | Video recipe",
   "channel": "Allrecipes UK | Ireland",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53490": {
   "videoId": null,
@@ -2006,22 +2169,25 @@
   "videoId": "5aw5Ba0PCa0",
   "title": "Homemade Spanish Crema Catalana Recipe",
   "channel": "Spain on a Fork",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53072": {
   "videoId": "4mINk5d2hto",
   "title": "Filipino Fried Eggplant - Vegan Recipe",
   "channel": "Vegan International",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53419": {
   "videoId": "V0G3ODvMg0k",
   "title": "Recipe: Crispy Fried Fish with Ginger and Fermented Soybeans (Trey Chien Chuon) - Cambodia Food",
   "channel": "Mitzie Mee",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52999": {
   "videoId": null,
@@ -2041,8 +2207,9 @@
   "videoId": "K0ipnz4fwJI",
   "title": "Traditional Croatian Lamb Peka at Dubrovnik Restaurant",
   "channel": "DubrovnikRestaurant",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52830": {
   "videoId": "oqL0mLDBzS4",
@@ -2062,15 +2229,17 @@
   "videoId": "gfNjne0AMb0",
   "title": "Dilled Fennel and Cucumber Salad | Volunteer Gardener",
   "channel": "Volunteer Gardener",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53098": {
   "videoId": "r1lnsOTNjws",
   "title": "The Ultimate Cumberland Pie – British Cooking Made Simple",
   "channel": "Digwell Greenfingers",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53473": {
   "videoId": null,
@@ -2088,8 +2257,9 @@
   "videoId": "E0bOy1FWkXA",
   "title": "Date Squares (Classic Verson) - Joyofbaking.com",
   "channel": "Joy of Baking",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53411": {
   "videoId": "G7OLFDL63J4",
@@ -2121,15 +2291,17 @@
   "videoId": "MHhLJqghY-o",
   "title": "Duck Confit | Byron Talbott",
   "channel": "ByronTalbott",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53137": {
   "videoId": "2J0ICGYsBL4",
   "title": "Dulce de Leche",
   "channel": "Preppy Kitchen",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53543": {
   "videoId": null,
@@ -2149,8 +2321,9 @@
   "videoId": "MgI-_e4R53Y",
   "title": "How To Make Grandma's Authentic Dutch Apple Pie",
   "channel": "Tim is Cooking",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53393": {
   "videoId": null,
@@ -2162,8 +2335,9 @@
   "videoId": "gK1b5gymAUY",
   "title": "Perfect Poffertjes: How to Make Fluffy Dutch Mini Pancakes at Home!",
   "channel": "Bec's Table",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53387": {
   "videoId": "3NIRQ3KMorw",
@@ -2177,8 +2351,9 @@
   "videoId": "3zCrERE0kbc",
   "title": "How to Make Stroopwafels (Just Like in Amsterdam!)",
   "channel": "Bigger Bolder Baking with Gemma Stafford",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53285": {
   "videoId": "koPyA-HO8Q4",
@@ -2192,8 +2367,9 @@
   "videoId": "EusTpzrqYK4",
   "title": "Spanish Chicken & Dirty Rice | Easy One Pot Cooking Perfection!",
   "channel": "Kitchen Sanctuary",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53486": {
   "videoId": null,
@@ -2205,29 +2381,33 @@
   "videoId": "xV0QCJ0GD5w",
   "title": "Eccles Cakes",
   "channel": "Geoff Cooper",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52955": {
   "videoId": "9XpzHm9QpZg",
   "title": "How to Make Egg Drop Soup",
   "channel": "Sue and Gambo",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53370": {
   "videoId": "XVTJrkgW304",
   "title": "BETTER THAN TAKEOUT AND EASY - Egg Foo Young Recipe",
   "channel": "Souped Up Recipes",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53073": {
   "videoId": "pKXACYjwMns",
   "title": "How to make Eggplant Adobo || Adobong Talong",
   "channel": "LinsAdventureandmore",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53031": {
   "videoId": "WLuOHkDE4A4",
@@ -2241,8 +2421,9 @@
   "videoId": "RRNVLC6IAv4",
   "title": "How to Make Empanadas | So Delicious and Easy!",
   "channel": "Preppy Kitchen",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53518": {
   "videoId": null,
@@ -2254,22 +2435,25 @@
   "videoId": "FXjYU2Ensck",
   "title": "HOW TO MAKE A FULL ENGLISH BREAKFAST - Greg's Kitchen",
   "channel": "Greg's Kitchen",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53149": {
   "videoId": "_Quo9Tgxih4",
   "title": "ensaimadas | ensaimada de mallorca | original ensaimada recipe | no cheese ensaymada",
   "channel": "IFTR | infortheride",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52944": {
   "videoId": "nF6DOtGE6k8",
   "title": "Jamaican Style Escovitch Fish.",
   "channel": "caribbeanpot",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53557": {
   "videoId": null,
@@ -2281,8 +2465,9 @@
   "videoId": "Z1mX-C2fAuc",
   "title": "Refika's Must-Try EZME Recipe - Addictive & Proudly Vegan Turkish Bash-Mash | Easy Appetizer Idea",
   "channel": "Refika's Kitchen",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53139": {
   "videoId": null,
@@ -2294,29 +2479,33 @@
   "videoId": "NZcWedPKysk",
   "title": "How to Make Falafel | Falafel Recipe",
   "channel": "The Cooking Foodie",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53123": {
   "videoId": "2mMT71Knp8E",
   "title": "🇳🇴🐑🥬 Fårikål - making Norwegian National dish!",
   "channel": "Visit Norway",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53188": {
   "videoId": "ecBMVy3p6Ns",
   "title": "Fašírky",
   "channel": "neviemvarit",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53092": {
   "videoId": "_EadiEPxQI0",
   "title": "Easy Fasoliyyeh Bi Z-Zayt (Syrian Green Beans with Olive Oil) Recipe",
   "channel": "Vegan Food Recipes",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52919": {
   "videoId": "tXBzZm2kkh8",
@@ -2330,15 +2519,17 @@
   "videoId": "-mW1unsVhFU",
   "title": "Feteer Meshaltet",
   "channel": "Ishita B Saha (IshitaUnblogged)",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53342": {
   "videoId": "b2bF5gZyYDA",
   "title": "Figgy Duff -- You Made What?! -- recipe",
   "channel": "emmymade",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53399": {
   "videoId": null,
@@ -2350,15 +2541,17 @@
   "videoId": "YXUZHK2PrV8",
   "title": "Fofos (Fish Croquettes) | Sanjeev Kapoor Khana Khazana",
   "channel": "Sanjeev Kapoor Khazana ",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53079": {
   "videoId": "cS3Yn-y5uVg",
   "title": "Ukha | Russian Fish Soup Recipe | Рецепт Ухи, Pыбный Cуп",
   "channel": "AllasYummyFood",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52918": {
   "videoId": "fp9Lqx2EUco",
@@ -2384,15 +2577,17 @@
   "videoId": "rpv_PXIoysE",
   "title": "Easy Flan | Creme Caramel",
   "channel": "With Wendy and Shannon",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53341": {
   "videoId": "ALTeJItoxHg",
   "title": "Canadian Flapper Pie Recipe / Custard Pie topped with meringue",
   "channel": "Maricel's Recipes",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53464": {
   "videoId": null,
@@ -2412,15 +2607,17 @@
   "videoId": "CrlTS1mJQMA",
   "title": "French Lentil Soup w/ Tarragon & Thyme | The Vegan Test Kitchen",
   "channel": "The Vegan Test Kitchen",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52915": {
   "videoId": "qXPhVYpQLPA",
   "title": "French Omelette - How to Make Soft, Buttery French-Style Omelets",
   "channel": "Food Wishes",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52996": {
   "videoId": null,
@@ -2432,8 +2629,9 @@
   "videoId": "VcxMq33G-Do",
   "title": "How to Make Crispy Fried Calamari Better Than Restaurants",
   "channel": "The Mediterranean Dish",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53572": {
   "videoId": null,
@@ -2469,22 +2667,25 @@
   "videoId": "ixpCabILuxw",
   "title": "Ful Medames Recipe",
   "channel": "Usman & Salman's Food Joint",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52896": {
   "videoId": "FXjYU2Ensck",
   "title": "HOW TO MAKE A FULL ENGLISH BREAKFAST - Greg's Kitchen",
   "channel": "Greg's Kitchen",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53131": {
   "videoId": "MBh7sQcdzwo",
   "title": "Making Fyrstekake - Norwegian Prince Cake",
   "channel": "Scandinavian Cookbook",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53541": {
   "videoId": null,
@@ -2504,22 +2705,25 @@
   "videoId": "2hf2xltFbxQ",
   "title": "Garlic King Prawns and Sherry with Angela Hartnett",
   "channel": "My Kitchen",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52951": {
   "videoId": "wWGwz0iBmvU",
   "title": "General Tso's Chicken | How to make General Chicken",
   "channel": "Simply Mamá Cooks",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53381": {
   "videoId": "1BYSZIkLOHc",
   "title": "How to Make Gevulde Speculaas: Dutch Almond Paste Filled Spice Cookies",
   "channel": "Toine’s Kitchen 🇳🇱",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53012": {
   "videoId": "e-2K2iyPASA",
@@ -2545,8 +2749,9 @@
   "videoId": "ZxKA2bGkIa8",
   "title": "Grape Nut Ice Cream Recipe/How To Make Grape Nut Ice  Cream",
   "channel": "Cooking With The Salmons",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53274": {
   "videoId": "332VIeW67VM",
@@ -2560,8 +2765,9 @@
   "videoId": "s_ilia2LZ4U",
   "title": "Grilled Flatbread Anyone Can Make",
   "channel": "Helen Rennie",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53255": {
   "videoId": null,
@@ -2579,15 +2785,17 @@
   "videoId": "ourC5IhljB4",
   "title": "HOW TO MAKE GRILLED EGGPLANT WITH COCONUT MILK|INIHAW NA TALONG WITH GATA|ItsJhen",
   "channel": "Its Jhen PH",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52829": {
   "videoId": "PYq31xLj-DY",
   "title": "How to Make A Grilled Mac & Cheese",
   "channel": "TheOfficialHungry",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53041": {
   "videoId": "JYtMjKa6cdY",
@@ -2645,22 +2853,25 @@
   "videoId": "JE8crtueXs8",
   "title": "Greek Yogurt Cheesecake | Akis Petretzikis",
   "channel": "Akis Petretzikis",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52954": {
   "videoId": "KgV9Zq3aSTo",
   "title": "How to Make Hot Sour Soup",
   "channel": "Sue and Gambo",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52787": {
   "videoId": "oJvbsVSblfk",
   "title": "HOW TO MAKE OLD-FASHIONED CHOCOLATE FUDGE",
   "channel": "Hot Chocolate Hits",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53258": {
   "videoId": null,
@@ -2672,8 +2883,9 @@
   "videoId": "EsZFJEjANiA",
   "title": "How to make the best hummus of your life",
   "channel": "Rainbow Plant Life",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53552": {
   "videoId": null,
@@ -2693,8 +2905,9 @@
   "videoId": "kYH2qJXnSMo",
   "title": "Irish Beef Stew",
   "channel": "Simply Recipes",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53436": {
   "videoId": null,
@@ -2706,43 +2919,49 @@
   "videoId": "8dh7HmkBLCI",
   "title": "1938 Jam Jams Cookie Recipe",
   "channel": "Glen And Friends Cooking",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52890": {
   "videoId": "5ZYWVQ8imVA",
   "title": "How to Make Jam Roly Poly",
   "channel": "Cooking Methods MNL",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53351": {
   "videoId": "I3wZ04FgW0I",
   "title": "How to Make Jamaican Banana Fritters at Home!",
   "channel": "Jehan Powell",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52938": {
   "videoId": "ypQjoiZiTac",
   "title": "Jamaican Beef Patties Recipe: How To Make Jamaican Beef Patties",
   "channel": "PhillyboyjaySweetz",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53353": {
   "videoId": "RhUxdkYIHPY",
   "title": "Jamaican Boiled Dumplings Recipe | Easy 3-Ingredient Dumplings",
   "channel": "Jerk Tavern",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53363": {
   "videoId": "NACm9tDACRc",
   "title": "How to make THE BEST Jamaican Cornmeal Porridge!",
   "channel": "Deddy's Kitchen",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53345": {
   "videoId": null,
@@ -2754,50 +2973,57 @@
   "videoId": "SrX2KMsWbF4",
   "title": "How to make Jamaican CURRY GOAT!",
   "channel": "Deddy's Kitchen",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53362": {
   "videoId": "Lnaj4duQ7hs",
   "title": "The Best Jamaican Curry Shrimp Recipe Ever",
   "channel": "Cook Like A Jamaican",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53355": {
   "videoId": "N270k22MPWk",
   "title": "Jamaican Festival Dumplings",
   "channel": "Racquel’s Caribbean Cuisine",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53356": {
   "videoId": "W5AJhsW-X44",
   "title": "Jamaican Fried Dumplings 🇯🇲",
   "channel": "Racquel’s Caribbean Cuisine",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53352": {
   "videoId": "iJm1F-TE8Sk",
   "title": "Instant Pot Rice and Peas | Jamaican Rice and Peas",
   "channel": "Jerene's Eats",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53349": {
   "videoId": "ILCmxtCp8jc",
   "title": "Jamaican Style Pepper Shrimp|                         THE RAINA’S KITCHEN",
   "channel": "The Raina’s Kitchen",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53357": {
   "videoId": "swVY-6tUK5g",
   "title": "How to make Jamaican RICE and PEAS!",
   "channel": "Deddy's Kitchen",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53348": {
   "videoId": null,
@@ -2809,22 +3035,25 @@
   "videoId": "amEkrC9rzgM",
   "title": "Classic Jamaican Steamed Cabbage #MeatFreeMonday | CaribbeanPot.com",
   "channel": "caribbeanpot",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53344": {
   "videoId": "8W8hZeGuiOc",
   "title": "Sweet Potato Pudding, Jamaican Style, Authentic & Delicious!!",
   "channel": "Racquel’s Caribbean Cuisine",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53145": {
   "videoId": "YFMDkUsMazw",
   "title": "Jamón & Wild Garlic Croquetas #easyrecipes #viral #viralshort  #recipe #trending  #cookingtutorial",
   "channel": "Maxie's Tasty Treat Creations",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53033": {
   "videoId": "rZO86_-MIp0",
@@ -2846,8 +3075,9 @@
   "videoId": "w-rVGvZXVfs",
   "title": "Traditional Newfoundland Jiggs Dinner",
   "channel": "Sam & Feng Cooking",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53220": {
   "videoId": "lrcUixJEPK0",
@@ -2873,8 +3103,9 @@
   "videoId": "UIcuiU1kV8I",
   "title": "Kapsalon shoarma, Mc Döner Hoogeveen",
   "channel": "MC Doner Hoogeveen",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53125": {
   "videoId": "HDWgGMJqvgw",
@@ -2894,8 +3125,9 @@
   "videoId": "_Pw1I1-SItE",
   "title": "Smoked Haddock Kedgeree Recipe",
   "channel": "Sorted Food",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53449": {
   "videoId": null,
@@ -2907,8 +3139,9 @@
   "videoId": "u_OSIChzuL0",
   "title": "Recipe Tunisian Lamb with Saffron (Keleya Zaara)",
   "channel": "Kirstie Bevan",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52813": {
   "videoId": "PTUxCvCz8Bc",
@@ -2950,15 +3183,17 @@
   "videoId": "3EF_R7__xu4",
   "title": "How to Make Knafeh | Kanafeh Recipe",
   "channel": "The Cooking Foodie",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53257": {
   "videoId": "4OsDpyaTKk0",
   "title": "Kofta Burgers! #kofta #burgerrecipe #bbqrecipe",
   "channel": "Matthew Augusta",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53434": {
   "videoId": null,
@@ -2976,8 +3211,9 @@
   "videoId": "h05_zOhGedo",
   "title": "Albanian Kulaç Bread - Soda Bread with Yogurt #kulac, #sodabread, #kuzhinashqiptare",
   "channel": "Sonila Zarate",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52978": {
   "videoId": "IEDEtZ4UVtI",
@@ -2989,8 +3225,9 @@
   "videoId": "ysiuZm9FIxs",
   "title": "Easy Kung Pao Shrimp",
   "channel": "Panlasang Pinoy",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53414": {
   "videoId": null,
@@ -3002,15 +3239,17 @@
   "videoId": "FjQRhFS3aZU",
   "title": "Kvæfjordkake -  Norwegian Verdens Beste - World's Best Cake",
   "channel": "Home Cooking Adventure",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53412": {
   "videoId": "KAsoWvGbpGk",
   "title": "Mish e Lakra Darkë tradicionale / Cabbage and beef Stew Recipe 👌",
   "channel": "Sevdas Kitchen",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53407": {
   "videoId": "k4aYxqlevGQ",
@@ -3030,22 +3269,25 @@
   "videoId": "NCyPaaUNYUk",
   "title": "LAMB PIE WITH POTATOES BY UTUBEDISHGAGIGE@GMAIL.COM",
   "channel": "utubedishgagige",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52805": {
   "videoId": "r7SYVSG5nxo",
   "title": "Mutton Biryani Recipe, Hyderabadi Mutton Biryani, Lamb Biryani",
   "channel": "Vahchef - VahRehVah",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53083": {
   "videoId": "rllQsUw1hFQ",
   "title": "Quick and Easy Lamb Pilaf | Pilau | Pulao | Pilaf Rice | Lamb Plov",
   "channel": "Salt and Pepper",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52782": {
   "videoId": "vaZb1MnFBgA",
@@ -3059,15 +3301,17 @@
   "videoId": "s7_TF4ZHjPc",
   "title": "How to Make A Lamb Tzatziki Burger",
   "channel": "TheOfficialHungry",
+  "checked": "2026-10-21",
   "status": "verified",
-  "checked": "2026-10-20"
+  "transcribed": true
  },
  "themealdb:52884": {
   "videoId": "w6TS5J8YRA4",
   "title": "How To Make Lancashire Hotpot",
   "channel": "Videojug",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53427": {
   "videoId": "qDWN61Ib4A4",
@@ -3081,8 +3325,9 @@
   "videoId": "0dkBqf0zj6M",
   "title": "How to make Lao Pickled Cabbage - Som Pak Galum",
   "channel": "Saeng Douangdara",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52987": {
   "videoId": null,
@@ -3130,15 +3375,17 @@
   "videoId": "vX0KYKAkBTU",
   "title": "Locro Criollo Tradicional Argentino | Receta de Locos X el Asado",
   "channel": "Locos X el Asado",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53461": {
   "videoId": "38dxvOH7Z-s",
   "title": "THE BEST CARIBBEAN MACARONI PIE! | ARTBUTFOOD",
   "channel": "Art But Food",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53504": {
   "videoId": null,
@@ -3150,8 +3397,9 @@
   "videoId": "-YDh4WEmK_E",
   "title": "The Best Madeira Cake Recipe | Cupcake Jemma",
   "channel": "CupcakeJemma",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53472": {
   "videoId": null,
@@ -3169,8 +3417,9 @@
   "videoId": "RqBeOaXvqGM",
   "title": "It will melt in your mouth, Maamoul cookies recipe great for Eid. Irresistible taste 😋",
   "channel": "Heaven Bites",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53538": {
   "videoId": null,
@@ -3188,8 +3437,9 @@
   "videoId": "KTgAOhsTTC8",
   "title": "Mantu. Dumplings",
   "channel": "Halfghan Kitchen",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53400": {
   "videoId": null,
@@ -3201,8 +3451,9 @@
   "videoId": "X5UxDaNHD30",
   "title": "How To Make Matambre a la Pizza! | Argentine Pizza Steak Dish",
   "channel": "Ballistic BBQ",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53132": {
   "videoId": "ZpZ_8mcmNLI",
@@ -3222,8 +3473,9 @@
   "videoId": "1nArqhRyszw",
   "title": "Scotch Pie Recipe - Paul Hollywood",
   "channel": "Jalebi Man Cooking",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53423": {
   "videoId": null,
@@ -3235,36 +3487,41 @@
   "videoId": "e52IL8zYmaE",
   "title": "Mediterranean Pasta Salad Recipe",
   "channel": "Gimme Some Oven",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53048": {
   "videoId": "pOJEmDBgtSk",
   "title": "Mee Goreng Mamak Daging Ori Style Penang | Sedap Sungguh Baq Hang",
   "channel": "Che Nom",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53086": {
   "videoId": "GSvFVBpqMKI",
   "title": "How to make Pork with portuguese migas | Food From Portugal",
   "channel": "Food From Portugal",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53135": {
   "videoId": "_G3cyucbB3o",
   "title": "Authentic Milanesa Steak Recipe | Crispy & Flavorful!",
   "channel": "El Mundo Eats",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52991": {
   "videoId": "PnXft7lQNJE",
   "title": "Mince Pies Recipe Demonstration - Joyofbaking.com",
   "channel": "Joy of Baking",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52876": {
   "videoId": "QY47h-uqq5g",
@@ -3278,8 +3535,9 @@
   "videoId": "4agkoGMcL2w",
   "title": "Mini Bundt Cakes - 6 Ways",
   "channel": "Bonni Bakery",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53560": {
   "videoId": null,
@@ -3299,22 +3557,25 @@
   "videoId": "60tmFXd4uoI",
   "title": "My Great-Grandma's Baked Beans with Molasses",
   "channel": "It Is a Keeper Recipes",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52927": {
   "videoId": "g5oCDoyxbBk",
   "title": "Montreal Smoked Meat on the Big Green Egg",
   "channel": "BBQ Tom",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53047": {
   "videoId": "7tDWOpnIhok",
   "title": "How to make 'Moroccan Carrot Soup' - An Easy, Healthy and Delicious Recipe by FOOD SPACE!",
   "channel": "Food space by Saumya",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53029": {
   "videoId": "vWc5JzgAkIQ",
@@ -3344,8 +3605,9 @@
   "videoId": "M1ok7mG9-Qc",
   "title": "Buckwheat Soup with Wild Mushrooms. Ukrainian food.",
   "channel": "Innichka Chef",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53038": {
   "videoId": "_iKllHSC978",
@@ -3359,29 +3621,33 @@
   "videoId": "xzu8XswXqcs",
   "title": "How to Make Arabic Mutabbaq + Easy Recipe",
   "channel": "Kitchen with Sorayda",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52924": {
   "videoId": "MMrE4I1ZtWo",
   "title": "How to Make Nanaimo Bars | Chocolate Recipe | Allrecipes.com",
   "channel": "Allrecipes",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53377": {
   "videoId": "Fj0JALB4_5k",
   "title": "Napa Cabbage With Dried Shrimp Stir Fry",
   "channel": "Busy Daddy Cooks",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53347": {
   "videoId": "6WpzVZrOwIs",
   "title": "Easy rum raisin ice cream",
   "channel": "RecipeTin Eats",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53497": {
   "videoId": null,
@@ -3407,8 +3673,9 @@
   "videoId": "7JXuI2V2MLg",
   "title": "Norwegian Krumkake",
   "channel": "outdoorcastironcook",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53121": {
   "videoId": null,
@@ -3440,15 +3707,17 @@
   "videoId": "nSQNfZxOdeU",
   "title": "Student Cooking tutorials - Nutty Chicken Curry",
   "channel": "Kat Edmonds",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53331": {
   "videoId": "kkrRFWN4LG4",
   "title": "How to Make Easy Oatmeal Pancakes",
   "channel": "The Stay At Home Chef",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53551": {
   "videoId": null,
@@ -3474,8 +3743,9 @@
   "videoId": "DIhxk-98Hz8",
   "title": "How to Make Jamaican Oxtail with Broad Beans | Stew Recipes | Allrecipes.com",
   "channel": "Allrecipes",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53487": {
   "videoId": null,
@@ -3487,8 +3757,9 @@
   "videoId": "nFoQ5K-7_24",
   "title": "Catalonia’s Anytime Snack: Pa Amb Tomàquet (Catalan Tomato Bread)",
   "channel": "America's Test Kitchen",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53537": {
   "videoId": null,
@@ -3528,8 +3799,9 @@
   "videoId": "x5SRhOq3vfs",
   "title": "Best Passion Fruit Mousse Ever",
   "channel": "FluffyCubes",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53520": {
   "videoId": null,
@@ -3555,29 +3827,33 @@
   "videoId": "QRFqnLkEv3I",
   "title": "Potato,Corn,Beef Hot Pie RECIPE  AKA Pâté Chinois 中国肉派",
   "channel": "Sunny Asian Food",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52862": {
   "videoId": "SNeO28BCpsc",
   "title": "\"Blueberry Grunt\" - Cooking With Code",
   "channel": "TheRecyclePoliceVEVO",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52861": {
   "videoId": "QSTsturcyL0",
   "title": "Peanut Butter Cheesecake",
   "channel": "Chelsea",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52916": {
   "videoId": "8U1tKWKDeWA",
   "title": "Caramelised Pear Tarte Tatin",
   "channel": "Not Quite a Domestic Goddess",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53471": {
   "videoId": null,
@@ -3595,15 +3871,17 @@
   "videoId": "SGkMAlrTu6g",
   "title": "Piernik - Polish gingerbread cake",
   "channel": "Caroline's Cooking",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53019": {
   "videoId": "lyqDmUroZrI",
   "title": "How to make pierogi (Polish dumplings) video - Allrecipes.co.uk",
   "channel": "Allrecipes UK | Ireland",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52837": {
   "videoId": "wqZzLAPmr9k",
@@ -3623,22 +3901,25 @@
   "videoId": "ACpikfieDP0",
   "title": "Pistachio Cake Recipe",
   "channel": "The Cooking Foodie",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53224": {
   "videoId": "vINcKAS7Ig8",
   "title": "Pistachio Kunafa Chocolate Dream Cake Recipe by (YES I CAN COOK)",
   "channel": "Yes I Can Cook",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53160": {
   "videoId": "T43aUS9bG_0",
   "title": "Pisto con huevos",
   "channel": "Anna recetasfaciles",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53566": {
   "videoId": null,
@@ -3656,22 +3937,25 @@
   "videoId": "17jL5nZrgPw",
   "title": "Pączki - Polish Jelly Donuts - Oven Baked Doughnuts",
   "channel": "Jenny Can Cook",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53299": {
   "videoId": "0XrToCi-U1c",
   "title": "Juicy Beef Patties - Kotlety Mielone - Polish Recipes",
   "channel": "The Silly Kitchen with Sylvia",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53162": {
   "videoId": "dam5k5HCE1Y",
   "title": "Pollo en pepitoria: el mejor y más tradicional guiso de pollo",
   "channel": "Las Recetas de MJ",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53540": {
   "videoId": null,
@@ -3683,36 +3967,41 @@
   "videoId": "EZS4ev2crHc",
   "title": "Polish PANCAKES - NALEŚNIKI - How to make Polish food.",
   "channel": "Polish Your Kitchen",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53297": {
   "videoId": "wTqashUAid8",
   "title": "Pomegranate Salad",
   "channel": "HomeCookingShow",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53301": {
   "videoId": "91FM8lHEGbQ",
   "title": "Pork and Sauerkraut Goulash (Segedin)",
   "channel": "Jernej Kitchen",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52847": {
   "videoId": "MEdHMTD0VCA",
   "title": "Recipe: Pork Cassoulet",
   "channel": "WPRI",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53306": {
   "videoId": "SqRP4xYS6wA",
   "title": "Ukrainian Borshch with pork ribs | Ukrainian cuisine | Ievgen Klopotenko",
   "channel": "Yevhen Klopotenko - Chef from Ukraine",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53521": {
   "videoId": null,
@@ -3748,8 +4037,9 @@
   "videoId": "-O6MsNm39Yw",
   "title": "Postre Chajá clásico",
   "channel": "Isabel Vermal",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52780": {
   "videoId": "p3u8eiy3yHI",
@@ -3769,15 +4059,17 @@
   "videoId": "RnsWwHcpKiY",
   "title": "Olivier Russian Potato Salad (Как Приготовить Салат Оливье)",
   "channel": "Tatyana's Everyday Food",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52932": {
   "videoId": "WFvj71RZYPc",
   "title": "Pouding chômeur",
   "channel": "Recettes Québécoises Stephane Jacques",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53280": {
   "videoId": "78O6Sv7HNO0",
@@ -3791,8 +4083,9 @@
   "videoId": "UVAMAoA2_WU",
   "title": "POUTINE RECIPE",
   "channel": "Barry Lewis",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53499": {
   "videoId": null,
@@ -3804,8 +4097,9 @@
   "videoId": "4thpMbDakgM",
   "title": "Prawn Bisque Soup Recipe | Classic French Seafood Bisque",
   "channel": "Online Culinary School",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53244": {
   "videoId": null,
@@ -3817,22 +4111,25 @@
   "videoId": "DddM8OGb4Jc",
   "title": "Stir Fried Prawns (Shrimp)",
   "channel": "RecipeTin Eats",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53174": {
   "videoId": "miqfHkE6rJY",
   "title": "EPIC SPANISH TAPAS: Seared Shrimp with Romesco Sauce",
   "channel": "Spain on a Fork",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53410": {
   "videoId": "se2DU0httvg",
   "title": "Tave me presha e oriz !(tradicionale) - Leeks and Rice dish",
   "channel": "Kuzhina Familjare",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52921": {
   "videoId": "B7isFo2uP2k",
@@ -3846,8 +4143,9 @@
   "videoId": "hpapqEeb36k",
   "title": "Pumpkin Pie - You Suck at Cooking (episode 68)",
   "channel": "You Suck At Cooking",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53230": {
   "videoId": null,
@@ -3865,8 +4163,9 @@
   "videoId": "CxHTj_6sU_A",
   "title": "The Easiest Salt & Pepper Squid | 5-Minute Recipe | Easy Asian Home Cooking",
   "channel": "Adam Liaw",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53383": {
   "videoId": "AbJNVnkndS4",
@@ -3880,22 +4179,25 @@
   "videoId": "Ys2kZnTVXAM",
   "title": "How to Make Rappie Pie video",
   "channel": "William Surette",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53303": {
   "videoId": "YbFsvvwcSCw",
   "title": "Best Raspberry Mousse Recipe | This airy mousse melts in your mouth!",
   "channel": "Pastry Living with Aya",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53124": {
   "videoId": "2NFNabRkF04",
   "title": "Raspeballer (Norwegian Potato Dumplings)",
   "channel": "Scandinavian Cookbook",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52809": {
   "videoId": "FXtCris37nE",
@@ -3917,29 +4219,33 @@
   "videoId": "3z2jTcsL28g",
   "title": "How to Make Homemade Pickled Red Onions | SAM THE COOKING GUY",
   "channel": "SAM THE COOKING GUY",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52941": {
   "videoId": "1ogCfDXotMw",
   "title": "Jamaican Red Peas Soup Authentic| Perfect dinner Recipe",
   "channel": "MultiBrowngirl",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52811": {
   "videoId": "BiQUYTBb6eQ",
   "title": "351 - Ribollita toscana...ecco il vero toccasana! (zuppa di verdure tipica toscana facile e gustosa)",
   "channel": "IlBoccaTV - Cucina toscana e italiana in vernacolo",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53227": {
   "videoId": "YU09jIusxo4",
   "title": "Rice Paper Dumplings",
   "channel": "Cooking With Ayeh",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53273": {
   "videoId": null,
@@ -3959,8 +4265,9 @@
   "videoId": "e8Bn3V3kmpM",
   "title": "Roasted Chicken with Creamy Walnut Sauce",
   "channel": "SoDelicious",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52816": {
   "videoId": "HkywCtna9t0",
@@ -3974,15 +4281,17 @@
   "videoId": "tY3taZO3Aro",
   "title": "Go bake ROCK CAKES today! | How to make easy cake recipe",
   "channel": "Original Naked Chef",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52786": {
   "videoId": "N1aJ3nEYXyg",
   "title": "How to Make Rocky Road Fudge Dessert",
   "channel": "Six Sisters' Stuff",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53024": {
   "videoId": "VAR10T9mfhU",
@@ -3996,8 +4305,9 @@
   "videoId": "v4rIJOWXM3w",
   "title": "Rømmegrøt - Norwegian Sour Cream Porridge",
   "channel": "Scandinavian Cookbook",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53545": {
   "videoId": null,
@@ -4015,15 +4325,17 @@
   "videoId": "AU60fxyxXGw",
   "title": "Polish CHICKEN SOUP - ROSÓŁ with HOMEMADE NOODLES; How to make Polish food by Polish Your Kitchen",
   "channel": "Polish Your Kitchen",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53052": {
   "videoId": "cl4YH8wblRs",
   "title": "ROTI JOHN CHEESE BUAT SENDIRI | MENU IFTAR TANPA BAZAR RAMADHAN 2020",
   "channel": "Tekak Diva Studio",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53388": {
   "videoId": null,
@@ -4035,15 +4347,17 @@
   "videoId": "bP7m7xx0GpM",
   "title": "Easy Rye Bread Recipe",
   "channel": "Preppy Kitchen",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53234": {
   "videoId": "__Kh1sizUAM",
   "title": "🔴 LIVE | Quick Salmon Noodle Soup with Homemade Broth | Gluten Free ",
   "channel": "Next with Nicola",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53248": {
   "videoId": "9j2qftITN-Y",
@@ -4057,8 +4371,9 @@
   "videoId": "l1Ik6k22s1I",
   "title": "Ultra Crispy Salt & Pepper Squid!",
   "channel": "RecipeTin Eats",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53511": {
   "videoId": null,
@@ -4070,22 +4385,25 @@
   "videoId": "ga7YoAjGgnA",
   "title": "Torta de Bacalao [Cod Spanish Omelette]",
   "channel": "Cooking with the Senses",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52833": {
   "videoId": "q5dQp3qpmI4",
   "title": "How to Make Salted Caramel Cheesecake // Living Deliciously",
   "channel": "TheKitchyKitchen",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52936": {
   "videoId": "nbfNyZbdn2I",
   "title": "Ackee And Saltfish Recipe #TastyTuesdays | CaribbeanPot",
   "channel": "caribbeanpot",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53498": {
   "videoId": null,
@@ -4103,8 +4421,9 @@
   "videoId": "wla0ijWVLCs",
   "title": "CULTURE BITES | How to Make Saskatoon Berry Pie",
   "channel": "Indigenous Youth Wellness",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53577": {
   "videoId": null,
@@ -4116,15 +4435,17 @@
   "videoId": "eVWBJt2jaPU",
   "title": "Easy Sauerkraut Pierogi Recipe",
   "channel": "Cooking Polish",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53247": {
   "videoId": "xzDYKZl50FQ",
   "title": "Crispy skin sea bass with Sizzled Ginger, chilli and spring onion.سمك قاروص",
   "channel": "Moustafa Eltoukhy",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52836": {
   "videoId": "itsFEc8W468",
@@ -4136,22 +4457,25 @@
   "videoId": "Dr8Nsod20yg",
   "title": "How To Make Seafood Rice |Must Try!",
   "channel": "Island Vibe Cooking",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53054": {
   "videoId": "_NJtCfqgaBo",
   "title": "PERFECT Kuih Seri Muka | Kuih Salat | Steamed Glutinous Rice with Pandan Custard [Nyonya Cooking]",
   "channel": "Nyonya Cooking",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53378": {
   "videoId": "q37qn81lg5c",
   "title": "BEST Viral Cucumber Salad with Asian Sesame Dressing Recipe",
   "channel": "Gentle Tummy",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53470": {
   "videoId": null,
@@ -4171,15 +4495,17 @@
   "videoId": "xaBo3BxKzp8",
   "title": "Shakshuka With Feta | NYT Cooking",
   "channel": "NYT Cooking",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53226": {
   "videoId": "ndkTbgsTCeI",
   "title": "HOW TO MAKE SHAWARMA BREAD AT HOME | SHAWARMA WRAP | PITA BREAD | SOFT SHAWARMA BREAD FROM SCRATCH",
   "channel": "Cooking with Efya",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53217": {
   "videoId": "YLhyRjyLkcE",
@@ -4193,29 +4519,33 @@
   "videoId": "LfeBW8ipt0w",
   "title": "Si te Gatuajme Shendetlie Tradicionale Shqiptare | Albanian Walnut Cake with Honey 🍯 🇦🇱 ",
   "channel": "Martha's Kitchen ",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52953": {
   "videoId": "wzaTcpoFEaY",
   "title": "Shrimp Chow Fun Flat Rice Noodles Stir Fry",
   "channel": "Sue and Gambo",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53375": {
   "videoId": "RmbTaEqabN4",
   "title": "Snow Peas and Shrimp! Super Easy Recipe!",
   "channel": "Pheatz Kitchen",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53374": {
   "videoId": "j54Af9gBmzo",
   "title": "Restaurant Style Sichuan Eggplant",
   "channel": "Beatrix Stein",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53371": {
   "videoId": "7mzLphZJ3xc",
@@ -4229,15 +4559,17 @@
   "videoId": "bSLv5vFn5Z0",
   "title": "Quickest recipe: Silken Tofu with Soy Sauce 👨🏻‍🍳🔥",
   "channel": "Chef Chris Cho",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53368": {
   "videoId": "DiFUyPAGoug",
   "title": "The 'Singapore' noodles I've never eaten in Singapore - Marion's Kitchen",
   "channel": "Marion Grasby",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52994": {
   "videoId": null,
@@ -4249,8 +4581,9 @@
   "videoId": "w6d3N2E_Vdo",
   "title": "Leer Een Slagroomtaart Maken",
   "channel": "Mama's Kitchen",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53023": {
   "videoId": "v6I3GZlBkOM",
@@ -4284,8 +4617,9 @@
   "videoId": "JOXBWo37wWU",
   "title": "Smoked aubergine puree",
   "channel": "Rob Wade",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52964": {
   "videoId": "QqdzDCWS4gQ",
@@ -4335,8 +4669,9 @@
   "videoId": "fKqSOn5NCrk",
   "title": "💖One Pot Spanish Chicken💖15 minute one pot marvellous mid week meal 😊",
   "channel": "Northern Nic’s Back Kitchen",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53155": {
   "videoId": null,
@@ -4360,8 +4695,9 @@
   "videoId": "fhz1QjO1tB0",
   "title": "SPANISH RICE AND PRAWN ONE POT | SCRUMPTIOUS SEAFOOD FEAST | LUNCH GUIDE",
   "channel": "BrandPlus TV",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53182": {
   "videoId": "jA-G6k1wT9M",
@@ -4375,8 +4711,9 @@
   "videoId": "OG9zuXJht7I",
   "title": "Spanish Tomato Bread and Serrano Ham or Prosciutto (224): Jacques Pépin: More Fast Food My Way",
   "channel": "KQED",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53175": {
   "videoId": "D35ByGgKNaY",
@@ -4416,22 +4753,25 @@
   "videoId": "rYGaEJjyLQA",
   "title": "CANNELLONI: SPINACH AND RICOTTA",
   "channel": "CookingwithKarma",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52925": {
   "videoId": "qdhWz7qAaCU",
   "title": "Split Pea Soup - How To Make Split Pit Pea and Ham Soup",
   "channel": "TheWolfePit",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52886": {
   "videoId": "fu15XOF-ros",
   "title": "How To Make Spotted Dick Recipe | Sorted Food",
   "channel": "Sorted Food",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53040": {
   "videoId": "Q24haJU-1dI",
@@ -4457,43 +4797,49 @@
   "videoId": "hTrSXryX31A",
   "title": "Stamppot",
   "channel": "TheGGJourney",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53229": {
   "videoId": "Lo4_GdyetEU",
   "title": "The salad that's anything but sad | Vietnamese Beef & Crunchy Noodle Salad | Marion's Kitchen",
   "channel": "Marion Grasby",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52881": {
   "videoId": "oTw5tPt4KmA",
   "title": "Home-made Steak And Kidney Pie. TheScottReaProject",
   "channel": "Scott Rea",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52935": {
   "videoId": "9rWZNHkrsNg",
   "title": "Steak Diane | Gordon Ramsay",
   "channel": "Gordon Ramsay",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53110": {
   "videoId": "o8tz2BOltTg",
   "title": "Mouthwatering Juicy Sticky chicken recipe",
   "channel": "Dumi's Life Recipes",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52793": {
   "videoId": "hKq6RbxJHBo",
   "title": "Sticky Toffee Pudding Recipe - Paul Hollywood",
   "channel": "Jalebi Man Cooking",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52817": {
   "videoId": "uYB-1xJp4lg",
@@ -4507,15 +4853,17 @@
   "videoId": "ybWHc4Vi-xU",
   "title": "How to Make Strawberries Romanoff",
   "channel": "Escoffier Home Gourmet",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53005": {
   "videoId": "tGw5Pwm4YA0",
   "title": "Strawberry Rhubarb Pie Recipe Demonstration - Joyofbaking.com",
   "channel": "Joy of Baking",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53550": {
   "videoId": null,
@@ -4547,15 +4895,17 @@
   "videoId": "LgIQXxkOrMM",
   "title": "Norwegian Suksessterte (Success Cake)",
   "channel": "Scandinavian Cookbook",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53113": {
   "videoId": "02hHtPDAxOs",
   "title": "How to cook Sukuma Wiki | Collard Greens | Kale | Jikoni Magic",
   "channel": "Jikonimagic",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53187": {
   "videoId": "gUS-__P4nW0",
@@ -4569,50 +4919,57 @@
   "videoId": "fyeqZJKEXp0",
   "title": "Soup au Pistou",
   "channel": "KC Quaretti",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52889": {
   "videoId": "akJIO6UhXtA",
   "title": "SUMMER PUDDING RECIPE - SORTED",
   "channel": "Sorted Food",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53065": {
   "videoId": "ub68OxEypaY",
   "title": "Easy Authentic Sushi Hand Rolls At Home (Temaki)",
   "channel": "Joshua Weissman",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53376": {
   "videoId": "cblsP5S9PhU",
   "title": "SWEET AND SOUR CHICKEN RECIPE  | SWEET AND SOUR CHICKEN WITH PINEAPPLE | SWEET AND SOUR CHICKEN",
   "channel": "Spice Eats",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52949": {
   "videoId": "mdaBIhgEAMo",
   "title": "Sweet and Sour Pork",
   "channel": "Panlasang Pinoy",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53275": {
   "videoId": "RkiKSO0IuVQ",
   "title": "Creamy Sweet Potato Salad | Easy Side Dish",
   "channel": "MOMables - Laura Fuentes",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53089": {
   "videoId": "Pjzj0dws0Yk",
   "title": "Flavourful Eats Episode 109 Traditional Syrian bread with Dr Leah Abraham May 2022",
   "channel": "ActonTV",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53095": {
   "videoId": null,
@@ -4624,15 +4981,17 @@
   "videoId": "MGmaX9Uv_Gs",
   "title": "Easy Exotic Syrian Spaghetti Food Recipe",
   "channel": "Vegan Food Recipes",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52950": {
   "videoId": "SQGZqZYz7Ms",
   "title": "How to Make Szechuan Beef",
   "channel": "Sue and Gambo",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53447": {
   "videoId": null,
@@ -4644,8 +5003,9 @@
   "videoId": "8kRlmz8pW0I",
   "title": "Vegetarian recipes. Veggie tahini lentils",
   "channel": "Машутка Волкова",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53287": {
   "videoId": "thf-JDXoTVg",
@@ -4659,8 +5019,9 @@
   "videoId": "3LvxDuZuPkU",
   "title": "Baking FAMOUS Norwegian Skoleboller (School Bread) from Lille Betong",
   "channel": "Scandinavian Cookbook",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53535": {
   "videoId": null,
@@ -4716,8 +5077,9 @@
   "videoId": "4aZr5hZXP_s",
   "title": "Chicken Teriyaki Casserole",
   "channel": "TheCooknShare",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53199": {
   "videoId": "N3OI_7zu5sA",
@@ -4731,8 +5093,9 @@
   "videoId": "pT0WoqUZXw0",
   "title": "Thai Chicken Cakes with Sweet Chilli Sauce | Everyday Gourmet S6 E69",
   "channel": "everydaygourmettv",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53208": {
   "videoId": "1OeM2sdLOPk",
@@ -4746,50 +5109,57 @@
   "videoId": "FN8tcugjCFs",
   "title": "Thai Green Curry Noodle Soup Recipe",
   "channel": "Whisk Affair",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53212": {
   "videoId": "lv1tj9FK3f0",
   "title": "Thai Red Curry Drumsticks | Affordable easy meal!",
   "channel": "3CatsFoodie",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53198": {
   "videoId": "9wZAYbPcF-I",
   "title": "Thai Fried Rice with Prawns • Khao Pad Goong | Thai Girl in the Kitchen",
   "channel": "Thai Girl in the Kitchen",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53214": {
   "videoId": "3s4Yitd546w",
   "title": "Thai Green Curry Chicken Soup",
   "channel": "Soups of the world",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53197": {
   "videoId": "cxryD8ZHCdQ",
   "title": "This Thai Inspired Peanut Pork is PERFECT Comfort food!",
   "channel": "Kitchen Sanctuary",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53205": {
   "videoId": "dEMPVKQXSYA",
   "title": "Thai Red Curry with Prawns | Thai Prawns Curry in Coconut Milk Recipe |How to make Prawns Thai Curry",
   "channel": "Kitchen Kravings",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53210": {
   "videoId": "X3BxTRAhgTc",
   "title": "Thai Coconut Pumpkin Soup",
   "channel": "RecipeTin Eats",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53203": {
   "videoId": null,
@@ -4809,22 +5179,25 @@
   "videoId": "KQ-dl8fuBlQ",
   "title": "Fresh Thai Steamed Fish Recipe!",
   "channel": "School of Wok",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52882": {
   "videoId": "Ds1Jb8H5Sg8",
   "title": "Mary Berry's Fish Pie with Crushed Potato Topping",
   "channel": "DK Books",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52912": {
   "videoId": "mS_gbQpBvZo",
   "title": "Three Cheese Soufflé",
   "channel": "SuMo Cooks",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52929": {
   "videoId": "fFLn1h80AGQ",
@@ -4842,29 +5215,33 @@
   "videoId": "FJer_Cutb2I",
   "title": "Tom Yum Soup (Thai Hot and Sour Soup with Prawns ) | Thai Recipes | Recipes Are Simple",
   "channel": "Recipes are Simple",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53194": {
   "videoId": "fvLcZg9gNnE",
   "title": "One Pot Tom Yum Soup with Prawns | Tom Yum Goong Recipe",
   "channel": "Home Cooking with Somjit",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53032": {
   "videoId": "aASr5x0d3Ys",
   "title": "How To Make Perfect Tonkatsu | Japanese Pork Cutlet | とんかつの作り方",
   "channel": "Adam Liaw",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53415": {
   "videoId": "ympLYopSKow",
   "title": "How to Make Torrijas",
   "channel": "Better From Scratch",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53165": {
   "videoId": "RGUp1N5KAGY",
@@ -4878,43 +5255,49 @@
   "videoId": "JIDdt3XPi9U",
   "title": "En unos pocos minutos podes hacer TORTA DE FIAMBRE con MASA CASERA| Vane Fernández",
   "channel": "Vane Fernández",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53075": {
   "videoId": "eLl8ekOu1MM",
   "title": "Tortang Talong Recipe: How to Make the Best Fluffy, Crispy Filipino Eggplant Omelette | Pepper.ph",
   "channel": "Pepper",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52926": {
   "videoId": "A96hbwobKKs",
   "title": "Tourtiere - BEST MEAT PIE ever!",
   "channel": "thehungrybachelor",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53057": {
   "videoId": "ipEz5u2T7KM",
   "title": "This is my Beef Goulash Recipe - SUPER TASTY!",
   "channel": "Kitchen Sanctuary",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53391": {
   "videoId": "Od8EjjvwN_Y",
   "title": "Dutch Rice Cake | Recipe - Tasty German Baking Rijstevlaai",
   "channel": "Beas German Recipes",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52892": {
   "videoId": "YMmgKCNcqwI",
   "title": "Traditional Treacle Tart Recipe - SORTED",
   "channel": "Sorted Food",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53416": {
   "videoId": "Ro-S7zlFvN4",
@@ -4950,43 +5333,49 @@
   "videoId": "L-ItzFfVgos",
   "title": "Turkey Bánh Mì",
   "channel": "The Culinary Institute of America",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52845": {
   "videoId": "mTvlmY4vCug",
   "title": "Cheesy BBQ Turkey Meatloaf",
   "channel": "Divas Can Cook",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53251": {
   "videoId": "8HTa64s8RK8",
   "title": "The Best Homemade Lahmacun Recipe You Need To Try",
   "channel": "Turkish Food Travel",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53263": {
   "videoId": "FXaQK06pMBI",
   "title": "Lamb pilau recipe | How to make lamb pilau | Turkish pilaf recipe",
   "channel": "My little cookbook",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53252": {
   "videoId": "gY6PZzjO53M",
   "title": "Meliz Cooks EASY Vermicelli Rice",
   "channel": "Meliz Cooks",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53270": {
   "videoId": "RSXfGtom4RQ",
   "title": "Turkish Lamb Roast Recipe | Juicy Turkish Lamb Recipe | Lamb Roast in Turkish style At Home #roast",
   "channel": "RotiDotCom",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53321": {
   "videoId": "9MncGG2cH_g",
@@ -5000,15 +5389,17 @@
   "videoId": "i0_C3eRTbgg",
   "title": "Vegan Banh Mi - the BEST Sandwich in the World?",
   "channel": "Thee Burger Dude",
+  "checked": "2026-10-21",
   "status": "verified",
-  "checked": "2026-10-20"
+  "transcribed": true
  },
  "themealdb:52775": {
   "videoId": "VU8cXvlGbvc",
   "title": "EASY PLANT BASED VEGAN LASAGNA RECIPE / GLUTEN FREE",
   "channel": "Monami Frost",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53000": {
   "videoId": null,
@@ -5020,36 +5411,41 @@
   "videoId": "oHmKE9mWtWM",
   "title": "How to make Vegetable Casserole Stew - Winter Warmer - Recipes by Warren Nash",
   "channel": "Warren Nash",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52867": {
   "videoId": "D0bFRVH_EqU",
   "title": "VEGETARIAN CHILI",
   "channel": "Datev Gallagher",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53222": {
   "videoId": "ZNEos6ybryg",
   "title": "VEGETARIAN SHAKSHUKA- EGGLESS",
   "channel": "Kirti Bhoutika",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52838": {
   "videoId": "oWQDVgjB_Lw",
   "title": "How to cook a delicious Duck Ragu",
   "channel": "Gressingham Duck",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53325": {
   "videoId": "kbvh5XaBpJk",
   "title": "Venezuelan Arepas | The Frugal Chef",
   "channel": "The Frugal Chef",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53327": {
   "videoId": "32rCc85rZJA",
@@ -5063,15 +5459,17 @@
   "videoId": "w6KNOKkcRBs",
   "title": "Sancocho Venezolano | Venezuelan Stew (Soup)",
   "channel": "Michelle’s Cooking Channel",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53328": {
   "videoId": "TPn1BKS5Eio",
   "title": "Venezuelan Shredded Beef | The Frugal Chef",
   "channel": "The Frugal Chef",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53332": {
   "videoId": "OfuQf6sCycU",
@@ -5085,15 +5483,17 @@
   "videoId": "3MBbvrUtn74",
   "title": "Vietnamese Caramel Trout/ One Pan Sweet and Spicy Trout",
   "channel": "Marks Irish Kitchen",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53232": {
   "videoId": "behSkhzKpHI",
   "title": "Vietnamese Chicken Salad",
   "channel": "RecipeTin Eats",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53231": {
   "videoId": null,
@@ -5105,8 +5505,9 @@
   "videoId": "_DCJNrNTTB4",
   "title": "Vietnamese Grilled Pork Noodle Salad",
   "channel": "School of Wok",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53243": {
   "videoId": "lNU0LKVtHC4",
@@ -5142,29 +5543,33 @@
   "videoId": "Q_akngSJVrQ",
   "title": "Croatian Food Recipe - How to make this simple Croatian Walnut Roll \"Gužvara\"",
   "channel": "The Turkish Plate",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53271": {
   "videoId": "ivR-YRcQk08",
   "title": "Walnut, date and honey cake",
   "channel": "Cake Pops",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53106": {
   "videoId": "pR_ZfbTxwms",
   "title": "Easy warm roasted asparagus salad/ how to roast asparagus/ asparagus recipe",
   "channel": "Cooking With Aunt Jay",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52917": {
   "videoId": "LmJ0lsPLHDc",
   "title": "How to make White Chocolate Crème Brulee (video)",
   "channel": "Bear Naked Food",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53225": {
   "videoId": "1QX-KBX6tmM",
@@ -5184,21 +5589,24 @@
   "videoId": "uely-neGHLM",
   "title": "Chrupiące zapiekanki z szynką i pieczarkami",
   "channel": "Kulinarne przygody",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53394": {
   "videoId": "ypXGr9NdMZU",
   "title": "How to Make Zeeuwse Bolussen – The Ultimate Sticky Cinnamon-Spiced Pastry from Zeeland",
   "channel": "Toine’s Kitchen 🇳🇱",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53189": {
   "videoId": "WfpE70EIw2w",
   "title": "Zemiakové placky",
   "channel": "Varenie pre chlapov",
-  "status": "verified",
-  "checked": "2026-10-20"
+  "status": "rejected",
+  "checked": "2026-10-20",
+  "reason": "not yet checked against the recipe; only its title matched"
  }
 }

@@ -1,11 +1,14 @@
 // Builds src/data/videos.json: for each catalogue recipe, TheMealDB's own
-// YouTube link for that meal, kept only if YouTube's oEmbed says it exists and
-// is embeddable and its title agrees with the recipe's (videoMatches).
+// YouTube link for that meal, checked with YouTube's oEmbed. A title match is
+// only a candidate, stored as "rejected" until someone transcribes the recipe
+// from the video; entries already transcribed are kept as they are.
 // Usage: node scripts/fetch-videos.ts   (about 4 requests a second)
 import { readFileSync, writeFileSync } from "node:fs";
 import { type CatalogueVideo, parseYouTubeId, videoMatches } from "../src/videos.ts";
 
 const recipes: { source: string; title: string }[] = JSON.parse(readFileSync(new URL("../src/data/catalogue.json", import.meta.url), "utf8"));
+const videoFile = new URL("../src/data/videos.json", import.meta.url);
+const previous: Record<string, CatalogueVideo> = JSON.parse(readFileSync(videoFile, "utf8"));
 const out: Record<string, CatalogueVideo> = {};
 const checked = new Date().toISOString().slice(0, 10);
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
@@ -23,6 +26,10 @@ async function getJson(url: string, tries = 3): Promise<{ status: number; body: 
 }
 
 for (const r of recipes) {
+  if (previous[r.source]?.transcribed) {
+    out[r.source] = previous[r.source];
+    continue;
+  }
   const mealId = r.source.replace("themealdb:", "");
   const rec = (v: Omit<CatalogueVideo, "checked">) => (out[r.source] = { ...v, checked });
   try {
@@ -36,7 +43,7 @@ for (const r of recipes) {
       else if (o.status === 401 || o.status === 403) rec({ videoId: id, status: "unavailable", reason: "video can't be embedded" });
       else if (o.status !== 200 || !o.body) rec({ videoId: id, status: "unavailable", reason: `YouTube oEmbed answered ${o.status}` });
       else if (!videoMatches(r.title, String(o.body.title))) rec({ videoId: id, title: o.body.title, channel: o.body.author_name, status: "rejected", reason: "video title doesn't match the dish" });
-      else rec({ videoId: id, title: o.body.title, channel: o.body.author_name, status: "verified" });
+      else rec({ videoId: id, title: o.body.title, channel: o.body.author_name, status: "rejected", reason: "not yet checked against the recipe; only its title matched" });
     }
   } catch (err) {
     rec({ videoId: null, status: "unavailable", reason: `lookup failed: ${(err as Error).message}` });
@@ -44,6 +51,6 @@ for (const r of recipes) {
   await sleep(250);
   if (Object.keys(out).length % 50 === 0) console.log(Object.keys(out).length);
 }
-writeFileSync(new URL("../src/data/videos.json", import.meta.url), JSON.stringify(out, null, 1) + "\n");
+writeFileSync(videoFile, JSON.stringify(out, null, 1) + "\n");
 const n = (s: string) => Object.values(out).filter((v) => v.status === s).length;
 console.log(`verified ${n("verified")}, rejected ${n("rejected")}, unavailable ${n("unavailable")}`);
