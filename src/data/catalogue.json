@@ -32978,145 +32978,115 @@
  {
   "source": "themealdb:53291",
   "title": "Cornes de Gazelle (Gazelle Horns)",
-  "description": "An Algerian sweet made with almonds, orange blossom water and pistachios — makes 12, about an hour start to finish.",
-  "servings": 12,
-  "cuisine": "Algerian",
+  "description": "Moroccan almond-paste cookies: a thin butter pastry wrapped around a sweet almond filling scented with orange blossom water, baked until slightly golden and served with icing sugar.",
+  "servings": 20,
+  "cuisine": "Moroccan",
   "category": "Dessert",
   "image": "https://www.themealdb.com/images/media/meals/0h1b7m1764120235.jpg",
-  "prep_minutes": 20,
-  "cook_minutes": 35,
+  "prep_minutes": 30,
+  "cook_minutes": 30,
   "ingredients": [
    {
-    "name": "almonds",
-    "quantity": 2,
-    "unit": "cup",
-    "note": ""
-   },
-   {
-    "name": "sugar",
-    "quantity": 0.75,
-    "unit": "cup",
-    "note": ""
-   },
-   {
-    "name": "sugar",
-    "quantity": 1,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "cinnamon",
-    "quantity": 0.25,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "eggs",
-    "quantity": 1,
-    "unit": "",
-    "note": ""
-   },
-   {
-    "name": "orange blossom water",
-    "quantity": 1,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
     "name": "plain flour",
-    "quantity": 2,
-    "unit": "cup",
-    "note": ""
+    "quantity": 250,
+    "unit": "g",
+    "note": "for the dough"
    },
    {
     "name": "butter",
-    "quantity": 0.5,
-    "unit": "cup",
-    "note": ""
+    "quantity": 120,
+    "unit": "g",
+    "note": "softened, for the dough"
    },
    {
     "name": "salt",
     "quantity": 1,
     "unit": "pinch",
-    "note": ""
+    "note": "for the dough"
+   },
+   {
+    "name": "water",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": "for the dough; may need more or less"
+   },
+   {
+    "name": "orange blossom water",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "for the dough"
+   },
+   {
+    "name": "almonds",
+    "quantity": 250,
+    "unit": "g",
+    "note": "for the filling"
    },
    {
     "name": "eggs",
     "quantity": 1,
     "unit": "",
-    "note": "beaten"
+    "note": "for the filling"
    },
    {
-    "name": "vegetable oil",
-    "quantity": 3,
-    "unit": "tbsp",
-    "note": ""
+    "name": "caster sugar",
+    "quantity": 150,
+    "unit": "g",
+    "note": "for the filling"
    },
    {
     "name": "orange blossom water",
-    "quantity": 1.5,
+    "quantity": 1,
     "unit": "tbsp",
-    "note": ""
+    "note": "for the filling"
    },
    {
-    "name": "pistachios",
-    "quantity": 3,
-    "unit": "tbsp",
-    "note": ""
+    "name": "butter",
+    "quantity": 60,
+    "unit": "g",
+    "note": "for the filling"
+   },
+   {
+    "name": "vegetable oil",
+    "quantity": null,
+    "unit": "",
+    "note": "a little, to oil fingers when shaping"
+   },
+   {
+    "name": "icing sugar",
+    "quantity": null,
+    "unit": "",
+    "note": "to serve"
    }
   ],
   "steps": [
    {
-    "text": "Preheat oven to 150°C (300°F) (150 degrees C). Line a baking sheet with parchment paper. Spread almonds over the baking sheet.",
-    "minutes": null
-   },
-   {
-    "text": "Bake in the preheated oven until almonds are fragrant and roasted, 20 to 25 minutes.",
-    "minutes": 25
-   },
-   {
-    "text": "Prepare pastry dough while almonds are roasting. Combine flour, 1/2 cup plus 1 tablespoon butter, and salt in a bowl and rub together until the mixture resembles breadcrumbs.",
-    "minutes": null
-   },
-   {
-    "text": "Add egg, oil, and 1 1/2 tablespoons orange blossom water; knead everything into a smooth pastry dough. Add a little water, 1 teaspoon at a time, if dough is too dry.",
-    "minutes": null
-   },
-   {
-    "text": "Shape pastry dough into a ball, wrap in plastic wrap, and set aside for 30 minutes.",
+    "text": "Mix the flour and salt, rub in the softened butter until it looks like coarse sand, then add the water and orange blossom water. Knead for 1–2 minutes into a ball and rest for 30 minutes.",
     "minutes": 30
    },
    {
-    "text": "Remove almonds from oven and cool slightly, about 5 minutes. Place almonds in the bowl of a food processor; process until finely and evenly ground.",
-    "minutes": 5
-   },
-   {
-    "text": "Add 3/4 cup plus 1 tablespoon sugar, cinnamon, egg, and 1 tablespoon orange blossom water in that order to the food processor, pulsing after each addition until mixture is evenly combined and resembles a paste.",
+    "text": "Pulse the almonds in a food processor to a fine powder. Add the egg, sugar, orange blossom water and butter and process to a sticky paste.",
     "minutes": null
    },
    {
-    "text": "Remove small walnut-sized portions of filling with greased hands. Roll them into small logs with thin ends. Set aside.",
+    "text": "With lightly oiled fingers, portion the paste into 19–20 pieces and shape each into a small cylinder.",
     "minutes": null
    },
    {
-    "text": "Preheat oven to 160°C (325°F) (165 degrees C). Line a baking sheet with parchment paper.",
+    "text": "Divide the rested dough into 4 and roll each piece out thinly. Set an almond cylinder on the dough, seal with a little water, and cut out each cookie with a cutter.",
     "minutes": null
    },
    {
-    "text": "Roll out half of the pastry dough on a lightly floured surface until very thin. Place one of the almond paste logs on the edge of the pastry, fold pastry over the filling, covering it completely, and seal the edges.",
+    "text": "Make sure the ends are properly sealed or the filling will burst while baking. Repeat with the remaining dough and paste.",
     "minutes": null
    },
    {
-    "text": "Mold with your fingers into a crescent shape. Using a pastry cutter, cut around the crescent, and transfer to the prepared baking sheet. Repeat with remaining dough and filling.",
+    "text": "Place the cookies on a lined tray and prick each three times with a skewer so they don't puff up.",
     "minutes": null
    },
    {
-    "text": "Bake in the preheated oven until gazelle horns are lightly golden and baked through, about 20 minutes. They should not get too dark. Let cool slightly, about 3 minutes.",
-    "minutes": 20
-   },
-   {
-    "text": "Heat honey in a small saucepan over low-medium heat. Remove from heat and stir in 1 tablespoon orange blossom water. Dip gazelle horns into the honey and place on a serving plate. Sprinkle with crushed pistachios.",
-    "minutes": null
+    "text": "Bake at 180°C for about 30 minutes, until slightly golden. Serve dusted with icing sugar.",
+    "minutes": 30
    }
   ]
  },
@@ -48393,82 +48363,82 @@
  },
  {
   "source": "themealdb:53408",
-  "title": "Kulaç Soda Bread",
-  "description": "An Albanian side of greek yoghurt — serves 8, ready in under half an hour.",
+  "title": "Kulaç soda bread",
+  "description": "Albanian yogurt soda bread: a simple dough of bread flour, yogurt and baking soda, risen for an hour and baked in a Dutch oven until golden.",
   "servings": 8,
   "cuisine": "Albanian",
   "category": "Side",
   "image": "https://www.themealdb.com/images/media/meals/9aia021779646058.jpg",
-  "prep_minutes": 10,
-  "cook_minutes": 5,
+  "prep_minutes": 70,
+  "cook_minutes": 50,
   "ingredients": [
    {
-    "name": "plain flour",
-    "quantity": 450,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "greek yoghurt",
-    "quantity": 500,
-    "unit": "g",
-    "note": ""
+    "name": "bicarbonate of soda",
+    "quantity": 1.5,
+    "unit": "tsp",
+    "note": "fresh"
    },
    {
     "name": "salt",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": ""
+   },
+   {
+    "name": "sugar",
     "quantity": 0.5,
     "unit": "tsp",
     "note": ""
    },
    {
-    "name": "baking powder",
-    "quantity": 1,
-    "unit": "tsp",
-    "note": ""
+    "name": "water",
+    "quantity": 0.25,
+    "unit": "cup",
+    "note": "warm; a few more tbsp if needed (up to 0.5 cup)"
+   },
+   {
+    "name": "bread flour",
+    "quantity": 4,
+    "unit": "cup",
+    "note": "plus extra for dusting"
+   },
+   {
+    "name": "yoghurt",
+    "quantity": 1.5,
+    "unit": "cup",
+    "note": "plain or Greek"
    },
    {
     "name": "olive oil",
-    "quantity": null,
-    "unit": "",
-    "note": "a splash"
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "extra virgin"
    }
   ],
   "steps": [
    {
-    "text": "Prepare: on a large baking tray or a clean work surface, mix together the dry ingredients - flour, baking soda and salt.",
+    "text": "Dissolve the baking soda, salt and sugar in 1/4 cup warm water. Put the flour in a wide dish and make a well in the middle.",
     "minutes": null
    },
    {
-    "text": "Make a well in the middle and add the yogurt. Using your hands slowly combined the ingredients together to start to form a dough.",
+    "text": "Pour the soda mixture into the well and start mixing slowly, then add the yogurt and keep mixing and folding into a dough. Add a few tablespoons of warm water if needed.",
     "minutes": null
    },
    {
-    "text": "Kneed the dough on a floured surface, adding extra flour if you find the texture too sticky. The dough is ready when it is of a pizza dough texture and still very slightly sticky, this should only take a few minutes.",
+    "text": "Drizzle the olive oil over the dough, knead once more and shape into a ball.",
     "minutes": null
    },
    {
-    "text": "On a baking tray add a little oil and put the dough on top. Shape and flatten the dough into a circle shape ensuring the height of the dough is about 5cm.",
-    "minutes": null
+    "text": "Set the dough on a floured surface and leave it to rise in a warm corner of the kitchen for about an hour.",
+    "minutes": 60
    },
    {
-    "text": "Cover the dough with a little bit of olive oil, ensure it is fully covered.",
-    "minutes": null
+    "text": "Preheat the oven to 200°C. Bake for 40–50 minutes, covering the Dutch oven with its lid once the outside is golden brown, at around 30 minutes.",
+    "minutes": 50
    },
    {
-    "text": "You can bake the Kulaç as it is or you can create patterns which also helps with even cooking. The most common patterns are using the back of a fork to slightly press down to create line dents all over or spiking the dough with the fork. Baking.",
-    "minutes": null
-   },
-   {
-    "text": "Place on the bottom shelf of a pre heated oven. Bake for 40 minutes or until the dough is golden and firm to touch. Cooling.",
-    "minutes": 40
-   },
-   {
-    "text": "Once removed from the oven, stand upright or place on a cooling rack to allow the Kulaç to cool. Serving.",
-    "minutes": null
-   },
-   {
-    "text": "Cut the Kulaç the way you would a cake into 8 slices. If you are serving warm you may want to snap and pull apart the bread with your hands instead.",
-    "minutes": null
+    "text": "Cool the bread on a rack under a towel for at least an hour before cutting. Serve with butter and cheese or mezze.",
+    "minutes": 60
    }
   ]
  },
@@ -48546,82 +48516,88 @@
  {
   "source": "themealdb:52946",
   "title": "Kung Po Prawns",
-  "description": "A Chinese dish of prawns, tomato puree and peanuts — serves 4, on the table in about 45 minutes.",
-  "servings": 4,
+  "description": "Quick stir-fry of prawns with dried chilli, peanuts, onion, capsicum and zucchini, finished with ready-made kung pao sauce and spring onion.",
+  "servings": 3,
   "cuisine": "Chinese",
   "category": "Seafood",
   "image": "https://www.themealdb.com/images/media/meals/1525873040.jpg",
-  "prep_minutes": 20,
-  "cook_minutes": 20,
+  "prep_minutes": 5,
+  "cook_minutes": 15,
   "ingredients": [
    {
-    "name": "prawns",
-    "quantity": 400,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "soy sauce",
-    "quantity": 2,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "tomato puree",
-    "quantity": 1,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "cornflour",
-    "quantity": 1,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "sugar",
-    "quantity": 1,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
     "name": "vegetable oil",
-    "quantity": 1,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "peanuts",
-    "quantity": 85,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "chilli",
     "quantity": 3,
-    "unit": "",
-    "note": "large"
-   },
-   {
-    "name": "brown sugar",
-    "quantity": 1,
     "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "garlic",
-    "quantity": 6,
-    "unit": "clove",
-    "note": ""
-   },
-   {
-    "name": "water chestnut",
-    "quantity": 450,
-    "unit": "g",
     "note": ""
    },
    {
     "name": "ginger",
+    "quantity": 1,
+    "unit": "knob",
+    "note": "thumb-sized, minced"
+   },
+   {
+    "name": "garlic",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "minced"
+   },
+   {
+    "name": "dried chillies",
+    "quantity": 5,
+    "unit": "",
+    "note": ""
+   },
+   {
+    "name": "peanuts",
+    "quantity": 0.25,
+    "unit": "cup",
+    "note": ""
+   },
+   {
+    "name": "onion",
+    "quantity": 1,
+    "unit": "",
+    "note": "chopped"
+   },
+   {
+    "name": "courgette",
+    "quantity": 1,
+    "unit": "",
+    "note": "diced"
+   },
+   {
+    "name": "capsicum",
+    "quantity": 1,
+    "unit": "",
+    "note": "chopped"
+   },
+   {
+    "name": "prawns",
+    "quantity": 450,
+    "unit": "g",
+    "note": "large, heads and shells removed"
+   },
+   {
+    "name": "kung pao sauce",
+    "quantity": 180,
+    "unit": "ml",
+    "note": "store-bought"
+   },
+   {
+    "name": "spring onion",
+    "quantity": 0.5,
+    "unit": "cup",
+    "note": "chopped"
+   },
+   {
+    "name": "salt",
+    "quantity": null,
+    "unit": "",
+    "note": "to taste"
+   },
+   {
+    "name": "black pepper",
     "quantity": null,
     "unit": "",
     "note": "to taste"
@@ -48629,20 +48605,28 @@
   ],
   "steps": [
    {
-    "text": "Mix the cornflour and 1 tbsp soy sauce, toss in the prawns and set aside for 10 mins. Stir the vinegar, remaining soy sauce, tomato purée, sugar and 2 tbsp water together to make a sauce.",
-    "minutes": 10
-   },
-   {
-    "text": "When you’re ready to cook, heat a large frying pan or wok until very hot, then add 1 tbsp oil. Fry the prawns until they are golden in places and have opened out– then tip them out of the pan.",
+    "text": "Heat a wok or pan, add the oil and, once hot, quickly stir-fry the ginger and garlic without letting them burn.",
     "minutes": null
    },
    {
-    "text": "Heat the remaining oil and add the peanuts, chillies and water chestnuts.",
-    "minutes": null
+    "text": "Add the dried chillies and peanuts and stir-fry for 1 minute.",
+    "minutes": 1
    },
    {
-    "text": "Stir-fry for 2 mins or until the peanuts start to colour, then add the ginger and garlic and fry for 1 more min. Tip in the prawns and sauce and simmer for 2 mins until thickened slightly. Serve with rice.",
-    "minutes": 2
+    "text": "Add the onion and zucchini and cook for 1 minute, then add the capsicum and stir-fry for 2 minutes.",
+    "minutes": 3
+   },
+   {
+    "text": "Add the prawns and stir-fry for 2 to 5 minutes, taking care not to overcook them.",
+    "minutes": 5
+   },
+   {
+    "text": "Pour in the kung pao sauce, stir and cook for 1 minute.",
+    "minutes": 1
+   },
+   {
+    "text": "Add the spring onion, taste and season with salt and pepper if needed, then serve.",
+    "minutes": null
    }
   ]
  },
@@ -52456,56 +52440,98 @@
  },
  {
   "source": "themealdb:52777",
-  "title": "Mediterranean Pasta Salad",
-  "description": "An Italian salad of tuna, mozzarella and cherry tomatoes — serves 4, on the table in about 45 minutes.",
-  "servings": 4,
-  "cuisine": "Italian",
-  "category": "Seafood",
-  "image": "https://www.themealdb.com/images/media/meals/wvqpwt1468339226.jpg",
+  "title": "Mediterranean pasta salad",
+  "description": "Cold pasta salad with marinated artichokes, sun-dried tomatoes, kalamata olives, capers, arugula, pine nuts and parmesan, dressed with pesto, olive oil and lemon.",
+  "servings": 8,
+  "cuisine": "Mediterranean",
+  "category": "Pasta",
+  "image": "https://i.ytimg.com/vi/RfGo18b3Hrw/hqdefault.jpg",
   "prep_minutes": 15,
-  "cook_minutes": 15,
+  "cook_minutes": 10,
   "ingredients": [
    {
-    "name": "mozzarella",
-    "quantity": 200,
+    "name": "penne",
+    "quantity": 340,
     "unit": "g",
-    "note": ""
+    "note": "any small pasta shape"
    },
    {
-    "name": "cherry tomatoes",
-    "quantity": 250,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "basil",
+    "name": "artichoke hearts",
     "quantity": 1,
-    "unit": "bunch",
+    "unit": "jar",
+    "note": "340 g jar, marinated, drained and roughly chopped"
+   },
+   {
+    "name": "sun-dried tomatoes",
+    "quantity": 0.5,
+    "unit": "cup",
+    "note": "packed in oil, drained; reserve 2 tbsp of the oil"
+   },
+   {
+    "name": "kalamata olives",
+    "quantity": 0.5,
+    "unit": "cup",
+    "note": "chopped"
+   },
+   {
+    "name": "capers",
+    "quantity": 3,
+    "unit": "tbsp",
+    "note": "rinsed"
+   },
+   {
+    "name": "spring onion",
+    "quantity": 0.25,
+    "unit": "cup",
+    "note": "sliced"
+   },
+   {
+    "name": "parsley",
+    "quantity": 0.25,
+    "unit": "cup",
+    "note": "chopped"
+   },
+   {
+    "name": "rocket",
+    "quantity": 1,
+    "unit": "cup",
+    "note": "packed, roughly chopped"
+   },
+   {
+    "name": "parmesan",
+    "quantity": 0.33,
+    "unit": "cup",
     "note": ""
    },
    {
-    "name": "farfalle",
-    "quantity": 350,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "olive oil",
+    "name": "pine nuts",
     "quantity": 3,
     "unit": "tbsp",
     "note": ""
    },
    {
-    "name": "green olives",
-    "quantity": 40,
-    "unit": "g",
-    "note": ""
+    "name": "pesto",
+    "quantity": 3,
+    "unit": "tbsp",
+    "note": "for the dressing; homemade or store bought"
    },
    {
-    "name": "tuna",
-    "quantity": 200,
-    "unit": "g",
-    "note": ""
+    "name": "olive oil",
+    "quantity": 0.33,
+    "unit": "cup",
+    "note": "for the dressing"
+   },
+   {
+    "name": "sun-dried tomato oil",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": "from the sun-dried tomato jar (not bought separately), for the dressing"
+   },
+   {
+    "name": "lemon juice",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "for the dressing"
    },
    {
     "name": "salt",
@@ -52522,35 +52548,23 @@
   ],
   "steps": [
    {
-    "text": "Bring a large saucepan of salted water to the boil.",
-    "minutes": null
-   },
-   {
-    "text": "Add the pasta, stir once and cook for about 10 minutes or as directed on the packet.",
+    "text": "Cook the pasta in boiling water according to the packet until al dente, then rinse and drain. Let it cool to room temperature; spreading it on a tray in the fridge for 30 minutes speeds this up.",
     "minutes": 10
    },
    {
-    "text": "Meanwhile, wash the tomatoes and cut into quarters. Slice the olives. Wash the basil.",
+    "text": "In a large bowl combine the cooled pasta, chopped artichoke hearts, sun-dried tomatoes, olives, capers, spring onion and parsley, and toss.",
     "minutes": null
    },
    {
-    "text": "Put the tomatoes into a salad bowl and tear the basil leaves over them. Add a tablespoon of olive oil and mix.",
+    "text": "If serving cold, cover and refrigerate the salad until needed.",
     "minutes": null
    },
    {
-    "text": "When the pasta is ready, drain into a colander and run cold water over it to cool it quickly.",
+    "text": "Whisk together the pesto, olive oil, sun-dried tomato oil, lemon juice, salt and pepper for the dressing. It can be refrigerated until serving.",
     "minutes": null
    },
    {
-    "text": "Toss the pasta into the salad bowl with the tomatoes and basil.",
-    "minutes": null
-   },
-   {
-    "text": "Add the sliced olives, drained mozzarella balls, and chunks of tuna. Mix well and let the salad rest for at least half an hour to allow the flavours to mingle.",
-    "minutes": 60
-   },
-   {
-    "text": "Sprinkle the pasta with a generous grind of black pepper and drizzle with the remaining olive oil just before serving.",
+    "text": "Just before serving, add the rocket, parmesan and pine nuts and toss. Add the dressing, taste, and adjust the seasoning.",
     "minutes": null
    }
   ]
@@ -53008,95 +53022,125 @@
  },
  {
   "source": "themealdb:53304",
-  "title": "Mini bundt cakes",
-  "description": "A Polish sweet made with cocoa powder — serves 8, about an hour start to finish.",
-  "servings": 8,
-  "cuisine": "Polish",
+  "title": "Mini bundt cakes with vanilla glaze",
+  "description": "Vanilla mini bundt cakes finished with a vanilla powdered-sugar glaze. The video also shows five other glaze flavours (lemon, coffee, pistachio, strawberry, maple pecan), which are not listed here.",
+  "servings": 12,
+  "cuisine": "International",
   "category": "Dessert",
-  "image": "https://www.themealdb.com/images/media/meals/tzt3it1764363293.jpg",
-  "prep_minutes": 15,
-  "cook_minutes": 40,
+  "image": "https://i.ytimg.com/vi/4agkoGMcL2w/hqdefault.jpg",
+  "prep_minutes": 10,
+  "cook_minutes": 12,
   "ingredients": [
    {
     "name": "butter",
-    "quantity": 150,
+    "quantity": 140,
     "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "plain flour",
-    "quantity": 175,
-    "unit": "g",
-    "note": ""
+    "note": "unsalted, room temperature, for the cakes"
    },
    {
     "name": "sugar",
-    "quantity": 125,
+    "quantity": 250,
     "unit": "g",
-    "note": ""
+    "note": "granulated"
    },
    {
     "name": "eggs",
     "quantity": 3,
     "unit": "",
-    "note": ""
+    "note": "large, room temperature"
    },
    {
-    "name": "baking powder",
-    "quantity": 1,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "cocoa powder",
-    "quantity": 2,
-    "unit": "tsp",
-    "note": ""
+    "name": "plain flour",
+    "quantity": 240,
+    "unit": "g",
+    "note": "all-purpose, split in two"
    },
    {
     "name": "milk",
-    "quantity": 3,
-    "unit": "tbsp",
+    "quantity": 150,
+    "unit": "ml",
+    "note": "whole, room temperature"
+   },
+   {
+    "name": "baking powder",
+    "quantity": 1.5,
+    "unit": "tsp",
     "note": ""
    },
    {
-    "name": "icing sugar",
-    "quantity": 1,
-    "unit": "tbsp",
+    "name": "bicarbonate of soda",
+    "quantity": 0.25,
+    "unit": "tsp",
     "note": ""
+   },
+   {
+    "name": "salt",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": ""
+   },
+   {
+    "name": "vanilla extract",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "for the cakes"
+   },
+   {
+    "name": "icing sugar",
+    "quantity": 240,
+    "unit": "g",
+    "note": "powdered, for the glaze"
+   },
+   {
+    "name": "butter",
+    "quantity": 84,
+    "unit": "g",
+    "note": "unsalted, melted, for the glaze"
+   },
+   {
+    "name": "milk",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": "whole, for the glaze; more for a runnier glaze"
+   },
+   {
+    "name": "vanilla extract",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "for the glaze"
    }
   ],
   "steps": [
    {
-    "text": "Heat the oven to 180C/160C fan/gas 4. Melt 25g butter and generously brush into the holes of a mini bundt tins. Tip a little flour into each hole and shake to coat, then tip out the excess.",
+    "text": "Preheat the oven to 180°C (160°C fan). Cream the butter and sugar until light and fluffy.",
     "minutes": null
    },
    {
-    "text": "Beat the butter, caster sugar and a pinch of salt together using an electric whisk. Add the eggs, one at a time, beating well after each addition.",
+    "text": "Beat in the eggs and vanilla. Mix in half the flour with the baking powder, baking soda and salt.",
     "minutes": null
    },
    {
-    "text": "Combine the flour and baking powder in a separate bowl, then sift this into the wet ingredients and stir until smooth. Combine the cocoa powder and milk in a small bowl until smooth.",
+    "text": "Mix in the milk until fully combined, then add the rest of the flour and mix until no lumps remain.",
     "minutes": null
    },
    {
-    "text": "Spoon 1 tbsp of the plain batter into each hole of the bundt tin. Mix the remaining plain batter with the cocoa powder mixture, then divide this between the holes.",
+    "text": "Grease a mini bundt pan and fill each cavity about two-thirds full, using a piping bag if you like. With a 6-cavity pan, bake in two batches.",
     "minutes": null
    },
    {
-    "text": "Bake for 15-18 mins, or until a skewer inserted into the cakes comes out clean. Leave to cool in the tin for 5 mins, then turn out onto a wire rack and leave to cool completely. Dust with icing sugar to serve.",
-    "minutes": 18
+    "text": "Bake for 12 minutes, until golden and a toothpick comes out clean.",
+    "minutes": 12
    },
    {
-    "text": "Pour 1 tablespoon of light batter into each mold. Mix the remaining batter with the stirred cocoa mixture and then fill the molds with a tablespoon.",
+    "text": "Leave the cakes in the pan for exactly 10 minutes, then flip the pan onto a wire rack to release them.",
+    "minutes": 10
+   },
+   {
+    "text": "For the glaze, sift the powdered sugar into a bowl, then pour in the melted butter, milk and vanilla and stir. Add more milk for a runnier glaze.",
     "minutes": null
    },
    {
-    "text": "Bake the mini Bundt cakes in the preheated oven for 15-18 minutes , depending on the size of the molds. After 15 minutes of baking time, use a toothpick to test with a skewer and, if necessary, bake for another 3 minutes.",
-    "minutes": 18
-   },
-   {
-    "text": "Let the mini Bundt cakes cool down completely in the tin. Then carefully remove from the mold. Dust with some icing sugar and serve. Enjoy your meal!",
+    "text": "Glaze the cakes with the vanilla glaze. The video also shows lemon, coffee, pistachio, strawberry and maple pecan glazes, which are not part of this listed recipe.",
     "minutes": null
    }
   ]
@@ -53305,94 +53349,84 @@
  },
  {
   "source": "themealdb:53336",
-  "title": "Molasses Baked Beans",
-  "description": "A Canadian dish of cannellini beans, bacon and molasses — serves 4, a slow cook that's worth the wait.",
-  "servings": 4,
-  "cuisine": "Canadian",
-  "category": "Vegetarian",
+  "title": "Molasses baked beans",
+  "description": "Oven-baked canned pork and beans with diced onion, bacon, molasses, ketchup and brown sugar, baked for an hour in one pot.",
+  "servings": 6,
+  "cuisine": "American",
+  "category": "Side",
   "image": "https://www.themealdb.com/images/media/meals/9tddhg1764443699.jpg",
-  "prep_minutes": 15,
-  "cook_minutes": 305,
+  "prep_minutes": 5,
+  "cook_minutes": 65,
   "ingredients": [
    {
-    "name": "cannellini beans",
+    "name": "vegetable oil",
     "quantity": 2,
-    "unit": "cup",
-    "note": ""
-   },
-   {
-    "name": "bacon",
-    "quantity": 225,
-    "unit": "g",
+    "unit": "tsp",
     "note": ""
    },
    {
     "name": "onion",
     "quantity": 1,
     "unit": "",
-    "note": "medium"
+    "note": "large, diced"
+   },
+   {
+    "name": "baked beans",
+    "quantity": 4,
+    "unit": "can",
+    "note": "420 g each, canned pork and beans"
    },
    {
     "name": "molasses",
+    "quantity": 0.33,
+    "unit": "cup",
+    "note": ""
+   },
+   {
+    "name": "tomato ketchup",
     "quantity": 0.5,
     "unit": "cup",
     "note": ""
    },
    {
     "name": "brown sugar",
-    "quantity": 0.25,
+    "quantity": 0.5,
     "unit": "cup",
     "note": ""
    },
    {
-    "name": "apple cider vinegar",
-    "quantity": 2,
-    "unit": "tbsp",
+    "name": "bacon",
+    "quantity": 6,
+    "unit": "slice",
+    "note": "strips, diced"
+   },
+   {
+    "name": "all-purpose seasoning",
+    "quantity": 1,
+    "unit": "tsp",
     "note": ""
-   },
-   {
-    "name": "mustard",
-    "quantity": null,
-    "unit": "",
-    "note": "ground"
-   },
-   {
-    "name": "salt",
-    "quantity": null,
-    "unit": "",
-    "note": "to taste"
-   },
-   {
-    "name": "black pepper",
-    "quantity": null,
-    "unit": "",
-    "note": "to taste"
    }
   ],
   "steps": [
    {
-    "text": "Place the dried beans into a Dutch oven with 6 cups (1.5 L) of water. Soak overnight.",
+    "text": "Preheat the oven to 175°C (350°F).",
     "minutes": null
    },
    {
-    "text": "Drain and pour beans back into the pot with enough water to cover the beans by a couple of inches, cook for 30 minutes until they are tender but still firm. Drain beans, making sure to reserve cooking liquid, set aside.",
-    "minutes": 30
+    "text": "Heat the oil in a large oven-safe pot, then saute the onion for 3–4 minutes until softened.",
+    "minutes": 4
    },
    {
-    "text": "Preheat the oven to 325 °F (160 °C). While the oven is preheating, cook pork over medium-high heat in the Dutch Oven until fat is rendered and pork is beginning to brown, then add the onion cooking until tender.",
+    "text": "Add the beans, molasses, ketchup and brown sugar and stir to combine. The ingredient list also includes 1 tsp all-purpose seasoning, but the written method does not say when it goes in.",
     "minutes": null
    },
    {
-    "text": "Add the beans back to the pot, along with molasses, brown sugar, apple cider vinegar, ground mustard, salt and pepper and 3 cups (750 mL) of reserved bean water.",
+    "text": "Scatter the diced bacon over the top.",
     "minutes": null
    },
    {
-    "text": "Bake uncovered for 3 to 5 hours until the beans are tender, and the sauce has thickened, and the edges of the pot get sticky.",
-    "minutes": 300
-   },
-   {
-    "text": "(Note: if beans get dry, add another cup of water.)",
-    "minutes": null
+    "text": "Bake for 1 hour.",
+    "minutes": 60
    }
   ]
  },
@@ -54460,26 +54494,38 @@
  },
  {
   "source": "themealdb:53347",
-  "title": "No-Churn Rum Raisin Ice Cream",
-  "description": "A Jamaican sweet made with rum, raisins and condensed milk — makes 12, about an hour start to finish.",
-  "servings": 12,
+  "title": "No-churn rum raisin ice cream",
+  "description": "Rum-soaked raisins folded into condensed milk and whipped cream, then frozen for 12 hours with no ice cream maker; served in bowls or cones.",
+  "servings": 6,
   "cuisine": "Jamaican",
   "category": "Dessert",
   "image": "https://www.themealdb.com/images/media/meals/s9qyzd1764790772.jpg",
-  "prep_minutes": 15,
-  "cook_minutes": 45,
+  "prep_minutes": 10,
+  "cook_minutes": 0,
   "ingredients": [
+   {
+    "name": "raisins",
+    "quantity": 1.5,
+    "unit": "cup",
+    "note": "separated with fingers"
+   },
    {
     "name": "rum",
     "quantity": 0.5,
     "unit": "cup",
-    "note": ""
+    "note": "dark or golden, for soaking the raisins"
    },
    {
-    "name": "raisins",
-    "quantity": 1,
+    "name": "condensed milk",
+    "quantity": 395,
+    "unit": "g",
+    "note": "1 can"
+   },
+   {
+    "name": "rum",
+    "quantity": 0.25,
     "unit": "cup",
-    "note": ""
+    "note": "dark or golden, for the ice cream base"
    },
    {
     "name": "vanilla extract",
@@ -54488,70 +54534,58 @@
     "note": ""
    },
    {
-    "name": "condensed milk",
-    "quantity": 420,
-    "unit": "ml",
-    "note": "jar"
-   },
-   {
-    "name": "brown sugar",
-    "quantity": 2,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "cinnamon",
-    "quantity": 0.25,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
     "name": "allspice",
     "quantity": 0.125,
     "unit": "tsp",
-    "note": ""
+    "note": "ground, optional"
    },
    {
     "name": "cream",
     "quantity": 2,
     "unit": "cup",
-    "note": ""
+    "note": "thickened/heavy, fridge cold"
    },
    {
-    "name": "salt",
-    "quantity": 1,
-    "unit": "pinch",
-    "note": ""
+    "name": "ice cream cone",
+    "quantity": null,
+    "unit": "",
+    "note": "to serve"
+   },
+   {
+    "name": "chocolate",
+    "quantity": null,
+    "unit": "",
+    "note": "rum raisin chocolate, finely chopped, to serve"
    }
   ],
   "steps": [
    {
-    "text": "Heat the rum in a small saucepan over medium heat until warm (do not boil). Remove from heat and stir in the raisins and vanilla extract. Let the mixture sit for at least 30 minutes.",
+    "text": "Roughly chop the raisins (about in half) and separate them with your fingers.",
+    "minutes": null
+   },
+   {
+    "text": "Heat the 1/2 cup rum in a small saucepan on medium-high until hot, add the raisins, submerge them as well as you can and soak for 30 minutes. Pour off any excess rum.",
     "minutes": 30
    },
    {
-    "text": "After soaking, drain off the extra rum, but keep ¼ cup of the rum and reserve it to mix into your ice cream base.",
+    "text": "Briefly beat the condensed milk with the 1/4 cup rum, vanilla and allspice, then stir in the soaked raisins.",
     "minutes": null
    },
    {
-    "text": "In a large bowl, whisk together the sweetened condensed milk, dark brown sugar, cinnamon, allspice, salt, and reserved rum (¼ cup). Stir until the brown sugar is fully dissolved.",
+    "text": "Whip the cold cream on high for 2 1/2 to 3 minutes with an electric beater until stiff peaks form.",
+    "minutes": 3
+   },
+   {
+    "text": "Fold about 1 cup of the whipped cream into the condensed milk mixture, then pour that into the rest of the cream and fold gently until smooth, folding as little as possible.",
     "minutes": null
    },
    {
-    "text": "In a separate bowl, whip the cold heavy cream with an electric mixer until stiff peaks form.",
+    "text": "Spread into a 1.5 litre container, cover and freeze for at least 12 hours.",
+    "minutes": 720
+   },
+   {
+    "text": "Leave out a minute or two, then scoop into bowls or cones and top with chopped rum raisin chocolate if you like.",
     "minutes": null
-   },
-   {
-    "text": "Gently fold the whipped cream into the condensed milk mixture until fully combined, being careful not to deflate the cream. Fold in the drained rum-soaked raisins to distribute them evenly.",
-    "minutes": null
-   },
-   {
-    "text": "Pour the mixture into a loaf pan or freezer-safe container. Smooth the top and cover with plastic wrap or an airtight lid. Freeze for at least 6 hours, or until firm.",
-    "minutes": 360
-   },
-   {
-    "text": "Let the ice cream sit at room temperature for 5–10 minutes before scooping for the best texture.",
-    "minutes": 10
    }
   ]
  },

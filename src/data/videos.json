@@ -1960,12 +1960,10 @@
   "checked": "2026-10-20"
  },
  "themealdb:53283": {
-  "videoId": "kpsZQTVVjdk",
-  "title": "Chtitha batata - Algerian potato stew | Video recipe",
-  "channel": "Allrecipes UK | Ireland",
+  "videoId": null,
+  "checked": "2026-10-28",
   "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "reason": "Allrecipes UK video kpsZQTVVjdk has no transcript (YouTube blocked), a description with only a link, and the linked allrecipes.co.uk page is gone (redirects to the Allrecipes homepage; allrecipes.com/recipe/40921 is 404). One search for the same dish found only other cooks' videos in French/Arabic with no matching written recipe, so nothing could be verified."
  },
  "themealdb:53528": {
   "videoId": null,
@@ -2122,12 +2120,12 @@
   "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53291": {
-  "videoId": "KVnfEBh-rUk",
-  "title": "Cornes de gazelle | Video recipe",
-  "channel": "Allrecipes UK | Ireland",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "videoId": "XFLRUW5eKxw",
+  "title": "Gazelle Horns Recipe - Kaab el Ghazal Recipe",
+  "channel": "Romandian Masala",
+  "checked": "2026-10-28",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53490": {
   "videoId": null,
@@ -3207,9 +3205,9 @@
   "videoId": "h05_zOhGedo",
   "title": "Albanian Kulaç Bread - Soda Bread with Yogurt #kulac, #sodabread, #kuzhinashqiptare",
   "channel": "Sonila Zarate",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-28",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:52978": {
   "videoId": "IEDEtZ4UVtI",
@@ -3221,9 +3219,9 @@
   "videoId": "ysiuZm9FIxs",
   "title": "Easy Kung Pao Shrimp",
   "channel": "Panlasang Pinoy",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-28",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53414": {
   "videoId": null,
@@ -3480,12 +3478,12 @@
   "checked": "2026-10-20"
  },
  "themealdb:52777": {
-  "videoId": "e52IL8zYmaE",
-  "title": "Mediterranean Pasta Salad Recipe",
-  "channel": "Gimme Some Oven",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "videoId": "RfGo18b3Hrw",
+  "title": "Mediterranean Pasta Salad",
+  "channel": "Little Spice Jar (LittleSpiceJar)",
+  "checked": "2026-10-28",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53048": {
   "videoId": "pOJEmDBgtSk",
@@ -3531,9 +3529,9 @@
   "videoId": "4agkoGMcL2w",
   "title": "Mini Bundt Cakes - 6 Ways",
   "channel": "Bonni Bakery",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-28",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53560": {
   "videoId": null,
@@ -3553,9 +3551,9 @@
   "videoId": "60tmFXd4uoI",
   "title": "My Great-Grandma's Baked Beans with Molasses",
   "channel": "It Is a Keeper Recipes",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-28",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:52927": {
   "videoId": "g5oCDoyxbBk",
@@ -3641,9 +3639,9 @@
   "videoId": "6WpzVZrOwIs",
   "title": "Easy rum raisin ice cream",
   "channel": "RecipeTin Eats",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-28",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53497": {
   "videoId": null,
@@ -3700,12 +3698,10 @@
   "checked": "2026-10-20"
  },
  "themealdb:52851": {
-  "videoId": "nSQNfZxOdeU",
-  "title": "Student Cooking tutorials - Nutty Chicken Curry",
-  "channel": "Kat Edmonds",
+  "videoId": null,
+  "checked": "2026-10-28",
   "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "reason": "The video (Kat Edmonds, 'Student Cooking tutorials - Nutty Chicken Curry') is a student's tutorial whose description only links a BBC Good Food page by someone else, which is not the video creator's own recipe; the transcript is blocked (IpBlocked), so it cannot be confirmed that the video follows that page's amounts."
  },
  "themealdb:53331": {
   "videoId": "kkrRFWN4LG4",
