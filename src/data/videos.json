@@ -877,9 +877,9 @@
   "videoId": "Mz-ZVfOA_ig",
   "title": "Baba Ganoush (creamy eggplant dip)",
   "channel": "Nico's Recipes",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-28",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53396": {
   "videoId": null,
@@ -903,9 +903,9 @@
   "videoId": "-84Zz2EP4h4",
   "title": "Baingan Bharta Recipe | Roasted Eggplant  | Eggplant Recipe | Baingan Bharta by Kabitaskitchen",
   "channel": "Kabita's Kitchen",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-28",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53456": {
   "videoId": null,
@@ -931,9 +931,9 @@
   "videoId": "xvPR2Tfw5k0",
   "title": "Fennel Smoked Salmon - Hot-Smoked Salmon Recipe with Fennel and Tomatoes",
   "channel": "Food Wishes",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-28",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53548": {
   "videoId": null,
@@ -945,9 +945,9 @@
   "videoId": "1ahpSTf_Pvk",
   "title": "Jamie’s Bakewell Tart | Jamie Oliver - AD",
   "channel": "Jamie Oliver",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-28",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53279": {
   "videoId": "yK_sSFDvsT0",
@@ -964,12 +964,10 @@
   "checked": "2026-10-20"
  },
  "themealdb:53239": {
-  "videoId": "Na-6-lzs2wU",
-  "title": "Bang Bang Shrimp Salad",
-  "channel": "Tastefully Balanced",
+  "videoId": null,
+  "checked": "2026-10-28",
   "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "reason": "Current video (Na-6-lzs2wU, Tastefully Balanced, Bang Bang Shrimp Salad) has only a story in its description; the transcript is IpBlocked and the linked recipe page tastefullybalanced.com/recipe/bang-bang-shrimp-salad/ failed to load (DNS error on www, HTTP 522 on the bare domain, retried). It is also a bonefish-style bang bang shrimp salad, not the catalogue's rice noodle, peanut butter and coconut milk prawn salad. Three searches found no reputable written-recipe video of the catalogue dish."
  },
  "themealdb:53451": {
   "videoId": null,
@@ -989,9 +987,9 @@
   "videoId": "T3mBULRIcY8",
   "title": "Michelin Baked BBQ Pork Buns At Home | Marion's Kitchen",
   "channel": "Marion Grasby",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-28",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53103": {
   "videoId": null,

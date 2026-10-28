@@ -14852,99 +14852,113 @@
  },
  {
   "source": "themealdb:53094",
-  "title": "Baba Ghanoush",
-  "description": "A Syrian side of aubergine, lemon and tahini — serves 4, worth the couple of hours it takes.",
+  "title": "Baba ganoush",
+  "description": "Creamy, smoky roasted eggplant dip blended with tahini, lemon and garlic, finished with parsley, mint, smoked paprika and olive oil.",
   "servings": 4,
-  "cuisine": "Syrian",
+  "cuisine": "Levantine",
   "category": "Side",
   "image": "https://www.themealdb.com/images/media/meals/dlmh401760524897.jpg",
-  "prep_minutes": 15,
-  "cook_minutes": 65,
+  "prep_minutes": 10,
+  "cook_minutes": 20,
   "ingredients": [
    {
     "name": "aubergine",
-    "quantity": 4,
-    "unit": "",
-    "note": "large"
+    "quantity": 1.1,
+    "unit": "kg",
+    "note": "2 medium eggplants"
    },
    {
-    "name": "garlic",
-    "quantity": 2,
-    "unit": "clove",
-    "note": ""
+    "name": "olive oil",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "to season the eggplants before roasting"
    },
    {
     "name": "salt",
-    "quantity": 2,
+    "quantity": 0.25,
     "unit": "tsp",
-    "note": ""
+    "note": "to season the eggplants before roasting"
    },
    {
-    "name": "lemon",
-    "quantity": 1,
+    "name": "black pepper",
+    "quantity": 0.25,
+    "unit": "tsp",
+    "note": "to season the eggplants before roasting"
+   },
+   {
+    "name": "liquid smoke",
+    "quantity": null,
     "unit": "",
-    "note": ""
+    "note": "optional, recommended if air-frying"
+   },
+   {
+    "name": "garlic",
+    "quantity": 0.5,
+    "unit": "clove",
+    "note": "or more to taste"
+   },
+   {
+    "name": "lemon juice",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": "freshly squeezed"
    },
    {
     "name": "tahini",
     "quantity": 3,
     "unit": "tbsp",
-    "note": ""
+    "note": "runny"
    },
    {
-    "name": "olive oil",
-    "quantity": 3,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "greek yoghurt",
-    "quantity": 2,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "cayenne pepper",
-    "quantity": 1,
-    "unit": "pinch",
-    "note": ""
-   },
-   {
-    "name": "mint",
-    "quantity": 1,
-    "unit": "leaf",
-    "note": ""
+    "name": "salt",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": "for the dip"
    },
    {
     "name": "parsley",
     "quantity": 2,
     "unit": "tbsp",
-    "note": ""
+    "note": "flat-leaf, finely chopped, to garnish"
+   },
+   {
+    "name": "mint",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "optional, finely chopped, to garnish"
+   },
+   {
+    "name": "smoked paprika",
+    "quantity": 1,
+    "unit": "pinch",
+    "note": "to garnish"
+   },
+   {
+    "name": "olive oil",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "extra virgin, to drizzle on top"
    }
   ],
   "steps": [
    {
-    "text": "Preheat an outdoor grill for medium-high heat and lightly oil the grate. Prick the surface of the skin of eggplants several times with the tip of a knife.",
+    "text": "Cut the eggplants in half lengthwise, score the flesh with a knife and season with 1 tbsp olive oil, 1/4 tsp salt and 1/4 tsp pepper.",
     "minutes": null
    },
    {
-    "text": "Place eggplants directly on grill. Turn frequently with tongs while skin chars. Cook until eggplants have collapsed and are very soft, 25 to 30 minutes.",
-    "minutes": 30
+    "text": "Cook until very soft: either under the oven broiler until slightly charred, or cut side down in an air fryer at 200°C for about 20 minutes. Over an open flame, char the whole eggplant until tender and scrape off the burnt peel.",
+    "minutes": 20
    },
    {
-    "text": "Transfer to a bowl and cover tightly with aluminum foil and allow to cool, about 15 minutes.",
-    "minutes": 15
+    "text": "Let the eggplant cool a little, scoop the flesh from the skin with a spoon and put it in a food processor. If you used the air fryer, a little liquid smoke helps.",
+    "minutes": null
    },
    {
-    "text": "When eggplants are cool enough to handle, split them in half and scrape flesh into a colander placed over a bowl. Drain 5 or 10 minutes.",
-    "minutes": 10
+    "text": "Add the garlic, lemon juice, runny tahini and salt, and pulse a few times to the consistency you like. Taste and adjust the salt and lemon.",
+    "minutes": null
    },
    {
-    "text": "Transfer eggplant to mixing bowl. Add crushed garlic and salt; mash until creamy but with a little texture, about 5 minutes. Whisk in lemon juice, tahini, olive oil, and cayenne pepper. Stir in yogurt.",
-    "minutes": 5
-   },
-   {
-    "text": "Cover bowl with plastic wrap and refrigerate until completely chilled. Stir in mint and parsley, and taste to adjust seasonings before serving.",
+    "text": "Spread the dip on a serving platter and garnish with parsley, mint, a pinch of smoked paprika and a drizzle of extra virgin olive oil.",
     "minutes": null
    }
   ]
@@ -15304,173 +15318,141 @@
  },
  {
   "source": "themealdb:52807",
-  "title": "Baingan Bharta",
-  "description": "An Indian dish of aubergine, tomato and chilli — serves 2, about an hour start to finish.",
+  "title": "Baingan bharta",
+  "description": "Eggplant roasted over a flame, peeled, mashed and cooked with onion, tomato, green chilli and ground spices, finished with coriander.",
   "servings": 2,
   "cuisine": "Indian",
   "category": "Vegetarian",
   "image": "https://www.themealdb.com/images/media/meals/urtpqw1487341253.jpg",
   "prep_minutes": 15,
-  "cook_minutes": 60,
+  "cook_minutes": 25,
   "ingredients": [
    {
     "name": "aubergine",
-    "quantity": 1,
-    "unit": "",
-    "note": "large"
+    "quantity": 350,
+    "unit": "g",
+    "note": "1 eggplant"
+   },
+   {
+    "name": "vegetable oil",
+    "quantity": 4,
+    "unit": "tbsp",
+    "note": ""
+   },
+   {
+    "name": "cumin seeds",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": ""
+   },
+   {
+    "name": "asafoetida",
+    "quantity": 0.25,
+    "unit": "tsp",
+    "note": "optional"
    },
    {
     "name": "onion",
-    "quantity": 0.5,
-    "unit": "cup",
+    "quantity": 2,
+    "unit": "",
+    "note": "medium, chopped"
+   },
+   {
+    "name": "ginger garlic paste",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "grated or paste"
+   },
+   {
+    "name": "green chilli",
+    "quantity": 2,
+    "unit": "",
+    "note": "chopped"
+   },
+   {
+    "name": "turmeric",
+    "quantity": 0.33,
+    "unit": "tsp",
+    "note": "powder"
+   },
+   {
+    "name": "chilli powder",
+    "quantity": 0.33,
+    "unit": "tsp",
+    "note": "red, to taste"
+   },
+   {
+    "name": "ground cumin",
+    "quantity": 0.33,
+    "unit": "tsp",
+    "note": ""
+   },
+   {
+    "name": "ground coriander",
+    "quantity": 0.33,
+    "unit": "tsp",
     "note": ""
    },
    {
     "name": "tomato",
     "quantity": 1,
-    "unit": "cup",
-    "note": ""
-   },
-   {
-    "name": "garlic",
-    "quantity": 6,
-    "unit": "clove",
-    "note": ""
-   },
-   {
-    "name": "chilli",
-    "quantity": 1,
     "unit": "",
-    "note": ""
-   },
-   {
-    "name": "chilli powder",
-    "quantity": 0.25,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "vegetable oil",
-    "quantity": 1.5,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "coriander",
-    "quantity": 1,
-    "unit": "tbsp",
-    "note": "chopped"
+    "note": "large, chopped (two small in the video)"
    },
    {
     "name": "salt",
     "quantity": null,
     "unit": "",
-    "note": "as needed"
+    "note": "to taste"
+   },
+   {
+    "name": "garam masala",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": ""
+   },
+   {
+    "name": "coriander",
+    "quantity": 1,
+    "unit": "handful",
+    "note": "1/3 cup fresh leaves, chopped, plus a little to garnish"
    }
   ],
   "steps": [
    {
-    "text": "Rinse the baingan (eggplant or aubergine) in water. Pat dry with a kitchen napkin. Apply some oil all over and.",
+    "text": "Make a straight lengthwise cut in the eggplant without cutting it through. Optionally push 2 green chillies and 3 garlic cloves into the cut for extra flavour (then use a little less chilli later).",
     "minutes": null
    },
    {
-    "text": "Keep it for roasting on an open flame. You can also grill the baingan or roast in the oven. But then you won't get.",
+    "text": "Roast the eggplant directly on a medium gas flame, turning it until charred all over and soft inside. Check with a fork, then cook the base until done and leave it to cool completely.",
     "minutes": null
    },
    {
-    "text": "The smoky flavor of the baingan. Keep the eggplant turning after a 2 to 3 minutes on the flame, so that its evenly.",
+    "text": "Peel off the skin (don't wash it), cut off the stem and mash the flesh in a bowl, together with any roasted garlic and chilli.",
     "minutes": null
    },
    {
-    "text": "Cooked. You could also embed some garlic cloves in the baingan and then roast it.",
-    "minutes": null
-   },
-   {
-    "text": "Roast the aubergine till its completely cooked and tender. With a knife check the doneness. The knife should slid.",
-    "minutes": null
-   },
-   {
-    "text": "Easily in aubergines without any resistance. Remove the baingan and immerse in a bowl of water till it cools down.",
-    "minutes": null
-   },
-   {
-    "text": "You can also do the dhungar technique of infusing charcoal smoky flavor in the baingan. This is an optional step.",
-    "minutes": null
-   },
-   {
-    "text": "Use natural charcoal for this method. Heat a small piece of charcoal on flame till it becomes smoking hot and red.",
-    "minutes": null
-   },
-   {
-    "text": "Make small cuts on the baingan with a knife. Place the red hot charcoal in the same plate where the roasted.",
-    "minutes": null
-   },
-   {
-    "text": "Aubergine is kept. Add a few drops of oil on the charcoal. The charcoal would begin to smoke.",
-    "minutes": null
-   },
-   {
-    "text": "As soon as smoke begins to release from the charcoal, cover the entire plate tightly with a large bowl. Allow the.",
-    "minutes": null
-   },
-   {
-    "text": "Charcoal smoke to get infused for 1 to 2 minutes. The more you do, the more smoky the baingan bharta will.",
+    "text": "Heat the oil in a pan, add the cumin seeds until they sizzle, then the asafoetida and chopped onion. Fry on medium heat for about 2 minutes.",
     "minutes": 2
    },
    {
-    "text": "Become. I just keep for a minute. Alternatively, you can also do this dhungar method once the baingan bharta is.",
+    "text": "Add the ginger-garlic and green chilli and fry for about half a minute.",
     "minutes": null
    },
    {
-    "text": "Cooked, just like the way we do for Dal Tadka.",
+    "text": "Lower the heat, add the turmeric, red chilli powder, cumin powder and coriander powder, and cook for half a minute so the spices lose their raw taste.",
     "minutes": null
    },
    {
-    "text": "Peel the skin from the roasted and smoked eggplant.",
-    "minutes": null
+    "text": "Add the tomato and cook for 2-3 minutes until it breaks down.",
+    "minutes": 3
    },
    {
-    "text": "Chop the cooked eggplant finely or you can even mash it.",
-    "minutes": null
+    "text": "Stir in the mashed eggplant to coat it in the masala, then add salt, garam masala and the coriander leaves. Stir continuously on medium heat for 1 minute and switch off.",
+    "minutes": 1
    },
    {
-    "text": "In a kadai or pan, heat oil. Then add finely chopped onions and garlic.",
-    "minutes": null
-   },
-   {
-    "text": "Saute the onions till translucent. Don't brown them.",
-    "minutes": null
-   },
-   {
-    "text": "Add chopped green chilies and saute for a minute.",
-    "minutes": null
-   },
-   {
-    "text": "Add the chopped tomatoes and mix it well.",
-    "minutes": null
-   },
-   {
-    "text": "Bhuno (saute) the tomatoes till the oil starts separating from the mixture.",
-    "minutes": null
-   },
-   {
-    "text": "Now add the red chili powder. Stir and mix well. Add the chopped cooked baingan.",
-    "minutes": null
-   },
-   {
-    "text": "Stir and mix the chopped baingan very well with the oniontomato masala mixture.",
-    "minutes": null
-   },
-   {
-    "text": "Season with salt. Stir and saute for some more 4 to 5 minutes more.",
-    "minutes": 5
-   },
-   {
-    "text": "Finally stir in the coriander leaves with the baingan bharta or garnish it with them. Serve Baingan Bharta with.",
-    "minutes": null
-   },
-   {
-    "text": "Phulkas, rotis or chapatis. It goes well even with bread, toasted or grilled bread and plain rice or jeera rice.",
+    "text": "Serve hot, sprinkled with a little coriander, with roti or paratha.",
     "minutes": null
    }
   ]
@@ -15808,70 +15790,108 @@
  },
  {
   "source": "themealdb:52959",
-  "title": "Baked salmon with fennel & tomatoes",
-  "description": "A British dish of salmon fillet, fennel bulb and lemon — serves 2, on the table in about 45 minutes.",
+  "title": "Fennel-smoked salmon with tomato salad",
+  "description": "Salmon fillets hot-smoked on a bed of sliced fennel in a charcoal grill, served with a salad of cherry tomatoes dressed in lemon juice and olive oil.",
   "servings": 2,
-  "cuisine": "British",
+  "cuisine": "American",
   "category": "Seafood",
-  "image": "https://www.themealdb.com/images/media/meals/1548772327.jpg",
-  "prep_minutes": 10,
-  "cook_minutes": 25,
+  "image": "https://i.ytimg.com/vi/xvPR2Tfw5k0/hqdefault.jpg",
+  "prep_minutes": 15,
+  "cook_minutes": 20,
   "ingredients": [
    {
-    "name": "fennel bulb",
+    "name": "salmon fillet",
     "quantity": 2,
     "unit": "",
-    "note": "medium"
+    "note": "about 200 g each, centre cut"
    },
    {
-    "name": "parsley",
-    "quantity": 2,
-    "unit": "tbsp",
-    "note": "chopped"
+    "name": "salt",
+    "quantity": null,
+    "unit": "",
+    "note": "to taste, to season the salmon and the salad"
+   },
+   {
+    "name": "black pepper",
+    "quantity": null,
+    "unit": "",
+    "note": "to taste, to season the salmon and the salad"
+   },
+   {
+    "name": "fennel bulb",
+    "quantity": 1,
+    "unit": "",
+    "note": "sliced thinly; fronds saved for garnish"
+   },
+   {
+    "name": "white vinegar",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "type not stated, in a bowl of cold water to keep the fennel from browning"
+   },
+   {
+    "name": "cherry tomatoes",
+    "quantity": 1,
+    "unit": "cup",
+    "note": "quartered, for the salad"
+   },
+   {
+    "name": "sugar",
+    "quantity": 1,
+    "unit": "pinch",
+    "note": "for the salad"
    },
    {
     "name": "lemon",
     "quantity": 1,
     "unit": "",
-    "note": "juiced"
-   },
-   {
-    "name": "cherry tomatoes",
-    "quantity": 175,
-    "unit": "g",
-    "note": ""
+    "note": "juiced, for the salad"
    },
    {
     "name": "olive oil",
-    "quantity": 1,
+    "quantity": 3,
     "unit": "tbsp",
-    "note": ""
+    "note": "for the salad"
    },
    {
-    "name": "salmon fillet",
-    "quantity": 350,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "black olives",
+    "name": "fennel bulb",
     "quantity": null,
     "unit": "",
-    "note": "to serve"
+    "note": "fronds, to garnish"
    }
   ],
   "steps": [
    {
-    "text": "Heat oven to 180C/fan 160C/gas 4. Trim the fronds from the fennel and set aside. Cut the fennel bulbs in half, then cut each half into 3 wedges. Cook in boiling salted water for 10 mins, then drain well.",
-    "minutes": 10
-   },
-   {
-    "text": "Chop the fennel fronds roughly, then mix with the parsley and lemon zest.",
+    "text": "Soak wood chips in water for an hour or two, and light a charcoal fire about 15 minutes before cooking.",
     "minutes": null
    },
    {
-    "text": "Spread the drained fennel over a shallow ovenproof dish, then add the tomatoes. Drizzle with olive oil, then bake for 10 mins. Nestle the salmon among the veg, sprinkle with lemon juice, then bake 15 mins more until the fish is just cooked. Scatter over the parsley and serve.",
-    "minutes": 15
+    "text": "Trim the fennel fronds and save them, halve the bulb and slice it thinly. Leave the slices in cold water with a teaspoon of vinegar.",
+    "minutes": null
+   },
+   {
+    "text": "Season both salmon fillets generously with salt and pepper.",
+    "minutes": null
+   },
+   {
+    "text": "Put two handfuls of soaked wood chips on the white-hot coals, replace the grate and close the lid with the vents open. When smoke pours out, close the vents.",
+    "minutes": null
+   },
+   {
+    "text": "Lay the drained fennel slices over the grate as a base and set the salmon on top so it never touches the heat directly. Close the lid and smoke for 15 to 20 minutes, until just flaking when pushed.",
+    "minutes": 17
+   },
+   {
+    "text": "Rest the salmon for at least 5 minutes, topped with some of the smoked fennel.",
+    "minutes": 5
+   },
+   {
+    "text": "Meanwhile toss the quartered cherry tomatoes with salt, pepper, a pinch of sugar, the lemon juice and olive oil.",
+    "minutes": null
+   },
+   {
+    "text": "Serve the salmon over the tomato salad, spooning over the lemon-olive oil dressing and finishing with the fennel fronds.",
+    "minutes": null
    }
   ]
  },
@@ -15974,104 +15994,168 @@
  },
  {
   "source": "themealdb:52767",
-  "title": "Bakewell tart",
-  "description": "A British sweet made with jam, almonds and ground almonds — serves 8, about an hour start to finish.",
-  "servings": 8,
+  "title": "Sour cranberry Bakewell tart",
+  "description": "Sweet shortcrust tart with a sour cranberry jam base, a hazelnut and walnut frangipane filling and a St Clements orange and lemon icing drizzle.",
+  "servings": 12,
   "cuisine": "British",
   "category": "Dessert",
-  "image": "https://www.themealdb.com/images/media/meals/wyrqqq1468233628.jpg",
-  "prep_minutes": 15,
-  "cook_minutes": 55,
+  "image": "https://i.ytimg.com/vi/1ahpSTf_Pvk/hqdefault.jpg",
+  "prep_minutes": 40,
+  "cook_minutes": 80,
   "ingredients": [
    {
     "name": "plain flour",
-    "quantity": 175,
+    "quantity": 250,
     "unit": "g",
-    "note": ""
+    "note": "for the pastry, plus extra for dusting"
+   },
+   {
+    "name": "icing sugar",
+    "quantity": 50,
+    "unit": "g",
+    "note": "sifted, for the pastry (half of 100 g)"
    },
    {
     "name": "butter",
-    "quantity": 75,
+    "quantity": 125,
     "unit": "g",
-    "note": ""
+    "note": "cold, unsalted, cubed, for the pastry"
    },
    {
-    "name": "water",
-    "quantity": 2,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "jam",
+    "name": "orange",
     "quantity": 1,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "butter",
-    "quantity": 125,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "sugar",
-    "quantity": 125,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "ground almonds",
-    "quantity": 125,
-    "unit": "g",
-    "note": ""
+    "unit": "",
+    "note": "zest, for the pastry"
    },
    {
     "name": "eggs",
     "quantity": 1,
     "unit": "",
-    "note": "beaten"
+    "note": "large, beaten, for the pastry"
    },
    {
-    "name": "almond extract",
-    "quantity": 0.5,
-    "unit": "tsp",
-    "note": ""
+    "name": "salt",
+    "quantity": 1,
+    "unit": "pinch",
+    "note": "for the pastry"
    },
    {
-    "name": "almonds",
+    "name": "milk",
+    "quantity": null,
+    "unit": "",
+    "note": "a splash, for the pastry"
+   },
+   {
+    "name": "cranberries",
+    "quantity": 500,
+    "unit": "g",
+    "note": "fresh or frozen, for the jam"
+   },
+   {
+    "name": "caster sugar",
+    "quantity": 150,
+    "unit": "g",
+    "note": "golden, for the jam"
+   },
+   {
+    "name": "orange",
+    "quantity": 2,
+    "unit": "",
+    "note": "zest and juice of 1½, for the jam"
+   },
+   {
+    "name": "hazelnuts",
+    "quantity": 100,
+    "unit": "g",
+    "note": "blanched, for the frangipane"
+   },
+   {
+    "name": "walnuts",
+    "quantity": 100,
+    "unit": "g",
+    "note": "shelled, for the frangipane"
+   },
+   {
+    "name": "butter",
+    "quantity": 250,
+    "unit": "g",
+    "note": "cold, unsalted, cubed, for the frangipane"
+   },
+   {
+    "name": "caster sugar",
+    "quantity": 250,
+    "unit": "g",
+    "note": "golden, for the frangipane"
+   },
+   {
+    "name": "lemon",
+    "quantity": 1,
+    "unit": "",
+    "note": "zest, for the frangipane; juice for the icing"
+   },
+   {
+    "name": "orange",
+    "quantity": 1,
+    "unit": "",
+    "note": "zest, for the frangipane; juice for the icing"
+   },
+   {
+    "name": "eggs",
+    "quantity": 3,
+    "unit": "",
+    "note": "large, for the frangipane"
+   },
+   {
+    "name": "plain flour",
+    "quantity": 60,
+    "unit": "g",
+    "note": "for the frangipane"
+   },
+   {
+    "name": "icing sugar",
     "quantity": 50,
     "unit": "g",
-    "note": ""
+    "note": "remaining, for the icing"
+   },
+   {
+    "name": "cream",
+    "quantity": null,
+    "unit": "",
+    "note": "a dollop, optional, to serve"
    }
   ],
   "steps": [
    {
-    "text": "To make the pastry, measure the flour into a bowl and rub in the butter with your fingertips until the mixture resembles fine breadcrumbs. Add the water, mixing to form a soft dough.",
+    "text": "For the pastry, sift the flour and half the icing sugar into a bowl and rub in the cold butter until like breadcrumbs. Mix in the orange zest, a pinch of salt, the egg and a small splash of milk to a ball of dough.",
     "minutes": null
    },
    {
-    "text": "Roll out the dough on a lightly floured work surface and use to line a 20cm/8in flan tin. Leave in the fridge to chill for 30 minutes.",
-    "minutes": 30
+    "text": "Wrap the dough and chill for 30 minutes. Roll it out to about 5 mm thick and lay it into a 25 cm loose-bottomed tart tin, pressing it into the corners. Prick the base with a fork and chill it again for 30 minutes.",
+    "minutes": 60
    },
    {
-    "text": "Preheat the oven to 200C/400F/Gas 6 (180C fan).",
-    "minutes": null
+    "text": "Heat the oven to 180°C. Line the pastry with crumpled greaseproof paper and baking beans and blind bake for 12 minutes, then take out the paper and beans and bake 5 minutes more to cook the base.",
+    "minutes": 17
    },
    {
-    "text": "Line the pastry case with foil and fill with baking beans. Bake blind for about 15 minutes, then remove the beans and foil and cook for a further five minutes to dry out the base.",
+    "text": "For the jam, simmer the cranberries, golden caster sugar and the zest and juice of 1½ oranges for about 15 minutes until jammy. Cool.",
     "minutes": 15
    },
    {
-    "text": "For the filing, spread the base of the flan generously with raspberry jam.",
+    "text": "For the frangipane, blitz the hazelnuts and walnuts finely. Whiz the butter, sugar, lemon and orange zest until fluffy, add the eggs one at a time, then the nuts and flour.",
     "minutes": null
    },
    {
-    "text": "Melt the butter in a pan, take off the heat and then stir in the sugar. Add ground almonds, egg and almond extract. Pour into the flan tin and sprinkle over the flaked almonds.",
+    "text": "Spread about a third of the jam over the pastry base, then the frangipane on top. Ripple a few more spoonfuls of jam over the surface and keep the rest for toast.",
     "minutes": null
    },
    {
-    "text": "Bake for about 35 minutes. If the almonds seem to be browning too quickly, cover the tart loosely with foil to prevent them burning.",
-    "minutes": 35
+    "text": "Bake at 180°C for 45 to 50 minutes until golden and set. Cool for 20 minutes, then move to a wire rack.",
+    "minutes": 48
+   },
+   {
+    "text": "Mix the remaining icing sugar with a little orange and lemon juice to a thick drizzle. Drizzle over the tart and serve, with cream if you like.",
+    "minutes": null
    }
   ]
  },
@@ -16684,100 +16768,208 @@
  },
  {
   "source": "themealdb:53242",
-  "title": "Barbecue pork buns",
-  "description": "A Vietnamese dish of bacon, white bread mix and honey — serves 6, on the table in about 45 minutes.",
-  "servings": 6,
-  "cuisine": "Vietnamese",
+  "title": "Baked BBQ pork buns",
+  "description": "Soft enriched buns filled with a sticky hoisin-sauced char siu pork filling and topped with a sweet piped topping of butter, icing sugar, egg and flour before baking.",
+  "servings": 20,
+  "cuisine": "Chinese",
   "category": "Pork",
-  "image": "https://www.themealdb.com/images/media/meals/tzsy461763769901.jpg",
+  "image": "https://i.ytimg.com/vi/T3mBULRIcY8/hqdefault.jpg",
   "prep_minutes": 15,
-  "cook_minutes": 30,
+  "cook_minutes": 160,
   "ingredients": [
    {
-    "name": "sugar",
-    "quantity": 85,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "white bread mix",
-    "quantity": 500,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "vegetable oil",
-    "quantity": 1,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "bacon",
-    "quantity": 12,
-    "unit": "",
-    "note": ""
-   },
-   {
-    "name": "ginger",
-    "quantity": 1,
-    "unit": "knob",
-    "note": ""
-   },
-   {
-    "name": "garlic",
-    "quantity": 2,
-    "unit": "clove",
-    "note": "chopped"
-   },
-   {
-    "name": "soy sauce",
+    "name": "plain flour",
     "quantity": 2,
     "unit": "tbsp",
-    "note": ""
+    "note": "for the starter"
    },
    {
-    "name": "honey",
-    "quantity": 3,
-    "unit": "tbsp",
-    "note": ""
+    "name": "water",
+    "quantity": 125,
+    "unit": "ml",
+    "note": "for the starter"
    },
    {
-    "name": "tomato puree",
-    "quantity": 3,
-    "unit": "tbsp",
-    "note": ""
+    "name": "milk",
+    "quantity": 125,
+    "unit": "ml",
+    "note": "for the starter"
    },
    {
     "name": "eggs",
     "quantity": 1,
     "unit": "",
-    "note": "beaten"
+    "note": "lightly whisked, for the starter"
+   },
+   {
+    "name": "cake flour",
+    "quantity": 350,
+    "unit": "g",
+    "note": "cake flour (low protein flour) in the recipe; plain flour is the supermarket equivalent, for the dough"
+   },
+   {
+    "name": "milk powder",
+    "quantity": 3.5,
+    "unit": "tsp",
+    "note": "skim, for the dough"
+   },
+   {
+    "name": "sugar",
+    "quantity": 0.5,
+    "unit": "cup",
+    "note": "white, for the dough"
+   },
+   {
+    "name": "yeast",
+    "quantity": 2.5,
+    "unit": "tsp",
+    "note": "instant, for the dough"
+   },
+   {
+    "name": "salt",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "sea salt, for the dough"
+   },
+   {
+    "name": "butter",
+    "quantity": 70,
+    "unit": "g",
+    "note": "softened, in 3 portions, for the dough"
+   },
+   {
+    "name": "salt",
+    "quantity": 0.25,
+    "unit": "tsp",
+    "note": "sea salt, listed with the dough"
+   },
+   {
+    "name": "vegetable oil",
+    "quantity": null,
+    "unit": "",
+    "note": "oil spray, for greasing the bowl"
+   },
+   {
+    "name": "char siu pork",
+    "quantity": 500,
+    "unit": "g",
+    "note": "Chinese bbq pork, finely chopped, for the filling"
+   },
+   {
+    "name": "soy sauce",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "for the filling"
+   },
+   {
+    "name": "sugar",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "for the filling"
+   },
+   {
+    "name": "hoisin sauce",
+    "quantity": 4,
+    "unit": "tbsp",
+    "note": "for the filling"
+   },
+   {
+    "name": "shaoxing wine",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": "for the filling"
+   },
+   {
+    "name": "cornflour",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "mixed with 1 tbsp water, for the filling"
+   },
+   {
+    "name": "water",
+    "quantity": 0.25,
+    "unit": "cup",
+    "note": "for the filling"
+   },
+   {
+    "name": "cake flour",
+    "quantity": 140,
+    "unit": "g",
+    "note": "cake flour (low protein flour) in the recipe; plain flour is the supermarket equivalent, sifted 3 times, for the topping"
+   },
+   {
+    "name": "icing sugar",
+    "quantity": 65,
+    "unit": "g",
+    "note": "sifted, for the topping"
+   },
+   {
+    "name": "salt",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "sea salt, for the topping"
+   },
+   {
+    "name": "eggs",
+    "quantity": 2,
+    "unit": "",
+    "note": "lightly whisked, for the topping"
+   },
+   {
+    "name": "butter",
+    "quantity": 90,
+    "unit": "g",
+    "note": "unsalted, softened, for the topping"
+   },
+   {
+    "name": "chilli paste",
+    "quantity": null,
+    "unit": "",
+    "note": "e.g. sambal oelek, to serve"
+   },
+   {
+    "name": "soy sauce",
+    "quantity": null,
+    "unit": "",
+    "note": "to serve, for dipping"
    }
   ],
   "steps": [
    {
-    "text": "Heat the oven to 200C/fan 180C/gas. Mix the sugar into the bread mix in a large bowl, then add water as instructed on the pack. Bring the dough together with a wooden spoon, then knead on a lightly floured surface for 5 mins until smooth.",
-    "minutes": 5
-   },
-   {
-    "text": "Put into a large bowl, cover with oiled cling film then leave in a warm place until doubled in size.",
+    "text": "Starter: whisk 2 tbsp flour with the water in a small pan over medium heat until a thick paste forms, then whisk in the milk for a minute until smooth. Cool, then whisk in the egg.",
     "minutes": null
    },
    {
-    "text": "Meanwhile, heat the oil in a pan, then fry the bacon until crisp, about 5 mins. Add the ginger and garlic and fry for 1 min until soft, then tip in the soy, honey and tomato purée and stir well. Can be made up to 3 days ahead.",
+    "text": "Dough: sieve the flour, milk powder, sugar, yeast and salt into a stand mixer, add the starter and knead on medium for about 5 minutes. Add the butter in 3 pieces, kneading after each, then knead about 10 minutes more until silky.",
+    "minutes": 15
+   },
+   {
+    "text": "Knead lightly to punch the dough down, shape into a ball, place in an oiled bowl, cover and let rise at least 1 hour until doubled.",
+    "minutes": 60
+   },
+   {
+    "text": "Filling: put the pork, soy, sugar, hoisin, Shaoxing wine, 1/4 cup water and the cornflour mixture in a pan and cook on medium heat, stirring, for about 5 minutes until thick. Cool.",
     "minutes": 5
    },
    {
-    "text": "Turn out the dough and knead briefly, then pull into 12 even-sized balls. Flatten with your hands, then put a teaspoon-size blob of the filling in the middle.",
+    "text": "Topping: sift the flour 3 times. Beat the butter, icing sugar and salt for 4-5 minutes until pale and fluffy, gradually beat in the eggs, then fold in the flour. Put in a piping or zip-lock bag with a small corner cut off and keep out of the fridge.",
+    "minutes": 5
+   },
+   {
+    "text": "Divide the dough into 20 pieces (halve it, roll each half into a thick log, cut into 10). Roll each into a 10 cm round with thinner edges, put a heaped teaspoon of filling in the middle, pinch closed, twist and trim the knob, and set seam down on lined trays.",
     "minutes": null
    },
    {
-    "text": "Draw the dough up and pinch it closed like a purse, then turn the bun over and sit it on a large baking sheet. Cover with oiled cling film and leave to rise for about 30 mins until the dough feels pillowy.",
+    "text": "Cover the buns and prove for 30 minutes.",
     "minutes": 30
    },
    {
-    "text": "Brush with egg and bake for 20 mins until golden. Serve warm with dipping sauce. Can be frozen after second rise for up to 1 month or baked up to a day ahead and re-warmed.",
-    "minutes": 20
+    "text": "Heat the oven to 190°C. Pipe about 2 tbsp topping in a tight spiral on each bun and bake for about 15 minutes until lightly golden. Cool on a rack.",
+    "minutes": 15
+   },
+   {
+    "text": "Serve warm or at room temperature with chilli sauce and soy sauce for dipping.",
+    "minutes": null
    }
   ]
  },
