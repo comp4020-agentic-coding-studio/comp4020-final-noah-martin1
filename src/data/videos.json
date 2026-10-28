@@ -527,9 +527,9 @@
   "videoId": "q4Rz7tUkX9A",
   "title": "Key Lime Pie - Food Wishes",
   "channel": "Food Wishes",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-28",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:52858": {
   "videoId": "tspdJ6hxqnc",
@@ -556,12 +556,12 @@
   "transcribed": true
  },
  "themealdb:52909": {
-  "videoId": "8xDM8U6h9Pw",
-  "title": "Tarte Tatin - Recette en vidéo",
-  "channel": "Meilleur du Chef",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "videoId": "kIj3ItcjznA",
+  "title": "Foolproof Tarte Tatin Recipe | Preppy Kitchen",
+  "channel": "Preppy Kitchen",
+  "checked": "2026-10-28",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53046": {
   "videoId": "lWLCxui1Mw8",
@@ -605,9 +605,9 @@
   "videoId": "CbHWqzw4Qxg",
   "title": "Lamingtons Recipe | Australian Classic Dessert",
   "channel": "The Cooking Foodie",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-28",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53099": {
   "videoId": "CZItH4gQjAQ",
@@ -626,12 +626,10 @@
   "transcribed": true
  },
  "themealdb:53240": {
-  "videoId": "l8wuWeNy3J4",
-  "title": "Cashew Tofu Stir Fry | Healthy & Quick Meal | Tofu Stir Fry | Thai Cashew Tofu",
-  "channel": "Healthy Indian Recipes",
+  "videoId": null,
+  "checked": "2026-10-28",
   "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "reason": "Current video (l8wuWeNy3J4, Healthy Indian Recipes) has an ingredient list in the description (tofu, onion, bell pepper, broccoli, ginger-garlic paste, cashews, dried red chillies, soy sauce, vinegar) but no method and no transcript (IpBlocked), and it is a different dish from the catalogue's hoisin, pak choi and soya bean stir-fry. Two searches found only unverified or different dishes (Thai Cashew Tofu RUH-McVo0iU has almonds, cornstarch-fried tofu and a different sauce; Tulsi's Vegan Kitchen TTn3d3aexYI metadata timed out)."
  },
  "themealdb:52828": {
   "videoId": "Q3qcQcENzbU",

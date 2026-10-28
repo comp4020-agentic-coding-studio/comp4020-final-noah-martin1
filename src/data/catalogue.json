@@ -9400,84 +9400,108 @@
  },
  {
   "source": "themealdb:52859",
-  "title": "Key Lime Pie",
-  "description": "Tangy lime custard on a buttery biscuit base.",
+  "title": "Key lime pie",
+  "description": "A pie with a flaky shortening crust blind-baked first, filled with a baked lime, egg and sweetened condensed milk custard, and served cold with sweetened whipped cream and lime zest.",
   "servings": 8,
   "cuisine": "American",
   "category": "Dessert",
   "image": "https://www.themealdb.com/images/media/meals/qpqtuu1511386216.jpg",
-  "prep_minutes": 15,
-  "cook_minutes": 15,
+  "prep_minutes": 40,
+  "cook_minutes": 42,
   "ingredients": [
    {
-    "name": "digestive biscuits",
-    "quantity": 300,
-    "unit": "g",
-    "note": ""
+    "name": "plain flour",
+    "quantity": 1,
+    "unit": "cup",
+    "note": "pastry flour, for the crust; half of the 2 cups said, since the video makes a double batch of dough and fills only one crust"
    },
    {
-    "name": "butter",
-    "quantity": 150,
-    "unit": "g",
-    "note": ""
+    "name": "salt",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": "for the crust; half of the 1 tsp said (double batch)"
+   },
+   {
+    "name": "shortening",
+    "quantity": 6,
+    "unit": "tbsp",
+    "note": "for the crust; half of the 3/4 cup said (double batch)"
+   },
+   {
+    "name": "water",
+    "quantity": 3,
+    "unit": "tbsp",
+    "note": "ice cold, added gradually; half of 5 tbsp plus 1 tbsp said (double batch)"
+   },
+   {
+    "name": "lime",
+    "quantity": 3,
+    "unit": "",
+    "note": "microwaved 10 seconds and rolled, then juiced for about 1/2 cup of juice"
+   },
+   {
+    "name": "eggs",
+    "quantity": 3,
+    "unit": "",
+    "note": "whole"
    },
    {
     "name": "condensed milk",
     "quantity": 400,
     "unit": "g",
-    "note": ""
+    "note": "1 can, 14 oz, sweetened"
    },
    {
-    "name": "egg yolks",
-    "quantity": 3,
-    "unit": "",
-    "note": ""
-   },
-   {
-    "name": "lime",
-    "quantity": 4,
-    "unit": "",
-    "note": ""
+    "name": "food colouring",
+    "quantity": 1,
+    "unit": "drop",
+    "note": "green, optional, for a pale lime green"
    },
    {
     "name": "cream",
-    "quantity": 300,
-    "unit": "ml",
-    "note": ""
-   },
-   {
-    "name": "icing sugar",
-    "quantity": 1,
-    "unit": "tbsp",
-    "note": ""
+    "quantity": null,
+    "unit": "",
+    "note": "sweetened whipped cream, to serve"
    },
    {
     "name": "lime",
     "quantity": null,
     "unit": "",
-    "note": "to serve"
+    "note": "zest shaved on top, to garnish"
    }
   ],
   "steps": [
    {
-    "text": "Heat the oven to 160C/fan 140C/gas 3. Whizz the biscuits to crumbs in a food processor (or put in a strong plastic bag and bash with a rolling pin).",
+    "text": "Preheat the oven to 200 C. Cut the shortening into the flour and salt with a pastry cutter until it looks like gravel.",
     "minutes": null
    },
    {
-    "text": "Mix with the melted butter and press into the base and up the sides of a 22cm loose-based tart tin. Bake in the oven for 10 minutes. Remove and cool.",
-    "minutes": 10
-   },
-   {
-    "text": "Put the egg yolks in a large bowl and whisk for a minute with electric beaters. Add the condensed milk and whisk for 3 minutes then add the zest and juice and whisk again for 3 minutes.",
-    "minutes": 3
-   },
-   {
-    "text": "Pour the filling into the cooled base then put back in the oven for 15 minutes. Cool then chill for at least 3 hours or overnight if you like.",
-    "minutes": 180
-   },
-   {
-    "text": "When you are ready to serve, carefully remove the pie from the tin and put on a serving plate. To decorate, softly whip together the cream and icing sugar. Dollop or pipe the cream onto the top of the pie and finish with extra lime zest.",
+    "text": "Sprinkle in the ice water a little at a time, mixing gently with a fork until the dough just comes together, then form a loose ball without kneading. Skip resting.",
     "minutes": null
+   },
+   {
+    "text": "Press the dough into a round, roll it out 3-6 mm thick and a couple of inches wider than the pie tin, fold it into the tin, tuck under the excess and crimp the edge. Prick the base with a fork.",
+    "minutes": null
+   },
+   {
+    "text": "Blind-bake in the middle of the oven for 10-12 minutes until lightly golden, then cool completely.",
+    "minutes": 11
+   },
+   {
+    "text": "Microwave the limes for about 10 seconds, roll them on the bench, then juice them to get about 1/2 cup.",
+    "minutes": null
+   },
+   {
+    "text": "Mix the eggs, condensed milk and lime juice with a mixer, plus a drop of green food colouring if you like, until it is a pale lime green.",
+    "minutes": null
+   },
+   {
+    "text": "Pour the filling into the cooled crust and bake at 175 C for about 30 minutes, until just set. Overcooking makes it tough and bitter.",
+    "minutes": 30
+   },
+   {
+    "text": "Cool the pie for at least an hour, then chill it and serve cold with sweetened whipped cream and lime zest.",
+    "minutes": 60
    }
   ]
  },
@@ -9899,79 +9923,73 @@
  {
   "source": "themealdb:52909",
   "title": "Tarte Tatin",
-  "description": "Caramelised apples baked upside down under crisp pastry.",
+  "description": "Apples cooked in a sugar, water and butter caramel in a skillet, topped with a sheet of puff pastry, baked and turned out upside down.",
   "servings": 6,
   "cuisine": "French",
   "category": "Dessert",
   "image": "https://www.themealdb.com/images/media/meals/ryspuw1511786688.jpg",
-  "prep_minutes": 10,
-  "cook_minutes": 85,
+  "prep_minutes": 25,
+  "cook_minutes": 55,
   "ingredients": [
    {
-    "name": "puff pastry",
-    "quantity": 300,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "plain flour",
-    "quantity": null,
+    "name": "apple",
+    "quantity": 4,
     "unit": "",
-    "note": "dusting"
-   },
-   {
-    "name": "braeburn apples",
-    "quantity": 6,
-    "unit": "",
-    "note": ""
+    "note": "firm baking apples such as Granny Smith or Honeycrisp, peeled, quartered and cored; recipe says 4 to 5"
    },
    {
     "name": "sugar",
-    "quantity": 100,
-    "unit": "g",
-    "note": ""
+    "quantity": 0.67,
+    "unit": "cup",
+    "note": "granulated, for the caramel"
+   },
+   {
+    "name": "water",
+    "quantity": 6,
+    "unit": "tbsp",
+    "note": "for the caramel"
    },
    {
     "name": "butter",
-    "quantity": 85,
-    "unit": "g",
-    "note": ""
+    "quantity": 4,
+    "unit": "tbsp",
+    "note": "salted, stirred into the caramel"
    },
    {
-    "name": "creme fraiche",
-    "quantity": null,
+    "name": "puff pastry",
+    "quantity": 1,
     "unit": "",
-    "note": "to serve"
+    "note": "1 sheet, rolled out slightly and cut to an 11-inch (28 cm) circle"
    }
   ],
   "steps": [
    {
-    "text": "Roll the pastry to a 3mm-thick round on a lightly floured surface and cut a 24cm circle, using a plate as a guide. Lightly prick all over with a fork, wrap in cling film on a baking sheet and freeze while preparing the apples.",
+    "text": "Heat the oven to 200 C. Peel, quarter and core the apples and set them aside.",
     "minutes": null
    },
    {
-    "text": "Heat oven to 180C/160C fan/gas 4. Peel, quarter and core the apples. Put the sugar in a flameproof 20cm ceramic Tatin dish or a 20cm ovenproof heavy-based frying pan and place over a medium-high heat.",
+    "text": "In a 10-inch (25 cm) oven-proof skillet, sprinkle the sugar over the base and drizzle with the water. Cook over medium heat, stirring now and then, until it bubbles and turns light amber, 5-7 minutes.",
+    "minutes": 6
+   },
+   {
+    "text": "Stir in the butter until melted; it will bubble up, so take care.",
     "minutes": null
    },
    {
-    "text": "Cook the sugar for 5-7 mins to a dark amber caramel syrup that’s starting to smoke, then turn off the heat and stir in the 60g diced chilled butter.",
-    "minutes": 7
+    "text": "Add the apples and cook, stirring every few minutes, for about 15 minutes until the caramel is deep amber. Take off the heat and arrange the apples curved side down in concentric circles.",
+    "minutes": 15
    },
    {
-    "text": "To assemble the Tarte Tatin, arrange the apple quarters very tightly in a circle around the edge of the dish first, rounded-side down, then fill in the middle in a similar fashion. Gently press with your hands to ensure there are no gaps. Brush the fruit with the melted butter.",
+    "text": "Roll the puff pastry out slightly, cut an 11-inch (28 cm) circle and lay it over the apples, tucking the edges down. Put the skillet on a rimmed baking sheet.",
     "minutes": null
    },
    {
-    "text": "Bake in the oven for 30 mins, then remove and place the disc of frozen puff pastry on top – it will quickly defrost. Tuck the edges down the inside of the dish and, with a knife, prick a few holes in the pastry to allow steam to escape.",
-    "minutes": 30
+    "text": "Bake for 35-40 minutes until the pastry is deep golden brown on top.",
+    "minutes": 35
    },
    {
-    "text": "Bake for a further 40-45 mins until the pastry is golden brown and crisp.",
-    "minutes": 45
-   },
-   {
-    "text": "Allow to cool to room temperature for 1 hr before running a knife around the edge of the dish and inverting it onto a large serving plate that is deep enough to contain the juices. Serve with crème fraîche or vanilla ice cream.",
-    "minutes": 60
+    "text": "Cool on a wire rack for 15 minutes (up to 30 in a cast-iron skillet), then carefully invert onto a rimmed serving plate.",
+    "minutes": 15
    }
   ]
  },
@@ -10475,135 +10493,113 @@
  {
   "source": "themealdb:53104",
   "title": "Lamingtons",
-  "description": "Sponge squares dipped in chocolate and rolled in coconut.",
+  "description": "Squares of vanilla sponge dipped in a thin chocolate icing and rolled in desiccated coconut, with no cream or jam filling.",
   "servings": 16,
   "cuisine": "Australian",
   "category": "Dessert",
   "image": "https://www.themealdb.com/images/media/meals/j2n7vg1761848636.jpg",
-  "prep_minutes": 20,
+  "prep_minutes": 25,
   "cook_minutes": 25,
   "ingredients": [
    {
-    "name": "butter",
-    "quantity": 125,
-    "unit": "g",
-    "note": ""
+    "name": "eggs",
+    "quantity": 4,
+    "unit": "",
+    "note": "for the sponge"
    },
    {
     "name": "sugar",
-    "quantity": 250,
+    "quantity": 175,
     "unit": "g",
-    "note": ""
+    "note": "for the sponge"
    },
    {
-    "name": "eggs",
-    "quantity": 3,
-    "unit": "",
-    "note": "large"
-   },
-   {
-    "name": "self-raising flour",
-    "quantity": 250,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "milk",
-    "quantity": 3,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "salt",
-    "quantity": 0.5,
+    "name": "vanilla extract",
+    "quantity": 1,
     "unit": "tsp",
-    "note": ""
+    "note": "for the sponge"
    },
    {
-    "name": "cream",
-    "quantity": 250,
-    "unit": "ml",
-    "note": ""
-   },
-   {
-    "name": "icing sugar",
-    "quantity": 2,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "raspberry jam",
+    "name": "plain flour",
     "quantity": 200,
     "unit": "g",
-    "note": ""
+    "note": "sifted, for the sponge"
    },
    {
-    "name": "desiccated coconut",
-    "quantity": 350,
-    "unit": "g",
-    "note": ""
+    "name": "baking powder",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "for the sponge"
    },
    {
     "name": "butter",
-    "quantity": 80,
+    "quantity": 100,
     "unit": "g",
-    "note": ""
+    "note": "melted, for the sponge"
+   },
+   {
+    "name": "butter",
+    "quantity": 45,
+    "unit": "g",
+    "note": "melted, for the icing"
    },
    {
     "name": "milk",
-    "quantity": 250,
+    "quantity": 140,
     "unit": "ml",
-    "note": ""
+    "note": "warm, for the icing"
    },
    {
     "name": "cocoa powder",
-    "quantity": 50,
+    "quantity": 40,
     "unit": "g",
-    "note": ""
+    "note": "sifted, for the icing"
    },
    {
     "name": "icing sugar",
-    "quantity": 400,
+    "quantity": 310,
     "unit": "g",
-    "note": ""
+    "note": "sifted, for the icing"
+   },
+   {
+    "name": "desiccated coconut",
+    "quantity": 145,
+    "unit": "g",
+    "note": "for coating"
    }
   ],
   "steps": [
    {
-    "text": "Heat the oven to 200C/180C fan/gas 6. Butter and line a 20 x 30cm rectangle tin.",
+    "text": "Heat the oven to 180 C. Grease a 23 cm square tin and line it with baking paper.",
     "minutes": null
    },
    {
-    "text": "Beat the butter and sugar in a free-standing mixer until pale and fluffy. Add the eggs one at a time and beat well. Beat through the flour, milk and salt until fully combined, then spoon into the tin.",
+    "text": "Beat the eggs, sugar and vanilla in a large bowl until light and fluffy.",
     "minutes": null
    },
    {
-    "text": "Bake in the oven for 25 mins or until golden and firm to the touch. Set aside to cool completely.",
+    "text": "Sift in the flour and baking powder and mix just until combined, then mix in the melted butter.",
+    "minutes": null
+   },
+   {
+    "text": "Pour into the tin and bake for 25 minutes, until a skewer comes out clean. Cool in the tin for 10 minutes, then turn out and cool completely.",
     "minutes": 25
    },
    {
-    "text": "Slice the sponge horizontally to create two halves. Trim the edges to make perfect corners. Cut the sponge into 18 squares. Lightly whip the cream with the icing sugar until it reaches soft peaks.",
+    "text": "Mix the melted butter and warm milk for the icing, then sift in the cocoa and icing sugar and mix until smooth.",
     "minutes": null
    },
    {
-    "text": "Spread a little of the jam on half of the sponge squares then pipe or spread over a little of the cream. Sandwich each one with a second square of sponge then set aside in the fridge to chill.",
+    "text": "Once the cake is chilled, trim the edges and cut it into squares. Put the coconut in a bowl.",
     "minutes": null
    },
    {
-    "text": "To make the icing, whisk together the melted butter and milk in a bowl. Sieve the cocoa powder and icing sugar together in a seperate bowl.",
+    "text": "Using a fork, dip each square in the chocolate icing, turn to coat and let it drain, then roll in the coconut and set on a wire rack.",
     "minutes": null
    },
    {
-    "text": "Gradually add the cocoa and sugar to the butter and milk mixture, whisking continuously to ensure there are no lumps. If it gets lumpy, whizz with a hand blender until smooth.",
-    "minutes": null
-   },
-   {
-    "text": "Divide the coconut between three shallow bowls (this keeps it from getting coated in too much chocolate whilst you’re dipping).",
-    "minutes": null
-   },
-   {
-    "text": "Dip each lamington in the icing until completely covered. Roll in the coconut and set on a wire rack. Repeat with the remaining sponges. Chill for a minimum of 1 hr.",
-    "minutes": 60
+    "text": "Refrigerate the lamingtons for about 15 minutes until set, then serve.",
+    "minutes": 15
    }
   ]
  },
