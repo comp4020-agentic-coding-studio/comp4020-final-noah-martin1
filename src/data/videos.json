@@ -2823,25 +2823,25 @@
   "videoId": "JE8crtueXs8",
   "title": "Greek Yogurt Cheesecake | Akis Petretzikis",
   "channel": "Akis Petretzikis",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:52954": {
-  "videoId": "KgV9Zq3aSTo",
-  "title": "How to Make Hot Sour Soup",
-  "channel": "Sue and Gambo",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "videoId": "D78r9jvLliA",
+  "title": "BETTER THAN TAKEOUT - Authentic Hot And Sour Soup Recipe [酸辣汤]",
+  "channel": "Souped Up Recipes",
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:52787": {
   "videoId": "oJvbsVSblfk",
   "title": "HOW TO MAKE OLD-FASHIONED CHOCOLATE FUDGE",
   "channel": "Hot Chocolate Hits",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53258": {
   "videoId": null,
@@ -2853,9 +2853,9 @@
   "videoId": "EsZFJEjANiA",
   "title": "How to make the best hummus of your life",
   "channel": "Rainbow Plant Life",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53552": {
   "videoId": null,
@@ -2875,9 +2875,9 @@
   "videoId": "kYH2qJXnSMo",
   "title": "Irish Beef Stew",
   "channel": "Simply Recipes",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53436": {
   "videoId": null,
@@ -2921,9 +2921,9 @@
   "videoId": "RhUxdkYIHPY",
   "title": "Jamaican Boiled Dumplings Recipe | Easy 3-Ingredient Dumplings",
   "channel": "Jerk Tavern",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53363": {
   "videoId": "NACm9tDACRc",
@@ -2948,12 +2948,12 @@
   "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53362": {
-  "videoId": "Lnaj4duQ7hs",
-  "title": "The Best Jamaican Curry Shrimp Recipe Ever",
-  "channel": "Cook Like A Jamaican",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "videoId": "6J6JWM8XBG0",
+  "title": "JAMAICAN CURRY SHRIMP RECIPE | READY IS LESS THAN 30MIN!!",
+  "channel": "Taneisha - The Seasoned Skillet",
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53355": {
   "videoId": "N270k22MPWk",
@@ -2980,12 +2980,10 @@
   "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53349": {
-  "videoId": "ILCmxtCp8jc",
-  "title": "Jamaican Style Pepper Shrimp|                         THE RAINA’S KITCHEN",
-  "channel": "The Raina’s Kitchen",
+  "videoId": null,
+  "checked": "2026-10-29",
   "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "reason": "The Raina's Kitchen description lists ingredients with amounts but its METHOD section is empty and the link is only her e-book shop page; no transcript was available. Two searches found other pepper shrimp videos (Ks Nice N Spice, Jerene's Eats, Feed & Teach), but their descriptions give either an ingredient list without a method, or no recipe or linked page, so none could be verified."
  },
  "themealdb:53357": {
   "videoId": "swVY-6tUK5g",
@@ -3005,9 +3003,9 @@
   "videoId": "amEkrC9rzgM",
   "title": "Classic Jamaican Steamed Cabbage #MeatFreeMonday | CaribbeanPot.com",
   "channel": "caribbeanpot",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53344": {
   "videoId": "8W8hZeGuiOc",
@@ -3092,12 +3090,12 @@
   "checked": "2026-10-20"
  },
  "themealdb:52887": {
-  "videoId": "_Pw1I1-SItE",
-  "title": "Smoked Haddock Kedgeree Recipe",
-  "channel": "Sorted Food",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "videoId": "BFIY3-xymVQ",
+  "title": "Kedgeree - English fish with curried rice",
+  "channel": "RecipeTin Eats",
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53449": {
   "videoId": null,

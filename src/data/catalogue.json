@@ -43665,191 +43665,199 @@
  },
  {
   "source": "themealdb:53007",
-  "title": "Honey Yogurt Cheesecake",
-  "description": "A Greek sweet made with digestive biscuits, almonds and greek yoghurt — makes 16, worth the couple of hours it takes.",
-  "servings": 16,
+  "title": "Greek yoghurt cheesecake",
+  "description": "A baked cheesecake on a crushed digestive biscuit base, made with strained Greek yoghurt and eggs, chilled and topped with honey, walnuts and thyme.",
+  "servings": 12,
   "cuisine": "Greek",
   "category": "Dessert",
   "image": "https://www.themealdb.com/images/media/meals/y2irzl1585563479.jpg",
-  "prep_minutes": 15,
-  "cook_minutes": 75,
+  "prep_minutes": 20,
+  "cook_minutes": 120,
   "ingredients": [
    {
     "name": "digestive biscuits",
-    "quantity": 100,
+    "quantity": 250,
     "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "almonds",
-    "quantity": 85,
-    "unit": "g",
-    "note": ""
+    "note": "for the base"
    },
    {
     "name": "butter",
-    "quantity": 85,
+    "quantity": 100,
     "unit": "g",
-    "note": ""
+    "note": "for the base; melt a little extra to brush the pan"
    },
    {
     "name": "greek yoghurt",
-    "quantity": 250,
-    "unit": "ml",
-    "note": ""
-   },
-   {
-    "name": "mascarpone",
-    "quantity": 750,
+    "quantity": 1200,
     "unit": "g",
+    "note": "strained, at room temperature"
+   },
+   {
+    "name": "sugar",
+    "quantity": 300,
+    "unit": "g",
+    "note": "granulated"
+   },
+   {
+    "name": "salt",
+    "quantity": 1,
+    "unit": "pinch",
     "note": ""
    },
    {
-    "name": "eggs",
+    "name": "lemon juice",
+    "quantity": 2,
+    "unit": "tsp",
+    "note": ""
+   },
+   {
+    "name": "vanilla extract",
+    "quantity": 3,
+    "unit": "tsp",
+    "note": ""
+   },
+   {
+    "name": "egg yolks",
     "quantity": 2,
     "unit": "",
     "note": ""
    },
    {
-    "name": "lemon",
-    "quantity": 1,
+    "name": "eggs",
+    "quantity": 6,
     "unit": "",
-    "note": "zested"
-   },
-   {
-    "name": "orange",
-    "quantity": 1,
-    "unit": "",
-    "note": "zested"
+    "note": "whole, added one at a time"
    },
    {
     "name": "honey",
-    "quantity": 250,
-    "unit": "ml",
-    "note": ""
-   },
-   {
-    "name": "raisins",
     "quantity": null,
     "unit": "",
     "note": "to serve"
+   },
+   {
+    "name": "walnuts",
+    "quantity": null,
+    "unit": "",
+    "note": "chopped, to serve"
+   },
+   {
+    "name": "thyme",
+    "quantity": null,
+    "unit": "",
+    "note": "leaves, to serve"
    }
   ],
   "steps": [
    {
-    "text": "Heat oven to 160C/140C fan/gas 3. Crush the biscuits and most of the almonds inside a plastic food bag using a rolling pin.",
+    "text": "Heat the oven to 160°C fan. Blitz the digestive biscuits with the butter in a food processor.",
     "minutes": null
    },
    {
-    "text": "Mix with the butter, then press into the bottom of a deep, oval, 23cm dish (or something similar in size – a roasting tin, baking dish or cake tin will work). Bake for 10 mins until crisp.",
-    "minutes": 10
+    "text": "Brush melted butter over the bottom and sides of a 28 cm springform pan. Press the biscuit mixture into the base and bake for 13–15 minutes, then cool completely.",
+    "minutes": 13
    },
    {
-    "text": "Stir or mash together the yogurt and mascarpone, then whisk in the eggs, one at a time.",
+    "text": "Raise the oven to 230°C fan. Beat the room-temperature yoghurt with the whisk attachment for 2 minutes until light, fluffy and creamy.",
+    "minutes": 2
+   },
+   {
+    "text": "Add half the sugar and beat for 1 minute on medium speed, scraping down the bowl. Add the rest of the sugar, the salt, lemon juice, vanilla and the 2 egg yolks, and beat on low until combined.",
+    "minutes": 1
+   },
+   {
+    "text": "Scrape down the bowl again and add the 6 eggs one at a time, mixing each in fully before the next. Pour the batter into the pan.",
     "minutes": null
    },
    {
-    "text": "Stir in the lemon and orange zests, then stir in most of the honey, reserving about 3 tbsp. Spread over the biscuit base, cover loosely with foil and cook for 1 hr. Remove the foil and cook for 15 mins more until lightly golden and the top is firm with just the slightest wobble in the middle.",
-    "minutes": 60
+    "text": "Bake at 230°C fan for 10 minutes without opening the oven door. Then turn the oven down to 100°C fan and bake for 1½ hours.",
+    "minutes": 100
    },
    {
-    "text": "Leave to cool. Can be kept in the fridge for up to 2 days.",
-    "minutes": null
+    "text": "Cool for 5–10 minutes, then run a thin-bladed knife around the edge of the pan. Leave the cake in the pan until completely cool, about 2 hours, then refrigerate.",
+    "minutes": 120
    },
    {
-    "text": "To serve, scatter with almonds, drizzle over the remaining honey, and hand around fresh fruit to go with it.",
+    "text": "Just before serving, top with honey, chopped walnuts and thyme leaves.",
     "minutes": null
    }
   ]
  },
  {
   "source": "themealdb:52954",
-  "title": "Hot and Sour Soup",
-  "description": "A Chinese soup of tofu, pork and mushrooms — serves 2, ready in under half an hour.",
-  "servings": 2,
+  "title": "Hot and sour soup",
+  "description": "Chicken-stock soup with shredded pork, silken tofu, shiitake, black fungus and carrot, thickened with cornflour, with egg stirred in and finished with white pepper and black vinegar.",
+  "servings": 3,
   "cuisine": "Chinese",
   "category": "Pork",
   "image": "https://www.themealdb.com/images/media/meals/1529445893.jpg",
-  "prep_minutes": 20,
-  "cook_minutes": 5,
+  "prep_minutes": 25,
+  "cook_minutes": 10,
   "ingredients": [
    {
-    "name": "mushrooms",
-    "quantity": 0.333,
-    "unit": "cup",
-    "note": ""
+    "name": "shiitake mushrooms",
+    "quantity": 2,
+    "unit": "",
+    "note": "dried, soaked 4 hours and thinly sliced"
    },
    {
     "name": "wood ear mushrooms",
-    "quantity": 0.333,
-    "unit": "cup",
-    "note": ""
-   },
-   {
-    "name": "tofu",
-    "quantity": 0.667,
-    "unit": "cup",
-    "note": ""
+    "quantity": null,
+    "unit": "",
+    "note": "dried black fungus, a few pieces, soaked 4 hours and thinly sliced"
    },
    {
     "name": "pork",
-    "quantity": 0.5,
-    "unit": "cup",
-    "note": ""
-   },
-   {
-    "name": "chicken stock",
-    "quantity": 2.5,
-    "unit": "cup",
-    "note": ""
-   },
-   {
-    "name": "salt",
-    "quantity": 0.5,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "sugar",
-    "quantity": 0.25,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "sesame oil",
-    "quantity": 1,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "black pepper",
-    "quantity": 0.25,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "hot sauce",
-    "quantity": 0.5,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "white vinegar",
-    "quantity": 1.5,
-    "unit": "cup",
-    "note": ""
+    "quantity": 100,
+    "unit": "g",
+    "note": "shredded"
    },
    {
     "name": "soy sauce",
-    "quantity": 1,
+    "quantity": 2,
     "unit": "tsp",
+    "note": "to marinate the pork"
+   },
+   {
+    "name": "cornflour",
+    "quantity": 2,
+    "unit": "tsp",
+    "note": "to marinate the pork"
+   },
+   {
+    "name": "silken tofu",
+    "quantity": 140,
+    "unit": "g",
+    "note": "silken or soft, cut into thin shreds"
+   },
+   {
+    "name": "eggs",
+    "quantity": 2,
+    "unit": "",
+    "note": "beaten"
+   },
+   {
+    "name": "carrot",
+    "quantity": 0.33,
+    "unit": "cup",
+    "note": "shredded"
+   },
+   {
+    "name": "ginger",
+    "quantity": 0.5,
+    "unit": "tbsp",
+    "note": "minced"
+   },
+   {
+    "name": "chicken stock",
+    "quantity": 3.5,
+    "unit": "cup",
     "note": ""
    },
    {
     "name": "cornflour",
-    "quantity": 1,
+    "quantity": 2,
     "unit": "tbsp",
-    "note": ""
+    "note": "mixed with the water for the early seasoning"
    },
    {
     "name": "water",
@@ -43858,123 +43866,187 @@
     "note": ""
    },
    {
-    "name": "spring onion",
-    "quantity": 0.25,
-    "unit": "cup",
+    "name": "soy sauce",
+    "quantity": 1.5,
+    "unit": "tbsp",
+    "note": "light, for the early seasoning"
+   },
+   {
+    "name": "dark soy sauce",
+    "quantity": 1,
+    "unit": "tsp",
     "note": ""
+   },
+   {
+    "name": "sugar",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": ""
+   },
+   {
+    "name": "salt",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "or to taste"
+   },
+   {
+    "name": "white pepper",
+    "quantity": 2,
+    "unit": "tsp",
+    "note": "freshly ground, 2-3 tsp (page list); the method says 1 tbsp; added with the vinegar at the end"
+   },
+   {
+    "name": "black vinegar",
+    "quantity": 3,
+    "unit": "tbsp",
+    "note": "Chinese black vinegar"
+   },
+   {
+    "name": "sesame oil",
+    "quantity": 1.5,
+    "unit": "tsp",
+    "note": "to serve"
+   },
+   {
+    "name": "coriander",
+    "quantity": null,
+    "unit": "",
+    "note": "to garnish"
+   },
+   {
+    "name": "spring onion",
+    "quantity": null,
+    "unit": "",
+    "note": "to garnish"
    }
   ],
   "steps": [
    {
-    "text": "In a wok add chicken broth and wait for it to boil.",
+    "text": "Soak the dried shiitake and black fungus for 4 hours until fully soft, then slice thinly. Marinate the shredded pork in 2 tsp soy sauce and 2 tsp cornflour for about 15 minutes.",
+    "minutes": 15
+   },
+   {
+    "text": "Shred the tofu and carrot, mince the ginger and beat the eggs.",
     "minutes": null
    },
    {
-    "text": "Next add salt, sugar, sesame seed oil, white pepper, hot pepper sauce, vinegar and soy sauce and stir for few seconds.",
+    "text": "Mix 2 tbsp cornflour with 2 tbsp water until smooth, then stir in the light soy sauce, dark soy sauce, sugar and salt. This is the early seasoning.",
     "minutes": null
    },
    {
-    "text": "Add Tofu, mushrooms, black wood ear mushrooms to the wok.",
+    "text": "In a separate bowl, mix the white pepper and black vinegar. This goes in right at the end, as the flavour fades if cooked long.",
     "minutes": null
    },
    {
-    "text": "To thicken the sauce, whisk together 1 Tablespoon of cornstarch and 2 Tablespoon of water in a bowl and slowly add to your soup until it's the right thickness.",
+    "text": "In a wok, combine the ginger, mushrooms, black fungus, carrot and 3.5 cups of stock. Cover and bring to the boil.",
     "minutes": null
    },
    {
-    "text": "Next add 1 egg slightly beaten with a knife or fork and add it to the soup and stir for 8 seconds.",
+    "text": "Add the pork and stir for about 10 seconds until it changes colour, then gently add the tofu without breaking it.",
     "minutes": null
    },
    {
-    "text": "Serve the soup in a bowl and add the bbq pork and sliced green onions on top.",
+    "text": "Cover and return to the boil. Whisk in the early seasoning, then stir in the beaten egg and cook for another 30 seconds.",
+    "minutes": null
+   },
+   {
+    "text": "Add the pepper and vinegar mixture, turn off the heat about 10 seconds later, and serve topped with spring onion, coriander and the sesame oil.",
     "minutes": null
    }
   ]
  },
  {
   "source": "themealdb:52787",
-  "title": "Hot Chocolate Fudge",
-  "description": "An American sweet made with chocolate chips, cream and condensed milk — makes 10, ready in under half an hour.",
+  "title": "Old-fashioned chocolate fudge",
+  "description": "Classic stovetop chocolate fudge boiled to soft-ball stage, then beaten until thick and set in a lined loaf pan. No marshmallow or condensed milk.",
   "servings": 10,
   "cuisine": "American",
   "category": "Dessert",
-  "image": "https://www.themealdb.com/images/media/meals/xrysxr1483568462.jpg",
+  "image": "https://i.ytimg.com/vi/oJvbsVSblfk/hqdefault.jpg",
   "prep_minutes": 10,
-  "cook_minutes": 5,
+  "cook_minutes": 15,
   "ingredients": [
    {
-    "name": "chocolate chips",
+    "name": "butter",
+    "quantity": null,
+    "unit": "",
+    "note": "for greasing the saucepan and lining the dish; amount not given"
+   },
+   {
+    "name": "sugar",
     "quantity": 2,
+    "unit": "cup",
+    "note": "granulated"
+   },
+   {
+    "name": "corn syrup",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "light corn syrup; the page also allows golden syrup, maple syrup or honey"
+   },
+   {
+    "name": "dark chocolate",
+    "quantity": 50,
+    "unit": "g",
+    "note": "bitter chocolate"
+   },
+   {
+    "name": "milk",
+    "quantity": 0.75,
     "unit": "cup",
     "note": ""
    },
    {
-    "name": "cream",
-    "quantity": 2,
-    "unit": "tbsp",
+    "name": "salt",
+    "quantity": 1,
+    "unit": "pinch",
     "note": ""
    },
    {
-    "name": "condensed milk",
-    "quantity": 30,
-    "unit": "ml",
-    "note": "can"
+    "name": "butter",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": "unsalted, stirred in at the end"
    },
    {
     "name": "vanilla extract",
     "quantity": 1,
     "unit": "tsp",
     "note": ""
-   },
-   {
-    "name": "white chocolate",
-    "quantity": 1.333,
-    "unit": "cup",
-    "note": ""
-   },
-   {
-    "name": "marshmallows",
-    "quantity": 1.5,
-    "unit": "cup",
-    "note": ""
    }
   ],
   "steps": [
    {
-    "text": "Line an 8-inch-square baking pan with wax paper or foil, and coat with non-stick spray.",
+    "text": "Generously butter a medium saucepan (about 4–6 cup capacity) to help stop the sugar crystallising. Line a loaf pan with buttered foil.",
     "minutes": null
    },
    {
-    "text": "In a microwave-safe bowl, combine the dark chocolate chips, heavy cream and half of the sweetened condensed milk. Microwave the dark chocolate mixture in 20-second intervals, stirring in between each interval, until the chocolate is melted.",
+    "text": "Over medium heat, combine the sugar, syrup, chocolate, milk and salt and bring to the boil, stirring constantly and scraping down the sides. It may look grainy at first.",
     "minutes": null
    },
    {
-    "text": "Add the vanilla extract to the dark chocolate mixture and stir well until smooth.",
+    "text": "Once at a rolling boil, stir only now and then. Cook until a candy thermometer reads 112°C (234°F), the soft-ball stage.",
     "minutes": null
    },
    {
-    "text": "Transfer the dark chocolate mixture into the prepared pan and spread into an even layer.",
+    "text": "Without a thermometer, drop a little of the mixture into cold water: if it forms a soft ball it is ready. Slightly underdone is better than overdone.",
     "minutes": null
    },
    {
-    "text": "In a separate bowl, combine the white chocolate chips with the remaining half of the sweetened condensed milk. Microwave the white chocolate mixture in 20-second intervals, stirring in between each interval, until the chocolate is melted.",
+    "text": "Turn off the heat and add the butter and vanilla. Let the butter melt; the mixture will bubble vigorously when the vanilla goes in.",
     "minutes": null
    },
    {
-    "text": "Evenly spread the white chocolate mixture on top of dark chocolate layer.",
+    "text": "Beat the fudge vigorously, with a whisk then a spoon, until it thickens to a thick cake-batter consistency and loses some gloss.",
     "minutes": null
    },
    {
-    "text": "Top the chocolate layers with the Mallow Bits or miniature marshmallows, and gently press them down. Refrigerate for 4 hours, or until set.",
-    "minutes": 240
-   },
-   {
-    "text": "Remove the fudge and wax paper from the pan. Carefully peel all of the wax paper from the fudge.",
+    "text": "Pour quickly into the lined loaf pan without spreading it; it sets by itself. Push the foil edges in to shape it if you like, and add sprinkles quickly if using.",
     "minutes": null
    },
    {
-    "text": "Cut the fudge into bite-sized pieces and serve.",
-    "minutes": null
+    "text": "Leave to set for 20–30 minutes before cutting into small pieces.",
+    "minutes": 20
    }
   ]
  },
@@ -44078,56 +44150,144 @@
  {
   "source": "themealdb:53269",
   "title": "Hummus",
-  "description": "A Turkish side of chickpeas, tahini and greek yoghurt — serves 4, ready in under half an hour.",
-  "servings": 4,
-  "cuisine": "Turkish",
-  "category": "Side",
+  "description": "Smooth hummus made from soaked and boiled dried chickpeas, tahini, lemon, garlic and ice water, served with fried lemon-garlic topping, parsley and paprika.",
+  "servings": 8,
+  "cuisine": "Middle Eastern",
+  "category": "Vegan",
   "image": "https://www.themealdb.com/images/media/meals/gpon5u1763801180.jpg",
-  "prep_minutes": 10,
-  "cook_minutes": 5,
+  "prep_minutes": 5,
+  "cook_minutes": 55,
   "ingredients": [
    {
     "name": "chickpeas",
-    "quantity": 400,
+    "quantity": 227,
     "unit": "g",
-    "note": ""
+    "note": "dried, soaked 8 hours or overnight"
+   },
+   {
+    "name": "bicarbonate of soda",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "half for soaking, half for cooking"
+   },
+   {
+    "name": "salt",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "kosher, added to the chickpeas for the last 10-15 minutes of cooking"
    },
    {
     "name": "tahini",
-    "quantity": 1,
+    "quantity": 185,
+    "unit": "g",
+    "note": "good-quality"
+   },
+   {
+    "name": "lemon juice",
+    "quantity": 6,
     "unit": "tbsp",
-    "note": ""
+    "note": "freshly squeezed, plus more to taste"
    },
    {
     "name": "garlic",
+    "quantity": 3,
+    "unit": "clove",
+    "note": "chopped, for the hummus"
+   },
+   {
+    "name": "ground cumin",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "plus more to taste"
+   },
+   {
+    "name": "salt",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "kosher (Diamond Crystal), heaping, added to the hummus; adjust to taste"
+   },
+   {
+    "name": "black pepper",
+    "quantity": null,
+    "unit": "",
+    "note": "freshly cracked, to taste"
+   },
+   {
+    "name": "water",
+    "quantity": 90,
+    "unit": "ml",
+    "note": "ice water, 6 to 10 tbsp (90 to 150 ml), added to loosen"
+   },
+   {
+    "name": "olive oil",
+    "quantity": 75,
+    "unit": "g",
+    "note": "extra virgin, for the fried topping, then spooned over"
+   },
+   {
+    "name": "garlic",
+    "quantity": 5,
+    "unit": "clove",
+    "note": "large, thinly sliced, for the topping"
+   },
+   {
+    "name": "lemon zest",
     "quantity": 1,
     "unit": "",
-    "note": "large"
+    "note": "4 to 6 strips of peel about 5 cm long (from about half a lemon), for the topping; 1 stands for the strips so the app does not price 4 lemons"
    },
    {
-    "name": "greek yoghurt",
-    "quantity": 3,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "lemon",
-    "quantity": 0.5,
+    "name": "salt",
+    "quantity": null,
     "unit": "",
-    "note": "juiced"
+    "note": "flaky sea salt, to sprinkle on the topping"
+   },
+   {
+    "name": "parsley",
+    "quantity": 1,
+    "unit": "handful",
+    "note": "flat-leaf, chopped, to serve"
+   },
+   {
+    "name": "paprika",
+    "quantity": null,
+    "unit": "",
+    "note": "or Aleppo pepper or sumac, to serve"
+   },
+   {
+    "name": "pita bread",
+    "quantity": null,
+    "unit": "",
+    "note": "warm, or lavash, to serve"
    }
   ],
   "steps": [
    {
-    "text": "Drain the chickpeas into a sieve set over a bowl or jug to catch the liquid. Tip the chickpeas, tahini, garlic and yogurt into a food processor or blender and whizz to smooth.",
+    "text": "Soak the dried chickpeas in cold water with half the bicarbonate of soda for 8 hours or overnight. Drain and rinse.",
     "minutes": null
    },
    {
-    "text": "Whizz in a tbsp of the chickpea liquid at a time until you have a nice consistency, then scrape into a bowl.",
+    "text": "Boil the chickpeas with the other half of the bicarbonate of soda and 1.4 litres of water, covered at a rapid simmer, for 30 minutes. Uncover, add 1 tsp salt and cook 10–15 minutes more until very soft. Drain well.",
+    "minutes": 45
+   },
+   {
+    "text": "Blend the warm chickpeas in a food processor for 1–2 minutes into a smooth puree, scraping down the sides.",
+    "minutes": 2
+   },
+   {
+    "text": "Add the tahini, lemon juice, garlic, cumin, 1 heaping tsp salt and pepper. With the motor running, stream in the ice water a tablespoon at a time; after 6 tbsp, check the texture and add more if you want it looser. Taste and adjust.",
     "minutes": null
    },
    {
-    "text": "Stir in a squeeze of lemon juice and season to taste.",
+    "text": "For the topping, warm the olive oil in a frying pan over medium heat and cook the sliced garlic, stirring, for 2 to 2½ minutes until just golden. Add the lemon peel strips for 30 seconds.",
+    "minutes": 3
+   },
+   {
+    "text": "Pour through a sieve set over a bowl to keep the oil. Sprinkle the garlic and lemon peel with flaky salt.",
+    "minutes": null
+   },
+   {
+    "text": "Spread the hummus in a shallow bowl, make waves or a well with a spoon, and pour in the reserved oil. Top with the fried garlic and lemon, parsley and paprika, and serve with warm pita.",
     "minutes": null
    }
   ]
@@ -44360,125 +44520,157 @@
  },
  {
   "source": "themealdb:52781",
-  "title": "Irish stew",
-  "description": "An Irish stew of lamb chops, wholemeal flour and shallot — makes 12, worth the couple of hours it takes.",
-  "servings": 12,
+  "title": "Irish beef stew",
+  "description": "Beef chuck braised with Guinness, red wine and stock, then finished with butter-sautéed onions, carrots and potatoes.",
+  "servings": 6,
   "cuisine": "Irish",
   "category": "Beef",
-  "image": "https://www.themealdb.com/images/media/meals/sxxpst1468569714.jpg",
-  "prep_minutes": 20,
-  "cook_minutes": 80,
+  "image": "https://i.ytimg.com/vi/kYH2qJXnSMo/hqdefault.jpg",
+  "prep_minutes": 25,
+  "cook_minutes": 110,
   "ingredients": [
    {
-    "name": "wholemeal flour",
-    "quantity": 300,
+    "name": "chuck steak",
+    "quantity": 570,
     "unit": "g",
-    "note": "soaked overnight in water"
+    "note": "well-marbled, cut into 4 cm chunks"
    },
    {
-    "name": "lamb chops",
-    "quantity": 2000,
-    "unit": "g",
-    "note": "cut into 3cm cubes"
+    "name": "salt",
+    "quantity": 3,
+    "unit": "tsp",
+    "note": "about 1 tsp on the beef, 2 tsp in the stew; more to taste"
    },
    {
     "name": "olive oil",
-    "quantity": 120,
-    "unit": "ml",
+    "quantity": 0.25,
+    "unit": "cup",
+    "note": "extra virgin"
+   },
+   {
+    "name": "garlic",
+    "quantity": 6,
+    "unit": "clove",
+    "note": "large, minced"
+   },
+   {
+    "name": "beef stock",
+    "quantity": 4,
+    "unit": "cup",
+    "note": "or broth"
+   },
+   {
+    "name": "water",
+    "quantity": 2,
+    "unit": "cup",
     "note": ""
    },
    {
-    "name": "shallot",
-    "quantity": 24,
-    "unit": "",
-    "note": "skinned"
+    "name": "beer",
+    "quantity": 1,
+    "unit": "cup",
+    "note": "Guinness extra stout"
    },
    {
-    "name": "carrot",
-    "quantity": 4,
-    "unit": "",
-    "note": "large"
+    "name": "red wine",
+    "quantity": 1,
+    "unit": "cup",
+    "note": "hearty"
    },
    {
-    "name": "turnip",
+    "name": "tomato puree",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": "tomato paste"
+   },
+   {
+    "name": "sugar",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": ""
+   },
+   {
+    "name": "thyme",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "dried"
+   },
+   {
+    "name": "worcestershire sauce",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": ""
+   },
+   {
+    "name": "bay leaf",
     "quantity": 2,
     "unit": "",
     "note": ""
    },
    {
-    "name": "celeriac",
-    "quantity": 1,
-    "unit": "",
-    "note": ""
+    "name": "butter",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": "for the onions and carrots"
    },
    {
     "name": "potato",
-    "quantity": 350,
+    "quantity": 1360,
     "unit": "g",
-    "note": ""
+    "note": "russet, peeled, cut into 1 cm pieces"
    },
    {
-    "name": "white wine",
-    "quantity": 150,
-    "unit": "ml",
-    "note": ""
-   },
-   {
-    "name": "sugar",
+    "name": "onion",
     "quantity": 1,
+    "unit": "",
+    "note": "large, chopped"
+   },
+   {
+    "name": "carrot",
+    "quantity": 3,
+    "unit": "",
+    "note": "peeled, 1 cm pieces (about 2 cups); carrots and/or parsnips, 3 to 4"
+   },
+   {
+    "name": "black pepper",
+    "quantity": 0.5,
     "unit": "tsp",
-    "note": ""
+    "note": "freshly ground"
    },
    {
-    "name": "thyme",
-    "quantity": 4,
-    "unit": "sprig",
-    "note": ""
-   },
-   {
-    "name": "oregano",
-    "quantity": 4,
-    "unit": "sprig",
-    "note": ""
-   },
-   {
-    "name": "chicken stock",
-    "quantity": 450,
-    "unit": "ml",
-    "note": ""
+    "name": "parsley",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": "chopped, to serve"
    }
   ],
   "steps": [
    {
-    "text": "Heat the oven to 180C/350F/gas mark 4. Drain and rinse the soaked wheat, put it in a medium pan with lots of water, bring to a boil and simmer for an hour, until cooked. Drain and set aside.",
+    "text": "Sprinkle about 1 tsp of salt over the beef. Heat the olive oil in a large heavy pot over medium-high heat, pat the beef dry and brown it in batches without crowding, turning to colour two sides.",
+    "minutes": null
+   },
+   {
+    "text": "Add the garlic and cook for 30 seconds until fragrant.",
+    "minutes": null
+   },
+   {
+    "text": "Add the beef stock, water, Guinness, red wine, tomato paste, sugar, thyme, Worcestershire sauce and bay leaves and stir. Bring to a simmer.",
+    "minutes": null
+   },
+   {
+    "text": "Turn the heat to its lowest setting, cover and cook at a bare simmer for 1 hour, stirring occasionally.",
     "minutes": 60
    },
    {
-    "text": "Season the lamb with a teaspoon of salt and some black pepper. Put one tablespoon of oil in a large, deep sauté pan for which you have a lid; place on a medium-high heat.",
-    "minutes": null
+    "text": "Meanwhile, melt the butter in another pot over medium heat and sauté the onions and carrots until the onions are golden, about 15 minutes. Set aside.",
+    "minutes": 15
    },
    {
-    "text": "Add some of the lamb – don't overcrowd the pan – and sear for four minutes on all sides. Transfer to a bowl, and repeat with the remaining lamb, adding oil as needed.",
-    "minutes": null
+    "text": "Add the onions, carrots and potatoes to the stew along with the pepper and the remaining 2 tsp salt. Simmer uncovered for about 40 minutes until the vegetables and beef are very tender.",
+    "minutes": 40
    },
    {
-    "text": "Lower the heat to medium and add a tablespoon of oil to the pan. Add the shallots and fry for four minutes, until caramelised.",
-    "minutes": null
-   },
-   {
-    "text": "Tip these into the lamb bowl, and repeat with the remaining vegetables until they are all nice and brown, adding more oil as you need it.",
-    "minutes": null
-   },
-   {
-    "text": "Once all the vegetables are seared and removed from the pan, add the wine along with the sugar, herbs, a teaspoon of salt and a good grind of black pepper. Boil on a high heat for about three minutes.",
-    "minutes": null
-   },
-   {
-    "text": "Tip the lamb, vegetables and whole wheat back into the pot, and add the stock. Cover and boil for five minutes, then transfer to the oven for an hour and a half.",
-    "minutes": 60
-   },
-   {
-    "text": "Remove the stew from the oven and check the liquid; if there is a lot, remove the lid and boil for a few minutes.",
+    "text": "Discard the bay leaves and spoon off excess fat. Season to taste, ladle into bowls and sprinkle with parsley.",
     "minutes": null
    }
   ]
@@ -45050,70 +45242,66 @@
  },
  {
   "source": "themealdb:53353",
-  "title": "Jamaican Boiled Dumplings",
-  "description": "A Jamaican classic made with everyday staples — serves 4, on the table in about 45 minutes.",
+  "title": "Jamaican boiled dumplings",
+  "description": "Simple dough of flour, cornmeal and water, shaped into flattened discs and boiled in salted water until they float.",
   "servings": 4,
   "cuisine": "Jamaican",
   "category": "Side",
   "image": "https://www.themealdb.com/images/media/meals/tsdbcq1764795636.jpg",
   "prep_minutes": 10,
-  "cook_minutes": 30,
+  "cook_minutes": 20,
   "ingredients": [
-   {
-    "name": "water",
-    "quantity": 8,
-    "unit": "cup",
-    "note": ""
-   },
-   {
-    "name": "salt",
-    "quantity": 0.5,
-    "unit": "tbsp",
-    "note": ""
-   },
    {
     "name": "plain flour",
     "quantity": 2,
     "unit": "cup",
+    "note": "plus a little extra if the dough is sticky"
+   },
+   {
+    "name": "cornmeal",
+    "quantity": 0.5,
+    "unit": "cup",
     "note": ""
    },
    {
     "name": "salt",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": "added to the boiling water"
+   },
+   {
+    "name": "olive oil",
     "quantity": 1,
     "unit": "tsp",
-    "note": ""
+    "note": "added to the boiling water"
    },
    {
     "name": "water",
-    "quantity": 0.5,
-    "unit": "cup",
-    "note": ""
+    "quantity": null,
+    "unit": "",
+    "note": "as needed, for the dough and for boiling"
    }
   ],
   "steps": [
    {
-    "text": "In a large pot, bring water and salt to a boil to boil the dumplings.",
+    "text": "Put a large pot of water with the salt and oil over high heat and bring to the boil.",
     "minutes": null
    },
    {
-    "text": "In a large mixing bowl, combine the all-purpose flour and salt, stirring to distribute the salt evenly throughout the flour. Gradually add water to the flour mixture, mixing with your hands until a dough forms.",
+    "text": "Knead the flour and cornmeal with water, adding it a little at a time, into a soft dough that isn't sticky. Add flour a tablespoon at a time if it is sticky.",
     "minutes": null
    },
    {
-    "text": "Divide the dough into equal-sized pieces, rolling each into a smooth ball. Flatten each ball slightly with the palm of your hand to form a round, circular dumpling. It should look like a thick disk.",
+    "text": "Pinch off pieces of dough, roll into balls and flatten into discs.",
     "minutes": null
    },
    {
-    "text": "Carefully drop the dumplings into the boiling water, one at a time, ensuring that they don't stick together. You can use a wooden spoon to stir the dumplings in the water.",
+    "text": "Drop the dumplings into the boiling water and stir so they don't stick to the bottom. Repeat until all the dough is used.",
     "minutes": null
    },
    {
-    "text": "Boil the dumplings for 15-20 minutes, or until they are cooked through and have risen to the surface of the water. Stir occasionally to prevent sticking.",
+    "text": "Boil until cooked through; they will float. This takes about 15–20 minutes. Serve with any meat dish.",
     "minutes": 20
-   },
-   {
-    "text": "Use a slotted spoon to remove the cooked dumplings from the pot, allowing any excess water to drain. Serve with your favorite recipes.",
-    "minutes": null
    }
   ]
  },
@@ -45460,124 +45648,170 @@
  },
  {
   "source": "themealdb:53362",
-  "title": "Jamaican Curry Shrimp",
-  "description": "A Jamaican curry with prawns, capsicum and scotch bonnet — serves 4, on the table in about 45 minutes.",
+  "title": "Jamaican curry shrimp",
+  "description": "Shrimp seasoned with curry powder, simmered with onion, bell peppers, garlic, thyme and scotch bonnet in coconut milk, optionally thickened with a little cornstarch.",
   "servings": 4,
   "cuisine": "Jamaican",
   "category": "Seafood",
   "image": "https://www.themealdb.com/images/media/meals/n7h5zs1765318909.jpg",
-  "prep_minutes": 20,
-  "cook_minutes": 25,
+  "prep_minutes": 10,
+  "cook_minutes": 15,
   "ingredients": [
    {
     "name": "prawns",
-    "quantity": 455,
+    "quantity": 450,
     "unit": "g",
+    "note": "raw, peeled and deveined"
+   },
+   {
+    "name": "curry powder",
+    "quantity": 2,
+    "unit": "tsp",
+    "note": "to season the shrimp; Betapac or Montego brand recommended"
+   },
+   {
+    "name": "garlic powder",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": "to season the shrimp"
+   },
+   {
+    "name": "salt",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": "to season the shrimp; more or less to taste"
+   },
+   {
+    "name": "black pepper",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": "to season the shrimp"
+   },
+   {
+    "name": "olive oil",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": ""
+   },
+   {
+    "name": "butter",
+    "quantity": 1,
+    "unit": "tbsp",
     "note": ""
    },
    {
     "name": "curry powder",
-    "quantity": 2.5,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "all-purpose seasoning",
     "quantity": 1,
-    "unit": "tsp",
-    "note": ""
+    "unit": "tbsp",
+    "note": "cooked in the oil and butter first"
    },
    {
-    "name": "olive oil",
-    "quantity": 2,
-    "unit": "tbsp",
-    "note": ""
+    "name": "capsicum",
+    "quantity": 0.5,
+    "unit": "",
+    "note": "green, medium, finely diced or julienned"
+   },
+   {
+    "name": "capsicum",
+    "quantity": 0.5,
+    "unit": "",
+    "note": "red, medium, finely diced or julienned"
    },
    {
     "name": "onion",
     "quantity": 1,
     "unit": "",
-    "note": "sliced"
+    "note": "small, finely diced or julienned"
    },
    {
-    "name": "capsicum",
+    "name": "spring onion",
     "quantity": 1,
     "unit": "",
-    "note": "sliced"
-   },
-   {
-    "name": "capsicum",
-    "quantity": 1,
-    "unit": "",
-    "note": "sliced"
-   },
-   {
-    "name": "scotch bonnet",
-    "quantity": 1,
-    "unit": "",
-    "note": "sliced"
+    "note": "stalk, finely sliced, to garnish (the page does not say when it is added)"
    },
    {
     "name": "garlic",
     "quantity": 3,
     "unit": "clove",
-    "note": "chopped"
-   },
-   {
-    "name": "unsweetened coconut milk",
-    "quantity": 380,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "tomato ketchup",
-    "quantity": 0.5,
-    "unit": "tbsp",
-    "note": ""
+    "note": "minced; 3-4"
    },
    {
     "name": "thyme",
-    "quantity": 4,
+    "quantity": 1,
     "unit": "sprig",
-    "note": ""
+    "note": "fresh; 1-2"
+   },
+   {
+    "name": "scotch bonnet",
+    "quantity": 1,
+    "unit": "",
+    "note": "or 1 tsp hot pepper sauce"
+   },
+   {
+    "name": "coconut milk",
+    "quantity": 1,
+    "unit": "can",
+    "note": "400 ml"
    },
    {
     "name": "salt",
-    "quantity": null,
-    "unit": "",
-    "note": "to taste"
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": "added to the sauce; more or less to taste"
    },
    {
     "name": "black pepper",
-    "quantity": null,
-    "unit": "",
-    "note": "to taste"
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": "added to the sauce"
+   },
+   {
+    "name": "tomato ketchup",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "optional"
+   },
+   {
+    "name": "cornflour",
+    "quantity": 3,
+    "unit": "tsp",
+    "note": "mixed with the cold water, if needed to thicken"
+   },
+   {
+    "name": "water",
+    "quantity": 3,
+    "unit": "tsp",
+    "note": "cold, for the cornflour slurry"
    }
   ],
   "steps": [
    {
-    "text": "Season shrimp with 1 Tablespoon of curry powder and all-purpose seasoning and set aside for about 10 minutes while you prepare the other ingredients like chopping your onions, peppers, and garlic.",
-    "minutes": 10
-   },
-   {
-    "text": "Heat 2 Tablespoons of olive oil in a large skillet over medium heat.",
+    "text": "Season the shrimp with garlic powder, 2 tsp curry powder, black pepper and salt and set aside.",
     "minutes": null
    },
    {
-    "text": "Add sliced yellow onion, red bell pepper, green bell pepper, scotch bonnet pepper, if using, and chopped garlic and stir for 5 minutes, until peppers are slightly softened.",
+    "text": "Heat the olive oil and butter in a large saucepan over medium-high heat and cook the 1 tbsp curry powder for about 2 minutes.",
+    "minutes": 2
+   },
+   {
+    "text": "Add the bell peppers, onion and garlic and sauté until slightly softened. Add the thyme and scotch bonnet.",
+    "minutes": null
+   },
+   {
+    "text": "Stir in the coconut milk, then add the salt and pepper and cook, stirring occasionally, for about 5 minutes. The page lists optional ketchup but does not say when it goes in; stir it in here if using.",
     "minutes": 5
    },
    {
-    "text": "Add 1.5 Tablespoons of curry powder to the skillet and stir for an additional minute.",
+    "text": "Add the shrimp and cook until they start to turn pink.",
     "minutes": null
    },
    {
-    "text": "Then add coconut milk, seasoned shrimp, ketchup, and thyme, making sure the shrimp is covered in the sauce.",
+    "text": "If needed, stir in the cornflour dissolved in the cold water and simmer, stirring, until the sauce thickens. Adjust the seasoning and remove the scotch bonnet.",
     "minutes": null
    },
    {
-    "text": "Allow the sauce to come to a simmer and continue to cook over medium heat, stirring occasionally and flipping the shrimp halfway, until the shrimp is fully cooked on both sides. This should take about 5-6 minutes. Salt and pepper to taste.",
-    "minutes": 6
+    "text": "Serve hot, topped with the sliced green onion (the page lists it but does not say when it is added).",
+    "minutes": null
    }
   ]
  },
@@ -46189,106 +46423,124 @@
  },
  {
   "source": "themealdb:53364",
-  "title": "Jamaican Steamed Cabbage",
-  "description": "A Jamaican side of cabbage, carrot and tomato — serves 4, on the table in about 45 minutes.",
+  "title": "Jamaican steamed cabbage",
+  "description": "Shredded cabbage steamed in its own juices with carrot, bell peppers, onion, thyme, garlic and a little scotch bonnet.",
   "servings": 4,
   "cuisine": "Jamaican",
   "category": "Side",
   "image": "https://www.themealdb.com/images/media/meals/paejva1765321314.jpg",
-  "prep_minutes": 20,
-  "cook_minutes": 25,
+  "prep_minutes": 15,
+  "cook_minutes": 15,
   "ingredients": [
    {
-    "name": "cabbage",
-    "quantity": 0.5,
-    "unit": "",
-    "note": ""
-   },
-   {
-    "name": "carrot",
-    "quantity": 2,
-    "unit": "",
-    "note": "sliced"
-   },
-   {
-    "name": "tomato",
-    "quantity": 1,
-    "unit": "",
-    "note": "chopped"
+    "name": "olive oil",
+    "quantity": 1.5,
+    "unit": "tbsp",
+    "note": "any oil works"
    },
    {
     "name": "onion",
     "quantity": 1,
     "unit": "",
-    "note": "chopped"
+    "note": "sliced"
    },
    {
     "name": "garlic",
-    "quantity": 4,
+    "quantity": 3,
     "unit": "clove",
-    "note": "chopped"
-   },
-   {
-    "name": "spring onion",
-    "quantity": 4,
-    "unit": "",
-    "note": "chopped"
-   },
-   {
-    "name": "thyme",
-    "quantity": 4,
-    "unit": "sprig",
-    "note": ""
-   },
-   {
-    "name": "scotch bonnet",
-    "quantity": 0.5,
-    "unit": "",
-    "note": ""
-   },
-   {
-    "name": "water",
-    "quantity": 2,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "olive oil",
-    "quantity": 2,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "butter",
-    "quantity": 4,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "salt",
-    "quantity": 2,
-    "unit": "tsp",
-    "note": ""
+    "note": "crushed or sliced"
    },
    {
     "name": "black pepper",
-    "quantity": 1,
+    "quantity": 0.25,
     "unit": "tsp",
     "note": ""
+   },
+   {
+    "name": "allspice",
+    "quantity": 2,
+    "unit": "",
+    "note": "berries (pimento)"
+   },
+   {
+    "name": "thyme",
+    "quantity": 3,
+    "unit": "sprig",
+    "note": "3-4 sprigs"
+   },
+   {
+    "name": "scotch bonnet",
+    "quantity": 0.25,
+    "unit": "",
+    "note": "sliced thin; wear gloves"
+   },
+   {
+    "name": "carrot",
+    "quantity": 1,
+    "unit": "",
+    "note": "large, julienned"
+   },
+   {
+    "name": "capsicum",
+    "quantity": 1,
+    "unit": "",
+    "note": "red bell pepper, julienned"
+   },
+   {
+    "name": "capsicum",
+    "quantity": 1,
+    "unit": "",
+    "note": "green bell pepper, julienned"
+   },
+   {
+    "name": "salt",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": "adjust to taste"
+   },
+   {
+    "name": "stock cube",
+    "quantity": 1,
+    "unit": "",
+    "note": "vegetable, crushed"
+   },
+   {
+    "name": "cabbage",
+    "quantity": 1,
+    "unit": "",
+    "note": "large, shredded (about 6 cups)"
+   },
+   {
+    "name": "spring onion",
+    "quantity": 2,
+    "unit": "",
+    "note": "scallions, chopped, to garnish (the page does not say when they are added)"
    }
   ],
   "steps": [
    {
-    "text": "Add all the ingredients to a large pan over medium heat and cover with a lid.",
+    "text": "Prep all the vegetables first: shred the cabbage, slice the onion, julienne the carrot and bell peppers, and chop the scallions.",
     "minutes": null
    },
    {
-    "text": "Cook on medium heat for 10 minutes, stirring occasionally.",
-    "minutes": 10
+    "text": "In a wide pot over low heat, warm the oil, then add the onion and garlic and stir.",
+    "minutes": null
    },
    {
-    "text": "After 10 minutes, reduce the heat to low and continue to cook for an additional 5 minutes, until the cabbage is soft and tender. Remove from the heat and remove the stalks of thyme before serving.",
-    "minutes": 10
+    "text": "Add the black pepper, allspice berries, thyme and scotch bonnet and cook on low for about 3 minutes.",
+    "minutes": 3
+   },
+   {
+    "text": "Turn the heat to medium-low, add the carrot and bell peppers, then the salt and crushed stock cube, stir well and cook for 2 minutes.",
+    "minutes": 2
+   },
+   {
+    "text": "Add the cabbage and stir; it looks like a lot but wilts down. Cover and steam in its own juices for about 6 minutes, stirring a couple of times.",
+    "minutes": 6
+   },
+   {
+    "text": "Taste and adjust the salt. Turn off the heat if the texture is right, or cook longer for softer cabbage. Scatter the chopped scallions over at the end (the page lists them but does not say when they go in).",
+    "minutes": null
    }
   ]
  },
@@ -47456,104 +47708,126 @@
  {
   "source": "themealdb:52887",
   "title": "Kedgeree",
-  "description": "A British dish of smoked haddock, rice and curry powder — serves 4, about an hour start to finish.",
-  "servings": 4,
+  "description": "Smoked haddock poached in chicken stock, then folded through curried butter rice with peas, coriander and hard-boiled eggs.",
+  "servings": 5,
   "cuisine": "British",
   "category": "Seafood",
   "image": "https://www.themealdb.com/images/media/meals/utxqpt1511639216.jpg",
   "prep_minutes": 15,
-  "cook_minutes": 40,
+  "cook_minutes": 30,
   "ingredients": [
    {
+    "name": "chicken stock",
+    "quantity": 1,
+    "unit": "l",
+    "note": "low-sodium, for poaching the fish and cooking the rice"
+   },
+   {
     "name": "smoked haddock",
-    "quantity": 300,
+    "quantity": 500,
     "unit": "g",
-    "note": ""
+    "note": "skin-on, or smoked cod"
    },
    {
-    "name": "bay leaf",
-    "quantity": 2,
+    "name": "rice",
+    "quantity": 2.25,
+    "unit": "cup",
+    "note": "long grain, uncooked"
+   },
+   {
+    "name": "butter",
+    "quantity": 75,
+    "unit": "g",
+    "note": "unsalted"
+   },
+   {
+    "name": "curry leaves",
+    "quantity": 15,
+    "unit": "leaf",
+    "note": "optional"
+   },
+   {
+    "name": "cardamom",
+    "quantity": 6,
     "unit": "",
-    "note": ""
-   },
-   {
-    "name": "milk",
-    "quantity": 300,
-    "unit": "ml",
-    "note": ""
-   },
-   {
-    "name": "eggs",
-    "quantity": 4,
-    "unit": "",
-    "note": ""
-   },
-   {
-    "name": "parsley",
-    "quantity": 1,
-    "unit": "handful",
-    "note": ""
-   },
-   {
-    "name": "coriander",
-    "quantity": 1,
-    "unit": "handful",
-    "note": ""
-   },
-   {
-    "name": "vegetable oil",
-    "quantity": 2,
-    "unit": "tbsp",
-    "note": ""
+    "note": "green pods, lightly crushed"
    },
    {
     "name": "onion",
     "quantity": 1,
     "unit": "",
-    "note": "chopped"
+    "note": "brown, diced"
    },
    {
-    "name": "coriander",
-    "quantity": 1,
-    "unit": "tsp",
-    "note": ""
+    "name": "garlic",
+    "quantity": 2,
+    "unit": "clove",
+    "note": "finely minced"
    },
    {
     "name": "curry powder",
     "quantity": 2,
     "unit": "tsp",
-    "note": ""
+    "note": "mild or spicy"
    },
    {
-    "name": "rice",
-    "quantity": 300,
-    "unit": "g",
-    "note": ""
+    "name": "turmeric",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": "ground"
+   },
+   {
+    "name": "peas",
+    "quantity": 1,
+    "unit": "cup",
+    "note": "frozen, thawed"
+   },
+   {
+    "name": "coriander",
+    "quantity": 0.5,
+    "unit": "cup",
+    "note": "leaves, roughly chopped; keep some for garnish"
+   },
+   {
+    "name": "eggs",
+    "quantity": 3,
+    "unit": "",
+    "note": "hard-boiled (9 minutes), halved or quartered"
+   },
+   {
+    "name": "salt",
+    "quantity": null,
+    "unit": "",
+    "note": "to taste, only if needed"
    }
   ],
   "steps": [
    {
-    "text": "For the rice, heat the oil in a large, lidded pan, add the onion, then gently fry for 5 mins until softened but not coloured. Add the spices, season with salt, then continue to fry until the mix start to go brown and fragrant; about 3 mins.",
-    "minutes": 5
+    "text": "Bring the chicken stock to the boil, add the haddock and poach gently, barely rippling, for 8 minutes until it flakes. Lift the fish out onto a plate.",
+    "minutes": 8
    },
    {
-    "text": "Add the rice and stir in well. Add 600ml water, stir, then bring to the boil. Reduce to a simmer, then cover for 10 mins. Take off the heat and leave to stand, covered, for 10-15 mins more.",
-    "minutes": 15
-   },
-   {
-    "text": "The rice will be perfectly cooked if you do not lift the lid before the end of the cooking.",
+    "text": "Once cool enough, discard the skin and flake the fish into large pieces, checking for bones. Keep 1/2 cup of the poaching liquid aside.",
     "minutes": null
    },
    {
-    "text": "Meanwhile, put the haddock and bay leaves in a frying pan, cover with the milk, then poach for 10 mins until the flesh flakes. Remove from the milk, peel away the skin, then flake the flesh into thumbsize pieces.",
-    "minutes": 10
+    "text": "Add the rice to the poaching liquid, bring to a simmer over high heat, cover and cook on low for 13 minutes. Rest off the heat, lid on, for 10 minutes, then fluff.",
+    "minutes": 23
    },
    {
-    "text": "Place the eggs in a pan, cover with water, bring to the boil, then reduce to a simmer. Leave for 4½-5 mins, plunge into cold water, then peel and cut the eggs into quarters.",
-    "minutes": 5
+    "text": "While the rice rests, melt the butter in a large skillet over medium-high heat. Stir the cardamom and curry leaves for 30 seconds, then sauté the onion and garlic for 5 minutes until browning at the edges.",
+    "minutes": 6
    },
    {
-    "text": "Gently mix the fish, eggs, parsley, coriander and rice together in the pan. Serve hot, sprinkled with a few extra herbs.",
+    "text": "Lower the heat to medium, stir in the curry powder and turmeric, then the rice, until evenly yellow. Pour over the reserved 1/2 cup poaching stock and toss. Season with salt if needed.",
+    "minutes": null
+   },
+   {
+    "text": "Stir through the peas and most of the coriander, then gently fold in the fish, keeping some large chunks.",
+    "minutes": null
+   },
+   {
+    "text": "Serve topped with the boiled egg and the remaining coriander.",
     "minutes": null
    }
   ]
