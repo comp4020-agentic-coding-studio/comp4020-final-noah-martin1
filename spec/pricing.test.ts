@@ -164,6 +164,12 @@ describe("cup measures of solid food", () => {
     expect(gramsOf({ name: "ginger", quantity: 2, unit: "cup" })).toBe(192);
     expect(gramsOf({ name: "ginger", quantity: 1, unit: "knob" })).toBe(10);
   });
+
+  // Cubed bread for a pudding is measured by the cup; as water, 8 cups read as
+  // 2 kg of bread, about seven times what goes in.
+  it("weighs a cup of cubed bread as bread, not as water", () => {
+    expect(gramsOf({ name: "bread", quantity: 8, unit: "cup" })).toBe(240);
+  });
 });
 
 describe("reference prices agree with their own shelf price", () => {
