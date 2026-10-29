@@ -72430,65 +72430,53 @@
  {
   "source": "themealdb:53082",
   "title": "Strawberries Romanoff",
-  "description": "A Russian sweet made with strawberries, orange liqueur and cream — serves 4, ready in under half an hour.",
-  "servings": 4,
+  "description": "Fresh strawberries served with a sauce of sour cream, light brown sugar, brandy and cinnamon.",
+  "servings": 6,
   "cuisine": "Russian",
   "category": "Dessert",
   "image": "https://www.themealdb.com/images/media/meals/oe8rg51699014028.jpg",
   "prep_minutes": 10,
-  "cook_minutes": 5,
+  "cook_minutes": 0,
   "ingredients": [
    {
-    "name": "strawberries",
-    "quantity": 1140,
-    "unit": "ml",
-    "note": ""
-   },
-   {
-    "name": "sugar",
-    "quantity": 4,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "orange liqueur",
-    "quantity": 4,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "cream",
-    "quantity": 1,
+    "name": "sour cream",
+    "quantity": 2,
     "unit": "cup",
     "note": ""
    },
    {
-    "name": "sour cream",
+    "name": "brown sugar",
+    "quantity": 0.75,
+    "unit": "cup",
+    "note": "light"
+   },
+   {
+    "name": "brandy",
     "quantity": 0.25,
     "unit": "cup",
     "note": ""
+   },
+   {
+    "name": "cinnamon",
+    "quantity": 1.5,
+    "unit": "tsp",
+    "note": ""
+   },
+   {
+    "name": "strawberries",
+    "quantity": 4,
+    "unit": "cup",
+    "note": "fresh; 2 US pints"
    }
   ],
   "steps": [
    {
-    "text": "In a medium bowl, combine hulled and quartered strawberries, 4 Tbsp sugar and 4 Tbsp liqueur, stir to combine then cover and refrigerate at least 1 hour and up to 2 hours, stirring once or twice.",
-    "minutes": 60
-   },
-   {
-    "text": "Two photos of cut strawberries in a bowl with one having sugar being added to the bowl Two photos of cut up strawberries for Strawberry Romanoff.",
+    "text": "Mix the sour cream, light brown sugar, brandy and cinnamon together in a bowl.",
     "minutes": null
    },
    {
-    "text": "Just before serving, in a large mixing bowl, combine 1 cup cold heavy cream and 1/4 cup powdered sugar, and beat with an electric mixer until stiff peaks form. Using a spatula, fold in 1/4 cup sour cream just until well blended.",
+    "text": "Serve the sour cream mixture over the fresh strawberries.",
     "minutes": null
-   },
-   {
-    "text": "To serve, stir strawberries then divide between 6 serving glasses or bowls. You can spoon a little syrup over the berries if you like. You can also use this syrup to soak a cake. Spoon cream over strawberries, dividing evenly.",
-    "minutes": null
-   },
-   {
-    "text": "You can also use an ice cream scoop with trigger release for a nice rounded puff of cream. Serve right away or chill and enjoy within 2 hours of assembly.",
-    "minutes": 120
    }
   ]
  },
@@ -73109,103 +73097,103 @@
  },
  {
   "source": "themealdb:53130",
-  "title": "Suksessterte (Norwegian almond “success cake”)",
-  "description": "A Norwegian sweet made with almonds, egg yolks and cream — serves 8, worth the couple of hours it takes.",
-  "servings": 8,
+  "title": "Suksessterte (Norwegian almond \"success cake\")",
+  "description": "A Norwegian almond cake baked from ground almonds and eggs, topped with a yellow egg cream of yolks, cream, vanilla and butter.",
+  "servings": 10,
   "cuisine": "Norwegian",
   "category": "Dessert",
   "image": "https://www.themealdb.com/images/media/meals/de83k51763075604.jpg",
-  "prep_minutes": 15,
-  "cook_minutes": 65,
+  "prep_minutes": 30,
+  "cook_minutes": 60,
   "ingredients": [
    {
     "name": "almonds",
     "quantity": 2,
     "unit": "cup",
-    "note": ""
+    "note": "whole, ground in a food processor, for the base"
    },
    {
     "name": "eggs",
     "quantity": 3,
     "unit": "",
-    "note": ""
+    "note": "for the base"
    },
    {
     "name": "sugar",
     "quantity": 1.25,
     "unit": "cup",
-    "note": ""
+    "note": "granulated, for the base"
    },
    {
     "name": "plain flour",
     "quantity": 2,
     "unit": "tbsp",
-    "note": ""
+    "note": "for the base"
    },
    {
     "name": "baking powder",
     "quantity": 1,
     "unit": "tsp",
-    "note": ""
+    "note": "for the base"
    },
    {
     "name": "egg yolks",
     "quantity": 5,
     "unit": "",
-    "note": ""
+    "note": "for the egg cream"
    },
    {
     "name": "cream",
     "quantity": 0.5,
     "unit": "cup",
-    "note": ""
+    "note": "heavy, for the egg cream"
    },
    {
     "name": "sugar",
-    "quantity": 0.333,
+    "quantity": 0.33,
     "unit": "cup",
-    "note": ""
+    "note": "granulated, for the egg cream"
    },
    {
-    "name": "vanilla extract",
+    "name": "vanilla sugar",
     "quantity": 1,
     "unit": "tsp",
-    "note": ""
+    "note": "or vanilla extract"
    },
    {
     "name": "butter",
-    "quantity": 100,
-    "unit": "g",
-    "note": ""
+    "quantity": 7,
+    "unit": "tbsp",
+    "note": "room temperature, for the egg cream"
    }
   ],
   "steps": [
    {
-    "text": "Almond base: preheat oven to 345°F (175°C) and grease cake form (I use a 27 cm spring form) – you can line the bottom with baking paper if you like.",
+    "text": "Heat the oven to 175°C and grease a 27 cm springform tin, lining the base with baking paper if you like.",
     "minutes": null
    },
    {
-    "text": "Grind almonds in an almond grinder or food processor. I like to keep them a bit coarse.",
+    "text": "Grind the almonds in a food processor, keeping them a little coarse.",
     "minutes": null
    },
    {
-    "text": "Gently whisk the eggs and sugar together until combined (no longer). Stir in the ground almonds, flour, and baking powder.",
+    "text": "Gently whisk the eggs and sugar together until just combined. Stir in the ground almonds, flour and baking powder.",
     "minutes": null
    },
    {
-    "text": "Pour batter into cake form and bake for about 45 – 50 minutes, monitoring to make sure the top doesn't burn. Yellow egg cream.",
+    "text": "Pour the batter into the tin and bake for 45–50 minutes, watching that the top doesn't burn.",
     "minutes": 50
    },
    {
-    "text": "Add egg yolks, heavy cream, sugar, and vanilla to a saucepan. Heat over low/medium heat while stirring constantly until the mixture thickens – about 15 minutes. Turn up the heat if the mixture doesn't thicken, but be careful not to boil.",
+    "text": "For the egg cream, put the egg yolks, cream, sugar and vanilla in a saucepan. Stir constantly over low to medium heat for about 15 minutes until thickened, without letting it boil.",
     "minutes": 15
    },
    {
-    "text": "Let the mixture cool to room temperature and then add the butter. You can use an electric mixer for a fluffy egg cream. Assembly.",
+    "text": "Cool the egg cream to room temperature, then beat in the butter, with an electric mixer if you want it fluffy.",
     "minutes": null
    },
    {
-    "text": "Wait for the cake to cool completely before removing from form and frosting.",
+    "text": "Let the cake cool completely before taking it out of the tin, then frost it with the egg cream.",
     "minutes": null
    }
   ]
@@ -73905,72 +73893,112 @@
  },
  {
   "source": "themealdb:53275",
-  "title": "Sweet potato salad",
-  "description": "A Turkish salad of sweet potato, shallot and spring onion — serves 4, ready in under half an hour.",
-  "servings": 4,
-  "cuisine": "Turkish",
-  "category": "Vegetarian",
-  "image": "https://www.themealdb.com/images/media/meals/z458v91763817681.jpg",
-  "prep_minutes": 15,
-  "cook_minutes": 5,
+  "title": "Creamy sweet potato salad",
+  "description": "A lighter take on potato salad: boiled sweet potatoes and hard-boiled eggs folded into a Greek yoghurt and mayonnaise dressing with onion and celery.",
+  "servings": 8,
+  "cuisine": "American",
+  "category": "Side",
+  "image": "https://i.ytimg.com/vi/RkiKSO0IuVQ/hqdefault.jpg",
+  "prep_minutes": 10,
+  "cook_minutes": 20,
   "ingredients": [
    {
     "name": "sweet potato",
-    "quantity": 1200,
+    "quantity": 900,
     "unit": "g",
-    "note": ""
+    "note": "peeled and diced"
    },
    {
-    "name": "olive oil",
+    "name": "salt",
     "quantity": 1,
-    "unit": "tbsp",
-    "note": ""
+    "unit": "tsp",
+    "note": "for the cooking water"
    },
    {
-    "name": "shallot",
+    "name": "eggs",
     "quantity": 2,
     "unit": "",
-    "note": ""
+    "note": "hard-boiled, peeled and diced"
+   },
+   {
+    "name": "red onion",
+    "quantity": 0.25,
+    "unit": "cup",
+    "note": "diced"
    },
    {
     "name": "spring onion",
-    "quantity": 4,
-    "unit": "",
-    "note": "sliced"
+    "quantity": 0.25,
+    "unit": "cup",
+    "note": "thinly sliced (more reserved for the top)"
    },
    {
-    "name": "chives",
+    "name": "celery",
+    "quantity": 0.25,
+    "unit": "cup",
+    "note": "chopped"
+   },
+   {
+    "name": "thyme",
+    "quantity": 0.25,
+    "unit": "tsp",
+    "note": ""
+   },
+   {
+    "name": "paprika",
     "quantity": 1,
-    "unit": "bunch",
+    "unit": "tsp",
+    "note": "ground (more reserved for the top)"
+   },
+   {
+    "name": "salt",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": "for the dressing"
+   },
+   {
+    "name": "black pepper",
+    "quantity": 0.25,
+    "unit": "tsp",
     "note": ""
    },
    {
-    "name": "sherry vinegar",
-    "quantity": 5,
-    "unit": "tbsp",
-    "note": ""
+    "name": "greek yoghurt",
+    "quantity": 170,
+    "unit": "g",
+    "note": "plain nonfat"
    },
    {
-    "name": "olive oil",
-    "quantity": 2,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "honey",
-    "quantity": 2,
-    "unit": "tbsp",
+    "name": "mayonnaise",
+    "quantity": 0.25,
+    "unit": "cup",
     "note": ""
    }
   ],
   "steps": [
    {
-    "text": "Heat oven to 200C/180C fan/gas 6. Toss the sweet potato chunks with the olive oil and some seasoning, and spread on a baking parchment-lined baking sheet. Roast for 30 - 35 mins until tender and golden. Cool at room temperature.",
-    "minutes": 35
+    "text": "Peel and dice the sweet potatoes. Hard-boil the eggs while the potatoes cook.",
+    "minutes": null
    },
    {
-    "text": "When just about cool whisk together all the dressing ingredients with a little more seasoning and gently toss through the potato chunks – use your hands to avoid breaking them up.",
+    "text": "Cover the potatoes with about 5 cm of water in a large pot, add 1 tsp salt, bring to the boil and cook for 15–20 minutes until just tender but not mushy. Drain and cool completely.",
+    "minutes": 20
+   },
+   {
+    "text": "In a large bowl, combine the red onion, spring onion, celery, thyme, paprika, salt and pepper.",
     "minutes": null
+   },
+   {
+    "text": "Add the yoghurt and mayonnaise and mix until well combined.",
+    "minutes": null
+   },
+   {
+    "text": "Add the cooled sweet potatoes and diced eggs and gently fold them into the dressing until coated.",
+    "minutes": null
+   },
+   {
+    "text": "Refrigerate for 2 hours or up to 3 days. Just before serving, garnish with extra spring onion and paprika if you like.",
+    "minutes": 120
    }
   ]
  },
@@ -74712,125 +74740,141 @@
  {
   "source": "themealdb:53119",
   "title": "Tall Skoleboller",
-  "description": "A Norwegian sweet made with egg yolks, vanilla pod and desiccated coconut — makes 16, ready in under half an hour.",
-  "servings": 16,
+  "description": "Tall Norwegian cardamom buns baked with a large well of vanilla custard, then iced and rolled in shredded coconut.",
+  "servings": 6,
   "cuisine": "Norwegian",
   "category": "Dessert",
   "image": "https://www.themealdb.com/images/media/meals/xihiu41762773169.jpg",
-  "prep_minutes": 20,
-  "cook_minutes": 5,
+  "prep_minutes": 45,
+  "cook_minutes": 20,
   "ingredients": [
    {
     "name": "milk",
     "quantity": 1,
     "unit": "cup",
-    "note": ""
+    "note": "heated until lukewarm, for the dough"
    },
    {
     "name": "yeast",
     "quantity": 3,
     "unit": "tsp",
-    "note": ""
+    "note": "instant, or 25 g fresh"
    },
    {
     "name": "sugar",
-    "quantity": 1.333,
+    "quantity": 0.33,
     "unit": "cup",
-    "note": ""
+    "note": "granulated, for the dough"
    },
    {
     "name": "cardamom",
     "quantity": 1,
     "unit": "tsp",
-    "note": ""
+    "note": "ground"
    },
    {
-    "name": "vanilla extract",
+    "name": "vanilla sugar",
     "quantity": 1,
     "unit": "tsp",
-    "note": ""
+    "note": "or vanilla extract, for the dough"
    },
    {
     "name": "plain flour",
-    "quantity": 2.25,
+    "quantity": 3.75,
     "unit": "cup",
-    "note": ""
+    "note": "about 2/3 first, the rest added slowly"
    },
    {
     "name": "butter",
     "quantity": 5,
     "unit": "tbsp",
-    "note": ""
+    "note": "softened"
    },
    {
     "name": "milk",
     "quantity": 1.25,
     "unit": "cup",
-    "note": ""
+    "note": "whole, for the custard"
    },
    {
     "name": "sugar",
-    "quantity": 1.333,
+    "quantity": 0.33,
     "unit": "cup",
-    "note": ""
+    "note": "granulated, for the custard (half with the milk, half with the cornflour)"
    },
    {
     "name": "egg yolks",
     "quantity": 3,
     "unit": "",
-    "note": ""
+    "note": "for the custard"
    },
    {
     "name": "cornflour",
     "quantity": 2,
     "unit": "tbsp",
-    "note": ""
+    "note": "corn starch, for the custard"
    },
    {
     "name": "vanilla pod",
     "quantity": 1,
     "unit": "",
-    "note": ""
+    "note": "seeds scraped out"
    },
    {
     "name": "icing sugar",
-    "quantity": 2,
+    "quantity": 1.75,
     "unit": "cup",
-    "note": ""
+    "note": "for the icing"
    },
    {
     "name": "water",
-    "quantity": 3,
+    "quantity": 2,
     "unit": "tbsp",
-    "note": ""
+    "note": "2–3 tbsp, for the icing"
    },
    {
     "name": "desiccated coconut",
     "quantity": 1,
     "unit": "cup",
-    "note": ""
+    "note": "shredded, for coating"
    }
   ],
   "steps": [
    {
-    "text": "Heat the milk until it's lukewarm. Add the yeast and dissolve.",
+    "text": "Warm the milk until lukewarm and dissolve the yeast in it. Add the sugar, cardamom, vanilla and about two thirds of the flour.",
     "minutes": null
    },
    {
-    "text": "Add the sugar, cardamom, vanilla, and about 2/3 of the flour.",
-    "minutes": null
+    "text": "Mix by hand or with a dough hook, slowly adding the rest of the flour until the dough forms a ball that isn't too sticky. Add the softened butter and knead for about 10 minutes.",
+    "minutes": 10
    },
    {
-    "text": "Mix the dough together either by hand or in a mixer with a dough hook, slowly adding the rest of the flour. You might need a bit more or less flour to form dough that isn't too sticky to knead.",
-    "minutes": null
-   },
-   {
-    "text": "When the dough forms a nice ball, add the softened butter and continue to knead the dough for about ten minutes.",
-    "minutes": null
-   },
-   {
-    "text": "Roll the dough into a cylinder and cut into six equal parts. Roll each piece into a round bun and set them in a greased muffin/cake tin. Cover and let rise until doubled in size (about an hour).",
+    "text": "Cut the dough into six equal pieces, roll each into a ball and set them in a greased muffin or cake tin. Cover and leave to double in size, about an hour.",
     "minutes": 60
+   },
+   {
+    "text": "For the custard, heat the milk and half the sugar, scraping in the vanilla seeds. Whisk the remaining sugar, cornflour and egg yolks together until smooth.",
+    "minutes": null
+   },
+   {
+    "text": "When the milk bubbles, whisk about half of it into the yolk mixture, then pour it all back into the pan. Cook over medium-low heat for 2 minutes, whisking, until very thick.",
+    "minutes": 2
+   },
+   {
+    "text": "Pour the custard into a clean bowl, press cling film onto its surface and let it cool while the dough rises.",
+    "minutes": null
+   },
+   {
+    "text": "Press a large, deep well into each bun, bigger than you think you need. Fill each with a heaping portion of custard as it will sink as the buns rise.",
+    "minutes": null
+   },
+   {
+    "text": "Heat the oven to 200°C (top and bottom heat) and let the buns rise once more. Bake in the bottom third of the oven for about 20 minutes until golden on top and bottom.",
+    "minutes": 20
+   },
+   {
+    "text": "Stir the water gradually into the icing sugar to make a thick icing. Once the buns are cool, ice the sides and roll them in the coconut, then ice the top and press it into the coconut.",
+    "minutes": null
    }
   ]
  },
@@ -75554,35 +75598,77 @@
  {
   "source": "themealdb:52772",
   "title": "Teriyaki Chicken Casserole",
-  "description": "A Japanese stew of chicken breast, stir-fry vegetables and brown rice — serves 4, about an hour start to finish.",
-  "servings": 4,
+  "description": "Seared chicken breast, stir-fry vegetables and brown rice baked in a homemade soy, brown sugar and honey teriyaki sauce.",
+  "servings": 8,
   "cuisine": "Japanese",
   "category": "Chicken",
   "image": "https://www.themealdb.com/images/media/meals/wvpsxx1468256321.jpg",
-  "prep_minutes": 15,
-  "cook_minutes": 60,
+  "prep_minutes": 20,
+  "cook_minutes": 15,
   "ingredients": [
+   {
+    "name": "chicken breast",
+    "quantity": 680,
+    "unit": "g",
+    "note": "boneless, skinless, cut into bite-sized pieces"
+   },
+   {
+    "name": "olive oil",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "garlic-infused if desired"
+   },
+   {
+    "name": "salt",
+    "quantity": null,
+    "unit": "",
+    "note": "to taste"
+   },
+   {
+    "name": "black pepper",
+    "quantity": null,
+    "unit": "",
+    "note": "to taste"
+   },
+   {
+    "name": "stir-fry vegetables",
+    "quantity": 900,
+    "unit": "g",
+    "note": "frozen Asian-style mixed vegetables, unsauced"
+   },
+   {
+    "name": "brown rice",
+    "quantity": 1,
+    "unit": "cup",
+    "note": "uncooked, to make the 3 cups cooked rice the page lists"
+   },
    {
     "name": "soy sauce",
     "quantity": 0.75,
     "unit": "cup",
-    "note": ""
+    "note": "low sodium, for the teriyaki sauce"
    },
    {
     "name": "water",
     "quantity": 0.5,
     "unit": "cup",
-    "note": ""
+    "note": "for the teriyaki sauce"
    },
    {
     "name": "brown sugar",
-    "quantity": 0.25,
+    "quantity": 0.33,
     "unit": "cup",
+    "note": "packed"
+   },
+   {
+    "name": "honey",
+    "quantity": 1,
+    "unit": "tbsp",
     "note": ""
    },
    {
     "name": "ground ginger",
-    "quantity": 0.5,
+    "quantity": 0.75,
     "unit": "tsp",
     "note": ""
    },
@@ -75590,61 +75676,59 @@
     "name": "garlic",
     "quantity": 0.5,
     "unit": "tsp",
-    "note": ""
+    "note": "minced"
    },
    {
     "name": "cornflour",
-    "quantity": 4,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "chicken breast",
     "quantity": 2,
-    "unit": "",
-    "note": ""
+    "unit": "tbsp",
+    "note": "for the slurry"
    },
    {
-    "name": "stir-fry vegetables",
-    "quantity": 1,
-    "unit": "",
-    "note": ""
+    "name": "water",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": "cold, for the slurry"
    },
    {
-    "name": "brown rice",
-    "quantity": 3,
-    "unit": "cup",
-    "note": ""
+    "name": "apple cider vinegar",
+    "quantity": null,
+    "unit": "",
+    "note": "optional splash, to loosen a thick sauce"
    }
   ],
   "steps": [
    {
-    "text": "Preheat oven to 180°C (350°F) Spray a 9x13-inch baking pan with non-stick spray.",
+    "text": "Heat the oven to 175°C.",
     "minutes": null
    },
    {
-    "text": "Combine soy sauce, ½ cup water, brown sugar, ginger and garlic in a small saucepan and cover. Bring to a boil over medium heat. Remove lid and cook for one minute once boiling.",
+    "text": "Heat the olive oil in a large skillet over medium-high heat and sear the chicken in batches until browned. Season lightly with salt and pepper and set aside.",
     "minutes": null
    },
    {
-    "text": "Meanwhile, stir together the corn starch and 2 tablespoons of water in a separate dish until smooth. Once sauce is boiling, add mixture to the saucepan and stir to combine. Cook until the sauce starts to thicken then remove from heat.",
+    "text": "In the same skillet, add a little more oil and sauté the frozen vegetables until just tender. Tip them into a large casserole dish with the chicken.",
     "minutes": null
    },
    {
-    "text": "Place the chicken breasts in the prepared pan. Pour one cup of the sauce over top of chicken. Place chicken in oven and bake 35 minutes or until cooked through. Remove from oven and shred chicken in the dish using two forks.",
-    "minutes": 35
-   },
-   {
-    "text": "*Meanwhile, steam or cook the vegetables according to package directions.",
+    "text": "Stir the cooked brown rice into the chicken and vegetables.",
     "minutes": null
    },
    {
-    "text": "Add the cooked vegetables and rice to the casserole dish with the chicken. Add most of the remaining sauce, reserving a bit to drizzle over the top when serving. Gently toss everything together in the casserole dish until combined.",
+    "text": "For the sauce, bring the soy sauce, water, brown sugar, honey, ginger and garlic to the boil in a saucepan. Mix the cornflour and cold water into a slurry, stir it in and simmer until thickened, adding a splash of cider vinegar if it's too thick.",
     "minutes": null
    },
    {
-    "text": "Return to oven and cook 15 minutes. Remove from oven and let stand 5 minutes before serving. Drizzle each serving with remaining sauce. Enjoy!",
+    "text": "Pour most of the sauce over the casserole and stir to combine, keeping a little back for the top.",
+    "minutes": null
+   },
+   {
+    "text": "Bake uncovered at 175°C for 15 minutes.",
     "minutes": 15
+   },
+   {
+    "text": "Drizzle the reserved sauce over the top and serve hot.",
+    "minutes": null
    }
   ]
  },
@@ -76857,128 +76941,194 @@
  },
  {
   "source": "themealdb:52882",
-  "title": "Three Fish Pie",
-  "description": "A British dish of salmon fillet, haddock and potato — serves 8, about an hour start to finish.",
-  "servings": 8,
+  "title": "Fish pie",
+  "description": "Raw and smoked fish poached in milk, folded into a creamy vegetable white sauce with peas and egg, then topped with mash and baked until golden.",
+  "servings": 6,
   "cuisine": "British",
   "category": "Seafood",
-  "image": "https://www.themealdb.com/images/media/meals/spswqs1511558697.jpg",
-  "prep_minutes": 20,
-  "cook_minutes": 55,
+  "image": "https://i.ytimg.com/vi/DFsB4a1K7TY/hqdefault.jpg",
+  "prep_minutes": 15,
+  "cook_minutes": 60,
   "ingredients": [
    {
-    "name": "potato",
-    "quantity": 1000,
+    "name": "smoked fish",
+    "quantity": 400,
     "unit": "g",
-    "note": ""
+    "note": "smoked fish of choice, for poaching"
    },
    {
-    "name": "butter",
-    "quantity": 1,
-    "unit": "knob",
-    "note": ""
+    "name": "white fish",
+    "quantity": 400,
+    "unit": "g",
+    "note": "raw unsmoked fish of choice (the creator used perch), for poaching"
    },
    {
     "name": "milk",
-    "quantity": 1,
-    "unit": "dash",
-    "note": ""
+    "quantity": 750,
+    "unit": "ml",
+    "note": "low or full fat, for poaching and the sauce"
    },
    {
-    "name": "gruyère",
-    "quantity": 50,
-    "unit": "g",
-    "note": ""
+    "name": "onion",
+    "quantity": 1,
+    "unit": "",
+    "note": "brown, quartered, to flavour the poaching milk"
+   },
+   {
+    "name": "cloves",
+    "quantity": 4,
+    "unit": "",
+    "note": "whole cloves, spice; optional, pushed into the onion skin"
    },
    {
     "name": "butter",
-    "quantity": 75,
+    "quantity": 50,
     "unit": "g",
-    "note": ""
+    "note": "unsalted, for the sauce"
    },
    {
-    "name": "leek",
+    "name": "garlic",
     "quantity": 2,
+    "unit": "clove",
+    "note": "minced"
+   },
+   {
+    "name": "onion",
+    "quantity": 0.5,
     "unit": "",
-    "note": "sliced"
+    "note": "small, finely chopped, for the sauce"
+   },
+   {
+    "name": "carrot",
+    "quantity": 1,
+    "unit": "",
+    "note": "small, finely chopped"
+   },
+   {
+    "name": "celery",
+    "quantity": 1,
+    "unit": "",
+    "note": "small stick, finely chopped"
    },
    {
     "name": "plain flour",
-    "quantity": 75,
+    "quantity": 50,
     "unit": "g",
-    "note": ""
+    "note": "1/3 cup"
    },
    {
-    "name": "white wine",
-    "quantity": 150,
-    "unit": "ml",
-    "note": ""
-   },
-   {
-    "name": "milk",
-    "quantity": 568,
-    "unit": "ml",
-    "note": ""
+    "name": "tarragon",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "fresh, finely chopped, optional"
    },
    {
     "name": "parsley",
     "quantity": 2,
     "unit": "tbsp",
-    "note": "chopped"
+    "note": "finely chopped, for the sauce"
    },
    {
-    "name": "salmon fillet",
-    "quantity": 250,
-    "unit": "g",
-    "note": ""
+    "name": "salt",
+    "quantity": null,
+    "unit": "",
+    "note": "to taste"
    },
    {
-    "name": "haddock",
-    "quantity": 250,
-    "unit": "g",
-    "note": ""
+    "name": "black pepper",
+    "quantity": null,
+    "unit": "",
+    "note": "to taste"
    },
    {
-    "name": "smoked haddock",
-    "quantity": 250,
+    "name": "potato",
+    "quantity": 750,
     "unit": "g",
-    "note": ""
+    "note": "floury, peeled and cut into 2.5 cm pieces"
+   },
+   {
+    "name": "butter",
+    "quantity": 30,
+    "unit": "g",
+    "note": "unsalted, for the mash"
+   },
+   {
+    "name": "milk",
+    "quantity": 125,
+    "unit": "ml",
+    "note": "for the mash"
+   },
+   {
+    "name": "peas",
+    "quantity": 1,
+    "unit": "cup",
+    "note": "frozen"
    },
    {
     "name": "eggs",
-    "quantity": 6,
+    "quantity": 4,
     "unit": "",
-    "note": ""
+    "note": "hard boiled, quartered, optional"
+   },
+   {
+    "name": "butter",
+    "quantity": 30,
+    "unit": "g",
+    "note": "melted, for the top"
+   },
+   {
+    "name": "parmesan",
+    "quantity": 15,
+    "unit": "g",
+    "note": "1/4 cup, grated, optional"
+   },
+   {
+    "name": "parsley",
+    "quantity": null,
+    "unit": "",
+    "note": "finely chopped, to garnish"
    }
   ],
   "steps": [
    {
-    "text": "Preheat the oven to 200C/400F/Gas 6 (180C fan).",
+    "text": "Push a clove into each piece of onion and put them in a pot with the milk over medium-high heat. When the milk is barely simmering, add both fishes and poach for 7 minutes.",
+    "minutes": 7
+   },
+   {
+    "text": "Lift the fish into a medium baking dish and flake it with forks, removing any bones. Remove the onion and cloves from the milk and keep the milk. Heat the oven to 180°C and set a pot of water on to boil for the potatoes.",
     "minutes": null
    },
    {
-    "text": "Put the potatoes into a saucepan of cold salted water. Bring up to the boil and simmer until completely tender. Drain well and then mash with the butter and milk. Add pepper and taste to check the seasoning. Add salt and more pepper if necessary.",
+    "text": "For the sauce, melt the butter in a large deep skillet and cook the garlic and chopped onion for 1 minute. Add the celery and carrot and cook for 5 minutes until the carrot is soft.",
+    "minutes": 6
+   },
+   {
+    "text": "Turn the heat to medium-low, stir in the flour, then add half the reserved milk and mix quickly. Stir in the rest of the milk and cook over medium heat for about 3 minutes until thick like honey.",
+    "minutes": 3
+   },
+   {
+    "text": "Take the sauce off the heat and stir in the tarragon and parsley. Season with salt and pepper.",
     "minutes": null
    },
    {
-    "text": "For the fish filling, melt the butter in a saucepan, add the leeks and stir over the heat. Cover with a lid and simmer gently for 10 minutes, or until soft. Measure the flour into a small bowl. Add the wine and whisk together until smooth.",
-    "minutes": 10
-   },
-   {
-    "text": "Add the milk to the leeks, bring to the boil and then add the wine mixture. Stir briskly until thickened. Season and add the parsley and fish. Stir over the heat for two minutes, then spoon into an ovenproof casserole.",
+    "text": "Scatter the peas over the flaked fish and pour the sauce over. Stir through gently so the fish doesn't break up. Smooth the top and nestle the egg quarters in.",
     "minutes": null
    },
    {
-    "text": "Scatter over the eggs. Allow to cool until firm.",
+    "text": "Boil the potatoes for 15 minutes until soft, drain, and mash with the butter, milk, salt and pepper until creamy.",
+    "minutes": 15
+   },
+   {
+    "text": "Dollop the mash on the pie while it's hot and spread it out. Draw squiggles on the surface with a fork for more golden bits.",
     "minutes": null
    },
    {
-    "text": "Spoon the mashed potatoes over the fish mixture and mark with a fork. Sprinkle with cheese.",
-    "minutes": null
+    "text": "Drizzle with the melted butter, sprinkle with parmesan and bake for 35 minutes until the top is deep golden.",
+    "minutes": 35
    },
    {
-    "text": "Bake for 30-40 minutes, or until lightly golden-brown on top and bubbling around the edges.",
-    "minutes": 40
+    "text": "Stand for 5 minutes, then garnish with parsley and serve.",
+    "minutes": 5
    }
   ]
  },
@@ -77330,76 +77480,136 @@
  {
   "source": "themealdb:53196",
   "title": "Tom yum (hot & sour) soup with prawns",
-  "description": "A Thai soup of prawns, fish sauce and lemongrass — serves 2, ready in under half an hour.",
-  "servings": 2,
+  "description": "Thai hot and sour prawn soup built on a fresh paste of shallots, galangal and chilli, flavoured with lemongrass, kaffir lime leaves, tamarind and lime.",
+  "servings": 4,
   "cuisine": "Thai",
   "category": "Seafood",
   "image": "https://www.themealdb.com/images/media/meals/9c5nlx1763424766.jpg",
-  "prep_minutes": 15,
-  "cook_minutes": 5,
+  "prep_minutes": 10,
+  "cook_minutes": 10,
   "ingredients": [
    {
-    "name": "chicken stock",
-    "quantity": 700,
-    "unit": "ml",
+    "name": "chilli",
+    "quantity": 1,
+    "unit": "",
+    "note": "large fresh red (mild), for the paste"
+   },
+   {
+    "name": "shallot",
+    "quantity": 5,
+    "unit": "",
+    "note": "peeled, 5–6, for the paste"
+   },
+   {
+    "name": "galangal",
+    "quantity": 7.5,
+    "unit": "cm",
+    "note": "3 inch piece, for the paste"
+   },
+   {
+    "name": "vegetable oil",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": "sunflower or vegetable"
+   },
+   {
+    "name": "chilli paste",
+    "quantity": 0.25,
+    "unit": "tsp",
+    "note": "dried red chilli paste"
+   },
+   {
+    "name": "prawns",
+    "quantity": 10,
+    "unit": "",
+    "note": "medium, cleaned and deveined; 10–12"
+   },
+   {
+    "name": "water",
+    "quantity": 3.5,
+    "unit": "cup",
     "note": ""
    },
    {
     "name": "lemongrass",
-    "quantity": 1,
+    "quantity": 3,
     "unit": "",
-    "note": ""
-   },
-   {
-    "name": "galangal",
-    "quantity": 5,
-    "unit": "slice",
-    "note": ""
-   },
-   {
-    "name": "coriander",
-    "quantity": 6,
-    "unit": "",
-    "note": ""
+    "note": "slender stalks, white part bruised"
    },
    {
     "name": "lime leaves",
-    "quantity": 3,
+    "quantity": 2,
     "unit": "",
-    "note": ""
+    "note": "large kaffir lime leaves, midvein removed, torn in half"
    },
    {
-    "name": "prawns",
-    "quantity": 6,
+    "name": "tamarind paste",
+    "quantity": null,
     "unit": "",
-    "note": ""
+    "note": "page gives 3 tsp of diluted tamarind solution; concentrated paste is added to taste, so use less"
    },
    {
     "name": "fish sauce",
-    "quantity": 3,
-    "unit": "tbsp",
-    "note": ""
+    "quantity": null,
+    "unit": "",
+    "note": "or salt, to taste"
+   },
+   {
+    "name": "brown sugar",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": "light"
    },
    {
     "name": "chilli",
-    "quantity": 6,
+    "quantity": 3,
     "unit": "",
-    "note": "small"
+    "note": "small, hot Thai chillies, whole; 3–4"
    },
    {
-    "name": "lime juice",
-    "quantity": 4,
-    "unit": "tbsp",
-    "note": ""
+    "name": "lime",
+    "quantity": 1,
+    "unit": "",
+    "note": "juice of half to start, the rest if needed"
+   },
+   {
+    "name": "coriander",
+    "quantity": null,
+    "unit": "",
+    "note": "chopped, to garnish"
    }
   ],
   "steps": [
    {
-    "text": "Bring the stock to a boil in a medium-sized saucepan. Add the lemongrass, galangal, coriander roots and lime leaves, then simmer for 2 mins.",
-    "minutes": 2
+    "text": "Roughly chop the large red chilli, shallots and galangal and grind them without water to a smooth paste.",
+    "minutes": null
    },
    {
-    "text": "Add the prawns, fish sauce, chillies and lime juice, then return to the boil. Taste and adjust the seasoning with either more lime juice or fish sauce, then garnish with coriander leaves and serve.",
+    "text": "Heat the oil in a pot and fry the fresh paste until aromatic. Stir in the dried chilli paste until the oil starts to separate.",
+    "minutes": null
+   },
+   {
+    "text": "Add the cleaned prawns and coat them in the paste. Cook for about a minute until lightly seared.",
+    "minutes": 1
+   },
+   {
+    "text": "Pour in the water and bring to the boil. Meanwhile, bruise the white part of the lemongrass and tear each lime leaf in half, removing the midvein.",
+    "minutes": null
+   },
+   {
+    "text": "Once boiling, add the lemongrass and lime leaves, then the tamarind (3 tsp solution, or to taste if using concentrated paste), fish sauce or salt, and the brown sugar.",
+    "minutes": null
+   },
+   {
+    "text": "Simmer over medium heat for 8–10 minutes until the prawns are just cooked, adding the whole small Thai chillies partway through. Taste and add salt if needed.",
+    "minutes": 10
+   },
+   {
+    "text": "At the end, stir in the juice of half the lime, adding more to taste.",
+    "minutes": null
+   },
+   {
+    "text": "Rest the soup a while, then remove the lemongrass, lime leaves and whole chillies so they don't overpower it. Garnish with coriander and serve, with steamed rice if you like.",
     "minutes": null
    }
   ]
@@ -77529,93 +77739,131 @@
  },
  {
   "source": "themealdb:53032",
-  "title": "Tonkatsu pork",
-  "description": "A Japanese dish of pork chops, breadcrumbs and tomato ketchup — serves 4, ready in under half an hour.",
-  "servings": 4,
+  "title": "Tonkatsu",
+  "description": "Japanese pork cutlets breaded in fresh-style panko and double-fried, served with shredded cabbage, cucumber, sesame dressing and sesame tonkatsu sauce.",
+  "servings": 2,
   "cuisine": "Japanese",
   "category": "Pork",
   "image": "https://www.themealdb.com/images/media/meals/lwsnkl1604181187.jpg",
   "prep_minutes": 15,
-  "cook_minutes": 10,
+  "cook_minutes": 15,
   "ingredients": [
    {
     "name": "pork chops",
-    "quantity": 4,
-    "unit": "",
-    "note": ""
-   },
-   {
-    "name": "plain flour",
-    "quantity": 100,
+    "quantity": 200,
     "unit": "g",
-    "note": ""
+    "note": "2 boneless pork loin chops, about 1 cm thick, about 100 g each"
    },
    {
-    "name": "eggs",
-    "quantity": 2,
-    "unit": "",
-    "note": "beaten"
+    "name": "salt",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": "Diamond Crystal kosher salt; use half for table salt"
    },
    {
-    "name": "breadcrumbs",
-    "quantity": 100,
-    "unit": "g",
-    "note": ""
+    "name": "black pepper",
+    "quantity": 0.125,
+    "unit": "tsp",
+    "note": "freshly ground"
    },
    {
     "name": "vegetable oil",
-    "quantity": null,
+    "quantity": 720,
+    "unit": "ml",
+    "note": "neutral oil, for deep-frying"
+   },
+   {
+    "name": "plain flour",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": "for the breading"
+   },
+   {
+    "name": "eggs",
+    "quantity": 1,
     "unit": "",
-    "note": "for deep-frying"
+    "note": "large, for the breading"
    },
    {
-    "name": "tomato ketchup",
+    "name": "vegetable oil",
+    "quantity": 0.5,
+    "unit": "tbsp",
+    "note": "neutral oil, whisked into the egg"
+   },
+   {
+    "name": "breadcrumbs",
+    "quantity": 30,
+    "unit": "g",
+    "note": "panko (Japanese breadcrumbs), about 1/2 cup"
+   },
+   {
+    "name": "cabbage",
+    "quantity": 0.25,
+    "unit": "",
+    "note": "head, shredded very finely, to serve"
+   },
+   {
+    "name": "cucumber",
+    "quantity": 1,
+    "unit": "",
+    "note": "Japanese or Persian, sliced into thin strips, to serve"
+   },
+   {
+    "name": "sesame dressing",
     "quantity": 2,
     "unit": "tbsp",
-    "note": ""
+    "note": "Japanese, to serve"
    },
    {
-    "name": "worcestershire sauce",
-    "quantity": 2,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "oyster sauce",
+    "name": "sesame seed",
     "quantity": 1,
     "unit": "tbsp",
-    "note": ""
+    "note": "toasted white, for the dipping sauce"
    },
    {
-    "name": "sugar",
-    "quantity": 2,
+    "name": "sesame seed",
+    "quantity": 1,
     "unit": "tbsp",
-    "note": ""
+    "note": "toasted black, for the dipping sauce"
+   },
+   {
+    "name": "tonkatsu sauce",
+    "quantity": 4,
+    "unit": "tbsp",
+    "note": "for the dipping sauce"
    }
   ],
   "steps": [
    {
-    "text": "Remove the large piece of fat on the edge of each pork loin, then bash each of the loins between two pieces of baking parchment until around 1cm in thickness – you can do this using a meat tenderiser or a rolling pin.",
+    "text": "Shred the cabbage very finely and toss with thin strips of cucumber. Keep the sesame dressing chilled.",
     "minutes": null
    },
    {
-    "text": "Once bashed, use your hands to reshape the meat to its original shape and thickness – this step will ensure the meat is as succulent as possible.",
+    "text": "Grind the toasted white and black sesame seeds, leaving some whole, and divide among dipping bowls. Add the tonkatsu sauce to each and set aside.",
     "minutes": null
    },
    {
-    "text": "Put the flour, eggs and panko breadcrumbs into three separate wide-rimmed bowls. Season the meat, then dip first in the flour, followed by the eggs, then the breadcrumbs.",
+    "text": "Spray the panko with water until moist and leave for 15 minutes to soften. Meanwhile whisk the egg with the oil in one dish and put the flour in another.",
+    "minutes": 15
+   },
+   {
+    "text": "Trim the excess fat off the pork, slit the connective tissue on both sides and pound the meat with the back of a knife. Shape it back into a cutlet and season both sides with salt and pepper.",
     "minutes": null
    },
    {
-    "text": "In a large frying or sauté pan, add enough oil to come 2cm up the side of the pan. Heat the oil to 180C – if you don’t have a thermometer, drop a bit of panko into the oil and if it sinks a little then starts to fry, the oil is ready.",
-    "minutes": null
+    "text": "Dredge each cutlet in flour, dip it in the egg, then press it into the panko. Rest on a tray for 5–10 minutes.",
+    "minutes": 10
    },
    {
-    "text": "Add two pork chops and cook for 1 min 30 secs on each side, then remove and leave to rest on a wire rack for 5 mins. Repeat with the remaining pork chops.",
-    "minutes": 5
+    "text": "Heat about 5 cm of oil to 170°C. Fry one cutlet for 1 minute, flip and fry 1 minute more, then drain for 4 minutes on a rack. Fry the second cutlet the same way, skimming crumbs from the oil in between.",
+    "minutes": 6
    },
    {
-    "text": "While the pork is resting, make the sauce by whisking the ingredients together, adding a splash of water if it’s particularly thick. Slice the tonkatsu and serve drizzled with the sauce.",
+    "text": "Raise the oil to 180°C and fry each cutlet again for 30 seconds a side. Drain on the rack for 2 minutes.",
+    "minutes": 2
+   },
+   {
+    "text": "Cut the cutlets crosswise into slices about 2 cm wide. Serve with the cabbage and cucumber, the sesame dressing and the sesame tonkatsu sauce.",
     "minutes": null
    }
   ]
@@ -77623,106 +77871,80 @@
  {
   "source": "themealdb:53415",
   "title": "Torrijas",
-  "description": "An Andorran breakfast of orange, lemon and dry sherry — makes 10, on the table in about 45 minutes.",
-  "servings": 10,
-  "cuisine": "Andorran",
+  "description": "Spanish-style French toast: slices of stale French bread soaked in warm vanilla milk and beaten egg, fried until golden and dusted with cinnamon sugar.",
+  "servings": 15,
+  "cuisine": "Spanish",
   "category": "Breakfast",
   "image": "https://www.themealdb.com/images/media/meals/927vvp1779732018.jpg",
-  "prep_minutes": 15,
-  "cook_minutes": 20,
+  "prep_minutes": 5,
+  "cook_minutes": 5,
   "ingredients": [
-   {
-    "name": "orange",
-    "quantity": 1,
-    "unit": "",
-    "note": "medium"
-   },
-   {
-    "name": "lemon",
-    "quantity": 1,
-    "unit": "",
-    "note": "medium"
-   },
-   {
-    "name": "milk",
-    "quantity": 4,
-    "unit": "cup",
-    "note": ""
-   },
-   {
-    "name": "sugar",
-    "quantity": 0.5,
-    "unit": "cup",
-    "note": ""
-   },
-   {
-    "name": "cinnamon stick",
-    "quantity": 1,
-    "unit": "",
-    "note": ""
-   },
-   {
-    "name": "dry sherry",
-    "quantity": 0.333,
-    "unit": "cup",
-    "note": ""
-   },
    {
     "name": "baguette",
     "quantity": 1,
     "unit": "",
-    "note": ""
+    "note": "loaf of stale French bread, cut into 4 cm slices (12–15 slices)"
    },
    {
-    "name": "olive oil",
-    "quantity": 1,
+    "name": "milk",
+    "quantity": 1.5,
     "unit": "cup",
+    "note": "warm"
+   },
+   {
+    "name": "vanilla extract",
+    "quantity": 1,
+    "unit": "tsp",
     "note": ""
    },
    {
     "name": "eggs",
-    "quantity": 4,
+    "quantity": 3,
     "unit": "",
-    "note": "large"
+    "note": "large, beaten"
    },
    {
-    "name": "honey",
+    "name": "vegetable oil",
     "quantity": null,
     "unit": "",
-    "note": "to serve"
+    "note": "canola or vegetable, for frying"
+   },
+   {
+    "name": "sugar",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": "granulated, for the cinnamon sugar"
+   },
+   {
+    "name": "cinnamon",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": "ground, for the cinnamon sugar"
    }
   ],
   "steps": [
    {
-    "text": "Finely grate the zest of 1 medium orange (about 2 teaspoons) and 1 medium lemon (about 1 teaspoon) into a medium saucepan.",
+    "text": "Pour the warm milk and vanilla into a shallow bowl. Beat the eggs well in a separate shallow bowl.",
     "minutes": null
    },
    {
-    "text": "Add 1 quart whole milk, 1/2 cup granulated sugar, and 1 (3-inch) cinnamon stick. Bring to a boil over medium heat. Remove the pan from the heat and add 1/3 cup dry sherry. Let sit until cool enough to handle.",
+    "text": "Mix the sugar and cinnamon together and set aside.",
     "minutes": null
    },
    {
-    "text": "Meanwhile, cut 1 (12-ounce) day-old baguette crosswise into 1-inch-thick slices (about 16). Arrange in a single layer on a rimmed baking sheet.",
+    "text": "Pour enough oil into a large skillet to cover the base and heat over medium until hot but not smoking.",
     "minutes": null
    },
    {
-    "text": "Pour the milk mixture over the bread and let it soak for 5 minutes. Flip each slice of bread. Let the bread sit until it absorbs most of the liquid but isn't falling apart, about 5 minutes more.",
-    "minutes": 5
+    "text": "Dip each bread slice in the milk on both sides so it soaks well, then in the beaten egg. Fry, flipping, for a few minutes until golden on both sides.",
+    "minutes": 3
    },
    {
-    "text": "Heat 1 cup olive oil in a large frying pan over medium-high heat until shimmering. Meanwhile, whisk 4 eggs together in a medium bowl.",
+    "text": "Drain on a plate lined with paper towels or a wire rack, and sprinkle with the cinnamon sugar (or honey if you prefer).",
     "minutes": null
    },
    {
-    "text": "Working with 1 slice at a time, dip the bread in the egg mixture to coat. Let the excess drip off, then add to the pan. Repeat with as many slices as needed until the pan is filled with a single layer.",
-    "minutes": null
-   },
-   {
-    "text": "Fry until golden-brown on the bottom, about 4 minutes. Flip the slices and fry until the second side until golden-brown, 3 to 4 minutes more. Transfer to a paper towel-lined plate or baking sheet.",
-    "minutes": 4
-   },
-   {
-    "text": "Repeat dipping and frying the remaining bread. Drizzle with honey to serve.",
+    "text": "Serve warm, or refrigerate and serve cold.",
     "minutes": null
    }
   ]
@@ -77900,59 +78122,69 @@
  {
   "source": "themealdb:53075",
   "title": "Tortang Talong",
-  "description": "A Filipino dish of aubergine — serves 2, ready in under half an hour.",
-  "servings": 2,
+  "description": "Filipino eggplant omelette: boiled Chinese eggplants peeled, flattened, dipped in beaten egg and pan-fried until golden.",
+  "servings": 3,
   "cuisine": "Filipino",
   "category": "Vegetarian",
   "image": "https://www.themealdb.com/images/media/meals/va668f1683209318.jpg",
   "prep_minutes": 10,
-  "cook_minutes": 10,
+  "cook_minutes": 15,
   "ingredients": [
    {
     "name": "aubergine",
-    "quantity": 4,
+    "quantity": 3,
     "unit": "",
-    "note": ""
+    "note": "large Chinese eggplants, stems left on"
    },
    {
     "name": "eggs",
-    "quantity": 2,
+    "quantity": 5,
     "unit": "",
-    "note": ""
+    "note": "beaten"
+   },
+   {
+    "name": "vegetable oil",
+    "quantity": null,
+    "unit": "",
+    "note": "for frying"
    },
    {
     "name": "salt",
-    "quantity": 1,
+    "quantity": 0.5,
     "unit": "tsp",
     "note": ""
    },
    {
-    "name": "olive oil",
-    "quantity": 4,
-    "unit": "tsp",
-    "note": ""
+    "name": "black pepper",
+    "quantity": null,
+    "unit": "",
+    "note": "to taste"
    }
   ],
   "steps": [
    {
-    "text": "Grill the eggplant until the color of skin turns almost black.",
+    "text": "Boil water in a large pot, add the eggplants and cover. Turn them over once the skin has discolored.",
     "minutes": null
    },
    {
-    "text": "Let the eggplant cool for a while then peel off the skin. Set aside. Crack the eggs and place in a bowl Add salt and beat.",
+    "text": "When the skin is charred or wrinkly, take the pot off the heat. Drain and let the eggplants cool, then peel off the skin.",
     "minutes": null
    },
    {
-    "text": "Place the eggplant on a flat surface and flatten using a fork.",
+    "text": "Crack the eggs into a wide bowl, season with salt and pepper and beat.",
     "minutes": null
    },
    {
-    "text": "Dip the flattened eggplant in the beaten egg mixture Heat the pan and pour the cooking oil.",
+    "text": "Dip each peeled eggplant into the egg and flatten it with a fork.",
     "minutes": null
    },
    {
-    "text": "Fry the eggplant (that was dipped in the beaten mixture). Make sure that both sides are cooked. Frying time will take you about 3 to 4 minutes per side on medium heat.",
-    "minutes": 4
+    "text": "Fry on medium heat in vegetable oil for about 3 minutes, then spoon a little more beaten egg over each eggplant.",
+    "minutes": 3
+   },
+   {
+    "text": "Turn over once the bottom is brown and cook the other side. Repeat with the rest of the eggplants.",
+    "minutes": null
    }
   ]
  },
@@ -79379,61 +79611,25 @@
  {
   "source": "themealdb:53321",
   "title": "Vanilla alfajores",
-  "description": "An Uruguayan sweet made with dulce de leche, desiccated coconut and egg yolks — makes 12, on the table in about 45 minutes.",
-  "servings": 12,
+  "description": "Tender cornstarch shortbread rounds sandwiched with dulce de leche and rolled in shredded coconut.",
+  "servings": 18,
   "cuisine": "Uruguayan",
   "category": "Dessert",
   "image": "https://www.themealdb.com/images/media/meals/3wnyvh1764373818.jpg",
-  "prep_minutes": 20,
-  "cook_minutes": 20,
+  "prep_minutes": 15,
+  "cook_minutes": 10,
   "ingredients": [
    {
-    "name": "dulce de leche",
-    "quantity": 150,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "desiccated coconut",
-    "quantity": 50,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "butter",
-    "quantity": 100,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "sugar",
-    "quantity": 100,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "eggs",
-    "quantity": 1,
-    "unit": "",
-    "note": ""
-   },
-   {
-    "name": "egg yolks",
-    "quantity": 1,
-    "unit": "",
-    "note": ""
-   },
-   {
     "name": "cornflour",
-    "quantity": 200,
+    "quantity": 180,
     "unit": "g",
-    "note": ""
+    "note": "1¼ cups cornstarch"
    },
    {
     "name": "plain flour",
-    "quantity": 100,
+    "quantity": 120,
     "unit": "g",
-    "note": ""
+    "note": "1 cup"
    },
    {
     "name": "baking powder",
@@ -79442,47 +79638,75 @@
     "note": ""
    },
    {
+    "name": "salt",
+    "quantity": 0.25,
+    "unit": "tsp",
+    "note": ""
+   },
+   {
+    "name": "butter",
+    "quantity": 170,
+    "unit": "g",
+    "note": "unsalted, room temperature"
+   },
+   {
+    "name": "sugar",
+    "quantity": 133,
+    "unit": "g",
+    "note": "granulated"
+   },
+   {
+    "name": "egg yolks",
+    "quantity": 3,
+    "unit": "",
+    "note": ""
+   },
+   {
     "name": "vanilla extract",
-    "quantity": 1,
+    "quantity": 2,
     "unit": "tsp",
     "note": ""
    },
    {
     "name": "dulce de leche",
-    "quantity": 150,
+    "quantity": 380,
     "unit": "g",
-    "note": ""
+    "note": "1 can (13.4 oz)"
    },
    {
     "name": "desiccated coconut",
-    "quantity": 50,
-    "unit": "g",
-    "note": ""
+    "quantity": 0.33,
+    "unit": "cup",
+    "note": "unsweetened shredded, for rolling"
    }
   ],
   "steps": [
    {
-    "text": "For the sandwich cookie cream the soft butter for about a minute, then add the sugar and cream for another two minutes. Incorporate the egg fully before mixing in the egg yolk.",
+    "text": "Whisk the cornflour, plain flour, salt and baking powder together in a bowl and set aside.",
     "minutes": null
    },
    {
-    "text": "Once everything is nicely combined, add all remaining ingredients and mix one more time. Form dough into a ball and wrap in plastic wrap. Chill for at least half an hour or overnight.",
+    "text": "Beat the soft butter and sugar for about 3 minutes until light and fluffy.",
+    "minutes": 3
+   },
+   {
+    "text": "Add the egg yolks and vanilla and mix for 1 minute, scraping down the bowl. Add the flour mixture and mix on low for 30 seconds until just combined.",
+    "minutes": 1
+   },
+   {
+    "text": "Flatten the dough into one or two discs, wrap well and chill for about 1 hour.",
     "minutes": 60
    },
    {
-    "text": "Preheat oven to 180 degrees Celsius and line two baking sheets with parchment paper.",
+    "text": "Preheat the oven to 175°C (350°F). Roll the dough 3-6 mm thick on a floured surface and cut 4.5-5 cm rounds. Place on lined trays and re-roll the scraps.",
     "minutes": null
    },
    {
-    "text": "Divide dough in half, put one back in the fridge and roll out the other thickly on a lightly floured surface. Cut out cookies with either the bottom of a glass or a cookie cutter around 6cm in diameter. Repeat with all the dough.",
-    "minutes": null
-   },
-   {
-    "text": "Bake for about 8-10min, the cookies will look very pale. Let cool off before filling half with each a teaspoon of dulce de leche.",
+    "text": "Bake for 10-12 minutes until just set and lightly browned at the edges, rotating the trays halfway. Cool on the tray.",
     "minutes": 10
    },
    {
-    "text": "Place other half of cookies on top and roll the sides of each cookie in the coconut flakes (it helps if the dulce de leche was pressed down to the sides of the cookie). Enjoy.",
+    "text": "Pipe or spread dulce de leche on the underside of one cookie and sandwich with another. Roll the edges in shredded coconut.",
     "minutes": null
    }
   ]
