@@ -1705,9 +1705,9 @@
   "videoId": "U33HYUr-0Fw",
   "title": "Chicken Marengo Recipe (Adventures in Chicken Part 3)",
   "channel": "Titli's Busy Kitchen",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:52879": {
   "videoId": null,
@@ -1853,9 +1853,9 @@
   "videoId": "J45Y5olZCuo",
   "title": "Churros with Chocolate Sauce + Salted Caramel  | Churros con Chocolate y Dulce de Leche",
   "channel": "The Mad Table",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53101": {
   "videoId": "8TzqUo8PCLg",
@@ -1869,9 +1869,9 @@
   "videoId": "Cdo14aXSHrA",
   "title": "Chocolate Dulce de Leche Empanadas - Gemma's Bigger Bolder Baking Ep  82",
   "channel": "Bigger Bolder Baking with Gemma Stafford",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:52905": {
   "videoId": "2uYHHhp4yxw",
@@ -2011,9 +2011,9 @@
   "videoId": "PM9TZPUJTiU",
   "title": "Professional Baker Teaches You How To Make TOURTIERE!",
   "channel": "Oh Yum with Anna Olson",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53446": {
   "videoId": null,
@@ -2211,9 +2211,9 @@
   "videoId": "r1lnsOTNjws",
   "title": "The Ultimate Cumberland Pie – British Cooking Made Simple",
   "channel": "Digwell Greenfingers",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53473": {
   "videoId": null,
@@ -2371,9 +2371,9 @@
   "videoId": "XVTJrkgW304",
   "title": "BETTER THAN TAKEOUT AND EASY - Egg Foo Young Recipe",
   "channel": "Souped Up Recipes",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53073": {
   "videoId": "pKXACYjwMns",
@@ -2451,9 +2451,9 @@
   "videoId": "NZcWedPKysk",
   "title": "How to Make Falafel | Falafel Recipe",
   "channel": "The Cooking Foodie",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53123": {
   "videoId": "2mMT71Knp8E",
@@ -2735,9 +2735,9 @@
   "videoId": "s_ilia2LZ4U",
   "title": "Grilled Flatbread Anyone Can Make",
   "channel": "Helen Rennie",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53255": {
   "videoId": null,
@@ -2884,12 +2884,10 @@
   "checked": "2026-10-20"
  },
  "themealdb:53339": {
-  "videoId": "8dh7HmkBLCI",
-  "title": "1938 Jam Jams Cookie Recipe",
-  "channel": "Glen And Friends Cooking",
+  "videoId": null,
+  "checked": "2026-10-29",
   "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "reason": "The video (Glen And Friends Cooking, '1938 Jam Jams Cookie Recipe') makes a jam sandwich cookie, but its description gives no amount for the main structural ingredient: 'enough flour to make a soft dough', and no amount for the jam or any yield. A recipe whose flour is unmeasured can't be costed or cooked from, so the catalogue recipe is left unchanged."
  },
  "themealdb:52890": {
   "videoId": "5ZYWVQ8imVA",
@@ -2965,9 +2963,9 @@
   "videoId": "W5AJhsW-X44",
   "title": "Jamaican Fried Dumplings 🇯🇲",
   "channel": "Racquel’s Caribbean Cuisine",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53352": {
   "videoId": "iJm1F-TE8Sk",

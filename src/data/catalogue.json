@@ -27650,68 +27650,116 @@
  {
   "source": "themealdb:52920",
   "title": "Chicken Marengo",
-  "description": "A French dish of chicken legs, mushrooms and passata — serves 4, about an hour start to finish.",
+  "description": "A simple herby chicken stew: cubed chicken breast browned with onion, then simmered with tomatoes, garlic and thyme, and finished with mushrooms and parsley.",
   "servings": 4,
   "cuisine": "French",
   "category": "Chicken",
   "image": "https://www.themealdb.com/images/media/meals/qpxvuq1511798906.jpg",
   "prep_minutes": 10,
-  "cook_minutes": 45,
+  "cook_minutes": 40,
   "ingredients": [
    {
     "name": "olive oil",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": ""
+   },
+   {
+    "name": "chicken breast",
+    "quantity": 500,
+    "unit": "g",
+    "note": "cubed"
+   },
+   {
+    "name": "onion",
+    "quantity": 1,
+    "unit": "",
+    "note": "large, chopped"
+   },
+   {
+    "name": "plain flour",
     "quantity": 1,
     "unit": "tbsp",
     "note": ""
    },
    {
-    "name": "mushrooms",
-    "quantity": 300,
-    "unit": "g",
-    "note": ""
+    "name": "garlic",
+    "quantity": 2,
+    "unit": "clove",
+    "note": "crushed"
    },
    {
-    "name": "chicken legs",
-    "quantity": 4,
-    "unit": "",
-    "note": ""
-   },
-   {
-    "name": "passata",
-    "quantity": 500,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "stock cube",
+    "name": "bay leaf",
     "quantity": 1,
-    "unit": "",
+    "unit": "leaf",
     "note": ""
    },
    {
-    "name": "black olives",
-    "quantity": 100,
-    "unit": "g",
+    "name": "thyme",
+    "quantity": 0.25,
+    "unit": "tsp",
     "note": ""
+   },
+   {
+    "name": "salt",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": ""
+   },
+   {
+    "name": "black pepper",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": ""
+   },
+   {
+    "name": "tomato",
+    "quantity": 400,
+    "unit": "g",
+    "note": "chopped"
+   },
+   {
+    "name": "water",
+    "quantity": 250,
+    "unit": "ml",
+    "note": ""
+   },
+   {
+    "name": "mushrooms",
+    "quantity": 200,
+    "unit": "g",
+    "note": "thickly sliced"
    },
    {
     "name": "parsley",
     "quantity": null,
     "unit": "",
-    "note": "chopped"
+    "note": "chopped, to serve"
    }
   ],
   "steps": [
    {
-    "text": "Heat the oil in a large flameproof casserole dish and stir-fry the mushrooms until they start to soften. Add the chicken legs and cook briefly on each side to colour them a little.",
+    "text": "Heat the olive oil over a medium heat and brown the cubed chicken for 3-4 minutes.",
+    "minutes": 4
+   },
+   {
+    "text": "Add the chopped onion and fry until it starts to brown.",
     "minutes": null
    },
    {
-    "text": "Pour in the passata, crumble in the stock cube and stir in the olives. Season with black pepper – you shouldn’t need salt. Cover and simmer for 40 mins until the chicken is tender.",
-    "minutes": 40
+    "text": "Turn the heat down, stir in the flour and cook for 2 minutes, stirring.",
+    "minutes": 2
    },
    {
-    "text": "Sprinkle with parsley and serve with pasta and a salad, or mash and green veg, if you like.",
+    "text": "Add the garlic, bay leaf, thyme, tomatoes and the water. Bring to the boil, cover and simmer for 15 minutes.",
+    "minutes": 15
+   },
+   {
+    "text": "Add the mushrooms and simmer uncovered for another 15 minutes.",
+    "minutes": 15
+   },
+   {
+    "text": "Season with the salt and pepper (the source does not say when they go in), sprinkle with chopped parsley and serve, with pasta, rice or toasted French bread if you like.",
     "minutes": null
    }
   ]
@@ -29721,80 +29769,44 @@
  },
  {
   "source": "themealdb:53170",
-  "title": "Chocolate churros with chocolate & salted caramel sauce",
-  "description": "A Spanish sweet made with cream, dark chocolate and cocoa powder — makes 12, on the table in about 45 minutes.",
-  "servings": 12,
+  "title": "Churros with chocolate sauce and salted caramel",
+  "description": "Plain churros piped from a choux-style dough, fried and rolled in cinnamon sugar, served with a semisweet chocolate sauce and a homemade salted caramel.",
+  "servings": 8,
   "cuisine": "Spanish",
   "category": "Dessert",
   "image": "https://www.themealdb.com/images/media/meals/erzs951763296201.jpg",
   "prep_minutes": 20,
-  "cook_minutes": 20,
+  "cook_minutes": 30,
   "ingredients": [
    {
-    "name": "vegetable oil",
-    "quantity": null,
-    "unit": "",
-    "note": "for deep-frying"
-   },
-   {
-    "name": "ice cream",
-    "quantity": null,
-    "unit": "",
-    "note": "to serve"
-   },
-   {
-    "name": "brown sugar",
-    "quantity": 120,
-    "unit": "g",
-    "note": ""
+    "name": "milk",
+    "quantity": 1,
+    "unit": "cup",
+    "note": "for the churros"
    },
    {
     "name": "butter",
-    "quantity": 60,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "cream",
-    "quantity": 250,
-    "unit": "ml",
-    "note": ""
-   },
-   {
-    "name": "dark chocolate",
-    "quantity": 100,
-    "unit": "g",
-    "note": ""
+    "quantity": 6,
+    "unit": "tbsp",
+    "note": "diced into small cubes, for the churros"
    },
    {
     "name": "sugar",
-    "quantity": 100,
-    "unit": "g",
-    "note": ""
+    "quantity": 1.5,
+    "unit": "tbsp",
+    "note": "granulated, for the churros"
    },
    {
-    "name": "cinnamon",
-    "quantity": 2,
+    "name": "salt",
+    "quantity": 0.25,
     "unit": "tsp",
-    "note": ""
+    "note": "for the churros"
    },
    {
     "name": "plain flour",
-    "quantity": 200,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "cocoa powder",
-    "quantity": 50,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "baking powder",
     "quantity": 1,
-    "unit": "tsp",
-    "note": ""
+    "unit": "cup",
+    "note": "listed as all-purpose flour"
    },
    {
     "name": "vanilla extract",
@@ -29803,48 +29815,108 @@
     "note": ""
    },
    {
-    "name": "butter",
-    "quantity": 50,
+    "name": "eggs",
+    "quantity": 3,
+    "unit": "",
+    "note": "large"
+   },
+   {
+    "name": "vegetable oil",
+    "quantity": 1,
+    "unit": "cup",
+    "note": "canola oil, for deep-frying"
+   },
+   {
+    "name": "sugar",
+    "quantity": 0.5,
+    "unit": "cup",
+    "note": "granulated, for the cinnamon sugar coating"
+   },
+   {
+    "name": "cinnamon",
+    "quantity": 0.25,
+    "unit": "tsp",
+    "note": "ground, for the coating"
+   },
+   {
+    "name": "dark chocolate",
+    "quantity": 225,
     "unit": "g",
-    "note": ""
+    "note": "semisweet, finely chopped, for the chocolate sauce"
+   },
+   {
+    "name": "cream",
+    "quantity": 1,
+    "unit": "cup",
+    "note": "heavy cream, for the chocolate sauce"
+   },
+   {
+    "name": "corn syrup",
+    "quantity": 0.5,
+    "unit": "cup",
+    "note": "light corn syrup, for the chocolate sauce"
+   },
+   {
+    "name": "sugar",
+    "quantity": 1,
+    "unit": "cup",
+    "note": "granulated, for the salted caramel"
+   },
+   {
+    "name": "butter",
+    "quantity": 6,
+    "unit": "tbsp",
+    "note": "salted, room temperature, cut into 6 pieces, for the caramel"
+   },
+   {
+    "name": "cream",
+    "quantity": 0.5,
+    "unit": "cup",
+    "note": "heavy cream, for the caramel"
+   },
+   {
+    "name": "salt",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "stirred into the caramel"
    }
   ],
   "steps": [
    {
-    "text": "To make the sauce, tip the sugar and butter into a saucepan and bring to a simmer until the sugar has melted, then stir in the cream and simmer until you have a smooth sauce, about 2-3 mins. Remove from the heat, stir through a pinch of sea salt and the chocolate, and continue to stir for 2-3 mins, or until it has completely melted.",
+    "text": "Bring the milk, butter, sugar and salt to a boil in a large saucepan over medium-high heat. Add the flour, lower the heat to medium-low and stir constantly for about 3 minutes until it comes together.",
     "minutes": 3
    },
    {
-    "text": "Keep warm or leave to cool for reheating later. For the coating, mix the sugar with the cinnamon and a small pinch of fine sea salt and set aside.",
+    "text": "Cool the dough for 2-3 minutes, then stir in the vanilla and eggs until smooth.",
+    "minutes": 3
+   },
+   {
+    "text": "Heat the oil in a large pot or deep skillet over medium-high heat to 175°C. Fill a piping bag fitted with a rounded star tip with the dough.",
     "minutes": null
    },
    {
-    "text": "For the churros, tip the flour, cocoa, baking powder and a large pinch of salt into a bowl. Add the vanilla extract and melted butter, then carefully pour in 250-300ml boiling water and whisk to make a smooth, very thick batter.",
-    "minutes": null
-   },
-   {
-    "text": "Leave to cool for a few minutes, then scrape the mixture into a piping bag fitted with a medium star nozzle.",
-    "minutes": null
-   },
-   {
-    "text": "Tip sunflower oil into a deep-fat fryer following the manufacturer’s instructions, or a heavy-based pan, ensuring it is no more than a third full. Heat to 170C, or until a cube of bread dropped in browns in 30 seconds.",
-    "minutes": null
-   },
-   {
-    "text": "Pipe 12-15cm lengths of dough into the oil, snipping off the end of each one with a pair of scissors as you go.",
-    "minutes": null
-   },
-   {
-    "text": "Pipe four or five at a time and cook for around 4 mins, or until golden and crisp, turning them with tongs or a slotted spoon as they cook. Remove from the oil and place on a wire rack. Repeat with the rest of the dough.",
+    "text": "Pipe about 15 cm lengths into the oil, snipping each end with clean scissors. Fry about 2 minutes per side until golden brown.",
     "minutes": 4
    },
    {
-    "text": "Leave to cool if reheating later, otherwise roll the churros in the cinnamon sugar and serve immediately with the warm chocolate sauce and ice cream.",
+    "text": "Drain briefly on paper towels, then roll in the cinnamon sugar (sugar whisked with cinnamon). Repeat with the rest of the dough.",
     "minutes": null
    },
    {
-    "text": "To reheat the churros, put on a tray and bake for 5-8 mins, then roll in the sugar coating. Meanwhile, warm the sauce in a pan and serve alongside for dipping.",
-    "minutes": 8
+    "text": "For the chocolate sauce, put the chopped chocolate in a bowl. Simmer the cream and corn syrup, pour over the chocolate, leave 3-4 minutes, then whisk smooth and let cool slightly.",
+    "minutes": 4
+   },
+   {
+    "text": "For the salted caramel, melt the sugar in a saucepan over medium heat, stirring constantly, until it is a thick amber liquid.",
+    "minutes": null
+   },
+   {
+    "text": "Immediately stir in the butter until melted, about 2 minutes (whisk hard if it separates). Slowly pour in the cream, boil for 1 minute, then stir in the salt and cool a little.",
+    "minutes": 3
+   },
+   {
+    "text": "Serve the churros warm with the chocolate sauce and salted caramel.",
+    "minutes": null
    }
   ]
  },
@@ -29947,115 +30019,113 @@
  },
  {
   "source": "themealdb:53324",
-  "title": "Chocolate empanadas",
-  "description": "An Uruguayan sweet made with condensed milk, cocoa powder and cinnamon — makes 10, on the table in about 45 minutes.",
-  "servings": 10,
-  "cuisine": "Uruguayan",
+  "title": "Chocolate dulce de leche empanadas",
+  "description": "Baked cocoa pastry half-moons filled with homemade dulce de leche, boiled from a can of condensed milk, brushed with egg wash and served warm.",
+  "servings": 15,
+  "cuisine": "Latin American",
   "category": "Dessert",
   "image": "https://www.themealdb.com/images/media/meals/u9ezi21764375474.jpg",
-  "prep_minutes": 15,
-  "cook_minutes": 30,
+  "prep_minutes": 40,
+  "cook_minutes": 140,
   "ingredients": [
    {
     "name": "condensed milk",
-    "quantity": 400,
-    "unit": "g",
-    "note": ""
+    "quantity": 1,
+    "unit": "can",
+    "note": "not evaporated milk; boiled into dulce de leche (can size not given)"
    },
    {
     "name": "plain flour",
-    "quantity": 250,
+    "quantity": 315,
     "unit": "g",
     "note": ""
    },
    {
-    "name": "cocoa powder",
-    "quantity": 25,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "salt",
-    "quantity": 1,
-    "unit": "pinch",
-    "note": ""
-   },
-   {
-    "name": "butter",
-    "quantity": 125,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "eggs",
-    "quantity": 1,
-    "unit": "",
-    "note": ""
-   },
-   {
-    "name": "milk",
+    "name": "icing sugar",
     "quantity": 3,
     "unit": "tbsp",
     "note": ""
    },
    {
-    "name": "butter",
-    "quantity": 30,
+    "name": "cocoa powder",
+    "quantity": 60,
     "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "sugar",
-    "quantity": 30,
-    "unit": "g",
-    "note": ""
+    "note": "sieved"
    },
    {
     "name": "cinnamon",
-    "quantity": 1,
+    "quantity": 0.5,
     "unit": "tsp",
     "note": ""
+   },
+   {
+    "name": "butter",
+    "quantity": 200,
+    "unit": "g",
+    "note": "cold, cubed"
+   },
+   {
+    "name": "egg yolks",
+    "quantity": 2,
+    "unit": "",
+    "note": ""
+   },
+   {
+    "name": "water",
+    "quantity": 4,
+    "unit": "tbsp",
+    "note": "or milk or coffee"
+   },
+   {
+    "name": "salt",
+    "quantity": 1,
+    "unit": "pinch",
+    "note": "generous pinch, plus a tiny bit on the caramel"
+   },
+   {
+    "name": "eggs",
+    "quantity": null,
+    "unit": "",
+    "note": "beaten, for the egg wash (amount not given)"
+   },
+   {
+    "name": "ice cream",
+    "quantity": null,
+    "unit": "",
+    "note": "vanilla, to serve"
    }
   ],
   "steps": [
    {
-    "text": "For the filling place the can in a large pot and cover completely with water. Boil for two and a half hours, occassionally adding water. Let cool before opening. For further tips, please check here.",
+    "text": "Make the dulce de leche: peel the label off a can of condensed milk, set it in a pot lined with a tea towel, cover with water by about 5 cm and simmer for 2 hours. Pour off the water and let the can cool completely.",
+    "minutes": 120
+   },
+   {
+    "text": "Mix the flour, icing sugar, salt, sieved cocoa and cinnamon in a large bowl or food processor. Rub in the cold cubed butter until it looks like breadcrumbs.",
     "minutes": null
    },
    {
-    "text": "For the dough combine the flour, cocoa powder, and salt in a large bowl. Add the cold butter in small pieces and rub into crumbs with your fingers Add the egg and work into a dough.",
+    "text": "Mix the egg yolks with the water, stir into the dry mix until a dough forms, then wrap and chill for 30 minutes.",
+    "minutes": 30
+   },
+   {
+    "text": "Roll the dough about 6 mm thick on a floured surface and cut discs. Brush egg wash around each rim.",
     "minutes": null
    },
    {
-    "text": "You may have to add milk, a tablespoon at a time if it still is to dry. Wrap and chill for at least half an hour or overnight.",
-    "minutes": 60
-   },
-   {
-    "text": "Line a baking sheeet with parchment paper and preheat the oven to 180 degrees Celsius.",
+    "text": "Spoon a teaspoon of the caramel onto half of each disc, with a tiny pinch of salt if you like. Fold over and seal the edges with fingers, then a fork.",
     "minutes": null
    },
    {
-    "text": "Roll out the dough on a lightly floured surface, it should be thin. Cut out circles of 12cm either with a cookie cutter or with a smaller plate/dish. Put two to three teaspoons of the dulce de leche in the middle of each circle.",
-    "minutes": null
+    "text": "Brush the tops with egg wash and chill the empanadas for at least 30 minutes.",
+    "minutes": 30
    },
    {
-    "text": "Brush the edges with milk, I do this with my pinkie. Fold each circle in half so that you have a half moon and press down the edges with a fork.",
-    "minutes": null
+    "text": "Bake at 190°C for 15-20 minutes.",
+    "minutes": 18
    },
    {
-    "text": "You can also turn the edges about half a centimeter inwards every centimeter or so to create a pattern.",
-    "minutes": null
-   },
-   {
-    "text": "Place the prepared empanadas on the baking sheet and brush with egg wash. Bake for about 20-25min.",
-    "minutes": 25
-   },
-   {
-    "text": "Towards the end of the baking time, melt the remaining butter and mix the sugar and cinnamon in a small bowl. Once you take the empanadas out, immediately brush with the butter and sprinkle with the sugar mix.",
-    "minutes": null
-   },
-   {
-    "text": "Empanadas can be enjoyed either still warm or cold. If eating warm, be careful not to burn yourself with hot filling!",
+    "text": "Serve warm, dusted with a little cocoa powder and with a scoop of vanilla ice cream if you like.",
     "minutes": null
    }
   ]
@@ -32004,25 +32074,25 @@
  {
   "source": "themealdb:53343",
   "title": "Classic Tourtière",
-  "description": "A Canadian dish of beef mince, pork mince and savory — serves 8, on the table in about 45 minutes.",
-  "servings": 8,
+  "description": "A Canadian beef meat pie: minced beef simmered with onion, allspice and a grated potato, cooled, then baked in a double pastry crust until golden.",
+  "servings": 6,
   "cuisine": "Canadian",
   "category": "Beef",
   "image": "https://www.themealdb.com/images/media/meals/0sd7ac1764787957.jpg",
-  "prep_minutes": 20,
-  "cook_minutes": 25,
+  "prep_minutes": 30,
+  "cook_minutes": 50,
   "ingredients": [
    {
-    "name": "vegetable oil",
-    "quantity": 2,
-    "unit": "tbsp",
+    "name": "beef mince",
+    "quantity": 675,
+    "unit": "g",
     "note": ""
    },
    {
     "name": "onion",
     "quantity": 1,
-    "unit": "",
-    "note": "chopped"
+    "unit": "cup",
+    "note": "minced (250 mL)"
    },
    {
     "name": "garlic",
@@ -32031,22 +32101,46 @@
     "note": "minced"
    },
    {
-    "name": "beef mince",
-    "quantity": 455,
-    "unit": "g",
-    "note": ""
+    "name": "bay leaf",
+    "quantity": 2,
+    "unit": "leaf",
+    "note": "removed before filling the pie"
    },
    {
-    "name": "pork mince",
-    "quantity": 455,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "savory",
+    "name": "celery salt",
     "quantity": 1,
     "unit": "tsp",
     "note": ""
+   },
+   {
+    "name": "black pepper",
+    "quantity": 0.25,
+    "unit": "tsp",
+    "note": "ground"
+   },
+   {
+    "name": "allspice",
+    "quantity": 0.25,
+    "unit": "tsp",
+    "note": "ground"
+   },
+   {
+    "name": "worcestershire sauce",
+    "quantity": 2,
+    "unit": "dash",
+    "note": "2-3 dashes"
+   },
+   {
+    "name": "beef stock",
+    "quantity": 375,
+    "unit": "ml",
+    "note": "beef or chicken stock"
+   },
+   {
+    "name": "potato",
+    "quantity": 1,
+    "unit": "",
+    "note": "medium Yukon Gold, peeled and grated"
    },
    {
     "name": "salt",
@@ -32055,77 +32149,51 @@
     "note": "to taste"
    },
    {
-    "name": "black pepper",
-    "quantity": null,
-    "unit": "",
-    "note": "to taste"
-   },
-   {
-    "name": "cloves",
-    "quantity": 0.5,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "nutmeg",
-    "quantity": 0.5,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "bay leaf",
-    "quantity": 1,
-    "unit": "",
-    "note": ""
-   },
-   {
-    "name": "beef stock",
-    "quantity": 1,
-    "unit": "cup",
-    "note": ""
-   },
-   {
-    "name": "potato",
-    "quantity": 1,
-    "unit": "",
-    "note": "small"
-   },
-   {
     "name": "shortcrust pastry",
-    "quantity": 4,
-    "unit": "",
-    "note": ""
-   },
-   {
-    "name": "eggs",
     "quantity": 1,
     "unit": "",
-    "note": "beaten"
+    "note": "homemade, recipe in a separate video, or store-bought; 1 recipe makes two discs (top and base)"
+   },
+   {
+    "name": "egg yolks",
+    "quantity": 1,
+    "unit": "",
+    "note": "mixed with 2 tbsp water, for brushing"
+   },
+   {
+    "name": "water",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": "mixed into the egg yolk wash"
    }
   ],
   "steps": [
    {
-    "text": "Heat oil on medium-high heat in a large sauté pan or skillet, then sauté the onion and garlic until softened, about 5 minutes. Add the ground beef, pork, and spices and cook until the meat is browned.",
+    "text": "In a large sauté pan over medium-high heat, cook the beef until no longer pink. Drain off excess fat.",
+    "minutes": null
+   },
+   {
+    "text": "Add the onion, garlic, bay leaves, celery salt, pepper, allspice and Worcestershire sauce and sauté until the onion is tender, about 5 minutes.",
     "minutes": 5
    },
    {
-    "text": "Add the beef broth and bring it up to a simmer then reduce heat to medium low. Add the grated potato and stir it in. Cook until liquid is almost absorbed, about 15 min. Remove the bay leaves and add salt to taste.",
+    "text": "Add the stock and bring to a simmer. Grate the potato into the pan and stir it in.",
+    "minutes": null
+   },
+   {
+    "text": "Simmer uncovered for about 15 minutes until most of the liquid is absorbed. Remove the bay leaves, season with salt, and cool to room temperature (can be made a day ahead and chilled).",
     "minutes": 15
    },
    {
-    "text": "Remove the pan from the heat and let the mixture cool completely — it bakes best if the filling is chilled.",
+    "text": "Heat the oven to 190°C. Roll out one disc of pie dough to just under 6 mm and line a 9-inch (23 cm) pie plate. Fill with the cooled mixture.",
     "minutes": null
    },
    {
-    "text": "Preheat the oven to 375 °F (190 °C). On a lightly floured surface, roll out one disc of the pie dough to less than the 1/4-inch thickness and line the 9-inch pie plate. Fill this with the cooled tourtière mixture and spread out evenly.",
+    "text": "Roll out the second disc to the same thickness, cut a steam hole in the centre and lay it over the filling. Trim and pinch the edges together, then brush with the egg yolk and water wash.",
     "minutes": null
    },
    {
-    "text": "Roll out the remaining dough to the same thickness, cut a hole in the centre (for steam to escape) and place on top of the filling. Trim the dough to 1/2-inch beyond the edge of the pie plate and pinch the edges of the crust together. Brush the crust with the egg wash.",
-    "minutes": null
-   },
-   {
-    "text": "Bake tourtière for about 45 minutes or until the pastry is a rich golden brown. Let cool for 15 minutes before slicing to serve. Serves: 8-10 (makes 2 9-inch pies)",
+    "text": "Bake for about 45 minutes until the pastry is rich golden brown. Cool for 15 minutes before slicing.",
     "minutes": 45
    }
   ]
@@ -34973,19 +35041,19 @@
  {
   "source": "themealdb:53098",
   "title": "Cumberland Pie",
-  "description": "A British dish of celery, carrot and tomato puree — serves 8, a slow cook that's worth the wait.",
-  "servings": 8,
+  "description": "A slow-cooked beef and vegetable casserole in a beef stock gravy, topped with sliced potatoes and grated cheddar and parmesan, then baked until golden.",
+  "servings": 6,
   "cuisine": "British",
   "category": "Beef",
   "image": "https://www.themealdb.com/images/media/meals/pvfkz61761595976.jpg",
-  "prep_minutes": 20,
-  "cook_minutes": 175,
+  "prep_minutes": 30,
+  "cook_minutes": 240,
   "ingredients": [
    {
     "name": "celery",
     "quantity": 2,
     "unit": "",
-    "note": ""
+    "note": "sticks, sliced into 2 cm pieces"
    },
    {
     "name": "onion",
@@ -34997,25 +35065,37 @@
     "name": "carrot",
     "quantity": 2,
     "unit": "",
-    "note": "large"
+    "note": "big, halved lengthways and sliced into chunks (2 or 3)"
+   },
+   {
+    "name": "leek",
+    "quantity": 1,
+    "unit": "",
+    "note": "sliced into big chunks"
+   },
+   {
+    "name": "spring onion",
+    "quantity": 1,
+    "unit": "bunch",
+    "note": "tops and tails removed"
    },
    {
     "name": "bay leaf",
-    "quantity": 5,
-    "unit": "",
+    "quantity": 2,
+    "unit": "leaf",
     "note": ""
    },
    {
     "name": "thyme",
     "quantity": 3,
-    "unit": "",
-    "note": ""
+    "unit": "sprig",
+    "note": "two go in the casserole, leaves of the rest on the potatoes"
    },
    {
     "name": "vegetable oil",
     "quantity": 2,
     "unit": "tbsp",
-    "note": ""
+    "note": "half for the casserole, half for the potatoes"
    },
    {
     "name": "butter",
@@ -35045,57 +35125,77 @@
     "name": "stock cube",
     "quantity": 2,
     "unit": "",
-    "note": ""
+    "note": "beef, dissolved in 600 ml hot water"
    },
    {
-    "name": "chuck steak",
-    "quantity": 800,
+    "name": "water",
+    "quantity": 600,
+    "unit": "ml",
+    "note": "hot, to dissolve the stock cubes"
+   },
+   {
+    "name": "beef",
+    "quantity": 500,
     "unit": "g",
-    "note": ""
+    "note": "stewing steak"
    },
    {
     "name": "potato",
-    "quantity": 800,
+    "quantity": 850,
     "unit": "g",
-    "note": ""
+    "note": "large"
    },
    {
     "name": "cheddar cheese",
     "quantity": 25,
     "unit": "g",
-    "note": ""
+    "note": "mature, grated"
    },
    {
     "name": "parmesan",
     "quantity": 25,
     "unit": "g",
-    "note": ""
+    "note": "grated"
+   },
+   {
+    "name": "seasoning",
+    "quantity": null,
+    "unit": "",
+    "note": "unspecified; tossed with the potato slices"
    }
   ],
   "steps": [
    {
-    "text": "Heat oven to 160C/140C fan/gas 3. Soften the celery, onion, carrots, bay and 1 thyme sprig in a casserole with 1 tbsp oil and the butter for 10 mins. Stir in the flour, followed by the purée, Worcestershire sauce and stock cubes.",
+    "text": "Heat the oven to 140°C fan. In a casserole, soften the celery, onion, carrots, leek, spring onions, bay leaves and two thyme sprigs in 1 tbsp of the oil and the butter for 10 minutes.",
     "minutes": 10
    },
    {
-    "text": "Gradually stir in 600ml hot water, then tip in the beef and bring to a gentle simmer. Cover and cook in the oven for 2 hrs 30 mins, then uncover and cook for 30 mins -1 hr more until the meat is really tender and sauce thickened.",
-    "minutes": 120
-   },
-   {
-    "text": "Meanwhile, cook potatoes in a pan of boiling water until they’re not done but about ¾ of the way there.",
+    "text": "Stir in the flour, then the tomato puree, Worcestershire sauce and the stock made from the cubes and 600 ml hot water. Bring to a gentle boil.",
     "minutes": null
    },
    {
-    "text": "Transfer meat to a baking dish. Slice spuds into 1cm thick rounds and gently toss with seasoning, the remaining oil and thyme leaves. Layer on the beef, scattering with the cheese as you layer.",
+    "text": "Add the beef and bring back to a simmer. Cover and cook in the oven for 2 hours 30 minutes.",
+    "minutes": 150
+   },
+   {
+    "text": "Uncover and cook for a further 30 to 60 minutes until the meat is tender and the sauce has thickened.",
+    "minutes": 30
+   },
+   {
+    "text": "Meanwhile, boil the potatoes until about three-quarters cooked.",
     "minutes": null
    },
    {
-    "text": "You can cover and chill the pie now for 1 day, or freeze for up to 3 months.",
+    "text": "Move the meat to a baking dish. Slice the potatoes into 1 cm rounds and toss with seasoning, the remaining oil and the leaves of the last thyme sprig.",
     "minutes": null
    },
    {
-    "text": "Increase oven to 200C/180C fan/gas 6 and bake for 30-40 mins until golden and crispy, and sauce bubbling if the dish went in cold. Serve with peas.",
-    "minutes": 40
+    "text": "Layer the potatoes over the beef, scattering the cheddar and parmesan between the layers. It can be chilled for a day or frozen at this point.",
+    "minutes": null
+   },
+   {
+    "text": "Raise the oven to 180°C and bake for 30 to 40 minutes until golden and crisp, with the sauce bubbling.",
+    "minutes": 35
    }
   ]
  },
@@ -37432,149 +37532,157 @@
  },
  {
   "source": "themealdb:53370",
-  "title": "Egg Foo Young",
-  "description": "A Chinese dish of prawns, spring onion and bean sprouts — serves 4, on the table in about 45 minutes.",
-  "servings": 4,
+  "title": "Egg foo young",
+  "description": "Pan-fried omelettes of egg, pork, prawns, shredded vegetables and chilli, cooked in a wok and served with a thick oyster-soy gravy.",
+  "servings": 3,
   "cuisine": "Chinese",
   "category": "Seafood",
   "image": "https://www.themealdb.com/images/media/meals/47y6ii1765658818.jpg",
-  "prep_minutes": 25,
+  "prep_minutes": 20,
   "cook_minutes": 15,
   "ingredients": [
    {
-    "name": "beef stock",
-    "quantity": 1,
+    "name": "eggs",
+    "quantity": 5,
+    "unit": "",
+    "note": "beaten"
+   },
+   {
+    "name": "pork mince",
+    "quantity": 113,
+    "unit": "g",
+    "note": "pre-cooked"
+   },
+   {
+    "name": "prawns",
+    "quantity": 113,
+    "unit": "g",
+    "note": "peeled, roughly cut into small pieces"
+   },
+   {
+    "name": "carrot",
+    "quantity": 0.5,
     "unit": "cup",
-    "note": ""
+    "note": "thin shreds"
+   },
+   {
+    "name": "chinese leek",
+    "quantity": 0.33,
+    "unit": "cup",
+    "note": "cut into short strips"
+   },
+   {
+    "name": "chives",
+    "quantity": 0.33,
+    "unit": "cup",
+    "note": "Chinese chives, cut into short strips"
+   },
+   {
+    "name": "cabbage",
+    "quantity": 0.33,
+    "unit": "cup",
+    "note": "thin shreds"
+   },
+   {
+    "name": "chilli",
+    "quantity": 0.25,
+    "unit": "cup",
+    "note": "fresh hot chilli, chopped"
    },
    {
     "name": "soy sauce",
     "quantity": 1,
     "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "shaoxing wine",
-    "quantity": 1,
-    "unit": "tbsp",
-    "note": ""
+    "note": "in the egg mixture"
    },
    {
     "name": "oyster sauce",
-    "quantity": 1,
-    "unit": "tbsp",
-    "note": ""
+    "quantity": 2,
+    "unit": "tsp",
+    "note": "in the egg mixture"
    },
    {
     "name": "black pepper",
     "quantity": 0.5,
     "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "cornflour",
-    "quantity": 1,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "water",
-    "quantity": 1,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "cornflour",
-    "quantity": 1,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "water",
-    "quantity": 1,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "eggs",
-    "quantity": 8,
-    "unit": "",
-    "note": "large"
+    "note": "in the egg mixture"
    },
    {
     "name": "salt",
-    "quantity": 0.5,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "sugar",
     "quantity": 0.25,
     "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "spring onion",
-    "quantity": 1,
-    "unit": "",
-    "note": ""
-   },
-   {
-    "name": "bean sprouts",
-    "quantity": 1,
-    "unit": "cup",
-    "note": ""
-   },
-   {
-    "name": "prawns",
-    "quantity": 20,
-    "unit": "",
-    "note": ""
+    "note": "to taste; creator uses about this much"
    },
    {
     "name": "vegetable oil",
-    "quantity": null,
-    "unit": "",
-    "note": "for deep-frying, about 3 cup"
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "for frying"
    },
    {
-    "name": "jasmine rice",
-    "quantity": 2,
+    "name": "oyster sauce",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "for the sauce"
+   },
+   {
+    "name": "soy sauce",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "for the sauce (the method text says 2 tbsp)"
+   },
+   {
+    "name": "sugar",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "for the sauce"
+   },
+   {
+    "name": "cornflour",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "for the sauce"
+   },
+   {
+    "name": "white pepper",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": "for the sauce"
+   },
+   {
+    "name": "water",
+    "quantity": 1,
     "unit": "cup",
-    "note": ""
+    "note": "for the sauce; chicken broth can replace it"
    }
   ],
   "steps": [
    {
-    "text": "In a small saucepan, add the beef stock, soy sauce, Shaoxing wine, oyster sauce, and white pepper powder over medium heat. Whisk together and bring to a simmer.",
+    "text": "Cut the cabbage and carrot into thin shreds, the Chinese leeks and chives into short strips, and chop the chillies. Roughly chop the prawns and pre-cook the pork. Beat the eggs.",
     "minutes": null
    },
    {
-    "text": "Combine the cornstarch and water in a small bowl and whisk to dissolve. Add to the saucepan and whisk until the gravy thickens and coats the back of the spoon, 2 to 3 minutes.",
-    "minutes": 3
-   },
-   {
-    "text": "Cover the saucepan with a lid and keep it warm on the lowest possible heat.",
+    "text": "Mix everything in a big bowl with the soy sauce, oyster sauce, black pepper and salt.",
     "minutes": null
    },
    {
-    "text": "In a medium bowl, whisk together the cornstarch and water until dissolved. Add the eggs, salt, and sugar. Whisk until well combined and there are no more egg white clumps.",
+    "text": "Heat the wok on high for about 10 seconds, add the oil, then turn the heat to low because the egg burns easily.",
     "minutes": null
    },
    {
-    "text": "Add the green onion, bean sprouts, and shrimp. Stir until everything is evenly coated.",
+    "text": "Add about 1/2 cup of the egg mixture and fry on low heat for 1-2 minutes each side until both sides are golden. Repeat with the rest, one at a time in a round wok.",
+    "minutes": 4
+   },
+   {
+    "text": "For the gravy, mix the oyster sauce, soy sauce, sugar, cornflour, white pepper and water (or chicken broth) in a small pot.",
     "minutes": null
    },
    {
-    "text": "Add the vegetable oil to a large wok; it should reach about 2 inches up the sides. Heat the oil over medium-high heat to 180°C (350°F), or until vigorous bubbles form around an inserted wooden chopstick.",
+    "text": "Cook over medium heat, turning it to low once it bubbles, and stir until the sauce thickens.",
     "minutes": null
    },
    {
-    "text": "With a ladle, gently and slowly add 1/4 of the omelet batter. Egg foo young should immediately bubble and puff up like magic. Fry until golden brown and crispy on each side, about 2 minutes per side.",
-    "minutes": 2
-   },
-   {
-    "text": "If there are any light spots, use a ladle to gently baste it with hot oil.",
+    "text": "Pour the sauce over the egg foo young and serve.",
     "minutes": null
    }
   ]
@@ -38658,36 +38766,60 @@
  {
   "source": "themealdb:53266",
   "title": "Falafel",
-  "description": "A Turkish dish of chickpeas, ground cumin and ground coriander — serves 2, ready in under half an hour.",
-  "servings": 2,
-  "cuisine": "Turkish",
+  "description": "Crispy deep-fried falafel balls made from soaked dried chickpeas blitzed with onion, garlic, herbs and spices, served in pita with salad and tahini sauce. Makes 24 balls, about 4 each for 6 people.",
+  "servings": 6,
+  "cuisine": "Middle Eastern",
   "category": "Vegetarian",
   "image": "https://www.themealdb.com/images/media/meals/u5e9qq1763795441.jpg",
-  "prep_minutes": 15,
-  "cook_minutes": 10,
+  "prep_minutes": 80,
+  "cook_minutes": 20,
   "ingredients": [
    {
-    "name": "vegetable oil",
-    "quantity": 2,
-    "unit": "tbsp",
-    "note": ""
+    "name": "dried chickpeas",
+    "quantity": 400,
+    "unit": "g",
+    "note": "dried, soaked overnight; not canned"
    },
    {
     "name": "onion",
     "quantity": 1,
     "unit": "",
-    "note": "chopped"
+    "note": "small"
    },
    {
     "name": "garlic",
-    "quantity": 1,
+    "quantity": 3,
     "unit": "clove",
-    "note": "peeled crushed"
+    "note": "3-5 cloves"
    },
    {
-    "name": "chickpeas",
-    "quantity": 400,
-    "unit": "g",
+    "name": "parsley",
+    "quantity": 0.33,
+    "unit": "bunch",
+    "note": ""
+   },
+   {
+    "name": "coriander",
+    "quantity": 0.5,
+    "unit": "bunch",
+    "note": "listed as cilantro"
+   },
+   {
+    "name": "breadcrumbs",
+    "quantity": 4,
+    "unit": "tbsp",
+    "note": "or flour, or chickpea flour for gluten free (about 30 g)"
+   },
+   {
+    "name": "salt",
+    "quantity": 1.25,
+    "unit": "tsp",
+    "note": ""
+   },
+   {
+    "name": "black pepper",
+    "quantity": 0.25,
+    "unit": "tsp",
     "note": ""
    },
    {
@@ -38697,40 +38829,70 @@
     "note": ""
    },
    {
-    "name": "ground coriander",
+    "name": "paprika",
     "quantity": 1,
     "unit": "tsp",
     "note": ""
    },
    {
-    "name": "parsley",
-    "quantity": 1,
-    "unit": "handful",
-    "note": ""
+    "name": "bicarbonate of soda",
+    "quantity": 2,
+    "unit": "tsp",
+    "note": "listed as baking soda"
    },
    {
-    "name": "eggs",
-    "quantity": 1,
+    "name": "vegetable oil",
+    "quantity": null,
     "unit": "",
-    "note": "beaten"
+    "note": "for frying"
+   },
+   {
+    "name": "pita bread",
+    "quantity": null,
+    "unit": "",
+    "note": "to serve"
+   },
+   {
+    "name": "tahini",
+    "quantity": null,
+    "unit": "",
+    "note": "tahini sauce, to serve"
+   },
+   {
+    "name": "mixed salad leaves",
+    "quantity": null,
+    "unit": "",
+    "note": "listed as salad, to serve"
    }
   ],
   "steps": [
    {
-    "text": "Heat 1 tbsp oil in a large pan, then fry the onion and garlic over a low heat for 5 mins until softened.",
-    "minutes": 5
-   },
-   {
-    "text": "Tip into a large mixing bowl with the chickpeas and spices, then mash together with a fork or potato masher until the chickpeas are totally broken down. Stir in the parsley or dried herbs, with seasoning to taste.",
+    "text": "Cover the dried chickpeas with 5-7 cm of cold water in a large bowl and soak overnight. Wash and drain them.",
     "minutes": null
    },
    {
-    "text": "Add the egg, then squish the mixture together with your hands.",
+    "text": "Process the chickpeas in a food processor with the garlic, onion, parsley, coriander, bicarbonate of soda and spices until smooth but crumbly.",
     "minutes": null
    },
    {
-    "text": "Mould the mix into 6 balls, then flatten into patties. Heat the remaining oil in the pan, then fry the falafels on a medium heat for 3 mins on each side, until golden brown and firm. Serve hot or cold with couscous, pitta bread or salad.",
-    "minutes": 3
+    "text": "Transfer to a large bowl, mix in the breadcrumbs, then cover and refrigerate for 1 hour.",
+    "minutes": 60
+   },
+   {
+    "text": "Heat the oil to 180°C.",
+    "minutes": null
+   },
+   {
+    "text": "With wet hands, shape the mixture into 2.5 cm balls.",
+    "minutes": null
+   },
+   {
+    "text": "Fry in batches of 4-6 for 3-4 minutes until golden brown and crispy, then drain on paper towel.",
+    "minutes": 4
+   },
+   {
+    "text": "Serve as they are, or in pita bread with salad and tahini sauce.",
+    "minutes": null
    }
   ]
  },
@@ -42538,32 +42700,26 @@
  },
  {
   "source": "themealdb:53272",
-  "title": "Griddled flatbreads",
-  "description": "A Turkish side of wholemeal flour and bread flour — serves 6, about an hour start to finish.",
-  "servings": 6,
-  "cuisine": "Turkish",
+  "title": "Grilled flatbread",
+  "description": "Soft, bubbly flatbreads from a wet, rested dough that is chilled overnight or up to 4 days, then grilled quickly and topped with garlic lemon butter and fresh herbs.",
+  "servings": 2,
+  "cuisine": "International",
   "category": "Side",
   "image": "https://www.themealdb.com/images/media/meals/8825lo1763815264.jpg",
-  "prep_minutes": 10,
-  "cook_minutes": 65,
+  "prep_minutes": 30,
+  "cook_minutes": 5,
   "ingredients": [
    {
-    "name": "wholemeal flour",
-    "quantity": 250,
+    "name": "plain flour",
+    "quantity": 226,
     "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "bread flour",
-    "quantity": 250,
-    "unit": "g",
-    "note": ""
+    "note": "unbleached all-purpose flour"
    },
    {
     "name": "yeast",
-    "quantity": 15,
-    "unit": "g",
-    "note": ""
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "instant"
    },
    {
     "name": "sugar",
@@ -42572,31 +42728,85 @@
     "note": ""
    },
    {
+    "name": "salt",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "table salt"
+   },
+   {
+    "name": "water",
+    "quantity": 158,
+    "unit": "ml",
+    "note": "158 g, at 21-32°C"
+   },
+   {
     "name": "olive oil",
+    "quantity": 28,
+    "unit": "g",
+    "note": "divided between 2 containers"
+   },
+   {
+    "name": "butter",
     "quantity": 2,
     "unit": "tbsp",
-    "note": ""
+    "note": "melted, for the garlic butter"
+   },
+   {
+    "name": "garlic",
+    "quantity": 1,
+    "unit": "clove",
+    "note": "grated on a microplane, for the garlic butter"
+   },
+   {
+    "name": "lemon juice",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "for the garlic butter"
+   },
+   {
+    "name": "salt",
+    "quantity": null,
+    "unit": "",
+    "note": "to taste, for the garlic butter (no amount given)"
+   },
+   {
+    "name": "mint",
+    "quantity": null,
+    "unit": "",
+    "note": "chopped, or coriander, to serve"
    }
   ],
   "steps": [
    {
-    "text": "Tip the flours into a food processor. Add the yeast, sugar and 1tsp salt, then mix well. Pour in 350ml warm water and the oil, then process to a soft dough. Mix for 1 min, then leave until doubled in size, about 1 hour.",
-    "minutes": 60
-   },
-   {
-    "text": "Pulse the dough a couple of times just to knock out the air, then tip onto a floured surface. Cut the dough in half and roll out one half to a rectangle about 20 x 40cm.",
+    "text": "Whisk the flour, yeast, sugar and salt in a bowl. Pour in the water, stir, then knead only until no dry flour remains. The dough should be sticky and rough, not smooth. A stand mixer with the paddle also works.",
     "minutes": null
    },
    {
-    "text": "Trim the edges using a large sharp knife, then cut into eight 10cm squares. Line a large tray or two baking sheets with non-stick paper and arrange the bread rectangles over the tray in one layer. Repeat with the other half of the dough.",
+    "text": "Cut the dough in half, roll each piece into a rough ball and put each in a container with half the olive oil. Flatten the tops with an oiled spoon and cover tightly.",
     "minutes": null
    },
    {
-    "text": "Leave in a warm place for about 30 mins until the dough is just starting to rise.",
-    "minutes": 30
+    "text": "Rest at room temperature for 45 minutes, then refrigerate overnight or up to 4 days, until roughly doubled.",
+    "minutes": 45
    },
    {
-    "text": "Place bread directly onto the BBQ racks and cook for a couple of mins until they puff up, then flip over and cook on the other side. Tip into a basket and serve with the dips.",
+    "text": "Pat each piece into a flatbread about 6 mm thick on aluminium foil, about 28 cm across, and cover with plastic. Preheat the grill with all burners on high for 15 minutes.",
+    "minutes": 15
+   },
+   {
+    "text": "Mix the melted butter, grated garlic, lemon juice and a little salt in a small bowl.",
+    "minutes": null
+   },
+   {
+    "text": "Slide the foil with the dough onto the grill with a rimless baking sheet. Cover and cook 2 minutes until the edges are brown and bubbly.",
+    "minutes": 2
+   },
+   {
+    "text": "Flip and cook the other side for about 30 seconds, moving it every 10 seconds for grill marks. Take off the grill and cool for a minute, then peel off the foil.",
+    "minutes": null
+   },
+   {
+    "text": "Spoon over the garlic butter and sprinkle with chopped mint or coriander. Serve hot, or wrap tightly in foil and rewarm on the grill for 1-2 minutes.",
     "minutes": null
    }
   ]
@@ -46054,14 +46264,14 @@
  },
  {
   "source": "themealdb:53356",
-  "title": "Jamaican Fried Dumplings",
-  "description": "A Jamaican classic made with everyday staples — makes 12, ready in under half an hour.",
-  "servings": 12,
+  "title": "Jamaican fried dumplings",
+  "description": "Soft, sweet, fluffy fried dumplings from a rested dough of flour, sugar, baking powder and milk, shaped into 8-10 small balls and fried until golden. Yield is not stated; 4 servings assumed.",
+  "servings": 4,
   "cuisine": "Jamaican",
   "category": "Side",
   "image": "https://www.themealdb.com/images/media/meals/dd7t4d1764877271.jpg",
-  "prep_minutes": 10,
-  "cook_minutes": 5,
+  "prep_minutes": 40,
+  "cook_minutes": 10,
   "ingredients": [
    {
     "name": "plain flour",
@@ -46070,49 +46280,65 @@
     "note": ""
    },
    {
-    "name": "baking powder",
+    "name": "sugar",
     "quantity": 2,
-    "unit": "tsp",
+    "unit": "tbsp",
+    "note": "granulated"
+   },
+   {
+    "name": "baking powder",
+    "quantity": 1,
+    "unit": "tbsp",
     "note": ""
    },
    {
     "name": "salt",
-    "quantity": 1,
+    "quantity": 0.5,
     "unit": "tsp",
-    "note": ""
+    "note": "1/2 to 1 tsp"
    },
    {
     "name": "milk",
-    "quantity": 0.75,
+    "quantity": 1,
     "unit": "cup",
-    "note": ""
+    "note": "or water, added a little at a time"
+   },
+   {
+    "name": "butter",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": "optional; the source does not say when it is added"
    },
    {
     "name": "vegetable oil",
-    "quantity": 1.5,
-    "unit": "cup",
-    "note": ""
+    "quantity": null,
+    "unit": "",
+    "note": "for frying"
    }
   ],
   "steps": [
    {
-    "text": "Add flour, baking powder, and salt in a large bowl and stir to combine. Pour in the milk and stir until combined. Then roll the mixture into a ball and lightly knead until it comes together.",
+    "text": "Mix the flour, salt, baking powder and sugar well in a bowl.",
     "minutes": null
    },
    {
-    "text": "Break off about 10 pieces of dough and form them into balls. Set them aside.",
+    "text": "Pour in the milk or water a little at a time to form a dough, without making it too wet.",
     "minutes": null
    },
    {
-    "text": "In a 10-inch skillet, heat enough oil over medium heat to fry the dumplings, until the oil is about 350 degrees.",
+    "text": "Knead until the dough is soft and smooth, then rest it for 30 minutes.",
+    "minutes": 30
+   },
+   {
+    "text": "Divide into 8-10 small balls.",
     "minutes": null
    },
    {
-    "text": "Once the dumplings are browned on one side, flip them and cook until both sides are browned, about 2-3 minutes each.",
-    "minutes": 3
+    "text": "Heat oil in a frying pan over medium heat. When hot, fry the dumplings, turning to cook both sides, until light, fluffy and golden.",
+    "minutes": null
    },
    {
-    "text": "Once done, remove the dumplings from the oil and place them on paper towels or a cooling rack to drain off any excess oil. Serve and enjoy.",
+    "text": "Drain on paper towel and serve hot.",
     "minutes": null
    }
   ]
