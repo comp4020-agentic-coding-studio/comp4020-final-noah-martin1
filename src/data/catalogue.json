@@ -7505,19 +7505,19 @@
  {
   "source": "themealdb:53067",
   "title": "Stuffed peppers with quinoa",
-  "description": "Sweet peppers filled with quinoa, black beans and melted cheese.",
-  "servings": 4,
+  "description": "Bell peppers filled with quinoa cooked with onion and spices, black beans, corn, fire-roasted tomatoes and Mexican-style cheese, baked until the cheese is golden.",
+  "servings": 8,
   "cuisine": "Mexican",
   "category": "Vegetarian",
   "image": "https://www.themealdb.com/images/media/meals/b66myb1683207208.jpg",
-  "prep_minutes": 20,
-  "cook_minutes": 60,
+  "prep_minutes": 25,
+  "cook_minutes": 40,
   "ingredients": [
    {
     "name": "capsicum",
-    "quantity": 4,
+    "quantity": 6,
     "unit": "",
-    "note": "whole"
+    "note": "large, tops and cores removed; 6–8 depending on size"
    },
    {
     "name": "olive oil",
@@ -7526,32 +7526,62 @@
     "note": ""
    },
    {
-    "name": "onion",
+    "name": "red onion",
     "quantity": 1,
     "unit": "",
-    "note": "small finely diced"
+    "note": "medium, diced"
    },
    {
-    "name": "garlic",
-    "quantity": 2,
-    "unit": "clove",
-    "note": "minced"
+    "name": "salt",
+    "quantity": 0.25,
+    "unit": "tsp",
+    "note": ""
+   },
+   {
+    "name": "jalapeño",
+    "quantity": 1,
+    "unit": "",
+    "note": "small, diced; optional"
    },
    {
     "name": "quinoa",
     "quantity": 1,
     "unit": "cup",
+    "note": "dry, rinsed"
+   },
+   {
+    "name": "ground cumin",
+    "quantity": 2,
+    "unit": "tsp",
     "note": ""
    },
    {
-    "name": "black beans",
+    "name": "chilli powder",
     "quantity": 1,
-    "unit": "can",
+    "unit": "tsp",
     "note": ""
    },
    {
-    "name": "sweetcorn",
+    "name": "smoked paprika",
     "quantity": 1,
+    "unit": "tsp",
+    "note": "optional"
+   },
+   {
+    "name": "garlic powder",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": ""
+   },
+   {
+    "name": "onion powder",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": ""
+   },
+   {
+    "name": "vegetable stock",
+    "quantity": 2,
     "unit": "cup",
     "note": ""
    },
@@ -7559,83 +7589,55 @@
     "name": "canned tomatoes",
     "quantity": 1,
     "unit": "can",
-    "note": ""
+    "note": "425 g, fire-roasted"
    },
    {
-    "name": "ground cumin",
+    "name": "black beans",
     "quantity": 1,
-    "unit": "tsp",
-    "note": ""
+    "unit": "can",
+    "note": "425 g, drained and rinsed"
    },
    {
-    "name": "chilli powder",
-    "quantity": 0.5,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "smoked paprika",
-    "quantity": 0.5,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "salt",
-    "quantity": null,
-    "unit": "",
-    "note": "to taste"
-   },
-   {
-    "name": "capsicum",
-    "quantity": null,
-    "unit": "",
-    "note": "to taste"
+    "name": "sweetcorn",
+    "quantity": 1,
+    "unit": "cup",
+    "note": "frozen"
    },
    {
     "name": "shredded mexican cheese",
-    "quantity": 1.5,
+    "quantity": 1,
     "unit": "cup",
-    "note": ""
-   },
-   {
-    "name": "coriander",
-    "quantity": null,
-    "unit": "",
-    "note": "chopped"
+    "note": "or shredded cheddar; half in the filling, half on top"
    }
   ],
   "steps": [
    {
-    "text": "Preheat your oven to 375°F (190°C). Lightly grease a 9x13-inch baking dish or a similar-sized casserole dish.",
+    "text": "Heat the oven to 200°C.",
     "minutes": null
    },
    {
-    "text": "Place the bell pepper halves in the prepared baking dish, cut side up. Bake for 15-20 minutes, or until slightly softened.",
-    "minutes": 20
+    "text": "Cook the red onion with the salt in the olive oil over medium-high heat for 4 to 6 minutes until soft and lightly golden.",
+    "minutes": 6
    },
    {
-    "text": "While the bell peppers are baking, prepare the filling. In a large skillet, heat the olive oil over medium heat. Add the chopped onion, and cook for 3-4 minutes, until softened. Add the garlic, and cook for another 1 minute, until fragrant.",
-    "minutes": 4
+    "text": "Add the jalapeño, quinoa and all the spices and toast for 1 minute, stirring. Pour in the vegetable stock.",
+    "minutes": 1
    },
    {
-    "text": "Stir in the cooked quinoa, black beans, corn, diced tomatoes, ground cumin, chili powder, smoked paprika, salt, and pepper. Cook for 5-7 minutes, until heated through.",
-    "minutes": 7
+    "text": "Bring to the boil, then cover and simmer gently for 15 minutes until the liquid is absorbed and the quinoa is fluffy.",
+    "minutes": 15
    },
    {
-    "text": "Remove the skillet from heat, and stir in 1 cup of the shredded cheese, if using.",
+    "text": "Stir in the tomatoes, black beans, corn and half the cheese, and taste for seasoning.",
     "minutes": null
    },
    {
-    "text": "Remove the bell peppers from the oven, and carefully stuff each pepper half with the quinoa and black bean mixture. Top the stuffed peppers with the remaining 1/2 cup of shredded cheese, if using.",
+    "text": "Stand the peppers in an oiled baking dish or cast-iron skillet. Fill each with about 1 cup of the quinoa mixture and top with the remaining cheese.",
     "minutes": null
    },
    {
-    "text": "Return the stuffed peppers to the oven, and bake for another 15-20 minutes, until the cheese is melted and the peppers are tender.",
-    "minutes": 20
-   },
-   {
-    "text": "Remove from the oven, and allow the stuffed peppers to cool for 5 minutes before serving. Garnish with fresh chopped cilantro.",
-    "minutes": 5
+    "text": "Cover tightly with foil and bake at 200°C for 30 minutes, then uncover and bake 10 minutes more until the cheese is bubbling and golden.",
+    "minutes": 40
    }
   ]
  },
@@ -12507,32 +12509,74 @@
  },
  {
   "source": "themealdb:53495",
-  "title": "Amok Trey – Cambodian Fish Curry",
-  "description": "A Cambodian curry with white fish, fish sauce and coconut milk — serves 4, about an hour start to finish.",
-  "servings": 4,
+  "title": "Amok trey (Cambodian fish curry)",
+  "description": "Firm white fish mixed with a pounded lemongrass, galangal and turmeric paste, coconut milk and egg, steamed over greens until set and finished with a drizzle of coconut milk.",
+  "servings": 2,
   "cuisine": "Cambodian",
   "category": "Seafood",
   "image": "https://www.themealdb.com/images/media/meals/diuub11782687570.jpg",
   "prep_minutes": 20,
-  "cook_minutes": 35,
+  "cook_minutes": 20,
   "ingredients": [
    {
-    "name": "white fish",
-    "quantity": 455,
-    "unit": "g",
+    "name": "lemongrass",
+    "quantity": 3,
+    "unit": "",
+    "note": "stalks, outer layers removed, finely chopped; for the kroeung"
+   },
+   {
+    "name": "galangal",
+    "quantity": 2.5,
+    "unit": "cm",
+    "note": "piece, peeled and minced; for the kroeung"
+   },
+   {
+    "name": "fingerroot",
+    "quantity": 2,
+    "unit": "",
+    "note": "finely chopped; for the kroeung"
+   },
+   {
+    "name": "turmeric",
+    "quantity": 2.5,
+    "unit": "cm",
+    "note": "fresh piece, peeled and minced; for the kroeung"
+   },
+   {
+    "name": "garlic",
+    "quantity": 5,
+    "unit": "clove",
+    "note": "peeled and minced; for the kroeung"
+   },
+   {
+    "name": "shallot",
+    "quantity": 1,
+    "unit": "",
+    "note": "large, peeled and minced; for the kroeung"
+   },
+   {
+    "name": "lime leaves",
+    "quantity": 4,
+    "unit": "",
+    "note": "makrut, stems removed and finely chopped; for the kroeung, 4–5"
+   },
+   {
+    "name": "dried chillies",
+    "quantity": 1,
+    "unit": "",
+    "note": "dried California chile, soaked then minced into a paste"
+   },
+   {
+    "name": "coconut milk",
+    "quantity": 125,
+    "unit": "ml",
     "note": ""
    },
    {
     "name": "coconut milk",
-    "quantity": 1,
-    "unit": "can",
-    "note": ""
-   },
-   {
-    "name": "red curry paste",
-    "quantity": 2,
-    "unit": "tbsp",
-    "note": ""
+    "quantity": null,
+    "unit": "",
+    "note": "more, to drizzle over before the second steam, to serve"
    },
    {
     "name": "fish sauce",
@@ -12541,94 +12585,76 @@
     "note": ""
    },
    {
-    "name": "brown sugar",
+    "name": "sugar",
     "quantity": 1,
+    "unit": "tbsp",
+    "note": "granulated"
+   },
+   {
+    "name": "salt",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "kosher"
+   },
+   {
+    "name": "shrimp paste",
+    "quantity": 0.5,
     "unit": "tsp",
     "note": ""
    },
    {
-    "name": "chicken stock",
-    "quantity": 1,
-    "unit": "cup",
-    "note": ""
+    "name": "white fish",
+    "quantity": 450,
+    "unit": "g",
+    "note": "firm, cut into 2.5 cm pieces"
    },
    {
     "name": "eggs",
-    "quantity": 1,
+    "quantity": 2,
     "unit": "",
-    "note": ""
+    "note": "large, lightly beaten"
+   },
+   {
+    "name": "spinach",
+    "quantity": 60,
+    "unit": "g",
+    "note": "baby spinach or pea shoots"
    },
    {
     "name": "lime leaves",
-    "quantity": 2,
-    "unit": "",
-    "note": ""
-   },
-   {
-    "name": "vegetable oil",
-    "quantity": 1,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "banana leaves",
-    "quantity": 1,
-    "unit": "handful",
-    "note": ""
-   },
-   {
-    "name": "coriander",
     "quantity": null,
     "unit": "",
-    "note": "to garnish"
-   },
-   {
-    "name": "lime",
-    "quantity": null,
-    "unit": "",
-    "note": "to garnish"
+    "note": "makrut, thinly sliced, to garnish"
    }
   ],
   "steps": [
    {
-    "text": "In a medium bowl, combine the coconut milk, red curry paste, fish sauce, palm sugar, and broth, whisking until smooth—this ensures no lumps in the sauce.",
+    "text": "Make the kroeung by pounding the lemongrass to a paste in a mortar, then adding the galangal, fingerroot, turmeric, garlic, shallot and lime leaves one after another until smooth. Only 3 tablespoons are used; the rest can be frozen.",
     "minutes": null
    },
    {
-    "text": "Heat the vegetable oil in a large skillet over medium heat (about 180°C (350°F)) for 30 seconds until shimmering.",
+    "text": "Soak the dried chile in warm water until soft, about 15 minutes. Drain, remove the stem and seeds and mince to a paste.",
+    "minutes": 15
+   },
+   {
+    "text": "Mix 1 tablespoon of the chilli paste with the coconut milk, 3 tablespoons kroeung, fish sauce, sugar, salt and shrimp paste.",
     "minutes": null
    },
    {
-    "text": "Pour the coconut milk mixture into the skillet and bring it to a gentle simmer, stirring occasionally, which should take about 3-4 minutes.",
-    "minutes": 4
-   },
-   {
-    "text": "Add the fish cubes and kaffir lime leaves to the skillet, submerging them fully in the sauce.",
+    "text": "Toss the fish pieces in the mixture, then gently fold in the beaten eggs.",
     "minutes": null
    },
    {
-    "text": "Reduce the heat to low, cover the skillet, and let it cook for 10 minutes until the fish is opaque and flakes easily with a fork—avoid overcooking to keep it tender.",
+    "text": "Divide the spinach or pea shoots between two 10 oz (about 300 ml) ramekins and spoon the fish mixture on top. The video steams the fish in banana-leaf pockets; this method follows the written recipe, which uses ramekins.",
+    "minutes": null
+   },
+   {
+    "text": "Set the ramekins in a steamer basket over 2.5 cm of simmering water, cover and steam gently for about 10 minutes until lightly set.",
     "minutes": 10
    },
    {
-    "text": "Stir in the beaten egg slowly, cooking for 2 more minutes until the sauce thickens slightly, which adds a rich, custard-like texture.",
-    "minutes": null
-   },
-   {
-    "text": "While the curry simmers, prepare the banana leaves by briefly passing them over a gas flame for 10 seconds to make them pliable, or use parchment paper as a handy alternative.",
-    "minutes": null
-   },
-   {
-    "text": "Spoon the curry into the center of each banana leaf square, folding the edges to form a tight packet to trap steam.",
-    "minutes": null
-   },
-   {
-    "text": "Place the packets in a steamer basket over boiling water and steam for 10 minutes until heated through and fragrant.",
+    "text": "Drizzle with extra coconut milk, cover again and steam about 10 minutes more until firm. Scatter with thinly sliced lime leaves and serve.",
     "minutes": 10
-   },
-   {
-    "text": "Carefully unwrap the packets and garnish with fresh cilantro and lime wedges before serving.",
-    "minutes": null
    }
   ]
  },
@@ -18533,135 +18559,153 @@
  },
  {
   "source": "themealdb:53421",
-  "title": "Beef lok lak (Lok Lak Sach Ko)",
-  "description": "A Cambodian dish of beef fillet, palm sugar and sesame oil — serves 4, on the table in about 45 minutes.",
+  "title": "Beef lok lak",
+  "description": "Cubes of marinated sirloin seared hot in a wok with red onion and a savoury sauce, served on lettuce and tomato with a lime and Kampot pepper dipping sauce and steamed rice.",
   "servings": 4,
   "cuisine": "Cambodian",
   "category": "Beef",
   "image": "https://www.themealdb.com/images/media/meals/t2b8bn1779737789.jpg",
-  "prep_minutes": 25,
-  "cook_minutes": 20,
+  "prep_minutes": 15,
+  "cook_minutes": 10,
   "ingredients": [
    {
-    "name": "beef fillet",
-    "quantity": 1000,
+    "name": "sirloin steak",
+    "quantity": 500,
     "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "garlic",
-    "quantity": 5,
-    "unit": "clove",
-    "note": ""
+    "note": "sirloin or striploin, cut into 3 cm cubes"
    },
    {
     "name": "vegetable oil",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": ""
+   },
+   {
+    "name": "red onion",
+    "quantity": 1,
+    "unit": "",
+    "note": "cut into wedges"
+   },
+   {
+    "name": "tomato",
+    "quantity": 1,
+    "unit": "",
+    "note": "sliced"
+   },
+   {
+    "name": "lettuce",
+    "quantity": null,
+    "unit": "",
+    "note": "leaves, to serve"
+   },
+   {
+    "name": "rice",
+    "quantity": null,
+    "unit": "",
+    "note": "steamed, to serve"
+   },
+   {
+    "name": "oyster sauce",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "for the marinade"
+   },
+   {
+    "name": "soy sauce",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "for the marinade"
+   },
+   {
+    "name": "sweet dark soy sauce",
     "quantity": 2,
-    "unit": "tbsp",
-    "note": ""
+    "unit": "tsp",
+    "note": "for the marinade"
    },
    {
-    "name": "palm sugar",
-    "quantity": 1.5,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "salt",
+    "name": "black pepper",
     "quantity": 1,
     "unit": "tsp",
-    "note": ""
+    "note": "ground Kampot pepper, for the marinade"
    },
    {
-    "name": "white wine",
+    "name": "cornflour",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "for the marinade"
+   },
+   {
+    "name": "bicarbonate of soda",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": "for the marinade"
+   },
+   {
+    "name": "garlic",
     "quantity": 2,
-    "unit": "tbsp",
-    "note": ""
+    "unit": "clove",
+    "note": "finely grated, for the marinade"
    },
    {
     "name": "oyster sauce",
     "quantity": 2,
     "unit": "tbsp",
-    "note": ""
+    "note": "for the stir-fry sauce"
    },
    {
     "name": "soy sauce",
-    "quantity": 2,
+    "quantity": 1,
     "unit": "tbsp",
-    "note": ""
+    "note": "for the stir-fry sauce"
    },
    {
-    "name": "sesame oil",
-    "quantity": 1.5,
+    "name": "sugar",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "for the stir-fry sauce"
+   },
+   {
+    "name": "lime juice",
+    "quantity": 3,
     "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "lettuce",
-    "quantity": 500,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "tomato",
-    "quantity": 400,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "onion",
-    "quantity": 200,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "eggs",
-    "quantity": 4,
-    "unit": "",
-    "note": ""
-   },
-   {
-    "name": "salt",
-    "quantity": 1.5,
-    "unit": "tbsp",
-    "note": ""
+    "note": "for the dipping sauce"
    },
    {
     "name": "black pepper",
     "quantity": 1,
-    "unit": "tbsp",
-    "note": ""
+    "unit": "tsp",
+    "note": "ground Kampot pepper, for the dipping sauce"
    },
    {
-    "name": "lime juice",
+    "name": "salt",
     "quantity": 1,
-    "unit": "tbsp",
-    "note": ""
+    "unit": "tsp",
+    "note": "sea salt, for the dipping sauce"
    }
   ],
   "steps": [
    {
-    "text": "Fry the eggs sunny-side up and set aside. Finely chop the garlic. Wash the lettuce leaves and drain well. Thinly slice the onion and tomatoes.",
+    "text": "Combine the beef with the marinade ingredients and mix well.",
     "minutes": null
    },
    {
-    "text": "Cut the beef tenderloin into 2–3 cm cubes. Marinate with sea salt, palm sugar, Chinese cooking wine, oyster sauce, soy sauce, and sesame oil. Mix well.",
+    "text": "Mix the stir-fry sauce ingredients in one bowl and the dipping sauce ingredients in another, and set both aside.",
     "minutes": null
    },
    {
-    "text": "Heat a frying pan on high heat with cooking oil. Add chopped garlic and stir until the garlic browns lightly. Add the marinated beef (with all the marinade) and cook for 5–7 minutes, depending on how rare you want the beef.",
-    "minutes": 7
+    "text": "Heat the oil in a wok or large frying pan over high heat. Add the beef in a single layer and sear for about half a minute, then toss. Repeat 3 more times until it starts to char.",
+    "minutes": 2
    },
    {
-    "text": "Dry roast the black Kampot peppercorns in a frying pan over medium-low heat for 2–3 minutes until fragrant. Grind the roasted pepper, place it in a bowl, then add sea salt and lime juice. Mix well.",
-    "minutes": 3
+    "text": "Add the onion wedges and toss for a few seconds, then add the stir-fry sauce and toss for another half minute for medium beef, longer for well done.",
+    "minutes": 1
    },
    {
-    "text": "On a serving plate, arrange a bed of lettuce, then layer tomatoes, then onions. Spoon the cooked beef over the vegetables and place fried eggs on top. Serve with the Kampot pepper sauce and fragrant steamed rice.",
-    "minutes": null
+    "text": "Turn the heat off and let the beef rest in the pan for about a minute.",
+    "minutes": 1
    },
    {
-    "text": "Sear hot and fast, Lok Lak is at its best when the beef stays tender and juicy, with a bold, bright dipping sauce to cut through the richness.",
+    "text": "Spread lettuce on a plate, top with sliced tomato and then the beef. Serve with steamed rice and the dipping sauce.",
     "minutes": null
    }
   ]
@@ -22010,106 +22054,164 @@
  },
  {
   "source": "themealdb:53305",
-  "title": "Braised stuffed cabbage",
-  "description": "A Polish dish of cabbage, celery and basmati rice — serves 4, worth the couple of hours it takes.",
-  "servings": 4,
+  "title": "Polish cabbage rolls (gołąbki)",
+  "description": "Boiled cabbage leaves wrapped around a pork and rice filling, simmered in chicken stock, then finished in a light tomato and butter sauce.",
+  "servings": 5,
   "cuisine": "Polish",
-  "category": "Vegetarian",
-  "image": "https://www.themealdb.com/images/media/meals/z267f71764364072.jpg",
-  "prep_minutes": 15,
-  "cook_minutes": 75,
+  "category": "Pork",
+  "image": "https://i.ytimg.com/vi/p_zhLlkizIw/hqdefault.jpg",
+  "prep_minutes": 40,
+  "cook_minutes": 50,
   "ingredients": [
    {
     "name": "cabbage",
-    "quantity": 6,
-    "unit": "",
-    "note": "large"
+    "quantity": 1.5,
+    "unit": "kg",
+    "note": "1 head savoy or green cabbage"
    },
    {
-    "name": "olive oil",
-    "quantity": 2,
+    "name": "salt",
+    "quantity": 1,
     "unit": "tbsp",
-    "note": ""
+    "note": "cooking salt, for the cooking water"
+   },
+   {
+    "name": "chicken stock",
+    "quantity": 4,
+    "unit": "cup",
+    "note": "low-sodium"
+   },
+   {
+    "name": "pork mince",
+    "quantity": 700,
+    "unit": "g",
+    "note": "for the stuffing"
    },
    {
     "name": "onion",
     "quantity": 1,
     "unit": "",
-    "note": "chopped"
+    "note": "large brown, peeled and grated into the stuffing"
    },
    {
-    "name": "rosemary",
+    "name": "breadcrumbs",
+    "quantity": 1.5,
+    "unit": "cup",
+    "note": "panko, for the stuffing"
+   },
+   {
+    "name": "cooked white rice",
     "quantity": 2,
-    "unit": "tsp",
-    "note": ""
+    "unit": "cup",
+    "note": "for the stuffing"
    },
    {
-    "name": "celery",
-    "quantity": 1,
+    "name": "eggs",
+    "quantity": 2,
     "unit": "",
-    "note": "chopped"
+    "note": "large, for the stuffing"
    },
    {
-    "name": "basmati rice",
-    "quantity": 140,
-    "unit": "g",
-    "note": ""
+    "name": "garlic",
+    "quantity": 3,
+    "unit": "clove",
+    "note": "crushed, for the stuffing"
    },
    {
-    "name": "chestnuts",
-    "quantity": 140,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "dried cranberries",
-    "quantity": 50,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "vegetable stock",
-    "quantity": 300,
-    "unit": "ml",
-    "note": ""
-   },
-   {
-    "name": "balsamic vinegar",
+    "name": "marjoram",
     "quantity": 1,
     "unit": "tbsp",
-    "note": ""
+    "note": "dried; or 1.5 tsp dried oregano"
    },
    {
-    "name": "honey",
+    "name": "salt",
+    "quantity": 2.5,
+    "unit": "tsp",
+    "note": "cooking salt, for the stuffing"
+   },
+   {
+    "name": "black pepper",
     "quantity": 1,
     "unit": "tsp",
-    "note": ""
+    "note": "for the stuffing"
+   },
+   {
+    "name": "parsley",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": "finely chopped, for the stuffing"
+   },
+   {
+    "name": "passata",
+    "quantity": 700,
+    "unit": "g",
+    "note": "for the sauce"
+   },
+   {
+    "name": "tomato puree",
+    "quantity": 1.5,
+    "unit": "tbsp",
+    "note": "tomato paste, for the sauce"
+   },
+   {
+    "name": "salt",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": "cooking salt, for the sauce"
+   },
+   {
+    "name": "black pepper",
+    "quantity": 0.25,
+    "unit": "tsp",
+    "note": "for the sauce"
+   },
+   {
+    "name": "sugar",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": "white, for the sauce"
+   },
+   {
+    "name": "butter",
+    "quantity": 30,
+    "unit": "g",
+    "note": "unsalted, cut into pieces, for the sauce"
+   },
+   {
+    "name": "parsley",
+    "quantity": 0.5,
+    "unit": "tbsp",
+    "note": "finely chopped, to garnish"
    }
   ],
   "steps": [
    {
-    "text": "Heat oven to 180C/fan 160C/gas 4. Remove the tough central stalk from the cabbage leaves. Bring a large pan of salted water to the boil, add the cabbage, then cook for just 1-2 mins until the leaves are starting to wilt.",
-    "minutes": 2
+    "text": "Core the cabbage and boil it whole in about 5 litres of salted water with the lid on for 10 minutes. Peel off 10 outer leaves, pat dry and trim the thick rib flush with the leaf.",
+    "minutes": 10
    },
    {
-    "text": "Drain and refresh under cold running water. Drain well, then pat dry with a tea towel.",
+    "text": "Finely chop the rest of the cabbage and squeeze out the excess water.",
     "minutes": null
    },
    {
-    "text": "Heat the oil in a pan, add the onion, then fry for 5 mins until slightly browned. Add the rosemary and celery, then cook for 8 mins more. Stir in the rice, then cook for a min or so until the grains are glistening.",
-    "minutes": 8
-   },
-   {
-    "text": "Remove from the heat, stir in the chestnuts and cranberries, then season.",
+    "text": "Grate the onion into a bowl, mix in the panko and let it soak for a minute. Add the other stuffing ingredients and 3 tightly packed cups (about 300 g) of the chopped cabbage and mix by hand.",
     "minutes": null
    },
    {
-    "text": "Spoon a little stuffing onto a cabbage leaf, roll up and fold in the sides to enclose the filling. Put in a single layer in a large, oiled, shallow ovenproof dish with the join underneath. Fill the remaining leaves in the same way.",
+    "text": "Divide the stuffing into 10 portions, shape each into a cylinder about 8.5 cm long and roll up in a cabbage leaf, folding in the sides.",
     "minutes": null
    },
    {
-    "text": "Mix the stock, vinegar and honey, then pour over the cabbage. Cover the dish tightly with foil, bake for 1 hr, uncover, then cook for a further 15 mins.",
-    "minutes": 60
+    "text": "Pour 1 cup of stock into a large deep 30 cm pan, pack the rolls in seam side down and pour over the rest of the stock. Simmer gently, covered, for 25 minutes, then lift the rolls out.",
+    "minutes": 25
+   },
+   {
+    "text": "Boil the stock left in the pan down to about 1.5 cups, about 7 minutes. Stir in the passata, tomato paste, salt, pepper and sugar and reduce for 5 minutes until thickened, then stir in the butter.",
+    "minutes": 12
+   },
+   {
+    "text": "Return the rolls to the sauce seam side down, brush a little sauce over them, cover and warm through gently for 5 minutes. Sprinkle with parsley and serve.",
+    "minutes": 5
    }
   ]
  },
@@ -22883,86 +22985,106 @@
  },
  {
   "source": "themealdb:52842",
-  "title": "Broccoli & Stilton soup",
-  "description": "A British soup of celery, leek and potato — serves 4, on the table in about 45 minutes.",
+  "title": "Broccoli and Stilton soup",
+  "description": "A smooth broccoli soup built on onion, spring onion and garlic, cooked in the water the broccoli was blanched in, with Stilton crumbled in and blended.",
   "servings": 4,
   "cuisine": "British",
   "category": "Starter",
   "image": "https://www.themealdb.com/images/media/meals/tvvxpv1511191952.jpg",
   "prep_minutes": 15,
-  "cook_minutes": 30,
+  "cook_minutes": 25,
   "ingredients": [
    {
-    "name": "vegetable oil",
-    "quantity": 2,
-    "unit": "tbsp",
+    "name": "water",
+    "quantity": 1.5,
+    "unit": "l",
     "note": ""
-   },
-   {
-    "name": "onion",
-    "quantity": 1,
-    "unit": "",
-    "note": "finely chopped"
-   },
-   {
-    "name": "celery",
-    "quantity": 1,
-    "unit": "",
-    "note": ""
-   },
-   {
-    "name": "leek",
-    "quantity": 1,
-    "unit": "",
-    "note": "sliced"
-   },
-   {
-    "name": "potato",
-    "quantity": 1,
-    "unit": "",
-    "note": "medium"
-   },
-   {
-    "name": "butter",
-    "quantity": 1,
-    "unit": "knob",
-    "note": ""
-   },
-   {
-    "name": "vegetable stock",
-    "quantity": 1000,
-    "unit": "ml",
-    "note": "hot"
    },
    {
     "name": "broccoli",
     "quantity": 1,
     "unit": "",
-    "note": "chopped"
+    "note": "head; florets and chopped stalk"
    },
    {
     "name": "stilton",
-    "quantity": 140,
+    "quantity": 150,
+    "unit": "g",
+    "note": "plus extra to serve"
+   },
+   {
+    "name": "onion",
+    "quantity": 2,
+    "unit": "",
+    "note": "small, peeled and diced (or 1 large)"
+   },
+   {
+    "name": "spring onion",
+    "quantity": 3,
+    "unit": "",
+    "note": "roughly chopped"
+   },
+   {
+    "name": "garlic",
+    "quantity": 1,
+    "unit": "clove",
+    "note": "peeled, left whole"
+   },
+   {
+    "name": "butter",
+    "quantity": 25,
     "unit": "g",
     "note": ""
+   },
+   {
+    "name": "salt",
+    "quantity": null,
+    "unit": "",
+    "note": "to taste"
+   },
+   {
+    "name": "black pepper",
+    "quantity": null,
+    "unit": "",
+    "note": "to taste"
    }
   ],
   "steps": [
    {
-    "text": "Heat the rapeseed oil in a large saucepan and then add the onions. Cook on a medium heat until soft. Add a splash of water if the onions start to catch.",
+    "text": "Bring 1.5 litres of lightly salted water to the boil in a large pan.",
     "minutes": null
    },
    {
-    "text": "Add the celery, leek, potato and a knob of butter. Stir until melted, then cover with a lid. Allow to sweat for 5 minutes. Remove the lid.",
+    "text": "Cut the broccoli into similar-sized florets, peel and roughly chop the stalk, and roughly dice the onions. Roughly chop the spring onions and peel the garlic clove.",
+    "minutes": null
+   },
+   {
+    "text": "Boil the florets only for 3 to 5 minutes until tender, then plunge them into iced water to keep them green.",
     "minutes": 5
    },
    {
-    "text": "Pour in the stock and add any chunky bits of broccoli stalk. Cook for 10 – 15 minutes until all the vegetables are soft.",
+    "text": "Pour the cooking water into a jug to keep as the stock.",
+    "minutes": null
+   },
+   {
+    "text": "Melt the butter in the pan over medium heat and cook the onions, broccoli stalk, spring onions and whole garlic clove for 4 to 5 minutes until the onions turn translucent.",
+    "minutes": 5
+   },
+   {
+    "text": "Pour the reserved cooking water back in and simmer for 10 to 15 minutes.",
     "minutes": 15
    },
    {
-    "text": "Add the rest of the broccoli and cook for a further 5 minutes. Carefully transfer to a blender and blitz until smooth. Stir in the stilton, allowing a few lumps to remain. Season with black pepper and serve.",
-    "minutes": 5
+    "text": "Add the florets back to warm through for 2 minutes and crumble in 150 g of Stilton.",
+    "minutes": 2
+   },
+   {
+    "text": "Blend with a stick blender until smooth and season with salt and pepper.",
+    "minutes": null
+   },
+   {
+    "text": "Ladle into bowls and crumble a little extra Stilton over the top.",
+    "minutes": null
    }
   ]
  },

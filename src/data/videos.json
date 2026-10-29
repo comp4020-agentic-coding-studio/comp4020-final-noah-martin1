@@ -382,10 +382,12 @@
   "transcribed": true
  },
  "themealdb:53067": {
-  "videoId": null,
-  "status": "unavailable",
-  "reason": "TheMealDB lists no video for this meal",
-  "checked": "2026-10-20"
+  "videoId": "ylnyKH1rcRE",
+  "title": "Quinoa Stuffed Bell Peppers | vegetarian & great for meal prep",
+  "channel": "Cozy Peach Kitchen - Easy Vegetarian Recipes",
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:52908": {
   "videoId": "BFdQUgAFtGU",
@@ -722,10 +724,12 @@
   "checked": "2026-10-20"
  },
  "themealdb:53495": {
-  "videoId": null,
-  "status": "unavailable",
-  "reason": "TheMealDB lists no video for this meal",
-  "checked": "2026-10-20"
+  "videoId": "mlngdPqXi10",
+  "title": "Make Amok, Fish Curry Steamed In Banana Leaves",
+  "channel": "Munchies",
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53430": {
   "videoId": null,
@@ -1022,12 +1026,10 @@
   "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52874": {
-  "videoId": "nMyBC9staMU",
-  "title": "James Martin Home Comforts 17/02/14",
-  "channel": "Limelight Celebrity Management Ltd",
+  "videoId": null,
+  "checked": "2026-10-29",
   "status": "rejected",
-  "reason": "video title doesn't match the dish",
-  "checked": "2026-10-20"
+  "reason": "The catalogue video (James Martin Home Comforts, Limelight Celebrity Management) has no description or recipe. Two searches (James Martin; BBC Good Food) for a beef and mustard pie found only beef and ale, beef and onion, Guinness or cottage pies, none the same dish with a written recipe."
  },
  "themealdb:52878": {
   "videoId": "ONX74yP6JnI",
@@ -1068,12 +1070,10 @@
   "transcribed": true
  },
  "themealdb:52873": {
-  "videoId": "6NgheY-r5t0",
-  "title": "James Martin - How To Make Beef Stew and Dumplings",
-  "channel": "Wahl UK",
+  "videoId": null,
+  "checked": "2026-10-29",
   "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "reason": "The catalogue video (James Martin Beef Stew and Dumplings, Wahl UK) is a slow-cooker advert whose description has no recipe; Gordon Ramsay's beef and ale stew with mustard dumplings (OhLGGkWg0ts) is a different dish and its description also has no recipe. Two searches (BBC Good Food; Kitchen Sanctuary) found no beef stew with suet dumplings video with a written recipe."
  },
  "themealdb:53317": {
   "videoId": "RRNVLC6IAv4",
@@ -1084,12 +1084,12 @@
   "transcribed": true
  },
  "themealdb:53421": {
-  "videoId": "3oWgjFhQQW0",
-  "title": "How to make Cambodian beef Lok Lak​, ឡុកឡាក់​, Lok Lak Sach Kor   Khmer Beef Salad",
-  "channel": "Bunthai Y",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "videoId": "gVuihbacvhY",
+  "title": "The best pepper steak recipe you've never cooked at home | Cambodian Beef Lok Lak | Marion's Kitchen",
+  "channel": "Marion Grasby",
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53359": {
   "videoId": null,
@@ -1118,10 +1118,10 @@
   "checked": "2026-10-20"
  },
  "themealdb:52824": {
-  "videoId": "2l3-dBdNehY",
-  "status": "unavailable",
-  "reason": "video no longer exists on YouTube",
-  "checked": "2026-10-20"
+  "videoId": null,
+  "checked": "2026-10-29",
+  "status": "rejected",
+  "reason": "Jamie Oliver's Perfect Roast Beef video (rApdDLwp_gM) cooks only the topside of beef on a bed of vegetables. It does not make the roast vegetables, Yorkshire puddings or gravy of a Beef Sunday Roast, so it covers only part of the dish and cannot stand in for it."
  },
  "themealdb:52803": {
   "videoId": "FS8u1RBdf6I",
@@ -1225,9 +1225,9 @@
  },
  "themealdb:53546": {
   "videoId": null,
-  "status": "unavailable",
-  "reason": "TheMealDB lists no video for this meal",
-  "checked": "2026-10-20"
+  "checked": "2026-10-29",
+  "status": "rejected",
+  "reason": "The only verifiable video (Chef Zee Cooks, 7yT5c2Uy0e0) makes Cuban black beans as a side dish to serve with rice. A black bean soup and a side of beans are different dishes, so it cannot replace the soup."
  },
  "themealdb:53536": {
   "videoId": null,
@@ -1308,12 +1308,12 @@
   "transcribed": true
  },
  "themealdb:53305": {
-  "videoId": "RNrZpQaj5us",
-  "title": "BRAISED CABBAGE ROLLS | SHERSON LIAN",
-  "channel": "Sherson Lian",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "videoId": "p_zhLlkizIw",
+  "title": "Polish Cabbage Rolls - Gołąbki",
+  "channel": "RecipeTin Eats",
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53485": {
   "videoId": null,
@@ -1352,12 +1352,10 @@
   "checked": "2026-10-20"
  },
  "themealdb:52965": {
-  "videoId": "BoD0TIO9nE4",
-  "title": "Breakfast Potato Recipe Share if you Like!!",
-  "channel": "Shawn Phillips",
+  "videoId": null,
+  "checked": "2026-10-29",
   "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "reason": "The catalogue video (Shawn Phillips, BoD0TIO9nE4) has a short description recipe with amounts but no yield, times, heat or method detail, and its link is a domain-for-sale page, so servings and timings cannot be verified from evidence. The catalogue recipe (maple syrup, allspice, parsley) also differs from it. Two searches found no diced breakfast potato with bacon and maple syrup video with a written recipe."
  },
  "themealdb:52913": {
   "videoId": "FzNPPD8lbWg",
@@ -1368,10 +1366,12 @@
   "checked": "2026-10-20"
  },
  "themealdb:52842": {
-  "videoId": "_HgVLpmNxTY",
-  "status": "unavailable",
-  "reason": "video can't be embedded",
-  "checked": "2026-10-20"
+  "videoId": "6b02bOCVw5o",
+  "title": "How to Make Delicious Broccoli and Stilton Soup - A Step by Step Recipe Video",
+  "channel": "Pinch of Mint",
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:52940": {
   "videoId": "_gFB1fkNhXs",
