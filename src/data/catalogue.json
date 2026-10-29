@@ -20638,110 +20638,136 @@
  {
   "source": "themealdb:52979",
   "title": "Bitterballen (Dutch meatballs)",
-  "description": "A Dutch dish of beef, breadcrumbs and nutmeg — serves 4, ready in under half an hour.",
-  "servings": 4,
+  "description": "Beef stock-based ragout made with shredded steak, chilled overnight, scooped into balls, double-crumbed with crushed crackers and breadcrumbs, and deep-fried.",
+  "servings": 6,
   "cuisine": "Dutch",
-  "category": "Beef",
+  "category": "Starter",
   "image": "https://www.themealdb.com/images/media/meals/lhqev81565090111.jpg",
-  "prep_minutes": 20,
-  "cook_minutes": 5,
+  "prep_minutes": 60,
+  "cook_minutes": 180,
   "ingredients": [
    {
-    "name": "butter",
-    "quantity": 100,
+    "name": "beef",
+    "quantity": 450,
     "unit": "g",
+    "note": "steak, for the stock"
+   },
+   {
+    "name": "carrot",
+    "quantity": 3,
+    "unit": "",
+    "note": "for the stock"
+   },
+   {
+    "name": "leek",
+    "quantity": 1,
+    "unit": "",
+    "note": "for the stock"
+   },
+   {
+    "name": "water",
+    "quantity": 2,
+    "unit": "l",
+    "note": "for the stock"
+   },
+   {
+    "name": "butter",
+    "quantity": 1,
+    "unit": "cup",
     "note": ""
+   },
+   {
+    "name": "shallot",
+    "quantity": 3,
+    "unit": "tbsp",
+    "note": "finely diced"
    },
    {
     "name": "plain flour",
-    "quantity": 150,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "beef stock",
-    "quantity": 700,
-    "unit": "ml",
-    "note": ""
-   },
-   {
-    "name": "onion",
-    "quantity": 30,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "parsley",
     "quantity": 1,
-    "unit": "tbsp",
-    "note": ""
+    "unit": "cup",
+    "note": "all purpose, added a tablespoon at a time"
    },
    {
-    "name": "beef",
-    "quantity": 400,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "salt",
-    "quantity": 1,
-    "unit": "pinch",
-    "note": ""
-   },
-   {
-    "name": "black pepper",
-    "quantity": 1,
-    "unit": "pinch",
-    "note": ""
+    "name": "water",
+    "quantity": 0.5,
+    "unit": "cup",
+    "note": "extra, only if the roux is too thick"
    },
    {
     "name": "nutmeg",
-    "quantity": 1,
-    "unit": "pinch",
-    "note": ""
+    "quantity": null,
+    "unit": "",
+    "note": "to taste"
    },
    {
-    "name": "plain flour",
-    "quantity": 50,
-    "unit": "g",
-    "note": ""
+    "name": "salt",
+    "quantity": null,
+    "unit": "",
+    "note": "to taste; under-salt as it saltens when chilled"
+   },
+   {
+    "name": "parsley",
+    "quantity": 0.25,
+    "unit": "cup",
+    "note": "chopped"
+   },
+   {
+    "name": "crackers",
+    "quantity": 12,
+    "unit": "",
+    "note": "low-sodium, ground to crumbs; approximate"
    },
    {
     "name": "eggs",
-    "quantity": 2,
+    "quantity": 6,
     "unit": "",
-    "note": "beaten"
+    "note": "beaten; recipe says 6-8, approximate"
    },
    {
     "name": "breadcrumbs",
-    "quantity": 50,
-    "unit": "g",
-    "note": ""
+    "quantity": 2,
+    "unit": "cup",
+    "note": "approximate"
+   },
+   {
+    "name": "vegetable oil",
+    "quantity": null,
+    "unit": "",
+    "note": "for deep-frying"
    }
   ],
   "steps": [
    {
-    "text": "Melt the butter in a skillet or pan. When melted, add the flour little by little and stir into a thick paste. Slowly stir in the stock, making sure the roux absorbs the liquid.",
+    "text": "Make a stock by simmering the steak, carrots and leek in 2 litres of water for about 2.5 hours, until about 2 cups of stock remain.",
+    "minutes": 150
+   },
+   {
+    "text": "Strain the stock. Separate the vegetables from the meat, shred the meat with two forks and remove any large bits of fat. Discard the vegetables or keep them for something else.",
     "minutes": null
    },
    {
-    "text": "Simmer for a couple of minutes on a low heat while you stir in the onion, parsley and the shredded meat. The mixture should thicken and turn into a heavy, thick sauce.",
+    "text": "Melt the butter in a large saute pan and cook the diced shallots. Stir in the flour a tablespoon at a time.",
     "minutes": null
    },
    {
-    "text": "Pour the mixture into a shallow container, cover and refrigerate for several hours, or until the sauce has solidified.",
+    "text": "Add the 2 cups of stock a few tablespoons at a time, stirring. If the roux gets too thick, loosen it with up to 1/2 cup water.",
     "minutes": null
    },
    {
-    "text": "Take a heaping tablespoon of the cold, thick sauce and quickly roll it into a small ball. Roll lightly through the flour, then the egg and finally the breadcrumbs. Make sure that the egg covers the whole surface of the bitterbal.",
+    "text": "Fold in the shredded meat and the parsley. Season lightly with salt, as the filling gets saltier when chilled. The source lists nutmeg but does not say when to add it, so it is added here.",
     "minutes": null
    },
    {
-    "text": "When done, refrigerate the snacks while the oil in your fryer heats up to 190C (375F). Fry four bitterballen at a time, until golden.",
+    "text": "Divide the filling between two shallow containers and chill overnight.",
     "minutes": null
    },
    {
-    "text": "Serve on a plate with a nice grainy or spicy mustard.",
+    "text": "Grind the crackers to crumbs in a food processor, rolling any large pieces with a rolling pin. Scoop the cold filling with an ice cream scoop onto the crumbs and roll to coat, returning finished balls to the fridge.",
+    "minutes": null
+   },
+   {
+    "text": "Dip each ball in beaten egg, coat in breadcrumbs and deep-fry. The source gives no frying temperature or time.",
     "minutes": null
    }
   ]
@@ -21173,100 +21199,132 @@
  {
   "source": "themealdb:53080",
   "title": "Blini Pancakes",
-  "description": "A Russian side of buckwheat — serves 4, on the table in about 45 minutes.",
-  "servings": 4,
+  "description": "Small yeasted Russian pancakes from a rested batter lightened with whisked egg white, topped with sour cream, smoked salmon or caviar and chives. The page makes 60 blini; servings is 12 people at about 5 each.",
+  "servings": 12,
   "cuisine": "Russian",
-  "category": "Side",
+  "category": "Starter",
   "image": "https://www.themealdb.com/images/media/meals/0206h11699013358.jpg",
   "prep_minutes": 10,
-  "cook_minutes": 30,
+  "cook_minutes": 4,
   "ingredients": [
    {
-    "name": "buckwheat",
-    "quantity": 0.5,
-    "unit": "cup",
-    "note": ""
+    "name": "butter",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": "unsalted, melted"
+   },
+   {
+    "name": "water",
+    "quantity": 120,
+    "unit": "ml",
+    "note": "lukewarm"
+   },
+   {
+    "name": "milk",
+    "quantity": 120,
+    "unit": "ml",
+    "note": "whole"
+   },
+   {
+    "name": "cream",
+    "quantity": 180,
+    "unit": "ml",
+    "note": "pouring / single"
+   },
+   {
+    "name": "eggs",
+    "quantity": 1,
+    "unit": "",
+    "note": "separated"
    },
    {
     "name": "plain flour",
-    "quantity": 0.667,
-    "unit": "cup",
+    "quantity": 200,
+    "unit": "g",
     "note": ""
    },
    {
-    "name": "salt",
-    "quantity": 0.5,
-    "unit": "tsp",
+    "name": "sugar",
+    "quantity": 1,
+    "unit": "tbsp",
     "note": ""
    },
    {
     "name": "yeast",
     "quantity": 1,
     "unit": "tsp",
-    "note": ""
+    "note": "rapid rise"
    },
    {
-    "name": "milk",
-    "quantity": 1,
-    "unit": "cup",
-    "note": ""
+    "name": "salt",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": "added to the egg white"
    },
    {
-    "name": "butter",
-    "quantity": 2,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "eggs",
-    "quantity": 1,
+    "name": "vegetable oil",
+    "quantity": null,
     "unit": "",
-    "note": "seperated"
+    "note": "flavourless, for frying: as needed for the pan"
+   },
+   {
+    "name": "sour cream",
+    "quantity": null,
+    "unit": "",
+    "note": "to serve"
+   },
+   {
+    "name": "smoked salmon",
+    "quantity": null,
+    "unit": "",
+    "note": "to serve"
+   },
+   {
+    "name": "caviar",
+    "quantity": null,
+    "unit": "",
+    "note": "to serve, about 1/4 tsp per blini"
+   },
+   {
+    "name": "chives",
+    "quantity": null,
+    "unit": "",
+    "note": "finely chopped, to serve"
+   },
+   {
+    "name": "quail eggs",
+    "quantity": null,
+    "unit": "",
+    "note": "optional topping, to serve; the page refers to its notes for how to use them"
    }
   ],
   "steps": [
    {
-    "text": "In a large bowl, whisk together 1/2 cup buckwheat flour, 2/3 cup all-purpose flour, 1/2 teaspoon salt, and 1 teaspoon yeast.",
+    "text": "Combine the melted butter, milk, cream, lukewarm water and egg yolk in a large bowl.",
     "minutes": null
    },
    {
-    "text": "Make a well in the center and pour in 1 cup warm milk, whisking until the batter is smooth.",
+    "text": "Sift the flour, yeast and sugar over the liquid and whisk slowly to combine.",
     "minutes": null
    },
    {
-    "text": "Cover the bowl and let the batter rise until doubled, about 1 hour. Enrich and Rest the Batter.",
+    "text": "Cover loosely and leave in a warm spot for 1 to 2 hours, until slightly risen and bubbly.",
     "minutes": 60
    },
    {
-    "text": "Stir 2 tablespoons melted butter and 1 egg yolk into the batter.",
+    "text": "Whisk the egg white with the salt to soft peaks and fold it gently into the batter in batches, without deflating it.",
     "minutes": null
    },
    {
-    "text": "In a separate bowl, whisk 1 egg white until stiff, but not dry.",
+    "text": "Heat a non-stick frying pan, wipe with a little flavourless oil and add 1 tbsp batter per pancake. Cook over medium-low heat until bubbles form and the surface looks dry.",
     "minutes": null
    },
    {
-    "text": "Fold the whisked egg white into the batter.",
-    "minutes": null
+    "text": "Flip and cook the other side until coloured, about a minute. Set aside and repeat with the remaining batter.",
+    "minutes": 1
    },
    {
-    "text": "Cover the bowl and let the batter stand 20 minutes. Pan-Fry the Blini.",
-    "minutes": 20
-   },
-   {
-    "text": "Heat butter in a large nonstick skillet over medium heat.",
-    "minutes": null
-   },
-   {
-    "text": "Drop quarter-sized dollops of batter into the pan, being careful not to overcrowd the pan. Cook for about 1 minute or until bubbles form.",
-    "minutes": null
-   },
-   {
-    "text": "Turn and cook for about 30 additional seconds.",
-    "minutes": null
-   },
-   {
-    "text": "Remove the finished blini onto a plate and cover them with a clean kitchen towel to keep warm. Add more butter to the pan and repeat the frying process with the remaining batter.",
+    "text": "Top each blini with a dollop of sour cream, then a little caviar or a piece of smoked salmon, and finely chopped chives. Serve immediately.",
     "minutes": null
    }
   ]
@@ -23203,75 +23261,69 @@
  },
  {
   "source": "themealdb:52961",
-  "title": "Budino Di Ricotta",
-  "description": "An Italian sweet made with ricotta, lemon and rum — serves 8, about an hour start to finish.",
-  "servings": 8,
+  "title": "Nonna's ricotta cake",
+  "description": "A crustless baked ricotta cake with orange zest: ricotta, eggs and sugar mixed together, poured into a buttered springform pan and baked at two temperatures.",
+  "servings": 10,
   "cuisine": "Italian",
   "category": "Dessert",
-  "image": "https://www.themealdb.com/images/media/meals/1549542877.jpg",
+  "image": "https://i.ytimg.com/vi/6dzd6Ra6sb4/hqdefault.jpg",
   "prep_minutes": 15,
-  "cook_minutes": 40,
+  "cook_minutes": 70,
   "ingredients": [
    {
     "name": "ricotta",
-    "quantity": 500,
+    "quantity": 1360,
     "unit": "g",
-    "note": ""
+    "note": "fresh"
    },
    {
     "name": "eggs",
-    "quantity": 4,
+    "quantity": 8,
     "unit": "",
     "note": "large"
    },
    {
-    "name": "plain flour",
-    "quantity": 3,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
     "name": "sugar",
-    "quantity": 250,
+    "quantity": 225,
     "unit": "g",
     "note": ""
    },
    {
-    "name": "cinnamon",
-    "quantity": 1,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "lemon",
+    "name": "orange",
     "quantity": 2,
     "unit": "",
-    "note": "zested"
+    "note": "zest only"
    },
    {
-    "name": "rum",
-    "quantity": 5,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "icing sugar",
+    "name": "butter",
     "quantity": null,
     "unit": "",
-    "note": "to sprinkle"
+    "note": "for greasing: coating the bottom and sides of the pan"
    }
   ],
   "steps": [
    {
-    "text": "Mash the ricotta and beat well with the egg yolks, stir in the flour, sugar, cinnamon, grated lemon rind and the rum and mix well. You can do this in a food processor.",
+    "text": "Mix the ricotta, eggs, sugar and orange zest together very well in a bowl.",
     "minutes": null
    },
    {
-    "text": "Beat the egg whites until stiff, fold in and pour into a buttered and floured 25cm cake tin. Bake in the oven at 180°C/160°C fan/gas 4 for about 40 minutes, or until it is firm.",
+    "text": "Butter the bottom and sides of a springform pan (the page says 9 inches).",
+    "minutes": null
+   },
+   {
+    "text": "Pour the mixture into the pan.",
+    "minutes": null
+   },
+   {
+    "text": "Bake at 220°C for 30 minutes.",
+    "minutes": 30
+   },
+   {
+    "text": "Lower the oven to 195°C and bake for another 40 minutes.",
     "minutes": 40
    },
    {
-    "text": "Serve hot or cold dusted with icing sugar.",
+    "text": "Let the cake cool, then serve.",
     "minutes": null
    }
   ]
@@ -30761,70 +30813,112 @@
  {
   "source": "themealdb:52788",
   "title": "Christmas Pudding Flapjack",
-  "description": "A British sweet made with orange, rolled oats and christmas pudding — makes 16, about an hour start to finish.",
-  "servings": 16,
+  "description": "Mince pie flavoured flapjacks baked in a cupcake tin, coated in chocolate orange and decorated with white chocolate and icing holly to look like Christmas puddings.",
+  "servings": 12,
   "cuisine": "British",
   "category": "Dessert",
   "image": "https://www.themealdb.com/images/media/meals/vvusxs1483907034.jpg",
-  "prep_minutes": 10,
-  "cook_minutes": 45,
+  "prep_minutes": 25,
+  "cook_minutes": 20,
   "ingredients": [
    {
     "name": "butter",
-    "quantity": 250,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "brown sugar",
-    "quantity": 225,
+    "quantity": 170,
     "unit": "g",
     "note": ""
    },
    {
     "name": "golden syrup",
-    "quantity": 150,
+    "quantity": 280,
+    "unit": "g",
+    "note": ""
+   },
+   {
+    "name": "mincemeat",
+    "quantity": 220,
     "unit": "g",
     "note": ""
    },
    {
     "name": "orange",
-    "quantity": 1,
+    "quantity": 2,
     "unit": "",
-    "note": "zested"
+    "note": "zest only"
+   },
+   {
+    "name": "raisins",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": ""
+   },
+   {
+    "name": "cinnamon",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": ""
    },
    {
     "name": "rolled oats",
-    "quantity": 500,
+    "quantity": 420,
     "unit": "g",
     "note": ""
    },
    {
-    "name": "christmas pudding",
+    "name": "milk chocolate",
     "quantity": 250,
     "unit": "g",
-    "note": ""
+    "note": "melted, to decorate"
+   },
+   {
+    "name": "orange essence",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "mixed into the melted milk chocolate"
+   },
+   {
+    "name": "white chocolate",
+    "quantity": 100,
+    "unit": "g",
+    "note": "melted, to decorate"
+   },
+   {
+    "name": "ready-rolled icing",
+    "quantity": null,
+    "unit": "",
+    "note": "small amount of green and red, for the holly leaf and berries, to garnish"
    }
   ],
   "steps": [
    {
-    "text": "Preheat the oven to 180°C/fan 160°C/gas mark 4 and grease and line a 25cm x 20cm tin. Melt the butter, sugar, syrup and orange zest in a large saucepan over a medium heat.",
+    "text": "Heat the oven to 160°C (gas 4) and grease the holes of a small cupcake tin.",
     "minutes": null
    },
    {
-    "text": "The aim is to dissolve all the ingredients so that they are smooth, but to not lose any volume through boiling so be careful not to overheat.",
+    "text": "Melt the butter and golden syrup together in a large saucepan. Take it off the heat and stir in the mincemeat, orange zest, cinnamon and raisins.",
     "minutes": null
    },
    {
-    "text": "Add the oats and stir well until evenly coated. Stir through the leftover Christmas pudding and tip into the prepared tin. Use a spoon to flatten the top and bake for 40 minutes until the edges start to brown.",
-    "minutes": 40
-   },
-   {
-    "text": "Whilst still warm in the tin, score into 12 squares. Allow to cool completely before cutting along the scores.",
+    "text": "Pour the mixture over the rolled oats and mix until well combined.",
     "minutes": null
    },
    {
-    "text": "Keeps for 5 days in an air tight tin or freeze for up to 1 month.",
+    "text": "Divide it between the cupcake holes, levelling the tops, and bake for 20 minutes.",
+    "minutes": 20
+   },
+   {
+    "text": "Cool completely, running a blunt knife around each edge to turn them out.",
+    "minutes": null
+   },
+   {
+    "text": "Melt the milk chocolate, stir in the orange essence, and stand each flapjack on its wide base. Spoon the chocolate over so it runs down and covers the sides, then chill until set.",
+    "minutes": null
+   },
+   {
+    "text": "Melt the white chocolate, spoon a little on top of each so it runs down the edges, and chill again until set.",
+    "minutes": null
+   },
+   {
+    "text": "Make a small holly leaf from the green icing and two small balls from the red, and place them on the white chocolate.",
     "minutes": null
    }
   ]
@@ -35978,47 +36072,35 @@
  {
   "source": "themealdb:52899",
   "title": "Dundee cake",
-  "description": "A British sweet made with almonds, orange and jam — makes 16, a slow cook that's worth the wait.",
-  "servings": 16,
+  "description": "A fruit cake of tea- and whisky-soaked mixed fruit and ground almonds, topped with a circle of blanched almonds and baked slowly with a dish of water in the oven.",
+  "servings": 12,
   "cuisine": "British",
   "category": "Dessert",
   "image": "https://www.themealdb.com/images/media/meals/wxyvqq1511723401.jpg",
-  "prep_minutes": 20,
-  "cook_minutes": 145,
+  "prep_minutes": 30,
+  "cook_minutes": 90,
   "ingredients": [
    {
-    "name": "almonds",
-    "quantity": 100,
+    "name": "mixed dried fruit",
+    "quantity": 500,
     "unit": "g",
     "note": ""
    },
    {
-    "name": "butter",
-    "quantity": 180,
-    "unit": "g",
-    "note": ""
+    "name": "black tea",
+    "quantity": 220,
+    "unit": "ml",
+    "note": "strong, hot, cooled before soaking"
    },
    {
-    "name": "brown sugar",
-    "quantity": 180,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "orange",
-    "quantity": 1,
-    "unit": "",
-    "note": "zested"
-   },
-   {
-    "name": "jam",
-    "quantity": 3,
-    "unit": "tbsp",
+    "name": "whisky",
+    "quantity": 75,
+    "unit": "ml",
     "note": ""
    },
    {
     "name": "plain flour",
-    "quantity": 225,
+    "quantity": 275,
     "unit": "g",
     "note": ""
    },
@@ -36029,88 +36111,88 @@
     "note": ""
    },
    {
-    "name": "eggs",
-    "quantity": 3,
-    "unit": "",
-    "note": "large"
+    "name": "salt",
+    "quantity": 1,
+    "unit": "pinch",
+    "note": ""
    },
    {
-    "name": "ground almonds",
-    "quantity": 100,
+    "name": "butter",
+    "quantity": 250,
     "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "milk",
-    "quantity": 2,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "raisins",
-    "quantity": 500,
-    "unit": "g",
-    "note": ""
+    "note": "room temperature"
    },
    {
     "name": "glacé cherries",
-    "quantity": 100,
+    "quantity": 50,
+    "unit": "g",
+    "note": "washed, dried and halved"
+   },
+   {
+    "name": "brown sugar",
+    "quantity": 250,
+    "unit": "g",
+    "note": "light soft"
+   },
+   {
+    "name": "eggs",
+    "quantity": 6,
+    "unit": "",
+    "note": "medium"
+   },
+   {
+    "name": "orange",
+    "quantity": 1,
+    "unit": "",
+    "note": "zest only"
+   },
+   {
+    "name": "lemon",
+    "quantity": 1,
+    "unit": "",
+    "note": "zest only"
+   },
+   {
+    "name": "ground almonds",
+    "quantity": 125,
     "unit": "g",
     "note": ""
    },
    {
-    "name": "milk",
-    "quantity": 1,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "sugar",
-    "quantity": 2,
-    "unit": "tsp",
-    "note": ""
+    "name": "almonds",
+    "quantity": 60,
+    "unit": "g",
+    "note": "blanched whole, for the top"
    }
   ],
   "steps": [
    {
-    "text": "Put the almonds into a small bowl and pour over boiling water to just cover. Leave for 5 mins then drain in a sieve and leave to dry.",
-    "minutes": 5
+    "text": "Make the hot tea and let it cool, then add the whisky and mixed fruit and soak for at least 2 hours.",
+    "minutes": 120
    },
    {
-    "text": "Preheat the oven to 180C/160 C fan/Gas Mark 4. Line a deep loose-based 20cm cake tin with baking parchment.",
+    "text": "Heat the oven to 160°C (140°C fan, gas 3) and line the base of a 20 cm round tin with baking paper. Soaked baking bands around the tin help it bake evenly.",
     "minutes": null
    },
    {
-    "text": "Put the butter in a large bowl and beat well until soft. Add the sugar and beat until light and fluffy. Stir in the orange zest and apricot jam.",
+    "text": "Beat the butter and sugar until soft and fluffy, then beat in the eggs one at a time.",
     "minutes": null
    },
    {
-    "text": "Sieve together the flour and baking powder. Add the eggs to the creamed butter and sugar, a little at a time, beating well between each addition. If the mixture starts to curdle, stir in a little flour.",
+    "text": "Mix in the lemon and orange zest. Fold in the flour, baking powder and ground almonds, then stir in the drained fruit and glace cherries. The source lists a pinch of salt but does not say when to add it, so it goes in with the flour.",
     "minutes": null
    },
    {
-    "text": "Add the remaining flour and ground almonds and mix well. Mix in the milk and then add the dried fruit and cherries and mix gently together.",
+    "text": "Spoon the batter into the tin and make a slight dip in the centre. Arrange the whole almonds in a circle on top without pressing them in.",
     "minutes": null
    },
    {
-    "text": "Spoon the mixture into the prepared tin and spread level using the back of a spoon. Arrange the whole almonds close together in neat circles on the top of the cake. Bake in the oven for 45 mins.",
-    "minutes": 45
+    "text": "Put a dish of water on the bottom of the oven and bake for 90 to 120 minutes, until a skewer in the centre comes out clean.",
+    "minutes": 90
    },
    {
-    "text": "Lower the oven temperature to 160C/140 C fan/Gas Mark 3 and cook for a further 60–80 minutes. Check the cake after 50 minutes by inserting a wooden or metal skewer into the cake. When it’s done it should have just a few crumbs attached.",
-    "minutes": 80
-   },
-   {
-    "text": "Check every 10 minutes - it’s important not to overcook this cake so the centre will be a little soft.",
-    "minutes": 10
-   },
-   {
-    "text": "When cooked, remove the cake briefly from the oven, put the milk and sugar into a small pan and heat gently until the sugar has dissolved.",
-    "minutes": null
-   },
-   {
-    "text": "Brush over the top of the cake and return the cake to the oven for 2-3 mins. Remove and allow the cake to cool in the tin. When quite cold remove from the tin and wrap in foil and keep for at least 2 days before cutting.",
-    "minutes": 3
+    "text": "Cool the cake in the tin for 1 hour, then turn it onto a wire rack to cool fully. Wrap in baking paper and keep in an airtight tin for up to 5 weeks.",
+    "minutes": 60
    }
   ]
  },
@@ -81809,25 +81891,19 @@
  {
   "source": "themealdb:53325",
   "title": "Venezuelan Arepas",
-  "description": "A Venezuelan side of cornmeal — serves 4, on the table in about 45 minutes.",
+  "description": "Venezuelan arepas made from precooked corn flour, water and salt, browned in butter in a skillet, finished in the oven and split open to fill.",
   "servings": 4,
   "cuisine": "Venezuelan",
   "category": "Side",
   "image": "https://www.themealdb.com/images/media/meals/3hcy191764376285.jpg",
-  "prep_minutes": 10,
+  "prep_minutes": 15,
   "cook_minutes": 25,
   "ingredients": [
-   {
-    "name": "cornmeal",
-    "quantity": 2,
-    "unit": "cup",
-    "note": ""
-   },
    {
     "name": "water",
     "quantity": 2.5,
     "unit": "cup",
-    "note": ""
+    "note": "warm"
    },
    {
     "name": "salt",
@@ -81836,75 +81912,51 @@
     "note": ""
    },
    {
+    "name": "precooked corn flour",
+    "quantity": 2,
+    "unit": "cup",
+    "note": "PAN brand precooked cornmeal (masarepa), not regular cornmeal"
+   },
+   {
     "name": "vegetable oil",
-    "quantity": 1,
-    "unit": "tbsp",
-    "note": ""
+    "quantity": null,
+    "unit": "",
+    "note": "a little, in the bowl of water for wetting hands"
+   },
+   {
+    "name": "butter",
+    "quantity": null,
+    "unit": "",
+    "note": "for browning in the skillet and a little inside each arepa; amount not given"
    }
   ],
   "steps": [
    {
-    "text": "Preheat oven to 210°C (410°F)",
+    "text": "Put the warm water in a bowl, add the salt and mix.",
     "minutes": null
    },
    {
-    "text": "Pour the water into a large bowl. Make sure it is room temperature.",
+    "text": "Add the corn flour slowly, mixing with a spoon, then finish with your hands until you have a non-sticky dough. Let it rest for a few minutes.",
     "minutes": null
    },
    {
-    "text": "Add the salt. Blend well with a mixer, fork or spatula to make sure it dissolves well.",
+    "text": "Put a little oil in a bowl of water to wet your hands. Roll a ball of dough, squish it into a disk and shape it by spinning it in your palms.",
     "minutes": null
    },
    {
-    "text": "While you continue to beat the mixture, slowly add the corn meal—a little bit at a time.",
+    "text": "Keep the shaped arepas under a damp kitchen towel. Heat the oven to 175°C.",
     "minutes": null
    },
    {
-    "text": "Once all the flour is added, keep mixing until the corn meal, water and salt are thoroughly blended and dissolved.",
+    "text": "Melt butter in a skillet, preferably cast iron. Brown the arepas, flipping them a few times.",
     "minutes": null
    },
    {
-    "text": "Set aside the masa in its bowl. Let it rest for 5 minutes so that the flour is thoroughly hydrated. This type of corn flour does not have any gluten, so it doesn’t need to be kneaded. The masa should be smooth, firm yet malleable.",
-    "minutes": 5
-   },
-   {
-    "text": "While waiting for the 5 minutes’ rest, heat your budare (or comal, griddle, cast-iron pan or non-stick pan) over medium heat. Coat with a little bit of the oil.",
-    "minutes": 5
-   },
-   {
-    "text": "Fill a small bowl with water to wet your hands to make the arepas.",
-    "minutes": null
-   },
-   {
-    "text": "Take about 2 Tbsp of the masa in your damp hands. The masa should fit easily in your palm so that it is easy to shape into a small ball.",
-    "minutes": null
-   },
-   {
-    "text": "Cross your hands, so that one is on top of the other, with the masa ball between them. Rotate your right hand in a circle, so that you are at the same time both pressing the masa into a flat disc and keeping its round shape. arepa making.",
-    "minutes": null
-   },
-   {
-    "text": "The last step in shaping your arepa is to quickly pass and lightly press the masa disc from one hand to the other until it is about ¾ of an inch thick and 4 inches wide.",
-    "minutes": null
-   },
-   {
-    "text": "Smooth the edges with your fingertips (quickly dip them into the water bowl first) so that they stay as round as possible and without cracks. arepa making.",
-    "minutes": null
-   },
-   {
-    "text": "Place your arepas in batches on the preheated surface of your budare griddle or nonstick pan. Let each side turn golden, about 4 to 5 minutes per side. Check them often so that they don’t burn.",
-    "minutes": 5
-   },
-   {
-    "text": "Once they are nicely browned on both sides, place the arepas on a baking sheet in your preheated oven for 10 minutes.",
+    "text": "Transfer the browned arepas to the oven and bake for about 10 minutes, until cooked through.",
     "minutes": 10
    },
    {
-    "text": "They should be somewhat puffy, so that if you tap an arepa lightly on top, it will sound like you are tapping an empty box.",
-    "minutes": null
-   },
-   {
-    "text": "Serve arepas hot, whether you stuff with them with your choice of fillings or serve solo to accompany your favorite Venezuelan guiso or stew.",
+    "text": "Handle them carefully as they are hot. Cut each open leaving an edge intact to make a pocket, add a little butter inside and fill as you like.",
     "minutes": null
    }
   ]
@@ -82188,134 +82240,142 @@
  {
   "source": "themealdb:53328",
   "title": "Venezuelan Shredded Beef",
-  "description": "A Venezuelan dish of flank steak, capsicum and tomato — serves 4, about an hour start to finish.",
-  "servings": 4,
+  "description": "Flank or skirt steak simmered for about two hours until shreddable, then finished in an onion, spring onion and red capsicum sofrito with some of the broth.",
+  "servings": 6,
   "cuisine": "Venezuelan",
   "category": "Beef",
   "image": "https://www.themealdb.com/images/media/meals/mq27gf1764436795.jpg",
-  "prep_minutes": 20,
-  "cook_minutes": 35,
+  "prep_minutes": 15,
+  "cook_minutes": 140,
   "ingredients": [
    {
     "name": "flank steak",
-    "quantity": 910,
+    "quantity": 700,
     "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "garlic",
-    "quantity": 2,
-    "unit": "clove",
-    "note": "minced"
-   },
-   {
-    "name": "onion",
-    "quantity": 1,
-    "unit": "",
-    "note": "chopped"
-   },
-   {
-    "name": "onion",
-    "quantity": 1,
-    "unit": "",
-    "note": "sliced"
-   },
-   {
-    "name": "capsicum",
-    "quantity": 1,
-    "unit": "",
-    "note": "sliced"
-   },
-   {
-    "name": "tomato",
-    "quantity": 3,
-    "unit": "",
-    "note": "sliced thinly"
-   },
-   {
-    "name": "beef stock",
-    "quantity": 4,
-    "unit": "cup",
-    "note": ""
-   },
-   {
-    "name": "worcestershire sauce",
-    "quantity": 2,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "tomato puree",
-    "quantity": 1,
-    "unit": "tbsp",
-    "note": ""
+    "note": "flank or skirt"
    },
    {
     "name": "ground cumin",
-    "quantity": 1,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "tomato ketchup",
-    "quantity": 0.25,
-    "unit": "cup",
-    "note": ""
+    "quantity": null,
+    "unit": "",
+    "note": "to season the steak; amount not given"
    },
    {
     "name": "salt",
     "quantity": null,
     "unit": "",
-    "note": "to taste"
+    "note": "to taste, for the steak and the water"
    },
    {
     "name": "black pepper",
     "quantity": null,
     "unit": "",
-    "note": "to taste"
+    "note": "to taste, for the steak and the water"
    },
    {
-    "name": "olive oil",
+    "name": "vegetable oil",
+    "quantity": null,
+    "unit": "",
+    "note": "for frying, to brown the beef; amount not given"
+   },
+   {
+    "name": "water",
+    "quantity": 4,
+    "unit": "cup",
+    "note": "to simmer the beef"
+   },
+   {
+    "name": "garlic",
+    "quantity": 2,
+    "unit": "clove",
+    "note": "smashed"
+   },
+   {
+    "name": "onion",
+    "quantity": 2,
+    "unit": "slice",
+    "note": "2 small pieces, for the simmering liquid"
+   },
+   {
+    "name": "jalapeño",
     "quantity": 1,
+    "unit": "",
+    "note": "small, halved, optional"
+   },
+   {
+    "name": "thyme",
+    "quantity": null,
+    "unit": "",
+    "note": "number of sprigs not given"
+   },
+   {
+    "name": "annatto",
+    "quantity": 110,
+    "unit": "g",
+    "note": "seeds, optional: covered in oil to make annatto oil"
+   },
+   {
+    "name": "vegetable oil",
+    "quantity": null,
+    "unit": "",
+    "note": "optional, for frying: covers the annatto seeds in a jar to make annatto oil; amount not given"
+   },
+   {
+    "name": "vegetable oil",
+    "quantity": 2,
     "unit": "tbsp",
-    "note": ""
+    "note": "annatto or regular oil for the sofrito (2 to 3 tbsp, lower value used)"
+   },
+   {
+    "name": "onion",
+    "quantity": 0.5,
+    "unit": "",
+    "note": "large, coarsely chopped, for the sofrito"
+   },
+   {
+    "name": "spring onion",
+    "quantity": 6,
+    "unit": "",
+    "note": "white, light green and dark green parts chopped"
+   },
+   {
+    "name": "capsicum",
+    "quantity": 1,
+    "unit": "",
+    "note": "small red, coarsely chopped"
    }
   ],
   "steps": [
    {
-    "text": "Season beef with salt, pepper and minced garlic Chop 1 onion in 4 big wedges.",
+    "text": "Rinse and pat dry the steak and season it generously with salt, pepper and cumin on both sides.",
     "minutes": null
    },
    {
-    "text": "Place in the beef pressure cooker with the 4 wedges of onion and the stock Pressure cook for 20 minutes Release the pressure and open the lid.",
-    "minutes": 20
-   },
-   {
-    "text": "Remove the beef and SAVE 2 cups of stock in another container.",
+    "text": "Brown the beef evenly on both sides in a large deep skillet with some oil.",
     "minutes": null
    },
    {
-    "text": "With 2 forks, shred the beef. Beef should be tender enough to so easily. If not, cook for another 10 minutes.",
-    "minutes": 10
+    "text": "Add the water, garlic, onion pieces, jalapeño if using and thyme, and season the water with salt and pepper. Bring to a simmer and cook for about 2 hours, until the meat separates with a fork.",
+    "minutes": 120
    },
    {
-    "text": "Press the saute button of the Instant pot. Add the olive oil.",
+    "text": "Lift the meat out and shred it. Strain the broth and keep it, as some is needed to finish the dish.",
     "minutes": null
    },
    {
-    "text": "When the machine beeps, add the sliced onion, pepper and tomatoes. Cook until tender.",
+    "text": "Optional: cover the annatto seeds with oil in a jar and keep in the fridge, topping up the oil until it stops taking colour. Plain oil works if you skip this.",
     "minutes": null
    },
    {
-    "text": "Add the shredded beef back in the pot and mix.",
+    "text": "Heat 2 to 3 tbsp of the annatto or regular oil in a skillet and cook the onion, spring onion and red capsicum until soft and the onion is translucent, about 8 minutes, adding more oil if it dries up.",
+    "minutes": 8
+   },
+   {
+    "text": "Add the shredded beef and 1 cup of the broth and simmer until the broth has all cooked away. Adjust the salt and pepper.",
     "minutes": null
    },
    {
-    "text": "Pour in 1 1/2 cups of the saved stock, the Worcestershire sauce, tomato paste, ketchup and cumin. Mix.",
-    "minutes": null
-   },
-   {
-    "text": "If sauce seems to dry, add a tad more of stock Season with salt and pepper Serve!",
+    "text": "Serve with rice and beans, or inside an empanada or an arepa.",
     "minutes": null
    }
   ]
@@ -83444,112 +83504,134 @@
  {
   "source": "themealdb:53062",
   "title": "Walnut Roll Gužvara",
-  "description": "A Croatian sweet made with walnuts and cinnamon — makes 12, about an hour start to finish.",
+  "description": "Soft yeasted dough rolled up around a ground walnut, milk and sugar filling, glazed with egg yolk and baked into two loaves, then dusted with icing sugar.",
   "servings": 12,
   "cuisine": "Croatian",
   "category": "Dessert",
   "image": "https://www.themealdb.com/images/media/meals/u9l7k81628771647.jpg",
-  "prep_minutes": 20,
+  "prep_minutes": 40,
   "cook_minutes": 35,
   "ingredients": [
    {
-    "name": "plain flour",
-    "quantity": 450,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "sugar",
-    "quantity": 55,
-    "unit": "g",
-    "note": ""
+    "name": "milk",
+    "quantity": 280,
+    "unit": "ml",
+    "note": "lukewarm, for the dough"
    },
    {
     "name": "yeast",
+    "quantity": 1,
+    "unit": "",
+    "note": "1 cube of fresh di-go yeast (weight not stated in the source)"
+   },
+   {
+    "name": "sugar",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "to activate the yeast"
+   },
+   {
+    "name": "plain flour",
+    "quantity": 550,
+    "unit": "g",
+    "note": "for the dough"
+   },
+   {
+    "name": "sugar",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": "for the dough"
+   },
+   {
+    "name": "vegetable oil",
+    "quantity": 150,
+    "unit": "ml",
+    "note": "for the dough"
+   },
+   {
+    "name": "egg yolks",
     "quantity": 2,
     "unit": "",
-    "note": "parts"
+    "note": "for the dough"
    },
    {
     "name": "salt",
-    "quantity": 0.5,
+    "quantity": 1,
     "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "milk",
-    "quantity": 180,
-    "unit": "ml",
-    "note": ""
-   },
-   {
-    "name": "eggs",
-    "quantity": 2,
-    "unit": "",
-    "note": "beaten"
-   },
-   {
-    "name": "butter",
-    "quantity": 30,
-    "unit": "g",
-    "note": ""
+    "note": "for the dough"
    },
    {
     "name": "walnuts",
-    "quantity": 140,
+    "quantity": 400,
     "unit": "g",
-    "note": ""
+    "note": "ground, for the filling"
    },
    {
-    "name": "butter",
-    "quantity": 85,
-    "unit": "g",
-    "note": ""
+    "name": "milk",
+    "quantity": 200,
+    "unit": "ml",
+    "note": "for the filling"
    },
    {
-    "name": "brown sugar",
-    "quantity": 85,
+    "name": "sugar",
+    "quantity": 200,
     "unit": "g",
-    "note": ""
+    "note": "for the filling"
    },
    {
-    "name": "cinnamon",
+    "name": "egg yolks",
     "quantity": 1,
-    "unit": "tsp",
-    "note": ""
+    "unit": "",
+    "note": "beaten with a little milk, for the glaze"
    },
    {
     "name": "milk",
     "quantity": null,
     "unit": "",
-    "note": "to glaze"
+    "note": "a little, beaten with the egg yolk for the glaze"
    },
    {
     "name": "icing sugar",
     "quantity": null,
     "unit": "",
-    "note": "to glaze"
+    "note": "to dust over the cooled roll, to serve"
    }
   ],
   "steps": [
    {
-    "text": "Mix all the ingredients for the dough together and knead well. Cover the dough and put to rise until doubled in size which should take about 2 hours. Knock back the dough and knead lightly.",
-    "minutes": 120
-   },
-   {
-    "text": "Divide the dough into two equal pieces; roll each piece into an oblong about 12 inches by 8 inches. Mix the filling ingredients together and divide between the dough, spreading over each piece.",
+    "text": "Stir the fresh yeast and 1 tsp sugar into the lukewarm milk.",
     "minutes": null
    },
    {
-    "text": "Roll up the oblongs as tightly as possible to give two 12 inch sausages. Place these side by side, touching each other, on a greased baking sheet. Cover and leave to rise for about 40 minutes. Heat oven to 200°C (425°F).",
-    "minutes": 40
+    "text": "Make a well in the flour and add the yeast mixture, 2 tbsp sugar, oil, salt and egg yolks. Mix with a spoon, then knead by hand until the dough pulls away from your fingers and the bowl.",
+    "minutes": null
    },
    {
-    "text": "Bake for 30-35 minutes until well risen and golden brown. Bread should sound hollow when the base is tapped.",
+    "text": "Cover the dough and leave it at room temperature to rise; the source gives no rising time. Then knead it down again.",
+    "minutes": null
+   },
+   {
+    "text": "Cut the dough into two equal pieces and shape each into a ball. Mix the ground walnuts, 200 ml milk and 200 g sugar for the filling.",
+    "minutes": null
+   },
+   {
+    "text": "Roll each ball out to the width of the baking tin, spread half the filling over it and roll it up.",
+    "minutes": null
+   },
+   {
+    "text": "Place both rolls in the tin, cover with a cloth and leave for 30 minutes.",
+    "minutes": 30
+   },
+   {
+    "text": "Beat the egg yolk with a little milk and brush it over each roll.",
+    "minutes": null
+   },
+   {
+    "text": "Bake at 170°C for about 35 to 40 minutes.",
     "minutes": 35
    },
    {
-    "text": "Remove from oven and brush the hot bread top with milk. Sift with a generous covering of icing sugar.",
+    "text": "Cover the baked rolls with a cloth and let them cool, then dust with icing sugar and slice.",
     "minutes": null
    }
   ]
@@ -84069,125 +84151,111 @@
  {
   "source": "themealdb:53394",
   "title": "Zeeuwse bolussen",
-  "description": "A Dutch sweet made with cinnamon and cardamom — makes 10, ready in under half an hour.",
-  "servings": 10,
+  "description": "Soft enriched yeast dough rolled in a brown sugar, cinnamon and lemon zest mixture, coiled into flat spirals and baked hot so the sugar caramelises into a sticky top.",
+  "servings": 12,
   "cuisine": "Dutch",
   "category": "Dessert",
   "image": "https://www.themealdb.com/images/media/meals/qawvoy1777627952.jpg",
-  "prep_minutes": 15,
+  "prep_minutes": 40,
   "cook_minutes": 10,
   "ingredients": [
    {
-    "name": "yeast",
-    "quantity": 10,
+    "name": "plain flour",
+    "quantity": 325,
+    "unit": "g",
+    "note": "all-purpose"
+   },
+   {
+    "name": "salt",
+    "quantity": 6,
     "unit": "g",
     "note": ""
+   },
+   {
+    "name": "yeast",
+    "quantity": 7,
+    "unit": "g",
+    "note": "instant"
    },
    {
     "name": "milk",
     "quantity": 200,
     "unit": "ml",
-    "note": ""
-   },
-   {
-    "name": "sugar",
-    "quantity": 25,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "plain flour",
-    "quantity": 400,
-    "unit": "g",
-    "note": ""
+    "note": "lukewarm, about 43°C"
    },
    {
     "name": "eggs",
     "quantity": 1,
     "unit": "",
-    "note": "medium"
+    "note": "large, about 55 g"
+   },
+   {
+    "name": "sugar",
+    "quantity": 18,
+    "unit": "g",
+    "note": "for the dough"
    },
    {
     "name": "butter",
-    "quantity": 75,
+    "quantity": 40,
     "unit": "g",
-    "note": ""
+    "note": "unsalted, softened"
    },
    {
-    "name": "salt",
-    "quantity": 1,
-    "unit": "tsp",
-    "note": ""
+    "name": "brown sugar",
+    "quantity": 475,
+    "unit": "g",
+    "note": "for the rolling mixture"
    },
    {
     "name": "cinnamon",
-    "quantity": 1,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "cardamom",
-    "quantity": 1,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "brown sugar",
-    "quantity": 75,
+    "quantity": 21,
     "unit": "g",
-    "note": ""
+    "note": "ground"
    },
    {
-    "name": "brown sugar",
-    "quantity": 250,
+    "name": "lemon zest",
+    "quantity": 4,
     "unit": "g",
-    "note": ""
+    "note": "from about 1 large lemon"
    }
   ],
   "steps": [
    {
-    "text": "Place the dried yeast, milk and sugar in the bowl of your food processor. Mix and let stand for a few minutes until it begins to foam.",
-    "minutes": null
+    "text": "Stir the yeast into the lukewarm milk and leave it for 5 to 10 minutes. Mix the flour, salt, sugar and egg in a stand mixer, add the milk mixture and knead on medium-low for about 8 minutes until smooth and slightly elastic.",
+    "minutes": 18
    },
    {
-    "text": "Then add the flour, egg, butter, salt, 1 tsp of cinnamon and cardamom and process until smooth.",
-    "minutes": null
+    "text": "Add the softened butter one piece at a time, letting each piece absorb, and knead 2 to 3 minutes more until the dough is soft and pulls from the bowl.",
+    "minutes": 3
    },
    {
-    "text": "Form the dough into a ball, cover the bowl and let it rise for 1 hour or until it has doubled in size.",
+    "text": "Cover and let the dough rise in a warm spot for about 1 hour, until doubled.",
     "minutes": 60
    },
    {
-    "text": "Mix the caster sugar with 1 tablespoon of cinnamon, pour over the dough and roll it in.",
+    "text": "Meanwhile mix the brown sugar, cinnamon and lemon zest on a large rimmed tray.",
     "minutes": null
    },
    {
-    "text": "Form 10 equal balls (about 75 grams each) and let them “sweat” for a while. The sugar will dissolve a little. When you roll them again later, the rest of the dough will absorb the sugar better.",
+    "text": "Deflate the dough, divide into 12 pieces of about 54 g and roll into balls. Roll each through the sugar mixture, put them in a covered bowl and rest about 15 minutes.",
+    "minutes": 15
+   },
+   {
+    "text": "On a damp towel with some of the sugar mixture, roll each ball into a rope about 51 cm long, coating it in sugar. Coil each into a flat spiral and tuck the end under.",
     "minutes": null
    },
    {
-    "text": "Then roll the ball into a strand about 35-40 centimeters long while rolling through the powdered sugar.",
-    "minutes": null
-   },
-   {
-    "text": "Fold the strand around one end and tuck the other end under the bolus. Push something between the roll to secure the end.",
-    "minutes": null
-   },
-   {
-    "text": "Place on a baking sheet lined with a baking sheet, cover with plastic wrap and let them rise for ½-1 hour.",
+    "text": "Place the spirals on a parchment-lined tray with space between them, cover with a damp towel and let rise again for about 1 hour.",
     "minutes": 60
    },
    {
-    "text": "Meanwhile, preheat the oven to 250 degrees Celsius/480 Fahrenheit top and bottom heat.",
-    "minutes": null
+    "text": "Heat the oven to 250°C and bake for 7 to 9 minutes until golden and the sugar is bubbling. Watch closely as the sugar burns fast.",
+    "minutes": 9
    },
    {
-    "text": "Bake the Zeeland Boluses for about 8 minutes until done. Be careful – if you bake them too long, they will get dry and you will want something sticky .",
-    "minutes": 8
-   },
-   {
-    "text": "Let them cool out of the oven for 1 minute, then turn them over and let them cool further (on a wire rack if necessary). Enjoy!",
-    "minutes": null
+    "text": "Straight from the oven, lay a second parchment-lined tray on top and flip both over. Leave 5 to 10 minutes, lift off the hot tray and cool completely.",
+    "minutes": 10
    }
   ]
  },

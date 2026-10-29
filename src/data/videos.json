@@ -1210,12 +1210,12 @@
   "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52979": {
-  "videoId": "q8AKfYUtDuM",
-  "title": "Bitterballen - Recipe Dutch fried beef croquette balls with crispy crust",
-  "channel": "Nicole Michael DIY",
-  "status": "rejected",
-  "reason": "video title doesn't match the dish",
-  "checked": "2026-10-20"
+  "videoId": "OonwnAnz7iQ",
+  "title": "BITTERBALLEN - Crispy DUTCH treat with a soft MEAT center",
+  "channel": "Kravings",
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53482": {
   "videoId": null,
@@ -1247,9 +1247,9 @@
   "videoId": "GsB8ZI5vREA",
   "title": "Easy Blini Recipe | Supergolden Bakes",
   "channel": "Lucy Parissi",
-  "status": "rejected",
-  "reason": "video title doesn't match the dish",
-  "checked": "2026-10-20"
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53100": {
   "videoId": "7tq5JvO88E0",
@@ -1401,9 +1401,9 @@
   "videoId": "6dzd6Ra6sb4",
   "title": "Nonna Romana's Ricotta Cheesecake - Rossella's Cooking with Nonna",
   "channel": "Rossella's Cooking with Nonna",
-  "status": "rejected",
-  "reason": "video title doesn't match the dish",
-  "checked": "2026-10-20"
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53492": {
   "videoId": null,
@@ -1710,12 +1710,10 @@
   "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52879": {
-  "videoId": "tiG-xlmeyjg",
-  "title": "PARMENTIER AU POULET FACILE ET RAPIDE",
-  "channel": "Aux Fourneaux",
+  "videoId": null,
+  "checked": "2026-10-29",
   "status": "rejected",
-  "reason": "video title doesn't match the dish",
-  "checked": "2026-10-20"
+  "reason": "The Aux Fourneaux description has no recipe and its blog link only reaches the homepage; replacement searches found chicken parmentier videos whose descriptions have an ingredient list without a method (Tous en Cuisine avec Seb, JFM TV), or only a paywalled blog post (Je fais quoi avec ça), or nothing (Gourmet Grandad, KD's kusina), so none could be verified."
  },
  "themealdb:53549": {
   "videoId": null,
@@ -1937,9 +1935,9 @@
   "videoId": "OaqvGvEiwzU",
   "title": "CHRISTMAS FLAPJACK RECIPE",
   "channel": "Barry Lewis",
-  "status": "rejected",
-  "reason": "video title doesn't match the dish",
-  "checked": "2026-10-20"
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:52989": {
   "videoId": "jRfyNQs5qhU",
@@ -2286,12 +2284,12 @@
   "checked": "2026-10-20"
  },
  "themealdb:52899": {
-  "videoId": "4hEXsfpeMQE",
-  "title": "Traditional English Christmas Cake",
-  "channel": "Dave Knowles - filmmaker",
-  "status": "rejected",
-  "reason": "video title doesn't match the dish",
-  "checked": "2026-10-20"
+  "videoId": "WA5B8AP1mlo",
+  "title": "Making a Prize Winning Scottish Dundee Cake for Competition!",
+  "channel": "Scrummy",
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53386": {
   "videoId": "MgI-_e4R53Y",
@@ -5393,9 +5391,9 @@
   "videoId": "kbvh5XaBpJk",
   "title": "Venezuelan Arepas | The Frugal Chef",
   "channel": "The Frugal Chef",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53327": {
   "videoId": null,
@@ -5415,9 +5413,9 @@
   "videoId": "TPn1BKS5Eio",
   "title": "Venezuelan Shredded Beef | The Frugal Chef",
   "channel": "The Frugal Chef",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53332": {
   "videoId": null,
@@ -5486,12 +5484,12 @@
   "transcribed": true
  },
  "themealdb:53062": {
-  "videoId": "Q_akngSJVrQ",
-  "title": "Croatian Food Recipe - How to make this simple Croatian Walnut Roll \"Gužvara\"",
-  "channel": "The Turkish Plate",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "videoId": "Htp13HADUJ4",
+  "title": "Orahnjača",
+  "channel": "di-go kvasac",
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53271": {
   "videoId": "ivR-YRcQk08",
@@ -5543,9 +5541,9 @@
   "videoId": "ypXGr9NdMZU",
   "title": "How to Make Zeeuwse Bolussen – The Ultimate Sticky Cinnamon-Spiced Pastry from Zeeland",
   "channel": "Toine’s Kitchen 🇳🇱",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53189": {
   "videoId": "WfpE70EIw2w",
