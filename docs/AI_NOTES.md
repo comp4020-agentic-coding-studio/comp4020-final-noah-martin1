@@ -106,7 +106,7 @@ Things learned the hard way while matching catalogue recipes to YouTube videos.
 
 ## Where it stopped (2026-10-29)
 
-- 315 recipes verified (of 757). About 167 recipes have no candidate video
+- 331 recipes verified (of 757). About 167 recipes have no candidate video
   at all, 125 have a video with no recipe in its description, 46 a video with
   ingredients but no method (wait for transcripts), 22 a dead video.
 - Scratch state (`/tmp/ytwork`: scan.json, assigned.json, out/, review/) is

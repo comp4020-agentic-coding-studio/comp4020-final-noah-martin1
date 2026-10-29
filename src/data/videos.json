@@ -2102,10 +2102,12 @@
   "checked": "2026-10-20"
  },
  "themealdb:52998": {
-  "videoId": null,
-  "status": "unavailable",
-  "reason": "TheMealDB lists no video for this meal",
-  "checked": "2026-10-20"
+  "videoId": "DXVL1Wtg1dg",
+  "title": "Easy Corned Beef and Cabbage (Stovetop or Slow Cooker)",
+  "channel": "The Stay At Home Chef",
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53350": {
   "videoId": "Bxjz-q2hioA",
@@ -2476,12 +2478,12 @@
   "transcribed": true
  },
  "themealdb:53123": {
-  "videoId": "2mMT71Knp8E",
-  "title": "🇳🇴🐑🥬 Fårikål - making Norwegian National dish!",
-  "channel": "Visit Norway",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "videoId": "gLrKJhHoCfU",
+  "title": "Fårikål (National Dish of Norway)",
+  "channel": "Scandinavian Cookbook",
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53188": {
   "videoId": "ecBMVy3p6Ns",
@@ -2554,10 +2556,12 @@
   "transcribed": true
  },
  "themealdb:53122": {
-  "videoId": null,
-  "status": "unavailable",
-  "reason": "TheMealDB's link isn't a valid YouTube video URL",
-  "checked": "2026-10-20"
+  "videoId": "cF22x8pamO4",
+  "title": "Fiskesuppe - Creamy Norwegian Fish Soup",
+  "channel": "Scandinavian Cookbook",
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:52906": {
   "videoId": null,
@@ -2792,10 +2796,12 @@
   "transcribed": true
  },
  "themealdb:53041": {
-  "videoId": "JYtMjKa6cdY",
-  "status": "unavailable",
-  "reason": "video can't be embedded",
-  "checked": "2026-10-20"
+  "videoId": "nwrd_CxgKXE",
+  "title": "Portuguese Grilled Sardines (Sardinhas)",
+  "channel": "Fifteen Blog",
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53397": {
   "videoId": "Mzv2JIg3TRA",
@@ -2830,10 +2836,12 @@
   "checked": "2026-10-20"
  },
  "themealdb:52967": {
-  "videoId": null,
-  "status": "unavailable",
-  "reason": "TheMealDB lists no video for this meal",
-  "checked": "2026-10-20"
+  "videoId": "_EL8oIl8SCQ",
+  "title": "How to make soft mandazi",
+  "channel": "Vanessa Mehri",
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:52993": {
   "videoId": null,
@@ -3086,12 +3094,12 @@
   "checked": "2026-10-20"
  },
  "themealdb:52769": {
-  "videoId": "UIcuiU1kV8I",
-  "title": "Kapsalon shoarma, Mc Döner Hoogeveen",
-  "channel": "MC Doner Hoogeveen",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "videoId": "rSTX4qdbnrc",
+  "title": "24Kitchen | Job & Perry’s luxe kapsalon | Wat Eten We Vandaag? | Afl. 131",
+  "channel": "24Kitchen",
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53125": {
   "videoId": "HDWgGMJqvgw",
@@ -3130,20 +3138,16 @@
   "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52813": {
-  "videoId": "PTUxCvCz8Bc",
-  "title": "Copycat KFC Fried Chicken - Homemade",
-  "channel": "Nicko's Kitchen",
+  "videoId": null,
+  "checked": "2026-10-29",
   "status": "rejected",
-  "reason": "video title doesn't match the dish",
-  "checked": "2026-10-20"
+  "reason": "The only recipe evidence found (See, Cook, Eat! video aRjQws_yyIg, description) gives full spice-mix and buttermilk amounts but no weight or count for the chicken, the main ingredient ('enough to coat a full family size chicken drumsticks package'), and no yield. A recipe whose main ingredient is unmeasured cannot be costed or given a verified serving count. The previous video (Nicko's Kitchen) has no recipe in its description. Transcripts are paused."
  },
  "themealdb:53112": {
-  "videoId": "NxrOueTLiqA",
-  "title": "Beef Curry Recipe /Meat Stew /Mchuzi wa Nyama ya Kukaanga/ Kenya Recipe /Halima's Coastal Cuisine",
-  "channel": "Halima's Coastal Cuisine",
+  "videoId": null,
+  "checked": "2026-10-29",
   "status": "rejected",
-  "reason": "the video is a fried meat stew (mchuzi wa nyama ya kukaanga); the method may differ",
-  "checked": "2026-10-20"
+  "reason": "The current video (Halima's Coastal Cuisine, NxrOueTLiqA) has only a link list in its description and no recipe. Replacement searches found Kenyan-style beef curry videos with no usable written recipe: Infoods (8-ouTgYwEUs) lists ingredients with amounts but gives no method, Chef Ali Mandhry (k2pv9CR7k_8) has no description, and Ninah's Delibites (OTOfdYgK5uQ) lists ingredients without amounts. Transcripts are paused, so none could be verified."
  },
  "themealdb:53494": {
   "videoId": null,
@@ -3152,10 +3156,12 @@
   "checked": "2026-10-20"
  },
  "themealdb:53502": {
-  "videoId": null,
-  "status": "unavailable",
-  "reason": "TheMealDB lists no video for this meal",
-  "checked": "2026-10-20"
+  "videoId": "V8dhQQYvWR0",
+  "title": "How To Make Vietnamese Pancakes 'Banh Xeo' - Marion's Kitchen",
+  "channel": "Marion Grasby",
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53286": {
   "videoId": "-BzhiwgfAOQ",
@@ -3174,12 +3180,12 @@
   "transcribed": true
  },
  "themealdb:53257": {
-  "videoId": "4OsDpyaTKk0",
-  "title": "Kofta Burgers! #kofta #burgerrecipe #bbqrecipe",
-  "channel": "Matthew Augusta",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "videoId": "RngkESI6aKM",
+  "title": "GRILLED KOFTA BURGERS",
+  "channel": "Weekend at the Cottage",
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53434": {
   "videoId": null,

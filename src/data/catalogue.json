@@ -33789,51 +33789,83 @@
  {
   "source": "themealdb:52998",
   "title": "Corned Beef and Cabbage",
-  "description": "An Irish dish of beef brisket, baby potatoes and carrot — serves 4, worth the couple of hours it takes.",
+  "description": "Corned beef brisket simmered in beer and Worcestershire sauce with its spice packet, then potatoes, carrots and cabbage wedges cooked in the same pot (stovetop method).",
   "servings": 4,
   "cuisine": "Irish",
   "category": "Beef",
   "image": "https://www.themealdb.com/images/media/meals/xb97a81583266727.jpg",
   "prep_minutes": 10,
-  "cook_minutes": 70,
+  "cook_minutes": 130,
   "ingredients": [
    {
-    "name": "beef brisket",
-    "quantity": 1360,
+    "name": "corned beef",
+    "quantity": 900,
     "unit": "g",
+    "note": "brisket with spice packet; 2-3 lb, lower value used"
+   },
+   {
+    "name": "beer",
+    "quantity": 4,
+    "unit": "cup",
+    "note": "or beef broth, enough to cover the brisket"
+   },
+   {
+    "name": "worcestershire sauce",
+    "quantity": 0.25,
+    "unit": "cup",
     "note": ""
    },
    {
     "name": "baby potatoes",
-    "quantity": 10,
-    "unit": "",
-    "note": ""
+    "quantity": 900,
+    "unit": "g",
+    "note": "baby red potatoes"
    },
    {
     "name": "carrot",
-    "quantity": 5,
-    "unit": "",
-    "note": ""
+    "quantity": 900,
+    "unit": "g",
+    "note": "baby carrots"
    },
    {
     "name": "cabbage",
     "quantity": 1,
     "unit": "",
-    "note": ""
+    "note": "large green head, cut into wedges"
+   },
+   {
+    "name": "salt",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": "to season the vegetables"
+   },
+   {
+    "name": "black pepper",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": "to season the vegetables"
    }
   ],
   "steps": [
    {
-    "text": "Place corned beef in large pot or Dutch oven and cover with water. Add the spice packet that came with the corned beef. Cover pot and bring to a boil, then reduce to a simmer. Simmer approximately 50 minutes per pound or until tender.",
-    "minutes": 50
+    "text": "Put the corned beef in a large pot with a lid, pour the beer or beef broth over to cover, add the Worcestershire sauce and sprinkle over the spice packet.",
+    "minutes": null
    },
    {
-    "text": "Add whole potatoes and peeled and cut carrots, and cook until the vegetables are almost tender. Add cabbage and cook for 15 more minutes. Remove meat and let rest 15 minutes.",
+    "text": "Bring to the boil over high heat, cover, reduce to low and simmer for 50 minutes per pound of brisket (about 100 minutes for 2 lb) until it shreds easily with a fork.",
+    "minutes": 100
+   },
+   {
+    "text": "Add the potatoes, cover again and cook for 15 minutes until they start to soften.",
     "minutes": 15
    },
    {
-    "text": "Place vegetables in a bowl and cover. Add as much broth (cooking liquid reserved in the Dutch oven or large pot) as you want. Slice meat across the grain.",
-    "minutes": null
+    "text": "Add the carrots and cabbage wedges, season with the salt and pepper, and cook covered for 15 minutes until everything is tender.",
+    "minutes": 15
+   },
+   {
+    "text": "Lift out the beef and rest it for 15 minutes, then slice against the grain or shred. Serve with the vegetables and as much of the cooking liquid as you like, seasoning to taste.",
+    "minutes": 15
    }
   ]
  },
@@ -39583,31 +39615,31 @@
  {
   "source": "themealdb:53123",
   "title": "Fårikål (Norwegian National Dish)",
-  "description": "A Norwegian dish of lamb and cabbage — serves 4, a slow cook that's worth the wait.",
+  "description": "Norwegian national dish of lamb pieces layered with cabbage wedges, whole black peppercorns and salt, simmered in a little water for 2 to 3 hours and served with boiled potatoes.",
   "servings": 4,
   "cuisine": "Norwegian",
   "category": "Lamb",
   "image": "https://www.themealdb.com/images/media/meals/ttfxxn1762773067.jpg",
   "prep_minutes": 10,
-  "cook_minutes": 185,
+  "cook_minutes": 150,
   "ingredients": [
    {
     "name": "lamb",
     "quantity": 1360,
     "unit": "g",
-    "note": ""
+    "note": "cut into large pieces, bone-in"
    },
    {
     "name": "cabbage",
     "quantity": 1,
     "unit": "",
-    "note": ""
+    "note": "white, whole head cut into large wedges, core kept"
    },
    {
     "name": "black peppercorns",
-    "quantity": 3,
-    "unit": "tbsp",
-    "note": ""
+    "quantity": 5,
+    "unit": "tsp",
+    "note": "whole"
    },
    {
     "name": "salt",
@@ -39623,30 +39655,42 @@
    },
    {
     "name": "plain flour",
-    "quantity": 5,
+    "quantity": 4,
     "unit": "tbsp",
-    "note": ""
+    "note": "optional, 4-5 tbsp, for a thicker stew"
+   },
+   {
+    "name": "potato",
+    "quantity": null,
+    "unit": "",
+    "note": "boiled, to serve"
+   },
+   {
+    "name": "parsley",
+    "quantity": null,
+    "unit": "",
+    "note": "fresh, to serve"
    }
   ],
   "steps": [
    {
-    "text": "Cut the lamb into large pieces: slice the cabbage into large wedges, keeping the core attached.",
+    "text": "Cut the lamb into large pieces and the cabbage into large wedges, keeping the core attached.",
     "minutes": null
    },
    {
-    "text": "Add a layer of lamb pieces to the bottom of a large pot, fatty side down. Sprinkle with peppercorns and salt. Add a layer of cabbage wedges on top. Repeat with more layers of lamb, peppercorns, and cabbage, ending with cabbage on top.",
+    "text": "Put a layer of lamb, fatty side down, in the bottom of a large pot. Sprinkle with some of the peppercorns and salt, then add a layer of cabbage wedges.",
     "minutes": null
    },
    {
-    "text": "Optional: Sprinkle a couple of tablespoons on top of the lamb for a thicker stew.",
+    "text": "Repeat the layers of lamb, peppercorns, salt and cabbage, finishing with cabbage on top. Optionally sprinkle a couple of tablespoons of flour over the lamb layers for a thicker stew.",
     "minutes": null
    },
    {
-    "text": "Add water to the pot and bring to a boil. Cover and reduce heat. Cook on low heat for 2 – 3 hours, until the lamb gently falls away from the bone.",
-    "minutes": 180
+    "text": "Add the water and bring to the boil. Cover, reduce the heat to low and cook for 2 to 3 hours, until the lamb falls away from the bone.",
+    "minutes": 150
    },
    {
-    "text": "Serve with boiled potatoes and fresh parsley, covering generously with the fårikål broth.",
+    "text": "Serve with boiled potatoes and fresh parsley, spooning plenty of the broth over.",
     "minutes": null
    }
   ]
@@ -40651,43 +40695,43 @@
  {
   "source": "themealdb:53122",
   "title": "Fiskesuppe (Creamy Norwegian Fish Soup)",
-  "description": "A Norwegian soup of white fish, fish stock and potato — serves 4, on the table in about 45 minutes.",
+  "description": "Creamy Norwegian fish soup: a butter and flour base with fish stock, milk, potato, carrot and leek, finished with crème fraîche and cubed fish poached in the hot soup.",
   "servings": 4,
   "cuisine": "Norwegian",
   "category": "Seafood",
   "image": "https://www.themealdb.com/images/media/meals/raqjbj1762773035.jpg",
-  "prep_minutes": 20,
+  "prep_minutes": 10,
   "cook_minutes": 20,
   "ingredients": [
    {
     "name": "white fish",
-    "quantity": 455,
+    "quantity": 450,
     "unit": "g",
-    "note": ""
+    "note": "fresh or frozen fillet, any fish except herring; e.g. half salmon, half cod"
    },
    {
     "name": "garlic",
     "quantity": 1,
     "unit": "clove",
-    "note": ""
+    "note": "crushed or chopped"
    },
    {
     "name": "potato",
     "quantity": 2,
     "unit": "",
-    "note": "medium"
+    "note": "medium, cut into thin strips"
    },
    {
     "name": "carrot",
     "quantity": 2,
     "unit": "",
-    "note": ""
+    "note": "cut into thin strips"
    },
    {
     "name": "leek",
     "quantity": 1,
     "unit": "",
-    "note": ""
+    "note": "cut into thin strips"
    },
    {
     "name": "butter",
@@ -40703,7 +40747,7 @@
    },
    {
     "name": "fish stock",
-    "quantity": 4,
+    "quantity": 4.25,
     "unit": "cup",
     "note": ""
    },
@@ -40717,48 +40761,44 @@
     "name": "creme fraiche",
     "quantity": 1.25,
     "unit": "cup",
-    "note": ""
+    "note": "or sour cream"
    },
    {
     "name": "prawns",
     "quantity": 1,
     "unit": "cup",
-    "note": ""
+    "note": "peeled and cooked, optional, added right before serving"
    },
    {
     "name": "chives",
     "quantity": 1,
     "unit": "tbsp",
-    "note": ""
+    "note": "or dill or parsley, to garnish"
    }
   ],
   "steps": [
    {
-    "text": "Cut the fish fillets in cubes or strips. Crush or chop the garlic. Rinse the vegetables and cut into thin strips.",
+    "text": "Cut the fish into cubes or strips, crush or chop the garlic, and cut the potatoes, carrots and leek into thin strips.",
     "minutes": null
    },
    {
-    "text": "Heat the butter in a pot and add the garlic. Once the garlic starts to turn golden add the flour, whisking well.",
+    "text": "Melt the butter in a pot, add the garlic and, once it starts to turn golden, whisk in the flour.",
     "minutes": null
    },
    {
-    "text": "Add the fish stock and continue to whisk until there are no lumps.",
+    "text": "Pour in the fish stock and keep whisking until there are no lumps.",
     "minutes": null
    },
    {
-    "text": "Add the vegetables and milk and bring to a boil. Cook for about 10 minutes.",
+    "text": "Add the vegetables and milk, bring to the boil and cook for about 10 minutes.",
     "minutes": 10
    },
    {
-    "text": "Add the crème fraîche (or sour cream). Bring the soup back to a simmer and once the soup begins to bubble again turn off the heat. Keep the soup on the burner and add the fish. Let the fish cook in the hot soup for 5 minutes.",
+    "text": "Stir in the crème fraîche and bring back to a simmer. As soon as it bubbles, turn off the heat, leaving the pot on the burner, and add the fish to cook in the hot soup for 5 minutes.",
     "minutes": 5
    },
    {
-    "text": "If using shrimp, add right before serving.",
-    "minutes": null
-   },
-   {
-    "text": "Sprinkle with chives (or dill or parsley) before serving.",
+    "text": "Add the cooked prawns just before serving, if using, and sprinkle with chives.",
     "minutes": null
    }
   ]
@@ -44088,65 +44128,73 @@
  {
   "source": "themealdb:53041",
   "title": "Grilled Portuguese sardines",
-  "description": "A Portuguese dish of sardines, lemon and chilli — serves 2, ready in under half an hour.",
+  "description": "Whole sardines brushed with a lemon, olive oil, garlic and parsley marinade and grilled for about 2 minutes a side, served with salad or baked potatoes.",
   "servings": 2,
   "cuisine": "Portuguese",
   "category": "Seafood",
   "image": "https://www.themealdb.com/images/media/meals/lpd4wy1614347943.jpg",
   "prep_minutes": 10,
-  "cook_minutes": 10,
+  "cook_minutes": 5,
   "ingredients": [
    {
     "name": "sardines",
-    "quantity": 8,
+    "quantity": 4,
     "unit": "",
-    "note": ""
-   },
-   {
-    "name": "olive oil",
-    "quantity": 2,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "garlic",
-    "quantity": 3,
-    "unit": "clove",
-    "note": ""
-   },
-   {
-    "name": "paprika",
-    "quantity": 1,
-    "unit": "tbsp",
-    "note": ""
+    "note": "medium"
    },
    {
     "name": "lemon",
     "quantity": 0.5,
     "unit": "",
-    "note": ""
+    "note": "juiced"
    },
    {
-    "name": "rosemary",
-    "quantity": 4,
-    "unit": "sprig",
-    "note": ""
-   },
-   {
-    "name": "chilli",
+    "name": "olive oil",
     "quantity": 1,
-    "unit": "",
+    "unit": "tbsp",
+    "note": ""
+   },
+   {
+    "name": "parsley",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "chopped"
+   },
+   {
+    "name": "garlic",
+    "quantity": 2,
+    "unit": "clove",
+    "note": "small, minced"
+   },
+   {
+    "name": "salt",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": ""
+   },
+   {
+    "name": "black pepper",
+    "quantity": 0.5,
+    "unit": "tsp",
     "note": ""
    }
   ],
   "steps": [
    {
-    "text": "Put all of the ingredients, except the sardines, into a bowl and mix together with some seasoning. Pour into a baking dish, add the sardines and toss really well. Cover and chill for a few hours.",
+    "text": "Mix the olive oil, lemon juice, garlic, parsley, salt and pepper in a small container to make the marinade.",
     "minutes": null
    },
    {
-    "text": "Heat a BBQ or griddle pan until hot. Cook the sardines for 4-5 minutes on each side or until really caramelised and charred. Put onto a serving plate, drizzle with oil, sprinkle with a little more paprika and squeeze over the lemon wedges.",
-    "minutes": 5
+    "text": "Spoon about 1 tsp of the marinade over each sardine and leave for 2-3 minutes.",
+    "minutes": 3
+   },
+   {
+    "text": "Place the sardines on a hot grill and cook for about 2 minutes each side until crisp outside and moist inside.",
+    "minutes": 4
+   },
+   {
+    "text": "Serve straight away with fresh salad or baked potatoes.",
+    "minutes": null
    }
   ]
  },
@@ -44662,30 +44710,48 @@
  {
   "source": "themealdb:52967",
   "title": "Home-made Mandazi",
-  "description": "A Kenyan breakfast of self-raising flour — serves 8, on the table in about 45 minutes.",
+  "description": "Soft East African fried dough: a yeasted, cardamom-spiced dough made with milk, butter and egg, left to double, rolled 1 cm thick, cut into squares or rounds and fried.",
   "servings": 8,
   "cuisine": "Kenyan",
   "category": "Breakfast",
   "image": "https://www.themealdb.com/images/media/meals/thazgm1555350962.jpg",
-  "prep_minutes": 10,
-  "cook_minutes": 30,
+  "prep_minutes": 20,
+  "cook_minutes": 70,
   "ingredients": [
    {
-    "name": "self-raising flour",
-    "quantity": 750,
-    "unit": "g",
-    "note": ""
+    "name": "plain flour",
+    "quantity": 3,
+    "unit": "cup",
+    "note": "all-purpose"
+   },
+   {
+    "name": "yeast",
+    "quantity": 2,
+    "unit": "tsp",
+    "note": "instant"
    },
    {
     "name": "sugar",
-    "quantity": 6,
+    "quantity": 5,
     "unit": "tbsp",
     "note": ""
    },
    {
-    "name": "eggs",
-    "quantity": 2,
-    "unit": "",
+    "name": "baking powder",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": ""
+   },
+   {
+    "name": "cardamom",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": "ground"
+   },
+   {
+    "name": "salt",
+    "quantity": 0.5,
+    "unit": "tsp",
     "note": ""
    },
    {
@@ -44693,55 +44759,49 @@
     "quantity": 1,
     "unit": "cup",
     "note": ""
+   },
+   {
+    "name": "butter",
+    "quantity": 4,
+    "unit": "tbsp",
+    "note": "melted (butter or margarine)"
+   },
+   {
+    "name": "eggs",
+    "quantity": 1,
+    "unit": "",
+    "note": ""
+   },
+   {
+    "name": "vegetable oil",
+    "quantity": null,
+    "unit": "",
+    "note": "for deep-frying, not listed in the source"
    }
   ],
   "steps": [
    {
-    "text": "This is one recipe a lot of people have requested and I have tried to make it as simple as possible and I hope it will work for you. Make sure you use the right flour which is basically one with raising agents.",
+    "text": "Mix the flour, yeast, sugar, baking powder, cardamom and salt in a bowl.",
     "minutes": null
    },
    {
-    "text": "Adjust the amount of sugar to your taste and try using different flavours to have variety whenever you have them.",
+    "text": "In a separate bowl, mix the milk, melted butter and egg.",
     "minutes": null
    },
    {
-    "text": "You can use Coconut milk instead of regular milk, you can also add desiccated coconut to the dry flour or other spices like powdered cloves or cinnamon.",
+    "text": "Add the wet mixture to the dry ingredients and knead into a dough.",
     "minutes": null
    },
    {
-    "text": "For “healthy looking” mandazis do not roll the dough too thin before frying and use the procedure I have indicated above.",
+    "text": "Cover with a damp cloth and leave to rise for about 1 hour, until doubled in size.",
+    "minutes": 60
+   },
+   {
+    "text": "Roll the dough out on a lightly floured surface to 1 cm thick and cut it into squares, or rounds using the bottom of a glass.",
     "minutes": null
    },
    {
-    "text": "Mix the flour,cinnamon and sugar in a suitable bowl.",
-    "minutes": null
-   },
-   {
-    "text": "In a separate bowl whisk the egg into the milk.",
-    "minutes": null
-   },
-   {
-    "text": "Make a well at the centre of the flour and add the milk and egg mixture and slowly mix to form a dough.",
-    "minutes": null
-   },
-   {
-    "text": "Knead the dough for 3-4 minutes or until it stops sticking to the sides of the bowl and you have a smooth surface.",
-    "minutes": 4
-   },
-   {
-    "text": "Cover the dough with a damp cloth and allow to rest for 15 minutes.",
-    "minutes": 15
-   },
-   {
-    "text": "Roll the dough on a lightly floured surface into a 1cm thick piece.",
-    "minutes": null
-   },
-   {
-    "text": "Using a sharp small knife, cut the dough into the desired size setting aside ready for deep frying.",
-    "minutes": null
-   },
-   {
-    "text": "Heat your oil in a suitable pot and gently dip the mandazi pieces to cook until light brown on the first side then turn to cook on the second side. Serve them warm or cold.",
+    "text": "Fry the pieces and enjoy. The description gives no frying oil, temperature or time.",
     "minutes": null
    }
   ]
@@ -48845,25 +48905,73 @@
  {
   "source": "themealdb:52769",
   "title": "Kapsalon",
-  "description": "A Dutch dish of fries, doner meat and lettuce — serves 4, ready in under half an hour.",
+  "description": "Rotterdam kapsalon: deep-fried chips topped with spiced chicken thigh strips and sliced cheese, grilled until melted, then finished with iceberg lettuce, tomato, cucumber, red onion, garlic sauce and sambal.",
   "servings": 4,
   "cuisine": "Dutch",
-  "category": "Lamb",
+  "category": "Chicken",
   "image": "https://www.themealdb.com/images/media/meals/sxysrt1468240488.jpg",
-  "prep_minutes": 15,
-  "cook_minutes": 10,
+  "prep_minutes": 10,
+  "cook_minutes": 20,
   "ingredients": [
    {
-    "name": "fries",
-    "quantity": 250,
-    "unit": "g",
-    "note": ""
+    "name": "sunflower oil",
+    "quantity": 1,
+    "unit": "l",
+    "note": "for deep-frying the chips"
    },
    {
-    "name": "doner meat",
+    "name": "potato",
+    "quantity": 1,
+    "unit": "kg",
+    "note": "large agria or other firm-cooking potatoes, cut into chips"
+   },
+   {
+    "name": "chicken thigh",
+    "quantity": 600,
+    "unit": "g",
+    "note": "boneless fillet, cut into strips"
+   },
+   {
+    "name": "shawarma seasoning",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": "shoarmakruiden"
+   },
+   {
+    "name": "lettuce",
     "quantity": 500,
     "unit": "g",
-    "note": ""
+    "note": "iceberg, finely shredded"
+   },
+   {
+    "name": "tomato",
+    "quantity": 3,
+    "unit": "",
+    "note": "diced"
+   },
+   {
+    "name": "cucumber",
+    "quantity": 1,
+    "unit": "",
+    "note": "diced"
+   },
+   {
+    "name": "gouda",
+    "quantity": 8,
+    "unit": "slice",
+    "note": "young matured (jong belegen) cheese"
+   },
+   {
+    "name": "red onion",
+    "quantity": 1,
+    "unit": "",
+    "note": "in thin rings"
+   },
+   {
+    "name": "parsley",
+    "quantity": 1,
+    "unit": "bunch",
+    "note": "flat-leaf, listed in the recipe but not used in its method"
    },
    {
     "name": "garlic sauce",
@@ -48872,59 +48980,49 @@
     "note": "to serve"
    },
    {
-    "name": "hot sauce",
+    "name": "sambal",
     "quantity": null,
     "unit": "",
     "note": "to serve"
    },
    {
-    "name": "lettuce",
-    "quantity": 1,
+    "name": "salt",
+    "quantity": null,
     "unit": "",
-    "note": ""
-   },
-   {
-    "name": "tomato",
-    "quantity": 1,
-    "unit": "",
-    "note": ""
-   },
-   {
-    "name": "cucumber",
-    "quantity": 3,
-    "unit": "",
-    "note": "rd"
-   },
-   {
-    "name": "gouda",
-    "quantity": 100,
-    "unit": "g",
-    "note": ""
+    "note": "to taste, on the chips"
    }
   ],
   "steps": [
    {
-    "text": "Cut the meat into strips. Heat oil in a pan and fry the strips for 6 minutes until it's ready.",
-    "minutes": 6
-   },
-   {
-    "text": "Bake the fries until golden brown in a deep fryrer. When ready transfer to a backing dish. Make sure the fries are spread over the whole dish.",
+    "text": "Heat the frying oil to 150C and heat the oven to its highest setting (about 275C) with the grill on. Peel the potatoes, cut into chips, rinse off the starch and pat dry.",
     "minutes": null
    },
    {
-    "text": "Cover the fries with a new layer of meat and spread evenly.",
+    "text": "Fry the chips for about 5 minutes until cooked through, then drain and let them cool on paper towel (a few minutes in the freezer speeds this up).",
+    "minutes": 5
+   },
+   {
+    "text": "Cut the chicken thighs into strips and toss with the shawarma seasoning.",
     "minutes": null
    },
    {
-    "text": "Add a layer of cheese over the meat. You can also use grated cheese. When done put in the oven for a few minutes until the cheese is melted.",
+    "text": "Fry the chicken in a little oil in a frying pan for about 10 minutes until cooked and golden, then set aside.",
+    "minutes": 10
+   },
+   {
+    "text": "Heat the fryer to 200C and fry the chips again for about 3 minutes until crisp. Drain on paper towel and season with salt.",
+    "minutes": 3
+   },
+   {
+    "text": "Shred the lettuce, dice the tomatoes and cucumber and slice the red onion into thin rings.",
     "minutes": null
    },
    {
-    "text": "Chop the lettuce, tomato and cucumber in small pieces and mix together. for a basic salad. As extra you can add olives jalapenos and a red union.",
-    "minutes": null
+    "text": "Layer chips in an ovenproof tray, add the chicken and top with 2 slices of cheese per serving. Grill for about 1 minute until the cheese melts.",
+    "minutes": 1
    },
    {
-    "text": "Dived the salad over the dish and Serve with garlicsauce and hot sauce.",
+    "text": "Top with the lettuce, tomato, cucumber and red onion, then finish with garlic sauce and sambal.",
     "minutes": null
    }
   ]
@@ -49913,115 +50011,153 @@
  },
  {
   "source": "themealdb:53502",
-  "title": "Khmer Banh Xeo – Cambodian Savory Pancake",
-  "description": "A Cambodian dish of pork belly, fish sauce and rice flour — serves 8, on the table in about 45 minutes.",
-  "servings": 8,
-  "cuisine": "Cambodian",
-  "category": "Pork",
-  "image": "https://www.themealdb.com/images/media/meals/xrv78g1782769859.jpg",
-  "prep_minutes": 15,
-  "cook_minutes": 30,
+  "title": "Banh xeo (Vietnamese crispy pancakes)",
+  "description": "Crispy turmeric and coconut milk rice-flour pancakes filled with shredded chicken, carrot and bean shoots, folded and served with herbs, lettuce and a fish sauce nuoc cham dressing.",
+  "servings": 3,
+  "cuisine": "Vietnamese",
+  "category": "Chicken",
+  "image": "https://i.ytimg.com/vi/V8dhQQYvWR0/hqdefault.jpg",
+  "prep_minutes": 10,
+  "cook_minutes": 40,
   "ingredients": [
    {
     "name": "rice flour",
-    "quantity": 1,
-    "unit": "cup",
-    "note": ""
-   },
-   {
-    "name": "cornflour",
-    "quantity": 0.25,
-    "unit": "cup",
-    "note": ""
-   },
-   {
-    "name": "coconut milk",
-    "quantity": 1.25,
-    "unit": "cup",
-    "note": ""
-   },
-   {
-    "name": "water",
-    "quantity": 0.75,
-    "unit": "cup",
-    "note": ""
+    "quantity": 140,
+    "unit": "g",
+    "note": "for the batter"
    },
    {
     "name": "turmeric",
     "quantity": 0.5,
     "unit": "tsp",
-    "note": ""
+    "note": "ground, for the batter"
    },
    {
-    "name": "pork belly",
-    "quantity": 225,
-    "unit": "g",
-    "note": ""
+    "name": "salt",
+    "quantity": 0.25,
+    "unit": "tsp",
+    "note": "sea salt, for the batter"
    },
    {
-    "name": "bean sprouts",
-    "quantity": 1,
-    "unit": "cup",
-    "note": ""
+    "name": "coconut milk",
+    "quantity": 125,
+    "unit": "ml",
+    "note": "for the batter"
    },
    {
-    "name": "onion",
+    "name": "water",
     "quantity": 0.5,
+    "unit": "cup",
+    "note": "for the batter"
+   },
+   {
+    "name": "spring onion",
+    "quantity": 2,
     "unit": "",
-    "note": ""
+    "note": "finely sliced, for the batter"
    },
    {
     "name": "vegetable oil",
-    "quantity": 2,
-    "unit": "tbsp",
-    "note": ""
+    "quantity": null,
+    "unit": "",
+    "note": "for frying"
+   },
+   {
+    "name": "chicken",
+    "quantity": 1,
+    "unit": "cup",
+    "note": "shredded cooked chicken, e.g. leftover roast or rotisserie (cut not specified)"
+   },
+   {
+    "name": "carrot",
+    "quantity": 1,
+    "unit": "",
+    "note": "small, julienned or coarsely grated"
+   },
+   {
+    "name": "bean sprouts",
+    "quantity": 100,
+    "unit": "g",
+    "note": "bean shoots"
+   },
+   {
+    "name": "coriander",
+    "quantity": null,
+    "unit": "",
+    "note": "a couple of sprigs per pancake; the page gives no total"
+   },
+   {
+    "name": "mint",
+    "quantity": null,
+    "unit": "",
+    "note": "leaves, to serve"
+   },
+   {
+    "name": "lettuce",
+    "quantity": null,
+    "unit": "",
+    "note": "leaves, to serve"
    },
    {
     "name": "fish sauce",
-    "quantity": null,
+    "quantity": 3,
+    "unit": "tbsp",
+    "note": "for the nuoc cham"
+   },
+   {
+    "name": "white vinegar",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": "for the nuoc cham"
+   },
+   {
+    "name": "sugar",
+    "quantity": 3,
+    "unit": "tbsp",
+    "note": "for the nuoc cham"
+   },
+   {
+    "name": "lime juice",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "for the nuoc cham"
+   },
+   {
+    "name": "chilli",
+    "quantity": 1,
     "unit": "",
-    "note": "a splash"
+    "note": "long red, finely chopped, for the nuoc cham"
+   },
+   {
+    "name": "garlic",
+    "quantity": 2,
+    "unit": "clove",
+    "note": "finely chopped, for the nuoc cham"
    }
   ],
   "steps": [
    {
-    "text": "Whisk together rice flour, cornstarch, coconut milk, water, and turmeric in a bowl until smooth, then let rest for 15 minutes—this hydrates the flour for better texture.",
-    "minutes": 15
+    "text": "Mix the rice flour, turmeric and salt in a large bowl. Whisk in the coconut milk, water and spring onions, then leave the batter to rest for 10 minutes.",
+    "minutes": 10
    },
    {
-    "text": "Heat a 10-inch non-stick skillet over medium-high heat (190°C (375°F)) and add 1/2 tablespoon of vegetable oil.",
+    "text": "Whisk the fish sauce, vinegar, sugar, lime juice, chilli and garlic together for the nuoc cham and set aside.",
     "minutes": null
    },
    {
-    "text": "Sauté pork belly slices for 3–4 minutes until lightly browned, then push to one side of the skillet.",
+    "text": "Heat a 22 cm non-stick frying pan over medium-high heat with enough oil to just cover the base.",
+    "minutes": null
+   },
+   {
+    "text": "Pour in a third of the batter and swirl to coat the pan thinly. Scatter a third of the chicken, carrot and bean sprouts over half of it and top with a couple of coriander sprigs.",
+    "minutes": null
+   },
+   {
+    "text": "Cook for 3-4 minutes until the underside is crisp and golden, then fold the pancake over the filling and slide it onto a plate to keep warm.",
     "minutes": 4
    },
    {
-    "text": "Add onion slices and cook for 1 minute until slightly softened.",
-    "minutes": null
-   },
-   {
-    "text": "Stir the batter briefly and pour about 1/2 cup into the skillet, immediately swirling to coat the bottom thinly.",
-    "minutes": null
-   },
-   {
-    "text": "Scatter bean sprouts over half of the pancake and cover the skillet with a lid for 2 minutes to steam the sprouts.",
-    "minutes": 2
-   },
-   {
-    "text": "Uncover and cook for another 3–4 minutes until the edges curl and turn golden brown and crispy.",
-    "minutes": 4
-   },
-   {
-    "text": "Fold the pancake in half over the bean sprouts using a spatula, then transfer to a plate.",
-    "minutes": null
-   },
-   {
-    "text": "Repeat steps 2–8 with remaining batter and ingredients, adding oil as needed to prevent sticking.",
-    "minutes": null
-   },
-   {
-    "text": "Serve immediately with fish sauce for dipping.",
+    "text": "Repeat with the remaining batter and filling, adding oil to the pan each time. Serve with mint, lettuce and the nuoc cham.",
     "minutes": null
    }
   ]
@@ -50254,98 +50390,176 @@
  },
  {
   "source": "themealdb:53257",
-  "title": "kofta burgers",
-  "description": "A Turkish dish of lamb, pita bread and tomato — serves 6, ready in under half an hour.",
+  "title": "Kofta burgers",
+  "description": "Grilled burgers of ground lamb and beef mixed with toasted pine nuts and walnuts, squeezed-dry onion, capsicum and jalapeño, and a cumin, cinnamon and coriander spice blend, served on buns with lettuce, tomato and feta dip.",
   "servings": 6,
-  "cuisine": "Turkish",
+  "cuisine": "Middle Eastern",
   "category": "Lamb",
-  "image": "https://www.themealdb.com/images/media/meals/lgmnff1763789847.jpg",
-  "prep_minutes": 15,
-  "cook_minutes": 10,
+  "image": "https://i.ytimg.com/vi/RngkESI6aKM/hqdefault.jpg",
+  "prep_minutes": 20,
+  "cook_minutes": 12,
   "ingredients": [
    {
-    "name": "lamb",
-    "quantity": 1000,
+    "name": "lamb mince",
+    "quantity": 450,
     "unit": "g",
-    "note": ""
+    "note": "ground lamb"
+   },
+   {
+    "name": "beef mince",
+    "quantity": 450,
+    "unit": "g",
+    "note": "lean ground beef"
+   },
+   {
+    "name": "pine nuts",
+    "quantity": 0.5,
+    "unit": "cup",
+    "note": "toasted"
+   },
+   {
+    "name": "walnuts",
+    "quantity": 0.5,
+    "unit": "cup",
+    "note": "toasted"
    },
    {
     "name": "onion",
-    "quantity": 2,
+    "quantity": 1,
     "unit": "",
-    "note": ""
+    "note": "white, finely chopped"
    },
    {
     "name": "garlic",
-    "quantity": 1,
-    "unit": "",
-    "note": ""
+    "quantity": 4,
+    "unit": "clove",
+    "note": "finely chopped"
    },
    {
-    "name": "garam masala",
-    "quantity": 6,
-    "unit": "tbsp",
-    "note": ""
+    "name": "capsicum",
+    "quantity": 1,
+    "unit": "",
+    "note": "red, seeded and diced"
+   },
+   {
+    "name": "jalapeño",
+    "quantity": 1,
+    "unit": "",
+    "note": "seeded and diced"
    },
    {
     "name": "coriander",
-    "quantity": 1,
-    "unit": "bunch",
-    "note": ""
+    "quantity": 0.5,
+    "unit": "cup",
+    "note": "fresh, chopped"
    },
    {
-    "name": "chilli sauce",
-    "quantity": 1,
-    "unit": "tbsp",
-    "note": ""
+    "name": "ground cumin",
+    "quantity": 2,
+    "unit": "tsp",
+    "note": "for the spice blend"
    },
    {
-    "name": "pita bread",
-    "quantity": 8,
+    "name": "ground cinnamon",
+    "quantity": 1.5,
+    "unit": "tsp",
+    "note": "for the spice blend"
+   },
+   {
+    "name": "ground coriander",
+    "quantity": 2,
+    "unit": "tsp",
+    "note": "for the spice blend"
+   },
+   {
+    "name": "paprika",
+    "quantity": 2,
+    "unit": "tsp",
+    "note": "for the spice blend"
+   },
+   {
+    "name": "ground cloves",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": "for the spice blend"
+   },
+   {
+    "name": "cayenne pepper",
+    "quantity": 0.25,
+    "unit": "tsp",
+    "note": "for the spice blend"
+   },
+   {
+    "name": "salt",
+    "quantity": 2,
+    "unit": "tsp",
+    "note": "kosher salt, for the spice blend"
+   },
+   {
+    "name": "black pepper",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "for the spice blend"
+   },
+   {
+    "name": "burger bun",
+    "quantity": null,
     "unit": "",
-    "note": ""
+    "note": "toasted, to serve (or pita bread)"
+   },
+   {
+    "name": "lettuce",
+    "quantity": null,
+    "unit": "",
+    "note": "curly, to serve"
    },
    {
     "name": "tomato",
-    "quantity": 4,
+    "quantity": null,
     "unit": "",
-    "note": "sliced"
-   },
-   {
-    "name": "red cabbage",
-    "quantity": 0.5,
-    "unit": "",
-    "note": ""
+    "note": "sliced, to serve"
    },
    {
     "name": "red onion",
-    "quantity": 1,
+    "quantity": null,
     "unit": "",
-    "note": "sliced"
+    "note": "shaved, to serve"
    },
    {
-    "name": "yoghurt",
-    "quantity": 1,
-    "unit": "pack",
-    "note": "small"
+    "name": "feta dip",
+    "quantity": null,
+    "unit": "",
+    "note": "to serve; separate recipe"
    }
   ],
   "steps": [
    {
-    "text": "Tip the mince into a large bowl (use a clean washing-up bowl if you don’t have anything big enough) with all the other burger ingredients and a good pinch of salt.",
+    "text": "Mix the spices and salt together in a bowl and set aside.",
     "minutes": null
    },
    {
-    "text": "Roll up your sleeves, get your hands into the mix and squelch everything together through your fingers until completely mixed. Pat the mix into 16 small burgers. These may now be frozen for up to 1 month or chilled up to a day ahead.",
+    "text": "Toast the walnuts and pine nuts in a dry pan over medium to medium-high heat until golden, then cool and pulse to a rough chop.",
     "minutes": null
    },
    {
-    "text": "To cook, heat grill to its highest setting and lay the burgers in a single layer on a baking tray (you may need to do this in batches, depending on how big your tray is).",
+    "text": "Pulse the onion, garlic, capsicum, jalapeño and coriander in a food processor, then squeeze the mix in cheesecloth to remove the liquid and discard it.",
     "minutes": null
    },
    {
-    "text": "Grill on the highest shelf for 5-6 mins on each side until browned and cooked through. Pile burgers onto a platter and serve with all the accompaniments, so everyone can construct their own sandwich.",
-    "minutes": 6
+    "text": "Combine the lamb, beef, nuts, vegetables and spices by hand. Divide into 6 equal patties of about 225 g each, place on a lined tray, cover and chill for 1 hour.",
+    "minutes": 60
+   },
+   {
+    "text": "Heat a grill to 260C (500F) with only one side lit. Cook the patties over direct heat for 4 minutes, flip and cook 4 more minutes.",
+    "minutes": 8
+   },
+   {
+    "text": "Move the patties to the unlit side for a final 4 minutes (12 minutes in all).",
+    "minutes": 4
+   },
+   {
+    "text": "Serve in toasted buns with lettuce, tomato, shaved red onion and a spoonful of feta dip.",
+    "minutes": null
    }
   ]
  },
