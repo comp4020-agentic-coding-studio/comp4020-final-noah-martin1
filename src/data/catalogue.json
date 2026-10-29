@@ -33254,82 +33254,96 @@
  },
  {
   "source": "themealdb:53096",
-  "title": "Corned Beef Hash",
-  "description": "A British dish of corned beef and potato — serves 4, on the table in about 45 minutes.",
+  "title": "Corned beef hash",
+  "description": "Canned corned beef seared, then shredded into a skillet of diced potato and onion seasoned with Worcestershire sauce and paprika.",
   "servings": 4,
-  "cuisine": "British",
+  "cuisine": "American",
   "category": "Beef",
   "image": "https://www.themealdb.com/images/media/meals/vz94r81760534692.jpg",
   "prep_minutes": 10,
-  "cook_minutes": 20,
+  "cook_minutes": 25,
   "ingredients": [
    {
-    "name": "butter",
-    "quantity": 3,
-    "unit": "tbsp",
-    "note": ""
+    "name": "vegetable oil",
+    "quantity": null,
+    "unit": "",
+    "note": "for the skillet, for frying"
+   },
+   {
+    "name": "corned beef",
+    "quantity": 340,
+    "unit": "g",
+    "note": "canned"
+   },
+   {
+    "name": "potato",
+    "quantity": 2,
+    "unit": "",
+    "note": "medium, unpeeled, diced"
    },
    {
     "name": "onion",
     "quantity": 1,
     "unit": "",
-    "note": "medium, chopped"
+    "note": "large, chopped"
    },
    {
-    "name": "corned beef",
-    "quantity": 3,
-    "unit": "cup",
-    "note": ""
+    "name": "worcestershire sauce",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": "2–3 tbsp"
    },
    {
-    "name": "potato",
-    "quantity": 3,
-    "unit": "",
-    "note": "chopped"
+    "name": "paprika",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "the written recipe says 1–2 tsp"
+   },
+   {
+    "name": "caraway seeds",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "optional"
    },
    {
     "name": "salt",
-    "quantity": 1,
-    "unit": "dash",
-    "note": ""
+    "quantity": null,
+    "unit": "",
+    "note": "to taste"
    },
    {
     "name": "black pepper",
-    "quantity": 1,
-    "unit": "dash",
-    "note": ""
-   },
-   {
-    "name": "parsley",
     "quantity": null,
     "unit": "",
-    "note": "chopped"
+    "note": "to taste"
+   },
+   {
+    "name": "chilli",
+    "quantity": null,
+    "unit": "",
+    "note": "optional, fresh or dried hot pepper"
    }
   ],
   "steps": [
    {
-    "text": "Sauté the onions: heat butter in a large skillet (preferably cast iron) on medium heat. Add the onion and cook a few minutes, until translucent.",
+    "text": "Heat oil in a skillet over medium heat. Slice the canned corned beef and sear it in the skillet while you prep the other ingredients, then remove it and set aside.",
     "minutes": null
    },
    {
-    "text": "Mix in the chopped corned beef and potatoes. Spread out evenly over the pan. Increase the heat to high or medium high and press down on the mixture with a metal spatula.",
-    "minutes": null
+    "text": "Add the potatoes, cut into small, even dice (the skins can stay on). Saute for about 5 minutes, stirring only occasionally.",
+    "minutes": 5
    },
    {
-    "text": "Do not stir the potatoes and corned beef, but let them brown. If you hear them sizzling, this is good.",
-    "minutes": null
+    "text": "Mix in the chopped onion and keep sauteing for another 5 minutes.",
+    "minutes": 5
    },
    {
-    "text": "Use a metal spatula to peek underneath and see if they are browning. If nicely browned, use the spatula to flip sections over in the pan so that they brown on the other side. Press down again with the spatula.",
-    "minutes": null
+    "text": "Add the Worcestershire sauce, paprika, caraway seeds if using, salt and pepper, and cook for another 5 minutes.",
+    "minutes": 5
    },
    {
-    "text": "If there is too much sticking, you can add a little more butter to the pan. Continue to cook in this manner until the potatoes and the corned beef are nicely browned.",
-    "minutes": null
-   },
-   {
-    "text": "Remove from heat, stir in chopped parsley. Add plenty of freshly ground black pepper, and add salt to taste.",
-    "minutes": null
+    "text": "Shred the seared corned beef into the skillet and mix well. Raise the heat to medium-high and cook 5–10 minutes more, until done to your liking. Add a little hot pepper if you like.",
+    "minutes": 8
    }
   ]
  },
@@ -33876,25 +33890,25 @@
  {
   "source": "themealdb:53148",
   "title": "Crema Catalana",
-  "description": "A Spanish sweet made with cream, orange zest and lemon zest — serves 4, about an hour start to finish.",
+  "description": "A Spanish custard infused with lemon peel, cinnamon and vanilla, set in ramekins and topped with sugar burnt with a kitchen torch.",
   "servings": 4,
   "cuisine": "Spanish",
   "category": "Dessert",
   "image": "https://www.themealdb.com/images/media/meals/x73ll91763247842.jpg",
-  "prep_minutes": 15,
-  "cook_minutes": 55,
+  "prep_minutes": 10,
+  "cook_minutes": 20,
   "ingredients": [
    {
     "name": "milk",
-    "quantity": 400,
-    "unit": "ml",
-    "note": ""
+    "quantity": 2.5,
+    "unit": "cup",
+    "note": "organic; 2 cups to infuse plus 1/2 cup cold for the cornflour"
    },
    {
-    "name": "cream",
-    "quantity": 150,
-    "unit": "ml",
-    "note": ""
+    "name": "vanilla pod",
+    "quantity": 1,
+    "unit": "",
+    "note": "split in half"
    },
    {
     "name": "cinnamon stick",
@@ -33903,69 +33917,59 @@
     "note": ""
    },
    {
-    "name": "orange zest",
-    "quantity": 1,
-    "unit": "",
-    "note": ""
-   },
-   {
     "name": "lemon zest",
     "quantity": 1,
     "unit": "",
-    "note": ""
+    "note": "8 strips of peel, from about one lemon"
    },
    {
     "name": "egg yolks",
-    "quantity": 7,
+    "quantity": 5,
     "unit": "",
-    "note": ""
+    "note": "large, organic"
    },
    {
     "name": "sugar",
-    "quantity": 100,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "sugar",
-    "quantity": 6,
-    "unit": "tbsp",
-    "note": ""
+    "quantity": 0.25,
+    "unit": "cup",
+    "note": "2 tbsp for the milk, 2 tbsp for the yolks"
    },
    {
     "name": "cornflour",
-    "quantity": 45,
-    "unit": "g",
-    "note": ""
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "cornstarch"
+   },
+   {
+    "name": "sugar",
+    "quantity": 4,
+    "unit": "tbsp",
+    "note": "to serve, 1 tbsp per ramekin, burnt on top"
    }
   ],
   "steps": [
    {
-    "text": "Put the milk, cream, cinnamon stick and all the citrus zest in a saucepan set over a medium heat.",
+    "text": "Heat 2 cups of the milk with the lemon peels, cinnamon stick, split vanilla bean and 2 tbsp sugar over medium heat. When it comes to a light boil, turn off the heat and leave to infuse.",
     "minutes": null
    },
    {
-    "text": "Cook, stirring often, until the milk is just steaming but not boiling, about 3-5 mins. Remove from the heat, cover with a plate and leave to infuse for at least 30 mins.",
-    "minutes": 30
-   },
-   {
-    "text": "When the cream mixture has infused, whisk the egg yolks, sugar and cornflour together in a separate bowl for 3-5 mins, or until light and pale in colour. Pour the infused milk through a sieve into the egg mixture, whisking continuously. Return the mixture to the saucepan.",
-    "minutes": 5
-   },
-   {
-    "text": "Put the saucepan over a medium-high heat and whisk for around 10-12 mins. The mixture should start thickening to a custard-like consistency – you can tell it’s ready by dipping a wooden spoon in the mixture, then running a finger through the mixture on the back of the spoon.",
-    "minutes": 12
-   },
-   {
-    "text": "If the line holds, it's ready. Sieve the mixture into a jug to remove any froth.",
+    "text": "Whisk the egg yolks with 2 tbsp sugar. In a separate bowl whisk the remaining 1/2 cup cold milk with the cornflour, then whisk that into the yolks until well combined.",
     "minutes": null
    },
    {
-    "text": "Divide the custard between six 150ml ramekins or small terracotta dishes, then leave to cool for 1 hr at room temperature until set with a slight wobble. Chill overnight.",
-    "minutes": 60
+    "text": "Pour the infused milk through a sieve into the egg mixture and whisk until incorporated, then return it to the saucepan.",
+    "minutes": null
    },
    {
-    "text": "Just before serving, sprinkle 1 tbsp caster sugar over the top of each ramekin and caramelise using a kitchen blowtorch. Alternatively, slide the ramekins under a hot grill until the sugar turns golden and starts to bubble. Serve straightaway.",
+    "text": "Cook over medium heat, whisking constantly, until it forms a thick cream, 9–10 minutes. Turn off the heat and whisk for another 30 seconds.",
+    "minutes": 10
+   },
+   {
+    "text": "Divide the cream between 4 ramekins. After 20 minutes cover with cling film and chill for at least 4 hours.",
+    "minutes": 260
+   },
+   {
+    "text": "To serve, sprinkle 1 tbsp sugar over each crema and burn it with a kitchen torch until deep golden.",
     "minutes": null
    }
   ]
@@ -34050,7 +34054,7 @@
  {
   "source": "themealdb:53419",
   "title": "Crispy fried fish with ginger and fermented soybeans (trey chien chuon)",
-  "description": "A Cambodian dish of white fish, tempura flour and soya bean — serves 4, on the table in about 45 minutes.",
+  "description": "A Cambodian dish of crispy fried white fish strips stir-fried with garlic, salted fermented soybeans, fried julienned ginger and spring onion, served with rice.",
   "servings": 4,
   "cuisine": "Cambodian",
   "category": "Seafood",
@@ -34062,43 +34066,49 @@
     "name": "ginger",
     "quantity": 2,
     "unit": "cup",
-    "note": ""
+    "note": "julienned into fine strips, fried"
    },
    {
     "name": "white fish",
-    "quantity": 455,
+    "quantity": 450,
     "unit": "g",
-    "note": ""
+    "note": "cut into strips"
    },
    {
     "name": "tempura flour",
     "quantity": 2,
     "unit": "tbsp",
-    "note": ""
+    "note": "for dredging"
    },
    {
     "name": "vegetable oil",
-    "quantity": null,
-    "unit": "",
-    "note": "for deep-frying, about 2 cup"
+    "quantity": 1,
+    "unit": "cup",
+    "note": "for deep-frying the ginger and fish, 1–2 cups"
+   },
+   {
+    "name": "vegetable oil",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "for frying the garlic"
    },
    {
     "name": "garlic",
     "quantity": 4,
     "unit": "clove",
-    "note": ""
+    "note": "crushed and chopped"
    },
    {
     "name": "soya bean",
-    "quantity": 800,
+    "quantity": 850,
     "unit": "g",
-    "note": ""
+    "note": "salted, 1 bottle, drained"
    },
    {
     "name": "sugar",
-    "quantity": 0.5,
+    "quantity": 0.25,
     "unit": "tbsp",
-    "note": ""
+    "note": "¼–½ tbsp, only if the soybeans are very salty"
    },
    {
     "name": "water",
@@ -34108,42 +34118,38 @@
    },
    {
     "name": "spring onion",
-    "quantity": 3,
+    "quantity": 2,
     "unit": "",
-    "note": ""
+    "note": "2–3, chopped"
    }
   ],
   "steps": [
    {
-    "text": "Fry the ginger in plenty of oil until golden and slightly crispy. Set aside for later.",
+    "text": "Fry the julienned ginger in plenty of oil until golden and slightly crispy. Set aside.",
     "minutes": null
    },
    {
-    "text": "Cut the fish into strips. Dredge the fish in a very thin layer of tempura flour.",
+    "text": "Cut the fish into strips and dredge in a very thin layer of tempura flour.",
     "minutes": null
    },
    {
-    "text": "Fry the fish in plenty of oil until golden brown and crispy. You can use the same oil as you were using to fry the ginger.",
+    "text": "Fry the fish in plenty of oil (the ginger oil can be reused) until golden brown and crispy.",
     "minutes": null
    },
    {
-    "text": "Crush the garlic and chop it into small pieces. Chop the spring onion.",
+    "text": "Crush and chop the garlic and chop the spring onions. Drain the soybeans in a colander, rinsing first if they are in very salty brine.",
     "minutes": null
    },
    {
-    "text": "Drain the fermented soybeans using a colander. If you are using salted beans (soybeans in a very salty brine), you need to wash the beans in water before you add them to the dish.",
+    "text": "Heat 1 tbsp oil in a deep pan and saute the garlic until slightly golden.",
     "minutes": null
    },
    {
-    "text": "Add a tablespoon of oil to a deep pan or a large pot, and sauté the garlic until slightly golden.",
-    "minutes": null
+    "text": "Add the soybeans and stir-fry for a few minutes, adding the sugar only if they are very salty. Add the water and fry for a minute.",
+    "minutes": 4
    },
    {
-    "text": "Add the soybeans and stir fry for a few minutes. If the soybeans are very salty, add ¼- ½ tablespoon sugar to balance the flavor. Add water and fry for a minute.",
-    "minutes": null
-   },
-   {
-    "text": "Just before serving, stir in the fried ginger, the spring onion, and the crispy fish. Serve with steamed rice.",
+    "text": "Just before serving, stir in the fried ginger, spring onion and crispy fish. Serve with steamed rice.",
     "minutes": null
    }
   ]
@@ -35130,101 +35136,103 @@
  {
   "source": "themealdb:53338",
   "title": "Date squares",
-  "description": "A Canadian sweet made with dates and rolled oats — makes 12, ready in under half an hour.",
-  "servings": 12,
+  "description": "Matrimonial bars: two buttery oatmeal crust layers sandwiching a vanilla-scented pureed date filling, baked until golden and chilled before cutting.",
+  "servings": 20,
   "cuisine": "Canadian",
   "category": "Dessert",
   "image": "https://www.themealdb.com/images/media/meals/u4scbo1764446514.jpg",
-  "prep_minutes": 15,
-  "cook_minutes": 10,
+  "prep_minutes": 20,
+  "cook_minutes": 45,
   "ingredients": [
    {
     "name": "dates",
-    "quantity": 2.5,
-    "unit": "cup",
-    "note": ""
+    "quantity": 400,
+    "unit": "g",
+    "note": "pitted dried, coarsely chopped, for the filling"
    },
    {
     "name": "water",
-    "quantity": 1,
-    "unit": "cup",
-    "note": ""
+    "quantity": 240,
+    "unit": "ml",
+    "note": "filtered, for the filling"
    },
    {
     "name": "vanilla extract",
-    "quantity": 1.5,
-    "unit": "cup",
-    "note": ""
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "pure, for the filling"
    },
    {
     "name": "rolled oats",
-    "quantity": 2,
-    "unit": "cup",
-    "note": ""
+    "quantity": 180,
+    "unit": "g",
+    "note": "old-fashioned, for the crust"
    },
    {
     "name": "plain flour",
-    "quantity": 1,
-    "unit": "cup",
-    "note": ""
+    "quantity": 130,
+    "unit": "g",
+    "note": "for the crust"
    },
    {
     "name": "brown sugar",
-    "quantity": 1,
-    "unit": "cup",
-    "note": ""
+    "quantity": 160,
+    "unit": "g",
+    "note": "light, firmly packed, for the crust"
    },
    {
-    "name": "baking powder",
+    "name": "bicarbonate of soda",
     "quantity": 0.5,
     "unit": "tsp",
-    "note": ""
+    "note": "for the crust"
    },
    {
     "name": "salt",
     "quantity": 0.25,
     "unit": "tsp",
-    "note": ""
+    "note": "for the crust"
+   },
+   {
+    "name": "cinnamon",
+    "quantity": 0.125,
+    "unit": "tsp",
+    "note": "ground, optional"
    },
    {
     "name": "butter",
-    "quantity": 1,
-    "unit": "cup",
-    "note": ""
+    "quantity": 225,
+    "unit": "g",
+    "note": "unsalted, cold, cut into small cubes, for the crust"
    }
   ],
   "steps": [
    {
-    "text": "Preheat oven to 350°F (180°C). Grease an 8-inch (20 cm) square baking pan.",
+    "text": "Cook the chopped dates and water in a saucepan over low heat, stirring now and then, until soft and most of the water is absorbed. Stir in the vanilla, cool to room temperature, then puree in a food processor until fairly smooth (a few lumps are fine).",
+    "minutes": 10
+   },
+   {
+    "text": "Heat the oven to 180°C with the rack in the centre. Butter a 23 cm square pan and line the base with baking paper.",
     "minutes": null
    },
    {
-    "text": "To make the date filing: Combine the dates and water in a medium saucepan over high heat and bring to a boil. Reduce heat to low and simmer gently, stirring occasionally until the mixture thickens, around 6 to 8 minutes.",
-    "minutes": 8
-   },
-   {
-    "text": "Remove from heat, stir in vanilla and let cool. Set aside.",
+    "text": "Pulse the oats, flour, brown sugar, bicarbonate of soda, salt and cinnamon in a food processor. Add the cold butter and pulse until crumbly and just starting to come together.",
     "minutes": null
    },
    {
-    "text": "Combine rolled oats, flour, sugar, baking soda and salt in a food processor. Pulse 3 times (careful not to overmix, you don’t want the mixture to be powdery, just combined).",
+    "text": "Press about two-thirds of the oat mixture (about 450 g) into the base of the pan, then spread the date puree evenly over it.",
     "minutes": null
    },
    {
-    "text": "Add butter and pulse again until the mixture is crumbly in pea-sized clumps. Transfer to a mixing bowl to thoroughly mix in the butter.",
+    "text": "Sprinkle the remaining oat mixture over the dates and press down gently to compact it.",
     "minutes": null
    },
    {
-    "text": "Spread half of the oat mixture on the bottom of the prepared baking pan, pressing down to make a flat, equal bottom later. Add the date mixture over the crust and then spread evenly.",
-    "minutes": null
-   },
-   {
-    "text": "Layer with the remaining oat mixture and press down to flatten the top layer.",
-    "minutes": null
-   },
-   {
-    "text": "Bake in the centre of the oven until the top is golden brown, 30 to 35 minutes. Let cool completely in the pan before cutting and serving. Date Squares keep well, covered in the refrigerator for up to a week, and frozen for 2 to 3 months.",
+    "text": "Bake for 30–40 minutes until golden brown, then cool on a wire rack.",
     "minutes": 35
+   },
+   {
+    "text": "Cover the cooled pan and chill for at least 1 hour until firm enough to cut into squares. They keep covered in the fridge for up to a week.",
+    "minutes": 60
    }
   ]
  },
@@ -35750,51 +35758,51 @@
  {
   "source": "themealdb:53137",
   "title": "Dulce de Leche",
-  "description": "An Argentinian sweet made with everyday staples — serves 4, worth the couple of hours it takes.",
-  "servings": 4,
+  "description": "Dulce de leche made by slowly cooking a can of sweetened condensed milk, either simmered in its can in water or baked in a covered dish in a water bath.",
+  "servings": 1,
   "cuisine": "Argentinian",
   "category": "Dessert",
   "image": "https://www.themealdb.com/images/media/meals/jyjlhj1763075323.jpg",
-  "prep_minutes": 10,
-  "cook_minutes": 125,
+  "prep_minutes": 5,
+  "cook_minutes": 120,
   "ingredients": [
    {
-    "name": "milk",
-    "quantity": 1000,
-    "unit": "ml",
-    "note": ""
-   },
-   {
-    "name": "sugar",
-    "quantity": 300,
+    "name": "condensed milk",
+    "quantity": 400,
     "unit": "g",
-    "note": ""
+    "note": "1 can (14 oz) sweetened; add more cans if you want more"
    },
    {
-    "name": "baking powder",
-    "quantity": 0.25,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "vanilla extract",
-    "quantity": 1,
-    "unit": "tsp",
-    "note": ""
+    "name": "water",
+    "quantity": null,
+    "unit": "",
+    "note": "for boiling the can, or the roasting-pan water bath; not eaten"
    }
   ],
   "steps": [
    {
-    "text": "Combine Ingredients: In a large, heavy-bottomed pot, mix the milk, sugar, and baking soda. Cook over low heat, stirring constantly to prevent burning.",
+    "text": "Boiling method: remove the label from the can of condensed milk and place the unopened can in a pot large enough to hold it. Cover with 1–2 inches (about 2.5–5 cm) of water.",
     "minutes": null
    },
    {
-    "text": "Thicken: Continue to cook, stirring frequently, until the mixture becomes thick and caramel-colored, about 1-2 hours. Flavor: Stir in the vanilla extract.",
+    "text": "Bring to the boil over medium-high heat, then reduce to a simmer. Check the water level now and then and top up as needed.",
+    "minutes": null
+   },
+   {
+    "text": "Simmer for 2 hours for a light golden colour or 3 hours for a darker amber colour and richer flavour.",
     "minutes": 120
    },
    {
-    "text": "Cool: Let the dulce de leche cool, then transfer to a jar. It will thicken further as it cools.",
+    "text": "Baking method: heat the oven to 220°C. Pour the condensed milk into a pie dish or cake pan and cover tightly with foil.",
     "minutes": null
+   },
+   {
+    "text": "Set the dish in a deep roasting pan and add hot water to about 2.5 cm depth.",
+    "minutes": null
+   },
+   {
+    "text": "Bake for 1 hour 45 minutes, more or less depending on the colour you want. Cool, then whisk to smooth out any lumps.",
+    "minutes": 105
    }
   ]
  },
@@ -36257,61 +36265,55 @@
  {
   "source": "themealdb:53379",
   "title": "Dutch poffertjes (mini pancakes)",
-  "description": "A Dutch breakfast of buckwheat flour and vanilla sugar — serves 4, ready in under half an hour.",
-  "servings": 4,
+  "description": "Small fluffy Dutch pancakes from a yeasted milk, egg and flour batter, cooked in a buttered poffertjes pan and served with melted butter and icing sugar.",
+  "servings": 8,
   "cuisine": "Dutch",
   "category": "Breakfast",
   "image": "https://www.themealdb.com/images/media/meals/oaqz9f1766593912.jpg",
-  "prep_minutes": 15,
-  "cook_minutes": 5,
+  "prep_minutes": 5,
+  "cook_minutes": 15,
   "ingredients": [
    {
-    "name": "plain flour",
-    "quantity": 125,
-    "unit": "g",
-    "note": ""
+    "name": "milk",
+    "quantity": 370,
+    "unit": "ml",
+    "note": "listed as 380 g (about 370 ml at 1.03 g/ml)"
    },
    {
-    "name": "buckwheat flour",
-    "quantity": 125,
+    "name": "yeast",
+    "quantity": 7,
     "unit": "g",
-    "note": ""
+    "note": "dried"
+   },
+   {
+    "name": "plain flour",
+    "quantity": 300,
+    "unit": "g",
+    "note": "the page says a 50/50 plain and buckwheat flour mix is more traditional"
    },
    {
     "name": "eggs",
     "quantity": 2,
     "unit": "",
-    "note": ""
+    "note": "about 100 g without shell"
    },
    {
-    "name": "butter",
-    "quantity": 1,
-    "unit": "knob",
-    "note": ""
-   },
-   {
-    "name": "milk",
-    "quantity": 300,
-    "unit": "ml",
-    "note": ""
-   },
-   {
-    "name": "yeast",
-    "quantity": 10,
+    "name": "sugar",
+    "quantity": 60,
     "unit": "g",
-    "note": ""
+    "note": "caster"
    },
    {
-    "name": "vanilla sugar",
+    "name": "salt",
     "quantity": 1,
-    "unit": "tsp",
+    "unit": "pinch",
     "note": ""
    },
    {
     "name": "butter",
     "quantity": null,
     "unit": "",
-    "note": "to serve"
+    "note": "melted, for brushing the pan and the poffertjes, to serve"
    },
    {
     "name": "icing sugar",
@@ -36322,27 +36324,31 @@
   ],
   "steps": [
    {
-    "text": "Mix the dry yeast with some of the luke warm milk en stir until dissolved.",
+    "text": "Optionally warm the milk and yeast together to 40°C so the yeast activates.",
     "minutes": null
    },
    {
-    "text": "Place buckwheat and the flour together in a bowl and make a small circle in the middle. Add the yeast mixture into it. Add the milk and stir until you have a smooth batter.",
+    "text": "Mix the flour, eggs, sugar and a pinch of salt into the milk and yeast until a smooth batter forms.",
     "minutes": null
    },
    {
-    "text": "Add the eggs, salt and vanille sugar and stir through. Leave to stand and rise for about 45 minutes.",
-    "minutes": 45
+    "text": "Rest the batter 20–30 minutes (about an hour at room temperature if you skipped the warming step). It should be pourable like thick pancake batter; add a little more milk if it is too thick.",
+    "minutes": 30
    },
    {
-    "text": "Heat the poffertjespan and add a bit of butter into each hole. Fill halfway with batter and first bake one side until you can see the top dry out a little.",
+    "text": "For easier pouring, put the batter in a squeeze bottle using a funnel (optional).",
     "minutes": null
    },
    {
-    "text": "Turn the poffertjes around with a small fork and bake the other side until cooked and golden brown.",
+    "text": "Heat a poffertjes pan over medium heat and brush each mould generously with butter. Fill the moulds nearly to the top with batter.",
     "minutes": null
    },
    {
-    "text": "Serve the poffertjes with butter and icing sugar.",
+    "text": "When bubbles form on the surface, flip each poffertje with a fork or skewer and cook about 1 minute more until golden brown.",
+    "minutes": 2
+   },
+   {
+    "text": "Brush with melted butter and dust with icing sugar. Honey, maple syrup, jam or cream are optional extras.",
     "minutes": null
    }
   ]
@@ -36429,112 +36435,96 @@
  {
   "source": "themealdb:53382",
   "title": "Dutch stroopwafel",
-  "description": "A Dutch sweet made with fruit syrup and cinnamon — makes 10, ready in under half an hour.",
-  "servings": 10,
+  "description": "Thin yeasted waffle-iron wafers split in half and sandwiched with salted caramel sauce, the way they are sold at Dutch markets.",
+  "servings": 18,
   "cuisine": "Dutch",
   "category": "Dessert",
   "image": "https://www.themealdb.com/images/media/meals/8cvkcz1766596315.jpg",
-  "prep_minutes": 15,
-  "cook_minutes": 5,
+  "prep_minutes": 60,
+  "cook_minutes": 45,
   "ingredients": [
    {
-    "name": "milk",
-    "quantity": 15,
-    "unit": "ml",
-    "note": ""
-   },
-   {
-    "name": "yeast",
-    "quantity": 10,
-    "unit": "g",
-    "note": ""
+    "name": "eggs",
+    "quantity": 2,
+    "unit": "",
+    "note": "large, room temperature"
    },
    {
     "name": "plain flour",
-    "quantity": 250,
+    "quantity": 426,
     "unit": "g",
     "note": ""
    },
    {
     "name": "butter",
-    "quantity": 120,
+    "quantity": 170,
     "unit": "g",
-    "note": ""
+    "note": "melted"
    },
    {
     "name": "sugar",
-    "quantity": 80,
+    "quantity": 142,
     "unit": "g",
-    "note": ""
+    "note": "granulated"
    },
    {
-    "name": "eggs",
-    "quantity": 1,
-    "unit": "",
-    "note": ""
+    "name": "milk",
+    "quantity": 60,
+    "unit": "ml",
+    "note": "whole, lukewarm"
    },
    {
-    "name": "salt",
-    "quantity": 1,
-    "unit": "pinch",
-    "note": ""
-   },
-   {
-    "name": "fruit syrup",
-    "quantity": 200,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "brown sugar",
-    "quantity": 120,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "butter",
-    "quantity": 80,
-    "unit": "g",
-    "note": ""
+    "name": "yeast",
+    "quantity": 2,
+    "unit": "tsp",
+    "note": "instant"
    },
    {
     "name": "cinnamon",
-    "quantity": 1,
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": "ground"
+   },
+   {
+    "name": "salt",
+    "quantity": 0.25,
     "unit": "tsp",
     "note": ""
+   },
+   {
+    "name": "caramel sauce",
+    "quantity": 0.5,
+    "unit": "cup",
+    "note": "salted, for filling"
    }
   ],
   "steps": [
    {
-    "text": "Combine milk and yeast in a bowl. Let stand for a moment to allow the yeast to dissolve.",
+    "text": "In a stand mixer with the dough hook, combine the eggs, flour, melted butter, sugar, milk, yeast, cinnamon and salt and mix on low until moistened.",
     "minutes": null
    },
    {
-    "text": "In another bowl, combine flour, butter, sugar, egg, and salt. Pour in the yeast mixture and knead until smooth. Cover the bowl and let the dough rise for one hour.",
+    "text": "Knead on medium for 6 minutes until smooth and soft (or knead by hand for 10 minutes).",
+    "minutes": 6
+   },
+   {
+    "text": "Divide into 18 portions of about 50 g, roll into balls on a floured tray, cover and leave to rise in a warm place for 1 hour.",
     "minutes": 60
    },
    {
-    "text": "When the dough is almost ready, make the stroop filling. Combine all the ingredients in a saucepan and stir until the butter is melted and the sugar is dissolved. Let it simmer for a while. The stroop will continue to thicken as it cools.",
-    "minutes": null
-   },
-   {
-    "text": "Shape the dough into balls weighing about 35 grams each. Make a total of 14. Turn your stroopwafel iron on the highest setting.",
-    "minutes": null
-   },
-   {
-    "text": "Place a ball of dough in the iron and close the iron. Don’t flatten the waffle too much; you should still be able to cut through it. Bake for 1-2 minutes until the waffle is nicely golden brown.",
+    "text": "Heat a waffle cone iron to medium. Brush with oil only if the maker recommends it, and cook one ball of dough until golden, about 2 minutes.",
     "minutes": 2
    },
    {
-    "text": "When the waffle is done, work quickly. Remove the waffle from the iron and immediately use a round cutter to cut out a nice circle of about 8 to 9 cm (3 to 3.5 inches).",
+    "text": "While the waffle is hot, split it in half with a serrated knife and cool the halves on a rack. Repeat with the remaining dough.",
     "minutes": null
    },
    {
-    "text": "Place the hot waffle on a cutting board and cut horizontally with a sharp knife. The stroopwafel is very hot, so use an oven mitt to hold it in place.",
+    "text": "Spread 1–2 tbsp salted caramel sauce on one half of each waffle and sandwich with the other half.",
     "minutes": null
    },
    {
-    "text": "Take half a waffle and spread the (hot!) stroop on it. Place the other half on top, pressing gently if necessary, and place the waffle on a wire rack to cool. Repeat for all the balls.",
+    "text": "Store in an airtight container for up to 3 days.",
     "minutes": null
    }
   ]
@@ -36722,18 +36712,54 @@
  },
  {
   "source": "themealdb:53143",
-  "title": "Easy Spanish chicken",
-  "description": "A Spanish dish of chorizo, butter beans and capsicum — serves 4, worth the couple of hours it takes.",
-  "servings": 4,
+  "title": "Spanish chicken and rice",
+  "description": "Spice-rubbed chicken thighs baked on a bed of rice cooked with chorizo, celery, red pepper, wine and stock, all in one oven-proof pan.",
+  "servings": 6,
   "cuisine": "Spanish",
   "category": "Chicken",
-  "image": "https://www.themealdb.com/images/media/meals/kzxflc1763194887.jpg",
-  "prep_minutes": 20,
-  "cook_minutes": 60,
+  "image": "https://i.ytimg.com/vi/EusTpzrqYK4/hqdefault.jpg",
+  "prep_minutes": 15,
+  "cook_minutes": 55,
   "ingredients": [
    {
-    "name": "olive oil",
-    "quantity": 2,
+    "name": "salt",
+    "quantity": 0.25,
+    "unit": "tsp",
+    "note": "for the chicken rub"
+   },
+   {
+    "name": "garlic salt",
+    "quantity": 0.25,
+    "unit": "tsp",
+    "note": "for the chicken rub"
+   },
+   {
+    "name": "black pepper",
+    "quantity": 0.25,
+    "unit": "tsp",
+    "note": "for the chicken rub"
+   },
+   {
+    "name": "white pepper",
+    "quantity": 0.25,
+    "unit": "tsp",
+    "note": "for the chicken rub"
+   },
+   {
+    "name": "paprika",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "for the chicken rub"
+   },
+   {
+    "name": "chicken thigh",
+    "quantity": 6,
+    "unit": "",
+    "note": "bone-in, skin on"
+   },
+   {
+    "name": "vegetable oil",
+    "quantity": 1,
     "unit": "tbsp",
     "note": ""
    },
@@ -36741,89 +36767,117 @@
     "name": "onion",
     "quantity": 1,
     "unit": "",
-    "note": ""
+    "note": "finely chopped"
+   },
+   {
+    "name": "celery",
+    "quantity": 2,
+    "unit": "stick",
+    "note": "finely chopped"
+   },
+   {
+    "name": "capsicum",
+    "quantity": 1,
+    "unit": "",
+    "note": "red, sliced into strips"
    },
    {
     "name": "chorizo",
-    "quantity": 150,
+    "quantity": 100,
     "unit": "g",
-    "note": ""
+    "note": "sliced into half-moons"
    },
    {
-    "name": "capsicum",
-    "quantity": 1,
-    "unit": "",
-    "note": ""
-   },
-   {
-    "name": "capsicum",
-    "quantity": 1,
-    "unit": "",
-    "note": ""
-   },
-   {
-    "name": "smoked paprika",
+    "name": "oregano",
     "quantity": 1,
     "unit": "tsp",
     "note": ""
    },
    {
     "name": "garlic",
-    "quantity": 4,
+    "quantity": 2,
     "unit": "clove",
+    "note": "minced"
+   },
+   {
+    "name": "tomato puree",
+    "quantity": 2,
+    "unit": "tbsp",
     "note": ""
    },
    {
-    "name": "canned tomatoes",
-    "quantity": 400,
+    "name": "basmati rice",
+    "quantity": 250,
     "unit": "g",
     "note": ""
    },
    {
-    "name": "green olives",
-    "quantity": 150,
-    "unit": "g",
+    "name": "white wine",
+    "quantity": 60,
+    "unit": "ml",
     "note": ""
    },
    {
-    "name": "butter beans",
-    "quantity": 400,
-    "unit": "g",
-    "note": ""
+    "name": "chicken stock",
+    "quantity": 900,
+    "unit": "ml",
+    "note": "hot"
    },
    {
-    "name": "chicken thigh",
-    "quantity": 8,
+    "name": "cherry tomatoes",
+    "quantity": 10,
     "unit": "",
-    "note": ""
+    "note": "halved"
+   },
+   {
+    "name": "lemon",
+    "quantity": 1,
+    "unit": "",
+    "note": "sliced into half moons"
    },
    {
     "name": "parsley",
     "quantity": 1,
-    "unit": "handful",
-    "note": ""
+    "unit": "tbsp",
+    "note": "chopped fresh, to garnish"
    }
   ],
   "steps": [
    {
-    "text": "Heat the oven to 200C/180C fan/gas 6.",
+    "text": "Heat the oven to 170°C fan. Mix the salt, garlic salt, black and white pepper and paprika, and rub it onto the skin of the chicken thighs.",
     "minutes": null
    },
    {
-    "text": "Heat the olive oil in a large ovenproof frying pan over a medium heat and fry the onion, chorizo and peppers along with a pinch of salt and pepper for 15 mins until the veg has softened and the chorizo has released its oils.",
-    "minutes": 15
+    "text": "Heat the oil in a large, wide ovenproof pan over medium-high heat. Brown the thighs skin-side down for 4–5 minutes, turn them for another couple of minutes, then remove to a plate.",
+    "minutes": 7
    },
    {
-    "text": "Add the paprika and garlic, and cook for another few minutes until fragrant.",
+    "text": "Add the onion, celery and red pepper to the pan and cook 3–4 minutes until starting to soften.",
+    "minutes": 4
+   },
+   {
+    "text": "Add the chorizo and cook for a further 2 minutes.",
+    "minutes": 2
+   },
+   {
+    "text": "Stir in the oregano, garlic and tomato puree, then the rice, stirring to coat it in the oil.",
     "minutes": null
    },
    {
-    "text": "Tip in the chopped tomatoes, olives and butter beans, stir to combine and season. Nestle in the chicken thighs and season well.",
+    "text": "Pour in the wine and hot stock and stir. Set the chicken skin-side up on the rice.",
     "minutes": null
    },
    {
-    "text": "Transfer to the oven and bake for 40 mins until the chicken skin is crisp and the meat cooked through and tender. Scatter with the parsley and serve.",
-    "minutes": 40
+    "text": "Arrange the cherry tomatoes around the chicken and the lemon slices on and around it.",
+    "minutes": null
+   },
+   {
+    "text": "Cover with a lid or tight foil and bake for 35–40 minutes, checking the rice in the last 10 minutes, until tender.",
+    "minutes": 38
+   },
+   {
+    "text": "Take out of the oven and sprinkle with parsley.",
+    "minutes": null
    }
   ]
  },
@@ -36946,142 +37000,148 @@
  },
  {
   "source": "themealdb:52888",
-  "title": "Eccles Cakes",
-  "description": "A British sweet made with lemon, raisins and mixed peel — serves 8, ready in under half an hour.",
-  "servings": 8,
+  "title": "Eccles cakes",
+  "description": "Flaky all-butter pastry rolled and folded, filled with spiced currants and mixed peel, flattened, glazed with egg white and sugar, and baked until golden.",
+  "servings": 18,
   "cuisine": "British",
   "category": "Dessert",
   "image": "https://www.themealdb.com/images/media/meals/wtqrqw1511639627.jpg",
-  "prep_minutes": 20,
-  "cook_minutes": 5,
+  "prep_minutes": 100,
+  "cook_minutes": 20,
   "ingredients": [
    {
     "name": "butter",
     "quantity": 250,
     "unit": "g",
-    "note": ""
+    "note": "cold block, cubed and frozen until very hard, for the pastry"
    },
    {
     "name": "plain flour",
     "quantity": 350,
     "unit": "g",
-    "note": ""
+    "note": "for the pastry"
    },
    {
-    "name": "lemon",
+    "name": "lemon juice",
     "quantity": 0.5,
     "unit": "",
-    "note": "juiced"
+    "note": "juice of ½ lemon, for the pastry"
+   },
+   {
+    "name": "water",
+    "quantity": 100,
+    "unit": "ml",
+    "note": "iced, for the pastry"
    },
    {
     "name": "butter",
     "quantity": 25,
     "unit": "g",
-    "note": ""
+    "note": "melted, for the filling"
    },
    {
-    "name": "raisins",
+    "name": "currants",
     "quantity": 200,
     "unit": "g",
-    "note": ""
+    "note": "for the filling"
    },
    {
     "name": "mixed peel",
     "quantity": 50,
     "unit": "g",
-    "note": ""
+    "note": "chopped, for the filling"
    },
    {
     "name": "brown sugar",
     "quantity": 100,
     "unit": "g",
-    "note": ""
+    "note": "light muscovado, for the filling"
    },
    {
     "name": "cinnamon",
     "quantity": 1,
     "unit": "tsp",
-    "note": ""
+    "note": "ground, for the filling"
    },
    {
-    "name": "ginger",
+    "name": "ground ginger",
     "quantity": 1,
     "unit": "tsp",
-    "note": ""
+    "note": "for the filling"
    },
    {
     "name": "allspice",
     "quantity": 1,
     "unit": "tsp",
-    "note": ""
+    "note": "ground, for the filling"
    },
    {
-    "name": "lemon",
+    "name": "lemon zest",
     "quantity": 1,
     "unit": "",
-    "note": "zested"
+    "note": "zest of 1 lemon, for the filling"
    },
    {
-    "name": "eggs",
+    "name": "orange zest",
     "quantity": 1,
     "unit": "",
-    "note": "beaten"
+    "note": "zest of 1 orange, for the filling"
+   },
+   {
+    "name": "orange juice",
+    "quantity": 3,
+    "unit": "tbsp",
+    "note": "for the filling"
+   },
+   {
+    "name": "egg whites",
+    "quantity": 1,
+    "unit": "",
+    "note": "lightly beaten, to glaze"
    },
    {
     "name": "sugar",
-    "quantity": null,
-    "unit": "",
-    "note": "to sprinkle"
+    "quantity": 3,
+    "unit": "tbsp",
+    "note": "preserving or granulated, to glaze"
    }
   ],
   "steps": [
    {
-    "text": "To make the pastry, dice the butter and put it in the freezer to go really hard. Tip flour into the bowl of a food processor with half the butter and pulse to the texture of breadcrumbs.",
+    "text": "For the filling, melt the 25 g butter. Mix the currants and peel, then the spices and muscovado sugar, then the lemon and orange zest and orange juice. Stir in the melted butter and set aside.",
     "minutes": null
    },
    {
-    "text": "Pour in the lemon juice and 100ml iced water, and pulse to a dough. Tip in the rest of the butter and pulse a few times until the dough is heavily flecked with butter.",
+    "text": "Pulse the flour with half the frozen butter in a food processor to breadcrumbs. Add the lemon juice and iced water and pulse to a dough, then add the rest of the butter and pulse a few times until heavily flecked with butter.",
     "minutes": null
    },
    {
-    "text": "It is important that you don’t overdo this as the flecks of butter are what makes the pastry flaky.",
-    "minutes": null
+    "text": "Roll the pastry to a rectangle about 20 x 30 cm. Fold the ends into the middle, then fold in half. Roll out and repeat the folding 3 more times, resting at least 15 minutes between each.",
+    "minutes": 45
    },
    {
-    "text": "On a floured surface roll the pastry out to a neat rectangle about 20 x 30cm. Fold the two ends of the pastry into the middle (See picture 1), then fold in half (pic 2).",
-    "minutes": null
-   },
-   {
-    "text": "Roll the pastry out again and refold the same way 3 more times resting the pastry for at least 15 mins each time between roll and fold, then leave to rest in the fridge for at least 30 mins before using.",
+    "text": "Rest the pastry in the fridge for at least 30 minutes.",
     "minutes": 30
    },
    {
-    "text": "To make the filling, melt the butter in a large saucepan. Take it off the heat and stir in all the other ingredients until completely mixed, then set aside.",
+    "text": "Heat the oven to 200°C fan (220°C conventional) and line one or two trays with baking paper.",
     "minutes": null
    },
    {
-    "text": "To make the cakes, roll the pastry out until it’s just a little thicker than a £1 coin and cut out 8 rounds about 12cm across. Re-roll the trimming if needed.",
+    "text": "Roll the pastry slightly thicker than a £1 coin and cut rounds (12 cm per the recipe, which makes 8; the author used 10 cm and got 18). Re-roll the trimmings.",
     "minutes": null
    },
    {
-    "text": "Place a good heaped tablespoon of mixture in the middle of each round, brush the edges of the rounds with water, then gather the pastry around the filling and squeeze it together (pic 3).",
+    "text": "Put about 1 tbsp filling in the centre of each round, wet the edges, gather and pinch closed. Turn smooth side up, pat round, then flatten with a rolling pin until the fruit just shows.",
     "minutes": null
    },
    {
-    "text": "Flip them over so the smooth top is upwards and pat them into a smooth round. Flatten each round with a rolling pin to an oval until the fruit just starts to poke through, then place on a baking tray.",
+    "text": "Cut 2 slits in each cake, brush generously with egg white and sprinkle with sugar.",
     "minutes": null
    },
    {
-    "text": "Cut 2 little slits in each Eccles cakes, brush generously with egg white and sprinkle with the sugar (pic 4).",
-    "minutes": null
-   },
-   {
-    "text": "Heat the oven to 220C/200C fan/gas 8. Bake the Eccles cakes for 15-20 mins until just past golden brown and sticky. Leave to cool on a rack and enjoy while still warm or cold with a cup of tea.",
+    "text": "Bake for 15–20 minutes until golden brown and sticky. Cool on a rack and eat warm or cold.",
     "minutes": 20
-   },
-   {
-    "text": "If you prefer, Eccles cakes also go really well served with a wedge of hard, tangy British cheese such as Lancashire or cheddar.",
-    "minutes": null
    }
   ]
  },

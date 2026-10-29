@@ -2107,9 +2107,9 @@
   "videoId": "SPr_UnCrYPg",
   "title": "Best Corned Beef Hash Recipe with Canned Corned beef",
   "channel": "Chef Buck",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53291": {
   "videoId": "XFLRUW5eKxw",
@@ -2155,9 +2155,9 @@
   "videoId": "5aw5Ba0PCa0",
   "title": "Homemade Spanish Crema Catalana Recipe",
   "channel": "Spain on a Fork",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53072": {
   "videoId": "4mINk5d2hto",
@@ -2171,9 +2171,9 @@
   "videoId": "V0G3ODvMg0k",
   "title": "Recipe: Crispy Fried Fish with Ginger and Fermented Soybeans (Trey Chien Chuon) - Cambodia Food",
   "channel": "Mitzie Mee",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:52999": {
   "videoId": null,
@@ -2212,12 +2212,10 @@
   "checked": "2026-10-20"
  },
  "themealdb:53309": {
-  "videoId": "gfNjne0AMb0",
-  "title": "Dilled Fennel and Cucumber Salad | Volunteer Gardener",
-  "channel": "Volunteer Gardener",
+  "videoId": null,
+  "checked": "2026-10-29",
   "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "reason": "The video (Volunteer Gardener, 'Dilled Fennel and Cucumber Salad') has no recipe in its description; the only link is to volunteergardener.org full-episode pages, and a guessed recipe page returned 403. Searches found no embeddable video of the same cucumber, fennel, sour cream and dill salad with a written recipe (results were other salads, or farm-market videos with no recipe)."
  },
  "themealdb:53098": {
   "videoId": "r1lnsOTNjws",
@@ -2243,9 +2241,9 @@
   "videoId": "E0bOy1FWkXA",
   "title": "Date Squares (Classic Verson) - Joyofbaking.com",
   "channel": "Joy of Baking",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53411": {
   "videoId": "G7OLFDL63J4",
@@ -2285,9 +2283,9 @@
   "videoId": "2J0ICGYsBL4",
   "title": "Dulce de Leche",
   "channel": "Preppy Kitchen",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53543": {
   "videoId": null,
@@ -2321,9 +2319,9 @@
   "videoId": "gK1b5gymAUY",
   "title": "Perfect Poffertjes: How to Make Fluffy Dutch Mini Pancakes at Home!",
   "channel": "Bec's Table",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53387": {
   "videoId": "3NIRQ3KMorw",
@@ -2337,9 +2335,9 @@
   "videoId": "3zCrERE0kbc",
   "title": "How to Make Stroopwafels (Just Like in Amsterdam!)",
   "channel": "Bigger Bolder Baking with Gemma Stafford",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53285": {
   "videoId": "koPyA-HO8Q4",
@@ -2353,9 +2351,9 @@
   "videoId": "EusTpzrqYK4",
   "title": "Spanish Chicken & Dirty Rice | Easy One Pot Cooking Perfection!",
   "channel": "Kitchen Sanctuary",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53486": {
   "videoId": null,
@@ -2367,9 +2365,9 @@
   "videoId": "xV0QCJ0GD5w",
   "title": "Eccles Cakes",
   "channel": "Geoff Cooper",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:52955": {
   "videoId": "9XpzHm9QpZg",
