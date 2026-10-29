@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { gramsOf } from "../src/nutrition.ts";
+import { gramsOf, referencePrice } from "../src/nutrition.ts";
 import { choosePack, convert, type PackOption, purchasePlan, referenceOption, toBase } from "../src/pricing.ts";
 
 // The package-purchase engine in isolation (src/pricing.ts). These run in
@@ -163,6 +163,17 @@ describe("cup measures of solid food", () => {
   it("weighs a cup of ginger as the food, not as water", () => {
     expect(gramsOf({ name: "ginger", quantity: 2, unit: "cup" })).toBe(192);
     expect(gramsOf({ name: "ginger", quantity: 1, unit: "knob" })).toBe(10);
+  });
+});
+
+describe("reference prices agree with their own shelf price", () => {
+  // Reference prices are cents per 100 g. A 10 x 10 g box of stock cubes at
+  // about $3 is 300 c/100 g; it was stored as 3000, charging every recipe
+  // with a stock cube ten times its cost.
+  it("prices stock cubes at the rate their cited box gives", () => {
+    const p = referencePrice("stock cube")!;
+    expect(p.source).toMatch(/10 x 10g ~\$3/);
+    expect(p.centsPer100).toBe(300);
   });
 });
 
