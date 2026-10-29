@@ -1822,36 +1822,36 @@
   "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52856": {
-  "videoId": "fDpoT0jvg4Y",
-  "title": "Chocolate Pecan Pie Recipe - Pecan Pie with Semi-Sweet Chocolate Chips",
-  "channel": "Food Wishes",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "videoId": "2BVEt7JSsPc",
+  "title": "This Chocolate Pecan Pie Is ALWAYS the First to Go!",
+  "channel": "Sugar Spun Run",
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53320": {
   "videoId": "ucBoYab5tXY",
   "title": "Chocolate Alfajores Cookies - The Scran Line",
   "channel": "The Scran Line",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:52853": {
   "videoId": "wuZffe60q4M",
   "title": "Avocado Chocolate Mousse Recipe",
   "channel": "Recipes by Carina",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:52966": {
   "videoId": "qsk_At_gjv0",
   "title": "Chocolate Caramel Rice Crispy Treats",
   "channel": "Donal Skehan",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53170": {
   "videoId": "J45Y5olZCuo",
@@ -1878,12 +1878,12 @@
   "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52905": {
-  "videoId": "FWqfkUEWOTg",
-  "title": "Chocolate Soufflé - How to Make Chocolate Soufflé for Two",
-  "channel": "Food Wishes",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "videoId": "2uYHHhp4yxw",
+  "title": "Easy Chocolate Souffle Recipe",
+  "channel": "Preppy Kitchen",
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53289": {
   "videoId": null,
@@ -1908,12 +1908,10 @@
   "checked": "2026-10-20"
  },
  "themealdb:53185": {
-  "videoId": "RFlENguMJNA",
-  "title": "The best Tomato Salad and Chorizo by Jamie Oliver",
-  "channel": "Jamie Oliver",
+  "videoId": null,
+  "checked": "2026-10-29",
   "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "reason": "The Jamie Oliver video (RFlENguMJNA, 'The best Tomato Salad and Chorizo') has no recipe in its description (only the jamieoliver.com homepage and a nutrition link), and guessed recipe-page URLs on jamieoliver.com returned 404; two searches found no embeddable video of this salad with a creator's written recipe with amounts and method (Víctor Muñoz's blog page lists ingredients without amounts)."
  },
  "themealdb:53159": {
   "videoId": "K2Ba5BWYXUU",
@@ -1967,17 +1965,17 @@
   "videoId": "453mpKHVaBs",
   "title": "How to Make Churros",
   "channel": "Preppy Kitchen",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53116": {
   "videoId": "wNiyp89pTi0",
   "title": "The Best Cinnamon Buns | Richard Bertinet | Gozney Master",
   "channel": "Gozney",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53462": {
   "videoId": "LZ6ra2I0Edo",
@@ -1988,20 +1986,16 @@
   "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52840": {
-  "videoId": "fEN_fm6kX6k",
-  "title": "Homemade Clam Chowder Recipe - Laura Vitale - Laura in the Kitchen Episode 413",
-  "channel": "Laura in the Kitchen",
+  "videoId": null,
+  "checked": "2026-10-29",
   "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "reason": "The Laura in the Kitchen video (fEN_fm6kX6k) has no recipe in its description and no transcript is available; the creator's page (laurainthekitchen.com/recipes/clam-chowder/) is garbled when fetched, so the clam weight ('3 ? pounds') and the cream amount ('? cup') are unreadable, and the page never says when the bacon goes back in. The main amounts cannot be verified, so the recipe is left unchanged."
  },
  "themealdb:53154": {
-  "videoId": "IoRuT7TxDAo",
-  "title": "Cinco De Mayo: How To Make Spicy Clam, Chorizo And White Bean Soup | Recipes | Well Done",
-  "channel": "Well Done",
+  "videoId": null,
+  "checked": "2026-10-29",
   "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "reason": "The Well Done video (IoRuT7TxDAo) links coastalliving.com/recipe/spicy-clam-chorizo-white-bean-soup, which now returns 404 (the /recipes/ and 'and' variants also 404), and it has no recipe in its description; replacement candidates found (Omar Allibhoy's clam and bean stew has no chorizo, Home Cooking Spain's description lists ingredients but no method) did not give verifiable evidence for this dish."
  },
  "themealdb:52988": {
   "videoId": "Pb_lJxL1vtk",

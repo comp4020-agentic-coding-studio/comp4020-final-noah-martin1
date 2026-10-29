@@ -29151,215 +29151,149 @@
  },
  {
   "source": "themealdb:52856",
-  "title": "Choc Chip Pecan Pie",
-  "description": "An American sweet made with cream cheese, pecan nuts and chocolate chips — makes 24, about an hour start to finish.",
-  "servings": 24,
+  "title": "Chocolate pecan pie",
+  "description": "A pecan pie in a chilled pastry case with melted dark chocolate stirred into a corn syrup and brown sugar filling, baked until set and cooled before slicing.",
+  "servings": 10,
   "cuisine": "American",
   "category": "Dessert",
-  "image": "https://www.themealdb.com/images/media/meals/rqvwxt1511384809.jpg",
+  "image": "https://i.ytimg.com/vi/2BVEt7JSsPc/hqdefault.jpg",
   "prep_minutes": 20,
-  "cook_minutes": 40,
+  "cook_minutes": 45,
   "ingredients": [
    {
-    "name": "plain flour",
-    "quantity": 300,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "butter",
-    "quantity": 75,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "cream cheese",
-    "quantity": 100,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "icing sugar",
+    "name": "shortcrust pastry",
     "quantity": 1,
-    "unit": "tbsp",
-    "note": ""
+    "unit": "",
+    "note": "homemade pie dough, or store-bought; chilled, for a 9½-inch pie plate"
    },
    {
-    "name": "butter",
-    "quantity": 150,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "maple syrup",
-    "quantity": 200,
-    "unit": "ml",
-    "note": ""
-   },
-   {
-    "name": "brown sugar",
+    "name": "pecan nuts",
     "quantity": 250,
     "unit": "g",
-    "note": ""
+    "note": "halves, toasted"
    },
    {
-    "name": "brown sugar",
-    "quantity": 100,
+    "name": "butter",
+    "quantity": 57,
     "unit": "g",
-    "note": ""
+    "note": "unsalted, melted"
+   },
+   {
+    "name": "dark chocolate",
+    "quantity": 113,
+    "unit": "g",
+    "note": "finely chopped, 60-72% bar"
    },
    {
     "name": "eggs",
-    "quantity": 4,
+    "quantity": 3,
     "unit": "",
-    "note": ""
+    "note": "large, room temperature"
+   },
+   {
+    "name": "corn syrup",
+    "quantity": 0.67,
+    "unit": "cup",
+    "note": "light; dark corn syrup also works"
+   },
+   {
+    "name": "brown sugar",
+    "quantity": 0.67,
+    "unit": "cup",
+    "note": "light, firmly packed"
    },
    {
     "name": "vanilla extract",
-    "quantity": 1,
+    "quantity": 1.5,
     "unit": "tsp",
     "note": ""
    },
    {
-    "name": "pecan nuts",
-    "quantity": 400,
-    "unit": "g",
-    "note": ""
+    "name": "salt",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": "table salt"
    },
    {
-    "name": "chocolate chips",
-    "quantity": 200,
-    "unit": "g",
-    "note": ""
+    "name": "sea salt flakes",
+    "quantity": null,
+    "unit": "",
+    "note": "to garnish, optional, for sprinkling on top"
    }
   ],
   "steps": [
    {
-    "text": "First, make the pastry. Tip the ingredients into a food processor with 1 /4 tsp salt. Blend until the mixture resembles breadcrumbs.",
+    "text": "Heat the oven to 175°C. The pie dough has its own separate recipe on the creator's site; use that or store-bought. Roll the dough into a 30 cm circle, fit it into a 24 cm pie plate, flute the edges and chill while you make the filling.",
     "minutes": null
    },
    {
-    "text": "Drizzle 2-3 tsp cold water into the funnel while the blade is running – the mixture should start to clump together. Tip onto a work surface and bring together, kneading briefly into a ball.",
-    "minutes": null
-   },
-   {
-    "text": "Pat into a disc, wrap in cling film, and chill for at least 20 mins. Heat oven to 200C/180C fan/gas 6.",
-    "minutes": 20
-   },
-   {
-    "text": "Remove the pastry from the fridge and leave at room temperature for 5 mins to soften. Flour the work surface, then unwrap the pastry and roll to a circle the thickness of a £1 coin.",
+    "text": "Spread the pecans on a baking tray and toast at 175°C for 5-8 minutes, checking at 5, until fragrant and darker. Set aside to cool; chop coarsely if you like.",
     "minutes": 5
    },
    {
-    "text": "Use the pastry to line a deep, 23cm round fluted tin – mine was about 3cm deep. Press the pastry into the corners and up the sides, making sure there are no gaps. Leave 1cm pastry overhanging (save some of the pastry scraps for later).",
+    "text": "Melt the butter and chocolate together in a heatproof bowl in the microwave in 25-second bursts, stirring between each, until smooth. Set aside.",
     "minutes": null
    },
    {
-    "text": "Line with baking parchment (scrunch it up first to make it more pliable) and fill with baking beans.",
+    "text": "In a separate bowl, whisk the eggs vigorously for about 1 minute until slightly lighter and foamy.",
+    "minutes": 1
+   },
+   {
+    "text": "Whisk in the corn syrup, brown sugar, vanilla and table salt until well combined.",
     "minutes": null
    },
    {
-    "text": "Blind-bake for 15-20 mins until the sides are set, then remove the parchment and beans and return to the oven for 5 mins until golden brown. Trim the pastry so it’s flush with the top of the tin – a small serrated knife is best for this.",
-    "minutes": 20
-   },
-   {
-    "text": "If there are any cracks, patch them up with the pastry scraps.",
+    "text": "Drizzle in the melted chocolate and butter, stirring until the mixture is uniform, then stir in the pecans.",
     "minutes": null
    },
    {
-    "text": "Meanwhile, weigh the butter, syrup and sugars into a pan, and add 1 /4 tsp salt. Heat until the butter has melted and the sugar dissolved, stirring until smooth. Remove from the heat and cool for 10 mins. Reduce oven to 160C/140C fan/gas 3.",
-    "minutes": 10
+    "text": "Take the pie plate from the fridge and pour the filling in evenly. Bake on the centre rack at 175°C for 40-50 minutes, until the centre is set and no longer jiggles when nudged.",
+    "minutes": 40
    },
    {
-    "text": "Beat the eggs in a bowl. Add the syrup mixture, vanilla and pecans, and mix until well combined. Pour half the mixture into the tart case, scatter over half the chocolate chips, then cover with the remaining filling and chocolate chips.",
+    "text": "Cool the pie completely, or at least mostly, which takes about 2-4 hours, before slicing; cutting while warm is messy. Sprinkle with flaky salt if you like.",
     "minutes": null
-   },
-   {
-    "text": "Bake on the middle shelf for 50-55 mins until set. Remove from the oven and leave to cool, then chill for at least 2 hrs before serving.",
-    "minutes": 120
    }
   ]
  },
  {
   "source": "themealdb:53320",
   "title": "Chocolate alfajores",
-  "description": "An Uruguayan sweet made with honey, cocoa powder and dulce de leche — makes 20, on the table in about 45 minutes.",
+  "description": "Soft chocolate shortbread sandwich cookies filled with dulce de leche and half-dipped in melted dark chocolate, with an optional orange zest and coconut finish.",
   "servings": 20,
   "cuisine": "Uruguayan",
   "category": "Dessert",
   "image": "https://www.themealdb.com/images/media/meals/k9o0xr1764373018.jpg",
-  "prep_minutes": 20,
+  "prep_minutes": 45,
   "cook_minutes": 20,
   "ingredients": [
    {
-    "name": "butter",
-    "quantity": 150,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "sugar",
-    "quantity": 70,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "eggs",
-    "quantity": 1,
-    "unit": "",
-    "note": ""
-   },
-   {
-    "name": "honey",
-    "quantity": 25,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "plain flour",
-    "quantity": 175,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "cornflour",
-    "quantity": 80,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "cocoa powder",
-    "quantity": 30,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "baking powder",
-    "quantity": 1,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "baking powder",
-    "quantity": 1,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "dulce de leche",
-    "quantity": 400,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "milk chocolate",
-    "quantity": 500,
-    "unit": "g",
-    "note": ""
+    "name": "condensed milk",
+    "quantity": 2,
+    "unit": "can",
+    "note": "sweetened, to make the dulce de leche; cooking method is on the creator's separate page, or use store-bought dulce de leche"
    },
    {
     "name": "butter",
-    "quantity": 100,
+    "quantity": 200,
+    "unit": "g",
+    "note": "unsalted, softened"
+   },
+   {
+    "name": "icing sugar",
+    "quantity": 110,
+    "unit": "g",
+    "note": "powdered sugar"
+   },
+   {
+    "name": "salt",
+    "quantity": 3,
+    "unit": "g",
+    "note": "fine"
+   },
+   {
+    "name": "vanilla extract",
+    "quantity": 14,
     "unit": "g",
     "note": ""
    },
@@ -29367,149 +29301,183 @@
     "name": "orange",
     "quantity": 1,
     "unit": "",
-    "note": "zested"
+    "note": "zested, optional"
+   },
+   {
+    "name": "plain flour",
+    "quantity": 290,
+    "unit": "g",
+    "note": ""
+   },
+   {
+    "name": "cocoa powder",
+    "quantity": 40,
+    "unit": "g",
+    "note": "Dutch-processed, sifted"
+   },
+   {
+    "name": "dark chocolate",
+    "quantity": 300,
+    "unit": "g",
+    "note": "dark cooking chocolate, for the coating (optional)"
+   },
+   {
+    "name": "vegetable oil",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": "for the chocolate coating"
+   },
+   {
+    "name": "desiccated coconut",
+    "quantity": 50,
+    "unit": "g",
+    "note": "shredded, optional, to garnish"
    }
   ],
   "steps": [
    {
-    "text": "For the cookies cream the butter with the sugar for a few minutes. Then add the egg and honey and mix well. Add flour, cornstarch, cocoa, baking soda and baking powder and mix until you get a dough.",
+    "text": "Make the dulce de leche from the 2 cans of condensed milk; the cooking method is on the creator's separate page and is not given here. Or use store-bought dulce de leche.",
     "minutes": null
    },
    {
-    "text": "Wrap in plastic wrap and chill for at least half an hour or overnight.",
+    "text": "Cream the softened butter, icing sugar, salt, vanilla and orange zest (if using) until pale and fluffy, about 3 minutes.",
+    "minutes": 3
+   },
+   {
+    "text": "Mix in half the flour and cocoa until a dough forms, then add the rest. The dough should be soft and smooth; if it is too soft on a warm day, chill it for 30 minutes.",
+    "minutes": null
+   },
+   {
+    "text": "Shape the dough into two flat ovals. Roll each between two sheets of baking paper to about 5 mm thick.",
+    "minutes": null
+   },
+   {
+    "text": "Slide the rolled dough onto a tray and chill for 1 hour. Heat the oven to 150°C (130°C fan).",
     "minutes": 60
    },
    {
-    "text": "Line two baking sheets with parchment paper, preheat oven to 200 degrees Celsius.",
+    "text": "Cut out 4 cm rounds and place them about 2 cm apart on a lined tray. Bake for 20 minutes; they firm up as they cool.",
+    "minutes": 20
+   },
+   {
+    "text": "Sandwich pairs of cooled cookies with dulce de leche, piped or spooned on.",
     "minutes": null
    },
    {
-    "text": "Divide dough into two parts, put one part back in the fridge before using. Roll out second part to about 2 millimeters and cut out round cookies with 5-6 centimeters in diameter. This can be done with a cookie cutter or glass.",
-    "minutes": null
-   },
-   {
-    "text": "You should get 30 cookies in total or even more, I get about 40. Bake one baking sheet at the time for about 8-10min. Let cookies cool.",
-    "minutes": 10
-   },
-   {
-    "text": "For the filling look for two cookies of the same size and place about one teaspoon of dulce de leche onto the bottom one before sandwiching together.",
-    "minutes": null
-   },
-   {
-    "text": "Chop semi-sweet chocolate and melt with butter and orange zest on low heat. Dunk each sandwich cookie into the chocolate and let cool off on parchment paper before serving.",
+    "text": "Melt the dark chocolate with the oil in 30-second microwave bursts, stirring each time, and let it cool slightly. Dip half of each sandwiched cookie, let the excess drip off and set on a tray, sprinkling with coconut if you like.",
     "minutes": null
    }
   ]
  },
  {
   "source": "themealdb:52853",
-  "title": "Chocolate Avocado Mousse",
-  "description": "A British sweet made with banana, cocoa powder and avocado — serves 2, ready in under half an hour.",
-  "servings": 2,
+  "title": "Chocolate avocado mousse",
+  "description": "A cream- and egg-free mousse of blended avocado, melted dark chocolate, honey, milk and cocoa, served in ramekins with mint, strawberries and grated chocolate.",
+  "servings": 4,
   "cuisine": "British",
   "category": "Dessert",
   "image": "https://www.themealdb.com/images/media/meals/uttuxy1511382180.jpg",
-  "prep_minutes": 15,
+  "prep_minutes": 10,
   "cook_minutes": 5,
   "ingredients": [
    {
-    "name": "banana",
-    "quantity": 1,
-    "unit": "",
-    "note": ""
-   },
-   {
-    "name": "cocoa powder",
-    "quantity": 3,
-    "unit": "tbsp",
-    "note": ""
+    "name": "dark chocolate",
+    "quantity": 200,
+    "unit": "g",
+    "note": "melted over a double boiler"
    },
    {
     "name": "avocado",
     "quantity": 1,
     "unit": "",
-    "note": ""
+    "note": "large; or 2 small"
+   },
+   {
+    "name": "milk",
+    "quantity": 80,
+    "unit": "ml",
+    "note": "a little more for a thinner mousse"
    },
    {
     "name": "honey",
-    "quantity": 2,
+    "quantity": 64,
+    "unit": "g",
+    "note": "3 tbsp"
+   },
+   {
+    "name": "cocoa powder",
+    "quantity": 1,
     "unit": "tbsp",
     "note": ""
    },
    {
-    "name": "lemon juice",
-    "quantity": 1,
-    "unit": "tsp",
-    "note": ""
+    "name": "mint",
+    "quantity": null,
+    "unit": "",
+    "note": "leaves, to serve"
    },
    {
-    "name": "vanilla extract",
-    "quantity": 1,
-    "unit": "tsp",
-    "note": ""
+    "name": "strawberries",
+    "quantity": null,
+    "unit": "",
+    "note": "to serve"
    },
    {
-    "name": "water",
-    "quantity": 2,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "salt",
-    "quantity": 1,
-    "unit": "pinch",
-    "note": ""
+    "name": "dark chocolate",
+    "quantity": null,
+    "unit": "",
+    "note": "grated, to serve"
    }
   ],
   "steps": [
    {
-    "text": "Blend all the mousse ingredients together in your food processor until smooth.",
+    "text": "Melt the dark chocolate in a bowl over a double boiler, stirring until completely melted.",
     "minutes": null
    },
    {
-    "text": "Add the cacao powder first and, as you blend, have all the ingredients to hand in order to adjust the ratios slightly as the size of avocados and bananas varies so much.",
+    "text": "Take the chocolate off the heat and leave it to cool while you prepare the rest.",
     "minutes": null
    },
    {
-    "text": "The perfect ratio in order to avoid the dish tasting too much of either is to use equal amounts of both.",
+    "text": "Halve the avocados, remove the stone and scoop out the flesh, discarding the skin.",
     "minutes": null
    },
    {
-    "text": "Taste and add a few drops of stevia if you feel you need more sweetness.",
+    "text": "Put the avocado in a food processor with the milk, honey, cocoa powder and cooled melted chocolate.",
     "minutes": null
    },
    {
-    "text": "Fill little cups or shot glasses with the mousse, sprinkle with the cacao powder or nibs and serve.",
+    "text": "Blend until the mousse comes together; it looks crumbly and separated at first. Add more milk if you want a thinner mousse.",
     "minutes": null
    },
    {
-    "text": "Tip If you don’t have a frozen banana to hand you can just use a normal one and then chill the mousse before serving for a cooling dessert.",
+    "text": "Spoon into ramekins and serve with mint leaves, strawberries and grated chocolate. It keeps in the fridge for a few days.",
     "minutes": null
    }
   ]
  },
  {
   "source": "themealdb:52966",
-  "title": "Chocolate Caramel Crispy",
-  "description": "A British sweet made with mars bar, rice krispies and milk chocolate — serves 4, ready in under half an hour.",
-  "servings": 4,
+  "title": "Chocolate caramel crispy",
+  "description": "Melted Mars bars and butter stirred through Rice Krispies, pressed into a tin and topped with a layer of melted milk chocolate, then sliced into squares once set.",
+  "servings": 12,
   "cuisine": "British",
   "category": "Dessert",
   "image": "https://www.themealdb.com/images/media/meals/1550442508.jpg",
-  "prep_minutes": 10,
+  "prep_minutes": 15,
   "cook_minutes": 5,
   "ingredients": [
    {
     "name": "mars bar",
     "quantity": 6,
     "unit": "",
-    "note": "chopped"
+    "note": "roughly chopped"
    },
    {
     "name": "butter",
     "quantity": 150,
     "unit": "g",
-    "note": ""
+    "note": "cubed"
    },
    {
     "name": "rice krispies",
@@ -29521,28 +29489,32 @@
     "name": "milk chocolate",
     "quantity": 150,
     "unit": "g",
-    "note": ""
+    "note": "for the topping"
    }
   ],
   "steps": [
    {
-    "text": "Grease and line a 20 x 20cm/8\" x 8\" baking tin with parchment paper.",
+    "text": "Grease and line a 20 x 20 cm baking tin with parchment paper.",
     "minutes": null
    },
    {
-    "text": "Put the mars bars and butter in a heat proof bowl and place over a pan of barely simmering water. Mixing with a whisk, melt until the mixture is smooth.",
+    "text": "Put the chopped Mars bars and butter in a heatproof bowl over a pan of barely simmering water and whisk until smooth.",
     "minutes": null
    },
    {
-    "text": "Pour over the rice krispies in a mixing bowl and mix until all the ingredients are evenly combined. Press evenly into the prepare baking tin and set aside.",
+    "text": "Pour the melted mixture over the Rice Krispies in a mixing bowl and mix until evenly coated.",
     "minutes": null
    },
    {
-    "text": "Melt the milk chocolate in the microwave or over a pan of barely simmering water.",
+    "text": "Press the mixture evenly into the prepared tin and set aside.",
     "minutes": null
    },
    {
-    "text": "Spread the melted chocolate over the rice krispie mixture and leave to set in a cool place. Once set slice into squares and serve!",
+    "text": "Melt the milk chocolate in the microwave or over barely simmering water, then spread it over the Rice Krispie layer.",
+    "minutes": null
+   },
+   {
+    "text": "Leave to set in a cool place, then slice into squares and serve.",
     "minutes": null
    }
   ]
@@ -29890,112 +29862,92 @@
  },
  {
   "source": "themealdb:52905",
-  "title": "Chocolate Souffle",
-  "description": "A French sweet made with cream, dark chocolate and egg yolks — serves 8, on the table in about 45 minutes.",
-  "servings": 8,
+  "title": "Chocolate souffle",
+  "description": "Light chocolate soufflés for four: melted chocolate and butter enriched with egg yolks, folded into whipped meringue and baked in buttered, sugared ramekins.",
+  "servings": 4,
   "cuisine": "French",
   "category": "Dessert",
-  "image": "https://www.themealdb.com/images/media/meals/twspvx1511784937.jpg",
-  "prep_minutes": 20,
-  "cook_minutes": 15,
+  "image": "https://i.ytimg.com/vi/2uYHHhp4yxw/hqdefault.jpg",
+  "prep_minutes": 25,
+  "cook_minutes": 12,
   "ingredients": [
    {
-    "name": "cream",
-    "quantity": 142,
-    "unit": "ml",
-    "note": ""
-   },
-   {
-    "name": "sugar",
-    "quantity": 25,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "dark chocolate",
-    "quantity": 100,
-    "unit": "g",
-    "note": ""
-   },
-   {
     "name": "butter",
-    "quantity": 25,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "butter",
-    "quantity": null,
-    "unit": "",
-    "note": "a drizzle"
-   },
-   {
-    "name": "sugar",
-    "quantity": 50,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "dark chocolate",
-    "quantity": 175,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "cream",
-    "quantity": 2,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "egg yolks",
-    "quantity": 4,
-    "unit": "",
-    "note": ""
-   },
-   {
-    "name": "egg whites",
     "quantity": 5,
+    "unit": "tbsp",
+    "note": "unsalted, room temperature; 2 tbsp to coat ramekins, 3 tbsp melted with the chocolate"
+   },
+   {
+    "name": "sugar",
+    "quantity": 6,
+    "unit": "tbsp",
+    "note": "granulated; 3 tbsp to coat ramekins, 3 tbsp for the egg whites"
+   },
+   {
+    "name": "dark chocolate",
+    "quantity": 85,
+    "unit": "g",
+    "note": "semi-sweet, roughly chopped"
+   },
+   {
+    "name": "eggs",
+    "quantity": 3,
     "unit": "",
+    "note": "large, separated"
+   },
+   {
+    "name": "vanilla extract",
+    "quantity": 0.5,
+    "unit": "tsp",
     "note": ""
    },
    {
-    "name": "cream",
-    "quantity": 2,
-    "unit": "tbsp",
+    "name": "salt",
+    "quantity": 0.25,
+    "unit": "tsp",
+    "note": "kosher"
+   },
+   {
+    "name": "cream of tartar",
+    "quantity": 0.25,
+    "unit": "tsp",
     "note": ""
    },
    {
     "name": "icing sugar",
     "quantity": null,
     "unit": "",
-    "note": "to serve"
+    "note": "confectioners' sugar, to serve"
    }
   ],
   "steps": [
    {
-    "text": "Heat oven to 220C/fan 200C/gas 7 and place a baking tray on the top shelf. For the sauce, heat the cream and sugar until boiling. Remove from the heat, stir in the chocolate and butter until melted, then keep warm.",
+    "text": "Brush four 150 ml ramekins thoroughly with 2 tbsp of the butter using upward strokes. Coat each with sugar from 3 tbsp, tipping the excess into the next ramekin, then chill them on a baking tray.",
     "minutes": null
    },
    {
-    "text": "Brush 6 x 150ml ramekins with melted butter, sprinkle with the 2 tbsp caster sugar, then tip out any excess. Melt the chocolate and cream in a bowl over a pan of simmering water, cool, then mix in the egg yolks.",
+    "text": "Heat the oven to 200°C. Melt the chocolate and the remaining 3 tbsp butter in a heatproof bowl over simmering water, stir until smooth, then cool for 2 minutes.",
+    "minutes": 2
+   },
+   {
+    "text": "Whisk the egg yolks, vanilla and salt into the chocolate until smooth and set aside.",
     "minutes": null
    },
    {
-    "text": "Whisk the egg whites until they hold their shape, then add the sugar, 1 tbsp at a time, whisking back to the same consistency. Mix a spoonful into the chocolate, then gently fold in the rest.",
-    "minutes": null
+    "text": "Beat the egg whites with the cream of tartar until foamy and doubled, about 1-2 minutes, then slowly add the remaining 3 tbsp sugar and beat to stiff peaks, about 3 more minutes.",
+    "minutes": 5
    },
    {
-    "text": "Working quickly, fill the ramekins, wipe the rims clean and run your thumb around the edges. Turn oven down to 200C/fan 180C/gas 6, place the ramekins onto the baking tray, then bake for 8-10 mins until risen with a slight wobble.",
+    "text": "Fold the whites into the chocolate in 3 batches, mixing more firmly the first time and gently after that. Chill the batter for 10 minutes.",
     "minutes": 10
    },
    {
-    "text": "Don’t open the oven door too early as this may make them collapse.",
+    "text": "Divide the batter among the ramekins and smooth the tops. Run a finger around the inside edge of each to make a channel so the soufflé rises evenly.",
     "minutes": null
    },
    {
-    "text": "Once the soufflés are ready, dust with icing sugar, scoop a small hole from their tops, then pour in some of the hot chocolate sauce. Replace the lids and serve straight away.",
-    "minutes": null
+    "text": "Bake for 12-14 minutes, until risen above the rim with a slight jiggle in the centre. Dust with icing sugar and serve immediately.",
+    "minutes": 12
    }
   ]
  },
@@ -31019,140 +30971,110 @@
  {
   "source": "themealdb:53153",
   "title": "Churros",
-  "description": "A Spanish sweet made with bread, dark chocolate and cream — makes 12, about an hour start to finish.",
-  "servings": 12,
+  "description": "Choux-style churro dough piped with a star tip, fried until golden and tossed in cinnamon sugar. The video's chocolate dipping sauce has no recipe on the creator's page, so it is not listed.",
+  "servings": 18,
   "cuisine": "Spanish",
   "category": "Dessert",
   "image": "https://www.themealdb.com/images/media/meals/nxnny61763250596.jpg",
   "prep_minutes": 20,
-  "cook_minutes": 35,
+  "cook_minutes": 10,
   "ingredients": [
    {
-    "name": "butter",
-    "quantity": 50,
-    "unit": "g",
-    "note": ""
+    "name": "sugar",
+    "quantity": 0.75,
+    "unit": "cup",
+    "note": "granulated, for the coating (150 g)"
    },
    {
-    "name": "vanilla extract",
+    "name": "cinnamon",
+    "quantity": 2,
+    "unit": "tsp",
+    "note": "for the coating"
+   },
+   {
+    "name": "water",
+    "quantity": 240,
+    "unit": "ml",
+    "note": "for the dough"
+   },
+   {
+    "name": "butter",
+    "quantity": 85,
+    "unit": "g",
+    "note": "unsalted"
+   },
+   {
+    "name": "sugar",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "granulated, for the dough"
+   },
+   {
+    "name": "salt",
     "quantity": 0.5,
     "unit": "tsp",
     "note": ""
    },
    {
     "name": "plain flour",
-    "quantity": 250,
+    "quantity": 120,
     "unit": "g",
-    "note": ""
+    "note": "all-purpose"
    },
    {
-    "name": "baking powder",
+    "name": "eggs",
+    "quantity": 3,
+    "unit": "",
+    "note": "large; 3 to 4, add the 4th a little at a time only if needed"
+   },
+   {
+    "name": "vanilla extract",
     "quantity": 1,
     "unit": "tsp",
     "note": ""
    },
    {
     "name": "vegetable oil",
-    "quantity": null,
-    "unit": "",
-    "note": "for deep-frying, about 1000 ml"
-   },
-   {
-    "name": "bread",
-    "quantity": 2,
-    "unit": "",
-    "note": "chopped"
-   },
-   {
-    "name": "dark chocolate",
-    "quantity": 200,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "cream",
-    "quantity": 100,
-    "unit": "ml",
-    "note": ""
-   },
-   {
-    "name": "milk",
-    "quantity": 100,
-    "unit": "ml",
-    "note": ""
-   },
-   {
-    "name": "golden syrup",
-    "quantity": 3,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "vanilla extract",
-    "quantity": 0.5,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "sugar",
-    "quantity": 100,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "cinnamon",
-    "quantity": 2,
-    "unit": "tsp",
-    "note": ""
+    "quantity": 1,
+    "unit": "l",
+    "note": "for deep-frying, 1-2 quarts, about 5 cm deep in a large pot"
    }
   ],
   "steps": [
    {
-    "text": "Boil the kettle, then measure 300ml boiling water into a jug and add the melted butter and vanilla extract. Sift the flour and baking powder into a big mixing bowl with a big pinch of salt.",
+    "text": "Stir the 3/4 cup sugar and cinnamon together in a large bowl or shallow dish and set aside.",
     "minutes": null
    },
    {
-    "text": "Make a well in the centre, then pour in the contents of the jug and very quickly beat into the flour with a wooden spoon until lump-free. Rest for 10-15 mins while you make the sauce.",
-    "minutes": 15
-   },
-   {
-    "text": "Put all the sauce ingredients into a pan and gently melt together, stirring occasionally until you have a smooth shiny sauce. Keep warm on a low heat.",
+    "text": "Bring the water, butter, 1 tbsp sugar and salt to a boil in a large saucepan over medium-high heat, then take it off the heat straight away.",
     "minutes": null
    },
    {
-    "text": "Fill a large deep saucepan one-third full of oil. Cooking with hot oil can be dangerous – before you start, read up on how to deep-fry safely to avoid accidents in the kitchen.",
-    "minutes": null
-   },
-   {
-    "text": "Heat until a cube of bread browns in 45 seconds to 1 min. Cover a tray with kitchen paper and mix the caster sugar and cinnamon together.",
+    "text": "Add all the flour at once and stir hard with a wooden spoon for 30-60 seconds until incorporated, then return to the heat and cook, stirring, for 30 seconds.",
     "minutes": 1
    },
    {
-    "text": "Fit a star nozzle to a piping bag – 1.5-2cm wide is a good size. Fill with the rested dough, then pipe 2-3 strips directly into the pan, snipping off each dough strip with a pair of kitchen scissors. Fry until golden brown and crisp.",
+    "text": "Scrape the dough into a mixing bowl and beat on medium for 2 minutes to cool it. With the mixer running, add 3 eggs one at a time, scraping the bowl between each, then the vanilla, until smooth and glossy.",
+    "minutes": 2
+   },
+   {
+    "text": "The dough should fall slowly from the beaters. If it still clings, beat the 4th egg and add it a little at a time until it does.",
     "minutes": null
    },
    {
-    "text": "Be very careful here – if air bubbles form in the churros they can explode, especially if the oil overheats or you use old flour.",
+    "text": "Spoon the dough into a piping bag fitted with a large closed star tip; the ridges stop the churros bursting, so don't use a plain round tip.",
     "minutes": null
    },
    {
-    "text": "Cooking with hot oil can be dangerous – before you start, read up on how to deep-fry safely to avoid accidents in the kitchen.",
+    "text": "Heat about 5 cm of oil in a large pot to 200°C and line a baking sheet with paper towels.",
     "minutes": null
    },
    {
-    "text": "Keep children out of the kitchen and protect yourself by wearing long sleeves and eye protection, and keeping your face away from the pan.",
-    "minutes": null
+    "text": "Pipe 8-13 cm lengths into the oil, about three at a time, and fry on both sides for 1-2 minutes until golden. Lift out with tongs and drain on the paper towels for about 30 seconds.",
+    "minutes": 2
    },
    {
-    "text": "Once the churros are crisp and golden brown, remove them from the oil with a slotted spoon and drain on the kitchen paper-lined tray.",
-    "minutes": null
-   },
-   {
-    "text": "Carry on cooking the rest of the dough in batches, sprinkling the cooked churros with some cinnamon sugar as you go. When you’ve cooked all the churros, toss with any remaining cinnamon sugar and serve with the chocolate sauce, for dipping.",
-    "minutes": null
-   },
-   {
-    "text": "To see a video of how to prepare churros, take a look at our churros ice cream sandwich recipe.",
+    "text": "Toss the churros in the cinnamon sugar, tapping off any excess, and serve immediately.",
     "minutes": null
    }
   ]
@@ -31160,155 +31082,131 @@
  {
   "source": "themealdb:53116",
   "title": "Cinnamon buns",
-  "description": "A Norwegian sweet made with bread flour, cardamom and cinnamon — makes 12, on the table in about 45 minutes.",
-  "servings": 12,
-  "cuisine": "Norwegian",
+  "description": "Enriched yeast dough rolled with cinnamon and brown sugar butter, cut into plaited strips and rolled into knots, baked in a muffin tray and brushed with sugar syrup.",
+  "servings": 24,
+  "cuisine": "British",
   "category": "Dessert",
   "image": "https://www.themealdb.com/images/media/meals/as88dq1762772486.jpg",
   "prep_minutes": 20,
-  "cook_minutes": 25,
+  "cook_minutes": 20,
   "ingredients": [
-   {
-    "name": "butter",
-    "quantity": 100,
-    "unit": "g",
-    "note": ""
-   },
    {
     "name": "milk",
     "quantity": 200,
-    "unit": "ml",
-    "note": ""
-   },
-   {
-    "name": "salt",
-    "quantity": 1,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "plain flour",
-    "quantity": 250,
     "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "bread flour",
-    "quantity": 250,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "yeast",
-    "quantity": 1.5,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "cardamom",
-    "quantity": 1,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "sugar",
-    "quantity": 1,
-    "unit": "tbsp",
-    "note": ""
+    "note": "full fat, weighed, for the dough"
    },
    {
     "name": "eggs",
     "quantity": 2,
     "unit": "",
-    "note": ""
+    "note": "medium, for the dough"
    },
    {
-    "name": "olive oil",
-    "quantity": 1,
-    "unit": "dash",
+    "name": "bread flour",
+    "quantity": 600,
+    "unit": "g",
+    "note": "strong white"
+   },
+   {
+    "name": "yeast",
+    "quantity": 25,
+    "unit": "g",
+    "note": "fresh"
+   },
+   {
+    "name": "sugar",
+    "quantity": 50,
+    "unit": "g",
+    "note": "caster, for the dough"
+   },
+   {
+    "name": "salt",
+    "quantity": 10,
+    "unit": "g",
     "note": ""
    },
    {
     "name": "butter",
-    "quantity": 75,
+    "quantity": 200,
     "unit": "g",
-    "note": ""
+    "note": "unsalted, for the dough"
    },
    {
-    "name": "sugar",
-    "quantity": 100,
+    "name": "butter",
+    "quantity": 150,
     "unit": "g",
-    "note": ""
+    "note": "unsalted, for the filling"
+   },
+   {
+    "name": "brown sugar",
+    "quantity": 250,
+    "unit": "g",
+    "note": "soft, for the filling"
    },
    {
     "name": "cinnamon",
     "quantity": 2,
-    "unit": "tbsp",
-    "note": ""
+    "unit": "tsp",
+    "note": "for the filling"
    },
    {
     "name": "eggs",
     "quantity": 1,
     "unit": "",
-    "note": ""
+    "note": "for the egg glaze"
+   },
+   {
+    "name": "milk",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": "full fat, for the egg glaze"
+   },
+   {
+    "name": "sugar",
+    "quantity": 100,
+    "unit": "g",
+    "note": "caster, for the sugar glaze"
+   },
+   {
+    "name": "water",
+    "quantity": 100,
+    "unit": "ml",
+    "note": "for the sugar glaze (100 g)"
    }
   ],
   "steps": [
    {
-    "text": "In a small saucepan heat the butter, milk and salt until the butter is melted. Allow the mixture to cool until it is lukewarm.",
+    "text": "Put the milk, eggs and flour in a mixer bowl. Add the yeast to one side and the salt, sugar and 200 g butter to the other.",
     "minutes": null
    },
    {
-    "text": "In a large bowl, stir together the flours, yeast, cardamom and sugar until combined.",
-    "minutes": null
+    "text": "Mix on slow for 4 minutes, then on medium for 10-12 minutes, until the dough comes away cleanly from the side of the bowl.",
+    "minutes": 14
    },
    {
-    "text": "Make a well in the centre and crack in the eggs. Pour in the lukewarm milk mixture and stir everything together to form a sticky dough. You may have to use your hands as the dough becomes stiffer.",
-    "minutes": null
-   },
-   {
-    "text": "Oil the work surface with a teaspoon of olive oil. Turn the dough out onto the oiled surface and knead vigorously for 5–8 minutes, using a plastic scraper as needed to prise the dough from the work surface.",
-    "minutes": 8
-   },
-   {
-    "text": "Don’t be tempted to add flour, as this will make the buns dry and tough. Keep kneading until the dough is considerably less sticky, smoother and more elastic.",
-    "minutes": null
-   },
-   {
-    "text": "Shape into a ball, and put into a large, greased bowl. Cover the bowl with a clean tea towel and set aside in a warm place to prove for an hour, or until doubled in size.",
-    "minutes": 60
-   },
-   {
-    "text": "Meanwhile, for the filling and topping, mix the softened butter in a bowl with half the sugar and 1 tablespoon cinnamon. Use a fork to mix the sugar and spice into the butter until it is completely combined.",
-    "minutes": null
-   },
-   {
-    "text": "Mix the remaining sugar and cinnamon in a separate bowl and set aside.",
-    "minutes": null
-   },
-   {
-    "text": "When the dough has risen, turn out onto a floured work surface and gently roll out into a 36x24cm/14x9½in rectangle. Spread the cinnamon-sugar-butter evenly over the dough with a table or palette knife.",
-    "minutes": null
-   },
-   {
-    "text": "With the longest edge closest to you, roll the dough up into a cylinder. Cut into 12 even slices.",
-    "minutes": null
-   },
-   {
-    "text": "Place each slice onto a flattened out paper cupcake case on a baking tray, or into a greased muffin tin. (Baking in a muffin tin will make your cinnamon buns taller and domed.)",
-    "minutes": null
-   },
-   {
-    "text": "Cover with a clean tea towel and set aside to prove again for 30–45 minutes, or until risen.",
+    "text": "Shape the dough into a ball in a floured bowl, cover and leave for about 45 minutes until doubled.",
     "minutes": 45
    },
    {
-    "text": "Preheat the oven to 200C/180C Fan/Gas 6.",
+    "text": "Roll the dough on a floured surface into a rectangle about the size of an A3 sheet. Beat the 150 g butter and brown sugar until pale, stir in the cinnamon and spread over the dough.",
     "minutes": null
    },
    {
-    "text": "Brush the tops of the buns with beaten egg and dust liberally with the cinnamon sugar. Bake for 12 minutes until the buns are dark golden-brown. Enjoy warm with a cup of coffee.",
-    "minutes": 12
+    "text": "Fold the dough in half lengthways to enclose the filling and slice across into 24 strips about 3.5 cm wide. Cut each strip twice along its length into three strands and plait them.",
+    "minutes": null
+   },
+   {
+    "text": "Roll each plait up along its length into a knot and place in a greased 12-cup muffin tray. Cover and prove for 1 hour.",
+    "minutes": 60
+   },
+   {
+    "text": "Heat the oven to 200°C. Brush the knots with the egg and milk glaze and bake for 15-20 minutes until golden.",
+    "minutes": 15
+   },
+   {
+    "text": "Meanwhile, boil the sugar and water, then simmer to a light syrup. Brush it over the hot buns and leave to cool.",
+    "minutes": null
    }
   ]
  },
