@@ -1385,9 +1385,9 @@
   "videoId": "VuLnP0Yu84o",
   "title": "Brun Lapskaus: Norwegian Beef & Vegetable Root Stew",
   "channel": "Scandinavian Cookbook",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53190": {
   "videoId": "IPF_VpH7FzI",
@@ -1426,12 +1426,12 @@
   "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53077": {
-  "videoId": "lTjlbqGc_Y8",
-  "title": "How to make Russian Schi Soup | Sour Cabbage Soup Recipe",
-  "channel": "AllasYummyFood",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "videoId": "vMdMWRt2O_g",
+  "title": "Shchi (Russian Cabbage Soup)",
+  "channel": "Helen Rennie",
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53488": {
   "videoId": null,
@@ -1479,9 +1479,9 @@
   "videoId": "_LsP1TP4P9Q",
   "title": "Recipe: Cambodian Stir-fried Morning Glory with Pork, Fermented Soybeans, and Garlic",
   "channel": "Mitzie Mee",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:52923": {
   "videoId": "WUpaOGghOdo",
@@ -1509,9 +1509,9 @@
   "videoId": "asjZ7iTrGKA",
   "title": "Carrot Cake Recipe -  Chef Tips",
   "channel": "Chef Tips",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:52976": {
   "videoId": "IqXEZUk4hWI",
@@ -1602,12 +1602,12 @@
   "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53016": {
-  "videoId": "1WDesu7bUDM",
-  "title": "Chick-fil-A Chicken Sandwich - But Homemade... & WAY Better! | SAM THE COOKING GUY 4K",
-  "channel": "SAM THE COOKING GUY",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "videoId": "zlglJ9mLGOU",
+  "title": "Chick-fil-A Chicken Sandwich with Walmart Ingredients",
+  "channel": "Jason Farmer",
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:52846": {
   "videoId": "bXKWu4GojNI",
@@ -1642,12 +1642,12 @@
   "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52956": {
-  "videoId": "kqEfk801E94",
-  "title": "Chicken Congee - Rice Porridge - jok",
-  "channel": "Sue and Gambo",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "videoId": "sNRC2gL-XOw",
+  "title": "Chicken Congee (鸡粥) Recipe",
+  "channel": "Omnivore's Cookbook",
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:52850": {
   "videoId": null,
@@ -1670,12 +1670,12 @@
   "checked": "2026-10-20"
  },
  "themealdb:52875": {
-  "videoId": "xr-CpPE_lNk",
-  "title": "How To Make Chicken And Leek Pie | Waitrose",
-  "channel": "Waitrose & Partners",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "videoId": "FFW9JGxKAB8",
+  "title": "Chicken & Leek Pie",
+  "channel": "RecipeTin Eats",
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53531": {
   "videoId": null,
@@ -1751,9 +1751,9 @@
   "videoId": "nI2Sm4B3gWU",
   "title": "Spanish Chickpea & Chorizo Stew | Potaje de Garbanzos y Chorizo Recipe",
   "channel": "Spain on a Fork",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53516": {
   "videoId": null,
@@ -1793,17 +1793,15 @@
   "videoId": "Wn8ox93Qhus",
   "title": "🍅  Tomato + Egg 🥚 = The BEST Stir Fry?!",
   "channel": "Made With Lau",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:52910": {
-  "videoId": "5dAW9HQgtCk",
-  "title": "chinon apple tarts recipe",
-  "channel": "What Woman Needs",
+  "videoId": null,
+  "checked": "2026-10-29",
   "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "reason": "The video (What Woman Needs, 'chinon apple tarts recipe') has a description with only the site homepage and social links, no recipe, and whatwomanneeds.com returns 403 to fetches; searches for Chinon apple tarts found no other video of this dish with a written recipe."
  },
  "themealdb:53319": {
   "videoId": "tX3fN9AG_ik",

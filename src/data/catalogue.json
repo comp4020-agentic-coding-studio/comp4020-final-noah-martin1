@@ -23021,14 +23021,14 @@
  },
  {
   "source": "themealdb:53126",
-  "title": "Brun Lapskaus (Norwegian Beef Vegetable Stew)",
-  "description": "A Norwegian stew of beef, swede and celery — serves 4, worth the couple of hours it takes.",
+  "title": "Brun lapskaus (Norwegian beef and root vegetable stew)",
+  "description": "A Norwegian stew of browned beef simmered in stock with swede, celeriac, carrots, parsley root, potatoes and leek, finished with fresh parsley.",
   "servings": 4,
   "cuisine": "Norwegian",
   "category": "Beef",
   "image": "https://www.themealdb.com/images/media/meals/6vi2cv1763075785.jpg",
   "prep_minutes": 15,
-  "cook_minutes": 65,
+  "cook_minutes": 105,
   "ingredients": [
    {
     "name": "olive oil",
@@ -23038,15 +23038,15 @@
    },
    {
     "name": "beef",
-    "quantity": 910,
+    "quantity": 800,
     "unit": "g",
-    "note": ""
+    "note": "stewing quality, such as chuck steak, cut into 2.5 cm cubes"
    },
    {
     "name": "onion",
     "quantity": 1,
     "unit": "",
-    "note": ""
+    "note": "diced"
    },
    {
     "name": "beef stock",
@@ -23058,61 +23058,65 @@
     "name": "swede",
     "quantity": 1,
     "unit": "",
-    "note": "small"
+    "note": "small (rutabaga), peeled, cut into 2.5 cm cubes"
    },
    {
-    "name": "celery",
+    "name": "celeriac",
     "quantity": 1,
     "unit": "",
-    "note": ""
+    "note": "celery root, peeled, cut into 2.5 cm cubes"
    },
    {
     "name": "carrot",
     "quantity": 4,
     "unit": "",
-    "note": ""
+    "note": "peeled, cut into 2.5 cm cubes"
    },
    {
-    "name": "parsley",
+    "name": "parsley root",
     "quantity": 4,
     "unit": "",
-    "note": ""
+    "note": "peeled, cut into 2.5 cm cubes"
    },
    {
     "name": "potato",
-    "quantity": 455,
+    "quantity": 450,
     "unit": "g",
-    "note": ""
+    "note": "peeled, cut into 2.5 cm cubes"
    },
    {
     "name": "leek",
     "quantity": 0.5,
     "unit": "",
-    "note": ""
+    "note": "sliced into rings"
    },
    {
     "name": "parsley",
     "quantity": null,
     "unit": "",
-    "note": "to garnish"
+    "note": "fresh, to garnish"
    }
   ],
   "steps": [
    {
-    "text": "Heat olive oil in a large pot. Cut beef into 1 inch (2.5 cm) cubes and brown in oil.",
+    "text": "Heat the olive oil in a large pot. Cut the beef into 2.5 cm cubes and brown it in the oil.",
     "minutes": null
    },
    {
-    "text": "Dice the onion and add to browning beef. Add the stock and bring to a boil, then lower the heat, cover, and let simmer for about 30 minutes.",
+    "text": "Dice the onion and add it to the browning beef. Pour in the stock and bring to the boil, then lower the heat, cover and simmer for about 30 minutes.",
     "minutes": 30
    },
    {
-    "text": "Peel and cut the rutabaga and celery root into 1 inch (2.5 cm) cubes. Add to the pot, cover, and continue simmering for another 30 minutes.",
+    "text": "Peel the swede and celeriac, cut into 2.5 cm cubes, and add to the pot. Cover and simmer for another 30 minutes.",
     "minutes": 30
    },
    {
-    "text": "Peel and chop the rest of the vegetables into 1 inch (2.5 cm) cubes and add to the pot. Slice the leek into rings. Cover and continue simmering for about 20 minutes. Stir as little as possible. Top with fresh parsley.",
+    "text": "Peel and cube the carrots, parsley roots and potatoes the same size and add them, along with the leek cut into rings. Cover and simmer for about 20 minutes, stirring as little as possible.",
     "minutes": 20
+   },
+   {
+    "text": "Top with fresh parsley and serve.",
+    "minutes": null
    }
   ]
  },
@@ -23527,110 +23531,138 @@
  },
  {
   "source": "themealdb:53077",
-  "title": "Cabbage Soup (Shchi)",
-  "description": "A Russian soup of cabbage, carrot and celery — serves 2, about an hour start to finish.",
-  "servings": 2,
+  "title": "Shchi (Russian cabbage soup)",
+  "description": "A Russian cabbage soup built on a slow-cooked meat stock, with potatoes, cabbage and sauerkraut, finished with a carrot, onion and tomato sofrito and served with sour cream.",
+  "servings": 8,
   "cuisine": "Russian",
-  "category": "Vegetarian",
+  "category": "Beef",
   "image": "https://www.themealdb.com/images/media/meals/60oc3k1699009846.jpg",
-  "prep_minutes": 15,
-  "cook_minutes": 35,
+  "prep_minutes": 30,
+  "cook_minutes": 150,
   "ingredients": [
    {
-    "name": "butter",
+    "name": "beef",
+    "quantity": 1000,
+    "unit": "g",
+    "note": "for the stock; short-ribs, shin or chuck with marrow bones (or pork shanks, shoulder or neck); she gives 1–1.5 kg"
+   },
+   {
+    "name": "water",
     "quantity": 3,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "onion",
-    "quantity": 1,
-    "unit": "",
-    "note": "large"
-   },
-   {
-    "name": "cabbage",
-    "quantity": 1,
-    "unit": "",
-    "note": "medium"
-   },
-   {
-    "name": "carrot",
-    "quantity": 1,
-    "unit": "",
-    "note": ""
-   },
-   {
-    "name": "celery",
-    "quantity": 1,
-    "unit": "",
-    "note": ""
+    "unit": "l",
+    "note": "cold, for the stock in a pressure cooker (4 l in a regular pot)"
    },
    {
     "name": "bay leaf",
-    "quantity": 1,
+    "quantity": 2,
     "unit": "",
-    "note": ""
+    "note": "for the stock"
    },
    {
-    "name": "vegetable stock",
-    "quantity": 8,
+    "name": "vegetable oil",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": "unrefined sunflower (or olive), for the sofrito"
+   },
+   {
+    "name": "carrot",
+    "quantity": 450,
+    "unit": "g",
+    "note": "shredded, for the sofrito"
+   },
+   {
+    "name": "butter",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": "or more oil, for the sofrito"
+   },
+   {
+    "name": "onion",
+    "quantity": 2,
+    "unit": "",
+    "note": "yellow, diced, for the sofrito"
+   },
+   {
+    "name": "garlic",
+    "quantity": 4,
+    "unit": "clove",
+    "note": "minced, for the sofrito"
+   },
+   {
+    "name": "canned tomatoes",
+    "quantity": 2,
     "unit": "cup",
-    "note": ""
+    "note": "diced, for the sofrito"
+   },
+   {
+    "name": "salt",
+    "quantity": null,
+    "unit": "",
+    "note": "to taste, for the sofrito and the soup"
    },
    {
     "name": "potato",
-    "quantity": 2,
-    "unit": "",
-    "note": "large"
+    "quantity": 560,
+    "unit": "g",
+    "note": "boiling potatoes, peeled and diced"
    },
    {
-    "name": "tomato",
-    "quantity": 2,
-    "unit": "",
-    "note": "large"
+    "name": "cabbage",
+    "quantity": 450,
+    "unit": "g",
+    "note": "shredded"
+   },
+   {
+    "name": "sauerkraut",
+    "quantity": 740,
+    "unit": "ml",
+    "note": "jar, drained, liquid reserved to season"
+   },
+   {
+    "name": "water",
+    "quantity": 1,
+    "unit": "l",
+    "note": "another quart, added with the cabbage"
    },
    {
     "name": "sour cream",
     "quantity": null,
     "unit": "",
-    "note": "to garnish"
-   },
-   {
-    "name": "dill",
-    "quantity": null,
-    "unit": "",
-    "note": "to garnish"
+    "note": "to serve"
    }
   ],
   "steps": [
    {
-    "text": "Add the butter to a large Dutch oven or other heavy-duty pot over medium heat. When the butter has melted, add the onion and sauté until translucent.",
+    "text": "Put the meat, 3 litres of cold water and the bay leaves in a pressure cooker and cook on high pressure for 1 hour with natural release, or simmer gently uncovered in a pot with 4 litres of water for 3 hours until fork tender.",
+    "minutes": 60
+   },
+   {
+    "text": "Lift the meat out, cool it, discard gristle and bones and shred it. Skim the stock if you like, then refrigerate the meat and stock separately overnight.",
     "minutes": null
    },
    {
-    "text": "Add the cabbage, carrot, and celery. Sauté until the vegetables begin to soften, stirring frequently, about 3 minutes.",
-    "minutes": 3
+    "text": "For the sofrito, heat the oil in a large skillet over medium heat. Add the carrots and a good pinch of salt, cover and cook 7–10 minutes until the bottom browns, then uncover and cook until completely tender, 2–5 minutes. Remove the carrots.",
+    "minutes": 9
    },
    {
-    "text": "Add the bay leaf and vegetable stock and bring to a boil over high heat. Reduce the heat to low and simmer, covered, until the vegetables are crisp-tender, about 15 minutes.",
+    "text": "Add the butter, onions and salt to the pan. Cover until the onions soften, 7–10 minutes, then uncover and cook about 10 minutes until translucent and golden. Return the carrots to the pan.",
+    "minutes": 17
+   },
+   {
+    "text": "Add the garlic and cook on moderate heat 2–5 minutes until aromatic. Add the tomatoes and cook until all the moisture evaporates and it looks thick. Taste and adjust the salt.",
+    "minutes": 2
+   },
+   {
+    "text": "Degrease the stock, pour it into an 8-quart pot and bring to a simmer. Season with salt, add the potatoes and simmer about 20 minutes until tender.",
+    "minutes": 20
+   },
+   {
+    "text": "Add the cabbage, drained sauerkraut, the shredded meat and another quart of water. Simmer very gently about 15 minutes until the cabbage is almost tender.",
     "minutes": 15
    },
    {
-    "text": "Add the potatoes and bring it back to a boil over high heat. Reduce the heat to low and simmer, covered, until the potatoes are tender, about 10 minutes.",
-    "minutes": 10
-   },
-   {
-    "text": "Add the tomatoes (or undrained canned tomatoes) and bring the soup back to a boil over high heat. Reduce the heat to low and simmer, uncovered, for 5 minutes. Season to taste with salt and pepper.",
-    "minutes": 5
-   },
-   {
-    "text": "Emove and discard the bay leaf from the pot.",
-    "minutes": null
-   },
-   {
-    "text": "Serve topped with fresh sour cream and fresh dill.",
-    "minutes": null
+    "text": "Stir in the sofrito, season and add sauerkraut brine to taste for the saltiness and acidity you want. Simmer 15 minutes, then take off the heat and rest at least 30 minutes. Serve with sour cream.",
+    "minutes": 15
    }
   ]
  },
@@ -24232,20 +24264,20 @@
  },
  {
   "source": "themealdb:53418",
-  "title": "Cambodian Stir-fried Morning Glory with Pork, Fermented Soybeans, and Garlic",
-  "description": "A Cambodian dish of pork mince, fish sauce and water spinach — serves 2, on the table in about 45 minutes.",
+  "title": "Cambodian stir-fried morning glory with pork, fermented soybeans and garlic",
+  "description": "A quick Cambodian stir-fry of garlic, minced pork, fermented soy beans and morning glory (water spinach), seasoned with fish sauce and palm sugar and served with rice.",
   "servings": 2,
   "cuisine": "Cambodian",
   "category": "Pork",
   "image": "https://www.themealdb.com/images/media/meals/wympxc1779734808.jpg",
-  "prep_minutes": 15,
-  "cook_minutes": 15,
+  "prep_minutes": 10,
+  "cook_minutes": 8,
   "ingredients": [
    {
     "name": "water spinach",
     "quantity": 1,
     "unit": "bunch",
-    "note": ""
+    "note": "morning glory, washed and cut into 5–7 cm pieces, about 4 cups (1 L)"
    },
    {
     "name": "pork mince",
@@ -24254,7 +24286,7 @@
     "note": ""
    },
    {
-    "name": "soya bean",
+    "name": "fermented soy beans",
     "quantity": 2,
     "unit": "tbsp",
     "note": ""
@@ -24263,52 +24295,52 @@
     "name": "garlic",
     "quantity": 4,
     "unit": "clove",
-    "note": "chopped"
+    "note": "finely chopped"
    },
    {
     "name": "vegetable oil",
-    "quantity": null,
-    "unit": "",
-    "note": "for deep-frying"
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "for stir-frying"
    },
    {
     "name": "fish sauce",
-    "quantity": 1,
-    "unit": "dash",
-    "note": ""
+    "quantity": null,
+    "unit": "",
+    "note": "to taste, for seasoning"
    },
    {
-    "name": "sugar",
-    "quantity": 1,
-    "unit": "dash",
-    "note": ""
+    "name": "palm sugar",
+    "quantity": null,
+    "unit": "",
+    "note": "to taste, or regular sugar"
    },
    {
     "name": "chilli",
     "quantity": null,
     "unit": "",
-    "note": "to sprinkle"
+    "note": "optional"
    }
   ],
   "steps": [
    {
-    "text": "In a wok or large pan, heat 1 tablespoon of vegetable oil over medium heat. Once the oil is hot, add the garlic and stir-fry for about 30 seconds, until fragrant but not burnt.",
+    "text": "Heat 1 tablespoon of oil in a wok or large pan over medium heat. Add the garlic and stir-fry for about 30 seconds until fragrant but not burnt.",
     "minutes": null
    },
    {
-    "text": "Add the minced pork to the pan and break it up with a spatula. Stir-fry until the pork is fully cooked and browned, about 2-3 minutes.",
-    "minutes": 3
+    "text": "Add the minced pork and break it up with a spatula. Stir-fry for 2–3 minutes until fully cooked and browned.",
+    "minutes": 2
    },
    {
-    "text": "Stir in the fermented soy beans and cook for another minute, mixing it thoroughly with the pork.",
-    "minutes": null
+    "text": "Stir in the fermented soy beans and cook for another minute, mixing them through the pork.",
+    "minutes": 1
    },
    {
-    "text": "Toss in the cut morning glory and stir-fry for 2-3 minutes to retain its bright green colour and crisp texture.",
-    "minutes": 3
+    "text": "Toss in the cut morning glory and stir-fry for 2–3 minutes so it stays bright green and crisp.",
+    "minutes": 2
    },
    {
-    "text": "Check the seasoning and adjust with fish sauce or sugar if needed. Transfer to a serving dish and serve immediately with steamed rice.",
+    "text": "Taste and adjust with fish sauce or sugar. Serve straight away with steamed rice, with chilli if you like.",
     "minutes": null
    }
   ]
@@ -24580,43 +24612,79 @@
  },
  {
   "source": "themealdb:52897",
-  "title": "Carrot Cake",
-  "description": "A British sweet made with carrot, walnuts and cream cheese — makes 24, worth the couple of hours it takes.",
-  "servings": 24,
-  "cuisine": "British",
+  "title": "Carrot cake",
+  "description": "A spiced carrot cake made by mixing eggs, sugar and oil with shredded carrot and flour, baked on a lined baking sheet and topped with a chilled cream cheese frosting.",
+  "servings": 12,
+  "cuisine": "American",
   "category": "Dessert",
   "image": "https://www.themealdb.com/images/media/meals/vrspxv1511722107.jpg",
-  "prep_minutes": 20,
-  "cook_minutes": 70,
+  "prep_minutes": 30,
+  "cook_minutes": 40,
   "ingredients": [
    {
-    "name": "vegetable oil",
-    "quantity": 450,
-    "unit": "ml",
+    "name": "sugar",
+    "quantity": 1.5,
+    "unit": "cup",
+    "note": "white"
+   },
+   {
+    "name": "brown sugar",
+    "quantity": 0.5,
+    "unit": "cup",
+    "note": "packed light brown"
+   },
+   {
+    "name": "eggs",
+    "quantity": 4,
+    "unit": "",
     "note": ""
+   },
+   {
+    "name": "vegetable oil",
+    "quantity": 1.5,
+    "unit": "cup",
+    "note": "canola oil"
+   },
+   {
+    "name": "carrot",
+    "quantity": 6,
+    "unit": "",
+    "note": "medium, peeled and shredded (about 3 cups)"
    },
    {
     "name": "plain flour",
-    "quantity": 400,
-    "unit": "g",
-    "note": ""
+    "quantity": 2.5,
+    "unit": "cup",
+    "note": "all purpose"
    },
    {
-    "name": "bicarbonate of soda",
-    "quantity": 2,
+    "name": "cinnamon",
+    "quantity": 1.25,
+    "unit": "tsp",
+    "note": "ground"
+   },
+   {
+    "name": "nutmeg",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": "ground"
+   },
+   {
+    "name": "cloves",
+    "quantity": 0.125,
+    "unit": "tsp",
+    "note": "ground"
+   },
+   {
+    "name": "baking powder",
+    "quantity": 1.25,
     "unit": "tsp",
     "note": ""
    },
    {
-    "name": "sugar",
-    "quantity": 550,
-    "unit": "ml",
-    "note": ""
-   },
-   {
-    "name": "eggs",
-    "quantity": 5,
-    "unit": "",
+    "name": "bicarbonate of soda",
+    "quantity": 1,
+    "unit": "tsp",
     "note": ""
    },
    {
@@ -24626,61 +24694,75 @@
     "note": ""
    },
    {
-    "name": "cinnamon",
-    "quantity": 2,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "carrot",
-    "quantity": 500,
-    "unit": "g",
-    "note": "grated"
+    "name": "raisins",
+    "quantity": null,
+    "unit": "",
+    "note": "optional, if desired"
    },
    {
     "name": "walnuts",
-    "quantity": 150,
-    "unit": "g",
-    "note": ""
+    "quantity": null,
+    "unit": "",
+    "note": "optional, if desired"
+   },
+   {
+    "name": "icing sugar",
+    "quantity": 1.25,
+    "unit": "cup",
+    "note": "powdered, for the frosting"
    },
    {
     "name": "cream cheese",
-    "quantity": 200,
+    "quantity": 225,
     "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "sugar",
-    "quantity": 150,
-    "unit": "g",
-    "note": ""
+    "note": "softened, for the frosting"
    },
    {
     "name": "butter",
-    "quantity": 100,
-    "unit": "g",
-    "note": ""
+    "quantity": 5,
+    "unit": "tbsp",
+    "note": "unsalted, for the frosting"
+   },
+   {
+    "name": "vanilla extract",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": "for the frosting"
+   },
+   {
+    "name": "sour cream",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "for the frosting"
    }
   ],
   "steps": [
    {
-    "text": "For the carrot cake, preheat the oven to 160C/325F/Gas 3. Grease and line a 26cm/10in springform cake tin.",
+    "text": "Blend the powdered sugar, softened cream cheese, butter, vanilla and sour cream in a food processor, scraping down the sides until smooth. Chill until needed.",
     "minutes": null
    },
    {
-    "text": "Mix all of the ingredients for the carrot cake, except the carrots and walnuts, together in a bowl until well combined. Stir in the carrots and walnuts.",
+    "text": "Line a baking sheet and spray it with cooking spray or butter.",
     "minutes": null
    },
    {
-    "text": "Spoon the mixture into the cake tin and bake for 1 hour 15 minutes, or until a skewer inserted into the middle comes out clean.",
-    "minutes": 60
+    "text": "Mix the eggs and both sugars in a food processor until frothy. Drizzle in the oil and mix for another 20 seconds, then transfer to a mixing bowl.",
+    "minutes": null
    },
    {
-    "text": "Remove the cake from the oven and set aside to cool for 10 minutes, then carefully remove the cake from the tin and set aside to cool completely on a cooling rack.",
-    "minutes": 10
+    "text": "Stir in the shredded carrots and flour until well mixed, then mix in the cinnamon, nutmeg and cloves.",
+    "minutes": null
    },
    {
-    "text": "Meanwhile, for the icing, beat the cream cheese, caster sugar and butter together in a bowl until fluffy. Spread the icing over the top of the cake with a palette knife.",
+    "text": "Add the baking powder, baking soda and salt. Raisins and walnuts are optional; the page doesn't say when to add them.",
+    "minutes": null
+   },
+   {
+    "text": "Spread the batter onto the lined baking sheet and bake on the middle rack at 180°C (350°F) for 35–40 minutes.",
+    "minutes": 35
+   },
+   {
+    "text": "The page doesn't spell out the finishing step: the cream cheese frosting is made as this cake's frosting, so once the baked cake has cooled, spread the chilled frosting over it.",
     "minutes": null
    }
   ]
@@ -25797,131 +25879,189 @@
  },
  {
   "source": "themealdb:53016",
-  "title": "Chick-Fil-A Sandwich",
-  "description": "An American dish of chicken breast, pickle juice and garlic powder — serves 4, on the table in about 45 minutes.",
-  "servings": 4,
+  "title": "Chick-fil-A chicken sandwich",
+  "description": "A copycat Chick-fil-A sandwich: chicken fillets brined 6 to 8 hours, coated in a seasoned, milk-powder flour mix with milk wash, deep-fried and served on toasted buns with two pickle slices.",
+  "servings": 6,
   "cuisine": "American",
   "category": "Chicken",
   "image": "https://www.themealdb.com/images/media/meals/sbx7n71587673021.jpg",
-  "prep_minutes": 20,
-  "cook_minutes": 10,
+  "prep_minutes": 40,
+  "cook_minutes": 20,
   "ingredients": [
    {
-    "name": "chicken breast",
-    "quantity": 1,
-    "unit": "",
-    "note": ""
+    "name": "salt",
+    "quantity": 14,
+    "unit": "tsp",
+    "note": "kosher, 1/4 cup + 2 tsp, for the brine (most stays in the brine)"
    },
    {
-    "name": "pickle juice",
-    "quantity": 0.25,
-    "unit": "cup",
-    "note": ""
-   },
-   {
-    "name": "eggs",
-    "quantity": 1,
-    "unit": "",
-    "note": ""
-   },
-   {
-    "name": "milk",
-    "quantity": 0.25,
-    "unit": "cup",
-    "note": ""
-   },
-   {
-    "name": "plain flour",
+    "name": "sugar",
     "quantity": 0.5,
     "unit": "cup",
-    "note": ""
+    "note": "for the brine"
    },
    {
-    "name": "icing sugar",
+    "name": "msg",
     "quantity": 1,
     "unit": "tbsp",
-    "note": ""
+    "note": "for the brine"
    },
    {
     "name": "paprika",
-    "quantity": 0.5,
+    "quantity": 2,
     "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "salt",
-    "quantity": 0.5,
-    "unit": "tsp",
-    "note": ""
+    "note": "for the brine"
    },
    {
     "name": "black pepper",
     "quantity": 0.25,
     "unit": "tsp",
-    "note": ""
+    "note": "coarse ground, for the brine"
    },
    {
-    "name": "garlic powder",
-    "quantity": 0.25,
+    "name": "mustard powder",
+    "quantity": 1,
     "unit": "tsp",
-    "note": ""
+    "note": "for the brine"
    },
    {
-    "name": "celery salt",
-    "quantity": 0.25,
+    "name": "water",
+    "quantity": 1,
+    "unit": "l",
+    "note": "for the brine"
+   },
+   {
+    "name": "chicken breast",
+    "quantity": 2,
+    "unit": "",
+    "note": "boneless skinless, 340–450 g each, cut into 115 g fillets"
+   },
+   {
+    "name": "plain flour",
+    "quantity": 2,
+    "unit": "cup",
+    "note": "plus 2 tsp, for the coating"
+   },
+   {
+    "name": "sugar",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": "for the coating"
+   },
+   {
+    "name": "salt",
+    "quantity": 1.75,
     "unit": "tsp",
-    "note": ""
+    "note": "kosher, for the coating"
+   },
+   {
+    "name": "msg",
+    "quantity": 2,
+    "unit": "tsp",
+    "note": "for the coating"
+   },
+   {
+    "name": "milk powder",
+    "quantity": 8,
+    "unit": "tsp",
+    "note": "nonfat, 2 tbsp + 2 tsp, for the coating"
+   },
+   {
+    "name": "baking powder",
+    "quantity": 1.5,
+    "unit": "tsp",
+    "note": "for the coating"
+   },
+   {
+    "name": "white pepper",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": "for the coating"
+   },
+   {
+    "name": "mustard powder",
+    "quantity": 2,
+    "unit": "tsp",
+    "note": "for the coating"
    },
    {
     "name": "cayenne pepper",
-    "quantity": 0.5,
-    "unit": "tsp",
-    "note": ""
+    "quantity": 2,
+    "unit": "pinch",
+    "note": "for the coating"
    },
    {
-    "name": "olive oil",
+    "name": "milk",
     "quantity": 1,
     "unit": "cup",
-    "note": ""
+    "note": "skim or reconstituted from nonfat milk powder, for the milk wash; 4 tbsp of the wash goes into the flour"
    },
    {
-    "name": "bread rolls",
-    "quantity": 1,
+    "name": "eggs",
+    "quantity": 2,
     "unit": "",
-    "note": ""
+    "note": "whisked into the milk wash"
+   },
+   {
+    "name": "peanut oil",
+    "quantity": null,
+    "unit": "",
+    "note": "for deep-frying at 165°C; vegetable or canola also works"
+   },
+   {
+    "name": "burger bun",
+    "quantity": 6,
+    "unit": "",
+    "note": "hamburger buns, brioche preferred"
+   },
+   {
+    "name": "butter",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": "for toasting the buns"
+   },
+   {
+    "name": "dill pickles",
+    "quantity": 12,
+    "unit": "slice",
+    "note": "hamburger dill chips, 2 per sandwich"
    }
   ],
   "steps": [
    {
-    "text": "Wrap the chicken loosely between plastic wrap and pound gently with the flat side of a meat tenderizer until about 1/2 inch thick all around.",
+    "text": "Dissolve the brine salt, sugar, MSG, paprika, pepper and mustard powder in 1 litre of water.",
     "minutes": null
    },
    {
-    "text": "Cut into two pieces, as even as possible.",
+    "text": "Remove the tenderloin from each breast, trim the narrow end, butterfly the thick half and split it into two even pieces to get about 3 fillets and 1 tenderloin per breast. Pound any thick spots gently, then submerge in the brine, cover and refrigerate 6–8 hours.",
+    "minutes": 360
+   },
+   {
+    "text": "Lift the chicken from the brine and dry it very thoroughly with paper towels.",
     "minutes": null
    },
    {
-    "text": "Marinate in the pickle juice for 30 minutes to one hour (add a teaspoon of Tabasco sauce now for a spicy sandwich). Beat the egg with the milk in a bowl.",
-    "minutes": 30
-   },
-   {
-    "text": "Combine the flour, sugar, and spices in another bowl.",
+    "text": "Mix the flour, sugar, salt, MSG, milk powder, baking powder, white pepper, mustard powder and cayenne and sift it through a fine sieve. Drizzle in 4 tbsp of milk wash and crumble with your fingers into small beads.",
     "minutes": null
    },
    {
-    "text": "Dip the chicken pieces each into the egg on both sides, then coat in flour on both sides.",
+    "text": "For the milk wash, whisk the 2 eggs into the 1 cup of milk until smooth.",
     "minutes": null
    },
    {
-    "text": "Heat the oil in a skillet (1/2 inch deep) to about 345-350.",
+    "text": "Heat the peanut oil to 165°C in a deep fryer or a heavy pot with a thermometer. Butter both halves of each bun and toast them in a pan over medium heat.",
     "minutes": null
    },
    {
-    "text": "Fry each cutlet for 2 minutes on each side, or until golden and cooked through.",
-    "minutes": 2
+    "text": "Dip each fillet in the milk wash, shake off the excess and press it firmly into the coating, flattening evenly and shaking off extra flour.",
+    "minutes": null
    },
    {
-    "text": "Blot on paper and serve on toasted buns with pickle slices.",
+    "text": "Fry each fillet about 4 minutes 20 seconds at 165°C until deep golden and 74°C inside. Rest on a wire rack over a baking sheet.",
+    "minutes": 4
+   },
+   {
+    "text": "Put 2 pickle slices (not overlapping) on each bottom bun, top with a fillet and the bun top, and serve immediately.",
     "minutes": null
    }
   ]
@@ -26528,97 +26668,111 @@
  },
  {
   "source": "themealdb:52956",
-  "title": "Chicken Congee",
-  "description": "A Chinese soup of chicken, ginger cordial and spring onion — serves 2, worth the couple of hours it takes.",
-  "servings": 2,
+  "title": "Chicken congee",
+  "description": "A silky Chinese rice porridge: short-grain rice simmered with chicken stock, water and ginger, then finished with quickly cooked marinated chicken slices, spring onion and sesame oil.",
+  "servings": 4,
   "cuisine": "Chinese",
   "category": "Chicken",
   "image": "https://www.themealdb.com/images/media/meals/1529446352.jpg",
-  "prep_minutes": 15,
-  "cook_minutes": 70,
+  "prep_minutes": 10,
+  "cook_minutes": 50,
   "ingredients": [
    {
-    "name": "chicken",
+    "name": "chicken breast",
     "quantity": 225,
     "unit": "g",
-    "note": ""
+    "note": "or tender or thigh, thinly sliced"
+   },
+   {
+    "name": "shaoxing wine",
+    "quantity": 2,
+    "unit": "tsp",
+    "note": "for the chicken marinade"
    },
    {
     "name": "salt",
-    "quantity": 1,
-    "unit": "pinch",
-    "note": ""
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": "for the chicken marinade"
    },
    {
-    "name": "black pepper",
-    "quantity": 1,
-    "unit": "pinch",
-    "note": ""
-   },
-   {
-    "name": "ginger cordial",
+    "name": "cornflour",
     "quantity": 1,
     "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "ginger",
-    "quantity": 1,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "spring onion",
-    "quantity": 1,
-    "unit": "tbsp",
-    "note": ""
+    "note": "for the chicken marinade"
    },
    {
     "name": "rice",
     "quantity": 0.5,
     "unit": "cup",
-    "note": ""
+    "note": "uncooked short grain white rice (or medium grain), rinsed"
    },
    {
-    "name": "water",
-    "quantity": 8,
+    "name": "chicken stock",
+    "quantity": 4,
     "unit": "cup",
     "note": ""
    },
    {
-    "name": "coriander",
-    "quantity": 55,
-    "unit": "g",
-    "note": ""
+    "name": "shaoxing wine",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "or dry sherry, for the congee"
+   },
+   {
+    "name": "ginger",
+    "quantity": 2,
+    "unit": "slice",
+    "note": "large slices"
+   },
+   {
+    "name": "water",
+    "quantity": 4,
+    "unit": "cup",
+    "note": "stovetop method"
+   },
+   {
+    "name": "spring onion",
+    "quantity": 2,
+    "unit": "",
+    "note": "thinly sliced"
+   },
+   {
+    "name": "stock cube",
+    "quantity": 0.25,
+    "unit": "tsp",
+    "note": "chicken bouillon, or salt, to taste"
+   },
+   {
+    "name": "sesame oil",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "toasted"
    }
   ],
   "steps": [
    {
-    "text": "In a bowl, add chicken, salt, white pepper, ginger juice and then mix it together well. Set the chicken aside.",
+    "text": "Rinse the rice in a bowl of water a few times, draining each time, then drain well.",
     "minutes": null
    },
    {
-    "text": "Rinse the rice in a metal bowl or pot a couple times and then drain the water.",
+    "text": "Put the rice, ginger, chicken stock and 4 cups of water in a large pot with the 1 tablespoon of Shaoxing wine. Bring to a simmer over medium-high heat, then turn to low.",
     "minutes": null
    },
    {
-    "text": "Next add 8 cups of water and then set the stove on high heat until it is boiling. Once rice porridge starts to boil, set the stove on low heat and then stir it once every 8-10 minutes for around 20-25 minutes.",
-    "minutes": 25
+    "text": "Cover with the lid slightly ajar and simmer 45 minutes to 1 hour, stirring often near the end, until the congee is thick and sticky. (An Instant Pot works instead: 15 minutes on high pressure with natural release.)",
+    "minutes": 45
    },
    {
-    "text": "After 25 minutes, this is optional but you can add a little bit more water to make rice porridge to make it less thick or to your preference.",
-    "minutes": 25
+    "text": "While it cooks, toss the sliced chicken with the 2 tsp Shaoxing wine, salt and cornflour and set aside to marinate.",
+    "minutes": null
    },
    {
-    "text": "Next add the marinated chicken to the rice porridge and leave the stove on low heat for another 10 minutes.",
-    "minutes": 10
+    "text": "When the congee is ready, add the chicken, spring onion and bouillon over medium heat, stirring constantly to separate the pieces, until the chicken just turns white, about 2 minutes.",
+    "minutes": 2
    },
    {
-    "text": "After an additional 10 minutes add the green onions, sliced ginger, 1 pinch of salt, 1 pinch of white pepper and stir for 10 seconds. Serve the rice porridge in a bowl.",
-    "minutes": 10
-   },
-   {
-    "text": "Optional: add Coriander on top of the rice porridge.",
+    "text": "Stir in the sesame oil, taste and add salt if needed. Ladle into bowls and serve hot.",
     "minutes": null
    }
   ]
@@ -26878,182 +27032,162 @@
  },
  {
   "source": "themealdb:52875",
-  "title": "Chicken Ham and Leek Pie",
-  "description": "A British dish of chicken breast, ham and leek — serves 8, worth the couple of hours it takes.",
-  "servings": 8,
+  "title": "Chicken and leek pie",
+  "description": "A creamy chicken and leek pie: chicken thighs, bacon, leek and celery in a white wine, mustard and cream sauce, cooled and baked under a puff pastry lid until golden.",
+  "servings": 5,
   "cuisine": "British",
   "category": "Chicken",
-  "image": "https://www.themealdb.com/images/media/meals/xrrtss1511555269.jpg",
+  "image": "https://i.ytimg.com/vi/FFW9JGxKAB8/hqdefault.jpg",
   "prep_minutes": 25,
-  "cook_minutes": 70,
+  "cook_minutes": 60,
   "ingredients": [
    {
-    "name": "chicken stock",
-    "quantity": 450,
-    "unit": "ml",
-    "note": ""
-   },
-   {
-    "name": "chicken breast",
-    "quantity": 3,
-    "unit": "",
-    "note": ""
-   },
-   {
     "name": "butter",
-    "quantity": 75,
+    "quantity": 50,
     "unit": "g",
-    "note": ""
+    "note": "unsalted, divided"
+   },
+   {
+    "name": "chicken thigh",
+    "quantity": 750,
+    "unit": "g",
+    "note": "skinless, boneless, cut into 1.8 cm pieces"
+   },
+   {
+    "name": "black pepper",
+    "quantity": 0.25,
+    "unit": "tsp",
+    "note": "for the chicken"
+   },
+   {
+    "name": "salt",
+    "quantity": 0.25,
+    "unit": "tsp",
+    "note": "for the chicken"
+   },
+   {
+    "name": "bacon",
+    "quantity": 80,
+    "unit": "g",
+    "note": "streaky, chopped into 1 cm squares"
    },
    {
     "name": "leek",
     "quantity": 2,
     "unit": "",
-    "note": "sliced"
+    "note": "cut into squares and pieces"
+   },
+   {
+    "name": "celery",
+    "quantity": 2,
+    "unit": "",
+    "note": "stems, sliced 4 mm thick"
    },
    {
     "name": "garlic",
     "quantity": 2,
     "unit": "clove",
-    "note": "minced"
+    "note": "finely minced"
+   },
+   {
+    "name": "dry white wine",
+    "quantity": 0.33,
+    "unit": "cup",
+    "note": "chardonnay or other dry white"
    },
    {
     "name": "plain flour",
-    "quantity": 50,
-    "unit": "g",
+    "quantity": 0.25,
+    "unit": "cup",
     "note": ""
    },
    {
-    "name": "milk",
-    "quantity": 200,
-    "unit": "ml",
-    "note": ""
-   },
-   {
-    "name": "white wine",
-    "quantity": 3,
+    "name": "mustard",
+    "quantity": 1,
     "unit": "tbsp",
+    "note": "Dijon"
+   },
+   {
+    "name": "thyme",
+    "quantity": 2,
+    "unit": "sprig",
+    "note": "or 1/2 tsp dried"
+   },
+   {
+    "name": "bay leaf",
+    "quantity": 2,
+    "unit": "",
     "note": ""
+   },
+   {
+    "name": "chicken stock",
+    "quantity": 1,
+    "unit": "cup",
+    "note": "low sodium"
    },
    {
     "name": "cream",
-    "quantity": 150,
-    "unit": "ml",
-    "note": ""
-   },
-   {
-    "name": "ham",
-    "quantity": 150,
-    "unit": "g",
-    "note": ""
+    "quantity": 1,
+    "unit": "cup",
+    "note": "thickened / heavy"
    },
    {
     "name": "salt",
-    "quantity": null,
-    "unit": "",
-    "note": "to sprinkle"
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": "for the sauce"
    },
    {
     "name": "black pepper",
-    "quantity": 1,
-    "unit": "pinch",
-    "note": ""
+    "quantity": 0.25,
+    "unit": "tsp",
+    "note": "for the sauce"
    },
    {
-    "name": "plain flour",
-    "quantity": 350,
+    "name": "puff pastry",
+    "quantity": 360,
     "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "butter",
-    "quantity": 200,
-    "unit": "g",
-    "note": ""
+    "note": "2 frozen butter puff sheets, 20 cm, semi-thawed"
    },
    {
     "name": "eggs",
     "quantity": 1,
     "unit": "",
-    "note": "beaten"
-   },
-   {
-    "name": "water",
-    "quantity": 1,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "eggs",
-    "quantity": 1,
-    "unit": "",
-    "note": "beaten"
+    "note": "yolk and white separated, lightly whisked"
    }
   ],
   "steps": [
    {
-    "text": "Heat the chicken stock in a lidded saucepan. Add the chicken breast and bring to a low simmer. Cover with a lid and cook for 10 minutes. Remove the chicken breasts from the water with tongs and place on a plate.",
-    "minutes": 10
-   },
-   {
-    "text": "Pour the cooking liquor into a large jug.",
+    "text": "Cut the leeks: trim, halve, then split lengthways; cut the outer layers into 1.8 cm squares and the inner core into 2 cm pieces.",
     "minutes": null
    },
    {
-    "text": "Melt 25g/1oz of the butter in a large heavy-based saucepan over a low heat. Stir in the leeks and fry gently for two minutes, stirring occasionally until just softened. Add the garlic and cook for a further minute.",
+    "text": "Melt half the butter in a large pan over high heat. Cook the chicken with the salt and pepper until the outside turns white but the inside is still raw, then remove to a bowl.",
     "minutes": null
    },
    {
-    "text": "Add the remaining butter and stir in the flour as soon as the butter has melted. Cook for 30 seconds, stirring constantly.",
+    "text": "In the same pan, cook the bacon 1 minute, then the leek, celery and garlic 5 minutes until the celery softens, without browning the leek. Add the wine and simmer hard until mostly evaporated.",
+    "minutes": 6
+   },
+   {
+    "text": "Lower to medium, melt in the remaining butter, sprinkle over the flour and stir for 1 minute. Slowly stir in the stock until thick, then add the mustard, cream, thyme, bay leaves, salt and pepper and return the chicken with its juices.",
+    "minutes": 1
+   },
+   {
+    "text": "Simmer about 5 minutes, stirring, until the sauce is as thick as you want the finished pie. Cool the filling for 1 hour.",
+    "minutes": 65
+   },
+   {
+    "text": "Heat the oven to 200°C (180°C fan). Join the two pastry sheets by overlapping them 0.5 cm with egg white, and cut a lid using your dish as a guide. Cut strips from the offcuts to line the rim if you like.",
     "minutes": null
    },
    {
-    "text": "Slowly pour the milk into the pan, just a little at a time, stirring well between each adding. Gradually add 250ml/10fl oz of the reserved stock and the wine, if using, stirring until the sauce is smooth and thickened slightly.",
+    "text": "Fill a 1.5 litre baking dish with the cooled filling. Brush the rim strips with egg white, cover with the lid, brush with egg yolk and cut a small X in the centre.",
     "minutes": null
    },
    {
-    "text": "Bring to a gentle simmer and cook for 3 minutes.",
-    "minutes": 3
-   },
-   {
-    "text": "Season the mixture, to taste, with salt and freshly ground black pepper. Remove from the heat and stir in the cream. Pour into a large bowl and cover the surface of the sauce with cling ilm to prevent a skin forming. Set aside to cool.",
-    "minutes": null
-   },
-   {
-    "text": "Preheat the oven to 200C/400F/Gas 6. Put a baking tray in the oven to heat.",
-    "minutes": null
-   },
-   {
-    "text": "For the pastry, put the flour and butter in a food processor and blend on the pulse setting until the mixture resembles fine breadcrumbs. With the motor running, add the beaten egg and water and blend until the mixture forms a ball.",
-    "minutes": null
-   },
-   {
-    "text": "Portion off 250g/10oz of pastry for the lid.",
-    "minutes": null
-   },
-   {
-    "text": "Roll the remaining pastry out on a lightly floured surface, turning the pastry frequently until around 5mm/¼in thick and 4cm/1½in larger than the pie dish. Lift the pastry over the rolling pin and place it gently into the pie dish.",
-    "minutes": null
-   },
-   {
-    "text": "Press the pastry firmly up the sides, making sure there are no air bubbles. Leave the excess pastry overhanging the sides.",
-    "minutes": null
-   },
-   {
-    "text": "Cut the chicken breasts into 3cm/1¼in pieces. Stir the chicken, ham and leeks into the cooled sauce. Pour the chicken filling into the pie dish. Brush the rim of the dish with beaten egg. Roll out the reserved pastry for the lid.",
-    "minutes": null
-   },
-   {
-    "text": "Cover the pie with the pastry lid and press the edges together firmly to seal. Trim any excess pastry.",
-    "minutes": null
-   },
-   {
-    "text": "Make a small hole in the centre of the pie with the tip of a knife. Glaze the top of the pie with beaten egg.",
-    "minutes": null
-   },
-   {
-    "text": "Bake on the preheated tray in the centre of the oven for 35-40 minutes or until the pie is golden-brown all over and the filling is piping hot.",
-    "minutes": 40
+    "text": "Bake 45 minutes until deep golden brown. Rest 5 minutes before serving.",
+    "minutes": 45
    }
   ]
  },
@@ -28075,109 +28209,117 @@
  },
  {
   "source": "themealdb:53166",
-  "title": "Chickpea, chorizo & spinach stew",
-  "description": "A Spanish stew of chorizo, chickpeas and carrot — serves 4, on the table in about 45 minutes.",
-  "servings": 4,
+  "title": "Spanish chickpea and chorizo stew",
+  "description": "A Spanish potaje of chorizo, potato and canned chickpeas simmered in vegetable broth with tomato sauce, smoked paprika and a bay leaf, finished with parsley.",
+  "servings": 2,
   "cuisine": "Spanish",
   "category": "Pork",
-  "image": "https://www.themealdb.com/images/media/meals/xvnx8j1763287209.jpg",
-  "prep_minutes": 20,
-  "cook_minutes": 10,
+  "image": "https://i.ytimg.com/vi/nI2Sm4B3gWU/hqdefault.jpg",
+  "prep_minutes": 10,
+  "cook_minutes": 35,
   "ingredients": [
    {
     "name": "olive oil",
-    "quantity": 4,
+    "quantity": 2,
     "unit": "tbsp",
-    "note": ""
+    "note": "extra virgin"
    },
    {
     "name": "onion",
     "quantity": 1,
     "unit": "",
-    "note": "chopped"
-   },
-   {
-    "name": "carrot",
-    "quantity": 1,
-    "unit": "",
-    "note": "diced"
-   },
-   {
-    "name": "celery",
-    "quantity": 1,
-    "unit": "",
-    "note": "diced"
-   },
-   {
-    "name": "thyme",
-    "quantity": 3,
-    "unit": "",
-    "note": ""
-   },
-   {
-    "name": "bay leaf",
-    "quantity": 2,
-    "unit": "",
-    "note": ""
+    "note": "small, roughly diced"
    },
    {
     "name": "garlic",
-    "quantity": 2,
+    "quantity": 4,
     "unit": "clove",
-    "note": "chopped"
+    "note": "roughly chopped"
+   },
+   {
+    "name": "potato",
+    "quantity": 1,
+    "unit": "",
+    "note": "large, cut into 1.25 cm pieces"
    },
    {
     "name": "chorizo",
     "quantity": 200,
     "unit": "g",
-    "note": ""
+    "note": "Spanish, cut into 1.25 cm rounds"
    },
    {
-    "name": "cinnamon",
-    "quantity": 0.25,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "paprika",
+    "name": "smoked paprika",
     "quantity": 1,
     "unit": "tsp",
-    "note": ""
+    "note": "sweet smoked Spanish paprika"
+   },
+   {
+    "name": "tomato sauce",
+    "quantity": 0.5,
+    "unit": "cup",
+    "note": "about 115 g"
    },
    {
     "name": "chickpeas",
-    "quantity": 800,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "sherry vinegar",
-    "quantity": 2,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "spinach",
     "quantity": 400,
     "unit": "g",
+    "note": "canned, drained weight, drained and washed (2 1/2 cups canned)"
+   },
+   {
+    "name": "vegetable stock",
+    "quantity": 710,
+    "unit": "ml",
+    "note": "3 cups"
+   },
+   {
+    "name": "bay leaf",
+    "quantity": 1,
+    "unit": "",
     "note": ""
+   },
+   {
+    "name": "salt",
+    "quantity": 1,
+    "unit": "pinch",
+    "note": "sea salt"
+   },
+   {
+    "name": "black pepper",
+    "quantity": 1,
+    "unit": "dash",
+    "note": ""
+   },
+   {
+    "name": "parsley",
+    "quantity": 1,
+    "unit": "handful",
+    "note": "finely chopped fresh, to garnish"
    }
   ],
   "steps": [
    {
-    "text": "Heat the oil in a large pan, then gently fry the onion for 3-4 mins until it begins to soften. Stir in the carrot, celery, thyme and bay leaves. Season, then cook for 2-3 mins, stirring occasionally.",
-    "minutes": 4
-   },
-   {
-    "text": "Add the garlic, chorizo, cinnamon and smoked paprika. Gently fry until the vegetables soften and the chorizo starts to release its oils and crisp up.",
+    "text": "Heat the olive oil in a large deep pan or stock pot over medium heat for a couple of minutes. Meanwhile dice the onion, chop the garlic, cut the potato into 1.25 cm pieces and slice the chorizo into 1.25 cm rounds.",
     "minutes": null
    },
    {
-    "text": "Stir in the chickpeas, vinegar and 150ml water, then bring to a simmer for 1-2 mins until the chickpeas have heated up. Add the spinach, then stir through the chickpeas until it wilts a little.",
+    "text": "Add the onion and garlic and cook about 2 minutes until the onion starts to turn translucent.",
     "minutes": 2
    },
    {
-    "text": "Remove from the heat, season to taste, then serve warm with crusty bread.",
+    "text": "Add the chorizo and saute for about 4 minutes. Stir in the smoked paprika, then the tomato sauce, and simmer for about 3 minutes until thickened.",
+    "minutes": 7
+   },
+   {
+    "text": "Add the potato, season with salt and pepper, then add the drained and washed chickpeas, vegetable broth and bay leaf. Turn the heat to high and stir.",
+    "minutes": null
+   },
+   {
+    "text": "When the broth boils, cover, lower to a low-medium heat and simmer 20–25 minutes, until the potato is just cooked through.",
+    "minutes": 20
+   },
+   {
+    "text": "Ladle into shallow bowls and sprinkle with finely chopped parsley.",
     "minutes": null
    }
   ]
@@ -28701,104 +28843,110 @@
  },
  {
   "source": "themealdb:53372",
-  "title": "Chinese Tomato Egg Stir Fry",
-  "description": "A Chinese dish of tomato, sesame oil and spring onion — serves 4, on the table in about 45 minutes.",
+  "title": "Chinese tomato and egg stir fry",
+  "description": "A Chinese restaurant-style stir fry of soft scrambled egg and tomato wedges cooked with ginger, brown sugar and a cornstarch-thickened sauce, finished with ketchup.",
   "servings": 4,
   "cuisine": "Chinese",
   "category": "Vegetarian",
   "image": "https://www.themealdb.com/images/media/meals/rwvw8q1765660071.jpg",
-  "prep_minutes": 15,
-  "cook_minutes": 15,
+  "prep_minutes": 5,
+  "cook_minutes": 10,
   "ingredients": [
    {
     "name": "tomato",
-    "quantity": 455,
+    "quantity": 680,
     "unit": "g",
-    "note": ""
+    "note": "cut into 8 wedges each; peeling optional"
    },
    {
-    "name": "vegetable oil",
-    "quantity": 1,
-    "unit": "tbsp",
-    "note": ""
+    "name": "ginger",
+    "quantity": 5,
+    "unit": "slice",
+    "note": "cut into thin strips"
    },
    {
     "name": "eggs",
-    "quantity": 5,
+    "quantity": 4,
     "unit": "",
-    "note": "large"
-   },
-   {
-    "name": "sesame oil",
-    "quantity": 1,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "stock cube",
-    "quantity": 2,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "sugar",
-    "quantity": 2,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "black pepper",
-    "quantity": 0.5,
-    "unit": "tsp",
     "note": ""
    },
    {
     "name": "salt",
-    "quantity": 0.25,
+    "quantity": 0.5,
     "unit": "tsp",
-    "note": ""
+    "note": "for the eggs"
    },
    {
-    "name": "spring onion",
+    "name": "cornflour",
     "quantity": 1,
-    "unit": "",
+    "unit": "tbsp",
+    "note": "for the slurry"
+   },
+   {
+    "name": "water",
+    "quantity": 4,
+    "unit": "tbsp",
+    "note": "for the slurry"
+   },
+   {
+    "name": "vegetable oil",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": "split between the eggs and the tomatoes"
+   },
+   {
+    "name": "water",
+    "quantity": 3,
+    "unit": "tbsp",
+    "note": "added to the tomatoes"
+   },
+   {
+    "name": "salt",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": "for the tomatoes"
+   },
+   {
+    "name": "brown sugar",
+    "quantity": 2,
+    "unit": "tbsp",
     "note": ""
    },
    {
-    "name": "jasmine rice",
+    "name": "tomato ketchup",
     "quantity": 2,
-    "unit": "cup",
+    "unit": "tbsp",
     "note": ""
    }
   ],
   "steps": [
    {
-    "text": "You can use chicken broth in place of the chicken bouillon powder. Add 1/4 cup of broth followed by 2 teaspoons of cornstarch dissolved in 1 tablespoPrepare the tomatoes:.",
+    "text": "Optionally peel the tomatoes: score an X, cover with boiling water for about 2 minutes and pull the skins off. Halve the tomatoes, cut out the hard stem part and cut each half into 4 wedges.",
+    "minutes": 2
+   },
+   {
+    "text": "Cut 5 thin slices of ginger and julienne them. Beat the eggs with the first half teaspoon of salt until well combined and airy.",
     "minutes": null
    },
    {
-    "text": "Slice the tomatoes in half. Remove the tough stem from each half that connects to the vine. Cut each half into equal thirds (you’ll get 6 slices from each tomato).",
+    "text": "Mix the cornstarch with 4 tbsp water in a small bowl to make a slurry.",
     "minutes": null
    },
    {
-    "text": "In a cold, 8 to 10-inch nonstick skillet, add the vegetable oil and beaten eggs. Turn the heat to medium. Once a thin layer of eggs is just beginning to cook on the bottom, push the eggs in one direction to create layers of scrambled eggs.",
+    "text": "Heat the pan on high until hot but not smoking, add oil and swirl. Pour in the eggs and gently push them around until about 80% cooked, about 35 seconds, then move them to a bowl.",
     "minutes": null
    },
    {
-    "text": "Cook, gently stirring the whole time, until the scramble eggs are mostly set but still slightly wet and shiny, 2 to 5 minutes. Remove the eggs to a plate and, if needed, wipe out the pan.",
-    "minutes": 5
+    "text": "Add a little more oil to the hot pan, then the ginger and tomato wedges. Stir-fry for about 30 seconds, add 3 tbsp water, the other half teaspoon of salt and the brown sugar.",
+    "minutes": null
    },
    {
-    "text": "Add the sesame oil to the pan followed by the tomatoes and stir-fry over medium heat until the tomatoes are softened but not mushy, about 3 minutes. Add the chicken bouillon powder, sugar, and white pepper.",
+    "text": "Cook the tomatoes for about 2.5 minutes, covering if they will not stay at a boil. Slowly pour in the slurry, stirring, using only as much as you need for the thickness you like.",
     "minutes": 3
    },
    {
-    "text": "Toss until combined and the sugar and bouillon have dissolved, about 1 minute.",
+    "text": "Return the eggs to the pan, stir and cook for 50 seconds, then turn off the heat and stir in the ketchup. Taste, adjust the seasoning and serve.",
     "minutes": null
-   },
-   {
-    "text": "Add the eggs back to the pan with the tomatoes. Stir-fry for about 2 minutes to heat through and combine. Taste, adding salt only if needed. Sprinkle with the green onions and serve with steamed rice.on of water, plus salt to taste.",
-    "minutes": 2
    }
   ]
  },
