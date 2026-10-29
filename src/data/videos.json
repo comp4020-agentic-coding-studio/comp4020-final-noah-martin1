@@ -1778,10 +1778,12 @@
   "checked": "2026-10-20"
  },
  "themealdb:53514": {
-  "videoId": null,
-  "status": "unavailable",
-  "reason": "TheMealDB lists no video for this meal",
-  "checked": "2026-10-20"
+  "videoId": "VZ-LjOlr3qo",
+  "title": "Make These Baked Chilean Empanadas At Home",
+  "channel": "Munchies",
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53513": {
   "videoId": null,
@@ -2012,12 +2014,12 @@
   "reason": "The Well Done video (IoRuT7TxDAo) links coastalliving.com/recipe/spicy-clam-chorizo-white-bean-soup, which now returns 404 (the /recipes/ and 'and' variants also 404), and it has no recipe in its description; replacement candidates found (Omar Allibhoy's clam and bean stew has no chorizo, Home Cooking Spain's description lists ingredients but no method) did not give verifiable evidence for this dish."
  },
  "themealdb:52988": {
-  "videoId": "Pb_lJxL1vtk",
-  "title": "How to make a traditional Christmas Pudding - part 1",
-  "channel": "GoodtoKnow",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "videoId": "w96fi9SqYpU",
+  "title": "How to Make Christmas Pudding  | Jamie Oliver",
+  "channel": "Jamie Oliver",
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53555": {
   "videoId": null,
@@ -2215,9 +2217,9 @@
  },
  "themealdb:53547": {
   "videoId": null,
-  "status": "unavailable",
-  "reason": "TheMealDB lists no video for this meal",
-  "checked": "2026-10-20"
+  "checked": "2026-10-29",
+  "status": "rejected",
+  "reason": "The only complete written recipe (Allrecipes, 9lyFe3e_1AI) roasts and marinates a whole 2.3 kg pork shoulder for 4 sandwiches, which use about 2 cups of it; its marinade amounts are for the whole roast, so a per-sandwich cost can't be stated honestly from the source."
  },
  "themealdb:53309": {
   "videoId": null,
@@ -2310,12 +2312,10 @@
   "transcribed": true
  },
  "themealdb:53386": {
-  "videoId": "MgI-_e4R53Y",
-  "title": "How To Make Grandma's Authentic Dutch Apple Pie",
-  "channel": "Tim is Cooking",
+  "videoId": null,
+  "checked": "2026-10-29",
   "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "reason": "No verifiable video found. Searched 'Dutch apple pie recipe Toine's Kitchen' and 'appeltaart Dutch apple pie recipe Toine's Kitchen'. Tim is Cooking MgI-_e4R53Y (Grandma's Dutch Apple Pie) lists ingredients with amounts but its description has no method and no linked recipe page; Toine's Kitchen's only apple result (JDeoT8p7wYg) is appelkruimelvlaai, a yeasted crumb pie, a different dish."
  },
  "themealdb:53393": {
   "videoId": null,
@@ -2447,9 +2447,9 @@
  },
  "themealdb:53557": {
   "videoId": null,
-  "status": "unavailable",
-  "reason": "TheMealDB lists no video for this meal",
-  "checked": "2026-10-20"
+  "checked": "2026-10-29",
+  "status": "rejected",
+  "reason": "No verifiable video of this dish (Dominican deep-fried wings in cassava/tapioca flour). Searched 'extra crispy chicken wings recipe' and 'extra crispy chicken wings tapioca flour cassava flour fried'. Jera & Jem Uz0hOJi3FXw (cassava flour wings) lists ingredients but no method in its description. Kitchen Sanctuary WC9uurKgXLA has a full written recipe but makes oven-baked baking-powder wings, a different dish, and its recipe page returned 403."
  },
  "themealdb:53254": {
   "videoId": "Z1mX-C2fAuc",
@@ -2619,9 +2619,9 @@
   "videoId": "VcxMq33G-Do",
   "title": "How to Make Crispy Fried Calamari Better Than Restaurants",
   "channel": "The Mediterranean Dish",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53572": {
   "videoId": null,
@@ -2660,12 +2660,10 @@
   "reason": "The replacement video (The cookbook, a small channel) cannot be verified: its description gives no can size for the fava beans, no salt amount and no amounts for the toppings, and no yield. The brief requires a reputable cooking channel with the main amounts given, so the recipe is left unchanged."
  },
  "themealdb:52896": {
-  "videoId": "FXjYU2Ensck",
-  "title": "HOW TO MAKE A FULL ENGLISH BREAKFAST - Greg's Kitchen",
-  "channel": "Greg's Kitchen",
+  "videoId": null,
+  "checked": "2026-10-29",
   "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "reason": "No verifiable video found. Searched 'full English breakfast recipe BBC Good Food' and 'full English breakfast recipe Jamie Oliver Kitchen Sanctuary'. Candidates checked: Greg's Kitchen FXjYU2Ensck (description has no recipe), Jamie Oliver fry-up NZpqXVkDvS0 (clip, no written recipe), Gary Rhodes part 3 l_sSL_UZJgA (one part of three, no recipe in description)."
  },
  "themealdb:53131": {
   "videoId": "MBh7sQcdzwo",
@@ -2676,10 +2674,12 @@
   "transcribed": true
  },
  "themealdb:53541": {
-  "videoId": null,
-  "status": "unavailable",
-  "reason": "TheMealDB lists no video for this meal",
-  "checked": "2026-10-20"
+  "videoId": "wFhRIIS-6yQ",
+  "title": "Gallo Pinto Recipe from Costa Rica",
+  "channel": "The Foreign Fork",
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:52764": {
   "videoId": "uO0ejc85zSE",
@@ -2690,12 +2690,12 @@
   "transcribed": true
  },
  "themealdb:53180": {
-  "videoId": "2hf2xltFbxQ",
-  "title": "Garlic King Prawns and Sherry with Angela Hartnett",
-  "channel": "My Kitchen",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "videoId": "oUdJsGO_CiM",
+  "title": "The Famous Spanish Garlic Shrimp | Gambas al Ajillo from Madrid",
+  "channel": "Spain on a Fork",
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:52951": {
   "videoId": "wWGwz0iBmvU",
@@ -2908,12 +2908,12 @@
   "reason": "The video (Glen And Friends Cooking, '1938 Jam Jams Cookie Recipe') makes a jam sandwich cookie, but its description gives no amount for the main structural ingredient: 'enough flour to make a soft dough', and no amount for the jam or any yield. A recipe whose flour is unmeasured can't be costed or cooked from, so the catalogue recipe is left unchanged."
  },
  "themealdb:52890": {
-  "videoId": "5ZYWVQ8imVA",
-  "title": "How to Make Jam Roly Poly",
-  "channel": "Cooking Methods MNL",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "videoId": "uwwGOtxPo1o",
+  "title": "Jam Roly Poly Recipe | Good Housekeeping UK",
+  "channel": "Good Housekeeping UK",
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53351": {
   "videoId": "I3wZ04FgW0I",

@@ -28899,144 +28899,168 @@
  },
  {
   "source": "themealdb:53514",
-  "title": "Chilean Empanada",
-  "description": "A Chilean dish of pork mince, raisins and black olives — makes 10, worth the couple of hours it takes.",
+  "title": "Chilean empanada (empanada de pino)",
+  "description": "Baked Chilean empanadas filled with slow-simmered diced flank steak and onion, black olives, hard-boiled egg and sultanas, in a wine and butter dough.",
   "servings": 10,
   "cuisine": "Chilean",
-  "category": "Pork",
-  "image": "https://www.themealdb.com/images/media/meals/q4xgij1782851193.jpg",
+  "category": "Beef",
+  "image": "https://i.ytimg.com/vi/VZ-LjOlr3qo/hqdefault.jpg",
   "prep_minutes": 25,
-  "cook_minutes": 60,
+  "cook_minutes": 100,
   "ingredients": [
    {
-    "name": "butter",
-    "quantity": 1,
+    "name": "olive oil",
+    "quantity": 3,
     "unit": "tbsp",
-    "note": ""
+    "note": "for the filling"
    },
    {
     "name": "onion",
-    "quantity": 1,
-    "unit": "",
-    "note": "large"
-   },
-   {
-    "name": "garlic",
-    "quantity": 1,
-    "unit": "tsp",
-    "note": "minced"
-   },
-   {
-    "name": "dried oregano",
-    "quantity": 1,
-    "unit": "tsp",
-    "note": ""
+    "quantity": 680,
+    "unit": "g",
+    "note": "medium, finely diced"
    },
    {
     "name": "ground cumin",
+    "quantity": 4,
+    "unit": "tsp",
+    "note": ""
+   },
+   {
+    "name": "paprika",
+    "quantity": 2,
+    "unit": "tsp",
+    "note": ""
+   },
+   {
+    "name": "flank steak",
+    "quantity": 1,
+    "unit": "kg",
+    "note": "finely diced"
+   },
+   {
+    "name": "stock cube",
+    "quantity": 2,
+    "unit": "",
+    "note": "beef bouillon cubes"
+   },
+   {
+    "name": "chilli powder",
     "quantity": 1,
     "unit": "tsp",
     "note": ""
+   },
+   {
+    "name": "white wine",
+    "quantity": 250,
+    "unit": "ml",
+    "note": "for the filling"
    },
    {
     "name": "salt",
-    "quantity": 0.5,
-    "unit": "tsp",
-    "note": ""
+    "quantity": null,
+    "unit": "",
+    "note": "kosher, to taste, for the filling"
    },
    {
     "name": "black pepper",
-    "quantity": 0.5,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "pork mince",
-    "quantity": 455,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "raisins",
-    "quantity": 1,
-    "unit": "cup",
-    "note": ""
-   },
-   {
-    "name": "black olives",
-    "quantity": 1,
-    "unit": "cup",
-    "note": ""
+    "quantity": null,
+    "unit": "",
+    "note": "freshly ground, to taste, for the filling"
    },
    {
     "name": "eggs",
     "quantity": 3,
     "unit": "",
-    "note": "large"
+    "note": "large, hard-boiled for 10 minutes, peeled and quartered"
    },
    {
-    "name": "water",
-    "quantity": 1,
-    "unit": "cup",
-    "note": ""
+    "name": "black olives",
+    "quantity": 20,
+    "unit": "",
+    "note": "2 per empanada"
    },
    {
-    "name": "shortening",
-    "quantity": 1,
-    "unit": "cup",
-    "note": ""
+    "name": "sultanas",
+    "quantity": 30,
+    "unit": "",
+    "note": "or golden raisins, 3 per empanada"
    },
    {
     "name": "plain flour",
-    "quantity": 5,
-    "unit": "cup",
-    "note": ""
+    "quantity": 1.3,
+    "unit": "kg",
+    "note": "all-purpose, plus more for dusting; for the dough"
+   },
+   {
+    "name": "baking powder",
+    "quantity": 4,
+    "unit": "tsp",
+    "note": "for the dough"
+   },
+   {
+    "name": "white wine",
+    "quantity": 125,
+    "unit": "ml",
+    "note": "for the dough"
+   },
+   {
+    "name": "butter",
+    "quantity": 180,
+    "unit": "g",
+    "note": "unsalted, melted, for the dough"
+   },
+   {
+    "name": "egg yolks",
+    "quantity": 3,
+    "unit": "",
+    "note": "large; 2 in the dough, 1 for the egg wash"
+   },
+   {
+    "name": "milk",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "whole, for the egg wash"
    },
    {
     "name": "salt",
-    "quantity": 2,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "eggs",
-    "quantity": 2,
-    "unit": "",
-    "note": "beaten"
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "dissolved in 2 cups warm water for the dough"
    }
   ],
   "steps": [
    {
-    "text": "Make the filling: Melt butter in a large skillet over medium heat. Add onion, garlic, oregano, cumin, salt, and pepper; cook and stir until onion is golden brown, 5 to 7 minutes.",
-    "minutes": 7
-   },
-   {
-    "text": "Add pork and cook until completely browned and crumbly, 7 to 10 minutes more. Drain fat from the skillet. Stir in raisins, olives, and hard-cooked eggs.",
+    "text": "Heat the olive oil in a large saucepan over medium and cook the onions until soft, about 10 minutes. Add the cumin and paprika for 30 seconds.",
     "minutes": 10
    },
    {
-    "text": "Whisk water and cornstarch together in a small bowl; pour into the skillet and stir until liquid thickens. Remove from the heat and set aside.",
+    "text": "Stir in the diced beef, stock cubes and chilli powder and cook, stirring, until lightly browned, about 4 minutes. Add the wine, season with salt and pepper, cover and simmer on low about 45 minutes until the beef is tender. Cool completely.",
+    "minutes": 49
+   },
+   {
+    "text": "For the dough, warm 2 cups water with 1 tbsp salt until the salt dissolves. Mix the flour with the baking powder, add the wine, melted butter and 2 egg yolks until small crumbs form, then knead in the warm salted water on a work surface until smooth.",
     "minutes": null
    },
    {
-    "text": "Make the dough: Whisk milk and melted shortening together in a bowl until evenly blended. Stir flour and salt together in a separate large bowl. Pour milk mixture into flour mixture; whisk until well combined and a dough forms. Let rest for 10 minutes.",
+    "text": "Divide the dough into two balls, wrap in plastic and chill for 20 minutes.",
+    "minutes": 20
+   },
+   {
+    "text": "Boil the 3 whole eggs for 10 minutes, rinse under cold water, peel and quarter lengthwise. Heat the oven to 190°C. Mix the last egg yolk with the milk for the egg wash.",
     "minutes": 10
    },
    {
-    "text": "Preheat the oven to 200°C (400°F) (200 degrees C). Line a baking sheet with parchment paper.",
+    "text": "Roll one ball of dough into a circle about 60 cm across and cut five circles of about 20 cm. Put a heaping 1/2 cup of filling in the centre of each, then top with 2 olives, a piece of egg and 3 sultanas.",
     "minutes": null
    },
    {
-    "text": "Roll dough on a lightly floured surface to a thickness of 1/8 inch. Cut into 12 circles with a round cookie cutter or glass. Spoon filling into the center of each circle. Fold each circle in half and press the edges with a fork to seal.",
+    "text": "Brush the edges with water, fold each circle in half pressing out air pockets, and seal. Fold the left, then right, side of the curved edge inwards to seal completely. Brush with egg wash and put on a baking tray lined with parchment. Repeat with the other dough ball and the remaining filling.",
     "minutes": null
    },
    {
-    "text": "Brush the tops with beaten egg. Place empanadas onto the prepared baking sheet.",
-    "minutes": null
-   },
-   {
-    "text": "Bake in the preheated oven until golden brown, about 25 minutes.",
-    "minutes": 25
+    "text": "Bake for 35 to 40 minutes until golden all over. Cool slightly and serve.",
+    "minutes": 40
    }
   ]
  },
@@ -32227,138 +32251,140 @@
  },
  {
   "source": "themealdb:52988",
-  "title": "Classic Christmas pudding",
-  "description": "A British sweet made with almonds, apple and mixed peel — makes 20, worth the couple of hours it takes.",
-  "servings": 20,
+  "title": "Christmas pudding",
+  "description": "A lighter steamed Christmas pudding of dates, apricots, pecans, cranberries, raisins and suet bound with milk, egg and clementine, simmered for 4 hours and served with golden syrup and bourbon.",
+  "servings": 8,
   "cuisine": "British",
   "category": "Dessert",
-  "image": "https://www.themealdb.com/images/media/meals/1d85821576790598.jpg",
-  "prep_minutes": 15,
-  "cook_minutes": 70,
+  "image": "https://i.ytimg.com/vi/w96fi9SqYpU/hqdefault.jpg",
+  "prep_minutes": 30,
+  "cook_minutes": 240,
   "ingredients": [
    {
-    "name": "almonds",
-    "quantity": 50,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "apple",
-    "quantity": 2,
+    "name": "butter",
+    "quantity": null,
     "unit": "",
-    "note": "large"
+    "note": "unsalted, for greasing"
    },
    {
-    "name": "mixed peel",
-    "quantity": 200,
+    "name": "dates",
+    "quantity": 150,
     "unit": "g",
-    "note": ""
+    "note": "Medjool, destoned and finely chopped"
    },
    {
-    "name": "nutmeg",
+    "name": "dried apricots",
+    "quantity": 150,
+    "unit": "g",
+    "note": "finely chopped"
+   },
+   {
+    "name": "pecan nuts",
+    "quantity": 150,
+    "unit": "g",
+    "note": "finely chopped"
+   },
+   {
+    "name": "crystallised ginger",
+    "quantity": 75,
+    "unit": "g",
+    "note": "finely chopped"
+   },
+   {
+    "name": "rosemary",
     "quantity": 1,
-    "unit": "",
+    "unit": "sprig",
+    "note": "small, leaves only, finely chopped"
+   },
+   {
+    "name": "dried cranberries",
+    "quantity": 150,
+    "unit": "g",
     "note": ""
    },
    {
     "name": "raisins",
-    "quantity": 1000,
+    "quantity": 150,
+    "unit": "g",
+    "note": ""
+   },
+   {
+    "name": "suet",
+    "quantity": 150,
     "unit": "g",
     "note": ""
    },
    {
     "name": "plain flour",
-    "quantity": 140,
+    "quantity": 150,
     "unit": "g",
     "note": ""
    },
    {
     "name": "breadcrumbs",
-    "quantity": 100,
+    "quantity": 75,
     "unit": "g",
-    "note": ""
+    "note": "fresh"
    },
    {
-    "name": "brown sugar",
-    "quantity": 100,
-    "unit": "g",
-    "note": ""
+    "name": "milk",
+    "quantity": 200,
+    "unit": "ml",
+    "note": "semi-skimmed"
    },
    {
     "name": "eggs",
-    "quantity": 3,
+    "quantity": 1,
     "unit": "",
-    "note": "large"
+    "note": "large, free-range"
    },
    {
-    "name": "brandy",
-    "quantity": 2,
-    "unit": "tbsp",
-    "note": ""
+    "name": "clementine",
+    "quantity": 1,
+    "unit": "",
+    "note": "zest and juice"
    },
    {
-    "name": "butter",
-    "quantity": 250,
-    "unit": "g",
-    "note": ""
+    "name": "golden syrup",
+    "quantity": null,
+    "unit": "",
+    "note": "to serve, drizzled over"
+   },
+   {
+    "name": "bourbon",
+    "quantity": null,
+    "unit": "",
+    "note": "barrel-aged, to serve, a swig to drizzle or flame"
    }
   ],
   "steps": [
    {
-    "text": "Get everything for the pudding prepared. Chop the almonds coarsely. Peel, core and chop the cooking apples. Sharpen your knife and chop the candied peel.",
+    "text": "Grease a 1.5 litre pudding bowl with butter.",
     "minutes": null
    },
    {
-    "text": "(You can chop the almonds and apples in a food processor, but the peel must be done by hand.) Grate three quarters of the nutmeg (sounds a lot but it's correct).",
+    "text": "Destone the dates and finely chop them with the apricots, pecans, ginger and rosemary leaves, by hand or in a food processor.",
     "minutes": null
    },
    {
-    "text": "Mix the almonds, apples, candied peel, nutmeg, raisins, flour, breadcrumbs, light muscovado sugar, eggs and 2 tbsp brandy or cognac in a large bowl.",
+    "text": "Mix the chopped fruit and nuts with the cranberries, raisins, suet, flour, breadcrumbs and milk. Crack in the egg, add the finely grated clementine zest and its juice, and mix well.",
     "minutes": null
    },
    {
-    "text": "Holding the butter in its wrapper, grate a quarter of it into the bowl, then stir everything together. Repeat until all the butter is grated, then stir for 3-4 mins – the mixture is ready when it subsides slightly after each stir.",
-    "minutes": 4
-   },
-   {
-    "text": "Ask the family to stir too, and get everyone to make a wish.",
+    "text": "Tip the mixture into the bowl and cover with one layer of greaseproof paper and two layers of foil, tied on with string. Sit the bowl in a large deep saucepan and add water halfway up the sides.",
     "minutes": null
    },
    {
-    "text": "Generously butter two 1.2 litre bowls and put a circle of baking parchment in the bottom of each. Pack in the pudding mixture.",
+    "text": "Bring the water to the boil, cover with a tight lid and simmer for 4 hours, topping up with boiling water as needed.",
+    "minutes": 240
+   },
+   {
+    "text": "Lift out the bowl, remove the foil and paper and turn the pudding out onto a plate, or leave it to cool and reheat later.",
     "minutes": null
    },
    {
-    "text": "Cover with a double layer of baking parchment, pleating it to allow for expansion, then tie with string (keep the paper in place with a rubber band while tying). Trim off any excess paper.",
+    "text": "Serve drizzled with golden syrup and a swig of bourbon, or warm some bourbon, set it alight and pour it over; drizzle with golden syrup when the flame dies down. Serve with cream, custard or ice cream.",
     "minutes": null
-   },
-   {
-    "text": "Now stand each bowl on a large sheet of foil and bring the edges up over the top, then put another sheet of foil over the top and bring it down underneath to make a double package (this makes the puddings watertight).",
-    "minutes": null
-   },
-   {
-    "text": "Tie with more string, and make a handle for easy lifting in and out of the pan. Watch our video to see how to tie up a pudding correctly.",
-    "minutes": null
-   },
-   {
-    "text": "Boil or oven steam the puddings for 8 hrs, topping up with water as necessary. Remove from the pans and leave to cool overnight. When cold, discard the messy wrappings and re-wrap in new baking parchment, foil and string.",
-    "minutes": 480
-   },
-   {
-    "text": "Store in a cool, dry place until Christmas.",
-    "minutes": null
-   },
-   {
-    "text": "To make the brandy butter, cream the butter with the orange zest and icing sugar. Gradually beat in the brandy or cognac and chopped stem ginger. Put in a small bowl, fork the top attractively and put in the fridge to set.",
-    "minutes": null
-   },
-   {
-    "text": "The butter will keep for a week in the fridge, or it can be frozen for up to six weeks.",
-    "minutes": null
-   },
-   {
-    "text": "On Christmas Day, boil or oven steam for 1 hr. Unwrap and turn out. To flame, warm 3-4 tbsp brandy in a small pan, pour it over the pudding and set light to it.",
-    "minutes": 60
    }
   ]
  },
@@ -41306,80 +41332,112 @@
  {
   "source": "themealdb:53178",
   "title": "Fried calamari",
-  "description": "A Spanish dish of squid, capers and mayonnaise — serves 4, ready in under half an hour.",
-  "servings": 4,
-  "cuisine": "Spanish",
+  "description": "Calamari rings soaked in salted milk, coated in a seasoned flour and cornflour mix and deep-fried until golden, served with lemon.",
+  "servings": 6,
+  "cuisine": "Mediterranean",
   "category": "Seafood",
   "image": "https://www.themealdb.com/images/media/meals/yhi46r1763330279.jpg",
-  "prep_minutes": 10,
+  "prep_minutes": 20,
   "cook_minutes": 5,
   "ingredients": [
    {
     "name": "squid",
-    "quantity": 300,
+    "quantity": 450,
     "unit": "g",
-    "note": ""
+    "note": "frozen calamari tubes, thawed"
+   },
+   {
+    "name": "salt",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "kosher, for the milk soak; more to season after frying"
+   },
+   {
+    "name": "milk",
+    "quantity": 0.5,
+    "unit": "cup",
+    "note": "2%, for the soak"
    },
    {
     "name": "plain flour",
-    "quantity": 200,
-    "unit": "g",
+    "quantity": 1.5,
+    "unit": "cup",
+    "note": "all-purpose"
+   },
+   {
+    "name": "cornflour",
+    "quantity": 0.33,
+    "unit": "cup",
+    "note": "cornstarch"
+   },
+   {
+    "name": "baking powder",
+    "quantity": 0.5,
+    "unit": "tsp",
     "note": ""
    },
    {
-    "name": "capers",
-    "quantity": 2,
-    "unit": "tbsp",
+    "name": "dried oregano",
+    "quantity": 0.75,
+    "unit": "tsp",
     "note": ""
    },
    {
-    "name": "garlic",
-    "quantity": 1,
-    "unit": "clove",
-    "note": "peeled crushed"
-   },
-   {
-    "name": "mayonnaise",
-    "quantity": 5,
-    "unit": "tbsp",
+    "name": "black pepper",
+    "quantity": 0.5,
+    "unit": "tsp",
     "note": ""
    },
    {
-    "name": "vegetable oil",
+    "name": "cayenne pepper",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": ""
+   },
+   {
+    "name": "grapeseed oil",
     "quantity": null,
     "unit": "",
-    "note": "for deep-frying"
+    "note": "for deep-frying, about 10 cm deep"
    },
    {
     "name": "lemon",
-    "quantity": null,
+    "quantity": 1,
     "unit": "",
-    "note": "to serve"
+    "note": "cut into wedges, to serve"
    }
   ],
   "steps": [
    {
-    "text": "Cut the squid into rings about ½cm thick. Tip the flour into a freezer bag and season well. Add the capers, then give everything a good shake to mix together. Tip the squid into the bag, then shake again until all the rings are well coated.",
+    "text": "Slice the thawed calamari tubes into rings about 2 cm thick.",
     "minutes": null
    },
    {
-    "text": "Mix together the garlic and mayonnaise, then place in a serving bowl.",
+    "text": "Stir 1 tsp kosher salt into the milk, add the calamari rings and refrigerate for 30 minutes.",
+    "minutes": 30
+   },
+   {
+    "text": "Whisk the flour, cornflour, baking powder, oregano, black pepper and cayenne together in a large bowl.",
     "minutes": null
    },
    {
-    "text": "Pour some oil into a large pan until it comes about 7cm up the sides, but the pan is no more than a third full. Place over a medium heat and let the oil warm up.",
+    "text": "Lift out about half the calamari, shake off the excess milk and toss it in the flour mix to coat. Put it in a colander over a bowl, then repeat with the rest.",
     "minutes": null
    },
    {
-    "text": "To test that the oil is ready, place a small piece of bread in the pan – it should sizzle when it touches the oil.",
+    "text": "Heat the oven to a low 65°C and set a wire rack lined with paper towel over a sheet pan to keep the cooked calamari warm.",
     "minutes": null
    },
    {
-    "text": "Remove a handful of squid from the flour and shake off any excess. Gently drop into the oil, then cook for about 3 mins until crisp. Remove with a slotted spoon and place on kitchen paper. Repeat with the remaining squid.",
+    "text": "Heat about 10 cm of grapeseed oil in a small pot to 177–185°C. A test ring should bubble and start to float.",
+    "minutes": null
+   },
+   {
+    "text": "Fry the calamari in batches for about 3 minutes until golden. Drain on the paper towel, season with kosher salt straight away and hold in the warm oven.",
     "minutes": 3
    },
    {
-    "text": "Serve straight away with the mayonnaise and lemon wedges.",
+    "text": "Serve on a plate with a squeeze of lemon juice.",
     "minutes": null
    }
   ]
@@ -42139,49 +42197,43 @@
  {
   "source": "themealdb:53541",
   "title": "Gallo pinto",
-  "description": "A Costa Rican dish of black beans, rice and salsa lizano — serves 2, on the table in about 45 minutes.",
-  "servings": 2,
+  "description": "Costa Rican rice and black beans cooked with onion, red capsicum, coriander and Lizano sauce, served with a fried egg for breakfast.",
+  "servings": 6,
   "cuisine": "Costa Rican",
   "category": "Vegetarian",
   "image": "https://www.themealdb.com/images/media/meals/ytogg31784397116.jpg",
-  "prep_minutes": 15,
-  "cook_minutes": 20,
+  "prep_minutes": 10,
+  "cook_minutes": 10,
   "ingredients": [
    {
     "name": "black beans",
-    "quantity": 0.667,
-    "unit": "cup",
-    "note": ""
+    "quantity": 1,
+    "unit": "can",
+    "note": "425 g (15 oz), drained, not rinsed; keep the liquid"
    },
    {
-    "name": "rice",
-    "quantity": 1.25,
-    "unit": "cup",
+    "name": "olive oil",
+    "quantity": 2,
+    "unit": "tbsp",
     "note": ""
    },
    {
     "name": "onion",
-    "quantity": 2,
-    "unit": "tbsp",
-    "note": ""
+    "quantity": 0.5,
+    "unit": "",
+    "note": "medium yellow, very finely diced"
    },
    {
-    "name": "black pepper",
-    "quantity": 2,
-    "unit": "tbsp",
-    "note": ""
+    "name": "capsicum",
+    "quantity": 0.5,
+    "unit": "",
+    "note": "red, very finely diced"
    },
    {
     "name": "coriander",
     "quantity": 2,
     "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "salsa lizano",
-    "quantity": 0.5,
-    "unit": "tsp",
-    "note": ""
+    "note": "cilantro, finely chopped"
    },
    {
     "name": "salt",
@@ -42190,38 +42242,48 @@
     "note": ""
    },
    {
-    "name": "ground cumin",
-    "quantity": 0.5,
-    "unit": "tsp",
-    "note": ""
+    "name": "salsa lizano",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": "the recipe says Worcestershire sauce can substitute if necessary"
    },
    {
-    "name": "black pepper",
-    "quantity": 0.25,
-    "unit": "tsp",
-    "note": ""
+    "name": "rice",
+    "quantity": 1.5,
+    "unit": "cup",
+    "note": "uncooked white rice, cooked ahead (about 3 cups cooked leftover rice)"
+   },
+   {
+    "name": "eggs",
+    "quantity": null,
+    "unit": "",
+    "note": "fried, to serve (optional)"
    }
   ],
   "steps": [
    {
-    "text": "Heat up a pan over medium high heat, add olive oil and let it get hot. Add onions, peppers, cilantro, garlic, cumin, salt and pepper, cook for 3 to 5 min until onion is translucent.",
+    "text": "Drain the can of beans, keeping the liquid in a small bowl. If you are not using leftover rice, cook the rice first.",
+    "minutes": null
+   },
+   {
+    "text": "Heat the oil in a large pan over medium-high heat.",
+    "minutes": null
+   },
+   {
+    "text": "Add the onion, red capsicum, coriander and salt and cook until the vegetables begin to soften, about 5 minutes.",
     "minutes": 5
    },
    {
-    "text": "Mix in the beans, stir and reduce heat to medium, add the Lizano sauce, stir and cook for 5 more minutes.",
+    "text": "Stir in the Lizano, then add the beans and stir until heated through.",
     "minutes": null
    },
    {
-    "text": "Add the rice, stir and cooked for a few more minutes, to incorporate all the flavors in the rice.",
+    "text": "Add the 3 cups of cooked rice and stir it through the beans.",
     "minutes": null
    },
    {
-    "text": "The time to cook it I will depend of how you like your gallo pinto, some people like it a little wet and some other like it a little toasted or dry.",
+    "text": "Pour in about 1/4 cup of the reserved bean liquid and stir until everything is heated through. Serve with a fried egg.",
     "minutes": null
-   },
-   {
-    "text": "I prefer it not too dry, so I cook it for about 5 to 7 min.",
-    "minutes": 7
    }
   ]
  },
@@ -42350,53 +42412,93 @@
  },
  {
   "source": "themealdb:53180",
-  "title": "Garlicky prawns with sherry",
-  "description": "A Spanish dish of prawns and dry sherry — serves 2, ready in under half an hour.",
-  "servings": 2,
+  "title": "Garlic prawns (gambas al ajillo)",
+  "description": "Raw jumbo prawns cooked in plenty of olive oil with sliced garlic and dried cayenne peppers, finished with a splash of white wine and parsley, with bread to mop up the sauce.",
+  "servings": 4,
   "cuisine": "Spanish",
   "category": "Seafood",
   "image": "https://www.themealdb.com/images/media/meals/u2lhqb1763331899.jpg",
   "prep_minutes": 10,
-  "cook_minutes": 5,
+  "cook_minutes": 10,
   "ingredients": [
    {
-    "name": "olive oil",
-    "quantity": 3,
-    "unit": "tbsp",
-    "note": ""
+    "name": "prawns",
+    "quantity": 15,
+    "unit": "",
+    "note": "raw jumbo, peeled and deveined"
    },
    {
     "name": "garlic",
-    "quantity": 3,
+    "quantity": 8,
     "unit": "clove",
-    "note": "chopped"
+    "note": "peeled and thinly sliced"
    },
    {
-    "name": "prawns",
-    "quantity": 400,
-    "unit": "g",
-    "note": ""
+    "name": "dried chillies",
+    "quantity": 4,
+    "unit": "",
+    "note": "small dried cayenne peppers"
    },
    {
-    "name": "dry sherry",
-    "quantity": 2,
-    "unit": "tbsp",
-    "note": ""
+    "name": "white wine",
+    "quantity": 85,
+    "unit": "ml",
+    "note": "1/3 cup"
+   },
+   {
+    "name": "olive oil",
+    "quantity": 88,
+    "unit": "ml",
+    "note": "extra virgin, 1/3 cup"
    },
    {
     "name": "parsley",
     "quantity": 1,
     "unit": "handful",
-    "note": ""
+    "note": "freshly chopped"
+   },
+   {
+    "name": "salt",
+    "quantity": null,
+    "unit": "",
+    "note": "sea salt, to taste"
+   },
+   {
+    "name": "black pepper",
+    "quantity": null,
+    "unit": "",
+    "note": "to taste"
+   },
+   {
+    "name": "baguette",
+    "quantity": 1,
+    "unit": "",
+    "note": "to serve, optional"
    }
   ],
   "steps": [
    {
-    "text": "Heat the olive oil in a large frying pan. Tip in the garlic slices and cook for a few secs. Then stir through the prawns and cook for a couple of mins until they start to turn pink.",
+    "text": "Slice the garlic thinly. Pat the prawns dry with paper towel and season them with salt and pepper.",
     "minutes": null
    },
    {
-    "text": "Pour over the sherry and cook for a few mins more, just until the prawns are cooked through. Sprinkle with parsley before serving.",
+    "text": "Heat the olive oil in a large frying pan over medium heat for 2 minutes, then season the oil with a little salt.",
+    "minutes": 2
+   },
+   {
+    "text": "Add the garlic and dried cayenne peppers and stir in the oil for about 2 minutes, until the garlic is just starting to turn light golden.",
+    "minutes": 2
+   },
+   {
+    "text": "Add the prawns in a single layer and cook for 1½ to 2 minutes, then flip them.",
+    "minutes": 2
+   },
+   {
+    "text": "Pour in the white wine and raise the heat to medium-high. Cook about 4 minutes in total, 2 minutes a side, until the prawns are cooked through.",
+    "minutes": 2
+   },
+   {
+    "text": "Take the pan off the heat, tip everything into a serving dish and scatter with parsley. Serve with crusty baguette to mop up the sauce.",
     "minutes": null
    }
   ]
@@ -45673,97 +45775,73 @@
  },
  {
   "source": "themealdb:52890",
-  "title": "Jam Roly-Poly",
-  "description": "A British sweet made with self-raising flour, suet and jam — serves 4, worth the couple of hours it takes.",
-  "servings": 4,
+  "title": "Jam roly-poly",
+  "description": "A baked suet-pastry roll spread with raspberry or strawberry jam, wrapped in parchment and foil and cooked above a tray of boiling water, then sliced thickly.",
+  "servings": 6,
   "cuisine": "British",
   "category": "Dessert",
   "image": "https://www.themealdb.com/images/media/meals/ysqupp1511640538.jpg",
-  "prep_minutes": 10,
-  "cook_minutes": 75,
+  "prep_minutes": 15,
+  "cook_minutes": 105,
   "ingredients": [
    {
-    "name": "butter",
-    "quantity": 50,
-    "unit": "g",
-    "note": ""
-   },
-   {
     "name": "self-raising flour",
-    "quantity": 250,
+    "quantity": 175,
     "unit": "g",
-    "note": ""
+    "note": "plus extra to dust the work surface"
    },
    {
-    "name": "vanilla extract",
-    "quantity": 1,
-    "unit": "",
-    "note": "small"
+    "name": "sugar",
+    "quantity": 25,
+    "unit": "g",
+    "note": "caster"
    },
    {
     "name": "suet",
-    "quantity": 50,
+    "quantity": 100,
     "unit": "g",
-    "note": ""
+    "note": "vegetable"
    },
    {
     "name": "milk",
-    "quantity": 150,
+    "quantity": 75,
     "unit": "ml",
-    "note": ""
+    "note": "cold"
    },
    {
     "name": "jam",
-    "quantity": 100,
+    "quantity": 125,
     "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "custard",
-    "quantity": null,
-    "unit": "",
-    "note": "to serve"
+    "note": "raspberry or strawberry"
    }
   ],
   "steps": [
    {
-    "text": "Put a deep roasting tin onto the bottom shelf of the oven, and make sure that there’s another shelf directly above it.",
+    "text": "Stir the flour, sugar and suet together in a large bowl, pour in the milk and work with a knife into a sticky dough.",
     "minutes": null
    },
    {
-    "text": "Pull the roasting tin out on its shelf, fill two-thirds with boiling water from the kettle, then carefully slide it back in. Heat oven to 180C/160C fan/gas 4. Tear off a large sheet of foil and greaseproof paper (about 30 x 40cm).",
+    "text": "Tip the dough onto a floured surface, pat into a round and roll into a rectangle about 20 x 28 cm, giving it quarter turns so the thickness is even.",
     "minutes": null
    },
    {
-    "text": "Sit the greaseproof on top of the foil and butter it.",
+    "text": "Spread the jam over the pastry, leaving a border around the edges so it does not leak out.",
     "minutes": null
    },
    {
-    "text": "Tip butter, flour and vanilla seeds into a food processor; pulse until the butter has disappeared. Tip into a mixing bowl. Stir through the suet, pour in the milk and work together with a cutlery knife until you get a sticky dough.",
+    "text": "Roll it up tightly from the short bottom edge to the far edge.",
     "minutes": null
    },
    {
-    "text": "You may need a drop more milk, depending on your flour.",
+    "text": "Lift the roll onto the centre of a sheet of well-greased baking parchment sitting on foil, both wider than the roll. Fold the edges over and seal the ends, wrapping loosely because it puffs up.",
     "minutes": null
    },
    {
-    "text": "Tip the dough out onto a floured surface, quickly pat together to smooth, then roll out to a square roughly 25 x 25cm. Spread the jam all over, leaving a gap along one edge, then roll up from the opposite edge.",
-    "minutes": null
+    "text": "Set a roasting tin in the bottom of the oven and fill it a quarter full with boiling water. Put the roll straight on the oven shelf above it and cook at 180°C (160°C fan) for 1 hour 45 minutes.",
+    "minutes": 105
    },
    {
-    "text": "Pinch the jam-free edge into the dough where it meets, and pinch the ends roughly, too.",
-    "minutes": null
-   },
-   {
-    "text": "Carefully lift onto the greased paper, join-side down (you might find a flat baking sheet helpful for this), loosely bring up the paper and foil around it, then scrunch together along the edges and ends to seal.",
-    "minutes": null
-   },
-   {
-    "text": "The roly-poly will puff quite a bit during cooking so don’t wrap it tightly. Lift the parcel directly onto the rack above the tin and cook for 1 hr.",
-    "minutes": 60
-   },
-   {
-    "text": "Let the pudding sit for 5 mins before unwrapping, then carefully open the foil and paper, and thickly slice to serve.",
+    "text": "Rest the pudding for 5 minutes before unwrapping, then slice thickly to serve.",
     "minutes": 5
    }
   ]
