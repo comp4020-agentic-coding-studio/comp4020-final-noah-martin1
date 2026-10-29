@@ -4027,9 +4027,9 @@
   "videoId": "RnsWwHcpKiY",
   "title": "Olivier Russian Potato Salad (Как Приготовить Салат Оливье)",
   "channel": "Tatyana's Everyday Food",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:52932": {
   "videoId": "WFvj71RZYPc",
@@ -4051,9 +4051,9 @@
   "videoId": "UVAMAoA2_WU",
   "title": "POUTINE RECIPE",
   "channel": "Barry Lewis",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53499": {
   "videoId": null,
@@ -4065,9 +4065,9 @@
   "videoId": "4thpMbDakgM",
   "title": "Prawn Bisque Soup Recipe | Classic French Seafood Bisque",
   "channel": "Online Culinary School",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53244": {
   "videoId": null,
@@ -4079,9 +4079,9 @@
   "videoId": "DddM8OGb4Jc",
   "title": "Stir Fried Prawns (Shrimp)",
   "channel": "RecipeTin Eats",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53174": {
   "videoId": "miqfHkE6rJY",
@@ -4155,17 +4155,17 @@
   "videoId": "YbFsvvwcSCw",
   "title": "Best Raspberry Mousse Recipe | This airy mousse melts in your mouth!",
   "channel": "Pastry Living with Aya",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53124": {
   "videoId": "2NFNabRkF04",
   "title": "Raspeballer (Norwegian Potato Dumplings)",
   "channel": "Scandinavian Cookbook",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:52809": {
   "videoId": "FXtCris37nE",
@@ -4184,12 +4184,12 @@
   "transcribed": true
  },
  "themealdb:53115": {
-  "videoId": "3z2jTcsL28g",
-  "title": "How to Make Homemade Pickled Red Onions | SAM THE COOKING GUY",
-  "channel": "SAM THE COOKING GUY",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "videoId": "1Kq5L26_iJc",
+  "title": "Quick Pickled Onions (No Cook)",
+  "channel": "Evergreen Kitchen",
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:52941": {
   "videoId": "1ogCfDXotMw",
@@ -4211,9 +4211,9 @@
   "videoId": "YU09jIusxo4",
   "title": "Rice Paper Dumplings",
   "channel": "Cooking With Ayeh",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53273": {
   "videoId": null,
@@ -4271,9 +4271,9 @@
   "videoId": "v4rIJOWXM3w",
   "title": "Rømmegrøt - Norwegian Sour Cream Porridge",
   "channel": "Scandinavian Cookbook",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53545": {
   "videoId": null,
@@ -4311,9 +4311,9 @@
   "videoId": "bP7m7xx0GpM",
   "title": "Easy Rye Bread Recipe",
   "channel": "Preppy Kitchen",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53234": {
   "videoId": "__Kh1sizUAM",

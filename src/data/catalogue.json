@@ -61609,108 +61609,102 @@
  },
  {
   "source": "themealdb:53081",
-  "title": "Potato Salad (Olivier Salad)",
-  "description": "A Russian salad of sausages, potato and carrot — serves 4, on the table in about 45 minutes.",
-  "servings": 4,
+  "title": "Olivier salad",
+  "description": "Russian potato salad of diced potato, carrot, eggs, pickles, peas and smoked sausage or ham, folded with mayonnaise and sour cream.",
+  "servings": 8,
   "cuisine": "Russian",
-  "category": "Vegetarian",
+  "category": "Side",
   "image": "https://www.themealdb.com/images/media/meals/ebvuir1699013665.jpg",
-  "prep_minutes": 15,
-  "cook_minutes": 20,
+  "prep_minutes": 30,
+  "cook_minutes": 30,
   "ingredients": [
    {
     "name": "potato",
     "quantity": 4,
     "unit": "",
-    "note": ""
+    "note": "medium, Yukon or russet"
    },
    {
     "name": "carrot",
-    "quantity": 3,
+    "quantity": 5,
     "unit": "",
-    "note": ""
-   },
-   {
-    "name": "salt",
-    "quantity": 1,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "white wine vinegar",
-    "quantity": 0.5,
-    "unit": "tbsp",
-    "note": ""
+    "note": "large"
    },
    {
     "name": "eggs",
-    "quantity": 4,
+    "quantity": 6,
     "unit": "",
-    "note": ""
+    "note": "large, hard-boiled; 6 to 7"
    },
    {
-    "name": "sausages",
-    "quantity": 195,
-    "unit": "g",
-    "note": ""
+    "name": "dill pickles",
+    "quantity": 10,
+    "unit": "",
+    "note": "small, diced"
+   },
+   {
+    "name": "spring onion",
+    "quantity": 3,
+    "unit": "",
+    "note": "green, or 1 small sweet onion diced"
    },
    {
     "name": "dill",
-    "quantity": 110,
-    "unit": "g",
-    "note": ""
+    "quantity": 1,
+    "unit": "bunch",
+    "note": "small, fresh"
+   },
+   {
+    "name": "smoked sausage",
+    "quantity": 1.5,
+    "unit": "cup",
+    "note": "diced; smoked ham or sausage"
    },
    {
     "name": "peas",
     "quantity": 1,
-    "unit": "can",
-    "note": ""
-   },
-   {
-    "name": "onion",
-    "quantity": 4,
-    "unit": "",
-    "note": ""
+    "unit": "cup",
+    "note": "sweet peas, fresh or canned"
    },
    {
     "name": "mayonnaise",
-    "quantity": 1,
+    "quantity": 0.5,
+    "unit": "cup",
+    "note": "olive oil mayonnaise"
+   },
+   {
+    "name": "sour cream",
+    "quantity": 0.5,
     "unit": "cup",
     "note": ""
+   },
+   {
+    "name": "salt",
+    "quantity": 2,
+    "unit": "tsp",
+    "note": "to taste, plus salt for the cooking water"
    }
   ],
   "steps": [
    {
-    "text": "Cut the potatoes and carrots into small uniform cubes.",
+    "text": "Simmer the carrots and potatoes in a large pot of salted water until fork tender: about 15 minutes for the carrots, up to 25 for the potatoes. Lift them out onto a tray, cool, then peel.",
+    "minutes": 25
+   },
+   {
+    "text": "Boil the eggs in a separate pan of salted water for 9 1/2 to 10 minutes until the yolks are firm, then cool them quickly in iced water and peel.",
+    "minutes": 10
+   },
+   {
+    "text": "Dice the potatoes, carrots, sausage, eggs and pickles into pea-sized pieces, all the same size.",
     "minutes": null
    },
    {
-    "text": "Place them in a large pot and fill with water.",
+    "text": "Add the sliced scallions, dill, peas, mayonnaise and sour cream and fold everything together with a spatula. The page's method does not mention the peas, but its ingredient list does, so they go in with the dressing.",
     "minutes": null
    },
    {
-    "text": "Add salt and vinegar. Bring it to a boil over medium high heat, and then reduce the heat to medium and continue to cook until the potatoes are cooked through, about 15 minutes. Drain the potatoes and let it cool to room temperature.",
-    "minutes": 15
-   },
-   {
-    "text": "Meanwhile, cut the sausage and pickles into small cubes, and chop the green onions.",
+    "text": "Season with salt to taste. To make ahead, keep the pickles, dill and scallions separate and mix just before serving.",
     "minutes": null
-   },
-   {
-    "text": "Cut the hard-boiled eggs into small cubes as well. If using fresh dill, chop them as well.",
-    "minutes": null
-   },
-   {
-    "text": "In a large bowl, combine potatoes, carrots, sausage, pickles, peas and green onions.",
-    "minutes": null
-   },
-   {
-    "text": "Add mayo and dill and mix until well combined.",
-    "minutes": null
-   },
-   {
-    "text": "Salt and pepper to taste. Cover with a plastic wrap and refrigerate for at least 1 hour before serving.",
-    "minutes": 60
    }
   ]
  },
@@ -61913,58 +61907,120 @@
  {
   "source": "themealdb:52804",
   "title": "Poutine",
-  "description": "A Canadian dish of beef gravy, potato and cheese curds — serves 4, ready in under half an hour.",
+  "description": "Oven-baked chunky chips served with cheese curds and a homemade gravy of butter, flour, beef and chicken stock, garlic and parsley.",
   "servings": 4,
   "cuisine": "Canadian",
   "category": "Miscellaneous",
   "image": "https://www.themealdb.com/images/media/meals/uuyrrx1487327597.jpg",
-  "prep_minutes": 10,
-  "cook_minutes": 10,
+  "prep_minutes": 5,
+  "cook_minutes": 35,
   "ingredients": [
-   {
-    "name": "vegetable oil",
-    "quantity": 1,
-    "unit": "dash",
-    "note": ""
-   },
-   {
-    "name": "beef gravy",
-    "quantity": 1,
-    "unit": "can",
-    "note": ""
-   },
    {
     "name": "potato",
     "quantity": 5,
     "unit": "",
-    "note": "thin cut"
+    "note": "large, washed, cut into chunky chips"
+   },
+   {
+    "name": "vegetable oil",
+    "quantity": null,
+    "unit": "",
+    "note": "to drizzle over the chips; amount not given, to taste"
+   },
+   {
+    "name": "salt",
+    "quantity": null,
+    "unit": "",
+    "note": "to taste"
+   },
+   {
+    "name": "black pepper",
+    "quantity": null,
+    "unit": "",
+    "note": "to taste"
+   },
+   {
+    "name": "cornflour",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": "mixed with the water"
+   },
+   {
+    "name": "water",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "to mix with the cornflour (page says '1tsbp')"
+   },
+   {
+    "name": "butter",
+    "quantity": 4,
+    "unit": "tbsp",
+    "note": "for the gravy"
+   },
+   {
+    "name": "plain flour",
+    "quantity": 6,
+    "unit": "tbsp",
+    "note": "for the gravy"
+   },
+   {
+    "name": "garlic",
+    "quantity": 1,
+    "unit": "clove",
+    "note": "large, finely chopped"
+   },
+   {
+    "name": "beef stock",
+    "quantity": 400,
+    "unit": "ml",
+    "note": ""
+   },
+   {
+    "name": "chicken stock",
+    "quantity": 200,
+    "unit": "ml",
+    "note": ""
+   },
+   {
+    "name": "parsley",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "chopped"
    },
    {
     "name": "cheese curds",
-    "quantity": 2,
-    "unit": "cup",
-    "note": ""
+    "quantity": 1,
+    "unit": "handful",
+    "note": "scattered over the chips before the gravy"
    }
   ],
   "steps": [
    {
-    "text": "Heat oil in a deep fryer or deep heavy skillet to 365°F (185°C). Warm gravy in saucepan or microwave.",
+    "text": "Cut the potatoes into chunky chips, pat them dry, and spread on a baking tray. Drizzle with oil, season with salt and pepper and toss so every chip is coated and none are stacked.",
     "minutes": null
    },
    {
-    "text": "Place the fries into the hot oil, and cook until light brown, about 5 minutes.",
-    "minutes": 5
+    "text": "Bake at 170°C for about 35 minutes, until golden brown.",
+    "minutes": 35
    },
    {
-    "text": "Remove to a paper towel lined plate to drain.",
+    "text": "Meanwhile, mix the cornflour with the water in a small bowl and set aside.",
     "minutes": null
    },
    {
-    "text": "Place the fries on a serving platter, and sprinkle the cheese over them.",
+    "text": "Melt the butter in a saucepan, stir in the flour and cook to a thick dough-like ball, taking care not to burn it.",
     "minutes": null
    },
    {
-    "text": "Ladle gravy over the fries and cheese, and serve immediately.",
+    "text": "Add the garlic for a last minute, then pour in both stocks and the parsley. Stir constantly until it simmers and the lumps are gone.",
+    "minutes": 1
+   },
+   {
+    "text": "Stir in the cornflour paste, a little at a time, until the gravy is nice and thick. Keep it warm until the chips are done.",
+    "minutes": null
+   },
+   {
+    "text": "Serve the chips in a bowl, scatter over the cheese curds and pour the hot gravy over the top.",
     "minutes": null
    }
   ]
@@ -62100,107 +62156,161 @@
  },
  {
   "source": "themealdb:52922",
-  "title": "Prawn & Fennel Bisque",
-  "description": "A French side of prawns, fish stock and fennel bulb — serves 8, about an hour start to finish.",
-  "servings": 8,
+  "title": "Prawn bisque",
+  "description": "A French prawn bisque made by simmering prawn shells and heads with vegetables, cognac, wine, tomato paste and fish stock, thickened, strained and finished with cream.",
+  "servings": 6,
   "cuisine": "French",
-  "category": "Side",
+  "category": "Starter",
   "image": "https://www.themealdb.com/images/media/meals/rtwwvv1511799504.jpg",
   "prep_minutes": 20,
-  "cook_minutes": 55,
+  "cook_minutes": 75,
   "ingredients": [
    {
     "name": "prawns",
-    "quantity": 450,
+    "quantity": 680,
     "unit": "g",
-    "note": ""
+    "note": "whole with shells and heads"
+   },
+   {
+    "name": "shallot",
+    "quantity": 2,
+    "unit": "",
+    "note": "medium"
    },
    {
     "name": "olive oil",
-    "quantity": 4,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "onion",
-    "quantity": 1,
-    "unit": "",
-    "note": "large"
-   },
-   {
-    "name": "fennel bulb",
-    "quantity": 1,
-    "unit": "",
-    "note": "large"
-   },
-   {
-    "name": "carrot",
     "quantity": 2,
-    "unit": "",
-    "note": "chopped"
-   },
-   {
-    "name": "dry white wine",
-    "quantity": 150,
-    "unit": "ml",
+    "unit": "tbsp",
     "note": ""
    },
    {
     "name": "brandy",
-    "quantity": 1,
-    "unit": "tbsp",
+    "quantity": 0.25,
+    "unit": "cup",
+    "note": "cognac"
+   },
+   {
+    "name": "white wine",
+    "quantity": 0.5,
+    "unit": "cup",
     "note": ""
    },
    {
-    "name": "canned tomatoes",
-    "quantity": 400,
-    "unit": "g",
+    "name": "mirepoix",
+    "quantity": 2,
+    "unit": "cup",
+    "note": "diced vegetable mix"
+   },
+   {
+    "name": "garlic",
+    "quantity": 4,
+    "unit": "clove",
+    "note": ""
+   },
+   {
+    "name": "parsley",
+    "quantity": 6,
+    "unit": "sprig",
+    "note": ""
+   },
+   {
+    "name": "bay leaf",
+    "quantity": 3,
+    "unit": "leaf",
+    "note": ""
+   },
+   {
+    "name": "tomato paste",
+    "quantity": 0.5,
+    "unit": "cup",
     "note": ""
    },
    {
     "name": "fish stock",
-    "quantity": 1000,
-    "unit": "ml",
+    "quantity": 8,
+    "unit": "cup",
     "note": ""
    },
    {
-    "name": "paprika",
+    "name": "salt",
+    "quantity": null,
+    "unit": "",
+    "note": "to taste"
+   },
+   {
+    "name": "white pepper",
+    "quantity": null,
+    "unit": "",
+    "note": "to taste"
+   },
+   {
+    "name": "butter",
     "quantity": 2,
-    "unit": "pinch",
-    "note": ""
+    "unit": "tbsp",
+    "note": "unsalted; listed by the page, use not stated in its method (possibly for the croutons)"
    },
    {
     "name": "cream",
-    "quantity": 150,
-    "unit": "ml",
-    "note": ""
+    "quantity": 0.5,
+    "unit": "cup",
+    "note": "heavy, stirred in at the end"
    },
    {
-    "name": "prawns",
-    "quantity": 8,
-    "unit": "",
-    "note": ""
+    "name": "chives",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": "chopped, to garnish"
+   },
+   {
+    "name": "plain flour",
+    "quantity": 0.25,
+    "unit": "cup",
+    "note": "kneaded with the butter for the beurre manié"
+   },
+   {
+    "name": "butter",
+    "quantity": 0.25,
+    "unit": "cup",
+    "note": "soft, for the beurre manié"
+   },
+   {
+    "name": "bread",
+    "quantity": 4,
+    "unit": "slice",
+    "note": "sandwich bread, for the golden croutons, to serve"
    }
   ],
   "steps": [
    {
-    "text": "Shell the prawns, then fry the shells in the oil in a large pan for about 5 mins. Add the onion, fennel and carrots and cook for about 10 mins until the veg start to soften.",
+    "text": "Heat the olive oil in a large casserole. Add the mirepoix, garlic, parsley, shallots, prawn shells and heads, and bay leaves, and cook over medium heat for about 10 minutes.",
     "minutes": 10
    },
    {
-    "text": "Pour in the wine and brandy, bubble hard for about 1 min to drive off the alcohol, then add the tomatoes, stock and paprika. Cover and simmer for 30 mins. Meanwhile, chop the prawns.",
-    "minutes": 30
-   },
-   {
-    "text": "Blitz the soup as finely as you can with a stick blender or food processor, then press through a sieve into a bowl. Spend a bit of time really working the mixture through the sieve as this will give the soup its velvety texture.",
+    "text": "Add the cognac and ignite it, letting the alcohol burn off.",
     "minutes": null
    },
    {
-    "text": "Tip back into a clean pan, add the prawns and cook for 10 mins, then blitz again until smooth. You can make and chill this a day ahead or freeze it for 1 month. Thaw ovenight in the fridge. To serve, gently reheat in a pan with the cream.",
-    "minutes": 10
+    "text": "Stir in the tomato paste, white wine and fish stock and simmer very gently for 45 minutes.",
+    "minutes": 45
    },
    {
-    "text": "If garnishing, cook the 8 prawns in a little butter. Spoon into small bowls and top with the prawns and snipped fennel fronds.",
+    "text": "Knead the soft butter and flour into a paste (beurre manié). Beat it into a little of the hot liquid in a bowl, then return it to the pot and stir well.",
+    "minutes": null
+   },
+   {
+    "text": "Simmer for another 15 minutes.",
+    "minutes": 15
+   },
+   {
+    "text": "Strain the bisque through a fine sieve, pressing the solids with a ladle to get out all the liquid. Return it to the pan and bring to the boil.",
+    "minutes": null
+   },
+   {
+    "text": "Stir in the cream and adjust the seasoning and thickness. Serve hot, with chopped chives.",
+    "minutes": null
+   },
+   {
+    "text": "The source page names golden croutons in its title and lists sandwich bread and butter, but its method does not describe how to make them. Make croutons from the bread and butter as you prefer, or leave them out.",
     "minutes": null
    }
   ]
@@ -62329,134 +62439,126 @@
  {
   "source": "themealdb:53200",
   "title": "Prawn stir-fry",
-  "description": "A Thai dish of prawns, fish sauce and chilli — serves 2, on the table in about 45 minutes.",
-  "servings": 2,
-  "cuisine": "Thai",
+  "description": "Chinese-style prawn stir-fry with snow peas and broccolini in a ginger, soy and oyster sauce, served with rice.",
+  "servings": 3,
+  "cuisine": "Chinese",
   "category": "Seafood",
   "image": "https://www.themealdb.com/images/media/meals/96lt871763480970.jpg",
-  "prep_minutes": 25,
-  "cook_minutes": 5,
+  "prep_minutes": 10,
+  "cook_minutes": 7,
   "ingredients": [
    {
-    "name": "prawns",
-    "quantity": 200,
-    "unit": "g",
-    "note": ""
+    "name": "soy sauce",
+    "quantity": 1.5,
+    "unit": "tbsp",
+    "note": "light, for the sauce"
    },
    {
-    "name": "chilli",
-    "quantity": 1,
-    "unit": "",
-    "note": "chopped"
-   },
-   {
-    "name": "garlic",
-    "quantity": 3,
-    "unit": "clove",
-    "note": "crushed"
-   },
-   {
-    "name": "coriander",
-    "quantity": 1,
-    "unit": "bunch",
-    "note": ""
-   },
-   {
-    "name": "sugar",
+    "name": "shaoxing wine",
     "quantity": 1,
     "unit": "tbsp",
-    "note": ""
+    "note": "Chinese cooking wine, for the sauce"
    },
    {
-    "name": "lime",
+    "name": "oyster sauce",
+    "quantity": 2,
+    "unit": "tsp",
+    "note": "for the sauce"
+   },
+   {
+    "name": "sesame oil",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": "toasted, for the sauce"
+   },
+   {
+    "name": "cornflour",
     "quantity": 1,
-    "unit": "",
-    "note": "juiced"
+    "unit": "tbsp",
+    "note": "for the sauce"
    },
    {
-    "name": "fish sauce",
-    "quantity": 3,
-    "unit": "tbsp",
-    "note": ""
+    "name": "white pepper",
+    "quantity": 0.125,
+    "unit": "tsp",
+    "note": "for the sauce"
+   },
+   {
+    "name": "water",
+    "quantity": 0.75,
+    "unit": "cup",
+    "note": "for the sauce"
    },
    {
     "name": "vegetable oil",
     "quantity": 2,
     "unit": "tbsp",
-    "note": ""
+    "note": "peanut, canola or vegetable; more if the pan is dry"
+   },
+   {
+    "name": "prawns",
+    "quantity": 250,
+    "unit": "g",
+    "note": "medium, raw, peeled and deveined"
+   },
+   {
+    "name": "onion",
+    "quantity": 0.5,
+    "unit": "",
+    "note": "sliced, brown or white"
    },
    {
     "name": "ginger",
-    "quantity": 3,
-    "unit": "cm",
-    "note": "piece"
+    "quantity": 2,
+    "unit": "tsp",
+    "note": "finely julienned"
    },
    {
-    "name": "spring onion",
-    "quantity": 8,
-    "unit": "slice",
-    "note": ""
+    "name": "garlic",
+    "quantity": 2,
+    "unit": "clove",
+    "note": "finely chopped, about 2 tsp"
    },
    {
-    "name": "capsicum",
-    "quantity": 1,
-    "unit": "",
-    "note": "sliced"
+    "name": "broccolini",
+    "quantity": 1.5,
+    "unit": "bunch",
+    "note": "trimmed, cut into 5 cm lengths"
    },
    {
-    "name": "water chestnut",
-    "quantity": 85,
+    "name": "snow peas",
+    "quantity": 120,
     "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "bean sprouts",
-    "quantity": 100,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "soy sauce",
-    "quantity": 1,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "rice noodles",
-    "quantity": null,
-    "unit": "",
-    "note": "to serve"
-   },
-   {
-    "name": "lime",
-    "quantity": null,
-    "unit": "",
-    "note": "to serve"
+    "note": "strings removed"
    }
   ],
   "steps": [
    {
-    "text": "Put the prawns in a bowl. Put the chilli, garlic, coriander stalks (snip these up using scissors first) and caster sugar in a spice grinder or small food processor and whizz together.",
+    "text": "Steam the broccolini for 2 to 3 minutes until crisp-tender, then drain and dry it.",
+    "minutes": 3
+   },
+   {
+    "text": "Stir the soy sauce, cooking wine, oyster sauce, sesame oil, cornflour and white pepper together until the cornflour dissolves, then stir in the water.",
     "minutes": null
    },
    {
-    "text": "Add half of the lime juice and the fish sauce, then pour this over the prawns.",
-    "minutes": null
+    "text": "Heat the oil in a wok over medium to medium-high heat. Cook the prawns in one layer for 1 1/2 minutes, turn and cook 1 minute more, then move them to a bowl.",
+    "minutes": 3
    },
    {
-    "text": "Heat 1 tbsp oil in a wok, add the ginger and spring onions and fry for 1 min. Add the red pepper and fry for 1 min, until the pepper starts to soften.",
-    "minutes": 1
-   },
-   {
-    "text": "Add the water chestnuts and bean sprouts, and toss together until the bean sprouts start to wilt. Add the soy sauce and a really good grind of black pepper, then tip the lot into a serving dish.",
-    "minutes": null
-   },
-   {
-    "text": "Heat the remaining oil in the wok and add the prawns, lifting them out of their juices. Toss for 1-2 mins until they turn pink, add the marinade and swirl the wok quickly, then tip the lot onto the veg.",
+    "text": "Cook the onion for 1 minute, then the ginger and garlic for 1 more minute, adding oil if the pan is dry.",
     "minutes": 2
    },
    {
-    "text": "Snip over the coriander leaves and sprinkle on the remaining lime. Serves over noodles with extra lime for squeezing over.",
+    "text": "Toss in the snow peas to coat, then the broccolini.",
+    "minutes": null
+   },
+   {
+    "text": "Stir the sauce, pour it in and cook, stirring, for about 1 minute until it thickens to a syrupy coating.",
+    "minutes": 1
+   },
+   {
+    "text": "Return the prawns with their juices and toss for 30 seconds to warm through. Serve with rice.",
     "minutes": null
    }
   ]
@@ -63415,101 +63517,159 @@
  {
   "source": "themealdb:53303",
   "title": "Raspberry mousse",
-  "description": "A Polish sweet made with gelatine, raspberries and lemon — serves 4, on the table in about 45 minutes.",
-  "servings": 4,
-  "cuisine": "Polish",
+  "description": "Light, airy gelatine-set raspberry mousse made by folding whipped cream and Italian meringue into raspberry puree, with an optional raspberry sauce.",
+  "servings": 6,
+  "cuisine": "International",
   "category": "Dessert",
   "image": "https://www.themealdb.com/images/media/meals/v5jrnn1764362830.jpg",
-  "prep_minutes": 10,
-  "cook_minutes": 25,
+  "prep_minutes": 50,
+  "cook_minutes": 5,
   "ingredients": [
    {
     "name": "gelatine",
-    "quantity": 2,
-    "unit": "",
-    "note": ""
+    "quantity": 7.7,
+    "unit": "g",
+    "note": "powder, or 4.5 sheets"
+   },
+   {
+    "name": "water",
+    "quantity": 40,
+    "unit": "ml",
+    "note": "icy, to hydrate the gelatine"
    },
    {
     "name": "raspberries",
-    "quantity": 350,
+    "quantity": 330,
     "unit": "g",
-    "note": ""
+    "note": "pureed and strained to about 270 g, for the mousse"
    },
    {
-    "name": "sugar",
-    "quantity": 60,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "lemon",
-    "quantity": 1,
-    "unit": "",
-    "note": "juiced"
+    "name": "lemon juice",
+    "quantity": 15,
+    "unit": "ml",
+    "note": "for the mousse"
    },
    {
     "name": "cream",
-    "quantity": 500,
+    "quantity": 320,
     "unit": "ml",
-    "note": ""
+    "note": "heavy, about 320 g"
+   },
+   {
+    "name": "egg whites",
+    "quantity": 90,
+    "unit": "g",
+    "note": "about 3 small eggs"
+   },
+   {
+    "name": "sugar",
+    "quantity": 13,
+    "unit": "g",
+    "note": "granulated, for the egg white"
+   },
+   {
+    "name": "sugar",
+    "quantity": 130,
+    "unit": "g",
+    "note": "granulated, for the hot syrup"
+   },
+   {
+    "name": "water",
+    "quantity": 60,
+    "unit": "ml",
+    "note": "for the hot syrup"
+   },
+   {
+    "name": "raspberries",
+    "quantity": 210,
+    "unit": "g",
+    "note": "pureed and strained to about 170 g, for the optional sauce"
+   },
+   {
+    "name": "sugar",
+    "quantity": 17,
+    "unit": "g",
+    "note": "granulated, for the optional sauce"
+   },
+   {
+    "name": "lemon juice",
+    "quantity": 5,
+    "unit": "ml",
+    "note": "for the optional sauce"
    }
   ],
   "steps": [
    {
-    "text": "Put the gelatine leaves in a bowl, cover with warm water and leave to soak for 5 mins. Drain and squeeze out any excess water.",
+    "text": "Hydrate the gelatine powder in the icy water for about 10 minutes. Puree the raspberries and strain out the seeds.",
+    "minutes": 10
+   },
+   {
+    "text": "Heat a quarter to a third of the mousse puree until very warm (50-60°C) and stir in the gelatine until fully melted. Mix it back into the rest of the cold puree, then add the lemon juice.",
+    "minutes": null
+   },
+   {
+    "text": "Whip the cream until very stiff and keep it in the fridge. Whip the egg whites with the 13 g sugar until fluffy.",
+    "minutes": null
+   },
+   {
+    "text": "Heat the 130 g sugar and the water on medium heat, brushing down the pan sides, until the syrup reaches 118-119°C.",
     "minutes": 5
    },
    {
-    "text": "Tip the raspberries into a pan over a medium-low heat along with the sugar and lemon juice. Cook for 5-6 mins until the berries have completely broken down. Push the mixture through a sieve set over a bowl, discarding the seeds.",
-    "minutes": 6
+    "text": "Pour the hot syrup slowly down the side into the whipping egg whites at high speed, then whip at medium-low until the bowl no longer feels warm. This is the Italian meringue.",
+    "minutes": null
    },
    {
-    "text": "Stir in the gelatine leaves until dissolved (if they don’t dissolve, pour the mixture into a clean saucepan and heat gently until dissolved). Set aside to cool for 15 mins.",
-    "minutes": 15
+    "text": "Fold the meringue into the whipped cream until about half is mixed in, then fold in the raspberry puree in two additions, finishing with a spatula until even.",
+    "minutes": null
    },
    {
-    "text": "Whip the cream to soft peaks using an electric whisk, then gently fold this into the raspberry mixture. Spoon into the ramekins or moulds and chill overnight, or for at least 6 hrs. Serve with raspberries scattered over the top.",
+    "text": "Pipe or spoon the mousse into glasses and chill for at least a few hours, until set.",
+    "minutes": null
+   },
+   {
+    "text": "For the optional sauce, boil the sauce puree with the sugar and lemon juice, chill it, and pour over the mousse just before serving.",
     "minutes": null
    }
   ]
  },
  {
   "source": "themealdb:53124",
-  "title": "Raspeballer (Norwegian Potato Dumplings)",
-  "description": "A Norwegian dish of pork knuckle, sausages and potato — serves 4, a slow cook that's worth the wait.",
-  "servings": 4,
+  "title": "Raspeballer (Norwegian potato dumplings)",
+  "description": "Norwegian potato dumplings of boiled and grated raw potato with barley flour, simmered in broth and served with optional smoked sausage, pork knuckle and mashed rutabaga.",
+  "servings": 20,
   "cuisine": "Norwegian",
-  "category": "Pork",
+  "category": "Miscellaneous",
   "image": "https://www.themealdb.com/images/media/meals/hhm7xy1763075871.jpg",
-  "prep_minutes": 20,
-  "cook_minutes": 255,
+  "prep_minutes": 45,
+  "cook_minutes": 30,
   "ingredients": [
    {
     "name": "pork knuckle",
     "quantity": 1,
     "unit": "",
-    "note": ""
+    "note": "optional, salted meat to serve"
    },
    {
-    "name": "sausages",
+    "name": "smoked sausage",
     "quantity": 1,
     "unit": "",
-    "note": ""
+    "note": "optional, heated in the pot with the dumplings"
    },
    {
     "name": "potato",
-    "quantity": 455,
+    "quantity": 300,
     "unit": "g",
-    "note": ""
+    "note": "boiled, then peeled and mashed"
    },
    {
     "name": "potato",
-    "quantity": 910,
+    "quantity": 750,
     "unit": "g",
-    "note": ""
+    "note": "raw red potatoes, peeled and grated"
    },
    {
-    "name": "plain flour",
+    "name": "barley flour",
     "quantity": 1.25,
     "unit": "cup",
     "note": ""
@@ -63518,7 +63678,7 @@
     "name": "plain flour",
     "quantity": 2,
     "unit": "tbsp",
-    "note": ""
+    "note": "all purpose"
    },
    {
     "name": "salt",
@@ -63527,87 +63687,79 @@
     "note": ""
    },
    {
-    "name": "stock cube",
-    "quantity": 4,
-    "unit": "",
-    "note": ""
+    "name": "vegetable stock",
+    "quantity": 8.5,
+    "unit": "cup",
+    "note": "or beef stock, 4 bouillon cubes, or the pork knuckle broth"
    },
    {
     "name": "parsley",
-    "quantity": 1,
-    "unit": "pinch",
-    "note": ""
+    "quantity": null,
+    "unit": "",
+    "note": "fresh, chopped, to garnish"
    },
    {
     "name": "swede",
     "quantity": 1,
     "unit": "",
-    "note": ""
+    "note": "rutabaga, for the mash"
    },
    {
     "name": "carrot",
     "quantity": 2,
     "unit": "",
-    "note": ""
+    "note": "optional, for the mash"
    },
    {
     "name": "cream",
     "quantity": 0.25,
     "unit": "cup",
-    "note": ""
+    "note": "or milk, for the mash"
    },
    {
     "name": "butter",
     "quantity": 1,
     "unit": "tbsp",
-    "note": ""
+    "note": "for the mash"
    },
    {
     "name": "nutmeg",
     "quantity": 1,
     "unit": "tsp",
-    "note": ""
+    "note": "for the mash"
    }
   ],
   "steps": [
    {
-    "text": "Raspeballer & (Optional) Salted Meat: if you're making pork knuckle, cook it in simmering water for about 3 hours, until the meat falls from the bone. Remove the pork and save the broth to cook the raspeballer.",
+    "text": "If making the pork knuckle, simmer it in water for about 3 hours until the meat falls off the bone, and save the broth for the dumplings.",
     "minutes": 180
    },
    {
-    "text": "Boil the boiled potatoes and peel once cooled. Also peel the raw potatoes, and then grate them or run them through a food processor. Use a paper towel to remove some of the moisture from the grated potatoes.",
+    "text": "Boil the boiled-potato portion, cool and peel it. Peel and grate the raw potatoes and blot out some moisture with paper towel.",
     "minutes": null
    },
    {
-    "text": "Mash the boiled potatoes in a potato ricer or with a masher. Make sure there are no lumps. Add the grated raw potatoes to the mashed potatoes in a large mixing bowl and stir together.",
+    "text": "Mash the boiled potatoes until smooth, mix in the grated potatoes, then work in the barley flour, plain flour and salt by hand until fully combined.",
     "minutes": null
    },
    {
-    "text": "Add the barley flour, all purpose flour, and salt and mix together with your hands until the mixture is fully blended.",
+    "text": "Bring the stock (or knuckle broth) to a very light simmer; it must not fully boil or the dumplings may break apart.",
     "minutes": null
    },
    {
-    "text": "You can cook the raspeballer in either vegetable or beef broth, or if you're making pork knuckle, cook them in the broth from the pork knuckle.",
+    "text": "Shape each dumpling with a tablespoon dipped in cold water and drop it gently into the broth, dipping the spoon between each one.",
     "minutes": null
    },
    {
-    "text": "Bring the broth to a very light simmer – you don't want it to fully boil because then the raspeballer might break apart.",
-    "minutes": null
-   },
-   {
-    "text": "Use a tablespoon dipped in cold water to shape each raspeball in your hand. Try to make them as smooth as possible and then gently drop them into the simmering broth. Dip the tablespoon in a bowl of cold water between each raspeball.",
-    "minutes": null
-   },
-   {
-    "text": "Let the raspeballer simmer for about 30 minutes. If you're making smoked sausage, you can heat the sausage in the same pot with the raspeballer. Top with fresh chopped parsley. Mashed Rutabaga.",
+    "text": "Simmer the raspeballer for about 30 minutes, heating the smoked sausage in the same pot if using. Top with chopped parsley.",
     "minutes": 30
    },
    {
-    "text": "Peel the rutabaga and carrots and cut into small pieces. Boil in water for about 30 minutes, or until tender. Then drain the water, add the cream/milk, butter and nutmeg and mash until smooth.",
+    "text": "For the mash, peel and chop the rutabaga and carrots, boil for about 30 minutes until tender, drain, then mash with the cream or milk, butter and nutmeg.",
     "minutes": 30
    },
    {
-    "text": "Serve alongside the raspeballer and meat.",
+    "text": "Serve the raspeballer with the meat and mashed rutabaga.",
     "minutes": null
    }
   ]
@@ -63868,68 +64020,68 @@
  },
  {
   "source": "themealdb:53115",
-  "title": "Red onion pickle",
-  "description": "A Norwegian dish of red onion and apple cider vinegar — serves 2, ready in under half an hour.",
-  "servings": 2,
-  "cuisine": "Norwegian",
+  "title": "Quick pickled red onions",
+  "description": "Thinly sliced red onion and optional jalapeno steeped in a hot sugar, salt and apple cider vinegar brine, left to cool on the counter. No cooking on the hob.",
+  "servings": 8,
+  "cuisine": "International",
   "category": "Vegan",
-  "image": "https://www.themealdb.com/images/media/meals/ppodrp1762325183.jpg",
+  "image": "https://i.ytimg.com/vi/1Kq5L26_iJc/hqdefault.jpg",
   "prep_minutes": 10,
-  "cook_minutes": 5,
+  "cook_minutes": 0,
   "ingredients": [
    {
-    "name": "red onion",
-    "quantity": 3,
-    "unit": "",
-    "note": "large"
+    "name": "sugar",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": "cane or granulated, for the brine"
    },
    {
     "name": "salt",
     "quantity": 2,
     "unit": "tsp",
-    "note": ""
+    "note": "fine sea salt, for the brine"
+   },
+   {
+    "name": "water",
+    "quantity": 0.5,
+    "unit": "cup",
+    "note": "hot, for the brine"
    },
    {
     "name": "apple cider vinegar",
-    "quantity": 200,
-    "unit": "ml",
-    "note": ""
+    "quantity": 0.5,
+    "unit": "cup",
+    "note": "for the brine"
    },
    {
-    "name": "sugar",
-    "quantity": 50,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "black pepper",
+    "name": "red onion",
     "quantity": 1,
-    "unit": "tsp",
-    "note": ""
+    "unit": "",
+    "note": "thinly sliced"
    },
    {
-    "name": "bay leaf",
-    "quantity": 4,
+    "name": "jalapeño",
+    "quantity": 1,
     "unit": "",
-    "note": ""
+    "note": "sliced, optional; 1 to 2"
    }
   ],
   "steps": [
    {
-    "text": "Peel the onions, cut them in half from top to bottom and finely slice into half-moon pieces. Put in a colander placed over a bowl and sprinkle with salt, lightly turning over the onion pieces with your hands so the surfaces are all covered. Set aside for an hour or so to brine.",
-    "minutes": 60
-   },
-   {
-    "text": "Meanwhile put the vinegar, 50ml/2fl oz water and the sugar in a saucepan. Bring to a simmer, stirring to help the sugar dissolve, and cook for a couple of minutes. Set aside.",
+    "text": "Add the sugar and salt to a large heatproof jar or container.",
     "minutes": null
    },
    {
-    "text": "Pack the onions into the sterilised jars, sprinkling in a little pepper as you go. Cover with the warm vinegar and finish by tucking a couple of bay leaves down the side of the jars. Seal.",
+    "text": "Pour in the hot water and stir until the sugar dissolves, then stir in the apple cider vinegar.",
     "minutes": null
    },
    {
-    "text": "The onions are best kept in the fridge and used within to 4 weeks.",
+    "text": "Submerge the sliced red onion and jalapeno in the brine, topping up with equal parts water and vinegar if more liquid is needed.",
     "minutes": null
+   },
+   {
+    "text": "Cover and leave on the counter for about 30 minutes to cool, then use right away or store in the fridge.",
+    "minutes": 30
    }
   ]
  },
@@ -64224,68 +64376,14 @@
  {
   "source": "themealdb:53227",
   "title": "Rice paper dumplings",
-  "description": "A Vietnamese dish of pork mince, cabbage and carrot — serves 4, on the table in about 45 minutes.",
-  "servings": 4,
+  "description": "Double-wrapped rice paper dumplings filled with tofu, mushroom, cabbage and carrot, pan-fried until crisp. Vegan and gluten free.",
+  "servings": 12,
   "cuisine": "Vietnamese",
-  "category": "Pork",
-  "image": "https://www.themealdb.com/images/media/meals/sfahy01763752319.jpg",
-  "prep_minutes": 20,
-  "cook_minutes": 25,
+  "category": "Vegan",
+  "image": "https://i.ytimg.com/vi/YU09jIusxo4/hqdefault.jpg",
+  "prep_minutes": 15,
+  "cook_minutes": 5,
   "ingredients": [
-   {
-    "name": "cabbage",
-    "quantity": 0.25,
-    "unit": "",
-    "note": ""
-   },
-   {
-    "name": "carrot",
-    "quantity": 1,
-    "unit": "",
-    "note": ""
-   },
-   {
-    "name": "shiitake mushrooms",
-    "quantity": 100,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "pork mince",
-    "quantity": 400,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "garlic",
-    "quantity": 2,
-    "unit": "clove",
-    "note": "minced"
-   },
-   {
-    "name": "ginger",
-    "quantity": 20,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "soy sauce",
-    "quantity": 2,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "sesame oil",
-    "quantity": 2,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "spring onion",
-    "quantity": 3,
-    "unit": "",
-    "note": "sliced thinly"
-   },
    {
     "name": "rice paper sheets",
     "quantity": 20,
@@ -64293,10 +64391,40 @@
     "note": ""
    },
    {
-    "name": "vegetable oil",
-    "quantity": 75,
-    "unit": "ml",
-    "note": ""
+    "name": "tofu",
+    "quantity": 180,
+    "unit": "g",
+    "note": "firm, crumbled"
+   },
+   {
+    "name": "mushrooms",
+    "quantity": 200,
+    "unit": "g",
+    "note": "finely diced"
+   },
+   {
+    "name": "carrot",
+    "quantity": 2,
+    "unit": "",
+    "note": "small, finely shredded"
+   },
+   {
+    "name": "cabbage",
+    "quantity": 0.25,
+    "unit": "",
+    "note": "small green cabbage, finely shredded"
+   },
+   {
+    "name": "spring onion",
+    "quantity": 2,
+    "unit": "",
+    "note": "chopped"
+   },
+   {
+    "name": "garlic",
+    "quantity": 4,
+    "unit": "clove",
+    "note": "finely diced"
    },
    {
     "name": "soy sauce",
@@ -64305,56 +64433,70 @@
     "note": ""
    },
    {
-    "name": "rice vinegar",
-    "quantity": 2,
-    "unit": "tbsp",
+    "name": "sesame oil",
+    "quantity": 1,
+    "unit": "tsp",
     "note": ""
    },
    {
-    "name": "sesame seed",
-    "quantity": 0.5,
+    "name": "olive oil",
+    "quantity": 1,
     "unit": "tbsp",
-    "note": ""
+    "note": "for sautéing the mushrooms"
    },
    {
-    "name": "spring onion",
-    "quantity": 2,
+    "name": "salt",
+    "quantity": null,
     "unit": "",
-    "note": "sliced"
+    "note": "to taste"
+   },
+   {
+    "name": "black pepper",
+    "quantity": null,
+    "unit": "",
+    "note": "to taste"
+   },
+   {
+    "name": "ginger",
+    "quantity": null,
+    "unit": "",
+    "note": "grated in, to taste"
+   },
+   {
+    "name": "vegetable oil",
+    "quantity": null,
+    "unit": "",
+    "note": "for frying"
    }
   ],
   "steps": [
    {
-    "text": "Tip the cabbage into a food processor and blitz until finely chopped. Season with ½ tsp salt, toss well and set aside for 15 mins. Tip into a clean tea towel and squeeze out as much water as you can.",
-    "minutes": 15
-   },
-   {
-    "text": "Tip into a bowl with the carrot, mushrooms, pork mince, garlic, ginger, soy sauce, sesame oil and spring onions. Season with black pepper. Scrunch everything together using your hands, mixing well until everything is combined.",
+    "text": "Finely shred the cabbage and carrots, dice the garlic and mushrooms small, and crumble the tofu into small pieces.",
     "minutes": null
    },
    {
-    "text": "Soak the spring roll sheets for a couple of seconds in a shallow dish of warm water, then transfer to an oiled chopping board.",
-    "minutes": null
-   },
-   {
-    "text": "Working with one sheet at a time, spoon 1 heaped tbsp of the filling into the middle, then fold the bottom up and over the filling. Fold down the top of the sheet, then the sides to fully encase and make a neat square.",
-    "minutes": null
-   },
-   {
-    "text": "If the dumpling feels a little fragile, soak another sheet and wrap it again. Repeat with the remaining sheets and filling, transferring the dumplings to an oiled plate as you go.",
-    "minutes": null
-   },
-   {
-    "text": "Heat the oil in a large, non-stick frying pan (ensuring it is no more than a third full) over a medium-high heat and fry the dumplings for 3-5 mins until golden brown.",
+    "text": "Saute the mushrooms in oil in a large pan for a few minutes until browned. Add the vegetables and tofu and cook until half cooked and softening, then season and grate in some ginger.",
     "minutes": 5
    },
    {
-    "text": "Use a slotted spoon or spider to turn them, then cover with a lid and cook for another 3-4 mins until golden. Remove the lid and cook for 1-2 mins.",
-    "minutes": 4
+    "text": "Stir in the soy sauce and a dash of sesame oil, take off the heat, stir in the spring onions and let the filling cool.",
+    "minutes": null
    },
    {
-    "text": "Meanwhile, combine all the dipping sauce ingredients in small bowl. Serve the dumplings with the dipping sauce on the side.",
+    "text": "Set up a tray of water and a wet board or damp tea towel to wrap on.",
     "minutes": null
+   },
+   {
+    "text": "Dip a rice paper sheet in water for a few seconds, lay it on the damp surface and spoon a rectangle of filling in the centre. Fold over the bottom, the top, then the sides to make a pocket.",
+    "minutes": null
+   },
+   {
+    "text": "Wet a second sheet, place the pocket in the middle and wrap it the same way so it is double wrapped. Repeat until the filling is used up.",
+    "minutes": null
+   },
+   {
+    "text": "Pan-fry the dumplings in oil over medium-high heat for a few minutes each side until lightly golden. Serve with a dipping sauce.",
+    "minutes": 5
    }
   ]
  },
@@ -65071,26 +65213,26 @@
  },
  {
   "source": "themealdb:53118",
-  "title": "Rømmegrøt – Norwegian Sour Cream Porridge",
-  "description": "A Norwegian breakfast of sour cream and cinnamon — serves 4, ready in under half an hour.",
+  "title": "Rømmegrøt – Norwegian sour cream porridge",
+  "description": "Norwegian porridge of full-fat sour cream, flour and milk, cooked until the fat releases and served with sugar, cinnamon and the skimmed-off fat.",
   "servings": 4,
   "cuisine": "Norwegian",
   "category": "Breakfast",
   "image": "https://www.themealdb.com/images/media/meals/hyk47c1762772689.jpg",
-  "prep_minutes": 10,
+  "prep_minutes": 5,
   "cook_minutes": 15,
   "ingredients": [
    {
     "name": "sour cream",
     "quantity": 2,
     "unit": "cup",
-    "note": ""
+    "note": "full fat"
    },
    {
     "name": "plain flour",
     "quantity": 0.75,
     "unit": "cup",
-    "note": ""
+    "note": "half added first, the rest later"
    },
    {
     "name": "milk",
@@ -65108,40 +65250,40 @@
     "name": "sugar",
     "quantity": null,
     "unit": "",
-    "note": "to sprinkle"
+    "note": "to serve"
    },
    {
     "name": "cinnamon",
     "quantity": null,
     "unit": "",
-    "note": "to sprinkle"
+    "note": "to serve"
    },
    {
     "name": "butter",
     "quantity": null,
     "unit": "",
-    "note": "to taste"
+    "note": "optional, to serve on top if using lower-fat sour cream"
    }
   ],
   "steps": [
    {
-    "text": "Cook the sour cream in a covered saucepan on medium heat for about 5 minutes.",
+    "text": "Cook the sour cream in a covered saucepan over medium heat for about 5 minutes.",
     "minutes": 5
    },
    {
-    "text": "Turn down the heat and add half of the flour and stir well with a whisk. Once the flour is fully incorporated, let the mixture continue to cook, stirring occasionally, until fat starts to release.",
+    "text": "Turn the heat down, whisk in half the flour and keep cooking, stirring now and then, until the fat starts to release.",
     "minutes": null
    },
    {
-    "text": "Use a spoon to gather as much of the fat as you can in a small bowl, saving for later. (Don't worry if you can't get any fat – in that case you can add butter later.)",
+    "text": "Spoon off as much of the fat as you can into a small bowl and save it. If none comes out, use butter later instead.",
     "minutes": null
    },
    {
-    "text": "Whisk in the rest of the flour and then slowly add the milk, whisking constantly to avoid lumps. Let the porridge continue to cook on low heat for 5 minutes and then add salt.",
+    "text": "Whisk in the rest of the flour, then slowly whisk in the milk to avoid lumps. Cook on low heat for 5 minutes, then add the salt.",
     "minutes": 5
    },
    {
-    "text": "Serve with sugar, cinnamon, and the fat from the porridge. If you're using lower fat sour cream you can top the rømmegrøt with some butter instead.",
+    "text": "Serve with sugar, cinnamon and the saved fat (or butter if using lower-fat sour cream).",
     "minutes": null
    }
   ]
@@ -65706,40 +65848,46 @@
  {
   "source": "themealdb:53308",
   "title": "Rye bread",
-  "description": "A Polish side of rye, bread flour and honey — serves 2, about an hour start to finish.",
-  "servings": 2,
-  "cuisine": "Polish",
+  "description": "A yeasted caraway rye loaf made with bread flour and rye flour, sweetened with honey, risen twice and baked in a loaf tin.",
+  "servings": 10,
+  "cuisine": "International",
   "category": "Side",
   "image": "https://www.themealdb.com/images/media/meals/lmc6r51764365554.jpg",
-  "prep_minutes": 10,
-  "cook_minutes": 40,
+  "prep_minutes": 15,
+  "cook_minutes": 35,
   "ingredients": [
    {
-    "name": "rye",
-    "quantity": 200,
-    "unit": "g",
-    "note": ""
+    "name": "water",
+    "quantity": 360,
+    "unit": "ml",
+    "note": "warm, 40-43°C"
    },
    {
-    "name": "bread flour",
-    "quantity": 200,
-    "unit": "g",
+    "name": "honey",
+    "quantity": 2,
+    "unit": "tbsp",
     "note": ""
    },
    {
     "name": "yeast",
-    "quantity": 10,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "salt",
-    "quantity": 0.5,
+    "quantity": 2,
     "unit": "tsp",
-    "note": ""
+    "note": "active dry"
    },
    {
-    "name": "honey",
+    "name": "bread flour",
+    "quantity": 330,
+    "unit": "g",
+    "note": "2¾ cups"
+   },
+   {
+    "name": "rye flour",
+    "quantity": 160,
+    "unit": "g",
+    "note": "1½ cups"
+   },
+   {
+    "name": "vegetable oil",
     "quantity": 1,
     "unit": "tbsp",
     "note": ""
@@ -65747,42 +65895,48 @@
    {
     "name": "caraway seeds",
     "quantity": 1,
+    "unit": "tbsp",
+    "note": ""
+   },
+   {
+    "name": "salt",
+    "quantity": 1.75,
     "unit": "tsp",
     "note": ""
    }
   ],
   "steps": [
    {
-    "text": "Tip the flours, yeast and salt into a bowl. In a jug, mix the honey with 250ml warm water, pour the liquid into the bowl and mix to form a dough.",
+    "text": "In a stand mixer bowl, whisk the warm water, honey and yeast and leave for 5 minutes until very foamy.",
+    "minutes": 5
+   },
+   {
+    "text": "Add both flours, the oil, caraway seeds and salt. Stir with a spoon or spatula until a shaggy dough forms.",
     "minutes": null
    },
    {
-    "text": "Rye flour can be quite dry and absorbs lots of water, if the dough looks too dry add more warm water until you have a soft dough Tip out onto your work surface and knead for 10 mins until smooth.",
-    "minutes": 10
+    "text": "Knead with the dough hook on medium-low for 6 to 8 minutes until the dough balls around the hook, smooth and slightly sticky.",
+    "minutes": 8
    },
    {
-    "text": "Rye contains less gluten than white flour so the dough will not feel as springy as a conventional white loaf.",
+    "text": "Put the dough in a lightly oiled bowl, turn it to coat, cover and let rise in a warm spot (about 24°C) for 30 to 45 minutes until doubled.",
+    "minutes": 45
+   },
+   {
+    "text": "Grease a 23 x 13 cm (9x5 inch) loaf pan. Turn the dough onto a lightly floured surface, stretch it with moist hands into a 23 cm square, roll it into a log and pinch the seams closed.",
     "minutes": null
    },
    {
-    "text": "Place the dough in a well oiled bowl, cover with cling film and leave to rise in a warm place for 1-2 hrs, or until roughly doubled in size. Dust a 2lb/900g loaf tin with flour.",
-    "minutes": 120
+    "text": "Place the log seam side down in the pan, cover with oiled plastic wrap and rise 35 to 45 minutes, until 1 to 2.5 cm above the rim.",
+    "minutes": 45
    },
    {
-    "text": "Tip the dough back onto your work surface and knead briefly to knock out any air bubbles. If using caraway seeds work these in to the dough. Shape into a smooth oval loaf and pop into your tin.",
+    "text": "After 15 minutes of that rise, preheat the oven to 175°C.",
     "minutes": null
    },
    {
-    "text": "Cover the tin with oiled cling film and leave to rise somewhere warm for a further 1 – 1.5 hr, or until doubled in size.",
-    "minutes": 90
-   },
-   {
-    "text": "Heat oven to 220C/200C fan/gas 7. Remove the cling film and dust the surface of the loaf with rye flour. Slash a few incisions on an angle then bake for 30 mins until dark brown and hollow sounding when tapped.",
-    "minutes": 30
-   },
-   {
-    "text": "Transfer to a wire cooling rack and leave to cool for at least 20 mins before serving.",
-    "minutes": 20
+    "text": "Bake for 35 to 40 minutes until golden and hollow-sounding when tapped. Cool in the pan for a couple of minutes, then on a wire rack before slicing.",
+    "minutes": 35
    }
   ]
  },
