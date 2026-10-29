@@ -2282,12 +2282,12 @@
   "checked": "2026-10-20"
  },
  "themealdb:52907": {
-  "videoId": "MHhLJqghY-o",
-  "title": "Duck Confit | Byron Talbott",
-  "channel": "ByronTalbott",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "videoId": "5WggXnJX7xk",
+  "title": "Duck Confit (French Slow Roasted Duck Legs)",
+  "channel": "RecipeTin Eats",
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53137": {
   "videoId": "2J0ICGYsBL4",
@@ -2438,12 +2438,10 @@
   "reason": "The replacement video (Canal cómo se hace) is a real ensaimada method, but its description gives no amount for lard (manteca de cerdo), which is the main fat of an ensaimada, nor for the angel hair filling or the oil, and gives no yield (servings was inferred from the dough weight). The main amounts cannot be verified, so the recipe is left unchanged."
  },
  "themealdb:52944": {
-  "videoId": "nF6DOtGE6k8",
-  "title": "Jamaican Style Escovitch Fish.",
-  "channel": "caribbeanpot",
+  "videoId": null,
+  "checked": "2026-10-29",
   "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "reason": "No verifiable video of escovitch fish. Racquel's Caribbean Cuisine (SXx5r3j8Y8U) has an ingredient list in its description with most amounts missing (scotch bonnet, bell pepper, onion, thyme, fish, oil) and no method; Original Flava's 2026 'Full recipe process' video (WriaiJNPAv8) only says to search its website and links no recipe page, so the older Original Flava escovitch page cannot be tied to that video. Other results (Deddy's Kitchen, Feed & Teach, Morris Time Cooking) were not checked for lack of a recipe link in the search results within the two-search limit."
  },
  "themealdb:53557": {
   "videoId": null,
@@ -2636,10 +2634,12 @@
   "checked": "2026-10-20"
  },
  "themealdb:53553": {
-  "videoId": null,
-  "status": "unavailable",
-  "reason": "TheMealDB lists no video for this meal",
-  "checked": "2026-10-20"
+  "videoId": "WXiEkUiHwjc",
+  "title": "Danish Meatballs with Brown Sauce | Frikadeller med Brun Sovs",
+  "channel": "LoveThatBite.com",
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53465": {
   "videoId": null,
@@ -2698,12 +2698,12 @@
   "transcribed": true
  },
  "themealdb:52951": {
-  "videoId": "wWGwz0iBmvU",
-  "title": "General Tso's Chicken | How to make General Chicken",
-  "channel": "Simply Mamá Cooks",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "videoId": "AE_-ROS98PA",
+  "title": "🇨🇳🇺🇸 My dad's General Tso's Chicken (左宗棠鸡) - A Chinese American Icon",
+  "channel": "Made With Lau",
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53381": {
   "videoId": "1BYSZIkLOHc",
@@ -2798,12 +2798,12 @@
   "checked": "2026-10-20"
  },
  "themealdb:53179": {
-  "videoId": "nT8MGiWldHk",
-  "title": "Crispy Spanish Ham Croquettes! Perfect for tapas lovers! 🇪🇸 #HamCroquettes #SpanishTapas #recipe",
-  "channel": "KataCooks",
-  "status": "rejected",
-  "reason": "video title doesn't match the dish",
-  "checked": "2026-10-20"
+  "videoId": "Ma7Z9hTg_1E",
+  "title": "CRISPY Spanish Ham Croquettes | The Famous Croquetas de Jamón Recipe",
+  "channel": "Spain on a Fork",
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53035": {
   "videoId": null,
@@ -2924,12 +2924,12 @@
   "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52938": {
-  "videoId": "ypQjoiZiTac",
-  "title": "Jamaican Beef Patties Recipe: How To Make Jamaican Beef Patties",
-  "channel": "PhillyboyjaySweetz",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "videoId": "RqQedCPSvkw",
+  "title": "How To Make The Best Jamaican Beef Patty | Flaky and Juicy!",
+  "channel": "Feed & Teach",
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53353": {
   "videoId": "RhUxdkYIHPY",
@@ -2948,18 +2948,20 @@
   "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53345": {
-  "videoId": null,
-  "status": "unavailable",
-  "reason": "TheMealDB lists no video for this meal",
-  "checked": "2026-10-20"
+  "videoId": "bBzyTrzVVvA",
+  "title": "Mother's Day Special recipe: Nanny's Jamaican Curry chicken",
+  "channel": "Original Flava",
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53354": {
-  "videoId": "SrX2KMsWbF4",
-  "title": "How to make Jamaican CURRY GOAT!",
-  "channel": "Deddy's Kitchen",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "videoId": "DdqrBxDikbY",
+  "title": "HOW TO MAKE THE BEST Jamaican CURRY GOAT! (Authentic Step by Step Recipe!!) - Roxy Chow Down",
+  "channel": "Roxy Chow Down Jamaican Recipes",
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53362": {
   "videoId": "6J6JWM8XBG0",
@@ -2998,12 +3000,12 @@
   "reason": "The Raina's Kitchen description lists ingredients with amounts but its METHOD section is empty and the link is only her e-book shop page; no transcript was available. Two searches found other pepper shrimp videos (Ks Nice N Spice, Jerene's Eats, Feed & Teach), but their descriptions give either an ingredient list without a method, or no recipe or linked page, so none could be verified."
  },
  "themealdb:53357": {
-  "videoId": "swVY-6tUK5g",
-  "title": "How to make Jamaican RICE and PEAS!",
-  "channel": "Deddy's Kitchen",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "videoId": "T1w9lu3YJks",
+  "title": "Jamaican RICE & PEAS - MOST Delicious EASY & authentic recipe",
+  "channel": "Original Flava",
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53348": {
   "videoId": null,
@@ -3044,12 +3046,10 @@
   "transcribed": true
  },
  "themealdb:52937": {
-  "videoId": "qfchrS2D_v4",
-  "title": "The Best Jamaican Jerk Chicken Recipe: Jamaican Jerk Chicken On The Grill",
-  "channel": "PhillyboyjaySweetz",
+  "videoId": null,
+  "checked": "2026-10-29",
   "status": "rejected",
-  "reason": "video title doesn't match the dish",
-  "checked": "2026-10-20"
+  "reason": "No verifiable video of jerk chicken with rice and peas. Candidates checked: Candy Tha Glam Cook one-pot jerk chicken, rice and peas (Uj9nSpT03Hs) and Terri-Ann's Kitchen oven jerk chicken, rice and peas (7egAM71T1VI) list ingredients in the description but give no method and no linked recipe page; Shawn Again (SKimkOjheWY) has no recipe text; Jamie Oliver and Levi Roots (kkI8RdDCFII) is jerk chicken only, with no recipe in the description. Searches by dish and by Original Flava, Jamie Oliver and BBC Good Food found no video with a full written recipe for the combined dish."
  },
  "themealdb:53335": {
   "videoId": "w-rVGvZXVfs",

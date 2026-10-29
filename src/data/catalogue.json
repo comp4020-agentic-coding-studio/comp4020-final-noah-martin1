@@ -36334,92 +36334,142 @@
  },
  {
   "source": "themealdb:52907",
-  "title": "Duck Confit",
-  "description": "A French dish of duck legs, thyme and white wine — serves 4, a slow cook that's worth the wait.",
+  "title": "Duck confit",
+  "description": "Duck legs cured overnight with salt, herbs and spices, slow-roasted in duck fat for 8 hours, then roasted hot on a rack until the skin is deep golden and crisp.",
   "servings": 4,
   "cuisine": "French",
   "category": "Miscellaneous",
   "image": "https://www.themealdb.com/images/media/meals/wvpvsu1511786158.jpg",
-  "prep_minutes": 10,
-  "cook_minutes": 165,
+  "prep_minutes": 15,
+  "cook_minutes": 530,
   "ingredients": [
-   {
-    "name": "salt",
-    "quantity": 1,
-    "unit": "handful",
-    "note": ""
-   },
-   {
-    "name": "bay leaf",
-    "quantity": 4,
-    "unit": "",
-    "note": ""
-   },
-   {
-    "name": "garlic",
-    "quantity": 4,
-    "unit": "clove",
-    "note": ""
-   },
-   {
-    "name": "thyme",
-    "quantity": 1,
-    "unit": "handful",
-    "note": ""
-   },
    {
     "name": "duck legs",
     "quantity": 4,
     "unit": "",
+    "note": "about 250 g each, skin on, bone in (Marylands)"
+   },
+   {
+    "name": "duck fat",
+    "quantity": 750,
+    "unit": "ml",
+    "note": "to cover the legs"
+   },
+   {
+    "name": "salt",
+    "quantity": 4,
+    "unit": "tsp",
+    "note": "cooking or kosher salt, for the dry cure"
+   },
+   {
+    "name": "thyme",
+    "quantity": 0.33,
+    "unit": "cup",
+    "note": "sprigs, lightly packed, for the cure"
+   },
+   {
+    "name": "sage",
+    "quantity": 0.33,
+    "unit": "cup",
+    "note": "sprigs, lightly packed, for the cure"
+   },
+   {
+    "name": "rosemary",
+    "quantity": 0.33,
+    "unit": "cup",
+    "note": "sprigs, lightly packed, for the cure"
+   },
+   {
+    "name": "oregano",
+    "quantity": 0.33,
+    "unit": "cup",
+    "note": "sprigs, lightly packed, for the cure"
+   },
+   {
+    "name": "garlic",
+    "quantity": 6,
+    "unit": "clove",
+    "note": "smashed with skin on"
+   },
+   {
+    "name": "shallot",
+    "quantity": 1,
+    "unit": "",
+    "note": "listed as an eschalot; peeled and sliced 7 mm thick"
+   },
+   {
+    "name": "black peppercorns",
+    "quantity": 1,
+    "unit": "tbsp",
     "note": ""
    },
    {
-    "name": "white wine",
-    "quantity": 100,
-    "unit": "ml",
+    "name": "coriander seeds",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": ""
+   },
+   {
+    "name": "star anise",
+    "quantity": 8,
+    "unit": "",
+    "note": ""
+   },
+   {
+    "name": "bay leaf",
+    "quantity": 2,
+    "unit": "leaf",
+    "note": ""
+   },
+   {
+    "name": "juniper berries",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": ""
+   },
+   {
+    "name": "cloves",
+    "quantity": 8,
+    "unit": "",
     "note": ""
    }
   ],
   "steps": [
    {
-    "text": "The day before you want to make the dish, scatter half the salt, half the garlic and half of the herbs over the base of a small shallow dish. Lay the duck legs, skin-side up, on top, then scatter over the remaining salt, garlic and herbs.",
+    "text": "Toss the duck legs with all the dry cure ingredients (salt, herbs, garlic, shallot, peppercorns, coriander seeds, star anise, bay leaves, juniper and cloves) in a large bowl.",
     "minutes": null
    },
    {
-    "text": "Cover the duck and refrigerate overnight. This can be done up to 2 days ahead.",
+    "text": "Put the duck in a single snug layer in a ceramic or glass dish, cover and refrigerate for 12-24 hours.",
+    "minutes": 720
+   },
+   {
+    "text": "Brush off the cure, rinse the duck under the tap to remove all salt and dark bits, and pat dry.",
     "minutes": null
    },
    {
-    "text": "Pour the wine into a saucepan that will snugly fit the duck legs in a single layer. Brush the salt off the duck legs and place them, skin-side down, in the wine. Cover the pan with a lid and place over a medium heat.",
+    "text": "Heat the oven to 100°C (80°C fan). Fit the duck snugly in one layer in a small high-sided metal roasting pan and pour over the duck fat so it nearly covers the legs.",
     "minutes": null
    },
    {
-    "text": "As soon as the wine starts to bubble, turn the heat down to the lowest setting and cook for 2 hours, checking occasionally that the liquid is just barely simmering.",
-    "minutes": 120
-   },
-   {
-    "text": "(If you own a heat diffuser, it would be good to use it here.) After 2 hours, the duck legs should be submerged in their own fat and the meat should feel incredibly tender when prodded. Leave to cool.",
-    "minutes": 120
-   },
-   {
-    "text": "The duck legs are now cooked and can be eaten immediately – or you can follow the next step if you like them crisp.",
+    "text": "Heat the pan on the stove over medium-high until the fat bubbles energetically across the whole surface. Turn off the heat, press a sheet of baking paper onto the fat and cover the pan tightly with a double layer of foil.",
     "minutes": null
    },
    {
-    "text": "If you are preparing ahead, pack the duck legs tightly into a plastic container or jar and pour over the fat, but not the liquid at the bottom of the pan. Cover and leave in the fridge for up to a month, or freeze for up to 3 months.",
+    "text": "Carefully transfer to the oven and cook for 8 hours, until the meat is fall-apart tender and the leg gives easily at the joint.",
+    "minutes": 480
+   },
+   {
+    "text": "If keeping for later, strain off the meat juices and store the duck covered in cooled duck fat in the fridge for 5 days or freezer for 3 months. Melt the fat gently before using.",
     "minutes": null
    },
    {
-    "text": "The liquid you are left with makes a tasty gravy, which can be chilled or frozen until needed.",
+    "text": "To finish, heat the oven to 240°C (220°C fan) and set a rack over a deep roasting pan holding 2.5 cm of boiling water. Lift the duck out of the fat, pat off the excess oil and set it skin side up on the rack.",
     "minutes": null
    },
    {
-    "text": "To reheat and crisp up the duck legs, heat oven to 220C/fan 200C/gas 7. Remove the legs from the fat and place them, skin-side down, in an ovenproof frying pan. Roast for 30-40 mins, turning halfway through, until brown and crisp.",
+    "text": "Roast for 40 minutes, turning the pan as needed, until the skin is deep golden and crisp. Rest briefly and serve, for example with a lentil ragout.",
     "minutes": 40
-   },
-   {
-    "text": "Serve with the reheated gravy, a crisp salad and some crisp golden ptoatoes.",
-    "minutes": null
    }
   ]
  },
@@ -41568,95 +41618,169 @@
  },
  {
   "source": "themealdb:53553",
-  "title": "Frikadeller - Danish Meatballs",
-  "description": "A Danish dish of pork mince and rolled oats — serves 2, ready in under half an hour.",
-  "servings": 2,
+  "title": "Frikadeller (Danish meatballs)",
+  "description": "Danish pork and veal meatballs made with grated onion and garlic, pan-fried in butter and served with boiled potatoes and a brown onion gravy made with beef stock and cream.",
+  "servings": 4,
   "cuisine": "Danish",
   "category": "Pork",
   "image": "https://www.themealdb.com/images/media/meals/bnhfa71784662834.jpg",
-  "prep_minutes": 15,
-  "cook_minutes": 5,
+  "prep_minutes": 30,
+  "cook_minutes": 75,
   "ingredients": [
+   {
+    "name": "pork mince",
+    "quantity": 250,
+    "unit": "g",
+    "note": "lean"
+   },
+   {
+    "name": "veal",
+    "quantity": 250,
+    "unit": "g",
+    "note": "lean, ground (mince)"
+   },
+   {
+    "name": "garlic",
+    "quantity": 2,
+    "unit": "clove",
+    "note": "grated"
+   },
    {
     "name": "onion",
     "quantity": 1,
     "unit": "",
-    "note": "large"
+    "note": "medium, grated"
    },
    {
-    "name": "garlic",
-    "quantity": 1,
-    "unit": "clove",
-    "note": ""
-   },
-   {
-    "name": "pork mince",
-    "quantity": 500,
-    "unit": "g",
+    "name": "eggs",
+    "quantity": 2,
+    "unit": "",
     "note": ""
    },
    {
     "name": "plain flour",
-    "quantity": 1,
+    "quantity": 3,
     "unit": "tbsp",
-    "note": ""
+    "note": "for the meatballs"
    },
    {
-    "name": "rolled oats",
-    "quantity": 1,
+    "name": "breadcrumbs",
+    "quantity": 2,
     "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "milk",
-    "quantity": 0.5,
-    "unit": "cup",
-    "note": ""
-   },
-   {
-    "name": "eggs",
-    "quantity": 1,
-    "unit": "",
     "note": ""
    },
    {
     "name": "salt",
     "quantity": 1,
-    "unit": "tbsp",
-    "note": ""
+    "unit": "tsp",
+    "note": "for the meatballs"
    },
    {
     "name": "black pepper",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": "for the meatballs"
+   },
+   {
+    "name": "milk",
+    "quantity": 150,
+    "unit": "ml",
+    "note": "stirred in gradually"
+   },
+   {
+    "name": "butter",
+    "quantity": 0.5,
+    "unit": "cup",
+    "note": "for frying the meatballs"
+   },
+   {
+    "name": "onion",
+    "quantity": 0.25,
+    "unit": "",
+    "note": "small, sliced, for the gravy"
+   },
+   {
+    "name": "sugar",
     "quantity": 1,
     "unit": "tsp",
-    "note": ""
+    "note": "for the gravy"
    },
    {
     "name": "butter",
     "quantity": 2,
     "unit": "tbsp",
-    "note": ""
+    "note": "for the gravy"
+   },
+   {
+    "name": "plain flour",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": "for the gravy roux"
+   },
+   {
+    "name": "beef stock",
+    "quantity": 200,
+    "unit": "ml",
+    "note": "for the gravy"
+   },
+   {
+    "name": "thickened cream",
+    "quantity": 200,
+    "unit": "ml",
+    "note": "heavy cream, for the gravy"
+   },
+   {
+    "name": "gravy browning",
+    "quantity": null,
+    "unit": "",
+    "note": "optional, a few drops of gravy coloring (brun kulor)"
+   },
+   {
+    "name": "salt",
+    "quantity": 1,
+    "unit": "pinch",
+    "note": "for the gravy, to taste"
+   },
+   {
+    "name": "black pepper",
+    "quantity": 1,
+    "unit": "pinch",
+    "note": "for the gravy, to taste"
+   },
+   {
+    "name": "potato",
+    "quantity": null,
+    "unit": "",
+    "note": "boiled, to serve"
    }
   ],
   "steps": [
    {
-    "text": "Finely chop onion and garlic: stir salt into minced meat. Add the dry ingredients, then onion and garlic, then the egg. and lastly the milk. Stir the meat mixture until it is firm. Refrigerate for at least 30 minutes.",
-    "minutes": 30
-   },
-   {
-    "text": "You can also make the mixture one day in advance and refrigerate.",
+    "text": "In a large bowl, knead the pork, veal, eggs, grated onion, grated garlic, breadcrumbs, flour, salt and pepper together by hand, then stir in the milk gradually until well mixed.",
     "minutes": null
    },
    {
-    "text": "Heat a pan over medium heat. Add butter to the pan and use a spoon to form frikadeller (meatballs) in your preferred size. We recommend using about 2 tablespoons of mixture per frikadelle.",
+    "text": "Melt the 1/2 cup butter in a large skillet over medium-high heat. Scoop up the mixture with a tablespoon and shape into ovals about the size of a small egg, placing them in the pan.",
     "minutes": null
    },
    {
-    "text": "Fry until they develop a nice browned crust on both sides and are cooked all the way through.",
+    "text": "Fry on medium heat for about 5 minutes on each side until nicely browned and cooked through, in batches, setting each batch aside on a plate.",
+    "minutes": 10
+   },
+   {
+    "text": "For the gravy, melt 2 tbsp butter in a saucepan, add the sliced onion and sugar and saute for 3-5 minutes until the sugar caramelises.",
+    "minutes": 3
+   },
+   {
+    "text": "Stir in the flour to make a roux, then slowly pour in the beef stock and cream, stirring constantly until it reaches the thickness you like.",
     "minutes": null
    },
    {
-    "text": "Serve hot with a classic potato salad on the side.",
+    "text": "Add a few drops of gravy coloring if you have it, and season with a pinch of salt and pepper.",
+    "minutes": null
+   },
+   {
+    "text": "Serve the meatballs with boiled potatoes and the brown gravy.",
     "minutes": null
    }
   ]
@@ -42505,159 +42629,207 @@
  },
  {
   "source": "themealdb:52951",
-  "title": "General Tsos Chicken",
-  "description": "A Chinese dish of chicken breast, starch and onion salt — serves 4, on the table in about 45 minutes.",
+  "title": "General Tso's chicken",
+  "description": "Daddy Lau's restaurant-style General Tso's chicken: battered chicken fried twice until crisp, then tossed in a sweet, tangy soy and ketchup sauce with dried chillies and red capsicum.",
   "servings": 4,
   "cuisine": "Chinese",
   "category": "Chicken",
   "image": "https://www.themealdb.com/images/media/meals/1529444113.jpg",
-  "prep_minutes": 30,
-  "cook_minutes": 15,
+  "prep_minutes": 15,
+  "cook_minutes": 20,
   "ingredients": [
    {
     "name": "chicken breast",
-    "quantity": 1.5,
-    "unit": "",
-    "note": ""
+    "quantity": 280,
+    "unit": "g",
+    "note": "cut into bite-sized pieces; thighs also fine"
    },
    {
-    "name": "plain flour",
-    "quantity": 0.75,
-    "unit": "cup",
-    "note": ""
+    "name": "salt",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": "for the marinade"
    },
    {
     "name": "eggs",
     "quantity": 1,
     "unit": "",
-    "note": ""
+    "note": "beaten; half in the marinade, half in the batter"
    },
    {
-    "name": "starch",
-    "quantity": 2,
+    "name": "cornflour",
+    "quantity": 1,
     "unit": "tbsp",
-    "note": ""
+    "note": "for the marinade"
+   },
+   {
+    "name": "water",
+    "quantity": 0.5,
+    "unit": "tbsp",
+    "note": "for the marinade"
+   },
+   {
+    "name": "ginger",
+    "quantity": null,
+    "unit": "",
+    "note": "sliced, then minced; no amount given"
+   },
+   {
+    "name": "garlic",
+    "quantity": 2,
+    "unit": "clove",
+    "note": "crushed and minced"
+   },
+   {
+    "name": "dried chillies",
+    "quantity": 4,
+    "unit": "",
+    "note": "whole dried chilli peppers"
+   },
+   {
+    "name": "capsicum",
+    "quantity": 30,
+    "unit": "g",
+    "note": "red, cut into strips"
+   },
+   {
+    "name": "plain flour",
+    "quantity": 3,
+    "unit": "tbsp",
+    "note": "for the batter"
+   },
+   {
+    "name": "cornflour",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "for the batter"
    },
    {
     "name": "baking powder",
     "quantity": 1,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "salt",
-    "quantity": 1,
     "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "onion salt",
-    "quantity": 0.5,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "garlic powder",
-    "quantity": 0.25,
-    "unit": "tsp",
-    "note": ""
+    "note": "for the batter"
    },
    {
     "name": "water",
-    "quantity": 0.75,
-    "unit": "cup",
-    "note": ""
+    "quantity": 5,
+    "unit": "tbsp",
+    "note": "for the batter; add a little more if needed"
    },
    {
-    "name": "chicken stock",
-    "quantity": 0.5,
-    "unit": "cup",
-    "note": ""
+    "name": "olive oil",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "added to the batter last"
    },
    {
-    "name": "plum sauce",
-    "quantity": 0.25,
-    "unit": "cup",
-    "note": ""
+    "name": "vegetable oil",
+    "quantity": null,
+    "unit": "",
+    "note": "corn oil in the video, for frying"
    },
    {
     "name": "soy sauce",
-    "quantity": 3,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "honey",
     "quantity": 2,
     "unit": "tbsp",
-    "note": ""
+    "note": "light, for the sauce"
    },
    {
-    "name": "rice vinegar",
+    "name": "dark soy sauce",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "for the sauce"
+   },
+   {
+    "name": "sugar",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": "for the sauce"
+   },
+   {
+    "name": "vinegar",
     "quantity": 1,
     "unit": "tbsp",
-    "note": ""
+    "note": "type not stated, for the sauce"
+   },
+   {
+    "name": "tomato ketchup",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "for the sauce"
+   },
+   {
+    "name": "white pepper",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": "for the sauce"
+   },
+   {
+    "name": "cornflour",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "for the slurry"
+   },
+   {
+    "name": "water",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": "for the slurry"
    },
    {
     "name": "sesame oil",
-    "quantity": 2,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "gochujang",
-    "quantity": 0.5,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "starch",
-    "quantity": 2,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "garlic",
-    "quantity": 1,
-    "unit": "clove",
-    "note": ""
-   },
-   {
-    "name": "spring onion",
-    "quantity": 2,
-    "unit": "",
-    "note": "chopped"
-   },
-   {
-    "name": "ginger",
     "quantity": 1,
     "unit": "tsp",
-    "note": ""
+    "note": "added at the end"
+   },
+   {
+    "name": "broccoli",
+    "quantity": null,
+    "unit": "",
+    "note": "to serve, optional, cooked"
+   },
+   {
+    "name": "tomato",
+    "quantity": null,
+    "unit": "",
+    "note": "to serve, optional wedges"
    }
   ],
   "steps": [
    {
-    "text": "Sauce: in a bowl, add 2 Cups of water, 2 Tablespoon soy sauce, 2 Tablespoon white vinegar, sherry cooking wine, 1/4 Teaspoon white pepper, minced ginger, minced garlic, hot pepper, ketchup, hoisin sauce, and sugar. Mix together well and set aside.",
+    "text": "Cut the chicken into bite-sized pieces. Massage with the salt, half the beaten egg, 1 tbsp cornflour and 1/2 tbsp water for about a minute and set aside.",
     "minutes": null
    },
    {
-    "text": "In a bowl, add the chicken, 1 pinch of salt, 1 pinch of white pepper, 2 egg whites, and 3 Tablespoon of corn starch.",
+    "text": "Mince the garlic and ginger and cut the red capsicum into strips. If you like, cook a little broccoli and cut a few tomato wedges to serve.",
     "minutes": null
    },
    {
-    "text": "Deep fry the chicken at 350 degrees for 3-4 minutes or until it is golden brown and loosen up the chicken so that they don't stick together. Set the chicken aside.",
-    "minutes": 4
-   },
-   {
-    "text": "Add the sauce to the wok and then the broccoli and wait until it is boiling.",
+    "text": "Mix the flour, 1 tbsp cornflour, the other half of the egg, baking powder and water into a batter, then mix in the olive oil. Add water 1/2 tbsp at a time until it is the right consistency.",
     "minutes": null
    },
    {
-    "text": "To thicken the sauce, whisk together 2 Tablespoon of cornstarch and 4 Tablespoon of water in a bowl and slowly add to your stir-fry until it's the right thickness.",
+    "text": "Fill a wok with 4-5 cm of corn oil and heat it to about 149°C. Meanwhile stir the light and dark soy sauce, sugar, vinegar, ketchup and white pepper together for the sauce and taste it.",
     "minutes": null
    },
    {
-    "text": "Next add in the chicken and stir-fry for a minute and serve on a plate.",
+    "text": "Coat the chicken in the batter and lower the pieces gently into the oil one by one so they don't clump. First fry for about 10 minutes at 149°C until starting to turn golden, then lift out and let the oil come back up in temperature.",
+    "minutes": 10
+   },
+   {
+    "text": "Return the chicken to the oil at 176-204°C for a second fry of 1-2 minutes until crisp, then lift it out.",
+    "minutes": 2
+   },
+   {
+    "text": "Heat a little of the frying oil in a clean pan for 1-2 minutes until shimmering. Fry the dried chillies for 10-15 seconds, then the garlic and ginger for 20-30 seconds.",
+    "minutes": null
+   },
+   {
+    "text": "Pour in the sauce mix and stir for 20-30 seconds, then stir in a slurry of 1 tsp cornflour and 2 tbsp water for another 20-30 seconds. Add the capsicum and sesame oil and cook 30 seconds, adjusting the thickness with more cornflour or water.",
+    "minutes": null
+   },
+   {
+    "text": "Add the chicken and toss to coat in the sauce. Serve straight away, on a bed of cooked broccoli with tomato wedges if you like, and rice.",
     "minutes": null
    }
   ]
@@ -43970,7 +44142,7 @@
  {
   "source": "themealdb:53179",
   "title": "Ham croquetas",
-  "description": "A Spanish dish of prosciutto, breadcrumbs and leek — serves 4, on the table in about 45 minutes.",
+  "description": "Spanish croquetas de jamon: a thick onion, garlic and milk bechamel with chopped cured ham, chilled, shaped, breaded and shallow-fried in olive oil until golden. Makes 12.",
   "servings": 4,
   "cuisine": "Spanish",
   "category": "Pork",
@@ -43979,119 +44151,131 @@
   "cook_minutes": 25,
   "ingredients": [
    {
-    "name": "plain flour",
-    "quantity": 75,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "eggs",
-    "quantity": 2,
-    "unit": "",
-    "note": "large"
-   },
-   {
-    "name": "breadcrumbs",
-    "quantity": 75,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "vegetable oil",
-    "quantity": null,
-    "unit": "",
-    "note": "for deep-frying"
-   },
-   {
     "name": "olive oil",
-    "quantity": 4,
+    "quantity": 2,
     "unit": "tbsp",
-    "note": ""
+    "note": "extra virgin, for the bechamel"
    },
    {
-    "name": "leek",
-    "quantity": 0.5,
+    "name": "onion",
+    "quantity": 1,
     "unit": "",
-    "note": ""
+    "note": "small, finely chopped"
    },
    {
-    "name": "prosciutto",
-    "quantity": 70,
-    "unit": "g",
-    "note": ""
+    "name": "garlic",
+    "quantity": 3,
+    "unit": "clove",
+    "note": "roughly chopped"
    },
    {
     "name": "plain flour",
-    "quantity": 60,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "vegetable stock",
-    "quantity": 75,
-    "unit": "ml",
-    "note": ""
+    "quantity": 0.25,
+    "unit": "cup",
+    "note": "30 g, for the bechamel"
    },
    {
     "name": "milk",
-    "quantity": 330,
-    "unit": "ml",
-    "note": ""
+    "quantity": 1,
+    "unit": "cup",
+    "note": "low fat, 240 ml"
+   },
+   {
+    "name": "jamon iberico",
+    "quantity": 100,
+    "unit": "g",
+    "note": "sliced Spanish cured ham, finely chopped"
    },
    {
     "name": "nutmeg",
+    "quantity": 1,
+    "unit": "dash",
+    "note": ""
+   },
+   {
+    "name": "salt",
     "quantity": null,
     "unit": "",
-    "note": "grated"
+    "note": "sea salt, to taste, in the bechamel and the egg wash"
+   },
+   {
+    "name": "black pepper",
+    "quantity": null,
+    "unit": "",
+    "note": "to taste, in the bechamel and the egg wash"
+   },
+   {
+    "name": "plain flour",
+    "quantity": 0.5,
+    "unit": "cup",
+    "note": "60 g, for coating"
+   },
+   {
+    "name": "eggs",
+    "quantity": 1,
+    "unit": "",
+    "note": "large, for the egg wash"
+   },
+   {
+    "name": "milk",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "15 ml, for the egg wash"
+   },
+   {
+    "name": "breadcrumbs",
+    "quantity": 1,
+    "unit": "cup",
+    "note": "plain, 100 g"
+   },
+   {
+    "name": "olive oil",
+    "quantity": 1,
+    "unit": "cup",
+    "note": "virgin, 240 ml, for frying"
+   },
+   {
+    "name": "parsley",
+    "quantity": null,
+    "unit": "",
+    "note": "fresh, to garnish"
    }
   ],
   "steps": [
    {
-    "text": "To make the filling, heat the olive oil in a pan until it starts to shimmer. Add the leek and sauté until soft but not coloured.",
+    "text": "Heat the extra virgin olive oil in a medium pan over medium heat. Add the onion and garlic and stir for 2-3 minutes until the onion is slightly translucent.",
+    "minutes": 3
+   },
+   {
+    "text": "Add the 1/4 cup flour and stir for 2 minutes, then slowly add the milk while stirring continuously.",
+    "minutes": 2
+   },
+   {
+    "text": "Once you have a thick paste, turn off the heat and stir in the chopped ham, nutmeg and a little salt and pepper.",
     "minutes": null
    },
    {
-    "text": "Stir in the ham with a wooden spoon, fry for 1 min, then stir in the flour and fry over a medium heat, stirring occasionally, until the mixture is golden but not burnt – this will take about 5 mins.",
-    "minutes": 5
-   },
-   {
-    "text": "Meanwhile, combine the stock and milk in a small pan and heat until steaming but not boiling. Season with a few scrapes of nutmeg. Gradually add the liquid, a few tbsp at a time, stirring constantly.",
-    "minutes": null
-   },
-   {
-    "text": "Once you’ve incorporated all the milk stock, continue to cook the filling over a medium heat for about 10 mins or until it thickens and leaves the sides of the pan when you stir it.",
-    "minutes": 10
-   },
-   {
-    "text": "Season with black pepper, taste and adjust the salt if necessary – the ham can be very salty to start with. The filling is now done: it has to be really thick because you don’t want the croquetas to turn into pancakes.",
-    "minutes": null
-   },
-   {
-    "text": "Smooth the mixture onto a baking tray (30 x 20cm is fine). Once it has stopped steaming, cover with cling film to stop it drying out. Leave to cool before putting it in the fridge for 1 hr.",
-    "minutes": 60
-   },
-   {
-    "text": "When you're ready for the next stage, line up three bowls: the first filled with the flour, the second with beaten egg and the third with breadcrumbs. Take the ham mixture out of the fridge.",
-    "minutes": null
-   },
-   {
-    "text": "Put a little bit of olive oil on your hands to make it easier to roll the croquetas.",
-    "minutes": null
-   },
-   {
-    "text": "Roll a spoonful of the mixture between your palms. The size and shape of the croquetas is up to you, but the easiest is a walnut-sized ball. Then begin coating as follows.",
-    "minutes": null
-   },
-   {
-    "text": "Dunk the croquetas into the flour – you want a dusting – followed by the egg, then the breadcrumbs. Put them on a tray and, when you’ve used up all the mixture, place in the fridge for 30 mins.",
+    "text": "Spread the mixture into a bowl, cover with cling film and freeze for at least 30 minutes.",
     "minutes": 30
    },
    {
-    "text": "If you have a deep-fat fryer, heat the oil to 180C and fry for a couple of mins. If not, heat the oil in a deep, heavy-bottomed saucepan until it starts to shimmer. Then add 5-6 croquetas at a time and fry until golden all over.",
+    "text": "Set up a breading station: flour in one bowl, the egg whisked with 1 tbsp milk, salt and pepper in a second, and breadcrumbs in a third.",
     "minutes": null
    },
    {
-    "text": "Once cooked, drain on kitchen paper and eat straight away.",
+    "text": "Squeeze a spoonful of the chilled mixture in your hands to bind it and shape into a cylinder the size of a large egg. If it is too sticky, return it to the freezer for 15-30 minutes.",
+    "minutes": null
+   },
+   {
+    "text": "Coat each croquette in flour, then egg wash, then breadcrumbs, covering it fully at each stage.",
+    "minutes": null
+   },
+   {
+    "text": "Heat the virgin olive oil in the same pan over medium heat until hot but not smoking. Fry the croquettes in a single layer in batches, about 3 minutes per side until golden and crisp, and drain on paper towels.",
+    "minutes": 6
+   },
+   {
+    "text": "Serve hot or warm, garnished with fresh parsley.",
     "minutes": null
    }
   ]
@@ -45923,220 +46107,178 @@
  },
  {
   "source": "themealdb:52938",
-  "title": "Jamaican Beef Patties",
-  "description": "A Jamaican dish of beef mince, cayenne pepper and tomato ketchup — makes 10, about an hour start to finish.",
-  "servings": 10,
+  "title": "Jamaican beef patties",
+  "description": "Flaky suet-laminated pastry filled with a curried beef mince that is thickened with a bread panade and blended smooth, cut into patties and baked.",
+  "servings": 14,
   "cuisine": "Jamaican",
   "category": "Beef",
   "image": "https://www.themealdb.com/images/media/meals/wsqqsw1515364068.jpg",
-  "prep_minutes": 30,
-  "cook_minutes": 25,
+  "prep_minutes": 75,
+  "cook_minutes": 35,
   "ingredients": [
    {
     "name": "plain flour",
-    "quantity": 4,
-    "unit": "cup",
-    "note": ""
+    "quantity": 450,
+    "unit": "g",
+    "note": "for the crust"
+   },
+   {
+    "name": "egg powder",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": "approx.; turmeric or curry powder can be swapped in but changes the flavour"
+   },
+   {
+    "name": "suet",
+    "quantity": 225,
+    "unit": "g",
+    "note": "cold, grated; butter is a decent substitute"
+   },
+   {
+    "name": "sugar",
+    "quantity": 0.5,
+    "unit": "tbsp",
+    "note": "for the crust"
    },
    {
     "name": "salt",
-    "quantity": 1,
+    "quantity": 0.5,
     "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "curry powder",
-    "quantity": 1,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "butter",
-    "quantity": 250,
-    "unit": "g",
-    "note": ""
+    "note": "for the crust; optional with salted butter"
    },
    {
     "name": "water",
-    "quantity": 1,
+    "quantity": 0.5,
     "unit": "cup",
-    "note": ""
+    "note": "ice cold, about; added a tablespoon at a time"
    },
    {
     "name": "beef mince",
-    "quantity": 900,
+    "quantity": 450,
     "unit": "g",
+    "note": "lean"
+   },
+   {
+    "name": "vegetable oil",
+    "quantity": null,
+    "unit": "",
+    "note": "a splash, for frying"
+   },
+   {
+    "name": "curry powder",
+    "quantity": 2,
+    "unit": "tsp",
     "note": ""
+   },
+   {
+    "name": "garlic",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": "chopped"
+   },
+   {
+    "name": "onion",
+    "quantity": 3,
+    "unit": "tbsp",
+    "note": "chopped"
+   },
+   {
+    "name": "spring onion",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": "chopped"
+   },
+   {
+    "name": "scotch bonnet",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "chopped"
    },
    {
     "name": "allspice",
     "quantity": 1,
     "unit": "tsp",
-    "note": ""
+    "note": "ground pimento"
    },
    {
-    "name": "black pepper",
-    "quantity": 0.5,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "vegetable oil",
-    "quantity": 2,
+    "name": "capsicum",
+    "quantity": 3,
     "unit": "tbsp",
-    "note": ""
+    "note": "green, chopped"
    },
    {
-    "name": "onion",
-    "quantity": 1,
+    "name": "soy sauce",
+    "quantity": 0.25,
     "unit": "cup",
     "note": ""
    },
    {
-    "name": "cayenne pepper",
-    "quantity": null,
-    "unit": "",
-    "note": "ground"
+    "name": "bread",
+    "quantity": 3,
+    "unit": "slice",
+    "note": "blended smooth with the water to make the panade"
    },
    {
-    "name": "garlic",
-    "quantity": 2,
-    "unit": "tsp",
-    "note": "ground"
-   },
-   {
-    "name": "thyme",
-    "quantity": 1,
-    "unit": "tbsp",
-    "note": ""
+    "name": "water",
+    "quantity": 0.5,
+    "unit": "cup",
+    "note": "about, for the panade"
    },
    {
     "name": "salt",
-    "quantity": 0.25,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "tomato ketchup",
-    "quantity": 2,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "water",
-    "quantity": 2,
-    "unit": "cup",
-    "note": ""
-   },
-   {
-    "name": "onion",
     "quantity": 0.5,
-    "unit": "cup",
-    "note": ""
+    "unit": "tsp",
+    "note": "for the filling, added after tasting"
    },
    {
-    "name": "eggs",
+    "name": "sugar",
     "quantity": 1,
+    "unit": "tsp",
+    "note": "for the filling, added after tasting"
+   },
+   {
+    "name": "cheese",
+    "quantity": null,
     "unit": "",
-    "note": "beaten"
-   },
-   {
-    "name": "water",
-    "quantity": 1,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "water",
-    "quantity": 0.25,
-    "unit": "cup",
-    "note": ""
+    "note": "optional, a bit of your favourite cheese added with the filling"
    }
   ],
   "steps": [
    {
-    "text": "Make the Pastry Dough: to a large bowl, add flour, 1 teaspoon salt, and turmeric and mix thoroughly.",
-    "minutes": null
-   },
-   {
-    "text": "Rub shortening into flour until there are small pieces of shortening completely covered with flour.",
-    "minutes": null
-   },
-   {
-    "text": "Pour in 1/2 cup of the ice water and mix with your hands to bring the dough together. Keep adding ice water 2 to 3 tablespoons at a time until the mixture forms a dough.",
-    "minutes": null
-   },
-   {
-    "text": "At this stage, you can cut the dough into 2 large pieces, wrap in plastic and refrigerate for 30 minutes before using it.",
+    "text": "Mix the flour, egg powder and half the cold suet (a quarter pound). Add the ice-cold water about 1 tbsp at a time until the dough just comes together, then chill for 30-40 minutes.",
     "minutes": 30
    },
    {
-    "text": "Alternatively, cut the dough into 10 to 12 equal pieces, place on a platter or baking sheet, cover securely with plastic wrap and let chill for 30 minutes while you make the filling. Make the Filling.",
+    "text": "Roll the dough into a rectangle. Dot a quarter of the remaining suet over the middle third, fold the bottom third over it, add another quarter on top and fold the top third down. Roll out again and repeat until all the suet is used.",
+    "minutes": null
+   },
+   {
+    "text": "Fold and roll 2-3 more times for extra layers, wrap tightly and chill for 30-40 minutes.",
     "minutes": 30
    },
    {
-    "text": "Add ground beef to a large bowl. Sprinkle in allspice and black pepper. Mix together and set aside. Heat oil in a skillet until hot.",
+    "text": "For the filling, brown the mince in a hot, oiled pot just until it changes colour, then remove it. Add fresh oil to the pot and fry the curry powder for about a minute.",
+    "minutes": 1
+   },
+   {
+    "text": "Add the garlic, onion, spring onion, scotch bonnet and allspice and saute on high heat. Add the green capsicum and cook another 2-3 minutes.",
+    "minutes": 3
+   },
+   {
+    "text": "Drain the fat from the beef and return it to the pot. Stir in the soy sauce and panade, season with the salt and sugar after tasting, and simmer about 2 minutes.",
+    "minutes": 2
+   },
+   {
+    "text": "Blend the filling with an immersion blender until smooth rather than chunky, then leave to cool completely.",
     "minutes": null
    },
    {
-    "text": "Add onions and sauté until translucent. Add hot pepper, garlic and thyme and continue to sauté for another minute. Add 1/4 teaspoon salt.",
+    "text": "Roll the dough out about 3 mm thick. Space quarter-cup scoops of filling along it, add a little cheese if using, and fold the dough over, pressing out any air. Cut the patties apart with a ravioli cutter, or cut circles, fill, fold into semicircles and seal with a fork.",
     "minutes": null
    },
    {
-    "text": "Add seasoned ground beef and toss to mix, breaking up any clumps, and let cook until the meat is no longer pink. Add ketchup and more salt to taste.",
-    "minutes": null
-   },
-   {
-    "text": "Pour in 2 cups of water and stir. Bring the mixture to a boil then reduce heat and let simmer until most of the liquid has evaporated and whatever is remaining has reduced to a thick sauce.",
-    "minutes": null
-   },
-   {
-    "text": "Fold in green onions. Remove from heat and let cool completely. Assemble the Patties.",
-    "minutes": null
-   },
-   {
-    "text": "Beat the egg and water together to make an egg wash. Set aside.",
-    "minutes": null
-   },
-   {
-    "text": "Now you can prepare the dough in two ways.",
-    "minutes": null
-   },
-   {
-    "text": "First Method: Flour the work surface and rolling pin. If you had cut it into 2 large pieces, then take one of the large pieces and roll it out into a very large circle. Take a bowl with a wide rim (about 5 inches) and cut out three circles.",
-    "minutes": null
-   },
-   {
-    "text": "Place about 3 heaping tablespoons of the filling onto 1/2 of each circle. Dip a finger into the water and moisten the edges of the pastry. Fold over the other half and press to seal.",
-    "minutes": null
-   },
-   {
-    "text": "Take a fork and crimp the edges. Cut off any extra to make it look neat and uniform. Place on a parchment-lined baking sheet and continue to work until you have rolled all the dough and filled the patties.",
-    "minutes": null
-   },
-   {
-    "text": "Second Method: If you had pre-cut the dough into individual pieces, work with one piece of dough at a time. Roll it out on a floured surface into a 5-inch circle or a little larger. Don’t worry if the edges are not perfect.",
-    "minutes": null
-   },
-   {
-    "text": "Place 3 heaping tablespoons of the filling on one side of the circle. Dip a finger into the water and moisten the edges of the pastry. Fold over the other half and press to seal.",
-    "minutes": null
-   },
-   {
-    "text": "Take a fork and crimp the edges. Cut off any extra to make it look neat and uniform. Place on a parchment-lined baking sheet and continue work until you have rolled all the dough and filled the patties. Frying and Serving the Patties.",
-    "minutes": null
-   },
-   {
-    "text": "After forming the patties, place the pans in the refrigerator while you heat the oven to 180°C (350°F)",
-    "minutes": null
-   },
-   {
-    "text": "Just before adding the pans with the patties to the oven, brush the patties with egg wash.",
-    "minutes": null
-   },
-   {
-    "text": "Bake patties for 30 minutes or until golden brown. Cool on wire racks. Serve warm.",
-    "minutes": 30
+    "text": "Bake on a lined tray in an oven preheated to 160-180°C for 20-25 minutes.",
+    "minutes": 25
    }
   ]
  },
@@ -46286,193 +46428,20 @@
  },
  {
   "source": "themealdb:53345",
-  "title": "Jamaican Curry Chicken",
-  "description": "A Jamaican curry with chicken thigh, spring onion and capsicum — serves 4, worth the couple of hours it takes.",
+  "title": "Jamaican curry chicken",
+  "description": "Nanny's Jamaican curry chicken: skinless legs and thighs marinated in curry powder and seasoning, browned in a Dutch pot, then stewed with onion, garlic, thyme and a whole scotch bonnet.",
   "servings": 4,
   "cuisine": "Jamaican",
   "category": "Chicken",
   "image": "https://www.themealdb.com/images/media/meals/o5fuq51764789643.jpg",
-  "prep_minutes": 20,
-  "cook_minutes": 60,
+  "prep_minutes": 15,
+  "cook_minutes": 40,
   "ingredients": [
    {
     "name": "chicken thigh",
-    "quantity": 910,
+    "quantity": 750,
     "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "curry powder",
-    "quantity": 2.5,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "all-purpose seasoning",
-    "quantity": 1,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "onion",
-    "quantity": 1,
-    "unit": "",
-    "note": "chopped"
-   },
-   {
-    "name": "spring onion",
-    "quantity": 3,
-    "unit": "",
-    "note": "chopped"
-   },
-   {
-    "name": "capsicum",
-    "quantity": 0.5,
-    "unit": "",
-    "note": ""
-   },
-   {
-    "name": "garlic",
-    "quantity": 4,
-    "unit": "clove",
-    "note": "chopped"
-   },
-   {
-    "name": "scotch bonnet",
-    "quantity": 1,
-    "unit": "",
-    "note": "chopped"
-   },
-   {
-    "name": "thyme",
-    "quantity": 3,
-    "unit": "sprig",
-    "note": ""
-   },
-   {
-    "name": "olive oil",
-    "quantity": 3,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "water",
-    "quantity": 0.25,
-    "unit": "cup",
-    "note": ""
-   },
-   {
-    "name": "potato",
-    "quantity": 1,
-    "unit": "",
-    "note": "large"
-   },
-   {
-    "name": "salt",
-    "quantity": null,
-    "unit": "",
-    "note": "to taste"
-   },
-   {
-    "name": "black pepper",
-    "quantity": null,
-    "unit": "",
-    "note": "to taste"
-   }
-  ],
-  "steps": [
-   {
-    "text": "Add chicken thighs, all-purpose seasoning, 1 tablespoon of curry powder, onion, green onions, green pepper, garlic cloves, scotch bonnet pepper (if using), and thyme to a large bowl and combine, making sure all chicken pieces are covered with the seasoning.",
-    "minutes": null
-   },
-   {
-    "text": "Cover and refrigerate for at least 1 hour or up to overnight.",
-    "minutes": 60
-   },
-   {
-    "text": "One the chicken is done marinating, remove onions, peppers, and garlic cloves from chicken and set aside.",
-    "minutes": null
-   },
-   {
-    "text": "Heat olive oil in a large heavy bottom pot over medium heat. Add remaining curry powder and stir, cooking for about 20-30 seconds.",
-    "minutes": null
-   },
-   {
-    "text": "Add onions, green pepper, garlic cloves, thyme, and scotch bonnet pepper (if using) to pot and stir until onions have softened, about 3-5 minutes. If your onions and peppers are looking dry, add about 1 tablespoon of water.",
-    "minutes": 5
-   },
-   {
-    "text": "Add chicken and ¼ cup of water to the pot. Cover and reduce heat to medium low. Cook, stirring occasionally, for 30-35 minutes.",
-    "minutes": 35
-   },
-   {
-    "text": "When there is about 15 minutes remaining, stir in potato and continue to cook covered.",
-    "minutes": 15
-   },
-   {
-    "text": "Once chicken is cooked and potatoes are softened, remove from heat. Salt and pepper to taste.",
-    "minutes": null
-   }
-  ]
- },
- {
-  "source": "themealdb:53354",
-  "title": "Jamaican Curry Goat",
-  "description": "A Jamaican curry with goat, scotch bonnet and potato — serves 4, worth the couple of hours it takes.",
-  "servings": 4,
-  "cuisine": "Jamaican",
-  "category": "Goat",
-  "image": "https://www.themealdb.com/images/media/meals/uc9qp11764796575.jpg",
-  "prep_minutes": 20,
-  "cook_minutes": 65,
-  "ingredients": [
-   {
-    "name": "goat",
-    "quantity": 1360,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "curry powder",
-    "quantity": 2.5,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "ground ginger",
-    "quantity": 0.5,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "all-purpose seasoning",
-    "quantity": 0.5,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "allspice",
-    "quantity": 0.25,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "onion",
-    "quantity": 1,
-    "unit": "",
-    "note": "chopped"
-   },
-   {
-    "name": "garlic",
-    "quantity": 6,
-    "unit": "clove",
-    "note": "sliced"
-   },
-   {
-    "name": "thyme",
-    "quantity": 3,
-    "unit": "sprig",
-    "note": ""
+    "note": "legs and thighs, skin off, chopped into medium pieces; page prints '750kg', read as 750 g"
    },
    {
     "name": "vegetable oil",
@@ -46481,68 +46450,319 @@
     "note": ""
    },
    {
-    "name": "water",
-    "quantity": 1.25,
-    "unit": "cup",
+    "name": "salt",
+    "quantity": 1,
+    "unit": "tsp",
     "note": ""
+   },
+   {
+    "name": "black pepper",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": ""
+   },
+   {
+    "name": "all-purpose seasoning",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": ""
+   },
+   {
+    "name": "curry powder",
+    "quantity": 5,
+    "unit": "tbsp",
+    "note": ""
+   },
+   {
+    "name": "allspice",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "ground pimento"
+   },
+   {
+    "name": "onion",
+    "quantity": 1,
+    "unit": "",
+    "note": "medium, diced"
+   },
+   {
+    "name": "garlic",
+    "quantity": 4,
+    "unit": "clove",
+    "note": "minced"
+   },
+   {
+    "name": "ginger",
+    "quantity": 1,
+    "unit": "knob",
+    "note": "a thumb-sized piece; the page's method does not say when it is added"
+   },
+   {
+    "name": "thyme",
+    "quantity": 4,
+    "unit": "sprig",
+    "note": "4-6"
    },
    {
     "name": "scotch bonnet",
     "quantity": 1,
     "unit": "",
+    "note": "whole"
+   },
+   {
+    "name": "water",
+    "quantity": 500,
+    "unit": "ml",
     "note": ""
+   },
+   {
+    "name": "gravy granules",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": "chicken gravy granules, mixed with a little water"
+   }
+  ],
+  "steps": [
+   {
+    "text": "Wash the chicken and season it well with the salt, pepper, all-purpose seasoning, curry powder, pimento, onion, garlic and thyme. Marinate for a few hours, or overnight if you have time.",
+    "minutes": null
+   },
+   {
+    "text": "Heat a little oil in a Dutch pot or deep stew pot over medium heat. Take the onion, garlic and thyme off the chicken and set aside.",
+    "minutes": null
+   },
+   {
+    "text": "Brown the chicken in the pot one piece at a time until all the meat has colour.",
+    "minutes": null
+   },
+   {
+    "text": "Add the 500 ml of water and stir. Return the onion, garlic and thyme to the pot along with the whole scotch bonnet.",
+    "minutes": null
+   },
+   {
+    "text": "Stir in the gravy granules mixed with a little water and cook until the chicken is tender.",
+    "minutes": null
+   }
+  ]
+ },
+ {
+  "source": "themealdb:53354",
+  "title": "Jamaican curry goat",
+  "description": "Bone-in goat shoulder seasoned with a dry spice rub and fresh seasoning, cooked slowly in water with burnt curry powder, then finished with potato in a thick gravy.",
+  "servings": 7,
+  "cuisine": "Jamaican",
+  "category": "Goat",
+  "image": "https://www.themealdb.com/images/media/meals/uc9qp11764796575.jpg",
+  "prep_minutes": 10,
+  "cook_minutes": 180,
+  "ingredients": [
+   {
+    "name": "goat",
+    "quantity": 2,
+    "unit": "kg",
+    "note": "bone-in stew meat cut into 5 cm pieces, shoulder preferred"
+   },
+   {
+    "name": "white vinegar",
+    "quantity": null,
+    "unit": "",
+    "note": "for rinsing the goat, or lime or lemon juice; no amount given, not in the page's ingredient list"
+   },
+   {
+    "name": "soy sauce",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": ""
+   },
+   {
+    "name": "curry powder",
+    "quantity": 3,
+    "unit": "tbsp",
+    "note": "for the seasoning"
+   },
+   {
+    "name": "ground cumin",
+    "quantity": 2,
+    "unit": "tsp",
+    "note": ""
+   },
+   {
+    "name": "salt",
+    "quantity": 2,
+    "unit": "tsp",
+    "note": "level, or to taste"
+   },
+   {
+    "name": "black pepper",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": ""
+   },
+   {
+    "name": "fennel seeds",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "optional"
+   },
+   {
+    "name": "dried thyme",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "dried leaves"
+   },
+   {
+    "name": "allspice",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "ground"
+   },
+   {
+    "name": "onion powder",
+    "quantity": 2,
+    "unit": "tsp",
+    "note": "unsalted"
+   },
+   {
+    "name": "garlic powder",
+    "quantity": 2,
+    "unit": "tsp",
+    "note": "unsalted"
+   },
+   {
+    "name": "ground ginger",
+    "quantity": 2,
+    "unit": "tsp",
+    "note": ""
+   },
+   {
+    "name": "paprika",
+    "quantity": 2,
+    "unit": "tsp",
+    "note": "optional"
+   },
+   {
+    "name": "ginger",
+    "quantity": 2.5,
+    "unit": "cm",
+    "note": "fresh root, crushed"
+   },
+   {
+    "name": "scotch bonnet",
+    "quantity": 0.5,
+    "unit": "",
+    "note": "medium, de-seeded, to taste"
+   },
+   {
+    "name": "tomato",
+    "quantity": 0.5,
+    "unit": "",
+    "note": "small, diced, optional"
+   },
+   {
+    "name": "onion",
+    "quantity": 1,
+    "unit": "",
+    "note": "medium, white or yellow, chopped"
+   },
+   {
+    "name": "garlic",
+    "quantity": 6,
+    "unit": "clove",
+    "note": "crushed and chopped"
+   },
+   {
+    "name": "capsicum",
+    "quantity": 0.5,
+    "unit": "",
+    "note": "large, diced"
+   },
+   {
+    "name": "thyme",
+    "quantity": 1,
+    "unit": "bunch",
+    "note": "fresh"
+   },
+   {
+    "name": "spring onion",
+    "quantity": 2,
+    "unit": "",
+    "note": "stalks, chopped"
+   },
+   {
+    "name": "allspice berries",
+    "quantity": 8,
+    "unit": "",
+    "note": "pimento seeds, 8-10"
    },
    {
     "name": "potato",
     "quantity": 1,
     "unit": "",
-    "note": "large"
+    "note": "medium Irish potato, diced"
    },
    {
-    "name": "salt",
-    "quantity": null,
-    "unit": "",
-    "note": "to taste"
+    "name": "water",
+    "quantity": 2,
+    "unit": "cup",
+    "note": "added with the potato and reserved seasoning, on top of the warm water that covers the goat while it cooks (no amount given)"
    },
    {
-    "name": "black pepper",
-    "quantity": null,
+    "name": "stock cube",
+    "quantity": 0.5,
     "unit": "",
-    "note": "to taste"
+    "note": "chicken bouillon cube, added to taste at the end"
+   },
+   {
+    "name": "vegetable oil",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "cooking oil"
+   },
+   {
+    "name": "curry powder",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "for burning in the oil"
+   },
+   {
+    "name": "butter",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "optional"
    }
   ],
   "steps": [
    {
-    "text": "Rinse goat meat with vinegar and water.",
+    "text": "Rinse the goat in vinegar, lime or lemon juice and drain it completely.",
     "minutes": null
    },
    {
-    "text": "Season goat meat with 1 ½ tablespoon curry powder, all-purpose seasoning, ground ginger, allspice, onion, garlic cloves, and thyme. Marinate for at least 4 hours or up to overnight.",
-    "minutes": 240
-   },
-   {
-    "text": "Remove onion and garlic from goat and set aside.",
+    "text": "Season the goat with the soy sauce, salt, pepper, 3 tbsp curry powder, cumin, allspice, fennel seeds, pimento seeds, paprika, onion, garlic and ginger powders.",
     "minutes": null
    },
    {
-    "text": "Set an electric pressure cooker, like an Instant Pot, on high sauté and add oil. Add goat meat and brown, about 2-3 minutes per side.",
-    "minutes": 3
+    "text": "Chop the onion, garlic, thyme, capsicum, ginger root, spring onion, scotch bonnet and tomato and split it into two equal parts. Mix half into the goat; keep the rest for later. Marinate in the fridge for 6-8 hours if you can, or go straight on.",
+    "minutes": null
    },
    {
-    "text": "Remove goat from insert and add 1 tablespoon oil and remaining curry powder and sauté for about 10 seconds. Then add onions and garlic and sauté until softened. About 4 minutes.",
+    "text": "Heat the oil and butter in a large pot over medium-low heat, add 1 tbsp curry powder and stir for about 10 seconds. Add the goat, stir for 30 seconds, cover and cook on medium for 3 minutes.",
     "minutes": 4
    },
    {
-    "text": "If the onions look dry, add a little water and continue to sauté.",
-    "minutes": null
+    "text": "Add enough warm water to cover the goat, cover the pot and cook on high heat for 2.5-3 hours, stirring every 10 minutes and topping up with boiling water whenever it runs low.",
+    "minutes": 165
    },
    {
-    "text": "Add goat and water to the pressure cooker and cover the pressure cooker. Cook for 40 minutes on high pressure. Allow to naturally release for 10 minutes, then release the remaining pressure.",
-    "minutes": 40
+    "text": "Around the 2 3/4-hour mark test a piece for tenderness. When the goat is completely soft, add the diced potato, the reserved fresh seasoning and 2 cups of water, cover and cook on medium-high for 8-10 minutes.",
+    "minutes": 10
    },
    {
-    "text": "Once all the pressure has been released, open the pressure cooker. Place on sauté for 10-15 minutes, add potatoes and a whole scotch bonnet pepper. Cook until potatoes have softened. Remove scotch bonnet pepper.",
-    "minutes": 15
+    "text": "Taste the gravy and add the half bouillon cube if it needs more flavour. Reduce to medium, cover and cook 5 minutes, then uncover for about 5 minutes to thicken.",
+    "minutes": 10
+   },
+   {
+    "text": "Turn the heat off, re-cover and let the curry rest for 3 minutes. Serve hot with rice, roti or boiled ground provisions.",
+    "minutes": 3
    }
   ]
  },
@@ -47109,87 +47329,123 @@
  },
  {
   "source": "themealdb:53357",
-  "title": "Jamaican Rice and Peas",
-  "description": "A Jamaican dish of kidney beans, rice and coconut milk — serves 4, on the table in about 45 minutes.",
-  "servings": 4,
+  "title": "Jamaican rice and peas",
+  "description": "Rice cooked with red kidney beans (dry, soaked overnight, or canned) in coconut milk, thyme, spring onion and a whole scotch bonnet, finished on a medium-low heat and mixed through from the bottom.",
+  "servings": 8,
   "cuisine": "Jamaican",
   "category": "Vegetarian",
   "image": "https://www.themealdb.com/images/media/meals/pkyvrn1764878267.jpg",
   "prep_minutes": 15,
-  "cook_minutes": 20,
+  "cook_minutes": 90,
   "ingredients": [
    {
-    "name": "rice",
-    "quantity": 2,
-    "unit": "cup",
-    "note": ""
-   },
-   {
-    "name": "coconut milk",
-    "quantity": 380,
-    "unit": "g",
-    "note": ""
-   },
-   {
     "name": "kidney beans",
-    "quantity": 450,
+    "quantity": 400,
     "unit": "g",
-    "note": ""
+    "note": "dry (soaked overnight) or canned; the page does not say which the 400 g refers to; gungo peas also work"
    },
    {
-    "name": "water",
+    "name": "onion",
     "quantity": 1,
-    "unit": "cup",
-    "note": ""
-   },
-   {
-    "name": "salt",
-    "quantity": 2,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "allspice",
-    "quantity": 0.5,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "black pepper",
-    "quantity": 0.25,
-    "unit": "tsp",
-    "note": ""
+    "unit": "",
+    "note": "medium, chopped"
    },
    {
     "name": "spring onion",
-    "quantity": 3,
+    "quantity": 2,
     "unit": "",
-    "note": ""
+    "note": "chopped in half"
    },
    {
     "name": "thyme",
-    "quantity": 2,
+    "quantity": 4,
     "unit": "sprig",
-    "note": ""
+    "note": "fresh"
    },
    {
     "name": "scotch bonnet",
     "quantity": 1,
     "unit": "",
+    "note": "whole, removed before serving"
+   },
+   {
+    "name": "black pepper",
+    "quantity": 1,
+    "unit": "tsp",
     "note": ""
+   },
+   {
+    "name": "salt",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": ""
+   },
+   {
+    "name": "garlic",
+    "quantity": 2,
+    "unit": "clove",
+    "note": "chopped"
+   },
+   {
+    "name": "coconut milk",
+    "quantity": 400,
+    "unit": "ml",
+    "note": "or 60 g creamed coconut"
+   },
+   {
+    "name": "rice",
+    "quantity": 600,
+    "unit": "g",
+    "note": "long grain or basmati, washed well"
+   },
+   {
+    "name": "all-purpose seasoning",
+    "quantity": 2,
+    "unit": "tsp",
+    "note": ""
+   },
+   {
+    "name": "water",
+    "quantity": null,
+    "unit": "",
+    "note": "to cover the beans, then just above the rice; no amount given"
+   },
+   {
+    "name": "butter",
+    "quantity": null,
+    "unit": "",
+    "note": "optional"
+   },
+   {
+    "name": "allspice",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "pimento seeds or allspice, optional, for extra spice"
    }
   ],
   "steps": [
    {
-    "text": "Add rice, coconut milk, kidney beans, water, kosher salt, allspice, and black pepper to a large pot and stir until combined. Lay green onions, thyme and Scotch bonnet pepper on top. Bring mixture to a boil.",
+    "text": "Wash the dry kidney beans, cover with water by about 5 cm and soak overnight, keeping the soaking water in the pot.",
     "minutes": null
    },
    {
-    "text": "Once boiling, reduce heat to low and cover with a lid. Allow to cook covered for 18 minutes over low heat, then remove from heat. Leave the lid on for an additional 5 minutes.",
-    "minutes": 18
+    "text": "Set the pot on the stove and add the salt, black pepper, onion, thyme, spring onions, garlic, all-purpose seasoning, coconut milk and the allspice or pimento if using.",
+    "minutes": null
    },
    {
-    "text": "Open the lid and remove the green onion, Scotch bonnet pepper, and thyme. Fluff the rice and peas with a fork. Serve and enjoy.",
+    "text": "Boil the dry beans for about 1 hour until soft, adding more water if needed. With canned beans just bring the pot to the boil.",
+    "minutes": 60
+   },
+   {
+    "text": "Wash the rice thoroughly and add it to the pot, with the water level just above the rice. Stir together and add the whole scotch bonnet.",
+    "minutes": null
+   },
+   {
+    "text": "Put the lid on and cook on medium-low heat for 25-30 minutes.",
+    "minutes": 28
+   },
+   {
+    "text": "Take out the scotch bonnet and mix the rice thoroughly from the bottom. Butter is listed as optional, but the page does not say when or how much to add.",
     "minutes": null
    }
   ]
