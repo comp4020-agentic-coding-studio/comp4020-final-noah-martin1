@@ -3213,9 +3213,9 @@
   "videoId": "FjQRhFS3aZU",
   "title": "Kvæfjordkake -  Norwegian Verdens Beste - World's Best Cake",
   "channel": "Home Cooking Adventure",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53412": {
   "videoId": "KAsoWvGbpGk",
@@ -3477,25 +3477,25 @@
   "videoId": "GSvFVBpqMKI",
   "title": "How to make Pork with portuguese migas | Food From Portugal",
   "channel": "Food From Portugal",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53135": {
   "videoId": "_G3cyucbB3o",
   "title": "Authentic Milanesa Steak Recipe | Crispy & Flavorful!",
   "channel": "El Mundo Eats",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:52991": {
   "videoId": "PnXft7lQNJE",
   "title": "Mince Pies Recipe Demonstration - Joyofbaking.com",
   "channel": "Joy of Baking",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:52876": {
   "videoId": "QY47h-uqq5g",
@@ -3536,12 +3536,10 @@
   "transcribed": true
  },
  "themealdb:52927": {
-  "videoId": "g5oCDoyxbBk",
-  "title": "Montreal Smoked Meat on the Big Green Egg",
-  "channel": "BBQ Tom",
+  "videoId": null,
+  "checked": "2026-10-29",
   "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "reason": "The BBQ Tom video description is the creator's own account of the cure, rub, smoke and steam, but it never states the brisket's weight (the main ingredient) or the number of servings, and the rub amounts rest on an interpretation of an ambiguous '2 - 1 mixture ... full cup measurements'. The main amounts cannot be supported from the saved evidence, and no transcript is available."
  },
  "themealdb:53047": {
   "videoId": "7tDWOpnIhok",
@@ -3603,9 +3601,9 @@
   "videoId": "MMrE4I1ZtWo",
   "title": "How to Make Nanaimo Bars | Chocolate Recipe | Allrecipes.com",
   "channel": "Allrecipes",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53377": {
   "videoId": "Fj0JALB4_5k",
@@ -3729,9 +3727,9 @@
   "videoId": "nFoQ5K-7_24",
   "title": "Catalonia’s Anytime Snack: Pa Amb Tomàquet (Catalan Tomato Bread)",
   "channel": "America's Test Kitchen",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53537": {
   "videoId": null,
@@ -3843,9 +3841,9 @@
   "videoId": "SGkMAlrTu6g",
   "title": "Piernik - Polish gingerbread cake",
   "channel": "Caroline's Cooking",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53019": {
   "videoId": "dA-IGCYftn8",
@@ -3906,12 +3904,12 @@
   "checked": "2026-10-20"
  },
  "themealdb:53298": {
-  "videoId": "17jL5nZrgPw",
-  "title": "Pączki - Polish Jelly Donuts - Oven Baked Doughnuts",
-  "channel": "Jenny Can Cook",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "videoId": "gWGqu_lj0zg",
+  "title": "Traditional Polish Pączki (Doughnuts) Recipe",
+  "channel": "Original Recipes by Mashed",
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53299": {
   "videoId": "0XrToCi-U1c",
@@ -4007,9 +4005,9 @@
   "videoId": "-O6MsNm39Yw",
   "title": "Postre Chajá clásico",
   "channel": "Isabel Vermal",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:52780": {
   "videoId": "p3u8eiy3yHI",

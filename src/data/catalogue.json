@@ -49218,167 +49218,191 @@
  {
   "source": "themealdb:53128",
   "title": "Kvæfjord cake (World’s Best Cake)",
-  "description": "A Norwegian sweet made with egg yolks, cream and vanilla pod — makes 16, about an hour start to finish.",
-  "servings": 16,
+  "description": "Norwegian cake of two vanilla sponge layers topped with baked almond meringue, filled with vanilla pastry cream lightened with whipped cream and set with gelatine.",
+  "servings": 12,
   "cuisine": "Norwegian",
   "category": "Dessert",
   "image": "https://www.themealdb.com/images/media/meals/gdn1ot1763075684.jpg",
-  "prep_minutes": 25,
-  "cook_minutes": 35,
+  "prep_minutes": 30,
+  "cook_minutes": 30,
   "ingredients": [
    {
-    "name": "egg yolks",
-    "quantity": 2,
-    "unit": "",
-    "note": "large"
+    "name": "milk",
+    "quantity": 480,
+    "unit": "ml",
+    "note": "for the pastry cream"
+   },
+   {
+    "name": "sugar",
+    "quantity": 100,
+    "unit": "g",
+    "note": "for the pastry cream"
    },
    {
     "name": "cornflour",
-    "quantity": 2,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "sugar",
-    "quantity": 0.25,
-    "unit": "cup",
-    "note": ""
-   },
-   {
-    "name": "cream",
-    "quantity": 0.667,
-    "unit": "cup",
-    "note": ""
-   },
-   {
-    "name": "milk",
-    "quantity": 0.75,
-    "unit": "cup",
-    "note": ""
-   },
-   {
-    "name": "vanilla pod",
-    "quantity": 1,
-    "unit": "",
-    "note": ""
-   },
-   {
-    "name": "butter",
-    "quantity": 0.667,
-    "unit": "cup",
-    "note": ""
-   },
-   {
-    "name": "sugar",
-    "quantity": 0.75,
-    "unit": "cup",
-    "note": ""
-   },
-   {
-    "name": "egg yolks",
-    "quantity": 5,
-    "unit": "",
-    "note": "large"
+    "quantity": 30,
+    "unit": "g",
+    "note": "cornstarch, for the pastry cream"
    },
    {
     "name": "plain flour",
-    "quantity": 1.25,
-    "unit": "cup",
-    "note": ""
+    "quantity": 10,
+    "unit": "g",
+    "note": "for the pastry cream"
+   },
+   {
+    "name": "egg yolks",
+    "quantity": 3,
+    "unit": "",
+    "note": "for the pastry cream"
+   },
+   {
+    "name": "salt",
+    "quantity": 1,
+    "unit": "pinch",
+    "note": "for the pastry cream"
+   },
+   {
+    "name": "vanilla extract",
+    "quantity": 2,
+    "unit": "tsp",
+    "note": "for the pastry cream"
+   },
+   {
+    "name": "almonds",
+    "quantity": 40,
+    "unit": "g",
+    "note": "flaked, toasted for the meringue topping"
+   },
+   {
+    "name": "butter",
+    "quantity": 80,
+    "unit": "g",
+    "note": "room temperature, for the sponge"
+   },
+   {
+    "name": "sugar",
+    "quantity": 70,
+    "unit": "g",
+    "note": "for the sponge"
+   },
+   {
+    "name": "egg yolks",
+    "quantity": 3,
+    "unit": "",
+    "note": "for the sponge"
+   },
+   {
+    "name": "milk",
+    "quantity": 3,
+    "unit": "tbsp",
+    "note": "for the sponge"
+   },
+   {
+    "name": "vanilla extract",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "for the sponge"
+   },
+   {
+    "name": "plain flour",
+    "quantity": 80,
+    "unit": "g",
+    "note": "for the sponge"
    },
    {
     "name": "baking powder",
-    "quantity": 1.5,
+    "quantity": 1,
     "unit": "tsp",
     "note": ""
    },
    {
-    "name": "milk",
-    "quantity": 0.5,
-    "unit": "cup",
-    "note": ""
+    "name": "salt",
+    "quantity": 0.25,
+    "unit": "tsp",
+    "note": "for the sponge"
    },
    {
     "name": "egg whites",
-    "quantity": 7,
+    "quantity": 3,
     "unit": "",
-    "note": ""
+    "note": "for the meringue"
+   },
+   {
+    "name": "salt",
+    "quantity": 0.25,
+    "unit": "tsp",
+    "note": "for the meringue"
+   },
+   {
+    "name": "lemon juice",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "for the meringue"
    },
    {
     "name": "sugar",
-    "quantity": 1.5,
-    "unit": "cup",
-    "note": ""
+    "quantity": 150,
+    "unit": "g",
+    "note": "for the meringue"
    },
    {
-    "name": "almonds",
-    "quantity": null,
-    "unit": "",
-    "note": "sliced"
+    "name": "gelatine",
+    "quantity": 5,
+    "unit": "g",
+    "note": "powder"
+   },
+   {
+    "name": "water",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": "cold, for the gelatine"
    },
    {
     "name": "cream",
-    "quantity": 1.25,
-    "unit": "cup",
-    "note": ""
+    "quantity": 300,
+    "unit": "ml",
+    "note": "whipping cream"
+   },
+   {
+    "name": "icing sugar",
+    "quantity": null,
+    "unit": "",
+    "note": "to serve, for dusting"
    }
   ],
   "steps": [
    {
-    "text": "Vanilla custard: separate the egg yolks and set aside the whites to use in the meringue.",
+    "text": "Make the pastry cream: bring the milk to a simmer. Whisk the egg yolks with the sugar and salt, then the flour and cornflour. Gradually whisk in the hot milk, return to the heat and stir until it boils and thickens.",
     "minutes": null
    },
    {
-    "text": "Whisk together the egg yolks, cornstarch and sugar in a bowl.",
+    "text": "Take the pastry cream off the heat, stir in the vanilla, and cover the surface with plastic wrap. Let it cool to room temperature. Toast the flaked almonds in a dry pan, stirring, and set aside.",
     "minutes": null
    },
    {
-    "text": "Heat the cream and milk in a saucepan. Split open the vanilla pod and add the beans to the saucepan. Once the milk begins to bubble pour about half of it into the bowl with the egg mixture, whisking constantly.",
+    "text": "Heat the oven to 165°C and line two 20 cm pans with parchment. For the sponge, cream the butter and sugar, beat in the yolks one at a time, then the milk and vanilla. Fold in the sifted flour, baking powder and salt, and divide between the pans.",
     "minutes": null
    },
    {
-    "text": "Then return the saucepan to the heat and pour the egg mixture back into the saucepan with remaining milk, whisking constantly. Once the mixture thickens lower the heat and continue whisking for about 30 seconds.",
+    "text": "Whip the egg whites with the salt until foamy, add the lemon juice, then add the sugar gradually and whip to stiff peaks. Spread the meringue over the batter in both pans and scatter with toasted almonds.",
     "minutes": null
    },
    {
-    "text": "Pour the custard into a clean bowl and cover with plastic wrap, placing the plastic directly on the top layer of the custard. Chill in the fridge. Cake.",
+    "text": "Bake for 25–30 minutes until golden, then cool completely.",
+    "minutes": 25
+   },
+   {
+    "text": "Soak the gelatine in the cold water for 5–10 minutes, melt it over low heat, and mix it into the pastry cream. Whip the cream to stiff peaks and fold it in gently.",
+    "minutes": 10
+   },
+   {
+    "text": "Put one cake meringue-side down in a cake ring lined with acetate. Pour on the filling and smooth it, then top with the second cake, meringue side up.",
     "minutes": null
    },
    {
-    "text": "Mix together butter and sugar until light and fluffy. Add egg yolks one at a time, setting aside the egg whites for the meringue. Add the flour mixed with baking powder.",
-    "minutes": null
-   },
-   {
-    "text": "Stir in the milk, beating until smooth (you can use an electric mixer if you prefer).",
-    "minutes": null
-   },
-   {
-    "text": "Preheat oven to 320°F (160°C). Cover a baking sheet with baking paper and spread out the batter into a large, even rectangle. Meringue topping.",
-    "minutes": null
-   },
-   {
-    "text": "Whisk together the egg whites and sugar until you get glossy, stiff peaks. The meringue should hold its form – if it still melts continue whisking.",
-    "minutes": null
-   },
-   {
-    "text": "Spread out the meringue on top of the cake batter. Use a spatula to form light waves with the meringue. Sprinkle almonds on top of the meringue. Bake for about 30 minutes, until the meringue and almonds are golden. Cream filling.",
-    "minutes": 30
-   },
-   {
-    "text": "Whisk the cream into stiff peaks. Carefully fold in the vanilla custard. Assembly.",
-    "minutes": null
-   },
-   {
-    "text": "Once the cake has cooled, cut it in half. You can use scissors for this, or a knife on a cutting board, slicing through the baking paper as well.",
-    "minutes": null
-   },
-   {
-    "text": "Place half of the cake on a serving platter with the meringue side down and peel off the baking paper.",
-    "minutes": null
-   },
-   {
-    "text": "Spread the cream filling across the cake. Then carefully remove the other half of the cake from the baking paper and place it over the cream filling, meringue side up. Serve with fresh berries.",
-    "minutes": null
+    "text": "Refrigerate for 4–6 hours or overnight, then dust with icing sugar before serving.",
+    "minutes": 240
    }
   ]
  },
@@ -53208,99 +53232,165 @@
  },
  {
   "source": "themealdb:53086",
-  "title": "Migas",
-  "description": "A Spanish dish of pork and bread — serves 4, worth the couple of hours it takes.",
+  "title": "Portuguese migas with pork",
+  "description": "Diced pork marinated in garlic, red pepper paste and white wine then cooked with onion, served with garlicky bread migas finished with coriander.",
   "servings": 4,
-  "cuisine": "Spanish",
-  "category": "Miscellaneous",
+  "cuisine": "Portuguese",
+  "category": "Pork",
   "image": "https://www.themealdb.com/images/media/meals/xd9aj21740432378.jpg",
   "prep_minutes": 10,
-  "cook_minutes": 70,
+  "cook_minutes": 45,
   "ingredients": [
    {
-    "name": "bread",
-    "quantity": 1,
-    "unit": "",
-    "note": "large"
+    "name": "pork",
+    "quantity": 600,
+    "unit": "g",
+    "note": "diced"
    },
    {
-    "name": "olive oil",
-    "quantity": null,
-    "unit": "",
-    "note": "for deep-frying, about 1500 ml"
+    "name": "salt",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "for the pork"
+   },
+   {
+    "name": "black pepper",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": "for the pork"
    },
    {
     "name": "garlic",
-    "quantity": null,
-    "unit": "",
-    "note": "half"
+    "quantity": 5,
+    "unit": "clove",
+    "note": "unpeeled, crushed, for the pork"
    },
    {
-    "name": "pork",
+    "name": "red pepper paste",
     "quantity": 1,
-    "unit": "handful",
+    "unit": "tbsp",
+    "note": "sweet"
+   },
+   {
+    "name": "bay leaf",
+    "quantity": 2,
+    "unit": "",
     "note": ""
+   },
+   {
+    "name": "white wine",
+    "quantity": 100,
+    "unit": "ml",
+    "note": ""
+   },
+   {
+    "name": "olive oil",
+    "quantity": 50,
+    "unit": "ml",
+    "note": "for cooking the pork"
+   },
+   {
+    "name": "onion",
+    "quantity": 1,
+    "unit": "",
+    "note": "medium, sliced"
+   },
+   {
+    "name": "coriander",
+    "quantity": null,
+    "unit": "",
+    "note": "chopped, to taste, for the pork"
+   },
+   {
+    "name": "water",
+    "quantity": 1.2,
+    "unit": "l",
+    "note": "boiling, for the migas"
+   },
+   {
+    "name": "olive oil",
+    "quantity": 100,
+    "unit": "ml",
+    "note": "for the migas"
+   },
+   {
+    "name": "garlic",
+    "quantity": 4,
+    "unit": "clove",
+    "note": "peeled, for the migas"
+   },
+   {
+    "name": "bread",
+    "quantity": 600,
+    "unit": "g",
+    "note": "stale, cut into pieces"
+   },
+   {
+    "name": "salt",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "for the migas"
+   },
+   {
+    "name": "black pepper",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": "for the migas"
+   },
+   {
+    "name": "coriander",
+    "quantity": null,
+    "unit": "",
+    "note": "chopped, to taste, for the migas"
    }
   ],
   "steps": [
    {
-    "text": "Crumble the bread into small pieces. Sprinkle with cold water, cover with a damp cloth and leave for 30 minutes.",
-    "minutes": 30
+    "text": "Season the diced pork with salt, pepper, crushed unpeeled garlic, red pepper paste, bay leaves and white wine. Marinate for 1 to 2 hours.",
+    "minutes": 60
    },
    {
-    "text": "Heat 2 tsp of olive oil in a deep pan. Add the garlic cloves separated, skins on; just make a small cut with a knife to open them and keep frying for 5 minutes. Set the garlic aside.",
+    "text": "Heat the olive oil in a large saucepan and sauté the sliced onion over low heat until slightly golden.",
     "minutes": null
    },
    {
-    "text": "In the same oil, where we fried everything, simmer the bread, stirring constantly for 15 minutes and add a grinding of black pepper.",
-    "minutes": 15
+    "text": "Add the pork and its marinade, cover and cook over medium-low heat for 35 to 40 minutes, stirring now and then. Turn off the heat, sprinkle with chopped coriander and set aside.",
+    "minutes": 35
    },
    {
-    "text": "Add the garlic, continue stirring for about 20 minutes. It will be ready when the bread is soft and golden.",
-    "minutes": 20
+    "text": "For the migas, boil the water. In a large saucepan, sauté the peeled garlic in the olive oil over low heat for 3 to 4 minutes.",
+    "minutes": 3
+   },
+   {
+    "text": "Add the bread pieces, season with salt and pepper and stir to coat in the oil.",
+    "minutes": null
+   },
+   {
+    "text": "Gradually pour in the boiling water, stirring with a wooden spoon until the bread starts to fall apart.",
+    "minutes": null
+   },
+   {
+    "text": "Sprinkle with chopped coriander, mix well and serve the migas with the pork.",
+    "minutes": null
    }
   ]
  },
  {
   "source": "themealdb:53135",
   "title": "Milanesa",
-  "description": "An Argentinian dish of beef schnitzel and breadcrumbs — serves 4, ready in under half an hour.",
-  "servings": 4,
+  "description": "Thin steaks seasoned with garlic and parsley, coated in egg and breadcrumbs and broiled in the oven until crisp.",
+  "servings": 6,
   "cuisine": "Argentinian",
   "category": "Beef",
   "image": "https://www.themealdb.com/images/media/meals/wdfa171763065079.jpg",
   "prep_minutes": 10,
-  "cook_minutes": 5,
+  "cook_minutes": 6,
   "ingredients": [
    {
     "name": "beef schnitzel",
-    "quantity": 4,
-    "unit": "",
-    "note": ""
-   },
-   {
-    "name": "eggs",
-    "quantity": 2,
-    "unit": "",
-    "note": "beaten"
-   },
-   {
-    "name": "breadcrumbs",
-    "quantity": 200,
+    "quantity": 450,
     "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "parsley",
-    "quantity": 2,
-    "unit": "tbsp",
-    "note": "chopped"
-   },
-   {
-    "name": "garlic",
-    "quantity": 2,
-    "unit": "clove",
-    "note": "minced"
+    "note": "thinly cut round eye steak"
    },
    {
     "name": "salt",
@@ -53313,102 +53403,162 @@
     "quantity": null,
     "unit": "",
     "note": "to taste"
+   },
+   {
+    "name": "parsley",
+    "quantity": 3,
+    "unit": "tbsp",
+    "note": "finely chopped"
+   },
+   {
+    "name": "garlic",
+    "quantity": 4,
+    "unit": "clove",
+    "note": "finely chopped"
+   },
+   {
+    "name": "eggs",
+    "quantity": 3,
+    "unit": "",
+    "note": "large"
+   },
+   {
+    "name": "breadcrumbs",
+    "quantity": 2,
+    "unit": "cup",
+    "note": ""
+   },
+   {
+    "name": "vegetable oil",
+    "quantity": null,
+    "unit": "",
+    "note": "spray, for greasing the tray and the tops"
    }
   ],
   "steps": [
    {
-    "text": "Season the Cutlets: Salt and pepper the cutlets.",
+    "text": "Heat the oven to 225°C (fan-assisted) with a rack at the top.",
     "minutes": null
    },
    {
-    "text": "Bread the Cutlets: Dip each cutlet in egg, then coat with a mixture of breadcrumbs, parsley, and garlic.",
+    "text": "Season each piece of steak with salt and pepper, then press chopped parsley and garlic onto it. Stack the pieces on a plate.",
     "minutes": null
    },
    {
-    "text": "Fry: Heat oil in a large pan over medium heat. Fry the cutlets until golden and cooked through, about 3-4 minutes per side.",
-    "minutes": 4
+    "text": "Whisk the eggs with a little salt in a deep plate. Dip each steak in the egg, turning it so the whole surface is coated.",
+    "minutes": null
    },
    {
-    "text": "Serve: Serve hot with lemon wedges or a side salad.",
+    "text": "Press each steak into the breadcrumbs to coat both sides, and stack the breaded steaks on a plate.",
+    "minutes": null
+   },
+   {
+    "text": "Spray a baking tray with oil, lay the steaks on it without crowding, and spray the tops with oil.",
+    "minutes": null
+   },
+   {
+    "text": "Broil on the highest rack for 6 minutes, flipping halfway through.",
+    "minutes": 6
+   },
+   {
+    "text": "Move the milanesas to a plate or cooling rack without stacking them, so the crust stays crisp, and serve.",
     "minutes": null
    }
   ]
  },
  {
   "source": "themealdb:52991",
-  "title": "Mince Pies",
-  "description": "A British sweet made with mincemeat — makes 10, ready in under half an hour.",
-  "servings": 10,
+  "title": "Mince pies",
+  "description": "Small mince pies with a crisp buttery pastry case, filled with mincemeat and topped with pastry stars, makes 24 two-inch tarts.",
+  "servings": 24,
   "cuisine": "British",
   "category": "Dessert",
   "image": "https://www.themealdb.com/images/media/meals/qe8pf51576795532.jpg",
-  "prep_minutes": 10,
-  "cook_minutes": 5,
+  "prep_minutes": 30,
+  "cook_minutes": 15,
   "ingredients": [
    {
-    "name": "butter",
-    "quantity": 225,
+    "name": "plain flour",
+    "quantity": 175,
     "unit": "g",
-    "note": ""
+    "note": "for the pastry"
    },
    {
-    "name": "plain flour",
-    "quantity": 350,
-    "unit": "g",
-    "note": ""
+    "name": "salt",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": "for the pastry"
    },
    {
     "name": "sugar",
-    "quantity": 100,
+    "quantity": 15,
     "unit": "g",
-    "note": ""
+    "note": "granulated, for the pastry"
+   },
+   {
+    "name": "butter",
+    "quantity": 113,
+    "unit": "g",
+    "note": "unsalted, cold, cut into chunks"
+   },
+   {
+    "name": "water",
+    "quantity": 3,
+    "unit": "tbsp",
+    "note": "ice cold; 3–4 tbsp"
    },
    {
     "name": "mincemeat",
-    "quantity": 280,
+    "quantity": 350,
     "unit": "g",
-    "note": ""
+    "note": "homemade or store bought"
    },
    {
-    "name": "eggs",
-    "quantity": 1,
+    "name": "cream",
+    "quantity": null,
     "unit": "",
-    "note": "small"
+    "note": "optional, to brush the tops"
+   },
+   {
+    "name": "sugar",
+    "quantity": null,
+    "unit": "",
+    "note": "optional, granulated, to sprinkle on the tops"
    },
    {
     "name": "icing sugar",
     "quantity": null,
     "unit": "",
-    "note": "to serve"
+    "note": "to serve, for dusting"
    }
   ],
   "steps": [
    {
-    "text": "To make the pastry, rub 225g cold, diced butter into 350g plain flour, then mix in 100g golden caster sugar and a pinch of salt.",
+    "text": "In a food processor, pulse the flour, salt and sugar, add the cold butter and process to coarse crumbs. Sprinkle in about 3 tablespoons of ice water and process until the pastry just holds together, adding a little more water if needed.",
     "minutes": null
    },
    {
-    "text": "Combine the pastry into a ball – don’t add liquid – and knead it briefly. The dough will be fairly firm, like shortbread dough. You can use the dough immediately, or chill for later.",
+    "text": "Divide the pastry in half, flatten into two discs, wrap and refrigerate for 30 to 60 minutes until firm.",
+    "minutes": 30
+   },
+   {
+    "text": "Heat the oven to 200°C. On a lightly floured surface, roll one disc about 3 mm thick and cut 24 rounds slightly bigger than the cups of a 24-hole mini muffin tin.",
     "minutes": null
    },
    {
-    "text": "Preheat the oven to 200C/gas 6/fan 180C. Line 18 holes of two 12-hole patty tins, by pressing small walnut-sized balls of pastry into each hole. Spoon 280g mincemeat into the pies.",
+    "text": "Press the rounds into the muffin cups and put a heaping teaspoon of mincemeat in each. Re-roll the scraps.",
     "minutes": null
    },
    {
-    "text": "Take slightly smaller balls of pastry than before and pat them out between your hands to make round lids, big enough to cover the pies.",
+    "text": "Cut 24 stars (or other shapes) from the remaining pastry and set one on each tart. If you like, brush with cream and sprinkle with sugar.",
     "minutes": null
    },
    {
-    "text": "Top the pies with their lids, pressing the edges gently together to seal – you don’t need to seal them with milk or egg as they will stick on their own. (The pies may now be frozen for up to 1 month).",
-    "minutes": null
+    "text": "Bake for about 10 to 15 minutes until lightly browned. Cool on a wire rack and dust with icing sugar if you like.",
+    "minutes": 10
    },
    {
-    "text": "Beat 1 small egg and brush the tops of the pies. Bake for 20 mins until golden. Leave to cool in the tin for 5 mins, then remove to a wire rack.",
-    "minutes": 20
-   },
-   {
-    "text": "To serve, lightly dust with icing sugar.",
+    "text": "Serve warm, at room temperature or cold. The tarts freeze well.",
     "minutes": null
    }
   ]
@@ -54774,32 +54924,32 @@
  },
  {
   "source": "themealdb:52924",
-  "title": "Nanaimo Bars",
-  "description": "A Canadian sweet made with custard, cocoa powder and digestive biscuits — makes 12, on the table in about 45 minutes.",
-  "servings": 12,
+  "title": "Nanaimo bars",
+  "description": "No-bake bars with a cocoa, coconut and almond graham-cracker base, a custard-flavoured buttercream middle layer and a chocolate topping.",
+  "servings": 16,
   "cuisine": "Canadian",
   "category": "Dessert",
   "image": "https://www.themealdb.com/images/media/meals/vwuprt1511813703.jpg",
-  "prep_minutes": 20,
-  "cook_minutes": 25,
+  "prep_minutes": 30,
+  "cook_minutes": 10,
   "ingredients": [
    {
-    "name": "custard",
-    "quantity": 125,
+    "name": "butter",
+    "quantity": 113,
     "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "sugar",
-    "quantity": 50,
-    "unit": "g",
-    "note": ""
+    "note": "softened, for the base"
    },
    {
     "name": "cocoa powder",
     "quantity": 5,
     "unit": "tbsp",
-    "note": ""
+    "note": "unsweetened"
+   },
+   {
+    "name": "sugar",
+    "quantity": 0.25,
+    "unit": "cup",
+    "note": "white"
    },
    {
     "name": "eggs",
@@ -54808,80 +54958,84 @@
     "note": "beaten"
    },
    {
-    "name": "digestive biscuits",
-    "quantity": 200,
-    "unit": "g",
-    "note": "shredded"
+    "name": "graham cracker crumbs",
+    "quantity": 1.75,
+    "unit": "cup",
+    "note": ""
    },
    {
-    "name": "desiccated coconut",
-    "quantity": 100,
-    "unit": "g",
+    "name": "flaked coconut",
+    "quantity": 1,
+    "unit": "cup",
     "note": ""
    },
    {
     "name": "almonds",
-    "quantity": 50,
-    "unit": "g",
-    "note": ""
+    "quantity": 0.5,
+    "unit": "cup",
+    "note": "finely chopped"
    },
    {
     "name": "butter",
-    "quantity": 100,
+    "quantity": 113,
     "unit": "g",
-    "note": ""
+    "note": "softened, for the middle layer"
    },
    {
     "name": "cream",
-    "quantity": 4,
+    "quantity": 3,
     "unit": "tbsp",
-    "note": ""
+    "note": "heavy"
    },
    {
     "name": "custard powder",
-    "quantity": 3,
+    "quantity": 2,
     "unit": "tbsp",
     "note": ""
    },
    {
     "name": "icing sugar",
-    "quantity": 250,
-    "unit": "g",
-    "note": ""
+    "quantity": 2,
+    "unit": "cup",
+    "note": "confectioners' sugar"
    },
    {
     "name": "dark chocolate",
-    "quantity": 150,
+    "quantity": 113,
     "unit": "g",
-    "note": ""
+    "note": "semisweet, 4 squares of 1 oz"
    },
    {
     "name": "butter",
-    "quantity": 50,
-    "unit": "g",
-    "note": ""
+    "quantity": 2,
+    "unit": "tsp",
+    "note": "for the chocolate topping"
    }
   ],
   "steps": [
    {
-    "text": "Start by making the biscuit base. In a bowl, over a pan of simmering water, melt the butter with the sugar and cocoa powder, stirring occasionally until smooth. Whisk in the egg for 2 to 3 mins until the mixture has thickened.",
+    "text": "In a double boiler, melt half the butter with the cocoa and sugar, stirring until smooth. Beat in the egg and stir until thick, 2 to 3 minutes.",
     "minutes": 3
    },
    {
-    "text": "Remove from heat and mix in the biscuit crumbs, coconut and almonds if using, then press into the base of a lined 20cm square tin. Chill for 10 mins.",
-    "minutes": 10
-   },
-   {
-    "text": "For the middle layer, make the custard icing; whisk together the butter, cream and custard powder until light and fluffy, then gradually add the icing sugar until fully incorporated.",
+    "text": "Off the heat, mix in the graham cracker crumbs, coconut and almonds. Press the mixture into the bottom of an ungreased 20 cm (8-inch) square pan.",
     "minutes": null
    },
    {
-    "text": "Spread over the bottom layer and chill in the fridge for at least 10 mins until the custard is no longer soft.",
-    "minutes": 10
+    "text": "For the middle layer, beat the remaining butter, cream and custard powder until light and fluffy, then mix in the icing sugar until smooth.",
+    "minutes": null
    },
    {
-    "text": "Melt the chocolate and butter together in the microwave, then spread over the chilled bars and put back in the fridge. Leave until the chocolate has fully set (about 2 hrs). Take the mixture out of the tin and slice into squares to serve.",
-    "minutes": 120
+    "text": "Spread the custard layer over the base and chill to set.",
+    "minutes": null
+   },
+   {
+    "text": "Melt the chocolate with 2 teaspoons butter in the microwave or over low heat.",
+    "minutes": null
+   },
+   {
+    "text": "Spread the melted chocolate over the chilled bars and let it set before cutting into squares.",
+    "minutes": null
    }
   ]
  },
@@ -56922,65 +57076,75 @@
  },
  {
   "source": "themealdb:53417",
-  "title": "Pa Amb Tomaquet (Bread with Tomato)",
-  "description": "An Andorran dish of bread and tomato — serves 4, ready in under half an hour.",
+  "title": "Pa amb tomàquet (Catalan tomato bread)",
+  "description": "Thick ciabatta slices broiled until charred and crisp, rubbed with garlic, topped with grated fresh tomato pulp and finished with olive oil and flake sea salt.",
   "servings": 4,
-  "cuisine": "Andorran",
+  "cuisine": "Catalan",
   "category": "Vegetarian",
   "image": "https://www.themealdb.com/images/media/meals/lz9rw91779733434.jpg",
-  "prep_minutes": 10,
-  "cook_minutes": 5,
+  "prep_minutes": 15,
+  "cook_minutes": 4,
   "ingredients": [
    {
-    "name": "bread",
+    "name": "tomato",
     "quantity": 2,
     "unit": "",
-    "note": "sliced"
+    "note": "large, ripe, halved through the middle"
+   },
+   {
+    "name": "salt",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": "table salt, for the tomato pulp"
+   },
+   {
+    "name": "ciabatta",
+    "quantity": 1,
+    "unit": "",
+    "note": "loaf, halved horizontally and sliced 5 cm thick"
    },
    {
     "name": "garlic",
-    "quantity": 2,
+    "quantity": 1,
     "unit": "clove",
-    "note": ""
-   },
-   {
-    "name": "tomato",
-    "quantity": 3,
-    "unit": "",
-    "note": "chopped"
+    "note": "large, peeled and halved"
    },
    {
     "name": "olive oil",
-    "quantity": null,
-    "unit": "",
-    "note": "a splash"
+    "quantity": 3,
+    "unit": "tbsp",
+    "note": "extra-virgin, plus extra for serving"
    },
    {
     "name": "salt",
     "quantity": null,
     "unit": "",
-    "note": "to taste"
+    "note": "flake sea salt, to taste, to serve"
    }
   ],
   "steps": [
    {
-    "text": "Toast the bread slices -- either in a toaster, or by baking them in the oven at 200°C (400°F) -- until crispy and golden. (Toasting/baking time will totally depend on the type and thickness of your bread.)",
+    "text": "Rub the cut side of the tomato halves against the large holes of a box grater over a bowl until only the skins are left. Discard the skins (you should have about 1½ cups of pulp) and stir in the table salt.",
     "minutes": null
    },
    {
-    "text": "Take a clove of garlic and rub it cut-side-down all over the top of a slice of bread.",
+    "text": "Set an oven rack about 15 cm from the broiler and heat the broiler. Put a wire rack on a rimmed baking sheet and lay the ciabatta slices cut side up on it.",
     "minutes": null
    },
    {
-    "text": "Take a tomato half and rub it cut-side-down all over the top of the bread.",
+    "text": "Broil the bread for 2 to 4 minutes until browned, crisp and starting to char at the edges.",
+    "minutes": 3
+   },
+   {
+    "text": "Rub the toasts with the cut side of the garlic, pressing harder for a stronger flavour or lightly for a delicate one.",
     "minutes": null
    },
    {
-    "text": "Drizzle the bread evenly with a hint of olive oil. Sprinkle with a pinch of salt.",
+    "text": "Arrange the toasts on a platter, spread the tomato pulp evenly to the edges, drizzle with the oil and season lightly with flake sea salt.",
     "minutes": null
    },
    {
-    "text": "Repeat with the remaining slices of bread. Then serve immediately while they're nice and warm!",
+    "text": "Serve straight away, passing extra oil and sea salt at the table.",
     "minutes": null
    }
   ]
@@ -58515,47 +58679,83 @@
  {
   "source": "themealdb:53292",
   "title": "Piernik (Polish gingerbread)",
-  "description": "A Polish sweet made with honey, self-raising flour and jam — makes 16, worth the couple of hours it takes.",
-  "servings": 16,
+  "description": "A spiced honey loaf cake with orange zest and marmalade, topped with a thin cocoa icing.",
+  "servings": 12,
   "cuisine": "Polish",
   "category": "Dessert",
   "image": "https://www.themealdb.com/images/media/meals/kwmdk41764120884.jpg",
-  "prep_minutes": 20,
-  "cook_minutes": 65,
+  "prep_minutes": 15,
+  "cook_minutes": 50,
   "ingredients": [
    {
-    "name": "butter",
-    "quantity": 140,
-    "unit": "g",
-    "note": ""
-   },
-   {
     "name": "honey",
-    "quantity": 300,
-    "unit": "g",
+    "quantity": 0.5,
+    "unit": "cup",
     "note": ""
    },
    {
-    "name": "brown sugar",
-    "quantity": 100,
-    "unit": "g",
+    "name": "sugar",
+    "quantity": 0.5,
+    "unit": "cup",
     "note": ""
    },
    {
-    "name": "self-raising flour",
-    "quantity": 375,
+    "name": "butter",
+    "quantity": 57,
     "unit": "g",
+    "note": "unsalted, for the cake"
+   },
+   {
+    "name": "orange zest",
+    "quantity": 0.5,
+    "unit": "",
+    "note": "zest of half an orange"
+   },
+   {
+    "name": "marmalade",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": "or fruit jam such as apricot or plum"
+   },
+   {
+    "name": "plain flour",
+    "quantity": 1.5,
+    "unit": "cup",
     "note": ""
    },
    {
-    "name": "ground ginger",
-    "quantity": 3,
+    "name": "baking powder",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": ""
+   },
+   {
+    "name": "bicarbonate of soda",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": ""
+   },
+   {
+    "name": "salt",
+    "quantity": 0.25,
     "unit": "tsp",
     "note": ""
    },
    {
     "name": "cinnamon",
-    "quantity": 1,
+    "quantity": 1.5,
+    "unit": "tsp",
+    "note": ""
+   },
+   {
+    "name": "nutmeg",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": ""
+   },
+   {
+    "name": "allspice",
+    "quantity": 0.5,
     "unit": "tsp",
     "note": ""
    },
@@ -58563,82 +58763,74 @@
     "name": "cloves",
     "quantity": 0.5,
     "unit": "tsp",
-    "note": ""
+    "note": "ground"
    },
    {
-    "name": "nutmeg",
-    "quantity": 0.25,
+    "name": "cardamom",
+    "quantity": 0.125,
     "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "black pepper",
-    "quantity": 0.25,
-    "unit": "tsp",
-    "note": ""
+    "note": "ground"
    },
    {
     "name": "eggs",
-    "quantity": 3,
+    "quantity": 2,
     "unit": "",
-    "note": "large"
+    "note": "lightly beaten"
    },
    {
-    "name": "jam",
-    "quantity": 200,
-    "unit": "g",
+    "name": "milk",
+    "quantity": 0.5,
+    "unit": "cup",
     "note": ""
    },
    {
-    "name": "cream",
-    "quantity": 225,
-    "unit": "ml",
-    "note": ""
+    "name": "icing sugar",
+    "quantity": 0.5,
+    "unit": "cup",
+    "note": "for the icing, sifted"
    },
    {
-    "name": "dark chocolate",
-    "quantity": 140,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "honey",
-    "quantity": 3,
+    "name": "cocoa powder",
+    "quantity": 1,
     "unit": "tbsp",
-    "note": ""
+    "note": "unsweetened, for the icing"
+   },
+   {
+    "name": "butter",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "unsalted, melted, for the icing"
+   },
+   {
+    "name": "water",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "boiling, for the icing"
    }
   ],
   "steps": [
    {
-    "text": "Heat oven to 160C/140C fan/gas 3. Grease and line the base and sides of a deep 20cm cake tin with baking parchment. Put the honey, sugar and butter in a medium saucepan and cook over a medium heat until fully melted.",
+    "text": "Heat the oven to 180°C. Butter a 23 x 13 cm loaf tin and line it with parchment, at least across the base and up the long sides.",
     "minutes": null
    },
    {
-    "text": "Remove from the heat and allow to cool. Put the flour and spices in a large bowl and mix everything together.",
+    "text": "Warm the honey, sugar, butter, orange zest and marmalade in a small pan over medium-low heat until the butter and sugar dissolve. Take off the heat and set aside.",
     "minutes": null
    },
    {
-    "text": "Once the liquid ingredients have cooled, whisk in the eggs. Pour over the dry ingredients, whisking them together to form a smooth batter – be careful not to overmix as this can lead to a dry cake.",
+    "text": "Mix the flour, baking powder, baking soda, salt and spices in a large bowl. Add the honey-butter mixture, the milk and the lightly beaten eggs, and mix until just combined without over-mixing.",
     "minutes": null
    },
    {
-    "text": "Pour into the prepared tin and bake for 50-55 mins or until risen and a skewer inserted into the middle of the cake comes out clean. Allow the cake to cool in the pan for 20 mins before turning out onto a wire rack to cool completely.",
-    "minutes": 55
+    "text": "Pour the batter into the tin and bake on the lower middle shelf for about 50 minutes, until the top is golden and a skewer comes out clean.",
+    "minutes": 50
    },
    {
-    "text": "Once cooled, use a large serrated knife to slice the cake into 3 layers. Spread the jam across the 2 bottom cake layers, then reassemble the cake and set aside while you make the glaze.",
+    "text": "Let the loaf cool slightly. Sift the icing sugar with the cocoa, then mix in the melted butter and boiling water.",
     "minutes": null
    },
    {
-    "text": "Put the cream, chocolate and honey in a medium pan and cook over a low-medium heat until the chocolate is melted and you have a smooth, pourable mixture.",
-    "minutes": null
-   },
-   {
-    "text": "Put the cake on a wire rack set over a parchment-lined baking tray and pour over the glaze, making sure to cover the entire cake. Use a fish slice to carefully transfer the cake to a serving plate and allow the glaze to set.",
-    "minutes": null
-   },
-   {
-    "text": "To decorate, dust with a little edible gold powder, if you like. Uniced, this cake will keep for up to 5 days. Once iced, enjoy within 3 days – just keep in the fridge, but remove before serving and eat at room temperature.",
+    "text": "Spread the icing over the top without over-working it. Ideally leave it to harden before removing the loaf from the tin and slicing, though it is fine slightly warm.",
     "minutes": null
    }
   ]
@@ -59556,151 +59748,125 @@
  {
   "source": "themealdb:53298",
   "title": "Polish doughnuts (Pączki)",
-  "description": "A Polish sweet made with egg yolks, cream and jam — makes 12, on the table in about 45 minutes.",
-  "servings": 12,
+  "description": "Yeast-raised Polish doughnuts with a little rum in the dough, deep-fried and filled with instant pudding, then dusted with powdered sugar if you like.",
+  "servings": 15,
   "cuisine": "Polish",
   "category": "Dessert",
   "image": "https://www.themealdb.com/images/media/meals/x6jqog1764359857.jpg",
-  "prep_minutes": 25,
-  "cook_minutes": 20,
+  "prep_minutes": 180,
+  "cook_minutes": 15,
   "ingredients": [
    {
-    "name": "yeast",
-    "quantity": 10,
-    "unit": "g",
+    "name": "plain flour",
+    "quantity": 3.5,
+    "unit": "cup",
     "note": ""
    },
    {
     "name": "sugar",
-    "quantity": 1,
-    "unit": "tsp",
+    "quantity": 0.33,
+    "unit": "cup",
     "note": ""
    },
    {
-    "name": "plain flour",
-    "quantity": 1,
-    "unit": "tbsp",
+    "name": "yeast",
+    "quantity": 2.25,
+    "unit": "tsp",
+    "note": "instant"
+   },
+   {
+    "name": "salt",
+    "quantity": 0.5,
+    "unit": "tsp",
     "note": ""
    },
    {
     "name": "milk",
-    "quantity": 125,
-    "unit": "ml",
-    "note": ""
+    "quantity": 1,
+    "unit": "cup",
+    "note": "warmed to 43–46°C, for the dough"
+   },
+   {
+    "name": "eggs",
+    "quantity": 1,
+    "unit": "",
+    "note": "whole"
    },
    {
     "name": "egg yolks",
-    "quantity": 7,
+    "quantity": 2,
     "unit": "",
     "note": ""
    },
    {
-    "name": "sugar",
-    "quantity": 15,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "sugar",
-    "quantity": 10,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "vanilla extract",
-    "quantity": 1,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "plain flour",
-    "quantity": 500,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "cream",
-    "quantity": 200,
-    "unit": "ml",
-    "note": ""
-   },
-   {
     "name": "butter",
-    "quantity": 15,
-    "unit": "g",
-    "note": ""
+    "quantity": 3,
+    "unit": "tbsp",
+    "note": "melted"
    },
    {
-    "name": "jam",
-    "quantity": 125,
-    "unit": "ml",
-    "note": ""
-   },
-   {
-    "name": "ground almonds",
-    "quantity": 10,
-    "unit": "g",
-    "note": ""
+    "name": "rum",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "white rum"
    },
    {
     "name": "vegetable oil",
     "quantity": null,
     "unit": "",
-    "note": "for deep-frying"
+    "note": "canola or vegetable, for deep-frying, at least 7.5 cm deep"
+   },
+   {
+    "name": "instant pudding mix",
+    "quantity": 1,
+    "unit": "pack",
+    "note": "96 g (3.4 oz) packet, any flavour such as vanilla, for the filling"
+   },
+   {
+    "name": "milk",
+    "quantity": 2,
+    "unit": "cup",
+    "note": "remaining milk, for the pudding"
    },
    {
     "name": "icing sugar",
-    "quantity": 75,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "lemon",
-    "quantity": 0.5,
+    "quantity": null,
     "unit": "",
-    "note": "juiced"
-   },
-   {
-    "name": "almond extract",
-    "quantity": 1,
-    "unit": "dash",
-    "note": ""
-   },
-   {
-    "name": "almonds",
-    "quantity": 50,
-    "unit": "g",
-    "note": ""
+    "note": "to serve, for dusting"
    }
   ],
   "steps": [
    {
-    "text": "To make the leaven, mix the yeast with the sugar and flour, and stir in the warm milk. Set aside in a warm place for 30 minutes.",
-    "minutes": 30
-   },
-   {
-    "text": "For the dough, put egg yolks into a heatproof bowl and add the sugar and vanilla sugar. Set the bowl over a pan of simmering water and whisk until smooth and thick.",
+    "text": "Whisk the flour, sugar, yeast and salt together in a large bowl.",
     "minutes": null
    },
    {
-    "text": "Sift the flour into the bowl of a stand mixer, add the beaten yolks and the warm cream, mix thoroughly, then add a pinch of salt and the leaven. Bring together to make a dough and knead for 10 minutes (or 15-20 if doing this by hand).",
-    "minutes": 10
+    "text": "Warm 1 cup of the milk to 43–46°C. Mix it with the egg, egg yolks, melted butter and rum, add to the flour mixture and mix to a sticky dough.",
+    "minutes": null
    },
    {
-    "text": "When the dough stops sticking to your hands, pour in the cooled melted butter and knead for a few more minutes. Cover with a cloth and leave in a warm place to rise for at least 1 hr-1 hr 30 mins.",
+    "text": "Knead with floured hands for 6 to 8 minutes until smooth and elastic. Put the dough in a greased bowl, cover and let it double in a warm place, 1 to 2 hours.",
     "minutes": 60
    },
    {
-    "text": "Mix the jam with the ground almonds and spoon into a piping bag or jam syringe. Divide the dough into 16 pieces and shape them into doughnuts. Cover and leave to rise for 30 mins.",
-    "minutes": 30
+    "text": "Roll the dough out 2.5 cm thick on a floured surface and cut rounds with a 7.5 cm cutter. Set them on parchment-lined baking sheets, cover and let rise again until doubled, about 1 hour.",
+    "minutes": 60
    },
    {
-    "text": "Fill a deep pan or a deep fat fryer one third full of oil or melted lard and heat it until it is 180C – if you don’t have a thermometer, drop in a small chunk of bread. The oil is ready when it browns in about 30 secs.",
+    "text": "Heat at least 7.5 cm of oil in a Dutch oven to 175°C.",
     "minutes": null
    },
    {
-    "text": "Add the doughnuts and fry, turning them once for about 1-2 mins on each side (a thin lighter ring should form in the middle). After removing, drain the doughnuts of excess fat on some kitchen paper.",
-    "minutes": 2
+    "text": "Fry 4 or 5 doughnuts at a time for 2 to 3 minutes per side, then drain on a paper-towel-lined tray.",
+    "minutes": 5
+   },
+   {
+    "text": "Whisk the pudding mix with the remaining 2 cups of milk and let it thicken.",
+    "minutes": null
+   },
+   {
+    "text": "Once the doughnuts have cooled completely (about 1 hour), cut a slit in the side of each, pipe or spoon in the pudding, and dust with powdered sugar if you like.",
+    "minutes": 60
    }
   ]
  },
@@ -61027,154 +61193,134 @@
  {
   "source": "themealdb:53323",
   "title": "Postre Chajá",
-  "description": "An Uruguayan sweet made with egg whites, dulce de leche and cream — makes 10, about an hour start to finish.",
+  "description": "Uruguayan cake of three sponge layers soaked in warm peach syrup, layered with diced peaches, whipped cream and crisp baked meringue pieces.",
   "servings": 10,
   "cuisine": "Uruguayan",
   "category": "Dessert",
   "image": "https://www.themealdb.com/images/media/meals/wii0591764375062.jpg",
-  "prep_minutes": 20,
-  "cook_minutes": 50,
+  "prep_minutes": 45,
+  "cook_minutes": 78,
   "ingredients": [
    {
-    "name": "eggs",
-    "quantity": 5,
+    "name": "egg whites",
+    "quantity": 3,
     "unit": "",
-    "note": ""
+    "note": "about 90 g, for the meringue pieces; keep the yolks for something else"
+   },
+   {
+    "name": "lemon juice",
+    "quantity": null,
+    "unit": "",
+    "note": "a few drops, for the meringue pieces"
    },
    {
     "name": "sugar",
     "quantity": 100,
     "unit": "g",
-    "note": ""
+    "note": "white, for the meringue pieces"
    },
    {
-    "name": "salt",
-    "quantity": 1,
-    "unit": "pinch",
-    "note": ""
-   },
-   {
-    "name": "plain flour",
-    "quantity": 75,
+    "name": "icing sugar",
+    "quantity": 100,
     "unit": "g",
-    "note": ""
+    "note": "sifted, for the meringue pieces"
    },
    {
-    "name": "cornflour",
-    "quantity": 30,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "egg whites",
-    "quantity": 1,
+    "name": "eggs",
+    "quantity": 6,
     "unit": "",
-    "note": ""
+    "note": "for the sponge"
    },
    {
     "name": "sugar",
-    "quantity": 50,
+    "quantity": 180,
     "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "dulce de leche",
-    "quantity": 200,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "cream",
-    "quantity": 400,
-    "unit": "g",
-    "note": ""
+    "note": "white, for the sponge"
    },
    {
     "name": "vanilla extract",
     "quantity": 1,
     "unit": "tsp",
-    "note": ""
+    "note": "for the sponge"
    },
    {
-    "name": "sugar",
-    "quantity": 40,
+    "name": "plain flour",
+    "quantity": 180,
     "unit": "g",
-    "note": ""
+    "note": "finest plain flour without raising agent, sifted"
+   },
+   {
+    "name": "butter",
+    "quantity": 30,
+    "unit": "g",
+    "note": "unsalted, melted"
+   },
+   {
+    "name": "cream",
+    "quantity": 800,
+    "unit": "ml",
+    "note": "for the chantilly cream"
+   },
+   {
+    "name": "icing sugar",
+    "quantity": 80,
+    "unit": "g",
+    "note": "for the chantilly cream"
+   },
+   {
+    "name": "milk powder",
+    "quantity": 80,
+    "unit": "g",
+    "note": "optional, for the chantilly cream"
+   },
+   {
+    "name": "vanilla extract",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "for the chantilly cream"
    },
    {
     "name": "peach",
-    "quantity": 500,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "peach juice",
-    "quantity": 50,
-    "unit": "ml",
-    "note": ""
-   },
-   {
-    "name": "cornflour",
     "quantity": 1,
-    "unit": "tsp",
-    "note": ""
+    "unit": "can",
+    "note": "in syrup, size not stated; the syrup is used to soak the sponges"
    }
   ],
   "steps": [
    {
-    "text": "For the sponge cake preheat oven to 180 degrees Celsius and prepare either one or two 20cm/8 inch cake pan(s). Line bottom with parchment paper. Then divide the eggs into egg white and egg yolks. Use a bigger bowl for the egg yolks.",
+    "text": "For the meringue pieces, heat the oven to 100°C and line a tray. Whisk the egg whites with the lemon juice until doubled in volume, rain in the white sugar and whisk to a firm meringue, then fold in the sifted icing sugar.",
     "minutes": null
    },
    {
-    "text": "If you have a glass or metal bowl, use that one for the egg whites. Be sure that bowl is free of fat/grease and that your mixer was properly cleaned. First beat the egg whites on medium speed with a pinch of salt until soft peaks form.",
+    "text": "Pipe small dollops and strips onto the tray and bake for 1 hour until completely dry.",
+    "minutes": 60
+   },
+   {
+    "text": "For the sponge, heat the oven to 170°C and line the bases of three 20 cm pans. Whisk the eggs, sugar and vanilla for about 10 minutes until the ribbon stage.",
+    "minutes": 10
+   },
+   {
+    "text": "Gently fold in the sifted flour. Mix a little batter into the melted butter to even out the density, then fold it back in.",
     "minutes": null
    },
    {
-    "text": "Set aside. Without cleaning our mixer, beat the egg yolks with the sugar. Beat until the color becomes much paler and you have a creamy consistency. This usually takes several minutes.",
+    "text": "Divide the batter between the pans and bake for 18 minutes, or until a skewer comes out dry. Cool.",
+    "minutes": 18
+   },
+   {
+    "text": "Just before assembling, whip the cream with the sifted icing sugar, milk powder and vanilla until it holds its shape.",
     "minutes": null
    },
    {
-    "text": "Gently pour one third of the egg whites on top of the mixed egg yolks and sift the flour and cornstarch on top. Don't skip this step. It is important that the flour mix was sifted. Gently mix all ingredients with a spatula.",
+    "text": "Bring the syrup from the canned peaches to a boil and brush it over the cooled sponges. Dice the peaches.",
     "minutes": null
    },
    {
-    "text": "Try to incorperate the flour mix and egg whites without losing volume. Add the last two thirds of beaten egg whites and gently fold the mixture. Don't overmix. Put batter into the prepared cake pans and immediately bake.",
+    "text": "Put a dab of cream on the cake stand so the cake doesn't slide. Layer sponge, peaches, cream and meringue pieces, with a spoonful of cream before each next sponge.",
     "minutes": null
    },
    {
-    "text": "Don't let the batter sit for too long as it will quickly lose volume. Bake for 35 minutes if using one springform or 25 minutes if using two. Let cool a little before gently getting them out of the form.",
-    "minutes": 35
-   },
-   {
-    "text": "Tip: if making the day before, wrap in cling wrap, it is much easier to cut in half once cold.",
-    "minutes": null
-   },
-   {
-    "text": "For the meringue beat egg white until soft peaks form, add pinch of salt and continue beating on high while adding the sugar. Beat for at least three more minutes until glossy and shiny.",
-    "minutes": null
-   },
-   {
-    "text": "Pipe small stars or other shapes with the meringue on a baking sheet lined with parchment paper. Dry for about 45min at 100 degrees Celsius in the oven. Keep in airtight container until further use.",
-    "minutes": 45
-   },
-   {
-    "text": "For the filling beat heavy cream, vanilla extract and sugar until stiff peaks form, slice peaches in thin slices. Cut cake in four layers, this is much easier done once the cake layers are cold.",
-    "minutes": null
-   },
-   {
-    "text": "Brush cake layer with some of the peach juice left, then pipe thin layer of whipped cream around the edges, place the peach slices in the middle on first layer on cake, on the second layer only spread the dulce de leche.",
-    "minutes": null
-   },
-   {
-    "text": "Repeat layer with brushed peach juice, whipped cream and peaches for the third and final layer. Be sure to reserve enough peach slices for the top.",
-    "minutes": null
-   },
-   {
-    "text": "Spread thin layer of whipped cream on the sides of the cake and pipe on some roses around the edges if desired. Heat the peach juice and mix the cornstarch with a bit of water until you see no lumps.",
-    "minutes": null
-   },
-   {
-    "text": "Once juice is hot, add the cornstarch and stir until glaze thickenes. Pour over peaches of the top layer cake. Crush the meringue and pat around the sides. Serve immediately.",
+    "text": "Place the third sponge upside down on top, cover the whole cake with the remaining cream and decorate with meringue pieces.",
     "minutes": null
    }
   ]
