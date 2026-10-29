@@ -8992,181 +8992,137 @@
  },
  {
   "source": "themealdb:52784",
-  "title": "Smoky Lentil Chili with Squash",
-  "description": "A hearty, smoky vegetarian chilli with lentils and roasted squash.",
+  "title": "Red lentil chili",
+  "description": "A plant-based chili of red lentils, tomatoes, red pepper and smoky spices, sweetened with blended dates and cooked in an electric pressure cooker, topped with scallions.",
   "servings": 6,
-  "cuisine": "British",
-  "category": "Vegetarian",
-  "image": "https://www.themealdb.com/images/media/meals/uwxqwy1483389553.jpg",
-  "prep_minutes": 25,
-  "cook_minutes": 45,
+  "cuisine": "American",
+  "category": "Vegan",
+  "image": "https://i.ytimg.com/vi/pKmqawK2Tqs/hqdefault.jpg",
+  "prep_minutes": 15,
+  "cook_minutes": 10,
   "ingredients": [
    {
-    "name": "olive oil",
-    "quantity": 1,
-    "unit": "tbsp",
-    "note": ""
+    "name": "dates",
+    "quantity": 55,
+    "unit": "g",
+    "note": "about 9 Deglet Noor; blended with 1 cup of the water"
    },
    {
-    "name": "onion",
-    "quantity": 1,
-    "unit": "",
-    "note": ""
-   },
-   {
-    "name": "leek",
-    "quantity": 1,
-    "unit": "",
-    "note": "chopped"
-   },
-   {
-    "name": "garlic",
-    "quantity": 3,
-    "unit": "clove",
-    "note": ""
-   },
-   {
-    "name": "ground cumin",
-    "quantity": 4,
-    "unit": "tsp",
-    "note": "ground"
-   },
-   {
-    "name": "coriander",
-    "quantity": 2,
-    "unit": "tsp",
-    "note": "ground"
-   },
-   {
-    "name": "smoked paprika",
-    "quantity": 1,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "cinnamon",
-    "quantity": 0.5,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "chilli powder",
-    "quantity": 1,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "cocoa powder",
-    "quantity": 1,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "dried oregano",
-    "quantity": 0.5,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "canned tomatoes",
-    "quantity": 1,
-    "unit": "can",
+    "name": "red lentils",
+    "quantity": 450,
+    "unit": "g",
     "note": ""
    },
    {
     "name": "water",
-    "quantity": 3,
+    "quantity": 7,
     "unit": "cup",
-    "note": ""
+    "note": "divided; 1 cup for the dates, 6 for the pot"
    },
    {
-    "name": "carrot",
-    "quantity": 3,
-    "unit": "",
-    "note": "chopped"
+    "name": "canned tomatoes",
+    "quantity": 2,
+    "unit": "can",
+    "note": "salt-free diced, 14.5 oz (411 g) each; fire roasted preferred"
    },
    {
-    "name": "brown lentils",
-    "quantity": 1.5,
-    "unit": "cup",
-    "note": ""
-   },
-   {
-    "name": "salt",
+    "name": "tomato puree",
     "quantity": 1,
-    "unit": "tsp",
-    "note": ""
+    "unit": "can",
+    "note": "salt-free tomato paste, 6 oz (170 g) can"
    },
    {
-    "name": "squash",
-    "quantity": 1,
-    "unit": "",
-    "note": "small"
+    "name": "onion",
+    "quantity": 280,
+    "unit": "g",
+    "note": "chopped (about one large)"
    },
    {
-    "name": "cashews",
-    "quantity": 1,
-    "unit": "cup",
-    "note": ""
+    "name": "capsicum",
+    "quantity": 450,
+    "unit": "g",
+    "note": "red, finely chopped (about 2 large)"
+   },
+   {
+    "name": "garlic",
+    "quantity": 8,
+    "unit": "clove",
+    "note": "finely minced"
    },
    {
     "name": "apple cider vinegar",
-    "quantity": 1,
-    "unit": "tsp",
+    "quantity": 4,
+    "unit": "tbsp",
     "note": ""
+   },
+   {
+    "name": "dried parsley",
+    "quantity": 1.5,
+    "unit": "tbsp",
+    "note": ""
+   },
+   {
+    "name": "dried oregano",
+    "quantity": 1.5,
+    "unit": "tbsp",
+    "note": ""
+   },
+   {
+    "name": "chilli powder",
+    "quantity": 1.5,
+    "unit": "tbsp",
+    "note": "salt-free"
+   },
+   {
+    "name": "smoked paprika",
+    "quantity": 2,
+    "unit": "tsp",
+    "note": "not regular paprika"
+   },
+   {
+    "name": "chipotle powder",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": "or more to taste"
+   },
+   {
+    "name": "red chilli flakes",
+    "quantity": 0.25,
+    "unit": "tsp",
+    "note": "crushed red pepper flakes, or more to taste"
+   },
+   {
+    "name": "spring onion",
+    "quantity": null,
+    "unit": "",
+    "note": "scallions, to serve on top"
+   },
+   {
+    "name": "vegan parmesan",
+    "quantity": null,
+    "unit": "",
+    "note": "faux Parmesan, to serve on top; the recipe is only linked"
    }
   ],
   "steps": [
    {
-    "text": "Begin by roasting the squash. Slice it into thin crescents and drizzle with a little oil and sprinkle with sea salt. I added a fresh little sage I had in the fridge, but it’s unnecessary.",
+    "text": "Blend the dates with 1 cup of the water until smooth; a food processor gets it almost to a puree.",
     "minutes": null
    },
    {
-    "text": "Roast the squash a 205 C (400 F) for 20-30 minutes, flipping halfway through, until soft and golden. Let cool and chop into cubes.",
-    "minutes": 30
-   },
-   {
-    "text": "Meanwhile, rinse the lentils and cover them with water. Bring them to the boil then turn down to a simmer and let cook (uncovered) for 20-30 minutes, or until tender. Drain and set aside.",
-    "minutes": 30
-   },
-   {
-    "text": "While the lentils are cooking heat the 1 Tbsp. of oil on low in a medium pot. Add the onions and leeks and sauté for 5 or so minutes, or until they begin to soften.",
+    "text": "Put the date puree and all the remaining ingredients, including the other 6 cups of water, into an electric pressure cooker.",
     "minutes": null
    },
    {
-    "text": "Add the garlic next along with the cumin and coriander, cooking for a few more minutes. Add the remaining spices – paprika, cinnamon, chilli, cocoa, Worcestershire sauce, salt, and oregano.",
-    "minutes": null
+    "text": "Cook on high for 10 minutes.",
+    "minutes": 10
    },
    {
-    "text": "Next add the can of tomatoes, the water or stock, and carrots. Let simmer, covered, for 20 minutes or until the veg is tender and the mixture has thickened up.",
-    "minutes": 20
+    "text": "Or use a slow cooker instead: put everything in with 6 cups of water in total and cook on low for 8 hours.",
+    "minutes": 480
    },
    {
-    "text": "You’ll need to check on the pot periodically for a stir and a top of of liquid if needed.",
-    "minutes": null
-   },
-   {
-    "text": "Add the lentils and chopped roasted squash. Let cook for 10 more minutes to heat through.",
-    "minutes": null
-   },
-   {
-    "text": "Serve with sliced jalapeno, lime wedges, cilantro, green onions, and cashew sour cream. SIMPLE CASHEW SOUR CREAM 1 Cup Raw Unsalted Cashews Pinch Sea Salt 1 tsp. Apple Cider Vinegar Water",
-    "minutes": null
-   },
-   {
-    "text": "Bring some water to the boil, and use it to soak the cashews for at least four hours. Alternatively, you can use cold water and let the cashews soak overnight, but I’m forgetful/lazy, so often use the boil method which is much faster.",
-    "minutes": null
-   },
-   {
-    "text": "After the cashews have soaked, drain them and add to a high speed blender. Begin to puree, slowly adding about 1/2 cup fresh water, until a creamy consistency is reached.",
-    "minutes": null
-   },
-   {
-    "text": "You may need to add less or more water to reach the desired consistency.",
-    "minutes": null
-   },
-   {
-    "text": "Add a pinch of sea salt and vinegar (or lemon juice).",
+    "text": "Sprinkle with chopped scallions and serve with baked tortilla chips or over a baked potato.",
     "minutes": null
    }
   ]
@@ -17179,54 +17135,108 @@
  },
  {
   "source": "themealdb:52848",
-  "title": "Bean & Sausage Hotpot",
-  "description": "A British stew of sausages, butter beans and passata — serves 4, about an hour start to finish.",
+  "title": "Sausage and butter bean casserole",
+  "description": "A quick hob casserole of browned sausages, onion, carrot and butter beans in a tomato and stock sauce with paprika and mixed herbs, finished with frozen peas.",
   "servings": 4,
   "cuisine": "British",
   "category": "Miscellaneous",
   "image": "https://www.themealdb.com/images/media/meals/vxuyrx1511302687.jpg",
-  "prep_minutes": 10,
-  "cook_minutes": 40,
+  "prep_minutes": 5,
+  "cook_minutes": 25,
   "ingredients": [
    {
-    "name": "sausages",
-    "quantity": 8,
-    "unit": "",
-    "note": "large"
-   },
-   {
-    "name": "passata",
-    "quantity": 1,
-    "unit": "jar",
-    "note": ""
-   },
-   {
-    "name": "butter beans",
-    "quantity": 1200,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "molasses",
+    "name": "vegetable oil",
     "quantity": 1,
     "unit": "tbsp",
     "note": ""
    },
    {
-    "name": "mustard",
+    "name": "sausages",
+    "quantity": 8,
+    "unit": "",
+    "note": "meat or vegetarian"
+   },
+   {
+    "name": "onion",
     "quantity": 1,
+    "unit": "",
+    "note": "medium white, diced"
+   },
+   {
+    "name": "garlic",
+    "quantity": 2,
+    "unit": "clove",
+    "note": "crushed"
+   },
+   {
+    "name": "carrot",
+    "quantity": 2,
+    "unit": "",
+    "note": "medium, diced"
+   },
+   {
+    "name": "canned tomatoes",
+    "quantity": 400,
+    "unit": "g",
+    "note": "chopped, 1 tin"
+   },
+   {
+    "name": "tomato puree",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": ""
+   },
+   {
+    "name": "chicken stock",
+    "quantity": 200,
+    "unit": "ml",
+    "note": "chicken or vegetable stock"
+   },
+   {
+    "name": "paprika",
+    "quantity": 0.5,
     "unit": "tsp",
     "note": ""
+   },
+   {
+    "name": "mixed herbs",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": "dried"
+   },
+   {
+    "name": "butter beans",
+    "quantity": 400,
+    "unit": "g",
+    "note": "1 tin, drained"
+   },
+   {
+    "name": "peas",
+    "quantity": 80,
+    "unit": "g",
+    "note": "frozen"
    }
   ],
   "steps": [
    {
-    "text": "In a large casserole, fry the sausages until brown all over – about 10 mins.",
-    "minutes": 10
+    "text": "Heat the oil in a large saucepan or frying pan, add the sausages and fry gently for 5-6 minutes until they start to brown.",
+    "minutes": 6
    },
    {
-    "text": "Add the tomato sauce, stirring well, then stir in the beans, treacle or sugar and mustard. Bring to the simmer, cover and cook for 30 mins. Great served with crusty bread or rice.",
-    "minutes": 30
+    "text": "Add the onion, garlic and carrots and fry for another 2-3 minutes.",
+    "minutes": 3
+   },
+   {
+    "text": "Add the tinned tomatoes, tomato puree, stock, paprika and mixed herbs. Stir well and cook on a low-medium heat for 15 minutes.",
+    "minutes": 15
+   },
+   {
+    "text": "Add the butter beans and peas and cook for a final 5 minutes.",
+    "minutes": 5
+   },
+   {
+    "text": "Serve straight away with crusty bread or rice. For young children, cut the sausages into spears.",
+    "minutes": null
    }
   ]
  },
@@ -19459,31 +19469,55 @@
  {
   "source": "themealdb:53316",
   "title": "Beetroot pancakes",
-  "description": "An Ukrainian sweet made with beetroot, self-raising flour and mixed berries — serves 8, on the table in about 45 minutes.",
-  "servings": 8,
+  "description": "Pink-red pancakes made with blended boiled beetroot, milk, egg and maple syrup, fried in a pan and served with maple syrup and icing sugar.",
+  "servings": 4,
   "cuisine": "Ukrainian",
   "category": "Dessert",
   "image": "https://www.themealdb.com/images/media/meals/xlqqhw1764369924.jpg",
-  "prep_minutes": 15,
-  "cook_minutes": 20,
+  "prep_minutes": 20,
+  "cook_minutes": 25,
   "ingredients": [
    {
     "name": "beetroot",
-    "quantity": 3,
+    "quantity": 280,
+    "unit": "g",
+    "note": "10 oz, cubed and boiled"
+   },
+   {
+    "name": "milk",
+    "quantity": 1,
+    "unit": "cup",
+    "note": ""
+   },
+   {
+    "name": "eggs",
+    "quantity": 1,
     "unit": "",
     "note": ""
    },
    {
-    "name": "milk",
-    "quantity": 50,
-    "unit": "ml",
+    "name": "butter",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "melted"
+   },
+   {
+    "name": "maple syrup",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "for the batter"
+   },
+   {
+    "name": "vanilla extract",
+    "quantity": 1,
+    "unit": "tsp",
     "note": ""
    },
    {
-    "name": "self-raising flour",
-    "quantity": 200,
-    "unit": "g",
-    "note": ""
+    "name": "salt",
+    "quantity": null,
+    "unit": "",
+    "note": "to taste"
    },
    {
     "name": "baking powder",
@@ -19492,67 +19526,59 @@
     "note": ""
    },
    {
-    "name": "maple syrup",
-    "quantity": 2,
-    "unit": "tbsp",
+    "name": "plain flour",
+    "quantity": 1,
+    "unit": "cup",
     "note": ""
    },
    {
-    "name": "vanilla extract",
-    "quantity": 0.5,
+    "name": "vegetable oil",
+    "quantity": 1,
     "unit": "tsp",
-    "note": ""
+    "note": "for frying"
    },
    {
-    "name": "eggs",
-    "quantity": 3,
+    "name": "maple syrup",
+    "quantity": null,
     "unit": "",
-    "note": ""
+    "note": "to serve"
    },
    {
-    "name": "butter",
-    "quantity": 25,
-    "unit": "g",
-    "note": ""
+    "name": "icing sugar",
+    "quantity": null,
+    "unit": "",
+    "note": "to garnish (powdered sugar)"
    },
    {
     "name": "mixed berries",
-    "quantity": 200,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "jam",
-    "quantity": 2,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "greek yoghurt",
-    "quantity": 100,
-    "unit": "g",
-    "note": ""
+    "quantity": null,
+    "unit": "",
+    "note": "optional, to serve"
    }
   ],
   "steps": [
    {
-    "text": "Put the beetroot in a jug with the milk and blend with a stick blender until smooth. Pour into a bowl with the rest of the pancake ingredients and whisk until smooth and vibrant purple.",
+    "text": "Boil the cubed beetroot until tender (the ingredient list says cubed and boiled).",
     "minutes": null
    },
    {
-    "text": "Put a small knob of butter in a large non-stick frying pan and heat over a medium-low heat until melted and foamy. Now create 3 or 4 pancakes each made from 2 tbsp of the batter.",
+    "text": "Blend the beetroot until smooth, add the milk and blend a little more. Set aside.",
     "minutes": null
    },
    {
-    "text": "Cook for 2-3 mins then flip over and cook for a further minute until cooked through. Repeat with any remaining batter. Heat oven to lowest setting and keep the pancakes warm in there until needed.",
-    "minutes": 3
+    "text": "Mix the egg, melted butter, maple syrup and vanilla in a bowl, then stir in the blended beetroot.",
+    "minutes": null
    },
    {
-    "text": "Serve with your favourite pancake toppings or make a simple compote by simmering frozen berries in with 1 tbsp blackcurrant jam until bubbling and syrupy (about 5-10 mins). In a small bowl stir together the remaining jam and the yogurt.",
-    "minutes": 10
+    "text": "Season with salt, add the baking powder and flour and mix until even.",
+    "minutes": null
    },
    {
-    "text": "Stack the cooked pancakes with the yogurt and pour the warm berry compote over the top.",
+    "text": "Heat 1 tsp vegetable oil in a pan over low heat. Add a ladle of batter and fry for about 4 minutes on each side. Repeat with the remaining batter for 8-10 pancakes.",
+    "minutes": 8
+   },
+   {
+    "text": "Serve with maple syrup and a dusting of icing sugar, and berries if you like.",
     "minutes": null
    }
   ]
@@ -21248,77 +21274,91 @@
  {
   "source": "themealdb:53100",
   "title": "Blueberry & lemon friands",
-  "description": "An Australian sweet made with almonds, egg whites and lemon — serves 4, on the table in about 45 minutes.",
-  "servings": 4,
+  "description": "Light almond and egg white cakes flavoured with lemon zest and vanilla, topped with blueberries and baked in a 12-hole friand or muffin pan.",
+  "servings": 12,
   "cuisine": "Australian",
   "category": "Dessert",
   "image": "https://www.themealdb.com/images/media/meals/e756bf1761848342.jpg",
   "prep_minutes": 10,
-  "cook_minutes": 25,
+  "cook_minutes": 22,
   "ingredients": [
    {
-    "name": "butter",
-    "quantity": 100,
-    "unit": "g",
-    "note": ""
-   },
-   {
     "name": "icing sugar",
-    "quantity": 125,
+    "quantity": 225,
     "unit": "g",
-    "note": ""
+    "note": "sifted"
    },
    {
     "name": "plain flour",
-    "quantity": 25,
+    "quantity": 50,
     "unit": "g",
-    "note": ""
+    "note": "sifted"
    },
    {
-    "name": "almonds",
-    "quantity": 85,
+    "name": "ground almonds",
+    "quantity": 150,
     "unit": "g",
     "note": ""
    },
    {
     "name": "egg whites",
-    "quantity": 3,
+    "quantity": 6,
     "unit": "",
+    "note": "medium"
+   },
+   {
+    "name": "vanilla extract",
+    "quantity": 1,
+    "unit": "tsp",
     "note": ""
    },
    {
     "name": "lemon",
-    "quantity": 1,
+    "quantity": 2,
     "unit": "",
-    "note": ""
+    "note": "zest only, finely grated"
    },
    {
-    "name": "blackberries",
-    "quantity": 85,
+    "name": "butter",
+    "quantity": 185,
     "unit": "g",
-    "note": ""
+    "note": "melted and cooled"
+   },
+   {
+    "name": "blueberries",
+    "quantity": 80,
+    "unit": "g",
+    "note": "page says 80-150 g, 5 or 6 per cup"
    }
   ],
   "steps": [
    {
-    "text": "Preheat the oven to fan 180C/conventional 200C/gas 6. Generously butter six non-stick friand or muffin tins. Melt the butter and set aside to cool.",
+    "text": "Preheat the oven to 200°C (180°C fan). Grease a 12-hole friand or muffin pan.",
     "minutes": null
    },
    {
-    "text": "Sift the icing sugar and flour into a bowl. Add the almonds and mix everything between your fingers.",
+    "text": "Sift the icing sugar and flour into a large bowl, add the ground almonds and stir to combine.",
     "minutes": null
    },
    {
-    "text": "Whisk the egg whites in another bowl until they form a light, floppy foam. Make a well in the centre of the dry ingredients, tip in the egg whites and lemon rind, then lightly stir in the butter to form a soft batter.",
+    "text": "Whisk the egg whites until light and frothy but short of soft peaks.",
     "minutes": null
    },
    {
-    "text": "Divide the batter among the tins, a large serving spoon is perfect for this job. Sprinkle a handful of blueberries over each cake and bake for 15-20 minutes until just firm to the touch and golden brown.",
-    "minutes": 20
+    "text": "Make a well in the dry mix and pour in the egg whites and vanilla. Mix to a batter.",
+    "minutes": null
    },
    {
-    "text": "Cool in the tins for 5 minutes, then turn out and cool on a wire rack. To serve, dust lightly with icing sugar.",
-    "minutes": 5
+    "text": "Add the lemon zest, pour the melted butter over and mix until fully combined.",
+    "minutes": null
+   },
+   {
+    "text": "Divide the batter equally between the 12 cups and drop 5 or 6 blueberries into each so they sink a little.",
+    "minutes": null
+   },
+   {
+    "text": "Bake for 20-22 minutes until springy when the tops are pressed. Cool in the pan for 5 minutes, then move to a wire rack to cool completely.",
+    "minutes": 22
    }
   ]
  },
@@ -22852,118 +22892,130 @@
  },
  {
   "source": "themealdb:52940",
-  "title": "Brown Stew Chicken",
-  "description": "A Jamaican stew of chicken, tomato and capsicum — serves 4, about an hour start to finish.",
+  "title": "Brown stew chicken",
+  "description": "Jamaican chicken pieces seasoned with garlic and escallion, fried to brown, then simmered in an onion, pepper, thyme and ketchup gravy until tender.",
   "servings": 4,
   "cuisine": "Jamaican",
   "category": "Chicken",
   "image": "https://www.themealdb.com/images/media/meals/sypxpx1515365095.jpg",
   "prep_minutes": 20,
-  "cook_minutes": 35,
+  "cook_minutes": 45,
   "ingredients": [
    {
     "name": "chicken",
-    "quantity": 1,
-    "unit": "",
+    "quantity": 1300,
+    "unit": "g",
+    "note": "3 lb, cut in pieces, skin removed"
+   },
+   {
+    "name": "salt",
+    "quantity": 2,
+    "unit": "tsp",
+    "note": "to season the chicken"
+   },
+   {
+    "name": "black pepper",
+    "quantity": 0.5,
+    "unit": "tsp",
     "note": ""
    },
    {
-    "name": "tomato",
-    "quantity": 1,
-    "unit": "",
-    "note": "chopped"
-   },
-   {
-    "name": "onion",
+    "name": "sugar",
     "quantity": 2,
-    "unit": "",
-    "note": "chopped"
+    "unit": "tsp",
+    "note": ""
    },
    {
     "name": "garlic",
+    "quantity": 3,
+    "unit": "clove",
+    "note": "large, chopped large"
+   },
+   {
+    "name": "spring onion",
     "quantity": 2,
     "unit": "",
-    "note": "chopped"
-   },
-   {
-    "name": "capsicum",
-    "quantity": 1,
-    "unit": "",
-    "note": "chopped"
-   },
-   {
-    "name": "carrot",
-    "quantity": 1,
-    "unit": "",
-    "note": "chopped"
-   },
-   {
-    "name": "lime",
-    "quantity": 1,
-    "unit": "",
-    "note": ""
-   },
-   {
-    "name": "thyme",
-    "quantity": 2,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "allspice",
-    "quantity": 1,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "soy sauce",
-    "quantity": 2,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "cornflour",
-    "quantity": 2,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "coconut milk",
-    "quantity": 2,
-    "unit": "cup",
-    "note": ""
+    "note": "stalks escallion, white part only, chopped large"
    },
    {
     "name": "vegetable oil",
+    "quantity": 125,
+    "unit": "ml",
+    "note": "for frying the chicken, half drained afterwards"
+   },
+   {
+    "name": "onion",
+    "quantity": 1,
+    "unit": "",
+    "note": "large, chopped"
+   },
+   {
+    "name": "capsicum",
+    "quantity": 0.25,
+    "unit": "",
+    "note": "red, chopped"
+   },
+   {
+    "name": "capsicum",
+    "quantity": 0.25,
+    "unit": "",
+    "note": "green, chopped"
+   },
+   {
+    "name": "thyme",
+    "quantity": 1,
+    "unit": "sprig",
+    "note": "fresh, or 1 tsp dried"
+   },
+   {
+    "name": "hot sauce",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "hot pepper sauce"
+   },
+   {
+    "name": "tomato ketchup",
     "quantity": 1,
     "unit": "tbsp",
     "note": ""
+   },
+   {
+    "name": "water",
+    "quantity": 375,
+    "unit": "ml",
+    "note": "hot; page says 1½-2 cups, split between the gravy and the simmer"
+   },
+   {
+    "name": "salt",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "for the gravy, if needed"
    }
   ],
   "steps": [
    {
-    "text": "Squeeze lime over chicken and rub well. Drain off excess lime juice.",
-    "minutes": null
-   },
-   {
-    "text": "Combine tomato, scallion, onion, garlic, pepper, thyme, pimento and soy sauce in a large bowl with the chicken pieces. Cover and marinate at least one hour.",
+    "text": "Season the chicken with the salt, pepper, sugar, garlic and escallion and marinate for at least 1 hour, or overnight.",
     "minutes": 60
    },
    {
-    "text": "Heat oil in a dutch pot or large saucepan. Shake off the seasonings as you remove each piece of chicken from the marinade. Reserve the marinade for sauce.",
+    "text": "Remove the garlic and escallion, then fry the chicken in the hot oil on high heat for 2-3 minutes a side until browned. Take it out of the pan.",
+    "minutes": 6
+   },
+   {
+    "text": "Pour off half the oil, then fry the onion and peppers until the onion is transparent.",
     "minutes": null
    },
    {
-    "text": "Lightly brown the chicken a few pieces at a time in very hot oil. Place browned chicken pieces on a plate to rest while you brown the remaining pieces.",
+    "text": "Add the thyme, hot pepper sauce, ketchup and 1 cup of hot water, stir, taste and add 1 tsp salt if needed. Simmer for 5 minutes.",
+    "minutes": 5
+   },
+   {
+    "text": "Return the chicken to the gravy with another 125-250 ml of hot water, turn to low and cover. Simmer for 30 minutes until the chicken is tender and the gravy thick.",
+    "minutes": 30
+   },
+   {
+    "text": "If the gravy is still thin, lift out the chicken, simmer the gravy on medium until it thickens, then return the chicken and warm through.",
     "minutes": null
-   },
-   {
-    "text": "Drain off excess oil and return the chicken to the pan. Pour the marinade over the chicken and add the carrots. Stir and cook over medium heat for 10 minutes.",
-    "minutes": 10
-   },
-   {
-    "text": "Mix flour and coconut milk and add to stew, stirring constantly. Turn heat down to minimum and cook another 20 minutes or until tender.",
-    "minutes": 20
    }
   ]
  },
@@ -46306,56 +46358,92 @@
  },
  {
   "source": "themealdb:53033",
-  "title": "Japanese gohan rice",
-  "description": "A Japanese side of sushi rice and mirin — serves 4, ready in under half an hour.",
+  "title": "Takikomi gohan",
+  "description": "Japanese seasoned rice cooked in a rice cooker with chicken thigh, carrot, konnyaku and aburaage in soy sauce, sake and mirin.",
   "servings": 4,
   "cuisine": "Japanese",
-  "category": "Side",
-  "image": "https://www.themealdb.com/images/media/meals/kw92t41604181871.jpg",
+  "category": "Miscellaneous",
+  "image": "https://i.ytimg.com/vi/rZO86_-MIp0/hqdefault.jpg",
   "prep_minutes": 10,
-  "cook_minutes": 15,
+  "cook_minutes": 50,
   "ingredients": [
    {
-    "name": "sushi rice",
+    "name": "chicken thigh",
+    "quantity": 1,
+    "unit": "",
+    "note": "cut into bite-size pieces"
+   },
+   {
+    "name": "konnyaku",
+    "quantity": 0.33,
+    "unit": "",
+    "note": "slab, cut thinly"
+   },
+   {
+    "name": "carrot",
+    "quantity": 0.5,
+    "unit": "",
+    "note": "cut thinly"
+   },
+   {
+    "name": "aburaage",
+    "quantity": 0.5,
+    "unit": "",
+    "note": "fried tofu pouch, cut thinly"
+   },
+   {
+    "name": "rice",
     "quantity": 300,
     "unit": "g",
+    "note": "2 rice-cooker cups of 180 ml (360 ml, about 150 g per cup); washed"
+   },
+   {
+    "name": "salt",
+    "quantity": 0.5,
+    "unit": "tsp",
     "note": ""
    },
    {
-    "name": "mirin",
-    "quantity": 1,
+    "name": "soy sauce",
+    "quantity": 2,
     "unit": "tbsp",
     "note": ""
    },
    {
-    "name": "pickle juice",
-    "quantity": null,
-    "unit": "",
-    "note": "to garnish"
+    "name": "sake",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": ""
    },
    {
-    "name": "spring onion",
+    "name": "mirin",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": ""
+   },
+   {
+    "name": "water",
     "quantity": null,
     "unit": "",
-    "note": "to garnish"
+    "note": "enough to reach the 2-cup rice line of the cooker"
    }
   ],
   "steps": [
    {
-    "text": "Rinsing and soaking your rice is key to achieving the perfect texture. Measure the rice into a bowl, cover with cold water, then use your fingers to massage the grains of rice – the water will become cloudy.",
+    "text": "Cut the chicken thigh into bite-size pieces. Cut the konnyaku, carrot and aburaage thinly.",
     "minutes": null
    },
    {
-    "text": "Drain and rinse again with fresh water. Repeat five more times until the water stays clear.",
+    "text": "Wash the rice and put it in the removable bowl of the rice cooker.",
     "minutes": null
    },
    {
-    "text": "Tip the rinsed rice into a saucepan with 400ml water, or 200ml dashi and 200ml water, bring to the boil, then turn down the heat to a low simmer, cover with a tight-fitting lid with a steam hole and cook for 15 mins. Remove from the heat and leave to sit for another 15 mins, then stir through the mirin.",
-    "minutes": 15
+    "text": "Add the salt, soy sauce, sake and mirin, then add water up to the line for 2 cups of rice.",
+    "minutes": null
    },
    {
-    "text": "Remove the lid and give it a good stir. Serve with any or all of the optional toppings.",
-    "minutes": null
+    "text": "Add the chicken and vegetables on top and cook like white rice, using the normal rice-cooker cycle.",
+    "minutes": 50
    }
   ]
  },
@@ -78291,115 +78379,167 @@
  },
  {
   "source": "themealdb:53057",
-  "title": "Traditional Croatian Goulash",
-  "description": "A Croatian stew of beef, carrot and red wine — serves 4, worth the couple of hours it takes.",
-  "servings": 4,
-  "cuisine": "Croatian",
+  "title": "Slow-cooked beef goulash",
+  "description": "Beef braising steak slow-cooked in the oven in a smoky tomato and paprika sauce, finished with red peppers and sour cream and served with pasta.",
+  "servings": 8,
+  "cuisine": "Hungarian",
   "category": "Beef",
-  "image": "https://www.themealdb.com/images/media/meals/n1hcou1628770088.jpg",
-  "prep_minutes": 20,
-  "cook_minutes": 80,
+  "image": "https://i.ytimg.com/vi/ipEz5u2T7KM/hqdefault.jpg",
+  "prep_minutes": 30,
+  "cook_minutes": 255,
   "ingredients": [
    {
-    "name": "beef",
-    "quantity": 500,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "onion",
-    "quantity": 2,
-    "unit": "",
-    "note": "chopped"
-   },
-   {
-    "name": "carrot",
-    "quantity": 2,
-    "unit": "",
-    "note": "chopped"
-   },
-   {
-    "name": "garlic",
-    "quantity": 2,
-    "unit": "clove",
-    "note": ""
-   },
-   {
-    "name": "bay leaf",
-    "quantity": 2,
-    "unit": "",
-    "note": ""
-   },
-   {
-    "name": "red wine",
-    "quantity": 200,
-    "unit": "ml",
-    "note": ""
-   },
-   {
-    "name": "water",
-    "quantity": 2000,
-    "unit": "ml",
-    "note": ""
-   },
-   {
-    "name": "mustard",
+    "name": "vegetable oil",
     "quantity": 3,
     "unit": "tbsp",
     "note": ""
    },
    {
-    "name": "salt",
-    "quantity": 1,
+    "name": "beef",
+    "quantity": 900,
+    "unit": "g",
+    "note": "braising steak, cut into bite-size chunks"
+   },
+   {
+    "name": "plain flour",
+    "quantity": 2,
     "unit": "tbsp",
-    "note": ""
+    "note": "for dredging the beef"
+   },
+   {
+    "name": "salt",
+    "quantity": 0.25,
+    "unit": "tsp",
+    "note": "for dredging the beef"
    },
    {
     "name": "black pepper",
     "quantity": 0.5,
     "unit": "tsp",
+    "note": "freshly ground, for dredging the beef"
+   },
+   {
+    "name": "onion",
+    "quantity": 2,
+    "unit": "",
+    "note": "brown, peeled and diced"
+   },
+   {
+    "name": "garlic",
+    "quantity": 2,
+    "unit": "clove",
+    "note": "fat, peeled and minced"
+   },
+   {
+    "name": "tomato puree",
+    "quantity": 2,
+    "unit": "tbsp",
     "note": ""
    },
    {
     "name": "paprika",
-    "quantity": 0.5,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "vegetable oil",
     "quantity": 2,
     "unit": "tbsp",
     "note": ""
+   },
+   {
+    "name": "smoked paprika",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "regular paprika works if you have no smoked"
+   },
+   {
+    "name": "salt",
+    "quantity": 1,
+    "unit": "pinch",
+    "note": "large pinch, sprinkled over the beef with the paprika"
+   },
+   {
+    "name": "black pepper",
+    "quantity": 1,
+    "unit": "pinch",
+    "note": "large pinch, sprinkled over the beef with the paprika"
+   },
+   {
+    "name": "canned tomatoes",
+    "quantity": 2,
+    "unit": "can",
+    "note": "400 g each, chopped, in juice"
+   },
+   {
+    "name": "beef stock",
+    "quantity": 600,
+    "unit": "ml",
+    "note": "hot (water plus 2 stock cubes is fine)"
+   },
+   {
+    "name": "honey",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "optional, to balance the acidity of the tomatoes"
+   },
+   {
+    "name": "capsicum",
+    "quantity": 2,
+    "unit": "",
+    "note": "red, deseeded and sliced"
+   },
+   {
+    "name": "sour cream",
+    "quantity": 225,
+    "unit": "ml",
+    "note": "swirled on top"
+   },
+   {
+    "name": "pasta",
+    "quantity": null,
+    "unit": "",
+    "note": "cooked pappardelle, tagliatelle or penne, to serve"
+   },
+   {
+    "name": "parsley",
+    "quantity": 1,
+    "unit": "handful",
+    "note": "chopped, to garnish"
+   },
+   {
+    "name": "sour cream",
+    "quantity": null,
+    "unit": "",
+    "note": "extra, to serve"
    }
   ],
   "steps": [
    {
-    "text": "Clean the meat from the veins if there are some and cut it into smaller pieces, 3 × 3 cm. Marinate the meat in the mustard and spices and let it sit in the refrigerator for one hour.",
-    "minutes": 60
-   },
-   {
-    "text": "Heat one tablespoon of pork fat or vegetable oil in a pot and fry the meat on all sides until it gets browned. Once the meat is cooked, transfer it to a plate and add another tablespoon of fat to the pot.",
+    "text": "Heat the oven to 170°C fan. Heat the oil in a Dutch oven or oven-safe casserole.",
     "minutes": null
    },
    {
-    "text": "Cut the onions very fine, peel the carrots and shred it using a grater. Cook the onions and carrots over low heat for 15 minutes. You can salt the vegetables a little to make them soften faster.",
-    "minutes": 15
-   },
-   {
-    "text": "Once the vegetables have browned and become slightly mushy, add the meat and bay leaves and garlic. Pour over with wine and simmer for 10-15 minutes to allow the alcohol to evaporate. Now is the right time to add 2/3 the amount of liquid.",
-    "minutes": 15
-   },
-   {
-    "text": "Cover the pot and cook over low heat for an hour, stirring occasionally. After the first hour, pour over the rest of the water or stock and cook for another 30-45 minutes.",
-    "minutes": 45
-   },
-   {
-    "text": "Allow the stew to cool slightly and serve it with a sprinkle of chopped parsley and few slices of fresh hot pepper if you like to spice it up a bit.",
+    "text": "Toss the beef in the flour, salt and pepper and brown it in 2-3 batches until well browned. Remove it to a bowl.",
     "minutes": null
    },
    {
-    "text": "Slice some fresh bread, season the salad and simply enjoying these wonderful flavors.",
+    "text": "Turn the heat down and cook the onions for 2-3 minutes, scraping up the browned bits and keeping the heat low so nothing burns.",
+    "minutes": 3
+   },
+   {
+    "text": "Stir in the garlic and tomato puree, then return the beef to the pot. Sprinkle over the paprikas, salt and pepper and stir to coat.",
+    "minutes": null
+   },
+   {
+    "text": "Pour in the tomatoes, hot stock and honey, stir and bring to a simmer, scraping up anything stuck to the base.",
+    "minutes": null
+   },
+   {
+    "text": "Cover and cook in the oven for 3 hours 30 minutes, stirring 2 or 3 times and adding a splash of water if it gets dry.",
+    "minutes": 210
+   },
+   {
+    "text": "Stir in the sliced red peppers and return to the oven for 30 minutes.",
+    "minutes": 30
+   },
+   {
+    "text": "Stir, swirl the sour cream on top and sprinkle with parsley. Serve with cooked pasta and extra sour cream.",
     "minutes": null
    }
   ]
@@ -81397,104 +81537,136 @@
  {
   "source": "themealdb:53232",
   "title": "Vietnamese chicken salad",
-  "description": "A Vietnamese salad of chicken breast, fish sauce and rice noodles — serves 4, ready in under half an hour.",
-  "servings": 4,
+  "description": "A slaw-style salad of shredded chicken, wombok, carrot, capsicum, cucumber and herbs tossed in a fish sauce and lime dressing, topped with chopped peanuts.",
+  "servings": 3,
   "cuisine": "Vietnamese",
   "category": "Chicken",
-  "image": "https://www.themealdb.com/images/media/meals/pk8wtn1763758591.jpg",
-  "prep_minutes": 20,
-  "cook_minutes": 5,
+  "image": "https://i.ytimg.com/vi/behSkhzKpHI/hqdefault.jpg",
+  "prep_minutes": 15,
+  "cook_minutes": 0,
   "ingredients": [
    {
-    "name": "rice noodles",
-    "quantity": 140,
-    "unit": "g",
-    "note": ""
+    "name": "lime juice",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": "for the dressing"
    },
    {
-    "name": "carrot",
+    "name": "rice vinegar",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": "for the dressing"
+   },
+   {
+    "name": "fish sauce",
+    "quantity": 0.25,
+    "unit": "cup",
+    "note": "for the dressing; light soy sauce can replace it"
+   },
+   {
+    "name": "vegetable oil",
+    "quantity": 0.25,
+    "unit": "cup",
+    "note": "canola, for the dressing"
+   },
+   {
+    "name": "sugar",
     "quantity": 1,
-    "unit": "",
-    "note": ""
+    "unit": "tbsp",
+    "note": "white, for the dressing"
    },
    {
-    "name": "cucumber",
-    "quantity": 0.5,
-    "unit": "",
-    "note": ""
+    "name": "garlic",
+    "quantity": 1,
+    "unit": "clove",
+    "note": "large, very finely minced, for the dressing"
+   },
+   {
+    "name": "chilli",
+    "quantity": 2,
+    "unit": "tsp",
+    "note": "red, deseeded and very finely minced, for the dressing"
    },
    {
     "name": "chicken breast",
-    "quantity": 2,
-    "unit": "",
-    "note": ""
+    "quantity": 350,
+    "unit": "g",
+    "note": "cooked, cut into thin batons (about 2 large breasts)"
    },
    {
-    "name": "radish",
-    "quantity": 50,
+    "name": "chinese cabbage",
+    "quantity": 540,
     "unit": "g",
-    "note": ""
+    "note": "wombok, 6 heaped cups finely shredded (about 90 g per cup)"
    },
    {
     "name": "red onion",
     "quantity": 0.5,
     "unit": "",
-    "note": ""
+    "note": "very finely sliced"
    },
    {
-    "name": "mint",
+    "name": "capsicum",
     "quantity": 1,
-    "unit": "bunch",
-    "note": ""
+    "unit": "",
+    "note": "red, finely sliced into thin batons"
    },
    {
-    "name": "peanuts",
-    "quantity": 25,
-    "unit": "g",
-    "note": ""
+    "name": "cucumber",
+    "quantity": 2,
+    "unit": "",
+    "note": "seeds removed, sliced into half moons (or 1 long continental cucumber)"
+   },
+   {
+    "name": "carrot",
+    "quantity": 1,
+    "unit": "",
+    "note": "large, peeled and julienned"
    },
    {
     "name": "chilli",
     "quantity": 1,
     "unit": "",
-    "note": "chopped"
+    "note": "large, deseeded and julienned; optional"
    },
    {
-    "name": "lime",
+    "name": "mint",
     "quantity": 1,
-    "unit": "",
-    "note": "zest and juice"
+    "unit": "handful",
+    "note": "1 cup tightly packed leaves, torn"
    },
    {
-    "name": "fish sauce",
-    "quantity": 1.5,
-    "unit": "tbsp",
-    "note": ""
+    "name": "coriander",
+    "quantity": 1,
+    "unit": "handful",
+    "note": "1 cup tightly packed leaves"
    },
    {
-    "name": "soy sauce",
-    "quantity": 1.5,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "sesame oil",
-    "quantity": 1.5,
-    "unit": "tbsp",
-    "note": ""
+    "name": "peanuts",
+    "quantity": 0.5,
+    "unit": "cup",
+    "note": "roasted unsalted, finely chopped, to serve"
    }
   ],
   "steps": [
    {
-    "text": "To make the dressing, whisk all the ingredients together in a large serving bowl. Cook the noodles following pack instructions, then drain and add to the bowl with the dressing.",
+    "text": "Shake the dressing ingredients together in a jar and leave for 10 minutes so the flavours meld.",
+    "minutes": 10
+   },
+   {
+    "text": "Put the chicken, cabbage, red onion, capsicum, cucumber, carrot, chilli, mint and coriander in a very large bowl.",
     "minutes": null
    },
    {
-    "text": "Peel the carrot into long strips using a vegetable peeler. Do the same for the cucumber, until you reach the seeds (discard them).",
+    "text": "Pour over half the dressing and toss well. Leave for 5 minutes so the vegetables soften slightly and turn slaw-like.",
+    "minutes": 5
+   },
+   {
+    "text": "Just before serving, toss again and add most of the remaining dressing, tasting and adding more if you like.",
     "minutes": null
    },
    {
-    "text": "Add the carrot and cucumber to the noodle mixture along with the shredded chicken, radishes, red onion and mint. Toss well to coat in the dressing, scatter over the peanuts and serve.",
+    "text": "Serve sprinkled with plenty of chopped peanuts.",
     "minutes": null
    }
   ]
@@ -81993,191 +82165,299 @@
  },
  {
   "source": "themealdb:53235",
-  "title": "Vietnamese-style caramel pork",
-  "description": "A Vietnamese dish of pork shoulder, fish sauce and shallot — serves 4, on the table in about 45 minutes.",
-  "servings": 4,
+  "title": "Vietnamese caramelised pork (thit kho tieu)",
+  "description": "Thinly sliced pork belly marinated in fish sauce, caramelised in a copper-brown sugar and simmered in young coconut water with garlic and cracked black pepper.",
+  "servings": 3,
   "cuisine": "Vietnamese",
   "category": "Pork",
-  "image": "https://www.themealdb.com/images/media/meals/4mzt101763761546.jpg",
+  "image": "https://i.ytimg.com/vi/qmQe0Qxvyzc/hqdefault.jpg",
   "prep_minutes": 15,
-  "cook_minutes": 20,
+  "cook_minutes": 40,
   "ingredients": [
    {
-    "name": "vegetable oil",
-    "quantity": 1.5,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "pork shoulder",
-    "quantity": 500,
+    "name": "pork belly",
+    "quantity": 800,
     "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "shallot",
-    "quantity": 2,
-    "unit": "",
-    "note": "chopped"
-   },
-   {
-    "name": "ground ginger",
-    "quantity": 1,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "chilli",
-    "quantity": 1,
-    "unit": "",
-    "note": "chopped"
-   },
-   {
-    "name": "brown sugar",
-    "quantity": 75,
-    "unit": "g",
-    "note": ""
+    "note": "thinly sliced"
    },
    {
     "name": "fish sauce",
+    "quantity": 6,
+    "unit": "tbsp",
+    "note": ""
+   },
+   {
+    "name": "sugar",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": ""
+   },
+   {
+    "name": "vegetable oil",
     "quantity": 1,
     "unit": "tbsp",
     "note": ""
    },
    {
-    "name": "chilli sauce",
+    "name": "garlic",
     "quantity": 2,
-    "unit": "tsp",
-    "note": ""
+    "unit": "clove",
+    "note": "crushed"
    },
    {
-    "name": "spring onion",
-    "quantity": 4,
+    "name": "black pepper",
+    "quantity": 1.5,
+    "unit": "tsp",
+    "note": "cracked"
+   },
+   {
+    "name": "young coconut",
+    "quantity": 1,
     "unit": "",
-    "note": ""
+    "note": "for its water, to cover the pork"
+   },
+   {
+    "name": "water",
+    "quantity": null,
+    "unit": "",
+    "note": "only as needed to keep the pork covered"
    },
    {
     "name": "rice",
     "quantity": null,
     "unit": "",
-    "note": "steamed"
+    "note": "steamed, to serve"
    },
    {
-    "name": "pak choi",
+    "name": "cucumber",
     "quantity": null,
     "unit": "",
-    "note": "to serve"
+    "note": "sliced, to serve"
+   },
+   {
+    "name": "tomato",
+    "quantity": null,
+    "unit": "",
+    "note": "sliced, to serve"
    }
   ],
   "steps": [
    {
-    "text": "Heat 1 tbsp of the oil in a wok over a high heat and stir-fry the pork in batches until browned all over. Remove with a slotted spoon and set aside.",
+    "text": "Marinate the pork belly in the fish sauce for at least 15 minutes, or overnight for best results.",
+    "minutes": 15
+   },
+   {
+    "text": "Heat the sugar and oil in a medium saucepan over low to medium heat until the sugar turns copper brown. Add the pork as soon as it does, so the sugar does not burn.",
     "minutes": null
    },
    {
-    "text": "Turn the heat right down and add the remaining oil, then stir in the shallots, ginger and chilli. Cook over a low heat for a couple of mins until just starting to soften.",
+    "text": "Add the garlic and pepper with the pork and sauté for about 2 minutes until golden, then another minute.",
+    "minutes": 3
+   },
+   {
+    "text": "Pour in enough young coconut water to cover the pork and bring to the boil.",
     "minutes": null
    },
    {
-    "text": "Add the sugar, fish sauce and 200ml water to the pan and stir everything together. Bring to the boil, stirring, so that the sugar dissolves, then return the pork to the pan.",
-    "minutes": null
+    "text": "Simmer on low for 30 minutes, topping up with water if the pork is not covered.",
+    "minutes": 30
    },
    {
-    "text": "Bubble vigorously for 8-10 mins until the sauce thickens to coat the meat and become glossy. Taste and stir in a little more fish sauce, if needed, along with the chilli sauce.",
-    "minutes": 10
-   },
-   {
-    "text": "Sprinkle with the spring onions and serve with steamed rice and pak choi.",
+    "text": "Serve with steamed rice and sliced cucumbers and tomatoes.",
     "minutes": null
    }
   ]
  },
  {
   "source": "themealdb:53236",
-  "title": "Vietnamese-style veggie hotpot",
-  "description": "A Vietnamese stew of green beans, butternut squash and spring onion — serves 2, on the table in about 45 minutes.",
-  "servings": 2,
+  "title": "Vietnamese vegan hot pot (lẩu)",
+  "description": "A communal Vietnamese hot pot: a mushroom, corn, daikon and lemongrass broth finished with a paprika, garlic and lemongrass oil, with vegetables, tofu and noodles cooked at the table.",
+  "servings": 4,
   "cuisine": "Vietnamese",
-  "category": "Vegetarian",
-  "image": "https://www.themealdb.com/images/media/meals/4uje7l1763762276.jpg",
+  "category": "Vegan",
+  "image": "https://i.ytimg.com/vi/OR6jC9gw_Hw/hqdefault.jpg",
   "prep_minutes": 15,
-  "cook_minutes": 15,
+  "cook_minutes": 60,
   "ingredients": [
    {
-    "name": "vegetable oil",
+    "name": "water",
+    "quantity": 3,
+    "unit": "l",
+    "note": "for the broth"
+   },
+   {
+    "name": "dried mushrooms",
+    "quantity": 12,
+    "unit": "g",
+    "note": "soaked 10 minutes, rinsed twice"
+   },
+   {
+    "name": "corn cob",
+    "quantity": 5,
+    "unit": "",
+    "note": "shucked, broken in half"
+   },
+   {
+    "name": "lemongrass",
+    "quantity": 3,
+    "unit": "",
+    "note": "stalks; white part kept for the aromatic oil"
+   },
+   {
+    "name": "daikon",
+    "quantity": 1,
+    "unit": "",
+    "note": "large, peeled, cut in large chunks"
+   },
+   {
+    "name": "carrot",
+    "quantity": 4,
+    "unit": "",
+    "note": "medium, peeled, cut in 5 cm chunks"
+   },
+   {
+    "name": "onion",
     "quantity": 2,
-    "unit": "tsp",
-    "note": ""
+    "unit": "",
+    "note": "cooking onions, halved; page says 2-3"
    },
    {
     "name": "ginger",
-    "quantity": 4,
+    "quantity": 7.5,
     "unit": "cm",
-    "note": "finely chopped"
+    "note": "3 inches, peeled, in 1 cm slices"
    },
    {
     "name": "garlic",
-    "quantity": 2,
-    "unit": "",
-    "note": "chopped"
+    "quantity": 1,
+    "unit": "bulb",
+    "note": "9-12 cloves, for the aromatic oil"
    },
    {
-    "name": "butternut squash",
-    "quantity": 0.5,
-    "unit": "",
-    "note": ""
+    "name": "vegetable oil",
+    "quantity": 3,
+    "unit": "tbsp",
+    "note": "neutral, for the aromatic oil"
    },
    {
-    "name": "soy sauce",
+    "name": "paprika",
     "quantity": 2,
+    "unit": "tbsp",
+    "note": "for the aromatic oil"
+   },
+   {
+    "name": "chilli flakes",
+    "quantity": 1,
     "unit": "tsp",
-    "note": ""
+    "note": "optional, for spice; page says 1-3 tsp"
    },
    {
-    "name": "brown sugar",
-    "quantity": 2,
-    "unit": "tsp",
-    "note": ""
+    "name": "mushroom broth powder",
+    "quantity": 3,
+    "unit": "tbsp",
+    "note": "to season, about 1 tbsp per litre"
    },
    {
-    "name": "vegetable stock",
-    "quantity": 200,
-    "unit": "ml",
-    "note": ""
-   },
-   {
-    "name": "green beans",
-    "quantity": 100,
-    "unit": "g",
-    "note": "shredded"
-   },
-   {
-    "name": "spring onion",
-    "quantity": 4,
-    "unit": "",
-    "note": "sliced"
-   },
-   {
-    "name": "coriander",
+    "name": "mushrooms",
     "quantity": null,
     "unit": "",
-    "note": "to serve"
+    "note": "to serve; enoki, shimeji, king oyster or black oyster, for the table"
    },
    {
-    "name": "jasmine rice",
+    "name": "bean sprouts",
     "quantity": null,
     "unit": "",
-    "note": "to serve"
+    "note": "to serve, for the table"
+   },
+   {
+    "name": "okra",
+    "quantity": null,
+    "unit": "",
+    "note": "to serve, for the table"
+   },
+   {
+    "name": "puffy tofu",
+    "quantity": null,
+    "unit": "",
+    "note": "to serve, for the table"
+   },
+   {
+    "name": "vegan shrimp",
+    "quantity": null,
+    "unit": "",
+    "note": "to serve, for the table"
+   },
+   {
+    "name": "bean thread vermicelli",
+    "quantity": null,
+    "unit": "",
+    "note": "to serve, for the table"
+   },
+   {
+    "name": "shirataki noodles",
+    "quantity": null,
+    "unit": "",
+    "note": "to serve, for the table"
+   },
+   {
+    "name": "udon noodles",
+    "quantity": null,
+    "unit": "",
+    "note": "to serve, for the table"
+   },
+   {
+    "name": "yu choy",
+    "quantity": null,
+    "unit": "",
+    "note": "to serve, for the table"
+   },
+   {
+    "name": "pak choi",
+    "quantity": null,
+    "unit": "",
+    "note": "bok choy, to serve, for the table"
+   },
+   {
+    "name": "pea shoot tips",
+    "quantity": null,
+    "unit": "",
+    "note": "to serve, for the table"
+   },
+   {
+    "name": "bean curd sheets",
+    "quantity": null,
+    "unit": "",
+    "note": "to serve, for the table"
    }
   ],
   "steps": [
    {
-    "text": "Heat the oil in a medium-size, lidded saucepan. Add the ginger and garlic, then stir-fry for about 5 mins. Add the squash, soy sauce, sugar and stock.",
-    "minutes": 5
+    "text": "Trim the lemongrass: set aside the outer layers and green tops to simmer, and finely slice the tender white part. Blitz the white part with the garlic in a food processor until minced, and set aside for the oil.",
+    "minutes": null
    },
    {
-    "text": "Cover, then simmer for 10 mins. Remove the lid, add the green beans, then cook for 3 mins more until the squash and beans are tender. Stir the spring onions through at the last minute, then sprinkle with coriander and serve with rice.",
-    "minutes": 10
+    "text": "Simmer the soaked dried mushrooms, corn, lemongrass pieces, daikon, carrots, onions and ginger in the water, covered, for at least 1 hour.",
+    "minutes": 60
+   },
+   {
+    "text": "Strain the broth and set it aside; the cooked vegetables are not part of the hot pot.",
+    "minutes": null
+   },
+   {
+    "text": "Heat the oil in a small pot over medium heat, add the garlic and lemongrass mixture and cook, stirring often, until the garlic is just starting to turn golden.",
+    "minutes": null
+   },
+   {
+    "text": "Stir in the paprika (and chilli flakes if using) until coated, then turn off the heat.",
+    "minutes": null
+   },
+   {
+    "text": "Stir a few ladles of broth into the oil to lift the spices, then pour it all into the main broth. Season with mushroom broth powder (about 1 tbsp per litre).",
+    "minutes": null
+   },
+   {
+    "text": "Heat the broth over a portable stove at the table. Cook your choice of mushrooms, vegetables, tofu and noodles in it and fish them out with a spider spoon when cooked.",
+    "minutes": null
    }
   ]
  },
@@ -82485,63 +82765,83 @@
  {
   "source": "themealdb:52917",
   "title": "White chocolate creme brulee",
-  "description": "A French sweet made with cream, white chocolate and egg yolks — serves 8, ready in under half an hour.",
-  "servings": 8,
+  "description": "A baked white chocolate and vanilla custard cooked in a water bath, chilled, then topped with a layer of caramelised sugar.",
+  "servings": 6,
   "cuisine": "French",
   "category": "Dessert",
   "image": "https://www.themealdb.com/images/media/meals/uryqru1511798039.jpg",
-  "prep_minutes": 10,
-  "cook_minutes": 15,
+  "prep_minutes": 15,
+  "cook_minutes": 45,
   "ingredients": [
    {
     "name": "cream",
-    "quantity": 568,
+    "quantity": 300,
     "unit": "ml",
-    "note": ""
+    "note": "whipping cream"
    },
    {
     "name": "white chocolate",
-    "quantity": 100,
+    "quantity": 55,
     "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "vanilla extract",
-    "quantity": null,
-    "unit": "",
-    "note": "of"
+    "note": "cut into small pieces"
    },
    {
     "name": "egg yolks",
-    "quantity": 6,
-    "unit": "",
-    "note": ""
-   },
-   {
-    "name": "sugar",
     "quantity": 2,
-    "unit": "tbsp",
+    "unit": "",
+    "note": "large, room temperature"
+   },
+   {
+    "name": "sugar",
+    "quantity": 8,
+    "unit": "tsp",
+    "note": "caster, for the custard (2 tbsp + 2 tsp)"
+   },
+   {
+    "name": "vanilla extract",
+    "quantity": 0.25,
+    "unit": "tsp",
     "note": ""
    },
    {
     "name": "sugar",
-    "quantity": null,
-    "unit": "",
-    "note": "to serve"
+    "quantity": 6,
+    "unit": "tsp",
+    "note": "caster, to sprinkle on top of the custard"
    }
   ],
   "steps": [
    {
-    "text": "Heat the cream, chocolate and vanilla pod in a pan until the chocolate has melted. Take off the heat and allow to infuse for 10 mins, scraping the pod seeds into the cream. If using the vanilla extract, add straight away. Heat oven to 160C/fan 140C/gas 3.",
-    "minutes": 10
+    "text": "Heat the oven to 150°C. Bring the cream to a gentle boil in a saucepan, turn off the heat, add the white chocolate and stir until melted. Set aside.",
+    "minutes": null
    },
    {
-    "text": "Beat yolks and sugar until pale. stir in the chocolate cream. Strain into a jug and pour into ramekins. Place in a deep roasting tray and pour boiling water halfway up the sides. Bake for 15-20 mins until just set with a wobbly centre. Chill in the fridge for at least 4 hrs.",
+    "text": "Whisk the egg yolks and custard sugar together until pale and smooth.",
+    "minutes": null
+   },
+   {
+    "text": "Whisk 2 tbsp of the warm chocolate cream into the yolks to temper them, then slowly whisk in the rest. Stir in the vanilla and skim off any foam.",
+    "minutes": null
+   },
+   {
+    "text": "Pour the custard into ramekins, filling them about halfway, and set them on a tray. Pour hot water into the tray so it comes about 2.5 cm up the ramekins.",
+    "minutes": null
+   },
+   {
+    "text": "Bake for about 45 minutes, until the custard is set and the centre is firm when jiggled.",
+    "minutes": 45
+   },
+   {
+    "text": "Cool, then refrigerate for at least 4 hours or overnight.",
     "minutes": 240
    },
    {
-    "text": "To serve, sprinkle some sugar on top of the brûlées and caramelise with a blowtorch or briefly under a hot grill. Leave caramel to harden, then serve.",
-    "minutes": null
+    "text": "Before serving, sprinkle sugar over each custard and tap the ramekin to spread it. Caramelise with a blowtorch, or under a hot grill for about 5 minutes until browned.",
+    "minutes": 5
+   },
+   {
+    "text": "Return to the fridge for 10 minutes before serving.",
+    "minutes": 10
    }
   ]
  },
@@ -82684,130 +82984,104 @@
  {
   "source": "themealdb:53294",
   "title": "Zapiekanki",
-  "description": "A Polish dish of ham, smoked sausage and baguette — serves 4, about an hour start to finish.",
-  "servings": 4,
+  "description": "Open-faced baguette halves topped with buttery leek and mushrooms, ham, tomato and grated cheese, baked until golden and finished with ketchup and chives.",
+  "servings": 3,
   "cuisine": "Polish",
   "category": "Pork",
   "image": "https://www.themealdb.com/images/media/meals/72lmpt1764122511.jpg",
-  "prep_minutes": 20,
-  "cook_minutes": 45,
+  "prep_minutes": 10,
+  "cook_minutes": 20,
   "ingredients": [
    {
-    "name": "baguette",
-    "quantity": 2,
-    "unit": "",
-    "note": ""
-   },
-   {
-    "name": "butter",
-    "quantity": 1,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "vegetable oil",
-    "quantity": 2,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "onion",
-    "quantity": 1,
-    "unit": "",
-    "note": "chopped"
+    "name": "leek",
+    "quantity": 100,
+    "unit": "g",
+    "note": "light part, cut into half-slices"
    },
    {
     "name": "mushrooms",
     "quantity": 300,
     "unit": "g",
-    "note": ""
+    "note": "sliced"
    },
    {
-    "name": "garlic",
-    "quantity": 1,
-    "unit": "clove",
-    "note": ""
+    "name": "butter",
+    "quantity": null,
+    "unit": "",
+    "note": "for frying the leek and mushrooms and spreading on the rolls"
    },
    {
-    "name": "mayonnaise",
-    "quantity": 1,
-    "unit": "tbsp",
-    "note": ""
+    "name": "salt",
+    "quantity": null,
+    "unit": "",
+    "note": "to taste"
    },
    {
-    "name": "cheddar cheese",
-    "quantity": 50,
+    "name": "black pepper",
+    "quantity": null,
+    "unit": "",
+    "note": "to taste"
+   },
+   {
+    "name": "baguette",
+    "quantity": 1.5,
+    "unit": "",
+    "note": "3 half-baguettes, halved lengthways"
+   },
+   {
+    "name": "cheese",
+    "quantity": 250,
     "unit": "g",
-    "note": ""
+    "note": "grated, part under and part over the toppings"
    },
    {
     "name": "ham",
-    "quantity": 75,
+    "quantity": 100,
     "unit": "g",
-    "note": ""
+    "note": "finely diced"
    },
    {
-    "name": "smoked sausage",
-    "quantity": 75,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "mozzarella",
-    "quantity": 50,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "dill",
-    "quantity": 2,
+    "name": "tomato",
+    "quantity": null,
     "unit": "",
-    "note": ""
-   },
-   {
-    "name": "chives",
-    "quantity": 1,
-    "unit": "tbsp",
-    "note": ""
+    "note": "cut into pieces; no amount given"
    },
    {
     "name": "tomato ketchup",
     "quantity": null,
     "unit": "",
-    "note": "a drizzle"
+    "note": "to serve"
+   },
+   {
+    "name": "chives",
+    "quantity": null,
+    "unit": "",
+    "note": "to garnish"
    }
   ],
   "steps": [
    {
-    "text": "Heat the oven to 200C/180C fan/gas 6. Bake the baguettes on a baking tray for 8-10 mins, then leave to cool.",
-    "minutes": 10
-   },
-   {
-    "text": "Heat 2 tsp of the butter and 1 tsp of the oil in a pan over a low heat and cook the chopped onion for 5 mins until soft.",
-    "minutes": 5
-   },
-   {
-    "text": "Stir in the mushrooms, turn the heat to medium and cook for 5-10 mins more until the veg is soft and the mushroom liquid has evaporated. Stir in the garlic and cook for 1-2 mins until soft.",
-    "minutes": 10
-   },
-   {
-    "text": "Season, then stir in the mayonnaise and remove from the heat.",
+    "text": "Fry the leek in butter for a few minutes, then add the sliced mushrooms and fry until their water has evaporated. Season with salt and pepper at the end.",
     "minutes": null
    },
    {
-    "text": "Halve the baguettes lengthways, then return to the baking tray, cut-side up and spread over the mushroom mixture, then sprinkle over the cheddar, ham, kabanos and mozzarella.",
+    "text": "Heat the oven to 190°C. Cut the half-baguettes in half lengthways and spread them with butter.",
     "minutes": null
    },
    {
-    "text": "Bake for 8-10 mins, or until the cheese has melted and turned golden.",
+    "text": "Sprinkle on some of the grated cheese, then spread over the leek and mushrooms and add the diced ham.",
+    "minutes": null
+   },
+   {
+    "text": "Add pieces of tomato and cover with the rest of the cheese.",
+    "minutes": null
+   },
+   {
+    "text": "Bake for about 10 minutes, until nicely browned.",
     "minutes": 10
    },
    {
-    "text": "Meanwhile, heat the remaining butter and oil in a pan over a medium heat and fry the sliced onions for 5 mins until golden and soft. Remove from the heat and set aside.",
-    "minutes": 5
-   },
-   {
-    "text": "Once the pizzas are cooked, top with the caramelised onions, dill pickles (if using), the chives and a zig-zag drizzle of ketchup.",
+    "text": "Drizzle with ketchup and scatter over chives to serve.",
     "minutes": null
    }
   ]

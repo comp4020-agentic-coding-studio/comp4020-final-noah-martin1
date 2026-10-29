@@ -479,9 +479,9 @@
   "videoId": "pKmqawK2Tqs",
   "title": "Red Lentil Chili | Forks Over Knives",
   "channel": "Forks Over Knives",
-  "status": "rejected",
-  "reason": "video title doesn't match the dish",
-  "checked": "2026-10-20"
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:52960": {
   "videoId": "FJiu2S0Xap0",
@@ -1009,9 +1009,9 @@
   "videoId": "B0YX0yPX4Wo",
   "title": "Sausage & Butterbean Casserole | Healthy Family Dinner Recipe",
   "channel": "My Fussy Eater (Ciara Attwell)",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:52928": {
   "videoId": "2G07UOqU2e8",
@@ -1149,9 +1149,9 @@
   "videoId": "HzQT0rHKCWM",
   "title": "Beetroot Pancakes",
   "channel": "SoDelicious",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53463": {
   "videoId": null,
@@ -1255,9 +1255,9 @@
   "videoId": "7tq5JvO88E0",
   "title": "Lemon & Blueberry Friands",
   "channel": "Geoff Cooper",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53401": {
   "videoId": "bvrUPtEs_Uk",
@@ -1377,9 +1377,9 @@
   "videoId": "_gFB1fkNhXs",
   "title": "Jamaican Brown Stew Chicken Recipe Video",
   "channel": "Cook Like A Jamaican",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53126": {
   "videoId": "VuLnP0Yu84o",
@@ -1650,12 +1650,10 @@
   "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52850": {
-  "videoId": "GZQGy9oscVk",
-  "title": "Tasty Turkish Couscous | Kerryann Dunlop",
-  "channel": "Jamie Oliver",
+  "videoId": null,
+  "checked": "2026-10-29",
   "status": "rejected",
-  "reason": "video title doesn't match the dish",
-  "checked": "2026-10-20"
+  "reason": "The Jamie Oliver Food Tube video (GZQGy9oscVk) is Kerryann Dunlop's Turkish couscous; its description and jamieoliver.com video page give no recipe, and no transcript is available. Searches found no chicken, harissa, apricot and chickpea couscous video with a written recipe (the closest, ourtable42's harissa apricot chicken with pearl couscous, uses thighs, preserves and pistachios)."
  },
  "themealdb:52765": {
   "videoId": "EtVkwVKLc_M",
@@ -1888,12 +1886,10 @@
   "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53289": {
-  "videoId": "2z6IldJl_lQ",
-  "title": "COOKING ALGERIA: Chorba Frik 🇩🇿",
-  "channel": "ANTI-CHEF",
+  "videoId": null,
+  "checked": "2026-10-29",
   "status": "rejected",
-  "reason": "video title doesn't match the dish",
-  "checked": "2026-10-20"
+  "reason": "The ANTI-CHEF video (2z6IldJl_lQ) gives only a 'Recipe used' link to Dima Sharif's Algerian chorba frik (a third-party recipe by Radia Yousef) with no courgette, carrot, potato, celery, mint or steamed tomatoes, so it cannot show what the video cooks. No transcript is available and no other chorba frik video with a full written recipe was found."
  },
  "themealdb:53168": {
   "videoId": "K6Yi4YiY874",
@@ -2808,12 +2804,10 @@
   "checked": "2026-10-20"
  },
  "themealdb:53035": {
-  "videoId": "aQJAU2iJ730",
-  "title": "Mary Berry's heavenly slow-roast pork w/ Colcannon mash - BBC",
-  "channel": "BBC",
+  "videoId": null,
+  "checked": "2026-10-29",
   "status": "rejected",
-  "reason": "video title doesn't match the dish",
-  "checked": "2026-10-20"
+  "reason": "The BBC video (aQJAU2iJ730) is Mary Berry's slow-roast pork and could not be verified for ham hock colcannon. The replacement (b-sDtMjq0l8, Mom-Mom's Crossroad Cooking) is a tiny channel (about 300 views), not a reputable cooking channel, and its description gives no amount for the broth used. No other verifiable video was found."
  },
  "themealdb:53452": {
   "videoId": null,
@@ -3049,9 +3043,9 @@
   "videoId": "rZO86_-MIp0",
   "title": "Takikomi Gohan Recipe - Japanese Cooking 101",
   "channel": "JapaneseCooking101",
-  "status": "rejected",
-  "reason": "the video is takikomi gohan (mixed rice); plain gohan differs",
-  "checked": "2026-10-20"
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:52937": {
   "videoId": "qfchrS2D_v4",
@@ -5261,9 +5255,9 @@
   "videoId": "ipEz5u2T7KM",
   "title": "This is my Beef Goulash Recipe - SUPER TASTY!",
   "channel": "Kitchen Sanctuary",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53391": {
   "videoId": "Od8EjjvwN_Y",
@@ -5310,12 +5304,10 @@
   "checked": "2026-10-20"
  },
  "themealdb:53249": {
-  "videoId": "L-ItzFfVgos",
-  "title": "Turkey Bánh Mì",
-  "channel": "The Culinary Institute of America",
+  "videoId": null,
+  "checked": "2026-10-29",
   "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "reason": "The CIA video (L-ItzFfVgos) has no recipe in its description (only ciachef.edu homepage links) and no transcript is available. Searches found no verifiable Turkey Banh Mi with a written recipe: School of Wok's (smpYMYVm16w) is a leftover-Thanksgiving version with homemade bread, and Jamie Oliver's is a one-minute short."
  },
  "themealdb:52845": {
   "videoId": "mTvlmY4vCug",
@@ -5467,9 +5459,9 @@
   "videoId": "behSkhzKpHI",
   "title": "Vietnamese Chicken Salad",
   "channel": "RecipeTin Eats",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53231": {
   "videoId": null,
@@ -5503,17 +5495,17 @@
   "videoId": "qmQe0Qxvyzc",
   "title": "Vietnamese Caramelized Pork l Thit Kho Tieu l Vietnamese Recipes l Duncan Lu",
   "channel": "Duncan Lu",
-  "status": "rejected",
-  "reason": "video title doesn't match the dish",
-  "checked": "2026-10-20"
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53236": {
   "videoId": "OR6jC9gw_Hw",
   "title": "Vietnamese Vegan Hot Pot (Lẩu)",
   "channel": "The Viet Vegan",
-  "status": "rejected",
-  "reason": "video title doesn't match the dish",
-  "checked": "2026-10-20"
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53062": {
   "videoId": "Q_akngSJVrQ",
@@ -5543,9 +5535,9 @@
   "videoId": "LmJ0lsPLHDc",
   "title": "How to make White Chocolate Crème Brulee (video)",
   "channel": "Bear Naked Food",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53225": {
   "videoId": "1QX-KBX6tmM",
@@ -5565,9 +5557,9 @@
   "videoId": "uely-neGHLM",
   "title": "Chrupiące zapiekanki z szynką i pieczarkami",
   "channel": "Kulinarne przygody",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53394": {
   "videoId": "ypXGr9NdMZU",
