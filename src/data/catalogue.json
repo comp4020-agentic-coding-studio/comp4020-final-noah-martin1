@@ -7203,117 +7203,145 @@
  },
  {
   "source": "themealdb:52870",
-  "title": "Chickpea Fajitas",
-  "description": "Smoky spiced chickpeas and peppers wrapped in warm tortillas.",
+  "title": "Sheet pan chickpea fajitas",
+  "description": "Chickpeas, peppers, portobello mushrooms, zucchini and red onion roasted together on one tray with chilli and cumin spices, then spooned into warm tortillas with toppings.",
   "servings": 4,
   "cuisine": "Mexican",
   "category": "Vegetarian",
-  "image": "https://www.themealdb.com/images/media/meals/tvtxpq1511464705.jpg",
-  "prep_minutes": 20,
-  "cook_minutes": 35,
+  "image": "https://i.ytimg.com/vi/HSAVz1AxwWY/hqdefault.jpg",
+  "prep_minutes": 10,
+  "cook_minutes": 20,
   "ingredients": [
    {
     "name": "chickpeas",
-    "quantity": 400,
+    "quantity": 850,
     "unit": "g",
-    "note": ""
+    "note": "2 cans of 425 g, drained and dried"
+   },
+   {
+    "name": "capsicum",
+    "quantity": 2,
+    "unit": "",
+    "note": "medium bell peppers, any colour, cut in strips"
+   },
+   {
+    "name": "mushrooms",
+    "quantity": 2,
+    "unit": "",
+    "note": "large portobello, cut in strips"
+   },
+   {
+    "name": "courgette",
+    "quantity": 1,
+    "unit": "",
+    "note": "medium zucchini, cut in bite-sized half-moons"
+   },
+   {
+    "name": "red onion",
+    "quantity": 0.5,
+    "unit": "",
+    "note": "medium, sliced"
    },
    {
     "name": "olive oil",
+    "quantity": 0.25,
+    "unit": "cup",
+    "note": ""
+   },
+   {
+    "name": "chilli powder",
     "quantity": 1,
     "unit": "tbsp",
     "note": ""
    },
    {
-    "name": "paprika",
+    "name": "ground cumin",
     "quantity": 1,
-    "unit": "pinch",
-    "note": ""
-   },
-   {
-    "name": "tomato",
-    "quantity": 2,
-    "unit": "",
-    "note": "small cut chunks"
-   },
-   {
-    "name": "red onion",
-    "quantity": 1,
-    "unit": "",
-    "note": "finely sliced"
-   },
-   {
-    "name": "red wine vinegar",
-    "quantity": 2,
     "unit": "tsp",
     "note": ""
    },
    {
-    "name": "avocado",
+    "name": "smoked paprika",
     "quantity": 1,
-    "unit": "",
+    "unit": "tsp",
     "note": ""
    },
    {
-    "name": "lime",
-    "quantity": 1,
-    "unit": "",
-    "note": "juiced"
+    "name": "salt",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": ""
    },
    {
-    "name": "lime",
+    "name": "garlic powder",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": ""
+   },
+   {
+    "name": "onion powder",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": ""
+   },
+   {
+    "name": "tortilla",
+    "quantity": 4,
+    "unit": "",
+    "note": "medium, warmed in a skillet before serving; type (flour or corn) not specified"
+   },
+   {
+    "name": "guacamole",
     "quantity": null,
     "unit": "",
-    "note": "chopped"
+    "note": "to serve"
    },
    {
     "name": "sour cream",
-    "quantity": 100,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "harissa spice",
-    "quantity": 2,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "corn tortillas",
-    "quantity": 4,
+    "quantity": null,
     "unit": "",
-    "note": ""
+    "note": "to serve"
+   },
+   {
+    "name": "cheese",
+    "quantity": null,
+    "unit": "",
+    "note": "to serve, such as cotija or feta"
    },
    {
     "name": "coriander",
     "quantity": null,
     "unit": "",
-    "note": "to serve"
+    "note": "to serve (cilantro)"
    }
   ],
   "steps": [
    {
-    "text": "Heat oven to 200C/180C fan/gas 6 and line a baking tray with foil. Drain the chickpeas, pat dry and tip onto the prepared baking tray.",
+    "text": "Heat the oven to 204°C (400°F). Drain the chickpeas and spread them over a few layers of paper towel to dry.",
     "minutes": null
    },
    {
-    "text": "Add the oil and paprika, toss to coat, then roast for 20-25 mins until browned and crisp, shaking halfway through cooking.",
-    "minutes": 25
-   },
-   {
-    "text": "Meanwhile, put the tomatoes and onion in a small bowl with the vinegar and set aside to pickle. Put the avocado in another bowl and mash with a fork, leaving some larger chunks. Stir in the lime juice and season well.",
+    "text": "Cut the capsicums and portobello mushrooms into strips, the zucchini into bite-sized half-moons and the red onion into slices.",
     "minutes": null
    },
    {
-    "text": "Mix the soured cream with the harissa and set aside until ready to serve.",
+    "text": "Put the chickpeas on half of a large unlined rimmed baking sheet and the sliced vegetables on the other half, so the chickpeas stay crisp.",
     "minutes": null
    },
    {
-    "text": "Heat a griddle pan until nearly smoking. Add the tortillas , one at a time, charring each side until hot with griddle lines.",
+    "text": "Drizzle everything with the olive oil, sprinkle on the chilli powder, cumin, smoked paprika, salt, garlic powder and onion powder and toss to coat.",
     "minutes": null
    },
    {
-    "text": "Put everything on the table and build the fajitas : spread a little of the harissa cream over the tortilla, top with roasted chickpeas, guacamole, pickled salsa and coriander, if you like. Serve with the lime wedges for squeezing over.",
+    "text": "Bake for 20-25 minutes until the vegetables are tender and starting to char at the edges.",
+    "minutes": 20
+   },
+   {
+    "text": "Switch the oven to broil for 2-3 minutes, watching closely, until the edges are crisp and charred.",
+    "minutes": 3
+   },
+   {
+    "text": "Warm the tortillas in a skillet, spoon the mixture onto them and finish with guacamole, sour cream, cheese and coriander.",
     "minutes": null
    }
   ]
@@ -14174,33 +14202,15 @@
  },
  {
   "source": "themealdb:53522",
-  "title": "Arroz con Leche",
-  "description": "A Colombian sweet made with rice, condensed milk and cinnamon stick — makes 10, worth the couple of hours it takes.",
-  "servings": 10,
-  "cuisine": "Colombian",
+  "title": "Arroz con leche",
+  "description": "Spanish rice pudding: round rice simmered in milk infused with vanilla bean, cinnamon stick and lemon peel, sweetened with sugar and finished with cinnamon and mint.",
+  "servings": 4,
+  "cuisine": "Spanish",
   "category": "Dessert",
-  "image": "https://www.themealdb.com/images/media/meals/jp09191782856005.jpg",
-  "prep_minutes": 15,
-  "cook_minutes": 90,
+  "image": "https://i.ytimg.com/vi/lwdQmTP3BbQ/hqdefault.jpg",
+  "prep_minutes": 5,
+  "cook_minutes": 35,
   "ingredients": [
-   {
-    "name": "rice",
-    "quantity": 1,
-    "unit": "cup",
-    "note": ""
-   },
-   {
-    "name": "cinnamon stick",
-    "quantity": 4,
-    "unit": "",
-    "note": ""
-   },
-   {
-    "name": "water",
-    "quantity": 2,
-    "unit": "cup",
-    "note": ""
-   },
    {
     "name": "milk",
     "quantity": 4,
@@ -14208,56 +14218,72 @@
     "note": ""
    },
    {
-    "name": "salt",
+    "name": "vanilla pod",
     "quantity": 1,
-    "unit": "pinch",
+    "unit": "",
+    "note": "vanilla bean"
+   },
+   {
+    "name": "cinnamon stick",
+    "quantity": 1,
+    "unit": "",
     "note": ""
    },
    {
-    "name": "butter",
-    "quantity": 2,
-    "unit": "tbsp",
-    "note": ""
+    "name": "lemon zest",
+    "quantity": 1,
+    "unit": "",
+    "note": "4 strips of peel"
    },
    {
-    "name": "vanilla extract",
-    "quantity": 2,
-    "unit": "tbsp",
-    "note": ""
+    "name": "rice",
+    "quantity": 0.5,
+    "unit": "cup",
+    "note": "round rice"
    },
    {
     "name": "sugar",
-    "quantity": 1,
+    "quantity": 0.5,
     "unit": "cup",
-    "note": ""
+    "note": "white"
    },
    {
-    "name": "condensed milk",
-    "quantity": 360,
-    "unit": "ml",
-    "note": ""
+    "name": "cinnamon",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "ground, to serve"
+   },
+   {
+    "name": "mint",
+    "quantity": 1,
+    "unit": "leaf",
+    "note": "to garnish"
    }
   ],
   "steps": [
    {
-    "text": "In a small pot, add water and cinnamon sticks, bring to a boil and cook for 10 minutes. Set aside and discard cinnamon sticks.",
+    "text": "Heat the milk in a large frying pan over medium heat with the vanilla bean, cinnamon stick and lemon peels, stirring everything together.",
+    "minutes": null
+   },
+   {
+    "text": "When the milk starts to boil lightly, add the rice and stir. Keep stirring so the milk does not froth and form a skin.",
+    "minutes": null
+   },
+   {
+    "text": "Ten minutes after adding the rice, lower to a low heat, stir in the sugar and keep stirring.",
     "minutes": 10
    },
    {
-    "text": "Place the rice and the cinnamon water in a large saucepan, over medium heat and cook for 5 minutes.",
-    "minutes": 5
-   },
-   {
-    "text": "Add salt, butter, vanilla extract, 2 cups of milk, and sugar. Stir well to mix and cook uncovered for approximately 15 minutes.",
+    "text": "After about 15 more minutes it is done when you can see the bottom of the pan as you drag the spatula through.",
     "minutes": 15
    },
    {
-    "text": "Reduce heat to medium low. Add the remaining milk and condensed milk. Stir with a wooden spoon. Cook for 1 hour and 15 minutes, or until the rice pudding thickens to desire consistency.",
-    "minutes": 60
+    "text": "Turn off the heat and rest the pudding for about 5 minutes.",
+    "minutes": 5
    },
    {
-    "text": "Stir well and remove from heat, and let it cool at room temperature. The consistency should be very creamy. Refrigerate for a least 1 hour or overnight.",
-    "minutes": 60
+    "text": "Spoon into small bowls, sprinkle with ground cinnamon and garnish with a mint leaf.",
+    "minutes": null
    }
   ]
  },
@@ -17987,161 +18013,133 @@
  },
  {
   "source": "themealdb:52812",
-  "title": "Beef Brisket Pot Roast",
-  "description": "An American dish of beef brisket, carrot and potato — serves 8, a slow cook that's worth the wait.",
+  "title": "Classic pot roast",
+  "description": "A beef chuck roast seared, then braised in red wine and beef stock with onion, garlic, tomato paste, carrots and herbs until it pulls apart with a fork.",
   "servings": 8,
   "cuisine": "American",
   "category": "Beef",
-  "image": "https://www.themealdb.com/images/media/meals/ursuup1487348423.jpg",
-  "prep_minutes": 15,
-  "cook_minutes": 435,
+  "image": "https://i.ytimg.com/vi/Go8b1Cpjr84/hqdefault.jpg",
+  "prep_minutes": 30,
+  "cook_minutes": 210,
   "ingredients": [
    {
-    "name": "beef brisket",
-    "quantity": 1815,
+    "name": "chuck steak",
+    "quantity": 1800,
     "unit": "g",
-    "note": ""
+    "note": "beef chuck roast, 4-5 lb (1.8-2.3 kg)"
    },
    {
     "name": "salt",
+    "quantity": 4,
+    "unit": "tsp",
+    "note": "kosher, divided, or to taste"
+   },
+   {
+    "name": "black pepper",
+    "quantity": 1.5,
+    "unit": "tsp",
+    "note": "freshly ground, divided"
+   },
+   {
+    "name": "olive oil",
     "quantity": 1,
-    "unit": "dash",
-    "note": ""
+    "unit": "tbsp",
+    "note": "light, or any high-heat oil"
    },
    {
     "name": "onion",
-    "quantity": 3,
+    "quantity": 1,
     "unit": "",
-    "note": ""
+    "note": "large yellow, coarsely chopped"
    },
    {
     "name": "garlic",
-    "quantity": 5,
-    "unit": "clove",
-    "note": ""
-   },
-   {
-    "name": "thyme",
-    "quantity": 1,
-    "unit": "sprig",
-    "note": ""
-   },
-   {
-    "name": "rosemary",
-    "quantity": 1,
-    "unit": "sprig",
-    "note": ""
-   },
-   {
-    "name": "bay leaf",
     "quantity": 4,
-    "unit": "",
+    "unit": "clove",
+    "note": "coarsely chopped"
+   },
+   {
+    "name": "tomato paste",
+    "quantity": 3,
+    "unit": "tbsp",
     "note": ""
+   },
+   {
+    "name": "red wine",
+    "quantity": 1,
+    "unit": "cup",
+    "note": "dry, such as Cabernet Sauvignon or Pinot noir"
    },
    {
     "name": "beef stock",
-    "quantity": 2,
+    "quantity": 6,
     "unit": "cup",
     "note": ""
    },
    {
     "name": "carrot",
-    "quantity": 3,
+    "quantity": 5,
     "unit": "",
-    "note": "large"
+    "note": "whole, peeled, cut into 2-inch pieces; 5-6"
    },
    {
-    "name": "mustard",
-    "quantity": 1,
-    "unit": "tbsp",
+    "name": "bay leaf",
+    "quantity": 2,
+    "unit": "",
     "note": ""
    },
    {
-    "name": "potato",
-    "quantity": 4,
-    "unit": "",
-    "note": "mashed"
+    "name": "thyme",
+    "quantity": 6,
+    "unit": "sprig",
+    "note": "fresh, or 1 tsp dried"
+   },
+   {
+    "name": "parsley",
+    "quantity": 0.5,
+    "unit": "cup",
+    "note": "fresh, coarsely chopped, plus more to garnish"
+   },
+   {
+    "name": "cornflour",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": "optional, mixed with the cold water to thicken the sauce"
+   },
+   {
+    "name": "water",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": "cold, mixed with the cornflour; optional"
    }
   ],
   "steps": [
    {
-    "text": "Prepare the brisket for cooking: On one side of the brisket there should be a layer of fat, which you want. If there are any large chunks of fat, cut them off and discard them. Large pieces of fat will not be able to render out completely.",
+    "text": "Season the roast all over with 3 tsp of the salt and 1 tsp of the pepper and leave uncovered at room temperature for 1 hour. Heat the oven to 165°C (325°F) with the rack in the lower third.",
+    "minutes": 60
+   },
+   {
+    "text": "Sear the roast in the oil in a Dutch oven over medium-high heat until golden, about 3 minutes a side. Move it to a plate.",
     "minutes": null
    },
    {
-    "text": "Using a sharp knife, score the fat in parallel lines, about 3/4-inch apart. Slice through the fat, not the beef. Repeat in the opposite direction to make a cross-hatch pattern.",
+    "text": "Reduce the heat to medium and cook the onion until soft and golden, 4-5 minutes. Add the garlic for 30 seconds.",
+    "minutes": 5
+   },
+   {
+    "text": "Stir in the tomato paste for 2 minutes. Add the wine, scrape up the browned bits and cook 2-3 minutes until about a quarter has evaporated.",
+    "minutes": 5
+   },
+   {
+    "text": "Add the stock, thyme, parsley, bay leaves, the remaining 1 tsp salt and 1/2 tsp pepper. Return the roast with the carrots and bring to a simmer.",
     "minutes": null
    },
    {
-    "text": "Salt the brisket well and let it sit at room temperature for 30 minutes.",
-    "minutes": 30
+    "text": "Cover and bake at 165°C for 3-4 hours, depending on the size of the roast, until it pulls apart easily with two forks. If it is still tough, return it for another 30 minutes.",
+    "minutes": 210
    },
    {
-    "text": "Sear the brisket: You'll need an oven-proof, thick-bottomed pot with a cover, or Dutch oven, that is just wide enough to hold the brisket roast with a little room for the onions.",
-    "minutes": null
-   },
-   {
-    "text": "Pat the brisket dry and place it, fatty side down, into the pot and place it on medium high heat. Cook for 5-8 minutes, lightly sizzling, until the fat side is nicely browned.",
-    "minutes": 8
-   },
-   {
-    "text": "(If the roast seems to be cooking too fast, turn the heat down to medium. You want a steady sizzle, not a raging sear.)",
-    "minutes": null
-   },
-   {
-    "text": "Turn the brisket over and cook for a few minutes more to brown the other side.",
-    "minutes": null
-   },
-   {
-    "text": "Sauté the onions and garlic: When the brisket has browned, remove it from the pot and set aside. There should be a couple tablespoons of fat rendered in the pot, if not, add some olive oil.",
-    "minutes": null
-   },
-   {
-    "text": "Add the chopped onions and increase the heat to high. Sprinkle a little salt on the onions. Sauté, stirring often, until the onions are lightly browned, 5-8 minutes. Stir in the garlic and cook 1-2 more minutes.",
-    "minutes": 8
-   },
-   {
-    "text": "Return brisket to pot, add herbs, stock, bring to simmer, cover, cook in oven: Preheat the oven to 150°C (300°F) Use kitchen twine to tie together the bay leaves, rosemary and thyme.",
-    "minutes": null
-   },
-   {
-    "text": "Move the onions and garlic to the sides of the pot and nestle the brisket inside. Add the beef stock and the tied-up herbs. Bring the stock to a boil on the stovetop.",
-    "minutes": null
-   },
-   {
-    "text": "Cover the pot, place the pot in the 150°C (300°F) oven and cook for 3 hours. Carefully flip the brisket every hour so it cooks evenly.",
-    "minutes": 180
-   },
-   {
-    "text": "Add carrots, continue to cook: After 3 hours, add the carrots. Cover the pot and cook for 1 hour more, or until the carrots are cooked through and the brisket is falling-apart tender.",
-    "minutes": 180
-   },
-   {
-    "text": "Remove brisket to cutting board, tent with foil: When the brisket is falling-apart tender, take the pot out of the oven and remove the brisket to a cutting board. Cover it with foil. Pull out and discard the herbs.",
-    "minutes": null
-   },
-   {
-    "text": "Make sauce (optional): At this point you have two options. You can serve as is, or you can make a sauce with the drippings and some of the onions. If you serve as is, skip this step.",
-    "minutes": null
-   },
-   {
-    "text": "To make a sauce, remove the carrots and half of the onions, set aside and cover them with foil. Pour the ingredients that are remaining into the pot into a blender, and purée until smooth.",
-    "minutes": null
-   },
-   {
-    "text": "If you want, add 1 tablespoon of mustard to the mix. Put into a small pot and keep warm.",
-    "minutes": null
-   },
-   {
-    "text": "Slice the meat across the grain: Notice the lines of the muscle fibers of the roast. This is the \"grain\" of the meat.",
-    "minutes": null
-   },
-   {
-    "text": "Slice the meat perpendicular to these lines, or across the grain (cutting this way further tenderizes the meat), in 1/4-inch to 1/2-inch slices.",
-    "minutes": null
-   },
-   {
-    "text": "Serve with the onions, carrots and gravy. Serve with mashed, roasted or boiled potatoes, egg noodles or polenta.",
+    "text": "Remove and shred the meat. Thicken the sauce with the cornflour mixed with cold water if you like, or return the meat to the broth to soak up the flavour. Garnish with parsley.",
     "minutes": null
    }
   ]
@@ -18929,62 +18927,62 @@
  },
  {
   "source": "themealdb:53068",
-  "title": "Beef Mechado",
-  "description": "A Filipino dish of beef, tomato puree and lemon — serves 4, worth the couple of hours it takes.",
-  "servings": 4,
+  "title": "Beef mechado",
+  "description": "Filipino beef stew: chuck simmered in tomato sauce, soy sauce and lemon with bay leaves, finished with potato. Served with steamed rice.",
+  "servings": 6,
   "cuisine": "Filipino",
   "category": "Beef",
   "image": "https://www.themealdb.com/images/media/meals/cgl60b1683206581.jpg",
-  "prep_minutes": 20,
-  "cook_minutes": 65,
+  "prep_minutes": 10,
+  "cook_minutes": 90,
   "ingredients": [
    {
     "name": "garlic",
     "quantity": 3,
     "unit": "clove",
-    "note": ""
+    "note": "crushed"
    },
    {
     "name": "onion",
     "quantity": 1,
     "unit": "",
-    "note": "sliced"
+    "note": "large, sliced"
    },
    {
-    "name": "beef",
-    "quantity": 910,
+    "name": "chuck steak",
+    "quantity": 900,
     "unit": "g",
-    "note": ""
+    "note": "beef chuck, cubed"
    },
    {
-    "name": "tomato puree",
+    "name": "passata",
     "quantity": 225,
     "unit": "g",
-    "note": ""
+    "note": "US tomato sauce"
    },
    {
     "name": "water",
     "quantity": 1,
     "unit": "cup",
-    "note": ""
+    "note": "plus more as needed"
    },
    {
-    "name": "olive oil",
+    "name": "vegetable oil",
     "quantity": 3,
     "unit": "tbsp",
-    "note": ""
+    "note": "cooking oil"
    },
    {
     "name": "lemon",
     "quantity": 1,
     "unit": "slice",
-    "note": ""
+    "note": "with rind"
    },
    {
     "name": "potato",
     "quantity": 1,
     "unit": "",
-    "note": "large"
+    "note": "large, sliced"
    },
    {
     "name": "soy sauce",
@@ -18996,7 +18994,7 @@
     "name": "black pepper",
     "quantity": 0.5,
     "unit": "tsp",
-    "note": ""
+    "note": "ground"
    },
    {
     "name": "bay leaf",
@@ -19013,23 +19011,23 @@
   ],
   "steps": [
    {
-    "text": "Make the beef tenderloin marinade by combining soy sauce, vinegar, ginger, garlic, sesame oil, olive oil, sugar, salt, and ground black pepper in a large bowl. Mix well.",
+    "text": "Heat the oil in a pan and saute the garlic and onion.",
     "minutes": null
    },
    {
-    "text": "Add the cubed beef tenderloin to the bowl with the beef tenderloin marinade. Gently toss to coat the beef. Let it stay for 1 hour.",
-    "minutes": 60
-   },
-   {
-    "text": "Using a metal or bamboo skewer, assemble the beef kebob by skewering the vegetables and marinated beef tenderloin.",
-    "minutes": null
-   },
-   {
-    "text": "Heat-up the grill and start grilling the beef kebobs for 3 minutes per side. This will give you a medium beef that is juicy and tender on the inside. Add more time if you want your beef well done, but it will be less tender.",
+    "text": "Add the beef and saute for about 3 minutes until lightly browned.",
     "minutes": 3
    },
    {
-    "text": "Transfer to a serving plate. Serve with Saffron rice. Share and enjoy!",
+    "text": "Add the tomato sauce and water and simmer until the meat is tender, topping up the water as needed. This can take 60 to 120 minutes depending on the beef.",
+    "minutes": 90
+   },
+   {
+    "text": "Stir in the soy sauce, pepper, lemon slice, bay leaves and salt and simmer until the excess liquid evaporates.",
+    "minutes": null
+   },
+   {
+    "text": "Add the potato and cook until soft. Serve hot with steamed rice.",
     "minutes": null
    }
   ]
@@ -20324,127 +20322,247 @@
  {
   "source": "themealdb:53013",
   "title": "Double cheeseburger with special sauce",
-  "description": "An American dish of beef mince, bread rolls and lettuce — serves 4, worth the couple of hours it takes.",
+  "description": "A homemade Big Mac-style burger: two smashed beef patties and two cheeses in a toasted three-part brioche-style bun, with shaved lettuce, onion, pickles and a mayonnaise special sauce.",
   "servings": 4,
   "cuisine": "American",
   "category": "Beef",
   "image": "https://www.themealdb.com/images/media/meals/urzj1d1587670726.jpg",
-  "prep_minutes": 20,
-  "cook_minutes": 65,
+  "prep_minutes": 120,
+  "cook_minutes": 55,
   "ingredients": [
    {
-    "name": "beef mince",
-    "quantity": 400,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "olive oil",
+    "name": "plain flour",
     "quantity": 2,
     "unit": "tbsp",
-    "note": ""
+    "note": "for the tangzhong"
    },
    {
-    "name": "bread rolls",
+    "name": "milk",
+    "quantity": 0.75,
+    "unit": "cup",
+    "note": "whole, divided; 1/4 cup for the tangzhong"
+   },
+   {
+    "name": "water",
+    "quantity": 0.75,
+    "unit": "cup",
+    "note": "divided; 2 tbsp for the tangzhong"
+   },
+   {
+    "name": "sugar",
+    "quantity": 1.5,
+    "unit": "tbsp",
+    "note": "granulated, for the dough"
+   },
+   {
+    "name": "yeast",
+    "quantity": 2.5,
+    "unit": "tsp",
+    "note": "instant"
+   },
+   {
+    "name": "bread flour",
+    "quantity": 3.5,
+    "unit": "cup",
+    "note": "for the dough"
+   },
+   {
+    "name": "salt",
+    "quantity": 2,
+    "unit": "tsp",
+    "note": "fine sea salt, for the dough"
+   },
+   {
+    "name": "eggs",
     "quantity": 2,
     "unit": "",
-    "note": ""
+    "note": "large; 1 for the dough, 1 for the egg wash"
    },
    {
-    "name": "onion",
+    "name": "egg yolks",
+    "quantity": 1,
+    "unit": "",
+    "note": "for the dough"
+   },
+   {
+    "name": "butter",
+    "quantity": 3,
+    "unit": "tbsp",
+    "note": "unsalted, softened, for the dough"
+   },
+   {
+    "name": "sesame seed",
     "quantity": null,
     "unit": "",
-    "note": "chopped"
+    "note": "toasted white, for the buns; no amount given"
    },
    {
-    "name": "lettuce",
-    "quantity": 0.25,
+    "name": "butter",
+    "quantity": null,
     "unit": "",
-    "note": ""
+    "note": "melted, for brushing and toasting the buns; no amount given"
    },
    {
-    "name": "cheese",
-    "quantity": 2,
+    "name": "vegetable oil",
+    "quantity": null,
     "unit": "",
-    "note": "sliced"
-   },
-   {
-    "name": "dill pickles",
-    "quantity": 2,
-    "unit": "",
-    "note": "large"
+    "note": "for greasing the bowl"
    },
    {
     "name": "mayonnaise",
-    "quantity": 1,
+    "quantity": 0.5,
     "unit": "cup",
-    "note": ""
+    "note": "for the sauce"
    },
    {
-    "name": "white wine vinegar",
-    "quantity": 2,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "black pepper",
-    "quantity": 1,
-    "unit": "pinch",
-    "note": ""
+    "name": "tomato ketchup",
+    "quantity": 3,
+    "unit": "tbsp",
+    "note": "for the sauce"
    },
    {
     "name": "mustard",
-    "quantity": 2,
-    "unit": "tsp",
-    "note": ""
+    "quantity": 3,
+    "unit": "tbsp",
+    "note": "yellow, for the sauce"
    },
    {
-    "name": "onion salt",
-    "quantity": 1.5,
-    "unit": "tsp",
-    "note": ""
+    "name": "bread and butter pickle",
+    "quantity": 1,
+    "unit": "",
+    "note": "finely diced, for the sauce"
    },
    {
-    "name": "garlic powder",
-    "quantity": 1.5,
-    "unit": "tsp",
-    "note": ""
+    "name": "pickle juice",
+    "quantity": 1,
+    "unit": "dash",
+    "note": "a splash, for the sauce"
    },
    {
-    "name": "paprika",
+    "name": "onion powder",
+    "quantity": 0.125,
+    "unit": "tsp",
+    "note": "for the sauce"
+   },
+   {
+    "name": "onion",
+    "quantity": 3,
+    "unit": "tbsp",
+    "note": "sweet, brunoise, for the sauce"
+   },
+   {
+    "name": "garlic",
+    "quantity": 1,
+    "unit": "clove",
+    "note": "grated, for the sauce"
+   },
+   {
+    "name": "salt",
+    "quantity": null,
+    "unit": "",
+    "note": "kosher, to taste (sauce and burgers)"
+   },
+   {
+    "name": "black pepper",
+    "quantity": null,
+    "unit": "",
+    "note": "freshly ground, to taste (sauce and burgers)"
+   },
+   {
+    "name": "lettuce",
     "quantity": 0.5,
-    "unit": "tsp",
+    "unit": "",
+    "note": "iceberg head, thinly shaved"
+   },
+   {
+    "name": "parsley",
+    "quantity": 1,
+    "unit": "handful",
+    "note": "small handful of leaves, finely chopped"
+   },
+   {
+    "name": "lemon",
+    "quantity": 0.5,
+    "unit": "",
+    "note": "zested"
+   },
+   {
+    "name": "onion",
+    "quantity": 1,
+    "unit": "",
+    "note": "sweet, thinly sliced, for the toppings"
+   },
+   {
+    "name": "dill pickles",
+    "quantity": null,
+    "unit": "",
+    "note": "optional, thinly sliced lengthwise into planks"
+   },
+   {
+    "name": "beef mince",
+    "quantity": 900,
+    "unit": "g",
+    "note": "70/30, divided into 8 portions of about 115 g"
+   },
+   {
+    "name": "cooking spray",
+    "quantity": null,
+    "unit": "",
+    "note": "for greasing the skillet"
+   },
+   {
+    "name": "cheddar cheese",
+    "quantity": 4,
+    "unit": "slice",
+    "note": "aged"
+   },
+   {
+    "name": "american cheese",
+    "quantity": 4,
+    "unit": "slice",
     "note": ""
    }
   ],
   "steps": [
    {
-    "text": "For the Big Mac sauce, combine all the ingredients in a bowl, season with salt and chill until ready to use.",
+    "text": "Cook the flour with a quarter cup of the milk and 2 tablespoons of the water over medium heat, whisking until it forms a thick paste (the tangzhong). Set aside.",
     "minutes": null
    },
    {
-    "text": "To make the patties, season the mince with salt and pepper and form into 4 balls using about 1/3 cup mince each. Place each onto a square of baking paper and flatten to form into four x 15cm circles.",
+    "text": "Warm the remaining milk and water to 35°C, stir in the sugar and yeast and leave 5 minutes until frothy. Mix into the bread flour and salt with the tangzhong, egg and yolk, then add the butter a tablespoon at a time and knead until smooth.",
+    "minutes": 5
+   },
+   {
+    "text": "Leave the dough in a greased bowl to rise for 1 hour until doubled. Divide into 8-9 balls, put them on lined trays and proof for 30 minutes.",
+    "minutes": 90
+   },
+   {
+    "text": "Heat the oven to 190°C. Brush the buns with egg wash, add sesame seeds and bake for 17 minutes until golden. Brush with melted butter and cool completely.",
+    "minutes": 17
+   },
+   {
+    "text": "Slice each cooled bun crosswise into three rounds and toast each side in melted butter until crisp and golden.",
     "minutes": null
    },
    {
-    "text": "Heat oil in a large frypan over high heat. In 2 batches, cook beef patties for 1-2 minutes each side until lightly charred and cooked through. Remove from heat and keep warm. Repeat with remaining two patties.",
-    "minutes": 2
-   },
-   {
-    "text": "Carefully slice each burger bun into three acrossways, then lightly toast.",
+    "text": "Whisk together all the Big Mac sauce ingredients and keep in the fridge until needed.",
     "minutes": null
    },
    {
-    "text": "To assemble the burgers, spread a little Big Mac sauce over the bottom base. Top with some chopped onion, shredded lettuce, slice of cheese, beef patty and some pickle slices.",
+    "text": "Toss the lettuce with the parsley and lemon zest. Rinse the sliced onion under cold water and drain well.",
     "minutes": null
    },
    {
-    "text": "Top with the middle bun layer, and spread with more Big Mac sauce, onion, lettuce, pickles, beef patty and then finish with more sauce. Top with burger lid to serve.",
+    "text": "Roll the beef into 8 balls. Smash each in a greased hot skillet to a patty about 6 mm thick, season, and sear 1-2 minutes each side.",
     "minutes": null
    },
    {
-    "text": "After waiting half an hour for your food to settle, go for a jog.",
-    "minutes": 60
+    "text": "Put cheddar on the bottom bun and American cheese on the middle bun and melt them under the grill. Layer the bottom bun with lettuce, onion, sauce and a patty.",
+    "minutes": null
+   },
+   {
+    "text": "Build the middle bun with lettuce, onion, pickles and a second patty, stack it on the base, add a generous dollop of sauce and finish with the top bun.",
+    "minutes": null
    }
   ]
  },
@@ -20727,19 +20845,19 @@
  {
   "source": "themealdb:53069",
   "title": "Bistek",
-  "description": "A Filipino dish of beef and lemon — serves 4, on the table in about 45 minutes.",
-  "servings": 4,
+  "description": "Filipino beef steak: thin sirloin marinated in soy sauce, lemon and pepper, pan-fried and simmered with onion rings. Served hot with rice.",
+  "servings": 5,
   "cuisine": "Filipino",
   "category": "Beef",
   "image": "https://www.themealdb.com/images/media/meals/4pqimk1683207418.jpg",
-  "prep_minutes": 15,
-  "cook_minutes": 20,
+  "prep_minutes": 60,
+  "cook_minutes": 40,
   "ingredients": [
    {
-    "name": "beef",
-    "quantity": 455,
+    "name": "sirloin steak",
+    "quantity": 680,
     "unit": "g",
-    "note": ""
+    "note": "beef sirloin, thinly sliced"
    },
    {
     "name": "soy sauce",
@@ -20751,70 +20869,72 @@
     "name": "lemon",
     "quantity": 1,
     "unit": "",
-    "note": ""
+    "note": "or 4 calamansi"
+   },
+   {
+    "name": "black pepper",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": "ground"
    },
    {
     "name": "garlic",
     "quantity": 3,
     "unit": "clove",
-    "note": ""
+    "note": "minced"
    },
    {
     "name": "onion",
     "quantity": 3,
     "unit": "",
-    "note": "parts"
+    "note": "sliced into rings; half pan-fried first"
    },
    {
-    "name": "olive oil",
+    "name": "vegetable oil",
     "quantity": 4,
     "unit": "tbsp",
-    "note": ""
+    "note": "cooking oil, add more if needed"
    },
    {
     "name": "water",
     "quantity": 1,
     "unit": "cup",
-    "note": ""
+    "note": "plus more as needed"
    },
    {
     "name": "salt",
     "quantity": 1,
     "unit": "pinch",
-    "note": ""
+    "note": "plus more to taste"
    }
   ],
   "steps": [
    {
-    "text": "Marinate beef in soy sauce, lemon (or calamansi), and ground black pepper for at least 1 hour. Note: marinate overnight for best result.",
+    "text": "Marinate the beef in the soy sauce, lemon (or calamansi) juice and pepper for at least 1 hour; overnight is best.",
     "minutes": 60
    },
    {
-    "text": "Heat the cooking oil in a pan then pan-fry half of the onions until the texture becomes soft. Set aside.",
+    "text": "Heat the oil in a pan and pan-fry half of the onions until soft. Set aside.",
     "minutes": null
    },
    {
-    "text": "Drain the marinade from the beef. Set it aside. Pan-fry the beef on the same pan where the onions were fried for 1 minute per side. Remove from the pan. Set aside.",
+    "text": "Drain the beef, keeping the marinade. Pan-fry the beef in the same pan for 1 minute a side, then remove.",
+    "minutes": 2
+   },
+   {
+    "text": "Add more oil if needed and saute the garlic and remaining raw onions until the onion softens.",
     "minutes": null
    },
    {
-    "text": "Add more oil if needed. Saute garlic and remaining raw onions until onion softens.",
+    "text": "Pour in the reserved marinade and the water and bring to a boil.",
     "minutes": null
    },
    {
-    "text": "Pour the remaining marinade and water. Bring to a boil.",
+    "text": "Return the beef, cover and simmer until the meat is tender, adding water as needed.",
     "minutes": null
    },
    {
-    "text": "Add beef. Cover the pan and simmer until the meat is tender. Note: Add water as needed.",
-    "minutes": null
-   },
-   {
-    "text": "Season with ground black pepper and salt as needed. Top with pan-fried onions.",
-    "minutes": null
-   },
-   {
-    "text": "Transfer to a serving plate. Serve hot. Share and Enjoy!",
+    "text": "Season with pepper and salt, top with the pan-fried onions and serve hot.",
     "minutes": null
    }
   ]

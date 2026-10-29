@@ -281,9 +281,9 @@
  },
  "themealdb:52783": {
   "videoId": null,
-  "checked": "2026-10-21",
+  "checked": "2026-10-29",
   "status": "rejected",
-  "reason": "The current video (Kitchen Daddy, 45dpOfESxr8) is a different dish (red onion, red pepper, rosemary, red wine and crushed tomato; no fennel, olives or pesto), gives no amount for the rigatoni and has no written recipe. Searches for a fennel sausage rigatoni with pesto found only different dishes (cream sauce, orecchiette, sausage meatballs) or videos without a written recipe, none verifiable as the same dish."
+  "reason": "Searched 'rigatoni fennel sausage sauce recipe' and 'sausage and fennel rigatoni' (Food Network/Ina Garten, Kitchen Sanctuary, Natasha's Kitchen). Candidates: lIEAarqDjVo (Onthemenu757, Barefoot Contessa's cream and white-wine version, a different dish, description is an ingredient list with no method) and -vN7LeO5m3k (Lady Fire's Kitchen, description has no recipe at all). No video of this tomato-and-red-wine sausage and fennel ragu with olives and basil pesto has a written recipe with amounts and method."
  },
  "themealdb:52823": {
   "videoId": "KXD-U34Kv3c",
@@ -366,10 +366,12 @@
   "transcribed": true
  },
  "themealdb:52870": {
-  "videoId": "LGY3V7EGpT0",
-  "status": "unavailable",
-  "reason": "video no longer exists on YouTube",
-  "checked": "2026-10-20"
+  "videoId": "HSAVz1AxwWY",
+  "title": "Sheet Pan Chickpea Fajitas (Ready in 30 Minutes!)",
+  "channel": "Live Eat Learn",
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:52819": {
   "videoId": "NOMziLydxAI",
@@ -640,10 +642,10 @@
   "reason": "Current video (l8wuWeNy3J4, Healthy Indian Recipes) has an ingredient list in the description (tofu, onion, bell pepper, broccoli, ginger-garlic paste, cashews, dried red chillies, soy sauce, vinegar) but no method and no transcript (IpBlocked), and it is a different dish from the catalogue's hoisin, pak choi and soya bean stir-fry. Two searches found only unverified or different dishes (Thai Cashew Tofu RUH-McVo0iU has almonds, cornstarch-fried tofu and a different sauce; Tulsi's Vegan Kitchen TTn3d3aexYI metadata timed out)."
  },
  "themealdb:52828": {
-  "videoId": "Q3qcQcENzbU",
-  "status": "unavailable",
-  "reason": "video no longer exists on YouTube",
-  "checked": "2026-10-20"
+  "videoId": null,
+  "checked": "2026-10-29",
+  "status": "rejected",
+  "reason": "The catalogue dish is Vietnamese grilled pork built as a bowl (bun thit nuong style): pork over rice noodles with egg rolls, cucumber, mint, peanuts and nuoc cham. The only verified video (RecipeTin Eats 8l3Et0ubPEM) cooks just the lemongrass pork steaks and says to use them in the noodle bowls it publishes separately, so it shows only part of the dish."
  },
  "themealdb:53483": {
   "videoId": null,
@@ -830,10 +832,12 @@
   "transcribed": true
  },
  "themealdb:53522": {
-  "videoId": null,
-  "status": "unavailable",
-  "reason": "TheMealDB lists no video for this meal",
-  "checked": "2026-10-20"
+  "videoId": "lwdQmTP3BbQ",
+  "title": "Rice Pudding Recipe - Arroz con Leche",
+  "channel": "Spain on a Fork",
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53133": {
   "videoId": null,
@@ -899,9 +903,9 @@
  },
  "themealdb:53481": {
   "videoId": null,
-  "status": "unavailable",
-  "reason": "TheMealDB lists no video for this meal",
-  "checked": "2026-10-20"
+  "checked": "2026-10-29",
+  "status": "rejected",
+  "reason": "The only candidate video (NmCFydnr9do, DoesntEatWheat, 61 views) links a BBC Good Food recipe written by someone else; there is no creator-written recipe and the page was never checked against what the video cooks, so it cannot be verified."
  },
  "themealdb:53496": {
   "videoId": null,
@@ -1060,12 +1064,12 @@
   "checked": "2026-10-20"
  },
  "themealdb:52812": {
-  "videoId": "gh48wM6bPWQ",
-  "title": "Simple Beef Brisket | Gordon Ramsay",
-  "channel": "Gordon Ramsay",
-  "status": "rejected",
-  "reason": "video title doesn't match the dish",
-  "checked": "2026-10-20"
+  "videoId": "Go8b1Cpjr84",
+  "title": "Best Pot Roast Recipe | Easy & Delicious",
+  "channel": "Natashas Kitchen",
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53070": {
   "videoId": "yI7hTz0ft5k",
@@ -1104,12 +1108,12 @@
   "checked": "2026-10-20"
  },
  "themealdb:53068": {
-  "videoId": "jxW3Lj8VjyE",
-  "title": "Beef Mechado Recipe | Beef Stew | Mechadong Baka | Easy to Follow Recipe",
-  "channel": "Get Cookin'",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "videoId": "kEakYl5pDEM",
+  "title": "Beef Mechado",
+  "channel": "Panlasang Pinoy",
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53469": {
   "videoId": null,
@@ -1188,12 +1192,12 @@
   "checked": "2026-10-20"
  },
  "themealdb:53013": {
-  "videoId": "C5J39YnnPsg",
-  "title": "How to make a McDonald's Big Mac",
-  "channel": "Rebecca Brand",
-  "status": "rejected",
-  "reason": "video title doesn't match the dish",
-  "checked": "2026-10-20"
+  "videoId": "7oJ_pIaSRtQ",
+  "title": "Making The McDonald's Big Mac At Home | But Better",
+  "channel": "Joshua Weissman",
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53018": {
   "videoId": "8Wm96F4pQoM",
@@ -1212,12 +1216,12 @@
   "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53069": {
-  "videoId": "xOQON5_S7as",
-  "title": "How To Cook  Filipino Beef Steak ( BISTEK TAGALOG )",
-  "channel": "Mommy Chocco",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "videoId": "y9aA7K-aKOw",
+  "title": "Bistek Tagalog | Beefsteak | Panlasang Pinoy",
+  "channel": "Panlasang Pinoy",
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:52979": {
   "videoId": "OonwnAnz7iQ",
@@ -1434,12 +1438,10 @@
   "checked": "2026-10-20"
  },
  "themealdb:53060": {
-  "videoId": "YsJXZwE5pdY",
-  "title": "The Art of Making Burek",
-  "channel": "Chris Konesky",
+  "videoId": null,
+  "checked": "2026-10-29",
   "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "reason": "Searched 'burek recipe' and a creator-targeted burek query. Candidates: JMuFLs-wp2I (Tetka Nadia, cheese and meat burek; description has dough, feta/ricotta and 500 g ground pork amounts and a method, but onions, margarine/butter and canola oil are unmeasured, so more than two main ingredients lack amounts and the meat filling is not a clean version of the catalogue recipe) and 7p3fZFItZYs (Diet Starts Monday Club; ingredient amounts but no method in the description). Neither gives a complete measured recipe."
  },
  "themealdb:53077": {
   "videoId": "vMdMWRt2O_g",
