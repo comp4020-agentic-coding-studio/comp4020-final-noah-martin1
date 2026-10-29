@@ -37193,99 +37193,101 @@
  },
  {
   "source": "themealdb:52955",
-  "title": "Egg Drop Soup",
-  "description": "A Chinese soup of sesame oil, peas and mushrooms — serves 2, ready in under half an hour.",
-  "servings": 2,
+  "title": "Egg drop soup",
+  "description": "Chicken stock seasoned with sesame oil and white pepper, lightly thickened with a cornflour slurry and finished with ribbons of beaten egg and spring onion.",
+  "servings": 6,
   "cuisine": "Chinese",
-  "category": "Vegetarian",
+  "category": "Starter",
   "image": "https://www.themealdb.com/images/media/meals/1529446137.jpg",
-  "prep_minutes": 15,
-  "cook_minutes": 5,
+  "prep_minutes": 5,
+  "cook_minutes": 10,
   "ingredients": [
    {
     "name": "chicken stock",
-    "quantity": 3,
+    "quantity": 4,
     "unit": "cup",
+    "note": "about 1 litre"
+   },
+   {
+    "name": "sesame oil",
+    "quantity": 0.5,
+    "unit": "tsp",
     "note": ""
    },
    {
     "name": "salt",
-    "quantity": 0.25,
+    "quantity": 0.75,
     "unit": "tsp",
     "note": ""
    },
    {
     "name": "sugar",
+    "quantity": 0.125,
+    "unit": "tsp",
+    "note": ""
+   },
+   {
+    "name": "white pepper",
+    "quantity": 0.125,
+    "unit": "tsp",
+    "note": ""
+   },
+   {
+    "name": "msg",
     "quantity": 0.25,
     "unit": "tsp",
-    "note": ""
+    "note": "optional, increase to taste"
    },
    {
-    "name": "black pepper",
-    "quantity": 1,
-    "unit": "pinch",
-    "note": ""
-   },
-   {
-    "name": "sesame oil",
-    "quantity": 1,
+    "name": "turmeric",
+    "quantity": 0.5,
     "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "peas",
-    "quantity": 0.333,
-    "unit": "cup",
-    "note": ""
-   },
-   {
-    "name": "mushrooms",
-    "quantity": 0.333,
-    "unit": "cup",
-    "note": ""
+    "note": "optional, for the yellow restaurant colour"
    },
    {
     "name": "cornflour",
-    "quantity": 1,
+    "quantity": 3,
     "unit": "tbsp",
-    "note": ""
+    "note": "mixed with the water into a slurry; use more or less for a thicker or thinner soup"
    },
    {
     "name": "water",
-    "quantity": 2,
-    "unit": "tbsp",
-    "note": ""
+    "quantity": 0.33,
+    "unit": "cup",
+    "note": "to mix with the cornflour"
+   },
+   {
+    "name": "eggs",
+    "quantity": 3,
+    "unit": "",
+    "note": "lightly beaten"
    },
    {
     "name": "spring onion",
-    "quantity": 0.25,
-    "unit": "cup",
-    "note": ""
+    "quantity": 1,
+    "unit": "",
+    "note": "chopped, to garnish"
    }
   ],
   "steps": [
    {
-    "text": "In a wok add chicken broth and wait for it to boil.",
+    "text": "Bring the chicken stock to a simmer in a medium soup pot.",
     "minutes": null
    },
    {
-    "text": "Next add salt, sugar, white pepper, sesame seed oil.",
+    "text": "Stir in the sesame oil, salt, sugar, white pepper and MSG if using, plus the turmeric if you want the yellow restaurant colour. Taste and adjust the seasoning.",
     "minutes": null
    },
    {
-    "text": "When the chicken broth is boiling add the vegetables to the wok.",
+    "text": "Mix the cornflour and water well, as the starch settles quickly. Stir the soup continuously while drizzling in the slurry so it doesn't clump; use more or less to thicken as you like.",
     "minutes": null
    },
    {
-    "text": "To thicken the sauce, whisk together 1 Tablespoon of cornstarch and 2 Tablespoon of water in a bowl and slowly add to your soup until it's the right thickness.",
+    "text": "Circle a ladle through the soup and slowly drizzle in the lightly beaten eggs until all are added. Faster stirring gives smaller egg flowers.",
     "minutes": null
    },
    {
-    "text": "Next add 1 egg slightly beaten with a knife or fork and add it to the soup slowly and stir for 8 seconds.",
-    "minutes": null
-   },
-   {
-    "text": "Serve the soup in a bowl and add the green onions on top.",
+    "text": "Ladle into bowls and top with chopped spring onion.",
     "minutes": null
    }
   ]
@@ -38938,101 +38940,91 @@
  },
  {
   "source": "themealdb:53030",
-  "title": "Feteer Meshaltet",
-  "description": "An Egyptian classic made with everyday staples — makes 12, on the table in about 45 minutes.",
-  "servings": 12,
+  "title": "Feteer meshaltet",
+  "description": "Egyptian layered pastry: a soft dough stretched paper-thin, brushed with ghee and folded into flaky layers, topped with sour cream and baked until crisp and golden.",
+  "servings": 20,
   "cuisine": "Egyptian",
   "category": "Side",
   "image": "https://www.themealdb.com/images/media/meals/9f4z6v1598734293.jpg",
-  "prep_minutes": 10,
-  "cook_minutes": 20,
+  "prep_minutes": 20,
+  "cook_minutes": 30,
   "ingredients": [
    {
     "name": "plain flour",
-    "quantity": 4,
-    "unit": "cup",
-    "note": ""
-   },
-   {
-    "name": "water",
-    "quantity": 1.5,
-    "unit": "cup",
-    "note": ""
+    "quantity": 2.27,
+    "unit": "kg",
+    "note": "5 lb, sifted"
    },
    {
     "name": "salt",
-    "quantity": 0.25,
+    "quantity": 1,
     "unit": "tsp",
     "note": ""
    },
    {
-    "name": "butter",
+    "name": "sugar",
     "quantity": 1,
-    "unit": "cup",
+    "unit": "tsp",
     "note": ""
    },
    {
-    "name": "olive oil",
-    "quantity": 0.25,
+    "name": "water",
+    "quantity": 7,
     "unit": "cup",
-    "note": ""
+    "note": "7-8 cups, added little by little"
+   },
+   {
+    "name": "ghee",
+    "quantity": 900,
+    "unit": "g",
+    "note": "2 lb clarified butter, melted; not regular butter"
+   },
+   {
+    "name": "sour cream",
+    "quantity": 8,
+    "unit": "tbsp",
+    "note": "2 tbsp spread on top of each fateer"
    }
   ],
   "steps": [
    {
-    "text": "Mix the flour and salt then pour one cup of water and start kneading.",
+    "text": "Sift the flour into a very large bowl and mix in the salt and sugar.",
     "minutes": null
    },
    {
-    "text": "If you feel the dough is still not coming together or too dry, gradually add the remaining water until you get a dough that is very elastic so that when you pull it and it won’t be torn.",
-    "minutes": null
+    "text": "Add the water little by little while bringing the dough together, then knead about 15 minutes until it no longer sticks to your hands and springs back when stretched. Add a little more water if it is still sticky.",
+    "minutes": 15
    },
    {
-    "text": "Let the dough rest for just 10 minutes then divide the dough into 6-8 balls depending on the size you want for your feteer.",
-    "minutes": 10
-   },
-   {
-    "text": "Warm up the butter/ghee or oil you are using and pour into a deep bowl.",
-    "minutes": null
-   },
-   {
-    "text": "Immerse the dough balls into the warm butter. Let it rest for 15 to 20 minutes. Preheat oven to 290°C (550°F)",
+    "text": "Divide the dough into five equal portions, set them on a floured tray, cover with a towel and rest 20 minutes.",
     "minutes": 20
    },
    {
-    "text": "Stretch the first ball with your hands on a clean countertop. Stretch it as thin as you can, the goal here is to see your countertop through the dough.",
+    "text": "While the dough rests, melt the clarified butter or ghee over low heat.",
     "minutes": null
    },
    {
-    "text": "Fold the dough over itself to form a square brushing in between folds with the butter mixture.",
+    "text": "Stretch one ball on a floured counter from the centre outwards until very thin and nearly translucent, without tearing it.",
     "minutes": null
    },
    {
-    "text": "Set aside and start making the next ball.",
+    "text": "Rub a splash of the melted ghee over the whole top, fold the section over, and repeat the brushing and folding until the dough is back to roughly its original size.",
     "minutes": null
    },
    {
-    "text": "Stretch the second one thin as we have done for the first ball.",
+    "text": "Brush a round baking tray with ghee, set the folded fateer on it, cover with plastic wrap and a towel and rest about 30 minutes.",
+    "minutes": 30
+   },
+   {
+    "text": "Gently press the fateer to about 1.3 cm (1/2 inch) thick, without pressing hard enough to ruin the layers. Spread 2 tablespoons of sour cream on top, leaving it a little bumpy.",
     "minutes": null
    },
    {
-    "text": "Place the previous one on the middle seam side down. Fold the outer one over brushing with more butter mixture as you fold. Set aside.",
-    "minutes": null
+    "text": "Bake at 200°C for 30 minutes, rotating the shelves halfway through.",
+    "minutes": 30
    },
    {
-    "text": "Keep doing this for the third and fourth balls. Now we have one ready, place on a 10 inch baking/pie dish seam side down and brush the top with more butter.",
-    "minutes": null
-   },
-   {
-    "text": "Repeat for the remaining 4 balls to make a second one. With your hands lightly press the folded feteer to spread it on the baking dish.",
-    "minutes": null
-   },
-   {
-    "text": "Place in preheated oven for 10 minutes when the feteer starts puffing turn on the broiler to brown the top.",
-    "minutes": 10
-   },
-   {
-    "text": "When it is done add little butter on top and cover so it won’t get dry.",
+    "text": "Cover the fateer straight out of the oven and serve hot or warm with molasses and tahini, or with mish cheese.",
     "minutes": null
    }
   ]
@@ -39327,84 +39319,116 @@
  {
   "source": "themealdb:53079",
   "title": "Fish Soup (Ukha)",
-  "description": "A Russian soup of fish stock, cod and carrot — serves 4, on the table in about 45 minutes.",
+  "description": "Russian fisherman's soup: a clear broth simmered from a salmon frame, then cooked with potatoes and bay leaves, with chunks of salmon and perch added at the end and finished with dill.",
   "servings": 4,
   "cuisine": "Russian",
   "category": "Seafood",
   "image": "https://www.themealdb.com/images/media/meals/7n8su21699013057.jpg",
-  "prep_minutes": 15,
-  "cook_minutes": 15,
+  "prep_minutes": 10,
+  "cook_minutes": 65,
   "ingredients": [
    {
-    "name": "olive oil",
-    "quantity": 2,
-    "unit": "tbsp",
-    "note": ""
+    "name": "salmon frame",
+    "quantity": 1,
+    "unit": "",
+    "note": "large salmon or trout frame, bones including head and tail"
    },
    {
     "name": "onion",
     "quantity": 1,
     "unit": "",
-    "note": "sliced"
+    "note": "peeled and halved"
    },
    {
-    "name": "carrot",
-    "quantity": 2,
-    "unit": "",
-    "note": "medium"
+    "name": "salt",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "for the broth, plus more to taste"
    },
    {
-    "name": "fish stock",
-    "quantity": 3,
-    "unit": "cup",
-    "note": ""
+    "name": "black peppercorns",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "whole"
    },
    {
     "name": "water",
-    "quantity": 3,
+    "quantity": 12,
     "unit": "cup",
     "note": ""
    },
    {
-    "name": "potato",
-    "quantity": 4,
+    "name": "carrot",
+    "quantity": 1,
     "unit": "",
-    "note": "large"
+    "note": "optional; the source gives no step for when it goes in"
+   },
+   {
+    "name": "potato",
+    "quantity": 3,
+    "unit": "",
+    "note": "medium, peeled and cubed"
    },
    {
     "name": "bay leaf",
     "quantity": 3,
-    "unit": "",
-    "note": ""
-   },
-   {
-    "name": "cod",
-    "quantity": 1,
-    "unit": "",
+    "unit": "leaf",
     "note": ""
    },
    {
     "name": "salmon fillet",
+    "quantity": 500,
+    "unit": "g",
+    "note": "the source lists one combined 500 g (1 lb) for salmon and perch fillets, boneless and skinless, in 5 cm chunks; no split given"
+   },
+   {
+    "name": "vodka",
+    "quantity": 30,
+    "unit": "ml",
+    "note": "1 shot, optional"
+   },
+   {
+    "name": "dill",
     "quantity": 1,
+    "unit": "bunch",
+    "note": "chopped"
+   },
+   {
+    "name": "black pepper",
+    "quantity": null,
     "unit": "",
-    "note": ""
+    "note": "to taste; the recipe loves black pepper"
+   },
+   {
+    "name": "spring onion",
+    "quantity": null,
+    "unit": "",
+    "note": "chopped, to garnish (or parsley)"
    }
   ],
   "steps": [
    {
-    "text": "In a medium pot, heat the olive oil over medium-high heat. Add the onions and cook, stirring occasionally until the onions start to caramelize. Add the carrots and cook until the carrots start to soften, about 4 more minutes.",
+    "text": "Put the salmon frame and head, halved onion, 1 teaspoon salt, peppercorns and the water in a large pot and bring to a boil. Reduce the heat and simmer 45 minutes, skimming off any impurities.",
+    "minutes": 45
+   },
+   {
+    "text": "Line a colander with cheesecloth and strain the broth into a large bowl so it stays clear. Discard the bones.",
     "minutes": null
    },
    {
-    "text": "Add the stock, water, potatoes, bay leaves, and black peppercorns. Season with salt and bring to a boil. Reduce heat, cover and cook for 10 minutes. Add the millet and cook for 15 more minutes until millet and potatoes are cooked.",
+    "text": "Return the stock to the pot, add the cubed potatoes and bay leaves and cook about 10 minutes, until the potatoes are soft.",
     "minutes": 10
    },
    {
-    "text": "Gently add the fish cubes. Stir and bring the soup to a simmer. The fish will cook through very fast, so make sure to not overcook them. They are done when the flesh is opaque and flakes easily.",
+    "text": "Cut the salmon and perch into chunky pieces about 5 cm across (too small and they fall apart) and add them to the soup. Cook about 10 minutes.",
+    "minutes": 10
+   },
+   {
+    "text": "Add the chopped dill and the optional vodka and season with salt and plenty of black pepper.",
     "minutes": null
    },
    {
-    "text": "Garnish the soup with chopped fresh dill or parsley before serving.",
+    "text": "Ladle into bowls and sprinkle with chopped spring onion or parsley.",
     "minutes": null
    }
   ]
@@ -39827,170 +39851,166 @@
  {
   "source": "themealdb:53322",
   "title": "Flan",
-  "description": "An Uruguayan sweet made with vanilla pod and egg yolks — serves 4, about an hour start to finish.",
-  "servings": 4,
-  "cuisine": "Uruguayan",
+  "description": "Classic vanilla flan: a silky custard of eggs, condensed and evaporated milk baked in a water bath over amber caramel, chilled, then turned out.",
+  "servings": 8,
+  "cuisine": "Latin American",
   "category": "Dessert",
   "image": "https://www.themealdb.com/images/media/meals/0s80wo1764374393.jpg",
-  "prep_minutes": 10,
-  "cook_minutes": 45,
+  "prep_minutes": 20,
+  "cook_minutes": 50,
   "ingredients": [
    {
     "name": "sugar",
-    "quantity": 100,
+    "quantity": 150,
     "unit": "g",
-    "note": ""
+    "note": "granulated, for the caramel"
    },
    {
-    "name": "milk",
-    "quantity": 350,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "sugar",
-    "quantity": 45,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "vanilla pod",
-    "quantity": 1,
-    "unit": "",
-    "note": ""
-   },
-   {
-    "name": "egg yolks",
-    "quantity": 4,
-    "unit": "",
-    "note": ""
+    "name": "water",
+    "quantity": 0.25,
+    "unit": "cup",
+    "note": "for the caramel"
    },
    {
     "name": "eggs",
-    "quantity": 2,
+    "quantity": 5,
     "unit": "",
-    "note": ""
+    "note": "large"
    },
    {
-    "name": "dulce de leche",
-    "quantity": null,
-    "unit": "",
-    "note": "to taste"
+    "name": "condensed milk",
+    "quantity": 396,
+    "unit": "g",
+    "note": "1 can (14 oz), sweetened"
+   },
+   {
+    "name": "evaporated milk",
+    "quantity": 354,
+    "unit": "g",
+    "note": "1 can (12 oz)"
+   },
+   {
+    "name": "vanilla extract",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": ""
    }
   ],
   "steps": [
    {
-    "text": "For the caramel place 100 grams of sugar in a frying pan without any fat and melt on medium heat. Try not to stir with a spoon, but swirl the pan itself. Let melt until you have an amber color and sugar is fully melted.",
+    "text": "Preheat the oven to 180°C (350°F).",
     "minutes": null
    },
    {
-    "text": "Fill the bottom of four flan containers with it. Caramel will harden immediately, so you need to be fast. My containers yield about 120 milliliters each.",
+    "text": "Stir the sugar and 1/4 cup water in a medium saucepan over medium heat for about 2 minutes, until the sugar dissolves.",
+    "minutes": 2
+   },
+   {
+    "text": "Turn up to medium-high and cook, swirling occasionally, about 5 minutes until golden amber. Brush down any sugar crystals on the side with a wet pastry brush.",
+    "minutes": 5
+   },
+   {
+    "text": "Pour the caramel straight into an 8-inch (20 cm) round cake pan, tilting to coat the base, and leave it to harden while you make the custard. Take care: the pan gets very hot.",
     "minutes": null
    },
    {
-    "text": "Preheat oven to 150 degrees Celsius and look for a casserole or container all your four flan containers fit into.",
+    "text": "Blend or whisk the eggs, condensed milk, evaporated milk and vanilla until combined. Let any bubbles settle, or pour the mixture through a fine sieve into the pan to remove them.",
     "minutes": null
    },
    {
-    "text": "Heat milk with 45 grams of sugar and the cut and scraped out vanilla pod. The milk does not need to boil, just needs to be heated. Take out vanilla pod after a few minutes.",
+    "text": "Set the caramel pan in a roasting pan, pour the custard over the caramel, then fill the roasting pan with 2.5 cm of hot water.",
     "minutes": null
    },
    {
-    "text": "Meanwhile stir the egg yolks and eggs gently, try not to incorporate any air in it. Them pour milk-mix into egg-mix and again only stir very gently. Pour into prepared flan containers and place these into your casserole or container.",
+    "text": "Bake 35 to 40 minutes, until the centre is just set and wobbles slightly when jiggled.",
+    "minutes": 35
+   },
+   {
+    "text": "Lift the pan out of the water bath and cool on a rack to room temperature, then chill if you like.",
     "minutes": null
    },
    {
-    "text": "Boil water and pour the water into the large casserole. Be sure not to touch the flan mixture. Place on middle rack in the oven and let bake for about 35-40 minutes. An inserted toothpick should come out clean.",
-    "minutes": 40
-   },
-   {
-    "text": "Let cool inside the container for an hour before transferring to the fridge. Chill overnight. The next day gently release the rim and then turn upside down on a plate. Serve with some dulce de leche on the side.",
-    "minutes": 60
+    "text": "To serve, run a knife around the edge, set a plate upside down on top and flip. If chilled, dip the pan halfway into hot water first to loosen the caramel. Slice and serve.",
+    "minutes": null
    }
   ]
  },
  {
   "source": "themealdb:53341",
-  "title": "Flapper Pie",
-  "description": "A Canadian sweet made with digestive biscuits, egg yolks and egg whites — serves 8, on the table in about 45 minutes.",
-  "servings": 8,
+  "title": "Flapper pie",
+  "description": "Canadian vanilla custard pie in a browned-butter Biscoff or graham cracker crust, topped with spiked meringue and sprinkled with ground biscuit crumbs.",
+  "servings": 10,
   "cuisine": "Canadian",
   "category": "Dessert",
   "image": "https://www.themealdb.com/images/media/meals/6ht8141764786479.jpg",
-  "prep_minutes": 20,
-  "cook_minutes": 25,
+  "prep_minutes": 15,
+  "cook_minutes": 15,
   "ingredients": [
    {
-    "name": "digestive biscuits",
+    "name": "biscoff biscuits",
     "quantity": 1.5,
     "unit": "cup",
-    "note": ""
+    "note": "ground, or graham crackers; save 1 tbsp for topping"
    },
    {
     "name": "butter",
-    "quantity": 6,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "sugar",
-    "quantity": 0.5,
+    "quantity": 0.33,
     "unit": "cup",
-    "note": ""
-   },
-   {
-    "name": "cinnamon",
-    "quantity": 0.5,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "milk",
-    "quantity": 2.5,
-    "unit": "cup",
-    "note": ""
-   },
-   {
-    "name": "sugar",
-    "quantity": 0.5,
-    "unit": "cup",
-    "note": ""
-   },
-   {
-    "name": "cornflour",
-    "quantity": 0.25,
-    "unit": "cup",
-    "note": ""
+    "note": "salted, melted until browned"
    },
    {
     "name": "egg yolks",
     "quantity": 3,
     "unit": "",
-    "note": ""
+    "note": "large, for the custard"
+   },
+   {
+    "name": "evaporated milk",
+    "quantity": 354,
+    "unit": "ml",
+    "note": "1 can, for the custard"
+   },
+   {
+    "name": "condensed milk",
+    "quantity": 300,
+    "unit": "ml",
+    "note": "1 can, or 250 ml for a less sweet pie"
+   },
+   {
+    "name": "cornflour",
+    "quantity": 0.25,
+    "unit": "cup",
+    "note": "for the custard"
    },
    {
     "name": "vanilla extract",
     "quantity": 1,
     "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "salt",
-    "quantity": 0.25,
-    "unit": "tsp",
-    "note": ""
+    "note": "pure, for the custard"
    },
    {
     "name": "egg whites",
     "quantity": 3,
     "unit": "",
-    "note": ""
+    "note": "large, room temperature, for the meringue"
+   },
+   {
+    "name": "vanilla extract",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": "pure, for the meringue"
    },
    {
     "name": "sugar",
     "quantity": 0.25,
     "unit": "cup",
-    "note": ""
+    "note": "for the meringue"
+   },
+   {
+    "name": "cornflour",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "for the meringue"
    },
    {
     "name": "cream of tartar",
@@ -40001,40 +40021,28 @@
   ],
   "steps": [
    {
-    "text": "Preheat the oven to 180°C (350°F)",
+    "text": "Melt the salted butter in a small pan over medium-high heat until it browns.",
     "minutes": null
    },
    {
-    "text": "Mix all the crust ingredients (graham cracker crumbs, melted butter, granulated sugar and ground cinnamon) in a medium bowl.",
+    "text": "Grind the Biscoff or graham crackers (keep 1 tbsp for the topping), mix with the browned butter and press evenly into a 9-inch pie dish. Chill 15 minutes.",
+    "minutes": 15
+   },
+   {
+    "text": "Whisk all the custard ingredients in a medium pot and cook on low heat, whisking constantly, until smooth and thick. Sieve out any lumps and pour the hot custard into the crust.",
     "minutes": null
    },
    {
-    "text": "Set aside about 2 Tbsp (30 mL) for later and press the mixture into a 9-inch deep-dish pie plate in the bottom and up the sides. Bake crust for 10 minutes, it will only brown slightly.",
+    "text": "Beat the egg whites with the cream of tartar on high speed, gradually adding the sugar, then the cornflour and vanilla, until stiff peaks form.",
+    "minutes": null
+   },
+   {
+    "text": "Spread the meringue straight onto the hot custard, pulling it into spikes, and sprinkle the reserved ground crumbs on top.",
+    "minutes": null
+   },
+   {
+    "text": "Bake at 175°C (350°F) on the middle rack for 10 to 15 minutes until the meringue is lightly browned. For a no-bake version, brown the meringue with a kitchen torch.",
     "minutes": 10
-   },
-   {
-    "text": "Combine the vanilla custard filling ingredients (milk, granulated sugar, cornstarch, egg yolks, vanilla extract and salt together) and cook on medium heat, stirring constantly, until it bubbles and thickens to the texture of pudding.",
-    "minutes": null
-   },
-   {
-    "text": "Set aside to cool while you make the meringue topping.",
-    "minutes": null
-   },
-   {
-    "text": "In the bowl of a stand mixer fitted with the beater attachment or in a large bowl using an electric mixer beat the meringue ingredients (egg whites, granulated sugar, cream of tartar) together until it holds stiff and glossy peaks.",
-    "minutes": null
-   },
-   {
-    "text": "To assemble the pie, pour the filling into the crust and top with a thick layer of the meringue, making little spikes that will brown on top. Sprinkle the reserved crumb over the top and place it into the preheated oven.",
-    "minutes": null
-   },
-   {
-    "text": "Bake until the meringue browns, around 10 minutes, making sure to watch it carefully.",
-    "minutes": 10
-   },
-   {
-    "text": "Chill in the fridge and eat within a few hours of baking. This pie is best eaten the same day as the meringue will soften and liquify.",
-    "minutes": null
    }
   ]
  },
@@ -40387,89 +40395,79 @@
  },
  {
   "source": "themealdb:52915",
-  "title": "French Omelette",
-  "description": "A French dish of parmesan, tarragon and chives — serves 2, ready in under half an hour.",
+  "title": "French omelette",
+  "description": "Jacques Pépin's soft French omelette: four eggs beaten with fines herbes, stirred fast in a hot buttered pan and folded to a moist, creamy centre.",
   "servings": 2,
   "cuisine": "French",
-  "category": "Miscellaneous",
+  "category": "Breakfast",
   "image": "https://www.themealdb.com/images/media/meals/yvpuuy1511797244.jpg",
-  "prep_minutes": 10,
-  "cook_minutes": 10,
+  "prep_minutes": 5,
+  "cook_minutes": 3,
   "ingredients": [
    {
     "name": "eggs",
-    "quantity": 3,
+    "quantity": 4,
     "unit": "",
-    "note": ""
+    "note": "large, preferably organic"
    },
    {
-    "name": "butter",
-    "quantity": 2,
-    "unit": "knob",
-    "note": ""
-   },
-   {
-    "name": "parmesan",
+    "name": "salt",
     "quantity": 1,
-    "unit": "tsp",
+    "unit": "dash",
     "note": ""
    },
    {
-    "name": "tarragon",
-    "quantity": 3,
-    "unit": "",
-    "note": "chopped"
+    "name": "black pepper",
+    "quantity": 1,
+    "unit": "dash",
+    "note": "freshly ground"
    },
    {
     "name": "parsley",
     "quantity": 1,
     "unit": "tbsp",
-    "note": "chopped"
+    "note": "finely chopped, part of the fines herbes"
    },
    {
-    "name": "chives",
+    "name": "fines herbes",
     "quantity": 1,
     "unit": "tbsp",
-    "note": "chopped"
+    "note": "chervil, tarragon and chives combined, finely chopped"
    },
    {
-    "name": "gruyère",
-    "quantity": 4,
-    "unit": "tbsp",
-    "note": ""
+    "name": "butter",
+    "quantity": 1.5,
+    "unit": "tsp",
+    "note": "unsalted"
    }
   ],
   "steps": [
    {
-    "text": "Get everything ready. Warm a 20cm (measured across the top) non-stick frying pan on a medium heat. Crack the eggs into a bowl and beat them with a fork so they break up and mix, but not as completely as you would for scrambled egg.",
+    "text": "Beat the eggs with the salt, pepper and herbs using a fork until completely combined: lifting the fork, no strands of white should separate from the yolk.",
     "minutes": null
    },
    {
-    "text": "With the heat on medium-hot, drop one knob of butter into the pan. It should bubble and sizzle, but not brown. Season the eggs with the Parmesan and a little salt and pepper, and pour into the pan.",
+    "text": "Melt the butter over high heat in an 8-inch (20 cm) nonstick skillet, swirling it. When it foams, add the eggs.",
     "minutes": null
    },
    {
-    "text": "Let the eggs bubble slightly for a couple of seconds, then take a wooden fork or spatula and gently draw the mixture in from the sides of the pan a few times, so it gathers in folds in the centre.",
+    "text": "Holding the fork flat, stir the eggs as fast as you can while shaking the pan with your other hand, without stopping, so they set evenly.",
     "minutes": null
    },
    {
-    "text": "Leave for a few seconds, then stir again to lightly combine uncooked egg with cooked. Leave briefly again, and when partly cooked, stir a bit faster, stopping while there’s some barely cooked egg left.",
+    "text": "While the centre is still moist, tilt the pan forward so the eggs gather at the far end, and stop stirring.",
     "minutes": null
    },
    {
-    "text": "With the pan flat on the heat, shake it back and forth a few times to settle the mixture. It should slide easily in the pan and look soft and moist on top. A quick burst of heat will brown the underside.",
+    "text": "Use the fork to fold the thin lip of omelette towards the centre from one end, then the other, enclosing the thick moist centre. Press the fold into place.",
     "minutes": null
    },
    {
-    "text": "Grip the handle underneath. Tilt the pan down away from you and let the omelette fall to the edge.",
+    "text": "Loosen the far lip with the fork and tap the pan handle to make the omelette twist and lift onto itself. Fold the far lip back to meet the other lip and press so each end comes to a point.",
     "minutes": null
    },
    {
-    "text": "Fold the side nearest to you over by a third with your fork, and keep it rolling over, so the omelette tips onto a plate – or fold it in half, if that’s easier.",
-    "minutes": null
-   },
-   {
-    "text": "For a neat finish, cover the omelette with a piece of kitchen paper and plump it up a bit with your fingers. Rub the other knob of butter over to glaze. Serve immediately.",
+    "text": "Bang the far end of the pan gently so the omelette pulls together, then invert it onto a plate and serve straight away, moist and creamy in the centre.",
     "minutes": null
    }
   ]
@@ -41304,41 +41302,41 @@
  {
   "source": "themealdb:53131",
   "title": "Fyrstekake – Norwegian Prince Cake",
-  "description": "A Norwegian sweet made with egg yolks, almonds and brandy — makes 16, about an hour start to finish.",
-  "servings": 16,
+  "description": "Norwegian prince cake: a buttery vanilla dough lined into a tin, filled with a soft ground-almond filling and topped with a lattice of dough strips.",
+  "servings": 10,
   "cuisine": "Norwegian",
   "category": "Dessert",
   "image": "https://www.themealdb.com/images/media/meals/9zqrod1763075574.jpg",
-  "prep_minutes": 20,
-  "cook_minutes": 50,
+  "prep_minutes": 60,
+  "cook_minutes": 45,
   "ingredients": [
    {
     "name": "sugar",
     "quantity": 0.75,
     "unit": "cup",
-    "note": ""
+    "note": "granulated, for the crust"
    },
    {
     "name": "vanilla extract",
     "quantity": 1,
     "unit": "tsp",
-    "note": ""
+    "note": "or vanilla sugar"
    },
    {
     "name": "butter",
-    "quantity": 0.667,
-    "unit": "cup",
-    "note": ""
+    "quantity": 11,
+    "unit": "tbsp",
+    "note": "room temperature, for the crust"
    },
    {
     "name": "egg yolks",
     "quantity": 4,
     "unit": "",
-    "note": ""
+    "note": "for the crust"
    },
    {
     "name": "plain flour",
-    "quantity": 2,
+    "quantity": 1.75,
     "unit": "cup",
     "note": ""
    },
@@ -41352,80 +41350,80 @@
     "name": "almonds",
     "quantity": 1.5,
     "unit": "cup",
-    "note": ""
+    "note": "for the filling"
    },
    {
     "name": "brown sugar",
     "quantity": 0.75,
     "unit": "cup",
-    "note": ""
+    "note": "for the filling; the page says almonds and 'sugar' are ground together without naming it, so this is assumed to be the filling's sugar"
    },
    {
     "name": "butter",
     "quantity": 2,
     "unit": "tbsp",
-    "note": ""
+    "note": "melted, for the filling"
    },
    {
     "name": "eggs",
     "quantity": 2,
     "unit": "",
-    "note": "medium"
+    "note": "medium, for the filling"
    },
    {
     "name": "brandy",
-    "quantity": 2,
+    "quantity": 1,
     "unit": "tbsp",
-    "note": ""
+    "note": "optional; 1-2 tbsp cognac, brandy or brown rum"
    },
    {
     "name": "almond extract",
     "quantity": 5,
     "unit": "drop",
-    "note": ""
+    "note": "optional"
    },
    {
     "name": "eggs",
     "quantity": 1,
     "unit": "",
-    "note": ""
+    "note": "for the egg wash"
    }
   ],
   "steps": [
    {
-    "text": "Crust: mix together sugar, vanilla and butter until light and fluffy. Mix in the egg yolks. Add in the flour and baking powder and knead with hands until the dough is smooth.",
+    "text": "Crust: beat the sugar, vanilla and butter until light and fluffy, mix in the egg yolks, then add the flour and baking powder and knead by hand until the dough is smooth.",
     "minutes": null
    },
    {
-    "text": "Pack the dough in plastic wrap and chill in refrigerator for at least 30 minutes. Almond filling.",
+    "text": "Wrap the dough in plastic wrap and chill in the fridge for at least 30 minutes.",
     "minutes": 30
    },
    {
-    "text": "Run the almonds and sugar together in a food processor until the almonds are finely ground (you can decide for yourself how coarse or fine you want them).",
+    "text": "Filling: grind the almonds with sugar in a food processor until finely ground, as fine or coarse as you like. The source does not name which sugar; the filling's brown sugar is assumed here.",
     "minutes": null
    },
    {
-    "text": "Stir in the butter, egg, cognac and/or almond extract (if using). Assembly.",
+    "text": "Stir in the melted butter, eggs, and the cognac and/or almond extract if using.",
     "minutes": null
    },
    {
-    "text": "Line the bottom of your cake form with baking paper and grease the sides of the form. Preheat oven to 350°F (175°C).",
+    "text": "Line the base of a cake tin with baking paper and grease the sides. Preheat the oven to 175°C (350°F).",
     "minutes": null
    },
    {
-    "text": "Cut 2/3 of the crust dough into slices and press down into the cake form. Cover the bottom of the cake form with the dough and bring the dough 2-3 cm (1 inch) up the sides of the form, pressing until even.",
+    "text": "Slice two-thirds of the dough and press it over the base of the tin and 2 to 3 cm up the sides, until even.",
     "minutes": null
    },
    {
-    "text": "Scoop the almond filling on top of the crust, spreading it evenly across the cake form.",
+    "text": "Spread the almond filling evenly over the crust.",
     "minutes": null
    },
    {
-    "text": "Roll out of the rest of the dough and slice into long strips. Lay the strips of dough across the cake in a grid. Don't worry of the strips break – simply press them back together on the cake. Gently brush the dough with egg wash.",
+    "text": "Roll out the remaining dough, cut it into long strips and lay them across the cake in a grid, pressing any broken strips back together. Brush gently with egg wash.",
     "minutes": null
    },
    {
-    "text": "Bake for about 45 minutes. The top of the cake should be golden brown while the almond filling will remain soft.",
+    "text": "Bake about 45 minutes, until the top is golden brown while the almond filling stays soft.",
     "minutes": 45
    }
   ]
@@ -41817,99 +41815,157 @@
  {
   "source": "themealdb:53381",
   "title": "Gevulde speculaas",
-  "description": "A Dutch sweet made with self-raising flour, marzipan and mixed spice — makes 12, about an hour start to finish.",
-  "servings": 12,
+  "description": "Dutch holiday bake: spiced speculaas dough wrapped around a homemade almond paste filling, brushed with egg, studded with almonds and cut into squares.",
+  "servings": 16,
   "cuisine": "Dutch",
   "category": "Dessert",
   "image": "https://www.themealdb.com/images/media/meals/rw64di1766595573.jpg",
-  "prep_minutes": 15,
-  "cook_minutes": 45,
+  "prep_minutes": 30,
+  "cook_minutes": 40,
   "ingredients": [
    {
-    "name": "self-raising flour",
-    "quantity": 300,
+    "name": "almonds",
+    "quantity": 250,
     "unit": "g",
-    "note": ""
+    "note": "blanched and skinned, for the almond paste"
    },
    {
-    "name": "brown sugar",
-    "quantity": 150,
+    "name": "sugar",
+    "quantity": 250,
     "unit": "g",
-    "note": ""
+    "note": "for the almond paste"
    },
    {
-    "name": "mixed spice",
-    "quantity": 10,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "salt",
-    "quantity": 1,
-    "unit": "pinch",
-    "note": ""
-   },
-   {
-    "name": "butter",
-    "quantity": 125,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "milk",
-    "quantity": 10,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "marzipan",
-    "quantity": 300,
-    "unit": "g",
-    "note": ""
+    "name": "lemon",
+    "quantity": 0.5,
+    "unit": "",
+    "note": "zest only, no white pith, for the almond paste"
    },
    {
     "name": "eggs",
     "quantity": 1,
     "unit": "",
-    "note": ""
+    "note": "for the almond paste"
+   },
+   {
+    "name": "almond extract",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": "for the almond paste"
+   },
+   {
+    "name": "speculaas spice mix",
+    "quantity": 25,
+    "unit": "g",
+    "note": "homemade (cinnamon, cloves, nutmeg, coriander, cardamom, white pepper, mace, ginger), or store-bought; for the dough"
+   },
+   {
+    "name": "self-raising flour",
+    "quantity": 270,
+    "unit": "g",
+    "note": "for the dough"
+   },
+   {
+    "name": "salt",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": "for the dough"
+   },
+   {
+    "name": "ground anise",
+    "quantity": 1,
+    "unit": "pinch",
+    "note": "for the dough"
+   },
+   {
+    "name": "butter",
+    "quantity": 150,
+    "unit": "g",
+    "note": "unsalted, room temperature, for the dough"
+   },
+   {
+    "name": "brown sugar",
+    "quantity": 145,
+    "unit": "g",
+    "note": "for the dough"
    },
    {
     "name": "milk",
-    "quantity": null,
+    "quantity": 35,
+    "unit": "ml",
+    "note": "for the dough"
+   },
+   {
+    "name": "egg yolks",
+    "quantity": 1,
     "unit": "",
-    "note": "for brushing"
+    "note": "for the filling"
+   },
+   {
+    "name": "water",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "for the filling"
+   },
+   {
+    "name": "eggs",
+    "quantity": 1,
+    "unit": "",
+    "note": "for the egg wash"
+   },
+   {
+    "name": "milk",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "for the egg wash"
    },
    {
     "name": "almonds",
     "quantity": null,
     "unit": "",
-    "note": "to garnish"
+    "note": "blanched, to garnish: one almond per 5 cm square"
    }
   ],
   "steps": [
    {
-    "text": "Mix the self-rising flour, sugar, speculaas spice mix and salt. Add the butter and milk and knead into a firm ball of dough. Start with 6 tablespoons of milk, if the dough is too stiff you can add more milk.",
+    "text": "Almond paste: zest the lemon (yellow only), then pulse the almonds, sugar and zest in a food processor until sandy with no almond pieces left. Don't overprocess or it turns to almond butter.",
     "minutes": null
    },
    {
-    "text": "Wrap the dough in plastic wrap and refrigerate overnight. You can process and bake it immediately, but the flavor will be much better if you let it rest.",
+    "text": "Add the egg and almond extract and pulse until the mixture comes together into a ball. Wrap it and chill for at least 1 hour.",
+    "minutes": 60
+   },
+   {
+    "text": "Spice mix: freshly grate the nutmeg and stir together 26 g ground cinnamon, 6 g cloves, 5 g nutmeg, 1 g coriander, 2 g each of cardamom, white pepper, mace and ginger. Store airtight; the dough uses 25 g of this 46 g batch.",
     "minutes": null
    },
    {
-    "text": "Mix the almond paste with half of the beaten egg and knead well. This makes it easier to work with and gives it a better and tastier texture.",
+    "text": "Dough: whisk the flour, salt, ground anise and spice mix, then add the butter, brown sugar and milk and mix to a soft playdough texture, adding 1/2 tsp water or milk at a time if too dry. Wrap and chill at least 1 hour.",
+    "minutes": 60
+   },
+   {
+    "text": "Filling: break about 500 g of the almond paste into pieces (the batch makes more than needed) and mix with the egg yolk and water. Divide into two balls, roll each to an 18 cm square, stack them, press together, wrap and chill until needed.",
     "minutes": null
    },
    {
-    "text": "Take half of the dough and roll it out to 20 x 20 cm. Place in a baking pan lined with parchment paper. Spread the almond paste mixture evenly. Roll out the remaining dough and place on top of the almond paste.",
+    "text": "Line a baking dish with two strips of parchment. Split the dough into one ball of two-thirds and one of one-third, then roll the larger to about 30 cm square and lay it in the dish, going up the sides.",
     "minutes": null
    },
    {
-    "text": "Brush the top with the remaining beaten egg. Garnish with almonds and top with another layer of egg wash.",
+    "text": "Push the almond paste into the corners and edges of the dish and fold the dough edges over it.",
     "minutes": null
    },
    {
-    "text": "Bake the filled speculaas for 40 minutes at 180°C/350°F (conventional oven) or until done.",
-    "minutes": 40
+    "text": "Roll the smaller ball out to 5 mm, lay it over the exposed paste and pinch the top and bottom layers together to seal.",
+    "minutes": null
+   },
+   {
+    "text": "Heat the oven to 180°C (not fan-forced). Beat the egg with the milk, brush it over the top and press an almond in every 5 cm, so each future square has one in the centre.",
+    "minutes": null
+   },
+   {
+    "text": "Bake on the centre rack 35 to 40 minutes, then cut into 5 cm squares.",
+    "minutes": 35
    }
   ]
  },

@@ -2362,12 +2362,12 @@
   "transcribed": true
  },
  "themealdb:52955": {
-  "videoId": "9XpzHm9QpZg",
-  "title": "How to Make Egg Drop Soup",
-  "channel": "Sue and Gambo",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "videoId": "sBCKbRoAu5M",
+  "title": "Egg Drop Soup | The *Perfect* Ratio of Ingredients! | The Woks of Life",
+  "channel": "The Woks of Life",
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53370": {
   "videoId": "XVTJrkgW304",
@@ -2416,12 +2416,10 @@
   "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53149": {
-  "videoId": "_Quo9Tgxih4",
-  "title": "ensaimadas | ensaimada de mallorca | original ensaimada recipe | no cheese ensaymada",
-  "channel": "IFTR | infortheride",
+  "videoId": null,
+  "checked": "2026-10-29",
   "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "reason": "The replacement video (Canal cómo se hace) is a real ensaimada method, but its description gives no amount for lard (manteca de cerdo), which is the main fat of an ensaimada, nor for the angel hair filling or the oil, and gives no yield (servings was inferred from the dough weight). The main amounts cannot be verified, so the recipe is left unchanged."
  },
  "themealdb:52944": {
   "videoId": "nF6DOtGE6k8",
@@ -2492,12 +2490,12 @@
   "checked": "2026-10-20"
  },
  "themealdb:53030": {
-  "videoId": "-mW1unsVhFU",
-  "title": "Feteer Meshaltet",
-  "channel": "Ishita B Saha (IshitaUnblogged)",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "videoId": "Px9w7uEzQtI",
+  "title": "How to Make Authentic Egyptian Fateer Meshaltet at Home | The Egyptian Cook",
+  "channel": "Muhammed the Egyptian Cook",
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53342": {
   "videoId": "b2bF5gZyYDA",
@@ -2522,12 +2520,12 @@
   "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53079": {
-  "videoId": "cS3Yn-y5uVg",
-  "title": "Ukha | Russian Fish Soup Recipe | Рецепт Ухи, Pыбный Cуп",
-  "channel": "AllasYummyFood",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "videoId": "aUBXqAMGiEs",
+  "title": "Traditional Russian Ukha Fish Soup Recipe (Уха)",
+  "channel": "Peter's Food Adventures",
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:52918": {
   "videoId": "fp9Lqx2EUco",
@@ -2550,20 +2548,20 @@
   "checked": "2026-10-20"
  },
  "themealdb:53322": {
-  "videoId": "rpv_PXIoysE",
-  "title": "Easy Flan | Creme Caramel",
-  "channel": "With Wendy and Shannon",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "videoId": "d7_CTU4HXEY",
+  "title": "The BEST Flan Recipe",
+  "channel": "Preppy Kitchen",
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53341": {
   "videoId": "ALTeJItoxHg",
   "title": "Canadian Flapper Pie Recipe / Custard Pie topped with meringue",
   "channel": "Maricel's Recipes",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53464": {
   "videoId": null,
@@ -2588,12 +2586,12 @@
   "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52915": {
-  "videoId": "qXPhVYpQLPA",
-  "title": "French Omelette - How to Make Soft, Buttery French-Style Omelets",
-  "channel": "Food Wishes",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "videoId": "_Wb5Crj917I",
+  "title": "French Omelette",
+  "channel": "Home Cooking with Jacques Pépin",
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:52996": {
   "videoId": null,
@@ -2640,12 +2638,10 @@
   "checked": "2026-10-20"
  },
  "themealdb:53025": {
-  "videoId": "ixpCabILuxw",
-  "title": "Ful Medames Recipe",
-  "channel": "Usman & Salman's Food Joint",
+  "videoId": null,
+  "checked": "2026-10-29",
   "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "reason": "The replacement video (The cookbook, a small channel) cannot be verified: its description gives no can size for the fava beans, no salt amount and no amounts for the toppings, and no yield. The brief requires a reputable cooking channel with the main amounts given, so the recipe is left unchanged."
  },
  "themealdb:52896": {
   "videoId": "FXjYU2Ensck",
@@ -2659,9 +2655,9 @@
   "videoId": "MBh7sQcdzwo",
   "title": "Making Fyrstekake - Norwegian Prince Cake",
   "channel": "Scandinavian Cookbook",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53541": {
   "videoId": null,
@@ -2697,9 +2693,9 @@
   "videoId": "1BYSZIkLOHc",
   "title": "How to Make Gevulde Speculaas: Dutch Almond Paste Filled Spice Cookies",
   "channel": "Toine’s Kitchen 🇳🇱",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53012": {
   "videoId": "e-2K2iyPASA",
