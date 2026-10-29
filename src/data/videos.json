@@ -80,10 +80,12 @@
   "transcribed": true
  },
  "themealdb:52831": {
-  "videoId": "XivddFddthc",
-  "status": "unavailable",
-  "reason": "video can't be embedded",
-  "checked": "2026-10-20"
+  "videoId": "TEZpsg_KtXc",
+  "title": "How to Make Karaage (Japanese Fried Chicken) (Recipe) 唐揚げの作り方 (レシピ)",
+  "channel": "Just One Cookbook",
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:52773": {
   "videoId": "cd22ICdsXHQ",
@@ -214,10 +216,12 @@
   "transcribed": true
  },
  "themealdb:52865": {
-  "videoId": "wlseYNqwLNs",
-  "status": "unavailable",
-  "reason": "video no longer exists on YouTube",
-  "checked": "2026-10-20"
+  "videoId": "ZknwxYH8g2A",
+  "title": "Dhaba Style Matar Paneer Recipe at Home with Almost No Oil | Restaurant Style Mutter Paneer Ki Sabji",
+  "channel": "Hebbars Kitchen",
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:52868": {
   "videoId": "Tp_PMWvIKzo",
@@ -290,10 +294,12 @@
   "transcribed": true
  },
  "themealdb:53014": {
-  "videoId": "Mt5lgUZRoUg",
-  "status": "unavailable",
-  "reason": "video can't be embedded",
-  "checked": "2026-10-20"
+  "videoId": "vuzRPgPASJ8",
+  "title": "How to Make Pizza Margherita in a Cast-Iron Skillet",
+  "channel": "America's Test Kitchen",
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:52963": {
   "videoId": "hsYgYOihP8c",
@@ -582,10 +588,10 @@
   "transcribed": true
  },
  "themealdb:52893": {
-  "videoId": "4vhcOwVBDO4",
-  "status": "unavailable",
-  "reason": "video no longer exists on YouTube",
-  "checked": "2026-10-20"
+  "videoId": null,
+  "checked": "2026-10-29",
+  "status": "rejected",
+  "reason": "The video is by Kelly's Cakes and Bakes, a small home baker's channel (28,926 views) whose recipe lives on a free Wix blog page. The amounts are complete, but neither the description nor the page gives a yield (servings would be a guess from the old catalogue), the page's step numbering jumps from 3 to 6 so the method may be incomplete, and there is no transcript to cross-check. Not an established cooking channel with a complete, consistent recipe, so it is not shown."
  },
  "themealdb:52860": {
   "videoId": "M_5DICK7TJI",
@@ -1112,10 +1118,12 @@
   "checked": "2026-10-20"
  },
  "themealdb:52834": {
-  "videoId": "PQHgQX1Ss74",
-  "status": "unavailable",
-  "reason": "video can't be embedded",
-  "checked": "2026-10-20"
+  "videoId": "RtFJmmLLuZk",
+  "title": "Beef Stroganoff",
+  "channel": "RecipeTin Eats",
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:52824": {
   "videoId": null,
@@ -1124,10 +1132,12 @@
   "reason": "Jamie Oliver's Perfect Roast Beef video (rApdDLwp_gM) cooks only the topside of beef on a bed of vegetables. It does not make the roast vegetables, Yorkshire puddings or gravy of a Beef Sunday Roast, so it covers only part of the dish and cannot stand in for it."
  },
  "themealdb:52803": {
-  "videoId": "FS8u1RBdf6I",
-  "status": "unavailable",
-  "reason": "video can't be embedded",
-  "checked": "2026-10-20"
+  "videoId": "lTL1DPeU1T0",
+  "title": "How to make the perfect beef wellington",
+  "channel": "Good Food",
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53307": {
   "videoId": "ly1UeAjydEg",
@@ -1219,9 +1229,9 @@
  },
  "themealdb:53482": {
   "videoId": null,
-  "status": "unavailable",
-  "reason": "TheMealDB lists no video for this meal",
-  "checked": "2026-10-20"
+  "checked": "2026-10-29",
+  "status": "rejected",
+  "reason": "The only evidence is the video description of W2 KITCHEN, a small channel (one 2025 video with 31,571 views, no recipe site, only an Instagram link) whose description reads as generic summary text. The main meats are listed as alternatives ('ribs, belly, trotters, or shoulder'; 'linguica or chourico'), with optional beef and pork, so the evidence does not fix what the video actually cooks, and with transcripts paused the video cannot be cross-checked. Not an established cooking channel with a verifiable recipe, so it is not shown."
  },
  "themealdb:53546": {
   "videoId": null,
@@ -1322,22 +1332,28 @@
   "checked": "2026-10-20"
  },
  "themealdb:53476": {
-  "videoId": null,
-  "status": "unavailable",
-  "reason": "TheMealDB lists no video for this meal",
-  "checked": "2026-10-20"
+  "videoId": "IOb5uric4n0",
+  "title": "Brazilian Cheese Bread Recipe (Pão De Queijo)",
+  "channel": "The Cooking Foodie",
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53475": {
-  "videoId": null,
-  "status": "unavailable",
-  "reason": "TheMealDB lists no video for this meal",
-  "checked": "2026-10-20"
+  "videoId": "5n0EFtOuH9s",
+  "title": "Brigadeiro Recipe - Brazilian Chocolate Truffles",
+  "channel": "The Cooking Foodie",
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:52792": {
-  "videoId": "Vz5W1-BmOE4",
-  "status": "unavailable",
-  "reason": "video no longer exists on YouTube",
-  "checked": "2026-10-20"
+  "videoId": "9OgwCbDnJ90",
+  "title": "Company-worthy Bread and Butter Pudding",
+  "channel": "RecipeTin Eats",
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53533": {
   "videoId": null,

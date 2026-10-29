@@ -1517,89 +1517,127 @@
  },
  {
   "source": "themealdb:52831",
-  "title": "Chicken Karaage",
-  "description": "Ginger-and-soy marinated chicken, fried until shatteringly crisp.",
+  "title": "Chicken karaage",
+  "description": "Japanese fried chicken: skin-on thighs marinated in ginger, garlic, soy sauce and sake, coated in flour and potato starch and double-fried until crisp. Served with lemon and Japanese mayonnaise.",
   "servings": 4,
   "cuisine": "Japanese",
   "category": "Chicken",
   "image": "https://www.themealdb.com/images/media/meals/tyywsw1505930373.jpg",
   "prep_minutes": 15,
-  "cook_minutes": 10,
+  "cook_minutes": 15,
   "ingredients": [
    {
-    "name": "chicken",
-    "quantity": 450,
+    "name": "chicken thigh",
+    "quantity": 680,
     "unit": "g",
-    "note": "boneless skin"
+    "note": "boneless, skin-on, cut into 5 cm pieces"
+   },
+   {
+    "name": "salt",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": "kosher salt, for seasoning the chicken"
+   },
+   {
+    "name": "black pepper",
+    "quantity": 0.125,
+    "unit": "tsp",
+    "note": "freshly ground"
    },
    {
     "name": "ginger",
-    "quantity": 1,
-    "unit": "tbsp",
-    "note": ""
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": "freshly grated, with juice"
    },
    {
     "name": "garlic",
     "quantity": 1,
     "unit": "clove",
-    "note": ""
+    "note": "minced or pressed"
    },
    {
     "name": "soy sauce",
-    "quantity": 2,
+    "quantity": 0.5,
     "unit": "tbsp",
-    "note": ""
+    "note": "range 1/2 to 1 tbsp"
    },
    {
     "name": "sake",
-    "quantity": 1,
+    "quantity": 0.5,
     "unit": "tbsp",
-    "note": ""
+    "note": "or dry sherry, Chinese rice wine, or skip"
    },
    {
-    "name": "sugar",
-    "quantity": 2,
+    "name": "sesame oil",
+    "quantity": 0.5,
     "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "potato starch",
-    "quantity": 0.333,
-    "unit": "cup",
-    "note": ""
+    "note": "toasted"
    },
    {
     "name": "vegetable oil",
-    "quantity": 0.333,
+    "quantity": 3,
     "unit": "cup",
-    "note": ""
+    "note": "for deep-frying, 3 to 4 cups"
+   },
+   {
+    "name": "potato starch",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": "or cornflour; plus more if needed"
+   },
+   {
+    "name": "plain flour",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": "plus more if needed"
    },
    {
     "name": "lemon",
-    "quantity": 0.333,
-    "unit": "cup",
-    "note": ""
+    "quantity": null,
+    "unit": "",
+    "note": "wedges, to serve"
+   },
+   {
+    "name": "japanese mayonnaise",
+    "quantity": null,
+    "unit": "",
+    "note": "Kewpie, to serve for dipping"
+   },
+   {
+    "name": "shichimi togarashi",
+    "quantity": null,
+    "unit": "",
+    "note": "Japanese seven spice, to serve, optional"
    }
   ],
   "steps": [
    {
-    "text": "Add the ginger, garlic, soy sauce, sake and sugar to a bowl and whisk to combine. Add the chicken, then stir to coat evenly. Cover and refrigerate for at least 1 hour.",
-    "minutes": 60
-   },
-   {
-    "text": "Add 1 inch of vegetable oil to a heavy bottomed pot and heat until the oil reaches 360 degrees F. Line a wire rack with 2 sheets of paper towels and get your tongs out. Put the potato starch in a bowl",
+    "text": "Cut the chicken thighs into 5 cm pieces and season with the salt and pepper.",
     "minutes": null
    },
    {
-    "text": "Add a handful of chicken to the potato starch and toss to coat each piece evenly.",
+    "text": "Whisk the grated ginger, garlic, soy sauce, sake and sesame oil in a large bowl. Add the chicken, mix with your hands, then cover and marinate in the fridge for 30 minutes.",
+    "minutes": 30
+   },
+   {
+    "text": "Meanwhile pour the oil into a heavy pot to a depth of at least 2.5 cm and heat it to 160°C over medium-low heat.",
     "minutes": null
    },
    {
-    "text": "Fry the karaage in batches until the exterior is a medium brown and the chicken is cooked through. Transfer the fried chicken to the paper towel lined rack.",
+    "text": "Put the flour and the potato starch in separate piles on a tray. Coat each piece of chicken lightly in flour, dust off the excess, then dredge in the potato starch and shake off the excess.",
     "minutes": null
    },
    {
-    "text": "If you want the karaage to stay crispy longer, you can fry the chicken a second time, until it's a darker color after it's cooled off once. Serve with lemon wedges.",
+    "text": "First fry: check the oil is at 160°C, then fry 3 to 5 pieces at a time without crowding the pot for about 90 seconds, until light golden. Drain on a wire rack and rest while you fry the rest, skimming crumbs from the oil between batches.",
+    "minutes": 2
+   },
+   {
+    "text": "Second fry: raise the oil to 180°C and fry the rested chicken, 3 to 5 pieces at a time, for about 45 seconds until golden brown and crisp. Drain on the rack.",
+    "minutes": 1
+   },
+   {
+    "text": "Serve hot with lemon wedges and Japanese mayonnaise for dipping, with shichimi togarashi sprinkled on the mayo if you like some heat.",
     "minutes": null
    }
   ]
@@ -4218,107 +4256,167 @@
  },
  {
   "source": "themealdb:52865",
-  "title": "Matar Paneer",
-  "description": "Sweet peas and paneer in a gently spiced tomato gravy.",
-  "servings": 4,
+  "title": "Matar paneer",
+  "description": "Dhaba-style north Indian curry of paneer cubes and green peas in a spiced tomato, onion and cashew gravy, finished with cream, garam masala and coriander.",
+  "servings": 5,
   "cuisine": "Indian",
   "category": "Vegetarian",
   "image": "https://www.themealdb.com/images/media/meals/xxpqsy1511452222.jpg",
-  "prep_minutes": 20,
-  "cook_minutes": 15,
+  "prep_minutes": 10,
+  "cook_minutes": 30,
   "ingredients": [
    {
     "name": "vegetable oil",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": "for the tomato-onion paste"
+   },
+   {
+    "name": "onion",
+    "quantity": 2,
+    "unit": "",
+    "note": "sliced, for the paste"
+   },
+   {
+    "name": "tomato",
+    "quantity": 2,
+    "unit": "",
+    "note": "chopped, for the paste"
+   },
+   {
+    "name": "cashews",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": "ground into the paste"
+   },
+   {
+    "name": "vegetable oil",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": "for the curry"
+   },
+   {
+    "name": "cumin seeds",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": ""
+   },
+   {
+    "name": "ginger and garlic",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": "chopped ginger and garlic together, the source gives one combined amount; finely chopped"
+   },
+   {
+    "name": "onion",
+    "quantity": 1,
+    "unit": "",
+    "note": "finely chopped, for the curry"
+   },
+   {
+    "name": "turmeric",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": ""
+   },
+   {
+    "name": "chilli powder",
     "quantity": 1,
     "unit": "tbsp",
     "note": ""
    },
    {
-    "name": "paneer",
-    "quantity": 225,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "ginger",
-    "quantity": 2,
-    "unit": "",
-    "note": ""
-   },
-   {
     "name": "ground cumin",
-    "quantity": 1,
+    "quantity": 0.5,
     "unit": "tsp",
     "note": ""
    },
    {
-    "name": "turmeric",
+    "name": "kasuri methi",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "dried fenugreek leaves, crushed"
+   },
+   {
+    "name": "salt",
     "quantity": 1,
     "unit": "tsp",
     "note": ""
-   },
-   {
-    "name": "coriander",
-    "quantity": 1,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "chilli",
-    "quantity": 1,
-    "unit": "",
-    "note": ""
-   },
-   {
-    "name": "tomato",
-    "quantity": 4,
-    "unit": "",
-    "note": "large"
    },
    {
     "name": "peas",
-    "quantity": 150,
-    "unit": "g",
+    "quantity": 1,
+    "unit": "cup",
+    "note": ""
+   },
+   {
+    "name": "water",
+    "quantity": 1,
+    "unit": "cup",
+    "note": "hot"
+   },
+   {
+    "name": "paneer",
+    "quantity": 2,
+    "unit": "cup",
+    "note": "cubed"
+   },
+   {
+    "name": "sugar",
+    "quantity": 0.5,
+    "unit": "tsp",
     "note": ""
    },
    {
     "name": "garam masala",
-    "quantity": 1,
+    "quantity": 0.5,
     "unit": "tsp",
     "note": ""
    },
    {
-    "name": "coriander",
-    "quantity": null,
-    "unit": "",
-    "note": "small bunch"
+    "name": "cream",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": ""
    },
    {
-    "name": "naan bread",
-    "quantity": null,
-    "unit": "",
-    "note": "to serve"
+    "name": "coriander",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": "finely chopped"
    }
   ],
   "steps": [
    {
-    "text": "Heat the oil in a frying pan over high heat until it’s shimmering hot. Add the paneer, then turn the heat down a little.",
+    "text": "Heat 2 tbsp oil in a pan, lightly saute the 2 sliced onions, then add the chopped tomatoes and cook until soft. Cool completely.",
     "minutes": null
    },
    {
-    "text": "Fry until it starts to brown at the edges, then turn it over and brown on each side – the paneer will brown faster than you think, so don’t walk away. Remove the paneer from the pan and drain on kitchen paper.",
+    "text": "Blend the onion and tomato with the cashews to a smooth paste and set aside.",
     "minutes": null
    },
    {
-    "text": "Put the ginger, cumin, turmeric, ground coriander and chilli in the pan, and fry everything for 1 min. Add the tomatoes, mashing them with the back of a spoon and simmer everything for 5 mins until the sauce smells fragrant.",
+    "text": "Heat 2 tbsp oil in a kadai or deep pan and saute the cumin until aromatic. Add the ginger and garlic and the chopped onion and cook until the onion is golden brown.",
+    "minutes": null
+   },
+   {
+    "text": "On low heat, add the turmeric, chilli powder, ground cumin, kasuri methi and salt and saute until the spices smell aromatic.",
+    "minutes": null
+   },
+   {
+    "text": "Add the tomato-onion paste and cook until the oil separates. Stir in the peas, then the hot water, adjusting the consistency as needed.",
+    "minutes": null
+   },
+   {
+    "text": "Cover and cook for 5 minutes until the curry is cooked well.",
     "minutes": 5
    },
    {
-    "text": "Add a splash of water if it’s too thick. Season well. Add the peas and simmer for a further 2 mins, then stir in the paneer and sprinkle over the garam masala.",
-    "minutes": 2
+    "text": "Add the paneer and sugar, mix well and simmer for 3 minutes.",
+    "minutes": 3
    },
    {
-    "text": "Divide between two bowls, top with coriander leaves and serve with naan bread, roti or rice.",
+    "text": "Stir in the garam masala, cream and coriander. Serve with roti or rice.",
     "minutes": null
    }
   ]
@@ -5471,124 +5569,108 @@
  {
   "source": "themealdb:53014",
   "title": "Margherita pizza",
-  "description": "A thin, crisp margherita made from scratch at home.",
-  "servings": 2,
+  "description": "Two 11-inch margherita pizzas cooked in a cast-iron skillet: blended canned-tomato sauce, sliced fresh mozzarella and basil, started on the stovetop and finished in a hot oven.",
+  "servings": 4,
   "cuisine": "Italian",
   "category": "Miscellaneous",
-  "image": "https://www.themealdb.com/images/media/meals/x0lk931587671540.jpg",
-  "prep_minutes": 15,
-  "cook_minutes": 35,
+  "image": "https://i.ytimg.com/vi/vuzRPgPASJ8/hqdefault.jpg",
+  "prep_minutes": 30,
+  "cook_minutes": 30,
   "ingredients": [
    {
-    "name": "water",
-    "quantity": 150,
-    "unit": "ml",
-    "note": ""
-   },
-   {
-    "name": "sugar",
-    "quantity": 1,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "yeast",
-    "quantity": 15,
+    "name": "canned tomatoes",
+    "quantity": 800,
     "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "plain flour",
-    "quantity": 225,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "salt",
-    "quantity": 1.5,
-    "unit": "tsp",
-    "note": ""
+    "note": "28-ounce can whole peeled, drained with juice reserved, for the sauce; makes 2 cups, only 1 cup is used so half is left over"
    },
    {
     "name": "olive oil",
-    "quantity": null,
-    "unit": "",
-    "note": "drizzle"
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "extra-virgin, for the sauce (half is left over with the sauce)"
    },
    {
-    "name": "passata",
-    "quantity": 80,
+    "name": "red wine vinegar",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "for the sauce (half is left over with the sauce)"
+   },
+   {
+    "name": "garlic",
+    "quantity": 2,
+    "unit": "clove",
+    "note": "minced, for the sauce (half is left over with the sauce)"
+   },
+   {
+    "name": "dried oregano",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "for the sauce (half is left over with the sauce)"
+   },
+   {
+    "name": "olive oil",
+    "quantity": 0.25,
+    "unit": "cup",
+    "note": "extra-virgin, to grease the skillet (2 tbsp per pizza)"
+   },
+   {
+    "name": "pizza dough",
+    "quantity": 450,
     "unit": "g",
-    "note": ""
+    "note": "room temperature, divided in half"
    },
    {
     "name": "mozzarella",
-    "quantity": 70,
+    "quantity": 340,
     "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "oregano",
-    "quantity": null,
-    "unit": "",
-    "note": "peeled and sliced"
+    "note": "fresh, sliced 6 mm thick, half per pizza"
    },
    {
     "name": "basil",
-    "quantity": 1,
-    "unit": "leaf",
-    "note": ""
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": "fresh, chopped, 1 tbsp per pizza"
+   },
+   {
+    "name": "salt",
+    "quantity": null,
+    "unit": "",
+    "note": "to taste, for the sauce"
    },
    {
     "name": "black pepper",
-    "quantity": 1,
-    "unit": "pinch",
-    "note": ""
+    "quantity": null,
+    "unit": "",
+    "note": "to taste, for the sauce"
    }
   ],
   "steps": [
    {
-    "text": "1 Preheat the oven to 230°C.",
+    "text": "Heat the oven to 260°C with the rack in the upper middle. Blend the drained tomatoes with 1 tbsp oil, the vinegar, garlic and oregano until smooth, about 30 seconds. Add reserved tomato juice until the sauce measures 2 cups, and season.",
     "minutes": null
    },
    {
-    "text": "2 Add the sugar and crumble the fresh yeast into warm water.",
+    "text": "Grease a 12-inch cast-iron skillet with 2 tbsp oil. Divide the dough in half and keep one piece covered. Roll or press the other into an 11-inch round and push it to the corners of the skillet.",
     "minutes": null
    },
    {
-    "text": "3 Allow the mixture to stand for 10 – 15 minutes in a warm place (we find a windowsill on a sunny day works best) until froth develops on the surface.",
-    "minutes": 15
-   },
-   {
-    "text": "4 Sift the flour and salt into a large mixing bowl, make a well in the middle and pour in the yeast mixture and olive oil.",
+    "text": "Spread 1/2 cup of the sauce over the dough, leaving a 1 cm border, and top with half the mozzarella.",
     "minutes": null
    },
    {
-    "text": "5 Lightly flour your hands, and slowly mix the ingredients together until they bind.",
-    "minutes": null
+    "text": "Set the skillet over medium-high heat for 2 to 4 minutes, until the edge is set, the dough is lightly puffed and the base is spotty brown.",
+    "minutes": 4
    },
    {
-    "text": "6 Generously dust your surface with flour.",
-    "minutes": null
-   },
-   {
-    "text": "7 Throw down the dough and begin kneading for 10 minutes until smooth, silky and soft. )",
+    "text": "Transfer the skillet to the oven and bake for 7 to 10 minutes, until the edge is golden brown and the cheese is melted.",
     "minutes": 10
    },
    {
-    "text": "9 Spread the passata on top making sure you go to the edge.",
+    "text": "Slide the pizza onto a wire rack, cool slightly, sprinkle with 1 tbsp basil, cut into wedges and serve.",
     "minutes": null
    },
    {
-    "text": "10 Evenly place the mozzarella (or other cheese) on top, season with the oregano and black pepper, then drizzle with a little olive oil.",
-    "minutes": null
-   },
-   {
-    "text": "11 Cook in the oven for 10 – 12 minutes until the cheese slightly colours.",
-    "minutes": 12
-   },
-   {
-    "text": "12 When ready, place the basil leaf on top and tuck in!",
+    "text": "Repeat with the remaining 2 tbsp oil, dough, 1/2 cup sauce, mozzarella and 1 tbsp basil. The leftover sauce is kept for another use.",
     "minutes": null
    }
   ]
@@ -19072,101 +19154,125 @@
  {
   "source": "themealdb:52834",
   "title": "Beef stroganoff",
-  "description": "A Russian dish of beef fillet, mushrooms and creme fraiche — serves 4, on the table in about 45 minutes.",
+  "description": "Strips of scotch fillet seared quickly and finished in a creamy mushroom and onion sauce with sour cream and Dijon, served over pasta or egg noodles.",
   "servings": 4,
   "cuisine": "Russian",
   "category": "Beef",
   "image": "https://www.themealdb.com/images/media/meals/svprys1511176755.jpg",
   "prep_minutes": 15,
-  "cook_minutes": 30,
+  "cook_minutes": 15,
   "ingredients": [
    {
-    "name": "olive oil",
-    "quantity": 1,
+    "name": "beef",
+    "quantity": 600,
+    "unit": "g",
+    "note": "scotch fillet steak or boneless rib eye, flattened and sliced into 5 mm strips"
+   },
+   {
+    "name": "salt",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": "cooking salt, for the beef; more to taste in the sauce"
+   },
+   {
+    "name": "black pepper",
+    "quantity": 0.25,
+    "unit": "tsp",
+    "note": "for the beef; more to taste"
+   },
+   {
+    "name": "vegetable oil",
+    "quantity": 2,
     "unit": "tbsp",
-    "note": ""
+    "note": "divided, for searing the beef"
    },
    {
     "name": "onion",
     "quantity": 1,
     "unit": "",
-    "note": ""
-   },
-   {
-    "name": "garlic",
-    "quantity": 1,
-    "unit": "clove",
-    "note": ""
-   },
-   {
-    "name": "butter",
-    "quantity": 1,
-    "unit": "tbsp",
-    "note": ""
+    "note": "large, or 2 small, sliced"
    },
    {
     "name": "mushrooms",
-    "quantity": 250,
+    "quantity": 300,
     "unit": "g",
-    "note": ""
+    "note": "sliced, not too thin"
    },
    {
-    "name": "beef fillet",
-    "quantity": 500,
+    "name": "butter",
+    "quantity": 50,
     "unit": "g",
     "note": ""
    },
    {
     "name": "plain flour",
-    "quantity": 1,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "creme fraiche",
-    "quantity": 150,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "mustard",
-    "quantity": 1,
+    "quantity": 2,
     "unit": "tbsp",
     "note": ""
    },
    {
     "name": "beef stock",
-    "quantity": 100,
+    "quantity": 480,
     "unit": "ml",
-    "note": ""
+    "note": "2 cups, preferably salt reduced"
    },
    {
-    "name": "parsley",
+    "name": "mustard",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "Dijon"
+   },
+   {
+    "name": "sour cream",
+    "quantity": 0.67,
+    "unit": "cup",
+    "note": "2/3 cup"
+   },
+   {
+    "name": "pasta",
+    "quantity": 250,
+    "unit": "g",
+    "note": "or egg noodles, 250-300 g, to serve"
+   },
+   {
+    "name": "chives",
     "quantity": null,
     "unit": "",
-    "note": "to serve"
+    "note": "chopped, to garnish, optional"
    }
   ],
   "steps": [
    {
-    "text": "Heat the olive oil in a non-stick frying pan then add the sliced onion and cook on a medium heat until completely softened, so around 15 mins, adding a little splash of water if they start to stick at all.",
-    "minutes": 15
-   },
-   {
-    "text": "Crush in the garlic and cook for a 2-3 mins further, then add the butter. Once the butter is foaming a little, add the mushrooms and cook for around 5 mins until completely softened. Season everything well, then tip onto a plate.",
-    "minutes": 5
-   },
-   {
-    "text": "Tip the flour into a bowl with a big pinch of salt and pepper, then toss the steak in the seasoned flour.",
+    "text": "Flatten the steaks to about 3/4 cm thick, slice into 5 mm strips (cut long ones in half) and trim excess fat. Sprinkle with the salt and pepper.",
     "minutes": null
    },
    {
-    "text": "Add the steak pieces to the pan, splashing in a little oil if the pan looks particularly dry, and fry for 3-4 mins, until well coloured. Tip the onions and mushrooms back into the pan.",
-    "minutes": 4
+    "text": "Heat 1 tbsp oil in a large skillet over high heat. Scatter in half the beef, spread it quickly and leave for 30 seconds to brown, turn and brown 30 seconds more, then move to a plate. Repeat with the remaining oil and beef.",
+    "minutes": 2
    },
    {
-    "text": "Whisk the crème fraîche, mustard and beef stock together, then pour into the pan. Cook over a medium heat for around 5 mins. Scatter with parsley, then serve with pappardelle or rice.",
+    "text": "Turn the heat to medium-high and melt the butter in the same pan. Cook the onion for 1 minute, add the mushrooms and cook until golden, scraping up the browned bits.",
+    "minutes": null
+   },
+   {
+    "text": "Stir in the flour and cook for 1 minute.",
+    "minutes": 1
+   },
+   {
+    "text": "Add half the stock while stirring, then the rest.",
+    "minutes": null
+   },
+   {
+    "text": "Stir in the sour cream and mustard (it may look split but melts as it heats). Bring to a simmer, reduce to medium-low and cook 3 to 5 minutes until the sauce is the thickness of pouring cream. Taste and adjust the salt and pepper.",
     "minutes": 5
+   },
+   {
+    "text": "Return the beef and its plate juices to the pan, simmer 1 minute, then take it off the heat immediately.",
+    "minutes": 1
+   },
+   {
+    "text": "Serve over cooked pasta or egg noodles, with chives if you like.",
+    "minutes": null
    }
   ]
  },
@@ -19256,41 +19362,53 @@
  {
   "source": "themealdb:52803",
   "title": "Beef Wellington",
-  "description": "A British dish of beef fillet, prosciutto and mushrooms — serves 8, on the table in about 45 minutes.",
-  "servings": 8,
+  "description": "Roast beef fillet wrapped in prosciutto and a mushroom, thyme and white wine duxelles, sealed in puff pastry and baked until golden. Served in thick slices.",
+  "servings": 6,
   "cuisine": "British",
   "category": "Beef",
   "image": "https://www.themealdb.com/images/media/meals/vvpprx1487325699.jpg",
-  "prep_minutes": 15,
-  "cook_minutes": 30,
+  "prep_minutes": 60,
+  "cook_minutes": 50,
   "ingredients": [
    {
-    "name": "mushrooms",
-    "quantity": 400,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "mustard",
+    "name": "beef fillet",
     "quantity": 1,
-    "unit": "tbsp",
-    "note": ""
+    "unit": "kg",
+    "note": "preferably Aberdeen Angus, one piece"
    },
    {
     "name": "olive oil",
+    "quantity": 3,
+    "unit": "tbsp",
+    "note": "1 tbsp for the beef, 2 tbsp for the mushrooms"
+   },
+   {
+    "name": "mushrooms",
+    "quantity": 250,
+    "unit": "g",
+    "note": "chestnut, wild if you like, finely chopped"
+   },
+   {
+    "name": "butter",
+    "quantity": 50,
+    "unit": "g",
+    "note": "for the mushrooms"
+   },
+   {
+    "name": "thyme",
     "quantity": 1,
-    "unit": "dash",
+    "unit": "sprig",
+    "note": "large"
+   },
+   {
+    "name": "dry white wine",
+    "quantity": 100,
+    "unit": "ml",
     "note": ""
    },
    {
-    "name": "beef fillet",
-    "quantity": 750,
-    "unit": "g",
-    "note": "piece"
-   },
-   {
     "name": "prosciutto",
-    "quantity": 6,
+    "quantity": 12,
     "unit": "slice",
     "note": ""
    },
@@ -19298,65 +19416,69 @@
     "name": "puff pastry",
     "quantity": 500,
     "unit": "g",
-    "note": ""
+    "note": "thawed if frozen"
    },
    {
     "name": "plain flour",
     "quantity": null,
     "unit": "",
-    "note": "for dusting"
+    "note": "a little, for dusting"
    },
    {
     "name": "egg yolks",
     "quantity": 2,
     "unit": "",
-    "note": "beaten"
+    "note": "beaten with 1 tsp water, for glazing"
+   },
+   {
+    "name": "black pepper",
+    "quantity": null,
+    "unit": "",
+    "note": "to season the beef"
+   },
+   {
+    "name": "salt",
+    "quantity": null,
+    "unit": "",
+    "note": "to season the mushrooms, to taste"
    }
   ],
   "steps": [
    {
-    "text": "Put the mushrooms into a food processor with some seasoning and pulse to a rough paste. Scrape the paste into a pan and cook over a high heat for about 10 mins, tossing frequently, to cook out the moisture from the mushrooms. Spread out on a plate to cool.",
-    "minutes": 10
-   },
-   {
-    "text": "Heat in a frying pan and add a little olive oil. Season the beef and sear in the hot pan for 30 secs only on each side. (You don't want to cook it at this stage, just colour it).",
-    "minutes": null
-   },
-   {
-    "text": "Remove the beef from the pan and leave to cool, then brush all over with the mustard.",
-    "minutes": null
-   },
-   {
-    "text": "Lay a sheet of cling film on a work surface and arrange the Parma ham slices on it, in slightly overlapping rows. With a palette knife, spread the mushroom paste over the ham, then place the seared beef fillet in the middle.",
-    "minutes": null
-   },
-   {
-    "text": "Keeping a tight hold of the cling film from the edge, neatly roll the Parma ham and mushrooms around the beef to form a tight barrel shape. Twist the ends of the cling film to secure.",
-    "minutes": null
-   },
-   {
-    "text": "Chill for 15-20 mins to allow the beef to set and keep its shape.",
-    "minutes": 20
-   },
-   {
-    "text": "Roll out the puff pastry on a floured surface to a large rectangle, the thickness of a £1 coin. Remove the cling film from the beef, then lay in the centre. Brush the surrounding pastry with egg yolk.",
-    "minutes": null
-   },
-   {
-    "text": "Fold the ends over, the wrap the pastry around the beef, cutting off any excess. Turn over, so the seam is underneath, and place on a baking sheet. Brush over all the pastry with egg and chill for about 15 mins to let the pastry rest. Heat the oven to 200C, 400F, gas 6.",
+    "text": "Heat the oven to 220°C (200°C fan). Brush the beef with 1 tbsp oil, season with pepper and roast 15 minutes for medium-rare or 20 for medium. Cool, then chill about 20 minutes.",
     "minutes": 15
    },
    {
-    "text": "Lightly score the pastry at 1cm intervals and glaze again with beaten egg yolk.",
+    "text": "Chop the mushrooms very finely to the texture of coarse breadcrumbs, pulsing so they don't turn to slurry. Fry them with 2 tbsp oil, the butter and the thyme over medium heat for about 10 minutes, until softened.",
+    "minutes": 10
+   },
+   {
+    "text": "Season the mushrooms, add the wine and cook about 10 minutes until it is absorbed and the mixture holds its shape. Cool and discard the thyme.",
+    "minutes": 10
+   },
+   {
+    "text": "Overlap two sheets of cling film and lay the prosciutto on it in a double row. Spread half the mushroom mixture over it, place the beef on top and spread over the rest.",
     "minutes": null
    },
    {
-    "text": "Bake for 20 minutes, then lower the oven setting to 180C, 350F, gas 4 and cook for another 15 mins. Allow to rest for 10-15 mins before slicing and serving with the side dishes of your choice.",
-    "minutes": 20
+    "text": "Use the cling film to draw the prosciutto round the beef and roll it into a tight sausage, twisting the ends. Chill while you roll the pastry.",
+    "minutes": null
    },
    {
-    "text": "The beef should still be pink in the centre when you serve it.",
+    "text": "On a floured surface roll one third of the pastry into a 18 x 30 cm strip on a non-stick baking sheet, and the rest to about 28 x 36 cm.",
     "minutes": null
+   },
+   {
+    "text": "Unwrap the beef and set it on the smaller strip. Brush the pastry edges and the beef with egg yolk, drape the larger sheet over, press into the sides, trim to a 4 cm rim and seal with a fork.",
+    "minutes": null
+   },
+   {
+    "text": "Glaze all over with egg yolk, score long diagonal lines without cutting through, and chill for at least 30 minutes and up to 24 hours. Heat the oven to 200°C (180°C fan).",
+    "minutes": 30
+   },
+   {
+    "text": "Brush with a little more egg yolk and bake until golden and crisp, 20-25 minutes for medium-rare or 30 for medium. Rest 10 minutes and serve in thick slices.",
+    "minutes": 25
    }
   ]
  },
@@ -22315,108 +22437,219 @@
  {
   "source": "themealdb:53476",
   "title": "Brazilian cheese bread (pão de queijo)",
-  "description": "A Brazilian side of tapioca and parmesan — makes 10, on the table in about 45 minutes.",
-  "servings": 10,
+  "description": "Gluten-free cheese rolls made with tapioca flour, a hot milk and oil mixture, egg, mozzarella and parmesan, shaped into balls and baked until puffed and lightly golden.",
+  "servings": 16,
   "cuisine": "Brazilian",
   "category": "Side",
   "image": "https://www.themealdb.com/images/media/meals/sl7cr91782588539.jpg",
-  "prep_minutes": 10,
-  "cook_minutes": 35,
+  "prep_minutes": 15,
+  "cook_minutes": 20,
   "ingredients": [
    {
-    "name": "vegetable oil",
-    "quantity": null,
-    "unit": "",
-    "note": "a drizzle"
+    "name": "tapioca flour",
+    "quantity": 170,
+    "unit": "g",
+    "note": "1 1/3 cups"
    },
    {
     "name": "milk",
-    "quantity": 250,
+    "quantity": 160,
     "unit": "ml",
-    "note": ""
+    "note": "2/3 cup"
    },
    {
-    "name": "butter",
-    "quantity": 125,
-    "unit": "g",
-    "note": ""
+    "name": "vegetable oil",
+    "quantity": 80,
+    "unit": "ml",
+    "note": "1/3 cup"
+   },
+   {
+    "name": "eggs",
+    "quantity": 1,
+    "unit": "",
+    "note": "large"
    },
    {
     "name": "salt",
-    "quantity": 1,
+    "quantity": 0.5,
     "unit": "tsp",
     "note": ""
    },
    {
-    "name": "tapioca",
-    "quantity": 300,
+    "name": "mozzarella",
+    "quantity": 85,
     "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "eggs",
-    "quantity": 2,
-    "unit": "",
-    "note": ""
+    "note": "grated, or any other cheese"
    },
    {
     "name": "parmesan",
-    "quantity": 100,
+    "quantity": 25,
     "unit": "g",
-    "note": ""
+    "note": "grated"
    }
   ],
   "steps": [
    {
-    "text": "Heat the oven to 220C/200C fan/gas 7. Oil or butter a baking sheet and set aside.",
+    "text": "Heat the oven to 200°C and line a baking tray with parchment paper.",
     "minutes": null
    },
    {
-    "text": "Heat the milk, butter and salt in a medium saucepan and bring to a boil. Remove from the heat and add the tapioca flour. Stir vigorously, then leave to cool a little.",
+    "text": "Put the tapioca flour in a large bowl and set aside.",
     "minutes": null
    },
    {
-    "text": "Pour the dough into a standing mix to beat the dough until its cool, or use a wooden spoon and beat by hand. Beat the eggs in one at a time, waiting until each is completely incorporated before adding the next.",
+    "text": "Bring the milk, oil and salt to a boil in a large pan, then pour it over the tapioca and stir until combined.",
     "minutes": null
    },
    {
-    "text": "When the dough is glossy and mixed, add the parmesan. Beat again until mixed.",
+    "text": "Stir in the egg until combined, then add the mozzarella and parmesan and stir until a sticky dough forms.",
     "minutes": null
    },
    {
-    "text": "Spoon the dough onto the baking sheet in 1 tbsp balls, 5cm apart. Bake for 30 mins until crisp and golden. Remove from the oven and eat while still warm.",
-    "minutes": 30
+    "text": "Shape the dough into balls and place them on the lined tray.",
+    "minutes": null
+   },
+   {
+    "text": "Bake for 15 to 20 minutes until lightly golden and puffed. Eat warm or cool.",
+    "minutes": 15
    }
   ]
  },
  {
   "source": "themealdb:53475",
   "title": "Brazilian chocolate truffles - brigadeiro",
-  "description": "A Brazilian sweet made with condensed milk, cocoa powder and pistachios — makes 12, on the table in about 45 minutes.",
-  "servings": 12,
+  "description": "Brazilian chocolate truffles of sweetened condensed milk, cocoa powder and butter cooked until thick, cooled, rolled into small balls and coated in coconut, pistachios or sprinkles.",
+  "servings": 18,
   "cuisine": "Brazilian",
   "category": "Dessert",
   "image": "https://www.themealdb.com/images/media/meals/dg7tad1782588053.jpg",
-  "prep_minutes": 10,
-  "cook_minutes": 20,
+  "prep_minutes": 75,
+  "cook_minutes": 6,
   "ingredients": [
    {
-    "name": "butter",
-    "quantity": 3,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
     "name": "condensed milk",
-    "quantity": 400,
+    "quantity": 397,
     "unit": "g",
-    "note": ""
+    "note": "1 can (14 oz), sweetened"
    },
    {
     "name": "cocoa powder",
-    "quantity": 4,
-    "unit": "tbsp",
+    "quantity": 30,
+    "unit": "g",
+    "note": "unsweetened, 1/4 cup"
+   },
+   {
+    "name": "butter",
+    "quantity": 15,
+    "unit": "g",
+    "note": "1 tablespoon, plus extra to grease hands and plate"
+   },
+   {
+    "name": "salt",
+    "quantity": null,
+    "unit": "",
+    "note": "used in the method, no amount given"
+   },
+   {
+    "name": "desiccated coconut",
+    "quantity": null,
+    "unit": "",
+    "note": "to garnish, coating of your choice"
+   },
+   {
+    "name": "pistachios",
+    "quantity": null,
+    "unit": "",
+    "note": "crushed, to garnish, coating of your choice"
+   },
+   {
+    "name": "chocolate sprinkles",
+    "quantity": null,
+    "unit": "",
+    "note": "to garnish, coating of your choice"
+   }
+  ],
+  "steps": [
+   {
+    "text": "Melt the butter in a medium saucepan over low heat. Add the condensed milk, cocoa powder and salt.",
+    "minutes": null
+   },
+   {
+    "text": "Cook, stirring constantly, for 6 to 8 minutes until the mixture is very thick and pulls away from the bottom and sides of the pan. Don't overcook it.",
+    "minutes": 6
+   },
+   {
+    "text": "Take it off the heat and pour onto a greased plate or pan. Let it cool for 1 hour.",
+    "minutes": 60
+   },
+   {
+    "text": "Grease your hands with butter and shape the mixture into small balls, then roll them in coconut, crushed pistachios or chocolate sprinkles.",
+    "minutes": null
+   },
+   {
+    "text": "Keep refrigerated until serving.",
+    "minutes": null
+   }
+  ]
+ },
+ {
+  "source": "themealdb:52792",
+  "title": "Bread and Butter Pudding",
+  "description": "Cubes of white bread and sultanas soaked in an egg, milk and cream custard with cinnamon and vanilla, drizzled with butter and baked until golden but still slightly wobbly.",
+  "servings": 6,
+  "cuisine": "British",
+  "category": "Dessert",
+  "image": "https://www.themealdb.com/images/media/meals/xqwwpy1483908697.jpg",
+  "prep_minutes": 10,
+  "cook_minutes": 25,
+  "ingredients": [
+   {
+    "name": "bread",
+    "quantity": 8,
+    "unit": "cup",
+    "note": "heaped, white, preferably slightly stale, cut into 2.5 cm cubes"
+   },
+   {
+    "name": "sultanas",
+    "quantity": 1,
+    "unit": "cup",
+    "note": "or raisins, or more"
+   },
+   {
+    "name": "eggs",
+    "quantity": 3,
+    "unit": "",
     "note": ""
+   },
+   {
+    "name": "milk",
+    "quantity": 1.5,
+    "unit": "cup",
+    "note": "low or full fat, not zero fat"
+   },
+   {
+    "name": "thickened cream",
+    "quantity": 1,
+    "unit": "cup",
+    "note": "or any other cream"
+   },
+   {
+    "name": "butter",
+    "quantity": 40,
+    "unit": "g",
+    "note": "unsalted, melted and cooled, for the egg mixture"
+   },
+   {
+    "name": "sugar",
+    "quantity": 0.5,
+    "unit": "cup",
+    "note": "white"
+   },
+   {
+    "name": "cinnamon",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "powder"
    },
    {
     "name": "vanilla extract",
@@ -22425,145 +22658,54 @@
     "note": ""
    },
    {
-    "name": "pistachios",
-    "quantity": 50,
+    "name": "butter",
+    "quantity": 30,
     "unit": "g",
-    "note": ""
+    "note": "unsalted, melted, drizzled on top before baking"
    },
-   {
-    "name": "almonds",
-    "quantity": 50,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "desiccated coconut",
-    "quantity": 50,
-    "unit": "g",
-    "note": ""
-   }
-  ],
-  "steps": [
-   {
-    "text": "In a medium heavy-based saucepan, heat the butter, condensed milk, a pinch of salt and the cocoa, to boiling, stirring constantly with a wooden spoon.",
-    "minutes": null
-   },
-   {
-    "text": "Reduce the heat to medium-low; cook for 10-15 mins, stirring constantly, until the mixture is thick and shiny and starts to pull away from the bottom.",
-    "minutes": 15
-   },
-   {
-    "text": "Stir in the vanilla and vigorously mix again. Pour the mixture onto a buttered plate. Chill for at least 2 hrs.",
-    "minutes": 120
-   },
-   {
-    "text": "Butter your hands and pinch off some of the dough to make 2.5cm balls. Place your toppings into small bowls and roll the balls of one of the decorations. Place in mini paper baking cups or on a tray lined with non-stick baking paper.",
-    "minutes": null
-   }
-  ]
- },
- {
-  "source": "themealdb:52792",
-  "title": "Bread and Butter Pudding",
-  "description": "A British sweet made with bread, raisins and cream — serves 8, about an hour start to finish.",
-  "servings": 8,
-  "cuisine": "British",
-  "category": "Dessert",
-  "image": "https://www.themealdb.com/images/media/meals/xqwwpy1483908697.jpg",
-  "prep_minutes": 15,
-  "cook_minutes": 45,
-  "ingredients": [
    {
     "name": "butter",
-    "quantity": 25,
+    "quantity": 20,
     "unit": "g",
-    "note": ""
+    "note": "unsalted, melted, for brushing after baking, optional"
    },
    {
-    "name": "bread",
-    "quantity": 8,
-    "unit": "slice",
-    "note": ""
-   },
-   {
-    "name": "raisins",
-    "quantity": 50,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "cinnamon",
-    "quantity": 2,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "milk",
-    "quantity": 350,
-    "unit": "ml",
-    "note": ""
-   },
-   {
-    "name": "cream",
-    "quantity": 50,
-    "unit": "ml",
-    "note": ""
-   },
-   {
-    "name": "eggs",
-    "quantity": 2,
-    "unit": "",
-    "note": "free-range"
-   },
-   {
-    "name": "sugar",
-    "quantity": 25,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "nutmeg",
+    "name": "icing sugar",
     "quantity": null,
     "unit": "",
-    "note": "grated, to taste"
+    "note": "for dusting, to serve"
+   },
+   {
+    "name": "ice cream",
+    "quantity": null,
+    "unit": "",
+    "note": "or cream or custard, to serve"
    }
   ],
   "steps": [
    {
-    "text": "Grease a 1 litre/2 pint pie dish with butter.",
+    "text": "Heat the oven to 180°C (all oven types).",
     "minutes": null
    },
    {
-    "text": "Cut the crusts off the bread. Spread each slice with on one side with butter, then cut into triangles.",
+    "text": "Briefly whisk the eggs in a large bowl, then add the milk, cream, 40 g melted butter, sugar, cinnamon and vanilla and whisk together.",
     "minutes": null
    },
    {
-    "text": "Arrange a layer of bread, buttered-side up, in the bottom of the dish, then add a layer of sultanas.",
+    "text": "Add the bread cubes and sultanas, mix briefly and leave for 3 minutes so the custard soaks into the bread.",
+    "minutes": 3
+   },
+   {
+    "text": "Pour into a 2.5 litre (10 cup) baking dish, pushing any sultanas on the surface below it.",
     "minutes": null
    },
    {
-    "text": "Sprinkle with a little cinnamon, then repeat the layers of bread and sultanas, sprinkling with cinnamon, until you have used up all of the bread. Finish with a layer of bread, then set aside.",
+    "text": "Drizzle over 30 g melted butter and bake 25 to 30 minutes until golden on top and set inside but still slightly wobbly.",
+    "minutes": 25
+   },
+   {
+    "text": "Optionally brush with the remaining 20 g melted butter, dust with icing sugar, rest a few minutes and serve with ice cream, cream or custard.",
     "minutes": null
-   },
-   {
-    "text": "Gently warm the milk and cream in a pan over a low heat to scalding point. Don't let it boil.",
-    "minutes": null
-   },
-   {
-    "text": "Crack the eggs into a bowl, add three quarters of the sugar and lightly whisk until pale.",
-    "minutes": null
-   },
-   {
-    "text": "Add the warm milk and cream mixture and stir well, then strain the custard into a bowl.",
-    "minutes": null
-   },
-   {
-    "text": "Pour the custard over the prepared bread layers and sprinkle with nutmeg and the remaining sugar and leave to stand for 30 minutes. Preheat the oven to 180C/355F/Gas 4.",
-    "minutes": 30
-   },
-   {
-    "text": "Place the dish into the oven and bake for 30-40 minutes, or until the custard has set and the top is golden-brown.",
-    "minutes": 40
    }
   ]
  },
