@@ -52647,111 +52647,169 @@
  },
  {
   "source": "themealdb:53402",
-  "title": "Mantu Afghan Dumpling",
-  "description": "An Afghan starter of lamb, chilli and tomato puree — makes 12, worth the couple of hours it takes.",
-  "servings": 12,
+  "title": "Mantu Afghan dumplings",
+  "description": "Afghan steamed dumplings filled with spiced beef and onion, layered with garlicky yoghurt sauce and a tomato and yellow split pea sauce, finished with dried mint and coriander.",
+  "servings": 4,
   "cuisine": "Afghan",
   "category": "Starter",
   "image": "https://www.themealdb.com/images/media/meals/oemdp11779556068.jpg",
-  "prep_minutes": 15,
-  "cook_minutes": 65,
+  "prep_minutes": 30,
+  "cook_minutes": 25,
   "ingredients": [
    {
-    "name": "plain flour",
+    "name": "beef mince",
     "quantity": 450,
     "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "water",
-    "quantity": 225,
-    "unit": "ml",
-    "note": ""
-   },
-   {
-    "name": "lamb",
-    "quantity": 450,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "chilli",
-    "quantity": 1,
-    "unit": "",
-    "note": ""
+    "note": "for the filling (1 lb), browned"
    },
    {
     "name": "onion",
-    "quantity": 450,
-    "unit": "g",
-    "note": ""
+    "quantity": 1,
+    "unit": "",
+    "note": "diced, for the filling"
+   },
+   {
+    "name": "garlic",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "minced, for the filling"
+   },
+   {
+    "name": "red chilli flakes",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": "for the filling"
+   },
+   {
+    "name": "ground coriander",
+    "quantity": 1.5,
+    "unit": "tsp",
+    "note": "for the filling; listed as just coriander, taken as ground"
+   },
+   {
+    "name": "ground cumin",
+    "quantity": 1.5,
+    "unit": "tsp",
+    "note": "for the filling"
+   },
+   {
+    "name": "salt",
+    "quantity": null,
+    "unit": "",
+    "note": "to taste, for the filling"
    },
    {
     "name": "black pepper",
-    "quantity": 2,
-    "unit": "tbsp",
-    "note": ""
+    "quantity": null,
+    "unit": "",
+    "note": "to taste, for the filling"
    },
    {
-    "name": "vegetable oil",
-    "quantity": 1,
-    "unit": "tbsp",
-    "note": ""
+    "name": "wonton skin",
+    "quantity": null,
+    "unit": "",
+    "note": "mantu wraps or wonton wrappers; amount not given, enough to use up the filling"
    },
    {
     "name": "tomato puree",
+    "quantity": 3,
+    "unit": "cup",
+    "note": "for the tomato sauce"
+   },
+   {
+    "name": "yellow split peas",
     "quantity": 1,
-    "unit": "tbsp",
-    "note": ""
+    "unit": "cup",
+    "note": "pre-boiled, for the tomato sauce"
+   },
+   {
+    "name": "garlic",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "minced, for the tomato sauce"
+   },
+   {
+    "name": "turmeric",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "for the tomato sauce"
+   },
+   {
+    "name": "red chilli flakes",
+    "quantity": 0.25,
+    "unit": "tsp",
+    "note": "for the tomato sauce"
+   },
+   {
+    "name": "salt",
+    "quantity": null,
+    "unit": "",
+    "note": "to taste, for the tomato sauce"
    },
    {
     "name": "greek yoghurt",
-    "quantity": 425,
-    "unit": "ml",
-    "note": ""
+    "quantity": 1,
+    "unit": "cup",
+    "note": "plain, for the chakkah yoghurt sauce"
+   },
+   {
+    "name": "garlic",
+    "quantity": 2,
+    "unit": "tsp",
+    "note": "minced, for the yoghurt sauce"
+   },
+   {
+    "name": "salt",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "for the yoghurt sauce"
+   },
+   {
+    "name": "water",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": "for the yoghurt sauce, add until the desired thickness (1/8 cup)"
+   },
+   {
+    "name": "dried mint",
+    "quantity": null,
+    "unit": "",
+    "note": "to serve; amount not given"
    },
    {
     "name": "coriander",
-    "quantity": 1,
-    "unit": "pinch",
-    "note": ""
+    "quantity": null,
+    "unit": "",
+    "note": "fresh, chopped, to serve; amount not given"
    }
   ],
   "steps": [
    {
-    "text": "To prepare the dough, sift the flour with 1tsp of salt into a mixing bowl. Slowly mix in as much of the water is required, until a stiff dough is formed. Knead on a clean work surface for 5-10 minutes, until the dough is elastic and shiny.",
-    "minutes": 10
-   },
-   {
-    "text": "Cover with a damp cloth and set aside for about an hour.",
-    "minutes": 60
-   },
-   {
-    "text": "Put the chopped lamb, onions, chilli, 1 tsp salt, ground pepper and spices in a bowl and mix thoroughly.",
+    "text": "Brown the beef, then add the diced onion, garlic, salt, pepper, chilli flakes, ground coriander and cumin. Set the filling aside.",
     "minutes": null
    },
    {
-    "text": "Divide the dough into 4 small balls, and roll out to a thickness of 1.5mm, cutting into 10cm squares. Into each square, place 1 heaped teaspoon of the lamb mixture.",
+    "text": "Make the tomato sauce: combine the tomato puree, turmeric, salt, chilli flakes, garlic and pre-boiled yellow split peas, and leave it to simmer.",
     "minutes": null
    },
    {
-    "text": "Take two opposite corners and bring them to join in the centre by nipping together firmly between your fingers, and then bring together to other two corners in the same manner.",
+    "text": "Wet the edges of each mantu wrapper and put a portion of filling in the middle.",
     "minutes": null
    },
    {
-    "text": "Note that the mantu should not be entirely closed, as the steam has to be penetrate and cook the filling!",
+    "text": "Fold the wrappers so opposite corners meet and press them firmly together.",
     "minutes": null
    },
    {
-    "text": "Using fat to grease the shelves of the steamer, place your mantu so that there is a small space between each one. Steam for 30-45 minutes over a medium heat.",
-    "minutes": 45
+    "text": "Oil the bottom of a steamer and steam the dumplings for at least 15 minutes.",
+    "minutes": 15
    },
    {
-    "text": "Meanwhile, make the tomato sauce. Heat the oil in a pan, add tomato puree, and bring to the boil. Stir and simmer on a low heat until the mantu are ready.",
+    "text": "While they steam, mix the Greek yoghurt, garlic and salt, then add water until the yoghurt sauce is the thickness you like.",
     "minutes": null
    },
    {
-    "text": "Remove the mantu carefully from the steamer and place on a large, warm dish. Spoon the tomato sauce over the top, followed by the strained yoghurt, and sprinkle with chopped coriander to garnish.",
+    "text": "To plate, spread a layer of yoghurt sauce, add the steamed dumplings, another layer of yoghurt sauce, then the tomato sauce. Finish with dried mint and chopped coriander.",
     "minutes": null
    }
   ]
@@ -56815,90 +56873,94 @@
  {
   "source": "themealdb:53331",
   "title": "Oatmeal pancakes",
-  "description": "A Venezuelan breakfast of rolled oats, strawberries and sugar syrup — serves 8, on the table in about 45 minutes.",
-  "servings": 8,
-  "cuisine": "Venezuelan",
+  "description": "Buttermilk pancakes made with flour and quick oats, mixed in one bowl in about five minutes and cooked on a hot griddle until golden, served hot with syrup.",
+  "servings": 4,
+  "cuisine": "American",
   "category": "Breakfast",
-  "image": "https://www.themealdb.com/images/media/meals/c400ok1764439058.jpg",
-  "prep_minutes": 15,
+  "image": "https://i.ytimg.com/vi/kkrRFWN4LG4/hqdefault.jpg",
+  "prep_minutes": 10,
   "cook_minutes": 15,
   "ingredients": [
    {
-    "name": "eggs",
-    "quantity": 1,
-    "unit": "",
-    "note": "medium"
-   },
-   {
-    "name": "milk",
-    "quantity": 80,
-    "unit": "ml",
+    "name": "plain flour",
+    "quantity": 1.25,
+    "unit": "cup",
     "note": ""
    },
    {
+    "name": "quick oats",
+    "quantity": 0.5,
+    "unit": "cup",
+    "note": "quick oats, not rolled oats"
+   },
+   {
     "name": "sugar",
-    "quantity": 1,
+    "quantity": 2,
     "unit": "tbsp",
     "note": ""
    },
    {
     "name": "baking powder",
+    "quantity": 2,
+    "unit": "tsp",
+    "note": ""
+   },
+   {
+    "name": "bicarbonate of soda",
     "quantity": 1,
     "unit": "tsp",
     "note": ""
    },
    {
     "name": "salt",
-    "quantity": 1,
-    "unit": "pinch",
+    "quantity": 0.5,
+    "unit": "tsp",
     "note": ""
    },
    {
-    "name": "vanilla extract",
-    "quantity": 1,
-    "unit": "dash",
-    "note": ""
+    "name": "buttermilk",
+    "quantity": 300,
+    "unit": "ml",
+    "note": "1 1/4 cups"
    },
    {
-    "name": "rolled oats",
-    "quantity": 150,
-    "unit": "g",
-    "note": ""
+    "name": "eggs",
+    "quantity": 2,
+    "unit": "",
+    "note": "large"
    },
    {
     "name": "butter",
-    "quantity": 150,
-    "unit": "g",
-    "note": ""
+    "quantity": 0.25,
+    "unit": "cup",
+    "note": "salted, melted"
    },
    {
-    "name": "sugar syrup",
-    "quantity": 1,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "strawberries",
-    "quantity": 3,
+    "name": "syrup",
+    "quantity": null,
     "unit": "",
-    "note": ""
+    "note": "to serve; the description says only 'syrup', type not stated"
    }
   ],
   "steps": [
    {
-    "text": "Place all the ingredients in the glass and beat. Let the mixture stand for 10 minutes.",
-    "minutes": 10
-   },
-   {
-    "text": "Grease a hot frying pan with a little butter and pour a little of the mixture.",
+    "text": "In a large bowl, stir together the flour, quick oats, sugar, baking powder, baking soda and salt.",
     "minutes": null
    },
    {
-    "text": "When it starts to bubble on the surface, turn over with a spatula. Cook over medium-low heat so that they do not burn.",
+    "text": "Whisk in the buttermilk, eggs and melted butter just until combined.",
     "minutes": null
    },
    {
-    "text": "Finally, add the caramel and strawberries.",
+    "text": "Heat a flat griddle over medium-high heat.",
+    "minutes": null
+   },
+   {
+    "text": "Scoop 1/4 cup of batter onto the griddle for each pancake and cook until bubbles form, then flip.",
+    "minutes": null
+   },
+   {
+    "text": "Cook the other side until golden brown and serve hot with syrup.",
     "minutes": null
    }
   ]
@@ -59803,49 +59865,61 @@
  {
   "source": "themealdb:53293",
   "title": "Pistachio cake",
-  "description": "A Polish sweet made with pistachios, mascarpone and cream — makes 20, on the table in about 45 minutes.",
-  "servings": 20,
-  "cuisine": "Polish",
+  "description": "A soft buttermilk sponge with crushed pistachios in a square tin, covered with pistachio cream cheese buttercream and chopped pistachios, chilled before serving.",
+  "servings": 16,
+  "cuisine": "International",
   "category": "Dessert",
-  "image": "https://www.themealdb.com/images/media/meals/xvgpng1764121726.jpg",
+  "image": "https://i.ytimg.com/vi/ACpikfieDP0/hqdefault.jpg",
   "prep_minutes": 20,
-  "cook_minutes": 10,
+  "cook_minutes": 40,
   "ingredients": [
    {
-    "name": "butter",
-    "quantity": 250,
+    "name": "pistachios",
+    "quantity": 150,
     "unit": "g",
-    "note": ""
+    "note": "finely chopped or crushed, for the cake (1 cup)"
    },
    {
-    "name": "pistachios",
-    "quantity": 200,
+    "name": "butter",
+    "quantity": 115,
     "unit": "g",
-    "note": ""
+    "note": "softened, for the cake (1/2 cup)"
    },
    {
     "name": "plain flour",
-    "quantity": 80,
+    "quantity": 300,
     "unit": "g",
-    "note": ""
+    "note": "2 1/4 cups plus 2 tbsp"
    },
    {
     "name": "baking powder",
-    "quantity": 1,
+    "quantity": 1.5,
+    "unit": "tsp",
+    "note": ""
+   },
+   {
+    "name": "bicarbonate of soda",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": ""
+   },
+   {
+    "name": "salt",
+    "quantity": 0.25,
     "unit": "tsp",
     "note": ""
    },
    {
     "name": "sugar",
-    "quantity": 225,
+    "quantity": 200,
     "unit": "g",
     "note": ""
    },
    {
     "name": "eggs",
-    "quantity": 4,
+    "quantity": 3,
     "unit": "",
-    "note": ""
+    "note": "large"
    },
    {
     "name": "vanilla extract",
@@ -59854,70 +59928,74 @@
     "note": ""
    },
    {
-    "name": "icing sugar",
-    "quantity": 100,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "mascarpone",
-    "quantity": 250,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "cream",
-    "quantity": 200,
+    "name": "buttermilk",
+    "quantity": 240,
     "unit": "ml",
     "note": ""
    },
    {
-    "name": "pistachios",
+    "name": "butter",
     "quantity": 100,
     "unit": "g",
-    "note": ""
+    "note": "softened, for the frosting"
    },
    {
-    "name": "raspberries",
-    "quantity": 400,
+    "name": "cream cheese",
+    "quantity": 170,
     "unit": "g",
-    "note": ""
+    "note": "for the frosting (3/4 cup)"
    },
    {
-    "name": "lime",
-    "quantity": 1,
+    "name": "pistachio paste",
+    "quantity": 60,
+    "unit": "g",
+    "note": "for the frosting (1/4 cup)"
+   },
+   {
+    "name": "icing sugar",
+    "quantity": 125,
+    "unit": "g",
+    "note": "for the frosting (1 cup)"
+   },
+   {
+    "name": "pistachios",
+    "quantity": null,
     "unit": "",
-    "note": ""
+    "note": "crushed, to garnish the top; amount not given"
    }
   ],
   "steps": [
    {
-    "text": "Heat the oven to 180C/160C fan/gas 4. Butter and line a 23cm springform cake tin. Tip 150g of the pistachios into a food processor and blitz until finely ground. Tip into a bowl and mix in the flour, baking powder and pinch of salt.",
+    "text": "Heat the oven to 180°C and line a 9-inch (23 cm) square pan with baking paper.",
     "minutes": null
    },
    {
-    "text": "Beat the butter and sugar in a separate bowl until fluffy and pale, around 5 mins. Crack in the eggs one at a time, beating well for 1 min after each addition, until they have all been added.",
-    "minutes": 5
+    "text": "Whisk the flour, baking powder, baking soda and salt together in a bowl.",
+    "minutes": null
    },
    {
-    "text": "Beat in the vanilla, then fold in the flour mixture gently. Carefully spoon into the prepared tin and bake for 35-40 mins until a skewer inserted into the middle comes out clean. Set aside to cool completely on a wire rack in the tin.",
+    "text": "Beat the softened butter and sugar until light and creamy, then whisk in the eggs and vanilla.",
+    "minutes": null
+   },
+   {
+    "text": "Mix in half the flour mixture, then half the buttermilk, and repeat with the rest.",
+    "minutes": null
+   },
+   {
+    "text": "Fold in the chopped pistachios, pour the batter into the pan and bake 35-40 minutes until a toothpick comes out clean.",
     "minutes": 40
    },
    {
-    "text": "Meanwhile, sift the icing sugar into a bowl, then tip in the mascarpone, double cream and pistachio paste. Beat until well combined, then set aside in the fridge for 20-30 mins to thicken to a spooning consistency.",
-    "minutes": 30
+    "text": "Cool in the pan for 5 minutes, then turn out onto a wire rack to cool completely.",
+    "minutes": 5
    },
    {
-    "text": "Cut the cooled cake in half horizontally using a serrated knife, so you have two layers. Put the bottom layer on a plate or cake stand and spread over a generous spoonful of the pistachio cream.",
+    "text": "For the frosting, beat the softened butter, then beat in the icing sugar, cream cheese and pistachio paste until smooth. Chill 15-20 minutes if too soft.",
     "minutes": null
    },
    {
-    "text": "Top with a generous handful of the raspberries so the cake is covered. Top with the other sponge half, then cover the top and sides of the cake with the remaining cream.",
-    "minutes": null
-   },
-   {
-    "text": "Scatter over the last of the raspberries, the remaining pistachios and the lime zest to serve. Will keep chilled in an airtight container for two days.",
-    "minutes": null
+    "text": "Spread the frosting over the cooled cake, sprinkle with crushed pistachios and refrigerate at least 3 hours before serving.",
+    "minutes": 180
    }
   ]
  },
@@ -63337,130 +63415,150 @@
  },
  {
   "source": "themealdb:52921",
-  "title": "Provençal Omelette Cake",
-  "description": "A French dish of courgette, spring onion and capsicum — serves 4, on the table in about 45 minutes.",
-  "servings": 4,
-  "cuisine": "French",
-  "category": "Vegetarian",
-  "image": "https://www.themealdb.com/images/media/meals/qwtrtp1511799242.jpg",
-  "prep_minutes": 20,
-  "cook_minutes": 20,
+  "title": "Layered omelette cake",
+  "description": "Six omelettes from a cream cheese and flour batter, five of them layered with creamed spinach, capsicum, mushrooms or pickles and cheese, stacked, finished with bacon and baked for 25 minutes.",
+  "servings": 6,
+  "cuisine": "American",
+  "category": "Breakfast",
+  "image": "https://i.ytimg.com/vi/UR8UAlFJxLA/hqdefault.jpg",
+  "prep_minutes": 10,
+  "cook_minutes": 25,
   "ingredients": [
    {
     "name": "eggs",
-    "quantity": 10,
+    "quantity": 12,
     "unit": "",
-    "note": ""
+    "note": "for the batter"
    },
    {
-    "name": "olive oil",
-    "quantity": 1,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "courgette",
+    "name": "plain flour",
     "quantity": 2,
-    "unit": "",
-    "note": "finely chopped"
-   },
-   {
-    "name": "spring onion",
-    "quantity": 3,
-    "unit": "",
-    "note": "finely chopped"
-   },
-   {
-    "name": "capsicum",
-    "quantity": 4,
-    "unit": "",
-    "note": ""
-   },
-   {
-    "name": "garlic",
-    "quantity": 1,
-    "unit": "clove",
-    "note": "peeled crushed"
-   },
-   {
-    "name": "chilli",
-    "quantity": 1,
-    "unit": "",
-    "note": ""
+    "unit": "cup",
+    "note": "for the batter"
    },
    {
     "name": "cream cheese",
-    "quantity": 300,
+    "quantity": 225,
     "unit": "g",
-    "note": ""
+    "note": "for the batter"
    },
    {
-    "name": "milk",
-    "quantity": 6,
-    "unit": "tbsp",
-    "note": ""
+    "name": "salt",
+    "quantity": null,
+    "unit": "",
+    "note": "to taste"
+   },
+   {
+    "name": "black pepper",
+    "quantity": null,
+    "unit": "",
+    "note": "to taste"
+   },
+   {
+    "name": "olive oil",
+    "quantity": null,
+    "unit": "",
+    "note": "for frying, a little for each omelette"
+   },
+   {
+    "name": "creamed spinach",
+    "quantity": 285,
+    "unit": "g",
+    "note": "spread on the first omelette"
+   },
+   {
+    "name": "nutmeg",
+    "quantity": null,
+    "unit": "",
+    "note": "to taste, on the creamed spinach"
+   },
+   {
+    "name": "mozzarella",
+    "quantity": 1,
+    "unit": "cup",
+    "note": "shredded, used across the layers"
+   },
+   {
+    "name": "capsicum",
+    "quantity": 1,
+    "unit": "",
+    "note": "yellow, diced"
+   },
+   {
+    "name": "swiss cheese",
+    "quantity": 1,
+    "unit": "cup",
+    "note": "shredded, used across the layers"
+   },
+   {
+    "name": "mushrooms",
+    "quantity": 5,
+    "unit": "",
+    "note": "sliced"
+   },
+   {
+    "name": "cheddar cheese",
+    "quantity": 1,
+    "unit": "cup",
+    "note": "shredded, used across the layers"
+   },
+   {
+    "name": "dill pickles",
+    "quantity": 200,
+    "unit": "g",
+    "note": "kosher dill, diced"
+   },
+   {
+    "name": "capsicum",
+    "quantity": 1,
+    "unit": "",
+    "note": "red, diced"
+   },
+   {
+    "name": "bacon",
+    "quantity": null,
+    "unit": "",
+    "note": "diced, sprinkled on top; amount not given"
    },
    {
     "name": "chives",
-    "quantity": 4,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "basil",
-    "quantity": 2,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "rocket",
     "quantity": null,
     "unit": "",
-    "note": "to serve"
-   },
-   {
-    "name": "parmesan",
-    "quantity": null,
-    "unit": "",
-    "note": "to serve"
+    "note": "to garnish"
    }
   ],
   "steps": [
    {
-    "text": "Break the eggs into two bowls, five in each. Whisk lightly and season with salt and pepper. Heat the oil in a pan, add the courgettes and spring onions, then fry gently for about 10 mins until softened.",
-    "minutes": 10
-   },
-   {
-    "text": "Cool, then stir into one bowl of eggs with a little salt and pepper. Add the roasted peppers to the other bowl of eggs with the garlic, chilli, salt and pepper.",
+    "text": "Heat the oven to 180°C. Mix the eggs, flour and cream cheese to a smooth batter and season with salt and pepper.",
     "minutes": null
    },
    {
-    "text": "Heat a little oil in a 20-23cm frying pan, preferably non-stick. Pour the eggs with courgette into a measuring jug, then pourabout one-third of the mixture into the pan, swirling it to cover the base of the pan.",
+    "text": "Cook the first omelette: pour 1/6 of the batter into an oiled pan over medium heat, spread over the creamed spinach and a little nutmeg, cover with a lid and cook slowly. Sprinkle with mozzarella.",
     "minutes": null
    },
    {
-    "text": "Cook until the egg is set and lightly browned underneath, then cover the pan with a plate and invert the omelette onto it. Slide it back into the pan to cook the other side.",
+    "text": "Make the second omelette with the yellow capsicum, lid on until cooked through. Stack it on the first and sprinkle with Swiss cheese.",
     "minutes": null
    },
    {
-    "text": "Repeat with the remaining mix to make two more omelettes, adding a little oil to the pan each time. Stack the omelettes onto a plate. Make three omelettes in the same way with the red pepper mixture, then stack them on a separate plate.",
+    "text": "Make the third with the sliced mushrooms, stack it and sprinkle with cheddar.",
     "minutes": null
    },
    {
-    "text": "Now make the filling. Beat the cheese to soften it, then beat in the milk to make a spreadable consistency. Stir in the herbs, salt and pepper. Line a deep, 20-23cm round cake tin with cling film (use a tin the same size as the frying pan).",
+    "text": "Make the fourth with the diced pickles, stack it and sprinkle with mozzarella.",
     "minutes": null
    },
    {
-    "text": "Select the best red pepper omelette and place in the tin, prettiest side down. Spread with a thin layer of cheese filling, then cover with a courgette omelette.",
+    "text": "Make the fifth with the red capsicum, stack it and sprinkle with cheddar.",
     "minutes": null
    },
    {
-    "text": "Repeat, alternating the layers, until all the omelettes and filling are in the tin, finishing with an omelette. Flip the cling film over the omelette, then chill for up to 24 hrs.",
+    "text": "Make the sixth omelette, stack it and top with all three cheeses and the diced bacon. Push 4 wooden skewers down through the layers.",
     "minutes": null
    },
    {
-    "text": "To serve, invert the omelette cake onto a serving plate and peel off the cling film. Pile rocket on the top and scatter over the cheese, a drizzle of olive oil and a little freshly ground black pepper. Serve cut into wedges.",
-    "minutes": null
+    "text": "Bake for 25 minutes. Garnish with chives and slice to serve.",
+    "minutes": 25
    }
   ]
  },
@@ -65692,83 +65790,89 @@
  },
  {
   "source": "themealdb:53024",
-  "title": "Rogaliki (Polish Croissant Cookies)",
-  "description": "A Polish sweet made with egg yolks, cream cheese and jam — makes 12, on the table in about 45 minutes.",
+  "title": "Kolaczki (Polish cream cheese cookies)",
+  "description": "Polish cookies from a butter and cream cheese dough, cut into squares, filled with jam, folded and baked until just golden, then dusted with powdered sugar. One batch makes a lot of cookies, so servings is 12 people with amounts for the whole batch.",
   "servings": 12,
   "cuisine": "Polish",
   "category": "Dessert",
-  "image": "https://www.themealdb.com/images/media/meals/7mxnzz1593350801.jpg",
-  "prep_minutes": 10,
-  "cook_minutes": 30,
+  "image": "https://i.ytimg.com/vi/VAR10T9mfhU/hqdefault.jpg",
+  "prep_minutes": 30,
+  "cook_minutes": 16,
   "ingredients": [
    {
     "name": "butter",
-    "quantity": 1,
-    "unit": "cup",
-    "note": ""
-   },
-   {
-    "name": "egg yolks",
-    "quantity": 3,
-    "unit": "",
-    "note": ""
+    "quantity": 226,
+    "unit": "g",
+    "note": "unsalted, room temperature"
    },
    {
     "name": "cream cheese",
-    "quantity": 225,
+    "quantity": 226,
     "unit": "g",
-    "note": ""
+    "note": "room temperature"
    },
    {
-    "name": "baking powder",
-    "quantity": 1,
+    "name": "vanilla extract",
+    "quantity": 0.25,
     "unit": "tsp",
     "note": ""
    },
    {
+    "name": "salt",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": "kosher"
+   },
+   {
     "name": "plain flour",
-    "quantity": 3,
-    "unit": "cup",
-    "note": ""
+    "quantity": 270,
+    "unit": "g",
+    "note": "about 2 1/4 cups, spooned and levelled"
    },
    {
     "name": "jam",
-    "quantity": 1,
-    "unit": "jar",
-    "note": ""
+    "quantity": null,
+    "unit": "",
+    "note": "or other thick filling such as apricot, prune or cherry; about 1 tsp per cookie, amount not given"
+   },
+   {
+    "name": "icing sugar",
+    "quantity": null,
+    "unit": "",
+    "note": "for rolling and dusting"
    }
   ],
   "steps": [
    {
-    "text": "In a medium bowl mix egg yolks, philly cheese and baking powder using a hand held mixer. Carefully start adding the flour.",
+    "text": "Cream the butter and cream cheese until light and fluffy, about 2 minutes. Mix in the vanilla and salt.",
+    "minutes": 2
+   },
+   {
+    "text": "On low speed, slowly add the flour until incorporated. The dough will be very thick and sticky.",
     "minutes": null
    },
    {
-    "text": "When the mixture will not be mixing well, and will look like wood chips, put away the blending mixer and using your hands knead the dough.",
+    "text": "Divide the dough into 4 equal portions, flatten each between plastic wrap or parchment to about 1.3 cm thick, and chill for 45 minutes to 1 hour.",
+    "minutes": 45
+   },
+   {
+    "text": "Heat the oven to 175°C. Dust the bench liberally with icing sugar, dust one disc and roll it to a square about 6 mm thick, keeping the other discs chilled.",
     "minutes": null
    },
    {
-    "text": "Create a roll and cover in foil and freeze for 15 minutes. At this time preheat the oven to 375.",
-    "minutes": 15
-   },
-   {
-    "text": "Take the dough out and separate into two. Roll and cut out 3 inch trangles.",
+    "text": "Cut the dough into 5 cm squares.",
     "minutes": null
    },
    {
-    "text": "Make as many as you can and on centre of each put a small spoon of jam. Roll them into a croissant shape.",
+    "text": "Spread about 1 tsp of filling diagonally down the middle of each square. Dab water on one clean corner, fold the other corner over it and press to seal so they don't pop open.",
     "minutes": null
    },
    {
-    "text": "Place the croissants onto a greased cookie sheet, and bake for 10-12 minutes or until golden. Repeat with the rest of the dough.",
-    "minutes": 12
+    "text": "Place on lined trays fairly close together (they don't spread) and bake for 14–18 minutes until just barely golden. Cool on wire racks.",
+    "minutes": 16
    },
    {
-    "text": "When you take them out, put aside and sprinkle with powdered sugar on top.",
-    "minutes": null
-   },
-   {
-    "text": "This makes about 3 batches of 20 cookies each. Total count about 60 cookies.",
+    "text": "Dust with icing sugar just before serving. Store loosely covered at room temperature for up to 3 days.",
     "minutes": null
    }
   ]
@@ -66587,78 +66691,110 @@
  },
  {
   "source": "themealdb:53248",
-  "title": "Salmon noodle wraps",
-  "description": "A Vietnamese dish of salmon fillet, rice noodles and spring onion — serves 2, on the table in about 45 minutes.",
-  "servings": 2,
+  "title": "Smoked salmon Vietnamese rolls",
+  "description": "No-cook rice paper rolls filled with smoked salmon, spinach, cucumber, seasoned bean thread noodles and fresh herbs, served with a lime, fish sauce and red curry paste dipping sauce. Makes 25-30 rolls; servings is 10 people.",
+  "servings": 10,
   "cuisine": "Vietnamese",
   "category": "Seafood",
-  "image": "https://www.themealdb.com/images/media/meals/prrirc1763781360.jpg",
-  "prep_minutes": 10,
-  "cook_minutes": 25,
+  "image": "https://i.ytimg.com/vi/9j2qftITN-Y/hqdefault.jpg",
+  "prep_minutes": 30,
+  "cook_minutes": 0,
   "ingredients": [
    {
-    "name": "rice noodles",
-    "quantity": 100,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "spring onion",
-    "quantity": 3,
+    "name": "rice paper sheets",
+    "quantity": 25,
     "unit": "",
-    "note": "sliced thinly"
+    "note": "25-30, depending on the size of the wraps"
    },
    {
-    "name": "peas",
-    "quantity": 50,
-    "unit": "g",
+    "name": "spinach",
+    "quantity": 1,
+    "unit": "cup",
     "note": ""
    },
    {
-    "name": "chilli",
-    "quantity": 85,
-    "unit": "g",
+    "name": "mint",
+    "quantity": 0.5,
+    "unit": "cup",
+    "note": ""
+   },
+   {
+    "name": "thai basil",
+    "quantity": 0.5,
+    "unit": "cup",
     "note": ""
    },
    {
     "name": "coriander",
-    "quantity": 85,
-    "unit": "g",
+    "quantity": 0.25,
+    "unit": "cup",
     "note": ""
    },
    {
-    "name": "lime",
-    "quantity": 85,
-    "unit": "g",
-    "note": ""
+    "name": "cucumber",
+    "quantity": 1,
+    "unit": "",
+    "note": "1-2, cut in sticks"
    },
    {
-    "name": "salmon fillet",
+    "name": "bean thread noodles",
     "quantity": 300,
     "unit": "g",
+    "note": "soaked in hot water and drained"
+   },
+   {
+    "name": "smoked salmon",
+    "quantity": 500,
+    "unit": "g",
     "note": ""
+   },
+   {
+    "name": "lime juice",
+    "quantity": 0.5,
+    "unit": "cup",
+    "note": "for the sauce"
+   },
+   {
+    "name": "fish sauce",
+    "quantity": 5,
+    "unit": "tbsp",
+    "note": "for the sauce"
+   },
+   {
+    "name": "red curry paste",
+    "quantity": 2,
+    "unit": "tsp",
+    "note": "for the sauce"
    }
   ],
   "steps": [
    {
-    "text": "Heat oven to 200C/fan 180C/gas 6. Put the noodles in a bowl and pour over enough boiling water to just cover them. Leave for 2 mins, until they are bendable, but not too soft, then drain well.",
-    "minutes": 2
-   },
-   {
-    "text": "Return to the bowl with the spring onions, petit pois, salt and pepper and a third of the butter. Mix well until the butter has melted.",
+    "text": "Mix the lime juice, fish sauce and red curry paste to make the dipping sauce.",
     "minutes": null
    },
    {
-    "text": "Pile the noodles and vegetables onto two large squares of baking parchment, then sit the salmon on top. Slice the remaining butter and arrange over the top of the salmon.",
+    "text": "Soak the bean thread noodles in hot water for a few minutes and drain them completely.",
     "minutes": null
    },
    {
-    "text": "Bring the ends of the paper over the fish, fold them together to seal, then tuck the ends of the paper underneath so there are no gaps.",
+    "text": "Stir 4 tbsp of the sauce through the drained noodles.",
     "minutes": null
    },
    {
-    "text": "Put the parcels on a baking sheet and bake for 15-20 mins. Transfer to dinner plates and serve without delay.",
-    "minutes": 20
+    "text": "Soak a rice paper sheet in room-temperature water until soft, then lay it on a kitchen towel and pat the top dry.",
+    "minutes": null
+   },
+   {
+    "text": "Add spinach, smoked salmon, cucumber sticks and a little of the noodles, then finish with coriander, mint and Thai basil.",
+    "minutes": null
+   },
+   {
+    "text": "Fold one side over and pull it snug against the filling, tuck in the sides and roll up.",
+    "minutes": null
+   },
+   {
+    "text": "Store the rolls on parchment, covered with more parchment so they don't stick or dry out. Serve with the dipping sauce.",
+    "minutes": null
    }
   ]
  },
@@ -72545,108 +72681,168 @@
  },
  {
   "source": "themealdb:53040",
-  "title": "Spring onion and prawn empanadas",
-  "description": "A Portuguese dish of prawns, feta and spring onion — serves 4, about an hour start to finish.",
+  "title": "Prawn and cheese empanadas",
+  "description": "Butter dough folded around garlicky, paprika-spiced prawns with mozzarella and cream cheese, crimped into half-moons and baked until golden. Makes 10-12; servings is 4 people.",
   "servings": 4,
-  "cuisine": "Portuguese",
+  "cuisine": "Latin American",
   "category": "Seafood",
-  "image": "https://www.themealdb.com/images/media/meals/1c5oso1614347493.jpg",
-  "prep_minutes": 15,
-  "cook_minutes": 35,
+  "image": "https://i.ytimg.com/vi/x1LCFRJYCkQ/hqdefault.jpg",
+  "prep_minutes": 45,
+  "cook_minutes": 25,
   "ingredients": [
    {
-    "name": "spring onion",
-    "quantity": 1,
-    "unit": "bunch",
-    "note": ""
+    "name": "plain flour",
+    "quantity": 2,
+    "unit": "cup",
+    "note": "for the dough"
    },
    {
-    "name": "olive oil",
-    "quantity": 1,
-    "unit": "dash",
-    "note": ""
+    "name": "salt",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": "for the dough"
    },
    {
-    "name": "chilli",
-    "quantity": 1,
-    "unit": "",
-    "note": "finely sliced"
-   },
-   {
-    "name": "garlic",
-    "quantity": 1,
-    "unit": "clove",
-    "note": ""
-   },
-   {
-    "name": "prawns",
-    "quantity": 350,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "feta",
-    "quantity": 75,
-    "unit": "g",
-    "note": ""
+    "name": "baking powder",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": "for the dough"
    },
    {
     "name": "butter",
-    "quantity": 15,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "plain flour",
-    "quantity": 250,
-    "unit": "g",
-    "note": ""
+    "quantity": 4,
+    "unit": "tbsp",
+    "note": "cold, cubed, for the dough"
    },
    {
     "name": "eggs",
     "quantity": 1,
     "unit": "",
-    "note": "seperated"
+    "note": "for the dough"
    },
    {
-    "name": "white wine vinegar",
+    "name": "water",
+    "quantity": 0.33,
+    "unit": "cup",
+    "note": "cold, for the dough, adjust as needed"
+   },
+   {
+    "name": "white vinegar",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": "for the dough"
+   },
+   {
+    "name": "olive oil",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "for the filling"
+   },
+   {
+    "name": "prawns",
+    "quantity": 225,
+    "unit": "g",
+    "note": "peeled, deveined, chopped (1/2 lb)"
+   },
+   {
+    "name": "garlic",
+    "quantity": 2,
+    "unit": "clove",
+    "note": "minced"
+   },
+   {
+    "name": "smoked paprika",
     "quantity": 0.5,
     "unit": "tsp",
     "note": ""
+   },
+   {
+    "name": "ground cumin",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": ""
+   },
+   {
+    "name": "red chilli flakes",
+    "quantity": 0.25,
+    "unit": "tsp",
+    "note": "optional"
+   },
+   {
+    "name": "salt",
+    "quantity": null,
+    "unit": "",
+    "note": "to taste, for the filling"
+   },
+   {
+    "name": "black pepper",
+    "quantity": null,
+    "unit": "",
+    "note": "to taste, for the filling"
+   },
+   {
+    "name": "lime juice",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": ""
+   },
+   {
+    "name": "coriander",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "chopped fresh, optional, to garnish the filling"
+   },
+   {
+    "name": "mozzarella",
+    "quantity": 0.5,
+    "unit": "cup",
+    "note": "shredded"
+   },
+   {
+    "name": "cream cheese",
+    "quantity": 0.25,
+    "unit": "cup",
+    "note": "for extra creaminess"
+   },
+   {
+    "name": "eggs",
+    "quantity": 1,
+    "unit": "",
+    "note": "for the egg wash"
    }
   ],
   "steps": [
    {
-    "text": "To make the dough, rub the butter into the flour and then add the egg white and half the yolk (keep the rest), vinegar, a pinch of salt and enough cold water to make a soft dough.",
+    "text": "Mix the flour, salt and baking powder. Rub in the cold butter until crumbly, then mix in the egg and slowly add the cold water and vinegar until it comes together.",
     "minutes": null
    },
    {
-    "text": "Knead on a floured surface until smooth and then wrap and rest for 30 minutes.",
+    "text": "Knead the dough for 2-3 minutes until smooth, then cover and chill for at least 30 minutes.",
     "minutes": 30
    },
    {
-    "text": "Heat the oven to 180c/fan 160c/gas 4. Trim the green ends of the spring onions and then finely slice the rest. Heat a little oil in a pan and fry them gently until soft but not browned.",
+    "text": "Heat the olive oil in a pan over medium heat, add the garlic and cook about 30 seconds until fragrant.",
     "minutes": null
    },
    {
-    "text": "Add the chilli and garlic, stir and then add the prawns and cook until they are opaque. Season well. Scoop out the prawns and bubble the juices until they thicken, then add back the prawns.",
+    "text": "Stir in the prawns, paprika, cumin, chilli flakes, salt and pepper and cook 2-3 minutes until the prawns turn pink.",
+    "minutes": 3
+   },
+   {
+    "text": "Off the heat, stir in the lime juice and coriander and let it cool slightly. Mix in the mozzarella and cream cheese.",
     "minutes": null
    },
    {
-    "text": "Divide the empanada dough into eight balls and roll out to thin circles on a floured surface. Put some filling on one half of the dough, sprinkle the feta on top and fold the other half over.",
+    "text": "Roll the dough about 3 mm thick on a floured surface and cut circles 10-13 cm wide.",
     "minutes": null
    },
    {
-    "text": "Trim the edge and then fold and crimp the dough together so the empanada is tightly sealed, put it on an oiled baking sheet either on its side or sitting on its un-crimped edge like a cornish pasty.",
+    "text": "Put a spoonful of filling on each circle, fold over into a half-moon and seal the edge by crimping with a fork or twisting.",
     "minutes": null
    },
    {
-    "text": "Repeat with the remaining dough and mixture. Mix the leftover egg yolk with a splash of water and brush the top of the empanadas.",
-    "minutes": null
-   },
-   {
-    "text": "Bake for 30 minutes or until golden and slightly crisp around the edges.",
-    "minutes": 30
+    "text": "Heat the oven to 190°C. Place the empanadas on a lined tray, brush with beaten egg and bake 20-25 minutes until golden.",
+    "minutes": 25
    }
   ]
  },
@@ -72905,109 +73101,129 @@
  },
  {
   "source": "themealdb:53229",
-  "title": "Steak & Vietnamese noodle salad",
-  "description": "A Vietnamese salad of beef fillet, fish sauce and rice noodles — serves 2, on the table in about 45 minutes.",
-  "servings": 2,
+  "title": "Vietnamese beef and crunchy noodle salad",
+  "description": "Seared steak sliced over rice vermicelli, watercress, snow peas, cucumber and herbs, dressed and topped with sweet-chilli glazed crunchy noodles and toasted coconut.",
+  "servings": 4,
   "cuisine": "Vietnamese",
   "category": "Beef",
-  "image": "https://www.themealdb.com/images/media/meals/st9shl1763755808.jpg",
-  "prep_minutes": 20,
-  "cook_minutes": 10,
+  "image": "https://i.ytimg.com/vi/Lo4_GdyetEU/hqdefault.jpg",
+  "prep_minutes": 10,
+  "cook_minutes": 20,
   "ingredients": [
    {
-    "name": "rice noodles",
-    "quantity": 85,
+    "name": "crispy fried noodles",
+    "quantity": 100,
     "unit": "g",
-    "note": ""
+    "note": "crunchy fried noodles, for the glazed topping"
+   },
+   {
+    "name": "sweet chilli sauce",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": "for glazing the noodles"
+   },
+   {
+    "name": "kecap manis",
+    "quantity": 2,
+    "unit": "tsp",
+    "note": "or any sweet dark soy sauce"
+   },
+   {
+    "name": "rice noodles",
+    "quantity": 100,
+    "unit": "g",
+    "note": "Vietnamese rice vermicelli"
+   },
+   {
+    "name": "beef scotch fillet",
+    "quantity": 400,
+    "unit": "g",
+    "note": "2 x 200 g steaks; ribeye, or sirloin or rump"
+   },
+   {
+    "name": "sea salt",
+    "quantity": null,
+    "unit": "",
+    "note": "to season the steaks"
    },
    {
     "name": "vegetable oil",
     "quantity": 1,
-    "unit": "tsp",
-    "note": ""
+    "unit": "tbsp",
+    "note": "for searing"
    },
    {
-    "name": "beef fillet",
-    "quantity": 250,
+    "name": "watercress",
+    "quantity": 150,
     "unit": "g",
-    "note": ""
+    "note": "or other salad greens"
    },
    {
-    "name": "carrot",
-    "quantity": 2,
+    "name": "shallot",
+    "quantity": 1,
     "unit": "",
-    "note": ""
+    "note": "large, sliced"
    },
    {
-    "name": "chinese cabbage",
-    "quantity": 0.5,
-    "unit": "",
-    "note": ""
+    "name": "snow peas",
+    "quantity": 100,
+    "unit": "g",
+    "note": "sliced; or sugarsnap peas"
    },
    {
-    "name": "spring onion",
-    "quantity": 4,
+    "name": "cucumber",
+    "quantity": 1,
     "unit": "",
-    "note": "finely sliced"
+    "note": "small, sliced"
    },
    {
     "name": "coriander",
-    "quantity": 1,
-    "unit": "handful",
-    "note": ""
+    "quantity": 0.25,
+    "unit": "cup",
+    "note": "leaves, roughly chopped"
    },
    {
-    "name": "chilli",
-    "quantity": 1,
-    "unit": "",
-    "note": "sliced"
+    "name": "mint",
+    "quantity": 0.25,
+    "unit": "cup",
+    "note": "leaves"
    },
    {
-    "name": "lime",
-    "quantity": 1,
-    "unit": "",
-    "note": "juiced"
-   },
-   {
-    "name": "brown sugar",
-    "quantity": 2,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "rice vinegar",
-    "quantity": 1,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "garlic",
-    "quantity": 1,
-    "unit": "",
-    "note": "chopped"
-   },
-   {
-    "name": "fish sauce",
+    "name": "vietnamese dressing",
     "quantity": 0.5,
+    "unit": "",
+    "note": "bottled product: half a bottle of Marion's Vietnamese Tangy Dressing (brand; not priced)"
+   },
+   {
+    "name": "shaved coconut",
+    "quantity": 3,
     "unit": "tbsp",
-    "note": ""
+    "note": "toasted"
    }
   ],
   "steps": [
    {
-    "text": "Mix all the ingredients for the dressing together in a bowl with 1 tbsp water until the sugar has dissolved.",
+    "text": "Heat the oven to 170°C. Toss the crunchy fried noodles with the sweet chilli sauce and kecap manis, spread them loosely on a lined tray and bake for 10 minutes, mixing halfway. Leave to cool completely so they crisp up.",
+    "minutes": 10
+   },
+   {
+    "text": "Soak the rice vermicelli in room-temperature water for 20 minutes, until bendy and pliable.",
+    "minutes": 20
+   },
+   {
+    "text": "Bring the steaks to room temperature and salt them generously on both sides.",
     "minutes": null
    },
    {
-    "text": "Cook the noodles following pack instructions, then plunge into a bowl of cold water to cool completely. Drain the noodles, then add the carrot, cabbage, spring onion and dressing, and toss to combine.",
-    "minutes": null
+    "text": "Sear the steaks in a very hot pan with the oil: 1 minute, flip, then 1 minute more per side for medium rare, or keep flipping for a couple more minutes to taste. Rest on a plate.",
+    "minutes": 3
    },
    {
-    "text": "Heat the oil in a frying pan over a high heat. Season the steak, then cook to your liking; 2-3 mins on each side for medium rare. Leave to rest for 5 mins, then slice.",
-    "minutes": 5
+    "text": "Drain the soaked noodles, boil them for 1 minute until just softened and cool in cold water. Cut them into shorter lengths with scissors and keep them in cool water until serving.",
+    "minutes": 1
    },
    {
-    "text": "Divide the salad and steak slices between bowls and scatter over some coriander to serve.",
+    "text": "Arrange the watercress, shallot, drained noodles, snow peas, cucumber, herbs and sliced beef on a platter. Drizzle with the dressing and scatter over the glazed crunchy noodles and toasted coconut.",
     "minutes": null
    }
   ]
@@ -73632,184 +73848,132 @@
  },
  {
   "source": "themealdb:53005",
-  "title": "Strawberry Rhubarb Pie",
-  "description": "A British sweet made with rhubarb, strawberries and cinnamon — serves 8, worth the couple of hours it takes.",
+  "title": "Strawberry rhubarb pie",
+  "description": "A lattice-topped 9 inch pie with a butter pastry made in the food processor and a strawberry and rhubarb filling with cinnamon, baked until golden and bubbling.",
   "servings": 8,
-  "cuisine": "British",
+  "cuisine": "American",
   "category": "Dessert",
   "image": "https://www.themealdb.com/images/media/meals/178z5o1585514569.jpg",
-  "prep_minutes": 20,
-  "cook_minutes": 60,
+  "prep_minutes": 60,
+  "cook_minutes": 45,
   "ingredients": [
    {
     "name": "plain flour",
     "quantity": 350,
     "unit": "g",
-    "note": ""
+    "note": "for the crust"
    },
    {
     "name": "salt",
     "quantity": 1,
     "unit": "tsp",
-    "note": ""
+    "note": "for the crust"
    },
    {
     "name": "sugar",
     "quantity": 2,
     "unit": "tbsp",
-    "note": ""
+    "note": "for the crust"
    },
    {
     "name": "butter",
-    "quantity": 1,
-    "unit": "cup",
-    "note": ""
+    "quantity": 226,
+    "unit": "g",
+    "note": "unsalted, chilled, cut into 2.5 cm chunks, for the crust"
    },
    {
     "name": "water",
-    "quantity": 0.5,
-    "unit": "cup",
-    "note": ""
+    "quantity": 60,
+    "unit": "ml",
+    "note": "ice water for the crust; 60-120 ml as needed"
    },
    {
     "name": "rhubarb",
     "quantity": 450,
     "unit": "g",
-    "note": ""
+    "note": "cut into 1.5 cm pieces, not peeled"
    },
    {
     "name": "strawberries",
     "quantity": 450,
     "unit": "g",
-    "note": ""
+    "note": "fresh, cut into 4 cm pieces"
    },
    {
     "name": "cornflour",
     "quantity": 3,
     "unit": "tbsp",
-    "note": ""
+    "note": "for the filling"
    },
    {
     "name": "sugar",
     "quantity": 150,
     "unit": "g",
-    "note": ""
+    "note": "for the filling"
    },
    {
     "name": "cinnamon",
     "quantity": 0.25,
     "unit": "tsp",
-    "note": ""
+    "note": "ground"
    },
    {
     "name": "lemon juice",
     "quantity": 1,
     "unit": "tsp",
-    "note": ""
+    "note": "fresh"
    },
    {
     "name": "butter",
-    "quantity": 2,
-    "unit": "tbsp",
-    "note": ""
+    "quantity": 28,
+    "unit": "g",
+    "note": "unsalted, small chunks, to dot the filling"
    },
    {
     "name": "milk",
     "quantity": 2,
     "unit": "tbsp",
-    "note": ""
+    "note": "to glaze the lattice"
    },
    {
     "name": "sugar",
     "quantity": null,
     "unit": "",
-    "note": "to sprinkle"
+    "note": "to sprinkle over the glaze"
    }
   ],
   "steps": [
    {
-    "text": "Pie Crust: In a food processor, place the flour, salt, and sugar and process until combined. Add the butter and process until the mixture resembles coarse.",
+    "text": "For the crust, process the flour, salt and sugar in a food processor, then add the cold butter and process to a coarse meal (about 15 seconds). Stream in 60 ml ice water until the dough just holds together when pinched, adding more only if needed.",
     "minutes": null
    },
    {
-    "text": "Meal (about 15 seconds). Pour 1/4 cup (60 ml) water in a slow, steady stream, through the feed tube until the dough just holds together when pinched. If necessary, add more water. Do not process more than 30 seconds.",
-    "minutes": null
-   },
-   {
-    "text": "Turn the dough onto your work surface and gather into a ball. Divide the dough in half, flattening each half into a disk, cover with plastic wrap, and refrigerate for about one hour before using.",
+    "text": "Divide the dough in half, flatten into two discs, wrap and chill for about 1 hour.",
     "minutes": 60
    },
    {
-    "text": "This will chill the butter and relax the gluten in the flour.",
-    "minutes": null
-   },
-   {
-    "text": "After the dough has chilled sufficiently, remove one portion of the dough from the fridge and place it on a lightly floured surface. Roll the pastry into a 12 inch (30 cm) circle.",
-    "minutes": null
-   },
-   {
-    "text": "(To prevent the pastry from sticking to the counter and to ensure uniform thickness, keep lifting up and turning the pastry a quarter turn as you roll (always roll from the center of the pastry outwards).) Fold the dough in half and gently transfer to a 9 inch (23 cm) pie pan.",
-    "minutes": null
-   },
-   {
-    "text": "Brush off any excess flour and trim any overhanging pastry to an edge of 1/2 inch (1.5 cm). Refrigerate the pastry, covered with plastic wrap, while you make the filling.",
-    "minutes": null
-   },
-   {
-    "text": "Remove the second round of pastry and roll it into a 13 inch (30 cm) circle. Using a pastry wheel or pizza cutter, cut the pastry into about 3/4 inch (2 cm) strips.",
-    "minutes": null
-   },
-   {
-    "text": "Place the strips of pastry on a parchment paper-lined baking sheet, cover with plastic wrap, and place in the refrigerator for about 10 minutes.",
+    "text": "Roll one disc into a 30 cm circle and fit it into a 9 inch (23 cm) pie pan. Trim the overhang to 1.5 cm and chill. Roll the second disc, cut it into 2 cm strips and chill them on a lined tray for about 10 minutes.",
     "minutes": 10
    },
    {
-    "text": "Make the Strawberry Rhubarb Filling: Place the cut strawberries and rhubarb in a large bowl. In a small bowl mix together the cornstarch, sugar, and ground cinnamon.",
+    "text": "Toss the strawberries and rhubarb in a large bowl. Mix the cornflour, sugar and cinnamon, scatter about 2 tablespoons over the pastry base and toss the rest through the fruit.",
     "minutes": null
    },
    {
-    "text": "Remove the chilled pie crust from the fridge. Sprinkle about 2 tablespoons of the sugar mixture over the bottom of the pastry crust. Add the remaining sugar mixture to the strawberries and rhubarb and gently toss to combine.",
+    "text": "Pour the fruit into the pie shell, sprinkle with the lemon juice and dot with the butter.",
     "minutes": null
    },
    {
-    "text": "Pour the fruit mixture into the prepared pie shell. Sprinkle the fruit with about 1 teaspoon of lemon juice and dot with 2 tablespoons of butter.",
+    "text": "Weave the pastry strips into a lattice over the fruit, trim, then fold the edges under the bottom crust and flute. Brush the lattice with milk and sprinkle with sugar, then chill while the oven heats.",
     "minutes": null
    },
    {
-    "text": "Remove the lattice pastry from the refrigerator and, starting at the center with the longest strips and working outwards, place half the strips, spacing about 1 inch (2.5 cm) apart, on top of the filling.",
-    "minutes": null
-   },
-   {
-    "text": "(Use the shortest pastry strips at the outer edges.) Then, gently fold back, about halfway, every other strip of pastry. Take another strip of pastry and place it perpendicular on top of the first strips of pastry.",
-    "minutes": null
-   },
-   {
-    "text": "Unfold the bottom strips of pastry and then fold back the strips that weren't folded back the first time. Lay another strip of pastry perpendicular on top of the filling and then continue with the remaining strips.",
-    "minutes": null
-   },
-   {
-    "text": "Trim the edges of the pastry strips, leaving a 1 inch (2.5 cm) overhang. Seal the edges of the pastry strips by folding them under the bottom pastry crust and flute the edges of the pastry.",
-    "minutes": null
-   },
-   {
-    "text": "Brush the lattice pastry with milk and sprinkle with a little sugar. Cover and place in the refrigerator while you preheat the oven to 200°C (400°F) (205 degrees C) and place the oven rack in the lower third of the oven.",
-    "minutes": null
-   },
-   {
-    "text": "Put a baking sheet, lined with aluminum foil, on the oven rack (to catch any spills.)",
-    "minutes": null
-   },
-   {
-    "text": "Place the pie plate on the hot baking sheet and bake the pie for about 35 minutes and then, if the edges of the pie are browning too much, cover with a foil ring.",
+    "text": "Heat the oven to 205°C with the rack in the lower third and a foil-lined baking sheet on it to catch drips. Bake the pie on the sheet for about 35 minutes, covering the edge with a foil ring if it browns too fast.",
     "minutes": 35
    },
    {
-    "text": "Continue to bake the pie for about another 10 minutes or until the crust is a golden brown color and the fruit juices begin to bubble.",
+    "text": "Bake about 10 minutes more, until the crust is golden and the juices bubble. Cool on a rack for several hours, then serve at room temperature with whipped cream or vanilla ice cream.",
     "minutes": 10
-   },
-   {
-    "text": "Remove the pie from the oven and place on a wire rack to cool for several hours. Serve at room temperature with softly whipped cream or vanilla ice cream. Leftovers can be stored in the refrigerator for about 3 days. Reheat before serving. This pie can be frozen. Makes one 9 inch (23 cm) pie.",
-    "minutes": null
    }
   ]
  },
@@ -74599,33 +74763,15 @@
  },
  {
   "source": "themealdb:52889",
-  "title": "Summer Pudding",
-  "description": "A British sweet made with strawberries, blackberries and redcurrants — serves 8, ready in under half an hour.",
+  "title": "Summer pudding",
+  "description": "Raspberries, redcurrants and blackcurrants stewed briefly with sugar, set into a bread-lined pudding basin, weighted and chilled overnight, then turned out and served with cream.",
   "servings": 8,
   "cuisine": "British",
   "category": "Dessert",
   "image": "https://www.themealdb.com/images/media/meals/rsqwus1511640214.jpg",
-  "prep_minutes": 10,
-  "cook_minutes": 10,
+  "prep_minutes": 20,
+  "cook_minutes": 5,
   "ingredients": [
-   {
-    "name": "strawberries",
-    "quantity": 300,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "blackberries",
-    "quantity": 250,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "redcurrants",
-    "quantity": 100,
-    "unit": "g",
-    "note": ""
-   },
    {
     "name": "raspberries",
     "quantity": 500,
@@ -74633,300 +74779,358 @@
     "note": ""
    },
    {
-    "name": "sugar",
-    "quantity": 175,
+    "name": "redcurrants",
+    "quantity": 150,
     "unit": "g",
     "note": ""
    },
    {
-    "name": "bread",
-    "quantity": 7,
-    "unit": "slice",
-    "note": ""
-   }
-  ],
-  "steps": [
-   {
-    "text": "Bring out the juices: Wash fruit and gently dry on kitchen paper – keep strawberries separate. Put sugar and 3 tbsp water into a large pan. Gently heat until sugar dissolves – stir a few times.",
-    "minutes": null
-   },
-   {
-    "text": "Bring to a boil for 1 min, then tip in the fruit (not strawberries). Cook for 3 mins over a low heat, stirring 2-3 times. The fruit will be softened, mostly intact and surrounded by dark red juice.",
-    "minutes": 3
-   },
-   {
-    "text": "Put a sieve over a bowl and tip in the fruit and juice.",
-    "minutes": null
-   },
-   {
-    "text": "Line the bowl with cling film and prepare the bread: Line the 1.25-litre basin with cling film as this will help you to turn out the pudding.",
-    "minutes": null
-   },
-   {
-    "text": "Overlap two pieces of cling film in the middle of the bowl as it’s easier than trying to get one sheet to stick to all of the curves. Let the edges overhang by about 15cm. Cut the crusts off the bread.",
-    "minutes": null
-   },
-   {
-    "text": "Cut 4 pieces of bread in half, a little on an angle, to give 2 lopsided rectangles per piece. Cut 2 slices into 4 triangles each and leave the final piece whole.",
-    "minutes": null
-   },
-   {
-    "text": "Build the pud: Dip the whole piece of bread into the juice for a few secs just to coat. Push this into the bottom of the basin.",
-    "minutes": null
-   },
-   {
-    "text": "Now dip the wonky rectangular pieces one at a time and press around the basin’s sides so that they fit together neatly, alternately placing wide and narrow ends up.",
-    "minutes": null
-   },
-   {
-    "text": "If you can’t quite fit the last piece of bread in it doesn’t matter, just trim into a triangle, dip in juice and slot in. Now spoon in the softened fruit, adding the strawberries here and there as you go.",
-    "minutes": null
-   },
-   {
-    "text": "Let flavours mingle then serve: Dip the bread triangles in juice and place on top – trim off overhang with scissors. Keep leftover juice for later. Bring cling film up and loosely seal. Put a side plate on top and weight down with cans.",
-    "minutes": null
-   },
-   {
-    "text": "Chill for 6 hrs or overnight. To serve, open out cling film then put a serving plate upside-down on top and flip over. serve with leftover juice, any extra berries and cream.",
-    "minutes": 360
-   }
-  ]
- },
- {
-  "source": "themealdb:53065",
-  "title": "Sushi",
-  "description": "A Japanese dish of sushi rice, mayonnaise and cucumber — serves 4, ready in under half an hour.",
-  "servings": 4,
-  "cuisine": "Japanese",
-  "category": "Seafood",
-  "image": "https://www.themealdb.com/images/media/meals/g046bb1663960946.jpg",
-  "prep_minutes": 10,
-  "cook_minutes": 5,
-  "ingredients": [
-   {
-    "name": "sushi rice",
-    "quantity": 300,
-    "unit": "ml",
-    "note": ""
-   },
-   {
-    "name": "shaoxing wine",
-    "quantity": 100,
-    "unit": "ml",
+    "name": "blackcurrants",
+    "quantity": 150,
+    "unit": "g",
     "note": ""
    },
    {
     "name": "sugar",
-    "quantity": 2,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "mayonnaise",
     "quantity": 3,
     "unit": "tbsp",
     "note": ""
    },
    {
-    "name": "shaoxing wine",
-    "quantity": 1,
+    "name": "water",
+    "quantity": 3,
     "unit": "tbsp",
-    "note": ""
+    "note": "added to the berries in the pan"
    },
    {
-    "name": "soy sauce",
-    "quantity": 1,
+    "name": "bread",
+    "quantity": 8,
+    "unit": "slice",
+    "note": "thick white slices, crusts cut off"
+   },
+   {
+    "name": "butter",
+    "quantity": null,
+    "unit": "",
+    "note": "for greasing the basin"
+   },
+   {
+    "name": "cream",
+    "quantity": null,
+    "unit": "",
+    "note": "thick cream or ice cream, to serve"
+   }
+  ],
+  "steps": [
+   {
+    "text": "Put the berries in a pan with the sugar and 3 tbsp water. Bring slowly to the boil until the berries start to give up their juice, then simmer for 3-4 minutes and leave to cool.",
+    "minutes": 3
+   },
+   {
+    "text": "Cut the crusts off the bread and cut each slice into 3 strips.",
+    "minutes": null
+   },
+   {
+    "text": "Lightly grease a 1 litre (2 pint) pudding basin with butter and line it with the bread, cutting pieces to fit.",
+    "minutes": null
+   },
+   {
+    "text": "Pour in the juice and berries and cover the top with a layer of bread.",
+    "minutes": null
+   },
+   {
+    "text": "Stand the basin on a plate to catch juices, put a saucer smaller than the basin on top, and weigh it down with about 2 kg. Refrigerate overnight.",
+    "minutes": null
+   },
+   {
+    "text": "Remove the weight and saucer, run a palette knife around the inside of the basin, and turn the pudding out onto a plate. Drizzle over any extra juice.",
+    "minutes": null
+   },
+   {
+    "text": "Serve in slices with thick cream or ice cream.",
+    "minutes": null
+   }
+  ]
+ },
+ {
+  "source": "themealdb:53065",
+  "title": "Sushi rolls (hosomaki)",
+  "description": "Thin sushi rolls of seasoned short-grain rice and nori filled with tuna, cucumber or natto, rolled with a bamboo mat. Makes 10 rolls (60 pieces), served for about 4 people.",
+  "servings": 4,
+  "cuisine": "Japanese",
+  "category": "Seafood",
+  "image": "https://i.ytimg.com/vi/K5wdfUWckK4/hqdefault.jpg",
+  "prep_minutes": 60,
+  "cook_minutes": 0,
+  "ingredients": [
+   {
+    "name": "sushi rice",
+    "quantity": 2.25,
+    "unit": "cup",
+    "note": "Japanese short-grain white rice (3 rice cooker cups), uncooked"
+   },
+   {
+    "name": "water",
+    "quantity": 2.25,
+    "unit": "cup",
+    "note": "for cooking the rice"
+   },
+   {
+    "name": "kombu",
+    "quantity": 5,
+    "unit": "cm",
+    "note": "piece, optional, cooked with the rice"
+   },
+   {
+    "name": "rice vinegar",
+    "quantity": 0.33,
+    "unit": "cup",
+    "note": "unseasoned, for the sushi seasoning"
+   },
+   {
+    "name": "sugar",
+    "quantity": 3,
     "unit": "tbsp",
-    "note": ""
+    "note": "for the sushi seasoning"
+   },
+   {
+    "name": "salt",
+    "quantity": 1.5,
+    "unit": "tsp",
+    "note": "Diamond Crystal kosher salt, for the sushi seasoning"
    },
    {
     "name": "cucumber",
     "quantity": 1,
     "unit": "",
-    "note": ""
+    "note": "Japanese or Persian; makes 8 rolls"
+   },
+   {
+    "name": "sashimi-grade tuna",
+    "quantity": 194,
+    "unit": "g",
+    "note": "sashimi-grade; makes 12 rolls"
+   },
+   {
+    "name": "natto",
+    "quantity": 1,
+    "unit": "pack",
+    "note": "1 box; makes 2 rolls"
+   },
+   {
+    "name": "nori",
+    "quantity": 5,
+    "unit": "",
+    "note": "full sheets, cut in half"
+   },
+   {
+    "name": "water",
+    "quantity": 0.25,
+    "unit": "cup",
+    "note": "for the hand-dipping water (tezu)"
+   },
+   {
+    "name": "rice vinegar",
+    "quantity": 2,
+    "unit": "tsp",
+    "note": "for the hand-dipping water (tezu)"
+   },
+   {
+    "name": "soy sauce",
+    "quantity": null,
+    "unit": "",
+    "note": "to serve"
+   },
+   {
+    "name": "wasabi",
+    "quantity": null,
+    "unit": "",
+    "note": "optional, to serve"
+   },
+   {
+    "name": "pickled ginger",
+    "quantity": null,
+    "unit": "",
+    "note": "optional, to serve"
    }
   ],
   "steps": [
    {
-    "text": "Pat out some rice. Lay a nori sheet on the mat, shiny-side down. Dip your hands in the vinegared water, then pat handfuls of rice on top in a 1cm thick layer, leaving the furthest edge from you clear.",
+    "text": "Wash the rice until the water runs mostly clear and drain well. Put it in a rice cooker with an equal volume of water and the kombu, soak 20-30 minutes, then cook.",
+    "minutes": 20
+   },
+   {
+    "text": "Heat the rice vinegar, sugar and salt until the sugar dissolves. Spread the hot cooked rice in a wide bowl, remove the kombu, pour over the seasoning and cut through the rice while fanning until glossy and about body temperature. Keep covered with a damp cloth.",
     "minutes": null
    },
    {
-    "text": "Spread over some Japanese mayonnaise. Use a spoon to spread out a thin layer of mayonnaise down the middle of the rice.",
+    "text": "Cut the cucumber into 8 thin strips with the seeds removed, cut the tuna into long strips, and mix the natto with its seasoning packet until sticky.",
     "minutes": null
    },
    {
-    "text": "Add the filling. Get your child to top the mayonnaise with a line of their favourite fillings – here we’ve used tuna and cucumber.",
+    "text": "Mix 1/4 cup water with 2 tsp rice vinegar for dipping your fingers, and cut each nori sheet in half.",
     "minutes": null
    },
    {
-    "text": "Roll it up. Lift the edge of the mat over the rice, applying a little pressure to keep everything in a tight roll.",
+    "text": "Lay a nori half on the mat, shiny side down. With wet fingers spread about 1/2 cup (80 g) rice over it, leaving a 2.5 cm strip of nori clear along the far edge.",
     "minutes": null
    },
    {
-    "text": "Stick down the sides like a stamp. When you get to the edge without any rice, brush with a little water and continue to roll into a tight roll.",
+    "text": "Lay one filling (tuna, cucumber or natto) along the middle of the rice, then roll the mat over it, shape the roll and rotate once to seal the nori edge.",
     "minutes": null
    },
    {
-    "text": "Wrap in cling film. Remove the mat and roll tightly in cling film before a grown-up cuts the sushi into thick slices, then unravel the cling film.",
-    "minutes": null
-   },
-   {
-    "text": "Layer over some smoked salmon. Line a loaf tin with cling film, then place a thin layer of smoked salmon inside on top of the cling film.",
-    "minutes": null
-   },
-   {
-    "text": "Cover with rice and press down. Press about 3cm of rice over the fish, fold the cling film over and press down as much as you can, using another tin if you have one.",
-    "minutes": null
-   },
-   {
-    "text": "Tip it out like a sandcastle. Turn block of sushi onto a chopping board. Get a grown-up to cut into fingers, then remove the cling film.",
-    "minutes": null
-   },
-   {
-    "text": "Choose your topping. Get a small square of cling film and place a topping, like half a prawn or a small piece of smoked salmon, on it. Use damp hands to roll walnut-sized balls of rice and place on the topping.",
-    "minutes": null
-   },
-   {
-    "text": "Make into tight balls. Bring the corners of the cling film together and tighten into balls by twisting it up, then unwrap and serve.",
+    "text": "Wet a knife, cut each roll in half, then each half into 3 pieces. Serve with soy sauce, wasabi and pickled ginger, ideally right away.",
     "minutes": null
    }
   ]
  },
  {
   "source": "themealdb:53376",
-  "title": "Sweet and Sour Chicken",
-  "description": "A Chinese dish of chicken thigh, egg whites and pineapple — serves 4, about an hour start to finish.",
-  "servings": 4,
+  "title": "Sweet and sour chicken",
+  "description": "Bite-sized chicken marinated, dipped in a light egg white batter and deep-fried, then tossed with red and green capsicum in a ketchup, sugar and vinegar sauce.",
+  "servings": 2,
   "cuisine": "Chinese",
   "category": "Chicken",
-  "image": "https://www.themealdb.com/images/media/meals/arzs741766434335.jpg",
-  "prep_minutes": 20,
-  "cook_minutes": 45,
+  "image": "https://i.ytimg.com/vi/cblsP5S9PhU/hqdefault.jpg",
+  "prep_minutes": 30,
+  "cook_minutes": 20,
   "ingredients": [
    {
-    "name": "chicken thigh",
-    "quantity": 455,
+    "name": "chicken",
+    "quantity": 300,
     "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "egg whites",
-    "quantity": 1,
-    "unit": "",
-    "note": "large"
+    "note": "boneless, bite-sized pieces; a mix of dark and white meat works"
    },
    {
     "name": "salt",
-    "quantity": 1,
+    "quantity": 0.5,
     "unit": "tsp",
-    "note": ""
+    "note": "for the marinade"
+   },
+   {
+    "name": "black pepper",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": "for the marinade"
+   },
+   {
+    "name": "plain flour",
+    "quantity": 3,
+    "unit": "tbsp",
+    "note": "for the batter"
    },
    {
     "name": "cornflour",
     "quantity": 2,
     "unit": "tsp",
-    "note": ""
+    "note": "for the batter"
    },
    {
-    "name": "pineapple",
-    "quantity": 280,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "pineapple juice",
+    "name": "baking powder",
     "quantity": 0.25,
-    "unit": "cup",
-    "note": ""
+    "unit": "tsp",
+    "note": "for the batter"
    },
    {
-    "name": "white vinegar",
+    "name": "salt",
     "quantity": 0.25,
-    "unit": "cup",
-    "note": ""
+    "unit": "tsp",
+    "note": "for the batter"
+   },
+   {
+    "name": "egg whites",
+    "quantity": 1,
+    "unit": "",
+    "note": "from 1 egg, for the batter"
+   },
+   {
+    "name": "water",
+    "quantity": 4,
+    "unit": "tbsp",
+    "note": "chilled, for the batter"
    },
    {
     "name": "tomato ketchup",
-    "quantity": 0.25,
-    "unit": "cup",
-    "note": ""
+    "quantity": 4,
+    "unit": "tbsp",
+    "note": "for the sauce"
    },
    {
-    "name": "brown sugar",
+    "name": "sugar",
     "quantity": 3,
     "unit": "tbsp",
-    "note": ""
+    "note": "for the sauce"
+   },
+   {
+    "name": "white vinegar",
+    "quantity": 3,
+    "unit": "tbsp",
+    "note": "for the sauce"
+   },
+   {
+    "name": "dark soy sauce",
+    "quantity": 0.75,
+    "unit": "tsp",
+    "note": "for the sauce"
+   },
+   {
+    "name": "capsicum",
+    "quantity": 70,
+    "unit": "g",
+    "note": "green, cubed (about 1 cup)"
+   },
+   {
+    "name": "capsicum",
+    "quantity": 70,
+    "unit": "g",
+    "note": "red, cubed (about 1 cup)"
    },
    {
     "name": "vegetable oil",
-    "quantity": 4,
-    "unit": "tsp",
-    "note": ""
+    "quantity": 0.5,
+    "unit": "tbsp",
+    "note": "for stir-frying the peppers"
    },
    {
-    "name": "capsicum",
-    "quantity": 1,
+    "name": "vegetable oil",
+    "quantity": null,
     "unit": "",
-    "note": "chopped"
-   },
-   {
-    "name": "capsicum",
-    "quantity": 1,
-    "unit": "",
-    "note": "chopped"
-   },
-   {
-    "name": "ginger",
-    "quantity": 1,
-    "unit": "tsp",
-    "note": ""
+    "note": "for deep-frying the chicken; amount not given"
    }
   ],
   "steps": [
    {
-    "text": "In a bowl, combine the chicken with the egg white, 1/2 teaspoon kosher salt, and cornstarch. Stir to coat the chicken evenly. Let sit for 15 minutes at room temperature or up to overnight in the refrigerator.",
-    "minutes": 15
+    "text": "Drain the chicken, pat it dry if needed and cut it into bite-sized pieces. Marinate with the salt and pepper for 20 minutes.",
+    "minutes": 20
    },
    {
-    "text": "Whisk together the pineapple juice, vinegar, ketchup, 1/2 teaspoon kosher salt, and brown sugar.",
+    "text": "Mix the ketchup, sugar, vinegar and dark soy sauce in a small bowl for the sauce, and set aside.",
     "minutes": null
    },
    {
-    "text": "Heat a large frying pan or wok over high heat until a bead of water instantly sizzles and evaporates. Pour in 1 tablespoon of cooking oil and swirl to coat. It's important that the pan is very hot.",
+    "text": "Mix the flour, cornflour, baking powder, salt, egg white and chilled water into a batter.",
     "minutes": null
    },
    {
-    "text": "Add the chicken and spread the pieces out in one layer. Let the chicken fry untouched for 1 minute, until the bottoms are browned.",
+    "text": "Heat oil for deep-frying in a skillet or wok until medium hot. Dip the chicken pieces in the batter and drop them in side by side without crowding.",
     "minutes": null
    },
    {
-    "text": "Flip and fry the other side for 1 minute. The chicken should still be pinkish in the middle. Dish out the chicken onto a clean plate, leaving as much oil in the pan as possible.",
-    "minutes": null
+    "text": "Fry on medium heat for 1 minute without turning, then keep turning for another 4-5 minutes until golden. Remove and repeat with the next batch.",
+    "minutes": 6
    },
    {
-    "text": "Reduce the heat to medium and add the remaining 1 teaspoon of cooking oil. Let the oil heat up before adding the bell pepper chunks and ginger. Fry for 1 minute.",
-    "minutes": null
+    "text": "Heat 1/2 tbsp oil in a wok on high heat, add the peppers and stir-fry for 1 minute.",
+    "minutes": 1
    },
    {
-    "text": "Add the pineapple chunks and the sweet and sour sauce. Turn up the heat to high. When the sauce is simmering, add the chicken pieces back in.",
-    "minutes": null
+    "text": "Add the sauce and cook on high heat for another minute until thick.",
+    "minutes": 1
    },
    {
-    "text": "Let simmer for 1 to 2 minutes, until the chicken is cooked through. Timing depends on how thick you've cut your chicken. The best way to tell if the chicken is done is to take a piece out and cut into it.",
+    "text": "Add the fried chicken and stir-fry about 2 minutes to coat it well. Serve with noodles or fried rice.",
     "minutes": 2
-   },
-   {
-    "text": "If it's pink, add another minute to the cooking.",
-    "minutes": null
-   },
-   {
-    "text": "Taste the sauce and add more brown sugar or vinegar to suit your tastes, if you’d like.",
-    "minutes": null
-   },
-   {
-    "text": "Serve hot with steamed white or brown rice.",
-    "minutes": null
    }
   ]
  },
@@ -77220,8 +77424,8 @@
  },
  {
   "source": "themealdb:53212",
-  "title": "Thai drumsticks",
-  "description": "A Thai dish of chicken drumsticks, orange and sweet chilli sauce — serves 4, about an hour start to finish.",
+  "title": "Thai red curry drumsticks",
+  "description": "Chicken drumsticks marinated in red curry paste, lime juice, soy, ginger and garlic, then roasted until cooked through and sprinkled with coriander.",
   "servings": 4,
   "cuisine": "Thai",
   "category": "Chicken",
@@ -77230,50 +77434,90 @@
   "cook_minutes": 45,
   "ingredients": [
    {
-    "name": "sweet chilli sauce",
-    "quantity": 2,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "orange",
-    "quantity": 1,
-    "unit": "",
-    "note": "zested"
-   },
-   {
-    "name": "orange",
-    "quantity": 2,
-    "unit": "tbsp",
-    "note": ""
+    "name": "chicken drumsticks",
+    "quantity": 1.5,
+    "unit": "kg",
+    "note": "8 drumsticks"
    },
    {
     "name": "garlic",
-    "quantity": 1,
+    "quantity": 6,
     "unit": "clove",
-    "note": "peeled crushed"
+    "note": "peeled and minced"
+   },
+   {
+    "name": "ginger",
+    "quantity": 30,
+    "unit": "g",
+    "note": "peeled and minced"
+   },
+   {
+    "name": "lime juice",
+    "quantity": 60,
+    "unit": "ml",
+    "note": "fresh"
    },
    {
     "name": "thai red curry paste",
-    "quantity": 1,
+    "quantity": 65,
+    "unit": "g",
+    "note": "about 1/4 cup"
+   },
+   {
+    "name": "brown sugar",
+    "quantity": 2,
     "unit": "tbsp",
+    "note": "packed"
+   },
+   {
+    "name": "soy sauce",
+    "quantity": 80,
+    "unit": "ml",
+    "note": "light soy sauce"
+   },
+   {
+    "name": "vegetable oil",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": "peanut or vegetable oil"
+   },
+   {
+    "name": "salt",
+    "quantity": 1,
+    "unit": "tsp",
     "note": ""
    },
    {
-    "name": "chicken drumsticks",
-    "quantity": 8,
-    "unit": "",
-    "note": ""
+    "name": "coriander",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": "finely chopped, to serve"
    }
   ],
   "steps": [
    {
-    "text": "Heat oven to 200C/180C fan/gas 6 and line a baking tray with foil. Mix the chilli sauce with the orange zest and juice, garlic, curry paste and ¼ tsp salt. Add the chicken and coat really well.",
+    "text": "Slash each drumstick 2 or 3 times on both sides, down to the bone.",
     "minutes": null
    },
    {
-    "text": "Arrange the drumsticks on the foil, spaced apart. Coat the chicken with any marinade left in the bowl, then roast for 35-40 mins until tender. Wrap in foil or pack into a food container.",
-    "minutes": 40
+    "text": "Put the drumsticks in a large bowl with everything except the coriander and massage the marinade well into the chicken. Cover and marinate in the fridge for at least 2 hours or overnight.",
+    "minutes": 120
+   },
+   {
+    "text": "Take the chicken out of the fridge and rest it at room temperature for 30 minutes. In the last 15 minutes, heat a fan-forced oven to 180°C.",
+    "minutes": 30
+   },
+   {
+    "text": "Line a roasting tray with baking paper and foil, set the drumsticks on a raised rack and brush half the marinade over them.",
+    "minutes": null
+   },
+   {
+    "text": "Roast for 20 minutes, turn the drumsticks, brush with the remaining marinade and roast 15 to 20 minutes more until cooked through. Optionally grill on high for 5 minutes for colour.",
+    "minutes": 35
+   },
+   {
+    "text": "Sprinkle with coriander and serve.",
+    "minutes": null
    }
   ]
  },
@@ -80333,102 +80577,152 @@
  },
  {
   "source": "themealdb:52845",
-  "title": "Turkey Meatloaf",
-  "description": "A British dish of turkey mince, cannellini beans and tomato puree — serves 8, about an hour start to finish.",
-  "servings": 8,
-  "cuisine": "British",
+  "title": "Cheesy BBQ turkey meatloaf",
+  "description": "A turkey meatloaf with sauteed onion and garlic, crushed croutons, herbs, ketchup and BBQ sauce, folded through with Colby Jack cubes and glazed with more BBQ sauce.",
+  "servings": 4,
+  "cuisine": "American",
   "category": "Miscellaneous",
   "image": "https://www.themealdb.com/images/media/meals/ypuxtw1511297463.jpg",
   "prep_minutes": 15,
-  "cook_minutes": 60,
+  "cook_minutes": 35,
   "ingredients": [
    {
     "name": "olive oil",
     "quantity": 1,
     "unit": "tbsp",
-    "note": ""
+    "note": "1-2 tbsp, to saute the onion"
    },
    {
     "name": "onion",
-    "quantity": 1,
-    "unit": "",
-    "note": "large"
+    "quantity": 0.5,
+    "unit": "cup",
+    "note": "finely diced"
    },
    {
     "name": "garlic",
-    "quantity": 1,
-    "unit": "clove",
-    "note": "peeled crushed"
-   },
-   {
-    "name": "worcestershire sauce",
-    "quantity": 2,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "tomato puree",
     "quantity": 3,
-    "unit": "tsp",
-    "note": ""
+    "unit": "clove",
+    "note": "minced"
    },
    {
     "name": "turkey mince",
-    "quantity": 500,
+    "quantity": 450,
     "unit": "g",
-    "note": ""
+    "note": "ground turkey"
+   },
+   {
+    "name": "seasoned croutons",
+    "quantity": 0.5,
+    "unit": "cup",
+    "note": "crushed; 1/2-3/4 cup, or seasoned breadcrumbs"
    },
    {
     "name": "eggs",
     "quantity": 1,
     "unit": "",
-    "note": "large"
+    "note": ""
    },
    {
-    "name": "breadcrumbs",
-    "quantity": 85,
-    "unit": "g",
+    "name": "tomato ketchup",
+    "quantity": 2,
+    "unit": "tbsp",
     "note": ""
    },
    {
     "name": "barbecue sauce",
     "quantity": 2,
     "unit": "tbsp",
+    "note": "mixed with the ketchup"
+   },
+   {
+    "name": "salt",
+    "quantity": 1,
+    "unit": "tsp",
     "note": ""
    },
    {
-    "name": "cannellini beans",
-    "quantity": 800,
-    "unit": "g",
+    "name": "black pepper",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": ""
+   },
+   {
+    "name": "smoked paprika",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": ""
+   },
+   {
+    "name": "thyme",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": ""
+   },
+   {
+    "name": "oregano",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": ""
+   },
+   {
+    "name": "ground sage",
+    "quantity": 1,
+    "unit": "tsp",
     "note": ""
    },
    {
     "name": "parsley",
     "quantity": 2,
-    "unit": "tbsp",
-    "note": ""
+    "unit": "tsp",
+    "note": "plus more to garnish"
+   },
+   {
+    "name": "milk",
+    "quantity": 0.25,
+    "unit": "cup",
+    "note": "whole milk"
+   },
+   {
+    "name": "colby jack cheese",
+    "quantity": 0.75,
+    "unit": "cup",
+    "note": "cut into tiny cubes; 3/4-1 cup"
+   },
+   {
+    "name": "barbecue sauce",
+    "quantity": null,
+    "unit": "",
+    "note": "favourite BBQ sauce, to brush on top"
    }
   ],
   "steps": [
    {
-    "text": "Heat oven to 180C/160C fan/gas 4. Heat the oil in a large frying pan and cook the onion for 8-10 mins until softened. Add the garlic, Worcestershire sauce and 2 tsp tomato purée, and stir until combined. Set aside to cool.",
-    "minutes": 10
-   },
-   {
-    "text": "Put the turkey mince, egg, breadcrumbs and cooled onion mix in a large bowl and season well. Mix everything to combine, then shape into a rectangular loaf and place in a large roasting tin.",
+    "text": "Heat the oven to 175°C and lightly grease an 8.5 inch loaf pan.",
     "minutes": null
    },
    {
-    "text": "Spread 2 tbsp barbecue sauce over the meatloaf and bake for 30 mins.",
+    "text": "Saute the diced onion in the olive oil over medium heat until tender, add the garlic until fragrant, then take off the heat and cool.",
+    "minutes": null
+   },
+   {
+    "text": "In a large bowl combine the cooled onion and garlic, turkey, crushed croutons and egg. Stir the ketchup and BBQ sauce together and add it.",
+    "minutes": null
+   },
+   {
+    "text": "Add the salt, pepper, smoked paprika, thyme, oregano, sage and parsley, then the milk, and mix just until combined without overworking the meat.",
+    "minutes": null
+   },
+   {
+    "text": "Fold in the cheese cubes. Optionally fry a small test patty to check the seasoning.",
+    "minutes": null
+   },
+   {
+    "text": "Spoon the mixture into the pan and smooth the top. Brush with BBQ sauce and sprinkle with a little parsley.",
+    "minutes": null
+   },
+   {
+    "text": "Bake for 30 to 35 minutes, longer in some pans. Let it cool, then slice and serve.",
     "minutes": 30
-   },
-   {
-    "text": "Meanwhile, drain 1 can of beans only, then pour both cans into a large bowl. Add the remaining barbecue sauce and tomato purée. Season and set aside.",
-    "minutes": null
-   },
-   {
-    "text": "When the meatloaf has had its initial cooking time, scatter the beans around the outside and bake for 15 mins more until the meatloaf is cooked through and the beans are piping hot. Scatter over the parsley and serve the meatloaf in slices.",
-    "minutes": 15
    }
   ]
  },
@@ -80659,69 +80953,75 @@
  {
   "source": "themealdb:53252",
   "title": "Turkish rice (vermicelli rice)",
-  "description": "A Turkish dish of rice and vermicelli pasta — serves 4, on the table in about 45 minutes.",
+  "description": "Easy-cook long grain rice with browned crushed vermicelli, cooked by the absorption method in stock and left to steam under kitchen paper for fluffy separate grains.",
   "servings": 4,
   "cuisine": "Turkish",
-  "category": "Miscellaneous",
+  "category": "Side",
   "image": "https://www.themealdb.com/images/media/meals/xw1ruy1763786501.jpg",
-  "prep_minutes": 10,
-  "cook_minutes": 30,
+  "prep_minutes": 5,
+  "cook_minutes": 15,
   "ingredients": [
-   {
-    "name": "rice",
-    "quantity": 300,
-    "unit": "g",
-    "note": ""
-   },
    {
     "name": "vegetable oil",
     "quantity": 3,
     "unit": "tbsp",
-    "note": ""
+    "note": "sunflower, vegetable, rice bran or rapeseed"
    },
    {
     "name": "vermicelli pasta",
-    "quantity": 70,
-    "unit": "g",
-    "note": ""
+    "quantity": 4,
+    "unit": "tbsp",
+    "note": "crushed"
    },
    {
-    "name": "butter",
-    "quantity": 30,
-    "unit": "g",
-    "note": ""
+    "name": "rice",
+    "quantity": 1,
+    "unit": "cup",
+    "note": "easy cook long grain rice; 1 mug (mug size not stated: volume assumed to be 1 cup); washed in a sieve and drained"
    },
    {
-    "name": "chicken stock",
-    "quantity": 600,
-    "unit": "ml",
+    "name": "stock cube",
+    "quantity": 1,
+    "unit": "",
+    "note": "chicken or vegetable"
+   },
+   {
+    "name": "water",
+    "quantity": 2.5,
+    "unit": "cup",
+    "note": "boiling, to dissolve the stock cube; 2 1/2 mugs of the same mug as the rice (volume assumed 2.5 cups, keeping the creator's 1:2.5 ratio)"
+   },
+   {
+    "name": "salt",
+    "quantity": 0.25,
+    "unit": "tsp",
     "note": ""
    }
   ],
   "steps": [
    {
-    "text": "Pour the rice into a very large bowl under cold running water and carefully drain the water out of the bowl through a sieve.",
+    "text": "Wash the rice well in a sieve under cold water and leave it to drain.",
     "minutes": null
    },
    {
-    "text": "Repeat a few times until the water in the bowl is clear, then fill the bowl up with cold water and leave rice to soak for 10 mins while you cook the vermicelli.",
+    "text": "Heat the oil in a medium saucepan over medium heat, add the crushed vermicelli and brown it, stirring constantly. Take off the heat and cool for a minute or two.",
+    "minutes": null
+   },
+   {
+    "text": "Add the drained rice and stir so the rice and vermicelli are coated in oil.",
+    "minutes": null
+   },
+   {
+    "text": "Dissolve the stock cube in boiling water, using the same mug as the rice (2 1/2 mugfuls to 1 of rice). Pour it in, add the salt and stir once.",
+    "minutes": null
+   },
+   {
+    "text": "Return to a medium-low heat and cook for 10 to 12 minutes, until almost all the stock has evaporated and bubble holes appear in the rice.",
     "minutes": 10
    },
    {
-    "text": "Put the oil into a medium pan over medium heat.",
+    "text": "Turn off the heat, cover the pan with a sheet of kitchen paper and the lid, rest for a few minutes, then fluff with a fork and serve.",
     "minutes": null
-   },
-   {
-    "text": "Add the vermicelli and stir continuously until the strands turn a rich golden brown, 2-3 mins. Remove from the heat, stir through the butter until it melts and allow the vermicelli to cool for 1-2 mins.",
-    "minutes": 3
-   },
-   {
-    "text": "Drain the rice thoroughly through a sieve. Add the rice to the pan and stir well. Pour the hot stock into the pan, sprinkle in ½ tsp salt, stir well then return the pan to the hob over a high heat.",
-    "minutes": null
-   },
-   {
-    "text": "Bring to the boil, then reduce the heat to the lowest it will go, put the lid on the pan and simmer for 7-9 mins. Remove the pan from the heat, cover with a couple of sheets of kitchen paper or a light tea towel and the pan lid, and let the rice sit in the pan for 10 mins. Fluff up with a fork before serving.",
-    "minutes": 10
    }
   ]
  },
@@ -81492,121 +81792,117 @@
  },
  {
   "source": "themealdb:52863",
-  "title": "Vegetarian Casserole",
-  "description": "A British stew of brown lentils, carrot and celery — serves 4, about an hour start to finish.",
-  "servings": 4,
+  "title": "Vegetable stew",
+  "description": "An oven-baked stew of onion, swede, parsnips, carrots, leek and celery with chopped tomatoes, butter beans and stock, finished with fresh parsley.",
+  "servings": 3,
   "cuisine": "British",
   "category": "Vegetarian",
-  "image": "https://www.themealdb.com/images/media/meals/vptwyt1511450962.jpg",
-  "prep_minutes": 20,
-  "cook_minutes": 45,
+  "image": "https://i.ytimg.com/vi/oHmKE9mWtWM/hqdefault.jpg",
+  "prep_minutes": 15,
+  "cook_minutes": 90,
   "ingredients": [
    {
-    "name": "vegetable oil",
-    "quantity": 1,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
     "name": "onion",
-    "quantity": 1,
+    "quantity": 2,
     "unit": "",
-    "note": ""
+    "note": "peeled, roughly chopped"
    },
    {
     "name": "garlic",
-    "quantity": 3,
+    "quantity": 2,
     "unit": "clove",
-    "note": ""
+    "note": "peeled, roughly chopped"
    },
    {
-    "name": "paprika",
-    "quantity": 1,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "ground cumin",
-    "quantity": 0.5,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "thyme",
-    "quantity": 1,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "carrot",
-    "quantity": 3,
+    "name": "olive oil",
+    "quantity": null,
     "unit": "",
-    "note": "medium"
+    "note": "a little, to fry"
+   },
+   {
+    "name": "swede",
+    "quantity": 0.5,
+    "unit": "",
+    "note": "peeled, roughly chopped"
    },
    {
     "name": "celery",
     "quantity": 2,
     "unit": "",
-    "note": "small"
+    "note": "stalks, roughly chopped"
    },
    {
-    "name": "capsicum",
-    "quantity": 1,
+    "name": "parsnip",
+    "quantity": 2,
     "unit": "",
-    "note": ""
+    "note": "peeled, roughly chopped"
    },
    {
-    "name": "capsicum",
+    "name": "carrot",
+    "quantity": 2,
+    "unit": "",
+    "note": "peeled, roughly chopped"
+   },
+   {
+    "name": "leek",
     "quantity": 1,
     "unit": "",
-    "note": ""
+    "note": "roughly chopped"
    },
    {
     "name": "canned tomatoes",
-    "quantity": 800,
-    "unit": "g",
-    "note": "tins"
+    "quantity": 1,
+    "unit": "can",
+    "note": "chopped tomatoes"
    },
    {
-    "name": "vegetable stock",
-    "quantity": 250,
-    "unit": "ml",
-    "note": ""
+    "name": "butter beans",
+    "quantity": 1,
+    "unit": "can",
+    "note": "washed"
    },
    {
-    "name": "courgette",
-    "quantity": 2,
+    "name": "stock cube",
+    "quantity": 1,
     "unit": "",
-    "note": "sliced"
+    "note": "vegetable, made up with 300 ml boiling water"
    },
    {
-    "name": "thyme",
-    "quantity": 2,
-    "unit": "sprig",
-    "note": ""
+    "name": "water",
+    "quantity": 300,
+    "unit": "ml",
+    "note": "boiling, for the stock; top up if needed to just cover"
    },
    {
-    "name": "brown lentils",
-    "quantity": 250,
-    "unit": "g",
-    "note": ""
+    "name": "parsley",
+    "quantity": 1,
+    "unit": "handful",
+    "note": "fresh, to garnish"
    }
   ],
   "steps": [
    {
-    "text": "Heat the oil in a large, heavy-based pan. Add the onions and cook gently for 5 – 10 mins until softened.",
-    "minutes": 10
-   },
-   {
-    "text": "Add the garlic, spices, dried thyme, carrots, celery and peppers and cook for 5 minutes.",
+    "text": "Heat the oven to 180°C. Fry the roughly chopped onion and garlic in a little oil in a casserole on the hob for 5 minutes.",
     "minutes": 5
    },
    {
-    "text": "Add the tomatoes, stock, courgettes and fresh thyme and cook for 20 - 25 minutes.",
-    "minutes": 25
+    "text": "Meanwhile peel and roughly chop the swede, parsnips and carrots, and chop the celery and leek.",
+    "minutes": null
    },
    {
-    "text": "Take out the thyme sprigs. Stir in the lentils and bring back to a simmer. Serve with wild and white basmati rice, mash or quinoa.",
+    "text": "Add all the vegetables to the casserole with the chopped tomatoes and the washed butter beans.",
+    "minutes": null
+   },
+   {
+    "text": "Dissolve the stock cube in 300 ml boiling water, pour it in with some seasoning and stir well. Top up with boiling water if needed until the ingredients are just covered.",
+    "minutes": null
+   },
+   {
+    "text": "Put the lid on and cook in the oven for 60 to 90 minutes, until the sauce has thickened.",
+    "minutes": 60
+   },
+   {
+    "text": "Garnish with fresh parsley and serve.",
     "minutes": null
    }
   ]

@@ -3401,9 +3401,9 @@
   "videoId": "KTgAOhsTTC8",
   "title": "Mantu. Dumplings",
   "channel": "Halfghan Kitchen",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53400": {
   "videoId": null,
@@ -3675,9 +3675,9 @@
   "videoId": "kkrRFWN4LG4",
   "title": "How to Make Easy Oatmeal Pancakes",
   "channel": "The Stay At Home Chef",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53551": {
   "videoId": null,
@@ -3861,9 +3861,9 @@
   "videoId": "ACpikfieDP0",
   "title": "Pistachio Cake Recipe",
   "channel": "The Cooking Foodie",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53224": {
   "videoId": "vINcKAS7Ig8",
@@ -4000,12 +4000,10 @@
   "transcribed": true
  },
  "themealdb:52780": {
-  "videoId": "p3u8eiy3yHI",
-  "title": "Emma's Chicken Gratin",
-  "channel": "Ben's Menu",
+  "videoId": null,
+  "checked": "2026-10-29",
   "status": "rejected",
-  "reason": "the video's chicken gratin isn't confirmed to be a potato gratin",
-  "checked": "2026-10-20"
+  "reason": "The replacement video (Dainty bite, a small home-cooking channel) has only a short description with ingredient amounts and one paragraph of method: no stated yield, no exact steps, and it is not Ben & Emma's recipe from the catalogue. Not a reputable channel with a complete recipe, and servings would be a guess, so it is not shown."
  },
  "themealdb:53489": {
   "videoId": null,
@@ -4090,12 +4088,12 @@
   "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52921": {
-  "videoId": "B7isFo2uP2k",
-  "title": "Layered Omelettes",
-  "channel": "Helen Rennie",
-  "status": "rejected",
-  "reason": "video title doesn't match the dish",
-  "checked": "2026-10-20"
+  "videoId": "UR8UAlFJxLA",
+  "title": "6-Tier Omelet Cake = Cheesy Delight After 25 Minutes",
+  "channel": "Scrumdiddlyumptious",
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:52857": {
   "videoId": "hpapqEeb36k",
@@ -4253,9 +4251,9 @@
   "videoId": "VAR10T9mfhU",
   "title": "Polish Kolaczki Cookies",
   "channel": "Baker Bettie",
-  "status": "rejected",
-  "reason": "video title doesn't match the dish",
-  "checked": "2026-10-20"
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53118": {
   "videoId": "v4rIJOWXM3w",
@@ -4317,9 +4315,9 @@
   "videoId": "9j2qftITN-Y",
   "title": "Smoked Salmon Vietnamese Rolls | Easy Fresh Healthy No Cook Recipe | Kravings",
   "channel": "Kravings",
-  "status": "rejected",
-  "reason": "video title doesn't match the dish",
-  "checked": "2026-10-20"
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53233": {
   "videoId": "l1Ik6k22s1I",
@@ -4726,12 +4724,12 @@
   "transcribed": true
  },
  "themealdb:53040": {
-  "videoId": "Q24haJU-1dI",
-  "title": "Shrimp Empanada",
-  "channel": "MasquedFoodie",
-  "status": "rejected",
-  "reason": "video title doesn't match the dish",
-  "checked": "2026-10-20"
+  "videoId": "x1LCFRJYCkQ",
+  "title": "How to Make Shrimp Empanadas | Buttery, Flaky & Oven-Baked! | The Frugal Chef",
+  "channel": "The Frugal Chef",
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:52866": {
   "videoId": "xHZ-PoGwTLQ",
@@ -4757,9 +4755,9 @@
   "videoId": "Lo4_GdyetEU",
   "title": "The salad that's anything but sad | Vietnamese Beef & Crunchy Noodle Salad | Marion's Kitchen",
   "channel": "Marion Grasby",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:52881": {
   "videoId": "oTw5tPt4KmA",
@@ -4813,9 +4811,9 @@
   "videoId": "tGw5Pwm4YA0",
   "title": "Strawberry Rhubarb Pie Recipe Demonstration - Joyofbaking.com",
   "channel": "Joy of Baking",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53550": {
   "videoId": null,
@@ -4876,28 +4874,28 @@
   "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52889": {
-  "videoId": "akJIO6UhXtA",
-  "title": "SUMMER PUDDING RECIPE - SORTED",
-  "channel": "Sorted Food",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "videoId": "YXiIQZf_lPQ",
+  "title": "The Great British Summer Pudding Recipe",
+  "channel": "Titli's Busy Kitchen",
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53065": {
-  "videoId": "ub68OxEypaY",
-  "title": "Easy Authentic Sushi Hand Rolls At Home (Temaki)",
-  "channel": "Joshua Weissman",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "videoId": "K5wdfUWckK4",
+  "title": "How To Make Sushi Rolls (Hosomaki) (Recipe) 細巻きの作り方 （レシピ）",
+  "channel": "Just One Cookbook",
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53376": {
   "videoId": "cblsP5S9PhU",
   "title": "SWEET AND SOUR CHICKEN RECIPE  | SWEET AND SOUR CHICKEN WITH PINEAPPLE | SWEET AND SOUR CHICKEN",
   "channel": "Spice Eats",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:52949": {
   "videoId": "mdaBIhgEAMo",
@@ -4930,12 +4928,10 @@
   "checked": "2026-10-20"
  },
  "themealdb:53093": {
-  "videoId": "MGmaX9Uv_Gs",
-  "title": "Easy Exotic Syrian Spaghetti Food Recipe",
-  "channel": "Vegan Food Recipes",
+  "videoId": null,
+  "checked": "2026-10-29",
   "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "reason": "The video is a 70-second clip from 'Vegan Food Recipes', a repost-style channel linking relaxbuddy.com, whose description is a copied four-line recipe with no stated yield (servings would be inferred from a nutrition panel). The channel is not an established cooking channel and the clip cannot be confirmed to show the method, so it is not shown."
  },
  "themealdb:52950": {
   "videoId": "SQGZqZYz7Ms",
@@ -5069,9 +5065,9 @@
   "videoId": "lv1tj9FK3f0",
   "title": "Thai Red Curry Drumsticks | Affordable easy meal!",
   "channel": "3CatsFoodie",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53198": {
   "videoId": "9wZAYbPcF-I",
@@ -5244,12 +5240,10 @@
   "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52892": {
-  "videoId": "YMmgKCNcqwI",
-  "title": "Traditional Treacle Tart Recipe - SORTED",
-  "channel": "Sorted Food",
+  "videoId": null,
+  "checked": "2026-10-29",
   "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "reason": "The replacement (Roaming taste, 'How to bake British Treacle Tart', about 600 views, a small personal channel adapted from Saveur) was not accepted as a reputable source: its written recipe is internally inconsistent on filling amounts (cream '18 grams / 3 tablespoons', about 18 g versus 45 g; golden syrup '454 grams / 1 cup', which differ), gives no temperature for the final filling bake, and the original Sorted video's recipe page is a 404 with no recipe in its description. No verifiable video of this dish remains."
  },
  "themealdb:53416": {
   "videoId": "Ro-S7zlFvN4",
@@ -5289,9 +5283,9 @@
   "videoId": "mTvlmY4vCug",
   "title": "Cheesy BBQ Turkey Meatloaf",
   "channel": "Divas Can Cook",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53251": {
   "videoId": "8HTa64s8RK8",
@@ -5313,9 +5307,9 @@
   "videoId": "gY6PZzjO53M",
   "title": "Meliz Cooks EASY Vermicelli Rice",
   "channel": "Meliz Cooks",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53270": {
   "videoId": "RSXfGtom4RQ",
@@ -5359,9 +5353,9 @@
   "videoId": "oHmKE9mWtWM",
   "title": "How to make Vegetable Casserole Stew - Winter Warmer - Recipes by Warren Nash",
   "channel": "Warren Nash",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:52867": {
   "videoId": "D0bFRVH_EqU",
@@ -5380,12 +5374,10 @@
   "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52838": {
-  "videoId": "oWQDVgjB_Lw",
-  "title": "How to cook a delicious Duck Ragu",
-  "channel": "Gressingham Duck",
+  "videoId": null,
+  "checked": "2026-10-29",
   "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "reason": "Gressingham Duck's 66-second video has no recipe in its description (only a free-recipe-book sign-up link). The channel's duck ragu page (serves 2) lists no amount for the pasta, a main ingredient ('fresh pasta or homemade for 2 servings'), and the saved page text does not show a link to this video, so the video, the amounts and the page cannot be tied together from the evidence."
  },
  "themealdb:53325": {
   "videoId": "kbvh5XaBpJk",
