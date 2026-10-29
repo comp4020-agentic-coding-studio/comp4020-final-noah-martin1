@@ -36402,79 +36402,135 @@
  {
   "source": "themealdb:53387",
   "title": "Dutch Spiced Breakfast Cake (Ontbijtkoek)",
-  "description": "A Dutch sweet made with self-raising flour and cardamom — serves 8, worth the couple of hours it takes.",
+  "description": "A moist, spiced Dutch loaf cake sweetened with honey, molasses and brown sugar, flavoured with cinnamon, cardamom and ginger, and best eaten the day after baking.",
   "servings": 8,
   "cuisine": "Dutch",
   "category": "Dessert",
   "image": "https://www.themealdb.com/images/media/meals/uwq8001777540502.jpg",
   "prep_minutes": 15,
-  "cook_minutes": 115,
+  "cook_minutes": 50,
   "ingredients": [
    {
-    "name": "self-raising flour",
-    "quantity": 250,
+    "name": "plain flour",
+    "quantity": 150,
     "unit": "g",
-    "note": ""
+    "note": "all-purpose"
    },
    {
-    "name": "brown sugar",
-    "quantity": 250,
+    "name": "wholemeal flour",
+    "quantity": 150,
     "unit": "g",
-    "note": ""
+    "note": "wholewheat; the page also says rye flour"
    },
    {
-    "name": "milk",
-    "quantity": 250,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "sugar",
-    "quantity": 4,
-    "unit": "",
-    "note": ""
-   },
-   {
-    "name": "ginger",
+    "name": "salt",
     "quantity": 1,
-    "unit": "tbsp",
-    "note": ""
+    "unit": "tsp",
+    "note": "table salt"
+   },
+   {
+    "name": "cinnamon",
+    "quantity": 1.5,
+    "unit": "tsp",
+    "note": "ground"
    },
    {
     "name": "cardamom",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "ground"
+   },
+   {
+    "name": "ground ginger",
     "quantity": 0.5,
     "unit": "tsp",
     "note": ""
    },
    {
-    "name": "baking powder",
-    "quantity": 1,
+    "name": "ground coriander",
+    "quantity": 0.5,
     "unit": "tsp",
     "note": ""
    },
    {
-    "name": "salt",
+    "name": "cloves",
+    "quantity": 0.25,
+    "unit": "tsp",
+    "note": "ground"
+   },
+   {
+    "name": "nutmeg",
+    "quantity": 0.25,
+    "unit": "tsp",
+    "note": "ground"
+   },
+   {
+    "name": "black pepper",
+    "quantity": 0.25,
+    "unit": "tsp",
+    "note": "ground"
+   },
+   {
+    "name": "brown sugar",
+    "quantity": 100,
+    "unit": "g",
+    "note": "light brown"
+   },
+   {
+    "name": "baking powder",
     "quantity": 1,
-    "unit": "pinch",
+    "unit": "tbsp",
+    "note": ""
+   },
+   {
+    "name": "milk",
+    "quantity": 250,
+    "unit": "ml",
+    "note": "warmed, not scalded"
+   },
+   {
+    "name": "honey",
+    "quantity": 160,
+    "unit": "g",
+    "note": ""
+   },
+   {
+    "name": "molasses",
+    "quantity": 60,
+    "unit": "g",
+    "note": "black molasses"
+   },
+   {
+    "name": "vanilla extract",
+    "quantity": 2,
+    "unit": "tsp",
     "note": ""
    }
   ],
   "steps": [
    {
-    "text": "Preheat the oven to 160°C (320°F) Line a cake pan with parchment paper and set aside.",
+    "text": "Heat the oven to 160°C with the rack in the middle. Grease and line a loaf tin.",
     "minutes": null
    },
    {
-    "text": "Mix all the dry ingredients together in a large bowl. Place the milk in a small saucepan and heat it until it is almost boiling but not quite.",
+    "text": "Whisk the flours, salt, all the spices, brown sugar and baking powder together in a large bowl.",
     "minutes": null
    },
    {
-    "text": "Pour the milk slowly into the dry ingredients while whisking. Don't overmix! As soon as it is combined to a smooth batter you pour it into the cake pan. Sprinkle the pearl sugar over the top and bake it in the oven for about 1 hour.",
-    "minutes": 60
+    "text": "Warm the milk on the stove or in the microwave until warm but not scalded. Whisk in the honey, molasses and vanilla.",
+    "minutes": null
    },
    {
-    "text": "Check after about 50 minutes how the cake is progressing. If a cake tester comes out clean the cake it cooked. If not let it cook for a little longer.",
+    "text": "Pour the wet mixture into the dry and whisk until just smooth, without overmixing.",
+    "minutes": null
+   },
+   {
+    "text": "Pour the batter into the tin and bake for 50 to 60 minutes, until a skewer comes out clean.",
     "minutes": 50
+   },
+   {
+    "text": "Cool in the tin for 15 to 25 minutes, then lift out onto a wire rack to cool completely. It is best served the next day.",
+    "minutes": 20
    }
   ]
  },
@@ -40179,131 +40235,77 @@
  },
  {
   "source": "themealdb:53413",
-  "title": "Flija Layered Pancake / Crepe",
-  "description": "An Albanian breakfast of greek yoghurt, clotted cream and sour cream — makes 16, a slow cook that's worth the wait.",
-  "servings": 16,
+  "title": "Flija layered pancake",
+  "description": "Kosovo's national dish: thin flour batter pancakes baked in layers with a yoghurt mixture until the top is golden and crusty, served in wedges.",
+  "servings": 3,
   "cuisine": "Albanian",
-  "category": "Breakfast",
+  "category": "Vegetarian",
   "image": "https://www.themealdb.com/images/media/meals/eqnf3p1779649407.jpg",
   "prep_minutes": 20,
-  "cook_minutes": 145,
+  "cook_minutes": 60,
   "ingredients": [
    {
     "name": "plain flour",
-    "quantity": 1000,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "water",
-    "quantity": 1000,
-    "unit": "ml",
-    "note": ""
+    "quantity": 2,
+    "unit": "cup",
+    "note": "all-purpose, for the batter"
    },
    {
     "name": "salt",
-    "quantity": 1,
-    "unit": "tsp",
-    "note": ""
+    "quantity": null,
+    "unit": "",
+    "note": "a pinch in the batter and a pinch in the yoghurt, to taste"
+   },
+   {
+    "name": "water",
+    "quantity": null,
+    "unit": "",
+    "note": "added gradually for a thin, crepe-like batter"
+   },
+   {
+    "name": "yoghurt",
+    "quantity": 4,
+    "unit": "cup",
+    "note": "plain; or a mix of yoghurt and water"
    },
    {
     "name": "butter",
-    "quantity": 220,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "vegetable oil",
-    "quantity": 200,
-    "unit": "ml",
-    "note": ""
-   },
-   {
-    "name": "greek yoghurt",
-    "quantity": 5,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "butter",
-    "quantity": 220,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "vegetable oil",
-    "quantity": 200,
-    "unit": "ml",
-    "note": ""
-   },
-   {
-    "name": "clotted cream",
-    "quantity": 3,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "butter",
-    "quantity": 220,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "sour cream",
-    "quantity": 500,
-    "unit": "ml",
-    "note": ""
-   },
-   {
-    "name": "olive oil",
-    "quantity": 3,
-    "unit": "tbsp",
-    "note": ""
+    "quantity": 0.5,
+    "unit": "cup",
+    "note": "melted, to grease the dish"
    }
   ],
   "steps": [
    {
-    "text": "Prepare the Flour Batter: mix together the flour, water and salt ensuring all the lumps are dissolved. The mixture should be thick but still of a pouring consistency, add a little extra water if required. Put to one side. Prepare the Batter Filling.",
+    "text": "Whisk the flour and a pinch of salt with water, adding the water gradually, into a smooth batter as thin as crepe batter.",
     "minutes": null
    },
    {
-    "text": "Mix together the butter, oil and chosen yogurt / cream ensuring all the lumps are dissolved. The mixture should be runny, leave to rest for 10 minutes before given it another good mix. The consistency should be similar to custard. Put to one side. Baking.",
-    "minutes": 10
-   },
-   {
-    "text": "Preheat the gill to a medium setting (I use mark 4 of 6). Take a large deep baking tray or pie pan and rub some olive oil over the base.",
+    "text": "In another bowl, stir a pinch of salt into the yoghurt (or yoghurt thinned with water).",
     "minutes": null
    },
    {
-    "text": "Make the first layer of flour batter using a squirty bottle or laydel, don't try to pour the batter as it will be too thick in the pan. You need to make a star effect by leaving triangles between each line of batter layers.",
+    "text": "Heat the oven to 175°C and brush a round oven-safe dish with melted butter.",
     "minutes": null
    },
    {
-    "text": "Place under the grill until golden brown. This will take between 3 - 5 minutes.",
-    "minutes": 5
-   },
-   {
-    "text": "Remove from under the grill and using a brush or the back of spoon rub over the whole pan (both battered and un-battered areas) a layer of the batter filling.",
+    "text": "Pour a thin layer of batter into the dish and spread it in a sun shape: a central circle with gaps every 5 cm. Bake briefly.",
     "minutes": null
    },
    {
-    "text": "Then, add a layer of the flour filling, use the same star effect this time placing the lines of batter through the gaps left from the previous layering. Also, leaving the same triangle shapes between each line.",
+    "text": "Spread a thin layer of the yoghurt mixture over the cooked batter, then add another layer of batter and bake again.",
     "minutes": null
    },
    {
-    "text": "Place under the grill until golden brown. This will take between 3 - 5 minutes.",
-    "minutes": 5
-   },
-   {
-    "text": "Repeat step 4 until all the mixture has been used and ensuring each triangle gap is filled with flour batter on each layer - this will take around 2 hours.",
-    "minutes": 120
-   },
-   {
-    "text": "After every couple of layers, use one layer just to fill up any spaces (large gaps between the batter stars) that may have started to show. Serving.",
+    "text": "Keep alternating batter and yoghurt, baking each layer briefly, until you have about 10 layers or more.",
     "minutes": null
    },
    {
-    "text": "Once the Flija is ready serve straight away with honey or yogurt.",
+    "text": "Cover the dish with foil and bake for 1 to 1.5 hours, until cooked through. Leave it in the oven until crusty, or finish under the grill, for a crisp top.",
+    "minutes": 60
+   },
+   {
+    "text": "Cut into wedges like a pie and serve warm, with honey or with pickled vegetables and fresh cheese.",
     "minutes": null
    }
   ]
@@ -41520,82 +41522,122 @@
  {
   "source": "themealdb:52764",
   "title": "Garides Saganaki",
-  "description": "A Greek dish of prawns, feta and canned tomatoes — serves 4, about an hour start to finish.",
+  "description": "Greek prawns seared and finished in a pureed tomato sauce with onion, garlic and spring onion, topped with feta and grilled until bubbling and lightly charred.",
   "servings": 4,
   "cuisine": "Greek",
   "category": "Seafood",
   "image": "https://www.themealdb.com/images/media/meals/wuvryu1468232995.jpg",
   "prep_minutes": 15,
-  "cook_minutes": 45,
+  "cook_minutes": 25,
   "ingredients": [
    {
     "name": "prawns",
-    "quantity": 500,
+    "quantity": 450,
     "unit": "g",
-    "note": ""
+    "note": "jumbo, peeled and deveined, tails on"
+   },
+   {
+    "name": "salt",
+    "quantity": null,
+    "unit": "",
+    "note": "to taste; go easy as the feta is salty"
+   },
+   {
+    "name": "black pepper",
+    "quantity": null,
+    "unit": "",
+    "note": "freshly ground, to taste"
    },
    {
     "name": "olive oil",
-    "quantity": 3,
-    "unit": "tbsp",
+    "quantity": 0.5,
+    "unit": "cup",
     "note": ""
    },
    {
     "name": "onion",
-    "quantity": 1,
+    "quantity": 0.5,
     "unit": "",
-    "note": ""
-   },
-   {
-    "name": "parsley",
-    "quantity": 1,
-    "unit": "pinch",
-    "note": ""
-   },
-   {
-    "name": "white wine",
-    "quantity": 250,
-    "unit": "ml",
-    "note": ""
-   },
-   {
-    "name": "canned tomatoes",
-    "quantity": 400,
-    "unit": "g",
-    "note": ""
+    "note": "medium, finely chopped"
    },
    {
     "name": "garlic",
-    "quantity": 0.5,
+    "quantity": 3,
+    "unit": "clove",
+    "note": "grated; recipe says 3-4"
+   },
+   {
+    "name": "canned tomatoes",
+    "quantity": 425,
+    "unit": "g",
+    "note": "pureed; recipe says 15-16 oz"
+   },
+   {
+    "name": "sugar",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": ""
+   },
+   {
+    "name": "red chilli flakes",
+    "quantity": 1,
+    "unit": "pinch",
+    "note": "crushed"
+   },
+   {
+    "name": "spring onion",
+    "quantity": 4,
+    "unit": "",
+    "note": "finely chopped; recipe says 4-6"
+   },
+   {
+    "name": "dried oregano",
+    "quantity": 1,
     "unit": "tsp",
     "note": ""
    },
    {
     "name": "feta",
-    "quantity": 200,
+    "quantity": 115,
     "unit": "g",
-    "note": ""
+    "note": "crumbled"
+   },
+   {
+    "name": "parsley",
+    "quantity": 1,
+    "unit": "handful",
+    "note": "chopped, to garnish"
+   },
+   {
+    "name": "lemon",
+    "quantity": null,
+    "unit": "",
+    "note": "wedges, to garnish"
    }
   ],
   "steps": [
    {
-    "text": "Place the prawns in a pot and add enough water to cover. Boil for 5 minutes. Drain, reserving the liquid, and set aside.",
-    "minutes": 5
-   },
-   {
-    "text": "Heat 2 tablespoons of oil in a saucepan. Add the onion; cook and stir until soft. Mix in the parsley, wine, tomatoes, garlic and remaining olive oil. Simmer, stirring occasionally, for about 30 minutes, or until the sauce is thickened.",
-    "minutes": 30
-   },
-   {
-    "text": "While the sauce is simmering, the prawns should become cool enough to handle. First remove the legs by pinching them, and then pull off the shells, leaving the head and tail on.",
+    "text": "Season the prawns lightly on both sides with salt and pepper. Sear them in a hot oven-safe skillet in batches for 30 to 40 seconds a side, without crowding the pan.",
     "minutes": null
    },
    {
-    "text": "When the sauce has thickened, stir in the prawns. Bring to a simmer again if the sauce has cooled with the prawns, and cook for about 5 minutes. Add the feta and remove from the heat. Let stand until the cheese starts to melt. Serve warm with slices of crusty bread.",
+    "text": "Lower the heat and cook the onion for 5 to 7 minutes until soft and slightly golden. Add the garlic for a few seconds.",
+    "minutes": 7
+   },
+   {
+    "text": "Add the tomato puree, sugar, chilli flakes, pepper and a little salt, plus the oregano (the page lists it but does not say when it goes in). Cover and cook for 6 to 7 minutes until the sauce reduces and thickens.",
+    "minutes": 7
+   },
+   {
+    "text": "Stir in the spring onions, prawns and crumbled feta.",
+    "minutes": null
+   },
+   {
+    "text": "Put the pan under the grill for about 5 minutes, until the feta melts and the sauce is bubbly and slightly charred.",
     "minutes": 5
    },
    {
-    "text": "Though completely untraditional, you can add a few tablespoons of stock or passata to this recipe to make a delicious pasta sauce. Toss with pasta after adding the feta, and serve.",
+    "text": "Garnish with parsley and lemon wedges, and serve with crusty toasted bread or over pasta.",
     "minutes": null
    }
   ]
@@ -41972,94 +42014,120 @@
  {
   "source": "themealdb:53012",
   "title": "Gigantes Plaki",
-  "description": "A Greek dish of butter beans, tomato puree and tomato — serves 2, worth the couple of hours it takes.",
-  "servings": 2,
+  "description": "Greek giant beans boiled until tender, then baked in an oregano and tomato sauce and topped with crumbled feta, parsley and olives on the side.",
+  "servings": 8,
   "cuisine": "Greek",
   "category": "Vegetarian",
   "image": "https://www.themealdb.com/images/media/meals/b79r6f1585566277.jpg",
-  "prep_minutes": 15,
-  "cook_minutes": 75,
+  "prep_minutes": 20,
+  "cook_minutes": 110,
   "ingredients": [
    {
     "name": "butter beans",
-    "quantity": 400,
+    "quantity": 450,
     "unit": "g",
-    "note": ""
+    "note": "giant butter or lima beans, soaked in water overnight"
+   },
+   {
+    "name": "salt",
+    "quantity": 1.5,
+    "unit": "tsp",
+    "note": "plus salt for the cooking water and to season the beans"
    },
    {
     "name": "olive oil",
-    "quantity": 3,
-    "unit": "tbsp",
-    "note": ""
+    "quantity": 0.5,
+    "unit": "cup",
+    "note": "some to drizzle on the beans, 1/4 cup for the sauce"
    },
    {
     "name": "onion",
     "quantity": 1,
     "unit": "",
-    "note": "chopped"
+    "note": "large, finely chopped"
    },
    {
     "name": "garlic",
-    "quantity": 2,
-    "unit": "",
-    "note": "chopped"
+    "quantity": 4,
+    "unit": "clove",
+    "note": "large, finely chopped or grated"
    },
    {
-    "name": "tomato puree",
-    "quantity": 2,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "tomato",
+    "name": "canned tomatoes",
     "quantity": 800,
     "unit": "g",
-    "note": ""
+    "note": "28 oz can, pureed in a blender"
    },
    {
-    "name": "sugar",
-    "quantity": 1,
-    "unit": "tbsp",
+    "name": "black pepper",
+    "quantity": 0.5,
+    "unit": "tsp",
     "note": ""
    },
    {
     "name": "dried oregano",
-    "quantity": 1,
-    "unit": "tbsp",
+    "quantity": 2,
+    "unit": "tsp",
     "note": ""
    },
    {
-    "name": "cinnamon",
-    "quantity": 1,
-    "unit": "pinch",
+    "name": "sugar",
+    "quantity": 2,
+    "unit": "tsp",
     "note": ""
+   },
+   {
+    "name": "red chilli flakes",
+    "quantity": 0.25,
+    "unit": "tsp",
+    "note": "crushed"
+   },
+   {
+    "name": "feta",
+    "quantity": 1,
+    "unit": "cup",
+    "note": "crumbled; 'about 1 cup or more'"
    },
    {
     "name": "parsley",
-    "quantity": 2,
-    "unit": "tbsp",
-    "note": ""
+    "quantity": 0.25,
+    "unit": "cup",
+    "note": "chopped, to garnish"
+   },
+   {
+    "name": "black olives",
+    "quantity": null,
+    "unit": "",
+    "note": "to serve"
    }
   ],
   "steps": [
    {
-    "text": "Soak the beans overnight in plenty of water. Drain, rinse, then place in a pan covered with water. Bring to the boil, reduce the heat, then simmer for approx 50 mins until slightly tender but not soft. Drain, then set aside.",
-    "minutes": 50
+    "text": "Drain the soaked beans, cover with cold salted water and boil for about 40 minutes, until tender but not mushy. Drain and spread in a 9x13 inch baking dish, drizzle with olive oil and season with salt.",
+    "minutes": 40
    },
    {
-    "text": "Heat oven to 180C/160C fan/gas 4. Heat the olive oil in a large frying pan, tip in the onion and garlic, then cook over a medium heat for 10 mins until softened but not browned.",
+    "text": "Heat the oven to 200°C.",
+    "minutes": null
+   },
+   {
+    "text": "Heat 1/4 cup olive oil in a saucepan and cook the onion over medium-low heat for 10 to 15 minutes until soft and golden. Add the garlic until fragrant.",
+    "minutes": 15
+   },
+   {
+    "text": "Add the tomato puree, salt, pepper, oregano, sugar and chilli flakes. Bring to the boil and cook the sauce for 3 to 5 minutes.",
+    "minutes": 5
+   },
+   {
+    "text": "Pour the sauce over the beans, mix well and bake uncovered for about 45 minutes.",
+    "minutes": 45
+   },
+   {
+    "text": "Top with crumbled feta, tucking it into the sauce, and bake for 10 more minutes.",
     "minutes": 10
    },
    {
-    "text": "Add the tomato purée, cook for a further min, add remaining ingredients, then simmer for 2-3 mins. Season generously, then stir in the beans.",
-    "minutes": 3
-   },
-   {
-    "text": "Tip into a large ovenproof dish, then bake for approximately 1 hr, uncovered and without stirring, until the beans are tender. The beans will absorb all the fabulous flavours and the sauce will thicken.",
-    "minutes": 60
-   },
-   {
-    "text": "Allow to cool, then scatter with parsley and drizzle with a little more olive oil to serve.",
+    "text": "If the sauce has all been absorbed, stir in about a cup of hot water. Top with parsley and serve with olives and salad.",
     "minutes": null
    }
   ]
@@ -55736,105 +55804,123 @@
  },
  {
   "source": "themealdb:53245",
-  "title": "Noodle bowl salad",
-  "description": "A Vietnamese salad of smoked salmon, rice noodles and sugar snap peas — serves 2, on the table in about 45 minutes.",
-  "servings": 2,
+  "title": "Vietnamese chicken salad with noodles",
+  "description": "Shredded rotisserie chicken tossed with carrot, cabbage, chilli, mint and fried shallots in a honey, vinegar and fish sauce dressing, served with rice vermicelli bundles, lettuce and herbs.",
+  "servings": 4,
   "cuisine": "Vietnamese",
-  "category": "Seafood",
-  "image": "https://www.themealdb.com/images/media/meals/zry07j1763779321.jpg",
-  "prep_minutes": 20,
-  "cook_minutes": 10,
+  "category": "Chicken",
+  "image": "https://i.ytimg.com/vi/7EAdKeikJ9o/hqdefault.jpg",
+  "prep_minutes": 10,
+  "cook_minutes": 2,
   "ingredients": [
    {
-    "name": "rice noodles",
-    "quantity": 125,
-    "unit": "g",
-    "note": ""
+    "name": "chicken",
+    "quantity": 1,
+    "unit": "",
+    "note": "roast or rotisserie, bones discarded, meat shredded"
    },
    {
-    "name": "sugar snap peas",
-    "quantity": 200,
-    "unit": "g",
-    "note": ""
+    "name": "carrot",
+    "quantity": 1,
+    "unit": "",
+    "note": "small, finely julienned"
    },
    {
-    "name": "sesame oil",
-    "quantity": 2,
-    "unit": "tsp",
-    "note": ""
+    "name": "cabbage",
+    "quantity": 1,
+    "unit": "cup",
+    "note": "finely shredded"
+   },
+   {
+    "name": "chilli",
+    "quantity": 1,
+    "unit": "",
+    "note": "long red, finely sliced"
+   },
+   {
+    "name": "mint",
+    "quantity": 0.5,
+    "unit": "cup",
+    "note": "torn leaves, plus extra to serve"
    },
    {
     "name": "spring onion",
-    "quantity": 4,
+    "quantity": 2,
     "unit": "",
-    "note": "sliced"
+    "note": "finely sliced"
    },
    {
-    "name": "coriander",
-    "quantity": 1,
-    "unit": "handful",
+    "name": "fried shallots",
+    "quantity": 0.25,
+    "unit": "cup",
     "note": ""
    },
    {
-    "name": "smoked salmon",
-    "quantity": 150,
+    "name": "rice noodles",
+    "quantity": 270,
     "unit": "g",
-    "note": ""
+    "note": "rice vermicelli, 1 packet"
    },
    {
-    "name": "pretzels",
+    "name": "thai basil",
     "quantity": null,
     "unit": "",
-    "note": "to serve"
+    "note": "optional, to serve"
    },
    {
-    "name": "soy sauce",
-    "quantity": 3,
-    "unit": "tbsp",
-    "note": ""
+    "name": "lettuce",
+    "quantity": null,
+    "unit": "",
+    "note": "butter lettuce leaves, to serve"
+   },
+   {
+    "name": "crunchy fried noodles",
+    "quantity": 0.25,
+    "unit": "cup",
+    "note": "to sprinkle on top"
    },
    {
     "name": "honey",
-    "quantity": 1,
+    "quantity": 0.25,
+    "unit": "cup",
+    "note": "for the dressing"
+   },
+   {
+    "name": "white vinegar",
+    "quantity": 2,
     "unit": "tbsp",
-    "note": ""
+    "note": "for the dressing"
    },
    {
-    "name": "lemon juice",
-    "quantity": 1,
+    "name": "fish sauce",
+    "quantity": 2,
     "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "vegetable oil",
-    "quantity": 1,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "garlic",
-    "quantity": 1,
-    "unit": "clove",
-    "note": "finely chopped"
-   },
-   {
-    "name": "ginger",
-    "quantity": 1,
-    "unit": "knob",
-    "note": ""
+    "note": "for the dressing"
    }
   ],
   "steps": [
    {
-    "text": "Drop the noodles into a large bowl, then pour over enough boiling water to cover. Tip in the sliced sugar snaps and leave for 4 minutes. Drain in a colander, put under cold running water to cool off, then drain again.",
-    "minutes": 4
-   },
-   {
-    "text": "Tip into a bowl and toss in the sesame oil.",
+    "text": "Bring a large pot of water to the boil.",
     "minutes": null
    },
    {
-    "text": "Mix the dressing ingredients. Pile spring onions, coriander and salmon onto the noodles, pour over the dressing and toss everything together. Serve with a pretzel or bread roll.",
+    "text": "Put the shredded chicken in a large bowl with the carrot, cabbage, chilli, mint, spring onion and fried shallots, and set aside.",
+    "minutes": null
+   },
+   {
+    "text": "Whisk the honey, vinegar and fish sauce into a dressing. Toss half of it through the chicken mixture by hand, using just a light coating, and keep the rest for serving.",
+    "minutes": null
+   },
+   {
+    "text": "Cook the rice vermicelli in the boiling water for 2 minutes until just cooked, then drain and rinse under the tap to cool.",
+    "minutes": 2
+   },
+   {
+    "text": "Shape the noodles into small bundles on a platter and add the lettuce leaves, extra mint and Thai basil if using.",
+    "minutes": null
+   },
+   {
+    "text": "Scatter the crunchy fried noodles over the dressed chicken salad and serve with the noodle bundles, herbs, lettuce and the extra dressing.",
     "minutes": null
    }
   ]
@@ -57578,112 +57664,170 @@
  },
  {
   "source": "themealdb:53152",
-  "title": "Pan-fried hake, white bean & chorizo broth",
-  "description": "A Spanish soup of cannellini beans, chorizo and bread — serves 4, worth the couple of hours it takes.",
-  "servings": 4,
+  "title": "Pan-roasted hake with chorizo and chickpea stew",
+  "description": "Hake fillets pan-roasted skin-side down and basted with garlic, thyme and butter, served on a spicy chorizo and chickpea stew finished with lemon and parsley.",
+  "servings": 2,
   "cuisine": "Spanish",
   "category": "Seafood",
-  "image": "https://www.themealdb.com/images/media/meals/4yjart1763248459.jpg",
-  "prep_minutes": 20,
-  "cook_minutes": 60,
+  "image": "https://i.ytimg.com/vi/6hcNBBob_xI/hqdefault.jpg",
+  "prep_minutes": 15,
+  "cook_minutes": 30,
   "ingredients": [
    {
-    "name": "cannellini beans",
-    "quantity": 450,
+    "name": "chorizo",
+    "quantity": 250,
     "unit": "g",
+    "note": "1 piece, in large slices"
+   },
+   {
+    "name": "smoked paprika",
+    "quantity": 1,
+    "unit": "tsp",
     "note": ""
    },
    {
+    "name": "ground cumin",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": "cumin seeds, ground"
+   },
+   {
+    "name": "fennel seeds",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": "ground"
+   },
+   {
+    "name": "red onion",
+    "quantity": 2,
+    "unit": "",
+    "note": "sliced"
+   },
+   {
+    "name": "celery",
+    "quantity": 1,
+    "unit": "stick",
+    "note": "chopped"
+   },
+   {
     "name": "garlic",
-    "quantity": 4,
+    "quantity": 3,
     "unit": "clove",
-    "note": ""
+    "note": "finely chopped, for the stew"
    },
    {
     "name": "bay leaf",
     "quantity": 2,
-    "unit": "",
+    "unit": "leaf",
     "note": ""
    },
    {
     "name": "thyme",
-    "quantity": 1,
-    "unit": "tsp",
-    "note": ""
+    "quantity": 2,
+    "unit": "sprig",
+    "note": "for the stew"
    },
    {
-    "name": "olive oil",
-    "quantity": 6,
-    "unit": "tbsp",
-    "note": ""
+    "name": "rosé wine",
+    "quantity": 80,
+    "unit": "ml",
+    "note": "the recipe uses Mirabeau Classic Provence rosé"
    },
    {
-    "name": "bread",
-    "quantity": 100,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "chorizo",
-    "quantity": 100,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "onion",
-    "quantity": 1,
-    "unit": "",
-    "note": ""
-   },
-   {
-    "name": "paprika",
-    "quantity": 3,
-    "unit": "tsp",
-    "note": ""
+    "name": "canned tomatoes",
+    "quantity": 2,
+    "unit": "can",
+    "note": "chopped"
    },
    {
     "name": "chicken stock",
-    "quantity": 1000,
+    "quantity": 200,
     "unit": "ml",
     "note": ""
+   },
+   {
+    "name": "chickpeas",
+    "quantity": 2,
+    "unit": "can",
+    "note": "cooked, rinsed and drained (net weight 440g)"
+   },
+   {
+    "name": "lemon",
+    "quantity": 1,
+    "unit": "",
+    "note": "juiced"
    },
    {
     "name": "parsley",
     "quantity": 1,
     "unit": "handful",
-    "note": ""
+    "note": "chopped, stirred in at the end"
+   },
+   {
+    "name": "olive oil",
+    "quantity": null,
+    "unit": "",
+    "note": "for cooking and seasoning the fish"
+   },
+   {
+    "name": "salt",
+    "quantity": null,
+    "unit": "",
+    "note": "to taste"
    },
    {
     "name": "hake",
-    "quantity": 6,
+    "quantity": 2,
     "unit": "",
-    "note": ""
+    "note": "fillets, skin scored"
+   },
+   {
+    "name": "butter",
+    "quantity": 40,
+    "unit": "g",
+    "note": "for basting the fish"
+   },
+   {
+    "name": "thyme",
+    "quantity": 1,
+    "unit": "sprig",
+    "note": "for basting the fish"
+   },
+   {
+    "name": "garlic",
+    "quantity": 2,
+    "unit": "clove",
+    "note": "for basting the fish; recipe says 2/3"
    }
   ],
   "steps": [
    {
-    "text": "Drain the beans, then tip into a large pan with 2 litres of water. Simmer with the whole garlic cloves, bay leaves and thyme for 30 mins or until cooked and tender. Remove from the heat and set aside.",
-    "minutes": 30
-   },
-   {
-    "text": "Meanwhile, heat 2 tbsp oil in a frying pan. Fry the bread with the remaining garlic clove. When golden and crisp, scoop out and drain on kitchen paper. Add the chorizo to the pan, fry until crisp, tip out and keep warm with the bread.",
+    "text": "Fry the chorizo slices in a heavy pan until browned, then remove them, leaving some of the fat in the pan.",
     "minutes": null
    },
    {
-    "text": "Add another 2 tbsp oil and the onion to the pan, and cook for 5 mins until softened. Stir in the paprika. Drain the beans and add to the onions with the chicken stock and 2 tsp salt.",
+    "text": "Fry the ground spices in the fat, then add the onion and celery with a pinch of salt and cook a few minutes until soft. Add the garlic and herbs and cook a minute more.",
     "minutes": 5
    },
    {
-    "text": "Cook for 5-10 mins. Stir through the parsley and keep warm.",
+    "text": "Deglaze with the wine and reduce until nearly gone. Add the tomatoes and chicken stock, bring to the boil, then simmer on low for 10 minutes.",
     "minutes": 10
    },
    {
-    "text": "Season the hake and heat the remaining 2 tbsp oil in the frying pan. Put the hake, skin-side down, in the pan and cook for 3-5 mins over a mediumhigh heat to crisp up the skin.",
+    "text": "Add the chickpeas and cook 5 more minutes, then keep warm. Just before serving, add the juice of the lemon, season well and stir in the parsley.",
     "minutes": 5
    },
    {
-    "text": "Flip the fish over and cook for a further 3-5 mins until cooked through. Spoon the white bean mix into bowls, place the hake on top and finish with the fried bread, chorizo and a little more thyme.",
-    "minutes": 5
+    "text": "Meanwhile heat a frying pan over medium-high heat. Dry the fish skin, season with oil and salt, and fry skin-side down for 2 to 3 minutes until browned.",
+    "minutes": 3
+   },
+   {
+    "text": "Flip the fish and cook 1 minute, then add the thyme, garlic and butter and baste until just cooked through. Rest for a couple of minutes.",
+    "minutes": 1
+   },
+   {
+    "text": "Spoon the stew into bowls, set the hake on top and finish with chopped parsley.",
+    "minutes": null
    }
   ]
  },
@@ -57856,84 +58000,130 @@
  {
   "source": "themealdb:52902",
   "title": "Parkin Cake",
-  "description": "A British sweet made with molasses, rolled oats and self-raising flour — serves 8, worth the couple of hours it takes.",
-  "servings": 8,
+  "description": "A sticky, chewy Yorkshire-style ginger cake made with steel cut oats, black treacle, golden syrup and crystallised ginger, baked in a square tin and left to rest for a few days before eating.",
+  "servings": 16,
   "cuisine": "British",
   "category": "Dessert",
   "image": "https://www.themealdb.com/images/media/meals/qxuqtt1511724269.jpg",
-  "prep_minutes": 15,
-  "cook_minutes": 65,
+  "prep_minutes": 20,
+  "cook_minutes": 75,
   "ingredients": [
    {
-    "name": "butter",
-    "quantity": 200,
+    "name": "steel cut oats",
+    "quantity": 180,
+    "unit": "g",
+    "note": "pulsed in a food processor until broken down, not a flour"
+   },
+   {
+    "name": "plain flour",
+    "quantity": 90,
+    "unit": "g",
+    "note": "all-purpose"
+   },
+   {
+    "name": "baking powder",
+    "quantity": 1.5,
+    "unit": "tsp",
+    "note": ""
+   },
+   {
+    "name": "ground ginger",
+    "quantity": 2,
+    "unit": "tsp",
+    "note": "ginger powder"
+   },
+   {
+    "name": "allspice",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": ""
+   },
+   {
+    "name": "nutmeg",
+    "quantity": 0.25,
+    "unit": "tsp",
+    "note": ""
+   },
+   {
+    "name": "salt",
+    "quantity": 0.25,
+    "unit": "tsp",
+    "note": ""
+   },
+   {
+    "name": "golden syrup",
+    "quantity": 60,
+    "unit": "ml",
+    "note": "or corn syrup"
+   },
+   {
+    "name": "molasses",
+    "quantity": 155,
+    "unit": "ml",
+    "note": "black treacle"
+   },
+   {
+    "name": "brown sugar",
+    "quantity": 150,
     "unit": "g",
     "note": ""
+   },
+   {
+    "name": "butter",
+    "quantity": 115,
+    "unit": "g",
+    "note": ""
+   },
+   {
+    "name": "crystallised ginger",
+    "quantity": 45,
+    "unit": "g",
+    "note": "finely chopped"
    },
    {
     "name": "eggs",
     "quantity": 1,
     "unit": "",
-    "note": "large"
+    "note": "lightly beaten"
    },
    {
     "name": "milk",
-    "quantity": 4,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "golden syrup",
-    "quantity": 200,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "molasses",
-    "quantity": 85,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "brown sugar",
-    "quantity": 85,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "rolled oats",
-    "quantity": 100,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "self-raising flour",
-    "quantity": 250,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "ground ginger",
-    "quantity": 1,
+    "quantity": 2,
     "unit": "tbsp",
     "note": ""
    }
   ],
   "steps": [
    {
-    "text": "Heat oven to 160C/140C fan/gas 3. Grease a deep 22cm/9in square cake tin and line with baking parchment. Beat the egg and milk together with a fork.",
+    "text": "Heat the oven to 150°C and grease an 8 x 8 inch (20 cm) baking tin.",
     "minutes": null
    },
    {
-    "text": "Gently melt the syrup, treacle, sugar and butter together in a large pan until the sugar has dissolved. Remove from the heat. Mix together the oatmeal, flour and ginger and stir into the syrup mixture, followed by the egg and milk.",
+    "text": "Pulse the steel cut oats in a food processor to break them down, leaving some chunks.",
     "minutes": null
    },
    {
-    "text": "Pour the mixture into the tin and bake for 50 mins - 1 hr until the cake feels firm and a little crusty on top.",
-    "minutes": 60
+    "text": "Mix the oats, flour, baking powder, ginger, allspice, nutmeg and salt in a large bowl.",
+    "minutes": null
    },
    {
-    "text": "Cool in the tin then wrap in more parchment and foil and keep for 3-5 days before eating if you can – it’ll become softer and stickier the longer you leave it, up to 2 weeks.",
+    "text": "Melt the butter, brown sugar, black treacle and golden syrup in a small saucepan, stirring and not letting it boil. Take off the heat and cool for 5 minutes.",
+    "minutes": 5
+   },
+   {
+    "text": "Pour the warm syrup mixture into the dry ingredients and stir. Stir in the crystallised ginger, egg and milk.",
+    "minutes": null
+   },
+   {
+    "text": "Pour the batter into the tin and bake for about 1 hour 15 minutes, until a toothpick comes out clean. Cool in the tin for a few minutes.",
+    "minutes": 75
+   },
+   {
+    "text": "Turn out onto a board, remove the paper and cool for 10 to 15 minutes before cutting into squares.",
+    "minutes": 15
+   },
+   {
+    "text": "Store airtight and rest for 2 to 3 days so the flavour and stickiness develop.",
     "minutes": null
    }
   ]
@@ -58299,148 +58489,146 @@
  },
  {
   "source": "themealdb:53017",
-  "title": "Paszteciki (Polish Pasties)",
-  "description": "A Polish dish of beef brisket and swede — serves 4, about an hour start to finish.",
-  "servings": 4,
+  "title": "Paszteciki with sauerkraut and mushrooms",
+  "description": "Polish yeast-dough pasties rolled around a filling of sauerkraut and grated mushrooms fried with onion, sliced into short pieces and brushed with egg before baking.",
+  "servings": 6,
   "cuisine": "Polish",
-  "category": "Beef",
-  "image": "https://www.themealdb.com/images/media/meals/c9a3l31593261890.jpg",
-  "prep_minutes": 20,
-  "cook_minutes": 45,
+  "category": "Starter",
+  "image": "https://i.ytimg.com/vi/tE7UM_fZwNg/hqdefault.jpg",
+  "prep_minutes": 40,
+  "cook_minutes": 20,
   "ingredients": [
+   {
+    "name": "fresh yeast",
+    "quantity": 25,
+    "unit": "g",
+    "note": "for the starter"
+   },
+   {
+    "name": "milk",
+    "quantity": 0.25,
+    "unit": "cup",
+    "note": "lukewarm, for the starter (250 ml cup)"
+   },
+   {
+    "name": "sugar",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "for the starter"
+   },
    {
     "name": "plain flour",
     "quantity": 1,
+    "unit": "tbsp",
+    "note": "for the starter"
+   },
+   {
+    "name": "plain flour",
+    "quantity": 500,
+    "unit": "g",
+    "note": "for the dough"
+   },
+   {
+    "name": "milk",
+    "quantity": 0.75,
     "unit": "cup",
-    "note": ""
+    "note": "lukewarm, for the dough (250 ml cup)"
+   },
+   {
+    "name": "eggs",
+    "quantity": 1,
+    "unit": "",
+    "note": "for the dough"
    },
    {
     "name": "salt",
-    "quantity": 0.25,
+    "quantity": 1,
     "unit": "tsp",
-    "note": ""
+    "note": "for the dough"
    },
    {
-    "name": "eggs",
-    "quantity": 1,
-    "unit": "",
-    "note": "yolk"
+    "name": "vegetable oil",
+    "quantity": 0.25,
+    "unit": "cup",
+    "note": "for the dough (250 ml cup)"
    },
    {
-    "name": "eggs",
-    "quantity": 1,
-    "unit": "",
-    "note": ""
+    "name": "sauerkraut",
+    "quantity": 500,
+    "unit": "g",
+    "note": "for the filling"
    },
    {
-    "name": "butter",
-    "quantity": 5,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "butter",
-    "quantity": 6,
-    "unit": "tbsp",
-    "note": ""
+    "name": "mushrooms",
+    "quantity": 500,
+    "unit": "g",
+    "note": "grated, for the filling"
    },
    {
     "name": "onion",
-    "quantity": 0.333,
-    "unit": "cup",
-    "note": ""
-   },
-   {
-    "name": "swede",
-    "quantity": 0.5,
-    "unit": "cup",
-    "note": ""
-   },
-   {
-    "name": "beef brisket",
-    "quantity": 225,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "eggs",
-    "quantity": 2,
-    "unit": "",
-    "note": "beaten"
-   },
-   {
-    "name": "salt",
     "quantity": 1,
-    "unit": "tsp",
-    "note": ""
+    "unit": "",
+    "note": "medium, diced"
+   },
+   {
+    "name": "bay leaf",
+    "quantity": 1,
+    "unit": "leaf",
+    "note": "cooked with the sauerkraut"
+   },
+   {
+    "name": "allspice",
+    "quantity": null,
+    "unit": "",
+    "note": "ziele angielskie, cooked with the sauerkraut"
+   },
+   {
+    "name": "butter",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "or oil, for frying; 'łyżka'"
    },
    {
     "name": "black pepper",
-    "quantity": 0.25,
-    "unit": "tsp",
-    "note": ""
+    "quantity": null,
+    "unit": "",
+    "note": "to taste"
+   },
+   {
+    "name": "eggs",
+    "quantity": 1,
+    "unit": "",
+    "note": "beaten, to brush the pasties"
    }
   ],
   "steps": [
    {
-    "text": "Sift flour and salt into a large mixing bowl.",
+    "text": "Mix the yeast, lukewarm milk, sugar and a spoonful of flour into a starter and leave covered for about 15 minutes.",
+    "minutes": 15
+   },
+   {
+    "text": "Knead the dough ingredients with the starter until the dough leaves your hands. Cover and leave somewhere warm for about 1 hour to double.",
+    "minutes": 60
+   },
+   {
+    "text": "Meanwhile cook the sauerkraut covered with a little water, the bay leaf, allspice and a little salt for about 20 minutes. Chop it once cooked.",
+    "minutes": 20
+   },
+   {
+    "text": "Fry the diced onion until browned. Add the grated mushrooms and fry until the water evaporates, then stir in the sauerkraut, season with salt and pepper and take off the heat.",
     "minutes": null
    },
    {
-    "text": "Use a spoon to push the egg yolk through a fine sieve into the flour. Add the raw egg and mix well. Beat in butter 1 tablespoon at a time.",
+    "text": "Knead the risen dough briefly, roll it into a rectangle and cut into 4 long strips. Spread filling down the middle of each strip and roll it up into a log.",
     "minutes": null
    },
    {
-    "text": "Place dough on a floured surface and knead until smooth and elastic, then wrap in waxed paper and refrigerate until firm (at least 30 minutes).",
-    "minutes": 30
+    "text": "Cut the logs into 5 cm pieces and set them seam-side down on a lined tray. Leave 15 minutes to rise while the oven heats to 190°C.",
+    "minutes": 15
    },
    {
-    "text": "In a heavy skillet, melt 2 tablespoons butter over medium heat; saute the onion and rutabaga until the onion is soft and transparent (5 minutes).",
-    "minutes": 5
-   },
-   {
-    "text": "Put the onions, rutabaga, and beef through a meat grinder twice if you have one, if not just chop them up as fine as possible.",
-    "minutes": null
-   },
-   {
-    "text": "Melt the remaining 4 tablespoons butter over medium heat, and add the meat mixture.",
-    "minutes": null
-   },
-   {
-    "text": "Cook over low heat, stirring occasionally, until all of the liquid has evaporated and the mixture is thick enough to hold its shape.",
-    "minutes": null
-   },
-   {
-    "text": "Remove from heat and let cool, then stir in 1 egg, and season with salt and pepper. Preheat oven to 180°C (350°F)",
-    "minutes": null
-   },
-   {
-    "text": "On a lightly floured surface, roll the dough out into a 13x8\" rectangle (1/8\" thick).",
-    "minutes": null
-   },
-   {
-    "text": "Spoon the filling down the center of the rectangle lengthwise, leaving about an inch of space on each end.",
-    "minutes": null
-   },
-   {
-    "text": "Lightly brush the long sides with cold water, then fold one of the long sides over the filling and the other side over the top of that.",
-    "minutes": null
-   },
-   {
-    "text": "Brush the short ends with cold water and fold them over the top, enclosing the filling.",
-    "minutes": null
-   },
-   {
-    "text": "Place pastry seam side down on a baking sheet and brush the top evenly with the remaining scrambled egg.",
-    "minutes": null
-   },
-   {
-    "text": "Bake in preheated oven until rich golden brown (30 minutes).",
-    "minutes": 30
-   },
-   {
-    "text": "Slice pastry diagonally into 1.5\" long pieces and serve as an appetizer or with soup.",
-    "minutes": null
+    "text": "Brush with beaten egg and bake for about 20 minutes until browned. They can be frozen.",
+    "minutes": 20
    }
   ]
  },
@@ -61403,119 +61591,81 @@
  },
  {
   "source": "themealdb:53042",
-  "title": "Portuguese prego with green piri-piri",
-  "description": "A Portuguese dish of beef fillet, ciabatta and rocket — serves 4, worth the couple of hours it takes.",
-  "servings": 4,
+  "title": "Prego (Portuguese garlic steak sandwich)",
+  "description": "A thin tenderised steak studded with garlic and bay leaf, seared quickly in olive oil and served in a toasted bread roll.",
+  "servings": 1,
   "cuisine": "Portuguese",
   "category": "Beef",
-  "image": "https://www.themealdb.com/images/media/meals/ewcikl1614348364.jpg",
-  "prep_minutes": 20,
-  "cook_minutes": 125,
+  "image": "https://i.ytimg.com/vi/FbIKfcDEPLA/hqdefault.jpg",
+  "prep_minutes": 10,
+  "cook_minutes": 5,
   "ingredients": [
+   {
+    "name": "flank steak",
+    "quantity": 170,
+    "unit": "g",
+    "note": "6-8 oz; flank steak, top round or top sirloin"
+   },
    {
     "name": "garlic",
     "quantity": 1,
     "unit": "clove",
-    "note": ""
-   },
-   {
-    "name": "beef fillet",
-    "quantity": 2,
-    "unit": "",
-    "note": "small"
+    "note": "thinly sliced"
    },
    {
     "name": "olive oil",
-    "quantity": 2,
+    "quantity": 1.5,
     "unit": "tbsp",
-    "note": ""
+    "note": "extra virgin; source says '1-1/5 tbsp', read as 1 1/2 tbsp"
    },
    {
-    "name": "white vinegar",
-    "quantity": 1,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "parsley",
+    "name": "bay leaf",
     "quantity": 1,
     "unit": "leaf",
-    "note": ""
+    "note": "optional, cut into large pieces"
    },
    {
-    "name": "ciabatta",
-    "quantity": 2,
-    "unit": "",
-    "note": ""
-   },
-   {
-    "name": "rocket",
-    "quantity": 2,
-    "unit": "handful",
-    "note": ""
-   },
-   {
-    "name": "basil",
-    "quantity": 1,
-    "unit": "bunch",
-    "note": "small"
-   },
-   {
-    "name": "parsley",
-    "quantity": 1,
-    "unit": "bunch",
-    "note": "small"
-   },
-   {
-    "name": "jalapeño",
+    "name": "bread rolls",
     "quantity": 1,
     "unit": "",
-    "note": ""
+    "note": "Portuguese papo seco roll"
    },
    {
-    "name": "white vinegar",
-    "quantity": 1,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "spring onion",
-    "quantity": 2,
+    "name": "salt",
+    "quantity": null,
     "unit": "",
-    "note": "chopped"
+    "note": "to taste"
    },
    {
-    "name": "garlic",
-    "quantity": 0.5,
+    "name": "black pepper",
+    "quantity": null,
     "unit": "",
-    "note": ""
-   },
-   {
-    "name": "sugar",
-    "quantity": 0.5,
-    "unit": "tsp",
-    "note": ""
+    "note": "to taste"
    }
   ],
   "steps": [
    {
-    "text": "Rub the garlic over the steaks then put in a sandwich bag and tip in the olive oil, sherry vinegar and parsley stalks. Smoosh everything together, then use a rolling pin to bash the steaks a few times. Leave for 1-2 hours.",
-    "minutes": 120
-   },
-   {
-    "text": "To make the sauce, put all the ingredients into a blender with 1 tbsp water and whizz until as smooth as possible. This will make more than you’ll need for the recipe but will keep for a week in an airtight jar.",
+    "text": "Thinly slice the garlic and cut the bay leaf into large pieces.",
     "minutes": null
    },
    {
-    "text": "Heat a griddle or frying pan to high. Brush away the garlic and parsley stalks from the steaks and season well. Sear the steaks for 2 minutes on each side then rest on a plate.",
+    "text": "Trim the steak. If it is thick, cut it into slices about 6 mm thick.",
+    "minutes": null
+   },
+   {
+    "text": "Tenderise the steak thoroughly with a meat hammer until about 3 mm thick.",
+    "minutes": null
+   },
+   {
+    "text": "Gently nail the garlic and bay leaf into the steak.",
+    "minutes": null
+   },
+   {
+    "text": "Heat a saute pan with the olive oil and lay the steak in garlic-side down. Cook about 1 minute on each side.",
     "minutes": 2
    },
    {
-    "text": "Put the ciabatta halves onto the plate, toasted-side down, to soak up any juices.",
-    "minutes": null
-   },
-   {
-    "text": "Slice the steaks then stuff into the rolls with the green sauce and rocket.",
+    "text": "Remove the steak, then toast the bread roll in the pan with the steak juices, adding more oil if needed. Serve the steak in the roll.",
     "minutes": null
    }
   ]

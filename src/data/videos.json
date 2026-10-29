@@ -2319,9 +2319,9 @@
   "videoId": "3NIRQ3KMorw",
   "title": "Ontbitjkoek (Dutch Breakfast Cake)",
   "channel": "Salty Ginger",
-  "status": "rejected",
-  "reason": "video title doesn't match the dish",
-  "checked": "2026-10-20"
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53382": {
   "videoId": "3zCrERE0kbc",
@@ -2573,9 +2573,9 @@
   "videoId": "D2zlt4ZXAfA",
   "title": "I Made Kosovo's National Dish | Fli/Flija Kosove",
   "channel": "Tales From The Road",
-  "status": "rejected",
-  "reason": "video title doesn't match the dish",
-  "checked": "2026-10-20"
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:52815": {
   "videoId": "CrlTS1mJQMA",
@@ -2669,9 +2669,9 @@
   "videoId": "uO0ejc85zSE",
   "title": "Greek Shrimp Saganaki: Shrimp in a Tomato & Feta Sauce",
   "channel": "Dimitra's Dishes",
-  "status": "rejected",
-  "reason": "video title doesn't match the dish",
-  "checked": "2026-10-20"
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53180": {
   "videoId": "2hf2xltFbxQ",
@@ -2701,9 +2701,9 @@
   "videoId": "e-2K2iyPASA",
   "title": "Gigantes: Baked Giant Bean Casserole (Greek Style)",
   "channel": "Dimitra's Dishes",
-  "status": "rejected",
-  "reason": "video title doesn't match the dish",
-  "checked": "2026-10-20"
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53578": {
   "videoId": null,
@@ -3258,12 +3258,10 @@
   "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52782": {
-  "videoId": "vaZb1MnFBgA",
-  "title": "Lamb & Tomato Stew Recipe - Rosemary Lamb - Easy Lamb Stew - Best Lamb Stew",
-  "channel": "How To Cook Great",
+  "videoId": null,
+  "checked": "2026-10-29",
   "status": "rejected",
-  "reason": "video title doesn't match the dish",
-  "checked": "2026-10-20"
+  "reason": "The video (How To Cook Great, 'Lamb & Tomato Stew Recipe - Rosemary Lamb') is a rosemary lamb and tomato stew, not the catalogue's stuffed vine leaves in tomato sauce, and its description only links the channel's homepage (https://howtocookgreatfood.com, which returned no recipe), so it is neither the same dish nor verifiable. Searches for a vine-leaf version found only generic dolmades videos with beef or no fetchable written recipe (Preppy Kitchen's lamb dolmades page returned 403), so none could be matched to this recipe with evidence."
  },
  "themealdb:53010": {
   "videoId": "s7_TF4ZHjPc",
@@ -3625,9 +3623,9 @@
   "videoId": "7EAdKeikJ9o",
   "title": "The Vietnamese Noodle Salad I Could Eat Every Day | Make It Wednesday Marion’s Kitchen",
   "channel": "Marion Grasby",
-  "status": "rejected",
-  "reason": "a generic noodle salad; can't confirm it's this recipe",
-  "checked": "2026-10-20"
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53117": {
   "videoId": null,
@@ -3735,9 +3733,9 @@
   "videoId": "6hcNBBob_xI",
   "title": "Pan-Roasted Hake with Chorizo and Chickpea Stew | Mirabeau Kitchen",
   "channel": "Maison Mirabeau",
-  "status": "rejected",
-  "reason": "video title doesn't match the dish",
-  "checked": "2026-10-20"
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53534": {
   "videoId": null,
@@ -3752,12 +3750,12 @@
   "checked": "2026-10-20"
  },
  "themealdb:52902": {
-  "videoId": "k1lG4vk2MQA",
-  "title": "Parkin Recipe",
-  "channel": "What Woman Needs",
-  "status": "rejected",
-  "reason": "video title doesn't match the dish",
-  "checked": "2026-10-20"
+  "videoId": "538WrQC6mNA",
+  "title": "YORKSHIRE PARKIN | Sticky Ginger Parkin | British Recipe #gingercake #yorkshireparkin #gingerparkin",
+  "channel": "Susu's Cookbook",
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53333": {
   "videoId": "x5SRhOq3vfs",
@@ -3780,12 +3778,12 @@
   "checked": "2026-10-20"
  },
  "themealdb:53017": {
-  "videoId": "qANmR6BBJpQ",
-  "title": "Paszteciki Półkruche z Kapustą Kiszoną i Pieczarkami",
-  "channel": "Uwaga Babcia Gotuje",
-  "status": "rejected",
-  "reason": "video title doesn't match the dish",
-  "checked": "2026-10-20"
+  "videoId": "tE7UM_fZwNg",
+  "title": "Pyszne paszteciki z kapustą i pieczarkami",
+  "channel": "Kulinarne przygody",
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:52930": {
   "videoId": "QRFqnLkEv3I",
@@ -3991,9 +3989,9 @@
   "videoId": "FbIKfcDEPLA",
   "title": "Prego | Portuguese Sandwich. The garlic gets nailed into the steak!",
   "channel": "Just Cook With Michael Santos",
-  "status": "rejected",
-  "reason": "video title doesn't match the dish",
-  "checked": "2026-10-20"
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53323": {
   "videoId": "-O6MsNm39Yw",
