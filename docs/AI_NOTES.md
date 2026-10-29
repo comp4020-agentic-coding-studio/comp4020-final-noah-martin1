@@ -60,9 +60,62 @@ Things learned the hard way while matching catalogue recipes to YouTube videos.
 - Mark deep-frying and shallow-frying oil "for deep-frying"/"for frying" so it
   isn't charged as eaten, and don't list a homemade paste a second time as a
   bought jar.
+- Open gap in the app's reference data: there is "dried oregano" but no
+  "dried thyme" (or most other dried herbs) and no dried mushrooms, so a
+  recipe's dried thyme or dried shiitake is priced at the fresh price and
+  weight. Fix it in `src/nutrition.ts` and `src/data/prices.json` with dated
+  sources, not by renaming lines in recipes.
+- A cup of a solid food falls back to water's weight unless `CUP_GRAMS` in
+  `src/nutrition.ts` lists it. Ginger was missing and was priced at 250 g a
+  cup; check this table when a reviewer flags a cup amount as overpriced.
+
+## Choosing what to work on
+
+- Triage before spending agents: `scan.py` reads each candidate video's
+  description (no agent cost) and sorts it into "linked" (links a recipe
+  page), "inline" (full recipe in the description), "list" (ingredients, no
+  method), "none" and "dead". Linked and inline hit about 75%; do them first.
+- Once those run out, search waves on well-known dishes still hit 50-80%:
+  name a creator who publishes written recipes in the query (RecipeTin Eats,
+  Marion's Kitchen, Just One Cookbook, Made With Lau, Hebbars Kitchen, Spain on
+  a Fork, Scandinavian Cookbook, Panlasang Pinoy, Toine's Kitchen) and cap it
+  at 2 searches and 2 candidates per recipe.
+- "list" videos (ingredients but no method) only become usable once
+  transcripts work again, since the transcript gives the method.
+- The catalogue has near-duplicate pairs (two bigos, two empanadas, two full
+  English breakfasts, two gołąbki). `integrate.mjs` refuses to verify one
+  video for two recipes; give the second of a pair a different creator or
+  leave it.
+
+## What reviewers reject (and should)
+
+- A replacement that makes only part of the dish (a "Sunday roast" video that
+  only roasts the beef, a noodle-bowl recipe replaced by just the pork), or a
+  different dish (black bean soup replaced by a side of beans).
+- A main ingredient with no amount (the chicken in fried chicken, the flour in
+  jam biscuits, the brisket in smoked meat), even if the validator's limit of
+  two is technically met.
+- Evidence that is someone else's recipe (a "Recipe used:" link to another
+  site, a BBC page cited by a different channel), or a tiny channel with an
+  incomplete recipe.
+- A recipe whose batch size makes the per-serving cost meaningless (a whole
+  marinated 2.3 kg pork shoulder for four Cuban sandwiches).
+- Transcribers tend to drop an ingredient or invent an amount to pass the
+  validator, to rename to a priced but different food, and to carry the old
+  catalogue's servings over as if stated. Briefs now forbid all three.
+
+## Where it stopped (2026-10-29)
+
+- 315 recipes verified (of 757). About 167 recipes have no candidate video
+  at all, 125 have a video with no recipe in its description, 46 a video with
+  ingredients but no method (wait for transcripts), 22 a dead video.
+- Scratch state (`/tmp/ytwork`: scan.json, assigned.json, out/, review/) is
+  lost on reboot; videos.json and catalogue.json are the durable record.
 
 ## Cost
 
 - Sonnet transcribes a recipe for about $0.16, against about $1.10 on Opus,
   with similar quality once a reviewer checks it. Use Sonnet for both passes
   and save Opus for coordination.
+- Measured over this session: about $0.30 per verified recipe all in
+  (transcription, review and coordination), at a 70-75% hit rate.

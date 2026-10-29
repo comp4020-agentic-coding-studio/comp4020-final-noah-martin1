@@ -2022,10 +2022,12 @@
   "transcribed": true
  },
  "themealdb:53555": {
-  "videoId": null,
-  "status": "unavailable",
-  "reason": "TheMealDB lists no video for this meal",
-  "checked": "2026-10-20"
+  "videoId": "pcSXckB6YOk",
+  "title": "The best Potato Salad....",
+  "channel": "RecipeTin Eats",
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53343": {
   "videoId": "PM9TZPUJTiU",
@@ -2192,20 +2194,18 @@
   "checked": "2026-10-20"
  },
  "themealdb:53058": {
-  "videoId": "mrjnQal3S1A",
-  "title": "Corbasti pasulj - Bean Soup - Recipe -Bohnensuppe",
-  "channel": "Chef Boy An",
+  "videoId": null,
+  "checked": "2026-10-29",
   "status": "rejected",
-  "reason": "video title doesn't match the dish",
-  "checked": "2026-10-20"
+  "reason": "Two searches (grah Croatian bean stew; grah beans and sausage). Checked Eastern Kitchen 8YPn6Xxa-vM (ingredient list only, sausage and smoked meat amounts left open, no method; linked blog page unreachable), Chef Tyler's Croatian Kitchen fTn8HyA5wNI (ingredients but no method, several amounts missing) and Velebit Mountain Man YUR96U9XfqE (method only, no amounts). None has a complete written recipe."
  },
  "themealdb:53056": {
-  "videoId": "K0ipnz4fwJI",
-  "title": "Traditional Croatian Lamb Peka at Dubrovnik Restaurant",
-  "channel": "DubrovnikRestaurant",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "videoId": "aASVuAlcfjU",
+  "title": "Croatian Lamb Peka - Slow Cooked in the Oven - Outtakes included",
+  "channel": "Flawless Food",
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:52830": {
   "videoId": "oqL0mLDBzS4",
@@ -2242,10 +2242,12 @@
   "checked": "2026-10-20"
  },
  "themealdb:53556": {
-  "videoId": null,
-  "status": "unavailable",
-  "reason": "TheMealDB lists no video for this meal",
-  "checked": "2026-10-20"
+  "videoId": "kVVbecH8gD4",
+  "title": "How to Make Danish Rye Bread (Rugbrød) At Home!",
+  "channel": "Skandibaking",
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53338": {
   "videoId": "E0bOy1FWkXA",
@@ -2318,10 +2320,12 @@
   "reason": "No verifiable video found. Searched 'Dutch apple pie recipe Toine's Kitchen' and 'appeltaart Dutch apple pie recipe Toine's Kitchen'. Tim is Cooking MgI-_e4R53Y (Grandma's Dutch Apple Pie) lists ingredients with amounts but its description has no method and no linked recipe page; Toine's Kitchen's only apple result (JDeoT8p7wYg) is appelkruimelvlaai, a yeasted crumb pie, a different dish."
  },
  "themealdb:53393": {
-  "videoId": null,
-  "status": "unavailable",
-  "reason": "TheMealDB lists no video for this meal",
-  "checked": "2026-10-20"
+  "videoId": "xKXXWOZ9ZJM",
+  "title": "How to Make Oliebollen: Dutch New Year's Eve Treat: Fried Dough",
+  "channel": "Toine’s Kitchen 🇳🇱",
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53379": {
   "videoId": "gK1b5gymAUY",
@@ -2402,12 +2406,12 @@
   "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53031": {
-  "videoId": "WLuOHkDE4A4",
-  "title": "Egyptian fatta , one of most traditional dishes الفته المصريه بالخل الثوم   ولا احلى",
-  "channel": "Cooking Secrets with Rania اسرار الطبخ مع رانيا",
-  "status": "rejected",
-  "reason": "video title doesn't match the dish",
-  "checked": "2026-10-20"
+  "videoId": "FGMe18yKraU",
+  "title": "How to make Egyptian Lamb Fattah - A centuries old rice and lamb Eid centerpiece",
+  "channel": "Middle Eats",
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53134": {
   "videoId": "RRNVLC6IAv4",
@@ -2556,10 +2560,10 @@
   "checked": "2026-10-20"
  },
  "themealdb:52906": {
-  "videoId": "vT0q5c880Rg",
-  "status": "unavailable",
-  "reason": "video no longer exists on YouTube",
-  "checked": "2026-10-20"
+  "videoId": null,
+  "checked": "2026-10-29",
+  "status": "rejected",
+  "reason": "Two searches (flamiche leek tart; flamiche picarde). Checked French Food French Home WH1svQWNAoM (written recipe only as an email-gated recipe card, description has no recipe) and Météo à la carte B1DTmUTepzk (description has no recipe). No candidate had a complete written recipe."
  },
  "themealdb:53322": {
   "videoId": "d7_CTU4HXEY",
@@ -2592,12 +2596,12 @@
   "transcribed": true
  },
  "themealdb:52815": {
-  "videoId": "CrlTS1mJQMA",
-  "title": "French Lentil Soup w/ Tarragon & Thyme | The Vegan Test Kitchen",
-  "channel": "The Vegan Test Kitchen",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "videoId": "MlLMr8xiSx0",
+  "title": "French Lentil Ragout (Puy lentil side dish)",
+  "channel": "RecipeTin Eats",
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:52915": {
   "videoId": "_Wb5Crj917I",
@@ -2728,10 +2732,12 @@
   "checked": "2026-10-20"
  },
  "themealdb:53021": {
-  "videoId": "rBrTkDdoPYg",
-  "status": "unavailable",
-  "reason": "video can't be embedded",
-  "checked": "2026-10-20"
+  "videoId": "4QJSMg6QL9w",
+  "title": "How To Make Cabbage Rolls (Gołąbki)",
+  "channel": "The Polish Chef",
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53346": {
   "videoId": "ZxKA2bGkIa8",
@@ -2781,9 +2787,9 @@
   "videoId": "PYq31xLj-DY",
   "title": "How to Make A Grilled Mac & Cheese",
   "channel": "TheOfficialHungry",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53041": {
   "videoId": "JYtMjKa6cdY",

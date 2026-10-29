@@ -32390,111 +32390,157 @@
  },
  {
   "source": "themealdb:53555",
-  "title": "Classic Potato Salad",
-  "description": "A Danish salad of potato, asparagus and chives — serves 4, on the table in about 45 minutes.",
-  "servings": 4,
-  "cuisine": "Danish",
+  "title": "Potato salad with French dressing and bacon",
+  "description": "Hot boiled potatoes soaked in a French dressing, then tossed with a creamy mayonnaise and sour cream dressing, celery, cucumber, onion and crispy bacon.",
+  "servings": 6,
+  "cuisine": "International",
   "category": "Side",
-  "image": "https://www.themealdb.com/images/media/meals/5q88l31784664151.jpg",
-  "prep_minutes": 20,
+  "image": "https://i.ytimg.com/vi/pcSXckB6YOk/hqdefault.jpg",
+  "prep_minutes": 15,
   "cook_minutes": 15,
   "ingredients": [
    {
     "name": "potato",
-    "quantity": 600,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "asparagus",
-    "quantity": 150,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "chives",
     "quantity": 1,
-    "unit": "bunch",
-    "note": ""
-   },
-   {
-    "name": "red onion",
-    "quantity": 1,
-    "unit": "",
-    "note": ""
-   },
-   {
-    "name": "radish",
-    "quantity": 8,
-    "unit": "",
-    "note": ""
-   },
-   {
-    "name": "creme fraiche",
-    "quantity": 0.5,
-    "unit": "cup",
-    "note": ""
-   },
-   {
-    "name": "mayonnaise",
-    "quantity": 0.5,
-    "unit": "cup",
-    "note": ""
-   },
-   {
-    "name": "mustard",
-    "quantity": 2,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "sugar",
-    "quantity": 1,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "apple cider vinegar",
-    "quantity": 1,
-    "unit": "tbsp",
+    "unit": "kg",
     "note": ""
    },
    {
     "name": "salt",
+    "quantity": 2,
+    "unit": "tsp",
+    "note": "for cooking the potatoes"
+   },
+   {
+    "name": "white wine vinegar",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": "for the French dressing; apple cider vinegar works"
+   },
+   {
+    "name": "dijon mustard",
     "quantity": 1,
-    "unit": "pinch",
-    "note": ""
+    "unit": "tbsp",
+    "note": "for the French dressing"
+   },
+   {
+    "name": "olive oil",
+    "quantity": 0.25,
+    "unit": "cup",
+    "note": "extra virgin, for the French dressing"
+   },
+   {
+    "name": "water",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "for the French dressing"
+   },
+   {
+    "name": "sugar",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": "white, for the French dressing"
+   },
+   {
+    "name": "garlic",
+    "quantity": 0.5,
+    "unit": "clove",
+    "note": "finely grated, for the French dressing"
+   },
+   {
+    "name": "salt",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": "for the French dressing"
    },
    {
     "name": "black pepper",
+    "quantity": 0.25,
+    "unit": "tsp",
+    "note": "for the French dressing"
+   },
+   {
+    "name": "bacon",
+    "quantity": 250,
+    "unit": "g",
+    "note": "streaky, cooked crisp and chopped"
+   },
+   {
+    "name": "cucumber",
+    "quantity": 0.75,
+    "unit": "cup",
+    "note": "finely diced, seeds removed (about 1 x 15 cm cucumber)"
+   },
+   {
+    "name": "celery",
     "quantity": 1,
-    "unit": "pinch",
-    "note": ""
+    "unit": "cup",
+    "note": "finely sliced diagonally (about 2 ribs)"
+   },
+   {
+    "name": "white onion",
+    "quantity": 0.25,
+    "unit": "cup",
+    "note": "finely minced (about 1/2 onion)"
+   },
+   {
+    "name": "mayonnaise",
+    "quantity": 0.33,
+    "unit": "cup",
+    "note": "for the creamy dressing; whole-egg preferred"
+   },
+   {
+    "name": "sour cream",
+    "quantity": 0.33,
+    "unit": "cup",
+    "note": "full fat, for the creamy dressing"
+   },
+   {
+    "name": "horseradish",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "horseradish cream or relish, for the creamy dressing"
+   },
+   {
+    "name": "salt",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": "for the creamy dressing"
+   },
+   {
+    "name": "black pepper",
+    "quantity": 0.25,
+    "unit": "tsp",
+    "note": "for the creamy dressing"
    }
   ],
   "steps": [
    {
-    "text": "Boil potatoes in lightly salted water for 10 to 12 minutes. Drain water when a potato speared with a fork and lifted out of the water easily glides off the fork and falls back into the pot. Let potatoes stand and cool.",
-    "minutes": 12
-   },
-   {
-    "text": "Break off and discard the stringy ends of the asparagus spears, then chop into small pieces. You can pour boiling water over the chopped asparagus and let it soak for 2 minutes if you prefer a less raw taste.",
-    "minutes": 2
-   },
-   {
-    "text": "Finely chop chives, red onion and radish.",
+    "text": "Shake the French dressing ingredients in a jar until combined.",
     "minutes": null
    },
    {
-    "text": "Stir the dressing ingredients together and season with salt and pepper.",
+    "text": "Put the potatoes and 2 tsp salt in a large pot of cold water. Once it simmers, cook for about 4 minutes until just cooked but still a little firm in the middle, then drain gently.",
+    "minutes": 4
+   },
+   {
+    "text": "Transfer the hot potatoes to a large bowl, pour over the French dressing and toss gently. Leave for 2 hours so they absorb the dressing and cool.",
+    "minutes": 120
+   },
+   {
+    "text": "Lay the bacon in a cold non-stick pan, turn the heat to medium-high and cook until golden on both sides. Drain on paper towels, cool and chop.",
     "minutes": null
    },
    {
-    "text": "Reserve some of the chives for garnish and combine the rest of the vegetables with the dressing.",
+    "text": "Mix the mayonnaise, sour cream, horseradish, salt and pepper into a creamy dressing.",
     "minutes": null
    },
    {
-    "text": "Season with salt and pepper, garnish with chives and serve as a side dish.",
+    "text": "Add the creamy dressing, celery, cucumber, onion and most of the bacon to the potatoes and toss gently. Garnish with the rest of the bacon.",
+    "minutes": null
+   },
+   {
+    "text": "Serve at room temperature, not fridge-cold. It is better if left for a few hours or overnight to let the flavours meld.",
     "minutes": null
    }
   ]
@@ -34955,79 +35001,85 @@
  {
   "source": "themealdb:53056",
   "title": "Croatian lamb peka",
-  "description": "A Croatian dish of lamb shoulder, potato and courgette — serves 4, worth the couple of hours it takes.",
+  "description": "Diced lamb shoulder roasted with potatoes and chunky vegetables in a lidded casserole with olive oil, garlic, tomato puree, white wine and herbs.",
   "servings": 4,
   "cuisine": "Croatian",
-  "category": "Beef",
+  "category": "Lamb",
   "image": "https://www.themealdb.com/images/media/meals/pn59o51628769837.jpg",
-  "prep_minutes": 20,
-  "cook_minutes": 95,
+  "prep_minutes": 15,
+  "cook_minutes": 105,
   "ingredients": [
    {
-    "name": "potato",
-    "quantity": 600,
-    "unit": "g",
-    "note": ""
+    "name": "olive oil",
+    "quantity": 80,
+    "unit": "ml",
+    "note": "for the marinade"
    },
    {
-    "name": "courgette",
-    "quantity": 1,
-    "unit": "",
-    "note": "chopped"
-   },
-   {
-    "name": "carrot",
-    "quantity": 1,
-    "unit": "",
-    "note": "chopped"
-   },
-   {
-    "name": "capsicum",
-    "quantity": 1,
-    "unit": "",
-    "note": "chopped"
-   },
-   {
-    "name": "aubergine",
-    "quantity": 1,
-    "unit": "",
-    "note": "small"
-   },
-   {
-    "name": "onion",
-    "quantity": 1,
-    "unit": "",
-    "note": "large, chopped"
-   },
-   {
-    "name": "lamb shoulder",
-    "quantity": 800,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "garlic sauce",
-    "quantity": 1,
-    "unit": "tbsp",
-    "note": ""
+    "name": "garlic",
+    "quantity": 5,
+    "unit": "clove",
+    "note": "crushed; the web page gives 1 tbsp garlic puree or chopped fresh garlic"
    },
    {
     "name": "tomato puree",
     "quantity": 1,
     "unit": "tbsp",
-    "note": ""
+    "note": "sundried tomato puree (or tomato puree)"
    },
    {
-    "name": "olive oil",
-    "quantity": 80,
-    "unit": "ml",
-    "note": ""
-   },
-   {
-    "name": "thyme",
+    "name": "salt",
     "quantity": null,
     "unit": "",
-    "note": "to sprinkle"
+    "note": "to taste"
+   },
+   {
+    "name": "black pepper",
+    "quantity": null,
+    "unit": "",
+    "note": "to taste"
+   },
+   {
+    "name": "potato",
+    "quantity": 600,
+    "unit": "g",
+    "note": "waxy, chopped"
+   },
+   {
+    "name": "courgette",
+    "quantity": 1,
+    "unit": "",
+    "note": "chopped chunky"
+   },
+   {
+    "name": "carrot",
+    "quantity": 1,
+    "unit": "",
+    "note": "large, chopped (description says 2 small)"
+   },
+   {
+    "name": "capsicum",
+    "quantity": 1,
+    "unit": "",
+    "note": "green, chopped chunky"
+   },
+   {
+    "name": "aubergine",
+    "quantity": 1,
+    "unit": "",
+    "note": "small, chopped chunky"
+   },
+   {
+    "name": "onion",
+    "quantity": 1,
+    "unit": "",
+    "note": "large, chopped chunky"
+   },
+   {
+    "name": "lamb shoulder",
+    "quantity": 850,
+    "unit": "g",
+    "note": "diced; shoulder or leg, boned"
    },
    {
     "name": "white wine",
@@ -35036,79 +35088,57 @@
     "note": ""
    },
    {
-    "name": "black pepper",
-    "quantity": 1,
-    "unit": "pinch",
-    "note": ""
+    "name": "thyme",
+    "quantity": null,
+    "unit": "",
+    "note": "fresh, to taste; amount not given"
+   },
+   {
+    "name": "rosemary",
+    "quantity": null,
+    "unit": "",
+    "note": "fresh, to taste; amount not given"
+   },
+   {
+    "name": "sage",
+    "quantity": null,
+    "unit": "",
+    "note": "fresh, to taste; amount not given"
+   },
+   {
+    "name": "olive oil",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": "stirred in for the last step"
    }
   ],
   "steps": [
    {
-    "text": "Preheat oven to 200°C fan / 220°C / 425°F / Gas mark 7.",
+    "text": "Heat the oven to 200°C fan (220°C conventional). Cut the lamb into large chunks if it is not already diced.",
     "minutes": null
    },
    {
-    "text": "If you have not bought diced lamb, cut your lamb shoulder or leg into large chunks and place to one side.",
+    "text": "Mix the olive oil with the garlic, sundried tomato puree, salt and pepper to make the marinade.",
     "minutes": null
    },
    {
-    "text": "Chunks of chopped lamb of a red chopping board Make oil marinade -.",
+    "text": "Put the potatoes, courgette, carrot, green pepper, aubergine and onion in a large lidded casserole dish.",
     "minutes": null
    },
    {
-    "text": "Mix 80ml of olive oil in a bowl with garlic puree, sundried tomato puree ,black pepper and salt.",
+    "text": "Lay the diced lamb on top of the vegetables, pour over the marinade and the white wine, and add the thyme, rosemary and sage on top so the stalks are easy to remove later.",
     "minutes": null
    },
    {
-    "text": "Olive oil, gia sundried tomato puree and gia garlic puree and black pepper mixed together in a silver bowl to make Croatian peka.",
-    "minutes": null
+    "text": "Cover with the lid (or tightly with foil) and cook for 1 hour 30 minutes.",
+    "minutes": 90
    },
    {
-    "text": "Add potatoes and vegetables into a large lidded casserole dish.",
-    "minutes": null
+    "text": "Take off the lid, remove any thick herb stems, stir in 2 tbsp olive oil and cook for a further 20-30 minutes.",
+    "minutes": 20
    },
    {
-    "text": "Chopped up vegetables which consist of chopped up red onion, courgette, potatoes red peppers in a cast iron pan.",
-    "minutes": null
-   },
-   {
-    "text": "Place diced lamb on top of the vegetables, pour the marinade and wine over the top.",
-    "minutes": null
-   },
-   {
-    "text": "Chunks of lamb covered in in a sundried tomato oil sauce which is on top of chopped red onion, aubergine, courgette and potatoes in a cast iron pan.",
-    "minutes": null
-   },
-   {
-    "text": "Add the rosemary, thyme and sage, trying to keep the herbs on top.",
-    "minutes": null
-   },
-   {
-    "text": "So you can easily remove the herb stalks once cooked.",
-    "minutes": null
-   },
-   {
-    "text": "Chunks of lamb coated in a sundried tomato oil sauce and covered with thyme, rosemary and sage which is on top of chopped red onion, aubergine, courgette and potatoes in a cast iron pan.",
-    "minutes": null
-   },
-   {
-    "text": "Place lid on the casserole dish and cook for 1hr 30 minute.",
-    "minutes": 60
-   },
-   {
-    "text": "If you do not have a lid cover very well with kitchen foil Cast iron dish with lid on in the oven.",
-    "minutes": null
-   },
-   {
-    "text": "Take the lid off, remove any thick herb stems. Stir in 2 tbsp of olive oil. Cook for a further 20-30 mins.",
-    "minutes": 30
-   },
-   {
-    "text": "Cooked Croatian Lamb Peka in a cast iron pan in the oven.",
-    "minutes": null
-   },
-   {
-    "text": "Serve with fresh homemade bread to dip into the juices.",
+    "text": "Serve with fresh bread to dip into the juices.",
     "minutes": null
    }
   ]
@@ -35702,101 +35732,141 @@
  },
  {
   "source": "themealdb:53556",
-  "title": "Danish Rye Bread",
-  "description": "A Danish side of rye grain, beer and buttermilk — serves 8, worth the couple of hours it takes.",
-  "servings": 8,
+  "title": "Danish rye bread (rugbrød)",
+  "description": "A dense seeded Danish rye loaf with sunflower and flax seeds, chopped rye, cracked wheat, Greek yoghurt and buttermilk, proved twice and baked in a loaf tin.",
+  "servings": 12,
   "cuisine": "Danish",
   "category": "Side",
   "image": "https://www.themealdb.com/images/media/meals/hem6gk1784664868.jpg",
-  "prep_minutes": 15,
-  "cook_minutes": 90,
+  "prep_minutes": 110,
+  "cook_minutes": 70,
   "ingredients": [
    {
-    "name": "rye grain",
-    "quantity": 200,
-    "unit": "g",
-    "note": ""
+    "name": "yeast",
+    "quantity": 2,
+    "unit": "tsp",
+    "note": "instant"
    },
    {
     "name": "water",
-    "quantity": 0.75,
-    "unit": "cup",
-    "note": ""
+    "quantity": 200,
+    "unit": "ml",
+    "note": "warm, finger-warm"
    },
    {
-    "name": "beer",
-    "quantity": 0.75,
-    "unit": "cup",
-    "note": ""
-   },
-   {
-    "name": "buttermilk",
-    "quantity": 0.75,
-    "unit": "cup",
-    "note": ""
-   },
-   {
-    "name": "yeast",
-    "quantity": 10,
+    "name": "sunflower seeds",
+    "quantity": 70,
     "unit": "g",
     "note": ""
    },
    {
-    "name": "salt",
-    "quantity": 1,
-    "unit": "tsp",
+    "name": "flax seeds",
+    "quantity": 80,
+    "unit": "g",
     "note": ""
    },
    {
-    "name": "seeds",
-    "quantity": 130,
+    "name": "rye grain",
+    "quantity": 100,
+    "unit": "g",
+    "note": "chopped rye or cracked rye berries"
+   },
+   {
+    "name": "cracked wheat",
+    "quantity": 80,
+    "unit": "g",
+    "note": "or bulgur wheat"
+   },
+   {
+    "name": "greek yoghurt",
+    "quantity": 500,
+    "unit": "ml",
+    "note": "page says 1/2 liter"
+   },
+   {
+    "name": "buttermilk",
+    "quantity": 100,
+    "unit": "ml",
+    "note": ""
+   },
+   {
+    "name": "wholemeal flour",
+    "quantity": 100,
+    "unit": "g",
+    "note": "whole wheat"
+   },
+   {
+    "name": "rye flour",
+    "quantity": 300,
     "unit": "g",
     "note": ""
    },
    {
     "name": "plain flour",
-    "quantity": 0.75,
-    "unit": "cup",
+    "quantity": 75,
+    "unit": "g",
+    "note": "all-purpose"
+   },
+   {
+    "name": "salt",
+    "quantity": 2,
+    "unit": "tsp",
     "note": ""
    },
    {
-    "name": "rye flour",
-    "quantity": 2.5,
-    "unit": "cup",
-    "note": ""
+    "name": "vegetable oil",
+    "quantity": null,
+    "unit": "",
+    "note": "for greasing the bare sides of the tin"
+   },
+   {
+    "name": "water",
+    "quantity": null,
+    "unit": "",
+    "note": "for brushing the top of the loaf"
+   },
+   {
+    "name": "sunflower seeds",
+    "quantity": null,
+    "unit": "",
+    "note": "extra, to garnish the top"
    }
   ],
   "steps": [
    {
-    "text": "Combine rye grain and water in a saucepan and bring to a boil. Cover and simmer for 2 to 3 minutes.",
-    "minutes": 3
-   },
-   {
-    "text": "Transfer the boiled rye grain to a mixing bowl and combine with beer, buttermilk and salt.",
-    "minutes": null
-   },
-   {
-    "text": "Dissolve the fresh yeast in this mixture and then add the seeds.",
-    "minutes": null
-   },
-   {
-    "text": "Add all-purpose flour and rye flour, and knead for about 10 minutes. You can also use a kitchen mixer to knead the dough.",
+    "text": "Soak whole or cracked rye berries for 8 hours or overnight if using them; chopped rye does not need soaking. Dissolve the yeast in the warm water and leave 5-10 minutes until frothy.",
     "minutes": 10
    },
    {
-    "text": "Transfer the dough to an oiled loaf pan (2.5 l) and smooth out with a spatula.",
+    "text": "Put the seeds, chopped rye and cracked wheat in a stand-mixer bowl. Add the yeast mixture, Greek yoghurt and buttermilk and mix well.",
     "minutes": null
    },
    {
-    "text": "Poke holes in the surface with a fork and cover loaf pan with plastic wrap. Let the dough rise for 1½ hours at room temperature, or for 24 hours in the refrigerator.",
-    "minutes": 600
+    "text": "Whisk the three flours and the salt together. With the mixer on low and a dough hook, add the flour bit by bit until you have a heavy, claggy dough, then knead for about 10 minutes.",
+    "minutes": 10
    },
    {
-    "text": "Pre-heat oven to 200°C / 392°F (175°C / 347°F on fan setting) and bake bread on the bottom rack for about 75 minutes. Test to make sure dry in centre, or if using an oven thermometer, set it to turn off when centre reaches 98°C / 208°F.",
-    "minutes": 75
+    "text": "Let the dough rise for 8-12 hours in the fridge overnight, or 1 hour at room temperature.",
+    "minutes": 60
    },
    {
-    "text": "Allow the bread to cool completely before slicing.",
+    "text": "Line a 900 g loaf tin with parchment and oil any bare sides. Press the dough in firmly to avoid air gaps and prick the top with a fork.",
+    "minutes": null
+   },
+   {
+    "text": "Cover and prove for about 45 minutes at room temperature while the oven heats to 200°C.",
+    "minutes": 45
+   },
+   {
+    "text": "Brush the loaf with water, sprinkle with sunflower seeds, put it on the bottom rack and immediately lower the oven to 160°C.",
+    "minutes": null
+   },
+   {
+    "text": "Bake for 1 hour 10 minutes until evenly browned and about 99°C inside (10 minutes longer if unsure; the recipe was tested on fan).",
+    "minutes": 70
+   },
+   {
+    "text": "Cool slightly in the tin, then on a rack. Wait at least an hour before slicing; it slices more easily the next day.",
     "minutes": null
    }
   ]
@@ -36893,77 +36963,129 @@
  },
  {
   "source": "themealdb:53393",
-  "title": "Dutch doughnuts",
-  "description": "A Dutch sweet made with everyday staples — makes 12, ready in under half an hour.",
+  "title": "Dutch doughnuts (oliebollen)",
+  "description": "Yeasted batter deep-fried in scoops until puffed and golden, made plain, with raisins and with apple and cinnamon, and dusted with powdered sugar. Makes 36, so listed as 12 servings of 3.",
   "servings": 12,
   "cuisine": "Dutch",
   "category": "Dessert",
   "image": "https://www.themealdb.com/images/media/meals/cz1d6v1777627421.jpg",
-  "prep_minutes": 10,
-  "cook_minutes": 10,
+  "prep_minutes": 15,
+  "cook_minutes": 36,
   "ingredients": [
    {
     "name": "plain flour",
-    "quantity": 500,
+    "quantity": 450,
     "unit": "g",
-    "note": ""
+    "note": "all-purpose"
    },
    {
     "name": "milk",
-    "quantity": 500,
+    "quantity": 450,
     "unit": "ml",
-    "note": ""
+    "note": "whole, lukewarm (no warmer than 43°C)"
    },
    {
     "name": "yeast",
     "quantity": 10,
     "unit": "g",
-    "note": ""
+    "note": "instant"
+   },
+   {
+    "name": "brown sugar",
+    "quantity": 15,
+    "unit": "g",
+    "note": "stirred into the milk"
    },
    {
     "name": "salt",
-    "quantity": 10,
+    "quantity": 3,
     "unit": "g",
     "note": ""
    },
    {
-    "name": "sugar",
-    "quantity": 25,
-    "unit": "g",
+    "name": "egg yolks",
+    "quantity": 2,
+    "unit": "",
     "note": ""
+   },
+   {
+    "name": "butter",
+    "quantity": 20,
+    "unit": "g",
+    "note": "unsalted, room temperature"
+   },
+   {
+    "name": "apple",
+    "quantity": 100,
+    "unit": "g",
+    "note": "finely chopped, for the apple-cinnamon portion"
+   },
+   {
+    "name": "cinnamon",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "ground, for the apple portion"
+   },
+   {
+    "name": "sugar",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "for the apple portion"
+   },
+   {
+    "name": "raisins",
+    "quantity": 100,
+    "unit": "g",
+    "note": "for the raisin portion"
+   },
+   {
+    "name": "vegetable oil",
+    "quantity": 3.8,
+    "unit": "l",
+    "note": "4 qt, for deep-frying; oil type not stated"
+   },
+   {
+    "name": "icing sugar",
+    "quantity": null,
+    "unit": "",
+    "note": "powdered sugar, to serve, generously"
    }
   ],
   "steps": [
    {
-    "text": "Place the flour in a large bowl and add the yeast and sugar. If the milk is cold make sure to heat it to lukewarm. Mix your flour mixture bit by bit with the milk until you have a smooth batter.",
+    "text": "Soak the raisins in water for at least an hour, pat dry and let them air dry for another hour.",
+    "minutes": 120
+   },
+   {
+    "text": "Stir the brown sugar and then the yeast into the lukewarm milk (no warmer than 43°C). Leave until bubbles appear on the surface every second or so.",
     "minutes": null
    },
    {
-    "text": "Add the salt and mix with a wooden spoon till the batter is smooth and liquidy.",
+    "text": "Put the flour in a bowl and make a well. Sprinkle the salt on the outer edge and add the egg yolks and butter to the well. Pour in the yeast milk and mix with a wooden spoon until lump-free.",
     "minutes": null
    },
    {
-    "text": "Cover with a clean tea towel and leave in a warm spot for about an hour to rise.",
+    "text": "Divide the batter into three bowls: half plain, a quarter for raisins and a quarter for apple. Mix the raisins into one quarter. Toss the apple with the cinnamon and sugar and mix it into the other quarter.",
+    "minutes": null
+   },
+   {
+    "text": "Cover the three bowls and leave in a warm spot for 1 hour.",
     "minutes": 60
    },
    {
-    "text": "Heat your deep fryer or add the oil to a large pot. The oil should be a t 180°C (350°F) for best results.",
+    "text": "Heat the oil to 180°C in a deep fryer or a large pot filled halfway. Stir the batter to deflate it.",
     "minutes": null
    },
    {
-    "text": "Before starting stir your batter through and scoop the batter with two spoons or with an ice cream scoop. Let it drop into the oil carefully.",
+    "text": "Dip a small scoop (about 22 ml) in the hot oil, shake it off, scoop up the batter and drop it gently into the oil. Fry up to 6 at a time without overcrowding.",
     "minutes": null
    },
    {
-    "text": "It is easiest to do this if you dip your spoons or scoop into the oil before dipping into the batter. That way it will slide of the spoons easily.",
-    "minutes": null
+    "text": "Fry for about 6-7 minutes, checking halfway that they have flipped over. Hold down any with a pale ring in the middle with tongs. Repeat with the rest of the batter.",
+    "minutes": 7
    },
    {
-    "text": "Don't over crowd the fryer to prevent the oil cooling down too quickly and everything sticking together. Once one side is golden brown it usually turns around to the other side automatically. If not help it along with two forks.",
-    "minutes": null
-   },
-   {
-    "text": "Take the balls out once golden brown and leave to drain on a piece of kitchen paper.",
+    "text": "Dust generously with powdered sugar and serve warm.",
     "minutes": null
    }
   ]
@@ -38290,161 +38412,245 @@
  },
  {
   "source": "themealdb:53031",
-  "title": "Egyptian Fatteh",
-  "description": "An Egyptian dish of beef, tomato and tomato puree — serves 4, worth the couple of hours it takes.",
-  "servings": 4,
+  "title": "Egyptian lamb fatteh",
+  "description": "Egyptian celebration dish of toasted pitta soaked in stock and garlic vinegar sauce, layered with rice and tomato sauce and served with lamb simmered with mastic and spices.",
+  "servings": 3,
   "cuisine": "Egyptian",
-  "category": "Beef",
-  "image": "https://www.themealdb.com/images/media/meals/rlwcc51598734603.jpg",
-  "prep_minutes": 20,
-  "cook_minutes": 60,
+  "category": "Lamb",
+  "image": "https://i.ytimg.com/vi/FGMe18yKraU/hqdefault.jpg",
+  "prep_minutes": 30,
+  "cook_minutes": 90,
   "ingredients": [
    {
-    "name": "beef",
-    "quantity": 455,
-    "unit": "g",
-    "note": ""
+    "name": "butter",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "for the stock, to melt the mastic"
+   },
+   {
+    "name": "mastic",
+    "quantity": 2,
+    "unit": "",
+    "note": "pieces, for the stock"
+   },
+   {
+    "name": "lamb shanks",
+    "quantity": 1,
+    "unit": "kg",
+    "note": "or leg pieces"
+   },
+   {
+    "name": "garlic",
+    "quantity": 4,
+    "unit": "clove",
+    "note": "crushed, for the stock"
+   },
+   {
+    "name": "onion",
+    "quantity": 2,
+    "unit": "",
+    "note": "brown, halved, for the stock"
+   },
+   {
+    "name": "bay leaf",
+    "quantity": 2,
+    "unit": "",
+    "note": "for the stock"
+   },
+   {
+    "name": "cardamom",
+    "quantity": 7,
+    "unit": "",
+    "note": "pods, for the stock"
+   },
+   {
+    "name": "black peppercorns",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "for the stock"
+   },
+   {
+    "name": "water",
+    "quantity": null,
+    "unit": "",
+    "note": "enough to submerge the meat; amount not given"
+   },
+   {
+    "name": "pita bread",
+    "quantity": 3,
+    "unit": "",
+    "note": "pitta, 3-4, cut into bite-sized pieces"
+   },
+   {
+    "name": "olive oil",
+    "quantity": 1.5,
+    "unit": "tbsp",
+    "note": "for the bread, 1/2 tbsp per pitta"
+   },
+   {
+    "name": "salt",
+    "quantity": 0.75,
+    "unit": "tsp",
+    "note": "for the bread, 1/4 tsp per pitta"
+   },
+   {
+    "name": "black pepper",
+    "quantity": 0.375,
+    "unit": "tsp",
+    "note": "for the bread, 1/8 tsp per pitta"
+   },
+   {
+    "name": "canned tomatoes",
+    "quantity": 500,
+    "unit": "ml",
+    "note": "crushed, for the tomato sauce"
+   },
+   {
+    "name": "water",
+    "quantity": 250,
+    "unit": "ml",
+    "note": "for the tomato sauce"
    },
    {
     "name": "onion",
     "quantity": 1,
     "unit": "",
-    "note": ""
-   },
-   {
-    "name": "stock cube",
-    "quantity": 1,
-    "unit": "",
-    "note": ""
-   },
-   {
-    "name": "tomato",
-    "quantity": 2,
-    "unit": "",
-    "note": ""
-   },
-   {
-    "name": "garlic",
-    "quantity": 4,
-    "unit": "",
-    "note": ""
-   },
-   {
-    "name": "tomato puree",
-    "quantity": 1,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "rice",
-    "quantity": 2,
-    "unit": "cup",
-    "note": ""
-   },
-   {
-    "name": "noodles",
-    "quantity": 0.25,
-    "unit": "cup",
-    "note": ""
+    "note": "brown, medium dice, for the tomato sauce"
    },
    {
     "name": "butter",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "for the tomato sauce"
+   },
+   {
+    "name": "garlic",
+    "quantity": 2,
+    "unit": "clove",
+    "note": "thinly sliced, for the tomato sauce"
+   },
+   {
+    "name": "white vinegar",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": "for the tomato sauce"
+   },
+   {
+    "name": "salt",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "for the tomato sauce"
+   },
+   {
+    "name": "black pepper",
     "quantity": 0.25,
+    "unit": "tsp",
+    "note": "for the tomato sauce"
+   },
+   {
+    "name": "rice",
+    "quantity": 1.5,
     "unit": "cup",
-    "note": ""
+    "note": "medium grain (Egyptian or Japanese), rinsed"
    },
    {
-    "name": "olive oil",
-    "quantity": null,
-    "unit": "",
-    "note": "for deep-frying, about 2 cup"
-   },
-   {
-    "name": "pita bread",
-    "quantity": 1,
-    "unit": "",
-    "note": ""
-   },
-   {
-    "name": "ground cumin",
+    "name": "butter",
     "quantity": 1,
     "unit": "tbsp",
-    "note": ""
+    "note": "for the rice"
    },
    {
-    "name": "white wine vinegar",
-    "quantity": 3,
+    "name": "vegetable oil",
+    "quantity": 1,
     "unit": "tbsp",
-    "note": ""
+    "note": "for the rice; oil type not stated"
+   },
+   {
+    "name": "salt",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "for the rice"
+   },
+   {
+    "name": "white pepper",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": "for the rice"
+   },
+   {
+    "name": "garlic",
+    "quantity": 6,
+    "unit": "clove",
+    "note": "for the garlic sauce, 6-8, thinly sliced or minced"
+   },
+   {
+    "name": "white vinegar",
+    "quantity": 6,
+    "unit": "tbsp",
+    "note": "for the garlic sauce, 6-8"
+   },
+   {
+    "name": "butter",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "for the garlic sauce"
+   },
+   {
+    "name": "butter",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "for searing the meat at the end"
    },
    {
     "name": "salt",
     "quantity": null,
     "unit": "",
-    "note": "to taste"
-   },
-   {
-    "name": "black pepper",
-    "quantity": null,
-    "unit": "",
-    "note": "to taste"
+    "note": "to taste, for seasoning the meat"
    }
   ],
   "steps": [
    {
-    "text": "To prepare bread for bottom of dish: Take pita bread and rip into bite size pieces. In a frying pan, add about a 1/4 stick of butter, add bread pieces and fry until golden brown and crisp.",
+    "text": "Melt 1 tbsp butter in a large pot with the mastic. Sear the lamb on all sides, then add the crushed garlic, halved onions, bay leaves, cardamom and peppercorns.",
     "minutes": null
    },
    {
-    "text": "Put these pieces in a glass baking dish, preferably a square sized dish. Set aside.",
+    "text": "Add enough water to cover the meat, bring to the boil and skim off the scum. Turn the heat to low and simmer for 1 hour.",
+    "minutes": 60
+   },
+   {
+    "text": "Toss the bite-sized pitta pieces with the olive oil, salt and pepper on a lined tray and bake at 180°C for 8-12 minutes until golden and toasted.",
+    "minutes": 8
+   },
+   {
+    "text": "For the tomato sauce, soften the diced onion in butter for 3-5 minutes, add the garlic for a couple of minutes, then deglaze with the vinegar. Add the crushed tomatoes, water, salt and pepper, boil, then simmer for 15-20 minutes until thick.",
+    "minutes": 15
+   },
+   {
+    "text": "Rinse the rice until the water runs clear and fry it in the butter and oil until toasted and shiny. Season, spread flat, and add stock to cover by about 1.5 cm.",
     "minutes": null
    },
    {
-    "text": "Then add to same pan, a little more butter, salt, approximately 2 cloves of crushed fresh garlic, and a teaspoon or so of cumin stir around a bit until you can smell aroma, then add fried bread pieces to this mixture, stir to coat bread and put back into glass baking dish. Set aside.",
+    "text": "Boil the rice, cover tightly, and when the water has evaporated turn the heat low and steam for 20 minutes.",
+    "minutes": 20
+   },
+   {
+    "text": "For the garlic sauce, fry the garlic in butter until light golden, add the vinegar and boil for 1 minute. Set aside.",
+    "minutes": 1
+   },
+   {
+    "text": "Sear the seasoned meat in butter in a frying pan until golden brown on all sides.",
     "minutes": null
    },
    {
-    "text": "To prepare meat: put some butter in a pot, stir fry meat until brown, add 1 onion quartered, salt & pepper, 1 cube of chicken bouillon and water to cover meat.",
+    "text": "Put the toasted bread in an oven-safe dish with half the vinegar sauce and a couple of spoonfuls of tomato sauce, mix, and bake at 180°C for 5 minutes until crisp again.",
+    "minutes": 5
+   },
+   {
+    "text": "Mix in the rest of the vinegar sauce (to taste) and a few ladles of stock (about 250 ml), cover with a plate and let it steam.",
     "minutes": null
    },
    {
-    "text": "Bring to a boil, turn down to simmer, cover and cook until tender, approximately 2 hours. After meat has cooled, take out chunks of meat and put in a bowl, set aside. Reserve soup from the meat separately.",
-    "minutes": 120
-   },
-   {
-    "text": "To prepare the rice: Put some butter into a pot, add shareya (fideo noodles) like a handful or so, keep stirring until golden brown, not too dark, but very golden.",
-    "minutes": null
-   },
-   {
-    "text": "Then add two cups of rice, stir a little bit until some of the rice turns an opaque white. Add 2-1/4 cups of water and salt to taste. Bring to a boil, cover and turn down to simmer, cook until tender.",
-    "minutes": null
-   },
-   {
-    "text": "Test the rice tenderness after about 35 minutes.",
-    "minutes": 35
-   },
-   {
-    "text": "Now take some of the soup from meat and add to the top of the bread pieces in baking dish to saturate. Add cooked rice on top of bread pieces.",
-    "minutes": null
-   },
-   {
-    "text": "Slowly spoon remainder of soup onto rice, looking at glass dish sides to see level of soup, should reach just to top of rice, don’t worry, this doesn’t have to be exact. Now you’re ready to make the sauce and fry the meat to put on top.",
-    "minutes": null
-   },
-   {
-    "text": "To prepare red sauce: In a pan, add a little oil or butter, crushed tomato, a half teaspoon of tomato paste, salt & pepper, 2 cloves of fresh crushed garlic and cumin.",
-    "minutes": null
-   },
-   {
-    "text": "Add also approximately 3 tablespoons of vinegar, stir this until you smell aroma and it is a bit smooth. It should be a bit thick, not watery, but if too thick you can add a bit of water. Spread with a wooden spoon atop the rice to cover.",
-    "minutes": null
-   },
-   {
-    "text": "To fry meat: In a pan add a bit of butter or oil, the meat, just a touch of tomato paste, about a tablespoon of fresh crushed garlic, salt & pepper, a teaspoon of cumin. Cook until meat is golden fried.",
-    "minutes": null
-   },
-   {
-    "text": "Spoon this atop the rice and serve. Enjoy!",
+    "text": "Spread the rice over the bread in an even layer, then spoon the tomato sauce over the rice. Serve with the seared lamb.",
     "minutes": null
    }
   ]
@@ -41094,85 +41300,107 @@
  },
  {
   "source": "themealdb:52815",
-  "title": "French Lentils With Garlic and Thyme",
-  "description": "A French dish of brown lentils, carrot and celery — serves 4, on the table in about 45 minutes.",
+  "title": "French lentil ragout with garlic and thyme",
+  "description": "Puy lentils simmered in vegetable stock with a sauteed base of onion, carrot and garlic, tomato paste, bay leaf and thyme, finished with parsley.",
   "servings": 4,
   "cuisine": "French",
-  "category": "Miscellaneous",
-  "image": "https://www.themealdb.com/images/media/meals/vwwspt1487394060.jpg",
-  "prep_minutes": 15,
-  "cook_minutes": 15,
+  "category": "Side",
+  "image": "https://i.ytimg.com/vi/MlLMr8xiSx0/hqdefault.jpg",
+  "prep_minutes": 10,
+  "cook_minutes": 25,
   "ingredients": [
    {
     "name": "olive oil",
-    "quantity": 3,
+    "quantity": 1,
     "unit": "tbsp",
     "note": ""
    },
    {
-    "name": "onion",
+    "name": "garlic",
     "quantity": 1,
-    "unit": "",
-    "note": ""
+    "unit": "clove",
+    "note": "finely minced"
    },
    {
-    "name": "garlic",
-    "quantity": 2,
-    "unit": "clove",
-    "note": ""
+    "name": "onion",
+    "quantity": 0.5,
+    "unit": "",
+    "note": "finely diced"
    },
    {
     "name": "carrot",
     "quantity": 1,
     "unit": "",
-    "note": ""
+    "note": "large, peeled and finely diced"
    },
    {
-    "name": "brown lentils",
-    "quantity": 2.25,
-    "unit": "cup",
-    "note": ""
+    "name": "tomato puree",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "tomato paste"
+   },
+   {
+    "name": "bay leaf",
+    "quantity": 1,
+    "unit": "",
+    "note": "fresh preferably, otherwise dried"
    },
    {
     "name": "thyme",
     "quantity": 1,
-    "unit": "tsp",
+    "unit": "sprig",
     "note": ""
    },
    {
-    "name": "bay leaf",
+    "name": "puy lentils",
+    "quantity": 1,
+    "unit": "cup",
+    "note": "French green lentils"
+   },
+   {
+    "name": "vegetable stock",
     "quantity": 3,
-    "unit": "",
+    "unit": "cup",
     "note": ""
    },
    {
     "name": "salt",
-    "quantity": 1,
-    "unit": "tbsp",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": "skip if the stock is store-bought"
+   },
+   {
+    "name": "black pepper",
+    "quantity": 0.25,
+    "unit": "tsp",
     "note": ""
    },
    {
-    "name": "celery",
-    "quantity": 2,
-    "unit": "stick",
-    "note": ""
+    "name": "parsley",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "finely chopped"
    }
   ],
   "steps": [
    {
-    "text": "Place a large saucepan over medium heat and add oil. When hot, add chopped vegetables and sauté until softened, 5 to 10 minutes.",
-    "minutes": 10
-   },
-   {
-    "text": "Add 6 cups water, lentils, thyme, bay leaves and salt. Bring to a boil, then reduce to a fast simmer.",
+    "text": "Heat the olive oil in a large saucepan over medium heat.",
     "minutes": null
    },
    {
-    "text": "Simmer lentils until they are tender and have absorbed most of the water, 20 to 25 minutes. If necessary, drain any excess water after lentils have cooked. Serve immediately, or allow them to cool and reheat later.",
-    "minutes": 25
+    "text": "Saute the garlic, carrot and onion for about 5 minutes until softened.",
+    "minutes": 5
    },
    {
-    "text": "For a fuller taste, use some chicken stock and reduce the water by the same amount.",
+    "text": "Add the tomato paste, bay leaf and thyme and cook for 2 minutes.",
+    "minutes": 2
+   },
+   {
+    "text": "Add the lentils, stock, salt and pepper. Bring to a simmer, then lower the heat and simmer without a lid for 15 minutes until the lentils are soft but not mushy.",
+    "minutes": 15
+   },
+   {
+    "text": "Stir through the parsley, taste, adjust the seasoning and serve.",
     "minutes": null
    }
   ]
@@ -43189,54 +43417,60 @@
  },
  {
   "source": "themealdb:53021",
-  "title": "Golabki (cabbage roll)",
-  "description": "A Polish dish of beef mince, pork mince and cabbage — serves 4, worth the couple of hours it takes.",
-  "servings": 4,
+  "title": "Gołąbki (Polish cabbage rolls)",
+  "description": "Parboiled cabbage leaves wrapped around a beef, rice and onion filling, packed in a pot and simmered in a tomato paste sauce until tender.",
+  "servings": 8,
   "cuisine": "Polish",
   "category": "Beef",
   "image": "https://www.themealdb.com/images/media/meals/q8sp3j1593349686.jpg",
-  "prep_minutes": 15,
-  "cook_minutes": 85,
+  "prep_minutes": 40,
+  "cook_minutes": 105,
   "ingredients": [
    {
     "name": "cabbage",
     "quantity": 1,
     "unit": "",
-    "note": ""
-   },
-   {
-    "name": "butter",
-    "quantity": 2,
-    "unit": "tbsp",
-    "note": ""
+    "note": "whole head"
    },
    {
     "name": "onion",
     "quantity": 1,
     "unit": "",
-    "note": "chopped"
+    "note": "medium, diced"
    },
    {
-    "name": "beef mince",
-    "quantity": 455,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "pork mince",
-    "quantity": 225,
-    "unit": "g",
-    "note": ""
+    "name": "vegetable oil",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "oil and/or butter, 1-2 tbsp, for the onion"
    },
    {
     "name": "rice",
-    "quantity": 1.5,
+    "quantity": 0.5,
     "unit": "cup",
-    "note": ""
+    "note": "long grain, boiled 10 minutes then rinsed"
    },
    {
-    "name": "garlic",
+    "name": "water",
+    "quantity": 4,
+    "unit": "cup",
+    "note": "about 4 cups, for boiling the rice"
+   },
+   {
+    "name": "beef mince",
+    "quantity": 450,
+    "unit": "g",
+    "note": "ground beef, 85% lean"
+   },
+   {
+    "name": "parsley",
     "quantity": 1,
+    "unit": "tbsp",
+    "note": "chopped, 1-2 tbsp, save some for garnish"
+   },
+   {
+    "name": "paprika",
+    "quantity": 0.75,
     "unit": "tsp",
     "note": ""
    },
@@ -43250,55 +43484,55 @@
     "name": "black pepper",
     "quantity": 0.25,
     "unit": "tsp",
-    "note": ""
+    "note": "ground"
+   },
+   {
+    "name": "eggs",
+    "quantity": 1,
+    "unit": "",
+    "note": "large"
    },
    {
     "name": "tomato puree",
-    "quantity": 3,
-    "unit": "can",
-    "note": ""
+    "quantity": 170,
+    "unit": "g",
+    "note": "tomato paste, 6 oz, for the sauce"
+   },
+   {
+    "name": "water",
+    "quantity": null,
+    "unit": "",
+    "note": "boiling, as needed to almost cover the rolls and make the sauce"
    }
   ],
   "steps": [
    {
-    "text": "Bring a large pot of lightly salted water to a boil. Place cabbage head into water, cover pot, and cook until cabbage leaves are slightly softened enough to remove from head, 3 minutes.",
-    "minutes": 3
+    "text": "Remove the leaves from the cabbage head as shown in the video. Fry the diced onion in oil or butter until it just begins to brown and put it in a heatproof bowl.",
+    "minutes": null
    },
    {
-    "text": "Remove cabbage from pot and let cabbage sit until leaves are cool enough to handle, about 10 minutes.",
+    "text": "Boil the rice in about 4 cups of water for 10 minutes, drain, rinse in cold water and add to the onion.",
     "minutes": 10
    },
    {
-    "text": "Remove 18 whole leaves from the cabbage head, cutting out any thick tough center ribs. Set whole leaves aside. Chop the remainder of the cabbage head and spread it in the bottom of a casserole dish.",
+    "text": "Add the beef, parsley, paprika, salt, pepper and egg to the bowl (not the tomato paste) and mix into a filling.",
     "minutes": null
    },
    {
-    "text": "Melt butter in a large skillet over medium-high heat. Cook and stir onion in hot butter until tender, 5 to 10 minutes. Cool.",
-    "minutes": 10
-   },
-   {
-    "text": "Stir onion, beef, pork, rice, garlic, 1 teaspoon salt, and 1/4 teaspoon pepper together in a large bowl.",
+    "text": "Roll a portion of filling in each cabbage leaf and pack the rolls tightly in a large pot.",
     "minutes": null
    },
    {
-    "text": "Preheat oven to 180°C (350°F) (175 degrees C).",
+    "text": "Add boiling water to almost cover. Put the tomato paste on top of the rolls, or stir it into the hot water first to make a sauce and pour it over.",
     "minutes": null
    },
    {
-    "text": "Place about 1/2 cup beef mixture on a cabbage leaf. Roll cabbage around beef mixture, tucking in sides to create an envelope around the meat. Repeat with remaining leaves and meat mixture.",
-    "minutes": null
+    "text": "Set a heatproof plate on top of the rolls, cover the pot, bring to a simmer and cook for 1.5 to 2 hours until the cabbage is tender and the meat is cooked. In an ovenproof pot it can be baked at 180°C instead.",
+    "minutes": 90
    },
    {
-    "text": "Place cabbage rolls in a layer atop the chopped cabbage in the casserole dish; season rolls with salt and black pepper.",
+    "text": "For extra sauce, heat more tomato paste mixed with water with the rolls before serving. Garnish with parsley.",
     "minutes": null
-   },
-   {
-    "text": "Whisk tomato soup, tomato juice, and ketchup together in a bowl. Pour tomato soup mixture over cabbage rolls and cover dish wish aluminum foil.",
-    "minutes": null
-   },
-   {
-    "text": "Bake in the preheated oven until cabbage is tender and meat is cooked through, about 1 hour.",
-    "minutes": 60
    }
   ]
  },
@@ -43792,201 +44026,61 @@
  },
  {
   "source": "themealdb:52829",
-  "title": "Grilled Mac and Cheese Sandwich",
-  "description": "An American dish of macaroni, garlic powder and cayenne pepper — makes 12, about an hour start to finish.",
-  "servings": 12,
+  "title": "Grilled mac and cheese sandwich",
+  "description": "A griddled sandwich of Texas toast with American cheese and leftover macaroni and cheese, spread on the outside with mayonnaise and served with hot sauce.",
+  "servings": 1,
   "cuisine": "American",
   "category": "Pasta",
   "image": "https://www.themealdb.com/images/media/meals/xutquv1505330523.jpg",
-  "prep_minutes": 25,
-  "cook_minutes": 40,
+  "prep_minutes": 5,
+  "cook_minutes": 6,
   "ingredients": [
    {
-    "name": "macaroni",
-    "quantity": 225,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "plain flour",
-    "quantity": 0.333,
-    "unit": "cup",
-    "note": ""
-   },
-   {
-    "name": "mustard powder",
-    "quantity": 0.75,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "garlic powder",
-    "quantity": 0.5,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "salt",
-    "quantity": 0.5,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "black pepper",
-    "quantity": 0.5,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "cayenne pepper",
-    "quantity": 0.125,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "butter",
-    "quantity": 6,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "milk",
-    "quantity": 1.5,
-    "unit": "cup",
-    "note": ""
-   },
-   {
-    "name": "cream",
-    "quantity": 1,
-    "unit": "cup",
-    "note": ""
-   },
-   {
-    "name": "monterey jack cheese",
-    "quantity": 455,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "butter",
-    "quantity": 4,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "garlic powder",
-    "quantity": 1,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
     "name": "bread",
-    "quantity": 16,
+    "quantity": 2,
     "unit": "slice",
-    "note": "square"
+    "note": "Texas toast"
    },
    {
-    "name": "cheddar cheese",
-    "quantity": 8,
-    "unit": "slice",
-    "note": "mild"
-   },
-   {
-    "name": "monterey jack cheese",
-    "quantity": 8,
-    "unit": "slice",
-    "note": ""
-   },
-   {
-    "name": "butter",
-    "quantity": 4,
+    "name": "mayonnaise",
+    "quantity": 2,
     "unit": "tbsp",
+    "note": "spread on the outside of the bread"
+   },
+   {
+    "name": "american cheese",
+    "quantity": 4,
+    "unit": "slice",
     "note": ""
+   },
+   {
+    "name": "macaroni and cheese",
+    "quantity": 1,
+    "unit": "cup",
+    "note": "leftover, already cooked"
+   },
+   {
+    "name": "hot sauce",
+    "quantity": null,
+    "unit": "",
+    "note": "to serve"
    }
   ],
   "steps": [
    {
-    "text": "Make the mac and cheese: bring a medium saucepan of generously salted water (you want it to taste like seawater) to a boil. Add the pasta and cook, stirring occasionally, until al dente, 8 to 10 minutes, or according to the package directions.",
-    "minutes": 10
-   },
-   {
-    "text": "The pasta should be tender but still chewy.",
+    "text": "Preheat a griddle or cast iron pan over medium heat.",
     "minutes": null
    },
    {
-    "text": "While the pasta is cooking, in a small bowl, whisk together the flour, mustard powder, garlic powder, salt, black pepper, and cayenne pepper.",
+    "text": "Spread mayonnaise on the outside of both slices of bread.",
     "minutes": null
    },
    {
-    "text": "Drain the pasta in a colander. Place the empty pasta pan (no need to wash it) over low heat and add the butter.",
+    "text": "Put one slice mayo-side down in the pan. Top with 2 slices of cheese, the mac and cheese, 2 more slices of cheese and the second slice of bread, mayo-side up.",
     "minutes": null
    },
    {
-    "text": "When the butter has melted, whisk in the flour mixture and continue to cook, whisking frequently, until the mixture is beginning to brown and has a pleasant, nutty aroma, about 1 minute.",
-    "minutes": null
-   },
-   {
-    "text": "Watch carefully so it does not scorch on the bottom of the pan.",
-    "minutes": null
-   },
-   {
-    "text": "Slowly whisk the milk and cream into the flour mixture until everything is really well combined. Cook, whisking constantly, until the sauce is heated through and just begins to thicken, about 2 minutes. Remove from the heat.",
-    "minutes": 2
-   },
-   {
-    "text": "Gradually add the cheese while stirring constantly with a wooden spoon or silicone spatula and keep stirring until the cheese has melted into the sauce. Then stir in the drained cooked pasta.",
-    "minutes": null
-   },
-   {
-    "text": "Line a 9-by-13-inch (23-by-33-centimeter) rimmed baking sheet with parchment paper or aluminum foil. Coat the paper or foil with nonstick cooking spray or slick it with butter.",
-    "minutes": null
-   },
-   {
-    "text": "Pour the warm mac and cheese onto the prepared baking sheet and spread it evenly with a spatula.",
-    "minutes": null
-   },
-   {
-    "text": "Coat another piece of parchment paper with cooking spray or butter and place it, oiled or buttered side down, directly on the surface of the mac and cheese. Refrigerate until cool and firm, about 1 hour. Make the grilled cheese.",
-    "minutes": 60
-   },
-   {
-    "text": "Heat a large cast-iron or nonstick skillet over medium-low heat.",
-    "minutes": null
-   },
-   {
-    "text": "In a small bowl, stir together the 4 tablespoons (55 grams) butter and garlic powder until well blended.",
-    "minutes": null
-   },
-   {
-    "text": "Remove the mac and cheese from the refrigerator and peel off the top layer of parchment paper. Carefully cut into 8 equal pieces. Each piece will make 1 grilled mac and cheese sandwich.",
-    "minutes": null
-   },
-   {
-    "text": "(You can stash each individual portion in a double layer of resealable plastic bags and refrigerate for up to 3 days or freeze it for up to 1 month.)",
-    "minutes": null
-   },
-   {
-    "text": "Spread 3/4 teaspoon garlic butter on one side of each bread slice. Place half of the slices, buttered-side down, on a clean cutting board. Top each with one slice of Cheddar, then 1 piece of the mac and cheese.",
-    "minutes": null
-   },
-   {
-    "text": "(Transfer from the baking sheet by scooting your hand or a spatula under each piece of mac and cheese and then flipping it over onto a sandwich.) Place 1 slice of Jack on top of each.",
-    "minutes": null
-   },
-   {
-    "text": "Finish with the remaining bread slices, buttered-side up.",
-    "minutes": null
-   },
-   {
-    "text": "Using a wide spatula, place as many sandwiches in the pan as will fit without crowding it. Cover and cook until the bottoms are nicely browned, about 4 minutes.",
-    "minutes": 4
-   },
-   {
-    "text": "Turn and cook until the second sides are browned, the cheese is melted, and the mac and cheese is heated through, about 4 minutes more.",
-    "minutes": 4
-   },
-   {
-    "text": "Repeat with the remaining ingredients. Cut the sandwiches in half, if desired, and serve.",
+    "text": "Press down gently and cook until the cheese melts and the bread is golden brown, then turn over and finish cooking. Serve with hot sauce.",
     "minutes": null
    }
   ]
