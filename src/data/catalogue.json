@@ -18040,32 +18040,62 @@
  },
  {
   "source": "themealdb:53070",
-  "title": "Beef Caldereta",
-  "description": "A Filipino stew of beef, capsicum and potato — serves 8, about an hour start to finish.",
-  "servings": 8,
+  "title": "Beef caldereta",
+  "description": "A Filipino beef stew braised in spicy tomato sauce with potatoes, carrots, green olives and capsicum, enriched with liver spread and cheddar.",
+  "servings": 6,
   "cuisine": "Filipino",
   "category": "Beef",
   "image": "https://www.themealdb.com/images/media/meals/41cxjh1683207682.jpg",
   "prep_minutes": 20,
-  "cook_minutes": 50,
+  "cook_minutes": 90,
   "ingredients": [
    {
-    "name": "beef",
-    "quantity": 2000,
-    "unit": "g",
-    "note": "cut cubes"
+    "name": "vegetable oil",
+    "quantity": 0.25,
+    "unit": "cup",
+    "note": "for frying the vegetables; most is poured off and about 2 tbsp is kept for the rest of the cooking"
    },
    {
-    "name": "beef stock",
+    "name": "potato",
+    "quantity": 2,
+    "unit": "",
+    "note": "large, peeled, cut into 5 cm cubes"
+   },
+   {
+    "name": "carrot",
+    "quantity": 2,
+    "unit": "",
+    "note": "large, peeled, cut into 5 cm cubes"
+   },
+   {
+    "name": "onion",
     "quantity": 1,
     "unit": "",
-    "note": ""
+    "note": "peeled, chopped"
    },
    {
-    "name": "soy sauce",
-    "quantity": 1,
+    "name": "garlic",
+    "quantity": 4,
+    "unit": "clove",
+    "note": "peeled, minced"
+   },
+   {
+    "name": "beef",
+    "quantity": 900,
+    "unit": "g",
+    "note": "bottom round roast, cut into 5 cm cubes"
+   },
+   {
+    "name": "passata",
+    "quantity": 2,
+    "unit": "cup",
+    "note": "tomato sauce"
+   },
+   {
+    "name": "tomato puree",
+    "quantity": 2,
     "unit": "tbsp",
-    "note": ""
+    "note": "tomato paste"
    },
    {
     "name": "water",
@@ -18074,98 +18104,86 @@
     "note": ""
    },
    {
+    "name": "chilli",
+    "quantity": 10,
+    "unit": "",
+    "note": "Thai chilli peppers, minced"
+   },
+   {
+    "name": "green olives",
+    "quantity": 0.5,
+    "unit": "cup",
+    "note": "pitted"
+   },
+   {
+    "name": "liver spread",
+    "quantity": 0.5,
+    "unit": "cup",
+    "note": ""
+   },
+   {
+    "name": "cheddar cheese",
+    "quantity": 0.5,
+    "unit": "cup",
+    "note": "shredded"
+   },
+   {
     "name": "capsicum",
     "quantity": 1,
     "unit": "",
-    "note": "sliced"
+    "note": "small green, seeded, cored, cubed"
    },
    {
     "name": "capsicum",
     "quantity": 1,
     "unit": "",
-    "note": "sliced"
+    "note": "small red, seeded, cored, cubed"
    },
    {
-    "name": "potato",
-    "quantity": 1,
+    "name": "salt",
+    "quantity": null,
     "unit": "",
-    "note": "sliced"
+    "note": "to taste"
    },
    {
-    "name": "carrot",
-    "quantity": 1,
+    "name": "black pepper",
+    "quantity": null,
     "unit": "",
-    "note": "sliced"
-   },
-   {
-    "name": "tomato puree",
-    "quantity": 225,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "peanut butter",
-    "quantity": 3,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "chilli powder",
-    "quantity": 5,
-    "unit": "",
-    "note": ""
-   },
-   {
-    "name": "onion",
-    "quantity": 1,
-    "unit": "",
-    "note": "chopped"
-   },
-   {
-    "name": "garlic",
-    "quantity": 5,
-    "unit": "clove",
-    "note": ""
-   },
-   {
-    "name": "olive oil",
-    "quantity": 3,
-    "unit": "tbsp",
-    "note": ""
+    "note": "to taste"
    }
   ],
   "steps": [
    {
-    "text": "Heat oil in a cooking pot. Saute onion and garlic until onion softens.",
+    "text": "Heat the oil in a wide pan over medium heat. Cook the potatoes and carrots until lightly browned, then remove them and drain on paper towels.",
     "minutes": null
    },
    {
-    "text": "Add beef. Saute until the outer part turns light brown.",
+    "text": "Pour off the oil except for about 2 tbsp. Cook the onion and garlic until softened.",
     "minutes": null
    },
    {
-    "text": "Add soy sauce. Pour tomato sauce and water. Let boil.",
+    "text": "Add the beef and cook, stirring occasionally, until lightly browned.",
     "minutes": null
    },
    {
-    "text": "Add Knorr Beef Cube. Cover the pressure cooker. Cook for 30 minutes.",
-    "minutes": 30
-   },
-   {
-    "text": "Pan-fry carrot and potato until it browns. Set aside.",
+    "text": "Add the tomato sauce, tomato paste, water and chillies and bring to the boil, skimming off any scum. Season with salt and pepper.",
     "minutes": null
    },
    {
-    "text": "Add chili pepper, liver spread and peanut butter. Stir.",
+    "text": "Lower the heat, cover and cook for 1 to 1 1/2 hours, until the beef is tender.",
+    "minutes": 60
+   },
+   {
+    "text": "Add the potatoes and carrots and keep cooking until tender.",
     "minutes": null
    },
    {
-    "text": "Add bell peppers, fried potato and carrot. Cover the pot. Continue cooking for 5 to 7 minutes.",
-    "minutes": 7
+    "text": "Stir in the liver spread and cheese and cook until the cheese melts and the sauce thickens.",
+    "minutes": null
    },
    {
-    "text": "Season with salt and ground black pepper. Serve.",
-    "minutes": null
+    "text": "Add the capsicums and olives and cook 1-2 minutes more, until tender but still crisp. Serve hot.",
+    "minutes": 1
    }
   ]
  },
@@ -24399,84 +24417,86 @@
  },
  {
   "source": "themealdb:52923",
-  "title": "Canadian Butter Tarts",
-  "description": "A Canadian sweet made with shortcrust pastry, raisins and cream — makes 12, on the table in about 45 minutes.",
+  "title": "Canadian butter tarts",
+  "description": "Pastry tarts filled with a simple butter, brown sugar and egg filling, with optional raisins, baked hot then moderately until the pastry is golden.",
   "servings": 12,
   "cuisine": "Canadian",
   "category": "Dessert",
   "image": "https://www.themealdb.com/images/media/meals/wpputp1511812960.jpg",
-  "prep_minutes": 15,
-  "cook_minutes": 25,
+  "prep_minutes": 20,
+  "cook_minutes": 28,
   "ingredients": [
    {
     "name": "shortcrust pastry",
-    "quantity": 375,
-    "unit": "g",
-    "note": ""
+    "quantity": null,
+    "unit": "",
+    "note": "3-2-1 pastry, amount not given (pie crust made with the creator's '3-2-1' recipe)"
    },
    {
     "name": "eggs",
-    "quantity": 2,
+    "quantity": 1,
     "unit": "",
-    "note": "large"
+    "note": "beaten"
+   },
+   {
+    "name": "butter",
+    "quantity": 0.33,
+    "unit": "cup",
+    "note": "1/3 cup"
    },
    {
     "name": "brown sugar",
-    "quantity": 175,
-    "unit": "g",
+    "quantity": 1,
+    "unit": "cup",
+    "note": "packed, dark or light"
+   },
+   {
+    "name": "milk",
+    "quantity": 2,
+    "unit": "tbsp",
     "note": ""
    },
    {
     "name": "raisins",
-    "quantity": 100,
-    "unit": "g",
-    "note": ""
+    "quantity": 0.5,
+    "unit": "cup",
+    "note": "raisins or currants, optional"
    },
    {
     "name": "vanilla extract",
     "quantity": 1,
     "unit": "tsp",
     "note": ""
-   },
-   {
-    "name": "butter",
-    "quantity": 50,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "cream",
-    "quantity": 4,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "walnuts",
-    "quantity": 50,
-    "unit": "g",
-    "note": ""
    }
   ],
   "steps": [
    {
-    "text": "Preheat the oven to fan 170C/ conventional 190C/gas 5. Roll out the pastry on a lightly floured surface so it’s slightly thinner than straight from the pack. Then cut out 18-20 rounds with a 7.5cm fluted cutter, re-rolling the trimmings.",
+    "text": "Make the pie crust using the 3-2-1 recipe (amounts are not in the description). Roll it about 3 mm thick and cut rounds to suit the tart pan.",
     "minutes": null
    },
    {
-    "text": "Use the rounds to line two deep 12-hole tart tins (not muffin tins). If you only have a regular-sized, 12-hole tart tin you will be able to make a few more slightly shallower tarts.",
+    "text": "Press the rounds into the prepared tart pan and chill. Heat the oven to 230°C.",
     "minutes": null
    },
    {
-    "text": "Beat the eggs in a large bowl and combine with the rest of the ingredients except the walnuts. Tip this mixture into a pan and stir continuously for 3-4 minutes until the butter melts, and the mixture bubbles and starts to thicken.",
-    "minutes": 4
-   },
-   {
-    "text": "It should be thick enough to coat the back of a wooden spoon. Don’t overcook, and be sure to stir all the time as the mixture can easily burn. Remove from the heat and stir in the nuts.",
+    "text": "Mix the egg, butter, brown sugar, milk and vanilla for the filling.",
     "minutes": null
    },
    {
-    "text": "Spoon the filling into the unbaked tart shells so it’s level with the pastry. Bake for 15-18 minutes until set and pale golden. Leave in the tin to cool for a few minutes before lifting out on to a wire rack. Serve warm or cold.",
-    "minutes": 18
+    "text": "Put raisins or currants into some, all or none of the shells, as you like.",
+    "minutes": null
+   },
+   {
+    "text": "Fill each shell two thirds full and wipe any spilled filling off the pan surface.",
+    "minutes": null
+   },
+   {
+    "text": "Bake for 8 minutes, then lower the oven to 175°C and bake 15-20 minutes more, until the pastry is golden brown.",
+    "minutes": 23
+   },
+   {
+    "text": "Cool a few minutes in the pan, then move to a wire rack to cool completely.",
+    "minutes": null
    }
   ]
  },
@@ -25794,137 +25814,135 @@
  },
  {
   "source": "themealdb:52898",
-  "title": "Chelsea Buns",
-  "description": "A British sweet made with raisins and cinnamon — makes 12, about an hour start to finish.",
-  "servings": 12,
+  "title": "Chelsea buns",
+  "description": "Sweet yeast dough rolled up with a currant, muscovado, mixed spice and lemon zest filling, cut into 16 pinwheels, baked in a tin and drizzled with white icing.",
+  "servings": 16,
   "cuisine": "British",
   "category": "Dessert",
   "image": "https://www.themealdb.com/images/media/meals/vqpwrv1511723001.jpg",
-  "prep_minutes": 20,
-  "cook_minutes": 30,
+  "prep_minutes": 30,
+  "cook_minutes": 35,
   "ingredients": [
    {
-    "name": "plain flour",
+    "name": "bread flour",
     "quantity": 500,
     "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "salt",
-    "quantity": 1,
-    "unit": "tsp",
-    "note": ""
+    "note": "strong white, for the dough"
    },
    {
     "name": "yeast",
     "quantity": 7,
     "unit": "g",
-    "note": ""
+    "note": "easy bake, for the dough"
    },
    {
     "name": "milk",
-    "quantity": 300,
+    "quantity": 275,
     "unit": "ml",
-    "note": ""
+    "note": "whole, for the dough"
    },
    {
     "name": "butter",
-    "quantity": 40,
+    "quantity": 50,
     "unit": "g",
-    "note": ""
+    "note": "unsalted, cold, diced, for the dough"
    },
    {
     "name": "eggs",
     "quantity": 1,
     "unit": "",
-    "note": ""
+    "note": "free range, medium, beaten, for the dough"
+   },
+   {
+    "name": "sugar",
+    "quantity": 75,
+    "unit": "g",
+    "note": "unrefined golden caster sugar, for the dough"
+   },
+   {
+    "name": "salt",
+    "quantity": 1.5,
+    "unit": "tsp",
+    "note": "for the dough"
    },
    {
     "name": "vegetable oil",
-    "quantity": 1,
-    "unit": "dash",
-    "note": ""
+    "quantity": null,
+    "unit": "",
+    "note": "for greasing the bowl"
    },
    {
     "name": "butter",
-    "quantity": 25,
+    "quantity": 50,
     "unit": "g",
-    "note": ""
+    "note": "unsalted, melted, for the filling, plus extra for greasing the tin"
    },
    {
     "name": "brown sugar",
     "quantity": 75,
     "unit": "g",
-    "note": ""
+    "note": "unrefined light muscovado, for the filling"
    },
    {
-    "name": "cinnamon",
+    "name": "mixed spice",
     "quantity": 2,
     "unit": "tsp",
-    "note": ""
+    "note": "for the filling"
    },
    {
-    "name": "raisins",
-    "quantity": 150,
+    "name": "currants",
+    "quantity": 100,
     "unit": "g",
-    "note": ""
+    "note": "for the filling"
    },
    {
-    "name": "milk",
+    "name": "lemon",
     "quantity": 2,
-    "unit": "tbsp",
-    "note": ""
+    "unit": "",
+    "note": "zest only, for the filling"
    },
    {
-    "name": "sugar",
-    "quantity": 2,
-    "unit": "tbsp",
-    "note": ""
+    "name": "icing sugar",
+    "quantity": 50,
+    "unit": "g",
+    "note": "for the icing"
    }
   ],
   "steps": [
    {
-    "text": "Sift the flour and salt into a large bowl. Make a well in the middle and add the yeast.",
+    "text": "Bring the milk to the boil, take it off the heat, add the diced butter and leave to cool to hand temperature. Mix the flour, yeast, sugar and salt in a big bowl, then stir in the milk mixture and beaten egg with a wooden spoon.",
     "minutes": null
    },
    {
-    "text": "Meanwhile, warm the milk and butter in a saucepan until the butter melts and the mixture is lukewarm.",
+    "text": "Tip onto a floured surface and knead for 10 minutes (or use a dough hook).",
+    "minutes": 10
+   },
+   {
+    "text": "Put the dough in a lightly oiled bowl, cover with a tea towel and leave to rise until doubled, up to 2 hours.",
+    "minutes": 120
+   },
+   {
+    "text": "Meanwhile, mash together the melted butter, muscovado sugar, mixed spice, currants and lemon zest.",
     "minutes": null
    },
    {
-    "text": "Add the milk mixture and egg to the flour mixture and stir until the contents of the bowl come together as a soft dough. (You may need to add a little extra flour.)",
+    "text": "Knock back the dough with 5 gentle kneads, then roll it into a 20 x 45 cm rectangle and scatter over the currant mixture.",
     "minutes": null
    },
    {
-    "text": "Tip the dough onto a generously floured work surface. Knead for five minutes, adding more flour if necessary, until the dough is smooth and elastic and no longer feels sticky.",
+    "text": "Roll up tightly from a long side like a Swiss roll and cut into 16 even slices. Arrange cut-side up in a buttered 23 cm square tin in a 4 x 4 pattern.",
     "minutes": null
    },
    {
-    "text": "Lightly oil a bowl with a little of the vegetable oil. Place the dough into the bowl and turn until it is covered in the oil. Cover the bowl with cling film and set aside in a warm place for one hour, or until the dough has doubled in size. Lightly grease a baking tray.",
-    "minutes": 60
-   },
-   {
-    "text": "For the filling, knock the dough back to its original size and turn out onto a lightly floured work surface. Roll the dough out into a rectangle 0.5cm/¼in thick.",
+    "text": "Heat the oven to 180°C (160°C fan). Cover the buns and prove until nearly doubled in size.",
     "minutes": null
    },
    {
-    "text": "Brush all over with the melted butter, then sprinkle over the brown sugar, cinnamon and dried fruit.",
-    "minutes": null
+    "text": "Bake for 35 minutes until golden and cooked through. Cool 20 minutes in the tin, then move to a wire rack to cool completely.",
+    "minutes": 35
    },
    {
-    "text": "Roll the dough up into a tight cylinder , cut ten 4cm/1½in slice and place them onto a lightly greased baking sheet, leaving a little space between each slice. Cover with a tea towel and set aside to rise for 30 minutes. Preheat oven to 190C/375F/Gas 5.",
-    "minutes": 30
-   },
-   {
-    "text": "Bake the buns in the oven for 20-25 minutes, or until risen and golden-brown.",
-    "minutes": 25
-   },
-   {
-    "text": "Meanwhile, for the glaze, heat the milk and sugar in a saucepan until boiling. Reduce the heat and simmer for 2-3 minutes.",
-    "minutes": 3
-   },
-   {
-    "text": "Remove the buns from the oven and brush with the glaze, then set aside to cool on a wire rack.",
+    "text": "Drizzle with white icing made from the icing sugar and leave to set before pulling the buns apart.",
     "minutes": null
    }
   ]
@@ -39175,66 +39193,100 @@
  },
  {
   "source": "themealdb:52919",
-  "title": "Fennel Dauphinoise",
-  "description": "A French side of potato, fennel bulb and cream — serves 4, about an hour start to finish.",
+  "title": "Potato and courgette dauphinoise",
+  "description": "Thinly sliced potato and courgette layered in a baking dish, covered with a garlic and bay soya cream sauce, topped with cheddar and baked until golden.",
   "servings": 4,
   "cuisine": "French",
   "category": "Side",
-  "image": "https://www.themealdb.com/images/media/meals/ytttsv1511798734.jpg",
-  "prep_minutes": 10,
-  "cook_minutes": 50,
+  "image": "https://i.ytimg.com/vi/tXBzZm2kkh8/hqdefault.jpg",
+  "prep_minutes": 30,
+  "cook_minutes": 35,
   "ingredients": [
    {
-    "name": "potato",
-    "quantity": 225,
-    "unit": "g",
-    "note": ""
+    "name": "soy milk",
+    "quantity": 125,
+    "unit": "ml",
+    "note": "Alpro Soya Original"
    },
    {
-    "name": "fennel bulb",
+    "name": "soy cream",
+    "quantity": 125,
+    "unit": "ml",
+    "note": "Alpro Soya Single, a soya alternative to cream"
+   },
+   {
+    "name": "potato",
+    "quantity": 500,
+    "unit": "g",
+    "note": "peeled, thinly sliced"
+   },
+   {
+    "name": "olive oil",
     "quantity": 1,
-    "unit": "",
-    "note": "small"
+    "unit": "tbsp",
+    "note": "for greasing the dish"
+   },
+   {
+    "name": "courgette",
+    "quantity": 170,
+    "unit": "g",
+    "note": "1 courgette, peeled, thinly sliced"
    },
    {
     "name": "garlic",
     "quantity": 1,
     "unit": "clove",
-    "note": "finely chopped"
+    "note": "crushed"
    },
    {
-    "name": "milk",
-    "quantity": 75,
-    "unit": "ml",
+    "name": "bay leaf",
+    "quantity": 2,
+    "unit": "",
     "note": ""
    },
    {
-    "name": "cream",
+    "name": "cheddar cheese",
     "quantity": 100,
-    "unit": "ml",
-    "note": ""
+    "unit": "g",
+    "note": "grated"
    },
    {
-    "name": "butter",
+    "name": "black pepper",
     "quantity": null,
     "unit": "",
-    "note": "for greasing"
+    "note": "to taste"
    },
    {
-    "name": "parmesan",
-    "quantity": null,
-    "unit": "",
-    "note": "to serve"
+    "name": "salt",
+    "quantity": 1,
+    "unit": "pinch",
+    "note": "small pinch per layer"
    }
   ],
   "steps": [
    {
-    "text": "Heat oven to 180C/160C fan/gas 4. Put potatoes, fennel, and garlic in a medium non-stick pan. Pour in milk and double cream, season well and simmer gently, covered, for 10 mins, stirring halfway through, until potatoes are just tender.",
-    "minutes": 10
+    "text": "Heat the oven to 200°C. Warm the soya milk with the soya cream, bay leaves and crushed garlic in a pan, and take it off the heat once it comes to the boil.",
+    "minutes": null
    },
    {
-    "text": "Divide the mixture between 2 small (about 150ml) buttered ramekins and scatter with Parmesan. Bake for 40 mins until the potatoes are golden and tender when pierced with a knife. Snip the reserved fennel fronds over before serving.",
-    "minutes": 40
+    "text": "Peel the potatoes and courgette and slice them thinly. Grease a baking dish with the olive oil.",
+    "minutes": null
+   },
+   {
+    "text": "Lay a layer of potato in the dish and season with pepper and a small pinch of salt.",
+    "minutes": null
+   },
+   {
+    "text": "Alternate layers of courgette and potato, seasoning every layer, and finish with a layer of courgette.",
+    "minutes": null
+   },
+   {
+    "text": "Pour the creamy sauce over until it covers about two thirds of the vegetables.",
+    "minutes": null
+   },
+   {
+    "text": "Sprinkle the grated cheddar over the top and bake for 35-40 minutes, until the potatoes are tender and the top is golden.",
+    "minutes": 35
    }
   ]
  },
@@ -39735,171 +39787,197 @@
  },
  {
   "source": "themealdb:52918",
-  "title": "Fish Stew with Rouille",
-  "description": "A French stew of prawns, fish stock and fennel bulb — serves 4, about an hour start to finish.",
-  "servings": 4,
+  "title": "Snapper bouillabaisse with rouille",
+  "description": "A saffron and tomato bouillabaisse of snapper, prawns and scallops, blended smooth and sieved, served with a quick rouille of mayonnaise, roasted capsicum and saffron.",
+  "servings": 6,
   "cuisine": "French",
   "category": "Seafood",
-  "image": "https://www.themealdb.com/images/media/meals/vptqpw1511798500.jpg",
-  "prep_minutes": 25,
-  "cook_minutes": 45,
+  "image": "https://i.ytimg.com/vi/fZVWYOYKv60/hqdefault.jpg",
+  "prep_minutes": 20,
+  "cook_minutes": 25,
   "ingredients": [
    {
-    "name": "prawns",
-    "quantity": 6,
-    "unit": "",
-    "note": "large"
-   },
-   {
     "name": "olive oil",
-    "quantity": 3,
-    "unit": "tbsp",
+    "quantity": 0.25,
+    "unit": "cup",
     "note": ""
-   },
-   {
-    "name": "dry white wine",
-    "quantity": 150,
-    "unit": "ml",
-    "note": ""
-   },
-   {
-    "name": "fish stock",
-    "quantity": 200,
-    "unit": "ml",
-    "note": ""
-   },
-   {
-    "name": "fennel bulb",
-    "quantity": 1,
-    "unit": "",
-    "note": "small, finely diced"
    },
    {
     "name": "onion",
     "quantity": 1,
     "unit": "",
-    "note": "small, finely diced"
+    "note": "finely chopped"
+   },
+   {
+    "name": "celery",
+    "quantity": 1,
+    "unit": "",
+    "note": "1 stalk, finely chopped"
    },
    {
     "name": "garlic",
-    "quantity": 3,
+    "quantity": 2,
     "unit": "clove",
-    "note": "chopped"
-   },
-   {
-    "name": "potato",
-    "quantity": 1,
-    "unit": "",
-    "note": "large"
-   },
-   {
-    "name": "orange",
-    "quantity": 1,
-    "unit": "",
-    "note": ""
-   },
-   {
-    "name": "star anise",
-    "quantity": 1,
-    "unit": "",
-    "note": ""
-   },
-   {
-    "name": "bay leaf",
-    "quantity": 1,
-    "unit": "",
-    "note": ""
-   },
-   {
-    "name": "harissa spice",
-    "quantity": 1.5,
-    "unit": "tsp",
-    "note": ""
+    "note": "finely chopped"
    },
    {
     "name": "tomato puree",
-    "quantity": 2,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "canned tomatoes",
-    "quantity": 400,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "mussels",
     "quantity": 1,
-    "unit": "handful",
+    "unit": "tbsp",
+    "note": "tomato paste"
+   },
+   {
+    "name": "dry white wine",
+    "quantity": 1,
+    "unit": "cup",
     "note": ""
    },
    {
-    "name": "white fish",
-    "quantity": 200,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "thyme",
-    "quantity": 2,
+    "name": "tomato",
+    "quantity": 4,
     "unit": "",
+    "note": "ripe roma, quartered and roughly chopped"
+   },
+   {
+    "name": "saffron",
+    "quantity": 1,
+    "unit": "pinch",
+    "note": "large pinch, for the soup"
+   },
+   {
+    "name": "orange zest",
+    "quantity": null,
+    "unit": "",
+    "note": "1 strip of rind, optional"
+   },
+   {
+    "name": "sugar",
+    "quantity": 2,
+    "unit": "tsp",
+    "note": "caster"
+   },
+   {
+    "name": "water",
+    "quantity": 2,
+    "unit": "cup",
     "note": ""
+   },
+   {
+    "name": "potato",
+    "quantity": 150,
+    "unit": "g",
+    "note": "quartered and sliced 1 cm thick"
+   },
+   {
+    "name": "snapper",
+    "quantity": 500,
+    "unit": "g",
+    "note": "skinless, boneless fillets, cut into 4 cm pieces"
+   },
+   {
+    "name": "prawns",
+    "quantity": 18,
+    "unit": "",
+    "note": "prawn cutlets, thawed"
+   },
+   {
+    "name": "scallops",
+    "quantity": 18,
+    "unit": "",
+    "note": "roe discarded"
+   },
+   {
+    "name": "saffron",
+    "quantity": 1,
+    "unit": "pinch",
+    "note": "large pinch, for the rouille"
+   },
+   {
+    "name": "water",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "boiling, to steep the rouille saffron"
+   },
+   {
+    "name": "garlic",
+    "quantity": 1,
+    "unit": "clove",
+    "note": "for the rouille"
+   },
+   {
+    "name": "roasted capsicum",
+    "quantity": 50,
+    "unit": "g",
+    "note": "roasted red, for the rouille"
+   },
+   {
+    "name": "tomato puree",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "tomato paste, for the rouille"
+   },
+   {
+    "name": "cayenne pepper",
+    "quantity": 1,
+    "unit": "pinch",
+    "note": "small pinch, for the rouille"
+   },
+   {
+    "name": "mayonnaise",
+    "quantity": 1,
+    "unit": "cup",
+    "note": "whole egg, for the rouille"
+   },
+   {
+    "name": "parsley",
+    "quantity": null,
+    "unit": "",
+    "note": "continental, chopped, to serve"
    },
    {
     "name": "bread",
     "quantity": null,
     "unit": "",
-    "note": "to serve"
+    "note": "crusty, to serve"
+   },
+   {
+    "name": "lemon",
+    "quantity": null,
+    "unit": "",
+    "note": "cut in cheeks, to serve"
    }
   ],
   "steps": [
    {
-    "text": "Twist the heads from the prawns, then peel away the legs and shells, but leave the tails intact. Devein each prawn. Fry the shells in 1 tbsp oil for 5 mins, until dark pink and golden in patches.",
-    "minutes": 5
-   },
-   {
-    "text": "Add the wine, boil down by two thirds, then pour in the stock. Strain into a jug, discarding the shells.",
+    "text": "Heat the oil in a large sauté pan and cook the onion, celery and garlic, stirring, until the onion is soft. Stir in the tomato paste for 1 minute.",
     "minutes": null
    },
    {
-    "text": "Heat the rest of the oil in a deep frying pan or casserole. Add the fennel, onion and garlic, season, then cover and gently cook for 10 mins until softened. Meanwhile, peel the potato and cut into 2cm-ish chunks.",
+    "text": "Add the wine and bring to the boil, then add the tomatoes, saffron, orange rind, sugar, water and potatoes.",
+    "minutes": null
+   },
+   {
+    "text": "Bring back to the boil, reduce the heat and simmer uncovered for 10 minutes, until the potato is soft.",
     "minutes": 10
    },
    {
-    "text": "Put into a pan of cold water, bring to the boil and cook for 5 mins until almost tender. Drain in a colander.",
-    "minutes": 5
-   },
-   {
-    "text": "Peel a strip of zest from the orange. Put the zest, star anise, bay and ½ tsp harissa into the pan. Fry gently, uncovered, for 5-10 mins, until the vegetables are soft, sweet and golden.",
-    "minutes": 10
-   },
-   {
-    "text": "Stir in the tomato purée, cook for 2 mins, then add the tomatoes and stock. Simmer for 10 mins until the sauce thickens slightly. Season to taste. The sauce can be made ahead, then reheated later in the day.",
-    "minutes": 10
-   },
-   {
-    "text": "Meantime, scrub the mussels or clams and pull away any stringy beards. Any that are open should be tapped sharply on the worktop – if they don’t close after a few seconds, discard them.",
+    "text": "Discard the orange rind and blend the mixture smooth with a stick blender. Season, then pass it through a sieve into a clean large pan.",
     "minutes": null
    },
    {
-    "text": "Reheat the sauce if necessary, then stir the potato, chunks of fish and prawns very gently into the stew.",
-    "minutes": null
+    "text": "For the rouille, steep the saffron in 1 tablespoon of boiling water for 2 minutes. Process it with the garlic, roasted capsicum, tomato paste and cayenne until smooth, then blend in the mayonnaise and season.",
+    "minutes": 2
    },
    {
-    "text": "Bring back to the boil, then cover and gently simmer for 3 mins. Scatter the mussels or clams over the stew, then cover and cook for 2 mins more or until the shells have opened wide. Discard any that remain closed.",
-    "minutes": 3
+    "text": "Bring the soup to a simmer, add the snapper and cook for 2 minutes.",
+    "minutes": 2
    },
    {
-    "text": "The chunks of fish should flake easily and the prawns should be pink through. Scatter with the thyme leaves.",
-    "minutes": null
+    "text": "Stir in the prawns and scallops and simmer 1-2 minutes, until the prawns are cooked.",
+    "minutes": 1
    },
    {
-    "text": "To make the quick rouille, stir the rest of the harissa through the mayonnaise. Serve the stew in bowls, topped with spoonfuls of rouille, which will melt into the sauce and enrich it.",
-    "minutes": null
-   },
-   {
-    "text": "Have some good bread ready, as you’ll definitely want to mop up the juices.",
+    "text": "Ladle into bowls, drizzle with rouille and scatter with parsley. Serve with crusty bread and lemon cheeks.",
     "minutes": null
    }
   ]
@@ -68888,80 +68966,130 @@
  },
  {
   "source": "themealdb:53215",
-  "title": "Shakshouka",
-  "description": "A Saudi Arabian dish of tomato — serves 4, on the table in about 45 minutes.",
-  "servings": 4,
-  "cuisine": "Saudi Arabian",
-  "category": "Miscellaneous",
+  "title": "Shakshuka",
+  "description": "Eggs poached in a spiced tomato and red capsicum sauce, simmered in a large frying pan and served with crusty bread or pita.",
+  "servings": 6,
+  "cuisine": "Middle Eastern",
+  "category": "Breakfast",
   "image": "https://www.themealdb.com/images/media/meals/crd1jz1763592990.jpg",
   "prep_minutes": 10,
-  "cook_minutes": 20,
+  "cook_minutes": 30,
   "ingredients": [
    {
-    "name": "tomato",
-    "quantity": 250,
-    "unit": "g",
-    "note": ""
-   },
-   {
     "name": "olive oil",
-    "quantity": 40,
-    "unit": "ml",
+    "quantity": 1,
+    "unit": "tbsp",
     "note": ""
    },
    {
-    "name": "eggs",
-    "quantity": 4,
+    "name": "onion",
+    "quantity": 1,
     "unit": "",
-    "note": ""
+    "note": "medium, diced"
    },
    {
     "name": "garlic",
-    "quantity": 4,
-    "unit": "",
-    "note": "sliced"
+    "quantity": 2,
+    "unit": "clove",
+    "note": "minced"
    },
    {
-    "name": "black pepper",
+    "name": "capsicum",
+    "quantity": 1,
+    "unit": "",
+    "note": "medium red, chopped"
+   },
+   {
+    "name": "canned tomatoes",
+    "quantity": 2,
+    "unit": "can",
+    "note": "diced, 400 g each"
+   },
+   {
+    "name": "tomato puree",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": "tomato paste, about 30 g"
+   },
+   {
+    "name": "chilli powder",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": ""
+   },
+   {
+    "name": "ground cumin",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": ""
+   },
+   {
+    "name": "paprika",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": ""
+   },
+   {
+    "name": "red chilli flakes",
     "quantity": null,
     "unit": "",
     "note": "to taste"
+   },
+   {
+    "name": "sugar",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": ""
    },
    {
     "name": "salt",
     "quantity": null,
     "unit": "",
     "note": "to taste"
+   },
+   {
+    "name": "black pepper",
+    "quantity": null,
+    "unit": "",
+    "note": "freshly ground, to taste"
+   },
+   {
+    "name": "eggs",
+    "quantity": 6,
+    "unit": "",
+    "note": ""
+   },
+   {
+    "name": "parsley",
+    "quantity": null,
+    "unit": "",
+    "note": "or coriander, to garnish"
    }
   ],
   "steps": [
    {
-    "text": "First, pan fry the black pepper and garlic over a dry medium heat until fragrant.",
-    "minutes": null
-   },
-   {
-    "text": "Add a good amount of extra virgin olive oil and infuse for a minute.",
-    "minutes": null
-   },
-   {
-    "text": "Once the oil heats up, add the tomatoes and salt, and cover with a lid. Simmer for 5 minutes.",
+    "text": "Heat the oil in a 30 cm frying pan over medium heat. Cook the onion for about 5 minutes until it starts to soften, then stir in the garlic.",
     "minutes": 5
    },
    {
-    "text": "Remove the lid and mash the tomatoes. Reduce until you reach the desired consistency of choice.",
-    "minutes": null
-   },
-   {
-    "text": "Make craters for the eggs and lower the heat. Carefully crack the eggs into the craters, making sure it touches the pan and not the tomato sauce.",
-    "minutes": null
-   },
-   {
-    "text": "Cover the eggs and leave it for 5 minutes without lifting the lid.",
+    "text": "Add the capsicum and cook over medium heat for 5-7 minutes until softened.",
     "minutes": 5
    },
    {
-    "text": "Remove from the heat and let the residual heat steam the eggs for 1-2 minutes. Serve with flatbread. Enjoy!",
-    "minutes": 2
+    "text": "Stir in the tomato paste and tomatoes, then add the chilli powder, cumin, paprika, chilli flakes and sugar. Season with salt and pepper.",
+    "minutes": null
+   },
+   {
+    "text": "Simmer over medium heat for 10-15 minutes until the sauce starts to reduce, then adjust the seasoning, adding more chilli flakes for heat or sugar for sweetness.",
+    "minutes": 10
+   },
+   {
+    "text": "Crack the eggs over the sauce, one in the middle and five around the edge of the pan. Cover and simmer for 10-15 minutes, until the eggs are cooked.",
+    "minutes": 10
+   },
+   {
+    "text": "Garnish with parsley or coriander and serve straight away with crusty bread or pita.",
+    "minutes": null
    }
   ]
  },
@@ -77314,54 +77442,178 @@
  },
  {
   "source": "themealdb:53199",
-  "title": "Thai beef stir-fry",
-  "description": "A Thai dish of beef, chilli and basil — serves 2, ready in under half an hour.",
-  "servings": 2,
+  "title": "Thai basil beef stir-fry (pad kra pao)",
+  "description": "Minced beef stir-fried with a pounded garlic and chilli paste and a fish, soy and oyster sauce, finished with holy basil and served with rice and crispy fried eggs.",
+  "servings": 4,
   "cuisine": "Thai",
   "category": "Beef",
-  "image": "https://www.themealdb.com/images/media/meals/kyuxew1763479470.jpg",
-  "prep_minutes": 10,
-  "cook_minutes": 5,
+  "image": "https://i.ytimg.com/vi/28nfxlyFV68/hqdefault.jpg",
+  "prep_minutes": 5,
+  "cook_minutes": 10,
   "ingredients": [
+   {
+    "name": "garlic",
+    "quantity": 7,
+    "unit": "clove",
+    "note": "pounded into the chilli paste"
+   },
+   {
+    "name": "chilli",
+    "quantity": 3,
+    "unit": "",
+    "note": "Thai chillies, pounded into the chilli paste"
+   },
+   {
+    "name": "shallot",
+    "quantity": 1,
+    "unit": "",
+    "note": "roughly chopped"
+   },
+   {
+    "name": "chilli",
+    "quantity": 2,
+    "unit": "",
+    "note": "mild chillies (or capsicum), thinly sliced, for colour"
+   },
    {
     "name": "vegetable oil",
     "quantity": 2,
     "unit": "tbsp",
-    "note": ""
+    "note": "neutral-tasting, plus more if needed"
    },
    {
-    "name": "beef",
-    "quantity": 400,
+    "name": "beef mince",
+    "quantity": 450,
     "unit": "g",
-    "note": ""
+    "note": "ground beef"
+   },
+   {
+    "name": "basil",
+    "quantity": 1.5,
+    "unit": "cup",
+    "note": "holy basil leaves (or Thai or Italian basil)"
+   },
+   {
+    "name": "black pepper",
+    "quantity": null,
+    "unit": "",
+    "note": "to taste"
+   },
+   {
+    "name": "fish sauce",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "for the stir-fry sauce"
+   },
+   {
+    "name": "soy sauce",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": "for the stir-fry sauce"
+   },
+   {
+    "name": "dark soy sauce",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "black soy sauce, for the stir-fry sauce"
+   },
+   {
+    "name": "oyster sauce",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "for the stir-fry sauce"
+   },
+   {
+    "name": "sugar",
+    "quantity": 1.5,
+    "unit": "tsp",
+    "note": "for the stir-fry sauce"
+   },
+   {
+    "name": "fish sauce",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": "for the prik nam pla condiment, to serve"
+   },
+   {
+    "name": "garlic",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "minced, for the condiment, to serve"
    },
    {
     "name": "chilli",
     "quantity": 1,
     "unit": "",
-    "note": "sliced"
+    "note": "Thai chilli, for the condiment, to serve"
    },
    {
-    "name": "oyster sauce",
-    "quantity": 2,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "basil",
+    "name": "sugar",
     "quantity": 1,
-    "unit": "handful",
-    "note": ""
+    "unit": "pinch",
+    "note": "small pinch, for the condiment, to serve"
+   },
+   {
+    "name": "lime",
+    "quantity": 0.5,
+    "unit": "",
+    "note": "juice, for the condiment, to serve"
+   },
+   {
+    "name": "cooked rice",
+    "quantity": 840,
+    "unit": "g",
+    "note": "hot, about 210 g per serving, to serve"
+   },
+   {
+    "name": "eggs",
+    "quantity": 4,
+    "unit": "",
+    "note": "crispy fried, to serve"
+   },
+   {
+    "name": "vegetable oil",
+    "quantity": null,
+    "unit": "",
+    "note": "for frying the eggs, generous amount, no amount given"
    }
   ],
   "steps": [
    {
-    "text": "Heat a wok or large frying pan until smoking hot. Pour in the oil and swirl around the pan, then tip in the beef strips and chilli.",
+    "text": "Pound the garlic, Thai chillies and chopped shallot into a rough paste in a mortar, or chop finely. Thinly slice the mild chillies.",
     "minutes": null
    },
    {
-    "text": "Cook, stirring all the time, until the meat is lightly browned, about 3 mins, then pour over the oyster sauce. Cook until heated through and the sauce coats the meat. stir in the basil leaves and serve with plain rice.",
+    "text": "Mix the fish sauce, soy sauce, dark soy sauce, oyster sauce and sugar for the stir-fry sauce. In a small bowl mix the condiment: fish sauce, minced garlic, sliced chilli, a pinch of sugar and the juice of half a lime.",
+    "minutes": null
+   },
+   {
+    "text": "Heat 2 tbsp oil in a wok over high heat. Add the beef, spread it out and leave it for 2 minutes until browned underneath.",
+    "minutes": 2
+   },
+   {
+    "text": "Flip and stir-fry for about 3 minutes until most of the liquid has evaporated.",
     "minutes": 3
+   },
+   {
+    "text": "Add the chilli-garlic paste and stir-fry for 1-2 minutes over medium-high heat, adding more oil if needed.",
+    "minutes": 1
+   },
+   {
+    "text": "Pour the sauce around the edge of the pan and stir for 1 minute, adding more salt or fish sauce if needed.",
+    "minutes": 1
+   },
+   {
+    "text": "Turn off the heat and mix in the basil, mild chillies and black pepper.",
+    "minutes": null
+   },
+   {
+    "text": "For the crispy eggs, heat a generous amount of oil in another pan over medium-high heat, add the eggs and tilt the pan so they fry in the oil.",
+    "minutes": null
+   },
+   {
+    "text": "Plate the rice, top with the beef stir-fry and a fried egg, and serve with the condiment on the side.",
+    "minutes": null
    }
   ]
  },
@@ -84160,14 +84412,14 @@
  },
  {
   "source": "themealdb:53271",
-  "title": "Walnut, date & honey cake",
-  "description": "A Turkish sweet made with self-raising flour, honey and banana — serves 8, worth the couple of hours it takes.",
+  "title": "Walnut, date and honey cake",
+  "description": "A one-bowl loaf cake of mashed banana, chopped dates and cinnamon, topped with walnut pieces and finished with a drizzle of honey.",
   "servings": 8,
-  "cuisine": "Turkish",
+  "cuisine": "International",
   "category": "Dessert",
   "image": "https://www.themealdb.com/images/media/meals/towo9c1763814590.jpg",
   "prep_minutes": 15,
-  "cook_minutes": 80,
+  "cook_minutes": 70,
   "ingredients": [
    {
     "name": "self-raising flour",
@@ -84179,25 +84431,25 @@
     "name": "cinnamon",
     "quantity": 0.5,
     "unit": "tsp",
-    "note": ""
+    "note": "ground"
    },
    {
     "name": "butter",
     "quantity": 175,
     "unit": "g",
-    "note": ""
+    "note": "softened, plus extra for greasing the tin"
    },
    {
     "name": "brown sugar",
     "quantity": 100,
     "unit": "g",
-    "note": ""
+    "note": "light muscovado"
    },
    {
     "name": "honey",
     "quantity": 3,
     "unit": "tbsp",
-    "note": ""
+    "note": "clear; 2 tbsp in the batter, 1 tbsp to drizzle"
    },
    {
     "name": "eggs",
@@ -84209,41 +84461,53 @@
     "name": "banana",
     "quantity": 2,
     "unit": "",
-    "note": "medium"
+    "note": "medium, ripe, about 250 g in their skins"
    },
    {
     "name": "dates",
     "quantity": 100,
     "unit": "g",
-    "note": ""
+    "note": "stoned, chopped"
    },
    {
     "name": "walnuts",
     "quantity": 50,
     "unit": "g",
-    "note": ""
+    "note": "pieces, to scatter on top"
    }
   ],
   "steps": [
    {
-    "text": "Preheat the oven to 160C/Gas 3/fan oven 140C. Line the base and long sides of a 900g/2lb loaf tin with greaseproof paper, buttering the tin and paper.",
+    "text": "Heat the oven to 160°C (140°C fan). Butter a 900 g loaf tin and line the base and long sides with buttered greaseproof paper.",
     "minutes": null
    },
    {
-    "text": "Tip the flour, cinnamon, butter, sugar, 2 tablespoons of the honey and the eggs into a large mixing bowl. Mash the bananas and chop the dates (kitchen scissors are easiest for this) and add to the bowl.",
+    "text": "Put the flour, cinnamon, butter, sugar, 2 tbsp of the honey and the eggs in a large bowl.",
     "minutes": null
    },
    {
-    "text": "Beat the mixture for 2-3 minutes, using a wooden spoon or hand-held mixer, until well blended.",
-    "minutes": 3
+    "text": "Mash the bananas, chop the dates (kitchen scissors are easiest) and add both to the bowl.",
+    "minutes": null
    },
    {
-    "text": "Spoon into the prepared tin and level the top. Scatter the walnut pieces over. Bake for 1 hour, then lightly press the top – it will feel firm if cooked. If not, bake for a further 10 minutes.",
+    "text": "Beat for 2-3 minutes with a wooden spoon or hand mixer until well blended.",
+    "minutes": 2
+   },
+   {
+    "text": "Spoon the batter into the tin, level the top and scatter the walnut pieces over.",
+    "minutes": null
+   },
+   {
+    "text": "Bake for 1 hour, then lightly press the top: it should feel firm. If not, bake for a further 10 minutes.",
     "minutes": 60
    },
    {
-    "text": "Cool for 15 minutes, then lift out of the tin using the paper. When cold, drizzle the remaining honey over. Cut into thick slices.",
+    "text": "Cool in the tin for 15 minutes, then lift out using the paper.",
     "minutes": 15
+   },
+   {
+    "text": "When completely cold, drizzle over the remaining honey and cut into thick slices.",
+    "minutes": null
    }
   ]
  },

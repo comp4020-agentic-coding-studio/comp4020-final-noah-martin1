@@ -1063,9 +1063,9 @@
   "videoId": "yI7hTz0ft5k",
   "title": "Beef Caldereta | Kalderetang Baka",
   "channel": "Kawaling Pinoy",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:52873": {
   "videoId": "6NgheY-r5t0",
@@ -1487,9 +1487,9 @@
   "videoId": "WUpaOGghOdo",
   "title": "🇨🇦 How To Make A Canadian Butter Tart 🇨🇦",
   "channel": "Glen And Friends Cooking",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53141": {
   "videoId": "MSyvKDBXuKQ",
@@ -1597,9 +1597,9 @@
   "videoId": "i_zemP3yBKw",
   "title": "How to Make Chelsea Buns | Baking Mad",
   "channel": "Silver Spoon",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53016": {
   "videoId": "zlglJ9mLGOU",
@@ -2483,9 +2483,9 @@
   "videoId": "tXBzZm2kkh8",
   "title": "Alpro Recipe - Potato and Courgette Dauphinoise",
   "channel": "Alpro",
-  "status": "rejected",
-  "reason": "video title doesn't match the dish",
-  "checked": "2026-10-20"
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53030": {
   "videoId": "Px9w7uEzQtI",
@@ -2526,12 +2526,12 @@
   "transcribed": true
  },
  "themealdb:52918": {
-  "videoId": "fp9Lqx2EUco",
-  "title": "How To Make A Real Tasty French Fish Soup",
-  "channel": "French Cooking Academy",
-  "status": "rejected",
-  "reason": "video title doesn't match the dish",
-  "checked": "2026-10-20"
+  "videoId": "fZVWYOYKv60",
+  "title": "Easy Bouillabaisse with Snapper | Woolworths",
+  "channel": "Woolworths",
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53122": {
   "videoId": null,
@@ -3418,12 +3418,10 @@
   "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53132": {
-  "videoId": "ZpZ_8mcmNLI",
-  "title": "MAZARINER | Swedish Almond Tarts",
-  "channel": "Cecilia Tolone",
+  "videoId": null,
+  "checked": "2026-10-29",
   "status": "rejected",
-  "reason": "video title doesn't match the dish",
-  "checked": "2026-10-20"
+  "reason": "The video's description (Cecilia Tolone, Mazariner) lists dough, filling and glaze amounts and mixing steps but gives no shaping, tin size, filling or baking method and no yield, and transcripts are unavailable, so the main cooking stage cannot be verified and a recipe built from it could not be cooked from."
  },
  "themealdb:52968": {
   "videoId": null,
@@ -3554,12 +3552,10 @@
   "checked": "2026-10-20"
  },
  "themealdb:52864": {
-  "videoId": "GNN7_ZSJ5YE",
-  "title": "Make Baked Spinach and Mushroom Rotolo - DIY  - Guidecentral",
-  "channel": "Guidecentral English",
+  "videoId": null,
+  "checked": "2026-10-29",
   "status": "rejected",
-  "reason": "the video's rotolo is spinach and mushroom, without chestnut",
-  "checked": "2026-10-20"
+  "reason": "Current video is Guidecentral's baked spinach and ricotta rotolo, a different dish (its description lists supplies but no method; guidecentr.al page failed to fetch). Two YouTube searches found no verifiable mushroom and chestnut rotolo: The Gate's vegan mushroom rotolo has no written recipe in its description."
  },
  "themealdb:53059": {
   "videoId": "M1ok7mG9-Qc",
@@ -4435,9 +4431,9 @@
   "videoId": "618QsMaVXp8",
   "title": "Shakshuka - Eggs in Tomato Sauce Recipe",
   "channel": "Home Cooking Adventure",
-  "status": "rejected",
-  "reason": "video title doesn't match the dish",
-  "checked": "2026-10-20"
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53219": {
   "videoId": "wecDCHL-LRQ",
@@ -5028,12 +5024,12 @@
   "transcribed": true
  },
  "themealdb:53199": {
-  "videoId": "N3OI_7zu5sA",
-  "title": "Spice Up Your Weekday With This Spicy Thai Beef!",
-  "channel": "School of Wok",
-  "status": "rejected",
-  "reason": "video title doesn't match the dish",
-  "checked": "2026-10-20"
+  "videoId": "28nfxlyFV68",
+  "title": "The Best Thai Basil Beef in 15 Minutes (Pad Kra Pao)",
+  "channel": "Aaron and Claire",
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53206": {
   "videoId": "pT0WoqUZXw0",
@@ -5485,9 +5481,9 @@
   "videoId": "ivR-YRcQk08",
   "title": "Walnut, date and honey cake",
   "channel": "Cake Pops",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53106": {
   "videoId": "pR_ZfbTxwms",
