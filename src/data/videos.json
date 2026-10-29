@@ -2986,12 +2986,10 @@
   "transcribed": true
  },
  "themealdb:53352": {
-  "videoId": "iJm1F-TE8Sk",
-  "title": "Instant Pot Rice and Peas | Jamaican Rice and Peas",
-  "channel": "Jerene's Eats",
+  "videoId": null,
+  "checked": "2026-10-29",
   "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "reason": "The replacement video (Caribbean Flava Cookin) has only a short InShot-made description with an ingredient list and one paragraph of method, no stated yield, no linked recipe page, and nothing in the saved info that shows an established cooking channel (about 2.6k views). Servings would be a guess carried over from the catalogue, so it is not shown."
  },
  "themealdb:53349": {
   "videoId": null,
@@ -3022,20 +3020,20 @@
   "transcribed": true
  },
  "themealdb:53344": {
-  "videoId": "8W8hZeGuiOc",
-  "title": "Sweet Potato Pudding, Jamaican Style, Authentic & Delicious!!",
-  "channel": "Racquel’s Caribbean Cuisine",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "videoId": "kGuH2qclJLk",
+  "title": "JAMAICAN SWEET POTATO PUDDING | rich, oven-baked Caribbean dessert | The Seasoned Skillet",
+  "channel": "Taneisha - The Seasoned Skillet",
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53145": {
   "videoId": "YFMDkUsMazw",
   "title": "Jamón & Wild Garlic Croquetas #easyrecipes #viral #viralshort  #recipe #trending  #cookingtutorial",
   "channel": "Maxie's Tasty Treat Creations",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53033": {
   "videoId": "rZO86_-MIp0",
@@ -3057,9 +3055,9 @@
   "videoId": "w-rVGvZXVfs",
   "title": "Traditional Newfoundland Jiggs Dinner",
   "channel": "Sam & Feng Cooking",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53220": {
   "videoId": "lrcUixJEPK0",
@@ -3165,9 +3163,9 @@
   "videoId": "3EF_R7__xu4",
   "title": "How to Make Knafeh | Kanafeh Recipe",
   "channel": "The Cooking Foodie",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53257": {
   "videoId": "4OsDpyaTKk0",
@@ -3579,9 +3577,9 @@
   "videoId": "M1ok7mG9-Qc",
   "title": "Buckwheat Soup with Wild Mushrooms. Ukrainian food.",
   "channel": "Innichka Chef",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53038": {
   "videoId": "_iKllHSC978",
@@ -4394,12 +4392,12 @@
   "checked": "2026-10-20"
  },
  "themealdb:53296": {
-  "videoId": "eVWBJt2jaPU",
-  "title": "Easy Sauerkraut Pierogi Recipe",
-  "channel": "Cooking Polish",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "videoId": "TqBd8dTKwtI",
+  "title": "Pierogi with cabbage and mushrooms",
+  "channel": "Culinary Adventures",
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53247": {
   "videoId": "xzDYKZl50FQ",
@@ -5069,9 +5067,9 @@
   "videoId": "FN8tcugjCFs",
   "title": "Thai Green Curry Noodle Soup Recipe",
   "channel": "Whisk Affair",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53212": {
   "videoId": "lv1tj9FK3f0",
@@ -5082,12 +5080,12 @@
   "transcribed": true
  },
  "themealdb:53198": {
-  "videoId": "9wZAYbPcF-I",
-  "title": "Thai Fried Rice with Prawns • Khao Pad Goong | Thai Girl in the Kitchen",
-  "channel": "Thai Girl in the Kitchen",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "videoId": "Lb5TDP-tONY",
+  "title": "15-Min Thai Shrimp Fried Rice Recipe — Just Like Bangkok",
+  "channel": "CiCi Li, Asian Home Cooking",
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53214": {
   "videoId": "3s4Yitd546w",
@@ -5101,9 +5099,9 @@
   "videoId": "cxryD8ZHCdQ",
   "title": "This Thai Inspired Peanut Pork is PERFECT Comfort food!",
   "channel": "Kitchen Sanctuary",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53205": {
   "videoId": "dEMPVKQXSYA",

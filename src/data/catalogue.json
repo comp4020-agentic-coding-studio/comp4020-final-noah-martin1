@@ -47384,226 +47384,264 @@
  },
  {
   "source": "themealdb:53344",
-  "title": "Jamaican Sweet Potato Pudding",
-  "description": "A Jamaican sweet made with sweet potato, coconut milk and raisins — serves 8, worth the couple of hours it takes.",
+  "title": "Jamaican sweet potato pudding",
+  "description": "Baked pudding of grated sweet potato and yellow yam in spiced coconut milk batter with rum-soaked raisins, finished with a coconut custard topping partway through baking.",
   "servings": 8,
   "cuisine": "Jamaican",
   "category": "Dessert",
   "image": "https://www.themealdb.com/images/media/meals/xj9sa81764788866.jpg",
-  "prep_minutes": 20,
-  "cook_minutes": 70,
+  "prep_minutes": 30,
+  "cook_minutes": 105,
   "ingredients": [
    {
     "name": "sweet potato",
     "quantity": 910,
     "unit": "g",
-    "note": ""
+    "note": "Jamaican, peeled and grated"
    },
    {
-    "name": "coconut milk",
-    "quantity": 1.5,
-    "unit": "cup",
-    "note": ""
+    "name": "yam",
+    "quantity": 450,
+    "unit": "g",
+    "note": "yellow yam, peeled and grated"
    },
    {
-    "name": "brown sugar",
-    "quantity": 1.5,
-    "unit": "cup",
-    "note": ""
-   },
-   {
-    "name": "plain flour",
-    "quantity": 0.5,
-    "unit": "cup",
-    "note": ""
-   },
-   {
-    "name": "vanilla extract",
+    "name": "ginger",
     "quantity": 1,
     "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "allspice",
-    "quantity": 1,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "cinnamon",
-    "quantity": 1,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "nutmeg",
-    "quantity": 1,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "ground ginger",
-    "quantity": 0.5,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "salt",
-    "quantity": 0.25,
-    "unit": "tsp",
-    "note": ""
+    "note": "fresh, peeled and grated"
    },
    {
     "name": "raisins",
     "quantity": 0.5,
     "unit": "cup",
-    "note": ""
+    "note": "optional, soaked in the wine and rum"
+   },
+   {
+    "name": "fortified wine",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": "J. Wray & Nephew Red Label Wine, for soaking the raisins"
+   },
+   {
+    "name": "rum",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "white overproof, for soaking the raisins"
    },
    {
     "name": "coconut milk",
-    "quantity": 0.75,
+    "quantity": 3,
     "unit": "cup",
-    "note": ""
+    "note": "or 2 x 400 ml cans, for the batter"
    },
    {
-    "name": "brown sugar",
-    "quantity": 1,
+    "name": "butter",
+    "quantity": 115,
+    "unit": "g",
+    "note": "1/2 cup unsalted, melted and cooled"
+   },
+   {
+    "name": "vanilla extract",
+    "quantity": 2,
     "unit": "tbsp",
     "note": ""
    },
    {
+    "name": "brown sugar",
+    "quantity": 1.5,
+    "unit": "cup",
+    "note": "packed, for the batter"
+   },
+   {
     "name": "cinnamon",
-    "quantity": 0.125,
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "for the batter; ground"
+   },
+   {
+    "name": "nutmeg",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "ground"
+   },
+   {
+    "name": "allspice",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": "ground"
+   },
+   {
+    "name": "salt",
+    "quantity": 0.5,
     "unit": "tsp",
     "note": ""
    },
    {
-    "name": "nutmeg",
-    "quantity": 0.125,
+    "name": "plain flour",
+    "quantity": 1,
+    "unit": "cup",
+    "note": "sifted, plus 1 tbsp for dusting the raisins"
+   },
+   {
+    "name": "coconut milk",
+    "quantity": 0.5,
+    "unit": "cup",
+    "note": "for the custard topping"
+   },
+   {
+    "name": "brown sugar",
+    "quantity": 0.25,
+    "unit": "cup",
+    "note": "for the custard topping"
+   },
+   {
+    "name": "cinnamon",
+    "quantity": 0.5,
     "unit": "tsp",
-    "note": ""
+    "note": "for the custard topping; ground"
    }
   ],
   "steps": [
    {
-    "text": "Preheat oven to 350°F (175°C). Grease and line a 9-inch round pan or loaf pan with parchment paper.",
+    "text": "Soak the raisins in the red label wine and white rum. Heat the oven to 175°C and grease a 9-inch springform or cake pan.",
     "minutes": null
    },
    {
-    "text": "Place your cut sweet potatoes in the bowl of a food processor and process until finely grated. In a small bowl, toss raisins in 2 teaspoons flour from the ½ cup. Set aside.",
+    "text": "Peel and grate the sweet potato, yellow yam and ginger on the medium side of a grater and set aside.",
     "minutes": null
    },
    {
-    "text": "In a large bowl, combine grated sweet potatoes, light brown sugar, all-purpose flour, vanilla extract, allspice, cinnamon, nutmeg, ginger, and salt. Stir in 1½ cups of coconut milk until a batter forms.",
+    "text": "Whisk the coconut milk, melted butter, vanilla, brown sugar, cinnamon, nutmeg, allspice, salt and the raisin-soaking liquid until smooth.",
     "minutes": null
    },
    {
-    "text": "Fold in the raisins that were tossed in the flour.",
+    "text": "Mix the grated sweet potato, yam and ginger into the liquid. For a smoother texture, blend it to the consistency you like.",
     "minutes": null
    },
    {
-    "text": "Pour the batter into the prepared pan and smooth the top. Bake uncovered for 1 hour 30 minutes, until mostly set but still slightly soft in the center.",
+    "text": "Sift in the flour and mix until combined. Toss the raisins in 1 tbsp flour and fold them in.",
+    "minutes": null
+   },
+   {
+    "text": "Pour the batter into the pan and bake for 1 hour.",
     "minutes": 60
+   },
+   {
+    "text": "Whisk together the custard topping ingredients, pour it over the pudding and bake for another 45 minutes to 1 hour.",
+    "minutes": 45
+   },
+   {
+    "text": "Cool completely, then remove from the pan, slice and serve.",
+    "minutes": null
    }
   ]
  },
  {
   "source": "themealdb:53145",
   "title": "Jamon & wild garlic croquetas",
-  "description": "A Spanish dish of prosciutto, wild garlic leaves and manchego — serves 4, on the table in about 45 minutes.",
+  "description": "Croquetas made from a butter, flour and milk base mixed with chopped wild garlic and jamón, cooled, crumbed and fried until golden, served with lemon.",
   "servings": 4,
   "cuisine": "Spanish",
-  "category": "Pork",
+  "category": "Starter",
   "image": "https://www.themealdb.com/images/media/meals/zc9cwz1763196177.jpg",
-  "prep_minutes": 15,
+  "prep_minutes": 20,
   "cook_minutes": 15,
   "ingredients": [
    {
-    "name": "wild garlic leaves",
-    "quantity": 150,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "milk",
-    "quantity": 350,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "olive oil",
-    "quantity": 45,
-    "unit": "g",
-    "note": ""
+    "name": "butter",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": "unsalted"
    },
    {
     "name": "plain flour",
-    "quantity": 65,
-    "unit": "g",
+    "quantity": 0.25,
+    "unit": "cup",
+    "note": "all-purpose"
+   },
+   {
+    "name": "milk",
+    "quantity": 1,
+    "unit": "cup",
     "note": ""
    },
    {
-    "name": "manchego",
-    "quantity": 35,
-    "unit": "g",
-    "note": ""
+    "name": "wild garlic leaves",
+    "quantity": 1,
+    "unit": "handful",
+    "note": "about 1/2 cup finely chopped; or chopped spinach"
    },
    {
-    "name": "prosciutto",
-    "quantity": 80,
-    "unit": "g",
+    "name": "jamon",
+    "quantity": 0.5,
+    "unit": "cup",
+    "note": "Spanish ham, finely chopped"
+   },
+   {
+    "name": "salt",
+    "quantity": null,
+    "unit": "",
+    "note": "to taste"
+   },
+   {
+    "name": "black pepper",
+    "quantity": null,
+    "unit": "",
+    "note": "to taste"
+   },
+   {
+    "name": "breadcrumbs",
+    "quantity": 2,
+    "unit": "cup",
     "note": ""
    },
    {
     "name": "eggs",
-    "quantity": 1,
+    "quantity": 2,
     "unit": "",
-    "note": ""
+    "note": "large, beaten"
    },
    {
-    "name": "breadcrumbs",
-    "quantity": 75,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "vegetable oil",
+    "name": "olive oil",
     "quantity": null,
     "unit": "",
-    "note": "for deep-frying, about 1000 ml"
+    "note": "for frying"
+   },
+   {
+    "name": "lemon",
+    "quantity": null,
+    "unit": "",
+    "note": "wedges, to serve"
    }
   ],
   "steps": [
    {
-    "text": "Wash the wild garlic leaves well in a colander, then pour over boiling water from the kettle until just wilted. Immediately rinse under cold running water, then squeeze out the excess water and finely chop.",
+    "text": "Melt the butter in a saucepan over medium heat, stir in the flour and cook the roux for 1–2 minutes until lightly golden.",
+    "minutes": 2
+   },
+   {
+    "text": "Gradually whisk in the milk, stirring constantly until the mixture thickens and is smooth.",
     "minutes": null
    },
    {
-    "text": "Warm the milk in a pan over a low heat until just steaming. Heat the oil or butter in a second pan and, once warm or melted, stir in the flour for a couple of minutes until it starts to brown a little.",
+    "text": "Stir in the chopped wild garlic and jamón, season with salt and pepper, and take off the heat to cool to room temperature.",
     "minutes": null
    },
    {
-    "text": "Gradually add the warm milk, a little at a time, until you have a thick, silky sauce. Bubble for a minute or two, stirring to make sure all the flour has cooked out. Season.",
+    "text": "Shape the cooled mixture into small cylinders or balls and put them on a parchment-lined baking sheet.",
     "minutes": null
    },
    {
-    "text": "Add the manchego, jamón and wild garlic to the pan, and beat to combine. Tip out onto a lightly oiled baking tray or plate, spread out then cover and chill for at least 1 hr. Will keep chilled for up to 24 hrs.",
-    "minutes": 60
-   },
-   {
-    "text": "Lightly oil your hands and shape the mixture into 18-20 even-sized balls. Arrange on a baking tray and freeze for 30 mins to firm up.",
-    "minutes": 30
-   },
-   {
-    "text": "Beat the egg in a shallow dish with a little seasoning. Tip the panko into a second dish. Dip each of the croquetas in the egg, then turn to coat in the breadcrumbs. At this point, the raw croquetas can be frozen for up to three months.",
+    "text": "Put the breadcrumbs and beaten eggs in separate shallow bowls. Roll each croqueta in breadcrumbs, dip it in egg, then roll in breadcrumbs again.",
     "minutes": null
    },
    {
-    "text": "Pour the oil into a large, deep pan ensuring it is no more than a third full and heat to 170C, or until a cube of bread browns lightly in 30 seconds. Fry the croquetas in batches for 2-3 mins until deeply golden.",
+    "text": "Heat olive oil in a frying pan over medium heat and fry the croquetas in batches until golden and crisp on all sides, about 2–3 minutes per side.",
     "minutes": 3
    },
    {
-    "text": "To cook from frozen, fry at 160C for a few minutes longer until they’re piping hot inside. Remove to a sheet of kitchen paper using a slotted spoon and leave to drain. Serve warm with a glass of sherry.",
+    "text": "Drain on paper towels and serve hot with lemon wedges.",
     "minutes": null
    }
   ]
@@ -47880,95 +47918,195 @@
  },
  {
   "source": "themealdb:53335",
-  "title": "Jiggs Dinner",
-  "description": "A Canadian dish of beef, yellow split peas and cabbage — serves 6, worth the couple of hours it takes.",
+  "title": "Jiggs dinner",
+  "description": "Newfoundland boiled dinner of salt beef simmered with cabbage, swede, carrot, parsnip and potato, with pease pudding, a roast stuffed chicken with savory dressing and gravy.",
   "servings": 6,
   "cuisine": "Canadian",
   "category": "Beef",
   "image": "https://www.themealdb.com/images/media/meals/z1tfnw1764443171.jpg",
-  "prep_minutes": 15,
-  "cook_minutes": 125,
+  "prep_minutes": 30,
+  "cook_minutes": 165,
   "ingredients": [
    {
-    "name": "beef",
-    "quantity": 910,
+    "name": "salt beef",
+    "quantity": 900,
     "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "yellow split peas",
-    "quantity": 1,
-    "unit": "cup",
-    "note": ""
+    "note": "2–3 lb, cut into chunks if needed, soaked overnight"
    },
    {
     "name": "cabbage",
     "quantity": 1,
     "unit": "",
-    "note": ""
+    "note": "head"
+   },
+   {
+    "name": "swede",
+    "quantity": 1,
+    "unit": "",
+    "note": "medium (rutabaga), peeled and cut in chunks"
    },
    {
     "name": "carrot",
     "quantity": 6,
     "unit": "",
-    "note": ""
+    "note": "medium, peeled and cut in chunks"
    },
    {
-    "name": "turnip",
-    "quantity": 1,
+    "name": "parsnip",
+    "quantity": 4,
     "unit": "",
-    "note": "large"
+    "note": "peeled and cut in chunks"
    },
    {
     "name": "potato",
-    "quantity": 8,
+    "quantity": 6,
     "unit": "",
-    "note": ""
+    "note": "large, peeled and cut in chunks"
+   },
+   {
+    "name": "chicken",
+    "quantity": 1,
+    "unit": "",
+    "note": "whole, to stuff and roast"
+   },
+   {
+    "name": "onion",
+    "quantity": 1,
+    "unit": "",
+    "note": "small, cut up for the roasting pan"
+   },
+   {
+    "name": "yellow split peas",
+    "quantity": 1.5,
+    "unit": "cup",
+    "note": "for the pease pudding"
    },
    {
     "name": "butter",
-    "quantity": 3,
+    "quantity": 2,
     "unit": "tbsp",
-    "note": ""
+    "note": "for the pease pudding"
    },
    {
     "name": "black pepper",
     "quantity": null,
     "unit": "",
-    "note": "to taste"
+    "note": "to taste, for the pease pudding"
+   },
+   {
+    "name": "bread",
+    "quantity": 1,
+    "unit": "pack",
+    "note": "from 1 small loaf, blended to fine breadcrumbs for the dressing"
+   },
+   {
+    "name": "onion",
+    "quantity": 1,
+    "unit": "",
+    "note": "small, chopped, for the dressing"
+   },
+   {
+    "name": "butter",
+    "quantity": 0.25,
+    "unit": "cup",
+    "note": "melted, for the dressing"
+   },
+   {
+    "name": "savory",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": "for the dressing; more to season the chicken"
+   },
+   {
+    "name": "apple",
+    "quantity": 1,
+    "unit": "",
+    "note": "small, chopped, for the dressing"
+   },
+   {
+    "name": "salt",
+    "quantity": null,
+    "unit": "",
+    "note": "to taste, to season the chicken"
+   },
+   {
+    "name": "black pepper",
+    "quantity": null,
+    "unit": "",
+    "note": "to taste, to season the chicken"
+   },
+   {
+    "name": "water",
+    "quantity": 1,
+    "unit": "cup",
+    "note": "in the roasting pan"
+   },
+   {
+    "name": "plain flour",
+    "quantity": 0.25,
+    "unit": "cup",
+    "note": "for the gravy"
+   },
+   {
+    "name": "water",
+    "quantity": 1,
+    "unit": "cup",
+    "note": "mixed with the flour for the gravy"
+   },
+   {
+    "name": "pickled beetroot",
+    "quantity": null,
+    "unit": "",
+    "note": "to serve, and/or mustard pickles"
    }
   ],
   "steps": [
    {
-    "text": "The night before, break salt beef into big chunks and soak in water overnight, at least 8-10 hours. Put split peas into a bowl and cover with water to soak overnight.",
+    "text": "The night before, cut the salt beef into smaller chunks if needed, cover with cold water and soak overnight.",
     "minutes": null
    },
    {
-    "text": "Drain the salt beef and place it into a large stockpot. Cover with fresh water, at least 6-7 litres.",
+    "text": "Make the dressing: blend the bread to fine crumbs and mix with the chopped onion and apple, the melted butter and the savory.",
     "minutes": null
    },
    {
-    "text": "Place the split peas into a pease pudding canvas bag or triple layer of cheesecloth and tie, making sure to leave room for peas to expand inside the bag.",
+    "text": "Stuff the chicken with the dressing and wrap the rest in foil. Season the chicken with salt, pepper and savory, set it in a roasting pan with the cut-up onion and 1 cup water, and put the foil parcel in the oven too.",
     "minutes": null
    },
    {
-    "text": "Put the bag inside the pot, tying the strings to the outside handle so it doesn't stick to the bottom of the pot with the salt beef. Bring to a boil, then lower the heat and simmer for 2 hours.",
+    "text": "Roast the chicken covered at 175°C for about 30 minutes, then uncovered for another 30–60 minutes depending on size, until it reads 74°C.",
+    "minutes": 60
+   },
+   {
+    "text": "Put the split peas in a pease pudding bag or cheesecloth. Put the salt beef in a large pot, tie the bag to the pot handle, cover with water, bring to the boil and simmer for 2 hours.",
     "minutes": 120
    },
    {
-    "text": "Remove the peas pudding bag and empty contents into a bowl, mixing with butter and pepper for taste. Set aside.",
+    "text": "Peel the carrot, parsnip, swede and potato and cut into chunks.",
     "minutes": null
    },
    {
-    "text": "Add your cabbage to the pot and boil for 20 more minutes. Then add turnip, carrots and potatoes then boil for 20 more, or until vegetables are tender.",
+    "text": "After 2 hours, take out the pease pudding. Add the cabbage and swede and simmer about 20 minutes until almost cooked.",
+    "minutes": 20
+   },
+   {
+    "text": "Add the potato, carrot and parsnip last and cook 20–25 minutes until fork tender.",
+    "minutes": 20
+   },
+   {
+    "text": "Cool the pease pudding bag slightly, turn it inside out into a bowl and mix in the butter and pepper to taste.",
     "minutes": null
    },
    {
-    "text": "Remove salt beef and vegetables from the pot and put them on a platter.",
+    "text": "When the chicken is cooked, take out the foil-wrapped dressing and tip it into a large bowl with the dressing from inside the chicken.",
     "minutes": null
    },
    {
-    "text": "Use the cooking liquid in two ways; as a pot liquor which some people like to drink or reduce it to make a jus or gravy to pour over the meal.",
+    "text": "For the gravy, set the roasting pan on the burner over medium heat. Mix 1/4 cup flour with 1 cup water, add some pot liquor if the drippings are short, and stir in the flour mixture until thick.",
+    "minutes": null
+   },
+   {
+    "text": "Serve a little of everything on each plate with pickled beets and/or mustard pickles.",
     "minutes": null
    }
   ]
@@ -49592,126 +49730,96 @@
  {
   "source": "themealdb:53216",
   "title": "Knafeh",
-  "description": "A Saudi Arabian sweet made with kataifi pastry, food colouring and mozzarella — makes 10, about an hour start to finish.",
-  "servings": 10,
-  "cuisine": "Saudi Arabian",
+  "description": "Pan-fried knafeh: buttered shredded kataifi pastry sandwiching a ricotta layer, fried golden on both sides and soaked in a rose water and lemon sugar syrup, with pistachios.",
+  "servings": 8,
+  "cuisine": "Middle Eastern",
   "category": "Dessert",
   "image": "https://www.themealdb.com/images/media/meals/76nffj1763593933.jpg",
   "prep_minutes": 20,
-  "cook_minutes": 35,
+  "cook_minutes": 20,
   "ingredients": [
    {
     "name": "kataifi pastry",
-    "quantity": 400,
+    "quantity": 340,
     "unit": "g",
-    "note": ""
+    "note": "kadayif, shredded phyllo knafeh dough"
    },
    {
     "name": "butter",
-    "quantity": 6,
-    "unit": "tbsp",
-    "note": ""
+    "quantity": 165,
+    "unit": "g",
+    "note": "unsalted, melted, to mix into the pastry"
    },
    {
-    "name": "food colouring",
-    "quantity": 1,
-    "unit": "pinch",
-    "note": ""
-   },
-   {
-    "name": "mozzarella",
-    "quantity": 1,
-    "unit": "cup",
-    "note": ""
-   },
-   {
-    "name": "cream cheese",
-    "quantity": 0.25,
-    "unit": "cup",
-    "note": ""
-   },
-   {
-    "name": "milk",
-    "quantity": 1.5,
-    "unit": "cup",
-    "note": ""
-   },
-   {
-    "name": "sugar",
-    "quantity": 4,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "cornflour",
+    "name": "butter",
     "quantity": 2,
     "unit": "tbsp",
-    "note": ""
+    "note": "unsalted, for frying the pan"
    },
    {
-    "name": "sugar",
-    "quantity": 1,
-    "unit": "cup",
-    "note": ""
+    "name": "ricotta",
+    "quantity": 285,
+    "unit": "g",
+    "note": "or goat cheese, mozzarella or another cheese"
    },
    {
     "name": "water",
-    "quantity": 1,
-    "unit": "cup",
-    "note": ""
+    "quantity": 240,
+    "unit": "ml",
+    "note": "for the syrup"
+   },
+   {
+    "name": "sugar",
+    "quantity": 100,
+    "unit": "g",
+    "note": "for the syrup"
    },
    {
     "name": "rose water",
-    "quantity": 1,
+    "quantity": 0.5,
     "unit": "tsp",
-    "note": ""
+    "note": "for the syrup"
    },
    {
     "name": "lemon juice",
-    "quantity": 0.5,
+    "quantity": 1,
     "unit": "tsp",
-    "note": ""
+    "note": "for the syrup"
+   },
+   {
+    "name": "pistachios",
+    "quantity": 33,
+    "unit": "g",
+    "note": "roasted, to garnish"
    }
   ],
   "steps": [
    {
-    "text": "Take kanfhe in a bowl and roughly cut them. Pour melted butter, yellow food color and mix well with your hands.",
+    "text": "Make the syrup: boil the sugar, water, rose water and lemon juice in a saucepan over medium-high heat, then simmer 5–6 minutes until the sugar has dissolved and it has thickened.",
+    "minutes": 6
+   },
+   {
+    "text": "Separate the kadayif strands well in a large bowl, add the melted butter and mix until every strand is coated.",
     "minutes": null
    },
    {
-    "text": "In a separate bowl mix milk, cream cheese, sugar, cornstarch well.",
+    "text": "Melt 1 tbsp butter in a 9-inch (23 cm) pan. Press half the kadayif onto the bottom with a wooden spoon.",
     "minutes": null
    },
    {
-    "text": "Turn on the flame and boil the liquid, when it gets thick turn off the flame let it cool down a little bit. Add mozzarella in it and mix it well.",
+    "text": "Gently spread the cheese over it, leaving 1 cm clear at the edges, and cover with the rest of the kadayif. Press the top and edges to make a neat round.",
     "minutes": null
    },
    {
-    "text": "Now make a base with half of the kanfhe in a dish, gently press it to level the dough well.",
-    "minutes": null
-   },
-   {
-    "text": "Pour the cheese mixture on the top and level it with a spoon.",
-    "minutes": null
-   },
-   {
-    "text": "Cover it with the other half of the kanfhe.",
-    "minutes": null
-   },
-   {
-    "text": "Put the dish in a preheated oven at 200 degree for about 20-25 minutes.",
-    "minutes": 25
-   },
-   {
-    "text": "It's ready when kunafa is golden and crunchy in the surface.",
-    "minutes": null
-   },
-   {
-    "text": "Boil water in a pan and dissolve sugar in it for 4–5 minutes. OR cook it until slightly thicken and keep on stirring. Add lemon juice with rose water, mix well.",
+    "text": "Fry over medium heat about 5 minutes until the bottom is golden. Put a plate on top and flip it over.",
     "minutes": 5
    },
    {
-    "text": "Evenly pour the syrup over the kunafa as soon as it comes out of the oven. Your kunafa is ready to serve.",
+    "text": "Add 1 tbsp butter to the pan and fry the second side 5 minutes until golden.",
+    "minutes": 5
+   },
+   {
+    "text": "Turn off the heat and pour over the syrup (all or only some). Move to a large plate and garnish with pistachios.",
     "minutes": null
    }
   ]
@@ -55884,82 +55992,136 @@
  {
   "source": "themealdb:53059",
   "title": "Mushroom soup with buckwheat",
-  "description": "A Croatian soup of mushrooms, buckwheat and sour cream — serves 4, ready in under half an hour.",
+  "description": "Ukrainian soup of roasted buckwheat, dried wild mushrooms and potato, built on a fried onion and carrot base (zazarka) with tomato paste and bay leaf, finished with herbs and spring onion.",
   "servings": 4,
-  "cuisine": "Croatian",
-  "category": "Side",
+  "cuisine": "Ukrainian",
+  "category": "Vegan",
   "image": "https://www.themealdb.com/images/media/meals/1ngcbf1628770793.jpg",
-  "prep_minutes": 15,
-  "cook_minutes": 5,
+  "prep_minutes": 30,
+  "cook_minutes": 35,
   "ingredients": [
    {
-    "name": "mushrooms",
-    "quantity": 150,
-    "unit": "g",
-    "note": ""
-   },
-   {
     "name": "buckwheat",
-    "quantity": 50,
-    "unit": "g",
-    "note": ""
+    "quantity": 1,
+    "unit": "cup",
+    "note": "rinsed"
    },
    {
-    "name": "vegetable oil",
-    "quantity": 4,
-    "unit": "tbsp",
-    "note": ""
+    "name": "dried wild mushrooms",
+    "quantity": 1,
+    "unit": "handful",
+    "note": "1/2–1 cup dry, soaked; chopped, keep the soaking water"
+   },
+   {
+    "name": "carrot",
+    "quantity": 2,
+    "unit": "",
+    "note": "big; one shredded for the zazarka, one shredded later"
    },
    {
     "name": "onion",
-    "quantity": 40,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "garlic",
     "quantity": 2,
-    "unit": "clove",
-    "note": ""
-   },
-   {
-    "name": "bay leaf",
-    "quantity": 1,
     "unit": "",
+    "note": "chopped; one for the zazarka, one added later"
+   },
+   {
+    "name": "potato",
+    "quantity": 2,
+    "unit": "",
+    "note": "chopped"
+   },
+   {
+    "name": "water",
+    "quantity": 8,
+    "unit": "cup",
     "note": ""
    },
    {
-    "name": "stock cube",
-    "quantity": 1,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "sour cream",
-    "quantity": 50,
-    "unit": "ml",
-    "note": ""
-   },
-   {
-    "name": "white wine vinegar",
-    "quantity": 1,
-    "unit": "dash",
+    "name": "tomato paste",
+    "quantity": 2,
+    "unit": "tsp",
     "note": ""
    },
    {
     "name": "parsley",
+    "quantity": 1,
+    "unit": "handful",
+    "note": "fresh herbs: parsley and dill, 1/2 cup combined"
+   },
+   {
+    "name": "dill",
     "quantity": null,
     "unit": "",
-    "note": "to serve"
+    "note": "part of the 1/2 cup of fresh herbs above; amount not split"
+   },
+   {
+    "name": "spring onion",
+    "quantity": 1,
+    "unit": "bunch",
+    "note": "1 cup chopped"
+   },
+   {
+    "name": "sunflower oil",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": "2–3 tbsp, extra virgin"
+   },
+   {
+    "name": "red chilli flakes",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "optional"
+   },
+   {
+    "name": "bay leaf",
+    "quantity": null,
+    "unit": "",
+    "note": "a few"
+   },
+   {
+    "name": "black pepper",
+    "quantity": null,
+    "unit": "",
+    "note": "freshly ground, to taste"
+   },
+   {
+    "name": "salt",
+    "quantity": null,
+    "unit": "",
+    "note": "to taste"
    }
   ],
   "steps": [
    {
-    "text": "Chop the onion and garlic, slice the mushrooms and wash the buckwheat. Heat the oil and lightly sauté the onion. Add the mushrooms and the garlic and continue to sauté.",
+    "text": "Rinse the buckwheat and soak the dried mushrooms for 15–30 minutes while you prepare the onions and carrots.",
+    "minutes": 30
+   },
+   {
+    "text": "Make the zazarka: in a pot such as a Dutch oven, cook the oil, one chopped onion, one shredded carrot, salt and pepper on low heat until the onion is translucent.",
     "minutes": null
    },
    {
-    "text": "Add the salt, vegetable seasoning, buckwheat and the bay leaf and cover with water. Simmer gently and just before it is completely cooked, add pepper, sour cream mixed with flour, the chopped parsley and vinegar to taste.",
+    "text": "Add the buckwheat and the chopped mushrooms (not their soaking water) and cook for about 3 minutes so the buckwheat soaks up the flavour.",
+    "minutes": 3
+   },
+   {
+    "text": "Add the mushroom soaking water and the tomato paste and stir.",
+    "minutes": null
+   },
+   {
+    "text": "Add the chopped potatoes, bay leaves, red pepper flakes and the water, and cover the pot.",
+    "minutes": null
+   },
+   {
+    "text": "Chop the second onion and shred the second carrot, and add them to the pot.",
+    "minutes": null
+   },
+   {
+    "text": "Simmer for 25–30 minutes.",
+    "minutes": 25
+   },
+   {
+    "text": "Taste for salt, then stir in the spring onions, parsley and dill.",
     "minutes": null
    }
   ]
@@ -68623,131 +68785,119 @@
  },
  {
   "source": "themealdb:53296",
-  "title": "Sauerkraut pierogi",
-  "description": "A Polish dish of shallot, sauerkraut and cabbage — serves 4, on the table in about 45 minutes.",
-  "servings": 4,
+  "title": "Sauerkraut and mushroom pierogi",
+  "description": "Boiled pierogi with a thin warm-water and butter dough, filled with sauerkraut cooked with bay leaf and allspice, fried onion and grated mushrooms. Makes about 50; servings set to 12 people.",
+  "servings": 12,
   "cuisine": "Polish",
   "category": "Vegetarian",
-  "image": "https://www.themealdb.com/images/media/meals/ckbx1h1764123606.jpg",
-  "prep_minutes": 20,
-  "cook_minutes": 25,
+  "image": "https://i.ytimg.com/vi/TqBd8dTKwtI/hqdefault.jpg",
+  "prep_minutes": 45,
+  "cook_minutes": 40,
   "ingredients": [
    {
-    "name": "vegetable oil",
-    "quantity": 1,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "shallot",
-    "quantity": 2,
-    "unit": "",
-    "note": ""
-   },
-   {
     "name": "sauerkraut",
-    "quantity": 150,
+    "quantity": 500,
     "unit": "g",
-    "note": ""
+    "note": "for the filling"
    },
    {
-    "name": "cabbage",
-    "quantity": 150,
-    "unit": "g",
-    "note": ""
+    "name": "water",
+    "quantity": null,
+    "unit": "",
+    "note": "a small amount, to cook the sauerkraut"
    },
    {
-    "name": "eggs",
+    "name": "bay leaf",
+    "quantity": 1,
+    "unit": "leaf",
+    "note": "for cooking the sauerkraut; source says \"liść laurowy\" (singular)"
+   },
+   {
+    "name": "allspice",
+    "quantity": null,
+    "unit": "",
+    "note": "whole berries, for cooking the sauerkraut"
+   },
+   {
+    "name": "onion",
     "quantity": 1,
     "unit": "",
-    "note": "large"
+    "note": "medium, diced, for the filling"
    },
    {
-    "name": "vegetable oil",
-    "quantity": 0.5,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "plain flour",
-    "quantity": 350,
+    "name": "mushrooms",
+    "quantity": 500,
     "unit": "g",
-    "note": ""
+    "note": "button mushrooms, grated"
    },
    {
-    "name": "vegetable oil",
+    "name": "salt",
     "quantity": null,
     "unit": "",
-    "note": "for deep-frying"
+    "note": "to taste, for the filling"
    },
    {
-    "name": "shallot",
-    "quantity": 2,
+    "name": "black pepper",
+    "quantity": null,
     "unit": "",
-    "note": ""
+    "note": "to taste, for the filling"
    },
    {
     "name": "plain flour",
-    "quantity": null,
-    "unit": "",
-    "note": "for dusting"
+    "quantity": 500,
+    "unit": "g",
+    "note": "wheat flour, for the dough"
    },
    {
     "name": "butter",
-    "quantity": 45,
-    "unit": "g",
-    "note": ""
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "melted, for the dough"
    },
    {
-    "name": "sour cream",
-    "quantity": 60,
-    "unit": "ml",
-    "note": ""
+    "name": "water",
+    "quantity": 1.25,
+    "unit": "cup",
+    "note": "warm, for the dough (cup = 250 ml)"
+   },
+   {
+    "name": "salt",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "for the dough"
    }
   ],
   "steps": [
    {
-    "text": "First, make the crispy shallots. Heat the oil in a saucepan to 180C (a cube of bread will turn golden in 15 secs). Toss the shallots in a little flour and deep-fry for 1 min or until light golden and crispy. Drain on kitchen paper.",
-    "minutes": 1
+    "text": "Cover the sauerkraut with a little water, add a bay leaf, allspice and a pinch of salt, cover and cook for about 20 minutes until soft.",
+    "minutes": 20
    },
    {
-    "text": "Can be made up to two days before and kept in an airtight container.",
+    "text": "Fry the diced onion in a hot pan until browned, then add the grated mushrooms and cook until their water has evaporated.",
     "minutes": null
    },
    {
-    "text": "To make the filling, heat the oil in a medium non-stick frying pan and gently fry the shallots for 10 mins until starting to turn golden.",
-    "minutes": 10
+    "text": "Mix the mushrooms with the sauerkraut, season with salt and pepper and fry for a few more minutes.",
+    "minutes": 5
    },
    {
-    "text": "Add the sauerkraut and cabbage, and cook for 5-10 mins until the cabbage has softened. Taste and add a little salt if under-seasoned, or sugar if stringent. Scrape into a bowl and leave to cool completely.",
-    "minutes": 10
-   },
-   {
-    "text": "To make the dough, mix the eggs and oil with 125ml water, then gradually add in the flour, mixing well with your hands. Knead it on a well-floured surface until the dough stops sticking to your hands.",
+    "text": "Knead the flour, warm water, melted butter and salt into a smooth dough, adding a little flour if needed.",
     "minutes": null
    },
    {
-    "text": "You should end up with firm, elastic dough. Wrap it in cling film and rest in the fridge for at least 30 mins, or overnight.",
-    "minutes": 30
-   },
-   {
-    "text": "Flour your work surface generously. Roll out the dough to a 40cm circle or until the dough is as thick as £1 coin.",
+    "text": "Roll the dough out very thin and cut circles with a glass.",
     "minutes": null
    },
    {
-    "text": "Using a 9cm cookie cutter, cut out discs in the dough – you should end up with about 25 discs. Do not throw away the off-cuts – we throw them in with the pierogi when boiling to minimise any waste.",
+    "text": "Put a full teaspoon of filling on each circle, fold over and seal the edges.",
     "minutes": null
    },
    {
-    "text": "Have a well-floured tray ready. Put 1 tsp of the filling into the centre of each disc. In your hand, fold in half around the filling and seal to create half-moon shapes. Put them on the floured tray, making sure they don’t touch each other.",
-    "minutes": null
+    "text": "Cook the pierogi in salted boiling water for 2–3 minutes after they float to the top.",
+    "minutes": 3
    },
    {
-    "text": "Bring a large saucepan of salted water to the boil and carefully lower the pierogi in. Boil them for 2 mins or until they float to the top.",
-    "minutes": 2
-   },
-   {
-    "text": "Drain and serve with a knob of butter and some soured cream. Finish by sprinkling the crispy shallots on top to serve.",
+    "text": "Serve topped with onion, or pan-fry the boiled pierogi.",
     "minutes": null
    }
   ]
@@ -78197,90 +78347,158 @@
  },
  {
   "source": "themealdb:53195",
-  "title": "Thai curry noodle soup",
-  "description": "A Thai soup of prawns, stir-fry vegetables and coconut milk — serves 2, ready in under half an hour.",
-  "servings": 2,
+  "title": "Thai green curry noodle soup",
+  "description": "Vegetarian noodle soup of green curry paste, vegetable broth, mushrooms, broccoli and spinach, finished with coconut milk and egg noodles and topped with chilli oil.",
+  "servings": 4,
   "cuisine": "Thai",
-  "category": "Seafood",
+  "category": "Vegetarian",
   "image": "https://www.themealdb.com/images/media/meals/118oj61763423896.jpg",
-  "prep_minutes": 15,
-  "cook_minutes": 10,
+  "prep_minutes": 10,
+  "cook_minutes": 20,
   "ingredients": [
    {
+    "name": "egg noodles",
+    "quantity": 50,
+    "unit": "g",
+    "note": "uncooked"
+   },
+   {
     "name": "vegetable oil",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": ""
+   },
+   {
+    "name": "spring onion",
+    "quantity": 2,
+    "unit": "",
+    "note": "chopped"
+   },
+   {
+    "name": "onion",
+    "quantity": 0.25,
+    "unit": "cup",
+    "note": "chopped"
+   },
+   {
+    "name": "shallot",
+    "quantity": 2,
+    "unit": "",
+    "note": "chopped"
+   },
+   {
+    "name": "garlic",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": "minced"
+   },
+   {
+    "name": "ginger",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": "grated"
+   },
+   {
+    "name": "thai green curry paste",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": ""
+   },
+   {
+    "name": "vegetable stock",
+    "quantity": 2,
+    "unit": "cup",
+    "note": "vegetable broth"
+   },
+   {
+    "name": "mushrooms",
+    "quantity": 100,
+    "unit": "g",
+    "note": "sliced"
+   },
+   {
+    "name": "broccoli",
+    "quantity": 100,
+    "unit": "g",
+    "note": "florets"
+   },
+   {
+    "name": "sugar",
+    "quantity": 2,
+    "unit": "tsp",
+    "note": ""
+   },
+   {
+    "name": "rice vinegar",
     "quantity": 1,
     "unit": "tsp",
     "note": ""
    },
    {
-    "name": "thai green curry paste",
+    "name": "lime juice",
+    "quantity": 2,
+    "unit": "tsp",
+    "note": "freshly squeezed"
+   },
+   {
+    "name": "spinach",
     "quantity": 1,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "stir-fry vegetables",
-    "quantity": 220,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "prawns",
-    "quantity": 150,
-    "unit": "g",
-    "note": ""
+    "unit": "cup",
+    "note": "packed"
    },
    {
     "name": "coconut milk",
-    "quantity": 150,
+    "quantity": 400,
     "unit": "ml",
-    "note": ""
-   },
-   {
-    "name": "vegetable stock",
-    "quantity": 225,
-    "unit": "ml",
-    "note": ""
-   },
-   {
-    "name": "udon noodles",
-    "quantity": 250,
-    "unit": "g",
-    "note": ""
+    "note": "unsweetened, full-fat"
    },
    {
     "name": "coriander",
-    "quantity": 10,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "basil",
-    "quantity": 10,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "chilli",
     "quantity": 1,
-    "unit": "",
-    "note": "sliced"
+    "unit": "tbsp",
+    "note": "chopped fresh leaves, to garnish"
    },
    {
-    "name": "spring onion",
-    "quantity": 1,
+    "name": "salt",
+    "quantity": null,
     "unit": "",
-    "note": "sliced"
+    "note": "to taste"
+   },
+   {
+    "name": "chilli oil",
+    "quantity": null,
+    "unit": "",
+    "note": "to garnish"
    }
   ],
   "steps": [
    {
-    "text": "Heat the oil in a saucepan over a medium heat and cook the curry paste for 1 min before adding the stir-fry veg and prawns. Cook for 3 mins until the prawns are mostly pink, then add the coconut milk, veg stock and noodles.",
-    "minutes": 3
+    "text": "Boil the egg noodles to the packet directions, drain and set aside.",
+    "minutes": null
    },
    {
-    "text": "Bring to the boil, then reduce the heat to a simmer and cook for 5 mins until the noodles are cooked through and the veg is tender but still has a bite. Divide between two bowls and sprinkle over the herbs, chilli and spring onion.",
-    "minutes": 5
+    "text": "Heat the oil in a large heavy-bottomed pan over medium-high heat. Add the spring onions, onion and shallots and sauté about 2 minutes.",
+    "minutes": 2
+   },
+   {
+    "text": "Add the garlic and ginger and sauté 10–15 seconds, then add the green curry paste and sauté 1 minute.",
+    "minutes": 1
+   },
+   {
+    "text": "Pour in the vegetable broth, add the mushrooms and broccoli and bring to the boil.",
+    "minutes": null
+   },
+   {
+    "text": "Add the sugar, rice vinegar, lime juice and spinach and cook for 1 minute.",
+    "minutes": 1
+   },
+   {
+    "text": "Add the coconut milk and cooked noodles and bring to a gentle boil. Add more salt if needed.",
+    "minutes": null
+   },
+   {
+    "text": "Turn off the heat and garnish with coriander and chilli oil. Serve hot.",
+    "minutes": null
    }
   ]
  },
@@ -78385,56 +78603,50 @@
  },
  {
   "source": "themealdb:53198",
-  "title": "Thai fried rice with prawns & peas",
-  "description": "A Thai dish of prawns, fish sauce and red onion — serves 4, on the table in about 45 minutes.",
+  "title": "Thai fried rice with prawns",
+  "description": "Wok-fried Thai prawn fried rice with onion, garlic, egg, soy and fish sauce and spring onions, served with cucumber, coriander, lime and a chilli fish sauce on the side.",
   "servings": 4,
   "cuisine": "Thai",
   "category": "Seafood",
   "image": "https://www.themealdb.com/images/media/meals/hblwvg1763478203.jpg",
-  "prep_minutes": 20,
-  "cook_minutes": 10,
+  "prep_minutes": 9,
+  "cook_minutes": 6,
   "ingredients": [
+   {
+    "name": "jasmine rice",
+    "quantity": 1,
+    "unit": "cup",
+    "note": "uncooked; cooks to the 3 cups of day-old cooled rice the recipe uses"
+   },
    {
     "name": "vegetable oil",
     "quantity": 2,
     "unit": "tbsp",
-    "note": ""
+    "note": "1 tbsp for the prawns, 1 tbsp for the rice"
    },
    {
-    "name": "red onion",
-    "quantity": 1,
+    "name": "prawns",
+    "quantity": 12,
     "unit": "",
-    "note": "sliced"
+    "note": "large, peeled and deveined"
+   },
+   {
+    "name": "onion",
+    "quantity": 0.5,
+    "unit": "",
+    "note": "medium, finely diced"
    },
    {
     "name": "garlic",
     "quantity": 2,
+    "unit": "clove",
+    "note": "minced"
+   },
+   {
+    "name": "eggs",
+    "quantity": 2,
     "unit": "",
-    "note": "sliced"
-   },
-   {
-    "name": "chilli",
-    "quantity": 1,
-    "unit": "",
-    "note": "sliced"
-   },
-   {
-    "name": "prawns",
-    "quantity": 250,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "brown rice",
-    "quantity": 140,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "peas",
-    "quantity": 75,
-    "unit": "g",
-    "note": ""
+    "note": "large"
    },
    {
     "name": "soy sauce",
@@ -78446,38 +78658,84 @@
     "name": "fish sauce",
     "quantity": 1,
     "unit": "tbsp",
+    "note": "for the rice"
+   },
+   {
+    "name": "sugar",
+    "quantity": 1,
+    "unit": "pinch",
     "note": ""
+   },
+   {
+    "name": "spring onion",
+    "quantity": 3,
+    "unit": "",
+    "note": "stalks, chopped"
+   },
+   {
+    "name": "cucumber",
+    "quantity": 3,
+    "unit": "slice",
+    "note": "to serve"
    },
    {
     "name": "coriander",
     "quantity": 1,
-    "unit": "bunch",
-    "note": ""
-   },
-   {
-    "name": "eggs",
-    "quantity": 4,
-    "unit": "",
-    "note": "large"
-   },
-   {
-    "name": "hot sauce",
-    "quantity": null,
-    "unit": "",
+    "unit": "sprig",
     "note": "to serve"
+   },
+   {
+    "name": "lime",
+    "quantity": 1,
+    "unit": "slice",
+    "note": "wedge, to serve"
+   },
+   {
+    "name": "chilli",
+    "quantity": 1,
+    "unit": "",
+    "note": "medium red, sliced, for the chilli fish sauce"
+   },
+   {
+    "name": "fish sauce",
+    "quantity": 3,
+    "unit": "tbsp",
+    "note": "for the chilli fish sauce"
+   },
+   {
+    "name": "lime",
+    "quantity": 1,
+    "unit": "slice",
+    "note": "wedge, squeezed into the chilli fish sauce"
    }
   ],
   "steps": [
    {
-    "text": "Heat 1 tbsp of the oil in a wok, add the onion, garlic and chilli, and cook for 2-3 mins until golden. Add the prawns and cook for 1 min. Tip in the rice and peas, and keep tossing until very hot.",
-    "minutes": 3
-   },
-   {
-    "text": "Add the soy and fish sauce, then stir through the chopped coriander. Keep warm while you fry the eggs.",
+    "text": "Dice the onion, mince the garlic, chop the spring onions, slice the cucumber and chilli, and cut the lime into wedges. Use cold day-old rice, or spread freshly cooked rice out to cool.",
     "minutes": null
    },
    {
-    "text": "Heat the remaining oil in a frying pan and fry the eggs with some seasoning. Divide the fried rice mix between 4 bowls and top each with a fried egg. Serve scattered with coriander, with chilli sauce, if you like.",
+    "text": "In a wok over high heat, heat 1 tbsp oil. Stir-fry the onion for about 10 seconds, then add the garlic and prawns for about 30 seconds until the prawns turn pink. Remove and set aside.",
+    "minutes": 1
+   },
+   {
+    "text": "Add the remaining 1 tbsp oil to the wok, crack in the eggs and stir-fry until about halfway set.",
+    "minutes": null
+   },
+   {
+    "text": "Add the rice and stir-fry, breaking up clumps. Season with the soy sauce, fish sauce and a pinch of sugar.",
+    "minutes": null
+   },
+   {
+    "text": "Return the prawn mixture to the wok and toss until combined, then add the spring onions and give a final toss.",
+    "minutes": null
+   },
+   {
+    "text": "For the chilli fish sauce, mix the sliced chilli, 3 tbsp fish sauce and a squeeze of lime in a small bowl.",
+    "minutes": null
+   },
+   {
+    "text": "Serve garnished with cucumber, coriander and a lime wedge, with the chilli fish sauce on the side.",
     "minutes": null
    }
   ]
@@ -78599,103 +78857,155 @@
  },
  {
   "source": "themealdb:53197",
-  "title": "Thai pork & peanut curry",
-  "description": "A Thai curry with pork fillet, spring onion and peanut butter — serves 4, on the table in about 45 minutes.",
+  "title": "Thai-style peanut pork",
+  "description": "Diced pork shoulder slow-cooked in the oven in a spiced coconut milk and peanut butter sauce, finished with lime juice and beansprouts and served over boiled rice.",
   "servings": 4,
   "cuisine": "Thai",
   "category": "Pork",
-  "image": "https://www.themealdb.com/images/media/meals/snmtd61763426568.jpg",
-  "prep_minutes": 20,
-  "cook_minutes": 25,
+  "image": "https://i.ytimg.com/vi/cxryD8ZHCdQ/hqdefault.jpg",
+  "prep_minutes": 15,
+  "cook_minutes": 135,
   "ingredients": [
    {
-    "name": "vegetable oil",
+    "name": "sunflower oil",
     "quantity": 1,
     "unit": "tbsp",
     "note": ""
    },
    {
-    "name": "spring onion",
+    "name": "pork shoulder",
     "quantity": 1,
-    "unit": "bunch",
-    "note": ""
+    "unit": "kg",
+    "note": "diced"
    },
    {
-    "name": "coriander",
+    "name": "onion",
     "quantity": 1,
-    "unit": "bunch",
-    "note": ""
+    "unit": "",
+    "note": "peeled and chopped"
    },
    {
-    "name": "pork fillet",
-    "quantity": 400,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "thai red curry paste",
-    "quantity": 4,
+    "name": "ground coriander",
+    "quantity": 2,
     "unit": "tbsp",
     "note": ""
    },
    {
-    "name": "peanut butter",
-    "quantity": 4,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "brown sugar",
+    "name": "ground cumin",
     "quantity": 1,
     "unit": "tbsp",
     "note": ""
    },
    {
-    "name": "soy sauce",
+    "name": "ground ginger",
     "quantity": 1,
-    "unit": "tbsp",
+    "unit": "tsp",
     "note": ""
+   },
+   {
+    "name": "garlic salt",
+    "quantity": 0.25,
+    "unit": "tsp",
+    "note": ""
+   },
+   {
+    "name": "chicken stock",
+    "quantity": 300,
+    "unit": "ml",
+    "note": "or vegetable stock"
    },
    {
     "name": "coconut milk",
     "quantity": 400,
     "unit": "ml",
+    "note": "1 can, full fat"
+   },
+   {
+    "name": "peanut butter",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": "heaped"
+   },
+   {
+    "name": "fish sauce",
+    "quantity": 2,
+    "unit": "tbsp",
     "note": ""
    },
    {
-    "name": "sweetcorn",
-    "quantity": 175,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "lime",
+    "name": "lime juice",
     "quantity": 1,
     "unit": "",
-    "note": "juiced"
+    "note": "juice of 1 lime"
    },
    {
-    "name": "jasmine rice",
+    "name": "bean sprouts",
+    "quantity": 100,
+    "unit": "g",
+    "note": "fresh, or drained canned"
+   },
+   {
+    "name": "rice",
     "quantity": null,
     "unit": "",
-    "note": "steamed"
+    "note": "boiled, to serve"
+   },
+   {
+    "name": "coriander",
+    "quantity": null,
+    "unit": "",
+    "note": "fresh, roughly torn, to serve"
+   },
+   {
+    "name": "green chilli",
+    "quantity": null,
+    "unit": "",
+    "note": "chopped, optional heat, to serve"
+   },
+   {
+    "name": "red chilli flakes",
+    "quantity": null,
+    "unit": "",
+    "note": "to serve"
+   },
+   {
+    "name": "tenderstem broccoli",
+    "quantity": null,
+    "unit": "",
+    "note": "steamed, optional, to serve"
    }
   ],
   "steps": [
    {
-    "text": "Heat the oil in a large saucepan or flameproof casserole. Add the spring onions and coriander stalks and cook for 1 min. Add the pork slices and cook for 5 mins until starting to brown.",
+    "text": "Heat the oven to 170°C. Heat the oil in a large casserole pan over high heat.",
+    "minutes": null
+   },
+   {
+    "text": "Brown the pork on all sides, 6–8 minutes.",
+    "minutes": 8
+   },
+   {
+    "text": "Turn the heat to medium, add the onion and cook for 5 minutes, stirring often, until softened.",
     "minutes": 5
    },
    {
-    "text": "Stir in the curry paste and peanut butter. After 30 secs, add the sugar, soy and coconut milk, plus ½ can of water. Mix well, put a lid on and leave to simmer for 15 mins, stirring occasionally.",
-    "minutes": 15
+    "text": "Stir in the ground coriander, cumin, ginger and garlic salt.",
+    "minutes": null
    },
    {
-    "text": "Remove the lid, add the baby corn and increase the heat. Bubble for 3 mins until the corn is cooked and the sauce has thickened a little. Stir in the lime juice and check the seasoning. Can now be frozen for up to 2 months.",
-    "minutes": 3
+    "text": "Add the stock, coconut milk, peanut butter and fish sauce, stir and bring to a gentle simmer.",
+    "minutes": null
    },
    {
-    "text": "To cook from frozen: thoroughly defrost, then heat in a pan on the hob until curry is hot all the way through. Serve scattered with the coriander leaves and rice.",
+    "text": "Cover and cook in the oven for 90 minutes to 2 hours until the pork falls apart. Check in the last hour and add a splash of water if it looks dry.",
+    "minutes": 90
+   },
+   {
+    "text": "Take it out of the oven, stir in the lime juice and beansprouts, and return to the oven for 10 minutes.",
+    "minutes": 10
+   },
+   {
+    "text": "Stir and serve over boiled rice with torn coriander, and chopped green chillies or chilli flakes for heat. Steamed tenderstem broccoli is optional.",
     "minutes": null
    }
   ]
