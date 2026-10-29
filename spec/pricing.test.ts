@@ -1,4 +1,5 @@
 import { describe, expect, it } from "vitest";
+import { gramsOf } from "../src/nutrition.ts";
 import { choosePack, convert, type PackOption, purchasePlan, referenceOption, toBase } from "../src/pricing.ts";
 
 // The package-purchase engine in isolation (src/pricing.ts). These run in
@@ -153,6 +154,15 @@ describe("units and reference packs", () => {
     expect(flour?.checked).toMatch(/^\d{4}-\d{2}$/);
     // "Typical Woolworths price" rows carry no pack to buy
     expect(referenceOption("beef brisket")).toBeNull();
+  });
+});
+
+describe("cup measures of solid food", () => {
+  // A cup of sliced or julienned ginger is mostly air: weighing it as a cup of
+  // water (250 g) would charge a recipe for two and a half times the ginger.
+  it("weighs a cup of ginger as the food, not as water", () => {
+    expect(gramsOf({ name: "ginger", quantity: 2, unit: "cup" })).toBe(192);
+    expect(gramsOf({ name: "ginger", quantity: 1, unit: "knob" })).toBe(10);
   });
 });
 

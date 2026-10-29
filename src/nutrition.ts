@@ -592,7 +592,7 @@ const CUP_GRAMS: Record<string, number> = {
   semolina: 167, sugar: 200, "brown sugar": 200, "icing sugar": 120, "palm sugar": 200, "cocoa powder": 85,
   butter: 227, parmesan: 100, "cheddar cheese": 113, mozzarella: 113, "monterey jack cheese": 113, "swiss cheese": 113,
   "shredded mexican cheese": 113, feta: 150, "cottage cheese": 225, ricotta: 245, "cream cheese": 230,
-  peas: 145, onion: 160, mushrooms: 70, "chinese broccoli": 90, chicken: 140, spinach: 30, kale: 67, cabbage: 90,
+  peas: 145, onion: 160, mushrooms: 70, "chinese broccoli": 90, chicken: 140, spinach: 30, kale: 67, cabbage: 90, ginger: 96,
   capsicum: 150, carrot: 128, "green beans": 110, "bean sprouts": 100, sweetcorn: 165, cassava: 206, pumpkin: 245,
   cashews: 140, peanuts: 145, almonds: 143, walnuts: 117, "pecan nuts": 110, pistachios: 123, hazelnuts: 135,
   "pine nuts": 135, "desiccated coconut": 85, "sesame seed": 144, raisins: 145, dates: 147, "dried apricots": 130,
