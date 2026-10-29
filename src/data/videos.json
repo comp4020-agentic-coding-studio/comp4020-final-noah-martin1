@@ -4327,9 +4327,9 @@
   "videoId": "l1Ik6k22s1I",
   "title": "Ultra Crispy Salt & Pepper Squid!",
   "channel": "RecipeTin Eats",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53511": {
   "videoId": null,
@@ -4346,20 +4346,18 @@
   "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52833": {
-  "videoId": "q5dQp3qpmI4",
-  "title": "How to Make Salted Caramel Cheesecake // Living Deliciously",
-  "channel": "TheKitchyKitchen",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "videoId": "rlaqN3JxgNE",
+  "title": "Salted Caramel Cheesecake Recipe",
+  "channel": "The Cooking Foodie",
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:52936": {
-  "videoId": "nbfNyZbdn2I",
-  "title": "Ackee And Saltfish Recipe #TastyTuesdays | CaribbeanPot",
-  "channel": "caribbeanpot",
+  "videoId": null,
+  "checked": "2026-10-29",
   "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "reason": "The CaribbeanPot video (nbfNyZbdn2I) has only an ingredient list in its description with no method, and the creator's site page for it was not found (the only page, caribbeanpot.com/the-ultimate-ackee-and-saltfish/, is a 2011 post with a different ingredient list, so it is not this video's recipe). Two YouTube searches found only videos with ingredient lists and no method, or no written recipe at all."
  },
  "themealdb:53498": {
   "videoId": null,
@@ -4421,17 +4419,17 @@
   "videoId": "_NJtCfqgaBo",
   "title": "PERFECT Kuih Seri Muka | Kuih Salat | Steamed Glutinous Rice with Pandan Custard [Nyonya Cooking]",
   "channel": "Nyonya Cooking",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53378": {
   "videoId": "q37qn81lg5c",
   "title": "BEST Viral Cucumber Salad with Asian Sesame Dressing Recipe",
   "channel": "Gentle Tummy",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53470": {
   "videoId": null,
@@ -4448,12 +4446,12 @@
   "checked": "2026-10-20"
  },
  "themealdb:53219": {
-  "videoId": "xaBo3BxKzp8",
-  "title": "Shakshuka With Feta | NYT Cooking",
-  "channel": "NYT Cooking",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "videoId": "wecDCHL-LRQ",
+  "title": "The Best Shakshuka with Spinach and Feta in 11 Easy Steps",
+  "channel": "By Andréa Janssen",
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53226": {
   "videoId": "ndkTbgsTCeI",
@@ -4480,12 +4478,12 @@
   "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52953": {
-  "videoId": "wzaTcpoFEaY",
-  "title": "Shrimp Chow Fun Flat Rice Noodles Stir Fry",
-  "channel": "Sue and Gambo",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "videoId": "v18RoxPA7As",
+  "title": "Shrimp Chow Fun",
+  "channel": "Seonkyoung Longest",
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53375": {
   "videoId": "RmbTaEqabN4",
@@ -4523,9 +4521,9 @@
   "videoId": "DiFUyPAGoug",
   "title": "The 'Singapore' noodles I've never eaten in Singapore - Marion's Kitchen",
   "channel": "Marion Grasby",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:52994": {
   "videoId": null,
@@ -4722,12 +4720,12 @@
   "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52886": {
-  "videoId": "fu15XOF-ros",
-  "title": "How To Make Spotted Dick Recipe | Sorted Food",
-  "channel": "Sorted Food",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "videoId": "tNewpwv4BE8",
+  "title": "What Makes This Spotted Dick So Good? A Classic British Steamed Pudding With Vanilla Custard",
+  "channel": "Culinary Exploration",
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53040": {
   "videoId": "Q24haJU-1dI",
@@ -4750,12 +4748,12 @@
   "checked": "2026-10-20"
  },
  "themealdb:52980": {
-  "videoId": "hTrSXryX31A",
-  "title": "Stamppot",
-  "channel": "TheGGJourney",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "videoId": "LbHjBoBuycQ",
+  "title": "How to Make Boerenkool Stamppot: Dutch Kale Mash with Smoked Sausage",
+  "channel": "Toine’s Kitchen 🇳🇱",
+  "checked": "2026-10-29",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53229": {
   "videoId": "Lo4_GdyetEU",

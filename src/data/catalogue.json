@@ -66582,119 +66582,119 @@
  },
  {
   "source": "themealdb:53233",
-  "title": "Salt & pepper squid",
-  "description": "A Vietnamese dish of squid, fish sauce and sichuan pepper — serves 4, ready in under half an hour.",
-  "servings": 4,
-  "cuisine": "Vietnamese",
+  "title": "Crispy salt and pepper squid",
+  "description": "Squid pieces in a thin cornflour batter, fried twice for a crunch that lasts, seasoned with salt and white pepper and served with garlic aioli.",
+  "servings": 3,
+  "cuisine": "Chinese",
   "category": "Seafood",
   "image": "https://www.themealdb.com/images/media/meals/yxiilf1763759428.jpg",
-  "prep_minutes": 20,
-  "cook_minutes": 5,
+  "prep_minutes": 15,
+  "cook_minutes": 15,
   "ingredients": [
    {
-    "name": "cornflour",
-    "quantity": 85,
+    "name": "squid",
+    "quantity": 500,
     "unit": "g",
-    "note": ""
+    "note": "cleaned tubes; or 700 g whole baby squid"
+   },
+   {
+    "name": "mayonnaise",
+    "quantity": 0.5,
+    "unit": "cup",
+    "note": "whole egg, for the aioli"
+   },
+   {
+    "name": "garlic",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": "finely grated, for the aioli"
    },
    {
     "name": "plain flour",
-    "quantity": 85,
-    "unit": "g",
-    "note": ""
+    "quantity": 0.33,
+    "unit": "cup",
+    "note": "for the batter"
    },
    {
-    "name": "black pepper",
-    "quantity": 2,
-    "unit": "tsp",
-    "note": ""
+    "name": "cornflour",
+    "quantity": 0.67,
+    "unit": "cup",
+    "note": "for the batter"
    },
    {
-    "name": "sichuan pepper",
-    "quantity": 2,
+    "name": "baking powder",
+    "quantity": 0.5,
     "unit": "tsp",
-    "note": ""
+    "note": "for the batter"
+   },
+   {
+    "name": "salt",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": "for the batter"
+   },
+   {
+    "name": "white pepper",
+    "quantity": 0.25,
+    "unit": "tsp",
+    "note": "powder, for the batter"
+   },
+   {
+    "name": "water",
+    "quantity": 0.67,
+    "unit": "cup",
+    "note": "cold, for the batter"
    },
    {
     "name": "vegetable oil",
+    "quantity": 3,
+    "unit": "cup",
+    "note": "for deep-frying, 3–4 cups, about 4 cm deep"
+   },
+   {
+    "name": "salt",
+    "quantity": 1,
+    "unit": "pinch",
+    "note": "to season at the end"
+   },
+   {
+    "name": "white pepper",
     "quantity": null,
     "unit": "",
-    "note": "for deep-frying"
-   },
-   {
-    "name": "squid",
-    "quantity": 400,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "spring onion",
-    "quantity": null,
-    "unit": "",
-    "note": "sliced"
-   },
-   {
-    "name": "chilli",
-    "quantity": null,
-    "unit": "",
-    "note": "sliced"
-   },
-   {
-    "name": "chilli",
-    "quantity": 1,
-    "unit": "",
-    "note": "chopped"
-   },
-   {
-    "name": "cucumber",
-    "quantity": 0.5,
-    "unit": "",
-    "note": ""
-   },
-   {
-    "name": "red onion",
-    "quantity": 1,
-    "unit": "",
-    "note": "chopped"
-   },
-   {
-    "name": "rice vinegar",
-    "quantity": 100,
-    "unit": "ml",
-    "note": ""
-   },
-   {
-    "name": "sugar",
-    "quantity": 1,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "fish sauce",
-    "quantity": 2,
-    "unit": "tsp",
-    "note": ""
+    "note": "powder, to season at the end, to taste"
    }
   ],
   "steps": [
    {
-    "text": "To make the dipping sauce, mix all the ingredients in a small bowl until the sugar has dissolved, then set aside. Mix the cornflour and plain flour with both peppers and 2 tsp sea salt in a large bowl, then set aside.",
+    "text": "Slit each squid tube open and lay it flat, pat dry, and lightly score the inside in 1.5 cm diamonds without cutting through. Cut into rectangles about 5 x 2 cm.",
     "minutes": null
    },
    {
-    "text": "Line a tray with kitchen paper and make sure you have more salt to sprinkle with.",
+    "text": "Stir the mayonnaise and grated garlic together for the aioli and leave it for at least 20 minutes.",
+    "minutes": 20
+   },
+   {
+    "text": "Whisk the flour, cornflour, baking powder and salt, then whisk in the cold water until smooth. Refrigerate the batter for 30 minutes.",
+    "minutes": 30
+   },
+   {
+    "text": "Heat about 4 cm of oil in a heavy pot to 160°C. Whisk the batter again and toss all the squid in it to coat.",
     "minutes": null
    },
    {
-    "text": "Heat about 7cm of oil to 180C in a deep fryer, wok or deep pan. If you don’t have a thermometer, you can test it with a cube of bread – it should brown in 20 secs.",
+    "text": "Fry in 3 batches, letting excess batter drip off first and separating pieces with chopsticks. Cook baby squid for 2 minutes or tubes for 3 minutes until light golden, then drain on paper towel and bring the oil back to temperature between batches.",
+    "minutes": 9
+   },
+   {
+    "text": "Raise the heat and bring the oil to 200°C. Line a large bowl with paper towel.",
     "minutes": null
    },
    {
-    "text": "Coat the squid well with the flour mix and fry in batches for about 2 mins each or until crisp. Use a slotted spoon to lift out the squid, then drain on the kitchen paper and sprinkle with a little more salt.",
-    "minutes": 2
+    "text": "Fry half the squid again for 1 1/2 minutes until deep golden and crisp, then repeat with the rest, returning the oil to 200°C in between.",
+    "minutes": 3
    },
    {
-    "text": "Serve the squid scattered with the spring onion and chilli, with the dipping sauce on the side.",
+    "text": "Remove the paper towel, taste, and toss the squid with a little salt and white pepper. Serve with the aioli.",
     "minutes": null
    }
   ]
@@ -66887,107 +66887,161 @@
  },
  {
   "source": "themealdb:52833",
-  "title": "Salted Caramel Cheescake",
-  "description": "An American sweet made with digestive biscuits, pretzels and cream cheese — makes 16, ready in under half an hour.",
-  "servings": 16,
+  "title": "Salted caramel cheesecake",
+  "description": "A baked cheesecake on a digestive biscuit and pretzel crust, set in a water bath and topped with homemade salted caramel, mini pretzels and flaky salt.",
+  "servings": 12,
   "cuisine": "American",
   "category": "Dessert",
-  "image": "https://www.themealdb.com/images/media/meals/xqrwyr1511133646.jpg",
-  "prep_minutes": 20,
-  "cook_minutes": 5,
+  "image": "https://i.ytimg.com/vi/rlaqN3JxgNE/hqdefault.jpg",
+  "prep_minutes": 60,
+  "cook_minutes": 120,
   "ingredients": [
    {
     "name": "digestive biscuits",
-    "quantity": 250,
+    "quantity": 190,
     "unit": "g",
-    "note": ""
+    "note": "or crackers, for the crust"
    },
    {
     "name": "pretzels",
-    "quantity": 75,
+    "quantity": 60,
     "unit": "g",
-    "note": ""
+    "note": "mini, for the crust"
    },
    {
     "name": "butter",
-    "quantity": 135,
+    "quantity": 90,
     "unit": "g",
-    "note": ""
+    "note": "melted, for the crust"
+   },
+   {
+    "name": "milk",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "listed with the crust by the page but no step uses it; 1–2 tbsp"
    },
    {
     "name": "cream cheese",
-    "quantity": 450,
+    "quantity": 900,
     "unit": "g",
-    "note": ""
+    "note": "room temperature, for the filling"
+   },
+   {
+    "name": "sugar",
+    "quantity": 200,
+    "unit": "g",
+    "note": "for the filling"
+   },
+   {
+    "name": "cream",
+    "quantity": 60,
+    "unit": "ml",
+    "note": "thickened, for the filling"
    },
    {
     "name": "vanilla extract",
     "quantity": 1,
     "unit": "tsp",
-    "note": ""
+    "note": "1–2 tsp"
    },
    {
-    "name": "icing sugar",
-    "quantity": 100,
+    "name": "eggs",
+    "quantity": 4,
+    "unit": "",
+    "note": "large"
+   },
+   {
+    "name": "sour cream",
+    "quantity": 225,
     "unit": "g",
     "note": ""
    },
    {
-    "name": "caramel",
-    "quantity": 150,
-    "unit": "g",
+    "name": "cornflour",
+    "quantity": 1.5,
+    "unit": "tbsp",
     "note": ""
+   },
+   {
+    "name": "lemon",
+    "quantity": 1,
+    "unit": "",
+    "note": "zest only"
    },
    {
     "name": "salt",
-    "quantity": 1,
+    "quantity": 0.25,
     "unit": "tsp",
-    "note": ""
+    "note": "for the filling"
+   },
+   {
+    "name": "sugar",
+    "quantity": 200,
+    "unit": "g",
+    "note": "for the caramel"
+   },
+   {
+    "name": "butter",
+    "quantity": 85,
+    "unit": "g",
+    "note": "room temperature, for the caramel"
    },
    {
     "name": "cream",
-    "quantity": 300,
+    "quantity": 120,
     "unit": "ml",
-    "note": ""
+    "note": "thickened, room temperature, for the caramel"
    },
    {
-    "name": "caramel sauce",
-    "quantity": null,
-    "unit": "",
-    "note": "a drizzle"
-   },
-   {
-    "name": "toffee popcorn",
-    "quantity": null,
-    "unit": "",
-    "note": "to serve"
+    "name": "salt",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": "flaky, for the caramel; 1/2–1 tsp"
    },
    {
     "name": "pretzels",
     "quantity": null,
     "unit": "",
-    "note": "to serve"
+    "note": "mini, to garnish"
+   },
+   {
+    "name": "salt",
+    "quantity": null,
+    "unit": "",
+    "note": "flaky, to garnish"
    }
   ],
   "steps": [
    {
-    "text": "Blitz the biscuits and the pretzels in a food processor and mix the biscuits with the melted butter. Spread on the bottom of an 8″/20cm Deep Springform Tin and press down firmly. Leave to set in the fridge whilst you make the rest!",
+    "text": "Heat the oven to 160°C. Crush the biscuits and pretzels to fine crumbs, mix in the melted butter, and press into the base of a 23 cm springform pan. Bake for 7–8 minutes and set aside.",
+    "minutes": 7
+   },
+   {
+    "text": "Beat the cream cheese and sugar until smooth, then beat in the eggs one at a time without overbeating.",
     "minutes": null
    },
    {
-    "text": "Using an electric mixer, I use my KitchenAid with the whisk attachment, whisk together the cream cheese, vanilla, and icing sugar until smooth and then add the caramel and whisk again until smooth and lump free – this could take a couple of minutes, I whisk it at half speed so not too quick or slow!",
+    "text": "Beat in the vanilla, sour cream, cream and salt until smooth, then the cornflour and lemon zest until just combined.",
     "minutes": null
    },
    {
-    "text": "Pour in the double cream & Salt flakes and continue to whisk for a couple of minutes until its very thick and mousse like (I mix it on a medium speed, level 6/10) – Now this could take up to 5 minutes depending on your mixer, but you seriously have to stick at it – it will hold itself completely when finished mixing (like a meringue does!) If you don’t mix it enough it will not set well enough, but don’t get impatient and whisk it really quick because that’ll make it split!",
-    "minutes": 5
-   },
-   {
-    "text": "Spread over the biscuit base and leave to set in the fridge overnight.",
+    "text": "Wrap the pan in foil, pour the filling over the crust and set the pan in a roasting pan. Pour hot water in to halfway up the springform pan.",
     "minutes": null
    },
    {
-    "text": "Remove the Cheesecake from the tin carefully and decorate the cheesecake – I drizzled over some of the spare caramel, and then some Toffee Popcorn and more Pretzels!",
+    "text": "Bake at 160°C for 50–65 minutes, until the edge is set but the centre still jiggles slightly. Turn the oven off and leave the cheesecake in for another hour.",
+    "minutes": 50
+   },
+   {
+    "text": "Cool to room temperature for an hour, then refrigerate for at least 4 hours or overnight.",
+    "minutes": 240
+   },
+   {
+    "text": "For the caramel, melt the sugar over medium-low heat, stirring now and then, until golden. Off the heat, stir in the butter, then the cream, then the salt, and cook over medium heat for about 1 minute. Let it cool.",
+    "minutes": null
+   },
+   {
+    "text": "Spread the caramel over the cheesecake and decorate with mini pretzels and flaky salt.",
     "minutes": null
    }
   ]
@@ -68101,141 +68155,137 @@
  },
  {
   "source": "themealdb:53054",
-  "title": "Seri muka kuih",
-  "description": "A Malaysian sweet made with rice, coconut milk and coconut cream — makes 10, worth the couple of hours it takes.",
-  "servings": 10,
+  "title": "Kuih seri muka",
+  "description": "A Malaysian two-layer steamed kuih: coconut-flavoured glutinous rice topped with a green pandan and coconut milk custard, cooled and cut into pieces.",
+  "servings": 20,
   "cuisine": "Malaysian",
   "category": "Dessert",
   "image": "https://www.themealdb.com/images/media/meals/6ut2og1619790195.jpg",
-  "prep_minutes": 15,
-  "cook_minutes": 115,
+  "prep_minutes": 60,
+  "cook_minutes": 90,
   "ingredients": [
    {
-    "name": "rice",
+    "name": "glutinous rice",
     "quantity": 400,
     "unit": "g",
-    "note": ""
+    "note": "soaked at least 4 hours"
    },
    {
     "name": "coconut milk",
-    "quantity": 150,
+    "quantity": 100,
     "unit": "ml",
-    "note": ""
+    "note": "for the rice"
    },
    {
     "name": "water",
-    "quantity": 100,
-    "unit": "ml",
-    "note": ""
+    "quantity": 3,
+    "unit": "tbsp",
+    "note": "for the rice"
    },
    {
-    "name": "salt",
-    "quantity": 1,
-    "unit": "tsp",
-    "note": ""
+    "name": "pandan leaves",
+    "quantity": 9,
+    "unit": "leaf",
+    "note": "9 in total; one knotted to steam with the rice, the rest blended (split is a reading of step 1, page gives only the total)"
+   },
+   {
+    "name": "water",
+    "quantity": 70,
+    "unit": "ml",
+    "note": "for blending the pandan extract"
+   },
+   {
+    "name": "sugar",
+    "quantity": 150,
+    "unit": "g",
+    "note": "for the custard"
+   },
+   {
+    "name": "coconut milk",
+    "quantity": 400,
+    "unit": "g",
+    "note": "for the custard"
    },
    {
     "name": "cornflour",
     "quantity": 5,
-    "unit": "tbsp",
-    "note": ""
+    "unit": "g",
+    "note": "for the custard"
    },
    {
-    "name": "plain flour",
-    "quantity": 3,
-    "unit": "tbsp",
-    "note": ""
+    "name": "rice flour",
+    "quantity": 40,
+    "unit": "g",
+    "note": "for the custard"
    },
    {
     "name": "eggs",
-    "quantity": 3,
+    "quantity": 4,
     "unit": "",
-    "note": ""
-   },
-   {
-    "name": "coconut cream",
-    "quantity": 200,
-    "unit": "ml",
-    "note": ""
-   },
-   {
-    "name": "sugar",
-    "quantity": 140,
-    "unit": "g",
-    "note": ""
+    "note": "for the custard"
    }
   ],
   "steps": [
    {
-    "text": "Soak glutinous rice with water for at least 1 ½ hours prior to using. Drain.",
+    "text": "Soak the glutinous rice for at least 4 hours, drain, and mix with the coconut milk and 3 tbsp water. Lay a knotted pandan leaf on top and steam for 40 minutes, until cooked.",
+    "minutes": 40
+   },
+   {
+    "text": "Blend the remaining pandan leaves with 70 ml water to make the extract. Mix the extract with the sugar, coconut milk, cornflour, rice flour and eggs in a pot.",
     "minutes": null
    },
    {
-    "text": "Prepare a 9-inch round or square cake pan and spray with cooking spray or line with plastic wrap.",
+    "text": "Stir the custard over low heat until it turns semi-solid, then take it off the heat and mix well.",
     "minutes": null
    },
    {
-    "text": "Mix coconut milk, water, salt and the rice. Pour it into cake pan, topped with the pandan knots. Steam for 30 minutes.",
-    "minutes": 30
-   },
-   {
-    "text": "After 30 minutes, fluff up the rice and remove pandan knots. Then, using a greased spatula, flatten the steamed rice. Make sure there are no holes/air bubbles and gaps in the rice, especially the sides. Steam for another 10 minutes.",
-    "minutes": 30
-   },
-   {
-    "text": "Combine pandan juice, coconut milk, all purpose flour, cornflour, and sugar. Mix well.",
+    "text": "Tip the cooked rice into an oiled cake pan and press it down firmly so it holds together when cut.",
     "minutes": null
    },
    {
-    "text": "Add eggs and whisk well then strain into a medium sized metal bowl or pot.",
-    "minutes": null
+    "text": "Pour the pandan custard over the compacted rice and steam for about 50 minutes to 1 hour.",
+    "minutes": 50
    },
    {
-    "text": "Place pandan mixture over simmering water (double boiler or bain-marie)",
-    "minutes": null
-   },
-   {
-    "text": "Stir continuously and cook till custard starts to thicken. (15 minutes)",
-    "minutes": 15
-   },
-   {
-    "text": "Pour pandan custard into glutinous rice layer, give it a little tap (for air bubbles) and continue to steam for 30 minutes.",
-    "minutes": 30
-   },
-   {
-    "text": "Remove kuih seri muka from the steamer and allow to cool completely before cutting into rectangles or diamond shapes.",
+    "text": "Cool to room temperature before cutting into pieces. It keeps refrigerated in an airtight container for 3 to 5 days.",
     "minutes": null
    }
   ]
  },
  {
   "source": "themealdb:53378",
-  "title": "Sesame Cucumber Salad",
-  "description": "A Chinese salad of cucumber, sesame oil and basil — serves 2, ready in under half an hour.",
-  "servings": 2,
-  "cuisine": "Chinese",
+  "title": "Cucumber carrot salad with creamy sesame dressing",
+  "description": "Sliced cucumber and carrot ribbons tossed in a creamy mayonnaise, soy and ground toasted sesame dressing, finished with spring onion and sesame seeds.",
+  "servings": 4,
+  "cuisine": "Asian",
   "category": "Side",
-  "image": "https://www.themealdb.com/images/media/meals/93iok31766436070.jpg",
+  "image": "https://i.ytimg.com/vi/q37qn81lg5c/hqdefault.jpg",
   "prep_minutes": 10,
-  "cook_minutes": 5,
+  "cook_minutes": 0,
   "ingredients": [
    {
     "name": "cucumber",
-    "quantity": 2,
+    "quantity": 1,
     "unit": "",
-    "note": "medium"
+    "note": "English, sliced"
    },
    {
-    "name": "salt",
-    "quantity": 0.5,
-    "unit": "tsp",
-    "note": ""
+    "name": "carrot",
+    "quantity": 3,
+    "unit": "",
+    "note": "shredded into long ribbons"
    },
    {
-    "name": "sesame oil",
-    "quantity": 2,
-    "unit": "tsp",
-    "note": ""
+    "name": "sesame seed",
+    "quantity": 3,
+    "unit": "tbsp",
+    "note": "toasted, ground for the dressing"
+   },
+   {
+    "name": "mayonnaise",
+    "quantity": 3,
+    "unit": "tbsp",
+    "note": "for the dressing"
    },
    {
     "name": "rice vinegar",
@@ -68244,31 +68294,79 @@
     "note": ""
    },
    {
-    "name": "basil",
-    "quantity": 6,
-    "unit": "",
+    "name": "honey",
+    "quantity": 1,
+    "unit": "tbsp",
     "note": ""
    },
    {
-    "name": "red chilli flakes",
-    "quantity": 0.5,
+    "name": "soy sauce",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": ""
+   },
+   {
+    "name": "sesame oil",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": ""
+   },
+   {
+    "name": "garlic powder",
+    "quantity": 1,
     "unit": "tsp",
     "note": ""
+   },
+   {
+    "name": "ginger",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": "as listed on the page"
+   },
+   {
+    "name": "salt",
+    "quantity": 0.25,
+    "unit": "tsp",
+    "note": ""
+   },
+   {
+    "name": "black pepper",
+    "quantity": 1,
+    "unit": "dash",
+    "note": ""
+   },
+   {
+    "name": "spring onion",
+    "quantity": 3,
+    "unit": "",
+    "note": "stalks, sliced, to garnish"
    },
    {
     "name": "sesame seed",
-    "quantity": 2,
+    "quantity": 0.5,
     "unit": "tsp",
-    "note": ""
+    "note": "to garnish"
    }
   ],
   "steps": [
    {
-    "text": "Peel the cucumbers. Cut them into quarters, lengthwise. (If the seeds are bitter, scrape out the seeds and discard.) Cut the cucumbers again, crosswise, into 1/2-inch thick pieces.",
+    "text": "Slice the cucumber and shred the carrots into long ribbons. Combine them in a large bowl.",
     "minutes": null
    },
    {
-    "text": "Place cucumbers into a serving bowl. Sprinkle with salt. Toss with sesame oil, seasoned rice vinegar, basil (if using), and chili flakes. Sprinkle with toasted sesame seeds if using.",
+    "text": "Grind the toasted sesame seeds in a chopper cup or food processor, or crush them in a mortar or a bag with a rolling pin.",
+    "minutes": null
+   },
+   {
+    "text": "Mix the ground sesame, mayonnaise, rice vinegar, honey, soy sauce, sesame oil, garlic powder, ginger, salt and pepper until well blended.",
+    "minutes": null
+   },
+   {
+    "text": "Pour 3–4 tablespoons of the dressing over the vegetables and toss gently to coat.",
+    "minutes": null
+   },
+   {
+    "text": "Top with sliced spring onion and sesame seeds and serve straight away, or chill for about 30 minutes (optional) to let the flavours meld.",
     "minutes": null
    }
   ]
@@ -68425,68 +68523,38 @@
  },
  {
   "source": "themealdb:53219",
-  "title": "Shakshuka Feta Cheese",
-  "description": "A Saudi Arabian dish of feta, passata and shallot — serves 2, on the table in about 45 minutes.",
+  "title": "Shakshuka with spinach and feta",
+  "description": "Eggs poached in a spiced tomato sauce with spinach and crumbled feta, cooked in one pan and served with bread for dipping.",
   "servings": 2,
-  "cuisine": "Saudi Arabian",
-  "category": "Miscellaneous",
+  "cuisine": "Middle Eastern",
+  "category": "Breakfast",
   "image": "https://www.themealdb.com/images/media/meals/wpkfin1763597958.jpg",
-  "prep_minutes": 20,
-  "cook_minutes": 25,
+  "prep_minutes": 5,
+  "cook_minutes": 20,
   "ingredients": [
    {
-    "name": "eggs",
-    "quantity": 4,
-    "unit": "",
-    "note": "large"
-   },
-   {
-    "name": "passata",
+    "name": "olive oil",
     "quantity": 3,
     "unit": "tbsp",
-    "note": ""
+    "note": "extra virgin"
    },
    {
-    "name": "olive oil",
-    "quantity": 1,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "shallot",
-    "quantity": 1,
+    "name": "onion",
+    "quantity": 0.5,
     "unit": "",
-    "note": "chopped"
+    "note": "sliced finely"
    },
    {
-    "name": "celery",
-    "quantity": 1,
+    "name": "chilli",
+    "quantity": 0.5,
     "unit": "",
-    "note": ""
+    "note": "red, deseeded and sliced finely"
    },
    {
     "name": "garlic",
-    "quantity": 1,
+    "quantity": 3,
     "unit": "clove",
-    "note": "peeled crushed"
-   },
-   {
-    "name": "spinach",
-    "quantity": 1,
-    "unit": "cup",
-    "note": ""
-   },
-   {
-    "name": "feta",
-    "quantity": 0.5,
-    "unit": "cup",
-    "note": ""
-   },
-   {
-    "name": "capsicum",
-    "quantity": 0.5,
-    "unit": "",
-    "note": ""
+    "note": "squeezed"
    },
    {
     "name": "ground cumin",
@@ -68495,34 +68563,98 @@
     "note": ""
    },
    {
+    "name": "paprika",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "sweet"
+   },
+   {
+    "name": "cayenne pepper",
+    "quantity": 0.125,
+    "unit": "tsp",
+    "note": "ground"
+   },
+   {
     "name": "salt",
-    "quantity": 0.5,
+    "quantity": 0.75,
     "unit": "tsp",
     "note": ""
    },
    {
     "name": "black pepper",
-    "quantity": 0.5,
+    "quantity": 0.25,
     "unit": "tsp",
-    "note": ""
+    "note": "ground"
+   },
+   {
+    "name": "canned tomatoes",
+    "quantity": 1.75,
+    "unit": "cup",
+    "note": "whole peeled"
+   },
+   {
+    "name": "spinach",
+    "quantity": 200,
+    "unit": "g",
+    "note": "washed"
+   },
+   {
+    "name": "feta",
+    "quantity": 140,
+    "unit": "g",
+    "note": "crumbled"
+   },
+   {
+    "name": "eggs",
+    "quantity": 4,
+    "unit": "",
+    "note": "size L"
+   },
+   {
+    "name": "parsley",
+    "quantity": 15,
+    "unit": "g",
+    "note": "fresh, to garnish"
+   },
+   {
+    "name": "bread",
+    "quantity": null,
+    "unit": "",
+    "note": "such as naan, for dipping, to serve"
    }
   ],
   "steps": [
    {
-    "text": "In a pan heat the oil medium to high heat, with a tablespoon of olive oil.",
+    "text": "Heat the oil in a pan and fry the onion until translucent.",
     "minutes": null
    },
    {
-    "text": "Add the chopped vegetables as onions, garlic, celery and red pepper. Stir all together for 5 mins.",
-    "minutes": 5
+    "text": "Add the red chilli and garlic and fry for 30 seconds. Stir in the cumin, paprika, cayenne, salt and pepper.",
+    "minutes": null
    },
    {
-    "text": "Add the cumin powder and salt and pepper and the tomato sauce and let it cook for another 7 mins.",
-    "minutes": 7
+    "text": "Pour in the peeled tomatoes, bring to the boil and simmer gently for 10 minutes, until the sauce thickens and the tomatoes fall apart.",
+    "minutes": 10
    },
    {
-    "text": "Add the eggs, cover and leave to coo for 8 mins. Add the fresh spinach and feta cheese at the end. Serve with fresh bread.",
-    "minutes": 8
+    "text": "Add the spinach a little at a time and let it wilt into the sauce.",
+    "minutes": null
+   },
+   {
+    "text": "Crumble the feta over the sauce and stir it in.",
+    "minutes": null
+   },
+   {
+    "text": "Make four wells in the sauce and crack an egg into each.",
+    "minutes": null
+   },
+   {
+    "text": "Cover the pan and cook for about 3 minutes, longer if you like the eggs firmer.",
+    "minutes": 3
+   },
+   {
+    "text": "Garnish with parsley and serve with bread for dipping.",
+    "minutes": null
    }
   ]
  },
@@ -68815,145 +68947,159 @@
  },
  {
   "source": "themealdb:52953",
-  "title": "Shrimp Chow Fun",
-  "description": "A Chinese dish of prawns, rice noodles and sesame oil — serves 4, about an hour start to finish.",
-  "servings": 4,
+  "title": "Shrimp chow fun",
+  "description": "Wide rice noodles stir-fried in a wok with marinated shrimp, shiitake mushrooms, garlic, ginger, bean sprouts and spring onion in a soy and rice wine sauce.",
+  "servings": 2,
   "cuisine": "Chinese",
   "category": "Seafood",
   "image": "https://www.themealdb.com/images/media/meals/1529445434.jpg",
-  "prep_minutes": 25,
-  "cook_minutes": 25,
+  "prep_minutes": 15,
+  "cook_minutes": 10,
   "ingredients": [
-   {
-    "name": "rice noodles",
-    "quantity": 0.5,
-    "unit": "pack",
-    "note": ""
-   },
    {
     "name": "prawns",
     "quantity": 225,
     "unit": "g",
-    "note": ""
+    "note": "peeled and deveined"
    },
    {
-    "name": "eggs",
-    "quantity": 0.5,
-    "unit": "",
-    "note": ""
-   },
-   {
-    "name": "black pepper",
+    "name": "rice wine",
     "quantity": 1,
-    "unit": "pinch",
-    "note": ""
-   },
-   {
-    "name": "sesame oil",
-    "quantity": 2,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "cornflour",
-    "quantity": 2,
     "unit": "tbsp",
-    "note": ""
+    "note": "for the shrimp"
    },
    {
-    "name": "vegetable oil",
-    "quantity": 4,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "garlic",
+    "name": "soy sauce",
     "quantity": 1,
     "unit": "tsp",
-    "note": ""
+    "note": "light, for the shrimp"
    },
    {
-    "name": "ginger",
+    "name": "white pepper",
+    "quantity": 0.125,
+    "unit": "tsp",
+    "note": "for the shrimp"
+   },
+   {
+    "name": "dark soy sauce",
     "quantity": 1,
     "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "onion",
-    "quantity": 0.5,
-    "unit": "cup",
-    "note": ""
-   },
-   {
-    "name": "bean sprouts",
-    "quantity": 1,
-    "unit": "cup",
-    "note": ""
-   },
-   {
-    "name": "spring onion",
-    "quantity": 0.5,
-    "unit": "cup",
-    "note": ""
-   },
-   {
-    "name": "shaoxing wine",
-    "quantity": 1,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "oyster sauce",
-    "quantity": 1,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "sugar",
-    "quantity": 0.5,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "white vinegar",
-    "quantity": 0.5,
-    "unit": "tbsp",
-    "note": ""
+    "note": "mushroom flavoured, for the sauce"
    },
    {
     "name": "soy sauce",
     "quantity": 1,
     "unit": "tbsp",
+    "note": "light, for the sauce"
+   },
+   {
+    "name": "chilli sauce",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "chilli in oil, optional, for the sauce"
+   },
+   {
+    "name": "sugar",
+    "quantity": 0.25,
+    "unit": "tsp",
+    "note": "for the sauce"
+   },
+   {
+    "name": "rice wine",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "for the sauce"
+   },
+   {
+    "name": "water",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": "for the sauce"
+   },
+   {
+    "name": "vegetable oil",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": "cooking oil, divided"
+   },
+   {
+    "name": "ginger",
+    "quantity": 0.5,
+    "unit": "tbsp",
+    "note": "chopped"
+   },
+   {
+    "name": "garlic",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "chopped"
+   },
+   {
+    "name": "chilli",
+    "quantity": 1,
+    "unit": "",
+    "note": "red, seeded and julienned; or 1/4 red capsicum"
+   },
+   {
+    "name": "shiitake mushrooms",
+    "quantity": 85,
+    "unit": "g",
+    "note": "sliced"
+   },
+   {
+    "name": "rice noodles",
+    "quantity": 285,
+    "unit": "g",
+    "note": "fresh wide chow fun noodles, separated"
+   },
+   {
+    "name": "spring onion",
+    "quantity": 3,
+    "unit": "",
+    "note": "3–4, halved lengthwise and cut into 5 cm pieces"
+   },
+   {
+    "name": "bean sprouts",
+    "quantity": 115,
+    "unit": "g",
     "note": ""
+   },
+   {
+    "name": "sesame oil",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "to garnish"
+   },
+   {
+    "name": "sesame seed",
+    "quantity": null,
+    "unit": "",
+    "note": "to garnish, no amount given"
    }
   ],
   "steps": [
    {
-    "text": "Soak the rice noodles overnight untill they are soft.",
+    "text": "Toss the shrimp with the rice wine, light soy sauce and white pepper and set aside. Whisk the dark soy, light soy, chilli oil, sugar, rice wine and water together until the sugar dissolves.",
     "minutes": null
    },
    {
-    "text": "Boil the noodles for 10-15 minutes and then rinse with cold water to stop the cooking process of the noodles. MARINATING.",
-    "minutes": 15
+    "text": "Heat a wok over high heat, add 1 tbsp oil and cook the shrimp for 1–2 minutes each side, until about three-quarters cooked. Remove and set aside.",
+    "minutes": 4
    },
    {
-    "text": "In a bowl add the shrimp, egg, 1 pinch of white pepper, 1 Teaspoon of sesame seed oil, 1 Tablespoon corn starch and 1 tablespoon of oil Mix together well.",
-    "minutes": null
+    "text": "Add the remaining oil to the wok with the ginger, garlic and red chilli and stir-fry for 30 seconds to 1 minute until fragrant. Add the shiitake and cook for 1 minute until soft, adding a little more oil if needed.",
+    "minutes": 2
    },
    {
-    "text": "In a wok add 2 Tablespoons of oil, shrimp and stir fry them until it is golden brown Set the shrimp aside.",
-    "minutes": null
+    "text": "Add the separated noodles and the sauce and stir-fry for 1–2 minutes until the noodles have soaked up the sauce and softened.",
+    "minutes": 2
    },
    {
-    "text": "Add 1 Tablespoon of oil to the work and then add minced garlic, ginger and all of the vegetables. Add the noodles to the wok.",
-    "minutes": null
+    "text": "Add the spring onion, bean sprouts and shrimp, toss together and stir-fry for 30 seconds to 1 minute, then remove from the heat.",
+    "minutes": 1
    },
    {
-    "text": "Next add sherry cooking wine, oyster sauce, sugar, vinegar, sesame seed oil, 1 pinch white pepper, and soy sauce Add back in the shrimp.",
-    "minutes": null
-   },
-   {
-    "text": "To thicken the sauce, whisk together 1 Tablespoon of corn starch and 2 Tablespoon of water in a bowl and slowly add to your stir-fry until it's the right thickness.",
+    "text": "Finish with the sesame oil and sesame seeds and serve immediately.",
     "minutes": null
    }
   ]
@@ -69400,176 +69546,130 @@
  },
  {
   "source": "themealdb:53368",
-  "title": "Singapore Noodles with Shrimp",
-  "description": "A Chinese dish of ham, prawns and sesame oil — serves 4, about an hour start to finish.",
+  "title": "Singapore noodles with pork and prawns",
+  "description": "Curry-spiced rice vermicelli stir-fried with quick-roasted char siu pork, prawns, egg omelette strips, capsicum and sugar snap peas.",
   "servings": 4,
   "cuisine": "Chinese",
   "category": "Seafood",
   "image": "https://www.themealdb.com/images/media/meals/f3cxnc1765656994.jpg",
-  "prep_minutes": 25,
-  "cook_minutes": 25,
+  "prep_minutes": 15,
+  "cook_minutes": 30,
   "ingredients": [
    {
-    "name": "sesame oil",
+    "name": "pork belly",
+    "quantity": 300,
+    "unit": "g",
+    "note": "skinless, cut into 2 thick slices, for the quick BBQ pork"
+   },
+   {
+    "name": "char siu sauce",
     "quantity": 2,
-    "unit": "tsp",
-    "note": ""
+    "unit": "tbsp",
+    "note": "for the pork"
    },
    {
     "name": "soy sauce",
-    "quantity": 2,
+    "quantity": 1,
     "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "rice vinegar",
-    "quantity": 2,
-    "unit": "tbsp",
-    "note": ""
+    "note": "for the pork"
    },
    {
     "name": "rice noodles",
-    "quantity": 170,
+    "quantity": 200,
     "unit": "g",
-    "note": ""
+    "note": "dried rice vermicelli"
+   },
+   {
+    "name": "vegetable oil",
+    "quantity": 4,
+    "unit": "tbsp",
+    "note": "divided between the omelette and the stir-fry"
    },
    {
     "name": "eggs",
-    "quantity": 2,
+    "quantity": 4,
     "unit": "",
-    "note": "large"
-   },
-   {
-    "name": "ground ginger",
-    "quantity": 2,
-    "unit": "tbsp",
-    "note": ""
+    "note": "lightly whisked"
    },
    {
     "name": "garlic",
-    "quantity": 1,
+    "quantity": 4,
     "unit": "clove",
     "note": "finely chopped"
    },
    {
-    "name": "carrot",
-    "quantity": 2,
-    "unit": "",
-    "note": ""
-   },
-   {
-    "name": "jalapeño",
+    "name": "onion",
     "quantity": 1,
     "unit": "",
-    "note": "sliced"
-   },
-   {
-    "name": "onion",
-    "quantity": 0.5,
-    "unit": "",
-    "note": ""
-   },
-   {
-    "name": "salt",
-    "quantity": 0.5,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "ham",
-    "quantity": 110,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "chinese cabbage",
-    "quantity": 0.5,
-    "unit": "",
-    "note": ""
-   },
-   {
-    "name": "spring onion",
-    "quantity": 4,
-    "unit": "",
-    "note": ""
+    "note": "finely diced"
    },
    {
     "name": "capsicum",
-    "quantity": 0.5,
+    "quantity": 1,
     "unit": "",
-    "note": ""
+    "note": "red, deseeded and cut into bite-sized pieces"
+   },
+   {
+    "name": "sugar snap peas",
+    "quantity": 50,
+    "unit": "g",
+    "note": "trimmed and sliced"
+   },
+   {
+    "name": "prawns",
+    "quantity": 300,
+    "unit": "g",
+    "note": "peeled and deveined"
+   },
+   {
+    "name": "shaoxing wine",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": "optional"
+   },
+   {
+    "name": "soy sauce",
+    "quantity": 0.25,
+    "unit": "cup",
+    "note": "for the stir-fry"
    },
    {
     "name": "curry powder",
     "quantity": 2,
     "unit": "tsp",
-    "note": ""
+    "note": "mild"
    },
    {
-    "name": "prawns",
-    "quantity": 225,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "coriander",
-    "quantity": 2,
-    "unit": "tbsp",
+    "name": "sugar",
+    "quantity": 1,
+    "unit": "tsp",
     "note": ""
    }
   ],
   "steps": [
    {
-    "text": "For the sweet onion, look for Vidalia, OSO Sweet, or Walla Walla. The super-sweet varieties are more suited to this stir-fry because at the end of cooking, the onion still has a slight crunch.",
-    "minutes": null
+    "text": "Heat the oven to 200°C. Toss the pork belly slices with the char siu sauce and soy sauce, put them on a lined tray and roast for 20 minutes, turning halfway, until cooked and starting to char. Rest for 5 minutes, then cut into thick slices.",
+    "minutes": 25
    },
    {
-    "text": "In a bowl, combine the sesame oil, soy sauce, and rice vinegar.",
-    "minutes": null
+    "text": "Meanwhile, soak the vermicelli in hot water for 2–3 minutes until just tender, then drain and set aside. Don't overcook it or it will turn mushy in the wok.",
+    "minutes": 3
    },
    {
-    "text": "Bring a large saucepan of water to a boil, add the noodles, and use tongs to turn them so they are submerged.",
-    "minutes": null
+    "text": "Heat half the oil in a large pan or wok over medium heat and pour in the eggs, spreading them out. When nearly set, flip and cook another minute, then cut the omelette into chunks and set aside.",
+    "minutes": 3
    },
    {
-    "text": "Cook for 2 minutes, or until they are tender but still have some bite (they will cook a little more once you add them to the skillet).",
+    "text": "Heat the remaining oil and stir-fry the garlic and onion for a minute. Add the capsicum and sugar snap peas for another minute.",
     "minutes": 2
    },
    {
-    "text": "Drain, rinse with cold water, and use scissors to snip the noodles several times to break them up into shorter lengths.",
+    "text": "Add the prawns and stir-fry until almost cooked. Pour in the Shaoxing wine and let it bubble for half a minute.",
     "minutes": null
    },
    {
-    "text": "In a small bowl whisk together the eggs. Heat the skillet or Dutch oven over medium heat. Add 1 tablespoon of the peanut or canola oil. Add the eggs and scramble them for 2 minutes, or until they form large, soft curds.",
+    "text": "Add the noodles, pork, egg, soy sauce, curry powder and sugar and stir-fry for 1–2 minutes until combined and the noodles have absorbed the sauce. Serve warm.",
     "minutes": 2
-   },
-   {
-    "text": "Transfer them from the pan to a plate or bowl.",
-    "minutes": null
-   },
-   {
-    "text": "Add 1 tablespoon of the remaining oil to the pan. When it is hot, add the ginger, garlic, carrots, jalapeño, onion, and salt. Cook, stirring constantly, for 2 minutes or until the vegetables start to soften.",
-    "minutes": 2
-   },
-   {
-    "text": "Sprinkle the vegetable mixture with the remaining 1 tablespoon peanut or canola oil. When the oil is hot, add the ham, cabbage, scallions, red pepper, and curry powder to the pan. Cook, stirring constantly, for 1 minute.",
-    "minutes": null
-   },
-   {
-    "text": "Add the shrimp and cook, stirring, for 3 more minutes or until the shrimp are bright pink and cooked through.",
-    "minutes": null
-   },
-   {
-    "text": "Add the eggs, the sauce mixture, and half the noodles to the pan. Toss for 1 minute.",
-    "minutes": null
-   },
-   {
-    "text": "Add the remaining noodles and continue tossing for 1 minute more until they are thoroughly combined and the mixture is heated through.",
-    "minutes": null
-   },
-   {
-    "text": "Taste for seasoning and add more salt or soy sauce, if you like. Sprinkle with cilantro leaves and serve.",
-    "minutes": null
    }
   ]
  },
@@ -72276,20 +72376,32 @@
  },
  {
   "source": "themealdb:52886",
-  "title": "Spotted Dick",
-  "description": "A British sweet made with self-raising flour, suet and raisins — serves 8, worth the couple of hours it takes.",
-  "servings": 8,
+  "title": "Spotted dick",
+  "description": "A steamed British pudding of self-raising flour, butter, currants and lemon zest, steamed in a basin for two hours and served with vanilla custard.",
+  "servings": 6,
   "cuisine": "British",
   "category": "Dessert",
   "image": "https://www.themealdb.com/images/media/meals/xqvyqr1511638875.jpg",
   "prep_minutes": 15,
-  "cook_minutes": 125,
+  "cook_minutes": 120,
   "ingredients": [
    {
     "name": "self-raising flour",
-    "quantity": 250,
+    "quantity": 300,
     "unit": "g",
     "note": ""
+   },
+   {
+    "name": "butter",
+    "quantity": 150,
+    "unit": "g",
+    "note": "diced (the creator used butter in place of suet)"
+   },
+   {
+    "name": "sugar",
+    "quantity": 75,
+    "unit": "g",
+    "note": "caster"
    },
    {
     "name": "salt",
@@ -72298,38 +72410,20 @@
     "note": ""
    },
    {
-    "name": "suet",
-    "quantity": 125,
+    "name": "currants",
+    "quantity": 100,
     "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "raisins",
-    "quantity": 175,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "sugar",
-    "quantity": 80,
-    "unit": "g",
-    "note": ""
+    "note": "dried"
    },
    {
     "name": "lemon",
-    "quantity": 1,
+    "quantity": 2,
     "unit": "",
-    "note": "zested"
-   },
-   {
-    "name": "orange",
-    "quantity": 1,
-    "unit": "",
-    "note": "zested"
+    "note": "zest only, from 2 lemons"
    },
    {
     "name": "milk",
-    "quantity": 150,
+    "quantity": 160,
     "unit": "ml",
     "note": ""
    },
@@ -72337,28 +72431,32 @@
     "name": "custard",
     "quantity": null,
     "unit": "",
-    "note": "to serve"
+    "note": "vanilla, to serve"
    }
   ],
   "steps": [
    {
-    "text": "Put the flour and salt in a bowl. Add the suet, currants, sugar, lemon and orange zest.",
+    "text": "Mix the flour and salt in a bowl. Rub in the diced butter by hand, or pulse in a food processor, until it looks like fine breadcrumbs.",
     "minutes": null
    },
    {
-    "text": "Pour in 150ml milk and mix to a firm but moist dough, adding the extra milk if necessary.",
+    "text": "Add the sugar, lemon zest and currants, mix, then stir in about three-quarters of the milk. Add the rest slowly until the mixture is soft but not wet; add a little more if your flour is thirsty.",
     "minutes": null
    },
    {
-    "text": "Shape into a fat roll about 20cm long. Place on a large rectangle of baking parchment. Wrap loosely to allow for the pudding to rise and tie the ends with string like a Christmas cracker.",
+    "text": "Mix with a spoon without kneading. Grease a 1 litre pudding basin generously and line the base with a circle of non-stick baking paper. Press the mixture in gently.",
     "minutes": null
    },
    {
-    "text": "Place a steamer over a large pan of boiling water, add the pudding to the steamer, cover and steam for 1 1/2 hours. Top up the pan with water from time to time.",
+    "text": "Cover with a circle of baking paper and then foil, tied with string, which can also make a handle.",
+    "minutes": null
+   },
+   {
+    "text": "Stand the basin on a trivet or folded cloth in a large pot and add boiling water to a third of the way up the basin. Cover and simmer for 2 hours, topping up with boiling water as needed.",
     "minutes": 120
    },
    {
-    "text": "Remove from the steamer and allow to cool slightly before unwrapping. Serve sliced with custard.",
+    "text": "Run a palette knife around the edge to release the pudding, turn it out onto a plate and serve with vanilla custard.",
     "minutes": null
    }
   ]
@@ -72618,111 +72716,107 @@
  },
  {
   "source": "themealdb:52980",
-  "title": "Stamppot",
-  "description": "A Dutch dish of sausages, potato and shallot — serves 4, about an hour start to finish.",
-  "servings": 4,
+  "title": "Boerenkool stamppot",
+  "description": "Dutch mashed potatoes with curly kale, crisp bacon and onion, seasoned with nutmeg and a little vinegar and served with smoked sausage.",
+  "servings": 6,
   "cuisine": "Dutch",
   "category": "Pork",
   "image": "https://www.themealdb.com/images/media/meals/hyarod1565090529.jpg",
-  "prep_minutes": 15,
-  "cook_minutes": 40,
+  "prep_minutes": 10,
+  "cook_minutes": 30,
   "ingredients": [
    {
     "name": "potato",
-    "quantity": 1500,
+    "quantity": 500,
     "unit": "g",
-    "note": ""
+    "note": "Yukon Gold, peeled and quartered"
    },
    {
-    "name": "bay leaf",
-    "quantity": 2,
-    "unit": "leaf",
-    "note": ""
+    "name": "kale",
+    "quantity": 300,
+    "unit": "g",
+    "note": "curly kale, leaves only, washed and chopped"
    },
    {
-    "name": "shallot",
-    "quantity": 2,
+    "name": "bacon",
+    "quantity": 125,
+    "unit": "g",
+    "note": "diced"
+   },
+   {
+    "name": "onion",
+    "quantity": 1,
     "unit": "",
+    "note": "sliced into small strips"
+   },
+   {
+    "name": "smoked sausage",
+    "quantity": 300,
+    "unit": "g",
+    "note": "such as kielbasa"
+   },
+   {
+    "name": "nutmeg",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": ""
+   },
+   {
+    "name": "white vinegar",
+    "quantity": 1,
+    "unit": "tsp",
     "note": ""
    },
    {
     "name": "butter",
-    "quantity": 3,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "kale",
-    "quantity": 750,
+    "quantity": 50,
     "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "sausages",
-    "quantity": 2,
-    "unit": "",
-    "note": ""
-   },
-   {
-    "name": "milk",
-    "quantity": 500,
-    "unit": "ml",
-    "note": ""
-   },
-   {
-    "name": "nutmeg",
-    "quantity": null,
-    "unit": "",
-    "note": "grated"
+    "note": "unsalted"
    },
    {
     "name": "salt",
-    "quantity": 1,
-    "unit": "pinch",
-    "note": ""
+    "quantity": null,
+    "unit": "",
+    "note": "to taste"
    },
    {
     "name": "black pepper",
-    "quantity": 1,
-    "unit": "pinch",
-    "note": ""
+    "quantity": null,
+    "unit": "",
+    "note": "ground, to taste"
    }
   ],
   "steps": [
    {
-    "text": "Wash and peel the potatoes and cut into similarly sized pieces for even cooking.",
+    "text": "Put the peeled, quartered potatoes in a large pot with water to about 2 cm above them. Lay the chopped kale on top without stirring and season with salt and pepper.",
     "minutes": null
    },
    {
-    "text": "In a large soup pot, boil the potatoes and the bay leaves in salted water for 20 minutes. Discard the bay leaves.",
-    "minutes": 20
-   },
-   {
-    "text": "If you're not using a bag of ready-cut curly kale, wash the bunches thoroughly under cool running water to get rid of all soil—you wouldn't want that gritty texture in your finished dish. Trim any coarse stems and discard any brown leaves.",
-    "minutes": null
-   },
-   {
-    "text": "With a sharp knife, cut the curly kale into thin strips. Peel and chop the shallots.",
-    "minutes": null
-   },
-   {
-    "text": "In a frying pan or skillet, melt 1 tbsp. of butter and saute the shallots for a few minutes before adding the curly kale and 2 tbsp. of water. Season and cook for about 10 minutes, or until tender.",
+    "text": "Cover and bring to the boil over medium-high heat, then simmer for 10 minutes.",
     "minutes": 10
    },
    {
-    "text": "Warm the milk on the stove or in the microwave.",
+    "text": "Meanwhile, cook the diced bacon in a dry non-stick pan over medium heat until crisp, remove it, and leave the fat in the pan.",
     "minutes": null
    },
    {
-    "text": "Drain, shake and dry the potatoes with kitchen towels before mashing with a potato masher or ricer. Working quickly, add the warm milk and the remaining butter. Season to taste with nutmeg, salt, and pepper.",
+    "text": "Cook the sliced onion in the bacon fat for about 5 minutes until soft and golden, return the bacon to the pan, cover and set aside.",
+    "minutes": 5
+   },
+   {
+    "text": "Lay the smoked sausage on top of the kale, cover again and cook for another 10 minutes so it steams through.",
+    "minutes": 10
+   },
+   {
+    "text": "Take out the sausage and keep it warm. Drain the pot into a bowl, keeping some cooking liquid for the mash.",
     "minutes": null
    },
    {
-    "text": "Mix the cooked curly kale through the cooked mashed potato mixture.",
+    "text": "Add the butter, nutmeg and vinegar to the hot potatoes and kale and mash together, adding butter or a splash of cooking water if it's too dry.",
     "minutes": null
    },
    {
-    "text": "Top with slices of the smoked sausage and serve hot with your favorite mustard or gravy. Serve and enjoy!",
+    "text": "Fold in the bacon and onion with any fat, taste for salt and pepper, and serve topped with the warm sausage.",
     "minutes": null
    }
   ]
