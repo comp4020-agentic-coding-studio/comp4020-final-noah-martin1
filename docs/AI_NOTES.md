@@ -39,11 +39,34 @@ Things learned the hard way while matching catalogue recipes to YouTube videos.
   next agent was blocked on its second fetch. Don't spend the first working
   fetches on tests; after a block, wait several hours, then send only the
   fetches that matter, one agent at a time.
+- The fix that worked: YouTube blocks the caption endpoint (and yt-dlp's
+  subtitle download, HTTP 429) but not the audio stream. `yt.py transcript`
+  now downloads the audio and transcribes it locally with `mlx-whisper`
+  (`large-v3-turbo`, in `/tmp/whisperenv`; ~15 s for a 4-minute video on the
+  M4, translating non-English speech). Music-only videos make Whisper loop
+  on a phrase ("Add 2 eggs Add 2 eggs"); `local_transcript` reports those as
+  NoSpeech by word rate and vocabulary. Whisper can mishear numbers, so
+  amounts from a written description still win.
 - A timeout is not a dead video. One scan marked 320 videos "dead" and 297
   were yt-dlp timeouts during a block. Never cache a timeout, and re-scan
   timed-out entries once YouTube answers again.
 - Some recipe sites refuse automated fetches. Don't work around that: use the
   transcript, another evidence source, or `no-video`.
+
+## Recipe photos
+
+- Don't use a video's thumbnail without looking at it: on 2026-11-05, 38 of
+  73 thumbnail photos showed the cook or a title banner. The creator's
+  written recipe page has a food-only photo (its schema.org Recipe `image`,
+  or `og:image`): `/tmp/ytwork/scripts/recipe_image.py`. Pick the recipe
+  link from the description by URL, not the first link: the first is often
+  a cookbook, shop or homepage.
+- Some sites serve images to curl but not as an `<img>` on another origin
+  (marionskitchen.com, justonecookbook.com): check in a browser with
+  `/tmp/ytwork/scripts/img-check.mjs`, a few dozen images at a time (hundreds
+  at once time out and look broken).
+- Write catalogue.json with Node's `JSON.stringify(cat, null, 1)`; Python's
+  json.dumps escapes non-ASCII differently and rewrites the whole file.
 
 ## Review
 
