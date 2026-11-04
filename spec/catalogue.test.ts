@@ -152,7 +152,7 @@ describe("catalogue videos", () => {
   // leaves this list when it's rewritten, and no other may join it.
   const KNOWN_GAPS = new Set([
     "themealdb:53457", "themealdb:52999", "themealdb:52830", "themealdb:52996",
-    "themealdb:52957", "themealdb:53000",
+    "themealdb:53000",
   ]);
 
   it("every catalogue recipe is usable: amounts on its main ingredients, at least two steps and a photo", () => {

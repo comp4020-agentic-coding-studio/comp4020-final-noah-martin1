@@ -1277,9 +1277,9 @@
   "videoId": "bvrUPtEs_Uk",
   "title": "Bolani with Potato Filling",
   "channel": "My Food Twist",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-11-04",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53438": {
   "videoId": "WovQkxxrUeE",
@@ -1644,12 +1644,12 @@
   "checked": "2026-10-20"
  },
  "themealdb:53459": {
-  "videoId": "2ehdHb1rcAQ",
-  "title": "Chicken and potato roti recipe /aloo paratha/how to make potato roti",
-  "channel": "The Hot and Cold Kitchen",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "videoId": "8T56NEzLR3k",
+  "title": "🇧🇧 Bajan Chefette Roti 🇧🇧 ⎜Copycat Recipe",
+  "channel": "Everything Paulette",
+  "checked": "2026-11-04",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:52934": {
   "videoId": "emfm6TwsVhg",
@@ -2418,12 +2418,12 @@
   "transcribed": true
  },
  "themealdb:53134": {
-  "videoId": "RRNVLC6IAv4",
-  "title": "How to Make Empanadas | So Delicious and Easy!",
-  "channel": "Preppy Kitchen",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "videoId": "lQzOBhuEri0",
+  "title": "Beef Empanadas",
+  "channel": "RecipeTin Eats",
+  "checked": "2026-11-04",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53518": {
   "videoId": null,
@@ -2660,10 +2660,12 @@
   "checked": "2026-10-20"
  },
  "themealdb:52957": {
-  "videoId": null,
-  "status": "unavailable",
-  "reason": "TheMealDB lists no video for this meal",
-  "checked": "2026-10-20"
+  "videoId": "420Cr63_dHo",
+  "title": "Cream Cheese Danish Recipe with Berries",
+  "channel": "Natashas Kitchen",
+  "checked": "2026-11-04",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53025": {
   "videoId": null,
@@ -3418,12 +3420,12 @@
   "checked": "2026-10-20"
  },
  "themealdb:53221": {
-  "videoId": "RqBeOaXvqGM",
-  "title": "It will melt in your mouth, Maamoul cookies recipe great for Eid. Irresistible taste 😋",
-  "channel": "Heaven Bites",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "videoId": "fdTDfK1Qqtg",
+  "title": "Ma'amoul Date Cookies Ramazan Special Recipe by Food Fusion",
+  "channel": "Food Fusion",
+  "checked": "2026-11-04",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53538": {
   "videoId": null,
@@ -3614,12 +3616,12 @@
   "checked": "2026-10-20"
  },
  "themealdb:53223": {
-  "videoId": "xzu8XswXqcs",
-  "title": "How to Make Arabic Mutabbaq + Easy Recipe",
-  "channel": "Kitchen with Sorayda",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "videoId": "FZPWOxr8mKc",
+  "title": "Mutabbaq Recipe - Saudi Street Food Mutabbaq recipe to make delicious mutabbaq at home",
+  "channel": "Asaan Recipes",
+  "checked": "2026-11-04",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:52924": {
   "videoId": "MMrE4I1ZtWo",
@@ -4222,12 +4224,12 @@
   "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52811": {
-  "videoId": "BiQUYTBb6eQ",
-  "title": "351 - Ribollita toscana...ecco il vero toccasana! (zuppa di verdure tipica toscana facile e gustosa)",
-  "channel": "IlBoccaTV - Cucina toscana e italiana in vernacolo",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "videoId": "PLtgZQO0IBU",
+  "title": "RIBOLLITA TOSCANA - RICETTA PERFETTA!💚🌿🥄",
+  "channel": "Giallozafferano recipes",
+  "checked": "2026-11-04",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53227": {
   "videoId": "YU09jIusxo4",
@@ -4732,12 +4734,12 @@
   "checked": "2026-10-20"
  },
  "themealdb:52849": {
-  "videoId": "rYGaEJjyLQA",
-  "title": "CANNELLONI: SPINACH AND RICOTTA",
-  "channel": "CookingwithKarma",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "videoId": "6yumsoxThMI",
+  "title": "Spinach & Ricotta Cannelloni",
+  "channel": "RecipeTin Eats",
+  "checked": "2026-11-04",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:52925": {
   "videoId": "qdhWz7qAaCU",

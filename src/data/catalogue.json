@@ -21788,48 +21788,90 @@
  },
  {
   "source": "themealdb:53401",
-  "title": "Bolani with Potato Filling",
-  "description": "An Afghan side of potato and spring onion — serves 8, on the table in about 45 minutes.",
-  "servings": 8,
+  "title": "Bolani with potato filling",
+  "description": "Triangle-folded flatbreads of a soft yeasted dough stuffed with a spiced mash of potato, onion, spring onion, coriander and green chilli, pan-fried until cooked on both sides.",
+  "servings": 5,
   "cuisine": "Afghan",
   "category": "Side",
   "image": "https://www.themealdb.com/images/media/meals/de0sns1779555283.jpg",
-  "prep_minutes": 10,
-  "cook_minutes": 20,
+  "prep_minutes": 40,
+  "cook_minutes": 35,
   "ingredients": [
    {
     "name": "plain flour",
-    "quantity": 450,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "water",
-    "quantity": 225,
-    "unit": "ml",
-    "note": ""
+    "quantity": 1.5,
+    "unit": "cup",
+    "note": "all-purpose, for the dough"
    },
    {
     "name": "salt",
-    "quantity": 3,
+    "quantity": 0.33,
     "unit": "tsp",
-    "note": ""
+    "note": "for the dough, or to taste"
+   },
+   {
+    "name": "yeast",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "for the dough; ½ tsp also works, or leave out"
+   },
+   {
+    "name": "vegetable oil",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "for the dough"
    },
    {
     "name": "potato",
-    "quantity": 900,
-    "unit": "g",
-    "note": ""
+    "quantity": 4,
+    "unit": "",
+    "note": "medium, boiled, for the filling"
+   },
+   {
+    "name": "onion",
+    "quantity": 1,
+    "unit": "",
+    "note": "small, chopped"
    },
    {
     "name": "spring onion",
-    "quantity": 50,
-    "unit": "g",
-    "note": ""
+    "quantity": 0.5,
+    "unit": "cup",
+    "note": "sliced"
+   },
+   {
+    "name": "coriander",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": "chopped; 2–3 tbsp"
+   },
+   {
+    "name": "green chilli",
+    "quantity": 3,
+    "unit": "",
+    "note": "chopped; 3–4, to your spice level (listed as green pepper)"
    },
    {
     "name": "black pepper",
     "quantity": 1,
+    "unit": "tsp",
+    "note": "freshly ground"
+   },
+   {
+    "name": "chilli powder",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "listed as red pepper powder"
+   },
+   {
+    "name": "salt",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": "for the filling, or to taste"
+   },
+   {
+    "name": "coriander seeds",
+    "quantity": 0.25,
     "unit": "tsp",
     "note": ""
    },
@@ -21837,36 +21879,54 @@
     "name": "vegetable oil",
     "quantity": null,
     "unit": "",
-    "note": "for deep-frying"
+    "note": "for frying"
+   },
+   {
+    "name": "tomato chutney",
+    "quantity": null,
+    "unit": "",
+    "note": "to serve"
    }
   ],
   "steps": [
    {
-    "text": "Put the flour and teaspoon of salt in a mixing bowl. Slowly adding as much water as is required. Mix to form a stiff dough.",
+    "text": "Mix the flour, salt, yeast and oil, then add water a little at a time and knead to a soft dough.",
     "minutes": null
    },
    {
-    "text": "Place the dough on a clean work surface and knead for about 5-10 minutes until the dough is elastic, smooth and shiny. Form the dough into a ball, cover with a damp cloth and set aside for at least half an hour.",
-    "minutes": 10
+    "text": "Rest the dough for 15 to 20 minutes, just until slightly risen. It should not rise much, or it turns fluffy.",
+    "minutes": 15
    },
    {
-    "text": "Peel and wash the potatoes and boil them in salted water until soft. Drain off the water and mash thoroughly. Add the spring onions, salt and black pepper.",
+    "text": "Boil the potatoes until cooked through (the recipe lists them as boiled and gives no time).",
     "minutes": null
    },
    {
-    "text": "Divide the dough into 3 or 4 balls. Roll out each ball as thinly as possible on a lightly floured surface (the thickness should be no more than 1.5mm - if the dough is too thick the Bolani will be tough)",
+    "text": "Mash the boiled potatoes with the onion, spring onion, coriander, green chilli, black pepper, chilli powder, salt and coriander seeds until no big lumps remain.",
     "minutes": null
    },
    {
-    "text": "Take a round cutter of 13-15cm (I often use a pan lid or tid lid), and cut as many rounds as possible. On each round spread 1-2 tablespoons of the mashed potato. Moisten the edges of the dough, fold over and seal shut.",
+    "text": "Divide the risen dough into 5 or 6 round balls.",
     "minutes": null
    },
    {
-    "text": "The Bolani should be spread out on a lightly floured surface until ready to fry. Heat enough vegetable oil in a frying-pan and shallow fry one or two Bolani at a time, browning on both sides.",
+    "text": "Roll one ball into a round about 20 cm across.",
     "minutes": null
    },
    {
-    "text": "Make sure to keep the fried Bolani warm until all are finished, and serve straight away.",
+    "text": "Spread the filling over it in a triangle shape (generously, if you like) and fold the corners in to make a triangle.",
+    "minutes": null
+   },
+   {
+    "text": "Heat a pan with a little oil and put the bolani in the centre, making sure it cooks evenly.",
+    "minutes": null
+   },
+   {
+    "text": "Cook until the first side is done, then flip and cook the other side the same way.",
+    "minutes": null
+   },
+   {
+    "text": "Lift out and serve hot with tomato chutney. Repeat with the remaining dough.",
     "minutes": null
    }
   ]
@@ -26899,168 +26959,212 @@
  {
   "source": "themealdb:53459",
   "title": "Chicken and Potato Roti",
-  "description": "A Bajan dish of chicken breast, shortening and scotch bonnet — serves 4, worth the couple of hours it takes.",
+  "description": "Bajan roti: chicken breast marinated overnight in curry spices and simmered with potato until tender, wrapped in flaky paratha-style roti skins cooked on a hot griddle.",
   "servings": 4,
   "cuisine": "Bajan",
   "category": "Chicken",
   "image": "https://www.themealdb.com/images/media/meals/mp9z0i1782238092.jpg",
-  "prep_minutes": 20,
-  "cook_minutes": 115,
+  "prep_minutes": 45,
+  "cook_minutes": 50,
   "ingredients": [
    {
-    "name": "plain flour",
-    "quantity": 455,
-    "unit": "g",
-    "note": ""
+    "name": "chicken breast",
+    "quantity": 2,
+    "unit": "",
+    "note": "large, boneless, cut into bite-size pieces"
    },
    {
-    "name": "shortening",
-    "quantity": 3,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "salt",
-    "quantity": 1,
-    "unit": "pinch",
-    "note": ""
-   },
-   {
-    "name": "water",
+    "name": "lemon juice",
     "quantity": null,
     "unit": "",
-    "note": "a splash"
-   },
-   {
-    "name": "chicken breast",
-    "quantity": 6,
-    "unit": "",
-    "note": ""
-   },
-   {
-    "name": "parsley",
-    "quantity": 1,
-    "unit": "pinch",
-    "note": ""
-   },
-   {
-    "name": "thyme",
-    "quantity": 1,
-    "unit": "pinch",
-    "note": ""
-   },
-   {
-    "name": "jerk seasoning",
-    "quantity": 1,
-    "unit": "pinch",
-    "note": ""
+    "note": "to wash the chicken, to taste"
    },
    {
     "name": "salt",
-    "quantity": 1,
-    "unit": "pinch",
-    "note": ""
+    "quantity": null,
+    "unit": "",
+    "note": "to wash the chicken, to taste"
    },
    {
-    "name": "sugar",
-    "quantity": 1,
-    "unit": "pinch",
-    "note": ""
+    "name": "curry powder",
+    "quantity": 0.67,
+    "unit": "cup",
+    "note": "recipe says 2/3 - 3/4 cup, for the marinade"
+   },
+   {
+    "name": "turmeric",
+    "quantity": 0.5,
+    "unit": "tbsp",
+    "note": "for the marinade"
+   },
+   {
+    "name": "garam masala",
+    "quantity": 0.5,
+    "unit": "tbsp",
+    "note": "for the marinade"
+   },
+   {
+    "name": "ground cumin",
+    "quantity": 0.5,
+    "unit": "tbsp",
+    "note": "listed as 'gera' (geera, cumin); for the marinade"
+   },
+   {
+    "name": "allspice",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": "for the marinade"
    },
    {
     "name": "black pepper",
-    "quantity": 1,
-    "unit": "pinch",
-    "note": ""
-   },
-   {
-    "name": "onion",
-    "quantity": 2,
+    "quantity": null,
     "unit": "",
-    "note": "large"
+    "note": "freshly ground, to taste"
    },
    {
-    "name": "garlic",
-    "quantity": 4,
-    "unit": "clove",
-    "note": ""
+    "name": "onion powder",
+    "quantity": 0.5,
+    "unit": "tbsp",
+    "note": "for the marinade"
    },
    {
-    "name": "scotch bonnet",
-    "quantity": 1,
+    "name": "garlic powder",
+    "quantity": 0.5,
+    "unit": "tbsp",
+    "note": "for the marinade"
+   },
+   {
+    "name": "adobo seasoning",
+    "quantity": 0.5,
+    "unit": "tbsp",
+    "note": "for the marinade"
+   },
+   {
+    "name": "coconut oil",
+    "quantity": null,
     "unit": "",
+    "note": "for frying"
+   },
+   {
+    "name": "creamed coconut",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "listed as '(TABLESPOON)' with no number, read as one tablespoon; for the pot"
+   },
+   {
+    "name": "bay leaf",
+    "quantity": 1,
+    "unit": "leaf",
     "note": ""
    },
    {
     "name": "potato",
-    "quantity": 225,
-    "unit": "g",
-    "note": ""
+    "quantity": 2,
+    "unit": "",
+    "note": "large, Irish potatoes, peeled and quartered; recipe says 2-3"
+   },
+   {
+    "name": "chicken stock",
+    "quantity": 2,
+    "unit": "cup",
+    "note": "or water"
+   },
+   {
+    "name": "stock cube",
+    "quantity": null,
+    "unit": "",
+    "note": "chicken cube, to taste"
+   },
+   {
+    "name": "thyme",
+    "quantity": null,
+    "unit": "",
+    "note": "fresh, finely chopped, to taste"
+   },
+   {
+    "name": "spring onion",
+    "quantity": null,
+    "unit": "",
+    "note": "chopped; the source gives no amount, add to taste"
+   },
+   {
+    "name": "plain flour",
+    "quantity": 2,
+    "unit": "cup",
+    "note": "all-purpose, for the roti dough"
+   },
+   {
+    "name": "baking powder",
+    "quantity": 0.25,
+    "unit": "tsp",
+    "note": "for the roti dough"
+   },
+   {
+    "name": "plain flour",
+    "quantity": null,
+    "unit": "",
+    "note": "extra, for dusting"
+   },
+   {
+    "name": "butter",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "salted, mixed with oil for brushing the roti"
+   },
+   {
+    "name": "vegetable oil",
+    "quantity": null,
+    "unit": "",
+    "note": "cooking oil, for frying and brushing the roti"
    }
   ],
   "steps": [
    {
-    "text": "Add a pint of chicken stock to the simmer and put three tablespoons of sugar into a large saucepan on high; cook until the sugar caramelizes, then add the cubed chicken breasts and stir until the chicken browns.",
+    "text": "Wash the chicken with lemon juice and salt, pat it dry and cut it into bite-size pieces.",
     "minutes": null
    },
    {
-    "text": "Add chopped onions, garlic, parsley, thyme, jerk seasoning, salt, and the whole scotch bonnet pepper – do not cut up the pepper! Reduce the heat to low and let this simmer for 25 minutes.",
-    "minutes": 25
-   },
-   {
-    "text": "In a large mixing bowl, sift the flour, and add a pinch of salt to taste.",
+    "text": "Toss the chicken with the curry powder, turmeric, garam masala, geera, allspice, black pepper, onion powder, garlic powder and adobo seasoning until well combined. Cover and marinate in the fridge overnight.",
     "minutes": null
    },
    {
-    "text": "Now add the first tablespoon of shortening, and with your fingers, rub the flour into the shortening until it forms a breadcrumb-like consistency.",
+    "text": "Heat a pot over low to medium heat and add the coconut oil, creamed coconut and bay leaf.",
     "minutes": null
    },
    {
-    "text": "Then add the second tablespoon of shortening and rub against the flour until it looks like breadcrumbs.",
+    "text": "Add the chicken and saute for 5 minutes, stirring constantly so it doesn't stick.",
+    "minutes": 5
+   },
+   {
+    "text": "Turn the heat to low, cover the pot and let the chicken simmer in its own juices for 15 minutes.",
+    "minutes": 15
+   },
+   {
+    "text": "Add the potatoes and the chicken stock or water, with the chicken cube, thyme and green onions to taste (the description doesn't say when these go in). Cover and simmer on low until the chicken is cooked through and the potatoes are tender.",
     "minutes": null
    },
    {
-    "text": "Now add the third tablespoon of shortening and repeat the process.",
+    "text": "For the roti, mix the flour and baking powder, pour in water gradually and knead to a soft, slightly sticky dough.",
     "minutes": null
    },
    {
-    "text": "You should by now have used all the flour. Your bowl should be all breadcrumb-like; if you still have fresh flour, use another tablespoon of shortening until your fresh flour is all used up.",
+    "text": "Divide the dough into 4 or 5 balls. Roll each into an oblong, brush with the oil and butter mix, sprinkle flour over the oil and slit from the top halfway down the centre.",
     "minutes": null
    },
    {
-    "text": "Add a small amount of water and mix with a butter knife; keep adding small amounts until your mixture forms a soft dough.",
+    "text": "Fold one end back over to the other and tuck the ends down the middle so it looks like a cone. Push down from the top with a finger, then flatten with your palm.",
     "minutes": null
    },
    {
-    "text": "Now dust your surface with flour and roll out your pastry; you want to roll wafer-thin rounds – this mixture should make at least 12 roti skins.",
-    "minutes": null
+    "text": "Cover with plastic wrap and repeat with the rest, then let them sit for 15 to 20 minutes.",
+    "minutes": 15
    },
    {
-    "text": "Cover with a tea towel while returning to the pot.",
-    "minutes": null
+    "text": "Heat the tawa, roll each cone out into a circle and cook on the griddle. When bubbles appear, flip, brush with the oil and butter mix, flip again and brush the other side. Each roti takes about 1 1/2 minutes.",
+    "minutes": 2
    },
    {
-    "text": "Now peel the potatoes and cube them into small bite-size pieces.",
-    "minutes": null
-   },
-   {
-    "text": "After 25 minutes of simmering, add 1/2 pint of water and the potatoes to the pool.",
-    "minutes": 25
-   },
-   {
-    "text": "Now cover and cook for 30 minutes on low heat.",
-    "minutes": 30
-   },
-   {
-    "text": "Turn a flat baking tray upside down, lightly cover with foil, and place on the stovetop on high; cook each roti skin for 1 minute on each side until brown but not crisp.",
-    "minutes": null
-   },
-   {
-    "text": "Now pile up your cooked roti skins, remove the pot after 30 minutes, and remove the whole scotch bonnet.",
-    "minutes": 30
-   },
-   {
-    "text": "Take the entire pot to the table with a pile of plates; each person assumes the roti skin, lays it flat on the scale, spoons some filling into the middle of the roti skin, and folds around the filling eats enjoy.",
+    "text": "Clap or shake each cooked roti in a covered bowl, then serve the chicken and potato curry as the filling.",
     "minutes": null
    }
   ]
@@ -39288,103 +39392,207 @@
  {
   "source": "themealdb:53134",
   "title": "Empanadas",
-  "description": "An Argentinian dish of beef mince, green olives and ground cumin — serves 8, about an hour start to finish.",
-  "servings": 8,
+  "description": "Baked beef empanadas: a buttery shortcrust pastry round filled with a chorizo, beef and potato mix, boiled egg and green olives, sealed and baked until golden.",
+  "servings": 10,
   "cuisine": "Argentinian",
   "category": "Beef",
   "image": "https://www.themealdb.com/images/media/meals/q99te31763075494.jpg",
-  "prep_minutes": 20,
-  "cook_minutes": 30,
+  "prep_minutes": 45,
+  "cook_minutes": 50,
   "ingredients": [
    {
     "name": "plain flour",
-    "quantity": 500,
+    "quantity": 375,
     "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "butter",
-    "quantity": 200,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "water",
-    "quantity": 120,
-    "unit": "ml",
-    "note": ""
+    "note": "for the pastry"
    },
    {
     "name": "salt",
     "quantity": 1,
     "unit": "tsp",
-    "note": ""
+    "note": "for the pastry"
    },
    {
-    "name": "beef mince",
-    "quantity": 500,
+    "name": "butter",
+    "quantity": 175,
     "unit": "g",
-    "note": ""
+    "note": "unsalted, cold, cut into 1 cm cubes"
+   },
+   {
+    "name": "egg yolks",
+    "quantity": 1,
+    "unit": "",
+    "note": "whisked into the warm milk for the pastry"
+   },
+   {
+    "name": "milk",
+    "quantity": 0.5,
+    "unit": "cup",
+    "note": "full fat, warmed"
+   },
+   {
+    "name": "olive oil",
+    "quantity": 1.5,
+    "unit": "tbsp",
+    "note": "for the filling"
    },
    {
     "name": "onion",
-    "quantity": 2,
+    "quantity": 0.5,
     "unit": "",
-    "note": "chopped"
+    "note": "finely chopped"
    },
    {
-    "name": "eggs",
-    "quantity": 4,
-    "unit": "",
-    "note": "chopped"
+    "name": "garlic",
+    "quantity": 1,
+    "unit": "clove",
+    "note": "finely minced"
    },
    {
-    "name": "green olives",
-    "quantity": 100,
+    "name": "chorizo",
+    "quantity": 120,
     "unit": "g",
+    "note": "chopped, then blitzed to a paste with a stick blender"
+   },
+   {
+    "name": "beef mince",
+    "quantity": 300,
+    "unit": "g",
+    "note": ""
+   },
+   {
+    "name": "tomato paste",
+    "quantity": 2,
+    "unit": "tsp",
+    "note": ""
+   },
+   {
+    "name": "thyme",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "fresh, finely chopped"
+   },
+   {
+    "name": "dried oregano",
+    "quantity": 0.5,
+    "unit": "tsp",
     "note": ""
    },
    {
     "name": "ground cumin",
-    "quantity": 1,
+    "quantity": 0.5,
     "unit": "tsp",
     "note": ""
    },
    {
     "name": "paprika",
-    "quantity": 1,
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": ""
+   },
+   {
+    "name": "cayenne pepper",
+    "quantity": 0.25,
     "unit": "tsp",
     "note": ""
    },
    {
     "name": "salt",
-    "quantity": null,
-    "unit": "",
-    "note": "to taste"
+    "quantity": 0.25,
+    "unit": "tsp",
+    "note": "for the filling"
    },
    {
-    "name": "black pepper",
-    "quantity": null,
+    "name": "chicken stock",
+    "quantity": 0.75,
+    "unit": "cup",
+    "note": "low sodium"
+   },
+   {
+    "name": "passata",
+    "quantity": 0.5,
+    "unit": "cup",
+    "note": "or crushed tomato"
+   },
+   {
+    "name": "potato",
+    "quantity": 150,
+    "unit": "g",
+    "note": "peeled, cut into 8 mm cubes (about 1 cup)"
+   },
+   {
+    "name": "spring onion",
+    "quantity": 0.33,
+    "unit": "cup",
+    "note": "finely sliced"
+   },
+   {
+    "name": "eggs",
+    "quantity": 2,
     "unit": "",
-    "note": "to taste"
+    "note": "hard boiled, for the filling"
+   },
+   {
+    "name": "green olives",
+    "quantity": 0.25,
+    "unit": "cup",
+    "note": "roughly chopped"
+   },
+   {
+    "name": "eggs",
+    "quantity": 2,
+    "unit": "",
+    "note": "separated, white for sealing and yolk for brushing"
    }
   ],
   "steps": [
    {
-    "text": "Make the Dough: Mix flour and salt in a large bowl. Add butter, using your fingers to blend into a crumbly texture. Gradually add water, mixing until a dough forms. Wrap and chill for 30 minutes.",
+    "text": "Blitz the flour, salt and cold butter in a food processor until the butter is fine crumbs. Add the egg yolk whisked into the warm milk and blitz about 10 seconds until a dough forms. (By hand: rub in the butter, then knead for 5 minutes.)",
+    "minutes": null
+   },
+   {
+    "text": "Shape the dough into 2 discs, wrap them and chill for 30 minutes.",
     "minutes": 30
    },
    {
-    "text": "Prepare the Filling: Cook onions in a pan until translucent. Add ground beef, cooking until browned. Stir in spices, then remove from heat. Once cooled, mix in eggs and olives.",
+    "text": "Roughly chop the chorizo, then blitz it to a paste with a stick blender.",
     "minutes": null
    },
    {
-    "text": "Assemble: Roll out the dough and cut into circles. Place a spoonful of filling in each, fold over, and seal the edges.",
+    "text": "For the filling, heat the olive oil in a large non-stick pan and cook the onion and garlic for 2 minutes.",
+    "minutes": 2
+   },
+   {
+    "text": "Add the chorizo paste and cook for 2 minutes.",
+    "minutes": 2
+   },
+   {
+    "text": "Add the beef and cook until no raw beef is left.",
     "minutes": null
    },
    {
-    "text": "Cook: Bake at 200°C (400°F) for 20-25 minutes, or until golden.",
-    "minutes": 25
+    "text": "Stir in the tomato paste and cook for 1 minute.",
+    "minutes": 1
+   },
+   {
+    "text": "Add the thyme, oregano, cumin, paprika, cayenne, salt, stock, passata and potato. Simmer gently for 15 minutes until the filling is juicy but not watery and the potato is cooked.",
+    "minutes": 15
+   },
+   {
+    "text": "Stir in the spring onion, tip the filling into a bowl and let it cool completely, about 2 hours.",
+    "minutes": 120
+   },
+   {
+    "text": "Roll out a chilled disc to 3 mm thick and cut 15 cm rounds (10 or 11 in all), keeping them covered in the fridge. Heat the oven to 220°C (200°C fan).",
+    "minutes": null
+   },
+   {
+    "text": "Put about 3 tablespoons of cold filling on half of each round, leaving a 1.5 cm border, and add the hard-boiled egg and olives. Brush the edge with egg white, fold over, press out the air and seal, pleating or crimping with a fork.",
+    "minutes": null
+   },
+   {
+    "text": "Place the empanadas on 2 trays, brush with egg yolk and bake for 20 minutes until golden and crisp underneath. Serve hot.",
+    "minutes": 20
    }
   ]
  },
@@ -42764,92 +42972,142 @@
  },
  {
   "source": "themealdb:52957",
-  "title": "Fruit and Cream Cheese Breakfast Pastries",
-  "description": "An American breakfast of cream cheese, puff pastry and strawberries — serves 6, on the table in about 45 minutes.",
-  "servings": 6,
+  "title": "Fruit and cream cheese breakfast pastries",
+  "description": "Twisted puff pastry rings filled with sweetened cream cheese and berries, brushed with egg wash, baked until golden and finished with a lemon glaze.",
+  "servings": 12,
   "cuisine": "American",
   "category": "Breakfast",
-  "image": "https://www.themealdb.com/images/media/meals/1543774956.jpg",
-  "prep_minutes": 15,
-  "cook_minutes": 25,
+  "image": "https://natashaskitchen.com/wp-content/uploads/2018/04/Cream-Cheese-Berry-Danish-5.jpg",
+  "prep_minutes": 20,
+  "cook_minutes": 20,
   "ingredients": [
    {
-    "name": "cream cheese",
-    "quantity": 35,
+    "name": "puff pastry",
+    "quantity": 450,
     "unit": "g",
-    "note": ""
+    "note": "2 sheets, thawed (one 1 lb box)"
+   },
+   {
+    "name": "cream cheese",
+    "quantity": 225,
+    "unit": "g",
+    "note": "room temperature, for the filling"
    },
    {
     "name": "sugar",
-    "quantity": 1.25,
+    "quantity": 0.25,
     "unit": "cup",
-    "note": ""
+    "note": "for the filling"
+   },
+   {
+    "name": "egg yolks",
+    "quantity": 1,
+    "unit": "",
+    "note": "room temperature, for the filling"
    },
    {
     "name": "vanilla extract",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": "for the filling"
+   },
+   {
+    "name": "lemon zest",
     "quantity": 1,
     "unit": "tsp",
-    "note": ""
+    "note": "from 1 small lemon, for the filling"
    },
    {
-    "name": "plain flour",
-    "quantity": null,
-    "unit": "",
-    "note": ""
+    "name": "mixed berries",
+    "quantity": 1.5,
+    "unit": "cup",
+    "note": "blueberries, strawberries and raspberries; the video used 12 of each"
    },
    {
-    "name": "puff pastry",
-    "quantity": 2,
+    "name": "eggs",
+    "quantity": 1,
     "unit": "",
-    "note": ""
+    "note": "for the egg wash"
    },
    {
-    "name": "strawberries",
-    "quantity": null,
-    "unit": "",
-    "note": ""
+    "name": "water",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "for the egg wash"
    },
    {
-    "name": "raspberries",
-    "quantity": null,
-    "unit": "",
-    "note": ""
+    "name": "icing sugar",
+    "quantity": 0.5,
+    "unit": "cup",
+    "note": "for the lemon glaze"
    },
    {
-    "name": "blackberries",
-    "quantity": null,
-    "unit": "",
-    "note": ""
+    "name": "lemon zest",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": "optional, for the lemon glaze"
+   },
+   {
+    "name": "lemon juice",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "fresh, for the lemon glaze; add more for the thickness you want"
+   },
+   {
+    "name": "icing sugar",
+    "quantity": 0.5,
+    "unit": "tbsp",
+    "note": "optional, for dusting"
    }
   ],
   "steps": [
    {
-    "text": "Preheat oven to 400°F (200°C), and prepare two cookie sheets with parchment paper. In a bowl, mix cream cheese, sugar, and vanilla until fully combined. Lightly flour the surface and roll out puff pastry on top to flatten.",
+    "text": "Thaw the puff pastry according to the packet instructions.",
     "minutes": null
    },
    {
-    "text": "Cut each sheet of puff pastry into 9 equal squares. On the top right and bottom left of the pastry, cut an L shape approximately ½ inch (1 cm) from the edge.",
+    "text": "Heat the oven to 200°C (400°F) with a rack in the centre, and line a large baking tray with baking paper.",
     "minutes": null
    },
    {
-    "text": "NOTE: This L shape should reach all the way down and across the square, however both L shapes should not meet at the ends. Your pastry should look like a picture frame with two corners still intact.",
+    "text": "Beat the cream cheese, sugar, egg yolk, vanilla and 1 tsp lemon zest on medium-high speed until creamy and smooth.",
     "minutes": null
    },
    {
-    "text": "Take the upper right corner and fold down towards the inner bottom corner. You will now have a diamond shape.",
+    "text": "Unfold the first pastry sheet on a clean bench and roll it lightly into a 25 cm (10 inch) square. Cut it into 12 even strips with a pizza cutter.",
     "minutes": null
    },
    {
-    "text": "Place 1 to 2 teaspoons of the cream cheese filling in the middle, then place berries on top.",
+    "text": "Pinch two strips together tightly at one end and twist the pair from top to bottom. Press one end onto the bench and loop the twisted strand around it, working from the centre out, then pinch the end to the pastry. Flatten the centre slightly with your fingertips and prick it a few times with a fork so it doesn't puff up too much.",
     "minutes": null
    },
    {
-    "text": "Repeat with the remaining pastry squares and place them onto the parchment covered baking sheet.",
+    "text": "Spoon 1 tbsp of the filling into the centre and press the berries halfway into it. Repeat with the remaining strips and the second pastry sheet, setting the pastries on the lined tray at least 1.25 cm (1/2 inch) apart.",
     "minutes": null
    },
    {
-    "text": "Bake for 15-20 minutes or until pastry is golden brown and puffed.",
-    "minutes": 20
+    "text": "Beat the egg and water together thoroughly with a fork, then brush it around the outside edges of the pastries.",
+    "minutes": null
+   },
+   {
+    "text": "Bake in the centre of the oven at 200°C for 18 to 20 minutes.",
+    "minutes": 18
+   },
+   {
+    "text": "Let the pastries cool completely to room temperature so the cream cheese filling sets.",
+    "minutes": null
+   },
+   {
+    "text": "Mix the icing sugar, lemon zest and lemon juice into a glaze, adding a little more juice if you want it thinner.",
+    "minutes": null
+   },
+   {
+    "text": "Drizzle the glaze over the cooled pastries.",
+    "minutes": null
+   },
+   {
+    "text": "If you like, dust the pastries with a little icing sugar to finish.",
+    "minutes": null
    }
   ]
  },
@@ -54713,83 +54971,139 @@
  {
   "source": "themealdb:53221",
   "title": "Mamoul (Eid biscuits)",
-  "description": "A Saudi Arabian sweet made with semolina — makes 12, worth the couple of hours it takes.",
-  "servings": 12,
+  "description": "Semolina ma'amoul cookies: a ghee-rich semolina and flour dough, rested overnight, wrapped around a chopped date, sesame and nut filling, pressed in a mould and baked.",
+  "servings": 20,
   "cuisine": "Saudi Arabian",
   "category": "Dessert",
   "image": "https://www.themealdb.com/images/media/meals/35kejr1763599712.jpg",
-  "prep_minutes": 10,
-  "cook_minutes": 85,
+  "prep_minutes": 90,
+  "cook_minutes": 15,
   "ingredients": [
    {
-    "name": "plain flour",
-    "quantity": 300,
+    "name": "dates",
+    "quantity": 150,
     "unit": "g",
-    "note": ""
+    "note": "soft, deseeded, for the filling"
+   },
+   {
+    "name": "ghee",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "for the filling"
+   },
+   {
+    "name": "sesame seed",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "for the filling"
+   },
+   {
+    "name": "pistachios",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "chopped, for the filling; 1–2 tbsp"
+   },
+   {
+    "name": "almonds",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "chopped, for the filling; 1–2 tbsp"
    },
    {
     "name": "semolina",
-    "quantity": 200,
-    "unit": "g",
-    "note": ""
+    "quantity": 1.5,
+    "unit": "cup",
+    "note": "for the dough"
    },
    {
-    "name": "vegetable oil",
-    "quantity": 25,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "butter",
-    "quantity": 250,
-    "unit": "g",
-    "note": ""
+    "name": "ghee",
+    "quantity": 0.5,
+    "unit": "cup",
+    "note": "for the dough"
    },
    {
     "name": "milk",
-    "quantity": 50,
-    "unit": "ml",
-    "note": ""
+    "quantity": 0.33,
+    "unit": "cup",
+    "note": "warm"
+   },
+   {
+    "name": "caster sugar",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": "to proof the yeast"
+   },
+   {
+    "name": "yeast",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": "instant"
+   },
+   {
+    "name": "plain flour",
+    "quantity": 0.75,
+    "unit": "cup",
+    "note": "all-purpose, sifted"
    },
    {
     "name": "icing sugar",
-    "quantity": 60,
-    "unit": "g",
+    "quantity": 0.5,
+    "unit": "cup",
     "note": ""
+   },
+   {
+    "name": "cardamom",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": "powder"
+   },
+   {
+    "name": "nutmeg",
+    "quantity": 1,
+    "unit": "pinch",
+    "note": "powder"
    }
   ],
   "steps": [
    {
-    "text": "Mix butter with sugar until creamy. Add oil flour and semolina and mix. Add warm milk and don't knead too much.",
+    "text": "Chop the dates well in a chopper, add the ghee, sesame seeds, pistachios and almonds and pulse once or twice.",
     "minutes": null
    },
    {
-    "text": "Cover and leave aside for an hour or less until you prepare the filling.",
+    "text": "With greased hands, roll the date mixture into 7 g balls and set aside.",
+    "minutes": null
+   },
+   {
+    "text": "Mix the semolina with the ghee, cover with cling film and refrigerate for 8 hours or overnight.",
+    "minutes": 480
+   },
+   {
+    "text": "Stir the warm milk, caster sugar and instant yeast together in a jug, cover and leave to proof for 5 to 10 minutes.",
+    "minutes": 5
+   },
+   {
+    "text": "Mix the chilled semolina again. Add the sifted flour, icing sugar, cardamom and nutmeg, then stir in the yeast mixture.",
+    "minutes": null
+   },
+   {
+    "text": "Cover the dough with cling film and rest it in a warm place for 1 hour.",
     "minutes": 60
    },
    {
-    "text": "For the dates filling, fry some sesame in a pan then add butter. Add the dates paste and mixed well with sesame and butter. Then add a little bit of water until it's mushy. Be careful don't make it too mushy.",
+    "text": "Knead the dough again. With greased hands, flatten a 30 g ball in your palm, place a date ball in the middle, gather the edges and seal it into a ball.",
     "minutes": null
    },
    {
-    "text": "Take it of the pan, put in a plate until it's cool. Then start to shape balls that weigh 15 gm. Refrigerate for 1/2 an hour.",
-    "minutes": 60
-   },
-   {
-    "text": "Get back to the dough and shape it as balls that weigh 30 gm.",
+    "text": "Set the balls on a lined baking tray and press the top of each with a mould (a mooncake or cookie mould) to leave a deep pattern.",
     "minutes": null
    },
    {
-    "text": "Take the date filling out of the fridge and start to stuff each dough ball with dates ball.",
-    "minutes": null
+    "text": "Bake in a preheated oven at 170°C for 10 minutes with both grills on, then 5 minutes with the upper grill only. (Or air fry in a preheated air fryer at 180°C for 10 minutes.)",
+    "minutes": 15
    },
    {
-    "text": "Then use the mamoul mould to give it this shape.",
+    "text": "Let the cookies cool at room temperature.",
     "minutes": null
-   },
-   {
-    "text": "In a preheated oven 180 degrees, put it for 20 minutes until golden from below and little bit golden from above.",
-    "minutes": 20
    }
   ]
  },
@@ -57724,73 +58038,61 @@
  {
   "source": "themealdb:53223",
   "title": "Mutabbaq",
-  "description": "A Saudi Arabian dish of mincemeat, tomato and spring onion — serves 4, on the table in about 45 minutes.",
-  "servings": 4,
+  "description": "Saudi street-food mutabbaq: a thin hand-rolled dough wrapped around a filling of minced meat, egg, tomato and spring onion, then pan-cooked on both sides and served with green chillies and lemon.",
+  "servings": 2,
   "cuisine": "Saudi Arabian",
   "category": "Miscellaneous",
   "image": "https://www.themealdb.com/images/media/meals/i5o2b61763739053.jpg",
-  "prep_minutes": 20,
-  "cook_minutes": 20,
+  "prep_minutes": 25,
+  "cook_minutes": 5,
   "ingredients": [
    {
-    "name": "mincemeat",
-    "quantity": 500,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "garlic",
-    "quantity": 1.5,
-    "unit": "tbsp",
-    "note": "minced"
-   },
-   {
-    "name": "ginger",
-    "quantity": 1.5,
-    "unit": "tbsp",
-    "note": "minced"
-   },
-   {
-    "name": "eggs",
+    "name": "plain flour",
     "quantity": 1,
-    "unit": "",
-    "note": ""
-   },
-   {
-    "name": "tomato",
-    "quantity": 1,
-    "unit": "",
-    "note": "large"
-   },
-   {
-    "name": "spring onion",
-    "quantity": 4,
-    "unit": "",
-    "note": ""
-   },
-   {
-    "name": "filo pastry",
-    "quantity": 12,
-    "unit": "",
-    "note": ""
-   },
-   {
-    "name": "butter",
-    "quantity": 1.5,
     "unit": "cup",
-    "note": ""
+    "note": "for the dough"
    },
    {
     "name": "salt",
     "quantity": 1,
     "unit": "tsp",
-    "note": ""
+    "note": "for the dough"
    },
    {
-    "name": "paprika",
+    "name": "vegetable oil",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "for the dough"
+   },
+   {
+    "name": "water",
+    "quantity": 0.5,
+    "unit": "cup",
+    "note": "lukewarm, added gradually"
+   },
+   {
+    "name": "eggs",
+    "quantity": 2,
+    "unit": "",
+    "note": "for the filling"
+   },
+   {
+    "name": "beef mince",
+    "quantity": 200,
+    "unit": "g",
+    "note": "boiled first; the source says only \"minced meat\" (beef assumed, the usual mince)"
+   },
+   {
+    "name": "tomato",
+    "quantity": 1,
+    "unit": "",
+    "note": "diced"
+   },
+   {
+    "name": "salt",
     "quantity": 1,
     "unit": "tsp",
-    "note": ""
+    "note": "for the filling"
    },
    {
     "name": "ground cumin",
@@ -57799,46 +58101,80 @@
     "note": ""
    },
    {
-    "name": "allspice",
-    "quantity": 1,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "turmeric",
-    "quantity": 1,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
     "name": "black pepper",
     "quantity": 1,
     "unit": "tsp",
-    "note": ""
+    "note": "ground"
    },
    {
-    "name": "sugar",
-    "quantity": 1,
-    "unit": "tsp",
-    "note": ""
+    "name": "spring onion",
+    "quantity": 4,
+    "unit": "",
+    "note": "leaves only; 4–5"
+   },
+   {
+    "name": "vegetable oil",
+    "quantity": null,
+    "unit": "",
+    "note": "for frying and oiling the work surface"
+   },
+   {
+    "name": "green chilli",
+    "quantity": null,
+    "unit": "",
+    "note": "to serve"
+   },
+   {
+    "name": "lemon",
+    "quantity": null,
+    "unit": "",
+    "note": "to serve"
    }
   ],
   "steps": [
    {
-    "text": "Heat the frying pan and add in some oil. Fry the mashed garlic and ginger first and then add in the minced meat and all seasoning. When the meat is cooked, set aside to cool down.",
+    "text": "Mix the flour, salt and oil, then add the lukewarm water a little at a time and knead (about 9 to 10 minutes by hand) to a dough that is neither hard nor soft and not sticky.",
+    "minutes": 9
+   },
+   {
+    "text": "Rub a little oil over the dough and rest it for 30 minutes.",
+    "minutes": 30
+   },
+   {
+    "text": "Boil the minced meat until cooked (the written recipe lists it as boiled minced meat and gives no method or time).",
     "minutes": null
    },
    {
-    "text": "Get another big bowl. Add in egg, chopped tomato, chopped spring onion and minced meat.",
+    "text": "Mix the eggs, boiled minced meat, diced tomato, salt, cumin, black pepper and spring onion leaves well. More eggs make the pastry harder to handle.",
     "minutes": null
    },
    {
-    "text": "Get one 2 sheets of filo pastry or 1 sheet spring roll wrap. Brush it with some butter and then put some filling in the middle. Fold the pastry and brush more butter on the seal part.",
+    "text": "Oil the work surface. Roll a small ball of dough by hand, then with a rolling pin until very thin, thin enough to see the surface through it.",
     "minutes": null
    },
    {
-    "text": "Heat a frying pan and add in some oil to cook the parcel until its both sides and 4 edges all turn into golden brown. (Or brush melted butter all over the parcel and bake it in 180°C oven for 10-15 minutes)",
-    "minutes": 15
+    "text": "Spread the meat filling in a rectangle in the middle of the sheet and fold in all four sides to make a parcel.",
+    "minutes": null
+   },
+   {
+    "text": "Brush oil on a pan and lay the mutabbaq in carefully, folded side down.",
+    "minutes": null
+   },
+   {
+    "text": "Prick a small hole in the top with a toothpick so the steam can escape.",
+    "minutes": null
+   },
+   {
+    "text": "Cook for 2 to 3 minutes on the first side.",
+    "minutes": 2
+   },
+   {
+    "text": "Turn it and cook the other side for 2 to 3 minutes, until the filling is cooked through.",
+    "minutes": 2
+   },
+   {
+    "text": "Cut into pieces and serve with green chillies and lemon.",
+    "minutes": null
    }
   ]
  },
@@ -67265,19 +67601,67 @@
  {
   "source": "themealdb:52811",
   "title": "Ribollita",
-  "description": "An Italian dish of cannellini beans, carrot and celery — serves 4, about an hour start to finish.",
-  "servings": 4,
+  "description": "Tuscan bread and bean soup: cannellini beans, savoy cabbage, cavolo nero, chard, potato and tomato simmered with a soffritto, then stale bread is soaked in, chilled and reboiled.",
+  "servings": 6,
   "cuisine": "Italian",
   "category": "Vegetarian",
   "image": "https://www.themealdb.com/images/media/meals/xrrwpx1487347049.jpg",
-  "prep_minutes": 20,
-  "cook_minutes": 50,
+  "prep_minutes": 30,
+  "cook_minutes": 120,
   "ingredients": [
    {
-    "name": "olive oil",
-    "quantity": 5,
-    "unit": "tbsp",
-    "note": ""
+    "name": "cannellini beans",
+    "quantity": 400,
+    "unit": "g",
+    "note": "dried, soaked overnight"
+   },
+   {
+    "name": "bread",
+    "quantity": 300,
+    "unit": "g",
+    "note": "stale Tuscan bread, sliced"
+   },
+   {
+    "name": "cabbage",
+    "quantity": 300,
+    "unit": "g",
+    "note": "savoy (verza), trimmed, in 1–2 cm strips"
+   },
+   {
+    "name": "kale",
+    "quantity": 400,
+    "unit": "g",
+    "note": "cavolo nero, trimmed, cut in strips"
+   },
+   {
+    "name": "silverbeet",
+    "quantity": 300,
+    "unit": "g",
+    "note": "chard (bietole), trimmed, cut small"
+   },
+   {
+    "name": "potato",
+    "quantity": 300,
+    "unit": "g",
+    "note": "peeled, cut in 2 cm chunks"
+   },
+   {
+    "name": "canned tomatoes",
+    "quantity": 300,
+    "unit": "g",
+    "note": "peeled, crushed with a fork"
+   },
+   {
+    "name": "carrot",
+    "quantity": 100,
+    "unit": "g",
+    "note": "finely diced"
+   },
+   {
+    "name": "celery",
+    "quantity": 100,
+    "unit": "g",
+    "note": "finely diced"
    },
    {
     "name": "onion",
@@ -67286,102 +67670,84 @@
     "note": "chopped"
    },
    {
-    "name": "carrot",
-    "quantity": 1,
-    "unit": "",
-    "note": "chopped"
-   },
-   {
-    "name": "celery",
-    "quantity": 1,
-    "unit": "",
-    "note": "chopped"
-   },
-   {
     "name": "garlic",
     "quantity": 1,
-    "unit": "tbsp",
-    "note": "minced"
-   },
-   {
-    "name": "cannellini beans",
-    "quantity": 2,
-    "unit": "cup",
-    "note": ""
-   },
-   {
-    "name": "canned tomatoes",
-    "quantity": 1,
-    "unit": "",
-    "note": ""
-   },
-   {
-    "name": "water",
-    "quantity": 4,
-    "unit": "cup",
-    "note": ""
-   },
-   {
-    "name": "rosemary",
-    "quantity": 1,
-    "unit": "",
-    "note": "fresh sprig"
+    "unit": "clove",
+    "note": "chopped"
    },
    {
     "name": "thyme",
-    "quantity": 1,
+    "quantity": null,
     "unit": "",
-    "note": "fresh sprig"
+    "note": "fresh, to taste"
    },
    {
-    "name": "kale",
-    "quantity": 455,
-    "unit": "g",
-    "note": "chopped"
-   },
-   {
-    "name": "bread",
-    "quantity": 4,
-    "unit": "slice",
-    "note": ""
-   },
-   {
-    "name": "red onion",
-    "quantity": 1,
+    "name": "olive oil",
+    "quantity": null,
     "unit": "",
-    "note": "thinly sliced"
+    "note": "extra virgin, for the soffritto and to finish, to taste"
    },
    {
-    "name": "parmesan",
-    "quantity": 0.5,
-    "unit": "cup",
-    "note": "freshly grated"
+    "name": "salt",
+    "quantity": null,
+    "unit": "",
+    "note": "to taste"
+   },
+   {
+    "name": "black pepper",
+    "quantity": null,
+    "unit": "",
+    "note": "to taste"
    }
   ],
   "steps": [
    {
-    "text": "Put 2 tablespoons of the oil in a large pot over medium heat. When it’s hot, add onion, carrot, celery and garlic; sprinkle with salt and pepper and cook, stirring occasionally, until vegetables are soft, 5 to 10 minutes.",
+    "text": "Soak the dried cannellini beans in cold water overnight.",
+    "minutes": null
+   },
+   {
+    "text": "Drain and rinse the beans, then boil them in plenty of unsalted water for 1 hour.",
+    "minutes": 60
+   },
+   {
+    "text": "Meanwhile dice the celery and carrot, chop the onion and garlic, cut the potatoes into 2 cm chunks, and cut the cabbage, chard and cavolo nero into strips. Crush the tomatoes with a fork.",
+    "minutes": null
+   },
+   {
+    "text": "When the beans are cooked, set about half aside. Blend the rest with their cooking water using a stick blender.",
+    "minutes": null
+   },
+   {
+    "text": "In a large pot, warm a swirl of olive oil, add the onion, celery, carrot, garlic and thyme and cook gently on low heat for about 10 minutes.",
     "minutes": 10
    },
    {
-    "text": "Heat the oven to 500 degrees. Drain the beans; if they’re canned, rinse them as well. Add them to the pot along with tomatoes and their juices and stock, rosemary and thyme.",
+    "text": "Add the potatoes and the leafy greens, season with salt and pepper and stir, letting it soften for a few minutes.",
     "minutes": null
    },
    {
-    "text": "Bring to a boil, then reduce heat so the soup bubbles steadily; cover and cook, stirring once or twice to break up the tomatoes, until the flavors meld, 15 to 20 minutes.",
-    "minutes": 20
-   },
-   {
-    "text": "Fish out and discard rosemary and thyme stems, if you like, and stir in kale. Taste and adjust seasoning. Lay bread slices on top of the stew so they cover the top and overlap as little as possible.",
+    "text": "Add the crushed tomatoes and the blended bean broth, topping up with water so the vegetables are just covered.",
     "minutes": null
    },
    {
-    "text": "Scatter red onion slices over the top, drizzle with the remaining 3 tablespoons oil and sprinkle with Parmesan.",
+    "text": "Bring to a boil, then simmer on medium-low for 45 minutes.",
+    "minutes": 45
+   },
+   {
+    "text": "Stir in the reserved whole beans. Push the sliced stale bread down into the soup so it is submerged and cover with the lid.",
     "minutes": null
    },
    {
-    "text": "Put the pot in the oven and bake until the bread, onions and cheese are browned and crisp, 10 to 15 minutes. (If your pot fits under the broiler, you can also brown the top there.) Divide the soup and bread among 4 bowls and serve.",
-    "minutes": 15
+    "text": "Leave the soup to cool, then refrigerate it for at least 2 hours, ideally overnight.",
+    "minutes": 120
+   },
+   {
+    "text": "Stir the soup, put it back on the heat and bring to a boil, adding water if it is too thick.",
+    "minutes": null
+   },
+   {
+    "text": "Serve with a drizzle of raw olive oil, black pepper and a little thyme.",
+    "minutes": null
    }
   ]
  },
@@ -74769,133 +75135,225 @@
  {
   "source": "themealdb:52849",
   "title": "Spinach & Ricotta Cannelloni",
-  "description": "An Italian dish of cannellini beans, canned tomatoes and basil — makes 10, worth the couple of hours it takes.",
-  "servings": 10,
+  "description": "Dried cannelloni tubes piped full of spinach, ricotta and parmesan filling, baked under a blended tomato and basil sauce and topped with mozzarella and parmesan.",
+  "servings": 5,
   "cuisine": "Italian",
   "category": "Vegetarian",
   "image": "https://www.themealdb.com/images/media/meals/wspuvp1511303478.jpg",
-  "prep_minutes": 20,
-  "cook_minutes": 65,
+  "prep_minutes": 25,
+  "cook_minutes": 35,
   "ingredients": [
    {
     "name": "olive oil",
-    "quantity": 3,
+    "quantity": 2,
     "unit": "tbsp",
-    "note": ""
+    "note": "for the sauce"
+   },
+   {
+    "name": "onion",
+    "quantity": 1,
+    "unit": "",
+    "note": "finely chopped"
    },
    {
     "name": "garlic",
-    "quantity": 8,
+    "quantity": 4,
     "unit": "clove",
-    "note": "chopped"
+    "note": "minced, for the sauce"
    },
    {
-    "name": "sugar",
-    "quantity": 3,
-    "unit": "tbsp",
+    "name": "bay leaf",
+    "quantity": 1,
+    "unit": "leaf",
+    "note": "fresh"
+   },
+   {
+    "name": "dried thyme",
+    "quantity": 0.5,
+    "unit": "tsp",
     "note": ""
    },
    {
-    "name": "red wine vinegar",
-    "quantity": 2,
-    "unit": "tbsp",
+    "name": "dried oregano",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": ""
+   },
+   {
+    "name": "tomato paste",
+    "quantity": 0.33,
+    "unit": "cup",
     "note": ""
    },
    {
     "name": "canned tomatoes",
-    "quantity": 3,
-    "unit": "",
-    "note": "400g cans"
+    "quantity": 800,
+    "unit": "g",
+    "note": "crushed"
+   },
+   {
+    "name": "vegetable stock",
+    "quantity": 4,
+    "unit": "cup",
+    "note": "or chicken stock, low sodium"
+   },
+   {
+    "name": "dry white wine",
+    "quantity": 0.33,
+    "unit": "cup",
+    "note": "optional, or use more stock"
+   },
+   {
+    "name": "salt",
+    "quantity": 0.75,
+    "unit": "tsp",
+    "note": "for the sauce"
+   },
+   {
+    "name": "sugar",
+    "quantity": 1.5,
+    "unit": "tsp",
+    "note": ""
+   },
+   {
+    "name": "black pepper",
+    "quantity": 0.33,
+    "unit": "tsp",
+    "note": "for the sauce"
    },
    {
     "name": "basil",
     "quantity": 1,
-    "unit": "bunch",
-    "note": ""
-   },
-   {
-    "name": "mascarpone",
-    "quantity": 2,
-    "unit": "pack",
-    "note": ""
-   },
-   {
-    "name": "milk",
-    "quantity": 3,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "parmesan",
-    "quantity": 85,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "mozzarella",
-    "quantity": 2,
-    "unit": "",
-    "note": "sliced"
+    "unit": "handful",
+    "note": "leaves, roughly torn, stirred into the sauce; about 2/3 cup"
    },
    {
     "name": "spinach",
-    "quantity": 1000,
+    "quantity": 250,
     "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "parmesan",
-    "quantity": 100,
-    "unit": "g",
-    "note": ""
+    "note": "frozen chopped, thawed and drained"
    },
    {
     "name": "ricotta",
-    "quantity": 3,
-    "unit": "pack",
-    "note": ""
+    "quantity": 500,
+    "unit": "g",
+    "note": "full fat"
+   },
+   {
+    "name": "parmesan",
+    "quantity": 0.33,
+    "unit": "cup",
+    "note": "finely shredded, for the filling"
+   },
+   {
+    "name": "mozzarella",
+    "quantity": 1,
+    "unit": "cup",
+    "note": "shredded, for the filling; the source also allows colby, cheddar, tasty, gruyere or swiss"
+   },
+   {
+    "name": "eggs",
+    "quantity": 1,
+    "unit": "",
+    "note": "for the filling"
+   },
+   {
+    "name": "garlic",
+    "quantity": 1,
+    "unit": "clove",
+    "note": "large, minced, for the filling"
    },
    {
     "name": "nutmeg",
-    "quantity": 1,
-    "unit": "pinch",
-    "note": ""
+    "quantity": null,
+    "unit": "",
+    "note": "freshly grated, a sprinkling, optional"
    },
    {
-    "name": "cannellini beans",
-    "quantity": 400,
+    "name": "salt",
+    "quantity": 0.75,
+    "unit": "tsp",
+    "note": "for the filling"
+   },
+   {
+    "name": "black pepper",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": "for the filling"
+   },
+   {
+    "name": "pasta",
+    "quantity": 250,
     "unit": "g",
-    "note": ""
+    "note": "dried cannelloni tubes, 18–22 in a 250 g pack"
+   },
+   {
+    "name": "parmesan",
+    "quantity": 0.33,
+    "unit": "cup",
+    "note": "finely shredded, for the topping"
+   },
+   {
+    "name": "mozzarella",
+    "quantity": 1.25,
+    "unit": "cup",
+    "note": "shredded, for the topping"
+   },
+   {
+    "name": "basil",
+    "quantity": null,
+    "unit": "",
+    "note": "to garnish, with extra parmesan"
    }
   ],
   "steps": [
    {
-    "text": "First make the tomato sauce. Heat the oil in a large pan and fry the garlic for 1 min. Add the sugar, vinegar, tomatoes and some seasoning and simmer for 20 mins, stirring occasionally, until thick.",
+    "text": "For the sauce, heat the oil in a small pot over medium-high heat and cook the garlic, onion, bay leaf, thyme and oregano for 3 to 4 minutes until the onion is translucent.",
+    "minutes": 3
+   },
+   {
+    "text": "Add the tomato paste and cook for 1 minute.",
+    "minutes": 1
+   },
+   {
+    "text": "Add the wine, turn the heat to high and boil until mostly evaporated, about 2 minutes.",
+    "minutes": 2
+   },
+   {
+    "text": "Add the tomatoes, stock, sugar, salt and pepper, stir, and simmer on medium-low for 20 minutes.",
     "minutes": 20
    },
    {
-    "text": "Add the basil and divide the sauce between 2 or more shallow ovenproof dishes (see Tips for freezing, below). Set aside. Make a sauce by beating the mascarpone with the milk until smooth, season, then set aside.",
+    "text": "Remove the bay leaf and blitz the sauce smooth with a stick blender.",
     "minutes": null
    },
    {
-    "text": "Put the spinach in a large colander and pour over a kettle of boiling water to wilt it (you may need to do this in batches). When cool enough to handle squeeze out the excess water.",
+    "text": "Simmer for 1 more minute, then take it off the heat, stir in the basil and cover to keep warm.",
+    "minutes": 1
+   },
+   {
+    "text": "For the filling, press most of the liquid out of the thawed spinach in a colander (it needn't be bone dry). Mix it with the ricotta, parmesan, shredded cheese, egg, garlic, nutmeg, salt and pepper, and adjust the seasoning.",
     "minutes": null
    },
    {
-    "text": "Roughly chop the spinach and mix in a large bowl with 100g Parmesan and ricotta. Season well with salt, pepper and the nutmeg.",
+    "text": "Heat the oven to 180°C (160°C fan). Spread 1 cup of the sauce over the base of a baking dish that fits about 20 cannelloni.",
     "minutes": null
    },
    {
-    "text": "Heat oven to 200C/180C fan/gas 6. Using a piping bag or plastic food bag with the corner snipped off, squeeze the filling into the cannelloni tubes.",
+    "text": "Pipe the filling into the dried tubes with a piping bag (or a strong zip-lock bag) and lay them in the dish.",
     "minutes": null
    },
    {
-    "text": "Lay the tubes, side by side, on top of the tomato sauce and spoon over the mascarpone sauce. Top with Parmesan and mozzarella. You can now freeze the cannelloni, uncooked, or you can cook it first and then freeze.",
-    "minutes": null
+    "text": "Pour the remaining sauce over so all the tubes are covered, cover with foil and bake for 30 minutes.",
+    "minutes": 30
    },
    {
-    "text": "Bake for 30-35 mins until golden and bubbling. Remove from oven and let stand for 5 mins before serving.",
-    "minutes": 35
+    "text": "Remove the foil, scatter over the parmesan and mozzarella and bake 15 minutes more until the cheese melts.",
+    "minutes": 15
+   },
+   {
+    "text": "Serve garnished with extra basil and parmesan.",
+    "minutes": null
    }
   ]
  },
