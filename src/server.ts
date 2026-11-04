@@ -36,6 +36,7 @@ import { routes as plannerRoutes } from "./routes/planner.ts";
 import { routes as profileRoutes } from "./routes/profile.ts";
 import { routes as readmeRoutes } from "./routes/readme.ts";
 import { routes as recipeRoutes } from "./routes/recipes.ts";
+import { routes as scanRoutes } from "./routes/scan.ts";
 import { routes as scheduleRoutes } from "./routes/schedule.ts";
 import { routes as settingsRoutes } from "./routes/settings.ts";
 import { routes as shoppingRoutes } from "./routes/shopping.ts";
@@ -62,6 +63,8 @@ const table = [
   ...authRoutes,
   ...recipeRoutes,
   ...cookRoutes,
+  // before the pantry's /pantry/:id, which would otherwise swallow /pantry/scan
+  ...scanRoutes,
   ...pantryRoutes,
   ...calendarRoutes,
   ...shoppingRoutes,

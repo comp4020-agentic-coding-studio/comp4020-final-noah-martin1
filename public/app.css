@@ -6297,6 +6297,25 @@ body.cooking {
     top: 0;
     right: 0;
     margin: 0;
+    display: flex;
+    gap: 6px;
+  }
+
+  /* the scan button shrinks to its icon so both fit beside the eyebrow */
+  .kx-scan-btn {
+    width: 38px;
+    height: 38px;
+    padding: 0;
+    justify-content: center;
+  }
+
+  .kx-scan-btn .kx-scan-label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
   }
 
   .kx-add-btn {
@@ -13471,3 +13490,75 @@ html:not(.no-js) .no-js-only { display: none; }
 .hm-suggest .button { text-shadow: none; }
 .cm-stage:has(> .cm-banner) { grid-template-rows: auto minmax(0, 1fr); }
 .cm-stage > .cm-banner { grid-column: 1 / -1; width: 100%; max-width: none; margin: 0; align-self: start; }
+
+/* ---------- fridge photo scan ---------- */
+
+.scan-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.scan-row {
+  display: grid;
+  /* minmax(0, …): a date input's intrinsic width would otherwise push the
+     row past a phone's edge */
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 4px 14px;
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+}
+
+.scan-row:has(.scan-keep input:not(:checked)) {
+  background: var(--surface-2);
+}
+
+.scan-row:has(.scan-keep input:not(:checked)) .scan-fields {
+  opacity: 0.55;
+}
+
+.scan-keep {
+  display: flex;
+  align-items: center;
+  padding-top: 22px;
+}
+
+.scan-keep input {
+  width: 22px;
+  height: 22px;
+}
+
+.scan-note {
+  grid-column: 2;
+  margin: 2px 0 0;
+}
+
+.scan-note .pill {
+  margin-right: 6px;
+}
+
+.scan-fields input {
+  min-width: 0;
+  width: 100%;
+}
+
+@media (max-width: 640px) {
+  .scan-row {
+    gap: 4px 10px;
+    padding: 12px;
+  }
+  /* two fields a line on a phone: the name gets its own line */
+  .scan-fields.inline-form {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+  .scan-fields .grow-2 {
+    grid-column: 1 / -1;
+  }
+}

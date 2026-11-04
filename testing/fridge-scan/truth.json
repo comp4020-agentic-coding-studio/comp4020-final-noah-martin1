@@ -1,0 +1,149 @@
+{
+  "01-crisper-drawers.jpg": {
+    "required": {
+      "orange": ["orange", "mandarin", "tangerine", "clementine", "citrus"],
+      "apple": ["apple"],
+      "carrot": ["carrot"],
+      "zucchini": ["zucchini", "courgette"],
+      "eggplant": ["eggplant", "aubergine"],
+      "cucumber": ["cucumber"]
+    },
+    "acceptable": ["lettuce", "leafy greens", "greens", "spinach", "herbs", "leaves", "cabbage", "water", "soft drink", "soda", "cola", "tomato", "container", "leftovers", "bottle", "drink"]
+  },
+  "02-fruit-bowl-shelf.jpg": {
+    "required": {
+      "apple": ["apple"],
+      "grapes": ["grape"],
+      "lime": ["lime"],
+      "pear": ["pear"],
+      "orange": ["orange", "mandarin", "nectarine", "peach"],
+      "fried chicken": ["fried chicken", "cooked chicken", "chicken wings", "chicken nuggets", "roast chicken", "breaded chicken"],
+      "salsa": ["salsa", "pico de gallo", "tomato sauce", "chopped tomato", "bruschetta"],
+      "raw chicken": ["raw chicken", "chicken drumstick", "chicken thigh", "chicken leg", "chicken pieces", "chicken"],
+      "salad leaves": ["salad", "lettuce", "leafy greens", "mixed greens", "spinach", "greens", "leaves", "rocket"]
+    },
+    "acceptable": ["lemon", "fruit", "meat"]
+  },
+  "03-leftovers-avocado.jpg": {
+    "required": {
+      "avocado": ["avocado"],
+      "peas": ["pea", "edamame"],
+      "pasta": ["pasta", "macaroni", "noodle", "rice", "pasta salad", "potato salad", "cauliflower", "gnocchi"],
+      "soup": ["soup", "curry", "stew", "sauce", "dal", "leftovers", "chili", "pumpkin"]
+    },
+    "acceptable": ["meat", "leftovers", "roast", "beef", "chicken", "cheese", "condiment", "bottle", "food container", "container", "sushi", "fish", "food"]
+  },
+  "04-containers-lemon.jpg": {
+    "required": {
+      "lemon": ["lemon"],
+      "hummus": ["hummus", "dip", "peanut butter", "tahini", "baba"],
+      "pesto": ["pesto", "green sauce", "chimichurri", "salsa verde", "herb sauce", "guacamole", "relish", "spinach"]
+    },
+    "acceptable": ["pineapple", "olive", "chickpea", "pea", "pickle", "cucumber", "leftovers", "container", "lemon slices", "mango", "food", "capers", "peppers", "potato", "salad"]
+  },
+  "05-door-shelf-drinks.jpg": {
+    "required": {
+      "orange juice": ["orange juice", "juice"],
+      "kefir": ["kefir", "yoghurt", "yogurt", "drinkable yoghurt", "milk", "probiotic"],
+      "lemon drink": ["lemon", "lemonade", "soda", "sparkling water", "soft drink", "seltzer", "drink can", "can"],
+      "iced coffee": ["coffee", "frappuccino", "frappe", "starbucks", "iced drink", "milkshake"],
+      "mayonnaise": ["mayonnaise", "mayo"],
+      "butter": ["butter"],
+      "hummus": ["hummus", "dip"],
+      "pasta salad": ["pasta", "macaroni", "salad", "leftovers", "potato salad"],
+      "peas": ["pea"]
+    },
+    "acceptable": ["soft drink", "sports drink", "gatorade", "orange soda", "water", "bottle", "container", "yoghurt", "sour cream", "cream", "leftovers", "chicken", "fish", "meat", "sauce", "food", "drink", "cup"]
+  },
+  "06-fridge-door.jpg": {
+    "required": {
+      "butter": ["butter"],
+      "cheese": ["cheese", "cheddar", "cheese slices"],
+      "crushed garlic": ["garlic"],
+      "mustard": ["mustard"],
+      "tomato sauce": ["ketchup", "tomato sauce"],
+      "caramel topping": ["caramel", "topping", "syrup", "dessert sauce", "chocolate sauce"],
+      "salad dressing": ["dressing", "vinaigrette", "balsamic", "vinegar"]
+    },
+    "acceptable": ["mayonnaise", "mayo", "bbq sauce", "barbecue sauce", "sweet chilli", "chilli sauce", "chili sauce", "hot sauce", "sriracha", "yoghurt", "yogurt", "custard", "dip", "pudding", "dessert", "lime juice", "lemon juice", "ranch", "aioli", "sauce", "condiment", "jar", "bottle", "honey", "jam", "pesto", "relish", "pickles", "olives", "worcestershire", "soy sauce", "oil", "burger sauce", "cream cheese", "sour cream"]
+  },
+  "07-bottles-and-milk.jpg": {
+    "required": {
+      "milk": ["milk"],
+      "cooking oil": ["oil"],
+      "juice": ["juice", "v8", "fruit drink"],
+      "sweet chilli sauce": ["chilli sauce", "chili sauce", "sweet chilli", "sweet chili", "hot sauce"],
+      "honey dijon dressing": ["dijon", "mustard", "dressing", "honey"],
+      "leftovers": ["leftovers", "pot", "covered dish", "foil", "casserole", "stew", "soup", "cooked food"],
+      "lettuce": ["lettuce", "cabbage", "greens", "salad", "vegetables", "leafy"]
+    },
+    "acceptable": ["iced tea", "tea", "salad dressing", "vinegar", "syrup", "sauce", "bottle", "condiment", "water", "jar", "beer", "drink", "soda", "barbecue", "bbq", "pickles"]
+  },
+  "08-office-fridge.jpg": {
+    "required": {
+      "apple juice": ["apple juice", "apfelsaft"],
+      "orange juice": ["orange juice", "orangensaft"],
+      "mineral water": ["water", "sparkling water", "mineral water", "soda water"],
+      "cream cheese": ["cream cheese", "philadelphia"],
+      "jam": ["jam", "jelly", "preserve", "fruit spread", "marmalade", "blueberr"],
+      "wine": ["wine"]
+    },
+    "acceptable": ["olive", "antipasti", "feta", "cheese", "juice", "soft drink", "soda", "vinegar", "oil", "hot sauce", "frozen", "ice", "bread", "rolls", "meat", "beer", "drink", "bottle", "liqueur", "spirits", "liquor", "schnapps", "sauce", "condiment", "butter", "milk", "garlic", "mozzarella", "cherry juice", "red juice", "fish", "fruit juice"]
+  },
+  "09-double-door-fridge.jpg": {
+    "required": {
+      "jalapenos": ["jalapeno", "jalapeño", "pickled pepper", "peppers", "chillies", "chilies"],
+      "hot sauce": ["hot sauce", "chilli sauce", "chili sauce", "habanero", "tabasco", "sriracha"],
+      "soy sauce": ["soy sauce", "kikkoman"],
+      "mustard": ["mustard"],
+      "ketchup": ["ketchup", "tomato sauce"],
+      "mayonnaise": ["mayonnaise", "mayo"],
+      "almond milk": ["almond milk", "milk", "plant milk"],
+      "english muffins": ["muffin", "bread", "bagel"],
+      "eggs": ["egg"],
+      "salad dressing": ["dressing", "vinaigrette", "ranch"],
+      "bbq sauce": ["bbq", "barbecue"],
+      "steak sauce": ["steak sauce", "a1", "worcestershire", "brown sauce"],
+      "capsicum": ["capsicum", "bell pepper", "pepper", "peppers"],
+      "leftovers": ["leftovers", "takeaway", "takeout", "food container", "container", "styrofoam"]
+    },
+    "acceptable": ["lemonade", "limeade", "juice", "beer", "yoghurt", "yogurt", "cans", "soda", "soft drink", "salsa", "protein shake", "shake", "pasta salad", "pasta", "olives", "pickles", "honey", "relish", "jam", "buffalo", "wing sauce", "pasta sauce", "cream cheese", "butter", "cheese", "lettuce", "greens", "vegetables", "tomato", "carrot", "strawberr", "fruit", "sauce", "condiment", "bottle", "jar", "water", "coffee creamer", "creamer", "milk", "tortillas", "lemon", "lime", "orange", "mango", "pineapple", "sour cream", "cottage cheese", "dip", "hummus", "garlic", "pesto", "oil", "vinegar", "teriyaki", "sesame", "fish sauce", "oyster sauce", "worcestershire", "drink", "cherr", "grapes", "berries", "meat", "deli", "ham", "turkey", "chicken", "cake", "dessert"]
+  },
+  "10-pantry-top-shelf.jpg": {
+    "required": {
+      "nutella": ["nutella", "chocolate spread", "hazelnut spread"],
+      "biscuits": ["biscuit", "cookie", "prince", "crackers"],
+      "chocolate": ["chocolate", "kinder"],
+      "bread": ["bread", "brioche", "loaf", "baguette", "rolls", "buns"],
+      "cherry tomatoes": ["tomato"],
+      "bananas": ["banana"],
+      "salt": ["salt"],
+      "chestnut spread": ["chestnut", "spread", "creme de marron", "crème de marrons"]
+    },
+    "acceptable": ["chocolate powder", "cocoa", "nesquik", "drinking chocolate", "crisps", "chips", "honey", "jam", "cereal", "pepper", "nuts", "hazelnuts", "almonds", "cake", "crackers", "madeleines", "pastry", "muffins", "rolls", "foie gras", "stock", "bouillon", "tin", "can", "snacks", "sugar", "flour", "pasta", "rice", "coffee", "tea", "candy", "sweets", "peanut butter", "baby food", "puree", "apricot", "marmalade", "spices", "sauce", "biscuits", "wafers", "toast", "rusks", "brioche", "croissant", "pain de mie"]
+  },
+  "11-packed-larder.jpg": {
+    "required": {
+      "tuna": ["tuna"],
+      "chopped tomatoes": ["tomato"],
+      "chickpeas": ["chickpea", "garbanzo"],
+      "coconut milk": ["coconut"],
+      "apple sauce": ["apple sauce", "applesauce", "compote", "apple puree", "apple"],
+      "jam": ["jam", "preserve", "marmalade", "jelly", "conserve", "chutney"],
+      "mustard": ["mustard"],
+      "peas": ["pea"],
+      "soup": ["soup"]
+    },
+    "acceptable": ["butter beans", "beans", "flageolet", "pie", "canned meat", "steak", "beef", "seafood sauce", "sauce", "pesto", "relish", "pickles", "honey", "sour cherry", "cherr", "mint sauce", "potato", "corn", "sweetcorn", "canned food", "cans", "tins", "canned goods", "jars", "preserved", "fruit", "vegetables", "carrots", "lentils", "olives", "capers", "condiment", "spread", "blackcurrant", "plum", "berry", "fish", "salmon", "sardine", "mayonnaise", "horseradish", "dressing"]
+  },
+  "12-corner-pantry.jpg": {
+    "required": {
+      "tapioca flour": ["tapioca", "flour", "starch"],
+      "tea": ["tea"],
+      "dried mushrooms": ["mushroom", "shiitake"],
+      "instant noodles": ["noodle", "maggi", "ramen"],
+      "spices": ["spice", "seasoning", "herbs", "pepper", "salt", "condiment"]
+    },
+    "acceptable": ["rice", "flour", "pasta", "sauce", "soy sauce", "vinegar", "wine", "honey", "mustard", "peanut butter", "nuts", "peanut", "snacks", "chips", "crisps", "biscuits", "cookies", "crackers", "sugar", "oil", "coffee", "chilli", "chili", "curry", "jam", "cereal", "oats", "lentils", "beans", "seeds", "jar", "canned", "cans", "tins", "bottle", "bag", "packet", "box", "dried", "grains", "cocoa", "chocolate", "candy", "sweets", "milk powder", "water", "drinks", "juice", "stock", "bouillon", "food", "plastic bag", "groceries", "fruit", "vegetables", "potato", "onion", "garlic", "ginger", "baking", "cake", "dates", "raisins", "dried fruit", "salt", "pepper", "seasoning", "herbs"]
+  }
+}

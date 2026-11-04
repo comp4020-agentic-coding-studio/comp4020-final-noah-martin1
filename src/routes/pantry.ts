@@ -110,7 +110,7 @@ function scenePayload(userId: number, items: InventoryItem[]): string {
   return JSON.stringify(data).replace(/</g, "\\u003c");
 }
 
-interface ItemInput {
+export interface ItemInput {
   name: string;
   quantity: number;
   unit: string;
@@ -120,13 +120,15 @@ interface ItemInput {
 
 // Quantity is never negative and price is a non-negative dollar amount;
 // the table's CHECK constraints back this up (CLAUDE.md invariant 7).
-function parseItem(form: URLSearchParams): { input: ItemInput; values: Record<string, string>; problems: string[] } {
+// `suffix` reads one row of a multi-row form ("name_3", "quantity_3", ...).
+export function parseItem(form: URLSearchParams, suffix = ""): { input: ItemInput; values: Record<string, string>; problems: string[] } {
+  const get = (k: string) => (form.get(k + suffix) ?? "").trim();
   const values = {
-    name: (form.get("name") ?? "").trim(),
-    quantity: (form.get("quantity") ?? "").trim(),
-    unit: (form.get("unit") ?? "").trim(),
-    expiry_date: (form.get("expiry_date") ?? "").trim(),
-    price: (form.get("price") ?? "").trim().replace(/^\$/, ""),
+    name: get("name"),
+    quantity: get("quantity"),
+    unit: get("unit"),
+    expiry_date: get("expiry_date"),
+    price: get("price").replace(/^\$/, ""),
   };
   const problems: string[] = [];
   if (!values.name || values.name.length > 80) problems.push("Name the item (up to 80 characters).");
@@ -226,7 +228,8 @@ function pantryPage(ctx: Ctx, values: Record<string, string> = {}, problems: str
           <div class="${counts.expired ? "kx-bad" : ""}"><dt>Expired</dt><dd>${counts.expired}</dd></div>
           <div><dt>Stock value</dt><dd>${money(value)}</dd></div>
         </dl>
-        <p class="kx-actions"><a class="button kx-add-btn" href="#add" data-kx-add>${icon("plus", 16)} Add an item</a></p>
+        <p class="kx-actions"><a class="button kx-add-btn" href="#add" data-kx-add>${icon("plus", 16)} Add an item</a>
+          <a class="button button-soft kx-scan-btn" href="/pantry/scan">${icon("spark", 16)} <span class="kx-scan-label">Scan a photo</span></a></p>
       </header>
 
       <div class="kx-stage" data-kx-stage>
@@ -345,6 +348,26 @@ function itemName(id: number): string {
   return one<{ name: string }>("SELECT i.name FROM inventory_items it JOIN ingredients i ON i.id = it.ingredient_id WHERE it.id = ?", id)?.name ?? "";
 }
 
+// One pantry insert for every way in (the add form, a photo scan), so the
+// price record and activity log can't drift between them.
+export function addPersonalItem(user: { id: number; username: string }, input: ItemInput, via: "form" | "scan"): number {
+  const ing = ingredientId(input.name, input.unit);
+  const { id } = run(
+    `INSERT INTO inventory_items (owner_type, owner_id, ingredient_id, quantity, unit, expiry_date, price_cents, added_by)
+     VALUES ('user', ?, ?, ?, ?, ?, ?, ?)`,
+    user.id,
+    ing,
+    input.quantity,
+    input.unit,
+    input.expiry_date,
+    input.price_cents,
+    user.id,
+  );
+  const recorded = recordPaidPrice(user.id, ing, id, input);
+  logActivity({ actor: user, action: "pantry.add", subject: input.name, detail: { item: id, expiry: input.expiry_date, priced: input.price_cents !== null, price_recorded: recorded, via } });
+  return id;
+}
+
 function back(form: URLSearchParams): string {
   const to = form.get("return_to") ?? "";
   return to.startsWith("/") && !to.startsWith("//") ? to : "/pantry";
@@ -364,20 +387,7 @@ export const routes: Route[] = [
     handler: async (ctx) => {
       const { input, values, problems } = parseItem(await ctx.form());
       if (problems.length) return pantryPage(ctx, values, problems, 422);
-      const ing = ingredientId(input.name, input.unit);
-      const { id } = run(
-        `INSERT INTO inventory_items (owner_type, owner_id, ingredient_id, quantity, unit, expiry_date, price_cents, added_by)
-         VALUES ('user', ?, ?, ?, ?, ?, ?, ?)`,
-        ctx.user!.id,
-        ing,
-        input.quantity,
-        input.unit,
-        input.expiry_date,
-        input.price_cents,
-        ctx.user!.id,
-      );
-      const recorded = recordPaidPrice(ctx.user!.id, ing, id, input);
-      logActivity({ actor: ctx.user, action: "pantry.add", subject: input.name, detail: { item: id, expiry: input.expiry_date, priced: input.price_cents !== null, price_recorded: recorded } });
+      addPersonalItem(ctx.user!, input, "form");
       setFlash(ctx, `Added ${input.name}.`);
       return redirect("/pantry");
     },
