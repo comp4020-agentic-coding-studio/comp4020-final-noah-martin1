@@ -34,6 +34,29 @@ photo-to-pantry scan. Results and photos are in `fridge-scan/`.
 - macOS `sips` crops without a dependency: `-c <height> <width> --cropOffset <y>
   <x>` (height and y come first).
 
+## Model size limits on this Mac (M4, 24 GB)
+
+- The GPU can use only about 15.5 GiB, so 27–30B models (qwen3.8:27b needs
+  16.9 GiB) fail with a 500 and "model requires ... but only ... available"
+  in the Ollama log. 8B is the largest Qwen vision model that loads.
+- `lfm3-vl:2b` runs on Ollama's MLX engine, which in the Homebrew build has no
+  structured-output support: any call with `format: "json"` returns 501.
+
+## Running a vision model in the browser
+
+- Headless Chrome on this Mac has WebGPU with no flags (Apple GPU, f16).
+- `onnx-community/Qwen3-VL-2B-Instruct-ONNX` works with transformers.js 4.3.2
+  through `AutoProcessor` and `AutoModelForImageTextToText`, `device:
+  "webgpu"`, `dtype: "q4f16"` (1.37 GB). Pass `enable_thinking: false` to
+  `apply_chat_template`. Replies come wrapped in a ```json fence;
+  `parseScan` already strips it.
+- The first load took about 4 minutes (download); a cached load about 2.5 s.
+  One whole-photo pass was 14–33 s on the M4 GPU, against about 5 s for the
+  same model in Ollama.
+- No browser (ONNX) build of Qwen3-VL-4B was found; Gemma-3n-E2B's is 3.3 GB.
+- Scoring Ollama's 2B model is a fair stand-in for the browser's: its answers
+  on the same photos were in the same range.
+
 ## Testing
 
 - Headless Chrome's `--window-size` has a floor of about 500 px, so a 390 px

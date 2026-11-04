@@ -1,0 +1,1181 @@
+{
+ "model": "qwen3-vl:2b-instruct-tiles3",
+ "recall": 0.6934193121693122,
+ "precision": 0.6825921059616712,
+ "meanMs": 27104.833333333332,
+ "rows": [
+  {
+   "photo": "01-crisper-drawers.jpg",
+   "ms": 23910,
+   "calls": 4,
+   "found": [
+    {
+     "name": "orange",
+     "count": 7,
+     "container": "loose",
+     "confidence": "high"
+    },
+    {
+     "name": "apple",
+     "count": 5,
+     "container": "tub",
+     "confidence": "high"
+    },
+    {
+     "name": "carrot",
+     "count": 6,
+     "container": "tub",
+     "confidence": "high"
+    },
+    {
+     "name": "zucchini",
+     "count": 6,
+     "container": "tub",
+     "confidence": "high"
+    },
+    {
+     "name": "eggplant",
+     "count": 1,
+     "container": "tub",
+     "confidence": "high"
+    },
+    {
+     "name": "cucumber",
+     "count": 4,
+     "container": "tub",
+     "confidence": "high"
+    },
+    {
+     "name": "water bottle",
+     "count": 2,
+     "container": "bottle",
+     "confidence": "medium"
+    },
+    {
+     "name": "vegetable bag",
+     "count": 1,
+     "container": "bag",
+     "confidence": "low"
+    }
+   ],
+   "recall": 1,
+   "precision": 0.875,
+   "matched": [
+    "orange",
+    "apple",
+    "carrot",
+    "zucchini",
+    "eggplant",
+    "cucumber"
+   ],
+   "missed": [],
+   "wrong": [
+    "vegetable bag"
+   ]
+  },
+  {
+   "photo": "02-fruit-bowl-shelf.jpg",
+   "ms": 25618,
+   "calls": 4,
+   "found": [
+    {
+     "name": "apple",
+     "count": 2,
+     "container": "loose",
+     "confidence": "high"
+    },
+    {
+     "name": "pear",
+     "count": 1,
+     "container": "loose",
+     "confidence": "high"
+    },
+    {
+     "name": "grape",
+     "count": 3,
+     "container": "loose",
+     "confidence": "high"
+    },
+    {
+     "name": "orange",
+     "count": 1,
+     "container": "loose",
+     "confidence": "high"
+    },
+    {
+     "name": "lime",
+     "count": 1,
+     "container": "loose",
+     "confidence": "high"
+    },
+    {
+     "name": "frozen chicken",
+     "count": 2,
+     "container": "tub",
+     "confidence": "medium"
+    },
+    {
+     "name": "fried chicken",
+     "count": 3,
+     "container": "tub",
+     "confidence": "high"
+    },
+    {
+     "name": "salsa",
+     "count": 1,
+     "container": "jar",
+     "confidence": "high"
+    },
+    {
+     "name": "raw chicken",
+     "count": 2,
+     "container": "tray",
+     "confidence": "high"
+    },
+    {
+     "name": "chicken",
+     "count": 3,
+     "container": "tub",
+     "confidence": "medium"
+    },
+    {
+     "name": "lettuce",
+     "count": 1,
+     "container": "container",
+     "confidence": "low"
+    },
+    {
+     "name": "tomato",
+     "count": 1,
+     "container": "container",
+     "confidence": "low"
+    },
+    {
+     "name": "rice",
+     "count": 1,
+     "container": "tub",
+     "confidence": "high"
+    },
+    {
+     "name": "fries",
+     "count": 2,
+     "container": "tub",
+     "confidence": "high"
+    }
+   ],
+   "recall": 1,
+   "precision": 0.7857142857142857,
+   "matched": [
+    "apple",
+    "grapes",
+    "lime",
+    "pear",
+    "orange",
+    "fried chicken",
+    "salsa",
+    "raw chicken",
+    "salad leaves"
+   ],
+   "missed": [],
+   "wrong": [
+    "tomato",
+    "rice",
+    "fries"
+   ]
+  },
+  {
+   "photo": "03-leftovers-avocado.jpg",
+   "ms": 18895,
+   "calls": 4,
+   "found": [
+    {
+     "name": "avocado",
+     "count": 2,
+     "container": "loose",
+     "confidence": "high"
+    },
+    {
+     "name": "peas",
+     "count": 2,
+     "container": "container",
+     "confidence": "high"
+    },
+    {
+     "name": "mashed potatoes",
+     "count": 1,
+     "container": "container",
+     "confidence": "high"
+    },
+    {
+     "name": "orange juice",
+     "count": 1,
+     "container": "container",
+     "confidence": "low"
+    },
+    {
+     "name": "mixed salad",
+     "count": 1,
+     "container": "container",
+     "confidence": "medium"
+    },
+    {
+     "name": "canned soup",
+     "count": 1,
+     "container": "can",
+     "confidence": "high"
+    }
+   ],
+   "recall": 0.75,
+   "precision": 0.5,
+   "matched": [
+    "avocado",
+    "peas",
+    "soup"
+   ],
+   "missed": [
+    "pasta"
+   ],
+   "wrong": [
+    "mashed potatoes",
+    "orange juice",
+    "mixed salad"
+   ]
+  },
+  {
+   "photo": "04-containers-lemon.jpg",
+   "ms": 18830,
+   "calls": 4,
+   "found": [
+    {
+     "name": "lemon",
+     "count": 1,
+     "container": "loose",
+     "confidence": "high"
+    },
+    {
+     "name": "dill pickle",
+     "count": 4,
+     "container": "jar",
+     "confidence": "medium"
+    },
+    {
+     "name": "olives",
+     "count": 5,
+     "container": "tub",
+     "confidence": "high"
+    },
+    {
+     "name": "milk",
+     "count": 1,
+     "container": "carton",
+     "confidence": "high"
+    },
+    {
+     "name": "mashed potatos",
+     "count": 1,
+     "container": "jar",
+     "confidence": "medium"
+    },
+    {
+     "name": "green sauce",
+     "count": 1,
+     "container": "tub",
+     "confidence": "low"
+    },
+    {
+     "name": "pineapple",
+     "count": 2,
+     "container": "tub",
+     "confidence": "high"
+    },
+    {
+     "name": "cucumber",
+     "count": 2,
+     "container": "jar",
+     "confidence": "low"
+    }
+   ],
+   "recall": 0.6666666666666666,
+   "precision": 0.875,
+   "matched": [
+    "lemon",
+    "pesto"
+   ],
+   "missed": [
+    "hummus"
+   ],
+   "wrong": [
+    "milk"
+   ]
+  },
+  {
+   "photo": "05-door-shelf-drinks.jpg",
+   "ms": 23625,
+   "calls": 4,
+   "found": [
+    {
+     "name": "orange juice",
+     "count": 1,
+     "container": "bottle",
+     "confidence": "high"
+    },
+    {
+     "name": "lemon drink",
+     "count": 1,
+     "container": "can",
+     "confidence": "high"
+    },
+    {
+     "name": "coffee",
+     "count": 1,
+     "container": "",
+     "confidence": "medium"
+    },
+    {
+     "name": "yogurt",
+     "count": 2,
+     "container": "tub",
+     "confidence": "low"
+    },
+    {
+     "name": "butter",
+     "count": 1,
+     "container": "tub",
+     "confidence": "high"
+    },
+    {
+     "name": "salsa",
+     "count": 1,
+     "container": "jar",
+     "confidence": "medium"
+    },
+    {
+     "name": "diced tomatoes",
+     "count": 1,
+     "container": "jar",
+     "confidence": "low"
+    },
+    {
+     "name": "leftovers",
+     "count": 1,
+     "container": "box",
+     "confidence": "high"
+    },
+    {
+     "name": "milk",
+     "count": 1,
+     "container": "carton",
+     "confidence": "high"
+    },
+    {
+     "name": "sugar",
+     "count": 1,
+     "container": "packet",
+     "confidence": "high"
+    },
+    {
+     "name": "dairy product",
+     "count": 1,
+     "container": "tub",
+     "confidence": "medium"
+    },
+    {
+     "name": "french toast",
+     "count": 1,
+     "container": "tub",
+     "confidence": "high"
+    },
+    {
+     "name": "chicken",
+     "count": 2,
+     "container": "tray",
+     "confidence": "low"
+    },
+    {
+     "name": "peas",
+     "count": 1,
+     "container": "box",
+     "confidence": "medium"
+    },
+    {
+     "name": "chickpeas",
+     "count": 1,
+     "container": "tray",
+     "confidence": "low"
+    }
+   ],
+   "recall": 0.7777777777777778,
+   "precision": 0.6666666666666666,
+   "matched": [
+    "orange juice",
+    "kefir",
+    "lemon drink",
+    "iced coffee",
+    "butter",
+    "pasta salad",
+    "peas"
+   ],
+   "missed": [
+    "mayonnaise",
+    "hummus"
+   ],
+   "wrong": [
+    "salsa",
+    "diced tomatoes",
+    "sugar",
+    "dairy product",
+    "french toast"
+   ]
+  },
+  {
+   "photo": "06-fridge-door.jpg",
+   "ms": 27310,
+   "calls": 4,
+   "found": [
+    {
+     "name": "butter",
+     "count": 1,
+     "container": "packet",
+     "confidence": "high"
+    },
+    {
+     "name": "cheese",
+     "count": 2,
+     "container": "bag",
+     "confidence": "low"
+    },
+    {
+     "name": "ketchup",
+     "count": 1,
+     "container": "bottle",
+     "confidence": "high"
+    },
+    {
+     "name": "mustard",
+     "count": 1,
+     "container": "bottle",
+     "confidence": "high"
+    },
+    {
+     "name": "mayo",
+     "count": 1,
+     "container": "bottle",
+     "confidence": "low"
+    },
+    {
+     "name": "tomato ketchup",
+     "count": 1,
+     "container": "bottle",
+     "confidence": "high"
+    },
+    {
+     "name": "chicken",
+     "count": 1,
+     "container": "loose",
+     "confidence": "low"
+    },
+    {
+     "name": "diced chicken",
+     "count": 1,
+     "container": "loose",
+     "confidence": "medium"
+    },
+    {
+     "name": "yogurt",
+     "count": 1,
+     "container": "jar",
+     "confidence": "high"
+    },
+    {
+     "name": "crushed garlic",
+     "count": 1,
+     "container": "jar",
+     "confidence": "high"
+    }
+   ],
+   "recall": 0.7142857142857143,
+   "precision": 0.8,
+   "matched": [
+    "butter",
+    "cheese",
+    "crushed garlic",
+    "mustard",
+    "tomato sauce"
+   ],
+   "missed": [
+    "caramel topping",
+    "salad dressing"
+   ],
+   "wrong": [
+    "chicken",
+    "diced chicken"
+   ]
+  },
+  {
+   "photo": "07-bottles-and-milk.jpg",
+   "ms": 25112,
+   "calls": 4,
+   "found": [
+    {
+     "name": "milk",
+     "count": 2,
+     "container": "carton",
+     "confidence": "high"
+    },
+    {
+     "name": "oil",
+     "count": 3,
+     "container": "bottle",
+     "confidence": "high"
+    },
+    {
+     "name": "soda",
+     "count": 1,
+     "container": "bottle",
+     "confidence": "high"
+    },
+    {
+     "name": "apple juice",
+     "count": 1,
+     "container": "bottle",
+     "confidence": "high"
+    },
+    {
+     "name": "skim milk",
+     "count": 1,
+     "container": "carton",
+     "confidence": "high"
+    },
+    {
+     "name": "canned food",
+     "count": 2,
+     "container": "can",
+     "confidence": "low"
+    },
+    {
+     "name": "leftovers",
+     "count": 1,
+     "container": "tub",
+     "confidence": "low"
+    },
+    {
+     "name": "chicken",
+     "count": 1,
+     "container": "tub",
+     "confidence": "low"
+    },
+    {
+     "name": "salsa",
+     "count": 1,
+     "container": "jar",
+     "confidence": "medium"
+    },
+    {
+     "name": "ketchup",
+     "count": 1,
+     "container": "bottle",
+     "confidence": "medium"
+    },
+    {
+     "name": "mayonnaise",
+     "count": 1,
+     "container": "jar",
+     "confidence": "high"
+    },
+    {
+     "name": "bread",
+     "count": 1,
+     "container": "bag",
+     "confidence": "medium"
+    }
+   ],
+   "recall": 0.5714285714285714,
+   "precision": 0.5,
+   "matched": [
+    "milk",
+    "cooking oil",
+    "juice",
+    "leftovers"
+   ],
+   "missed": [
+    "sweet chilli sauce",
+    "honey dijon dressing",
+    "lettuce"
+   ],
+   "wrong": [
+    "canned food",
+    "chicken",
+    "salsa",
+    "ketchup",
+    "mayonnaise",
+    "bread"
+   ]
+  },
+  {
+   "photo": "08-office-fridge.jpg",
+   "ms": 30256,
+   "calls": 4,
+   "found": [
+    {
+     "name": "orange juice",
+     "count": 2,
+     "container": "carton",
+     "confidence": "high"
+    },
+    {
+     "name": "milk",
+     "count": 1,
+     "container": "tub",
+     "confidence": "low"
+    },
+    {
+     "name": "cheese",
+     "count": 2,
+     "container": "tub",
+     "confidence": "high"
+    },
+    {
+     "name": "olives",
+     "count": 3,
+     "container": "tray",
+     "confidence": "high"
+    },
+    {
+     "name": "chicken",
+     "count": 3,
+     "container": "loose",
+     "confidence": "medium"
+    },
+    {
+     "name": "ketchup",
+     "count": 1,
+     "container": "jar",
+     "confidence": "high"
+    },
+    {
+     "name": "pepperoni pizza",
+     "count": 1,
+     "container": "tray",
+     "confidence": "high"
+    },
+    {
+     "name": "apple juice",
+     "count": 2,
+     "container": "carton",
+     "confidence": "high"
+    },
+    {
+     "name": "jam",
+     "count": 1,
+     "container": "jar",
+     "confidence": "high"
+    },
+    {
+     "name": "butter",
+     "count": 1,
+     "container": "packet",
+     "confidence": "high"
+    },
+    {
+     "name": "wine",
+     "count": 1,
+     "container": "bottle",
+     "confidence": "low"
+    },
+    {
+     "name": "sugar",
+     "count": 2,
+     "container": "packet",
+     "confidence": "medium"
+    },
+    {
+     "name": "dairy cream",
+     "count": 1,
+     "container": "tub",
+     "confidence": "low"
+    }
+   ],
+   "recall": 0.6666666666666666,
+   "precision": 0.6153846153846154,
+   "matched": [
+    "apple juice",
+    "orange juice",
+    "jam",
+    "wine"
+   ],
+   "missed": [
+    "mineral water",
+    "cream cheese"
+   ],
+   "wrong": [
+    "chicken",
+    "ketchup",
+    "pepperoni pizza",
+    "sugar",
+    "dairy cream"
+   ]
+  },
+  {
+   "photo": "09-double-door-fridge.jpg",
+   "ms": 34713,
+   "calls": 4,
+   "found": [
+    {
+     "name": "milk",
+     "count": 1,
+     "container": "bottle",
+     "confidence": "high"
+    },
+    {
+     "name": "chicken",
+     "count": 6,
+     "container": "tray",
+     "confidence": "medium"
+    },
+    {
+     "name": "canned food",
+     "count": 9,
+     "container": "can",
+     "confidence": "medium"
+    },
+    {
+     "name": "diced tomatoes",
+     "count": 3,
+     "container": "tub",
+     "confidence": "high"
+    },
+    {
+     "name": "english muffins",
+     "count": 2,
+     "container": "box",
+     "confidence": "medium"
+    },
+    {
+     "name": "canned goods",
+     "count": 12,
+     "container": "can",
+     "confidence": "high"
+    },
+    {
+     "name": "leftovers",
+     "count": 2,
+     "container": "tray",
+     "confidence": "medium"
+    },
+    {
+     "name": "apple sauce",
+     "count": 1,
+     "container": "jar",
+     "confidence": "low"
+    },
+    {
+     "name": "mayo",
+     "count": 1,
+     "container": "bottle",
+     "confidence": "high"
+    },
+    {
+     "name": "ketchup",
+     "count": 2,
+     "container": "bottle",
+     "confidence": "medium"
+    },
+    {
+     "name": "mustard",
+     "count": 1,
+     "container": "jar",
+     "confidence": "low"
+    },
+    {
+     "name": "hot sauce",
+     "count": 3,
+     "container": "bottle",
+     "confidence": "high"
+    },
+    {
+     "name": "dressing",
+     "count": 1,
+     "container": "jar",
+     "confidence": "low"
+    },
+    {
+     "name": "ice cream",
+     "count": 1,
+     "container": "tub",
+     "confidence": "high"
+    }
+   ],
+   "recall": 0.5714285714285714,
+   "precision": 0.7857142857142857,
+   "matched": [
+    "hot sauce",
+    "mustard",
+    "ketchup",
+    "mayonnaise",
+    "almond milk",
+    "english muffins",
+    "salad dressing",
+    "leftovers"
+   ],
+   "missed": [
+    "jalapenos",
+    "soy sauce",
+    "eggs",
+    "bbq sauce",
+    "steak sauce",
+    "capsicum"
+   ],
+   "wrong": [
+    "canned food",
+    "canned goods",
+    "ice cream"
+   ]
+  },
+  {
+   "photo": "10-pantry-top-shelf.jpg",
+   "ms": 30932,
+   "calls": 4,
+   "found": [
+    {
+     "name": "apple",
+     "count": 5,
+     "container": "bag",
+     "confidence": "high"
+    },
+    {
+     "name": "nutella",
+     "count": 2,
+     "container": "jar",
+     "confidence": "high"
+    },
+    {
+     "name": "bread",
+     "count": 3,
+     "container": "loose",
+     "confidence": "high"
+    },
+    {
+     "name": "chocolate",
+     "count": 3,
+     "container": "packet",
+     "confidence": "low"
+    },
+    {
+     "name": "milk",
+     "count": 1,
+     "container": "jar",
+     "confidence": "high"
+    },
+    {
+     "name": "canned goods",
+     "count": 2,
+     "container": "can",
+     "confidence": "high"
+    },
+    {
+     "name": "butter",
+     "count": 1,
+     "container": "jar",
+     "confidence": "high"
+    },
+    {
+     "name": "cheese",
+     "count": 2,
+     "container": "box",
+     "confidence": "high"
+    },
+    {
+     "name": "chocolate chip cookies",
+     "count": 1,
+     "container": "bag",
+     "confidence": "medium"
+    },
+    {
+     "name": "crescent roll",
+     "count": 1,
+     "container": "loose",
+     "confidence": "low"
+    },
+    {
+     "name": "chocolate spread",
+     "count": 1,
+     "container": "can",
+     "confidence": "medium"
+    },
+    {
+     "name": "chickpeas",
+     "count": 1,
+     "container": "loose",
+     "confidence": "medium"
+    },
+    {
+     "name": "orange juice",
+     "count": 1,
+     "container": "tub",
+     "confidence": "medium"
+    }
+   ],
+   "recall": 0.625,
+   "precision": 0.46153846153846156,
+   "matched": [
+    "nutella",
+    "biscuits",
+    "chocolate",
+    "bread",
+    "chestnut spread"
+   ],
+   "missed": [
+    "cherry tomatoes",
+    "bananas",
+    "salt"
+   ],
+   "wrong": [
+    "apple",
+    "milk",
+    "butter",
+    "cheese",
+    "crescent roll",
+    "chickpeas",
+    "orange juice"
+   ]
+  },
+  {
+   "photo": "11-packed-larder.jpg",
+   "ms": 34030,
+   "calls": 4,
+   "found": [
+    {
+     "name": "tomato ketchup",
+     "count": 1,
+     "container": "can",
+     "confidence": "high"
+    },
+    {
+     "name": "pomme de terre",
+     "count": 1,
+     "container": "jar",
+     "confidence": "medium"
+    },
+    {
+     "name": "chicken stock",
+     "count": 1,
+     "container": "jar",
+     "confidence": "low"
+    },
+    {
+     "name": "mushroom sauce",
+     "count": 1,
+     "container": "jar",
+     "confidence": "high"
+    },
+    {
+     "name": "apple sauce",
+     "count": 1,
+     "container": "jar",
+     "confidence": "medium"
+    },
+    {
+     "name": "chickpeas",
+     "count": 5,
+     "container": "jar",
+     "confidence": "high"
+    },
+    {
+     "name": "milk",
+     "count": 1,
+     "container": "carton",
+     "confidence": "high"
+    },
+    {
+     "name": "sauerkraut",
+     "count": 1,
+     "container": "jar",
+     "confidence": "medium"
+    },
+    {
+     "name": "butter beans",
+     "count": 1,
+     "container": "jar",
+     "confidence": "high"
+    },
+    {
+     "name": "marmalade",
+     "count": 1,
+     "container": "jar",
+     "confidence": "high"
+    },
+    {
+     "name": "chocolate sauce",
+     "count": 1,
+     "container": "jar",
+     "confidence": "medium"
+    },
+    {
+     "name": "canned tomatoes",
+     "count": 1,
+     "container": "can",
+     "confidence": "low"
+    },
+    {
+     "name": "mashed potatoes",
+     "count": 1,
+     "container": "jar",
+     "confidence": "high"
+    },
+    {
+     "name": "coconut milk",
+     "count": 1,
+     "container": "can",
+     "confidence": "high"
+    },
+    {
+     "name": "apple compote",
+     "count": 1,
+     "container": "jar",
+     "confidence": "high"
+    },
+    {
+     "name": "chopped tomato",
+     "count": 1,
+     "container": "tub",
+     "confidence": "high"
+    },
+    {
+     "name": "mustard",
+     "count": 1,
+     "container": "jar",
+     "confidence": "high"
+    },
+    {
+     "name": "wholegrain mustard",
+     "count": 1,
+     "container": "jar",
+     "confidence": "high"
+    },
+    {
+     "name": "3 fruit",
+     "count": 1,
+     "container": "jar",
+     "confidence": "high"
+    },
+    {
+     "name": "chopped tomatoes",
+     "count": 1,
+     "container": "jar",
+     "confidence": "high"
+    },
+    {
+     "name": "tomato sauce",
+     "count": 1,
+     "container": "jar",
+     "confidence": "high"
+    },
+    {
+     "name": "peas",
+     "count": 1,
+     "container": "carton",
+     "confidence": "high"
+    },
+    {
+     "name": "canned green beans",
+     "count": 1,
+     "container": "can",
+     "confidence": "high"
+    }
+   ],
+   "recall": 0.7777777777777778,
+   "precision": 0.8260869565217391,
+   "matched": [
+    "chopped tomatoes",
+    "chickpeas",
+    "coconut milk",
+    "apple sauce",
+    "jam",
+    "mustard",
+    "peas"
+   ],
+   "missed": [
+    "tuna",
+    "soup"
+   ],
+   "wrong": [
+    "pomme de terre",
+    "chicken stock",
+    "milk",
+    "sauerkraut"
+   ]
+  },
+  {
+   "photo": "12-corner-pantry.jpg",
+   "ms": 32027,
+   "calls": 4,
+   "found": [
+    {
+     "name": "flour",
+     "count": 1,
+     "container": "jar",
+     "confidence": "high"
+    },
+    {
+     "name": "milk",
+     "count": 1,
+     "container": "bottle",
+     "confidence": "low"
+    },
+    {
+     "name": "chickpeas",
+     "count": 2,
+     "container": "bag",
+     "confidence": "high"
+    },
+    {
+     "name": "canned goods",
+     "count": 9,
+     "container": "can",
+     "confidence": "high"
+    },
+    {
+     "name": "rice",
+     "count": 1,
+     "container": "jar",
+     "confidence": "low"
+    },
+    {
+     "name": "dried fruit",
+     "count": 2,
+     "container": "bag",
+     "confidence": "medium"
+    },
+    {
+     "name": "chicken",
+     "count": 4,
+     "container": "",
+     "confidence": "high"
+    },
+    {
+     "name": "leftovers",
+     "count": 1,
+     "container": "tub",
+     "confidence": "low"
+    }
+   ],
+   "recall": 0.2,
+   "precision": 0.5,
+   "matched": [
+    "tapioca flour"
+   ],
+   "missed": [
+    "tea",
+    "dried mushrooms",
+    "instant noodles",
+    "spices"
+   ],
+   "wrong": [
+    "milk",
+    "chickpeas",
+    "chicken",
+    "leftovers"
+   ]
+  }
+ ]
+}

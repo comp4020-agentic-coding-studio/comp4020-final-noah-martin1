@@ -29,7 +29,7 @@ const dir = "testing/fridge-scan";
 const truth = JSON.parse(readFileSync(join(dir, "truth.json"), "utf8")) as Record<string, { required: Record<string, string[]>; acceptable: string[] }>;
 const manifest = JSON.parse(readFileSync(join(dir, "manifest.json"), "utf8")) as { file: string; source_page: string; license: string }[];
 const runs = readdirSync(join(dir, "results"))
-  .filter((f) => f.endsWith(".json") && !/-\d\d\.json$/.test(f))
+  .filter((f) => f.endsWith(".json") && !/-\d\d\.json$/.test(f) && !f.startsWith("browser-"))
   .map((f) => JSON.parse(readFileSync(join(dir, "results", f), "utf8")) as Run)
   .sort((a, b) => b.recall - a.recall);
 
@@ -41,7 +41,10 @@ lines.push("**How it's scored.** For each photo I listed the items a careful per
 lines.push("## Summary", "");
 lines.push("| Model | Recall | Precision | Mean time / photo |", "|---|---|---|---|");
 for (const r of runs) lines.push(`| ${r.model} | ${pct(r.recall)} | ${pct(r.precision)} | ${(r.meanMs / 1000).toFixed(0)} s |`);
-lines.push("", "## Photo by photo", "");
+lines.push("", "Times are on an Apple M4 (24 GB) through Ollama. `tiles3` scans the whole photo plus three overlapping bands (four model calls); `whole` is one call.", "");
+lines.push("## In the browser", "");
+lines.push("Qwen3-VL-2B was also run inside Chrome on WebGPU (transformers.js 4.3.2, the 4-bit `q4f16` build) to check it can work on a visitor's own device: see `results/browser-qwen3-vl-2b.json`. It loaded and scanned. The first visit downloads 1.37 GB and took about 4 minutes; a return visit loads from the browser cache in about 2.5 s. One whole-photo pass took 14–33 s on the M4's GPU, against about 5 s in Ollama, so a tiled scan would be about a minute or two on this machine and slower on most phones. Its answers on three photos were in the same range as the 2B run through Ollama.", "");
+lines.push("## Photo by photo", "");
 for (const photo of Object.keys(truth)) {
   const t = truth[photo];
   const m = manifest.find((x) => x.file === photo);

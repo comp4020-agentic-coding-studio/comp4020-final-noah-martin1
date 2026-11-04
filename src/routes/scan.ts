@@ -6,6 +6,10 @@
 //
 // The review form is source-agnostic: a future barcode scan can produce the
 // same Suggestion rows and reuse reviewPage and the save route unchanged.
+// Open Food Facts (world.openfoodfacts.org/api/v2/product/<code>.json) answers
+// with name, brand and pack size ("400 g"), so a barcode can prefill the
+// quantity and unit a photo can't; it has gaps, so a miss falls back to a
+// blank row.
 
 import { catalogFor, normaliseIngredient } from "../db.ts";
 import { addDays, today } from "../format.ts";
