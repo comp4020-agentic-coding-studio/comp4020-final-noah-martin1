@@ -19,7 +19,7 @@ import { type Ctx, HttpError, htmlReply, json, redirect, setFlash } from "../htt
 import { logActivity } from "../activity.ts";
 import { checkImage, readMultipart } from "../images.ts";
 import { prefillFor } from "../scan-prefill.ts";
-import { catalogueHas, learnedNames, mergeScans, parseScan, rememberCorrection, resolveName, SCAN_PROMPT, scanConfig, type Resolved } from "../fridge-scan.ts";
+import { catalogueHas, learnedNames, mergeScans, parseScan, rememberCorrection, resolveName, SCAN_PROMPT, scanConfig, spellingCandidates, type Resolved } from "../fridge-scan.ts";
 import { aheadOf, createJob, finishReview, jobFor, jobResult, type JobKind, type ResultRow } from "../scan-jobs.ts";
 import { barcodeRow, lookupBarcode, LookupUnavailable, validBarcode } from "../barcode.ts";
 import type { Route } from "../server.ts";
@@ -403,6 +403,7 @@ export const routes: Route[] = [
     handler: async (ctx) => {
       const form = await ctx.form();
       const learned = learnedNames(ctx.user!.id);
+      const catalogue = spellingCandidates(ctx.user!.id);
       // one raw reply per view the browser scanned, parsed and merged here
       // exactly as a server scan's are, so a page can post nothing the
       // parser wouldn't accept from a model
@@ -410,7 +411,7 @@ export const routes: Route[] = [
       const items = mergeScans(replies.map(parseScan)).slice(0, MAX_ROWS);
       const seconds = Math.max(0, Math.min(Number(form.get("seconds")) || 0, 3600));
       const rows: ResultRow[] = items.map((d) => {
-        const r = resolveName(d, catalogueHas, learned);
+        const r = resolveName(d, catalogueHas, learned, catalogue);
         return { detected: d.name, name: r.name, match: r.match, confidence: d.confidence, quantity: d.count !== null ? String(d.count) : "", unit: "", price_cents: null };
       });
       logActivity({ actor: ctx.user, action: "pantry.scan", subject: "device", detail: { found: rows.length, seconds } });

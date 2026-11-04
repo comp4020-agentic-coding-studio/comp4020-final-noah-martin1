@@ -285,3 +285,12 @@ describe("prefilling a barcode's pack", () => {
     expect(odd.suggested).not.toMatch(/Woolworths|ALDI/);
   });
 });
+
+describe("showing a review creates nothing", () => {
+  it("prefilling a model's made-up name doesn't add it to the ingredient catalogue", async () => {
+    const { prefillFor } = await import("../src/scan-prefill.ts");
+    const { one } = await import("../src/db.ts");
+    prefillFor(0, "glorpberry jam", 1);
+    expect(one("SELECT 1 FROM ingredients WHERE name = 'glorpberry jam'")).toBeUndefined();
+  });
+});

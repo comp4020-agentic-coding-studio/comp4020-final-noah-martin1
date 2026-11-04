@@ -4,7 +4,7 @@
 // and everything the person then saves (quantity, unit, expiry, price), is
 // decided here or by the person, never by the model.
 
-import { all, normaliseIngredient, one, run } from "./db.ts";
+import { all, catalogFor, normaliseIngredient, one, run } from "./db.ts";
 import { tilesFor as sharedTiles } from "../public/scan-tiles.mjs";
 
 export interface Detected {
@@ -212,10 +212,11 @@ export interface Resolved {
 }
 
 // Exact name or a known alias/variant first, then the person's own past
-// corrections (they renamed "yoghurt" to "kefir" before). A name with no
-// match is offered as a new ingredient, clearly marked, rather than forced
-// onto the nearest-looking catalogue entry.
-export function resolveName(d: Detected, known: (name: string) => boolean, learned: Map<string, string> = new Map()): Resolved {
+// corrections (they renamed "yoghurt" to "kefir" before), then the same name
+// spelled differently (below). A name with no match is offered as a new
+// ingredient, clearly marked, rather than forced onto the nearest-looking
+// catalogue entry.
+export function resolveName(d: Detected, known: (name: string) => boolean, learned: Map<string, string> = new Map(), catalogue: string[] = []): Resolved {
   const n = normaliseIngredient(d.name);
   const taught = learned.get(n);
   if (taught) return { detected: d, name: taught, match: "alias" };
@@ -223,11 +224,78 @@ export function resolveName(d: Detected, known: (name: string) => boolean, learn
   const alias = ALIASES[n];
   if (alias && known(alias)) return { detected: d, name: alias, match: "alias" };
   for (const v of variants(n)) if (v !== n && known(v)) return { detected: d, name: v, match: "variant" };
+  const near = sameNameSpeltDifferently(n, catalogue);
+  if (near) return { detected: d, name: near, match: "variant" };
   return { detected: d, name: n, match: "new" };
+}
+
+// Australian and American spellings, normalised before comparing
+const SPELLING: [RegExp, string][] = [
+  [/\bchil(?:i|ie|ies|is)\b/g, "chilli"],
+  [/flavor/g, "flavour"],
+  [/\bmozarella\b/g, "mozzarella"],
+  [/\bjalapeno/g, "jalapeño"],
+  [/\bdoughnut/g, "donut"],
+];
+
+const spelling = (s: string) => SPELLING.reduce((t, [re, to]) => t.replace(re, to), s);
+
+// Optimal string alignment distance: insertions, deletions, substitutions
+// and swapped neighbours ("chesse") each cost one.
+function distance(a: string, b: string): number {
+  const d = Array.from({ length: a.length + 1 }, (_, i) => [i, ...Array(b.length).fill(0)]);
+  for (let j = 1; j <= b.length; j++) d[0][j] = j;
+  for (let i = 1; i <= a.length; i++) {
+    for (let j = 1; j <= b.length; j++) {
+      d[i][j] = Math.min(d[i - 1][j] + 1, d[i][j - 1] + 1, d[i - 1][j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1));
+      if (i > 1 && j > 1 && a[i - 1] === b[j - 2] && a[i - 2] === b[j - 1]) d[i][j] = Math.min(d[i][j], d[i - 2][j - 2] + 1);
+    }
+  }
+  return d[a.length][b.length];
+}
+
+// The catalogue name a model meant when it misspelt one ("parmesean"), used
+// an American spelling ("chili powder") or put the words in another order
+// ("cheese cheddar"). Deliberately strict, because the catalogue holds real
+// pairs a letter or two apart (custard / mustard, hot sauce / soy sauce, rice
+// / rye flour) and a model's "orange net" is two letters from "orange zest":
+// same number of words, only one word differs, that word starts with the
+// same letter and has one typo per five letters (at most two), and exactly
+// one catalogue name is that close. Otherwise it's left as a new ingredient
+// for the person to name.
+export function sameNameSpeltDifferently(name: string, catalogue: string[]): string | null {
+  const n = spelling(name);
+  const nw = n.split(" ");
+  const sorted = (w: string[]) => [...w].sort().join(" ");
+  const close: string[] = [];
+  for (const c of catalogue) {
+    const cs = spelling(c);
+    const cw = cs.split(" ");
+    if (cs === n || (nw.length > 1 && sorted(cw) === sorted(nw))) return c;
+    if (cw.length !== nw.length) continue;
+    const differ = nw.map((w, i) => [w, cw[i]] as const).filter(([a, b]) => a !== b);
+    if (differ.length !== 1) continue;
+    const [a, b] = differ[0];
+    const allowed = Math.min(2, Math.floor(Math.min(a.length, b.length) / 5));
+    if (allowed > 0 && a[0] === b[0] && distance(a, b) <= allowed) close.push(c);
+  }
+  return close.length === 1 ? close[0] : null;
 }
 
 export function catalogueHas(name: string): boolean {
   return !!one("SELECT 1 FROM ingredients WHERE name = ?", normaliseIngredient(name));
+}
+
+// The names a misspelling is compared against: this person's own catalogue
+// plus every ingredient of a public recipe, which anyone can already see.
+// Not every row in the table, since a freeform name someone else typed can
+// say more about them than they meant to share.
+export function spellingCandidates(userId: number): string[] {
+  const shared = all<{ name: string }>(
+    `SELECT DISTINCT i.name FROM ingredients i JOIN recipe_ingredients ri ON ri.ingredient_id = i.id
+     JOIN recipes r ON r.id = ri.recipe_id WHERE r.visibility = 'public'`,
+  ).map((r) => r.name);
+  return [...new Set([...catalogFor(userId), ...shared])];
 }
 
 /* ---------------- learning from corrections ---------------- */

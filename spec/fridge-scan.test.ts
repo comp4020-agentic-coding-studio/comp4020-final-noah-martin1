@@ -69,6 +69,33 @@ describe("matching a detected name to the catalogue", () => {
     expect(resolveName(d("pasta sauce"), known)).toMatchObject({ name: "pasta sauce", match: "new" });
   });
 
+  // names from the real catalogue, including pairs a letter or two apart
+  const real = ["mustard", "custard", "hot sauce", "soy sauce", "rice flour", "rye flour", "parmesan", "chilli powder", "cheddar cheese", "mozzarella", "worcestershire sauce", "lemon", "lemons"];
+  const inReal = (n: string) => real.includes(n);
+
+  it("matches the same name spelt differently before calling it new", () => {
+    const near = (name: string) => resolveName(d(name), inReal, new Map(), real);
+    expect(near("parmesean")).toMatchObject({ name: "parmesan", match: "variant" });
+    expect(near("chili powder")).toMatchObject({ name: "chilli powder", match: "variant" });
+    expect(near("cheese cheddar")).toMatchObject({ name: "cheddar cheese", match: "variant" });
+    expect(near("mozarella")).toMatchObject({ name: "mozzarella", match: "variant" });
+    expect(near("worchestershire sauce")).toMatchObject({ name: "worcestershire sauce", match: "variant" });
+  });
+
+  it("never merges different foods that are spelt alike", () => {
+    const near = (name: string) => resolveName(d(name), inReal, new Map(), real);
+    // "mustad" is a letter from mustard; custard starts differently
+    expect(near("mustad")).toMatchObject({ name: "mustard" });
+    // a different first letter is a different food, however close
+    expect(near("bustard")).toMatchObject({ match: "new" });
+    // one letter from both "rice flour" and "rich flour": ambiguous, so the
+    // person decides
+    expect(resolveName(d("ricx flour"), inReal, new Map(), [...real, "rich flour"])).toMatchObject({ match: "new" });
+    // short names get no typo allowance
+    expect(near("lime")).toMatchObject({ name: "lime", match: "new" });
+    expect(near("fish sauce")).toMatchObject({ match: "new" });
+  });
+
   it("uses what this person taught it before anything else", () => {
     const learned = new Map([["yoghurt", "kefir"]]);
     expect(resolveName(d("yoghurt"), known, learned)).toMatchObject({ name: "kefir", match: "alias" });

@@ -5,7 +5,7 @@
 // uploader alone: every read here is scoped to the user id.
 
 import { all, one, run } from "./db.ts";
-import { callVision, catalogueHas, learnedNames, plannedSteps, resolveName, scanConfig, scanPhoto, ScanUnavailable, type Resolved } from "./fridge-scan.ts";
+import { callVision, catalogueHas, learnedNames, plannedSteps, resolveName, scanConfig, scanPhoto, ScanUnavailable, spellingCandidates, type Resolved } from "./fridge-scan.ts";
 import { lineQuantity, parseReceipt, RECEIPT_PROMPT, type Receipt } from "./receipt-scan.ts";
 import { logActivity } from "./activity.ts";
 
@@ -129,16 +129,17 @@ async function runJob(id: number): Promise<void> {
   run("UPDATE scan_jobs SET status = 'running', updated_at = datetime('now') WHERE id = ?", id);
   const image = Buffer.from(job.image);
   const learned = learnedNames(job.user_id);
+  const catalogue = spellingCandidates(job.user_id);
   const started = Date.now();
   try {
     let result: JobResult;
     if (job.kind === "receipt") {
       const { text } = await callVision(cfg, image, RECEIPT_PROMPT);
       progress(id, 1, 1);
-      result = receiptResult(parseReceipt(text), learned, Date.now() - started);
+      result = receiptResult(parseReceipt(text), learned, Date.now() - started, catalogue);
     } else {
       const { items, ms } = await scanPhoto(cfg, image, job, undefined, (done, total) => progress(id, done, total));
-      const resolved = items.map((d) => resolveName(d, catalogueHas, learned));
+      const resolved = items.map((d) => resolveName(d, catalogueHas, learned, catalogue));
       result = {
         seconds: Math.round(ms / 1000),
         rows: resolved.map((r) => ({
@@ -168,12 +169,12 @@ function fail(id: number, reason: string): void {
   run("UPDATE scan_jobs SET status = 'failed', error = ?, image = NULL, updated_at = datetime('now') WHERE id = ?", reason, id);
 }
 
-export function receiptResult(receipt: Receipt, learned: Map<string, string>, ms: number): JobResult {
+export function receiptResult(receipt: Receipt, learned: Map<string, string>, ms: number, catalogue: string[] = []): JobResult {
   return {
     seconds: Math.round(ms / 1000),
     receipt: { total_cents: receipt.total_cents, sum_cents: receipt.check?.sum_cents ?? null, matches: receipt.check?.matches ?? null },
     rows: combineSame(receipt.lines.map((l) => {
-      const r = resolveName({ name: l.name, count: null, container: "", confidence: "medium" }, catalogueHas, learned);
+      const r = resolveName({ name: l.name, count: null, container: "", confidence: "medium" }, catalogueHas, learned, catalogue);
       const q = lineQuantity(l);
       return {
         detected: l.name,

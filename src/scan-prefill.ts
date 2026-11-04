@@ -6,7 +6,7 @@
 // with their source; the person confirms or changes them. Deterministic:
 // same item, same suggestion.
 
-import { ingredientId } from "./db.ts";
+import { normaliseIngredient, one } from "./db.ts";
 import { addDays, today } from "./format.ts";
 import { conversionFor } from "./nutrition.ts";
 import { packOptions, type PackOption } from "./pricing.ts";
@@ -80,7 +80,10 @@ function packText(o: PackOption): string {
 // saw: three cartons is three packs. Fields the scan (or a barcode, or a
 // receipt) already filled are left alone by the caller.
 export function prefillFor(userId: number, name: string, count: number | null): Prefill {
-  const opts = packOptions(userId, ingredientId(name), name);
+  // looked up, never created: rendering a review must not add the model's
+  // guesses to the catalogue (only saving does, after the person confirms)
+  const id = one<{ id: number }>("SELECT id FROM ingredients WHERE name = ?", normaliseIngredient(name))?.id ?? -1;
+  const opts = packOptions(userId, id, name);
   const pack = likelyPack(opts);
   const life = shelfLife(name);
   const n = count && count > 0 ? count : 1;

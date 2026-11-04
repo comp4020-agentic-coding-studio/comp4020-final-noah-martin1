@@ -4,7 +4,7 @@
 // usually a brand ("Nutella"). No match, a timeout or an unreadable code is
 // said plainly and the person types the item instead.
 
-import { catalogueHas, learnedNames, resolveName } from "./fridge-scan.ts";
+import { catalogueHas, learnedNames, resolveName, spellingCandidates } from "./fridge-scan.ts";
 import type { ResultRow } from "./scan-jobs.ts";
 
 export interface Product {
@@ -75,7 +75,7 @@ export function barcodeRow(userId: number, product: Product): ResultRow {
   const plain = product.brand
     ? product.name.replace(new RegExp(`\\b${product.brand.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\b`, "i"), "").trim() || product.name
     : product.name;
-  const r = resolveName({ name: plain.toLowerCase(), count: null, container: "", confidence: "high" }, catalogueHas, learnedNames(userId));
+  const r = resolveName({ name: plain.toLowerCase(), count: null, container: "", confidence: "high" }, catalogueHas, learnedNames(userId), spellingCandidates(userId));
   return {
     detected: plain.toLowerCase(),
     name: r.name,
