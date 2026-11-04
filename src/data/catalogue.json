@@ -27832,78 +27832,232 @@
  {
   "source": "themealdb:53565",
   "title": "Chicken Lollipop",
-  "description": "A Dominican dish of chicken wings and paprika — serves 4, ready in under half an hour.",
-  "servings": 4,
-  "cuisine": "Dominican",
+  "description": "Crisp double-fried chicken lollipops made from wings, marinated with a cooked Kashmiri chilli paste. Half are served plain and half tossed in a spicy 'drums of heaven' sauce.",
+  "servings": 3,
+  "cuisine": "Indian",
   "category": "Chicken",
   "image": "https://www.themealdb.com/images/media/meals/nz0lg71784671684.jpg",
-  "prep_minutes": 10,
-  "cook_minutes": 10,
+  "prep_minutes": 15,
+  "cook_minutes": 15,
   "ingredients": [
    {
     "name": "chicken wings",
-    "quantity": 910,
-    "unit": "g",
-    "note": ""
+    "quantity": 6,
+    "unit": "",
+    "note": "skin on, cut and shaped into 12 lollipops (drumettes and wingettes)"
    },
    {
-    "name": "black pepper",
-    "quantity": 1,
-    "unit": "tbsp",
-    "note": ""
+    "name": "dried chillies",
+    "quantity": 20,
+    "unit": "",
+    "note": "Kashmiri, deseeded and soaked, for the red chilli paste"
    },
    {
-    "name": "paprika",
-    "quantity": 1,
+    "name": "vegetable oil",
+    "quantity": 4,
     "unit": "tbsp",
-    "note": ""
+    "note": "for cooking the red chilli paste (4–5)"
    },
    {
-    "name": "garlic",
+    "name": "white vinegar",
     "quantity": 1,
-    "unit": "tbsp",
-    "note": ""
+    "unit": "tsp",
+    "note": "vinegar, for the red chilli paste"
    },
    {
     "name": "salt",
+    "quantity": null,
+    "unit": "",
+    "note": "to taste, for the marinade"
+   },
+   {
+    "name": "white pepper",
+    "quantity": 0.25,
+    "unit": "tsp",
+    "note": "powder, for the marinade"
+   },
+   {
+    "name": "garlic",
+    "quantity": 4,
+    "unit": "clove",
+    "note": "for the paste with the ginger and green chilli (4–5)"
+   },
+   {
+    "name": "ginger",
+    "quantity": 1.25,
+    "unit": "cm",
+    "note": "1/2 inch, for the paste with the garlic and green chilli"
+   },
+   {
+    "name": "green chilli",
     "quantity": 1,
-    "unit": "tbsp",
-    "note": ""
+    "unit": "",
+    "note": "for the paste with the garlic and ginger"
+   },
+   {
+    "name": "soy sauce",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "light, for the marinade"
+   },
+   {
+    "name": "white vinegar",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "vinegar, for the marinade"
    },
    {
     "name": "cornflour",
     "quantity": 4,
     "unit": "tbsp",
-    "note": ""
+    "note": "for the marinade"
+   },
+   {
+    "name": "plain flour",
+    "quantity": 3,
+    "unit": "tbsp",
+    "note": "refined flour, for the marinade"
+   },
+   {
+    "name": "eggs",
+    "quantity": 1,
+    "unit": "",
+    "note": "egg white only, for the marinade"
+   },
+   {
+    "name": "bicarbonate of soda",
+    "quantity": 1,
+    "unit": "pinch",
+    "note": "baking soda, for the marinade"
+   },
+   {
+    "name": "vegetable oil",
+    "quantity": null,
+    "unit": "",
+    "note": "for deep-frying"
+   },
+   {
+    "name": "vegetable oil",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": "for the drums of heaven sauce"
+   },
+   {
+    "name": "ginger",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "chopped, for the sauce"
+   },
+   {
+    "name": "garlic",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": "chopped, for the sauce"
+   },
+   {
+    "name": "spring onion",
+    "quantity": 3,
+    "unit": "tbsp",
+    "note": "chopped white bulbs, for the sauce"
+   },
+   {
+    "name": "green chilli",
+    "quantity": 2,
+    "unit": "",
+    "note": "chopped, for the sauce"
+   },
+   {
+    "name": "tomato ketchup",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": "for the sauce"
+   },
+   {
+    "name": "chilli sauce",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": "red, for the sauce"
+   },
+   {
+    "name": "dark soy sauce",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "for the sauce"
+   },
+   {
+    "name": "white vinegar",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "vinegar, for the sauce"
+   },
+   {
+    "name": "white pepper",
+    "quantity": 1,
+    "unit": "pinch",
+    "note": "powder, for the sauce"
+   },
+   {
+    "name": "salt",
+    "quantity": 1,
+    "unit": "pinch",
+    "note": "for the sauce"
+   },
+   {
+    "name": "cornflour",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "mixed with water into a slurry, for the sauce"
+   },
+   {
+    "name": "spring onion",
+    "quantity": 1,
+    "unit": "handful",
+    "note": "chopped green tops, tossed in with the lollipops"
    }
   ],
   "steps": [
    {
-    "text": "Wash chicken with lemon Drain and season chicken.",
+    "text": "Cut the tip off each wing, then cut between the drumette and wingette. Push the meat to one end of each bone to form a lollipop, and pull out the thin bone from the wingette.",
     "minutes": null
    },
    {
-    "text": "Using shears, cut through the meat at the tip of the drumettes.",
+    "text": "Soak the deseeded Kashmiri chillies in hot water (the written recipe says 1-2 hours, the video at least 15-20 minutes), then grind with a splash of water to a fine paste.",
+    "minutes": 60
+   },
+   {
+    "text": "Cook the paste in 4-5 tbsp hot oil over medium-high heat until crumbly and the oil separates, then stir in 1 tsp vinegar and let it cool.",
+    "minutes": 4
+   },
+   {
+    "text": "Mix the lollipops with the marinade: salt, white pepper, the ginger-garlic-green chilli paste, 1 tbsp of the red chilli paste, soy sauce, vinegar, cornflour, plain flour, egg white and the pinch of bicarb. Add no water.",
     "minutes": null
    },
    {
-    "text": "Add all seasoning ingredients to the drumettes.",
-    "minutes": null
+    "text": "Leave the lollipops to marinate.",
+    "minutes": 30
    },
    {
-    "text": "Pour oil into a deep fryer, or saucepan to the level of about 5 inches so that the chicken will be submerged.",
-    "minutes": null
+    "text": "Re-shape each lollipop and fry in batches of 6-7 in oil at 160°C over medium heat until 80-90% cooked, so the oil stays hot.",
+    "minutes": 6
    },
    {
-    "text": "Fry until medium brown, add your favorite sauce (I used honey garlic barbecue sauce) to place in the oven.",
-    "minutes": null
+    "text": "Drain the fried lollipops on a sieve and rest them.",
+    "minutes": 15
    },
    {
-    "text": "Or fry until golden brown if you're not putting it in the oven.",
-    "minutes": null
+    "text": "For the sauce, heat a wok on high, lower the flame and sauté the ginger, garlic, spring onion bulbs and green chillies in the oil.",
+    "minutes": 1
    },
    {
-    "text": "Using a silicon brush add sauce to chicken and place in the oven.",
+    "text": "Add 1 tbsp red chilli paste, ketchup, chilli sauce, dark soy, vinegar, white pepper and salt and cook for a minute. Add a splash of hot water, then stir in the cornflour slurry to thicken and turn off the heat.",
+    "minutes": 1
+   },
+   {
+    "text": "Fry the rested lollipops a second time in oil at 180°C until crisp. The plain ones can be served now.",
+    "minutes": 1
+   },
+   {
+    "text": "For drums of heaven, toss the second-fried lollipops in the sauce over high heat with the spring onion greens for a few seconds, then plate.",
     "minutes": null
    }
   ]
@@ -27911,141 +28065,257 @@
  {
   "source": "themealdb:53358",
   "title": "Chicken Mandi",
-  "description": "An Indian dish of chicken, basmati rice and chilli — serves 4, about an hour start to finish.",
-  "servings": 4,
-  "cuisine": "Indian",
+  "description": "Arabian-style chicken mandi: brined chicken quarters marinated in a ground spice rub, baked over spiced basmati rice in a sealed wok, then given a charcoal smoke.",
+  "servings": 5,
+  "cuisine": "Arabian",
   "category": "Chicken",
   "image": "https://www.themealdb.com/images/media/meals/er4d081765186828.jpg",
-  "prep_minutes": 20,
-  "cook_minutes": 35,
+  "prep_minutes": 30,
+  "cook_minutes": 85,
   "ingredients": [
    {
-    "name": "chicken",
-    "quantity": 1,
-    "unit": "",
-    "note": ""
-   },
-   {
-    "name": "basmati rice",
-    "quantity": 2,
-    "unit": "cup",
-    "note": ""
-   },
-   {
-    "name": "water",
-    "quantity": 4,
-    "unit": "cup",
-    "note": ""
-   },
-   {
-    "name": "onion",
-    "quantity": 1,
-    "unit": "",
-    "note": "large"
-   },
-   {
-    "name": "garlic",
-    "quantity": 4,
-    "unit": "clove",
-    "note": ""
-   },
-   {
-    "name": "chilli",
+    "name": "cinnamon stick",
     "quantity": 2,
     "unit": "",
-    "note": ""
+    "note": "for the ground spice mix"
+   },
+   {
+    "name": "black peppercorns",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": "for the ground spice mix"
+   },
+   {
+    "name": "cloves",
+    "quantity": 4,
+    "unit": "",
+    "note": "for the ground spice mix (4–5)"
+   },
+   {
+    "name": "cardamom",
+    "quantity": 2,
+    "unit": "",
+    "note": "green pods, for the ground spice mix"
+   },
+   {
+    "name": "black cardamom",
+    "quantity": 2,
+    "unit": "",
+    "note": "seeds, for the ground spice mix"
+   },
+   {
+    "name": "dried lemon",
+    "quantity": 1,
+    "unit": "",
+    "note": "for the ground spice mix"
+   },
+   {
+    "name": "dried basil",
+    "quantity": 1.5,
+    "unit": "tsp",
+    "note": "for the ground spice mix"
+   },
+   {
+    "name": "saffron",
+    "quantity": 0.25,
+    "unit": "tsp",
+    "note": "strands, for the ground spice mix"
+   },
+   {
+    "name": "chilli powder",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "red, or to taste, for the ground spice mix"
    },
    {
     "name": "salt",
     "quantity": 1.5,
     "unit": "tsp",
-    "note": ""
+    "note": "pink salt, or to taste, for the ground spice mix"
+   },
+   {
+    "name": "tikka masala spice mix",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "ready-made tikka masala spice powder, ground with the whole spices"
+   },
+   {
+    "name": "water",
+    "quantity": 4,
+    "unit": "cup",
+    "note": "for the brine, or as required"
+   },
+   {
+    "name": "white vinegar",
+    "quantity": 0.25,
+    "unit": "cup",
+    "note": "vinegar (type not stated), for the brine"
+   },
+   {
+    "name": "salt",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "pink salt, or to taste, for the brine"
+   },
+   {
+    "name": "chicken legs",
+    "quantity": 1,
+    "unit": "kg",
+    "note": "4 quarters with skin"
    },
    {
     "name": "vegetable oil",
-    "quantity": 3,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "turmeric",
     "quantity": 1,
     "unit": "tbsp",
-    "note": ""
+    "note": "for the marinade (1–2)"
    },
    {
-    "name": "coriander",
+    "name": "water",
+    "quantity": 0.25,
+    "unit": "cup",
+    "note": "for the marinade"
+   },
+   {
+    "name": "tomato paste",
     "quantity": 1,
-    "unit": "tsp",
-    "note": ""
+    "unit": "tbsp",
+    "note": "for the marinade"
    },
    {
-    "name": "cardamom",
-    "quantity": 0.5,
+    "name": "vegetable oil",
+    "quantity": 4,
     "unit": "tbsp",
-    "note": ""
+    "note": "for the rice"
    },
    {
     "name": "cloves",
-    "quantity": 0.25,
-    "unit": "tsp",
-    "note": ""
+    "quantity": 2,
+    "unit": "",
+    "note": "for the rice (2–3)"
    },
    {
-    "name": "cinnamon",
-    "quantity": 0.5,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "black pepper",
+    "name": "black cardamom",
     "quantity": 1,
-    "unit": "tsp",
-    "note": ""
+    "unit": "",
+    "note": "whole, for the rice"
+   },
+   {
+    "name": "cinnamon stick",
+    "quantity": 1,
+    "unit": "",
+    "note": "large, for the rice"
    },
    {
     "name": "bay leaf",
     "quantity": 2,
+    "unit": "leaf",
+    "note": "for the rice"
+   },
+   {
+    "name": "onion",
+    "quantity": 1,
     "unit": "",
+    "note": "medium, chopped"
+   },
+   {
+    "name": "green chilli",
+    "quantity": 2,
+    "unit": "",
+    "note": "sliced"
+   },
+   {
+    "name": "raisins",
+    "quantity": 0.25,
+    "unit": "cup",
     "note": ""
+   },
+   {
+    "name": "basmati rice",
+    "quantity": 500,
+    "unit": "g",
+    "note": "soaked for 1 hour"
+   },
+   {
+    "name": "water",
+    "quantity": 1,
+    "unit": "cup",
+    "note": "hot, to dissolve the stock cube"
+   },
+   {
+    "name": "stock cube",
+    "quantity": 1,
+    "unit": "",
+    "note": "chicken, dissolved in the hot water"
+   },
+   {
+    "name": "water",
+    "quantity": 3,
+    "unit": "cup",
+    "note": "for the rice"
+   },
+   {
+    "name": "salt",
+    "quantity": 0.5,
+    "unit": "tbsp",
+    "note": "pink salt, or to taste, for the rice"
+   },
+   {
+    "name": "charcoal",
+    "quantity": null,
+    "unit": "",
+    "note": "optional, for the smoke at the end"
+   },
+   {
+    "name": "parsley",
+    "quantity": null,
+    "unit": "",
+    "note": "fresh, to garnish"
    }
   ],
   "steps": [
    {
-    "text": "Clean and cut the chicken; marinate briefly with salt, turmeric and a little oil.",
+    "text": "Grind the cinnamon, peppercorns, cloves, green cardamom, black cardamom seeds, dried lemon, dried basil, saffron, chilli powder, salt and tikka masala to a powder.",
     "minutes": null
    },
    {
-    "text": "Rinse and soak basmati rice 20–30 minutes.",
-    "minutes": 30
+    "text": "Stir the water, vinegar and salt into a brine. Prick the chicken with a fork, soak it in the brine, then pat it dry.",
+    "minutes": 60
    },
    {
-    "text": "In a large pot, heat ghee/oil. Fry chopped onion until golden. Add minced garlic and green chillies and fry 1–2 min.",
+    "text": "Mix the ground spices with the oil, water and tomato paste. Rub it all over the chicken, cover and marinate in the fridge for 2 hours or overnight.",
+    "minutes": 120
+   },
+   {
+    "text": "Heat the oil in a wok and fry the cloves, black cardamom, cinnamon stick, bay leaves and onion over medium heat.",
     "minutes": 2
    },
    {
-    "text": "Add whole spices (cardamom, cloves, cinnamon, bay leaves) and ground spices (coriander, cumin). Stir until fragrant.",
+    "text": "Add the green chillies and raisins and fry, then stir in the rice (soaked for 1 hour beforehand) and take the wok off the heat.",
+    "minutes": 1
+   },
+   {
+    "text": "Dissolve the stock cube in the hot water and add it to the rice with the water and salt. Stir well.",
     "minutes": null
    },
    {
-    "text": "Add chicken pieces, brown lightly and add enough water/chicken stock to cover. Simmer until chicken is nearly cooked.",
+    "text": "Set a steam rack on the rice and put the marinated chicken on it with the leftover marinade. Cover the chicken with baking paper and seal the wok with foil.",
     "minutes": null
    },
    {
-    "text": "Remove chicken; measure remaining liquid and add soaked rice. Bring to a boil, then reduce heat, cover and cook rice until almost done.",
-    "minutes": null
-   },
-   {
-    "text": "Return the chicken to the rice pot on top, cover tightly and steam on low for 10–15 min so flavors meld.",
+    "text": "Preheat the oven to 180°C.",
     "minutes": 15
    },
    {
-    "text": "(Optional) For authentic smoky aroma: heat a small charcoal until red hot, place it on a small foil cup in the centre of the pot, add a tsp of butter/oil on the coal then cover immediately to trap smoke for 5–10 minutes. Remove coal.",
-    "minutes": 10
+    "text": "Bake the sealed wok at 180°C for 60 minutes, with both grills on.",
+    "minutes": 60
    },
    {
-    "text": "Garnish with fried onions, chopped coriander and serve with chutney or raita.",
-    "minutes": null
+    "text": "Carefully remove the foil and paper, then bake uncovered at 180°C for 15 minutes (the source says 15-20), upper grill only, until the chicken is browned.",
+    "minutes": 15
+   },
+   {
+    "text": "Discard the whole spices. Pile the rice and chicken in a serving dish, give it a charcoal smoke and garnish with parsley.",
+    "minutes": 2
    }
   ]
  },
@@ -44613,97 +44883,119 @@
  {
   "source": "themealdb:53340",
   "title": "Hodge Podge",
-  "description": "A Canadian dish of green beans, potato and carrot — serves 4, on the table in about 45 minutes.",
+  "description": "A Nova Scotia dish of new potatoes, carrots, green beans and peas cooked in boiling water, then simmered in butter, cream and milk and topped with chives.",
   "servings": 4,
   "cuisine": "Canadian",
   "category": "Vegetarian",
   "image": "https://www.themealdb.com/images/media/meals/xihv0c1764447887.jpg",
-  "prep_minutes": 15,
+  "prep_minutes": 10,
   "cook_minutes": 20,
   "ingredients": [
    {
-    "name": "potato",
-    "quantity": 455,
-    "unit": "g",
-    "note": ""
+    "name": "baby potatoes",
+    "quantity": 6,
+    "unit": "",
+    "note": "small, halved (6–8)"
    },
    {
     "name": "carrot",
-    "quantity": 455,
-    "unit": "g",
-    "note": ""
+    "quantity": 1,
+    "unit": "cup",
+    "note": "peeled, cut into chunks"
    },
    {
     "name": "green beans",
     "quantity": 1,
     "unit": "cup",
-    "note": ""
+    "note": "trimmed and cut into pieces"
+   },
+   {
+    "name": "celery",
+    "quantity": null,
+    "unit": "",
+    "note": "optional extra: said in the video but not in the creator's ingredient list, and no amount given; the dish uses whatever vegetables are on hand"
    },
    {
     "name": "peas",
-    "quantity": 0.5,
-    "unit": "cup",
-    "note": ""
-   },
-   {
-    "name": "dill",
     "quantity": 1,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "chives",
-    "quantity": 1,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "milk",
-    "quantity": 3,
     "unit": "cup",
-    "note": ""
-   },
-   {
-    "name": "cream",
-    "quantity": 0.5,
-    "unit": "cup",
-    "note": ""
+    "note": "fresh or frozen"
    },
    {
     "name": "butter",
-    "quantity": 0.5,
+    "quantity": 0.25,
+    "unit": "cup",
+    "note": "unsalted"
+   },
+   {
+    "name": "cream",
+    "quantity": 1,
+    "unit": "cup",
+    "note": "heavy (35%)"
+   },
+   {
+    "name": "milk",
+    "quantity": 1,
     "unit": "cup",
     "note": ""
    },
    {
-    "name": "salt",
-    "quantity": 0.5,
+    "name": "cornflour",
+    "quantity": 1,
     "unit": "tsp",
-    "note": ""
+    "note": "mixed to a slurry with a little water, optional for thickness"
+   },
+   {
+    "name": "salt",
+    "quantity": null,
+    "unit": "",
+    "note": "to taste"
    },
    {
     "name": "black pepper",
-    "quantity": 0.25,
-    "unit": "tsp",
-    "note": ""
+    "quantity": null,
+    "unit": "",
+    "note": "to taste"
+   },
+   {
+    "name": "chives",
+    "quantity": null,
+    "unit": "",
+    "note": "fresh, to garnish"
    }
   ],
   "steps": [
    {
-    "text": "First, cook your vegetables. Bring a large pot of salted water to boil. Par-cook carrots and potatoes for five minutes until carrots and potatoes are fork tender, then blanch the peas and beans for about a minute in the same pot. Strain vegetables and set aside.",
+    "text": "Bring a pot of lightly salted water to the boil and cook the carrots and potatoes for a few minutes, until a fork just goes in but they aren't done.",
     "minutes": null
    },
    {
-    "text": "In a heavy-bottomed pot or Dutch oven, melt butter over medium heat, add vegetables, and cook to warm through.",
+    "text": "Add the green beans and celery and cook a few minutes more, until the carrots and potatoes are tender but not falling apart.",
     "minutes": null
    },
    {
-    "text": "Add milk and cream and bring the soup to a boil. Turn the heat down to low and season with salt and pepper.",
+    "text": "Add the peas and cook for just a minute.",
+    "minutes": 1
+   },
+   {
+    "text": "Keep some of the cooking water, then drain the vegetables in the sink.",
     "minutes": null
    },
    {
-    "text": "Add dill and chives and let simmer for at least 10 minutes. Serve warm.",
-    "minutes": 10
+    "text": "Add the 1/4 cup butter to the pot and let it melt first.",
+    "minutes": null
+   },
+   {
+    "text": "Add the cream, milk and a splash of the reserved cooking water, and bring to a simmer to thicken slightly.",
+    "minutes": null
+   },
+   {
+    "text": "Stir in a teaspoon of cornflour mixed with a little water for extra body, then season with salt and pepper.",
+    "minutes": null
+   },
+   {
+    "text": "Serve topped with chives.",
+    "minutes": null
    }
   ]
  },
@@ -59842,147 +60134,189 @@
  {
   "source": "themealdb:53520",
   "title": "Pastel de Choclo",
-  "description": "A Chilean dish of beef mince, chicken and raisins — serves 4, worth the couple of hours it takes.",
-  "servings": 4,
+  "description": "A Chilean casserole of spiced onion and beef mince filling with egg, olives and raisins, topped with a thick blended-corn layer and baked until golden.",
+  "servings": 8,
   "cuisine": "Chilean",
-  "category": "Chicken",
+  "category": "Beef",
   "image": "https://www.themealdb.com/images/media/meals/47abic1782854326.jpg",
-  "prep_minutes": 25,
-  "cook_minutes": 65,
+  "prep_minutes": 20,
+  "cook_minutes": 75,
   "ingredients": [
    {
-    "name": "eggs",
+    "name": "olive oil",
     "quantity": 2,
-    "unit": "",
+    "unit": "tbsp",
+    "note": "for the beef"
+   },
+   {
+    "name": "beef mince",
+    "quantity": 1,
+    "unit": "kg",
     "note": ""
    },
    {
     "name": "onion",
-    "quantity": 2,
+    "quantity": 3,
     "unit": "",
-    "note": "chopped"
+    "note": "large, diced"
    },
    {
     "name": "garlic",
-    "quantity": 2,
+    "quantity": 6,
     "unit": "clove",
-    "note": "minced"
+    "note": "large, finely minced"
    },
    {
-    "name": "salt",
-    "quantity": 1,
-    "unit": "tsp",
+    "name": "plain flour",
+    "quantity": 0.25,
+    "unit": "cup",
+    "note": ""
+   },
+   {
+    "name": "beef stock",
+    "quantity": 1.5,
+    "unit": "cup",
+    "note": "low sodium"
+   },
+   {
+    "name": "ground cumin",
+    "quantity": 1.5,
+    "unit": "tbsp",
     "note": ""
    },
    {
     "name": "paprika",
-    "quantity": 0.5,
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "regular sweet paprika, for the filling"
+   },
+   {
+    "name": "salt",
+    "quantity": 1.5,
     "unit": "tsp",
-    "note": ""
+    "note": "for the filling"
    },
    {
     "name": "black pepper",
-    "quantity": null,
-    "unit": "",
-    "note": "to taste"
-   },
-   {
-    "name": "beef mince",
-    "quantity": 455,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "chicken",
     "quantity": 0.5,
-    "unit": "",
-    "note": ""
-   },
-   {
-    "name": "raisins",
-    "quantity": 2,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "green olives",
-    "quantity": 2,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "sweetcorn",
-    "quantity": 3,
-    "unit": "can",
-    "note": ""
-   },
-   {
-    "name": "basil",
-    "quantity": 2,
     "unit": "tsp",
     "note": ""
    },
    {
     "name": "butter",
-    "quantity": 1,
-    "unit": "tbsp",
-    "note": ""
+    "quantity": 50,
+    "unit": "g",
+    "note": "unsalted, or olive oil, for the corn layer"
    },
    {
-    "name": "milk",
-    "quantity": 1,
-    "unit": "cup",
-    "note": ""
-   },
-   {
-    "name": "sugar",
-    "quantity": 2,
-    "unit": "tsp",
-    "note": ""
+    "name": "sweetcorn",
+    "quantity": 1.25,
+    "unit": "kg",
+    "note": "frozen kernels, still frozen is fine"
    },
    {
     "name": "salt",
-    "quantity": null,
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": "for the corn layer"
+   },
+   {
+    "name": "milk",
+    "quantity": 0.5,
+    "unit": "cup",
+    "note": "any fat percentage"
+   },
+   {
+    "name": "basil",
+    "quantity": 12,
+    "unit": "leaf",
+    "note": "large leaves, optional (12–15)"
+   },
+   {
+    "name": "cornmeal",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": "fine, or semolina"
+   },
+   {
+    "name": "black olives",
+    "quantity": 0.25,
+    "unit": "cup",
+    "note": "pitted, roughly chopped; Kalamata is fine"
+   },
+   {
+    "name": "eggs",
+    "quantity": 2,
     "unit": "",
-    "note": "to taste"
+    "note": "soft-boiled, quartered"
+   },
+   {
+    "name": "raisins",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": "or sultanas"
+   },
+   {
+    "name": "sugar",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "regular granulated, sprinkled on top"
+   },
+   {
+    "name": "paprika",
+    "quantity": 1,
+    "unit": "pinch",
+    "note": "sprinkled on top to finish"
    }
   ],
   "steps": [
    {
-    "text": "Place eggs in a saucepan and cover with water. Bring to a boil, remove from heat, and let eggs stand in hot water for 15 minutes.",
-    "minutes": 15
+    "text": "Preheat the oven to 200°C (180°C fan).",
+    "minutes": null
    },
    {
-    "text": "Meanwhile, heat oil in a skillet over medium heat. Add onions, garlic, 1 pinch salt, ¼ teaspoon paprika, and black pepper; cook until fragrant, about 2 minutes.",
-    "minutes": 2
+    "text": "Brown the beef in the oil in a large pan over high heat, breaking it into fine pieces until no red is left. Lift it out with a slotted spoon, leaving the fat and juices in the pan.",
+    "minutes": null
    },
    {
-    "text": "Add beef, remaining 1 teaspoon salt, remaining ¼ teaspoon paprika, and black pepper; cook and stir until beef mostly browned, about 5 minutes. Add chicken, raisins, and olives.",
+    "text": "Cook the onion and garlic in the same pan, stirring, until the onion is translucent.",
     "minutes": 5
    },
    {
-    "text": "Remove eggs from hot water, cool under cold running water, and peel. Roughly chop; add to beef mixture. Keep pino warm.",
+    "text": "Return the beef, stir in the cumin, paprika, salt and pepper, then mix in the flour and pour in the stock.",
     "minutes": null
    },
    {
-    "text": "Combine corn and basil in a blender or the bowl of a food processor; blend until smooth. Pour into a saucepan over medium heat. Add butter; cook and stir until thickened, 7 to 10 minutes.",
-    "minutes": 10
+    "text": "Cook on medium, stirring, until the filling is thick enough to leave a path across the pan. Spread it in a 23 x 33 cm dish and leave to cool.",
+    "minutes": 5
    },
    {
-    "text": "Stir in milk, 2 teaspoons sugar, and salt; cook until thickened to a paste, about 15 minutes more.",
+    "text": "Lower the eggs into boiling water to soft-boil, then peel and quarter them.",
+    "minutes": 8
+   },
+   {
+    "text": "For the corn layer, melt the butter in a pot over medium-high heat and cook the corn, still frozen, stirring regularly.",
+    "minutes": 5
+   },
+   {
+    "text": "Add the milk, salt and basil and blitz with a stick blender for about 30 seconds, until no whole kernels remain but it is not completely smooth.",
+    "minutes": null
+   },
+   {
+    "text": "Stir in the cornmeal and cook on medium to medium-low, stirring, until the mixture is thick enough to mound on a spoon.",
+    "minutes": 5
+   },
+   {
+    "text": "Press the eggs into the beef and scatter over the olives and raisins. Dollop on the corn mixture and smooth it, then sprinkle with the sugar and a light dusting of paprika.",
+    "minutes": null
+   },
+   {
+    "text": "Bake until the surface is golden.",
+    "minutes": 40
+   },
+   {
+    "text": "Let it stand to set, then cut into slices like lasagne and serve.",
     "minutes": 15
-   },
-   {
-    "text": "Preheat the oven to 180°C (350°F) (175 degrees C).",
-    "minutes": null
-   },
-   {
-    "text": "Spread pino into a baking dish. Cover with corn paste; sprinkle a little sugar on top.",
-    "minutes": null
-   },
-   {
-    "text": "Bake in the preheated oven until golden brown on top, about 20 minutes.",
-    "minutes": 20
    }
   ]
  },
@@ -63109,47 +63443,53 @@
  {
   "source": "themealdb:53045",
   "title": "Portuguese fish stew (Caldeirada de peixe)",
-  "description": "A Portuguese stew of cod, squid and capsicum — serves 4, about an hour start to finish.",
-  "servings": 4,
+  "description": "A Portuguese fish stew of white fish and prawns simmered with potato, capsicum, tomato, white wine and saffron, finished with fresh coriander.",
+  "servings": 6,
   "cuisine": "Portuguese",
   "category": "Seafood",
   "image": "https://www.themealdb.com/images/media/meals/do7zps1614349775.jpg",
-  "prep_minutes": 25,
-  "cook_minutes": 40,
+  "prep_minutes": 10,
+  "cook_minutes": 35,
   "ingredients": [
    {
+    "name": "olive oil",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": ""
+   },
+   {
     "name": "onion",
-    "quantity": 2,
+    "quantity": 1,
     "unit": "",
-    "note": "finely chopped"
+    "note": "large, diced"
    },
    {
     "name": "capsicum",
     "quantity": 1,
     "unit": "",
-    "note": "diced"
+    "note": "large, red, sliced"
+   },
+   {
+    "name": "garlic",
+    "quantity": 2,
+    "unit": "clove",
+    "note": "large, chopped"
+   },
+   {
+    "name": "chilli flakes",
+    "quantity": 0.25,
+    "unit": "tsp",
+    "note": ""
    },
    {
     "name": "coriander",
     "quantity": 1,
-    "unit": "bunch",
-    "note": "small"
-   },
-   {
-    "name": "chilli",
-    "quantity": 1,
-    "unit": "",
-    "note": "small"
-   },
-   {
-    "name": "garlic",
-    "quantity": 3,
-    "unit": "clove",
-    "note": ""
+    "unit": "tbsp",
+    "note": "stems, chopped (1–2 tbsp)"
    },
    {
     "name": "dry white wine",
-    "quantity": 400,
+    "quantity": 250,
     "unit": "ml",
     "note": ""
    },
@@ -63161,82 +63501,74 @@
    },
    {
     "name": "bay leaf",
-    "quantity": 1,
-    "unit": "",
+    "quantity": 2,
+    "unit": "leaf",
     "note": ""
+   },
+   {
+    "name": "canned tomatoes",
+    "quantity": 1,
+    "unit": "can",
+    "note": "400 g can of cherry tomatoes"
    },
    {
     "name": "potato",
-    "quantity": 300,
+    "quantity": 350,
     "unit": "g",
-    "note": ""
+    "note": "peeled, cut into 2.5 cm cubes"
    },
    {
-    "name": "tomato",
-    "quantity": 400,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "cod",
-    "quantity": 600,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "squid",
-    "quantity": 300,
-    "unit": "g",
+    "name": "fish stock",
+    "quantity": 500,
+    "unit": "ml",
     "note": ""
    },
    {
     "name": "prawns",
-    "quantity": 8,
-    "unit": "",
-    "note": ""
-   },
-   {
-    "name": "clams",
-    "quantity": 500,
+    "quantity": 225,
     "unit": "g",
-    "note": ""
+    "note": "large, or a seafood mix"
    },
    {
-    "name": "mussels",
-    "quantity": 500,
+    "name": "white fish",
+    "quantity": 450,
     "unit": "g",
-    "note": ""
+    "note": "fillet, haddock or cod"
    },
    {
-    "name": "baguette",
+    "name": "coriander",
     "quantity": 1,
-    "unit": "",
-    "note": "sliced"
+    "unit": "handful",
+    "note": "leaves, roughly chopped, to finish"
    }
   ],
   "steps": [
    {
-    "text": "Heat a drizzle of oil in a large, deep-sided frying pan, and fry the onion and pepper on a medium heat until softened but not browned.",
+    "text": "Heat the olive oil in a large pot or Dutch oven and cook the onion and capsicum over medium heat until slightly softened.",
+    "minutes": 4
+   },
+   {
+    "text": "Stir in the garlic, chilli flakes and chopped coriander stems and keep cooking.",
+    "minutes": 1
+   },
+   {
+    "text": "Add the white wine, saffron and bay leaves and let it bubble until reduced by about half.",
+    "minutes": 2
+   },
+   {
+    "text": "Add the cherry tomatoes and break them down with the spoon, then stir in the potatoes and fish stock.",
     "minutes": null
    },
    {
-    "text": "Finely chop the coriander stalks (keep the leaves for later), and add to the pan with the chilli and chopped garlic. Fry for another few minutes. Add the wine, saffron and bay leaf and let it simmer until reduced by half.",
-    "minutes": null
+    "text": "Bring to the boil, lower the heat, cover the pot and simmer.",
+    "minutes": 15
    },
    {
-    "text": "Add the potatoes, tomatoes, and 300ml water and bring to a gentle boil. Break up the tomatoes with a spoon on the side of the pan and simmer for 20-25 minutes until the potatoes are just tender, and the tomatoes have broken down.",
-    "minutes": 25
+    "text": "Lay the prawns and fish on top and push them gently under the liquid. Put the lid back on and simmer until the fish is cooked through.",
+    "minutes": 5
    },
    {
-    "text": "Season well, then gently push the fish into the sauce, and arrange the squid, prawns, clams and mussels on the surface.",
-    "minutes": null
-   },
-   {
-    "text": "Put the lid on and cook for 6-8 minutes until the mussel and clam shells have opened, the prawns are cooked and the fish is flaky. Toast the bread, rub lightly with the halved garlic clove and drizzle with olive oil.",
-    "minutes": 8
-   },
-   {
-    "text": "Serve the stew scatted with chopped coriander leaves, and the toasts for dunking.",
+    "text": "Adjust the seasoning, sprinkle with chopped coriander and serve hot with rustic bread.",
     "minutes": null
    }
   ]

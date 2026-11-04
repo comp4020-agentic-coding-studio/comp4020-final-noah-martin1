@@ -1708,16 +1708,20 @@
   "checked": "2026-10-20"
  },
  "themealdb:53565": {
-  "videoId": null,
-  "status": "unavailable",
-  "reason": "TheMealDB lists no video for this meal",
-  "checked": "2026-10-20"
+  "videoId": "M0xfKeBmhiA",
+  "title": "Chicken Lollipop & Restaurant Style Drums of Heaven | होटल जैसे चिकन लॉलीपॉप | Chef Sanjyot Keer",
+  "channel": "Your Food Lab",
+  "checked": "2026-11-04",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53358": {
-  "videoId": null,
-  "status": "unavailable",
-  "reason": "TheMealDB lists no video for this meal",
-  "checked": "2026-10-20"
+  "videoId": "zVSGabEbDJ8",
+  "title": "Restaurant Style Chicken Mandi Recipe by Food Fusion",
+  "channel": "Food Fusion",
+  "checked": "2026-11-04",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:52920": {
   "videoId": "U33HYUr-0Fw",
@@ -2830,10 +2834,12 @@
   "checked": "2026-10-20"
  },
  "themealdb:53340": {
-  "videoId": null,
-  "status": "unavailable",
-  "reason": "TheMealDB lists no video for this meal",
-  "checked": "2026-10-20"
+  "videoId": "1BBpia_8870",
+  "title": "Nova Scotia Vegetable \"Hodge Podge\"",
+  "channel": "BillCooks!",
+  "checked": "2026-11-04",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:52967": {
   "videoId": "_EL8oIl8SCQ",
@@ -3074,10 +3080,10 @@
   "transcribed": true
  },
  "themealdb:53220": {
-  "videoId": "lrcUixJEPK0",
-  "status": "unavailable",
-  "reason": "video can't be embedded",
-  "checked": "2026-10-20"
+  "videoId": null,
+  "checked": "2026-11-04",
+  "status": "rejected",
+  "reason": "Candidate lrcUixJEPK0 (Halal Chef) cannot be embedded; NfxGIj3H6xc (The White Plate) is a traditional chicken kabsa (spices, tomato, dried limes) with captions disabled and a description that lists ingredients but only chapter headings for the method. No verifiable video of this exact variant (chicken, rice, capsicum, mushroom, sweetcorn, carrot, raisins) was found, so the recipe is left unchanged."
  },
  "themealdb:53398": {
   "videoId": "DQmh54vl4LE",
@@ -3786,10 +3792,12 @@
   "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53520": {
-  "videoId": null,
-  "status": "unavailable",
-  "reason": "TheMealDB lists no video for this meal",
-  "checked": "2026-10-20"
+  "videoId": "dO93NKM6T5Q",
+  "title": "Pastel de Choclo - Chilean Beef and Corn Casserole",
+  "channel": "RecipeTin Eats",
+  "checked": "2026-11-04",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53517": {
   "videoId": null,
@@ -3998,12 +4006,12 @@
   "checked": "2026-10-20"
  },
  "themealdb:53045": {
-  "videoId": "utv-GpSJypk",
-  "title": "Cataplana | Portuguese Fish Stew from Algarve",
-  "channel": "Just Cook With Michael Santos",
-  "status": "rejected",
-  "reason": "video title doesn't match the dish",
-  "checked": "2026-10-20"
+  "videoId": "acbXJfr_qS0",
+  "title": "Portuguese Fish Stew (Caldeirada de Peixe)",
+  "channel": "Skinny Spatula",
+  "checked": "2026-11-04",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53042": {
   "videoId": "FbIKfcDEPLA",
@@ -4965,9 +4973,9 @@
  },
  "themealdb:53447": {
   "videoId": null,
-  "status": "unavailable",
-  "reason": "TheMealDB lists no video for this meal",
-  "checked": "2026-10-20"
+  "checked": "2026-11-04",
+  "status": "rejected",
+  "reason": "Only two candidates checked. 74TLHzb5aQQ (German Recipes) has a transcript but gives no weight for the beef and no amounts for the vegetables or horseradish sauce ('a couple of liters', 'one and four onions'), and no written recipe is linked. hy45iCblTno (DW Food) is a Vienna restaurant feature with no recipe amounts. Neither can support a full recipe, so the recipe is left unchanged."
  },
  "themealdb:52869": {
   "videoId": "8kRlmz8pW0I",
