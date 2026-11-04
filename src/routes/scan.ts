@@ -1,26 +1,29 @@
-// "Scan your fridge": upload a photo, a local vision model proposes what's in
-// it, and the person confirms each line before anything is saved. The model
-// only suggests names; quantity, unit, expiry and price are the person's to
-// fill in (prefilled only with a count the model actually saw). With no model
-// configured, or a failing one, the page says so and points at the add form.
+// Adding items from a scan, four ways that all end at the same review form:
 //
-// The review form is source-agnostic: a future barcode scan can produce the
-// same Suggestion rows and reuse reviewPage and the save route unchanged.
-// Open Food Facts (world.openfoodfacts.org/api/v2/product/<code>.json) answers
-// with name, brand and pack size ("400 g"), so a barcode can prefill the
-// quantity and unit a photo can't; it has gaps, so a miss falls back to a
-// blank row.
+//   photo     uploaded to the server's vision model, run as a background job
+//   device    a small vision model in the person's own browser (WebGPU);
+//             the browser posts what it found here for review
+//   barcode   the camera or a typed number, looked up in Open Food Facts
+//   receipt   uploaded to the server's model, which transcribes each line;
+//             sizes come from the printed text and lines are checked
+//             against the receipt total by the app, not the model
+//
+// Models only suggest. Nothing is saved until the person ticks a row and
+// submits it, and every row is editable. A scan job is its uploader's alone:
+// anyone else gets a 404.
 
 import { catalogFor, normaliseIngredient } from "../db.ts";
-import { addDays, today } from "../format.ts";
-import { type Html, html } from "../html.ts";
-import { type Ctx, htmlReply, redirect, setFlash } from "../http.ts";
+import { addDays, money, today } from "../format.ts";
+import { type Html, html, raw } from "../html.ts";
+import { type Ctx, HttpError, htmlReply, json, redirect, setFlash } from "../http.ts";
 import { logActivity } from "../activity.ts";
 import { checkImage, readMultipart } from "../images.ts";
 import { shelfware } from "../kitchen.ts";
-import { catalogueHas, learnedNames, rememberCorrection, resolveName, scanConfig, scanPhoto, ScanUnavailable, type Resolved } from "../fridge-scan.ts";
+import { catalogueHas, learnedNames, mergeScans, parseScan, rememberCorrection, resolveName, SCAN_PROMPT, scanConfig, type Resolved } from "../fridge-scan.ts";
+import { aheadOf, createJob, finishReview, jobFor, jobResult, type JobKind, type ResultRow } from "../scan-jobs.ts";
+import { barcodeRow, lookupBarcode, LookupUnavailable, validBarcode } from "../barcode.ts";
 import type { Route } from "../server.ts";
-import { errors, icon, page, pageHeader } from "../views/layout.ts";
+import { errors, icon, page, pageHeader, subnav } from "../views/layout.ts";
 import { addPersonalItem, parseItem } from "./pantry.ts";
 
 export interface Suggestion {
@@ -36,6 +39,8 @@ export interface Suggestion {
   expiry_date?: string;
   price?: string;
   keep?: boolean;
+  // the printed receipt line or the barcode product, shown for checking
+  source?: string;
 }
 
 // Rough "keeps for" defaults by where the item lives, offered as a starting
@@ -49,17 +54,19 @@ function keepsFor(name: string): number | null {
   return null;
 }
 
-export function suggestionsFrom(resolved: Resolved[]): Suggestion[] {
+export function suggestionsFrom(rows: ResultRow[]): Suggestion[] {
   const order = { high: 0, medium: 1, low: 2 };
-  return resolved
+  return rows
     .map((r) => ({
-      detected: r.detected.name,
+      detected: r.detected,
       name: r.name,
       match: r.match,
-      confidence: r.detected.confidence,
-      quantity: r.detected.count !== null ? String(r.detected.count) : "",
-      unit: "",
+      confidence: r.confidence,
+      quantity: r.quantity,
+      unit: r.unit,
       expiry_days: keepsFor(r.name),
+      price: r.price_cents === null ? undefined : (r.price_cents / 100).toFixed(2),
+      source: r.source,
     }))
     .sort((a, b) => order[a.confidence] - order[b.confidence]);
 }
@@ -80,7 +87,8 @@ function row(s: Suggestion, i: number): Html {
   const manual = s.match === "manual";
   return html`<li class="scan-row scan-${s.confidence}">
     <input type="hidden" name="detected_${i}" value="${s.detected}" />
-    <label class="scan-keep"><input type="checkbox" name="keep" value="${i}" ${keep ? html`checked` : ""} aria-label="Add ${s.name}" /></label>
+    ${s.source ? html`<input type="hidden" name="source_${i}" value="${s.source}" />` : ""}
+    <label class="scan-keep"><input type="checkbox" name="keep" value="${i}" ${keep ? html`checked` : ""} aria-label="Add ${s.name || "this item"}" /></label>
     <div class="scan-fields inline-form">
       <label class="field grow-2"><span>Item</span>
         <input id="${id}-name" name="name_${i}" maxlength="80" list="ingredient-catalog" value="${s.name}" /></label>
@@ -94,12 +102,12 @@ function row(s: Suggestion, i: number): Html {
         <span class="input-prefix"><span>$</span><input name="price_${i}" inputmode="decimal" placeholder="0.00" value="${s.price ?? ""}" /></span></label>
     </div>
     ${manual
-      ? s.detected && s.detected !== s.name
-        ? html`<p class="scan-note small muted">Seen as “${s.detected}”</p>`
+      ? s.source || (s.detected && s.detected !== s.name)
+        ? html`<p class="scan-note small muted">${s.source ? html`From “${s.source}”` : html`Seen as “${s.detected}”`}</p>`
         : ""
       : html`<p class="scan-note small muted">
           <span class="pill pill-${s.confidence === "high" ? "fresh" : s.confidence === "medium" ? "soon" : "none"}">${s.confidence === "high" ? "Sure" : s.confidence === "medium" ? "Likely" : "Guess"}</span>
-          ${s.detected !== s.name ? html`Seen as “${s.detected}”` : ""}${MATCH_NOTE[s.match] ? html` · ${MATCH_NOTE[s.match]}` : ""}
+          ${s.source ? html`From “${s.source}”` : s.detected !== s.name ? html`Seen as “${s.detected}”` : ""}${MATCH_NOTE[s.match] ? html` · ${MATCH_NOTE[s.match]}` : ""}
         </p>`}
   </li>`;
 }
@@ -108,17 +116,43 @@ function row(s: Suggestion, i: number): Html {
 // is the opt-in; a row left blank is skipped on save.
 const EXTRA: Suggestion = { detected: "", name: "", match: "manual", confidence: "high", quantity: "", unit: "", expiry_days: null, keep: true };
 
-export function reviewPage(ctx: Ctx, suggestions: Suggestion[], opts: { problems?: string[]; seconds?: number; status?: number; resubmit?: boolean } = {}): ReturnType<typeof htmlReply> {
+interface ReviewOpts {
+  problems?: string[];
+  seconds?: number;
+  status?: number;
+  resubmit?: boolean;
+  // which scan this review closes, so its stored photo can be dropped on save
+  job?: number;
+  what?: "photo" | "receipt" | "barcode";
+  receipt?: { total_cents: number | null; sum_cents: number | null; matches: boolean | null };
+}
+
+export function reviewPage(ctx: Ctx, suggestions: Suggestion[], opts: ReviewOpts = {}): ReturnType<typeof htmlReply> {
   const catalog = catalogFor(ctx.user!.id);
+  const what = opts.what ?? "photo";
   const lede = opts.resubmit
     ? "Fix the lines below and press Add again. Nothing has been saved yet."
     : suggestions.length
-      ? `${suggestions.length} item${suggestions.length === 1 ? "" : "s"} spotted${opts.seconds ? ` in ${opts.seconds} s` : ""}. Untick anything that's wrong, fix names, and add how much you have. Nothing is saved until you press Add.`
-      : "Nothing was recognised in that photo. Add what's there below, or try a closer photo of one shelf.";
+      ? `${suggestions.length} item${suggestions.length === 1 ? "" : "s"} ${what === "receipt" ? "read off your receipt" : what === "barcode" ? "found" : "spotted"}${opts.seconds ? ` in ${opts.seconds} s` : ""}. Untick anything that's wrong, fix names, and add how much you have. Nothing is saved until you press Add.`
+      : what === "receipt"
+        ? "No grocery lines could be read off that receipt. Add what you bought below, or try a flatter, closer photo."
+        : "Nothing was recognised in that photo. Add what's there below, or try a closer photo of one shelf.";
+  const r = opts.receipt;
+  const check = r && r.total_cents !== null
+    ? r.matches === true
+      ? html`<p class="scan-check scan-check-ok" role="status">${icon("check", 16)} These prices add up to the receipt's total of ${money(r.total_cents)}. Names can still be misread, so check each item.</p>`
+      : r.matches === false
+        ? html`<p class="scan-check scan-check-bad" role="alert">These lines add up to ${money(r.sum_cents)}, but the receipt's total is ${money(r.total_cents)}. A price or line was probably misread: check the prices against your receipt before adding. Every line starts unticked.</p>`
+        : html`<p class="scan-check" role="status">Some prices couldn't be read, so the lines can't be checked against the total of ${money(r.total_cents)}.</p>`
+    : r
+      ? html`<p class="scan-check" role="status">The receipt's total couldn't be read, so the prices haven't been checked. Compare them with your receipt.</p>`
+      : "";
   const body = html`
     ${pageHeader("Check what we found", lede)}
     ${errors(opts.problems ?? [])}
+    ${check}
     <form method="post" action="/pantry/scan/save" class="panel stack scan-review">
+      ${opts.job ? html`<input type="hidden" name="job" value="${opts.job}" />` : ""}
       <ul class="scan-list">${suggestions.map(row)}</ul>
       <p class="muted small">Missed something? Add it below or with the <a href="/pantry#add">add form</a> afterwards.</p>
       <ul class="scan-list">${row(EXTRA, suggestions.length)}</ul>
@@ -132,58 +166,294 @@ export function reviewPage(ctx: Ctx, suggestions: Suggestion[], opts: { problems
   return htmlReply(page(ctx, { title: "Check your scan", active: "pantry", body }), opts.status ?? 200);
 }
 
-export function scanPage(ctx: Ctx, problem = "", status = 200): ReturnType<typeof htmlReply> {
-  const on = scanConfig() !== null;
-  const body = html`
-    ${pageHeader("Scan your fridge or pantry", "Take a photo of a shelf and Larder suggests what's on it. You check every item before it's added.")}
-    ${problem ? errors([problem]) : ""}
-    ${on
-      ? html`<form method="post" action="/pantry/scan" enctype="multipart/form-data" class="panel stack scan-upload" data-scan-form>
-          <label class="field"><span>Photo</span>
-            <input type="file" name="photo" accept="image/jpeg,image/png,image/webp" capture="environment" required /></label>
-          <p class="muted small">Best results: one shelf or door at a time, in good light, labels facing out. A scan takes up to a minute or two.</p>
-          <div class="form-actions">
-            <a class="button button-ghost" href="/pantry">Back to my kitchen</a>
-            <button class="button" type="submit" data-scan-submit>${icon("spark", 16)} Scan photo</button>
-          </div>
-          <p class="muted small" data-scan-wait hidden role="status">Looking at your photo… this can take a minute.</p>
-        </form>`
-      : html`<section class="panel stack">
-          <p>Photo scanning needs a vision model running alongside Larder, and this server doesn't have one.</p>
-          <p class="muted small">It runs on a self-hosted install with <a href="https://ollama.com">Ollama</a>: set <code>VISION_URL</code> to its address. Until then, the <a href="/pantry#add">add form</a> does the same job by hand.</p>
-        </section>`}`;
-  return htmlReply(page(ctx, { title: "Scan your fridge", active: "pantry", body, headExtra: html`<script type="module" src="/assets/scan.mjs"></script>` }), status);
+/* ---------------- the scan hub ---------------- */
+
+type Tab = "photo" | "device" | "barcode" | "receipt";
+
+function tabs(current: Tab): Html {
+  const server = scanConfig() !== null;
+  const items = [
+    ...(server ? [{ href: "/pantry/scan", label: "Photo" }] : []),
+    { href: "/pantry/scan/device", label: server ? "On this device" : "Photo" },
+    { href: "/pantry/scan/barcode", label: "Barcode" },
+    ...(server ? [{ href: "/pantry/scan/receipt", label: "Receipt" }] : []),
+  ];
+  const hrefs: Record<Tab, string> = { photo: "/pantry/scan", device: "/pantry/scan/device", barcode: "/pantry/scan/barcode", receipt: "/pantry/scan/receipt" };
+  return html`<div class="subnav-scan">${subnav("Ways to scan", items, hrefs[current])}</div>`;
 }
 
+function hub(ctx: Ctx, tab: Tab, title: string, lede: string, content: Html, opts: { problem?: string; status?: number; script?: string } = {}) {
+  const body = html`
+    ${pageHeader(title, lede)}
+    ${tabs(tab)}
+    ${opts.problem ? errors([opts.problem]) : ""}
+    ${content}`;
+  return htmlReply(
+    page(ctx, { title, active: "pantry", body, headExtra: html`<script type="module" src="/assets/${opts.script ?? "scan.mjs"}"></script>` }),
+    opts.status ?? 200,
+  );
+}
+
+function uploadForm(kind: JobKind): Html {
+  const receipt = kind === "receipt";
+  return html`<form method="post" action="${receipt ? "/pantry/scan/receipt" : "/pantry/scan"}" enctype="multipart/form-data" class="panel stack scan-upload" data-scan-form>
+    <label class="field"><span>${receipt ? "Receipt photo" : "Photo"}</span>
+      <input type="file" name="photo" accept="image/jpeg,image/png,image/webp" capture="environment" required /></label>
+    <p class="muted small">${receipt
+      ? "Lay the receipt flat in good light and fill the frame with it. Long receipts read best in two photos, top half then bottom."
+      : "Best results: one shelf or door at a time, in good light, labels facing out."} The scan runs in the background: you can leave the page and come back to it.</p>
+    <div class="form-actions">
+      <a class="button button-ghost" href="/pantry">Back to my kitchen</a>
+      <button class="button" type="submit" data-scan-submit>${icon("spark", 16)} ${receipt ? "Read receipt" : "Scan photo"}</button>
+    </div>
+  </form>`;
+}
+
+function scanPage(ctx: Ctx, problem = "", status = 200) {
+  if (!scanConfig()) return devicePage(ctx, problem, status);
+  return hub(ctx, "photo", "Scan your fridge or pantry", "Take a photo of a shelf and Larder suggests what's on it. You check every item before it's added.", uploadForm("photo"), { problem, status });
+}
+
+function receiptPage(ctx: Ctx, problem = "", status = 200) {
+  if (!scanConfig()) return devicePage(ctx, "Reading receipts needs the vision model on the server, which this one doesn't have.", 503);
+  return hub(ctx, "receipt", "Read a receipt", "Photograph your shopping receipt and Larder lists what you bought, with the prices you paid. You check every line before it's added.", uploadForm("receipt"), { problem, status });
+}
+
+// The in-browser scan: the page itself loads the model and does the work.
+// Without WebGPU (or JavaScript) it says so and offers the other ways.
+function devicePage(ctx: Ctx, problem = "", status = 200) {
+  const content = html`<section class="panel stack" data-device-scan>
+    <p>This runs a small vision model inside your browser, so your photo never leaves this device. It needs a recent browser with WebGPU, and downloads about 1.4 GB the first time; after that it starts in seconds.</p>
+    <p class="muted small">It's a smaller model than a server scan and makes more mistakes, so check each suggestion. A scan takes about a minute, longer on a phone. Keep this page open while it runs.</p>
+    <div class="scan-device-unsupported" data-device-unsupported hidden role="alert">
+      <p>This browser can't run the model (it needs WebGPU). Try Chrome or Edge on a recent computer or Android phone, or use the <a href="/pantry/scan/barcode">barcode scanner</a> or the <a href="/pantry#add">add form</a>.</p>
+    </div>
+    <noscript><p>The on-device scan needs JavaScript. The <a href="/pantry/scan/barcode">barcode form</a> and the <a href="/pantry#add">add form</a> work without it.</p></noscript>
+    <label class="field" data-device-ready hidden><span>Photo</span>
+      <input type="file" accept="image/jpeg,image/png,image/webp" capture="environment" data-device-file /></label>
+    <div class="scan-progress" data-device-progress hidden>
+      <p class="scan-progress-label" data-device-label role="status" aria-live="polite">Starting…</p>
+      <progress max="100" value="0" data-device-bar></progress>
+    </div>
+    <form method="post" action="/pantry/scan/device" data-device-form hidden>
+      <div data-device-replies></div>
+      <input type="hidden" name="seconds" data-device-seconds />
+    </form>
+    <script type="application/json" id="scan-config">${raw(JSON.stringify({ prompt: SCAN_PROMPT }).replace(/</g, "\\u003c"))}</script>
+    <div class="form-actions">
+      <a class="button button-ghost" href="/pantry">Back to my kitchen</a>
+      <button class="button" type="button" data-device-start hidden>${icon("spark", 16)} Scan photo</button>
+    </div>
+  </section>`;
+  return hub(ctx, "device", "Scan on this device", "Photograph a shelf and a model running in your browser suggests what's on it. You check every item before it's added.", content, { problem, status, script: "scan-device.mjs" });
+}
+
+function barcodePage(ctx: Ctx, problem = "", status = 200, code = "") {
+  const content = html`<section class="panel stack" data-barcode>
+    <div class="scan-camera" data-barcode-camera hidden>
+      <video playsinline muted data-barcode-video aria-label="Camera view for scanning a barcode"></video>
+      <p class="muted small" data-barcode-status role="status" aria-live="polite">Point the camera at a barcode.</p>
+    </div>
+    <button class="button button-soft" type="button" data-barcode-start hidden>${icon("search", 16)} Use the camera</button>
+    <form method="post" action="/pantry/scan/barcode" class="inline-form" data-barcode-form>
+      <label class="field grow-2"><span>Barcode number</span>
+        <input name="code" inputmode="numeric" autocomplete="off" pattern="[0-9 ]{8,16}" maxlength="16" placeholder="e.g. 9300633603109" value="${code}" required /></label>
+      <button class="button" type="submit">${icon("search", 16)} Look up</button>
+    </form>
+    <p class="muted small">Products are looked up in <a href="https://world.openfoodfacts.org">Open Food Facts</a>, an open database. Not every product is in it; if yours isn't, add it by hand.</p>
+    <div class="scan-basket" data-barcode-basket hidden>
+      <h2 class="panel-title">Scanned so far</h2>
+      <ul class="scan-basket-list" data-barcode-list></ul>
+      <form method="post" action="/pantry/scan/barcode/review" data-barcode-review>
+        <div data-barcode-codes></div>
+        <button class="button" type="submit">${icon("check", 16)} Review and add</button>
+      </form>
+    </div>
+  </section>`;
+  return hub(ctx, "barcode", "Scan barcodes", "Scan the packets and tins you've bought, one after another, then check and add them in one go.", content, { problem, status, script: "scan-barcode.mjs" });
+}
+
+function progressPage(ctx: Ctx, id: number) {
+  const job = jobFor(ctx.user!.id, id);
+  if (!job) throw new HttpError(404, "That scan doesn't exist.");
+  if (job.status === "done") return redirect(`/pantry/scan/jobs/${id}/review`);
+  const failed = job.status === "failed";
+  const ahead = job.status === "queued" ? aheadOf(id) : 0;
+  const pct = Math.round((job.step / Math.max(job.steps, 1)) * 100);
+  const label = failed
+    ? job.error ?? "The scan didn't finish."
+    : job.status === "queued"
+      ? ahead ? `Waiting: ${ahead} scan${ahead === 1 ? "" : "s"} ahead of yours.` : "Starting…"
+      : job.kind === "receipt"
+        ? "Reading the receipt…"
+        : `Looking at your photo: ${job.step} of ${job.steps} views done.`;
+  const body = html`
+    ${pageHeader(job.kind === "receipt" ? "Reading your receipt" : "Scanning your photo", failed ? "" : "This runs in the background. You can leave this page: the scan keeps going, and your fridge shows when it's ready.")}
+    <section class="panel stack scan-progress" data-job="${id}" data-job-status="${job.status}">
+      <p class="scan-progress-label" data-job-label role="status" aria-live="polite">${label}</p>
+      ${failed
+        ? ""
+        : job.step === 0
+          ? // no value until the first view is in: the bar shows it's working
+            html`<progress max="100" data-job-bar aria-label="Scan progress"></progress>`
+          : html`<progress max="100" value="${pct}" data-job-bar aria-label="Scan progress">${pct}%</progress>`}
+      <div class="form-actions">
+        <a class="button button-ghost" href="/pantry">Back to my kitchen</a>
+        ${failed ? html`<a class="button" href="${job.kind === "receipt" ? "/pantry/scan/receipt" : "/pantry/scan"}">Try again</a>` : ""}
+      </div>
+    </section>`;
+  // no JavaScript: the page reloads itself until the scan is done
+  const refresh = failed ? html`` : html`<noscript><meta http-equiv="refresh" content="4" /></noscript>`;
+  return htmlReply(page(ctx, { title: "Scanning", active: "pantry", body, headExtra: html`${refresh}<script type="module" src="/assets/scan.mjs"></script>` }));
+}
+
+/* ---------------- routes ---------------- */
+
+async function upload(ctx: Ctx, kind: JobKind) {
+  const again = kind === "receipt" ? receiptPage : scanPage;
+  if (!scanConfig()) return again(ctx, "Scanning isn't set up on this server.", 503);
+  const { files } = await readMultipart(ctx.req);
+  const photo = files.get("photo");
+  const check = checkImage(photo?.bytes ?? Buffer.alloc(0));
+  if (!check.ok) return again(ctx, check.problem.replace("of the dish", kind === "receipt" ? "of your receipt" : "of your fridge or pantry"), 422);
+  const id = createJob(ctx.user!.id, kind, photo!.bytes, check);
+  logActivity({ actor: ctx.user, action: "pantry.scan_queued", subject: kind, detail: { job: id, bytes: photo!.bytes.length } });
+  return redirect(`/pantry/scan/jobs/${id}`);
+}
+
+function jobId(ctx: Ctx): number {
+  const id = Number(ctx.params.id);
+  if (!Number.isSafeInteger(id) || id <= 0) throw new HttpError(404, "That scan doesn't exist.");
+  return id;
+}
+
+const MAX_ROWS = 200;
+
 export const routes: Route[] = [
+  { method: "GET", path: "/pantry/scan", auth: true, handler: (ctx) => scanPage(ctx) },
+  { method: "POST", path: "/pantry/scan", auth: true, handler: (ctx) => upload(ctx, "photo") },
+  { method: "GET", path: "/pantry/scan/receipt", auth: true, handler: (ctx) => receiptPage(ctx) },
+  { method: "POST", path: "/pantry/scan/receipt", auth: true, handler: (ctx) => upload(ctx, "receipt") },
+  { method: "GET", path: "/pantry/scan/device", auth: true, handler: (ctx) => devicePage(ctx) },
+  { method: "GET", path: "/pantry/scan/barcode", auth: true, handler: (ctx) => barcodePage(ctx) },
   {
     method: "GET",
-    path: "/pantry/scan",
+    path: "/pantry/scan/jobs/:id",
     auth: true,
-    handler: (ctx) => scanPage(ctx),
+    handler: (ctx) => progressPage(ctx, jobId(ctx)),
   },
   {
+    // what the progress page polls
+    method: "GET",
+    path: "/pantry/scan/jobs/:id/status",
+    auth: true,
+    handler: (ctx) => {
+      const job = jobFor(ctx.user!.id, jobId(ctx));
+      if (!job) return json({ error: "That scan doesn't exist." }, 404);
+      return json({
+        status: job.status,
+        step: job.step,
+        steps: job.steps,
+        kind: job.kind,
+        ahead: job.status === "queued" ? aheadOf(job.id) : 0,
+        error: job.status === "failed" ? job.error : null,
+        review: job.status === "done" ? `/pantry/scan/jobs/${job.id}/review` : null,
+      });
+    },
+  },
+  {
+    method: "GET",
+    path: "/pantry/scan/jobs/:id/review",
+    auth: true,
+    handler: (ctx) => {
+      const id = jobId(ctx);
+      const job = jobFor(ctx.user!.id, id);
+      if (!job) throw new HttpError(404, "That scan doesn't exist.");
+      const result = jobResult(job);
+      if (!result) return redirect(`/pantry/scan/jobs/${id}`);
+      return reviewPage(ctx, suggestionsFrom(result.rows), { seconds: result.seconds, job: id, what: job.kind, receipt: result.receipt });
+    },
+  },
+  {
+    // the in-browser model's findings, as the parser's own JSON shape
     method: "POST",
-    path: "/pantry/scan",
+    path: "/pantry/scan/device",
     auth: true,
     handler: async (ctx) => {
-      const cfg = scanConfig();
-      if (!cfg) return scanPage(ctx, "Photo scanning isn't set up on this server.", 503);
-      const { files } = await readMultipart(ctx.req);
-      const photo = files.get("photo");
-      const check = checkImage(photo?.bytes ?? Buffer.alloc(0));
-      if (!check.ok) return scanPage(ctx, check.problem.replace("of the dish", "of your fridge or pantry"), 422);
+      const form = await ctx.form();
+      const learned = learnedNames(ctx.user!.id);
+      // one raw reply per view the browser scanned, parsed and merged here
+      // exactly as a server scan's are, so a page can post nothing the
+      // parser wouldn't accept from a model
+      const replies = form.getAll("reply").slice(0, 8).map((r) => r.slice(0, 20000));
+      const items = mergeScans(replies.map(parseScan)).slice(0, MAX_ROWS);
+      const seconds = Math.max(0, Math.min(Number(form.get("seconds")) || 0, 3600));
+      const rows: ResultRow[] = items.map((d) => {
+        const r = resolveName(d, catalogueHas, learned);
+        return { detected: d.name, name: r.name, match: r.match, confidence: d.confidence, quantity: d.count !== null ? String(d.count) : "", unit: "", price_cents: null };
+      });
+      logActivity({ actor: ctx.user, action: "pantry.scan", subject: "device", detail: { found: rows.length, seconds } });
+      return reviewPage(ctx, suggestionsFrom(rows), { seconds: Math.round(seconds) });
+    },
+  },
+  {
+    // the camera scanner asks about one code at a time
+    method: "GET",
+    path: "/pantry/scan/barcode/lookup",
+    auth: true,
+    handler: async (ctx) => {
+      const code = validBarcode(ctx.url.searchParams.get("code") ?? "");
+      if (!code) return json({ error: "That doesn't look like a product barcode." }, 422);
       try {
-        const { items, ms, calls } = await scanPhoto(cfg, photo!.bytes, check);
-        const learned = learnedNames(ctx.user!.id);
-        const resolved = items.map((d) => resolveName(d, catalogueHas, learned));
-        logActivity({ actor: ctx.user, action: "pantry.scan", detail: { model: cfg.model, ms, calls, found: resolved.length, new: resolved.filter((r) => r.match === "new").length } });
-        return reviewPage(ctx, suggestionsFrom(resolved), { seconds: Math.round(ms / 1000) });
+        const product = await lookupBarcode(code);
+        if (!product) return json({ code, found: false });
+        return json({ code, found: true, product, row: barcodeRow(ctx.user!.id, product) });
       } catch (err) {
-        if (!(err instanceof ScanUnavailable)) throw err;
-        logActivity({ actor: ctx.user, action: "pantry.scan", outcome: "failed", detail: { model: cfg.model, reason: err.message } });
-        return scanPage(ctx, `${err.message} You can add items with the form instead.`, 503);
+        if (!(err instanceof LookupUnavailable)) throw err;
+        return json({ error: err.message }, 503);
       }
+    },
+  },
+  {
+    // typed number, no JavaScript: look it up and go straight to review
+    method: "POST",
+    path: "/pantry/scan/barcode",
+    auth: true,
+    handler: async (ctx) => {
+      const raw = ((await ctx.form()).get("code") ?? "").trim();
+      const code = validBarcode(raw);
+      if (!code) return barcodePage(ctx, "That doesn't look like a product barcode. Check the digits under the stripes.", 422, raw);
+      try {
+        const product = await lookupBarcode(code);
+        if (!product) return barcodePage(ctx, `Barcode ${code} isn't in the product database. Add the item with the form instead.`, 404, raw);
+        return reviewPage(ctx, suggestionsFrom([barcodeRow(ctx.user!.id, product)]), { what: "barcode" });
+      } catch (err) {
+        if (!(err instanceof LookupUnavailable)) throw err;
+        return barcodePage(ctx, err.message, 503, raw);
+      }
+    },
+  },
+  {
+    // a basket of camera-scanned codes, reviewed together
+    method: "POST",
+    path: "/pantry/scan/barcode/review",
+    auth: true,
+    handler: async (ctx) => {
+      const form = await ctx.form();
+      const codes = [...new Set(form.getAll("code").map((c) => validBarcode(c)).filter((c): c is string => !!c))].slice(0, 50);
+      const rows: ResultRow[] = [];
+      const missing: string[] = [];
+      for (const code of codes) {
+        try {
+          const product = await lookupBarcode(code);
+          if (product) rows.push(barcodeRow(ctx.user!.id, product));
+          else missing.push(code);
+        } catch {
+          missing.push(code);
+        }
+      }
+      const problems = missing.length ? [`${missing.length === 1 ? "One barcode wasn't" : `${missing.length} barcodes weren't`} found (${missing.join(", ")}). Add ${missing.length === 1 ? "it" : "them"} in the blank row below.`] : [];
+      return reviewPage(ctx, suggestionsFrom(rows), { what: "barcode", problems });
     },
   },
   {
@@ -192,25 +462,28 @@ export const routes: Route[] = [
     auth: true,
     handler: async (ctx) => {
       const form = await ctx.form();
-      const rows = Math.min(Number(form.get("rows")) || 0, 200);
+      const rows = Math.min(Number(form.get("rows")) || 0, MAX_ROWS + 1);
       const keep = new Set(form.getAll("keep").map(Number));
+      const job = Number(form.get("job")) || 0;
       const problems: string[] = [];
       const ready = [];
       const resubmit: Suggestion[] = [];
       for (let i = 0; i < rows; i++) {
         const detected = normaliseIngredient(form.get(`detected_${i}`) ?? "");
+        const source = (form.get(`source_${i}`) ?? "").slice(0, 160) || undefined;
         const { input, values, problems: p } = parseItem(form, `_${i}`);
         // a blank "add another" row isn't an error, ticked or not
         if (!detected && !values.name && !values.quantity) continue;
         const ticked = keep.has(i);
         // every row comes back on a refused save, unticked ones included, so
         // nothing the person checked has to be found again
-        resubmit.push({ detected, name: values.name, match: "manual", confidence: "high", quantity: values.quantity, unit: values.unit, expiry_days: null, expiry_date: values.expiry_date, price: values.price, keep: ticked });
+        resubmit.push({ detected, name: values.name, match: "manual", confidence: "high", quantity: values.quantity, unit: values.unit, expiry_days: null, expiry_date: values.expiry_date, price: values.price, keep: ticked, source });
         if (!ticked) continue;
         if (p.length) problems.push(...p.map((m) => `${values.name || `Row ${i + 1}`}: ${m}`));
         else ready.push({ input, detected });
       }
-      if (problems.length) return reviewPage(ctx, resubmit, { problems, status: 422, resubmit: true });
+      if (problems.length) return reviewPage(ctx, resubmit, { problems, status: 422, resubmit: true, job: job || undefined });
+      if (job) finishReview(ctx.user!.id, job);
       if (!ready.length) {
         setFlash(ctx, "Nothing was ticked, so nothing was added.");
         return redirect("/pantry");
@@ -220,7 +493,7 @@ export const routes: Route[] = [
         // the person renamed a suggestion: remember it for their next scan
         rememberCorrection(ctx.user!.id, detected, input.name);
       }
-      setFlash(ctx, `Added ${ready.length} item${ready.length === 1 ? "" : "s"} from your photo.`);
+      setFlash(ctx, `Added ${ready.length} item${ready.length === 1 ? "" : "s"}.`);
       return redirect("/pantry");
     },
   },

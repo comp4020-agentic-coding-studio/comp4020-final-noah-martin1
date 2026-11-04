@@ -7,6 +7,7 @@ import { db } from "./db.ts";
 import { seedVideos } from "./video-seed.ts";
 import { DEMO_MODE, seedDemo } from "./demo.ts";
 import { startExpirySweep } from "./expiry.ts";
+import { recoverJobs } from "./scan-jobs.ts";
 import {
   type Ctx,
   cookie,
@@ -206,6 +207,7 @@ const videos = seedVideos();
 if (videos) console.log(`videos: updated ${videos} catalogue recipes`);
 if (DEMO_MODE) await seedDemo();
 startExpirySweep();
+recoverJobs();
 
 server.listen(port, "0.0.0.0", () => {
   console.log(`listening on http://0.0.0.0:${port}`);

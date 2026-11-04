@@ -57,6 +57,32 @@ photo-to-pantry scan. Results and photos are in `fridge-scan/`.
 - Scoring Ollama's 2B model is a fair stand-in for the browser's: its answers
   on the same photos were in the same range.
 
+## Receipts
+
+- Real receipts put a weighed item's weight on the line below its name
+  ("APPLE PINK LADY" / "0.217 kg NET @ $3.90/kg") and a discount on its own
+  line ("GOLDEN PANCAK OFFER -1.98", Polish "Rabat -2,00", Tesco "REDUCED
+  PRICE"). Ask the model for each item's price after its discount, then check
+  those prices against the printed total; a total check that skips discounts
+  fails on every receipt that has one.
+- Woolworths writes grams as "GM", and "16PK 140GM" is a 140 g pack of 16,
+  not 16 × 140 g. European receipts use decimal commas ("0,5484kg").
+- A total check catches misread prices, not misread names: the 8B model read
+  Italian "CRIK CROK" crisps as "chocolate bar" with the right price.
+- Score receipt names on the model's `name` field only: its `text` copies the
+  printed line, so matching on both counts a wrong name as right.
+
+## Barcodes
+
+- Chrome on macOS has no `BarcodeDetector` (it ships on Android, ChromeOS and
+  Safari 17+). `barcode-detector@3.2.2`'s `ponyfill` (ZXing WebAssembly) fills
+  the gap and decoded a real EAN-13 in desktop Chrome.
+- Test the camera flow headless with a fake camera:
+  `--use-fake-device-for-media-stream --use-file-for-fake-video-capture=<file>.y4m`
+  (make the .y4m with `ffmpeg -loop 1 -i frame.png -t 3 -pix_fmt yuv420p -f yuv4mpegpipe`).
+- Open Food Facts names are usually brands ("Nutella", "Mars"), so the pack
+  size is the reliable part; the name still goes through `resolveName`.
+
 ## Testing
 
 - Headless Chrome's `--window-size` has a floor of about 500 px, so a 390 px

@@ -6,6 +6,7 @@ import { logActivity } from "../activity.ts";
 import { expiryState, listedParams, listedSql, removalDate } from "../expiry.ts";
 import { shelfware } from "../kitchen.ts";
 import { recordPaidPrice } from "../pricing.ts";
+import { recentJobs } from "../scan-jobs.ts";
 import type { Route } from "../server.ts";
 import { empty, errors, icon, page } from "../views/layout.ts";
 
@@ -201,6 +202,22 @@ export function gracePrompt(items: InventoryItem[], returnTo = "/pantry"): Html 
   </section>`;
 }
 
+// Scans still running or waiting to be checked: the scan runs in the
+// background, so the fridge's own header is where the person finds it
+// again, beside the buttons that started it.
+function scanNotice(userId: number): Html {
+  const jobs = recentJobs(userId);
+  if (!jobs.length) return html``;
+  return html`<ul class="kx-scans" aria-label="Your scans">
+    ${jobs.map((j) => {
+      const what = j.kind === "receipt" ? "Receipt" : "Photo scan";
+      return j.status === "done"
+        ? html`<li class="kx-scan-ready">${icon("check", 14)} <a href="/pantry/scan/jobs/${j.id}/review">${what} ready to check</a></li>`
+        : html`<li>${icon("spark", 14)} <a href="/pantry/scan/jobs/${j.id}">${what} in progress${j.status === "running" && j.kind !== "receipt" ? ` (${j.step} of ${j.steps})` : ""}</a></li>`;
+    })}
+  </ul>`;
+}
+
 function pantryPage(ctx: Ctx, values: Record<string, string> = {}, problems: string[] = [], status = 200) {
   const user = ctx.user!;
   const items = personalInventory(user.id);
@@ -230,6 +247,7 @@ function pantryPage(ctx: Ctx, values: Record<string, string> = {}, problems: str
         </dl>
         <p class="kx-actions"><a class="button kx-add-btn" href="#add" data-kx-add>${icon("plus", 16)} Add an item</a>
           <a class="button button-soft kx-scan-btn" href="/pantry/scan">${icon("spark", 16)} <span class="kx-scan-label">Scan a photo</span></a></p>
+        ${scanNotice(user.id)}
       </header>
 
       <div class="kx-stage" data-kx-stage>

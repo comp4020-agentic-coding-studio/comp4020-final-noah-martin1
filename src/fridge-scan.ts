@@ -5,6 +5,7 @@
 // decided here or by the person, never by the model.
 
 import { all, normaliseIngredient, one, run } from "./db.ts";
+import { tilesFor as sharedTiles } from "../public/scan-tiles.mjs";
 
 export interface Detected {
   name: string;
@@ -292,17 +293,8 @@ export interface Tile {
   h: number;
 }
 
-export function tilesFor(width: number, height: number, bands = 3, overlap = 0.12): Tile[] {
-  if (bands <= 1) return [{ x: 0, y: 0, w: width, h: height }];
-  const wide = width >= height;
-  const long = wide ? width : height;
-  const size = Math.round(long / bands + long * overlap);
-  const step = (long - size) / (bands - 1);
-  return Array.from({ length: bands }, (_, i) => {
-    const at = Math.round(i * step);
-    return wide ? { x: at, y: 0, w: size, h: height } : { x: 0, y: at, w: width, h: size };
-  });
-}
+// shared with the in-browser scan, which imports the same file
+export const tilesFor: (width: number, height: number, bands?: number, overlap?: number) => Tile[] = sharedTiles;
 
 // Crops with macOS's built-in `sips`, which is there wherever this scan is
 // meant to run (next to a local model on a Mac). Null means "no cropper":
@@ -335,13 +327,31 @@ export async function cropTiles(image: Buffer, width: number, height: number, ba
 
 // Whole photo plus bands: the whole view catches big items a band splits,
 // the bands catch the small ones the whole view skips. Replies are merged
-// the same way one reply's duplicates are.
-export async function scanPhoto(cfg: ScanConfig, image: Buffer, size: { width: number; height: number }, bands = Number(process.env.VISION_TILES ?? 3)): Promise<{ items: Detected[]; ms: number; calls: number }> {
+// the same way one reply's duplicates are. `onStep` hears each finished
+// pass, for a progress bar.
+export async function scanPhoto(
+  cfg: ScanConfig,
+  image: Buffer,
+  size: { width: number; height: number },
+  bands = Number(process.env.VISION_TILES ?? 3),
+  onStep: (done: number, total: number) => void = () => {},
+  prompt = SCAN_PROMPT,
+): Promise<{ items: Detected[]; ms: number; calls: number }> {
   const started = Date.now();
   const tiles = (await cropTiles(image, size.width, size.height, bands)) ?? [];
+  const views = [image, ...tiles];
+  onStep(0, views.length);
   const texts: string[] = [];
-  for (const img of [image, ...tiles]) texts.push((await callVision(cfg, img)).text);
+  for (const img of views) {
+    texts.push((await callVision(cfg, img, prompt)).text);
+    onStep(texts.length, views.length);
+  }
   return { items: mergeScans(texts.map(parseScan)), ms: Date.now() - started, calls: texts.length };
+}
+
+// How many passes a photo of this size will take, before any are run.
+export function plannedSteps(bands = Number(process.env.VISION_TILES ?? 3)): number {
+  return bands > 1 && process.platform === "darwin" ? bands + 1 : 1;
 }
 
 export function mergeScans(lists: Detected[][]): Detected[] {

@@ -18,6 +18,74 @@ Times are on an Apple M4 (24 GB) through Ollama. `tiles3` scans the whole photo 
 
 Qwen3-VL-2B was also run inside Chrome on WebGPU (transformers.js 4.3.2, the 4-bit `q4f16` build) to check it can work on a visitor's own device: see `results/browser-qwen3-vl-2b.json`. It loaded and scanned. The first visit downloads 1.37 GB and took about 4 minutes; a return visit loads from the browser cache in about 2.5 s. One whole-photo pass took 14–33 s on the M4's GPU, against about 5 s in Ollama, so a tiled scan would be about a minute or two on this machine and slower on most phones. Its answers on three photos were in the same range as the 2B run through Ollama.
 
+## Receipts
+
+Four real receipts in `../receipt-scan/` (one Australian Woolworths receipt with weighed produce and a promotional discount, a 1994 Tesco receipt, an Italian one with a weighed line and decimal commas, a Polish one with a discount line). **Items** is the share of printed items whose food name the model got right; **prices** is, of those, the share read to the cent, after any discount that belongs to them. The app checks the prices against the printed total: it catches a misread price, not a misread name.
+
+| Model | Items | Prices |
+|---|---|---|
+| qwen3-vl:8b-instruct | 74% | 100% |
+
+### r1-woolworths-au.jpg
+
+![r1-woolworths-au.jpg](../receipt-scan/r1-woolworths-au.jpg)
+
+Source: https://commons.wikimedia.org/wiki/File:Receipt-woolworth.jpg (CC BY-SA 4.0)
+
+**What's printed (price paid):** egg & lettuce sandwich $6.00; pink lady apple $0.85; low fat milk 1L $2.20; cavendish banana $1.43; pikelet bites 16pk 140g $3.99; pikelets 8pk 200g (less 1.98 pancake offer) $2.01. Total $16.48.
+
+**qwen3-vl:8b-instruct** — items 67%, prices 100%, weights 2/2, total read: yes, check: flagged as not adding up
+
+- Read: sandwich $6.00, apple $0.85, milk $2.20, banana $1.43, pancake mix $3.99, pancake mix $3.99
+- Missed: pikelet bites 16pk 140g; pikelets 8pk 200g (less 1.98 pancake offer)
+- Wrong price: —
+- Wrong name: pancake mix, pancake mix
+
+### r2-tesco-uk-1994.jpg
+
+![r2-tesco-uk-1994.jpg](../receipt-scan/r2-tesco-uk-1994.jpg)
+
+Source: https://commons.wikimedia.org/wiki/File:Tesco_grocery_receipt_Finchley_1994.jpg (Public domain)
+
+**What's printed (price paid):** 6 jam doughnuts (reduced) $0.55; 6 jam doughnuts (reduced) $0.55; mild white cheddar $1.45; rich tea biscuits $0.39; choc chip cookies $0.44; 4 teacakes (reduced) $0.50; 18 brown rolls (reduced) $0.85; tuna steaks $0.55; long grain rice $0.64; net of oranges $0.79. Total $6.71.
+
+**qwen3-vl:8b-instruct** — items 80%, prices 100%, weights 0/0, total read: yes, check: flagged as not adding up
+
+- Read: jam doughnuts $0.55, mild white chocolate $1.45, tea $0.39, cookie $0.44, teacakes $0.50, brown rolls $0.85, tuna steaks $0.55, rice $0.64, orange $0.79
+- Missed: 6 jam doughnuts (reduced); mild white cheddar
+- Wrong price: —
+- Wrong name: mild white chocolate
+
+### r3-italian.jpg
+
+![r3-italian.jpg](../receipt-scan/r3-italian.jpg)
+
+Source: https://commons.wikimedia.org/wiki/File:Italian_supermarket_receipt_showing_value-added_tax_(IVA)_categories.jpg (CC BY-SA 4.0)
+
+**What's printed (price paid):** 6 x mineral water $1.32; oat porridge drink $1.65; oat porridge drink $1.65; Lindt milk chocolate bar $2.85; Crik Crok crisps $2.85; granny smith apples 0.5484 kg $1.53. Total $11.85.
+
+**qwen3-vl:8b-instruct** — items 83%, prices 100%, weights 1/1, total read: yes, check: adds up (wrong: a name was misread but the prices were right)
+
+- Read: water $1.32, milk $1.65, milk $1.65, chocolate bar $2.85, chocolate bar $2.85, apple $1.53
+- Missed: Crik Crok crisps
+- Wrong price: —
+- Wrong name: chocolate bar
+
+### r4-polish.jpg
+
+![r4-polish.jpg](../receipt-scan/r4-polish.jpg)
+
+Source: https://commons.wikimedia.org/wiki/File:Polish_supermarket_receipt.jpg (CC BY-SA 4.0)
+
+**What's printed (price paid):** wheat-rye bread 550g $1.99; Swiss cheese 150g $3.29; salmon loin 100g (less 2.00 discount) $2.99. Total $8.27.
+
+**qwen3-vl:8b-instruct** — items 67%, prices 100%, weights 0/0, total read: yes, check: flagged as not adding up
+
+- Read: bread $1.99, cheese $3.29, meat $4.99
+- Missed: salmon loin 100g (less 2.00 discount)
+- Wrong price: —
+- Wrong name: meat
+
 ## Photo by photo
 
 ### 01-crisper-drawers.jpg

@@ -1,0 +1,227 @@
+{
+ "r1-woolworths-au.jpg": {
+  "total": 16.48,
+  "lines": [
+   {
+    "item": "egg & lettuce sandwich",
+    "keys": [
+     "sandwich"
+    ],
+    "price": 6.0
+   },
+   {
+    "item": "pink lady apple",
+    "keys": [
+     "apple"
+    ],
+    "price": 0.85,
+    "grams": 217
+   },
+   {
+    "item": "low fat milk 1L",
+    "keys": [
+     "milk"
+    ],
+    "price": 2.2,
+    "ml": 1000
+   },
+   {
+    "item": "cavendish banana",
+    "keys": [
+     "banana"
+    ],
+    "price": 1.43,
+    "grams": 572
+   },
+   {
+    "item": "pikelet bites 16pk 140g",
+    "keys": [
+     "pikelet",
+     "pancakes"
+    ],
+    "price": 3.99
+   },
+   {
+    "item": "pikelets 8pk 200g (less 1.98 pancake offer)",
+    "keys": [
+     "pikelet",
+     "pancakes"
+    ],
+    "price": 2.01
+   }
+  ]
+ },
+ "r2-tesco-uk-1994.jpg": {
+  "total": 6.71,
+  "lines": [
+   {
+    "item": "6 jam doughnuts (reduced)",
+    "keys": [
+     "doughnut",
+     "donut"
+    ],
+    "price": 0.55
+   },
+   {
+    "item": "6 jam doughnuts (reduced)",
+    "keys": [
+     "doughnut",
+     "donut"
+    ],
+    "price": 0.55
+   },
+   {
+    "item": "mild white cheddar",
+    "keys": [
+     "cheddar",
+     "cheese"
+    ],
+    "price": 1.45
+   },
+   {
+    "item": "rich tea biscuits",
+    "keys": [
+     "rich tea",
+     "biscuit",
+     "tea"
+    ],
+    "price": 0.39
+   },
+   {
+    "item": "choc chip cookies",
+    "keys": [
+     "cookie",
+     "biscuit"
+    ],
+    "price": 0.44
+   },
+   {
+    "item": "4 teacakes (reduced)",
+    "keys": [
+     "teacake",
+     "tea cake",
+     "bun",
+     "cake"
+    ],
+    "price": 0.5
+   },
+   {
+    "item": "18 brown rolls (reduced)",
+    "keys": [
+     "roll",
+     "bread"
+    ],
+    "price": 0.85
+   },
+   {
+    "item": "tuna steaks",
+    "keys": [
+     "tuna"
+    ],
+    "price": 0.55
+   },
+   {
+    "item": "long grain rice",
+    "keys": [
+     "rice"
+    ],
+    "price": 0.64
+   },
+   {
+    "item": "net of oranges",
+    "keys": [
+     "orange"
+    ],
+    "price": 0.79
+   }
+  ]
+ },
+ "r3-italian.jpg": {
+  "total": 11.85,
+  "lines": [
+   {
+    "item": "6 x mineral water",
+    "keys": [
+     "water",
+     "acqua"
+    ],
+    "price": 1.32
+   },
+   {
+    "item": "oat porridge drink",
+    "keys": [
+     "porridge",
+     "oat",
+     "milk"
+    ],
+    "price": 1.65
+   },
+   {
+    "item": "oat porridge drink",
+    "keys": [
+     "porridge",
+     "oat",
+     "milk"
+    ],
+    "price": 1.65
+   },
+   {
+    "item": "Lindt milk chocolate bar",
+    "keys": [
+     "chocolate",
+     "lindt"
+    ],
+    "price": 2.85
+   },
+   {
+    "item": "Crik Crok crisps",
+    "keys": [
+     "crisp",
+     "chip",
+     "crik"
+    ],
+    "price": 2.85
+   },
+   {
+    "item": "granny smith apples 0.5484 kg",
+    "keys": [
+     "apple",
+     "mele"
+    ],
+    "price": 1.53,
+    "grams": 548
+   }
+  ]
+ },
+ "r4-polish.jpg": {
+  "total": 8.27,
+  "lines": [
+   {
+    "item": "wheat-rye bread 550g",
+    "keys": [
+     "bread",
+     "chleb"
+    ],
+    "price": 1.99
+   },
+   {
+    "item": "Swiss cheese 150g",
+    "keys": [
+     "cheese",
+     "ser"
+    ],
+    "price": 3.29
+   },
+   {
+    "item": "salmon loin 100g (less 2.00 discount)",
+    "keys": [
+     "salmon",
+     "łosoś",
+     "losos",
+     "fish"
+    ],
+    "price": 2.99
+   }
+  ]
+ }
+}

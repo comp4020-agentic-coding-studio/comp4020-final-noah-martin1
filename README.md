@@ -112,6 +112,26 @@ reply appears underneath, labelled, and is thrown away if it names a food the
 facts didn't, repeats itself, or just echoes the answer. Nothing you type
 leaves your device for it, and every page works without it.
 
+Adding to the pantry can start from a scan (Fridge → Scan a photo). Every
+scan ends at the same review form, where each suggestion is an editable,
+untickable row and nothing is saved until you press Add:
+
+- **Barcode.** The camera (or a typed number, checked by its GS1 check digit)
+  is looked up in [Open Food Facts](https://world.openfoodfacts.org), which
+  gives the product and its exact pack size. Not every product is in it.
+- **Photo on this device.** Qwen3-VL 2B runs in your browser on WebGPU (1.4 GB
+  the first time). Your photo stays on your device.
+- **Photo or receipt on the server.** Only on a self-hosted install with a
+  local vision model (Ollama, `VISION_URL`); the deployed 256 MB machine can't
+  run one, so these tabs don't appear there. Scans run in the background with
+  a progress bar. For a receipt the model reads the lines; pack sizes and
+  weights come from the printed text, and the app checks the prices against
+  the receipt's total, starting every line unticked when they don't add up.
+
+The models suggest names; matching a name to an ingredient, sizes, and the
+total check are plain code. Measured accuracy, photo by photo and receipt by
+receipt, is in `testing/fridge-scan/RESULTS.md`.
+
 ## Not built yet (on purpose)
 
 The globe mixes real live cooks with a layer of demo cooks so it's never

@@ -13562,3 +13562,154 @@ html:not(.no-js) .no-js-only { display: none; }
     grid-column: 1 / -1;
   }
 }
+
+/* ---------- scan: progress, checks, barcode basket, fridge notice ---------- */
+
+.scan-progress progress {
+  appearance: none;
+  width: 100%;
+  height: 10px;
+  border: 0;
+  border-radius: var(--pill);
+  background: var(--surface-3);
+  overflow: hidden;
+}
+
+.scan-progress progress::-webkit-progress-bar {
+  background: var(--surface-3);
+  border-radius: var(--pill);
+}
+
+.scan-progress progress::-webkit-progress-value {
+  background: var(--accent);
+  border-radius: var(--pill);
+  transition: width 500ms var(--ease);
+}
+
+.scan-progress progress::-moz-progress-bar {
+  background: var(--accent);
+  border-radius: var(--pill);
+}
+
+/* no value yet (the model is starting): a calm stripe, not a spinner */
+.scan-progress progress:indeterminate {
+  background: linear-gradient(90deg, var(--surface-3) 0 30%, var(--accent-soft) 50%, var(--surface-3) 70% 100%);
+  background-size: 200% 100%;
+  animation: scan-wait 1.6s linear infinite;
+}
+
+.scan-progress progress:indeterminate::-webkit-progress-bar {
+  background: transparent;
+}
+
+@keyframes scan-wait {
+  from { background-position: 100% 0; }
+  to { background-position: -100% 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scan-progress progress:indeterminate { animation: none; }
+  .scan-progress progress::-webkit-progress-value { transition: none; }
+}
+
+.scan-progress-label {
+  margin: 0;
+  font-weight: 550;
+}
+
+.scan-check {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  margin: 0 0 16px;
+  padding: 12px 16px;
+  border-radius: var(--radius-sm);
+  background: var(--surface-2);
+}
+
+.scan-check-ok {
+  color: var(--good);
+  background: var(--good-soft);
+}
+
+.scan-check-bad {
+  color: var(--bad);
+  background: var(--bad-soft);
+}
+
+.scan-camera {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* a scan panel shown by script stays hidden until it's needed, whatever
+   display its own rule sets */
+[data-barcode] [hidden],
+[data-device-scan] [hidden] {
+  display: none !important;
+}
+
+.scan-camera video {
+  width: 100%;
+  max-width: 520px;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--radius);
+  background: var(--surface-3);
+}
+
+.scan-basket-list {
+  margin: 0 0 14px;
+  padding-left: 18px;
+}
+
+.scan-basket-list li + li {
+  margin-top: 4px;
+}
+
+/* scans in progress or ready, in the fridge header beside the buttons */
+.kx-scans {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 12px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.kx-scans li {
+  display: inline-flex;
+  align-self: flex-start;
+  gap: 6px;
+  align-items: center;
+  padding: 6px 12px;
+  border-radius: var(--pill);
+  background: var(--glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: var(--shadow-sm);
+  font-size: 13px;
+  font-weight: 550;
+}
+
+.kx-scans a {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.kx-scans a:hover {
+  text-decoration: underline;
+}
+
+.kx-scans .kx-scan-ready {
+  color: var(--good);
+  background: var(--good-soft);
+}
+
+/* four ways to scan fit on one line at phone width */
+@media (max-width: 480px) {
+  .subnav-scan a {
+    padding: 8px 12px;
+  }
+}

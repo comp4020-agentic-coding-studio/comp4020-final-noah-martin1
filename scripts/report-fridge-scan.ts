@@ -44,6 +44,36 @@ for (const r of runs) lines.push(`| ${r.model} | ${pct(r.recall)} | ${pct(r.prec
 lines.push("", "Times are on an Apple M4 (24 GB) through Ollama. `tiles3` scans the whole photo plus three overlapping bands (four model calls); `whole` is one call.", "");
 lines.push("## In the browser", "");
 lines.push("Qwen3-VL-2B was also run inside Chrome on WebGPU (transformers.js 4.3.2, the 4-bit `q4f16` build) to check it can work on a visitor's own device: see `results/browser-qwen3-vl-2b.json`. It loaded and scanned. The first visit downloads 1.37 GB and took about 4 minutes; a return visit loads from the browser cache in about 2.5 s. One whole-photo pass took 14–33 s on the M4's GPU, against about 5 s in Ollama, so a tiled scan would be about a minute or two on this machine and slower on most phones. Its answers on three photos were in the same range as the 2B run through Ollama.", "");
+// receipts, from scripts/eval-receipt-scan.ts
+const rdir = "testing/receipt-scan";
+const rtruth = JSON.parse(readFileSync(join(rdir, "truth.json"), "utf8")) as Record<string, { total: number; lines: { item: string; price: number }[] }>;
+const rmanifest = JSON.parse(readFileSync(join(rdir, "manifest.json"), "utf8")) as { file: string; source_page: string; license: string }[];
+const rruns = readdirSync(join(rdir, "results")).filter((f) => f.endsWith(".json")).map((f) => JSON.parse(readFileSync(join(rdir, "results", f), "utf8")) as {
+  model: string; items: number; prices: number;
+  rows: { photo: string; ms: number; items: number; prices: number; weighed: string; totalRead: boolean; check: { matches: boolean } | null; checkRight: boolean | null; missed: string[]; wrongPrice: string[]; extra: string[]; lines: { name: string; price_cents: number | null; text: string }[] }[];
+});
+lines.push("## Receipts", "");
+lines.push("Four real receipts in `../receipt-scan/` (one Australian Woolworths receipt with weighed produce and a promotional discount, a 1994 Tesco receipt, an Italian one with a weighed line and decimal commas, a Polish one with a discount line). **Items** is the share of printed items whose food name the model got right; **prices** is, of those, the share read to the cent, after any discount that belongs to them. The app checks the prices against the printed total: it catches a misread price, not a misread name.", "");
+lines.push("| Model | Items | Prices |", "|---|---|---|");
+for (const r of rruns) lines.push(`| ${r.model} | ${pct(r.items)} | ${pct(r.prices)} |`);
+lines.push("");
+for (const photo of Object.keys(rtruth)) {
+  const t = rtruth[photo];
+  const m = rmanifest.find((x) => x.file === photo);
+  lines.push(`### ${photo}`, "", `![${photo}](../receipt-scan/${photo})`, "");
+  if (m) lines.push(`Source: ${m.source_page} (${m.license})`, "");
+  lines.push(`**What's printed (price paid):** ${t.lines.map((l) => `${l.item} $${l.price.toFixed(2)}`).join("; ")}. Total $${t.total.toFixed(2)}.`, "");
+  for (const r of rruns) {
+    const row = r.rows.find((x) => x.photo === photo);
+    if (!row) continue;
+    lines.push(`**${r.model}** — items ${pct(row.items)}, prices ${pct(row.prices)}, weights ${row.weighed}, total read: ${row.totalRead ? "yes" : "no"}, check: ${row.check ? (row.check.matches ? "adds up" : "flagged as not adding up") : "none"}${row.checkRight === false ? " (wrong: a name was misread but the prices were right)" : ""}`, "");
+    lines.push(`- Read: ${row.lines.map((l) => `${l.name} $${((l.price_cents ?? 0) / 100).toFixed(2)}`).join(", ")}`);
+    lines.push(`- Missed: ${row.missed.join("; ") || "—"}`);
+    lines.push(`- Wrong price: ${row.wrongPrice.join("; ") || "—"}`);
+    lines.push(`- Wrong name: ${row.extra.join(", ") || "—"}`, "");
+  }
+}
+
 lines.push("## Photo by photo", "");
 for (const photo of Object.keys(truth)) {
   const t = truth[photo];

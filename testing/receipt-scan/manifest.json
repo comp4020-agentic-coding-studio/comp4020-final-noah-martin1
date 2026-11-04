@@ -1,0 +1,22 @@
+[
+ {
+  "file": "r1-woolworths-au.jpg",
+  "source_page": "https://commons.wikimedia.org/wiki/File:Receipt-woolworth.jpg",
+  "license": "CC BY-SA 4.0"
+ },
+ {
+  "file": "r2-tesco-uk-1994.jpg",
+  "source_page": "https://commons.wikimedia.org/wiki/File:Tesco_grocery_receipt_Finchley_1994.jpg",
+  "license": "Public domain"
+ },
+ {
+  "file": "r3-italian.jpg",
+  "source_page": "https://commons.wikimedia.org/wiki/File:Italian_supermarket_receipt_showing_value-added_tax_(IVA)_categories.jpg",
+  "license": "CC BY-SA 4.0"
+ },
+ {
+  "file": "r4-polish.jpg",
+  "source_page": "https://commons.wikimedia.org/wiki/File:Polish_supermarket_receipt.jpg",
+  "license": "CC BY-SA 4.0"
+ }
+]
