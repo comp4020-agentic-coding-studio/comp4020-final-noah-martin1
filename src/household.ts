@@ -1108,6 +1108,28 @@ export function overview(viewerId: number): Overview {
 // St" with a stocked pantry (some of it about to go off), this week's house
 // meals and a claim or two. Idempotent: does nothing once alice is in a
 // household, or if the demo users don't exist.
+// Clears the demo household so seedHouseholdDemo can build a current week:
+// every household a demo account is a member of (matched by membership, not
+// by name, so a real household also called "Fitzroy St" is safe), and its shared pantry and
+// calendar (those are keyed by owner, not by a foreign key, so they don't
+// cascade). Members, claims and the house log cascade from the household.
+// Real people who joined a demo household by its invite code lose that
+// membership; the household was the demo's, not theirs.
+export function resetHouseholdDemo(): void {
+  const houses = all<{ id: number }>(
+    `SELECT DISTINCT hm.household_id AS id FROM household_members hm JOIN users u ON u.id = hm.user_id
+     WHERE u.username IN ('alice', 'sam', 'bo', 'jo')`,
+  ).map((r) => r.id);
+  if (!houses.length) return;
+  transaction(() => {
+    for (const house of houses) {
+      run("DELETE FROM inventory_items WHERE owner_type = 'household' AND owner_id = ?", house);
+      run("DELETE FROM calendar_entries WHERE owner_type = 'household' AND owner_id = ?", house);
+      run("DELETE FROM households WHERE id = ?", house);
+    }
+  });
+}
+
 export function seedHouseholdDemo(): boolean {
   const id = (u: string) => one<{ id: number }>("SELECT id FROM users WHERE username = ?", u)?.id;
   const alice = id("alice");
@@ -1161,7 +1183,7 @@ export function seedHouseholdDemo(): boolean {
 
     // this week's house meals: catalogue recipes everyone can open, plus
     // Sam's public shakshuka
-    const cat = catalogueByTitle(["Spaghetti Bolognese", "Thai Green Curry", "Spanish Tortilla", "Pad Thai"]);
+    const cat = catalogueByTitle(["Spaghetti Bolognese", "Thai Green Curry", "Chicken Fried Rice", "Pad Thai"]);
     const shakshuka = one<{ id: number }>("SELECT id FROM recipes WHERE author_id = ? AND title = 'Shakshuka' AND visibility = 'public'", sam)?.id;
     const plan = (offset: number, meal: Meal, recipe: number | undefined, who: number, status = "planned") => {
       if (!recipe) return;
@@ -1177,7 +1199,7 @@ export function seedHouseholdDemo(): boolean {
     plan(0, "dinner", shakshuka, sam);
     plan(1, "dinner", cat.get("Spaghetti Bolognese")?.id, alice);
     plan(3, "dinner", cat.get("Thai Green Curry")?.id, bo);
-    plan(5, "lunch", cat.get("Spanish Tortilla")?.id, alice);
+    plan(5, "lunch", cat.get("Chicken Fried Rice")?.id, alice);
 
     // a claim on each list: Bo is using the spinach tonight, Sam is buying the mince
     const spinach = one<{ id: number }>(
