@@ -19,6 +19,7 @@ export const SCAN_PROMPT = `You are cataloguing the food in a home fridge or pan
 List every distinct food or drink item you can actually see. Rules:
 - One entry per kind of item. Five apples is one entry with count 5.
 - Name the food itself in plain grocery words, e.g. "milk", "cheddar cheese", "tomato ketchup", "carrot", "chickpeas". Not brand names, not "bottle", "jar" or "container".
+- If the same food appears prepared two ways, say which: "fried chicken" and "raw chicken", not "chicken" twice.
 - If a container's contents can't be identified, use a short guess like "leftovers" with confidence "low". Do not invent items you cannot see.
 - Ignore non-food things (thermometers, bags, baskets, cleaning products).
 - count is how many you can see, or null if you can't tell.
@@ -277,6 +278,90 @@ export function scanConfig(): ScanConfig | null {
 
 export class ScanUnavailable extends Error {}
 
+/* ---------------- tiling a busy photo ---------------- */
+
+// A small model loses track on a packed fridge: it lists the first shelf,
+// then repeats one item until it runs out of tokens. Three overlapping bands
+// along the photo's long side keep each request to a manageable handful of
+// items (measured: 4 → 10 of 14 required items on a full double-door
+// fridge). Overlap means an item cut by a band edge is whole in a neighbour.
+export interface Tile {
+  x: number;
+  y: number;
+  w: number;
+  h: number;
+}
+
+export function tilesFor(width: number, height: number, bands = 3, overlap = 0.12): Tile[] {
+  if (bands <= 1) return [{ x: 0, y: 0, w: width, h: height }];
+  const wide = width >= height;
+  const long = wide ? width : height;
+  const size = Math.round(long / bands + long * overlap);
+  const step = (long - size) / (bands - 1);
+  return Array.from({ length: bands }, (_, i) => {
+    const at = Math.round(i * step);
+    return wide ? { x: at, y: 0, w: size, h: height } : { x: 0, y: at, w: width, h: size };
+  });
+}
+
+// Crops with macOS's built-in `sips`, which is there wherever this scan is
+// meant to run (next to a local model on a Mac). Null means "no cropper":
+// the caller scans the whole photo instead.
+export async function cropTiles(image: Buffer, width: number, height: number, bands: number): Promise<Buffer[] | null> {
+  if (bands <= 1 || process.platform !== "darwin") return null;
+  const { mkdtemp, writeFile, readFile, rm } = await import("node:fs/promises");
+  const { tmpdir } = await import("node:os");
+  const { join } = await import("node:path");
+  const { execFile } = await import("node:child_process");
+  const { promisify } = await import("node:util");
+  const dir = await mkdtemp(join(tmpdir(), "larder-scan-"));
+  try {
+    const src = join(dir, "in.jpg");
+    await writeFile(src, image);
+    const out: Buffer[] = [];
+    for (const [i, t] of tilesFor(width, height, bands).entries()) {
+      const dst = join(dir, `t${i}.jpg`);
+      // sips: -c <height> <width>, --cropOffset <y> <x>
+      await promisify(execFile)("sips", ["-s", "format", "jpeg", "-c", String(t.h), String(t.w), "--cropOffset", String(t.y), String(t.x), src, "--out", dst]);
+      out.push(await readFile(dst));
+    }
+    return out;
+  } catch {
+    return null;
+  } finally {
+    await rm(dir, { recursive: true, force: true });
+  }
+}
+
+// Whole photo plus bands: the whole view catches big items a band splits,
+// the bands catch the small ones the whole view skips. Replies are merged
+// the same way one reply's duplicates are.
+export async function scanPhoto(cfg: ScanConfig, image: Buffer, size: { width: number; height: number }, bands = Number(process.env.VISION_TILES ?? 3)): Promise<{ items: Detected[]; ms: number; calls: number }> {
+  const started = Date.now();
+  const tiles = (await cropTiles(image, size.width, size.height, bands)) ?? [];
+  const texts: string[] = [];
+  for (const img of [image, ...tiles]) texts.push((await callVision(cfg, img)).text);
+  return { items: mergeScans(texts.map(parseScan)), ms: Date.now() - started, calls: texts.length };
+}
+
+export function mergeScans(lists: Detected[][]): Detected[] {
+  const merged = new Map<string, Detected>();
+  for (const list of lists) {
+    for (const d of list) {
+      const key = normaliseIngredient(d.name);
+      const prior = merged.get(key);
+      if (!prior) merged.set(key, { ...d });
+      else {
+        // the same items seen again in an overlapping view: keep the larger
+        // count, not the sum, and the surer confidence
+        if (d.count !== null) prior.count = Math.max(prior.count ?? 0, d.count);
+        if (rank(d.confidence) > rank(prior.confidence)) prior.confidence = d.confidence;
+      }
+    }
+  }
+  return [...merged.values()];
+}
+
 export async function callVision(cfg: ScanConfig, image: Buffer, prompt = SCAN_PROMPT): Promise<{ text: string; ms: number }> {
   const started = Date.now();
   let res: Response;
@@ -291,7 +376,10 @@ export async function callVision(cfg: ScanConfig, image: Buffer, prompt = SCAN_P
         format: "json",
         think: false,
         keep_alive: "10m",
-        options: { temperature: 0, num_predict: 1500, num_ctx: 8192 },
+        // a mild repeat penalty stops the "hot sauce, hot sauce, …" loop a
+        // small model falls into on a packed shelf; stronger ones also
+        // suppress JSON's own repeated keys and cut the list short
+        options: { temperature: 0, num_predict: 1000, num_ctx: 8192, repeat_penalty: 1.1, repeat_last_n: 96 },
         messages: [{ role: "user", content: prompt, images: [image.toString("base64")] }],
       }),
     });

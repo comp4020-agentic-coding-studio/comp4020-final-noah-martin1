@@ -14,7 +14,7 @@ import { type Ctx, htmlReply, redirect, setFlash } from "../http.ts";
 import { logActivity } from "../activity.ts";
 import { checkImage, readMultipart } from "../images.ts";
 import { shelfware } from "../kitchen.ts";
-import { callVision, catalogueHas, learnedNames, parseScan, rememberCorrection, resolveName, scanConfig, ScanUnavailable, type Resolved } from "../fridge-scan.ts";
+import { catalogueHas, learnedNames, rememberCorrection, resolveName, scanConfig, scanPhoto, ScanUnavailable, type Resolved } from "../fridge-scan.ts";
 import type { Route } from "../server.ts";
 import { errors, icon, page, pageHeader } from "../views/layout.ts";
 import { addPersonalItem, parseItem } from "./pantry.ts";
@@ -22,11 +22,16 @@ import { addPersonalItem, parseItem } from "./pantry.ts";
 export interface Suggestion {
   detected: string;
   name: string;
+  // "manual": a row the person typed or already checked, so no model badge
   match: Resolved["match"] | "manual";
   confidence: "high" | "medium" | "low";
   quantity: string;
   unit: string;
   expiry_days: number | null;
+  // what the person typed, carried back when a save is refused
+  expiry_date?: string;
+  price?: string;
+  keep?: boolean;
 }
 
 // Rough "keeps for" defaults by where the item lives, offered as a starting
@@ -65,9 +70,10 @@ const MATCH_NOTE: Record<Suggestion["match"], string> = {
 
 function row(s: Suggestion, i: number): Html {
   const id = `s${i}`;
-  const expiry = s.expiry_days !== null ? addDays(today(), s.expiry_days) : "";
+  const expiry = s.expiry_date ?? (s.expiry_days !== null ? addDays(today(), s.expiry_days) : "");
   // low-confidence guesses start unticked: the person opts in, not out
-  const keep = s.confidence !== "low";
+  const keep = s.keep ?? s.confidence !== "low";
+  const manual = s.match === "manual";
   return html`<li class="scan-row scan-${s.confidence}">
     <input type="hidden" name="detected_${i}" value="${s.detected}" />
     <label class="scan-keep"><input type="checkbox" name="keep" value="${i}" ${keep ? html`checked` : ""} aria-label="Add ${s.name}" /></label>
@@ -81,24 +87,37 @@ function row(s: Suggestion, i: number): Html {
       <label class="field"><span>Expires</span>
         <input name="expiry_date_${i}" type="date" value="${expiry}" /></label>
       <label class="field"><span>Price paid</span>
-        <span class="input-prefix"><span>$</span><input name="price_${i}" inputmode="decimal" placeholder="0.00" /></span></label>
+        <span class="input-prefix"><span>$</span><input name="price_${i}" inputmode="decimal" placeholder="0.00" value="${s.price ?? ""}" /></span></label>
     </div>
-    <p class="scan-note small muted">
-      <span class="pill pill-${s.confidence === "high" ? "fresh" : s.confidence === "medium" ? "soon" : "none"}">${s.confidence === "high" ? "Sure" : s.confidence === "medium" ? "Likely" : "Guess"}</span>
-      ${s.detected !== s.name ? html`Seen as “${s.detected}”` : ""}${MATCH_NOTE[s.match] ? html` · ${MATCH_NOTE[s.match]}` : ""}
-    </p>
+    ${manual
+      ? s.detected && s.detected !== s.name
+        ? html`<p class="scan-note small muted">Seen as “${s.detected}”</p>`
+        : ""
+      : html`<p class="scan-note small muted">
+          <span class="pill pill-${s.confidence === "high" ? "fresh" : s.confidence === "medium" ? "soon" : "none"}">${s.confidence === "high" ? "Sure" : s.confidence === "medium" ? "Likely" : "Guess"}</span>
+          ${s.detected !== s.name ? html`Seen as “${s.detected}”` : ""}${MATCH_NOTE[s.match] ? html` · ${MATCH_NOTE[s.match]}` : ""}
+        </p>`}
   </li>`;
 }
 
-export function reviewPage(ctx: Ctx, suggestions: Suggestion[], opts: { problems?: string[]; seconds?: number; status?: number } = {}): ReturnType<typeof htmlReply> {
+// The blank row for anything the scan missed. Ticked, since typing into it
+// is the opt-in; a row left blank is skipped on save.
+const EXTRA: Suggestion = { detected: "", name: "", match: "manual", confidence: "high", quantity: "", unit: "", expiry_days: null, keep: true };
+
+export function reviewPage(ctx: Ctx, suggestions: Suggestion[], opts: { problems?: string[]; seconds?: number; status?: number; resubmit?: boolean } = {}): ReturnType<typeof htmlReply> {
   const catalog = catalogFor(ctx.user!.id);
+  const lede = opts.resubmit
+    ? "Fix the lines below and press Add again. Nothing has been saved yet."
+    : suggestions.length
+      ? `${suggestions.length} item${suggestions.length === 1 ? "" : "s"} spotted${opts.seconds ? ` in ${opts.seconds} s` : ""}. Untick anything that's wrong, fix names, and add how much you have. Nothing is saved until you press Add.`
+      : "Nothing was recognised in that photo. Add what's there below, or try a closer photo of one shelf.";
   const body = html`
-    ${pageHeader("Check what we found", suggestions.length ? `${suggestions.length} item${suggestions.length === 1 ? "" : "s"} spotted${opts.seconds ? ` in ${opts.seconds} s` : ""}. Untick anything that's wrong, fix names, and add how much you have. Nothing is saved until you press Add.` : "Nothing was recognised in that photo.")}
+    ${pageHeader("Check what we found", lede)}
     ${errors(opts.problems ?? [])}
     <form method="post" action="/pantry/scan/save" class="panel stack scan-review">
       <ul class="scan-list">${suggestions.map(row)}</ul>
       <p class="muted small">Missed something? Add it below or with the <a href="/pantry#add">add form</a> afterwards.</p>
-      <ul class="scan-list">${row({ detected: "", name: "", match: "manual", confidence: "low", quantity: "", unit: "", expiry_days: null }, suggestions.length)}</ul>
+      <ul class="scan-list">${row(EXTRA, suggestions.length)}</ul>
       <input type="hidden" name="rows" value="${suggestions.length + 1}" />
       <datalist id="ingredient-catalog">${catalog.map((c) => html`<option value="${c}"></option>`)}</datalist>
       <div class="form-actions">
@@ -151,10 +170,10 @@ export const routes: Route[] = [
       const check = checkImage(photo?.bytes ?? Buffer.alloc(0));
       if (!check.ok) return scanPage(ctx, check.problem.replace("of the dish", "of your fridge or pantry"), 422);
       try {
-        const { text, ms } = await callVision(cfg, photo!.bytes);
+        const { items, ms, calls } = await scanPhoto(cfg, photo!.bytes, check);
         const learned = learnedNames(ctx.user!.id);
-        const resolved = parseScan(text).map((d) => resolveName(d, catalogueHas, learned));
-        logActivity({ actor: ctx.user, action: "pantry.scan", detail: { model: cfg.model, ms, found: resolved.length, new: resolved.filter((r) => r.match === "new").length } });
+        const resolved = items.map((d) => resolveName(d, catalogueHas, learned));
+        logActivity({ actor: ctx.user, action: "pantry.scan", detail: { model: cfg.model, ms, calls, found: resolved.length, new: resolved.filter((r) => r.match === "new").length } });
         return reviewPage(ctx, suggestionsFrom(resolved), { seconds: Math.round(ms / 1000) });
       } catch (err) {
         if (!(err instanceof ScanUnavailable)) throw err;
@@ -176,15 +195,18 @@ export const routes: Route[] = [
       const resubmit: Suggestion[] = [];
       for (let i = 0; i < rows; i++) {
         const detected = normaliseIngredient(form.get(`detected_${i}`) ?? "");
-        const nameRaw = (form.get(`name_${i}`) ?? "").trim();
-        // an untouched blank "add another" row isn't an error
-        if (!keep.has(i) || (!detected && !nameRaw)) continue;
-        const { input, problems: p } = parseItem(form, `_${i}`);
-        resubmit.push({ detected, name: nameRaw, match: "manual", confidence: "high", quantity: form.get(`quantity_${i}`) ?? "", unit: form.get(`unit_${i}`) ?? "", expiry_days: null });
-        if (p.length) problems.push(...p.map((m) => `${nameRaw || "Row " + (i + 1)}: ${m}`));
+        const { input, values, problems: p } = parseItem(form, `_${i}`);
+        // a blank "add another" row isn't an error, ticked or not
+        if (!detected && !values.name && !values.quantity) continue;
+        const ticked = keep.has(i);
+        // every row comes back on a refused save, unticked ones included, so
+        // nothing the person checked has to be found again
+        resubmit.push({ detected, name: values.name, match: "manual", confidence: "high", quantity: values.quantity, unit: values.unit, expiry_days: null, expiry_date: values.expiry_date, price: values.price, keep: ticked });
+        if (!ticked) continue;
+        if (p.length) problems.push(...p.map((m) => `${values.name || `Row ${i + 1}`}: ${m}`));
         else ready.push({ input, detected });
       }
-      if (problems.length) return reviewPage(ctx, resubmit, { problems, status: 422 });
+      if (problems.length) return reviewPage(ctx, resubmit, { problems, status: 422, resubmit: true });
       if (!ready.length) {
         setFlash(ctx, "Nothing was ticked, so nothing was added.");
         return redirect("/pantry");

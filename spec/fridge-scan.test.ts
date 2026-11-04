@@ -1,7 +1,7 @@
 import { JSDOM } from "jsdom";
 import { describe, expect, it } from "vitest";
 import { run } from "../src/db.ts";
-import { type Detected, learnedNames, parseScan, rememberCorrection, resolveName } from "../src/fridge-scan.ts";
+import { type Detected, learnedNames, mergeScans, parseScan, rememberCorrection, resolveName, tilesFor } from "../src/fridge-scan.ts";
 import { registered } from "./helpers.ts";
 
 const d = (name: string): Detected => ({ name, count: null, container: "", confidence: "medium" });
@@ -72,6 +72,35 @@ describe("matching a detected name to the catalogue", () => {
   it("uses what this person taught it before anything else", () => {
     const learned = new Map([["yoghurt", "kefir"]]);
     expect(resolveName(d("yoghurt"), known, learned)).toMatchObject({ name: "kefir", match: "alias" });
+  });
+});
+
+describe("tiling a busy photo", () => {
+  it("cuts a wide photo into overlapping bands that cover it edge to edge", () => {
+    const tiles = tilesFor(1280, 960, 3);
+    expect(tiles).toHaveLength(3);
+    expect(tiles[0].x).toBe(0);
+    expect(tiles.at(-1)!.x + tiles.at(-1)!.w).toBe(1280);
+    for (const t of tiles) expect(t).toMatchObject({ y: 0, h: 960 });
+    // neighbours overlap, so an item on a band edge is whole in one of them
+    for (let i = 1; i < tiles.length; i++) expect(tiles[i].x).toBeLessThan(tiles[i - 1].x + tiles[i - 1].w);
+  });
+
+  it("cuts a tall photo across, and one band means the whole photo", () => {
+    expect(tilesFor(960, 1280, 3).every((t) => t.x === 0 && t.w === 960)).toBe(true);
+    expect(tilesFor(960, 1280, 1)).toEqual([{ x: 0, y: 0, w: 960, h: 1280 }]);
+  });
+
+  it("merges overlapping views without double-counting what both saw", () => {
+    const whole = [{ name: "apple", count: 5, container: "", confidence: "medium" as const }];
+    const band = [
+      { name: "apple", count: 3, container: "", confidence: "high" as const },
+      { name: "kiwi", count: null, container: "", confidence: "low" as const },
+    ];
+    expect(mergeScans([whole, band])).toEqual([
+      { name: "apple", count: 5, container: "", confidence: "high" },
+      { name: "kiwi", count: null, container: "", confidence: "low" },
+    ]);
   });
 });
 
@@ -146,6 +175,38 @@ describe("saving a scan's review form", () => {
     expect(doc.querySelector(".form-errors")?.textContent).toContain("pear");
     expect((doc.querySelector("input[name^='name_'][value='apple']") as HTMLInputElement | null)?.value).toBe("apple");
     expect(await (await client.get("/pantry")).text()).toContain("Your pantry is empty");
+  });
+
+  it("a refused save keeps every typed field and unticked row, and claims no model confidence", async () => {
+    const { client } = await registered();
+    const res = await client.post("/pantry/scan/save", scanned([
+      { detected: "milk", name: "milk", quantity: "2", unit: "l", expiry_date: "2030-03-04", price: "3.10" },
+      { detected: "leftovers", name: "leftovers", quantity: "", unit: "", expiry_date: "", price: "" },
+      { detected: "pear", name: "pear", quantity: "-2", unit: "", expiry_date: "", price: "" },
+    ], [0, 2]));
+    expect(res.status).toBe(422);
+    const doc = new JSDOM(await res.text()).window.document;
+    const val = (n: string) => (doc.querySelector(`input[name='${n}']`) as HTMLInputElement | null)?.value;
+    expect([val("name_0"), val("expiry_date_0"), val("price_0")]).toEqual(["milk", "2030-03-04", "3.10"]);
+    // the unticked row is still there, still unticked
+    expect(val("name_1")).toBe("leftovers");
+    expect((doc.querySelector("input[name=keep][value='1']") as HTMLInputElement).checked).toBe(false);
+    expect(doc.body.textContent).not.toMatch(/\bSure\b|spotted/);
+  });
+
+  it("the blank row for a missed item is ticked, so typing into it is enough to save it", async () => {
+    const { client } = await registered();
+    // a review page with no suggestions is just the blank row; render one
+    // through a refused save of an empty form to read its markup
+    const blank = await client.post("/pantry/scan/save", scanned([{ detected: "x", name: "", quantity: "", unit: "", expiry_date: "", price: "" }], [0]));
+    const doc = new JSDOM(await blank.text()).window.document;
+    const rows = doc.querySelectorAll(".scan-row");
+    const extra = rows[rows.length - 1].querySelector("input[name=keep]") as HTMLInputElement;
+    expect(extra.checked).toBe(true);
+    const i = extra.value;
+    const res = await client.post("/pantry/scan/save", { rows: String(Number(i) + 1), keep: [i], [`detected_${i}`]: "", [`name_${i}`]: "kiwi fruit", [`quantity_${i}`]: "4", [`unit_${i}`]: "", [`expiry_date_${i}`]: "", [`price_${i}`]: "" });
+    expect(res.status).toBe(200);
+    expect(await (await client.get("/pantry")).text()).toContain("kiwi fruit");
   });
 
   it("an empty extra row or nothing ticked saves nothing and says so", async () => {

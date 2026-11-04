@@ -11,7 +11,8 @@
 
 import { mkdirSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
-import { callVision, parseScan, type Detected } from "../src/fridge-scan.ts";
+import { type Detected, scanPhoto } from "../src/fridge-scan.ts";
+import { checkImage } from "../src/images.ts";
 
 interface Truth {
   required: Record<string, string[]>;
@@ -43,17 +44,24 @@ export function score(found: Detected[], t: Truth) {
   };
 }
 
+// VISION_TILES=1 scores the whole photo alone; the default matches the app
+const bands = Number(process.env.VISION_TILES ?? 3);
+const label = `${model}${bands === 1 ? "-whole" : `-tiles${bands}`}`;
 const photos = readdirSync(dir).filter((f) => f.endsWith(".jpg") && f.startsWith(only)).sort();
-const rows: (ReturnType<typeof score> & { photo: string; ms: number; found: Detected[]; raw: string })[] = [];
+const rows: (ReturnType<typeof score> & { photo: string; ms: number; calls: number; found: Detected[] })[] = [];
 for (const photo of photos) {
   const bytes = readFileSync(join(dir, photo));
-  const { text, ms } = await callVision({ url, model, timeoutMs: 600000 }, bytes);
-  const found = parseScan(text);
+  const check = checkImage(bytes);
+  if (!check.ok) throw new Error(`${photo}: ${check.problem}`);
+  const { items: found, ms, calls } = await scanPhoto({ url, model, timeoutMs: 900000 }, bytes, check, bands);
   const s = score(found, truth[photo]);
-  rows.push({ photo, ms, found, raw: text, ...s });
+  rows.push({ photo, ms, calls, found, ...s });
   console.log(`${photo.padEnd(28)} ${(ms / 1000).toFixed(1).padStart(6)}s  recall ${(s.recall * 100).toFixed(0).padStart(3)}%  precision ${(s.precision * 100).toFixed(0).padStart(3)}%  missed: ${s.missed.join(", ")}${s.wrong.length ? `  | wrong: ${s.wrong.join(", ")}` : ""}`);
 }
 const avg = (k: "recall" | "precision" | "ms") => rows.reduce((a, r) => a + r[k], 0) / rows.length;
-console.log(`\n${model}: recall ${(avg("recall") * 100).toFixed(1)}%  precision ${(avg("precision") * 100).toFixed(1)}%  mean ${(avg("ms") / 1000).toFixed(1)}s/photo`);
-mkdirSync(join(dir, "results"), { recursive: true });
-writeFileSync(join(dir, "results", `${model.replace(/[:/]/g, "_")}${only ? `-${only}` : ""}.json`), JSON.stringify({ model, recall: avg("recall"), precision: avg("precision"), meanMs: avg("ms"), rows }, null, 1));
+console.log(`\n${label}: recall ${(avg("recall") * 100).toFixed(1)}%  precision ${(avg("precision") * 100).toFixed(1)}%  mean ${(avg("ms") / 1000).toFixed(1)}s/photo`);
+// a partial run (photo prefix given) is a probe, not a result for the report
+if (!only) {
+  mkdirSync(join(dir, "results"), { recursive: true });
+  writeFileSync(join(dir, "results", `${label.replace(/[:/]/g, "_")}.json`), JSON.stringify({ model: label, recall: avg("recall"), precision: avg("precision"), meanMs: avg("ms"), rows }, null, 1));
+}
