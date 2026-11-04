@@ -91,6 +91,55 @@ photo-to-pantry scan. Results and photos are in `fridge-scan/`.
   (make the .y4m with `ffmpeg -loop 1 -i frame.png -t 3 -pix_fmt yuv420p -f yuv4mpegpipe`).
 - Open Food Facts names are usually brands ("Nutella", "Mars"), so the pack
   size is the reliable part; the name still goes through `resolveName`.
+- On real photos (`barcode-scan/`), headless Chrome on macOS *does* expose a
+  native `BarcodeDetector`, and it missed a code on a curved bottle that ZXing
+  read. Don't trust native alone; the page falls back to ZXing.
+- Wikimedia Commons' `Category:International_Article_Number_(EAN13)` has real
+  photos of product barcodes; most don't state the digits, so read them off
+  the image and confirm with the check digit.
+
+## Receipt auto-capture (camera)
+
+- The check only has to choose *when* to shoot on a page where the person is
+  already pointing at a receipt, not classify receipts vs fridges. Trying to
+  reject fridge photos made it miss real receipts (white fridge walls look
+  like paper, labelled jars look like print).
+- Sharpness: Laplacian-based scores depend on content and didn't separate
+  blurred from sharp. The re-blur ratio (blur the crop, measure how much
+  neighbouring-pixel difference is lost; Crété et al. 2007) did: sharp
+  receipts 0.71–0.89, blurred 0–0.53. Test it with irregular content: a
+  periodic test pattern is flattened by its 9-tap blur whether sharp or not.
+- Motion: a 2 px shift at 720p already reads ~6 on the small-copy mean
+  difference, so a threshold of 6 would never fire in a hand. 10 lets tremble
+  through and still stops pans (15–35).
+- `ffmpeg` builds realistic test frames from the real receipts:
+  `rotate=angle=0.1:fillcolor=none:out_w=rotw(0.1):out_h=roth(0.1)` (named
+  options: positional `rotate=0.1:c=none` fails), `gblur`, `dblur` for shake,
+  and an `overlay` with time expressions for a slide-in/wobble/settle clip.
+- To submit a camera frame through an existing multipart form, put a `File`
+  in the input with `DataTransfer` and call `form.requestSubmit()`: the
+  browser follows the server's redirect or shows its error page normally.
+
+## Prefill (price, size, expiry)
+
+- `packOptions`/`referencePrice` match loosely on purpose (recipe costing),
+  which on fridge items gave basil → "Pesto Basil", chilli → "Lime & Chilli
+  Tuna", tomato sauce → tomatoes, cooked rice → a 5 kg bag. Every listing has
+  to contain the scanned name's words and not be another food made from it.
+  Run `prefillFor` over every name in `fridge-scan/results/*.json` and read
+  the whole list; spot checks missed most of these.
+- Calling `ingredientId(name)` to look up a price *inserts* the name. Look it
+  up with a SELECT when rendering a review.
+- A naive plural stem (`/(es|s)$/`) turns "oranges" into "orang", which
+  silently dropped the right listing and let "Choco Air Orange" win.
+
+## Spelling matches
+
+- The catalogue has real near-pairs (custard/mustard, hot/soy sauce, rice/rye
+  flour) and models write things like "orange net", two letters from "orange
+  zest". Only one word may differ, its first letter must agree, and only one
+  candidate may be that close. Check a new rule by giving every catalogue
+  name a typo and counting wrong matches (it should be 0).
 
 ## Testing
 
