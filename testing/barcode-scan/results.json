@@ -1,0 +1,422 @@
+{
+ "readers": [
+  "zxing",
+  "native"
+ ],
+ "summary": {
+  "zxing photo": {
+   "right": 8,
+   "of": 9,
+   "wrong_codes": 0,
+   "median_ms": 30,
+   "max_ms": 237
+  },
+  "zxing frame": {
+   "right": 8,
+   "of": 9,
+   "wrong_codes": 0,
+   "median_ms": 12,
+   "max_ms": 13
+  },
+  "native photo": {
+   "right": 7,
+   "of": 9,
+   "wrong_codes": 0,
+   "median_ms": 14,
+   "max_ms": 74
+  },
+  "native frame": {
+   "right": 7,
+   "of": 9,
+   "wrong_codes": 0,
+   "median_ms": 12,
+   "max_ms": 36
+  }
+ },
+ "lookup": {
+  "looked_up": 8,
+  "found": 6,
+  "median_ms": 447
+ },
+ "rows": [
+  {
+   "photo": "b01-candy-close-dim.jpg",
+   "want": "4620017455554",
+   "views": {
+    "zxing photo": {
+     "ms": 237,
+     "codes": [
+      "4620017455554"
+     ],
+     "right": true,
+     "wrong": []
+    },
+    "zxing frame": {
+     "ms": 8,
+     "codes": [
+      "4620017455554"
+     ],
+     "right": true,
+     "wrong": []
+    },
+    "native photo": {
+     "ms": 74,
+     "codes": [
+      "4620017455554"
+     ],
+     "right": true,
+     "wrong": []
+    },
+    "native frame": {
+     "ms": 31,
+     "codes": [
+      "4620017455554"
+     ],
+     "right": true,
+     "wrong": []
+    }
+   },
+   "lookup": {
+    "ms": 2218,
+    "status": 200,
+    "found": true,
+    "product": "hippo bondi"
+   }
+  },
+  {
+   "photo": "b02-coke-can-curved.jpg",
+   "want": "4890008100309",
+   "views": {
+    "zxing photo": {
+     "ms": 27,
+     "codes": [
+      "4890008100309"
+     ],
+     "right": true,
+     "wrong": []
+    },
+    "zxing frame": {
+     "ms": 13,
+     "codes": [
+      "4890008100309"
+     ],
+     "right": true,
+     "wrong": []
+    },
+    "native photo": {
+     "ms": 16,
+     "codes": [
+      "4890008100309"
+     ],
+     "right": true,
+     "wrong": []
+    },
+    "native frame": {
+     "ms": 14,
+     "codes": [
+      "4890008100309"
+     ],
+     "right": true,
+     "wrong": []
+    }
+   },
+   "lookup": {
+    "ms": 447,
+    "status": 200,
+    "found": true,
+    "product": "Coca-Cola 330 ml"
+   }
+  },
+  {
+   "photo": "b03-beer-can-vertical.jpg",
+   "want": "4047247110051",
+   "views": {
+    "zxing photo": {
+     "ms": 30,
+     "codes": [
+      "4047247110051"
+     ],
+     "right": true,
+     "wrong": []
+    },
+    "zxing frame": {
+     "ms": 12,
+     "codes": [
+      "4047247110051"
+     ],
+     "right": true,
+     "wrong": []
+    },
+    "native photo": {
+     "ms": 13,
+     "codes": [
+      "4047247110051"
+     ],
+     "right": true,
+     "wrong": []
+    },
+    "native frame": {
+     "ms": 13,
+     "codes": [
+      "4047247110051"
+     ],
+     "right": true,
+     "wrong": []
+    }
+   },
+   "lookup": {
+    "ms": 518,
+    "status": 200,
+    "found": true,
+    "product": "Winterbock (7%) 500 ml"
+   }
+  },
+  {
+   "photo": "b04-tea-box-angled.jpg",
+   "want": "4012346278001",
+   "views": {
+    "zxing photo": {
+     "ms": 28,
+     "codes": [
+      "4012346278001"
+     ],
+     "right": true,
+     "wrong": []
+    },
+    "zxing frame": {
+     "ms": 12,
+     "codes": [
+      "4012346278001"
+     ],
+     "right": true,
+     "wrong": []
+    },
+    "native photo": {
+     "ms": 53,
+     "codes": [
+      "4012346278001"
+     ],
+     "right": true,
+     "wrong": []
+    },
+    "native frame": {
+     "ms": 36,
+     "codes": [
+      "4012346278001"
+     ],
+     "right": true,
+     "wrong": []
+    }
+   },
+   "lookup": {
+    "ms": 454,
+    "status": 200,
+    "found": true,
+    "product": "Pfefferminz 60 g"
+   }
+  },
+  {
+   "photo": "b05-chocolate-glare.jpg",
+   "want": "4891118019*",
+   "views": {
+    "zxing photo": {
+     "ms": 32,
+     "codes": [],
+     "right": false,
+     "wrong": []
+    },
+    "zxing frame": {
+     "ms": 13,
+     "codes": [],
+     "right": false,
+     "wrong": []
+    },
+    "native photo": {
+     "ms": 16,
+     "codes": [],
+     "right": false,
+     "wrong": []
+    },
+    "native frame": {
+     "ms": 12,
+     "codes": [],
+     "right": false,
+     "wrong": []
+    }
+   },
+   "lookup": null
+  },
+  {
+   "photo": "b06-ham-pack-flash.jpg",
+   "want": "4893333797985",
+   "views": {
+    "zxing photo": {
+     "ms": 15,
+     "codes": [
+      "4893333797985"
+     ],
+     "right": true,
+     "wrong": []
+    },
+    "zxing frame": {
+     "ms": 10,
+     "codes": [
+      "4893333797985"
+     ],
+     "right": true,
+     "wrong": []
+    },
+    "native photo": {
+     "ms": 14,
+     "codes": [
+      "4893333797985"
+     ],
+     "right": true,
+     "wrong": []
+    },
+    "native frame": {
+     "ms": 9,
+     "codes": [
+      "4893333797985"
+     ],
+     "right": true,
+     "wrong": []
+    }
+   },
+   "lookup": {
+    "ms": 442,
+    "status": 200,
+    "found": false,
+    "product": null
+   }
+  },
+  {
+   "photo": "b07-beer-bottle-curved.jpg",
+   "want": "5012686019509",
+   "views": {
+    "zxing photo": {
+     "ms": 31,
+     "codes": [
+      "5012686019509"
+     ],
+     "right": true,
+     "wrong": []
+    },
+    "zxing frame": {
+     "ms": 13,
+     "codes": [
+      "5012686019509"
+     ],
+     "right": true,
+     "wrong": []
+    },
+    "native photo": {
+     "ms": 14,
+     "codes": [],
+     "right": false,
+     "wrong": []
+    },
+    "native frame": {
+     "ms": 11,
+     "codes": [],
+     "right": false,
+     "wrong": []
+    }
+   },
+   "lookup": {
+    "ms": 373,
+    "status": 200,
+    "found": true,
+    "product": "Spitfire 500 ml"
+   }
+  },
+  {
+   "photo": "b08-strawberry-label-small.jpg",
+   "want": "2017840000990",
+   "views": {
+    "zxing photo": {
+     "ms": 16,
+     "codes": [
+      "2017840000990"
+     ],
+     "right": true,
+     "wrong": []
+    },
+    "zxing frame": {
+     "ms": 9,
+     "codes": [
+      "2017840000990"
+     ],
+     "right": true,
+     "wrong": []
+    },
+    "native photo": {
+     "ms": 14,
+     "codes": [
+      "2017840000990"
+     ],
+     "right": true,
+     "wrong": []
+    },
+    "native frame": {
+     "ms": 10,
+     "codes": [
+      "2017840000990"
+     ],
+     "right": true,
+     "wrong": []
+    }
+   },
+   "lookup": {
+    "ms": 362,
+    "status": 200,
+    "found": false,
+    "product": null
+   }
+  },
+  {
+   "photo": "b09-jar-label-small.jpg",
+   "want": "3800065711135",
+   "views": {
+    "zxing photo": {
+     "ms": 30,
+     "codes": [
+      "3800065711135"
+     ],
+     "right": true,
+     "wrong": []
+    },
+    "zxing frame": {
+     "ms": 13,
+     "codes": [
+      "3800065711135"
+     ],
+     "right": true,
+     "wrong": []
+    },
+    "native photo": {
+     "ms": 12,
+     "codes": [
+      "3800065711135"
+     ],
+     "right": true,
+     "wrong": []
+    },
+    "native frame": {
+     "ms": 10,
+     "codes": [
+      "3800065711135"
+     ],
+     "right": true,
+     "wrong": []
+    }
+   },
+   "lookup": {
+    "ms": 406,
+    "status": 200,
+    "found": true,
+    "product": "Coffee Cocoa coated biscuits 160 g"
+   }
+  }
+ ]
+}

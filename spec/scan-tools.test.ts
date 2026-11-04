@@ -184,6 +184,18 @@ describe("scan pages and background jobs over HTTP", () => {
     }
   });
 
+  it("the receipt page's camera starts hidden, leaving the plain upload form for no-script and no-camera browsers", async () => {
+    const { client } = await registered();
+    const res = await client.get("/pantry/scan/receipt");
+    // a server without a model sends people to the other ways to scan
+    if (res.status === 503) return;
+    const doc = new JSDOM(await res.text()).window.document;
+    expect(doc.querySelector("[data-receipt-camera]")?.hasAttribute("hidden")).toBe(true);
+    expect(doc.querySelector("[data-receipt-start]")?.hasAttribute("hidden")).toBe(true);
+    expect(doc.querySelector("form[data-scan-form] input[type=file][name=photo]")).not.toBeNull();
+    expect(doc.querySelector("script[src='/assets/scan-receipt-camera.mjs']")).not.toBeNull();
+  });
+
   it("the barcode form works without the camera and refuses a bad code before any lookup", async () => {
     const { client } = await registered();
     const page = new JSDOM(await (await client.get("/pantry/scan/barcode")).text()).window.document;
@@ -269,6 +281,31 @@ describe("prefilling what a scan can't see", () => {
     expect([row.quantity, row.unit, row.price]).toEqual(["1000", "ml", "2.20"]);
     expect(row.expiry_date).toBeTruthy();
     expect(row.suggested).not.toMatch(/Woolworths|ALDI/);
+  });
+});
+
+describe("prefill never suggests a different food's price", () => {
+  // cases the 8B model produced on the test photos, which looser matching
+  // priced as raw wings, apple punnets, chilli mayonnaise and passata
+  it("leaves cooked food unpriced, and never prices a food from a product made of it", async () => {
+    const { prefillFor } = await import("../src/scan-prefill.ts");
+    for (const name of ["fried chicken", "cooked rice", "mashed potatoes", "leftovers"]) expect(prefillFor(0, name, 3).price).toBe("");
+    for (const [name, not] of [["apple juice", /punnet|apples \d/i], ["chilli", /mayonnaise|tuna/i], ["basil", /passata|pesto|tuna/i], ["tomato sauce", /^the /]] as const) {
+      expect(prefillFor(0, name, 1).note).not.toMatch(not);
+    }
+  });
+
+  it("counts more than a few as pieces of one pack, not that many packs", async () => {
+    const { prefillFor } = await import("../src/scan-prefill.ts");
+    const one = prefillFor(0, "chickpeas", 1);
+    expect(prefillFor(0, "chickpeas", 5).price).toBe(one.price);
+    expect(Number(prefillFor(0, "chickpeas", 2).price)).toBeCloseTo(Number(one.price) * 2, 2);
+  });
+
+  it("marks a price from a listing that isn't quite the food as rough", async () => {
+    const { prefillFor } = await import("../src/scan-prefill.ts");
+    const k = prefillFor(0, "tomato ketchup", 1);
+    if (k.price) expect(k.note).toMatch(/^roughly /);
   });
 });
 

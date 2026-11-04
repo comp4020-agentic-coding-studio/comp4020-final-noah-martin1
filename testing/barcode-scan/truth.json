@@ -1,0 +1,12 @@
+{
+ "_note": "Digits read by eye off each photo and confirmed by the EAN-13 check digit. b05's last digits are cut off at the photo's edge: any valid code starting 4891118019 counts.",
+ "b01-candy-close-dim.jpg": "4620017455554",
+ "b02-coke-can-curved.jpg": "4890008100309",
+ "b03-beer-can-vertical.jpg": "4047247110051",
+ "b04-tea-box-angled.jpg": "4012346278001",
+ "b05-chocolate-glare.jpg": "4891118019*",
+ "b06-ham-pack-flash.jpg": "4893333797985",
+ "b07-beer-bottle-curved.jpg": "5012686019509",
+ "b08-strawberry-label-small.jpg": "2017840000990",
+ "b09-jar-label-small.jpg": "3800065711135"
+}

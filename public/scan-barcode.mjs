@@ -8,13 +8,29 @@
 const POLYFILL = "https://cdn.jsdelivr.net/npm/barcode-detector@3.2.2/dist/es/ponyfill.js";
 const FORMATS = ["ean_13", "ean_8", "upc_a", "upc_e"];
 
+// Native first where there is one: it's quick. But measured on real photos
+// (testing/results.md) it missed a barcode wrapped round a curved bottle
+// that ZXing read, so every third frame the native reader finds nothing in
+// also goes to ZXing, loaded in the background.
 async function detector() {
+  const loadZxing = () => import(POLYFILL).then(({ BarcodeDetector: Ponyfill }) => new Ponyfill({ formats: FORMATS }));
   if ("BarcodeDetector" in window) {
     const have = await BarcodeDetector.getSupportedFormats().catch(() => []);
-    if (FORMATS.some((f) => have.includes(f))) return new BarcodeDetector({ formats: FORMATS });
+    if (FORMATS.some((f) => have.includes(f))) {
+      const native = new BarcodeDetector({ formats: FORMATS });
+      let zxing = null;
+      loadZxing().then((z) => (zxing = z), () => {});
+      let empty = 0;
+      return {
+        async detect(source) {
+          const found = await native.detect(source);
+          if (found.length || !zxing) return found;
+          return ++empty % 3 === 0 ? zxing.detect(source) : found;
+        },
+      };
+    }
   }
-  const { BarcodeDetector: Ponyfill } = await import(POLYFILL);
-  return new Ponyfill({ formats: FORMATS });
+  return loadZxing();
 }
 
 const root = document.querySelector("[data-barcode]");

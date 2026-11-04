@@ -9,7 +9,8 @@
 import { normaliseIngredient, one } from "./db.ts";
 import { addDays, today } from "./format.ts";
 import { conversionFor } from "./nutrition.ts";
-import { packOptions, type PackOption } from "./pricing.ts";
+import { fromProduct, packOptions, type PackOption } from "./pricing.ts";
+import { loadProducts, productsFor } from "./products.ts";
 import { shelfLife } from "./shelf-life.ts";
 
 export interface Prefill {
@@ -40,11 +41,15 @@ const UNIT_LABEL: Record<string, string> = { g: "g", ml: "ml", each: "" };
 // and fish have a per-item weight in the food table too, but they're bought
 // in trays by weight, so they're priced as packs.
 const COUNTED = /\b(apple|pear|orange|mandarin|lemon|lime|banana|avocado|mango|peach|nectarine|plum|kiwi|carrot|capsicum|tomato|cucumber|zucchini|eggplant|onion|potato|sweet potato|eggs?)\b/;
+// made from a counted food but sold in a jar, bottle or packet: "tomato
+// ketchup", "apple juice", "potato chips" are packs
+const MADE_FROM = /\b(ketchup|sauce|juice|jam|paste|puree|chips|crisps|soup|chutney|relish|compote|cider|vinegar|powder|dried|canned|tinned)\b/;
 // listings that aren't the whole food: a jar of smashed avocado, baby carrots
 const PROCESSED = /\b(smashed|dip|puree|purée|juice|sauce|paste|dried|frozen|baby|mini|chopped|diced|sliced|odd bunch|punnet|organic|macro)\b/i;
 
 function countedPrice(name: string, opts: PackOption[], count: number | null): { quantity: string; price: string; note: string } | null {
-  if (!COUNTED.test(` ${name.toLowerCase()} `)) return null;
+  const n = ` ${name.toLowerCase()} `;
+  if (!COUNTED.test(n) || MADE_FROM.test(n)) return null;
   const mine = opts.find((o) => o.kind === "user");
   const plain = opts.filter((o) => o.available && !PROCESSED.test(o.product));
   const eggs = /\beggs?\b/.test(name.toLowerCase());
@@ -76,6 +81,58 @@ function packText(o: PackOption): string {
   return o.retailer && !o.product.toLowerCase().includes(o.retailer.toLowerCase()) ? `${o.product} (${o.retailer})` : o.product;
 }
 
+// Listings filed under this food that recipe costing rejects as not quite
+// it ("Strawberry Yoghurt Pouch" for yoghurt, "Pasta Penne" for pasta): a
+// photo of a yoghurt tub or a pasta packet is one of them, so for a rough
+// suggestion they'll do, kids' and single-serve packs aside.
+const NOT_TYPICAL = /\b(pouch|kids|snack|single|mini|multipack|organic|squeezy bottle organic)\b/i;
+
+// food someone made, not bought: no shop price fits "fried chicken",
+// "cooked rice" or "leftover pasta"
+const COOKED = /\b(fried|cooked|roast(ed)?|grilled|baked|mashed|leftovers?|homemade|stew|curry|soup|salad|stir.?fry)\b/;
+
+const words = (s: string) => s.toLowerCase().match(/[a-z]+/g) ?? [];
+// plural to singular: tomatoes, peaches, berries, oranges
+const stem = (w: string) => w.replace(/ies$/, "y").replace(/(o|ch|sh|x)es$/, "$1").replace(/([^s])s$/, "$1");
+
+// what a food can be made into: a listing that is one of these, when the
+// name isn't, is a different product ("Chilli Mayonnaise", "Pesto Basil")
+const MADE_INTO = /\b(mayonnaise|mayo|pesto|sauce|dip|dressing|paste|jam|juice|drink|cordial|chips|crisps|crackers|biscuits?|cake|bar|spread|soup|seasoning|stock|oil|vinegar|chocolate|ice cream|yoghurt|cheese|bread|noodles|powder|flakes)\b/;
+
+// one-word foods the listings are filed under (tuna, passata, rice): a
+// listing naming one of these that the scanned name doesn't is mainly that
+// other food ("Mango Chilli Tuna" for chilli)
+let foods: Set<string> | null = null;
+function otherFood(name: string, product: string): boolean {
+  foods ??= new Set(Object.keys(loadProducts().products).filter((k) => !k.includes(" ")).map(stem));
+  const mine = new Set(words(name).map(stem));
+  return words(product).some((w) => foods!.has(stem(w)) && !mine.has(stem(w)));
+}
+
+// every word of the name is in the listing's name, and the listing isn't
+// the food made into something else: "apple juice" is not a punnet of
+// apples, "chilli" is not chilli mayonnaise, "lemon drink" not a lemon
+function namesIt(name: string, product: string): boolean {
+  const have = new Set(words(product).map(stem));
+  if (!words(name).every((w) => have.has(stem(w)))) return false;
+  // "Passata With Basil", "Lime & Chilli Tuna": flavoured with it
+  const flavour = new RegExp(`(?:\\bwith|\\band|&)\\s+(?:\\w+\\s+)?${words(name)[0]}`, "i");
+  if (flavour.test(product) && !flavour.test(name)) return false;
+  if (otherFood(name, product)) return false;
+  const made = MADE_INTO.exec(product.toLowerCase());
+  return !made || name.toLowerCase().includes(made[1]);
+}
+
+function roughly(name: string): PackOption[] {
+  return productsFor(name)
+    .filter((p) => p.available && p.size && !NOT_TYPICAL.test(p.name) && !/\bbulk\b/i.test(p.name) && namesIt(name, p.name))
+    .map(fromProduct);
+}
+
+// More than a few of one packaged food is the model counting pieces (six
+// drumsticks, four pickles), not packs: one pack is the better guess.
+const MOST_PACKS = 3;
+
 // What to put in a row the scan left blank. `count` is how many the scan
 // saw: three cartons is three packs. Fields the scan (or a barcode, or a
 // receipt) already filled are left alone by the caller.
@@ -83,10 +140,18 @@ export function prefillFor(userId: number, name: string, count: number | null): 
   // looked up, never created: rendering a review must not add the model's
   // guesses to the catalogue (only saving does, after the person confirms)
   const id = one<{ id: number }>("SELECT id FROM ingredients WHERE name = ?", normaliseIngredient(name))?.id ?? -1;
-  const opts = packOptions(userId, id, name);
+  const cooked = COOKED.test(name.toLowerCase());
+  // a listing has to name the food: the shared catalogue's loose matching
+  // (fine for costing "basil" in a recipe) would offer basil pesto here
+  let opts = cooked ? [] : packOptions(userId, id, name).filter((o) => o.kind === "user" || namesIt(name, o.product));
+  let rough = false;
+  if (!cooked && !opts.length) {
+    opts = roughly(name);
+    rough = opts.length > 0;
+  }
   const pack = likelyPack(opts);
   const life = shelfLife(name);
-  const n = count && count > 0 ? count : 1;
+  const n = count && count > 0 && count <= MOST_PACKS ? count : 1;
   const notes: string[] = [];
   let quantity = count ? String(count) : "";
   let unit = "";
@@ -111,7 +176,7 @@ export function prefillFor(userId: number, name: string, count: number | null): 
       // the per-kilo price so the person can work it out at a glance
       notes.push(`$${(pack.priceCents / 100).toFixed(2)}/kg loose`);
     }
-    notes.unshift(`${pack.size ? (n > 1 ? `${n} × ` : "") : "price per kg from "}${packText(pack)}`);
+    notes.unshift(`${rough ? "roughly " : ""}${pack.size ? (n > 1 ? `${n} × ` : "") : "price per kg from "}${packText(pack)}`);
   }
   if (!quantity) quantity = count ? String(count) : "1";
   const expiry_date = life ? addDays(today(), life.days) : "";

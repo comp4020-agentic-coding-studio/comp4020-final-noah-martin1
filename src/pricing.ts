@@ -89,7 +89,7 @@ export function optionLabel(o: PackOption): string {
 
 const RETAILER_NAME: Record<string, string> = { woolworths: "Woolworths", aldi: "ALDI" };
 
-function fromProduct(p: Product): PackOption {
+export function fromProduct(p: Product): PackOption {
   return {
     kind: "retailer",
     retailer: RETAILER_NAME[p.retailer] ?? p.retailer,

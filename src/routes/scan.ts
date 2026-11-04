@@ -218,6 +218,7 @@ function hub(ctx: Ctx, tab: Tab, title: string, lede: string, content: Html, opt
 function uploadForm(kind: JobKind): Html {
   const receipt = kind === "receipt";
   return html`<form method="post" action="${receipt ? "/pantry/scan/receipt" : "/pantry/scan"}" enctype="multipart/form-data" class="panel stack scan-upload" data-scan-form>
+    ${receipt ? receiptCamera() : ""}
     <label class="field"><span>${receipt ? "Receipt photo" : "Photo"}</span>
       <input type="file" name="photo" accept="image/jpeg,image/png,image/webp" capture="environment" required /></label>
     <p class="muted small">${receipt
@@ -230,6 +231,26 @@ function uploadForm(kind: JobKind): Html {
   </form>`;
 }
 
+// The live viewfinder (public/scan-receipt-camera.mjs): it watches for a
+// receipt that fills the frame, sharp and held still, and takes the photo
+// itself. Hidden until the script finds a camera; the file input below works
+// without it.
+function receiptCamera(): Html {
+  return html`<div class="scan-viewfinder" data-receipt-camera hidden>
+      <div class="scan-viewfinder-frame">
+        <video playsinline muted data-receipt-video aria-label="Camera view for photographing a receipt"></video>
+        <svg class="scan-hold" viewBox="0 0 40 40" aria-hidden="true"><circle class="scan-hold-track" cx="20" cy="20" r="17" /><circle class="scan-hold-fill" cx="20" cy="20" r="17" pathLength="100" data-receipt-hold /></svg>
+        <p class="scan-viewfinder-hint" data-receipt-hint role="status" aria-live="polite">Starting the camera…</p>
+      </div>
+      <div class="scan-viewfinder-actions">
+        <button class="button button-ghost" type="button" data-receipt-close>Close camera</button>
+        <button class="button" type="button" data-receipt-shoot>${icon("camera", 16)} Take photo now</button>
+      </div>
+    </div>
+    <button class="button button-soft" type="button" data-receipt-start hidden>${icon("camera", 16)} Use the camera</button>
+    <p class="muted small" data-receipt-start-note hidden>Hold the receipt in view and Larder takes the photo as soon as it's sharp and steady.</p>`;
+}
+
 function scanPage(ctx: Ctx, problem = "", status = 200) {
   if (!scanConfig()) return devicePage(ctx, problem, status);
   return hub(ctx, "photo", "Scan your fridge or pantry", "Take a photo of a shelf and Larder suggests what's on it. You check every item before it's added.", uploadForm("photo"), { problem, status });
@@ -237,7 +258,7 @@ function scanPage(ctx: Ctx, problem = "", status = 200) {
 
 function receiptPage(ctx: Ctx, problem = "", status = 200) {
   if (!scanConfig()) return devicePage(ctx, "Reading receipts needs the vision model on the server, which this one doesn't have.", 503);
-  return hub(ctx, "receipt", "Read a receipt", "Photograph your shopping receipt and Larder lists what you bought, with the prices you paid. You check every line before it's added.", uploadForm("receipt"), { problem, status });
+  return hub(ctx, "receipt", "Read a receipt", "Photograph your shopping receipt and Larder lists what you bought, with the prices you paid. You check every line before it's added.", uploadForm("receipt"), { problem, status, script: "scan-receipt-camera.mjs" });
 }
 
 // The in-browser scan: the page itself loads the model and does the work.
