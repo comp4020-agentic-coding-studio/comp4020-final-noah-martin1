@@ -1461,9 +1461,9 @@
   "videoId": "eIDgcvpAvf8",
   "title": "How to make Restaurant Style Cacik - Turkish Tzatziki",
   "channel": "Middle Eats",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-11-04",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53544": {
   "videoId": null,
@@ -1882,12 +1882,10 @@
   "transcribed": true
  },
  "themealdb:53101": {
-  "videoId": "8TzqUo8PCLg",
-  "title": "Chocolate Coconut Squares",
-  "channel": "Gordana’s Kitchen",
+  "videoId": null,
+  "checked": "2026-11-04",
   "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "reason": "The video on record (Gordana's Kitchen 8TzqUo8PCLg) has subtitles disabled by the channel, so there is no transcript, and its description lists ingredients for a large 17x12 in sponge (and a chocolate-butter coating, 'bake at 375 F for 25-27 minutes') but no method for mixing, coating or rolling in coconut. The one replacement tried, The Cake Mistress lamingtons (fLK4JebABEg), links a recipe page that returned unrelated casino spam instead of a recipe, so it has no usable evidence either."
  },
  "themealdb:53324": {
   "videoId": "Cdo14aXSHrA",
@@ -2178,12 +2176,12 @@
   "transcribed": true
  },
  "themealdb:53072": {
-  "videoId": "4mINk5d2hto",
-  "title": "Filipino Fried Eggplant - Vegan Recipe",
-  "channel": "Vegan International",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "videoId": "HVcLHMAy1ks",
+  "title": "How to Make Crispy Fried Eggplant",
+  "channel": "The Cooking Foodie",
+  "checked": "2026-11-04",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53419": {
   "videoId": "V0G3ODvMg0k",
@@ -2500,12 +2498,10 @@
   "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53092": {
-  "videoId": "_EadiEPxQI0",
-  "title": "Easy Fasoliyyeh Bi Z-Zayt (Syrian Green Beans with Olive Oil) Recipe",
-  "channel": "Vegan Food Recipes",
+  "videoId": null,
+  "checked": "2026-11-04",
   "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "reason": "Unverifiable as this video's own recipe. Its only evidence is the description: a pasted third-party recipe (impersonal wording, a nutrition block, and a single link to relaxbuddy.com, now a parked domain for sale). The same ingredients and directions appear on recipe-aggregator sites (bonapetite.com, posted by 'Oscar'; they trace to an Allrecipes member recipe), and a different channel's video (Kina Shuford, HGaLOvz24v8) carries the identical ingredient list. Text pasted under unrelated videos says nothing about what this 67-second video shows, the channel (Vegan Food Recipes) credits no one, and the transcript is blocked. No other embeddable video of this exact olive-oil-only dish with a written recipe was found (the others add tomatoes or onion)."
  },
  "themealdb:52919": {
   "videoId": "tXBzZm2kkh8",
@@ -3286,12 +3282,12 @@
   "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53083": {
-  "videoId": "rllQsUw1hFQ",
-  "title": "Quick and Easy Lamb Pilaf | Pilau | Pulao | Pilaf Rice | Lamb Plov",
-  "channel": "Salt and Pepper",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "videoId": "mhAO4P5QHZA",
+  "title": "Uzbek Pilaf, Fragrant and Flavorful One Pot Rice with Lamb",
+  "channel": "Hungry Man Kitchen",
+  "checked": "2026-11-04",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:52782": {
   "videoId": null,
@@ -3450,12 +3446,12 @@
   "checked": "2026-10-20"
  },
  "themealdb:53140": {
-  "videoId": "X5UxDaNHD30",
-  "title": "How To Make Matambre a la Pizza! | Argentine Pizza Steak Dish",
-  "channel": "Ballistic BBQ",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "videoId": "81Otv2657Ac",
+  "title": "Grilling The Argentine Flank Steak Pizza (Matambre a La Pizza) 🇦🇷🍕",
+  "channel": "Argentine Asado",
+  "checked": "2026-11-04",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53132": {
   "videoId": null,
@@ -4137,9 +4133,9 @@
   "videoId": "hpapqEeb36k",
   "title": "Pumpkin Pie - You Suck at Cooking (episode 68)",
   "channel": "You Suck At Cooking",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-11-04",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53230": {
   "videoId": null,
@@ -4442,12 +4438,10 @@
   "checked": "2026-10-20"
  },
  "themealdb:53167": {
-  "videoId": "Dr8Nsod20yg",
-  "title": "How To Make Seafood Rice |Must Try!",
-  "channel": "Island Vibe Cooking",
+  "videoId": null,
+  "checked": "2026-11-04",
   "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "reason": "Transcripts blocked; description has no method. The video on record (Island Vibe Cooking Dr8Nsod20yg) is a Haitian-style shrimp rice with creole and Old Bay seasoning, jasmine rice and butter (no chorizo, leek, fish stock or peas), and its description has an ingredient list with no method and no water amount beyond 'double the water'; its transcript could not be fetched. One search for a better video of the chorizo, leek and fish-stock seafood rice found no matching candidate with a written recipe."
  },
  "themealdb:53054": {
   "videoId": "_NJtCfqgaBo",

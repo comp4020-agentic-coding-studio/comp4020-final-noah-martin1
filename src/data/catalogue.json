@@ -24268,8 +24268,8 @@
  {
   "source": "themealdb:53256",
   "title": "Cacik",
-  "description": "A Turkish side of yoghurt, dried mint and cucumber — serves 2, ready in under half an hour.",
-  "servings": 2,
+  "description": "A cool Turkish dip of strained yoghurt, grated cucumber, garlic, dill, dried mint and lemon, served with spice-topped grilled pitta.",
+  "servings": 4,
   "cuisine": "Turkish",
   "category": "Side",
   "image": "https://www.themealdb.com/images/media/meals/16zbeu1763789342.jpg",
@@ -24277,13 +24277,37 @@
   "cook_minutes": 5,
   "ingredients": [
    {
-    "name": "yoghurt",
+    "name": "greek yoghurt",
     "quantity": 500,
     "unit": "g",
-    "note": ""
+    "note": "Greek or Turkish strained yoghurt"
+   },
+   {
+    "name": "cucumber",
+    "quantity": 0.5,
+    "unit": "",
+    "note": "large English, grated or finely cubed; or 2 small salad cucumbers"
+   },
+   {
+    "name": "dill",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "fresh, leaves finely minced"
+   },
+   {
+    "name": "garlic",
+    "quantity": 1,
+    "unit": "clove",
+    "note": "large, minced"
    },
    {
     "name": "lemon juice",
+    "quantity": 4,
+    "unit": "tbsp",
+    "note": ""
+   },
+   {
+    "name": "dried mint",
     "quantity": 2,
     "unit": "tsp",
     "note": ""
@@ -24292,51 +24316,83 @@
     "name": "olive oil",
     "quantity": 1,
     "unit": "tbsp",
-    "note": ""
+    "note": "mixed in, plus a little to finish"
    },
    {
-    "name": "dried mint",
+    "name": "salt",
+    "quantity": 0.75,
+    "unit": "tsp",
+    "note": "0.5 tsp for the cacik, 0.25 tsp for the bread topping"
+   },
+   {
+    "name": "sumac",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": "for the bread topping, to serve; a little more to finish the cacik"
+   },
+   {
+    "name": "vegetable oil",
     "quantity": 1,
     "unit": "tbsp",
-    "note": ""
+    "note": "for the bread topping, to serve"
    },
    {
-    "name": "cucumber",
+    "name": "chilli flakes",
     "quantity": 1,
-    "unit": "",
-    "note": ""
+    "unit": "tsp",
+    "note": "pul biber (Aleppo pepper), for the bread topping, to serve"
    },
    {
-    "name": "garlic",
+    "name": "dried oregano",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": "dried, for the bread topping, to serve"
+   },
+   {
+    "name": "paprika",
+    "quantity": 0.25,
+    "unit": "tsp",
+    "note": "for the bread topping, to serve"
+   },
+   {
+    "name": "pita bread",
     "quantity": 2,
-    "unit": "clove",
-    "note": "minced"
+    "unit": "",
+    "note": "large, to serve, topped with the spice paste"
    }
   ],
   "steps": [
    {
-    "text": "Put a sieve over a large bowl, line it with a thick sheet of non-dyed kitchen paper or a clean muslin cloth, and spoon in the yogurt. Cover with another sheet of kitchen paper and leave to strain in the fridge for a minimum of 12 hrs.",
-    "minutes": 600
-   },
-   {
-    "text": "Add the lemon juice, most of the olive oil and the dried mint to a bowl and stir well for the dried mint to soften and soak up the juices.",
+    "text": "Grate the cucumber on the large side of a grater, or chop it into small cubes.",
     "minutes": null
    },
    {
-    "text": "Mix in the strained yogurt, then pour away the strained yogurt liquid and leave that bowl to one side.",
+    "text": "Pull the dill leaves off the stalks and mince them finely. Mince the garlic.",
     "minutes": null
    },
    {
-    "text": "Halve the cucumber(s) lengthways and remove the seeds by running a teaspoon from the top to the bottom of the flesh, halve the cucumbers widthways to make them shorter and easier to handle, then coarsely grate each one into the bowl the yogurt was straining over.",
+    "text": "Combine the yoghurt, cucumber, dill, garlic, lemon juice, dried mint, 1 tbsp olive oil and the salt in a bowl and mix well until uniform.",
     "minutes": null
    },
    {
-    "text": "Using clean hands (or a clean muslin cloth), squeeze as much of the liquid out of the cucumber as possible.",
+    "text": "Spoon the cacik into a serving bowl, make a well in the middle, add a little olive oil and sprinkle with sumac or pul biber.",
     "minutes": null
    },
    {
-    "text": "Add the strained, grated cucumber, garlic and ¾ tsp flaky salt to the rest of the ingredients and mix well. Garnish with a drizzle of extra virgin olive oil and a sprinkling of dried mint.",
+    "text": "For the bread topping, mix the vegetable oil, pul biber, oregano, sumac, paprika and the remaining salt into a paste.",
     "minutes": null
+   },
+   {
+    "text": "Spread a very thin layer of the paste over the top of each pitta.",
+    "minutes": null
+   },
+   {
+    "text": "Grill the pittas for about 3 to 5 minutes, until crisp and the oil has been absorbed.",
+    "minutes": 3
+   },
+   {
+    "text": "Let the bread cool for a minute, then slice and serve warm with the cacik.",
+    "minutes": 1
    }
   ]
  },
@@ -34933,24 +34989,30 @@
  {
   "source": "themealdb:53072",
   "title": "Crispy Eggplant",
-  "description": "A Filipino dish of aubergine, breadcrumbs and sesame seed — serves 4, about an hour start to finish.",
+  "description": "Eggplant slices salted to draw out moisture, coated in egg, then in breadcrumbs and sesame seeds, and fried in a skillet of oil until golden.",
   "servings": 4,
-  "cuisine": "Filipino",
+  "cuisine": "International",
   "category": "Vegetarian",
   "image": "https://www.themealdb.com/images/media/meals/c7lzrl1683208757.jpg",
-  "prep_minutes": 10,
-  "cook_minutes": 65,
+  "prep_minutes": 40,
+  "cook_minutes": 10,
   "ingredients": [
    {
     "name": "aubergine",
     "quantity": 1,
     "unit": "",
-    "note": "large"
+    "note": "large eggplant, sliced 1 cm thick"
+   },
+   {
+    "name": "salt",
+    "quantity": null,
+    "unit": "",
+    "note": "to taste, for salting the slices and the egg"
    },
    {
     "name": "breadcrumbs",
-    "quantity": 1,
-    "unit": "cup",
+    "quantity": 100,
+    "unit": "g",
     "note": ""
    },
    {
@@ -34963,47 +35025,45 @@
     "name": "eggs",
     "quantity": 2,
     "unit": "",
-    "note": ""
-   },
-   {
-    "name": "salt",
-    "quantity": null,
-    "unit": "",
-    "note": "to taste"
+    "note": "beaten"
    },
    {
     "name": "black pepper",
-    "quantity": null,
-    "unit": "",
-    "note": "to taste"
+    "quantity": 1,
+    "unit": "pinch",
+    "note": "in the beaten egg"
    },
    {
     "name": "vegetable oil",
     "quantity": null,
     "unit": "",
-    "note": "for deep-frying"
+    "note": "for frying"
    }
   ],
   "steps": [
    {
-    "text": "Slice eggplant into 1 cm (0.4-inch) slices. Place them in a bowl and sprinkle them with salt. allow them to sit for 30 minutes to render some of their liquid and bitterness.",
+    "text": "Slice the eggplant into 1 cm slices, put them in a bowl and sprinkle with salt. Leave for 30 minutes to draw out liquid and bitterness.",
     "minutes": 30
    },
    {
-    "text": "After 30 minutes wash eggplant slices from salt and pat dry with a kitchen towel.",
-    "minutes": 30
-   },
-   {
-    "text": "In a large bowl/plate place breadcrumbs and sesame seeds. In another bowl beat 2 eggs with pinch salt and pepper.",
+    "text": "Rinse the salt off the eggplant slices and pat them dry with a kitchen towel.",
     "minutes": null
    },
    {
-    "text": "Heal oil in a large skillet over high heat.",
+    "text": "Mix the breadcrumbs and sesame seeds in a large bowl or plate. In another bowl beat the eggs with a pinch of salt and pepper.",
     "minutes": null
    },
    {
-    "text": "Dip eggplant slices in egg, then in crumbs, and place in hot oil. Fry 2 to 3 minutes on each side, or until golden brown. Drain on a paper towel.",
-    "minutes": 3
+    "text": "Heat oil in a large skillet over high heat.",
+    "minutes": null
+   },
+   {
+    "text": "Dip each slice in the egg, then in the crumbs, and lay it in the hot oil. Fry 2 to 3 minutes on each side until golden brown.",
+    "minutes": 4
+   },
+   {
+    "text": "Drain the fried slices on paper towel.",
+    "minutes": null
    }
   ]
  },
@@ -52260,100 +52320,134 @@
  {
   "source": "themealdb:53083",
   "title": "Lamb Pilaf (Plov)",
-  "description": "A Russian dish of lamb, prunes and rice — serves 4, worth the couple of hours it takes.",
-  "servings": 4,
-  "cuisine": "Russian",
+  "description": "Uzbek plov: lamb browned with onions and carrots, simmered into a rich broth, then topped with rice and steamed in one pot with a whole garlic bulb.",
+  "servings": 6,
+  "cuisine": "Uzbek",
   "category": "Lamb",
   "image": "https://www.themealdb.com/images/media/meals/kos9av1699014767.jpg",
-  "prep_minutes": 15,
-  "cook_minutes": 85,
+  "prep_minutes": 30,
+  "cook_minutes": 120,
   "ingredients": [
    {
+    "name": "rice",
+    "quantity": 600,
+    "unit": "g",
+    "note": "medium grain, preferably devzira, or basmati; soaked in salted hot water"
+   },
+   {
     "name": "lamb",
-    "quantity": 50,
+    "quantity": 600,
     "unit": "g",
-    "note": ""
+    "note": "or beef, cut into large chunks"
    },
    {
-    "name": "prunes",
-    "quantity": 120,
+    "name": "lamb fat",
+    "quantity": 150,
     "unit": "g",
-    "note": ""
+    "note": "tail fat, cut small and rendered; or use neutral oil instead"
    },
    {
-    "name": "lemon juice",
-    "quantity": 1,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "butter",
-    "quantity": 2,
-    "unit": "tbsp",
-    "note": ""
+    "name": "vegetable oil",
+    "quantity": 100,
+    "unit": "ml",
+    "note": "sunflower or linseed oil, optional, for frying; the list says 1/2 cup"
    },
    {
     "name": "onion",
-    "quantity": 1,
+    "quantity": 2,
     "unit": "",
-    "note": "chopped"
+    "note": "large, thinly chopped; or 3 medium"
    },
    {
-    "name": "lamb",
-    "quantity": 450,
+    "name": "carrot",
+    "quantity": 800,
     "unit": "g",
-    "note": ""
+    "note": "cut into thick batonettes"
+   },
+   {
+    "name": "cumin seeds",
+    "quantity": 2,
+    "unit": "tsp",
+    "note": "ground coarsely"
+   },
+   {
+    "name": "salt",
+    "quantity": 4,
+    "unit": "tsp",
+    "note": "2 tsp with the cumin, 2 tsp over the rice, plus extra for soaking the rice"
    },
    {
     "name": "garlic",
-    "quantity": 2,
-    "unit": "clove",
-    "note": ""
-   },
-   {
-    "name": "vegetable stock",
-    "quantity": 600,
-    "unit": "ml",
-    "note": ""
-   },
-   {
-    "name": "rice",
-    "quantity": 2,
-    "unit": "cup",
-    "note": ""
-   },
-   {
-    "name": "saffron",
     "quantity": 1,
-    "unit": "pinch",
-    "note": ""
+    "unit": "bulb",
+    "note": "whole, outer layer peeled"
    },
    {
-    "name": "parsley",
-    "quantity": null,
+    "name": "chickpeas",
+    "quantity": 1,
+    "unit": "cup",
+    "note": "cooked, optional"
+   },
+   {
+    "name": "raisins",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "black, optional; the method gives no point to add them"
+   },
+   {
+    "name": "chilli",
+    "quantity": 2,
     "unit": "",
-    "note": "to garnish"
+    "note": "red, optional, to serve with the pilaf"
    }
   ],
   "steps": [
    {
-    "text": "Place the raisins and prunes into a small bowl and pour over enough water to cover. Add lemon juice and let soak for at least 1 hour. Drain. Roughly chop the prunes.",
-    "minutes": 60
+    "text": "Soak the rice in hot salted water for at least 30 minutes, then rinse it 3 to 4 times until the water runs clear and drain.",
+    "minutes": 30
    },
    {
-    "text": "Meanwhile, heat the butter in a large pan, add the onion, and cook for 5 minutes. Add cubed lamb, ground lamb, and crushed garlic cloves. Fry for 5 minutes, stirring constantly until browned.",
+    "text": "Cut the meat into large chunks, cut the tail fat small, slice the onions thinly, cut the carrots into thick sticks and grind the cumin seeds coarsely.",
+    "minutes": null
+   },
+   {
+    "text": "Heat a large wok-shaped pot or Dutch oven, add the tail fat and render it over medium heat. Discard the hard unrendered pieces and add the oil, if using.",
+    "minutes": null
+   },
+   {
+    "text": "When the oil is hot and starting to smoke, fry half of the onions until well browned and fragrant.",
+    "minutes": null
+   },
+   {
+    "text": "Add the meat and fry until browned on all sides.",
+    "minutes": 10
+   },
+   {
+    "text": "Add the rest of the onions, stir and cook.",
     "minutes": 5
    },
    {
-    "text": "Pour 2/3 cup (150 milliliters) of stock into the pan. Bring to a boil, then lower the heat, cover, and simmer for 1 hour, or until the lamb is tender.",
-    "minutes": 60
+    "text": "Add the carrots, stir and cook until caramelised.",
+    "minutes": 5
    },
    {
-    "text": "Add the remaining stock and bring to a boil. Add rinsed long-grain white rice and a large pinch of saffron. Stir, then cover, and simmer for 15 minutes, or until the rice is tender.",
-    "minutes": 15
+    "text": "Stir in 2 tsp salt and the cumin, and push the whole garlic bulb into the middle of the pot.",
+    "minutes": null
    },
    {
-    "text": "Add the drained raisins, drained chopped prunes, and salt and pepper to taste. Heat through for a few minutes, then turn out onto a warmed serving dish and garnish with sprigs of flat-leaf parsley.",
+    "text": "Add hot water to just 1 cm above the ingredients (and the chickpeas if using). Simmer on low heat until the carrots are soft and a brown broth, the zirvak, has formed.",
+    "minutes": 30
+   },
+   {
+    "text": "Layer the rice evenly over the top and sprinkle with 2 tsp salt. Add more water only if the level is too low, just enough to barely cover the rice, and poke a few holes in the rice with the back of a wooden spoon so steam can escape. Cook until the water has evaporated.",
+    "minutes": null
+   },
+   {
+    "text": "Gather the rice into a mound in the middle, away from the pot edges. Cover it with a plate, cover the pot with a towel, put the lid on and steam on the lowest heat.",
+    "minutes": 45
+   },
+   {
+    "text": "Take off the plate and towel, remove the garlic bulb and stir the pilaf gently. Serve on a large plate with extra meat, chilies and garlic.",
     "minutes": null
    }
   ]
@@ -54754,68 +54848,124 @@
  {
   "source": "themealdb:53140",
   "title": "Matambre a la Pizza",
-  "description": "An Argentinian dish of flank steak, passata and mozzarella — serves 4, ready in under half an hour.",
+  "description": "Argentine flank steak folded and grilled slowly, then opened out and topped with tomato sauce, ham, mozzarella, cherry tomatoes and basil until the cheese melts.",
   "servings": 4,
   "cuisine": "Argentinian",
   "category": "Beef",
   "image": "https://www.themealdb.com/images/media/meals/wf49qs1763075222.jpg",
-  "prep_minutes": 10,
-  "cook_minutes": 10,
+  "prep_minutes": 30,
+  "cook_minutes": 90,
   "ingredients": [
    {
     "name": "flank steak",
-    "quantity": 1000,
-    "unit": "g",
-    "note": ""
+    "quantity": 1.5,
+    "unit": "kg",
+    "note": "one whole matambre, about 1.5 to 2 kg"
    },
    {
-    "name": "passata",
-    "quantity": 200,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "mozzarella",
-    "quantity": 200,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "oregano",
-    "quantity": 1,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "green olives",
-    "quantity": 100,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "salt",
+    "name": "sea salt",
     "quantity": null,
     "unit": "",
-    "note": "to taste"
+    "note": "coarse, rubbed on both sides, to taste"
    },
    {
     "name": "black pepper",
     "quantity": null,
     "unit": "",
-    "note": "to taste"
+    "note": "freshly ground, for the meat and the sauce, to taste"
+   },
+   {
+    "name": "sweet chilli sauce",
+    "quantity": null,
+    "unit": "",
+    "note": "a light brush, optional"
+   },
+   {
+    "name": "passata",
+    "quantity": 1,
+    "unit": "cup",
+    "note": "tomato purée or crushed tomato sauce, for the topping"
+   },
+   {
+    "name": "paprika",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "for the sauce"
+   },
+   {
+    "name": "curry powder",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "for the sauce; the video description says 1/2 tsp"
+   },
+   {
+    "name": "garlic",
+    "quantity": 2,
+    "unit": "clove",
+    "note": "minced, for the sauce"
+   },
+   {
+    "name": "ham",
+    "quantity": 200,
+    "unit": "g",
+    "note": "sliced"
+   },
+   {
+    "name": "mozzarella",
+    "quantity": 200,
+    "unit": "g",
+    "note": "fresh; or cremoso"
+   },
+   {
+    "name": "blue cheese",
+    "quantity": 50,
+    "unit": "g",
+    "note": "optional, for depth"
+   },
+   {
+    "name": "cherry tomatoes",
+    "quantity": 1,
+    "unit": "handful",
+    "note": "halved"
+   },
+   {
+    "name": "basil",
+    "quantity": null,
+    "unit": "",
+    "note": "fresh leaves, layered over the toppings, to garnish (no amount given)"
    }
   ],
   "steps": [
    {
-    "text": "Prepare the Steak: Season the steak with salt and pepper. Grill one side until half-cooked.",
+    "text": "Rub both sides of the matambre with coarse salt and crushed black pepper. You can add a light brush of sweet chilli sauce.",
     "minutes": null
    },
    {
-    "text": "Add Toppings: Spread tomato sauce over the cooked side, then add cheese, oregano, and olives.",
+    "text": "Fold the matambre in half like a book, fatty side out, and grill it over medium heat fatty side down.",
+    "minutes": 25
+   },
+   {
+    "text": "Turn the folded matambre and grill the other side until both sides are golden.",
+    "minutes": 25
+   },
+   {
+    "text": "Unfold the matambre and lay it meat side down so the fatty side faces up.",
     "minutes": null
    },
    {
-    "text": "Finish Grilling: Grill until the cheese is melted and bubbly. Serve: Slice and serve hot.",
+    "text": "Mix the tomato purée with the paprika, curry powder, black pepper and garlic.",
+    "minutes": null
+   },
+   {
+    "text": "Spread the sauce over the fatty side, then layer on the ham, cheese, cherry tomatoes and basil.",
+    "minutes": null
+   },
+   {
+    "text": "Keep grilling until the cheese has melted and the edges are crisp.",
+    "minutes": 25
+   },
+   {
+    "text": "Let the matambre rest, then slice it thinly across the grain and serve.",
     "minutes": null
    }
   ]
@@ -65481,36 +65631,36 @@
  {
   "source": "themealdb:52857",
   "title": "Pumpkin Pie",
-  "description": "An American sweet made with pumpkin, shortcrust pastry and nutmeg — serves 8, worth the couple of hours it takes.",
+  "description": "A no-fuss pumpkin pie: canned pure pumpkin, eggs, sugar, spices and cream mixed smooth, poured into a bought pie crust and baked until the wobble is gone.",
   "servings": 8,
   "cuisine": "American",
   "category": "Dessert",
   "image": "https://www.themealdb.com/images/media/meals/usuqtp1511385394.jpg",
-  "prep_minutes": 15,
-  "cook_minutes": 85,
+  "prep_minutes": 10,
+  "cook_minutes": 45,
   "ingredients": [
    {
-    "name": "pumpkin",
-    "quantity": 750,
-    "unit": "g",
-    "note": ""
-   },
-   {
     "name": "shortcrust pastry",
-    "quantity": 350,
-    "unit": "g",
-    "note": ""
+    "quantity": 1,
+    "unit": "",
+    "note": "ready-made pie crust"
    },
    {
-    "name": "plain flour",
-    "quantity": null,
+    "name": "pumpkin puree",
+    "quantity": 1,
+    "unit": "can",
+    "note": "398 ml (13.5 oz) pure pumpkin, not pie filling"
+   },
+   {
+    "name": "eggs",
+    "quantity": 2,
     "unit": "",
-    "note": "for dusting"
+    "note": ""
    },
    {
     "name": "sugar",
-    "quantity": 140,
-    "unit": "g",
+    "quantity": 0.75,
+    "unit": "cup",
     "note": ""
    },
    {
@@ -65520,73 +65670,63 @@
     "note": ""
    },
    {
-    "name": "nutmeg",
-    "quantity": 0.5,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "cinnamon",
+    "name": "ground cinnamon",
     "quantity": 1,
     "unit": "tsp",
-    "note": ""
+    "note": "the creator's alternative to 2¼ tsp pumpkin pie spice"
    },
    {
-    "name": "eggs",
-    "quantity": 2,
+    "name": "ground ginger",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "part of the pumpkin pie spice alternative"
+   },
+   {
+    "name": "ground cloves",
+    "quantity": 0.25,
+    "unit": "tsp",
+    "note": "part of the pumpkin pie spice alternative"
+   },
+   {
+    "name": "cream",
+    "quantity": 1.5,
+    "unit": "cup",
+    "note": "10% cream (half-and-half style), added slowly"
+   },
+   {
+    "name": "thickened cream",
+    "quantity": null,
     "unit": "",
-    "note": "beaten"
-   },
-   {
-    "name": "butter",
-    "quantity": 25,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "milk",
-    "quantity": 175,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "icing sugar",
-    "quantity": 1,
-    "unit": "tbsp",
-    "note": ""
+    "note": "to serve, whipped"
    }
   ],
   "steps": [
    {
-    "text": "Place the pumpkin in a large saucepan, cover with water and bring to the boil. Cover with a lid and simmer for 15 mins or until tender. Drain pumpkin; let cool.",
+    "text": "Spoon the can of pure pumpkin (not pumpkin pie filling) into a bowl. It will be very thick.",
+    "minutes": null
+   },
+   {
+    "text": "Add the eggs, sugar, salt, cinnamon, ginger and cloves and mix until smooth.",
+    "minutes": null
+   },
+   {
+    "text": "Slowly mix in the cream. The filling will look far too runny to set, but it does.",
+    "minutes": null
+   },
+   {
+    "text": "Pour the filling into the pie crust and bake at 220°C for 15 minutes.",
     "minutes": 15
    },
    {
-    "text": "Heat oven to 180C/160C fan/gas 4. Roll out the pastry on a lightly floured surface and use it to line a 22cm loose-bottomed tart tin.",
-    "minutes": null
+    "text": "Reduce the oven to 180°C and bake for about 30 minutes, testing the wobble: when the wobble is gone the pie is ready. A deep-dish crust can take up to an hour.",
+    "minutes": 30
    },
    {
-    "text": "Chill for 15 mins. Line the pastry with baking parchment and baking beans, then bake for 15 mins. Remove the beans and paper, and cook for a further 10 mins until the base is pale golden and biscuity.",
-    "minutes": 15
+    "text": "Take the pie out and leave it to set for at least an hour.",
+    "minutes": 60
    },
    {
-    "text": "Remove from the oven and allow to cool slightly.",
-    "minutes": null
-   },
-   {
-    "text": "Increase oven to 220C/200C fan/gas 7. Push the cooled pumpkin through a sieve into a large bowl. In a separate bowl, combine the sugar, salt, nutmeg and half the cinnamon.",
-    "minutes": null
-   },
-   {
-    "text": "Mix in the beaten eggs, melted butter and milk, then add to the pumpkin purée and stir to combine. Pour into the tart shell and cook for 10 mins, then reduce the temperature to 180C/160C fan/gas 4.",
-    "minutes": 10
-   },
-   {
-    "text": "Continue to bake for 35-40 mins until the filling has just set.",
-    "minutes": 40
-   },
-   {
-    "text": "Leave to cool, then remove the pie from the tin. Mix the remaining cinnamon with the icing sugar and dust over the pie. Serve chilled.",
+    "text": "Whip cream and serve it with the pie.",
     "minutes": null
    }
   ]

@@ -35,6 +35,10 @@ Things learned the hard way while matching catalogue recipes to YouTube videos.
   `fetch()` fails, so test with a real fetch. `yt.py` now refuses transcript
   calls while `/tmp/ytwork/data/TRANSCRIPTS_BLOCKED` exists; delete it once a
   test fetch works again.
+- A block that seems lifted isn't: at 03:25 a test fetch worked, and the
+  next agent was blocked on its second fetch. Don't spend the first working
+  fetches on tests; after a block, wait several hours, then send only the
+  fetches that matter, one agent at a time.
 - A timeout is not a dead video. One scan marked 320 videos "dead" and 297
   were yt-dlp timeouts during a block. Never cache a timeout, and re-scan
   timed-out entries once YouTube answers again.
