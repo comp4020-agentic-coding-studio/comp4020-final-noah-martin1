@@ -214,6 +214,8 @@ const FORMS = new Set(
     "chargrilled", "grilled", "fried", "crispy", "sushi", "mandarin", "murcott", "wheat", "flake", "flakes", "crystallised",
     "uncrystallised", "scroll", "cookies", "biscuit", "bar", "bars", "loaf", "perform", "protein", "yopro",
     "smoothie", "yoghurt", "yogurt", "muffin", "rope", "ropes", "roll", "straps", "gummies", "lolly", "cake", "bread", "chips", "chip", "lollies", "flavour",
+    // "Coffee With Cardamom" isn't cardamom; "Chick Peas" aren't peas
+    "coffee", "chick",
   ].map(stem),
 );
 

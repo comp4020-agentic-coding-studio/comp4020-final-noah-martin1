@@ -113,6 +113,13 @@ describe("like-for-like products", () => {
     expect(isEquivalent(ingredient, product)).toBe(true);
   });
 
+  it.each([
+    ["peas", "NEW SEASON Chick Peas 420g"],
+    ["cardamom", "Alameed Coffee Medium With Cardamom 250g"],
+  ])("%s is not %s", (ingredient, product) => {
+    expect(isEquivalent(ingredient, product)).toBe(false);
+  });
+
   it("every product offered for an ingredient passes the like-for-like rule", () => {
     for (const name of ["plain flour", "onion", "lemon", "prawns", "cream", "garlic", "milk", "rice"]) {
       for (const p of equivalentProducts(name)) expect(isEquivalent(name, p.name), `${name} → ${p.name}`).toBe(true);

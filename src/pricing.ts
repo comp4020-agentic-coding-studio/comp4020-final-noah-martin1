@@ -89,14 +89,40 @@ export function optionLabel(o: PackOption): string {
 
 const RETAILER_NAME: Record<string, string> = { woolworths: "Woolworths", aldi: "ALDI" };
 
+// Produce sold as one bunch or one piece of a whole ("Coriander Bunch",
+// "Green Cabbage Quarter each") is listed as 1 each, but its "each" isn't
+// the food table's item: the table's coriander item is a 1 g sprig and its
+// spring onion one 15 g stalk, so 10 g of coriander bought ten bunches. Such
+// a pack is weighed instead, at a typical Australian supermarket weight
+// (Woolworths and Coles product pages, 2026-11; the herb bunch matches
+// nutrition.ts's 40 g bunch).
+const PIECE_GRAMS: [RegExp, RegExp, number][] = [
+  [/\bbunch\b/i, /coriander|parsley|mint|basil|dill|chives|thyme|rosemary|sage|oregano|tarragon/i, 40],
+  [/\bbunch\b/i, /spring onion|shallot/i, 100],
+  [/\bbunch\b/i, /kale|silverbeet|chard/i, 250],
+  [/\bbunch\b/i, /asparagus/i, 200],
+  [/\bbunch\b/i, /radish/i, 250],
+  [/\bbunch\b/i, /celery/i, 600],
+  [/\bheart\b/i, /celery/i, 400],
+  [/\bquarter\b/i, /cabbage/i, 400],
+  [/\bhalf\b/i, /wombok|chinese cabbage/i, 700],
+  [/\bhalf\b/i, /cabbage/i, 800],
+];
+
+function pieceGrams(name: string): number | null {
+  for (const [piece, food, grams] of PIECE_GRAMS) if (piece.test(name) && food.test(name)) return grams;
+  return null;
+}
+
 export function fromProduct(p: Product): PackOption {
+  const piece = p.size?.unit === "each" && p.size.amount === 1 ? pieceGrams(p.name) : null;
   return {
     kind: "retailer",
     retailer: RETAILER_NAME[p.retailer] ?? p.retailer,
     product: p.name,
     url: p.url,
     priceCents: p.priceCents,
-    size: p.size,
+    size: piece ? { amount: piece, unit: "g" } : p.size,
     checked: p.checkedAt,
     available: p.available,
   };

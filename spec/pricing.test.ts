@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { gramsOf, referencePrice } from "../src/nutrition.ts";
-import { choosePack, convert, type PackOption, purchasePlan, referenceOption, toBase } from "../src/pricing.ts";
+import { choosePack, convert, fromProduct, type PackOption, purchasePlan, referenceOption, toBase } from "../src/pricing.ts";
 
 // The package-purchase engine in isolation (src/pricing.ts). These run in
 // the test process: no server, no database writes.
@@ -196,5 +196,28 @@ describe("one ingredient across incompatible lines", () => {
     // milk has a listed density: 250 ml and 100 g both come out of one 2 L bottle
     const plan = purchasePlan([need("milk", 250, "ml", "A", 2), need("milk", 100, "g", "B", 2)], [], () => [pack("ALDI", 339, 2000, "ml")]);
     expect(plan.purchaseCents).toBe(339);
+  });
+});
+
+// A herb or onion bunch is listed as "1 each", but the food table's "each"
+// for coriander is a 1 g sprig: ten grams bought ten bunches ($29.90).
+describe("produce sold by the bunch", () => {
+  const bunch = (name: string, cents: number) => fromProduct({ retailer: "aldi", name, url: "", priceCents: cents, size: { amount: 1, unit: "each" }, checkedAt: "2026-10-20", available: true });
+
+  it("a handful or a bunch of coriander is one bunch, not ten or forty", () => {
+    const o = [bunch("Coriander Bunch", 299)];
+    expect(choosePack(toBase(1, "handful", "coriander")!, o, "coriander").best).toMatchObject({ count: 1, costCents: 299 });
+    expect(choosePack(toBase(2, "handful", "coriander")!, o, "coriander").best).toMatchObject({ count: 1, costCents: 299 });
+    expect(choosePack(toBase(1, "bunch", "coriander")!, o, "coriander").best).toMatchObject({ count: 1, costCents: 299 });
+    expect(choosePack(toBase(3, "bunch", "coriander")!, o, "coriander").best).toMatchObject({ count: 3 });
+  });
+
+  it("four spring onions come from one bunch", () => {
+    const o = [bunch("Spring Onion Bunch", 199)];
+    expect(choosePack(toBase(4, "", "spring onion")!, o, "spring onion").best).toMatchObject({ count: 1 });
+  });
+
+  it("a listing sold by the piece that isn't a bunch keeps its count", () => {
+    expect(bunch("Pineapple Each", 599).size).toEqual({ amount: 1, unit: "each" });
   });
 });
