@@ -25721,74 +25721,20 @@
  },
  {
   "source": "themealdb:53055",
-  "title": "Cevapi Sausages",
-  "description": "A Croatian dish of beef mince, pork mince and breadcrumbs — serves 4, on the table in about 45 minutes.",
+  "title": "Cevapi sausages",
+  "description": "Skinless beef sausages seasoned with smoked paprika, garlic and onion, shaped by hand and pan-fried until browned and cooked through.",
   "servings": 4,
   "cuisine": "Croatian",
   "category": "Beef",
   "image": "https://www.themealdb.com/images/media/meals/vc08jn1628769553.jpg",
-  "prep_minutes": 20,
-  "cook_minutes": 25,
+  "prep_minutes": 15,
+  "cook_minutes": 7,
   "ingredients": [
    {
     "name": "beef mince",
     "quantity": 500,
     "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "pork mince",
-    "quantity": 250,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "onion",
-    "quantity": 1,
-    "unit": "",
-    "note": ""
-   },
-   {
-    "name": "garlic",
-    "quantity": 4,
-    "unit": "clove",
-    "note": ""
-   },
-   {
-    "name": "parsley",
-    "quantity": 3,
-    "unit": "tbsp",
-    "note": "chopped"
-   },
-   {
-    "name": "paprika",
-    "quantity": 1,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "baking powder",
-    "quantity": 0.75,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "breadcrumbs",
-    "quantity": 2,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "water",
-    "quantity": 3,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "stock cube",
-    "quantity": 1,
-    "unit": "",
-    "note": ""
+    "note": "the video sticks to beef; lamb, pork or veal also work"
    },
    {
     "name": "salt",
@@ -25798,35 +25744,61 @@
    },
    {
     "name": "black pepper",
-    "quantity": 1,
+    "quantity": 0.5,
     "unit": "tsp",
     "note": ""
+   },
+   {
+    "name": "smoked paprika",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "sweet paprika works too"
+   },
+   {
+    "name": "onion",
+    "quantity": 0.5,
+    "unit": "",
+    "note": "minced; red onion in the video, white or brown also fine"
+   },
+   {
+    "name": "garlic",
+    "quantity": 3,
+    "unit": "clove",
+    "note": "crushed"
+   },
+   {
+    "name": "bicarbonate of soda",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": "baking soda, as the narration says; the description list says baking powder"
+   },
+   {
+    "name": "vegetable oil",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": "for frying"
    }
   ],
   "steps": [
    {
-    "text": "Place the ground meat in a bowl. Chop the onion very finely and grate the garlic cloves. Add to the bowl. Add the chopped parsley, all sorts of paprika, baking soda, dried breadcrumbs, water, Vegeta, salt, and pepper.",
+    "text": "Put the beef mince in a bowl with the salt, pepper, smoked paprika, crushed garlic, minced onion and bicarbonate of soda.",
     "minutes": null
    },
    {
-    "text": "Mix well with the hand mixer fitted with the dough hooks. Cover the bowl with cling film/ plastic foil and leave to rest for 1 or 2 hours in the refrigerator.",
-    "minutes": 120
-   },
-   {
-    "text": "Take portions of the meat mixture, about 50-55 g/ 1.7-1.9 oz/ ¼ cup portions, and form the cevapi. The rolls should be about as thick as your thumb and about 7-10 cm/ 3-4 inches long. I had 18 sausages. The recipe can be easily doubled.",
+    "text": "Mix well by hand (or in a food processor) until the mixture is sticky and well combined.",
     "minutes": null
    },
    {
-    "text": "Grill the cevapcici on the hot grill pan or on the barbecue for about 12-14 minutes, turning them several times in between, or until brown and cooked through.",
-    "minutes": 14
-   },
-   {
-    "text": "I checked by cutting one in the middle and then grilling the following batches for the same period of time.",
+    "text": "Roll golf-ball-sized portions smooth, wetting your hands with water if they stick, then shape each into a sausage that is not too thin or too thick. A piping bag with a thick round nozzle also works.",
     "minutes": null
    },
    {
-    "text": "Serve hot as suggested above. The cevapcici can be reheated in the oven at 180 degrees Celsius/ 350 degrees Fahrenheit for about 10 minutes or until heated through. Check one, if it is not hot enough, give the sausages a few more minutes.",
-    "minutes": 10
+    "text": "Heat the oil in a pan over medium heat and add the cevapi. You can also grill or barbecue them.",
+    "minutes": null
+   },
+   {
+    "text": "Once browned underneath, turn them and keep cooking until golden all over and firm, about 7 to 8 minutes depending on size. Cut one open to check it is cooked through.",
+    "minutes": 7
    }
   ]
  },
@@ -39695,13 +39667,13 @@
  {
   "source": "themealdb:53139",
   "title": "Fainá",
-  "description": "An Argentinian side of chickpea flour — serves 4, a slow cook that's worth the wait.",
+  "description": "Argentine fainá, a thin baked chickpea-flour flatbread: a batter rested for at least three hours, then baked in a hot, oiled 30 cm tin and finished with black pepper.",
   "servings": 4,
   "cuisine": "Argentinian",
   "category": "Side",
   "image": "https://www.themealdb.com/images/media/meals/849jd81763075251.jpg",
-  "prep_minutes": 10,
-  "cook_minutes": 270,
+  "prep_minutes": 190,
+  "cook_minutes": 40,
   "ingredients": [
    {
     "name": "chickpea flour",
@@ -39710,41 +39682,67 @@
     "note": ""
    },
    {
+    "name": "salt",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": "fine salt"
+   },
+   {
     "name": "water",
-    "quantity": 600,
+    "quantity": 500,
     "unit": "ml",
-    "note": ""
+    "note": "added gradually"
    },
    {
     "name": "olive oil",
-    "quantity": 4,
-    "unit": "tbsp",
-    "note": ""
+    "quantity": 25,
+    "unit": "g",
+    "note": "stirred into the rested batter; the description says half a pocillo (a small cup), 25 g, so the spoken 'half a cup' is not a full cup"
    },
    {
-    "name": "salt",
-    "quantity": null,
-    "unit": "",
-    "note": "to taste"
+    "name": "olive oil",
+    "quantity": 3,
+    "unit": "tbsp",
+    "note": "for the tin"
    },
    {
     "name": "black pepper",
     "quantity": null,
     "unit": "",
-    "note": "to taste"
+    "note": "freshly ground, to taste, sprinkled on top"
    }
   ],
   "steps": [
    {
-    "text": "Prepare the Batter: Whisk together chickpea flour, water, salt, and pepper. Let sit for at least 4 hours.",
-    "minutes": 240
+    "text": "Mix the chickpea flour and salt in a bowl. Add the water a little at a time, mixing as you go so no lumps form.",
+    "minutes": null
    },
    {
-    "text": "Bake: Preheat the oven to 220°C (430°F). Pour olive oil into a round baking dish and heat in the oven. Pour in the batter and bake for 25-30 minutes, until golden.",
+    "text": "Leave the batter uncovered to rest for at least 3 hours (up to 24 hours). The flour will settle at the bottom.",
+    "minutes": 180
+   },
+   {
+    "text": "Stir the olive oil into the rested batter and mix well.",
+    "minutes": null
+   },
+   {
+    "text": "Spread about 3 tablespoons of olive oil over a 30 cm pizza tin so it is well covered.",
+    "minutes": null
+   },
+   {
+    "text": "Heat the oiled tin in a 220°C oven for 5 minutes. This step stops the batter sticking.",
+    "minutes": 5
+   },
+   {
+    "text": "Take the hot tin out and pour in the batter straight away. Bake it on the oven floor for 5 minutes.",
+    "minutes": 5
+   },
+   {
+    "text": "Move the tin to the top shelf and bake for 30 minutes more, until golden brown.",
     "minutes": 30
    },
    {
-    "text": "Serve: Slice and serve hot, optionally with black pepper on top.",
+    "text": "Sprinkle with freshly ground black pepper and serve hot or at room temperature.",
     "minutes": null
    }
   ]
@@ -40467,29 +40465,29 @@
  {
   "source": "themealdb:53399",
   "title": "Firni",
-  "description": "An Afghan sweet made with rose water, almonds and pistachios — serves 8, ready in under half an hour.",
-  "servings": 8,
+  "description": "Afghan milk custard thickened with cornflour, sweetened with sugar and scented with cardamom and rose water, cooled and topped with ground pistachios.",
+  "servings": 4,
   "cuisine": "Afghan",
   "category": "Dessert",
   "image": "https://www.themealdb.com/images/media/meals/dm8kee1779553541.jpg",
-  "prep_minutes": 10,
-  "cook_minutes": 5,
+  "prep_minutes": 5,
+  "cook_minutes": 20,
   "ingredients": [
    {
     "name": "milk",
-    "quantity": 6,
-    "unit": "cup",
-    "note": ""
+    "quantity": 1,
+    "unit": "l",
+    "note": "a little set aside to mix with the cornflour"
    },
    {
     "name": "cornflour",
-    "quantity": 5,
+    "quantity": 4,
     "unit": "tbsp",
     "note": ""
    },
    {
     "name": "sugar",
-    "quantity": 1.5,
+    "quantity": 0.75,
     "unit": "cup",
     "note": ""
    },
@@ -40497,7 +40495,7 @@
     "name": "cardamom",
     "quantity": 0.5,
     "unit": "tsp",
-    "note": ""
+    "note": "ground"
    },
    {
     "name": "rose water",
@@ -40506,37 +40504,35 @@
     "note": ""
    },
    {
-    "name": "almonds",
-    "quantity": 1,
-    "unit": "handful",
-    "note": ""
-   },
-   {
     "name": "pistachios",
     "quantity": 1,
-    "unit": "handful",
-    "note": ""
+    "unit": "tbsp",
+    "note": "ground, to garnish"
    }
   ],
   "steps": [
    {
-    "text": "Pour 1 cup of milk into a small bowl, add the cornstarch and whisk them well until smooth.",
+    "text": "Mix the cornflour with a little of the milk until there are no lumps, and set it aside.",
     "minutes": null
    },
    {
-    "text": "Pour the rest of the milk into a non-stick saucepan, adding the sugar and cardamom (and rosewater, if desired) whilst cooking over medium heat.",
+    "text": "Heat the rest of the milk in a saucepan over medium heat until it starts to boil.",
     "minutes": null
    },
    {
-    "text": "Before it starts to boil, slowly add the milk and cornstarch mixture to the pan, whisking constantly to avoid lumps. Keep stirring until the mixture increases in thickness.",
+    "text": "Stir in the sugar until it dissolves.",
     "minutes": null
    },
    {
-    "text": "Take the pan off the heat and pour into a large shallow serving bowl. Let it cool at room temperature, and then put in the refrigerator for about 1 – 2 hours.",
-    "minutes": 120
+    "text": "Lower the heat and add the cornflour mixture, stirring until it thickens. Avoid scraping the bottom of the pan so no burnt bits come up.",
+    "minutes": 10
    },
    {
-    "text": "Finally, sprinkle your Firni with sliced almonds and pistachios and serve!",
+    "text": "Once it starts to thicken, stir in the cardamom and rose water, keep stirring for a few more minutes, then turn off the heat.",
+    "minutes": null
+   },
+   {
+    "text": "Pour the firni into a serving dish, sprinkle with ground pistachios and leave it to cool before serving.",
     "minutes": null
    }
   ]
@@ -51155,70 +51151,162 @@
  {
   "source": "themealdb:52978",
   "title": "Kumpir",
-  "description": "A Turkish side of potato, cheese and capsicum — serves 4, ready in under half an hour.",
-  "servings": 4,
+  "description": "Turkish street-food baked potatoes: large potatoes baked about 90 minutes at 250°C, mashed with butter and cheese, then loaded two ways, with crispy dried smoked meat and gherkin or with American salad and sausage.",
+  "servings": 2,
   "cuisine": "Turkish",
   "category": "Side",
   "image": "https://www.themealdb.com/images/media/meals/mlchx21564916997.jpg",
-  "prep_minutes": 10,
-  "cook_minutes": 5,
+  "prep_minutes": 20,
+  "cook_minutes": 90,
   "ingredients": [
    {
     "name": "potato",
     "quantity": 2,
     "unit": "",
-    "note": "large"
+    "note": "large, one per kumpir"
    },
    {
     "name": "butter",
     "quantity": 2,
-    "unit": "tbsp",
-    "note": ""
+    "unit": "tsp",
+    "note": "1 tsp per potato"
    },
    {
     "name": "cheese",
-    "quantity": 150,
-    "unit": "g",
-    "note": ""
+    "quantity": 2,
+    "unit": "handful",
+    "note": "grated melting cheese (cheddar, mozzarella), 1 handful per potato"
    },
    {
-    "name": "onion",
+    "name": "salt",
+    "quantity": 4,
+    "unit": "pinch",
+    "note": "a pinch per kumpir plus 2 pinches for the American salad"
+   },
+   {
+    "name": "black pepper",
+    "quantity": 3,
+    "unit": "pinch",
+    "note": "freshly ground: a pinch per kumpir plus a pinch for the American salad"
+   },
+   {
+    "name": "bacon",
+    "quantity": 11,
+    "unit": "slice",
+    "note": "the video uses dried smoked meat (bacon is the creator's suggested substitute): 6 slices for the smoked-meat kumpir, 5 for the American salad"
+   },
+   {
+    "name": "tomato paste",
     "quantity": 1,
-    "unit": "",
-    "note": "large"
+    "unit": "tsp",
+    "note": "for the smoked-meat kumpir"
    },
    {
     "name": "capsicum",
     "quantity": 1,
     "unit": "",
-    "note": "large"
+    "note": "small green, finely chopped, for the smoked-meat kumpir"
    },
    {
-    "name": "red chilli flakes",
+    "name": "spring onion",
+    "quantity": 1,
+    "unit": "sprig",
+    "note": "finely sliced, for the smoked-meat kumpir"
+   },
+   {
+    "name": "dill pickles",
+    "quantity": 2,
+    "unit": "",
+    "note": "pickled: 1 small sliced for the smoked-meat kumpir, 1 diced for the American salad"
+   },
+   {
+    "name": "fried onions",
+    "quantity": null,
+    "unit": "",
+    "note": "crispy onions, to garnish"
+   },
+   {
+    "name": "sausages",
+    "quantity": 1,
+    "unit": "",
+    "note": "any kind, for the sausage kumpir"
+   },
+   {
+    "name": "water",
+    "quantity": 3,
+    "unit": "cup",
+    "note": "for boiling the carrot and peas, lightly salted"
+   },
+   {
+    "name": "peas",
+    "quantity": 1,
+    "unit": "handful",
+    "note": "fresh, frozen or canned, for the American salad"
+   },
+   {
+    "name": "carrot",
+    "quantity": 1,
+    "unit": "",
+    "note": "small, cut into 1 cm dice, for the American salad"
+   },
+   {
+    "name": "pickled garlics",
+    "quantity": 1,
+    "unit": "clove",
+    "note": "finely chopped, for the American salad"
+   },
+   {
+    "name": "mayonnaise",
+    "quantity": 3,
+    "unit": "tbsp",
+    "note": "heaped, for the American salad"
+   },
+   {
+    "name": "chilli flakes",
     "quantity": 1,
     "unit": "pinch",
-    "note": ""
+    "note": "hot, for the sausage kumpir"
    }
   ],
   "steps": [
    {
-    "text": "If you order kumpir in Turkey, the standard filling is first, lots of butter mashed into the potato, followed by cheese.",
+    "text": "Preheat the oven to 250°C, top and bottom heat, no fan.",
     "minutes": null
    },
    {
-    "text": "There’s then a row of other toppings that you can just point at to your heart’s content – sweetcorn, olives, salami, coleslaw, Russian salad, allsorts – and you walk away with an over-stuffed potato because you got ever-excited by the choices on offer.",
+    "text": "Scrub the potatoes and wrap each one in baking paper.",
     "minutes": null
    },
    {
-    "text": "Grate (roughly – you can use as much as you like) 150g of cheese.",
+    "text": "Set the potatoes on the oven floor with a tray on top so both the top and bottom of each potato touch metal. Bake about 1½ hours until soft inside, swapping their places now and then if your oven bakes unevenly.",
+    "minutes": 90
+   },
+   {
+    "text": "In the last 10–15 minutes, make the American salad. Boil the diced carrot and peas in 3 cups of salted water for 5–10 minutes, until the peas turn bright green and then dull slightly, then drain and salt them.",
+    "minutes": 5
+   },
+   {
+    "text": "Mix the diced gherkin, pickled garlic, finely sliced smoked meat, mayonnaise and black pepper with the carrots and peas.",
     "minutes": null
    },
    {
-    "text": "Finely chop one onion and one sweet red pepper.",
+    "text": "Fry the 6 slices of smoked meat for the smoked-meat kumpir in a cast iron pan over medium heat until crisp.",
     "minutes": null
    },
    {
-    "text": "Put these ingredients into a large bowl with a good sprinkling of salt and pepper, chilli flakes (optional).",
+    "text": "Cook the sausage in a ridged cast iron pan over medium-high heat for 5–6 minutes.",
+    "minutes": 5
+   },
+   {
+    "text": "Take each hot potato out, cut a big, deep slit down its length and mash in the butter, grated cheese, salt and pepper until creamy. Keep a little cheese back.",
+    "minutes": null
+   },
+   {
+    "text": "For the smoked-meat kumpir, mix in the tomato paste, green capsicum, spring onion, gherkin and the cheese you kept back. Top with chopped crispy smoked meat and crispy onions.",
+    "minutes": null
+   },
+   {
+    "text": "For the sausage kumpir, spread the American salad over the potato, sprinkle with chilli flakes and top with sliced sausage.",
     "minutes": null
    }
   ]
@@ -58090,118 +58178,122 @@
  {
   "source": "themealdb:53121",
   "title": "Norwegian Potato Lefse",
-  "description": "A Norwegian side of potato and cream — makes 12, on the table in about 45 minutes.",
-  "servings": 12,
+  "description": "Norwegian potato flatbread: riced potato dough rolled thin, cooked on a griddle, then filled with kling, a thin spread of butter, sugar and cream, folded and cut into small pieces.",
+  "servings": 8,
   "cuisine": "Norwegian",
   "category": "Side",
   "image": "https://www.themealdb.com/images/media/meals/hxcuj01762772827.jpg",
-  "prep_minutes": 15,
-  "cook_minutes": 20,
+  "prep_minutes": 60,
+  "cook_minutes": 30,
   "ingredients": [
    {
     "name": "potato",
     "quantity": 1360,
     "unit": "g",
-    "note": ""
+    "note": "3 lb, boiled and riced"
    },
    {
     "name": "salt",
-    "quantity": 1,
-    "unit": "tsp",
-    "note": ""
+    "quantity": null,
+    "unit": "",
+    "note": "to taste; the written recipe prints the amount garbled as 't tsp'"
    },
    {
     "name": "sugar",
     "quantity": 1,
     "unit": "tsp",
-    "note": ""
+    "note": "for the dough"
    },
    {
     "name": "butter",
     "quantity": 0.25,
     "unit": "cup",
-    "note": ""
+    "note": "melted, for the dough"
    },
    {
     "name": "cream",
     "quantity": 0.25,
     "unit": "cup",
-    "note": ""
+    "note": "heavy cream, for the dough"
    },
    {
     "name": "plain flour",
     "quantity": 1.5,
     "unit": "cup",
-    "note": ""
+    "note": "for the dough"
    },
    {
     "name": "plain flour",
     "quantity": 0.5,
     "unit": "cup",
-    "note": ""
+    "note": "for rolling"
    },
    {
     "name": "butter",
-    "quantity": 14,
-    "unit": "tbsp",
-    "note": ""
+    "quantity": 200,
+    "unit": "g",
+    "note": "14 tbsp, room temperature, for the kling"
    },
    {
     "name": "sugar",
     "quantity": 0.75,
     "unit": "cup",
-    "note": ""
+    "note": "granulated, for the kling"
    },
    {
     "name": "cream",
     "quantity": 1,
     "unit": "tbsp",
-    "note": ""
+    "note": "heavy cream, for the kling"
    }
   ],
   "steps": [
    {
-    "text": "Boil the potatoes. Peel the potatoes while still warm and run them through a potato ricer twice.",
+    "text": "Boil the potatoes, peel them while still warm and put them through a potato ricer twice.",
     "minutes": null
    },
    {
-    "text": "Let the potatoes cool in an uncovered bowl in the fridge.",
+    "text": "Let the riced potato cool in an uncovered bowl in the fridge.",
     "minutes": null
    },
    {
-    "text": "Stir the salt, sugar, melted butter, and cream into the riced potatoes.",
+    "text": "Stir the salt, 1 tsp sugar, melted butter and ¼ cup cream into the cold potato.",
     "minutes": null
    },
    {
-    "text": "Slowly add the flour and knead by hand until you get a good consistency. Don't add more flour than necessary! Roll the dough into a long sausage and divide into about 7 or 8 pieces if using an 18 inch griddle.",
+    "text": "Slowly knead in the 1½ cups flour, using no more than needed. Roll the dough into a long sausage and cut it into 7–8 pieces for an 18-inch griddle, or 10–12 for a smaller griddle or frying pan.",
     "minutes": null
    },
    {
-    "text": "If using a smaller griddle or frying pan, divide the dough into 10 – 12 pieces.",
+    "text": "Roll each piece into a ball, then press it into a flat, crack-free round using the edges of your hands.",
     "minutes": null
    },
    {
-    "text": "Roll each piece into a ball and then press into a flat circle, using the edges of your hands to form the dough into a nice circle shape without any cracks. This is important, otherwise you won't get round lefser.",
+    "text": "Heat the griddle over medium-high heat.",
     "minutes": null
    },
    {
-    "text": "Heat up your griddle on medium/high heat.",
+    "text": "On a lightly floured surface roll each piece into a large circle slightly smaller than the griddle, starting with a smooth rolling pin and finishing with a corrugated one. Go easy on the flour so the edges don't harden.",
     "minutes": null
    },
    {
-    "text": "Flour your rolling surface and roll the lefse dough into a large circle slightly smaller than your griddle or frying pan. Begin rolling with a smooth rolling pin, then switch to a corrugated rolling pin as the lefse gets thinner.",
+    "text": "Lift the lefse on a lefse stick onto the griddle. After a minute or two check for brown spots underneath, then flip it and cook the other side.",
+    "minutes": 1
+   },
+   {
+    "text": "Remove each lefse with the stick and keep it in a folded damp sheet or tablecloth.",
     "minutes": null
    },
    {
-    "text": "Don't use too much flour, as then the edges can become hard.",
+    "text": "For the kling, beat the softened butter, sugar and 1 tbsp cream together until smooth.",
     "minutes": null
    },
    {
-    "text": "Roll the lefse onto your lefse stick and then gently unroll it onto your griddle. After a minute or two check the underside of the lefse for brown spots and then use the lefse stick to flip the lefse and cook on the other side.",
+    "text": "Spread a very thin layer over a lefse and fold the edges in to make a rectangle. Cover the gaps with two triangles cut from another lefse.",
     "minutes": null
    },
    {
-    "text": "Use the lefse stick to remove the lefse from the griddle and place it in a folded damp sheet or tablecloth.",
+    "text": "Spread a second thin layer of kling over the rectangle, fold it in half and cut into small rectangles to serve.",
     "minutes": null
    }
   ]
@@ -67780,104 +67872,92 @@
  },
  {
   "source": "themealdb:53545",
-  "title": "Ropa Veija",
-  "description": "A Cuban dish of flank steak, capsicum and tomato puree — serves 4, a slow cook that's worth the wait.",
+  "title": "Ropa Vieja",
+  "description": "Cuban shredded beef: seared flank steak simmered for about two hours with onion, green capsicum, tomato, beef stock and bay leaves, then shredded and finished with olives and roasted capsicum.",
   "servings": 4,
   "cuisine": "Cuban",
   "category": "Beef",
   "image": "https://www.themealdb.com/images/media/meals/thvft91784576451.jpg",
-  "prep_minutes": 25,
-  "cook_minutes": 205,
+  "prep_minutes": 15,
+  "cook_minutes": 150,
   "ingredients": [
    {
     "name": "flank steak",
-    "quantity": 910,
+    "quantity": 900,
     "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "salt",
-    "quantity": 3,
-    "unit": "tsp",
-    "note": ""
+    "note": "lightly salted and peppered"
    },
    {
     "name": "vegetable oil",
-    "quantity": 4,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "capsicum",
-    "quantity": 1,
+    "quantity": null,
     "unit": "",
-    "note": ""
-   },
-   {
-    "name": "capsicum",
-    "quantity": 1,
-    "unit": "",
-    "note": ""
+    "note": "for frying; amount and type not stated"
    },
    {
     "name": "onion",
     "quantity": 1,
     "unit": "",
-    "note": ""
+    "note": "good size, chopped"
+   },
+   {
+    "name": "capsicum",
+    "quantity": 1,
+    "unit": "",
+    "note": "green, chopped"
    },
    {
     "name": "garlic",
-    "quantity": 6,
+    "quantity": 4,
     "unit": "clove",
-    "note": ""
+    "note": "large, roughly chopped; he says four or five"
    },
    {
-    "name": "tomato puree",
-    "quantity": 2,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "smoked paprika",
-    "quantity": 1,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "ground cumin",
-    "quantity": 2,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "dried oregano",
-    "quantity": 2,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "dry white wine",
-    "quantity": 0.5,
+    "name": "dry sherry",
+    "quantity": 0.25,
     "unit": "cup",
-    "note": ""
+    "note": "sherry, to deglaze; the auto-caption reads 'a/4 cup of cherry' but he says the alcohol cooks off, so sherry is meant; he doesn't say dry or sweet, priced as dry sherry"
+   },
+   {
+    "name": "salt",
+    "quantity": null,
+    "unit": "",
+    "note": "to taste"
+   },
+   {
+    "name": "black pepper",
+    "quantity": null,
+    "unit": "",
+    "note": "to taste"
    },
    {
     "name": "canned tomatoes",
     "quantity": 1,
     "unit": "can",
+    "note": "diced"
+   },
+   {
+    "name": "beef stock",
+    "quantity": 1,
+    "unit": "cup",
     "note": ""
    },
    {
     "name": "bay leaf",
-    "quantity": 2,
+    "quantity": 3,
     "unit": "",
     "note": ""
    },
    {
     "name": "green olives",
-    "quantity": 1,
+    "quantity": 0.5,
     "unit": "cup",
-    "note": ""
+    "note": "chopped; the recipe says half a cup, he adds more to taste; he doesn't say what kind, so priced as green olives"
+   },
+   {
+    "name": "roasted capsicum",
+    "quantity": null,
+    "unit": "",
+    "note": "chopped roasted pimentos (jarred roasted red capsicum); he adds 'some' with no amount, so to taste"
    },
    {
     "name": "rice",
@@ -67890,45 +67970,43 @@
     "quantity": null,
     "unit": "",
     "note": "to serve"
-   },
-   {
-    "name": "coriander",
-    "quantity": 0.25,
-    "unit": "cup",
-    "note": ""
    }
   ],
   "steps": [
    {
-    "text": "Cut steak into 4 rectangular pieces. Pat dry with paper towels; season all over with 1 1/2 teaspoons salt.",
+    "text": "Lightly salt and pepper the flank steak. Sear it in hot oil in a large pot over medium-high heat, in batches if needed, until well browned, then set it aside.",
     "minutes": null
    },
    {
-    "text": "In a large pot over medium-high heat, heat 2 tablespoons oil. Working in batches, cook steak until browned on both sides, 5 to 6 minutes. Transfer to a plate.",
-    "minutes": 6
+    "text": "In the same pot, cook the chopped onion and green capsicum for about 4–5 minutes until softened.",
+    "minutes": 4
    },
    {
-    "text": "In same pot over medium heat, heat remaining 2 tablespoons oil. Cook bell peppers, onion, and 1 1/2 teaspoons salt, stirring occasionally, until slightly softened, 4 to 5 minutes.",
-    "minutes": 5
+    "text": "Add the garlic and cook for 30 seconds to a minute until fragrant.",
+    "minutes": 1
    },
    {
-    "text": "Add garlic, tomato paste, paprika, cumin, and oregano and cook, stirring occasionally, until vegetables are softened and spices are aromatic, 1 to 2 minutes more.",
-    "minutes": 2
+    "text": "Pour in the sherry and scrape up the browned bits from the bottom of the pot as the alcohol cooks off.",
+    "minutes": null
    },
    {
-    "text": "Add wine, scraping any browned bits from bottom of pan, and cook, stirring occasionally, until reduced by half, about 2 minutes. Add tomatoes with their juices and bay leaves. Mash down on tomatoes to break up, then nestle beef into stew.",
-    "minutes": 2
+    "text": "Season with salt and pepper, then add the canned diced tomatoes and beef stock. Tuck the seared steak back in and add the bay leaves.",
+    "minutes": null
    },
    {
-    "text": "Add water to cover beef, if needed, and bring to a simmer. Reduce heat to medium-low; cover and simmer until steaks are tender enough to shred, 2 1/2 to 3 hours. Transfer steaks to a plate and finely shred with 2 forks.",
-    "minutes": 180
+    "text": "Bring to a boil, then reduce the heat, cover and simmer for about 2 hours, until the beef is very tender and shreddable.",
+    "minutes": 120
    },
    {
-    "text": "Stir shredded steak back into stew. Bring to a simmer and cook, stirring, until liquid has reduced to a sauce that coats steak, 5 to 10 minutes. Stir in olives; season with salt.",
+    "text": "Take the lid off to reduce the liquid a little, then move the steak to a bowl and shred it with two forks. If it won't shred easily, return it to the sauce and simmer longer.",
+    "minutes": null
+   },
+   {
+    "text": "Return the shredded beef to the pot with the chopped olives and chopped roasted pimentos. Mix well and simmer for about 10 minutes.",
     "minutes": 10
    },
    {
-    "text": "Spoon ropa vieja over rice and beans. Top with cilantro.",
+    "text": "Serve with cooked rice and black beans.",
     "minutes": null
    }
   ]
@@ -76196,15 +76274,21 @@
  },
  {
   "source": "themealdb:52931",
-  "title": "Sugar Pie",
-  "description": "A Canadian sweet made with everyday staples — serves 8, about an hour start to finish.",
+  "title": "Sugar pie",
+  "description": "A Canadian brown-sugar pie: brown sugar, flour, eggs, vanilla and cream mixed together and baked in a raw pie crust until just set.",
   "servings": 8,
   "cuisine": "Canadian",
   "category": "Dessert",
   "image": "https://www.themealdb.com/images/media/meals/yrstur1511816601.jpg",
-  "prep_minutes": 10,
-  "cook_minutes": 40,
+  "prep_minutes": 5,
+  "cook_minutes": 45,
   "ingredients": [
+   {
+    "name": "shortcrust pastry",
+    "quantity": 1,
+    "unit": "",
+    "note": "pie crust, left raw so it bakes with the filling"
+   },
    {
     "name": "brown sugar",
     "quantity": 2,
@@ -76212,16 +76296,22 @@
     "note": ""
    },
    {
-    "name": "butter",
-    "quantity": 0.25,
-    "unit": "cup",
-    "note": ""
+    "name": "plain flour",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": "all-purpose flour"
+   },
+   {
+    "name": "salt",
+    "quantity": 1,
+    "unit": "pinch",
+    "note": "about 1/8 tsp"
    },
    {
     "name": "eggs",
     "quantity": 2,
     "unit": "",
-    "note": ""
+    "note": "large"
    },
    {
     "name": "vanilla extract",
@@ -76230,44 +76320,44 @@
     "note": ""
    },
    {
-    "name": "salt",
+    "name": "thickened cream",
     "quantity": 1,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "plain flour",
-    "quantity": 0.5,
     "unit": "cup",
-    "note": ""
-   },
-   {
-    "name": "milk",
-    "quantity": 1.5,
-    "unit": "cup",
-    "note": ""
+    "note": "heavy whipping cream; use the highest fat content you can find"
    }
   ],
   "steps": [
    {
-    "text": "Preheat oven to 180°C (350°F) (175 degrees C). Grease a 9-inch pie dish.",
+    "text": "Roll out the pie crust and fit it into a pie pan, keeping it raw.",
     "minutes": null
    },
    {
-    "text": "Place the brown sugar and butter in a mixing bowl, and beat them together with an electric mixer until creamy and very well combined, without lumps. Beat in eggs, one at a time, incorporating the first egg before adding the next one.",
+    "text": "Heat the oven to 200°C.",
     "minutes": null
    },
    {
-    "text": "Add the vanilla extract and salt; beat the flour in, a little at a time, and then the milk, making a creamy batter. Pour the batter into the prepared pie dish.",
+    "text": "Mix the brown sugar, flour and salt in a bowl, breaking up any lumps in the sugar with the back of a spoon.",
     "minutes": null
    },
    {
-    "text": "Bake in the preheated oven for 35 minutes; remove pie, and cover the rim with aluminum foil to prevent burning. Return to oven, and bake until the middle sets and the top forms a crusty layer, about 15 more minutes.",
+    "text": "In another bowl, whisk the eggs with a fork until pale, then whisk in the vanilla and cream.",
+    "minutes": null
+   },
+   {
+    "text": "Add the wet mixture to the dry and stir until thoroughly combined, then pour it into the raw pie crust.",
+    "minutes": null
+   },
+   {
+    "text": "Bake at 200°C for 10 minutes.",
+    "minutes": 10
+   },
+   {
+    "text": "Reduce the oven to 180°C and bake for a further 35 to 40 minutes, until the crust is golden and the pie is just set.",
     "minutes": 35
    },
    {
-    "text": "Let the pie cool to room temperature, then refrigerate for at least 1 hour before serving.",
-    "minutes": 60
+    "text": "Let the pie cool fully before slicing and serving.",
+    "minutes": null
    }
   ]
  },
@@ -78176,93 +78266,197 @@
  {
   "source": "themealdb:53026",
   "title": "Tamiya",
-  "description": "An Egyptian dish of broad beans, spring onion and cayenne pepper — serves 2, ready in under half an hour.",
-  "servings": 2,
+  "description": "Egyptian falafel made from soaked split fava beans with leek, spring onion and herbs, whipped for a fluffy centre, coated in coriander and sesame seeds and deep-fried.",
+  "servings": 10,
   "cuisine": "Egyptian",
   "category": "Vegetarian",
   "image": "https://www.themealdb.com/images/media/meals/n3xxd91598732796.jpg",
-  "prep_minutes": 15,
-  "cook_minutes": 10,
+  "prep_minutes": 45,
+  "cook_minutes": 25,
   "ingredients": [
    {
     "name": "broad beans",
-    "quantity": 3,
-    "unit": "cup",
-    "note": ""
+    "quantity": 400,
+    "unit": "g",
+    "note": "dried split fava beans, soaked for at least 8 hours"
    },
    {
     "name": "spring onion",
-    "quantity": 6,
-    "unit": "",
-    "note": ""
+    "quantity": 100,
+    "unit": "g",
+    "note": "white and green parts, roughly chopped"
+   },
+   {
+    "name": "leek",
+    "quantity": 100,
+    "unit": "g",
+    "note": "white and light green parts, roughly chopped"
+   },
+   {
+    "name": "coriander",
+    "quantity": 50,
+    "unit": "g",
+    "note": "fresh, for the batter"
+   },
+   {
+    "name": "parsley",
+    "quantity": 50,
+    "unit": "g",
+    "note": "fresh, for the batter"
    },
    {
     "name": "garlic",
     "quantity": 4,
-    "unit": "",
-    "note": ""
+    "unit": "clove",
+    "note": "for the batter"
    },
    {
-    "name": "parsley",
-    "quantity": 0.25,
-    "unit": "cup",
-    "note": ""
+    "name": "ground coriander",
+    "quantity": 2,
+    "unit": "tsp",
+    "note": "dried, for the batter"
    },
    {
     "name": "ground cumin",
-    "quantity": 2,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "baking powder",
     "quantity": 1,
     "unit": "tsp",
-    "note": ""
+    "note": "for the batter"
    },
    {
     "name": "cayenne pepper",
-    "quantity": 0.5,
+    "quantity": 1,
     "unit": "tsp",
-    "note": ""
+    "note": "for the batter"
    },
    {
-    "name": "plain flour",
-    "quantity": null,
-    "unit": "",
-    "note": "to sprinkle"
+    "name": "salt",
+    "quantity": 2.5,
+    "unit": "tsp",
+    "note": "for the batter"
    },
    {
     "name": "vegetable oil",
+    "quantity": 1,
+    "unit": "l",
+    "note": "for deep-frying"
+   },
+   {
+    "name": "onion",
+    "quantity": 1,
+    "unit": "",
+    "note": "medium brown, small dice, for the optional harissa filling"
+   },
+   {
+    "name": "harissa spice",
+    "quantity": 1.5,
+    "unit": "tbsp",
+    "note": "harissa paste, for the optional filling; any hot chilli paste works"
+   },
+   {
+    "name": "tomato paste",
+    "quantity": 1.5,
+    "unit": "tbsp",
+    "note": "or red pepper paste, for the optional filling"
+   },
+   {
+    "name": "olive oil",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "for the optional filling"
+   },
+   {
+    "name": "ground cumin",
+    "quantity": 0.25,
+    "unit": "tsp",
+    "note": "for the optional filling"
+   },
+   {
+    "name": "salt",
+    "quantity": 0.25,
+    "unit": "tsp",
+    "note": "for the optional filling"
+   },
+   {
+    "name": "black pepper",
+    "quantity": 0.25,
+    "unit": "tsp",
+    "note": "for the optional filling"
+   },
+   {
+    "name": "ground coriander",
+    "quantity": 0.25,
+    "unit": "tsp",
+    "note": "for the optional filling"
+   },
+   {
+    "name": "coriander seeds",
+    "quantity": 0.25,
+    "unit": "cup",
+    "note": "lightly crushed, for the seed coating"
+   },
+   {
+    "name": "sesame seed",
+    "quantity": 0.25,
+    "unit": "cup",
+    "note": "for the seed coating"
+   },
+   {
+    "name": "pita bread",
     "quantity": null,
     "unit": "",
-    "note": "as needed"
+    "note": "to serve, for sandwiches"
+   },
+   {
+    "name": "tahini",
+    "quantity": null,
+    "unit": "",
+    "note": "tahina sauce, to serve in the sandwiches"
    }
   ],
   "steps": [
    {
-    "text": "Oak the beans in water to cover overnight. Drain. If skinless beans are unavailable, rub to loosen the skins, then discard the skins. Pat the beans dry with a towel.",
+    "text": "Wash 400 g split fava beans until the water runs clear, cover with plenty of water and soak for at least 8 hours or overnight. Drain.",
+    "minutes": 480
+   },
+   {
+    "text": "Roughly chop the leek, spring onions, coriander and parsley. Put them in a food processor with the garlic and the drained beans on top, and process to a fine paste, scraping down the sides.",
     "minutes": null
    },
    {
-    "text": "Grind the beans in a food mill or meat grinder. If neither appliance is available, process them in a food processor but only until the beans form a paste.",
+    "text": "Add the salt, dried coriander, cumin and cayenne and process until evenly mixed. The batter should be a uniform green with a texture like mashed avocado.",
     "minutes": null
    },
    {
-    "text": "(If blended too smoothly, the batter tends to fall apart during cooking.) Add the scallions, garlic, cilantro, cumin, baking powder, cayenne, salt, pepper, and coriander, if using. Refrigerate for at least 30 minutes.",
-    "minutes": 30
+    "text": "For the optional filling, soften the diced onion in the olive oil over medium heat, then stir in the harissa, tomato paste, cumin, coriander, salt and pepper. Add a splash of water and cook down, topping up the water until the onions are cooked through and the filling is thick.",
+    "minutes": 15
    },
    {
-    "text": "Shape the bean mixture into 1-inch balls. Flatten slightly and coat with flour.",
+    "text": "Lightly crush the coriander seeds in a mortar so they just crack open, then mix with the sesame seeds for the coating.",
     "minutes": null
    },
    {
-    "text": "Heat at least 1½-inches of oil over medium heat to 365 degrees.",
-    "minutes": null
-   },
-   {
-    "text": "Fry the patties in batches, turning once, until golden brown on all sides, about 5 minutes. Remove with a wire mesh skimmer or slotted spoon. Serve as part of a meze or in pita bread with tomato-cucumber salad and tahina sauce.",
+    "text": "Whisk a quarter of the batter in a stand mixer on medium speed until light, fluffy and airy. Do this just before frying, as it deflates quickly.",
     "minutes": 5
+   },
+   {
+    "text": "With wet hands or damp parchment, scoop 2 to 3 tablespoons of batter and press into a puck about 1 to 1.5 cm thick. Press the seed coating on both sides. For stuffed ones, make a smaller patty, add 1 tsp filling, cover with more batter and seal.",
+    "minutes": null
+   },
+   {
+    "text": "Heat the vegetable oil, about 2.5 cm deep, over medium heat to 160°C. Lower the tamiya in and baste the tops with hot oil so they hold together.",
+    "minutes": null
+   },
+   {
+    "text": "Fry for 2 to 3 minutes until the underside is light brown, then flip and fry 2 to 3 minutes on the other side.",
+    "minutes": 4
+   },
+   {
+    "text": "Fry for 2 more minutes on each side until deep brown, then drain on a paper-towel lined tray.",
+    "minutes": 4
+   },
+   {
+    "text": "Serve in split pita with tahina sauce, a tomato and cucumber salad and pickles if you like.",
+    "minutes": null
    }
   ]
  },
@@ -78435,149 +78629,143 @@
  {
   "source": "themealdb:53404",
   "title": "Tavë Kosi Baked Lamb and Yogurt",
-  "description": "An Albanian dish of lamb, rice and greek yoghurt — serves 4, worth the couple of hours it takes.",
-  "servings": 4,
+  "description": "Albanian casserole of seared, simmered lamb shoulder and rice topped with a set egg, Greek yoghurt and roux mixture, baked until risen and browned. The video makes two large portions.",
+  "servings": 2,
   "cuisine": "Albanian",
   "category": "Lamb",
   "image": "https://www.themealdb.com/images/media/meals/a1mi7t1779643816.jpg",
   "prep_minutes": 20,
-  "cook_minutes": 90,
+  "cook_minutes": 100,
   "ingredients": [
    {
-    "name": "lamb",
-    "quantity": 600,
+    "name": "lamb shoulder",
+    "quantity": 350,
     "unit": "g",
-    "note": ""
+    "note": "boneless, cut into 3 cm pieces, fat left on"
    },
    {
     "name": "butter",
-    "quantity": 20,
+    "quantity": 10,
     "unit": "g",
-    "note": ""
+    "note": "for searing the lamb"
    },
    {
     "name": "olive oil",
-    "quantity": 2,
+    "quantity": 1,
     "unit": "tbsp",
-    "note": ""
+    "note": "for searing the lamb"
    },
    {
-    "name": "rice",
-    "quantity": 70,
-    "unit": "g",
-    "note": ""
+    "name": "garlic",
+    "quantity": 1,
+    "unit": "clove",
+    "note": "big, peeled and sliced"
    },
    {
-    "name": "oregano",
-    "quantity": 2,
+    "name": "dried oregano",
+    "quantity": 0.5,
     "unit": "tsp",
     "note": ""
    },
    {
     "name": "water",
-    "quantity": 450,
+    "quantity": 260,
     "unit": "ml",
-    "note": ""
-   },
-   {
-    "name": "garlic",
-    "quantity": 2,
-    "unit": "clove",
-    "note": "chopped"
+    "note": "hot: 200 ml to simmer the lamb plus 60 ml for the rice"
    },
    {
     "name": "salt",
-    "quantity": 1,
-    "unit": "pinch",
-    "note": ""
+    "quantity": null,
+    "unit": "",
+    "note": "to taste, for the lamb and the yoghurt mixture"
    },
    {
     "name": "black pepper",
-    "quantity": 1,
-    "unit": "pinch",
-    "note": ""
+    "quantity": null,
+    "unit": "",
+    "note": "to taste, for the lamb and the yoghurt mixture"
    },
    {
-    "name": "butter",
-    "quantity": 50,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "plain flour",
-    "quantity": 2,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "greek yoghurt",
-    "quantity": 750,
+    "name": "rice",
+    "quantity": 30,
     "unit": "g",
     "note": ""
    },
    {
     "name": "eggs",
-    "quantity": 6,
+    "quantity": 2,
     "unit": "",
-    "note": ""
+    "note": "for the yoghurt mixture"
    },
    {
-    "name": "salt",
-    "quantity": 1,
-    "unit": "pinch",
-    "note": ""
+    "name": "greek yoghurt",
+    "quantity": 250,
+    "unit": "g",
+    "note": "full-fat"
    },
    {
-    "name": "black pepper",
+    "name": "butter",
+    "quantity": 20,
+    "unit": "g",
+    "note": "for the roux; the description says 1–2 tbsp"
+   },
+   {
+    "name": "plain flour",
+    "quantity": 20,
+    "unit": "g",
+    "note": "for the roux"
+   },
+   {
+    "name": "nutmeg",
     "quantity": 1,
     "unit": "pinch",
-    "note": ""
+    "note": "freshly grated, sprinkled on top"
    }
   ],
   "steps": [
    {
-    "text": "Baking the Lamb: in a large pan (with a lid) melt the butter and olive oil together then add the diced lamb. Brown the lamb on a medium heat, this will take around 5 minutes.",
-    "minutes": 5
-   },
-   {
-    "text": "Add the garlic, oregano, 300ml of water and season with salt and pepper. Mix well before covering with the lid. Leave to simmer for 50 minutes mixing a couple of times ensuring the lamb doesn’t start to burn.",
-    "minutes": 50
-   },
-   {
-    "text": "The juices should have nearly all boiled away so another 150ml of water should be added along with the rice. Mix altogether, bring to the boil, place the lid on and leave for just 10 minutes.",
-    "minutes": 10
-   },
-   {
-    "text": "It’s advised to check at around 8 minutes – you want the liquid to be evaporated with just moist coating of oily water left over the lamb and rice.",
-    "minutes": 8
-   },
-   {
-    "text": "Place the lamb and rice into a casserole dish, the mixture should fully cover the base and have at least 2 inches spare for the yogurt. Alternatively you can split into four ceramic bowls. Making a Roux.",
+    "text": "Cut the lamb into pieces about 3 cm across, leaving the fat on, and slice the garlic.",
     "minutes": null
    },
    {
-    "text": "In a small saucepan melt the butter over a medium heat and then add two tablespoons of flour while continuously stirring for two minutes (add a little extra flour if needed).",
+    "text": "In a lidded pan over medium-high heat, sear the lamb in the butter and olive oil for a few minutes, without overcrowding the pan.",
     "minutes": null
    },
    {
-    "text": "The roux should not be thick but not too runny, the colour will darken slightly. Pour the roux into a bowl and keep to one side. Making the Yogurt Mixture.",
+    "text": "Add the garlic, oregano and 200 ml hot water. Cover and simmer on low for at least 45 minutes, stirring every 15 minutes, until only oily juices remain.",
+    "minutes": 45
+   },
+   {
+    "text": "Season with salt and pepper, add the rice and 60 ml hot water, and cook for 6–8 minutes. The rice only needs to part-cook; it finishes in the oven.",
+    "minutes": 6
+   },
+   {
+    "text": "Heat the oven to 180°C with a baking sheet on the lowest shelf.",
     "minutes": null
    },
    {
-    "text": "In a mixing bowl add the yogurt, eggs and season with salt and pepper. Mix together then add the roux continuing to mix fast for a minute to ensure the roux and yogurt are thoroughly combined.",
+    "text": "Spread the lamb and rice evenly in an oven dish about 18 cm across, deep enough to hold at least double the volume.",
     "minutes": null
    },
    {
-    "text": "Pour the yogurt mixture over the baked lamb and rice and sprinkle on a little oregano. Cooking.",
+    "text": "Whisk the eggs briefly in a large bowl, then whisk in the Greek yoghurt until smooth.",
     "minutes": null
    },
    {
-    "text": "Place on the bottom shelf of the oven on 180 degrees for 35 minutes then move it up to the middle for a further 10 minutes. The Tavë kosi is ready when the yogurt has risen up high and a golden crust formed.",
-    "minutes": 35
+    "text": "Make a roux: melt the remaining butter in a saucepan over medium-low heat and stir in the flour in 2–3 batches, until neither too runny nor too thick.",
+    "minutes": null
    },
    {
-    "text": "Leave to cool for 5 – 10 minutes before serving.",
-    "minutes": 10
+    "text": "Take the roux off the heat and slowly whisk it into the egg and yoghurt, then season with salt and pepper.",
+    "minutes": null
+   },
+   {
+    "text": "Pour the mixture over the lamb and rice so it covers the lamb, and grate nutmeg on top.",
+    "minutes": null
+   },
+   {
+    "text": "Bake for about 45 minutes, checking every 15, until the top has risen and browned.",
+    "minutes": 45
    }
   ]
  },
@@ -81491,85 +81679,107 @@
  },
  {
   "source": "themealdb:53165",
-  "title": "Torrijas with sherry",
-  "description": "A Spanish breakfast of cream, dry sherry and bread — serves 2, on the table in about 45 minutes.",
-  "servings": 2,
+  "title": "Torrijas (Spanish cinnamon toast)",
+  "description": "Baguette slices soaked in milk infused with cinnamon, vanilla and lemon peel, dipped in egg, fried until golden and dusted with cinnamon sugar.",
+  "servings": 4,
   "cuisine": "Spanish",
-  "category": "Breakfast",
+  "category": "Dessert",
   "image": "https://www.themealdb.com/images/media/meals/f3ee3y1763309332.jpg",
-  "prep_minutes": 15,
-  "cook_minutes": 15,
+  "prep_minutes": 5,
+  "cook_minutes": 25,
   "ingredients": [
+   {
+    "name": "baguette",
+    "quantity": 1,
+    "unit": "",
+    "note": "cut in 1-inch (2.5 cm) diagonal slices"
+   },
+   {
+    "name": "milk",
+    "quantity": 1,
+    "unit": "cup",
+    "note": "for the infusion"
+   },
+   {
+    "name": "sugar",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "for the milk"
+   },
+   {
+    "name": "vanilla pod",
+    "quantity": 1,
+    "unit": "",
+    "note": "vanilla bean"
+   },
+   {
+    "name": "cinnamon stick",
+    "quantity": 1,
+    "unit": "",
+    "note": ""
+   },
+   {
+    "name": "lemon zest",
+    "quantity": null,
+    "unit": "",
+    "note": "some peel, to taste (no amount given)"
+   },
    {
     "name": "eggs",
     "quantity": 2,
     "unit": "",
-    "note": "medium"
+    "note": "beaten"
    },
    {
-    "name": "cream",
-    "quantity": 2,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "milk",
-    "quantity": 2,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "sugar",
-    "quantity": 3,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "dry sherry",
-    "quantity": 3,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "bread",
-    "quantity": 4,
-    "unit": "slice",
-    "note": ""
-   },
-   {
-    "name": "olive oil",
-    "quantity": null,
-    "unit": "",
-    "note": "for deep-frying"
+    "name": "sunflower oil",
+    "quantity": 0.5,
+    "unit": "cup",
+    "note": "for frying"
    },
    {
     "name": "icing sugar",
-    "quantity": null,
-    "unit": "",
-    "note": "to serve"
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "for dusting"
    },
    {
-    "name": "creme fraiche",
-    "quantity": null,
-    "unit": "",
-    "note": "to serve"
+    "name": "ground cinnamon",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "for dusting"
    }
   ],
   "steps": [
    {
-    "text": "In a wide, shallow bowl, beat the eggs with the cream, milk, golden caster sugar and sherry. Cut each slice of bread in two and dip them into the egg mix, turning to make sure they get a good coating on either side.",
+    "text": "Put the milk, sugar, vanilla bean, cinnamon stick and lemon peel in a small saucepan over medium heat. Turn it off as soon as the milk comes to a boil.",
     "minutes": null
    },
    {
-    "text": "Soak bread in egg mixture for 10 mins to absorb the liquid (carefully turn them over from time to time and make sure they don’t get too soggy).",
-    "minutes": 10
+    "text": "Let the milk cool, then pour it through a sieve into a shallow dish.",
+    "minutes": null
    },
    {
-    "text": "Heat 1½ tbsp olive oil in a large frying pan and cook the bread for about 3 mins on each side until dark golden and crisp on the edge. Keep the slices warm in a low oven as you cook the rest.",
-    "minutes": 3
+    "text": "Cut the baguette into diagonal slices about 1 inch (2.5 cm) thick, discarding the end.",
+    "minutes": null
    },
    {
-    "text": "Divide the torrijas between plates and dust with the icing sugar. Serve with crème fraîche or Greek yogurt on the side.",
+    "text": "Beat the 2 eggs in a bowl.",
+    "minutes": null
+   },
+   {
+    "text": "Heat the sunflower oil in a medium frying pan over medium heat.",
+    "minutes": null
+   },
+   {
+    "text": "Soak each slice of bread in the milk to coat both sides, then dip it in the beaten egg.",
+    "minutes": null
+   },
+   {
+    "text": "Fry the slices in batches, about 2 minutes a side, until golden. Lift onto a paper-towel lined plate to drain.",
+    "minutes": 4
+   },
+   {
+    "text": "Mix the icing sugar and cinnamon and sift it over the torrijas before serving.",
     "minutes": null
    }
   ]
@@ -86364,43 +86574,43 @@
  {
   "source": "themealdb:53225",
   "title": "Yemeni Lahsa (Elite Shakshuka)",
-  "description": "A Saudi Arabian breakfast of tomato, allspice and liquid cheese — serves 2, ready in under half an hour.",
-  "servings": 2,
-  "cuisine": "Saudi Arabian",
+  "description": "Yemeni lahsa: an onion, tomato paste and fresh tomato base lightly spiced with cumin and paprika, beaten eggs stirred through until fluffy, then glazed with cream cheese.",
+  "servings": 3,
+  "cuisine": "Yemeni",
   "category": "Breakfast",
   "image": "https://www.themealdb.com/images/media/meals/30s7vf1763741844.jpg",
   "prep_minutes": 10,
   "cook_minutes": 15,
   "ingredients": [
    {
-    "name": "eggs",
-    "quantity": 5,
+    "name": "vegetable oil",
+    "quantity": null,
     "unit": "",
-    "note": ""
+    "note": "a little, for frying"
    },
    {
     "name": "onion",
+    "quantity": 100,
+    "unit": "g",
+    "note": "half an onion, finely chopped"
+   },
+   {
+    "name": "tomato paste",
     "quantity": 1,
-    "unit": "",
-    "note": "diced"
+    "unit": "tbsp",
+    "note": "about 15 g"
    },
    {
     "name": "tomato",
+    "quantity": 300,
+    "unit": "g",
+    "note": "three medium, diced"
+   },
+   {
+    "name": "chilli",
     "quantity": 1,
     "unit": "",
-    "note": "diced"
-   },
-   {
-    "name": "olive oil",
-    "quantity": 2,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "allspice",
-    "quantity": 0.25,
-    "unit": "tsp",
-    "note": ""
+    "note": "hot pepper, chopped for the sauce; adjust to your spice preference"
    },
    {
     "name": "black pepper",
@@ -86409,23 +86619,89 @@
     "note": ""
    },
    {
-    "name": "liquid cheese",
-    "quantity": 3,
-    "unit": "tbsp",
+    "name": "ground cumin",
+    "quantity": 0.25,
+    "unit": "tsp",
     "note": ""
+   },
+   {
+    "name": "paprika",
+    "quantity": 0.25,
+    "unit": "tsp",
+    "note": ""
+   },
+   {
+    "name": "salt",
+    "quantity": null,
+    "unit": "",
+    "note": "to taste"
+   },
+   {
+    "name": "eggs",
+    "quantity": 5,
+    "unit": "",
+    "note": "beaten"
+   },
+   {
+    "name": "cream cheese",
+    "quantity": null,
+    "unit": "",
+    "note": "spread over the top, amount to taste"
+   },
+   {
+    "name": "chilli",
+    "quantity": null,
+    "unit": "",
+    "note": "a few slices, to garnish"
+   },
+   {
+    "name": "coriander",
+    "quantity": null,
+    "unit": "",
+    "note": "fresh leaves, to garnish"
+   },
+   {
+    "name": "bread",
+    "quantity": null,
+    "unit": "",
+    "note": "fresh, to serve"
    }
   ],
   "steps": [
    {
-    "text": "First, On medium heat, heat the olive oil and add the diced onion until it wethers. Next, add the tomatoes and cook for another 4-5 min. Lastly, add the all spice, salt, and cracked pepper.",
-    "minutes": 5
+    "text": "Heat a little vegetable oil in a pan over medium heat and sauté the chopped onion until soft and golden.",
+    "minutes": null
    },
    {
-    "text": "Add the eggs and mix throughly for 2 minutes and cover to cook 5-6 minutes until top is solidified. Lastly, spread the liquid cheese and have it covered for a minute.",
-    "minutes": 6
+    "text": "Stir in the tomato paste and cook for a minute to bring out its flavour.",
+    "minutes": 1
    },
    {
-    "text": "I served mine Mediterranean style with hash-browns, Egyptian fava beans, Turkish salami and olives, cheese wedges, and greek feta.",
+    "text": "Add the diced tomatoes and chopped hot pepper and mix well.",
+    "minutes": null
+   },
+   {
+    "text": "Season with black pepper, cumin, paprika and salt to taste.",
+    "minutes": null
+   },
+   {
+    "text": "Cook until the tomatoes are soft and form a thick, aromatic sauce.",
+    "minutes": null
+   },
+   {
+    "text": "Pour in the five beaten eggs and gently mix them into the sauce.",
+    "minutes": null
+   },
+   {
+    "text": "Cook, stirring now and then, until the eggs are fully cooked and fluffy.",
+    "minutes": null
+   },
+   {
+    "text": "Take off the heat and spread cream cheese over the warm eggs, as much as you like.",
+    "minutes": null
+   },
+   {
+    "text": "Top with fresh coriander and sliced chilli, and serve at once with fresh bread.",
     "minutes": null
    }
   ]
@@ -86433,67 +86709,73 @@
  {
   "source": "themealdb:53097",
   "title": "Yorkshire Puddings",
-  "description": "A British classic made with everyday staples — serves 2, on the table in about 45 minutes.",
-  "servings": 2,
+  "description": "Classic Yorkshire puddings from a simple whisked egg, milk and flour batter, poured into sunflower oil heated in a tin and baked until golden and crisp outside, chewy within.",
+  "servings": 6,
   "cuisine": "British",
   "category": "Miscellaneous",
   "image": "https://www.themealdb.com/images/media/meals/x5qz5k1761595900.jpg",
   "prep_minutes": 10,
-  "cook_minutes": 30,
+  "cook_minutes": 35,
   "ingredients": [
-   {
-    "name": "plain flour",
-    "quantity": 140,
-    "unit": "g",
-    "note": ""
-   },
    {
     "name": "eggs",
     "quantity": 4,
     "unit": "",
-    "note": ""
+    "note": "free-range"
    },
    {
     "name": "milk",
     "quantity": 200,
     "unit": "ml",
+    "note": "whole"
+   },
+   {
+    "name": "plain flour",
+    "quantity": 200,
+    "unit": "g",
+    "note": "sifted if you like"
+   },
+   {
+    "name": "salt",
+    "quantity": 1,
+    "unit": "pinch",
     "note": ""
    },
    {
     "name": "vegetable oil",
     "quantity": null,
     "unit": "",
-    "note": "a drizzle"
+    "note": "sunflower oil, for frying: about 1 cm deep in each mould of the tin"
    }
   ],
   "steps": [
    {
-    "text": "Heat oven to 230C/fan 210C/gas 8.",
+    "text": "Whisk the eggs in a big bowl so plenty of air goes in.",
     "minutes": null
    },
    {
-    "text": "Drizzle a little sunflower oil evenly into two 4-hole Yorkshire pudding tins or two 12-hole non-stick muffin tins and place in the oven to heat through.",
+    "text": "Whisk in the milk and flour (sifting the flour keeps it light and lump-free), then add a small pinch of salt. The batter should just coat the back of a spoon.",
     "minutes": null
    },
    {
-    "text": "To make the batter, tip 140g plain flour into a bowl and beat in 4 eggs until smooth.",
+    "text": "Pour the batter into a jug so it can be poured quickly.",
     "minutes": null
    },
    {
-    "text": "Gradually add 200ml milk and carry on beating until the mix is completely lump-free. Season with salt and pepper.",
+    "text": "Pour sunflower oil about 1 cm deep into each mould of a Yorkshire pudding or muffin tin.",
     "minutes": null
    },
    {
-    "text": "Pour the batter into a jug, then remove the hot tins from the oven. Carefully and evenly pour the batter into the holes.",
+    "text": "Heat the oiled tin in a 190°C oven for about 15 minutes, until the oil is very hot.",
+    "minutes": 15
+   },
+   {
+    "text": "Take the hot tin out and pour or spoon batter into the hot oil in each mould, keeping the batter off the sides so the puddings can rise. Put the tin straight back in the oven.",
     "minutes": null
    },
    {
-    "text": "Place the tins back in the oven and leave undisturbed for 20-25 mins until the puddings have puffed up and browned.",
-    "minutes": 25
-   },
-   {
-    "text": "Serve immediately. You can now cool them and freeze for up to 1 month.",
-    "minutes": null
+    "text": "Bake for 20–25 minutes, using the oven for nothing else, until golden and crisp. Serve hot.",
+    "minutes": 20
    }
   ]
  },

@@ -1572,12 +1572,12 @@
   "checked": "2026-10-20"
  },
  "themealdb:53055": {
-  "videoId": "_MpSxSgS7f8",
-  "title": "How to make cevapi : Petar Tasic from Fabrika",
-  "channel": "Hummguide Experiences",
-  "status": "rejected",
-  "reason": "video title doesn't match the dish",
-  "checked": "2026-10-20"
+  "videoId": "3kSZ3h6l_Uk",
+  "title": "How To Make Ćevapi (Skinless Sausages)",
+  "channel": "Henrys HowTos",
+  "checked": "2026-11-04",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:52969": {
   "videoId": "EHKNu93MSx4",
@@ -2468,10 +2468,12 @@
   "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53139": {
-  "videoId": null,
-  "status": "unavailable",
-  "reason": "TheMealDB lists no video for this meal",
-  "checked": "2026-10-20"
+  "videoId": "lQsdyE07njo",
+  "title": "FAINÁ Clásica y con Cebolla de Verdeo (sin TACC)",
+  "channel": "El Pastificio de Nicola",
+  "checked": "2026-11-04",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53266": {
   "videoId": "NZcWedPKysk",
@@ -2530,10 +2532,12 @@
   "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53399": {
-  "videoId": null,
-  "status": "unavailable",
-  "reason": "TheMealDB's link isn't a valid YouTube video URL",
-  "checked": "2026-10-20"
+  "videoId": "JtABFzmN-UA",
+  "title": "Firni Recipe (Afghan Custard) | My Afghan Kitchen",
+  "channel": "MyAfghanKitchen",
+  "checked": "2026-11-04",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53043": {
   "videoId": "YXUZHK2PrV8",
@@ -3214,10 +3218,12 @@
   "transcribed": true
  },
  "themealdb:52978": {
-  "videoId": "IEDEtZ4UVtI",
-  "status": "unavailable",
-  "reason": "video no longer exists on YouTube",
-  "checked": "2026-10-20"
+  "videoId": "skAdl3Bf08E",
+  "title": "How To Make Kumpir | Turkish Version Humble Baked Potato Recipe With A Special Cooking Technique!",
+  "channel": "Refika's Kitchen",
+  "checked": "2026-11-04",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:52946": {
   "videoId": "ysiuZm9FIxs",
@@ -3668,10 +3674,12 @@
   "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53121": {
-  "videoId": null,
-  "status": "unavailable",
-  "reason": "TheMealDB's link isn't a valid YouTube video URL",
-  "checked": "2026-10-20"
+  "videoId": "dGdYCCqGhUk",
+  "title": "Norwegian Potato Lefse Recipe",
+  "channel": "Scandinavian Cookbook",
+  "checked": "2026-11-04",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53500": {
   "videoId": null,
@@ -3689,9 +3697,9 @@
  },
  "themealdb:53501": {
   "videoId": null,
-  "status": "unavailable",
-  "reason": "TheMealDB lists no video for this meal",
-  "checked": "2026-10-20"
+  "checked": "2026-11-04",
+  "status": "rejected",
+  "reason": "Two searches found no verifiable Num Pang video: Sandwiches of History (dTRngtyPu7g) has no recipe in its description and its transcript fetch was IpBlocked; K's Kitchen (hmRZ8wgpJvQ) lists ingredients without amounts and covers pate sandwiches, not chicken. Recipe left unchanged."
  },
  "themealdb:52851": {
   "videoId": null,
@@ -4154,12 +4162,10 @@
   "transcribed": true
  },
  "themealdb:53383": {
-  "videoId": "AbJNVnkndS4",
-  "title": "How to make an Easy Shoyu Ramen at home in 10 minutes (recipe)",
-  "channel": "Way of Ramen",
+  "videoId": null,
+  "checked": "2026-11-04",
   "status": "rejected",
-  "reason": "video title doesn't match the dish",
-  "checked": "2026-10-20"
+  "reason": "Searched for a ramen noodle bowl with a boiled egg. Just One Cookbook's ramen-egg video covers only the marinated egg, and the other results were different dishes. Of the two checked, Souped Up Recipes' Yang Chun Mian (9f5iUsFWqoo) is a plain scallion-and-lard noodle soup with no egg, and Break the Spice's spicy ramen (CltUZnoUDFM) has transcripts disabled and a description with ingredients but no method, so neither can be verified as this dish."
  },
  "themealdb:52933": {
   "videoId": "Ys2kZnTVXAM",
@@ -4294,10 +4300,12 @@
   "transcribed": true
  },
  "themealdb:53545": {
-  "videoId": null,
-  "status": "unavailable",
-  "reason": "TheMealDB lists no video for this meal",
-  "checked": "2026-10-20"
+  "videoId": "M9ukcPTuQQk",
+  "title": "Ropa Vieja Recipe (Cuban Shredded Beef) | Easy & Flavorful",
+  "channel": "Chili Pepper Madness",
+  "checked": "2026-11-04",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53315": {
   "videoId": null,
@@ -4866,10 +4874,12 @@
   "transcribed": true
  },
  "themealdb:52931": {
-  "videoId": "uVQ66jiL-Dc",
-  "status": "unavailable",
-  "reason": "video can't be embedded",
-  "checked": "2026-10-20"
+  "videoId": "SxVKYZi0p3g",
+  "title": "Classic Canadian Sugar Pie",
+  "channel": "Sassy Kate and Wren",
+  "checked": "2026-11-04",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53130": {
   "videoId": "LgIQXxkOrMM",
@@ -5008,12 +5018,12 @@
   "checked": "2026-10-20"
  },
  "themealdb:53026": {
-  "videoId": "mulqW-J3Yy4",
-  "title": "Ta'ameya (Egyptian Falafel)",
-  "channel": "Doaa Fouda",
-  "status": "rejected",
-  "reason": "video title doesn't match the dish",
-  "checked": "2026-10-20"
+  "videoId": "PdGMnAt2sRY",
+  "title": "BEST EGYPTIAN FALAFEL EVER",
+  "channel": "Middle Eats",
+  "checked": "2026-11-04",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53312": {
   "videoId": "oVuAky9HTlM",
@@ -5033,9 +5043,9 @@
   "videoId": "sinI-D-vhKU",
   "title": "MOUTH-WATERING Albanian casserole with tender lamb meat | TAVE KOSI Recipe",
   "channel": "United Cuisines",
-  "status": "rejected",
-  "reason": "video title doesn't match the dish",
-  "checked": "2026-10-20"
+  "checked": "2026-11-04",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53405": {
   "videoId": "uRAmHFjVMEA",
@@ -5222,12 +5232,12 @@
   "transcribed": true
  },
  "themealdb:53165": {
-  "videoId": "RGUp1N5KAGY",
-  "title": "The Best French Toast You’ve Never Heard of is...Spanish",
-  "channel": "Christopher Kimball’s Milk Street",
-  "status": "rejected",
-  "reason": "video title doesn't match the dish",
-  "checked": "2026-10-20"
+  "videoId": "rlgWknBomDQ",
+  "title": "Torrijas Recipe - Spanish Cinnamon Toast",
+  "channel": "Spain on a Fork",
+  "checked": "2026-11-04",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53318": {
   "videoId": "JIDdt3XPi9U",
@@ -5538,18 +5548,20 @@
   "transcribed": true
  },
  "themealdb:53225": {
-  "videoId": "1QX-KBX6tmM",
-  "title": "Lahsa | The Yemeni Egg Dish You Need To Try",
-  "channel": "The Golden Balance",
-  "status": "rejected",
-  "reason": "video title doesn't match the dish",
-  "checked": "2026-10-20"
+  "videoId": "lOmM8ks2Uj8",
+  "title": "وصفة البيض اليمنية بالجبن السائل (لحسة) فطور سهل ولذيذ! How to make the perfect Yemeni egg breakfast",
+  "channel": "مطبخنا اليمني Our Yemeni Kitchen",
+  "checked": "2026-11-04",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53097": {
-  "videoId": null,
-  "status": "unavailable",
-  "reason": "TheMealDB's link isn't a valid YouTube video URL",
-  "checked": "2026-10-20"
+  "videoId": "nUvIJqhq0KQ",
+  "title": "How To Make Yorkshire Puddings | Jamie Oliver",
+  "channel": "Jamie Oliver",
+  "checked": "2026-11-04",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53294": {
   "videoId": "uely-neGHLM",

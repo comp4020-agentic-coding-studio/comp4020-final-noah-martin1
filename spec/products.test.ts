@@ -117,6 +117,7 @@ describe("like-for-like products", () => {
     ["peas", "NEW SEASON Chick Peas 420g"],
     ["cardamom", "Alameed Coffee Medium With Cardamom 250g"],
     ["white fish", "Bath & Pool Mirror - Pink & White Fish"],
+    ["rose water", "Garnier Skin Active Micellar Cleansing Rose Water 400mL"],
   ])("%s is not %s", (ingredient, product) => {
     expect(isEquivalent(ingredient, product)).toBe(false);
   });
