@@ -20718,126 +20718,188 @@
  {
   "source": "themealdb:53300",
   "title": "Bigos (Polish hunter's stew)",
-  "description": "A Polish stew of smoked sausage, bacon and cabbage — serves 8, worth the couple of hours it takes.",
-  "servings": 8,
+  "description": "A dry Polish hunter's stew of sauerkraut and fresh cabbage with bacon, pork shoulder, beef chuck and sausage, simmered until tender and best eaten the next day.",
+  "servings": 6,
   "cuisine": "Polish",
   "category": "Beef",
   "image": "https://www.themealdb.com/images/media/meals/fl4brj1764361323.jpg",
-  "prep_minutes": 25,
-  "cook_minutes": 60,
+  "prep_minutes": 30,
+  "cook_minutes": 120,
   "ingredients": [
    {
-    "name": "cabbage",
-    "quantity": 1,
-    "unit": "",
-    "note": "sliced"
-   },
-   {
-    "name": "beef stock",
-    "quantity": 250,
-    "unit": "ml",
-    "note": ""
-   },
-   {
-    "name": "mushrooms",
-    "quantity": 100,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "lard",
+    "name": "butter",
     "quantity": 2,
     "unit": "tbsp",
-    "note": ""
+    "note": "unsalted"
    },
    {
-    "name": "smoked sausage",
-    "quantity": 400,
+    "name": "sauerkraut",
+    "quantity": 2,
+    "unit": "cup",
+    "note": "drained, packed, not rinsed"
+   },
+   {
+    "name": "cabbage",
+    "quantity": 900,
     "unit": "g",
-    "note": ""
+    "note": "1 small green cabbage (2 lb before trimming), quartered and sliced like coleslaw"
    },
    {
     "name": "bacon",
-    "quantity": 250,
+    "quantity": 4,
+    "unit": "",
+    "note": "strips, cut in 2.5 cm pieces"
+   },
+   {
+    "name": "pork shoulder",
+    "quantity": 450,
     "unit": "g",
-    "note": ""
+    "note": "cut into 2.5 cm pieces"
+   },
+   {
+    "name": "chuck steak",
+    "quantity": 450,
+    "unit": "g",
+    "note": "beef chuck, cut into 2.5 cm pieces"
+   },
+   {
+    "name": "smoked sausage",
+    "quantity": 450,
+    "unit": "g",
+    "note": "Polish sausage links (or any other sausage), sliced; Chef John uses bratwurst and andouille"
    },
    {
     "name": "onion",
-    "quantity": 2,
+    "quantity": 1,
     "unit": "",
-    "note": "chopped"
+    "note": "large, peeled and chopped"
    },
    {
-    "name": "beef",
-    "quantity": 750,
-    "unit": "g",
-    "note": ""
+    "name": "dried mushrooms",
+    "quantity": 0.25,
+    "unit": "cup",
+    "note": "dried porcini, soaked until soft and chopped"
    },
    {
     "name": "prunes",
-    "quantity": 200,
-    "unit": "g",
+    "quantity": 3,
+    "unit": "",
+    "note": "pitted, diced"
+   },
+   {
+    "name": "red wine",
+    "quantity": 1,
+    "unit": "cup",
+    "note": "dry"
+   },
+   {
+    "name": "paprika",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": ""
+   },
+   {
+    "name": "caraway seeds",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": ""
+   },
+   {
+    "name": "dried thyme",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": ""
+   },
+   {
+    "name": "allspice",
+    "quantity": 0.25,
+    "unit": "tsp",
     "note": ""
    },
    {
     "name": "bay leaf",
     "quantity": 1,
     "unit": "",
-    "note": ""
+    "note": "large"
    },
    {
-    "name": "cloves",
-    "quantity": 2,
+    "name": "black pepper",
+    "quantity": null,
     "unit": "",
-    "note": ""
+    "note": "freshly ground, to taste"
    },
    {
-    "name": "black peppercorns",
-    "quantity": 12,
+    "name": "salt",
+    "quantity": null,
     "unit": "",
-    "note": ""
+    "note": "to taste; also used to season the pork, beef and onion"
    },
    {
-    "name": "juniper berries",
-    "quantity": 4,
+    "name": "water",
+    "quantity": 0.25,
+    "unit": "cup",
+    "note": "a splash when reheating the next day"
+   },
+   {
+    "name": "thyme",
+    "quantity": null,
     "unit": "",
-    "note": ""
+    "note": "fresh, to garnish"
    },
    {
-    "name": "allspice",
-    "quantity": 4,
+    "name": "bread",
+    "quantity": null,
     "unit": "",
-    "note": ""
-   },
-   {
-    "name": "red wine",
-    "quantity": 90,
-    "unit": "ml",
-    "note": ""
-   },
-   {
-    "name": "tomato puree",
-    "quantity": 2,
-    "unit": "tbsp",
-    "note": ""
+    "note": "buttered, to serve"
    }
   ],
   "steps": [
    {
-    "text": "Put the cabbage in a heavy casserole dish, add the stock and cook over a low heat for about 50 mins, until tender.",
-    "minutes": 50
+    "text": "Melt the butter in a Dutch oven over medium-low heat. Add the drained but unrinsed sauerkraut and the sliced fresh cabbage, and stir now and then while the meats brown.",
+    "minutes": null
    },
    {
-    "text": "Cut the soaked mushrooms into strips and save the soaking water. Heat the lard and fry the sausages and bacon, then scoop out, leaving the fat in the pan. Fry the onion in the same pan for 5-8 mins until lightly browned.",
-    "minutes": 8
+    "text": "In a frying pan over medium-high heat, brown the bacon until well cooked but not crisp. Move it into the cabbage and keep the fat in the pan.",
+    "minutes": null
    },
    {
-    "text": "Add the mushrooms and their liquid along with all the cooked meat, onions and prunes, then cover and cook for 20 mins. Add the spices, red wine and tomato purée and bring to a simmer, then cover and cook for 1 hr. Season well and leave to cool.",
-    "minutes": 60
+    "text": "Season the pork shoulder with salt, brown it in the bacon fat, and transfer it to the pot.",
+    "minutes": null
    },
    {
-    "text": "Will keep covered and chilled for up to two days. Bigos improves in flavour over a couple of days. Leave to cool first. Reheat until piping hot before serving.",
+    "text": "Season the beef chuck with salt, brown it the same way, and transfer it to the pot. Spoon or blot out fat if there is more than 2-3 tablespoons.",
+    "minutes": null
+   },
+   {
+    "text": "Brown the sliced sausage in the same pan and add it to the pot.",
+    "minutes": null
+   },
+   {
+    "text": "Lower the heat to medium and cook the chopped onion with a pinch of salt in the pan, stirring, until translucent and lightly coloured.",
+    "minutes": null
+   },
+   {
+    "text": "Stir in the soaked, chopped porcini and the diced prunes and cook with the onion for 2 minutes.",
+    "minutes": 2
+   },
+   {
+    "text": "Add the red wine, raise the heat to medium-high and cook, stirring, until almost all of it has reduced. Scrape the mixture into the pot.",
+    "minutes": null
+   },
+   {
+    "text": "Add the paprika, caraway, dried thyme, allspice, bay leaf and black pepper, and mix thoroughly. Add no extra liquid.",
+    "minutes": null
+   },
+   {
+    "text": "Cover tightly and simmer on low to medium-low, stirring occasionally, until the beef and pork are tender: about 1 1/2 hours here, anywhere from 1 to 2 hours.",
+    "minutes": 90
+   },
+   {
+    "text": "Turn off the heat and taste for seasoning. Let it cool and refrigerate overnight, since it is better the next day.",
+    "minutes": null
+   },
+   {
+    "text": "Reheat gently on low to medium-low with a splash of water (about 1/4 cup), stirring and checking it doesn't stick. Serve in large portions with fresh thyme and buttered bread.",
     "minutes": null
    }
   ]
@@ -24499,32 +24561,26 @@
  },
  {
   "source": "themealdb:53361",
-  "title": "Callaloo and SaltFish",
-  "description": "A Jamaican side of salt cod, bacon and callaloo — serves 4, ready in under half an hour.",
+  "title": "Callaloo and saltfish",
+  "description": "Jamaican saltfish boiled and shredded, then sautéed with capsicums, onion, tomato and scotch bonnet, folded through canned callaloo and steamed briefly.",
   "servings": 4,
   "cuisine": "Jamaican",
-  "category": "Side",
+  "category": "Seafood",
   "image": "https://www.themealdb.com/images/media/meals/73o3vq1765317873.jpg",
   "prep_minutes": 15,
-  "cook_minutes": 10,
+  "cook_minutes": 20,
   "ingredients": [
    {
     "name": "salt cod",
-    "quantity": 225,
+    "quantity": 340,
     "unit": "g",
-    "note": ""
+    "note": "saltfish, 1 pack (12 oz)"
    },
    {
-    "name": "bacon",
-    "quantity": 4,
-    "unit": "",
-    "note": ""
-   },
-   {
-    "name": "callaloo",
-    "quantity": 525,
-    "unit": "g",
-    "note": ""
+    "name": "vegetable oil",
+    "quantity": 0.33,
+    "unit": "cup",
+    "note": "for the pan; the narration says a small amount"
    },
    {
     "name": "onion",
@@ -24533,58 +24589,76 @@
     "note": "chopped"
    },
    {
-    "name": "spring onion",
-    "quantity": 2,
-    "unit": "",
-    "note": "chopped"
-   },
-   {
-    "name": "garlic",
-    "quantity": 2,
-    "unit": "clove",
-    "note": "minced"
-   },
-   {
-    "name": "scotch bonnet",
+    "name": "tomato",
     "quantity": 1,
     "unit": "",
     "note": "chopped"
    },
    {
-    "name": "tomato",
-    "quantity": 2,
+    "name": "capsicum",
+    "quantity": 0.75,
     "unit": "",
-    "note": "chopped"
+    "note": "1/4 each of a green, yellow and red capsicum, chopped"
    },
    {
-    "name": "thyme",
-    "quantity": 2,
-    "unit": "sprig",
-    "note": ""
+    "name": "scotch bonnet",
+    "quantity": 1,
+    "unit": "",
+    "note": "small, chopped, seeds removed"
+   },
+   {
+    "name": "callaloo",
+    "quantity": 1,
+    "unit": "can",
+    "note": "drained (or 2 lb fresh callaloo, chopped)"
    },
    {
     "name": "black pepper",
-    "quantity": 0.25,
+    "quantity": 0.125,
     "unit": "tsp",
-    "note": ""
+    "note": "ground"
    }
   ],
   "steps": [
    {
-    "text": "Soak salted fish in water overnight. Next, heat salted fish in water on stove until water boils. You should see a foam on top. Remove from heat and drain. Set aside and shred salted fish once it cools.",
+    "text": "Boil the saltfish to draw out the excess salt, pour off the water, and rinse the fish under cold water to cool it.",
     "minutes": null
    },
    {
-    "text": "Cook bacon in skillet over medium heat until crispy. Remove bacon from heat and drain the majority of the bacon grease, leaving about 1 tablespoon in the skillet.",
+    "text": "Shred the cooled saltfish and set it aside.",
     "minutes": null
    },
    {
-    "text": "Add yellow onion, green onion, scotch bonnet pepper, and garlic to the skillet and stir. Cook for about 2 minutes or until onions soften. Add salted fish to skillet and stir. Cook for about a minute.",
+    "text": "Chop the green, red and yellow capsicum, onion, tomato and scotch bonnet.",
+    "minutes": null
+   },
+   {
+    "text": "Heat the oil in a frying pan, add all the chopped vegetables, stir to combine and saute for a minute or two.",
+    "minutes": 1
+   },
+   {
+    "text": "Keep cooking the vegetables for another 2 minutes.",
     "minutes": 2
    },
    {
-    "text": "Next, add callaloo, roma tomatoes, thyme, and black pepper. Stir to combine and cook until heated through, about 2 minutes.",
-    "minutes": 2
+    "text": "Add the shredded saltfish and stir to combine.",
+    "minutes": null
+   },
+   {
+    "text": "Open the can of callaloo, drain it, add it to the pan and stir it through the saltfish.",
+    "minutes": null
+   },
+   {
+    "text": "Season with ground black pepper to taste.",
+    "minutes": null
+   },
+   {
+    "text": "Lower the heat, cover and steam for 5 minutes, then turn the heat off.",
+    "minutes": 5
+   },
+   {
+    "text": "Serve with fried plantain, roast or fried breadfruit, fried bread, or white rice.",
+    "minutes": null
    }
   ]
  },
@@ -27353,67 +27427,207 @@
  {
   "source": "themealdb:52765",
   "title": "Chicken Enchilada Casserole",
-  "description": "A Mexican stew of chicken breast, passata and monterey jack cheese — serves 4, about an hour start to finish.",
-  "servings": 4,
+  "description": "Boiled and chopped chicken thighs layered with sauce-dipped fried corn tortillas, raw onion and American cheese, with a homemade roux enchilada sauce, then baked until bubbly.",
+  "servings": 6,
   "cuisine": "Mexican",
   "category": "Chicken",
   "image": "https://www.themealdb.com/images/media/meals/qtuwxu1468233098.jpg",
-  "prep_minutes": 10,
-  "cook_minutes": 55,
+  "prep_minutes": 30,
+  "cook_minutes": 45,
   "ingredients": [
    {
-    "name": "passata",
-    "quantity": 390,
+    "name": "chicken thigh",
+    "quantity": 680,
     "unit": "g",
-    "note": "jar"
+    "note": "boneless, about 5 pieces"
    },
    {
-    "name": "monterey jack cheese",
-    "quantity": 3,
+    "name": "water",
+    "quantity": 5,
     "unit": "cup",
-    "note": ""
+    "note": "to simmer the chicken; 4 cups of the strained broth go into the sauce"
+   },
+   {
+    "name": "onion",
+    "quantity": 0.5,
+    "unit": "",
+    "note": "small, for simmering with the chicken"
+   },
+   {
+    "name": "garlic",
+    "quantity": 1,
+    "unit": "clove",
+    "note": "large, for simmering with the chicken"
+   },
+   {
+    "name": "salt",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "for simmering the chicken"
+   },
+   {
+    "name": "black pepper",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "1/2 tsp for the chicken, 1/2 tsp for the sauce"
+   },
+   {
+    "name": "butter",
+    "quantity": 3,
+    "unit": "tbsp",
+    "note": "salted, melted, for the sauce"
+   },
+   {
+    "name": "plain flour",
+    "quantity": 3,
+    "unit": "tbsp",
+    "note": "for the sauce"
+   },
+   {
+    "name": "chilli powder",
+    "quantity": 2.5,
+    "unit": "tbsp",
+    "note": "for the sauce"
+   },
+   {
+    "name": "paprika",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "for the sauce"
+   },
+   {
+    "name": "garlic powder",
+    "quantity": 2.5,
+    "unit": "tsp",
+    "note": "for the sauce"
+   },
+   {
+    "name": "onion powder",
+    "quantity": 1.5,
+    "unit": "tsp",
+    "note": "for the sauce"
+   },
+   {
+    "name": "ground cumin",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "for the sauce"
+   },
+   {
+    "name": "oregano",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "Mexican oregano, for the sauce"
+   },
+   {
+    "name": "tomato paste",
+    "quantity": 2,
+    "unit": "tsp",
+    "note": "for the sauce"
+   },
+   {
+    "name": "sugar",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": "for the sauce"
+   },
+   {
+    "name": "stock cube",
+    "quantity": 2,
+    "unit": "tsp",
+    "note": "chicken bouillon powder, for the sauce"
+   },
+   {
+    "name": "vegetable oil",
+    "quantity": 0.75,
+    "unit": "cup",
+    "note": "for frying the tortillas, as needed"
    },
    {
     "name": "corn tortillas",
-    "quantity": 6,
+    "quantity": 12,
     "unit": "",
-    "note": ""
+    "note": "depends on dish size"
    },
    {
-    "name": "chicken breast",
-    "quantity": 2,
+    "name": "cheddar cheese",
+    "quantity": 2.5,
+    "unit": "cup",
+    "note": "grated; the cook uses a block of American cheese and says Monterey Jack or cheddar also work"
+   },
+   {
+    "name": "cooking spray",
+    "quantity": null,
     "unit": "",
-    "note": ""
+    "note": "for greasing the dish"
+   },
+   {
+    "name": "onion",
+    "quantity": null,
+    "unit": "",
+    "note": "finely chopped, raw, layered with the chicken; amount as needed (to taste)"
+   },
+   {
+    "name": "sour cream",
+    "quantity": null,
+    "unit": "",
+    "note": "to serve"
+   },
+   {
+    "name": "pico de gallo",
+    "quantity": null,
+    "unit": "",
+    "note": "optional, to serve"
    }
   ],
   "steps": [
    {
-    "text": "Cut each chicken breast in about 3 pieces, so that it cooks faster and put it in a small pot. Pour Enchilada sauce over it and cook covered on low to medium heat until chicken is cooked through, about 20 minutes.",
+    "text": "Put the chicken thighs in a pot with the water, half an onion, the garlic clove, 1 tsp salt and 1/2 tsp pepper. Bring to the boil, then simmer with the lid on until the chicken is cooked through, 15 to 25 minutes depending on size.",
+    "minutes": 15
+   },
+   {
+    "text": "Lift out the chicken and let it cool a little. Strain the broth, keep 4 cups and cover it.",
+    "minutes": null
+   },
+   {
+    "text": "Chop the chicken and keep it covered so it doesn't dry out.",
+    "minutes": null
+   },
+   {
+    "text": "For the sauce, melt the butter in a clean pot, whisk in the flour and cook until it turns a pale golden colour and smells nutty.",
+    "minutes": null
+   },
+   {
+    "text": "Whisk in the chilli powder, paprika, garlic powder, onion powder, cumin, oregano, tomato paste, sugar, 1/2 tsp pepper and chicken bouillon until the spices are toasty and fragrant.",
+    "minutes": null
+   },
+   {
+    "text": "Slowly whisk in the 4 cups of broth until smooth. Bring to the boil, then cover and simmer on very low heat, whisking now and then so no skin forms.",
+    "minutes": null
+   },
+   {
+    "text": "Heat the oil in a small skillet and pass each corn tortilla through it for a few seconds a side, flipping as soon as it bubbles. Drain the excess oil and stack them on a plate.",
+    "minutes": null
+   },
+   {
+    "text": "Grate the cheese and heat the oven to 190°C. Lightly spray a 23 cm square (9x9 in) baking dish with cooking spray.",
+    "minutes": null
+   },
+   {
+    "text": "Dip a tortilla in the sauce and lay it in the dish; fit 4 tortillas in the first layer. Spoon a little sauce over, then add some of the chicken, some chopped raw onion and a little cheese.",
+    "minutes": null
+   },
+   {
+    "text": "Repeat for three layers in all. Finish with some sauce and the rest of the cheese, then cover the dish with foil.",
+    "minutes": null
+   },
+   {
+    "text": "Bake covered at 190°C for about 20 minutes, until bubbling.",
     "minutes": 20
    },
    {
-    "text": "No water is needed, the chicken will cook in the Enchilada sauce. Make sure you stir occasionally so that it doesn't stick to the bottom.",
-    "minutes": null
-   },
-   {
-    "text": "Remove chicken from the pot and shred with two forks. Preheat oven to 190°C (375°F) degrees.",
-    "minutes": null
-   },
-   {
-    "text": "Start layering the casserole. Start with about ¼ cup of the leftover Enchilada sauce over the bottom of a baking dish. I used a longer baking dish, so that I can put 2 corn tortillas across.",
-    "minutes": null
-   },
-   {
-    "text": "Place 2 tortillas on the bottom, top with ⅓ of the chicken and ⅓ of the remaining sauce. Sprinkle with ⅓ of the cheese and repeat starting with 2 more tortillas, then chicken, sauce, cheese.",
-    "minutes": null
-   },
-   {
-    "text": "Repeat with last layer with the remaining ingredients, tortillas, chicken, sauce and cheese.",
-    "minutes": null
-   },
-   {
-    "text": "Bake for 20 to 30 minutes uncovered, until bubbly and cheese has melted and started to brown on top. Serve warm.",
-    "minutes": 30
+    "text": "Rest the casserole for about 10 minutes so it's easier to serve. Serve with sour cream, pico de gallo and any leftover sauce.",
+    "minutes": 10
    }
   ]
  },
@@ -47439,87 +47653,111 @@
  },
  {
   "source": "themealdb:53355",
-  "title": "Jamaican Festival (Sweet Dumpling)",
-  "description": "A Jamaican side of cornmeal — serves 4, ready in under half an hour.",
-  "servings": 4,
+  "title": "Jamaican festival (sweet dumpling)",
+  "description": "Jamaican festivals: oblong cornmeal dumplings, sweetened and flavoured with vanilla and a pinch of cinnamon, rested then fried until golden, crunchy outside and light inside.",
+  "servings": 20,
   "cuisine": "Jamaican",
   "category": "Side",
   "image": "https://www.themealdb.com/images/media/meals/g6xb8m1764875029.jpg",
-  "prep_minutes": 15,
+  "prep_minutes": 45,
   "cook_minutes": 10,
   "ingredients": [
    {
     "name": "plain flour",
-    "quantity": 1.5,
+    "quantity": 3,
     "unit": "cup",
-    "note": ""
+    "note": "plus extra to dust"
    },
    {
     "name": "cornmeal",
     "quantity": 0.5,
     "unit": "cup",
-    "note": ""
+    "note": "more for a heavier festival"
    },
    {
-    "name": "sugar",
-    "quantity": 6,
+    "name": "baking powder",
+    "quantity": 1,
     "unit": "tbsp",
     "note": ""
    },
    {
-    "name": "baking powder",
-    "quantity": 2,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "vanilla extract",
+    "name": "salt",
     "quantity": 1,
     "unit": "tsp",
     "note": ""
    },
    {
-    "name": "salt",
-    "quantity": 0.5,
-    "unit": "tsp",
+    "name": "cinnamon",
+    "quantity": 1,
+    "unit": "pinch",
+    "note": "ground, optional"
+   },
+   {
+    "name": "vanilla extract",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": "1 tbsp vanilla lasco (a vanilla flavouring, the cook's \"secret\") in the dry mix plus 1 tbsp vanilla essence in the water; the description gives 1-2 tbsp of each"
+   },
+   {
+    "name": "sugar",
+    "quantity": 0.25,
+    "unit": "cup",
     "note": ""
    },
    {
-    "name": "milk",
-    "quantity": 0.75,
-    "unit": "cup",
+    "name": "butter",
+    "quantity": 1,
+    "unit": "tbsp",
     "note": ""
+   },
+   {
+    "name": "water",
+    "quantity": 1,
+    "unit": "cup",
+    "note": "stirred with the vanilla essence; the narration adds \"one more cup\" while kneading (2 cups in all), the written list says 1 cup"
    },
    {
     "name": "vegetable oil",
     "quantity": null,
     "unit": "",
-    "note": "for deep-frying"
+    "note": "cooking oil, for frying"
    }
   ],
   "steps": [
    {
-    "text": "Heat a heavy bottom pot of oil that has at least 3 inches of oil in it or use a deep fryer if you have one. Turn the heat over medium heat until the temperature reaches 180°C (350°F)",
+    "text": "In a large bowl combine the flour, cornmeal, baking powder, salt, a pinch of cinnamon, 1 tbsp vanilla lasco, the sugar and the butter.",
     "minutes": null
    },
    {
-    "text": "Add the all-purpose flour, cornmeal, granulated sugar, baking powder, and salt to a large bowl and stir to combine.",
+    "text": "Stir 1 tbsp vanilla essence into 1 cup of water.",
     "minutes": null
    },
    {
-    "text": "Add the vanilla extract and milk and stir until the dough comes together. Then use your hands to lightly form the mixture into a ball.",
+    "text": "Mix the dry ingredients and butter until the butter is spread evenly, then add the vanilla water.",
     "minutes": null
    },
    {
-    "text": "Pinch off pieces of dough and roll them into long oval shapes. Make about 12 dumplings.",
+    "text": "Knead lightly, adding a second cup of water as you go, until you have a sticky dough ball. Don't over-knead: the less you knead, the lighter the festivals.",
     "minutes": null
    },
    {
-    "text": "Once the oil has reached the temperature of 180°C (350°F), fry the dough on all sides, until golden brown. This should take about 4-6 minutes.",
-    "minutes": 6
+    "text": "Cover the dough and let it rest for at least 30 minutes so the gluten relaxes.",
+    "minutes": 30
    },
    {
-    "text": "Remove dough and drain off any excess grease. Serve and enjoy.",
+    "text": "Dust your hands with flour and shape the dough into oblong festivals. Keep them smallish because they expand as they fry.",
+    "minutes": null
+   },
+   {
+    "text": "Heat cooking oil in a pan or pot over medium heat, without letting it get too hot or the festivals will burn before they cook through.",
+    "minutes": null
+   },
+   {
+    "text": "Fry the festivals for 2-3 minutes a side, flipping once, until golden.",
+    "minutes": 4
+   },
+   {
+    "text": "Drain on paper towel or napkin to remove excess oil. Serve, for example with jerk pork.",
     "minutes": null
    }
   ]

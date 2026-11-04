@@ -1211,9 +1211,9 @@
   "videoId": "Oqg_cO4s8ik",
   "title": "Bigos - Polish Hunter's Stew Recipe",
   "channel": "Food Wishes",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-11-04",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53069": {
   "videoId": "y9aA7K-aKOw",
@@ -1473,11 +1473,11 @@
  },
  "themealdb:53361": {
   "videoId": "n1fRCk-zTRM",
-  "title": "Jamaican Callaloo and Saltfish Recipe | Traditional Recipe ",
+  "title": "Jamaican Callaloo and Saltfish Recipe | Traditional Recipe",
   "channel": "Cooking With Janiel",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-11-04",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:52939": {
   "videoId": "bCr3GasJWwE",
@@ -1674,10 +1674,12 @@
   "reason": "The Jamie Oliver Food Tube video (GZQGy9oscVk) is Kerryann Dunlop's Turkish couscous; its description and jamieoliver.com video page give no recipe, and no transcript is available. Searches found no chicken, harissa, apricot and chickpea couscous video with a written recipe (the closest, ourtable42's harissa apricot chicken with pearl couscous, uses thighs, preserves and pistachios)."
  },
  "themealdb:52765": {
-  "videoId": "EtVkwVKLc_M",
-  "status": "unavailable",
-  "reason": "video can't be embedded",
-  "checked": "2026-10-20"
+  "videoId": "Efw7ujc1gQ4",
+  "title": "My Popular Chicken Enchilada Casserole // It will become your favorite ❤️❤️",
+  "channel": "Rachel's Step by Step",
+  "checked": "2026-11-04",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:52818": {
   "videoId": "bwTSmLTZKNg",
@@ -2995,9 +2997,9 @@
   "videoId": "N270k22MPWk",
   "title": "Jamaican Festival Dumplings",
   "channel": "Racquel’s Caribbean Cuisine",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-11-04",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53356": {
   "videoId": "W5AJhsW-X44",
