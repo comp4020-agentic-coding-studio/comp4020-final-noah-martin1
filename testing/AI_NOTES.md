@@ -71,6 +71,15 @@ photo-to-pantry scan. Results and photos are in `fridge-scan/`.
   Italian "CRIK CROK" crisps as "chocolate bar" with the right price.
 - Score receipt names on the model's `name` field only: its `text` copies the
   printed line, so matching on both counts a wrong name as right.
+- Qwen3-VL 2B through Ollama reads receipts nearly as well as 8B (73% vs 74%
+  of names, every matched price right) but gives weights as a fractional
+  `qty` (0.572 for "0.572 kg NET") and discounts as negative-price lines.
+  The parser turns both into grams and into a discount on the item above.
+- The same 2B model in the browser (transformers.js 4.3.2) can't read
+  receipts at any precision: q4f16 got 5% of names, fp16 (4.73 GB) 33%, no
+  prices right. Image token counts matched Ollama's, so it isn't resolution
+  or compression. Fridge photos were fine. Don't ship browser receipt reading
+  on this stack without retesting a newer library or model.
 
 ## Barcodes
 

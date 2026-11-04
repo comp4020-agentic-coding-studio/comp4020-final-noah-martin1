@@ -1,0 +1,346 @@
+{
+ "model": "qwen3-vl:2b-instruct",
+ "items": 0.725,
+ "prices": 1,
+ "rows": [
+  {
+   "photo": "r1-woolworths-au.jpg",
+   "ms": 12091,
+   "items": 0.6666666666666666,
+   "prices": 1,
+   "weighed": "2/2",
+   "totalRead": true,
+   "check": {
+    "sum_cents": 1648,
+    "matches": true
+   },
+   "checkRight": false,
+   "missed": [
+    "pikelet bites 16pk 140g",
+    "pikelets 8pk 200g (less 1.98 pancake offer)"
+   ],
+   "wrongPrice": [],
+   "extra": [
+    "pikelite",
+    "pikelite"
+   ],
+   "lines": [
+    {
+     "text": "*WW SANDWICH CLASSIC EGG & LETTUCE",
+     "name": "sandwich",
+     "qty": 1,
+     "price_cents": 600,
+     "size": null,
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "APPLE PINK LADY",
+     "name": "apple",
+     "qty": 1,
+     "price_cents": 85,
+     "size": null,
+     "by_weight": true,
+     "grams": 217
+    },
+    {
+     "text": "MACRO ORGANIC FRESH MILK LOW FAT 1L",
+     "name": "milk",
+     "qty": 1,
+     "price_cents": 220,
+     "size": {
+      "quantity": 1000,
+      "unit": "ml"
+     },
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "BANANA CAVENDISH",
+     "name": "banana",
+     "qty": 1,
+     "price_cents": 143,
+     "size": null,
+     "by_weight": true,
+     "grams": 572
+    },
+    {
+     "text": "*GOLDEN PIKELET BITES 16PK 140GM",
+     "name": "pikelite",
+     "qty": 1,
+     "price_cents": 399,
+     "size": {
+      "quantity": 140,
+      "unit": "g"
+     },
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "*GOLDEN PIKELETS 8 PK 200GM",
+     "name": "pikelite",
+     "qty": 1,
+     "price_cents": 201,
+     "size": {
+      "quantity": 200,
+      "unit": "g"
+     },
+     "by_weight": false,
+     "grams": null
+    }
+   ],
+   "raw": "{\n  \"lines\": [\n    {\n      \"text\": \"*WW SANDWICH CLASSIC EGG & LETTUCE\",\n      \"name\": \"sandwich\",\n      \"qty\": 1,\n      \"price\": 6.0\n    },\n    {\n      \"text\": \"APPLE PINK LADY\",\n      \"name\": \"apple\",\n      \"qty\": 0.217,\n      \"price\": 0.85\n    },\n    {\n      \"text\": \"MACRO ORGANIC FRESH MILK LOW FAT 1L\",\n      \"name\": \"milk\",\n      \"qty\": 1,\n      \"price\": 2.2\n    },\n    {\n      \"text\": \"BANANA CAVENDISH\",\n      \"name\": \"banana\",\n      \"qty\": 0.572,\n      \"price\": 1.43\n    },\n    {\n      \"text\": \"*GOLDEN PIKELET BITES 16PK 140GM\",\n      \"name\": \"pikelite\",\n      \"qty\": 1,\n      \"price\": 3.99\n    },\n    {\n      \"text\": \"*GOLDEN PIKELETS 8 PK 200GM\",\n      \"name\": \"pikelite\",\n      \"qty\": 1,\n      \"price\": 3.99\n    },\n    {\n      \"text\": \"GOLDEN PANCAK OFFER\",\n      \"name\": \"pancake\",\n      \"qty\": 6,\n      \"price\": -1.98\n    }\n  ],\n  \"total\": 16.48\n}"
+  },
+  {
+   "photo": "r2-tesco-uk-1994.jpg",
+   "ms": 11033,
+   "items": 0.9,
+   "prices": 1,
+   "weighed": "0/0",
+   "totalRead": true,
+   "check": {
+    "sum_cents": 726,
+    "matches": false
+   },
+   "checkRight": true,
+   "missed": [
+    "mild white cheddar"
+   ],
+   "wrongPrice": [],
+   "extra": [
+    "jam doughnuts",
+    "mld wht chdr"
+   ],
+   "lines": [
+    {
+     "text": "6 JAM DOUGHNTS",
+     "name": "jam doughnuts",
+     "qty": 6,
+     "price_cents": 55,
+     "size": null,
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "REDUCED PRICE",
+     "name": "jam doughnuts",
+     "qty": 6,
+     "price_cents": 55,
+     "size": null,
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "6 JAM DOUGHNTS",
+     "name": "jam doughnuts",
+     "qty": 6,
+     "price_cents": 55,
+     "size": null,
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "REDUCED PRICE",
+     "name": "mld wht chdr",
+     "qty": 1,
+     "price_cents": 145,
+     "size": null,
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "RICH TEA",
+     "name": "tea",
+     "qty": 1,
+     "price_cents": 39,
+     "size": null,
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "C/CHP COOKIE",
+     "name": "cookie",
+     "qty": 1,
+     "price_cents": 44,
+     "size": null,
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "4 TEACAKES",
+     "name": "teacakes",
+     "qty": 4,
+     "price_cents": 50,
+     "size": null,
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "REDUCED PRICE",
+     "name": "brown rolls",
+     "qty": 18,
+     "price_cents": 85,
+     "size": null,
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "TUNA STEAKS",
+     "name": "tuna steaks",
+     "qty": 1,
+     "price_cents": 55,
+     "size": null,
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "L/GRAIN RICE",
+     "name": "rice",
+     "qty": 1,
+     "price_cents": 64,
+     "size": null,
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "ORANGE NET",
+     "name": "orange net",
+     "qty": 1,
+     "price_cents": 79,
+     "size": null,
+     "by_weight": false,
+     "grams": null
+    }
+   ],
+   "raw": "{\n  \"lines\": [\n    {\n      \"text\": \"6 JAM DOUGHNTS\",\n      \"name\": \"jam doughnuts\",\n      \"qty\": 6,\n      \"price\": 0.55\n    },\n    {\n      \"text\": \"REDUCED PRICE\",\n      \"name\": \"jam doughnuts\",\n      \"qty\": 6,\n      \"price\": 0.55\n    },\n    {\n      \"text\": \"6 JAM DOUGHNTS\",\n      \"name\": \"jam doughnuts\",\n      \"qty\": 6,\n      \"price\": 0.55\n    },\n    {\n      \"text\": \"REDUCED PRICE\",\n      \"name\": \"mld wht chdr\",\n      \"qty\": 1,\n      \"price\": 1.45\n    },\n    {\n      \"text\": \"RICH TEA\",\n      \"name\": \"tea\",\n      \"qty\": 1,\n      \"price\": 0.39\n    },\n    {\n      \"text\": \"C/CHP COOKIE\",\n      \"name\": \"cookie\",\n      \"qty\": 1,\n      \"price\": 0.44\n    },\n    {\n      \"text\": \"4 TEACAKES\",\n      \"name\": \"teacakes\",\n      \"qty\": 4,\n      \"price\": 0.50\n    },\n    {\n      \"text\": \"REDUCED PRICE\",\n      \"name\": \"brown rolls\",\n      \"qty\": 18,\n      \"price\": 0.85\n    },\n    {\n      \"text\": \"TUNA STEAKS\",\n      \"name\": \"tuna steaks\",\n      \"qty\": 1,\n      \"price\": 0.55\n    },\n    {\n      \"text\": \"L/GRAIN RICE\",\n      \"name\": \"rice\",\n      \"qty\": 1,\n      \"price\": 0.64\n    },\n    {\n      \"text\": \"ORANGE NET\",\n      \"name\": \"orange net\",\n      \"qty\": 1,\n      \"price\": 0.79\n    }\n  ],\n  \"total\": 6.71\n}"
+  },
+  {
+   "photo": "r3-italian.jpg",
+   "ms": 11076,
+   "items": 0.6666666666666666,
+   "prices": 1,
+   "weighed": "1/1",
+   "totalRead": true,
+   "check": {
+    "sum_cents": 1020,
+    "matches": false
+   },
+   "checkRight": true,
+   "missed": [
+    "oat porridge drink",
+    "Crik Crok crisps"
+   ],
+   "wrongPrice": [],
+   "extra": [
+    "crock stile fatta"
+   ],
+   "lines": [
+    {
+     "text": "ACQUA S.ANGELO NATUR",
+     "name": "water",
+     "qty": 6,
+     "price_cents": 132,
+     "size": null,
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "MILK PRO PORRIDGE AV",
+     "name": "milk porridge",
+     "qty": 2,
+     "price_cents": 165,
+     "size": null,
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "LINDT TAVOLETTA LATT",
+     "name": "lindt chocolate bar",
+     "qty": 1,
+     "price_cents": 285,
+     "size": null,
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "CRIK CROK STILE FATT",
+     "name": "crock stile fatta",
+     "qty": 1,
+     "price_cents": 285,
+     "size": null,
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "MELE GRANNY SMITH [C]",
+     "name": "granny smith apples",
+     "qty": 1,
+     "price_cents": 153,
+     "size": null,
+     "by_weight": true,
+     "grams": 548
+    }
+   ],
+   "raw": "{\n  \"lines\": [\n    {\n      \"text\": \"ACQUA S.ANGELO NATUR\",\n      \"name\": \"water\",\n      \"qty\": 6,\n      \"price\": 1.32\n    },\n    {\n      \"text\": \"MILK PRO PORRIDGE AV\",\n      \"name\": \"milk porridge\",\n      \"qty\": 2,\n      \"price\": 1.65\n    },\n    {\n      \"text\": \"LINDT TAVOLETTA LATT\",\n      \"name\": \"lindt chocolate bar\",\n      \"qty\": 1,\n      \"price\": 2.85\n    },\n    {\n      \"text\": \"CRIK CROK STILE FATT\",\n      \"name\": \"crock stile fatta\",\n      \"qty\": 1,\n      \"price\": 2.85\n    },\n    {\n      \"text\": \"MELE GRANNY SMITH [C]\",\n      \"name\": \"granny smith apples\",\n      \"qty\": 0.5484,\n      \"price\": 1.53\n    },\n    {\n      \"text\": \"TOTALE COMPLESSIVO\",\n      \"name\": \"total\",\n      \"qty\": null,\n      \"price\": 11.85\n    }\n  ],\n  \"total\": 11.85\n}"
+  },
+  {
+   "photo": "r4-polish.jpg",
+   "ms": 16007,
+   "items": 0.6666666666666666,
+   "prices": 1,
+   "weighed": "0/0",
+   "totalRead": true,
+   "check": {
+    "sum_cents": 1027,
+    "matches": false
+   },
+   "checkRight": true,
+   "missed": [
+    "salmon loin 100g (less 2.00 discount)"
+   ],
+   "wrongPrice": [],
+   "extra": [
+    "butter"
+   ],
+   "lines": [
+    {
+     "text": "ChlebPszen-Zyt550g",
+     "name": "bread",
+     "qty": 1,
+     "price_cents": 199,
+     "size": {
+      "quantity": 550,
+      "unit": "g"
+     },
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "Ser Ź Świat. 150g",
+     "name": "cheese",
+     "qty": 1,
+     "price_cents": 329,
+     "size": {
+      "quantity": 150,
+      "unit": "g"
+     },
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "Polędw kos 100g",
+     "name": "butter",
+     "qty": 1,
+     "price_cents": 499,
+     "size": {
+      "quantity": 100,
+      "unit": "g"
+     },
+     "by_weight": false,
+     "grams": null
+    }
+   ],
+   "raw": "{\n  \"lines\": [\n    {\n      \"text\": \"ChlebPszen-Zyt550g\",\n      \"name\": \"bread\",\n      \"qty\": 1,\n      \"price\": 1.99\n    },\n    {\n      \"text\": \"Ser Ź Świat. 150g\",\n      \"name\": \"cheese\",\n      \"qty\": 1,\n      \"price\": 3.29\n    },\n    {\n      \"text\": \"Polędw kos 100g\",\n      \"name\": \"butter\",\n      \"qty\": 1,\n      \"price\": 4.99\n    },\n    {\n      \"text\": \"Rabat\",\n      \"name\": \"rabat\",\n      \"qty\": 1,\n      \"price\": 2.99\n    }\n  ],\n  \"total\": 8.27\n}"
+  }
+ ]
+}

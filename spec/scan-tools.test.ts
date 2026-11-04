@@ -63,6 +63,47 @@ describe("reading a receipt", () => {
     expect(result.rows.every((row) => row.confidence === "low")).toBe(true);
   });
 
+  // lines the 2B model produced on the real Woolworths, Polish and Tesco receipts
+  it("drops discount lines a model listed as items, but keeps an item whose text is a discount", () => {
+    const r = parseReceipt(JSON.stringify({
+      lines: [
+        { text: "GOLDEN PANCAK OFFER", name: "pancake", qty: 6, price: 0 },
+        { text: "Rabat", name: "rabat", qty: 1, price: 2.99 },
+        { text: "REDUCED PRICE", name: "reduced price", qty: 1, price: 0.55 },
+        // the item's name with the discount line's text: really bought
+        { text: "REDUCED PRICE", name: "mld wht chdr", qty: 1, price: 1.45 },
+        { text: "APPLE PINK LADY", name: "apple", qty: 0, price: 0.85 },
+      ],
+      total: 2.3,
+    }));
+    expect(r.lines.map((l) => [l.name, l.qty])).toEqual([["mld wht chdr", 1], ["apple", 1]]);
+    expect(r.check).toEqual({ sum_cents: 230, matches: true });
+  });
+
+  // the 2B model's own reply to the Woolworths receipt, trimmed
+  it("takes a negative discount line off the item above, and reads a kilo quantity as weight", () => {
+    const r = parseReceipt(JSON.stringify({
+      lines: [
+        { text: "APPLE PINK LADY", name: "apple", qty: 0.217, price: 0.85 },
+        { text: "BANANA CAVENDISH", name: "banana", qty: 0.572, price: 1.43 },
+        { text: "*GOLDEN PIKELETS 8 PK 200GM", name: "pikelets", qty: 1, price: 3.99 },
+        { text: "GOLDEN PANCAK OFFER", name: "pancake", qty: 6, price: -1.98 },
+      ],
+      total: 4.29,
+    }));
+    expect(r.lines.map((l) => [l.name, l.price_cents, lineQuantity(l)])).toEqual([
+      ["apple", 85, { quantity: "217", unit: "g" }],
+      ["banana", 143, { quantity: "572", unit: "g" }],
+      ["pikelets", 201, { quantity: "200", unit: "g" }],
+    ]);
+    expect(r.check).toEqual({ sum_cents: 429, matches: true });
+  });
+
+  it("a discount bigger than the item above it, or with no item above, isn't applied", () => {
+    const r = parseReceipt('{"lines":[{"name":"offer","price":-1},{"name":"milk","price":0.5},{"name":"saving","price":-2}],"total":0.5}');
+    expect(r.lines.map((l) => [l.name, l.price_cents])).toEqual([["milk", 50]]);
+  });
+
   it("won't check a total it can't read, or lines without prices", () => {
     expect(parseReceipt('{"lines":[{"name":"milk","price":3.1}],"total":null}').check).toBeNull();
     expect(parseReceipt('{"lines":[{"name":"milk","price":3.1},{"name":"bread"}],"total":3.1}').check).toBeNull();

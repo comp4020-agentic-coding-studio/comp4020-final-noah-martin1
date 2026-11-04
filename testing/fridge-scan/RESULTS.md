@@ -24,7 +24,10 @@ Four real receipts in `../receipt-scan/` (one Australian Woolworths receipt with
 
 | Model | Items | Prices |
 |---|---|---|
+| qwen3-vl:2b-instruct | 73% | 100% |
 | qwen3-vl:8b-instruct | 74% | 100% |
+
+Both rows run through Ollama on the server. **In the browser** (the only place the deployed site can run a model) the same 2B model could not read receipts: the 1.37 GB build named 5% of items and no prices, looping on one line or inventing others, and the full-precision 4.73 GB build named 33% with no prices right. Image resolution was the same as Ollama's, so the gap is in the browser library's handling of this model on fine print; fridge photos, where items are large, were unaffected. See `results/browser-qwen3-vl-2b.json`.
 
 ### r1-woolworths-au.jpg
 
@@ -33,6 +36,13 @@ Four real receipts in `../receipt-scan/` (one Australian Woolworths receipt with
 Source: https://commons.wikimedia.org/wiki/File:Receipt-woolworth.jpg (CC BY-SA 4.0)
 
 **What's printed (price paid):** egg & lettuce sandwich $6.00; pink lady apple $0.85; low fat milk 1L $2.20; cavendish banana $1.43; pikelet bites 16pk 140g $3.99; pikelets 8pk 200g (less 1.98 pancake offer) $2.01. Total $16.48.
+
+**qwen3-vl:2b-instruct** — items 67%, prices 100%, weights 2/2, total read: yes, check: adds up (wrong: a name was misread but the prices were right)
+
+- Read: sandwich $6.00, apple $0.85, milk $2.20, banana $1.43, pikelite $3.99, pikelite $2.01
+- Missed: pikelet bites 16pk 140g; pikelets 8pk 200g (less 1.98 pancake offer)
+- Wrong price: —
+- Wrong name: pikelite, pikelite
 
 **qwen3-vl:8b-instruct** — items 67%, prices 100%, weights 2/2, total read: yes, check: flagged as not adding up
 
@@ -49,6 +59,13 @@ Source: https://commons.wikimedia.org/wiki/File:Tesco_grocery_receipt_Finchley_1
 
 **What's printed (price paid):** 6 jam doughnuts (reduced) $0.55; 6 jam doughnuts (reduced) $0.55; mild white cheddar $1.45; rich tea biscuits $0.39; choc chip cookies $0.44; 4 teacakes (reduced) $0.50; 18 brown rolls (reduced) $0.85; tuna steaks $0.55; long grain rice $0.64; net of oranges $0.79. Total $6.71.
 
+**qwen3-vl:2b-instruct** — items 90%, prices 100%, weights 0/0, total read: yes, check: flagged as not adding up
+
+- Read: jam doughnuts $0.55, jam doughnuts $0.55, jam doughnuts $0.55, mld wht chdr $1.45, tea $0.39, cookie $0.44, teacakes $0.50, brown rolls $0.85, tuna steaks $0.55, rice $0.64, orange net $0.79
+- Missed: mild white cheddar
+- Wrong price: —
+- Wrong name: jam doughnuts, mld wht chdr
+
 **qwen3-vl:8b-instruct** — items 80%, prices 100%, weights 0/0, total read: yes, check: flagged as not adding up
 
 - Read: jam doughnuts $0.55, mild white chocolate $1.45, tea $0.39, cookie $0.44, teacakes $0.50, brown rolls $0.85, tuna steaks $0.55, rice $0.64, orange $0.79
@@ -64,6 +81,13 @@ Source: https://commons.wikimedia.org/wiki/File:Italian_supermarket_receipt_show
 
 **What's printed (price paid):** 6 x mineral water $1.32; oat porridge drink $1.65; oat porridge drink $1.65; Lindt milk chocolate bar $2.85; Crik Crok crisps $2.85; granny smith apples 0.5484 kg $1.53. Total $11.85.
 
+**qwen3-vl:2b-instruct** — items 67%, prices 100%, weights 1/1, total read: yes, check: flagged as not adding up
+
+- Read: water $1.32, milk porridge $1.65, lindt chocolate bar $2.85, crock stile fatta $2.85, granny smith apples $1.53
+- Missed: oat porridge drink; Crik Crok crisps
+- Wrong price: —
+- Wrong name: crock stile fatta
+
 **qwen3-vl:8b-instruct** — items 83%, prices 100%, weights 1/1, total read: yes, check: adds up (wrong: a name was misread but the prices were right)
 
 - Read: water $1.32, milk $1.65, milk $1.65, chocolate bar $2.85, chocolate bar $2.85, apple $1.53
@@ -78,6 +102,13 @@ Source: https://commons.wikimedia.org/wiki/File:Italian_supermarket_receipt_show
 Source: https://commons.wikimedia.org/wiki/File:Polish_supermarket_receipt.jpg (CC BY-SA 4.0)
 
 **What's printed (price paid):** wheat-rye bread 550g $1.99; Swiss cheese 150g $3.29; salmon loin 100g (less 2.00 discount) $2.99. Total $8.27.
+
+**qwen3-vl:2b-instruct** — items 67%, prices 100%, weights 0/0, total read: yes, check: flagged as not adding up
+
+- Read: bread $1.99, cheese $3.29, butter $4.99
+- Missed: salmon loin 100g (less 2.00 discount)
+- Wrong price: —
+- Wrong name: butter
 
 **qwen3-vl:8b-instruct** — items 67%, prices 100%, weights 0/0, total read: yes, check: flagged as not adding up
 

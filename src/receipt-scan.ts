@@ -44,9 +44,21 @@ export interface Receipt {
 
 const NOT_FOOD = /\b(bag|bags|reusable|discount|saving|savings|promo|voucher|card|eftpos|surcharge|subtotal|sub-total|total|gst|change|cash|rounding|deposit|refund|points|flybuys|everyday rewards)\b/i;
 
-const cents = (v: unknown): number | null => {
+// A line whose *name* is a discount ("offer", Polish "rabat", "reduced
+// price") was a price adjustment the model listed as an item. Only the name
+// counts: a model can put the item's name in `name` and the discount line in
+// `text`, and that item was really bought.
+const DISCOUNT_NAME = /\b(?:offer|rabat|rebate|reduced price|price reduction|markdown|multibuy|coupon)\b/i;
+
+// A price in cents, sign kept: a negative amount is a discount line.
+const signedCents = (v: unknown): number | null => {
   const n = typeof v === "number" ? v : typeof v === "string" ? Number(v.replace(/[$,\s]/g, "")) : NaN;
-  return Number.isFinite(n) && n >= 0 && n < 10000 ? Math.round(n * 100) : null;
+  return Number.isFinite(n) && Math.abs(n) < 10000 ? Math.round(n * 100) : null;
+};
+
+const cents = (v: unknown): number | null => {
+  const c = signedCents(v);
+  return c !== null && c >= 0 ? c : null;
 };
 
 const toBaseUnit = (q: number, u: string): { quantity: number; unit: string } =>
@@ -118,7 +130,18 @@ export function parseReceipt(text: string): Receipt {
     const o = r as Record<string, unknown>;
     const printed = typeof o.text === "string" ? o.text.trim().slice(0, 120) : "";
     const name = typeof o.name === "string" ? normaliseIngredient(o.name.replace(/\s*\(.*?\)\s*/g, " ")) : "";
-    if (!name || name.length > 60) continue;
+    // a negative line ("GOLDEN PANCAK OFFER -1.98", "Rabat -2,00") is a
+    // discount on the item printed above it: take it off that item's price,
+    // as the prompt asks the model to (a smaller model lists it instead)
+    const signed = signedCents(o.price);
+    if (signed !== null && signed < 0) {
+      const prev = lines.at(-1);
+      if (prev?.price_cents != null && prev.price_cents + signed >= 0) prev.price_cents += signed;
+      continue;
+    }
+    if (!name || name.length > 60 || DISCOUNT_NAME.test(name)) continue;
+    // nothing was paid for it: a discount the model gave a food name to
+    if (cents(o.price) === 0) continue;
     if (NOT_FOOD.test(name) || NOT_FOOD.test(printed)) {
       // a bag is in the printed total; a discount or subtotal line is not a
       // purchase and its sign is unreliable, so only positive non-total lines
@@ -126,13 +149,17 @@ export function parseReceipt(text: string): Receipt {
       continue;
     }
     const q = typeof o.qty === "number" ? o.qty : Number(o.qty);
-    const w = weighed(printed);
+    const size = packSize(printed);
+    // a weight the printed text shows wins; otherwise a fractional quantity
+    // with no pack size is the model giving the weight in kilograms ("qty":
+    // 0.572 for "0.572 kg NET")
+    const w = weighed(printed) ?? (Number.isFinite(q) && q > 0 && q < 50 && !Number.isInteger(q) && !size ? { grams: Math.round(q * 1000) } : null);
     lines.push({
       text: printed,
       name,
-      qty: Number.isFinite(q) && q > 0 && q < 100 ? Math.round(q) : 1,
+      qty: w ? 1 : Number.isFinite(q) && q >= 1 && q < 100 ? Math.round(q) : 1,
       price_cents: cents(o.price),
-      size: w ? null : packSize(printed),
+      size: w ? null : size,
       by_weight: !!w,
       grams: w?.grams ?? null,
     });

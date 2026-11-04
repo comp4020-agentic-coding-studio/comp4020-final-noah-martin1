@@ -48,7 +48,7 @@ lines.push("Qwen3-VL-2B was also run inside Chrome on WebGPU (transformers.js 4.
 const rdir = "testing/receipt-scan";
 const rtruth = JSON.parse(readFileSync(join(rdir, "truth.json"), "utf8")) as Record<string, { total: number; lines: { item: string; price: number }[] }>;
 const rmanifest = JSON.parse(readFileSync(join(rdir, "manifest.json"), "utf8")) as { file: string; source_page: string; license: string }[];
-const rruns = readdirSync(join(rdir, "results")).filter((f) => f.endsWith(".json")).map((f) => JSON.parse(readFileSync(join(rdir, "results", f), "utf8")) as {
+const rruns = readdirSync(join(rdir, "results")).filter((f) => f.endsWith(".json") && !f.startsWith("browser-")).map((f) => JSON.parse(readFileSync(join(rdir, "results", f), "utf8")) as {
   model: string; items: number; prices: number;
   rows: { photo: string; ms: number; items: number; prices: number; weighed: string; totalRead: boolean; check: { matches: boolean } | null; checkRight: boolean | null; missed: string[]; wrongPrice: string[]; extra: string[]; lines: { name: string; price_cents: number | null; text: string }[] }[];
 });
@@ -56,7 +56,7 @@ lines.push("## Receipts", "");
 lines.push("Four real receipts in `../receipt-scan/` (one Australian Woolworths receipt with weighed produce and a promotional discount, a 1994 Tesco receipt, an Italian one with a weighed line and decimal commas, a Polish one with a discount line). **Items** is the share of printed items whose food name the model got right; **prices** is, of those, the share read to the cent, after any discount that belongs to them. The app checks the prices against the printed total: it catches a misread price, not a misread name.", "");
 lines.push("| Model | Items | Prices |", "|---|---|---|");
 for (const r of rruns) lines.push(`| ${r.model} | ${pct(r.items)} | ${pct(r.prices)} |`);
-lines.push("");
+lines.push("", "Both rows run through Ollama on the server. **In the browser** (the only place the deployed site can run a model) the same 2B model could not read receipts: the 1.37 GB build named 5% of items and no prices, looping on one line or inventing others, and the full-precision 4.73 GB build named 33% with no prices right. Image resolution was the same as Ollama's, so the gap is in the browser library's handling of this model on fine print; fridge photos, where items are large, were unaffected. See `results/browser-qwen3-vl-2b.json`.", "");
 for (const photo of Object.keys(rtruth)) {
   const t = rtruth[photo];
   const m = rmanifest.find((x) => x.file === photo);
