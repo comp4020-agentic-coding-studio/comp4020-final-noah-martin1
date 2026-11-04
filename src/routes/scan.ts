@@ -18,7 +18,7 @@ import { type Html, html, raw } from "../html.ts";
 import { type Ctx, HttpError, htmlReply, json, redirect, setFlash } from "../http.ts";
 import { logActivity } from "../activity.ts";
 import { checkImage, readMultipart } from "../images.ts";
-import { shelfware } from "../kitchen.ts";
+import { prefillFor } from "../scan-prefill.ts";
 import { catalogueHas, learnedNames, mergeScans, parseScan, rememberCorrection, resolveName, SCAN_PROMPT, scanConfig, type Resolved } from "../fridge-scan.ts";
 import { aheadOf, createJob, finishReview, jobFor, jobResult, type JobKind, type ResultRow } from "../scan-jobs.ts";
 import { barcodeRow, lookupBarcode, LookupUnavailable, validBarcode } from "../barcode.ts";
@@ -41,33 +41,53 @@ export interface Suggestion {
   keep?: boolean;
   // the printed receipt line or the barcode product, shown for checking
   source?: string;
+  // where prefilled size, price and expiry came from
+  suggested?: string;
 }
 
-// Rough "keeps for" defaults by where the item lives, offered as a starting
-// point the person can change; never saved unless the form submits it.
-function keepsFor(name: string): number | null {
-  const { place, model } = shelfware(name, "other");
-  if (model === "leafy") return 5;
-  if (model === "tray") return 3;
-  if (model === "milk" || model === "tub") return 7;
-  if (model === "veg" && place === "fridge") return 7;
-  return null;
-}
-
-export function suggestionsFrom(rows: ResultRow[]): Suggestion[] {
+// Each row arrives as complete as the app can make it: what the scan read
+// (a receipt's price and size, a barcode's pack size, a photo's count) wins;
+// any field still blank is suggested from this person's last price, the
+// Woolworths and ALDI listings, and a shelf-life table (src/scan-prefill.ts).
+// Every suggestion is shown with its source and is the person's to change.
+export function suggestionsFrom(userId: number, rows: ResultRow[]): Suggestion[] {
   const order = { high: 0, medium: 1, low: 2 };
   return rows
-    .map((r) => ({
-      detected: r.detected,
-      name: r.name,
-      match: r.match,
-      confidence: r.confidence,
-      quantity: r.quantity,
-      unit: r.unit,
-      expiry_days: keepsFor(r.name),
-      price: r.price_cents === null ? undefined : (r.price_cents / 100).toFixed(2),
-      source: r.source,
-    }))
+    .map((r) => {
+      const read = (v: string) => v !== "" && v !== undefined;
+      // a count the scan saw ("3"), with no unit, is how many to prefill for
+      const seen = read(r.quantity) && !r.unit && /^\d+$/.test(r.quantity) ? Number(r.quantity) : null;
+      const fill = r.name ? prefillFor(userId, r.name, seen) : null;
+      const sizeRead = read(r.quantity) && (r.unit !== "" || seen === null);
+      const priceRead = r.price_cents !== null;
+      // a barcode's 400 g jar priced from a 750 g listing: scale by size, and
+      // offer no price when the units differ
+      let price = fill?.price ?? "";
+      if (sizeRead && !priceRead && fill) {
+        const same = fill.unit === r.unit && Number(fill.quantity) > 0 && Number(r.quantity) > 0;
+        price = same && price ? ((Number(price) * Number(r.quantity)) / Number(fill.quantity)).toFixed(2) : "";
+      }
+      // say only what was actually suggested: a receipt's own size and
+      // price aren't "from Woolworths"
+      const note = fill
+        ? sizeRead && (priceRead || !price)
+          ? fill.note.split(" · ").filter((p) => p.startsWith("keeps")).join(" · ")
+          : fill.note
+        : "";
+      return {
+        detected: r.detected,
+        name: r.name,
+        match: r.match,
+        confidence: r.confidence,
+        quantity: sizeRead ? r.quantity : (fill?.quantity ?? r.quantity),
+        unit: sizeRead ? r.unit : (fill?.unit ?? r.unit),
+        expiry_days: null,
+        expiry_date: fill?.expiry_date || undefined,
+        price: priceRead ? (r.price_cents! / 100).toFixed(2) : price || undefined,
+        source: r.source,
+        suggested: note || undefined,
+      };
+    })
     .sort((a, b) => order[a.confidence] - order[b.confidence]);
 }
 
@@ -109,6 +129,7 @@ function row(s: Suggestion, i: number): Html {
           <span class="pill pill-${s.confidence === "high" ? "fresh" : s.confidence === "medium" ? "soon" : "none"}">${s.confidence === "high" ? "Sure" : s.confidence === "medium" ? "Likely" : "Guess"}</span>
           ${s.source ? html`From “${s.source}”` : s.detected !== s.name ? html`Seen as “${s.detected}”` : ""}${MATCH_NOTE[s.match] ? html` · ${MATCH_NOTE[s.match]}` : ""}
         </p>`}
+    ${s.suggested ? html`<p class="scan-note scan-suggested small muted">Prefilled: ${s.suggested}</p>` : ""}
   </li>`;
 }
 
@@ -133,7 +154,7 @@ export function reviewPage(ctx: Ctx, suggestions: Suggestion[], opts: ReviewOpts
   const lede = opts.resubmit
     ? "Fix the lines below and press Add again. Nothing has been saved yet."
     : suggestions.length
-      ? `${suggestions.length} item${suggestions.length === 1 ? "" : "s"} ${what === "receipt" ? "read off your receipt" : what === "barcode" ? "found" : "spotted"}${opts.seconds ? ` in ${opts.seconds} s` : ""}. Untick anything that's wrong, fix names, and add how much you have. Nothing is saved until you press Add.`
+      ? `${suggestions.length} item${suggestions.length === 1 ? "" : "s"} ${what === "receipt" ? "read off your receipt" : what === "barcode" ? "found" : "spotted"}${opts.seconds ? ` in ${opts.seconds} s` : ""}. Untick anything that's wrong and fix names. ${suggestions.some((x) => x.suggested) ? "Sizes, prices and dates the scan couldn't see are filled in from shop prices and how long food keeps: change any that are different. " : ""}Nothing is saved until you press Add.`
       : what === "receipt"
         ? "No grocery lines could be read off that receipt. Add what you bought below, or try a flatter, closer photo."
         : "Nothing was recognised in that photo. Add what's there below, or try a closer photo of one shelf.";
@@ -371,7 +392,7 @@ export const routes: Route[] = [
       if (!job) throw new HttpError(404, "That scan doesn't exist.");
       const result = jobResult(job);
       if (!result) return redirect(`/pantry/scan/jobs/${id}`);
-      return reviewPage(ctx, suggestionsFrom(result.rows), { seconds: result.seconds, job: id, what: job.kind, receipt: result.receipt });
+      return reviewPage(ctx, suggestionsFrom(ctx.user!.id, result.rows), { seconds: result.seconds, job: id, what: job.kind, receipt: result.receipt });
     },
   },
   {
@@ -393,7 +414,7 @@ export const routes: Route[] = [
         return { detected: d.name, name: r.name, match: r.match, confidence: d.confidence, quantity: d.count !== null ? String(d.count) : "", unit: "", price_cents: null };
       });
       logActivity({ actor: ctx.user, action: "pantry.scan", subject: "device", detail: { found: rows.length, seconds } });
-      return reviewPage(ctx, suggestionsFrom(rows), { seconds: Math.round(seconds) });
+      return reviewPage(ctx, suggestionsFrom(ctx.user!.id, rows), { seconds: Math.round(seconds) });
     },
   },
   {
@@ -426,7 +447,7 @@ export const routes: Route[] = [
       try {
         const product = await lookupBarcode(code);
         if (!product) return barcodePage(ctx, `Barcode ${code} isn't in the product database. Add the item with the form instead.`, 404, raw);
-        return reviewPage(ctx, suggestionsFrom([barcodeRow(ctx.user!.id, product)]), { what: "barcode" });
+        return reviewPage(ctx, suggestionsFrom(ctx.user!.id, [barcodeRow(ctx.user!.id, product)]), { what: "barcode" });
       } catch (err) {
         if (!(err instanceof LookupUnavailable)) throw err;
         return barcodePage(ctx, err.message, 503, raw);
@@ -453,7 +474,7 @@ export const routes: Route[] = [
         }
       }
       const problems = missing.length ? [`${missing.length === 1 ? "One barcode wasn't" : `${missing.length} barcodes weren't`} found (${missing.join(", ")}). Add ${missing.length === 1 ? "it" : "them"} in the blank row below.`] : [];
-      return reviewPage(ctx, suggestionsFrom(rows), { what: "barcode", problems });
+      return reviewPage(ctx, suggestionsFrom(ctx.user!.id, rows), { what: "barcode", problems });
     },
   },
   {

@@ -228,3 +228,60 @@ describe("scan pages and background jobs over HTTP", () => {
     }
   });
 });
+
+// What a scan can't see is suggested from the app's own price listings and a
+// shelf-life table, on this file's throwaway database with the catalogue's
+// product data loaded by the server module.
+describe("prefilling what a scan can't see", () => {
+  it("prices counted produce by the item, not by the bag", async () => {
+    const { prefillFor } = await import("../src/scan-prefill.ts");
+    const apples = prefillFor(0, "apple", 9);
+    expect(apples.quantity).toBe("9");
+    // nine apples cost a few dollars, not nine one-kilo bags
+    expect(Number(apples.price)).toBeGreaterThan(2);
+    expect(Number(apples.price)).toBeLessThan(15);
+    // a photo's one carton of eggs is a dozen; six loose eggs stay six
+    expect(prefillFor(0, "eggs", 1).quantity).toBe("12");
+    expect(prefillFor(0, "eggs", 6).quantity).toBe("6");
+  });
+
+  it("suggests a likely pack size and price for packaged food, with its source", async () => {
+    const { prefillFor } = await import("../src/scan-prefill.ts");
+    const milk = prefillFor(0, "milk", 1);
+    expect(milk.unit).toBe("ml");
+    expect(Number(milk.quantity)).toBeGreaterThan(0);
+    expect(Number(milk.price)).toBeGreaterThan(0);
+    expect(milk.note).toMatch(/Woolworths|ALDI/);
+  });
+
+  it("suggests an expiry from how long the food keeps, sauces before tomatoes", async () => {
+    const { shelfLife } = await import("../src/shelf-life.ts");
+    expect(shelfLife("chicken thigh")).toEqual({ days: 2, where: "fridge" });
+    expect(shelfLife("tomato ketchup")?.days).toBeGreaterThan(90);
+    expect(shelfLife("tomato")?.days).toBeLessThan(14);
+    expect(shelfLife("unicorn steak")?.where).toBe("fridge");
+    expect(shelfLife("xyzzy")).toBeNull();
+  });
+
+  it("never overwrites what the scan read: a receipt's size and price stay", async () => {
+    const { suggestionsFrom } = await import("../src/routes/scan.ts");
+    const [row] = suggestionsFrom(0, [{ detected: "milk", name: "milk", match: "exact", confidence: "high", quantity: "1000", unit: "ml", price_cents: 220, source: "MILK 1L" }]);
+    expect([row.quantity, row.unit, row.price]).toEqual(["1000", "ml", "2.20"]);
+    expect(row.expiry_date).toBeTruthy();
+    expect(row.suggested).not.toMatch(/Woolworths|ALDI/);
+  });
+});
+
+describe("prefilling a barcode's pack", () => {
+  it("prices the scanned size, not the listing's size, and says nothing it didn't suggest", async () => {
+    const { suggestionsFrom } = await import("../src/routes/scan.ts");
+    const { prefillFor } = await import("../src/scan-prefill.ts");
+    const listing = prefillFor(0, "milk", 1);
+    const [half] = suggestionsFrom(0, [{ detected: "milk", name: "milk", match: "exact", confidence: "high", quantity: String(Number(listing.quantity) / 2), unit: listing.unit, price_cents: null }]);
+    expect(Number(half.price)).toBeCloseTo(Number(listing.price) / 2, 1);
+    // a size in other units can't be priced from the listing
+    const [odd] = suggestionsFrom(0, [{ detected: "milk", name: "milk", match: "exact", confidence: "high", quantity: "3", unit: "bottles", price_cents: null }]);
+    expect(odd.price).toBeUndefined();
+    expect(odd.suggested).not.toMatch(/Woolworths|ALDI/);
+  });
+});
