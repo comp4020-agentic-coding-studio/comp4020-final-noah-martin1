@@ -27633,96 +27633,204 @@
  },
  {
   "source": "themealdb:52818",
-  "title": "Chicken Fajita Mac and Cheese",
-  "description": "An American dish of chicken breast, macaroni and cream — serves 4, on the table in about 45 minutes.",
-  "servings": 4,
+  "title": "Chicken fajita mac and cheese",
+  "description": "Fajita-spiced chicken glazed with honey, with caramelised onion and capsicum folded through macaroni in a creamy cheddar and cream cheese sauce; makes five meal-prep portions.",
+  "servings": 5,
   "cuisine": "American",
   "category": "Chicken",
   "image": "https://www.themealdb.com/images/media/meals/qrqywr1503066605.jpg",
-  "prep_minutes": 20,
+  "prep_minutes": 15,
   "cook_minutes": 25,
   "ingredients": [
    {
-    "name": "macaroni",
-    "quantity": 500,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "chicken stock",
+    "name": "vegetable oil",
     "quantity": 2,
-    "unit": "cup",
-    "note": ""
-   },
-   {
-    "name": "cream",
-    "quantity": 0.5,
-    "unit": "cup",
-    "note": ""
-   },
-   {
-    "name": "taco seasoning",
-    "quantity": 5,
-    "unit": "g",
-    "note": "sachet"
-   },
-   {
-    "name": "salt",
-    "quantity": 1,
     "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "chicken breast",
-    "quantity": 3,
-    "unit": "",
-    "note": "diced"
-   },
-   {
-    "name": "olive oil",
-    "quantity": 2,
-    "unit": "tbsp",
-    "note": ""
+    "note": "neutral oil, for the fajita veg"
    },
    {
     "name": "onion",
     "quantity": 1,
     "unit": "",
-    "note": "small, finely diced"
+    "note": "large, sliced or diced, for the veg"
    },
    {
     "name": "capsicum",
     "quantity": 2,
     "unit": "",
-    "note": "finely diced"
+    "note": "sliced or diced, any colour; description says 1–2"
+   },
+   {
+    "name": "garlic",
+    "quantity": 3,
+    "unit": "clove",
+    "note": "minced, for the veg"
+   },
+   {
+    "name": "smoked paprika",
+    "quantity": 2,
+    "unit": "tsp",
+    "note": "for the veg"
+   },
+   {
+    "name": "dried oregano",
+    "quantity": 1.5,
+    "unit": "tsp",
+    "note": "for the veg"
+   },
+   {
+    "name": "ground cumin",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "for the veg"
+   },
+   {
+    "name": "garlic powder",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "for the veg"
+   },
+   {
+    "name": "vegetable oil",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "neutral oil, for cooking the chicken"
+   },
+   {
+    "name": "chicken breast",
+    "quantity": 800,
+    "unit": "g",
+    "note": "sliced or diced"
+   },
+   {
+    "name": "smoked paprika",
+    "quantity": 3,
+    "unit": "tsp",
+    "note": "for the chicken"
+   },
+   {
+    "name": "garlic powder",
+    "quantity": 2,
+    "unit": "tsp",
+    "note": "for the chicken"
+   },
+   {
+    "name": "onion powder",
+    "quantity": 1.5,
+    "unit": "tsp",
+    "note": "for the chicken"
+   },
+   {
+    "name": "dried oregano",
+    "quantity": 1.5,
+    "unit": "tsp",
+    "note": "for the chicken"
+   },
+   {
+    "name": "ground cumin",
+    "quantity": 1.5,
+    "unit": "tsp",
+    "note": "for the chicken"
+   },
+   {
+    "name": "honey",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": ""
    },
    {
     "name": "garlic",
     "quantity": 2,
     "unit": "clove",
-    "note": "minced"
+    "note": "minced, for the chicken"
+   },
+   {
+    "name": "lime",
+    "quantity": 0.5,
+    "unit": "",
+    "note": "juice only; optional (the page lists it with the chicken but its method only mentions lime as a garnish)"
+   },
+   {
+    "name": "macaroni",
+    "quantity": 250,
+    "unit": "g",
+    "note": "dry; macaroni or shells"
+   },
+   {
+    "name": "milk",
+    "quantity": 325,
+    "unit": "ml",
+    "note": "full or light"
+   },
+   {
+    "name": "cream cheese",
+    "quantity": 150,
+    "unit": "g",
+    "note": "light"
+   },
+   {
+    "name": "butter",
+    "quantity": 14,
+    "unit": "g",
+    "note": "unsalted"
    },
    {
     "name": "cheddar cheese",
-    "quantity": 1,
-    "unit": "cup",
-    "note": ""
+    "quantity": 130,
+    "unit": "g",
+    "note": "grated"
    },
    {
-    "name": "parsley",
+    "name": "salt",
     "quantity": null,
     "unit": "",
-    "note": "garnish chopped"
+    "note": "to taste, for the veg, chicken and sauce"
+   },
+   {
+    "name": "black pepper",
+    "quantity": null,
+    "unit": "",
+    "note": "to taste, cracked"
+   },
+   {
+    "name": "coriander",
+    "quantity": null,
+    "unit": "",
+    "note": "to garnish, with lime if desired"
    }
   ],
   "steps": [
    {
-    "text": "Fry your onion, peppers and garlic in olive oil until nicely translucent. Make a well in your veg and add your chicken. Add your seasoning and salt. Allow to colour slightly. Add your cream, stock and macaroni.",
+    "text": "Heat the oil in a large pan over medium-high heat. Add the sliced onion and capsicum with a little salt and cook for 6 to 7 minutes, until softened and lightly caramelised.",
+    "minutes": 6
+   },
+   {
+    "text": "Stir in the garlic, smoked paprika, oregano, cumin and garlic powder for 1 to 2 minutes until fragrant. Tip the vegetables out and set aside.",
+    "minutes": 1
+   },
+   {
+    "text": "Add oil to the same pan. When hot, add the chicken and season with smoked paprika, garlic powder, onion powder, oregano, cumin and salt. Cook, stirring now and then, for 6 to 7 minutes until lightly golden.",
+    "minutes": 6
+   },
+   {
+    "text": "Stir in the garlic and honey until the chicken is glazed. Return two-thirds of the cooked vegetables to the pan and mix through.",
     "minutes": null
    },
    {
-    "text": "Cook on low for 20 minutes. Add your cheeses, stir to combine. Top with roasted peppers and parsley.",
-    "minutes": 20
+    "text": "Cook the macaroni until al dente, then drain.",
+    "minutes": null
+   },
+   {
+    "text": "In a pot over low heat, stir the milk, cream cheese and butter until smooth and slightly thickened.",
+    "minutes": null
+   },
+   {
+    "text": "Add the cheddar, salt and pepper and stir until melted. Fold in the macaroni until creamy, adding a splash of pasta water if needed.",
+    "minutes": null
+   },
+   {
+    "text": "Fold in the remaining vegetables and take off the heat. Divide the mac and chicken evenly into 5 containers and garnish with coriander or lime if you like.",
+    "minutes": null
    }
   ]
  },
@@ -37145,49 +37253,43 @@
  {
   "source": "themealdb:53543",
   "title": "Dulce de leche cheesecake with a Maria cookie crust",
-  "description": "A Cuban sweet made with digestive biscuits, cream cheese and condensed milk — makes 12, a slow cook that's worth the wait.",
-  "servings": 12,
+  "description": "A baked cream cheese and condensed milk cheesecake with dulce de leche beaten in, set on a crushed Maria cookie crust and finished with swirls of dulce de leche piped on top.",
+  "servings": 10,
   "cuisine": "Cuban",
   "category": "Dessert",
   "image": "https://www.themealdb.com/images/media/meals/f9qog11784574376.jpg",
   "prep_minutes": 15,
-  "cook_minutes": 140,
+  "cook_minutes": 65,
   "ingredients": [
    {
-    "name": "digestive biscuits",
-    "quantity": 195,
-    "unit": "g",
-    "note": ""
+    "name": "marie biscuits",
+    "quantity": 1,
+    "unit": "pack",
+    "note": "Maria cookies, about 2 cups of crumbs"
    },
    {
     "name": "butter",
     "quantity": 0.5,
     "unit": "cup",
-    "note": ""
+    "note": "melted, for the crust"
    },
    {
     "name": "cream cheese",
-    "quantity": 450,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "cream cheese",
-    "quantity": 450,
-    "unit": "g",
-    "note": ""
+    "quantity": 4,
+    "unit": "pack",
+    "note": "softened; the page gives no pack size"
    },
    {
     "name": "condensed milk",
-    "quantity": 1,
-    "unit": "can",
-    "note": ""
+    "quantity": 397,
+    "unit": "g",
+    "note": "sweetened; the source says 1 can, a standard Australian can is 397 g (the app reads 'can' as 400 g and would buy two)"
    },
    {
     "name": "eggs",
     "quantity": 4,
     "unit": "",
-    "note": ""
+    "note": "room temperature"
    },
    {
     "name": "vanilla extract",
@@ -37197,70 +37299,50 @@
    },
    {
     "name": "dulce de leche",
-    "quantity": null,
-    "unit": "",
-    "note": "to garnish"
+    "quantity": 1,
+    "unit": "jar",
+    "note": "squeeze bottle of milk caramel spread; 3 tbsp go into the filling, the rest is piped on top"
    }
   ],
   "steps": [
    {
-    "text": "Heat oven to 160°C (325°F)",
+    "text": "Heat the oven to 165°C (325°F). Grind the Maria cookies finely in a food processor (about 30 seconds), or crush them in a zip-top bag with a heavy skillet.",
     "minutes": null
    },
    {
-    "text": "Place cookies in bowl of food processor. Pulse 30 seconds, or until finely ground.",
+    "text": "Stir the melted butter into the crumbs, then press the mixture over the base and sides of a 23 cm (9-inch) springform pan.",
     "minutes": null
    },
    {
-    "text": "(Or, crush them by hand by placing cookies in zip-top bag and using the bottom of a heavy skillet, pound cookies until finely crushed); transfer cookie crumbs to bowl.",
-    "minutes": null
+    "text": "Bake the crust until firm and fragrant, 7 to 10 minutes, then let it cool.",
+    "minutes": 7
    },
    {
-    "text": "Add softened butter, stirring until combined.",
-    "minutes": null
-   },
-   {
-    "text": "Transfer cookie mixture to 9” spring form pan. Using your fingers, press cookie crumbs evenly onto bottom and sides of pan. Bake until firm and fragrant, about 10 minutes. Allow to cool.",
-    "minutes": 10
-   },
-   {
-    "text": "Set electric mixer on medium speed, beat cream cheese until fluffy, about 3 minutes.",
+    "text": "Beat the cream cheese with an electric mixer on medium speed until fluffy, about 3 minutes.",
     "minutes": 3
    },
    {
-    "text": "Add condensed milk; beat until smooth, 1 minute.",
-    "minutes": null
+    "text": "Add the condensed milk and beat until smooth, about 1 minute.",
+    "minutes": 1
    },
    {
-    "text": "Beat in eggs, vanilla and 3 tbsp. dulce de leche (caramel) until combined, 3 minutes.",
+    "text": "Beat in the eggs, vanilla and 3 tablespoons of the dulce de leche until combined, about 3 minutes.",
     "minutes": 3
    },
    {
-    "text": "Pour filling into prepared crust. Bake until golden brown and set, but still a little wiggly in the middle, 45 – 55 minutes.",
-    "minutes": 55
+    "text": "Pour the filling into the cooled crust and bake until golden brown and set but still wiggly in the middle, 45 to 55 minutes.",
+    "minutes": 45
    },
    {
-    "text": "Turn off oven; partially open oven door.",
-    "minutes": null
-   },
-   {
-    "text": "Let cheesecake sit in oven until it come to room temperature, about 1 hour.",
+    "text": "Turn the oven off, partly open the door, and leave the cheesecake inside until it reaches room temperature, about 1 hour.",
     "minutes": 60
    },
    {
-    "text": "Transfer cheesecake to refrigerator; cool completely, at least 4 hours.",
+    "text": "Refrigerate until completely cool, at least 4 hours.",
     "minutes": 240
    },
    {
-    "text": "Remove cooled cheesecake from sprigform pan.",
-    "minutes": null
-   },
-   {
-    "text": "Place remaining dulce de leche in ziplock bag.",
-    "minutes": null
-   },
-   {
-    "text": "Using scissors, snip small hole in corner of bag. Applying even pressure on “pastry bag,” paint stripes on your finished cheesecake.",
+    "text": "Take the cheesecake out of the pan. Put the remaining dulce de leche in a zip-top bag, snip a small corner, and pipe swirly designs on top. Slice and serve.",
     "minutes": null
    }
   ]
@@ -45370,32 +45452,68 @@
  },
  {
   "source": "themealdb:52993",
-  "title": "Honey Balsamic Chicken with Crispy Broccoli & Potatoes",
-  "description": "An American dish of chicken breast, potato and broccoli — serves 2, about an hour start to finish.",
+  "title": "Honey balsamic chicken with roasted potatoes, green beans and cherry tomatoes",
+  "description": "Chicken breasts marinated for an hour in honey, balsamic, garlic and thyme, then baked on one tray with rosemary roast potatoes, green beans and cherry tomatoes.",
   "servings": 2,
   "cuisine": "American",
   "category": "Chicken",
-  "image": "https://www.themealdb.com/images/media/meals/kvbotn1581012881.jpg",
-  "prep_minutes": 15,
+  "image": "https://i.ytimg.com/vi/hbrK8FZJJAw/hqdefault.jpg",
+  "prep_minutes": 60,
   "cook_minutes": 50,
   "ingredients": [
    {
     "name": "potato",
-    "quantity": 5,
+    "quantity": 6,
     "unit": "",
-    "note": ""
+    "note": "medium, unpeeled, cut into quarters"
    },
    {
-    "name": "broccoli",
-    "quantity": 1,
+    "name": "olive oil",
+    "quantity": 50,
+    "unit": "ml",
+    "note": "for the potatoes"
+   },
+   {
+    "name": "rosemary",
+    "quantity": null,
     "unit": "",
-    "note": ""
+    "note": "to taste, to season the potatoes; amount not stated"
+   },
+   {
+    "name": "balsamic vinegar",
+    "quantity": 80,
+    "unit": "ml",
+    "note": "for the marinade"
+   },
+   {
+    "name": "olive oil",
+    "quantity": 50,
+    "unit": "ml",
+    "note": "for the marinade"
+   },
+   {
+    "name": "honey",
+    "quantity": 5,
+    "unit": "tbsp",
+    "note": "for the marinade"
    },
    {
     "name": "garlic",
     "quantity": 2,
     "unit": "clove",
-    "note": ""
+    "note": "chopped, for the marinade"
+   },
+   {
+    "name": "chilli flakes",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": "for the marinade"
+   },
+   {
+    "name": "thyme",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "chopped, for the marinade"
    },
    {
     "name": "chicken breast",
@@ -45404,86 +45522,54 @@
     "note": ""
    },
    {
-    "name": "balsamic vinegar",
+    "name": "green beans",
+    "quantity": 1.25,
+    "unit": "cup",
+    "note": ""
+   },
+   {
+    "name": "cherry tomatoes",
+    "quantity": 10,
+    "unit": "",
+    "note": "halved"
+   },
+   {
+    "name": "salt",
     "quantity": null,
     "unit": "",
-    "note": ""
+    "note": "to taste, for the potatoes and marinade"
    },
    {
-    "name": "honey",
+    "name": "black pepper",
     "quantity": null,
     "unit": "",
-    "note": ""
-   },
-   {
-    "name": "chicken stock",
-    "quantity": null,
-    "unit": "",
-    "note": ""
-   },
-   {
-    "name": "butter",
-    "quantity": 1,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "vegetable oil",
-    "quantity": 1,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "olive oil",
-    "quantity": 1,
-    "unit": "tbsp",
-    "note": ""
+    "note": "to taste, for the potatoes"
    }
   ],
   "steps": [
    {
-    "text": "Servings: preheat oven to 425 degrees. Wash and dry all produce. Cut potatoes into 1/2-inch-thick wedges. Toss on one side of a baking sheet with a drizzle of oil, salt, and pepper.",
+    "text": "Wash the potatoes and cut them into quarters, leaving the skins on. Heat the oven to 180°C (355°F).",
     "minutes": null
    },
    {
-    "text": "(For 4 servings, spread potatoes out across entire sheet.) Roast on top rack for 5 minutes (we'll add the broccoli then).",
-    "minutes": 5
-   },
-   {
-    "text": "Meanwhile, cut broccoli florets into bite-size pieces, if necessary. Peel and finely chop garlic. In a small microwave-safe bowl, combine 1 TBSP olive oil (2 TBSP for 4 servings) and half the garlic.",
-    "minutes": null
-   },
-   {
-    "text": "Microwave until garlic sizzles, 30 seconds.",
-    "minutes": null
-   },
-   {
-    "text": "Once potatoes have roasted 5 minutes, remove sheet from oven and add broccoli to empty side; carefully toss with garlic oil, salt, and pepper.",
-    "minutes": 5
-   },
-   {
-    "text": "(For 4 servings, add broccoli to a second sheet.) Continue roasting until potatoes and broccoli are browned and crispy, 15-20 minutes more.",
+    "text": "Put the potatoes on a baking tray, pour over the olive oil, season with salt, pepper and rosemary, and bake for 20 minutes.",
     "minutes": 20
    },
    {
-    "text": "While veggies roast, pat chicken dry with paper towels; season all over with salt and pepper. Heat a drizzle of oil in a large pan over medium-high heat. Add chicken and cook until browned and cooked through, 5-6 minutes per side.",
-    "minutes": 6
-   },
-   {
-    "text": "(If chicken browns too quickly, reduce heat to medium.) Turn off heat; set chicken aside to rest. Wash out pan.",
+    "text": "Make the marinade: stir the balsamic vinegar, olive oil, honey, salt, garlic, chilli flakes and thyme together in a large bowl.",
     "minutes": null
    },
    {
-    "text": "Heat pan used for chicken over medium-high heat. Add a drizzle of oil and remaining garlic; cook until fragrant, 30 seconds. Stir in vinegar, honey, stock concentrate, and 1/4 cup water (1/3 cup for 4 servings).",
+    "text": "Coat both chicken breasts in the marinade and leave them for 1 hour.",
+    "minutes": 60
+   },
+   {
+    "text": "Tuck the green beans and halved cherry tomatoes in among the roasted potatoes. Lay the marinated chicken on top and pour the marinade over the tray.",
     "minutes": null
    },
    {
-    "text": "Simmer until thick and glossy, 2-3 minutes. Remove from heat and stir in 1 TBSP butter (2 TBSP for 4). Season with salt and pepper.",
-    "minutes": 3
-   },
-   {
-    "text": "Return chicken to pan and turn to coat in glaze. Divide chicken, broccoli, and potatoes between plates. Spoon any remaining glaze over chicken and serve.",
-    "minutes": null
+    "text": "Bake everything together at 180°C (355°F) for 30 minutes.",
+    "minutes": 30
    }
   ]
  },

@@ -1682,12 +1682,12 @@
   "transcribed": true
  },
  "themealdb:52818": {
-  "videoId": "bwTSmLTZKNg",
-  "title": "Chicken Fajita Pasta",
-  "channel": "Chop Secrets",
-  "status": "rejected",
-  "reason": "video title doesn't match the dish",
-  "checked": "2026-10-20"
+  "videoId": "KV3Hp6loLUs",
+  "title": "61g Protein Meal Prep For The Week | Chicken Fajita Mac & Cheese",
+  "channel": "Chef Jack Ovens",
+  "checked": "2026-11-04",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:52875": {
   "videoId": "FFW9JGxKAB8",
@@ -1762,12 +1762,10 @@
   "checked": "2026-10-20"
  },
  "themealdb:53186": {
-  "videoId": "uKWjI2DNq0Q",
-  "title": "Rice and Raisins With Saffron chicken! Easy and so delicious!",
-  "channel": "CookwithEli",
+  "videoId": null,
+  "checked": "2026-11-04",
   "status": "rejected",
-  "reason": "video title doesn't match the dish",
-  "checked": "2026-10-20"
+  "reason": "Two searches (chicken with saffron, raisins and pine nuts, in English and via Spain on a Fork) found no video of this dish: results were Gulf kabsa, pilaf and other unrelated rice or chicken dishes, and the second search returned nothing. Transcripts are blocked so a possible unwritten video could not be checked."
  },
  "themealdb:53166": {
   "videoId": "nI2Sm4B3gWU",
@@ -1934,12 +1932,10 @@
   "reason": "The Jamie Oliver video (RFlENguMJNA, 'The best Tomato Salad and Chorizo') has no recipe in its description (only the jamieoliver.com homepage and a nutrition link), and guessed recipe-page URLs on jamieoliver.com returned 404; two searches found no embeddable video of this salad with a creator's written recipe with amounts and method (Víctor Muñoz's blog page lists ingredients without amounts)."
  },
  "themealdb:53159": {
-  "videoId": "K2Ba5BWYXUU",
-  "title": "Chorizo Omelette | Traditional Spanish Omelette With Chorizo",
-  "channel": "Delicious Adventures",
+  "videoId": null,
+  "checked": "2026-11-04",
   "status": "rejected",
-  "reason": "video title doesn't match the dish",
-  "checked": "2026-10-20"
+  "reason": "No video of this dish with a verifiable recipe: the only one with a written recipe, Recipe30's Spanish omelette (GDryfdmWaO8, embeddable), cooks a different dish, a thick tortilla española of slowly oil-poached onion, potato and chorizo with thyme in 8 eggs, rested and flipped (serves 4, no cheese, no parsley), not the quick folded chorizo, potato and cheddar omelette for 2. Closer candidates have no usable recipe: Scrumdiddlyumptious qx0JrySSO4M (tortilla with chorizo and cheese, 12 potatoes and 12 eggs, ingredient list but no method), Delicious Adventures K2Ba5BWYXUU (chorizo omelette, no cheese, ingredient list but no method), Babee Daniel 9Lv0_Prtl-Y (no potato, no amounts). Transcripts blocked."
  },
  "themealdb:53542": {
   "videoId": null,
@@ -2306,10 +2302,12 @@
   "transcribed": true
  },
  "themealdb:53543": {
-  "videoId": null,
-  "status": "unavailable",
-  "reason": "TheMealDB lists no video for this meal",
-  "checked": "2026-10-20"
+  "videoId": "6L_hbxqcUbA",
+  "title": "Dulce de Leche Cheesecake",
+  "channel": "GOYA Foods",
+  "checked": "2026-11-04",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:52899": {
   "videoId": "WA5B8AP1mlo",
@@ -2623,9 +2621,9 @@
  },
  "themealdb:52996": {
   "videoId": null,
-  "status": "unavailable",
-  "reason": "TheMealDB lists no video for this meal",
-  "checked": "2026-10-20"
+  "checked": "2026-11-04",
+  "status": "rejected",
+  "reason": "No verifiable video of this dish: the two candidates with written recipes cannot be used (Carlsbad Cravings gzHWTyBYijY playable_in_embed False; Cooking With Tammy FWieMMCx9mA playable_in_embed False and a different dish, a bacon-and-cheese casserole bake). Embeddable videos of the right dish do exist (Flavorful Eats With Joy qT6XNOL7dek, Shyanne Peters sR94TvwD6BE, Jill's Comfort Zone CtRDeobzbWo) but their descriptions give no ingredients, amounts or method and transcripts are blocked, so nothing in them can be verified; retry with a transcript when YouTube allows it."
  },
  "themealdb:53178": {
   "videoId": "VcxMq33G-Do",
@@ -2852,10 +2850,12 @@
   "transcribed": true
  },
  "themealdb:52993": {
-  "videoId": null,
-  "status": "unavailable",
-  "reason": "TheMealDB lists no video for this meal",
-  "checked": "2026-10-20"
+  "videoId": "hbrK8FZJJAw",
+  "title": "Honey Balsamic Chicken Is A Dinnertime Winner",
+  "channel": "Scrumdiddlyumptious",
+  "checked": "2026-11-04",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53007": {
   "videoId": "JE8crtueXs8",
@@ -3335,9 +3335,9 @@
  },
  "themealdb:52987": {
   "videoId": null,
-  "status": "unavailable",
-  "reason": "TheMealDB lists no video for this meal",
-  "checked": "2026-10-20"
+  "checked": "2026-11-04",
+  "status": "rejected",
+  "reason": "Two searches (lasagna sandwiches with bacon, tomato and mozzarella) returned only grilled-cheese roundups, lasagne and white-sauce videos; no video of this dish (a toasted bacon, tomato and mozzarella sandwich with an oregano sour cream spread) was found."
  },
  "themealdb:53570": {
   "videoId": null,
@@ -4244,12 +4244,10 @@
   "checked": "2026-10-20"
  },
  "themealdb:52942": {
-  "videoId": "H5SmjR-fxUs",
-  "title": "Vegetarian Paella",
-  "channel": "The Spanish Academy Hong Kong",
+  "videoId": null,
+  "checked": "2026-11-04",
   "status": "rejected",
-  "reason": "video title doesn't match the dish",
-  "checked": "2026-10-20"
+  "reason": "No verifiable video of this dish: TZHFgCAW4pA (Vegan Recipes, vegan paella) is embeddable and lists full amounts, but its description has no method and it cooks artichokes, red and yellow capsicum, peas and tomato, not roast fennel and aubergine, so it is a different paella; transcripts blocked. Searches turned up no roast fennel and aubergine paella video."
  },
  "themealdb:53268": {
   "videoId": "e8Bn3V3kmpM",
@@ -4661,21 +4659,21 @@
  },
  "themealdb:53155": {
   "videoId": null,
-  "status": "unavailable",
-  "reason": "TheMealDB lists no video for this meal",
-  "checked": "2026-10-20"
+  "checked": "2026-11-04",
+  "status": "rejected",
+  "reason": "No candidate found: searches for a Spanish chicken pie with a potato topping, tomatoes, peppers and olives returned only different dishes (The Spanish Radish yWtLsojo-9E is a puff-pastry chicken and leek pie with Serrano ham; RecipeTin Eats KBd1K7RoVJ0 is a duchess potato chicken and mushroom pie; Backyard Chef V5BWStRs0OY is a one-tray chicken and potato bake) and none was checked as a match."
  },
  "themealdb:53163": {
   "videoId": null,
-  "status": "unavailable",
-  "reason": "TheMealDB lists no video for this meal",
-  "checked": "2026-10-20"
+  "checked": "2026-11-04",
+  "status": "rejected",
+  "reason": "No video of this dish found: the only Spain on a Fork result, 8wjcluXZ9C4 (Easy to Make Homemade Fig Bread), has a written recipe but is a baked fig, almond, walnut and flour loaf, not rolled fig and almond balls in sesame seeds, so it is a different dish. Other results were chocolate-covered figs and cakes."
  },
  "themealdb:53183": {
   "videoId": null,
-  "status": "unavailable",
-  "reason": "TheMealDB lists no video for this meal",
-  "checked": "2026-10-20"
+  "checked": "2026-11-04",
+  "status": "rejected",
+  "reason": "No video of this dish found: searches for Spanish meatballs with clams, chorizo and squid returned only other seafood dishes (RecipeTin Eats W03VoDcQ0dk Spanish seafood stew, Spain on a Fork FFAWo5VS56c seafood stew, paellas, clams with chorizo), none with meatballs, so none was checked further."
  },
  "themealdb:53184": {
   "videoId": "fhz1QjO1tB0",
@@ -4702,12 +4700,10 @@
   "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53175": {
-  "videoId": "D35ByGgKNaY",
-  "title": "EP 3| Spanish Slow Roast Lamb | Yummy Recipes",
-  "channel": "Yummy123",
+  "videoId": null,
+  "checked": "2026-11-04",
   "status": "rejected",
-  "reason": "video title doesn't match the dish",
-  "checked": "2026-10-20"
+  "reason": "Only candidate D35ByGgKNaY (Yummy123, Spanish Slow Roast Lamb, embeddable) is a different dish (lamb on potatoes with wine and garlic, no butter beans, peppers or olives) and its description lists ingredients with no amounts for lamb, olive oil or rosemary and gives no method; transcripts are blocked, so it cannot be verified. Other results were non-Spanish or bean-less lamb recipes."
  },
  "themealdb:53105": {
   "videoId": null,
@@ -4717,9 +4713,9 @@
  },
  "themealdb:53142": {
   "videoId": null,
-  "status": "unavailable",
-  "reason": "TheMealDB lists no video for this meal",
-  "checked": "2026-10-20"
+  "checked": "2026-11-04",
+  "status": "rejected",
+  "reason": "No verifiable video of this dish: the only close result t82zQKP_mvQ (NEW TECH GUY) is a gadget video with a quick curry-spiced omelette in a grilled tortilla wrap with bacon, mushrooms and cheese (a different dish) and no amounts or method in its description. Banglar Rannaghor RR5JDE5z8MQ (masala Spanish omelette) has no written recipe in its description; transcripts are blocked."
  },
  "themealdb:52797": {
   "videoId": "zxBzwJvTK4g",
