@@ -227,6 +227,7 @@ const NOT_FOOD = new Set(
     "mat", "towel", "cotton", "gsm", "plush", "luxurious", "shampoo", "conditioner", "body", "lotion", "fragrance",
     "diffuser", "refill", "seedling", "seeds", "plant", "pot", "yates", "jelly", "water", "rush", "cordial", "soft",
     "drink", "sparkling", "kombucha", "vodka", "gin", "beer", "wine", "lolly", "lollies", "gum", "mints", "toy",
+    "mirror", "bath", "pool", "sticker", "magnet", "costume", "plush",
   ].map(stem),
 );
 

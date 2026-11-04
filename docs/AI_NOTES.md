@@ -29,6 +29,12 @@ Things learned the hard way while matching catalogue recipes to YouTube videos.
   as transcript calls hanging (not erroring) and yt-dlp metadata timing out.
   It lifted after a few hours. While blocked, pause transcripts in `yt.py`
   so hung calls don't hold the shared queue, and verify from written recipes.
+- 2026-11-05: blocked again after only ~30 transcript fetches in 25 minutes,
+  despite a 6 s gap between calls, so the limit is on the count, not the
+  pace. During a block `YouTubeTranscriptApi().list()` still succeeds; only
+  `fetch()` fails, so test with a real fetch. `yt.py` now refuses transcript
+  calls while `/tmp/ytwork/data/TRANSCRIPTS_BLOCKED` exists; delete it once a
+  test fetch works again.
 - A timeout is not a dead video. One scan marked 320 videos "dead" and 297
   were yt-dlp timeouts during a block. Never cache a timeout, and re-scan
   timed-out entries once YouTube answers again.
@@ -65,6 +71,11 @@ Things learned the hard way while matching catalogue recipes to YouTube videos.
   recipe's dried thyme or dried shiitake is priced at the fresh price and
   weight. Fix it in `src/nutrition.ts` and `src/data/prices.json` with dated
   sources, not by renaming lines in recipes.
+- Before 2026-11-05 the app bought one "bunch" listing per *item* of the food
+  table (a 1 g coriander sprig), so a handful of coriander cost ten bunches.
+  `fromProduct` in `src/pricing.ts` now weighs bunch and part-cabbage
+  listings. If a herb or onion line looks wildly overpriced, run
+  `/tmp/ytwork/scripts/lineprice.mjs` on the record before blaming the amount.
 - A cup of a solid food falls back to water's weight unless `CUP_GRAMS` in
   `src/nutrition.ts` lists it. Ginger was missing and was priced at 250 g a
   cup; check this table when a reviewer flags a cup amount as overpriced.

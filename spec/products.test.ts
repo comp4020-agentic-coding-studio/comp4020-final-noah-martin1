@@ -116,6 +116,7 @@ describe("like-for-like products", () => {
   it.each([
     ["peas", "NEW SEASON Chick Peas 420g"],
     ["cardamom", "Alameed Coffee Medium With Cardamom 250g"],
+    ["white fish", "Bath & Pool Mirror - Pink & White Fish"],
   ])("%s is not %s", (ingredient, product) => {
     expect(isEquivalent(ingredient, product)).toBe(false);
   });
