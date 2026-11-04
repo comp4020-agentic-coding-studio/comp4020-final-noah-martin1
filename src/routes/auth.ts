@@ -8,7 +8,7 @@ import {
   verifyPassword,
 } from "../auth.ts";
 import { one, run } from "../db.ts";
-import { DEMO_LOGIN, DEMO_MODE } from "../demo.ts";
+import { DEMO_LOGIN, DEMO_MODE, DEMO_USERNAMES } from "../demo.ts";
 import { html } from "../html.ts";
 import { type Ctx, cookie, htmlReply, isHttps, parseCookies, redirect, setFlash } from "../http.ts";
 import type { Route } from "../server.ts";
@@ -99,7 +99,9 @@ export const routes: Route[] = [
       if (!USERNAME.test(username)) problems.push("Username must be 3–24 lowercase letters, numbers or underscores.");
       if (!displayName || displayName.length > 40) problems.push("Display name is required (up to 40 characters).");
       if (password.length < 8) problems.push("Password must be at least 8 characters.");
-      if (!problems.length && one("SELECT 1 FROM users WHERE username = ?", username)) {
+      // the demo names belong to the seeded shared accounts, whose passwords
+      // can't change, so a person never registers one of them
+      if (!problems.length && (DEMO_USERNAMES.includes(username) || one("SELECT 1 FROM users WHERE username = ?", username))) {
         problems.push("That username is taken.");
       }
       if (problems.length) return authForm(ctx, "register", values, problems, 422);

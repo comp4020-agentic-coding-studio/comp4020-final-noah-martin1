@@ -1,5 +1,23 @@
 # Larder
 
+**For markers: no setup needed.** For two people, sign in as `alice` in one
+Chrome profile and `sam` in the other (password `password123` for both).
+They're friends and housemates in a shared household, with a stocked pantry,
+recipes and planned meals. Or register your own accounts with any username
+and password. Please don't change the demo accounts' passwords, since other
+markers use them.
+
+- **Multi-user:** in Household → Shared shopping, press "I've got this" on an
+  item as alice; sam sees it claimed.
+- **Real-time:** open a public recipe and press "Cook step by step" (this goes
+  live); in the other profile, follow it from the Live globe as the steps
+  change.
+- **Persistence:** add a pantry item, then reload or sign out and back in.
+- **Optional, scanning** (Fridge → Scan a photo): Barcode and Photo work here.
+  The photo scan runs a model in your browser and downloads about 1.4 GB the
+  first time. Receipt reading needs a local model this server can't run, so
+  it's off here; its results are in `testing/fridge-scan/RESULTS.md`.
+
 Larder is a shared kitchen for people who cook together. Your fridge and
 pantry are a 3D kitchen of what you actually have, with expiry dates and what
 you paid. Recipes know what's in that kitchen, work out their own nutrition and

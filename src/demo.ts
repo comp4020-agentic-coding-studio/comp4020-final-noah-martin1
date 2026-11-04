@@ -20,6 +20,11 @@ export const DEMO_MODE = true;
 
 export const DEMO_LOGIN = { username: "alice", password: "password123" };
 
+// The seeded accounts all share DEMO_LOGIN's password and markers are told
+// to use them, so none may have its password changed: one change would lock
+// everyone else out. This holds whether or not DEMO_MODE prefills the form.
+export const DEMO_USERNAMES = ["alice", "sam", "bo", "jo"];
+
 // A believable week's shop for alice, so the fridge and pantry have
 // something to show: [name, qty, unit, days until expiry (null = none), cents].
 const ALICE_SHOP: [string, number, string, number | null, number | null][] = [

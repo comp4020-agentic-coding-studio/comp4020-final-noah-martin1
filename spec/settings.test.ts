@@ -10,6 +10,33 @@ const valid = {
   diet: ["vegetarian"],
 };
 
+// The README points markers at the seeded demo accounts, so their shared
+// password must hold for everyone, and nobody may register those names.
+describe("shared demo accounts", () => {
+  it("none of them can have its password changed", async () => {
+    const { Client } = await import("./helpers.ts");
+    for (const username of ["alice", "sam"]) {
+      const client = new Client();
+      const signedIn = await client.post("/login", { username, password: "password123" });
+      // only where the demo is seeded (it is on the deployed site and in CI)
+      if (signedIn.finalUrl !== "/") continue;
+      const res = await client.post("/settings/password", { current: "password123", next: "taken over now" });
+      expect(res.status).toBe(403);
+      expect((await new Client().post("/login", { username, password: "password123" })).finalUrl).toBe("/");
+    }
+  });
+
+  it("their usernames can't be registered by anyone else", async () => {
+    const { Client } = await import("./helpers.ts");
+    // "bo" and "jo" are under the 3-letter minimum, so they can't be registered anyway
+    for (const username of ["alice", "sam"]) {
+      const res = await new Client().post("/register", { username, display_name: "Someone", password: "a long enough password" });
+      expect(res.status).toBe(422);
+      expect(await res.text()).toContain("That username is taken");
+    }
+  });
+});
+
 describe("settings", () => {
   it("saves preferences that the rest of the app reads", async () => {
     const { client } = await registered();

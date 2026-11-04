@@ -1,6 +1,6 @@
 import { hashPassword, verifyPassword } from "../auth.ts";
 import { one, run } from "../db.ts";
-import { DEMO_LOGIN, DEMO_MODE } from "../demo.ts";
+import { DEMO_USERNAMES } from "../demo.ts";
 import { DIETARY_TAGS } from "../format.ts";
 import { html, raw } from "../html.ts";
 import { type Ctx, htmlReply, redirect, setFlash } from "../http.ts";
@@ -157,9 +157,9 @@ export const routes: Route[] = [
       const form = await ctx.form();
       const current = form.get("current") ?? "";
       const next = form.get("next") ?? "";
-      // the shared demo account must stay usable by everyone
-      if (DEMO_MODE && ctx.user!.username === DEMO_LOGIN.username) {
-        return settingsPage(ctx, [], ["The demo account's password can't be changed."], 403);
+      // the shared demo accounts must stay usable by everyone
+      if (DEMO_USERNAMES.includes(ctx.user!.username.toLowerCase())) {
+        return settingsPage(ctx, [], ["Demo accounts are shared, so their password can't be changed."], 403);
       }
       const row = one<{ password_hash: string }>("SELECT password_hash FROM users WHERE id = ?", ctx.user!.id)!;
       if (!(await verifyPassword(current, row.password_hash))) return settingsPage(ctx, [], ["Current password is incorrect."], 422);
