@@ -48193,143 +48193,177 @@
  {
   "source": "themealdb:53348",
   "title": "Jamaican Spice Bun",
-  "description": "A Jamaican sweet made with beer, honey and molasses — makes 10, worth the couple of hours it takes.",
-  "servings": 10,
+  "description": "Moist Jamaican Easter spice bun made with stout and Malta, mixed spices, guava jam, rum-soaked raisins, cherries and mixed peel, glazed and eaten with tasty cheddar.",
+  "servings": 20,
   "cuisine": "Jamaican",
   "category": "Dessert",
   "image": "https://www.themealdb.com/images/media/meals/08c5f41764791918.jpg",
-  "prep_minutes": 25,
-  "cook_minutes": 70,
+  "prep_minutes": 30,
+  "cook_minutes": 60,
   "ingredients": [
    {
-    "name": "plain flour",
-    "quantity": 380,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "baking powder",
-    "quantity": 2,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "cinnamon",
-    "quantity": 2,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "salt",
-    "quantity": 0.5,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "eggs",
+    "name": "beer",
     "quantity": 1,
     "unit": "",
-    "note": "large"
+    "note": "1 bottle of stout (Dragon Stout or Guinness; Malta if avoiding alcohol)"
    },
    {
-    "name": "brown sugar",
-    "quantity": 150,
-    "unit": "g",
-    "note": ""
+    "name": "malta",
+    "quantity": 1,
+    "unit": "",
+    "note": "1 bottle of Malta, a non-alcoholic malt drink; find it at Caribbean or African grocers"
    },
    {
-    "name": "beer",
-    "quantity": 250,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "milk",
-    "quantity": 0.333,
-    "unit": "cup",
-    "note": ""
-   },
-   {
-    "name": "honey",
-    "quantity": 0.25,
+    "name": "sugar",
+    "quantity": 2,
     "unit": "cup",
     "note": ""
    },
    {
     "name": "butter",
-    "quantity": 4,
-    "unit": "tbsp",
-    "note": ""
+    "quantity": 0.25,
+    "unit": "cup",
+    "note": "melted"
    },
    {
-    "name": "molasses",
-    "quantity": 1,
-    "unit": "tbsp",
-    "note": ""
+    "name": "eggs",
+    "quantity": 2,
+    "unit": "",
+    "note": "beaten"
    },
    {
-    "name": "caramelized sugar sauce",
+    "name": "orange zest",
     "quantity": 1,
-    "unit": "tsp",
-    "note": ""
+    "unit": "tbsp",
+    "note": "or lime zest"
+   },
+   {
+    "name": "browning",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": "burnt-sugar colouring, for the brown colour (the video says 'browning or some molasses'); also used in the glaze"
    },
    {
     "name": "vanilla extract",
     "quantity": 1,
-    "unit": "tsp",
-    "note": ""
+    "unit": "tbsp",
+    "note": "vanilla essence"
    },
    {
-    "name": "dried cranberries",
+    "name": "rose water",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "optional; the list says 'almond & rose water'"
+   },
+   {
+    "name": "jam",
+    "quantity": 0.25,
+    "unit": "cup",
+    "note": "guava jam or any flavour"
+   },
+   {
+    "name": "mixed peel",
     "quantity": 0.5,
     "unit": "cup",
-    "note": ""
+    "note": "plus a few for the top"
    },
    {
     "name": "raisins",
     "quantity": 0.5,
     "unit": "cup",
+    "note": "or currants; soaked in rum beforehand"
+   },
+   {
+    "name": "rum",
+    "quantity": null,
+    "unit": "",
+    "note": "optional, for soaking the raisins beforehand (amount not given)"
+   },
+   {
+    "name": "glacé cherries",
+    "quantity": 0.25,
+    "unit": "cup",
+    "note": "chopped, plus a few for the top; the video doesn't say which type, glacé assumed"
+   },
+   {
+    "name": "plain flour",
+    "quantity": 6.5,
+    "unit": "cup",
+    "note": "plain or baking flour, sifted with the dry ingredients"
+   },
+   {
+    "name": "baking powder",
+    "quantity": 2,
+    "unit": "tbsp",
     "note": ""
    },
    {
-    "name": "dried cherries",
-    "quantity": 0.5,
-    "unit": "cup",
+    "name": "salt",
+    "quantity": 1,
+    "unit": "tsp",
     "note": ""
+   },
+   {
+    "name": "mixed spice",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "1–2 tsp"
+   },
+   {
+    "name": "nutmeg",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "grated"
+   },
+   {
+    "name": "cinnamon",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "ground"
+   },
+   {
+    "name": "cheddar cheese",
+    "quantity": null,
+    "unit": "",
+    "note": "tasty cheddar, to serve"
    }
   ],
   "steps": [
    {
-    "text": "Soak the craisins, raisins, and cherries in the 1 cup of beer. Set aside and allow to soak for 30 minutes.",
-    "minutes": 30
-   },
-   {
-    "text": "Preheat the oven to 160°C (325°F) Grease an 8x4 loaf pan. Set aside.",
+    "text": "In a large container, mix the stout and the Malta with the sugar until it comes together; there's no need to heat it to dissolve the sugar.",
     "minutes": null
    },
    {
-    "text": "Combine all-purpose flour, baking powder, ground cinnamon, salt, in a large bowl and set aside.",
+    "text": "Stir in the melted butter, beaten eggs, orange zest, browning, vanilla, rose water and guava jam until everything is dissolved.",
     "minutes": null
    },
    {
-    "text": "In another bowl, combine brown sugar, egg, milk, honey, melted butter, molasses, browning, vanilla extract, and the beer that’s soaking the fruit. Do not pour the fruit in at this time, just the beer. Mix to combine.",
+    "text": "Add the mixed peel, the raisins that have been soaking in rum, and the chopped cherries.",
     "minutes": null
    },
    {
-    "text": "Remove 2 tablespoon of flour from the flour mixture and toss the fruit in it. Set aside.",
+    "text": "In a separate bowl, mix the flour, baking powder, salt, mixed spice, nutmeg and cinnamon.",
     "minutes": null
    },
    {
-    "text": "Make a well in the middle of the bowl of dry ingredients and pour in wet mixture, stirring until fully combined. And the fruits to the mixture and stir until incpororated.",
+    "text": "Sift the dry mix into the wet mix and stir until smooth. The batter should be nice and runny for a moist bun.",
     "minutes": null
    },
    {
-    "text": "Pour mixture into prepared loaf pan and bake in the preheated oven for 50-60 minutes or until a toothpick comes out clean.",
+    "text": "Pour into greased loaf pans about three-quarters full, leaving room to rise. Press a few cherries and mixed peel on top if you like.",
+    "minutes": null
+   },
+   {
+    "text": "Bake in a preheated oven at 180°C (350°F) for about 1 hour, or until a toothpick comes out clean.",
     "minutes": 60
    },
    {
-    "text": "Cool for 5 minutes in the pan and then move to a cooling rack to finish cooling. Serve with slices of cheddar cheese.",
-    "minutes": 5
+    "text": "Mix a little jam, sugar, melted butter and browning into a glaze (the video makes it while the buns bake). Brush it over the hot buns; honey or melted butter also works.",
+    "minutes": null
+   },
+   {
+    "text": "Let the buns cool for at least 15 minutes before cutting. Serve with slices of tasty cheddar.",
+    "minutes": 15
    }
   ]
  },
@@ -51245,123 +51279,125 @@
  {
   "source": "themealdb:53015",
   "title": "Glazed yeast doughnuts",
-  "description": "An American sweet made with shortening — makes 12, on the table in about 45 minutes.",
+  "description": "Soft yeast doughnuts enriched with milk and butter, chilled overnight, cut into rings, proofed, deep-fried and dipped in a thin sugar glaze.",
   "servings": 12,
   "cuisine": "American",
   "category": "Dessert",
   "image": "https://www.themealdb.com/images/media/meals/4i5cnx1587672171.jpg",
-  "prep_minutes": 20,
-  "cook_minutes": 10,
+  "prep_minutes": 50,
+  "cook_minutes": 15,
   "ingredients": [
    {
-    "name": "yeast",
-    "quantity": 5,
+    "name": "plain flour",
+    "quantity": 638,
     "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "water",
-    "quantity": 0.25,
-    "unit": "cup",
-    "note": ""
-   },
-   {
-    "name": "water",
-    "quantity": 1.5,
-    "unit": "cup",
-    "note": ""
+    "note": "all-purpose, about 4½ cups"
    },
    {
     "name": "sugar",
-    "quantity": 0.5,
-    "unit": "cup",
-    "note": ""
+    "quantity": 99,
+    "unit": "g",
+    "note": "granulated, about ½ cup"
    },
    {
-    "name": "salt",
+    "name": "yeast",
     "quantity": 1,
     "unit": "tsp",
+    "note": "instant or rapid-rise"
+   },
+   {
+    "name": "milk",
+    "quantity": 1.5,
+    "unit": "cup",
     "note": ""
    },
    {
     "name": "eggs",
-    "quantity": 2,
+    "quantity": 1,
     "unit": "",
-    "note": ""
+    "note": "large"
    },
    {
-    "name": "shortening",
-    "quantity": 0.333,
-    "unit": "cup",
-    "note": ""
-   },
-   {
-    "name": "plain flour",
-    "quantity": 5,
-    "unit": "drop",
-    "note": ""
-   },
-   {
-    "name": "vegetable oil",
-    "quantity": null,
-    "unit": "",
-    "note": "to sprinkle"
-   },
-   {
-    "name": "milk",
-    "quantity": 0.5,
-    "unit": "cup",
-    "note": ""
-   },
-   {
-    "name": "sugar",
-    "quantity": 2,
-    "unit": "cup",
-    "note": ""
-   },
-   {
-    "name": "vanilla extract",
+    "name": "salt",
     "quantity": 1.5,
-    "unit": "cup",
-    "note": ""
-   },
-   {
-    "name": "water",
-    "quantity": 6,
-    "unit": "tbsp",
-    "note": ""
+    "unit": "tsp",
+    "note": "table salt, for the dough"
    },
    {
     "name": "butter",
-    "quantity": 0.333,
+    "quantity": 114,
+    "unit": "g",
+    "note": "unsalted, softened, cut into small pieces (8 tbsp)"
+   },
+   {
+    "name": "vegetable oil",
+    "quantity": 1.9,
+    "unit": "l",
+    "note": "for deep-frying (2 quarts)"
+   },
+   {
+    "name": "icing sugar",
+    "quantity": 369,
+    "unit": "g",
+    "note": "confectioners' sugar, for the glaze"
+   },
+   {
+    "name": "water",
+    "quantity": 0.5,
     "unit": "cup",
-    "note": ""
+    "note": "hot, for the glaze"
+   },
+   {
+    "name": "salt",
+    "quantity": 1,
+    "unit": "pinch",
+    "note": "for the glaze"
    }
   ],
   "steps": [
    {
-    "text": "Dissolve yeast in warm water in 2 1/2-quart bowl. Add milk, sugar, salt, eggs, shortening and 2 cups flour. Beat on low for 30 seconds, scraping bowl constantly. Beat on medium speed for 2 minutes, scraping bowl occasionally.",
+    "text": "Stir the flour, sugar and yeast together in a stand mixer bowl, add the milk and egg and mix until moistened. Mix with the dough hook on medium-low for about 2 minutes until it forms a cohesive mass.",
     "minutes": 2
    },
    {
-    "text": "Stir in remaining flour until smooth. Cover and let rise until double, 50-60 minutes. (Dough is ready when indentation remains when touched.) Turn dough onto floured surface; roll around lightly to coat with flour.",
+    "text": "Cover the bowl with plastic wrap and let the dough stand for 20 minutes.",
+    "minutes": 20
+   },
+   {
+    "text": "Add the salt and mix on medium-low for 5–7 minutes, until the dough is smooth, elastic and clears the sides of the bowl.",
+    "minutes": 5
+   },
+   {
+    "text": "With the mixer running, add the softened butter a few pieces at a time. Keep mixing for another 7–13 minutes until the dough is stretchy and clears the bowl again.",
+    "minutes": 7
+   },
+   {
+    "text": "Shape the dough into a ball in a lightly greased bowl, cover it and leave it at room temperature for 1 hour.",
     "minutes": 60
    },
    {
-    "text": "Gently roll dough 1/2-inch thick with floured rolling pin. Cut with floured doughnut cutter. Cover and let rise until double, 30-40 minutes.",
-    "minutes": 40
-   },
-   {
-    "text": "Heat vegetable oil in deep fryer to 350°. Slide doughnuts into hot oil with wide spatula. Turn doughnuts as they rise to the surface. Fry until golden brown, about 1 minute on each side.",
+    "text": "Chill the dough in the fridge overnight, or up to 48 hours, so it firms up and is easy to cut.",
     "minutes": null
    },
    {
-    "text": "Remove carefully from oil (do not prick surface); drain. Dip the doughnuts into creamy glaze set on rack.",
+    "text": "Press the cold dough into a 20 cm square, then roll it out to a 25 by 33 cm rectangle about 1.25 cm thick. Cut 12 rounds with a 7.5 cm cutter, cut a 2.5 cm hole from the centre of each and set them with the holes on a greased, lined baking tray.",
     "minutes": null
    },
    {
-    "text": "Heat butter until melted. Remove from heat. Stir in powdered sugar and vanilla until smooth. Stir in water, 1 tablespoon at a time, until desired consistency.",
-    "minutes": null
+    "text": "Put a loaf pan of 1 cup boiling water on the lower oven rack (oven off) and the tray above it. Let the doughnuts rise 45 minutes to 1 hour, until about 50% taller and slowly springing back when pressed. Start heating the frying oil about 20 minutes before they're done.",
+    "minutes": 45
+   },
+   {
+    "text": "Heat about 4 cm of oil in a Dutch oven to 180°C and keep it between 177 and 185°C. Fry the doughnuts 4 at a time for 1–1½ minutes a side until golden, then drain on paper towels over a rack. Fry the holes together for about 2 minutes.",
+    "minutes": 2
+   },
+   {
+    "text": "Let the doughnuts cool for at least 5 minutes. Meanwhile whisk the icing sugar, hot water and a pinch of salt in a bowl until smooth; it should be a very loose glaze.",
+    "minutes": 5
+   },
+   {
+    "text": "Dip both sides of each doughnut in the glaze, let the excess drip off, and set on a rack for 15–30 minutes until the glaze turns matte and dry to the touch.",
+    "minutes": 15
    }
   ]
  },
@@ -59446,234 +59482,170 @@
  {
   "source": "themealdb:52810",
   "title": "Osso Buco alla Milanese",
-  "description": "An Italian dish of veal, carrot and celery — serves 4, a slow cook that's worth the wait.",
-  "servings": 4,
+  "description": "Veal shanks braised in white wine, tomato and beef stock over a soffritto, finished with a lemon and parsley gremolada and served on polenta.",
+  "servings": 3,
   "cuisine": "Italian",
   "category": "Miscellaneous",
   "image": "https://www.themealdb.com/images/media/meals/wwuqvt1487345467.jpg",
-  "prep_minutes": 25,
-  "cook_minutes": 190,
+  "prep_minutes": 10,
+  "cook_minutes": 120,
   "ingredients": [
    {
     "name": "veal",
-    "quantity": 4,
+    "quantity": 3,
     "unit": "",
-    "note": "meaty shanks"
+    "note": "bone-in shanks, about 2.5 cm thick"
    },
    {
-    "name": "plain flour",
-    "quantity": 0.5,
-    "unit": "cup",
-    "note": ""
+    "name": "butter",
+    "quantity": 30,
+    "unit": "g",
+    "note": "for the soffritto"
    },
    {
     "name": "olive oil",
     "quantity": 2,
     "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "butter",
-    "quantity": 3,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "onion",
-    "quantity": 1,
-    "unit": "",
-    "note": "medium, chopped into 1/2-inch pieces"
+    "note": "extra virgin, for the soffritto"
    },
    {
     "name": "carrot",
     "quantity": 1,
     "unit": "",
-    "note": "chopped into 1/2-inch pieces"
+    "note": "finely chopped"
    },
    {
     "name": "celery",
     "quantity": 1,
     "unit": "",
-    "note": "chopped into 1/2-inch pieces"
+    "note": "1 large stalk, finely chopped"
    },
    {
-    "name": "fennel bulb",
-    "quantity": 1,
-    "unit": "",
-    "note": "chopped into 1/2-inch pieces"
-   },
-   {
-    "name": "garlic",
-    "quantity": 3,
-    "unit": "clove",
-    "note": ""
-   },
-   {
-    "name": "orange zest",
-    "quantity": 2,
-    "unit": "",
-    "note": "strips"
-   },
-   {
-    "name": "marjoram",
-    "quantity": 1.5,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "bay leaf",
-    "quantity": 1,
-    "unit": "",
-    "note": ""
-   },
-   {
-    "name": "dry white wine",
-    "quantity": 1,
-    "unit": "cup",
-    "note": ""
-   },
-   {
-    "name": "chicken stock",
+    "name": "onion",
     "quantity": 0.5,
-    "unit": "cup",
+    "unit": "",
+    "note": "finely chopped"
+   },
+   {
+    "name": "plain flour",
+    "quantity": null,
+    "unit": "",
+    "note": "for dusting the shanks"
+   },
+   {
+    "name": "white wine",
+    "quantity": 125,
+    "unit": "ml",
+    "note": "half a glass"
+   },
+   {
+    "name": "tomato paste",
+    "quantity": 1,
+    "unit": "tbsp",
     "note": ""
    },
    {
-    "name": "tomato",
+    "name": "canned tomatoes",
+    "quantity": 400,
+    "unit": "g",
+    "note": "peeled, crushed by hand"
+   },
+   {
+    "name": "beef stock",
     "quantity": 1,
-    "unit": "cup",
-    "note": "chopped with juice"
+    "unit": "l",
+    "note": "hot; 2 tbsp of it goes in with the soffritto"
+   },
+   {
+    "name": "salt",
+    "quantity": null,
+    "unit": "",
+    "note": "to taste, for the sauce, shanks and polenta"
+   },
+   {
+    "name": "black pepper",
+    "quantity": null,
+    "unit": "",
+    "note": "to taste, for the sauce and polenta"
+   },
+   {
+    "name": "lemon",
+    "quantity": 1,
+    "unit": "",
+    "note": "peeled zest for the gremolada"
    },
    {
     "name": "parsley",
-    "quantity": 2,
+    "quantity": 1,
+    "unit": "bunch",
+    "note": "fresh, chopped (the recipe says 1 cup chopped), for the gremolada"
+   },
+   {
+    "name": "olive oil",
+    "quantity": 3,
     "unit": "tbsp",
-    "note": "chopped"
+    "note": "extra virgin, for the gremolada (3–4 tbsp)"
    },
    {
-    "name": "garlic",
+    "name": "cornmeal",
     "quantity": 1,
-    "unit": "tsp",
-    "note": "minced"
+    "unit": "cup",
+    "note": "polenta; the video calls it corn flour"
    },
    {
-    "name": "lemon zest",
-    "quantity": 1,
-    "unit": "tsp",
-    "note": "grated"
+    "name": "water",
+    "quantity": 1.2,
+    "unit": "l",
+    "note": "for the polenta"
    }
   ],
   "steps": [
    {
-    "text": "Heat the oven to 300 degrees.",
+    "text": "Cut four or five small nicks into the edges of each veal shank so it stays flat as it cooks. Crush the peeled tomatoes by hand in a bowl and set aside.",
     "minutes": null
    },
    {
-    "text": "Dredging the shanks: pour the flour into a shallow dish (a pie plate works nicely). Season the veal shanks on all sides with salt and pepper.",
-    "minutes": null
-   },
-   {
-    "text": "One at a time, roll the shanks around in the flour coat, and shake and pat the shank to remove any excuses flour. Discard the remaining flour.",
-    "minutes": null
-   },
-   {
-    "text": "Browning the shanks: put the oil and 1 tablespoon of the butter in a wide Dutch oven or heavy braising pot (6 to 7 quart) and heat over medium-high heat.",
-    "minutes": null
-   },
-   {
-    "text": "When the butter has melted and the oil is shimmering, lower the shanks into the pot, flat side down; if the shanks won’t fit without touching one another, do this in batches.",
-    "minutes": null
-   },
-   {
-    "text": "Brown the shanks, turning once with tongs, until both flat sides are well caramelized, about 5 minutes per side. If the butter-oil mixture starts to burn, lower the heat just a bit.",
-    "minutes": 5
-   },
-   {
-    "text": "Transfer the shanks to a large platter or tray and set aside.",
-    "minutes": null
-   },
-   {
-    "text": "The aromatics: pour off and discard the fat from the pot. Wipe out any burnt bits with a damp paper towel, being careful not to remove any delicious little caramelized bits.",
-    "minutes": null
-   },
-   {
-    "text": "Ad the remaining 2 tablespoons butter to the pot and melt it over medium heat. When the butter has stopped foaming, add the onion, carrot, celery, and fennel.",
-    "minutes": null
-   },
-   {
-    "text": "Season with salt and pepper, stir, and cook the vegetables until they begin to soften but do not brown, about 6 minutes. Stir in the garlic, orange zest, marjoram, and bay leaf, and stew for another minute or two.",
-    "minutes": 6
-   },
-   {
-    "text": "The braising liquid: add the wine, increase the heat to high, and bring to a boil. Boil, stirring occasionally, to reduce the wine by about half, 5 minutes.",
-    "minutes": 5
-   },
-   {
-    "text": "Add the stock and tomatoes, with their juice, and boil again to reduce the liquid to about 1 cup total, about 10 minutes.",
-    "minutes": null
-   },
-   {
-    "text": "The braise: Place the shanks in the pot so that they are sitting with the exposed bone facing up, and pour over any juices that accumulated as they sat.",
-    "minutes": null
-   },
-   {
-    "text": "Cover with parchment paper, pressing down so the parchment nearly touches the veal and the edges hang over the sides of the pot by about an inch.",
-    "minutes": null
-   },
-   {
-    "text": "Cover tightly with the lid, and slide into the lower part of the oven to braise at a gentle simmer. Check the pot after the first 15 minutes, and if the liquid is simmering too aggressively, lower the oven heat by 10 or 15 degrees.",
-    "minutes": 15
-   },
-   {
-    "text": "Continue braising, turning the shanks and spooning some pan juices over the top after the first 40 minutes, until the meat is completely tender and pulling away from the bone, about 2 hours.",
-    "minutes": 120
-   },
-   {
-    "text": "The gremolata: While the shanks are braising, stir together the garlic, parsley, and lemon zest in a small bowl. Cover with plastic wrap and set aside in a cool place (or the refrigerator, if your kitchen is very warm.)",
-    "minutes": null
-   },
-   {
-    "text": "The finish: When the veal is fork-tender and falling away from the bone, remove the lid and sprinkle over half of the gremolata. Return the veal to the oven, uncovered, for another 15 minutes to caramelize it some.",
-    "minutes": 15
-   },
-   {
-    "text": "Using a slotted spatula or spoon, carefully lift the shanks from the braising liquid, doing your best to keep them intact.",
-    "minutes": null
-   },
-   {
-    "text": "The shanks will be very tender and threatening to fall into pieces, and the marrow will be wobbly inside the bones, so this can be a bit tricky. But if they do break apart, don’t worry, the flavor won’t suffer at all.",
-    "minutes": null
-   },
-   {
-    "text": "Arrange the shanks on a serving platter or other large plate, without stacking, and cover with foil to keep warm.",
-    "minutes": null
-   },
-   {
-    "text": "Finishing the sauce: Set the braising pot on top of the stove and evaluate the sauce: if there is a visible layer of fat floating on the surface, use a large spoon to skim it off and discard it. Taste the sauce for concentration of flavor.",
-    "minutes": null
-   },
-   {
-    "text": "If it tastes a bit weak or flat, bring it to a boil over high heat, and boil to reduce the volume and intensify the flavor for 5 to 10 minutes. Taste again for salt and pepper.",
+    "text": "Melt the butter with 2 tbsp olive oil in a Dutch oven over medium-high heat. Add the carrot, celery and onion and cook this soffritto for 10 minutes.",
     "minutes": 10
    },
    {
-    "text": "If the sauce wants more zip, stir in a teaspoon or two of the remaining gremolata.",
+    "text": "While it cooks, lightly coat the shanks in flour. Stir up to 2 tbsp of the broth into the soffritto, cover and let it steam until soft.",
     "minutes": null
    },
    {
-    "text": "Portioning the veal shanks: if the shanks are reasonably sized, serve one per person.",
+    "text": "Lay the shanks on top of the soffritto and caramelise them 2–3 minutes a side, adding the white wine meanwhile. After about 5 minutes lift the shanks out onto a plate.",
+    "minutes": 5
+   },
+   {
+    "text": "Simmer until the wine has evaporated and the sauce turns creamy, then stir in the tomato paste.",
     "minutes": null
    },
    {
-    "text": "If the shanks are gargantuan or you’re dealing with modest appetites, pull apart the larger shanks, separating them at their natural seams, and serve smaller amounts. Be sure to give the marrow bones to whomever prizes them most.",
+    "text": "Add the crushed tomatoes with a touch of salt and pepper and stir everything together.",
     "minutes": null
    },
    {
-    "text": "Serving: Arrange the veal shanks on warm dinner plates accompanied by the risotto, if serving.",
+    "text": "Gently put the shanks back in, lightly salt each side, then pour in the rest of the hot broth.",
     "minutes": null
    },
    {
-    "text": "Just before carrying the plates to the table, sprinkle on the remaining gremolata and then spoon over a generous amount of sauce – the contact with the hot liquid will aromatize the gremolata and perk up everyone’s appetite with the whiff of garlic and lemon.",
+    "text": "Cover and simmer for 1½ hours, turning the meat and stirring every 30 minutes so nothing sticks.",
+    "minutes": 90
+   },
+   {
+    "text": "For the gremolada, peel the lemon zest with a peeler, avoiding the white pith. Blend it with the parsley and 3–4 tbsp olive oil, scraping down the sides, then set aside.",
+    "minutes": null
+   },
+   {
+    "text": "Remove the lid and let the sauce reduce for another 30 minutes.",
+    "minutes": 30
+   },
+   {
+    "text": "For the polenta, heat 1.2 l of water in a pot and add the cornmeal a little at a time, stirring so it doesn't lump. Boil until it thickens and starts to spit, then season with salt and pepper and stir in a little olive oil or butter.",
+    "minutes": null
+   },
+   {
+    "text": "Serve a spoonful of polenta with a shank and the reduced sauce, topped with the gremolada.",
     "minutes": null
    }
   ]
@@ -70416,151 +70388,153 @@
  {
   "source": "themealdb:52836",
   "title": "Seafood fideuà",
-  "description": "A Spanish dish of mussels, prawns and vermicelli pasta — serves 4, about an hour start to finish.",
-  "servings": 4,
+  "description": "Valencian noodle paella: squid, monkfish and jumbo prawns cooked with smoked paprika, tomato and saffron, then fideuà noodles simmered in fish stock.",
+  "servings": 2,
   "cuisine": "Spanish",
   "category": "Seafood",
   "image": "https://www.themealdb.com/images/media/meals/wqqvyq1511179730.jpg",
-  "prep_minutes": 20,
-  "cook_minutes": 50,
+  "prep_minutes": 15,
+  "cook_minutes": 30,
   "ingredients": [
    {
-    "name": "mussels",
-    "quantity": 400,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "prawns",
-    "quantity": 8,
-    "unit": "",
-    "note": ""
-   },
-   {
-    "name": "saffron",
-    "quantity": 2,
-    "unit": "pinch",
-    "note": ""
-   },
-   {
-    "name": "vermicelli pasta",
-    "quantity": 350,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "olive oil",
-    "quantity": 5,
-    "unit": "tbsp",
-    "note": ""
+    "name": "garlic",
+    "quantity": 3,
+    "unit": "clove",
+    "note": "finely minced"
    },
    {
     "name": "onion",
     "quantity": 1,
     "unit": "",
-    "note": "large"
+    "note": "small, finely diced"
    },
    {
-    "name": "garlic",
-    "quantity": 3,
-    "unit": "clove",
-    "note": ""
-   },
-   {
-    "name": "paprika",
-    "quantity": 2,
-    "unit": "tbsp",
-    "note": ""
+    "name": "squid",
+    "quantity": 1,
+    "unit": "",
+    "note": "cleaned tube, cut into 2.5 cm squares"
    },
    {
     "name": "monkfish",
     "quantity": 1,
     "unit": "",
-    "note": "tail"
+    "note": "tail, filleted and cut into 2.5 cm pieces"
    },
    {
-    "name": "squid",
-    "quantity": 4,
+    "name": "prawns",
+    "quantity": 12,
     "unit": "",
+    "note": "raw jumbo, seasoned with salt and pepper"
+   },
+   {
+    "name": "sea salt",
+    "quantity": null,
+    "unit": "",
+    "note": "to taste, for the prawns, oil and sauce"
+   },
+   {
+    "name": "black pepper",
+    "quantity": null,
+    "unit": "",
+    "note": "freshly cracked, to taste"
+   },
+   {
+    "name": "olive oil",
+    "quantity": 0.25,
+    "unit": "cup",
+    "note": "extra virgin Spanish"
+   },
+   {
+    "name": "smoked paprika",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": "a generous half teaspoon"
+   },
+   {
+    "name": "tomato puree",
+    "quantity": 0.5,
+    "unit": "cup",
     "note": ""
+   },
+   {
+    "name": "saffron",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": "threads"
+   },
+   {
+    "name": "vermicelli pasta",
+    "quantity": 250,
+    "unit": "g",
+    "note": "fideuà noodles (2 cups)"
    },
    {
     "name": "fish stock",
-    "quantity": 650,
-    "unit": "ml",
+    "quantity": 2.5,
+    "unit": "cup",
     "note": ""
-   },
-   {
-    "name": "tomato",
-    "quantity": 2,
-    "unit": "",
-    "note": "large"
-   },
-   {
-    "name": "lemon",
-    "quantity": 1,
-    "unit": "",
-    "note": "juiced"
    },
    {
     "name": "parsley",
     "quantity": null,
     "unit": "",
-    "note": "to serve"
+    "note": "freshly chopped, to garnish"
+   },
+   {
+    "name": "lemon",
+    "quantity": 2,
+    "unit": "slice",
+    "note": "to garnish"
    }
   ],
   "steps": [
    {
-    "text": "Boil the kettle. Empty the mussels into a colander and run under cold water. Throw away any with broken shells.",
+    "text": "Mince the garlic, dice the onion, cut the squid into 2.5 cm squares and fillet the monkfish tail, cutting each fillet into 2.5 cm pieces. Season the prawns with sea salt and pepper.",
     "minutes": null
    },
    {
-    "text": "Pick through the shells, tapping each one on the side of the sink – they should be closed or should slowly close when tapped – if they stay open, throw them away.",
+    "text": "Heat a paella pan over medium-high heat with the olive oil for 2 minutes, then season the oil with sea salt.",
+    "minutes": 2
+   },
+   {
+    "text": "Add the squid, stir it through the oil for 2 minutes, then take it out and set aside.",
+    "minutes": 2
+   },
+   {
+    "text": "In the same pan cook the monkfish for 5 minutes, turning occasionally.",
+    "minutes": 5
+   },
+   {
+    "text": "Make a well in the middle and cook the onion for 2 minutes.",
+    "minutes": 2
+   },
+   {
+    "text": "Make another well, add the garlic for 30 seconds, then stir in the smoked paprika until combined.",
     "minutes": null
    },
    {
-    "text": "If any of the shells still have barnacles or stringy beards attached, pull them off with a cutlery knife and rinse the shells well. Keep in the colander, covered with a cold, damp cloth, until you’re ready to cook.",
+    "text": "Add the tomato puree, season with sea salt, pinch in the saffron and return the squid to the pan. Mix everything together.",
     "minutes": null
    },
    {
-    "text": "Peel the prawn shells on the body section only – leave the heads and tails intact. Score down the backs and pull out any gritty entrails. Chill until you’re ready to cook.",
+    "text": "Add the fideuà noodles, mix until well coated and cook for 2 minutes.",
+    "minutes": 2
+   },
+   {
+    "text": "Pour in the fish stock and spread the noodles out gently. Once it boils, add the prawns and don't stir from here, just shake the pan once in a while.",
     "minutes": null
    },
    {
-    "text": "Put the saffron in a small cup, cover with 50ml kettle-hot water and set aside for 10 mins. If using vermicelli, put in a bowl and crush to little pieces (about 1cm long) with your hands.",
+    "text": "Cook for 10 minutes after adding the stock.",
     "minutes": 10
    },
    {
-    "text": "Heat the oil in a large frying pan with at least a 3cm lip, or a 40cm paella pan. Add the onion and stir around the pan for 5 mins until soft.",
-    "minutes": 5
-   },
-   {
-    "text": "Add the garlic and cook for 1 min more, then tip in the vermicelli and cook for 5 mins, stirring from time to time, until the vermicelli is toasted brown. Stir in the paprika.",
-    "minutes": 5
-   },
-   {
-    "text": "Keeping the heat moderate, stir through the monkfish, squid and saffron with its water, seasoning well. Spread the ingredients out in an even layer, then pour over the hot stock and scatter the tomatoes on top.",
-    "minutes": null
-   },
-   {
-    "text": "Bring to a simmer, then cover the whole dish with a tight-fitting lid (or foil). Turn the heat to medium and cook for 6 mins.",
-    "minutes": 6
-   },
-   {
-    "text": "Uncover and stir to incorporate the dry top layer of pasta. Push the mussels into the pasta so the hinges are buried in the bottom of the dish, and they stand straight up.",
-    "minutes": null
-   },
-   {
-    "text": "Arrange the prawns on top, cover tightly and cook for another 6 mins or until the mussels are open, the prawns are pink and the pasta is cooked through.",
-    "minutes": 6
-   },
-   {
-    "text": "Leave to simmer for another 2-3 mins to cook off most of the remaining liquid (leave a little in the pan to prevent the pasta from sticking together).",
+    "text": "Lower to a low-medium heat and simmer for 3 minutes, until very little stock is left. Take the pan off the heat.",
     "minutes": 3
    },
    {
-    "text": "Allow to sit for 2-3 mins, then squeeze over the lemon juice and arrange the wedges on top. Scatter with parsley before serving.",
-    "minutes": 3
+    "text": "Cover the pan and rest for 5 minutes. Uncover and garnish with chopped parsley and a couple of lemon slices.",
+    "minutes": 5
    }
   ]
  },
@@ -73113,112 +73087,128 @@
  {
   "source": "themealdb:52981",
   "title": "Snert (Dutch Split Pea Soup)",
-  "description": "A Dutch soup of pork, sausages and peas — serves 8, about an hour start to finish.",
-  "servings": 8,
+  "description": "Thick Dutch split pea soup built on browned pork, bacon, root vegetables and green split peas, with smoked sausage added near the end.",
+  "servings": 6,
   "cuisine": "Dutch",
   "category": "Side",
   "image": "https://www.themealdb.com/images/media/meals/9ptx0a1565090843.jpg",
-  "prep_minutes": 15,
-  "cook_minutes": 50,
+  "prep_minutes": 20,
+  "cook_minutes": 75,
   "ingredients": [
    {
-    "name": "water",
-    "quantity": 2000,
-    "unit": "ml",
-    "note": ""
-   },
-   {
-    "name": "peas",
-    "quantity": 300,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "pork",
-    "quantity": 100,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "stock cube",
-    "quantity": 1,
-    "unit": "",
-    "note": ""
-   },
-   {
-    "name": "celery",
+    "name": "pork chops",
     "quantity": 2,
     "unit": "",
-    "note": ""
+    "note": "bone-in, browned (the video uses pork shoulder riblets, belly or chops)"
    },
    {
-    "name": "carrot",
-    "quantity": 2,
+    "name": "olive oil",
+    "quantity": null,
     "unit": "",
-    "note": ""
-   },
-   {
-    "name": "potato",
-    "quantity": 1,
-    "unit": "",
-    "note": "large"
+    "note": "a little, for frying the pork"
    },
    {
     "name": "onion",
     "quantity": 1,
     "unit": "",
-    "note": "small"
+    "note": "chopped"
+   },
+   {
+    "name": "carrot",
+    "quantity": 2,
+    "unit": "",
+    "note": "chopped"
+   },
+   {
+    "name": "celeriac",
+    "quantity": 1,
+    "unit": "",
+    "note": "chopped; celery works if you can't find it"
    },
    {
     "name": "leek",
     "quantity": 1,
     "unit": "",
-    "note": "small"
+    "note": "chopped"
    },
    {
-    "name": "celeriac",
-    "quantity": 1,
-    "unit": "cup",
-    "note": ""
-   },
-   {
-    "name": "sausages",
-    "quantity": 455,
+    "name": "bacon",
+    "quantity": 200,
     "unit": "g",
+    "note": "chopped"
+   },
+   {
+    "name": "dried green split peas",
+    "quantity": 400,
+    "unit": "g",
+    "note": "green, rinsed"
+   },
+   {
+    "name": "chicken stock",
+    "quantity": 1.5,
+    "unit": "l",
+    "note": "or water"
+   },
+   {
+    "name": "parsley",
+    "quantity": null,
+    "unit": "",
+    "note": "fresh, chopped; amount not stated, add to taste"
+   },
+   {
+    "name": "bay leaf",
+    "quantity": 4,
+    "unit": "leaf",
     "note": ""
+   },
+   {
+    "name": "black pepper",
+    "quantity": null,
+    "unit": "",
+    "note": "fresh, to taste"
+   },
+   {
+    "name": "smoked sausage",
+    "quantity": 2,
+    "unit": "",
+    "note": "sliced 1.5 cm thick (rookworst or a German smoked sausage)"
    }
   ],
   "steps": [
    {
-    "text": "In a large soup pot, bring water, split peas, pork belly or bacon, pork chop, and bouillon cube to a boil.",
+    "text": "Rinse the split peas and set them aside.",
     "minutes": null
    },
    {
-    "text": "Reduce the heat to a simmer, cover and let cook for 45 minutes, stirring occasionally and skimming off any foam that rises to the top.",
+    "text": "Heat a little olive oil in a large stock pot. Season the pork lightly and brown it well on all sides, then take it out and set aside.",
+    "minutes": null
+   },
+   {
+    "text": "Add the chopped onion, carrots, celeriac and leek to the pot, season lightly and let them soften.",
+    "minutes": null
+   },
+   {
+    "text": "Add the chopped bacon and cook it with the vegetables so it renders its fat.",
+    "minutes": null
+   },
+   {
+    "text": "Stir in the rinsed split peas, chicken stock, chopped parsley, bay leaves and black pepper. Return the browned pork to the pot.",
+    "minutes": null
+   },
+   {
+    "text": "Bring to the boil, then simmer for at least 45 minutes, skimming off the foam as it rises.",
     "minutes": 45
    },
    {
-    "text": "Remove the pork chop, debone, and thinly slice the meat. Set aside.",
+    "text": "Lift out the pork, cut the meat from the bones in small pieces and put it back in the soup.",
     "minutes": null
    },
    {
-    "text": "Add the celery, carrots, potato, onion, leek, and celeriac to the soup.",
-    "minutes": null
-   },
-   {
-    "text": "Return to the boil, reduce the heat to a simmer and let cook, uncovered, for another 30 minutes, adding a little extra water if the ingredients start to stick to the bottom of the pot.",
-    "minutes": 30
-   },
-   {
-    "text": "Add the smoked sausage for the last 15 minutes of cooking time. When the vegetables are tender, remove the bacon and smoked sausage, slice thinly and set aside.",
+    "text": "Add the sliced smoked sausage and cook for a further 15 minutes.",
     "minutes": 15
    },
    {
-    "text": "If you prefer a smooth consistency, purée the soup with a stick blender. Season to taste with salt and pepper. Add the meat back to the soup, setting some slices of rookworst aside.",
-    "minutes": null
-   },
-   {
-    "text": "Serve in heated bowls or soup plates, garnished with slices of rookworst and chopped celery leaf.",
+    "text": "Check the thickness: cook longer or add more peas to thicken, or add water if it is too thick. Blend with a stick blender if you want it smoother.",
     "minutes": null
    }
   ]
@@ -76433,105 +76423,183 @@
  {
   "source": "themealdb:53435",
   "title": "Stuffed Grape Leaves",
-  "description": "An Armenian side of rice, passata and raisins — serves 6, about an hour start to finish.",
-  "servings": 6,
+  "description": "Vegetarian stuffed grape leaves (dolma): a rice, onion, tomato and herb filling with lemon juice, sumac and allspice, rolled in vine leaves and simmered in water flavoured with pomegranate molasses and olive oil.",
+  "servings": 10,
   "cuisine": "Armenian",
   "category": "Side",
   "image": "https://www.themealdb.com/images/media/meals/oga0ax1780089591.jpg",
-  "prep_minutes": 20,
-  "cook_minutes": 35,
+  "prep_minutes": 60,
+  "cook_minutes": 55,
   "ingredients": [
    {
-    "name": "rice",
-    "quantity": 1,
-    "unit": "cup",
-    "note": ""
-   },
-   {
-    "name": "chicken stock",
-    "quantity": 2,
-    "unit": "cup",
-    "note": ""
-   },
-   {
-    "name": "passata",
-    "quantity": 1,
-    "unit": "cup",
-    "note": ""
-   },
-   {
-    "name": "olive oil",
-    "quantity": 0.25,
-    "unit": "cup",
-    "note": ""
-   },
-   {
-    "name": "allspice",
-    "quantity": 0.25,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "cinnamon",
-    "quantity": 0.5,
-    "unit": "tsp",
-    "note": ""
+    "name": "vine leaves",
+    "quantity": 1.5,
+    "unit": "jar",
+    "note": "grape leaves in brine; the extra half jar covers torn leaves"
    },
    {
     "name": "onion",
-    "quantity": 1,
+    "quantity": 2,
     "unit": "",
-    "note": "chopped"
+    "note": "finely chopped (pulsed in a food processor)"
    },
    {
-    "name": "raisins",
-    "quantity": 0.5,
+    "name": "olive oil",
+    "quantity": 1,
     "unit": "cup",
+    "note": "for sautéing the onion"
+   },
+   {
+    "name": "tomato paste",
+    "quantity": 1,
+    "unit": "tbsp",
     "note": ""
+   },
+   {
+    "name": "red pepper paste",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "pepper (capsicum) paste"
+   },
+   {
+    "name": "tomato",
+    "quantity": 2,
+    "unit": "",
+    "note": "large, pureed"
+   },
+   {
+    "name": "rice",
+    "quantity": 2,
+    "unit": "cup",
+    "note": "basmati or any long grain rice (the cook used basmati), well washed and drained"
    },
    {
     "name": "dill",
-    "quantity": 0.5,
-    "unit": "cup",
-    "note": ""
-   },
-   {
-    "name": "pine nuts",
-    "quantity": 0.5,
-    "unit": "cup",
-    "note": ""
-   },
-   {
-    "name": "lemon",
     "quantity": 1,
-    "unit": "",
-    "note": "juiced"
+    "unit": "bunch",
+    "note": "chopped"
+   },
+   {
+    "name": "parsley",
+    "quantity": 1,
+    "unit": "bunch",
+    "note": "chopped"
+   },
+   {
+    "name": "coriander",
+    "quantity": 1,
+    "unit": "bunch",
+    "note": "chopped"
+   },
+   {
+    "name": "lemon juice",
+    "quantity": 1,
+    "unit": "cup",
+    "note": "mixed into the filling"
    },
    {
     "name": "salt",
-    "quantity": null,
-    "unit": "",
-    "note": "to taste"
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "in the filling"
+   },
+   {
+    "name": "allspice",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": ""
+   },
+   {
+    "name": "paprika",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": ""
    },
    {
     "name": "black pepper",
-    "quantity": null,
-    "unit": "",
-    "note": "to taste"
+    "quantity": 1,
+    "unit": "tsp",
+    "note": ""
+   },
+   {
+    "name": "sumac",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": ""
+   },
+   {
+    "name": "chilli powder",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": ""
+   },
+   {
+    "name": "dried mint",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "dried or fresh mint"
+   },
+   {
+    "name": "water",
+    "quantity": 2,
+    "unit": "cup",
+    "note": "for the cooking liquid"
+   },
+   {
+    "name": "salt",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "optional, in the cooking liquid"
+   },
+   {
+    "name": "pomegranate molasses",
+    "quantity": 2,
+    "unit": "tsp",
+    "note": "for the cooking liquid"
+   },
+   {
+    "name": "olive oil",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "for the cooking liquid"
    }
   ],
   "steps": [
    {
-    "text": "Wash rice in cold water until water runs clear. Sauté onions in olive oil until tender. Add spices and stir until fragrant. Add remaining ingredients.",
+    "text": "Pulse the onions in a food processor until finely chopped, then sauté them in the 1 cup of olive oil.",
     "minutes": null
    },
    {
-    "text": "Bring to a gentle boil, then simmer for 30 minutes until all stock is absorbed and rice is tender.",
-    "minutes": 30
+    "text": "Stir in the tomato paste and pepper paste and cook on medium-low heat for a little while, then add the pureed tomatoes.",
+    "minutes": null
    },
    {
-    "text": "Serve as a side dish or filling for dolmas.",
+    "text": "Add the well-washed, drained rice and turn off the heat, since it only needs to be part-cooked at this stage.",
     "minutes": null
+   },
+   {
+    "text": "Pulse the dill, parsley and coriander until chopped and mix them into the rice. Add the lemon juice, salt, allspice, paprika, black pepper, sumac, chilli powder and dried or fresh mint and combine well.",
+    "minutes": null
+   },
+   {
+    "text": "Remove the stem from each grape leaf. Put about 1 teaspoon of filling in each leaf, tuck in the top and sides, and roll gently, not too tight, so the rice has room to expand. Cut any big leaves in half so the rolls stay a similar size.",
+    "minutes": null
+   },
+   {
+    "text": "Line the bottom of a pot with the torn or ripped leaves, then pack the rolls in on top.",
+    "minutes": null
+   },
+   {
+    "text": "Mix the 2 cups of water with the salt, pomegranate molasses and 1 tbsp olive oil and pour it over the rolls. Weigh them down with a plate so they don't unravel.",
+    "minutes": null
+   },
+   {
+    "text": "Cover and cook on high heat for about 10 minutes, until bubbling and the water is absorbing.",
+    "minutes": 10
+   },
+   {
+    "text": "Lower to very low heat and cook for another 40–50 minutes, up to an hour. Remove the plate, then flip the pot onto a large tray or lift the rolls out one by one.",
+    "minutes": 40
    }
   ]
  },

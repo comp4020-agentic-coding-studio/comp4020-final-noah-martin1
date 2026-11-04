@@ -3030,10 +3030,12 @@
   "transcribed": true
  },
  "themealdb:53348": {
-  "videoId": null,
-  "status": "unavailable",
-  "reason": "TheMealDB lists no video for this meal",
-  "checked": "2026-10-20"
+  "videoId": "TpWfGFwP8xk",
+  "title": "Jamaican Easter Bun, Spice Bun, Moist & Delicious.",
+  "channel": "Racquel’s Caribbean Cuisine",
+  "checked": "2026-11-04",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53364": {
   "videoId": "amEkrC9rzgM",
@@ -3202,10 +3204,12 @@
   "checked": "2026-10-20"
  },
  "themealdb:53015": {
-  "videoId": "SamYg6IUGOI",
-  "status": "unavailable",
-  "reason": "video can't be embedded",
-  "checked": "2026-10-20"
+  "videoId": "pNHAHjVb7pc",
+  "title": "How to Make Homemade Glazed Doughnuts",
+  "channel": "America's Test Kitchen",
+  "checked": "2026-11-04",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53408": {
   "videoId": "h05_zOhGedo",
@@ -3574,12 +3578,10 @@
   "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:53029": {
-  "videoId": "vWc5JzgAkIQ",
-  "title": "Simple Molokhia recipe",
-  "channel": "Food,Travel etc",
+  "videoId": null,
+  "checked": "2026-11-04",
   "status": "rejected",
-  "reason": "video title doesn't match the dish",
-  "checked": "2026-10-20"
+  "reason": "Two candidates checked, neither verifiable: Anwar's Kitchen 0TqTZo0htbQ cooks molokhia with chicken and gives vague amounts (no chicken weight, no molokhia amount, 'bunch of few pies', no written recipe); Australian Beef & Lamb yIg8YMlbv-A is a lamb version whose description has an ingredient list but no method, its linked recipe page (bit.ly) failed with an expired SSL certificate, and its transcript could not be fetched (IpBlocked)."
  },
  "themealdb:53403": {
   "videoId": "0q1RvcqnVWA",
@@ -3726,12 +3728,12 @@
   "checked": "2026-10-20"
  },
  "themealdb:52810": {
-  "videoId": "9GUTC2Qwrf0",
-  "title": "OSSOBUCO ALLA MILANESE CON RISOTTO GIALLO di Alessandro Negrini",
-  "channel": "GialloZafferano",
-  "status": "rejected",
-  "reason": "video title doesn't match the dish",
-  "checked": "2026-10-20"
+  "videoId": "Z4HDhqCuJe4",
+  "title": "How to Make OSSO BUCO like an Italian | The Ultimate OSSOBUCO Recipe",
+  "channel": "Vincenzo's Plate",
+  "checked": "2026-11-04",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:52943": {
   "videoId": "DIhxk-98Hz8",
@@ -3886,12 +3888,10 @@
   "checked": "2026-10-20"
  },
  "themealdb:53039": {
-  "videoId": "_RKwKjskopk",
-  "title": "Peri Peri Chicken | How To Make",
-  "channel": "Chef Jack Ovens",
+  "videoId": null,
+  "checked": "2026-11-04",
   "status": "rejected",
-  "reason": "video title doesn't match the dish",
-  "checked": "2026-10-20"
+  "reason": "Two candidates checked, neither verifiable: Judy Ann's Kitchen GkQ5jl8Sg5s has a garbled, mostly [Music] auto-transcript with only a few marinade amounts and none for the chicken or slaw, and no written recipe in the description; Jamie Oliver tl5Jx0o5F_k (a different dish: griddled chicken with sweet potato fries and salsas) has no written recipe in the description and its transcript was blocked (IpBlocked). The top result Halal Chef 9e1GNh7qhac is not embeddable."
  },
  "themealdb:53293": {
   "videoId": "ACpikfieDP0",
@@ -4434,10 +4434,12 @@
   "reason": "not yet checked against the recipe; only its title matched"
  },
  "themealdb:52836": {
-  "videoId": "itsFEc8W468",
-  "status": "unavailable",
-  "reason": "video no longer exists on YouTube",
-  "checked": "2026-10-20"
+  "videoId": "02udm9FW9w8",
+  "title": "Authentic Spanish Seafood Fideuà Recipe from Valencia",
+  "channel": "Spain on a Fork",
+  "checked": "2026-11-04",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53167": {
   "videoId": null,
@@ -4622,12 +4624,12 @@
   "checked": "2026-10-20"
  },
  "themealdb:52981": {
-  "videoId": "5YV0sJLtLt8",
-  "title": "Pea soup - Traditional from Holland",
-  "channel": "Nicole Michael DIY",
-  "status": "rejected",
-  "reason": "video title doesn't match the dish",
-  "checked": "2026-10-20"
+  "videoId": "YGiiWcMJF_Y",
+  "title": "Carters' Christmas | Dutch Pea Soup (Snert)",
+  "channel": "Simon James Carter",
+  "checked": "2026-11-04",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:52992": {
   "videoId": null,
@@ -4856,10 +4858,12 @@
   "checked": "2026-10-20"
  },
  "themealdb:53435": {
-  "videoId": null,
-  "status": "unavailable",
-  "reason": "TheMealDB lists no video for this meal",
-  "checked": "2026-10-20"
+  "videoId": "YMxWsxXkW7s",
+  "title": "Stuffed Grape Leaves/ Vegetarian Armenian Best Stuffed grape leaves Dolma ملفوف ورق العنب دولمة",
+  "channel": "Nora’s International Cooking",
+  "checked": "2026-11-04",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53008": {
   "videoId": "L0vojEfIKWg",
