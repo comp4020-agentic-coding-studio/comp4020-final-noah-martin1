@@ -1,11 +1,263 @@
 {
  "reader": "PaddleOCR PP-OCRv4 (public/receipt-ocr.mjs) + src/receipt-text.ts",
- "items": 0.8851228878648232,
- "prices": 0.9893557422969188,
+ "items": 0.9069145758661886,
+ "prices": 0.9807131185807657,
  "rows": [
   {
+   "photo": "aldi-bentleigh-2020.jpg",
+   "ms": 261,
+   "items": 1,
+   "prices": 1,
+   "weighed": "0/0",
+   "totalRead": true,
+   "check": {
+    "sum_cents": 1635,
+    "matches": true
+   },
+   "checkRight": true,
+   "missed": [],
+   "wrongPrice": [],
+   "extra": [],
+   "lines": [
+    {
+     "text": "12417 ChsChedAgd200-250g",
+     "name": "cheddar cheese",
+     "qty": 1,
+     "price_cents": 399,
+     "size": {
+      "quantity": 250,
+      "unit": "g"
+     },
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "59308 Utopia 12pk 600ml",
+     "name": "utopia",
+     "qty": 1,
+     "price_cents": 499,
+     "size": {
+      "quantity": 600,
+      "unit": "ml"
+     },
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "55349Waffles 4pk/360g",
+     "name": "waffles",
+     "qty": 1,
+     "price_cents": 399,
+     "size": {
+      "quantity": 360,
+      "unit": "g"
+     },
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "703369 Chob BlueYog 170g",
+     "name": "yoghurt",
+     "qty": 1,
+     "price_cents": 169,
+     "size": {
+      "quantity": 170,
+      "unit": "g"
+     },
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "703369 Chob BlueYog 170g",
+     "name": "yoghurt",
+     "qty": 1,
+     "price_cents": 169,
+     "size": {
+      "quantity": 170,
+      "unit": "g"
+     },
+     "by_weight": false,
+     "grams": null
+    }
+   ],
+   "ocr": [
+    "ALDI STORES",
+    "ALIMITED PARTNERSHIP",
+    "BENTLEIGH",
+    "ABN:90196565019",
+    "Tax Invoice",
+    "12417 ChsChedAgd200-250g  3.99A",
+    "59308 Utopia 12pk 600ml  4.99B",
+    "55349Waffles 4pk/360g  3.99B",
+    "703369 Chob BlueYog 170g  1.69A",
+    "703369 Chob BlueYog 170g  1.69A",
+    "Subtotal  16.35",
+    "SUBTOTAL(INCL GST)  16.35"
+   ]
+  },
+  {
+   "photo": "aldi-southland.jpg",
+   "ms": 432,
+   "items": 0.8888888888888888,
+   "prices": 0.875,
+   "weighed": "0/0",
+   "totalRead": true,
+   "check": {
+    "sum_cents": 3352,
+    "matches": true
+   },
+   "checkRight": false,
+   "missed": [
+    "ham off the bone, shaved 150g"
+   ],
+   "wrongPrice": [
+    "shaved ham 250g: read 4.99, paid 3.99"
+   ],
+   "extra": [
+    "haim shaved (399264 Haim Shaved 250g)"
+   ],
+   "lines": [
+    {
+     "text": "294270 Mini Choc 5x40g",
+     "name": "chocolate",
+     "qty": 1,
+     "price_cents": 449,
+     "size": {
+      "quantity": 200,
+      "unit": "g"
+     },
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "458882 MR:Chocolate 125g",
+     "name": "chocolate",
+     "qty": 1,
+     "price_cents": 369,
+     "size": {
+      "quantity": 125,
+      "unit": "g"
+     },
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "522529 Kit Kat 18pk 252g",
+     "name": "kit kat",
+     "qty": 1,
+     "price_cents": 749,
+     "size": {
+      "quantity": 252,
+      "unit": "g"
+     },
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "403657 Chicken S1iced 80g",
+     "name": "chicken",
+     "qty": 1,
+     "price_cents": 199,
+     "size": {
+      "quantity": 80,
+      "unit": "g"
+     },
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "399264 Haim Shaved 250g",
+     "name": "haim shaved",
+     "qty": 1,
+     "price_cents": 399,
+     "size": {
+      "quantity": 250,
+      "unit": "g"
+     },
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "400800 S1cdPepperoni2x50g",
+     "name": "sliced pepperoni",
+     "qty": 1,
+     "price_cents": 299,
+     "size": {
+      "quantity": 50,
+      "unit": "g"
+     },
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "398557Ham0ffBoneShv150g",
+     "name": "ham",
+     "qty": 1,
+     "price_cents": 499,
+     "size": {
+      "quantity": 150,
+      "unit": "g"
+     },
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "572798 Crackers Sanz 250g",
+     "name": "crackers",
+     "qty": 1,
+     "price_cents": 95,
+     "size": {
+      "quantity": 250,
+      "unit": "g"
+     },
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "456504 Tcpz Ckr 227g",
+     "name": "crackers",
+     "qty": 1,
+     "price_cents": 269,
+     "size": {
+      "quantity": 227,
+      "unit": "g"
+     },
+     "by_weight": false,
+     "grams": null
+    }
+   ],
+   "ocr": [
+    "ALDI STORES",
+    "A LIMITED PARTNERSHIF",
+    "SOUTHLAND",
+    "ABN:90196565019",
+    "Tax Invoice",
+    "294270 Mini Choc 5x40g  4.49B",
+    "Subtotal  4.49",
+    "490093 Paper Shopping Bag  0.25  B",
+    "Subtotal  4.74",
+    "458882 MR:Chocolate 125g  3.69B",
+    "522529 Kit Kat 18pk 252g  7.49B",
+    "403657 Chicken S1iced 80g  1.99A",
+    "399264 Haim Shaved 250g  3.99A",
+    "400800 S1cdPepperoni2x50g  2.99A",
+    "398557Ham0ffBoneShv150g  4.99A",
+    "572798 Crackers Sanz 250g  0.95B",
+    "456504 Tcpz Ckr 227g  2.69B",
+    "Subtotal  33.52",
+    "SUBTOTAL (INCLGST)  33.52",
+    "COMMONWEALTH BANK",
+    "EFTPOS",
+    "ALDI STORES-CHELT",
+    "CHELTENHAM VIC",
+    "TERMINAL:  88506903",
+    "REFERENCE:  381392",
+    "CARD NO.:  1953（t)"
+   ]
+  },
+  {
    "photo": "coles-bentleigh-2021.jpg",
-   "ms": 638,
+   "ms": 640,
    "items": 0.9,
    "prices": 1,
    "weighed": "2/2",
@@ -299,7 +551,7 @@
   },
   {
    "photo": "coles-brighton-2020.jpg",
-   "ms": 853,
+   "ms": 813,
    "items": 0.6774193548387096,
    "prices": 0.9523809523809523,
    "weighed": "4/6",
@@ -699,7 +951,7 @@
   },
   {
    "photo": "costco-moorabbin-2023.jpg",
-   "ms": 668,
+   "ms": 649,
    "items": 1,
    "prices": 1,
    "weighed": "0/0",
@@ -901,7 +1153,7 @@
   },
   {
    "photo": "r1-woolworths-au.jpg",
-   "ms": 347,
+   "ms": 346,
    "items": 1,
    "prices": 1,
    "weighed": "2/2",
@@ -1001,7 +1253,7 @@
   },
   {
    "photo": "r2-tesco-uk-1994.jpg",
-   "ms": 344,
+   "ms": 321,
    "items": 0.9,
    "prices": 1,
    "weighed": "0/0",
@@ -1130,7 +1382,7 @@
   },
   {
    "photo": "r3-italian.jpg",
-   "ms": 401,
+   "ms": 433,
    "items": 1,
    "prices": 1,
    "weighed": "0/1",
@@ -1219,7 +1471,7 @@
   },
   {
    "photo": "r4-polish.jpg",
-   "ms": 466,
+   "ms": 461,
    "items": 0.6666666666666666,
    "prices": 1,
    "weighed": "0/0",
@@ -1307,27 +1559,23 @@
   },
   {
    "photo": "woolworths-chadstone-2021.jpg",
-   "ms": 366,
-   "items": 0.8571428571428571,
+   "ms": 333,
+   "items": 1,
    "prices": 1,
-   "weighed": "0/1",
+   "weighed": "1/1",
    "totalRead": true,
    "check": {
     "sum_cents": 3379,
     "matches": false
    },
-   "checkRight": true,
-   "missed": [
-    "purple sweet potato 0.462 kg"
-   ],
+   "checkRight": false,
+   "missed": [],
    "wrongPrice": [],
-   "extra": [
-    "potato (Potato Sweet Purple 0.462 kg NET @$6.90/kg)"
-   ],
+   "extra": [],
    "lines": [
     {
      "text": "Potato Sweet Purple 0.462 kg NET @$6.90/kg",
-     "name": "potato",
+     "name": "sweet potato",
      "qty": 1,
      "price_cents": 319,
      "size": null,
@@ -1442,7 +1690,7 @@
   },
   {
    "photo": "woolworths-chadstone-2024.jpg",
-   "ms": 568,
+   "ms": 563,
    "items": 0.85,
    "prices": 0.9411764705882353,
    "weighed": "3/3",
@@ -1744,7 +1992,7 @@
   },
   {
    "photo": "woolworths-qv-salad.jpg",
-   "ms": 380,
+   "ms": 381,
    "items": 1,
    "prices": 1,
    "weighed": "0/0",

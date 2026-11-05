@@ -980,5 +980,119 @@
     "price": 10.99
    }
   ]
+ },
+ "aldi-southland.jpg": {
+  "total": 33.52,
+  "note": "includes a 0.25 paper shopping bag, which is not food",
+  "lines": [
+   {
+    "item": "mini chocolate bars 5x40g",
+    "keys": [
+     "chocolate"
+    ],
+    "price": 4.49
+   },
+   {
+    "item": "milk chocolate 125g",
+    "keys": [
+     "chocolate"
+    ],
+    "price": 3.69
+   },
+   {
+    "item": "Kit Kat 18pk 252g",
+    "keys": [
+     "kit kat",
+     "chocolate"
+    ],
+    "price": 7.49
+   },
+   {
+    "item": "sliced chicken 80g",
+    "keys": [
+     "chicken"
+    ],
+    "price": 1.99
+   },
+   {
+    "item": "shaved ham 250g",
+    "keys": [
+     "ham"
+    ],
+    "price": 3.99
+   },
+   {
+    "item": "sliced pepperoni 2x50g",
+    "keys": [
+     "pepperoni"
+    ],
+    "price": 2.99
+   },
+   {
+    "item": "ham off the bone, shaved 150g",
+    "keys": [
+     "ham"
+    ],
+    "price": 4.99
+   },
+   {
+    "item": "Sanz crackers 250g",
+    "keys": [
+     "cracker"
+    ],
+    "price": 0.95
+   },
+   {
+    "item": "Topz crackers 227g",
+    "keys": [
+     "cracker"
+    ],
+    "price": 2.69
+   }
+  ]
+ },
+ "aldi-bentleigh-2020.jpg": {
+  "total": 16.35,
+  "lines": [
+   {
+    "item": "aged cheddar cheese 200-250g",
+    "keys": [
+     "cheddar",
+     "cheese"
+    ],
+    "price": 3.99
+   },
+   {
+    "item": "Utopia 12pk 600ml (spring water)",
+    "keys": [
+     "utopia",
+     "water"
+    ],
+    "price": 4.99
+   },
+   {
+    "item": "waffles 4pk 360g",
+    "keys": [
+     "waffle"
+    ],
+    "price": 3.99
+   },
+   {
+    "item": "Chobani blueberry yoghurt 170g",
+    "keys": [
+     "yoghurt",
+     "yogurt"
+    ],
+    "price": 1.69
+   },
+   {
+    "item": "Chobani blueberry yoghurt 170g",
+    "keys": [
+     "yoghurt",
+     "yogurt"
+    ],
+    "price": 1.69
+   }
+  ]
  }
 }

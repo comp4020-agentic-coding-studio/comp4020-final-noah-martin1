@@ -123,6 +123,12 @@ photo-to-pantry scan. Results and photos are in `fridge-scan/`.
   `OCR=saved ... scripts/eval-receipt-ocr.ts` (rescoring) after each rule.
   Openverse has a CC BY-NC Costco Moorabbin receipt from the same Melbourne
   photographer.
+- ALDI prints a running "Subtotal" after some items, so "stop at the
+  first subtotal" lost every item after it; a subtotal with more priced
+  items after it isn't the end, and the last subtotal is the total. ALDI
+  also prints kind-first ("Chs Ched" = cheddar cheese), so two-word names
+  match in either order. No openly licensed whole IGA receipt exists on
+  Commons or Openverse (searched 2026-11-06).
 - A size glued to a name ("DISH LIQ2.66L") or ending a name line
   ("TPD-DAWN PLAT 2.66") isn't a price: a price can't follow letters
   directly, and a name line with a numbers-only price line under it is

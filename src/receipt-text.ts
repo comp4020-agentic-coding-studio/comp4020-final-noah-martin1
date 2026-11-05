@@ -36,6 +36,9 @@ const ABBREVIATIONS: Record<string, string> = {
   chkn: "chicken", chick: "chicken", brst: "breast", thgh: "thigh", mnce: "mince", bf: "beef", prk: "pork",
   // Costco: "QUKES" baby cucumbers, "CAULI", "KS" Kirkland Signature
   qukes: "cucumber", cauli: "cauliflower", ks: "", kirkland: "",
+  // ALDI squashes names: "ChsChedAgd" aged cheddar, "SlcdPepperoni",
+  // "HamOffBoneShv", "Chob BlueYog", "Topz Ckr"
+  agd: "aged", slcd: "sliced", shv: "shaved", ckr: "crackers", chob: "",
   sausg: "sausages", saus: "sausages", tom: "tomato", toms: "tomatoes",
   potat: "potato", mush: "mushrooms", mshrm: "mushrooms", cap: "capsicum", caps: "capsicum", brocc: "broccoli",
   lett: "lettuce", cuc: "cucumber", cucumb: "cucumber", avo: "avocado", avos: "avocados", bana: "banana",
@@ -137,7 +140,8 @@ export function findTotal(lines: string[]): number | null {
   for (const raw of lines) {
     const { text, price_cents } = splitPrice(raw);
     if (price_cents === null || price_cents <= 0) continue;
-    if (/(?:\b|\d)sub\s?-?total\b/i.test(text)) subtotal ??= price_cents;
+    // ALDI prints a running subtotal between items: the last one counts
+    if (/(?:\b|\d)sub\s?-?total\b/i.test(text)) subtotal = price_cents;
     // "TOTAL(INCL GST)" is the total; "GST INCLUDED IN TOTAL" and "TOTAL
     // includes GST" are the tax in it, which read GST before the total or
     // say what the total includes
@@ -196,7 +200,12 @@ export function foodName(printed: string, known: string[]): { name: string; know
     const one = k.replace(/ies$/, "y").replace(/(o|ch|sh|x)es$/, "$1").replace(/([^s])s$/, "$1");
     // one extra printed word may sit inside a two-word name ("PORK SPARE
     // RIBS" is pork ribs, "CHICKEN BREAST FILLET" not), in order
-    const gap = (n: string) => n.split(" ").length === 2 ? `|${escapeRe(n.split(" ")[0])} [a-z]+ ${escapeRe(n.split(" ")[1])}` : "";
+    // ALDI prints the kind first ("Chs Ched" is cheddar cheese), so a
+    // two-word name also matches the other way round
+    const gap = (n: string) => {
+      const w = n.split(" ");
+      return w.length === 2 ? `|${escapeRe(w[0])} [a-z]+ ${escapeRe(w[1])}|${escapeRe(w[1])} ${escapeRe(w[0])}` : "";
+    };
     const m = new RegExp(`(^|[^a-z])(?:${escapeRe(k)}|${escapeRe(one)}${gap(k)}${gap(one)})(?:es|s)?($|[^a-z])`).exec(words);
     if (m) at = letterAt(m.index + m[1].length);
     // inside run-together text, for names long enough not to turn up by
@@ -260,6 +269,17 @@ export function foodName(printed: string, known: string[]): { name: string; know
  * Printed lines in reading order → the receipt, in receipt-scan's shape.
  * `known` is the ingredient names a food name is matched against.
  */
+// Whether an item line (words and a price, not another total) is printed
+// before the next total line.
+function moreItemsAfter(lines: string[], i: number): boolean {
+  for (let j = i + 1; j < lines.length; j++) {
+    const { text, price_cents } = splitPrice(lines[j]);
+    if (ENDS_ITEMS.test(text)) return false;
+    if (price_cents !== null && price_cents > 0 && /[a-z]{2}/i.test(text) && !NOT_ITEM.test(text)) return true;
+  }
+  return false;
+}
+
 export function parseReceiptText(lines: string[], known: string[]): Receipt {
   const total_cents = findTotal(lines);
   // the item block ends at the first total line; header lines before the
@@ -269,7 +289,12 @@ export function parseReceiptText(lines: string[], known: string[]): Receipt {
   let pendingName: string | null = null;
   for (let i = 0; i < lines.length; i++) {
     const { text, price_cents } = splitPrice(lines[i]);
-    if (ENDS_ITEMS.test(text)) break;
+    if (ENDS_ITEMS.test(text)) {
+      // a running subtotal with more items printed after it (ALDI) isn't
+      // the end; the items end at the last one
+      if (/sub\s?-?total/i.test(text) && !/total\s*\(?incl|grand/i.test(text) && moreItemsAfter(lines, i)) continue;
+      break;
+    }
     const prev = items.at(-1);
     // a weight line belongs to the item above, or to the name printed just
     // before it: "APPLE PINK LADY" / "0.217 kg NET @ $3.90/kg 0.85"

@@ -10,7 +10,7 @@ Everything runs locally: the models through Ollama on the server (or in the visi
 |---|---|---|---|
 | Fridge / pantry photo (Qwen3-VL 8B, tiled) | finds 78% of the items a careful person sees; 86% of its suggestions are right | 81 s a photo on average (39–178 s), in the background | ticks off wrong items; checks the prefilled size, price and date |
 | Barcode (camera) | read 8 of 9 real product photos, never a wrong code; product found for 6 of 8 | about 12 ms a camera frame to decode, about 0.45 s to look up | checks the row; prices and dates are prefilled |
-| Receipt, read in the browser (PaddleOCR + plain-code parser) | names 89% of items right; 99% of their prices right to the cent (10 receipts: Coles, Woolworths, Costco and four overseas) | about 1.5–2 s a receipt in Chrome once the 14 MB reader is cached; the camera takes the photo itself about 1 s after the receipt is held still | checks names; the total check flags a misread price |
+| Receipt, read in the browser (PaddleOCR + plain-code parser) | names 91% of items right; 98% of their prices right to the cent (12 receipts: Coles, Woolworths, Costco, ALDI and four overseas) | about 1.5–2 s a receipt in Chrome once the 14 MB reader is cached; the camera takes the photo itself about 1 s after the receipt is held still | checks names; the total check flags a misread price |
 | Receipt, server model (Qwen3-VL 8B) | names 74% of items right; 87% of their prices right (same 9 receipts) | 21–67 s a receipt, in the background | as above; only on a self-hosted install |
 
 ## 1. Fridge and pantry photos
@@ -67,10 +67,12 @@ Full results: [`barcode-scan/results.json`](barcode-scan/results.json), from `sc
 
 ## 3. Receipts
 
-Photos in [`receipt-scan/`](receipt-scan/), with the items and prices on each written down by hand in [`receipt-scan/truth.json`](receipt-scan/truth.json) (each receipt's lines add up to its printed total). Ten real receipts:
+Photos in [`receipt-scan/`](receipt-scan/), with the items and prices on each written down by hand in [`receipt-scan/truth.json`](receipt-scan/truth.json) (each receipt's lines add up to its printed total). Twelve real receipts:
 
 - **Five phone photos of Australian supermarket receipts** (Coles Brighton and Bentleigh, Woolworths Chadstone twice and Queen Victoria; Melbourne, 2015–2024): 20 and 31-item receipts, crumpled and curled paper, a granite or glass bench showing through, and on one, the printer's price column sitting half a line above the names.
 - **A Costco receipt** (Moorabbin, 2023), added after the first version failed on the user's own Costco receipt. Costco prints each item's name on one line and its price on the next after an item number and a count ("15795 1x 11.49 11.49 Z"), and its instant savings as a "TPD" line with a trailing minus ("2.00-Z"). The parser had only been written against Coles and Woolworths layouts, so it found 2 of 13 items and no total. It now pairs a numbers-only price line with the name above it, reads a trailing minus as a discount on the item before, and reads "TOTAL(INCL GST)" as the total: 13 of 13 items, every price right, adding up to the printed $204.40.
+- **Two ALDI receipts** (Southland and Bentleigh). ALDI prints an item number before each name, squashes names ("ChsChedAgd200-250g", "SlcdPepperoni2x50g", "Chob BlueYog"), and prints a running "Subtotal" after some items. The parser stopped at the first subtotal, so on Southland it found 1 of 9 items. Now a subtotal with more items after it is skipped and the last one is the total, and two-word names match either way round ("Chs Ched" is cheddar cheese, "SAUCE SOY" soy sauce): Bentleigh 5 of 5, Southland 9 of 9 found with every price in the review and the $33.52 total adding up (the scorer misses one ham line because the reader read "Ham" as "Haim").
+- **No IGA receipt.** No openly licensed photo of a whole IGA receipt could be found (only the foot of one). IGA stores are independent and use several till systems; the plain "NAME … PRICE" lines most print are what the parser already reads, but that's untested.
 - **The original four:** Woolworths (weighed fruit, a promotional discount), Tesco (UK, 1994), Italian (decimal commas) and Polish (a discount line).
 
 ### The live site reads receipts in the browser
@@ -85,7 +87,7 @@ Measured by `scripts/eval-receipt-ocr.ts`, which runs the same `receipt-ocr.mjs`
 
 | Reader | Item names right | Prices right (of matched items) | Time a receipt |
 |---|---|---|---|
-| **In the browser: PaddleOCR + parser** | **87%** (with Costco, 10 receipts: 89%) | **99%** | 0.3–0.8 s in node; 1.5–2 s in Chrome |
+| **In the browser: PaddleOCR + parser** | **87%** (with Costco and ALDI, 12 receipts: 91%) | **99%** (12 receipts: 98%) | 0.3–0.8 s in node; 1.5–2 s in Chrome |
 | Server: Qwen3-VL 8B (nine receipts, before Costco) | 74% | 87% | 21–67 s |
 | In the browser: Qwen3-VL 2B (original four only) | 5% | 0% | 30–60 s |
 
@@ -127,5 +129,5 @@ Measured by `scripts/eval-receipt-camera.ts` on 95 camera-like frames built from
 
 - **A real phone.** All camera tests used Chrome's fake camera at phone size. Real camera noise, autofocus hunting and hand tremble may need the stillness and sharpness thresholds tuning (they're named constants in `public/receipt-frame.mjs`, each with the measurement it came from).
 - **Learning from corrections.** When someone renames a scanned item, the next scan uses their name. It works and is tested, but how much it improves a person's second and third scans hasn't been measured.
-- **More receipts and photos.** Ten receipts and twelve fridge photos are enough to compare readers and catch failures, not to quote tight percentages. The receipt parser was tuned on these ten, and the Costco failure showed a store with a new layout can break it outright, so expect lower on new stores. ALDI and IGA receipts haven't been tried. A blurry, marker-scribbled US Costco photo also failed: the reader missed most of its price column, which no parsing can recover.
+- **More receipts and photos.** Twelve receipts and twelve fridge photos are enough to compare readers and catch failures, not to quote tight percentages. The receipt parser was tuned on these, and the Costco and ALDI failures showed a store with a new layout can break it outright, so expect lower on new stores. IGA receipts haven't been tried. A blurry, marker-scribbled US Costco photo also failed: the reader missed most of its price column, which no parsing can recover.
 - **Reading receipts on a phone.** The in-browser reader was timed on the M4 in Chrome; a mid-range phone will be slower (the reading is single-threaded WebAssembly).
