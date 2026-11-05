@@ -15625,109 +15625,165 @@
  {
   "source": "themealdb:53460",
   "title": "Bajan Sweet Bread",
-  "description": "A Bajan side of desiccated coconut, shortening and raisins — makes 12, worth the couple of hours it takes.",
-  "servings": 12,
+  "description": "A soft Barbadian coconut loaf with raisins and cherries, rolled around a sweet coconut-spice filling and finished with a brown sugar glaze.",
+  "servings": 8,
   "cuisine": "Bajan",
   "category": "Side",
   "image": "https://www.themealdb.com/images/media/meals/5vhbzt1782239221.jpg",
-  "prep_minutes": 15,
-  "cook_minutes": 65,
+  "prep_minutes": 20,
+  "cook_minutes": 55,
   "ingredients": [
    {
-    "name": "desiccated coconut",
-    "quantity": 2.5,
-    "unit": "cup",
-    "note": ""
-   },
-   {
-    "name": "butter",
-    "quantity": 0.5,
-    "unit": "cup",
-    "note": ""
-   },
-   {
     "name": "plain flour",
-    "quantity": 4,
+    "quantity": 2,
     "unit": "cup",
-    "note": ""
-   },
-   {
-    "name": "shortening",
-    "quantity": 1,
-    "unit": "tbsp",
-    "note": ""
+    "note": "sifted"
    },
    {
     "name": "baking powder",
-    "quantity": 1,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "salt",
-    "quantity": 1,
+    "quantity": 2,
     "unit": "tsp",
     "note": ""
    },
    {
-    "name": "sugar",
+    "name": "nutmeg",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": "ground, for the dough"
+   },
+   {
+    "name": "ground cinnamon",
     "quantity": 0.75,
+    "unit": "tsp",
+    "note": "for the dough"
+   },
+   {
+    "name": "salt",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": ""
+   },
+   {
+    "name": "desiccated coconut",
+    "quantity": 2,
     "unit": "cup",
+    "note": "the video uses freshly grated coconut; desiccated is the nearest priced supermarket substitute. For the dough"
+   },
+   {
+    "name": "butter",
+    "quantity": 55,
+    "unit": "g",
+    "note": "melted (half a stick)"
+   },
+   {
+    "name": "brown sugar",
+    "quantity": 1,
+    "unit": "cup",
+    "note": "for the dough"
+   },
+   {
+    "name": "vanilla extract",
+    "quantity": 1.5,
+    "unit": "tsp",
+    "note": ""
+   },
+   {
+    "name": "coconut oil",
+    "quantity": 3,
+    "unit": "tbsp",
     "note": ""
    },
    {
     "name": "raisins",
-    "quantity": 1,
-    "unit": "cup",
-    "note": ""
-   },
-   {
-    "name": "eggs",
-    "quantity": 1,
+    "quantity": null,
     "unit": "",
-    "note": "beaten"
+    "note": "to taste (creator says desired amount)"
    },
    {
-    "name": "evaporated milk",
-    "quantity": 1.25,
+    "name": "maraschino cherries",
+    "quantity": null,
+    "unit": "",
+    "note": "cherries in syrup, to taste (creator says desired amount); some halved for the top, plus 2 tbsp of the cherry juice"
+   },
+   {
+    "name": "water",
+    "quantity": 0.25,
     "unit": "cup",
-    "note": ""
+    "note": "for the dough (milk can be used instead)"
    },
    {
-    "name": "almond extract",
-    "quantity": 1,
+    "name": "desiccated coconut",
+    "quantity": 0.5,
+    "unit": "cup",
+    "note": "grated (fresh in the video; desiccated as the supermarket substitute), for the filling"
+   },
+   {
+    "name": "brown sugar",
+    "quantity": 3,
+    "unit": "tbsp",
+    "note": "for the filling"
+   },
+   {
+    "name": "nutmeg",
+    "quantity": 0.25,
     "unit": "tsp",
-    "note": ""
+    "note": "for the filling"
+   },
+   {
+    "name": "ground cinnamon",
+    "quantity": 0.25,
+    "unit": "tsp",
+    "note": "for the filling"
+   },
+   {
+    "name": "water",
+    "quantity": 3,
+    "unit": "tbsp",
+    "note": "warm, for the glaze"
+   },
+   {
+    "name": "brown sugar",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": "for the glaze"
    }
   ],
   "steps": [
    {
-    "text": "Add all the flour, baking powder, and salt to a large mixing bowl. Melt the butter in a saucepan.",
+    "text": "Sift the flour into a large bowl and stir in the baking powder, nutmeg, cinnamon and salt.",
     "minutes": null
    },
    {
-    "text": "Mix the coconut and most of the sugar in another bowl – leave some back to cover the loaves later, raisins, egg, milk, almond essence, vanilla essence, and melted butter. Mix well until you have a creamy paste.",
+    "text": "In another bowl combine the grated coconut, melted butter, brown sugar, vanilla, coconut oil, raisins, cherries and 2 tbsp of the cherry juice with 1/4 cup water.",
     "minutes": null
    },
    {
-    "text": "Add this to the bowl with the flour, baking powder, and salt. Mix until you form a stiff dough.",
+    "text": "Fold the coconut mixture into the dry ingredients until you have a soft dough that is neither runny nor dry. Add a splash more water only if needed.",
     "minutes": null
    },
    {
-    "text": "Now divide the mixture between the baking tins. Now boil the water.",
+    "text": "Mix the filling: 1/2 cup grated coconut, 3 tbsp brown sugar, 1/4 tsp nutmeg and 1/4 tsp cinnamon.",
     "minutes": null
    },
    {
-    "text": "Mix two tablespoons of sugar with some hot water and brush the top of each loaf.",
+    "text": "Turn the dough out onto a mat, put the filling in the middle and roll the dough over it into the shape of a loaf, keeping the coconut in the centre.",
     "minutes": null
    },
    {
-    "text": "Bake in the center of the oven for 1 hour.",
+    "text": "Set the loaf in a greased loaf pan, smooth the top and press halved cherries into it.",
+    "minutes": null
+   },
+   {
+    "text": "Bake in an oven preheated to 160°C for 45 minutes.",
+    "minutes": 45
+   },
+   {
+    "text": "Dissolve 2 tbsp brown sugar in 3 tbsp warm water and brush it over the loaf, then return it to the oven for 10 more minutes until golden brown.",
+    "minutes": 10
+   },
+   {
+    "text": "Turn the loaf out and cool for about an hour before slicing.",
     "minutes": 60
-   },
-   {
-    "text": "Leave to cool in tins before serving; slice and serve with a fresh pot of tea.",
-    "minutes": null
    }
   ]
  },
@@ -17377,42 +17433,54 @@
  {
   "source": "themealdb:52928",
   "title": "BeaverTails",
-  "description": "A Canadian sweet made with everyday staples — serves 8, worth the couple of hours it takes.",
-  "servings": 8,
+  "description": "Canadian yeasted dough stretched into beaver-tail ovals, deep-fried until dark brown underneath and coated in cinnamon sugar.",
+  "servings": 18,
   "cuisine": "Canadian",
   "category": "Dessert",
   "image": "https://www.themealdb.com/images/media/meals/ryppsv1511815505.jpg",
-  "prep_minutes": 20,
-  "cook_minutes": 125,
+  "prep_minutes": 55,
+  "cook_minutes": 20,
   "ingredients": [
    {
     "name": "water",
     "quantity": 0.5,
     "unit": "cup",
-    "note": ""
+    "note": "warm"
    },
    {
     "name": "yeast",
-    "quantity": 2,
-    "unit": "",
-    "note": "parts"
+    "quantity": 5,
+    "unit": "tsp",
+    "note": "dry yeast"
    },
    {
     "name": "sugar",
-    "quantity": 0.5,
-    "unit": "cup",
-    "note": ""
+    "quantity": 1,
+    "unit": "pinch",
+    "note": "to start the yeast"
    },
    {
     "name": "milk",
-    "quantity": 0.5,
+    "quantity": 1,
     "unit": "cup",
+    "note": "warm"
+   },
+   {
+    "name": "sugar",
+    "quantity": 0.33,
+    "unit": "cup",
+    "note": "for the dough"
+   },
+   {
+    "name": "salt",
+    "quantity": 1.5,
+    "unit": "tsp",
     "note": ""
    },
    {
-    "name": "butter",
-    "quantity": 6,
-    "unit": "tbsp",
+    "name": "vanilla extract",
+    "quantity": 1,
+    "unit": "tsp",
     "note": ""
    },
    {
@@ -17422,69 +17490,83 @@
     "note": ""
    },
    {
-    "name": "salt",
-    "quantity": 1.5,
-    "unit": "tsp",
-    "note": ""
+    "name": "vegetable oil",
+    "quantity": 0.33,
+    "unit": "cup",
+    "note": "for the dough"
    },
    {
     "name": "plain flour",
-    "quantity": 2.5,
+    "quantity": 4.25,
     "unit": "cup",
-    "note": ""
+    "note": "4 1/4 to 5 cups, unbleached all-purpose; add more as needed while kneading"
    },
    {
     "name": "vegetable oil",
     "quantity": null,
     "unit": "",
-    "note": "for deep-frying"
-   },
-   {
-    "name": "lemon",
-    "quantity": null,
-    "unit": "",
-    "note": "to garnish"
+    "note": "for deep-frying, about 4 inches (10 cm) deep"
    },
    {
     "name": "sugar",
-    "quantity": null,
-    "unit": "",
-    "note": "to garnish"
+    "quantity": 2,
+    "unit": "cup",
+    "note": "granulated, to coat the tails"
    },
    {
-    "name": "cinnamon",
-    "quantity": null,
-    "unit": "",
-    "note": "to garnish"
+    "name": "ground cinnamon",
+    "quantity": 0.25,
+    "unit": "cup",
+    "note": "for the sugar coating (the page's list says 1/4 cup, its method says 'a little cinnamon', so some may be left over)"
    }
   ],
   "steps": [
    {
-    "text": "In the bowl of a stand mixer, add warm water, a big pinch of sugar and yeast. Allow to sit until frothy.",
+    "text": "Stir the dry yeast, warm water and the pinch of sugar together in a large bowl and let it stand for a couple of minutes, until the yeast swells or dissolves.",
+    "minutes": 2
+   },
+   {
+    "text": "Stir in the remaining sugar, milk, vanilla, eggs, oil, salt and flour to make a soft dough.",
     "minutes": null
    },
    {
-    "text": "Into the same bowl, add 1/2 cup sugar, warm milk, melted butter, eggs and salt, and whisk until combined.",
+    "text": "Knead by hand or with a dough hook for 5 minutes, adding more flour as needed until the dough is firm, smooth and elastic.",
+    "minutes": 5
+   },
+   {
+    "text": "Put the dough in a greased bowl, cover it and let it rise for about 30 to 45 minutes.",
+    "minutes": 30
+   },
+   {
+    "text": "Gently deflate the dough.",
     "minutes": null
    },
    {
-    "text": "Place a dough hook on the mixer, add the flour with the machine on, until a smooth but slightly sticky dough forms.",
+    "text": "Take a piece of dough about the size of a golf ball and roll it out into an oval.",
     "minutes": null
    },
    {
-    "text": "Place dough in a bowl, cover with plastic wrap, and allow to proof for 1 1/2 hours.",
-    "minutes": 120
-   },
-   {
-    "text": "Cut dough into 12 pieces, and roll out into long oval-like shapes about 1/4 inch thick that resemble a beaver’s tail.",
+    "text": "Heat about 4 inches (10 cm) of oil in a wok or frying pan to about 195°C (385°F).",
     "minutes": null
    },
    {
-    "text": "In a large, deep pot, heat oil to 350 degrees. Gently place beavertail dough into hot oil and cook for 30 to 45 seconds on each side until golden brown.",
+    "text": "Stretch each oval into a tail shape, thinning it out and making it bigger, like a beaver's tail.",
     "minutes": null
    },
    {
-    "text": "Drain on paper towels, and garnish as desired. Toss in cinnamon sugar, in white sugar with a squeeze of lemon, or with a generous slathering of Nutella and a handful of toasted almonds. Enjoy!",
+    "text": "Add 1 or 2 pieces at a time to the hot oil and fry, turning once, until the undersides are dark brown.",
+    "minutes": null
+   },
+   {
+    "text": "Lift the tails out with tongs and drain them on paper towels.",
+    "minutes": null
+   },
+   {
+    "text": "Fill a large flat bowl with the 2 cups of granulated sugar.",
+    "minutes": null
+   },
+   {
+    "text": "Put the tails in the sugar with a little of the cinnamon and shake off the excess.",
     "minutes": null
    }
   ]
@@ -19483,68 +19565,66 @@
  {
   "source": "themealdb:53307",
   "title": "Beetroot & red cabbage sauerkraut",
-  "description": "A Polish dish of beetroot, red cabbage and caraway seeds — serves 2, ready in under half an hour.",
-  "servings": 2,
+  "description": "A simple fermented sauerkraut of thinly sliced red cabbage and grated beetroot, massaged with salt, mixed with coriander seeds and left to ferment for 5 to 10 days.",
+  "servings": 8,
   "cuisine": "Polish",
-  "category": "Vegetarian",
+  "category": "Vegan",
   "image": "https://www.themealdb.com/images/media/meals/ra2k8a1764365055.jpg",
-  "prep_minutes": 10,
-  "cook_minutes": 5,
+  "prep_minutes": 20,
+  "cook_minutes": 0,
   "ingredients": [
    {
-    "name": "beetroot",
-    "quantity": 320,
-    "unit": "g",
-    "note": ""
-   },
-   {
     "name": "red cabbage",
-    "quantity": 450,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "onion",
     "quantity": 1,
     "unit": "",
-    "note": "small"
+    "note": "medium head, cored, thinly sliced"
    },
    {
-    "name": "caraway seeds",
+    "name": "beetroot",
     "quantity": 2,
-    "unit": "tsp",
-    "note": ""
+    "unit": "",
+    "note": "medium, peeled and grated"
    },
    {
     "name": "salt",
-    "quantity": 1,
-    "unit": "tsp",
-    "note": ""
+    "quantity": 20,
+    "unit": "g",
+    "note": "1.5 tbsp, 20–25 g"
+   },
+   {
+    "name": "coriander seeds",
+    "quantity": 15,
+    "unit": "g",
+    "note": "whole, about 1 tbsp (caraway or juniper berries are the suggested alternatives)"
    }
   ],
   "steps": [
    {
-    "text": "Tip all the ingredients into a large bowl, add 1-1½ tsp freshly ground black pepper, then scrunch it all together with your hands for 5 mins. You might want to wear gloves to avoid staining your skin with the beetroot juices.",
-    "minutes": 5
-   },
-   {
-    "text": "Press the veg down in the bowl with your hands, then cover the surface and up the side of the bowl with a large sheet of compostable cling film or something reusable like a beeswax wrap. Now place another similar-sized bowl on top.",
+    "text": "Put the thinly sliced red cabbage, grated beetroot and salt in a large glass bowl.",
     "minutes": null
    },
    {
-    "text": "Press down hard and add anything heavy (packs of rice or cans work well) to weigh it down so the juices rise to cover the surface. Cover again.",
+    "text": "Massage and squeeze the salt into the vegetables for 10 to 15 minutes, until the cabbage softens and releases a brine.",
+    "minutes": 10
+   },
+   {
+    "text": "Mix in the coriander seeds.",
     "minutes": null
    },
    {
-    "text": "Leave to ferment at room temperature for at least five days, but for maximum flavour, leave for one-five weeks (until the bubbling subsides).",
+    "text": "Pack the mixture and its brine into a clean glass jar, pressing down firmly so the vegetables are fully under the brine. If they aren't, top up with 1/2 tsp salt dissolved in a cup of water.",
     "minutes": null
    },
    {
-    "text": "Check the sauerkraut. After a few days, you will see bubbles that have built up as it ferments. Give it a stir, then cover and weigh it down again as before.",
+    "text": "Set a clean weight on top to keep everything submerged and close the jar with an airtight lid.",
     "minutes": null
    },
    {
-    "text": "The cabbage will become increasingly sour the longer it’s fermented, so taste it now and again. When you like the flavour, transfer it to sterilised jars and keep chilled. Will keep chilled for up to six months.",
+    "text": "Ferment for 5 to 10 days at a cool temperature away from direct sunlight, tasting from day 4 to decide when to stop.",
+    "minutes": null
+   },
+   {
+    "text": "When it tastes right, seal the sauerkraut airtight in jars and keep it in the fridge for up to three months.",
     "minutes": null
    }
   ]
@@ -19552,98 +19632,84 @@
  {
   "source": "themealdb:53313",
   "title": "Beetroot latkes",
-  "description": "An Ukrainian dish of greek yoghurt, mint and rocket — serves 2, on the table in about 45 minutes.",
-  "servings": 2,
+  "description": "Grated beetroot latkes bound with a little flour and flavoured with fresh rosemary, pan-fried in butter and served with goat's cheese.",
+  "servings": 4,
   "cuisine": "Ukrainian",
   "category": "Vegetarian",
   "image": "https://www.themealdb.com/images/media/meals/qwicc91764368097.jpg",
   "prep_minutes": 20,
-  "cook_minutes": 15,
+  "cook_minutes": 10,
   "ingredients": [
    {
-    "name": "vegetable oil",
-    "quantity": 1,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "greek yoghurt",
-    "quantity": 4,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "mint",
-    "quantity": 0.5,
-    "unit": "pack",
-    "note": ""
-   },
-   {
-    "name": "rocket",
-    "quantity": 150,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "cherry tomatoes",
-    "quantity": 130,
-    "unit": "g",
-    "note": ""
-   },
-   {
     "name": "beetroot",
-    "quantity": 400,
+    "quantity": 450,
     "unit": "g",
-    "note": ""
+    "note": "peeled and grated; 450–680 g (1–1½ lb), about 4–5 beets"
    },
    {
-    "name": "eggs",
+    "name": "rosemary",
     "quantity": 1,
+    "unit": "tbsp",
+    "note": "fresh, leaves finely chopped"
+   },
+   {
+    "name": "salt",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "about"
+   },
+   {
+    "name": "black pepper",
+    "quantity": null,
     "unit": "",
-    "note": "beaten"
+    "note": "freshly ground, to taste (lots)"
    },
    {
     "name": "plain flour",
-    "quantity": 1,
-    "unit": "tbsp",
-    "note": ""
+    "quantity": 0.25,
+    "unit": "cup",
+    "note": "about, added a little at a time as a binder"
    },
    {
-    "name": "garlic",
-    "quantity": 1,
-    "unit": "clove",
-    "note": "finely chopped"
-   },
-   {
-    "name": "caraway seeds",
-    "quantity": 1,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "ground cumin",
-    "quantity": 0.5,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "lemon",
-    "quantity": 1,
+    "name": "butter",
+    "quantity": null,
     "unit": "",
-    "note": "zested"
+    "note": "for frying, to coat the griddle"
+   },
+   {
+    "name": "goat's cheese",
+    "quantity": null,
+    "unit": "",
+    "note": "to serve"
    }
   ],
   "steps": [
    {
-    "text": "Heat the oven to 180C/160C fan/gas 4. Make the latkes by combining all of the ingredients.",
+    "text": "Cut the green tops off the beets, peel them and grate them into a big bowl.",
     "minutes": null
    },
    {
-    "text": "Heat the oil in a large non-stick pan. Spoon in the mixture to make six round latkes. Fry for 4-5 mins on each side, then transfer to a baking sheet and bake for 10 mins.",
-    "minutes": 10
+    "text": "Finely chop the rosemary leaves and add them to the bowl with the salt and plenty of pepper.",
+    "minutes": null
    },
    {
-    "text": "Combine the yogurt and mint in a small bowl. Toss the salad leaves and tomatoes together, then serve the latkes with the mint yogurt and salad.",
+    "text": "Stir in the flour a little at a time, just enough to lightly coat and bind the beets without making it sticky.",
+    "minutes": null
+   },
+   {
+    "text": "Heat a griddle or pan and coat it well with butter.",
+    "minutes": null
+   },
+   {
+    "text": "Using two spoons, drop spoonfuls of the mixture onto the pan and flatten each slightly. Don't move them once they're cooking.",
+    "minutes": null
+   },
+   {
+    "text": "Cook about 2 to 3 minutes a side, until browned on both sides and shrunk down. Move to a plate.",
+    "minutes": 5
+   },
+   {
+    "text": "Serve the latkes with goat's cheese.",
     "minutes": null
    }
   ]
@@ -23705,25 +23771,31 @@
  {
   "source": "themealdb:53190",
   "title": "Bryndzové Halušky",
-  "description": "A Slovak dish of feta, bacon and potato — serves 4, ready in under half an hour.",
-  "servings": 4,
+  "description": "Slovak potato dumplings made from grated potato, flour and egg, tossed in bryndza sheep's cheese mixed with sour cream and topped with crisp diced bacon and spring onion.",
+  "servings": 6,
   "cuisine": "Slovak",
   "category": "Pork",
   "image": "https://www.themealdb.com/images/media/meals/g33c901763365484.jpg",
-  "prep_minutes": 10,
-  "cook_minutes": 15,
+  "prep_minutes": 25,
+  "cook_minutes": 20,
   "ingredients": [
+   {
+    "name": "bacon",
+    "quantity": 150,
+    "unit": "g",
+    "note": "cut into small cubes"
+   },
    {
     "name": "potato",
     "quantity": 500,
     "unit": "g",
-    "note": ""
+    "note": "peeled and finely grated"
    },
    {
     "name": "plain flour",
-    "quantity": 200,
+    "quantity": 250,
     "unit": "g",
-    "note": ""
+    "note": "add more as needed so the dough isn't too thick"
    },
    {
     "name": "eggs",
@@ -23733,52 +23805,60 @@
    },
    {
     "name": "salt",
-    "quantity": 1,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "feta",
-    "quantity": 250,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "bacon",
-    "quantity": 200,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "chives",
     "quantity": null,
     "unit": "",
-    "note": "to garnish"
+    "note": "to taste, plus plenty for the boiling water"
+   },
+   {
+    "name": "bryndza",
+    "quantity": 200,
+    "unit": "g",
+    "note": "Slovak soft sheep's cheese; not sold in Australian supermarkets, feta is the usual substitute"
+   },
+   {
+    "name": "sour cream",
+    "quantity": 200,
+    "unit": "g",
+    "note": "18% fat, mixed with the bryndza"
+   },
+   {
+    "name": "spring onion",
+    "quantity": 1,
+    "unit": "bunch",
+    "note": "green part, sliced, to serve"
    }
   ],
   "steps": [
    {
-    "text": "Prepare the Dough: grate the potatoes finely using a hand grater or food processor. Place the grated potatoes in a bowl and mix them with flour, egg, and salt until a sticky dough forms. The consistency should be thick but pliable. Cook the Dumplings.",
+    "text": "Cut the bacon into small cubes and fry in a pot until crisp, rendering out the fat. Keep the fat.",
     "minutes": null
    },
    {
-    "text": "Bring a large pot of salted water to a boil. Using a halušky maker (similar to a spaetzle maker), press the dough directly into the boiling water.",
+    "text": "Put a large pot of well-salted water on to boil.",
     "minutes": null
    },
    {
-    "text": "If you don’t have one, use a tilted cutting board and a knife to scrape small pieces of dough into the water.",
+    "text": "Peel and finely grate the potatoes into a bowl.",
     "minutes": null
    },
    {
-    "text": "Let the dumplings cook until they float to the surface, usually within 2-3 minutes. Scoop them out with a slotted spoon and set aside in a large bowl. Prepare the Toppings.",
+    "text": "Add the flour and egg and mix well, adding more flour as needed. The dough must not be too thick.",
+    "minutes": null
+   },
+   {
+    "text": "Press the dough through a halušky sieve into the boiling water, stirring so the dumplings don't stick. Cook until they float to the top, about 3 minutes.",
     "minutes": 3
    },
    {
-    "text": "Chop the bacon into small pieces and fry in a skillet over medium heat until crispy. If using a bryndza substitute, mix crumbled feta with a dollop of sour cream to mimic the tangy flavour of traditional Slovak sheep cheese. Assemble the Dish.",
+    "text": "In a large bowl, mix the bryndza with the sour cream.",
     "minutes": null
    },
    {
-    "text": "Toss the cooked dumplings with the bryndza cheese (or substitute) until they’re well-coated and creamy. Top with the crispy bacon and its drippings. Garnish with chopped chives or parsley for an extra touch of colour and flavour.",
+    "text": "Lift the halušky out of the water, add them to the bowl and toss gently to coat.",
+    "minutes": null
+   },
+   {
+    "text": "Serve topped with the crisp bacon and its fat and the sliced green part of the spring onion.",
     "minutes": null
    }
   ]
@@ -24725,114 +24805,104 @@
  {
   "source": "themealdb:52939",
   "title": "Callaloo Jamaican Style",
-  "description": "A Jamaican dish of bacon, kale and tomato — serves 2, about an hour start to finish.",
-  "servings": 2,
+  "description": "Jamaican-style callaloo cooked with crisp bacon, flaked saltfish (salted cod), onion and tomato, simmered briefly and served with boiled green bananas and dumplings.",
+  "servings": 4,
   "cuisine": "Jamaican",
   "category": "Miscellaneous",
   "image": "https://www.themealdb.com/images/media/meals/ussyxw1515364536.jpg",
-  "prep_minutes": 15,
-  "cook_minutes": 35,
+  "prep_minutes": 20,
+  "cook_minutes": 15,
   "ingredients": [
    {
-    "name": "kale",
-    "quantity": 1,
-    "unit": "bunch",
-    "note": ""
+    "name": "salt cod",
+    "quantity": 170,
+    "unit": "g",
+    "note": "6 oz, soaked overnight in cold water (or boiled and drained three times), then drained and flaked"
    },
    {
     "name": "bacon",
-    "quantity": 2,
-    "unit": "",
-    "note": "strips"
+    "quantity": 4,
+    "unit": "slice",
+    "note": "strips, chopped"
    },
    {
-    "name": "garlic",
+    "name": "olive oil",
     "quantity": 3,
-    "unit": "clove",
-    "note": "chopped"
+    "unit": "tbsp",
+    "note": "she fries in olive oil (written list says cooking oil); 2 tbsp for the bacon, 1 tbsp added with the callaloo"
    },
    {
     "name": "onion",
-    "quantity": 1,
-    "unit": "",
-    "note": "medium"
-   },
-   {
-    "name": "paprika",
     "quantity": 0.5,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "thyme",
-    "quantity": 1,
-    "unit": "sprig",
-    "note": ""
+    "unit": "",
+    "note": "medium, chopped"
    },
    {
     "name": "tomato",
+    "quantity": 0.5,
+    "unit": "",
+    "note": "medium, diced"
+   },
+   {
+    "name": "hot sauce",
     "quantity": 1,
-    "unit": "",
-    "note": ""
+    "unit": "tsp",
+    "note": "pepper sauce, optional"
    },
    {
-    "name": "capsicum",
+    "name": "callaloo",
     "quantity": 1,
-    "unit": "",
-    "note": ""
+    "unit": "can",
+    "note": "540 g (19 oz), drained; fresh spinach can replace it"
    },
    {
-    "name": "banana",
-    "quantity": 4,
-    "unit": "",
-    "note": ""
+    "name": "black pepper",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "sprinkled over at the end"
    },
    {
-    "name": "vegetable oil",
+    "name": "salt",
     "quantity": null,
     "unit": "",
-    "note": "a splash"
+    "note": "to taste"
    }
   ],
   "steps": [
    {
-    "text": "Cut leaves and soft stems from the kale branches, them soak in a bowl of cold water for about 5-10 minutes or until finish with prep.",
-    "minutes": 10
-   },
-   {
-    "text": "Proceed to slicing the onions, mincing the garlic and dicing the tomatoes. Set aside Remove kale from water cut in chunks.",
+    "text": "Take the salt out of the cod: soak it in cold water overnight (or boil and drain it three times), then drain and flake it into lumps.",
     "minutes": null
    },
    {
-    "text": "Place bacon on saucepan and cook until crispy. Then add onions, garlic, thyme, stir for about a minute or more.",
+    "text": "Drain the canned callaloo in a colander and set aside.",
     "minutes": null
    },
    {
-    "text": "Add tomatoes; scotch bonnet pepper, smoked paprika. Sauté for about 2-3 more minutes.",
+    "text": "Fry the chopped bacon in 2 tbsp oil until crisp, then push it to the side of the pan.",
     "minutes": null
    },
    {
-    "text": "Finally add vegetable, salt, mix well, and steamed for about 6-8 minutes or until leaves are tender. Add a tiny bit of water as needed. Adjust seasonings and turn off the heat.",
-    "minutes": 8
-   },
-   {
-    "text": "Using a sharp knife cut both ends off the plantain. This will make it easy to grab the skin of the plantains. Slit a shallow line down the long seam of the plantain; peel only as deep as the peel. Remove plantain peel by pulling it back.",
+    "text": "Add the chopped onion and tomato to the pan and cook until the onion is transparent.",
     "minutes": null
    },
    {
-    "text": "Slice the plantain into medium size lengthwise slices and set aside.",
+    "text": "Add the flaked cod to the onion and tomato, stir in the pepper sauce, then mix the bacon back in.",
     "minutes": null
    },
    {
-    "text": "Coat a large frying pan with cooking oil spray. Spray the tops of the plantains with a generous layer of oil spray and sprinkle with salt, freshly ground pepper.",
+    "text": "Let it simmer for a couple of minutes before adding the callaloo.",
+    "minutes": 2
+   },
+   {
+    "text": "Gently fold in the callaloo, adjust the oil with 1 tbsp more, and sprinkle the black pepper over the top.",
     "minutes": null
    },
    {
-    "text": "Let the plantains \"fry\" on medium heat, shaking the frying pan to redistribute them every few minutes.",
-    "minutes": null
+    "text": "Turn the heat to its lowest, cover and simmer for about 5 minutes.",
+    "minutes": 5
    },
    {
-    "text": "As the plantains brown, continue to add more cooking oil spray, salt and pepper (if needed) until they have reached the desired color and texture. Remove and serve with kale.",
+    "text": "Serve with boiled green bananas and dumplings, as in the video.",
     "minutes": null
    }
   ]
@@ -25077,55 +25147,97 @@
  {
   "source": "themealdb:53141",
   "title": "Carbonada Criolla",
-  "description": "An Argentinian stew of beef, carrot and potato — serves 4, worth the couple of hours it takes.",
+  "description": "An Argentinian beef stew with pumpkin, potato, sweet potato, carrot, corn and tomato, simmered for an hour and a half with dried peaches added near the end.",
   "servings": 4,
   "cuisine": "Argentinian",
   "category": "Beef",
   "image": "https://www.themealdb.com/images/media/meals/8b2msz1763074897.jpg",
-  "prep_minutes": 15,
-  "cook_minutes": 125,
+  "prep_minutes": 30,
+  "cook_minutes": 107,
   "ingredients": [
    {
-    "name": "beef",
+    "name": "diced beef",
     "quantity": 500,
     "unit": "g",
-    "note": ""
+    "note": "tortuguita (a lean beef cut), cut into medium pieces"
+   },
+   {
+    "name": "pumpkin",
+    "quantity": 500,
+    "unit": "g",
+    "note": "peeled, in medium pieces"
    },
    {
     "name": "onion",
     "quantity": 1,
     "unit": "",
-    "note": "chopped"
+    "note": "peeled and chopped small"
    },
    {
-    "name": "carrot",
-    "quantity": 2,
+    "name": "garlic",
+    "quantity": 1,
+    "unit": "clove",
+    "note": "chopped (the source does not say when it goes in)"
+   },
+   {
+    "name": "capsicum",
+    "quantity": 1,
     "unit": "",
-    "note": "chopped"
+    "note": "red, deseeded and chopped small"
+   },
+   {
+    "name": "tomato",
+    "quantity": 4,
+    "unit": "",
+    "note": "plum (perita), quartered, pulp removed, diced"
    },
    {
     "name": "potato",
-    "quantity": 2,
-    "unit": "",
-    "note": "chopped"
-   },
-   {
-    "name": "pumpkin",
     "quantity": 1,
     "unit": "",
-    "note": "small"
+    "note": "peeled, in medium pieces"
    },
    {
-    "name": "dried apricots",
-    "quantity": 100,
-    "unit": "g",
+    "name": "sweet potato",
+    "quantity": 1,
+    "unit": "",
+    "note": "peeled, in medium pieces"
+   },
+   {
+    "name": "carrot",
+    "quantity": 1,
+    "unit": "",
+    "note": "peeled, in medium pieces"
+   },
+   {
+    "name": "corn cob",
+    "quantity": 2,
+    "unit": "",
+    "note": "cut into rounds about a finger wide"
+   },
+   {
+    "name": "dried peaches",
+    "quantity": 10,
+    "unit": "slice",
+    "note": "orejones (dried peach halves), '10 u.' read as 10 pieces, cut into smaller pieces"
+   },
+   {
+    "name": "paprika",
+    "quantity": 2,
+    "unit": "tsp",
+    "note": "sweet"
+   },
+   {
+    "name": "bay leaf",
+    "quantity": 1,
+    "unit": "leaf",
     "note": ""
    },
    {
-    "name": "beef stock",
-    "quantity": 2000,
-    "unit": "ml",
-    "note": ""
+    "name": "vegetable oil",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": "to brown the meat"
    },
    {
     "name": "salt",
@@ -25138,23 +25250,53 @@
     "quantity": null,
     "unit": "",
     "note": "to taste"
+   },
+   {
+    "name": "spring onion",
+    "quantity": null,
+    "unit": "",
+    "note": "to garnish, chopped"
    }
   ],
   "steps": [
    {
-    "text": "Brown the Beef: In a large pot, brown the beef cubes. Remove and set aside.",
+    "text": "Peel and finely chop the onion and capsicum and set them aside together; chop the garlic too.",
     "minutes": null
    },
    {
-    "text": "Sauté Vegetables: In the same pot, cook the onion until translucent. Add carrots, potatoes, and pumpkin, cooking for a few minutes.",
+    "text": "Cut the potato, sweet potato, carrot and pumpkin into medium chunks.",
     "minutes": null
    },
    {
-    "text": "Simmer: Return the beef to the pot. Add broth and dried apricots. Season with salt and pepper. Simmer for 1-2 hours, until the beef is tender.",
-    "minutes": 120
+    "text": "Slice the corn into rounds a finger wide, quarter the tomatoes, remove the pulp and dice them.",
+    "minutes": null
    },
    {
-    "text": "Serve: Enjoy hot, with a crusty piece of bread.",
+    "text": "Cut the beef into strips and then into medium pieces.",
+    "minutes": null
+   },
+   {
+    "text": "Heat the oil in a wide pot over medium heat, add the beef and brown it for about 10 minutes, stirring now and then.",
+    "minutes": 10
+   },
+   {
+    "text": "Add the onion and capsicum, season with salt, pepper and sweet paprika, stir well and cook about 5 minutes.",
+    "minutes": 5
+   },
+   {
+    "text": "Add the pumpkin and cook for 2 minutes.",
+    "minutes": 2
+   },
+   {
+    "text": "Add the potato, sweet potato, carrot, tomatoes and corn, drop in the bay leaf and pour in water to cover the vegetables. Lower the heat and simmer for 1 hour 30 minutes, stirring now and then.",
+    "minutes": 90
+   },
+   {
+    "text": "About 5 minutes before the end, add the dried peaches cut into pieces.",
+    "minutes": null
+   },
+   {
+    "text": "Serve topped with chopped spring onion.",
     "minutes": null
    }
   ]
@@ -25633,79 +25775,91 @@
  {
   "source": "themealdb:53330",
   "title": "Cassava pizza",
-  "description": "A Venezuelan dish of chorizo, ham and casabe — serves 4, ready in under half an hour.",
+  "description": "A pizza on a pan-fried grated cassava base, spread with a parmesan cream sauce and topped with mozzarella, crisp bacon, onion and spring onion, then baked.",
   "servings": 4,
   "cuisine": "Venezuelan",
   "category": "Pork",
-  "image": "https://www.themealdb.com/images/media/meals/lrfdwz1764438393.jpg",
-  "prep_minutes": 15,
-  "cook_minutes": 10,
+  "image": "https://i.ytimg.com/vi/6iGK_tqY4wQ/maxres3.jpg",
+  "prep_minutes": 25,
+  "cook_minutes": 45,
   "ingredients": [
    {
-    "name": "casabe",
-    "quantity": 6,
+    "name": "cassava",
+    "quantity": 500,
+    "unit": "g",
+    "note": "roots, peeled and grated, for the base"
+   },
+   {
+    "name": "salt",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "for the base"
+   },
+   {
+    "name": "bacon",
+    "quantity": 100,
+    "unit": "g",
+    "note": "for the topping"
+   },
+   {
+    "name": "onion",
+    "quantity": 1,
     "unit": "",
-    "note": "cut thick slices"
+    "note": "chopped, for the topping"
    },
    {
-    "name": "passata",
-    "quantity": 450,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "chorizo",
-    "quantity": 225,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "ham",
-    "quantity": 225,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "sweetcorn",
-    "quantity": 75,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "green olives",
-    "quantity": 40,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "paprika",
-    "quantity": 55,
-    "unit": "g",
-    "note": ""
+    "name": "spring onion",
+    "quantity": 1,
+    "unit": "",
+    "note": "scallion, chopped, for the topping"
    },
    {
     "name": "mozzarella",
-    "quantity": 50,
+    "quantity": 300,
     "unit": "g",
-    "note": ""
+    "note": "sliced"
+   },
+   {
+    "name": "cream",
+    "quantity": 2,
+    "unit": "cup",
+    "note": "for the creamy sauce"
+   },
+   {
+    "name": "parmesan",
+    "quantity": 1,
+    "unit": "cup",
+    "note": "grated, for the creamy sauce"
    }
   ],
   "steps": [
    {
-    "text": "Preheat the oven to 200°C.",
+    "text": "Grate the cassava, make it into small balls in a cloth or paper towel and squeeze until it is really dry.",
     "minutes": null
    },
    {
-    "text": "Cut the bacon or chorizo into medium pieces and the paprika into strips.",
+    "text": "Spread the dry cassava on a plate, sprinkle over the salt and mix it in.",
     "minutes": null
    },
    {
-    "text": "Spread a little tomato sauce and mozzarella cheese on each portion of cassava.",
+    "text": "Heat a pan and press the salted cassava into it like a pancake. Cook about 10 minutes each side until golden.",
+    "minutes": 20
+   },
+   {
+    "text": "Blend the cream with the parmesan to make the sauce.",
     "minutes": null
    },
    {
-    "text": "Add the bacon or chorizo, corn, turkey ham, some olives and paprika. Bake for 7 to 10 minutes. Remove from the oven and enjoy.",
-    "minutes": 10
+    "text": "Fry the bacon in a pan until crunchy, then add the onion and spring onion and cook briefly, about 3 minutes. Take the pan off the heat.",
+    "minutes": 3
+   },
+   {
+    "text": "Heat the oven to 180°C. Put the cassava base on a tray, spread over the cream sauce, then add the sliced mozzarella and the bacon, onion and spring onion.",
+    "minutes": null
+   },
+   {
+    "text": "Bake for 20 minutes.",
+    "minutes": 20
    }
   ]
  },
@@ -25995,55 +26149,67 @@
  {
   "source": "themealdb:52969",
   "title": "Chakchouka",
-  "description": "A Tunisian dish of tomato, capsicum and ground cumin — serves 2, on the table in about 45 minutes.",
+  "description": "A Tunisian chakchouka of tomato, onion and capsicum simmered with tomato paste, harissa and spices, with four eggs set in the thickened sauce.",
   "servings": 2,
   "cuisine": "Tunisian",
   "category": "Miscellaneous",
   "image": "https://www.themealdb.com/images/media/meals/gpz67p1560458984.jpg",
   "prep_minutes": 15,
-  "cook_minutes": 30,
+  "cook_minutes": 40,
   "ingredients": [
    {
     "name": "tomato",
-    "quantity": 4,
+    "quantity": 3,
     "unit": "",
-    "note": ""
-   },
-   {
-    "name": "olive oil",
-    "quantity": 2,
-    "unit": "tbsp",
-    "note": ""
+    "note": "diced"
    },
    {
     "name": "onion",
     "quantity": 1,
     "unit": "",
+    "note": "medium, diced"
+   },
+   {
+    "name": "capsicum",
+    "quantity": 1,
+    "unit": "",
     "note": "diced"
    },
    {
-    "name": "capsicum",
-    "quantity": 1,
+    "name": "olive oil",
+    "quantity": null,
     "unit": "",
-    "note": "sliced"
+    "note": "a little, for frying"
    },
    {
-    "name": "capsicum",
+    "name": "tomato paste",
     "quantity": 1,
-    "unit": "",
-    "note": "sliced"
+    "unit": "tbsp",
+    "note": ""
+   },
+   {
+    "name": "harissa paste",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": ""
    },
    {
     "name": "garlic",
     "quantity": 3,
     "unit": "clove",
-    "note": "crushed"
+    "note": "minced"
    },
    {
-    "name": "ground cumin",
+    "name": "ground coriander",
     "quantity": 1,
     "unit": "tsp",
     "note": ""
+   },
+   {
+    "name": "caraway seeds",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": "ground"
    },
    {
     "name": "paprika",
@@ -26052,44 +26218,72 @@
     "note": ""
    },
    {
-    "name": "salt",
-    "quantity": 0.75,
+    "name": "onion powder",
+    "quantity": 1,
     "unit": "tsp",
     "note": ""
    },
    {
-    "name": "chilli powder",
-    "quantity": 0.5,
-    "unit": "tsp",
-    "note": ""
+    "name": "salt",
+    "quantity": null,
+    "unit": "",
+    "note": "to taste"
+   },
+   {
+    "name": "black pepper",
+    "quantity": null,
+    "unit": "",
+    "note": "to taste"
    },
    {
     "name": "eggs",
     "quantity": 4,
     "unit": "",
     "note": ""
+   },
+   {
+    "name": "coriander",
+    "quantity": null,
+    "unit": "",
+    "note": "fresh leaves, optional, to garnish (parsley also works)"
    }
   ],
   "steps": [
    {
-    "text": "In a large cast iron skillet or sauté pan with a lid, heat oil over medium high heat. Add the onion and sauté for 2-3 minutes, until softened. Add the peppers and garlic, and sauté for an additional 3-5 minutes.",
+    "text": "Dice the tomatoes, onion and capsicum.",
+    "minutes": null
+   },
+   {
+    "text": "Drizzle a little olive oil into a 10-inch frying pan over medium heat, add the onion and cook about 5 minutes until it starts to soften.",
     "minutes": 5
    },
    {
-    "text": "Add the tomatoes, cumin, paprika, salt, and chili powder. Mix well and bring the mixture to a simmer.",
+    "text": "Add the tomatoes and capsicum and stir, then stir in the tomato paste and harissa so the vegetables are coated.",
     "minutes": null
    },
    {
-    "text": "Reduce the heat to medium low and continue to simmer, uncovered, 10-15 minutes until the mixture has thickened to your desired consistency.",
+    "text": "Add the garlic and spices (coriander, caraway, paprika, onion powder, salt and pepper) and stir for about a minute.",
+    "minutes": 1
+   },
+   {
+    "text": "Let the sauce simmer for a good 10 minutes so the tomato paste cooks.",
+    "minutes": 10
+   },
+   {
+    "text": "Add just enough boiling water to cover the vegetables and simmer over medium heat for about 15 minutes, until it thickens and reduces.",
     "minutes": 15
    },
    {
-    "text": "(Taste the sauce at this point and adjust for salt and spice, as desired.) Using the back of a spoon, make four craters in the mixture, large enough to hold an egg. Crack one egg into each of the craters.",
+    "text": "Make four hollows in the sauce and crack an egg into each.",
     "minutes": null
    },
    {
-    "text": "Cover the skillet and simmer for 5-7 minutes, until the eggs have set. Serve immediately with crusty bread or pita.",
-    "minutes": 7
+    "text": "Reduce the heat and cook for 5 minutes for set whites and runny yolks. For firm yolks, bake at 180°C for about 10 minutes instead.",
+    "minutes": 5
+   },
+   {
+    "text": "Garnish with fresh coriander or parsley and serve with bread.",
+    "minutes": null
    }
   ]
  },
@@ -29172,139 +29366,237 @@
  },
  {
   "source": "themealdb:53218",
-  "title": "Chicken Shawarma with homemade garlic herb yoghurt sauce",
-  "description": "A Saudi Arabian dish of chicken breast, cayenne pepper and greek yoghurt — serves 4, about an hour start to finish.",
-  "servings": 4,
-  "cuisine": "Saudi Arabian",
+  "title": "Chicken shawarma with garlic sauce",
+  "description": "Thinly sliced chicken thighs marinated in a spiced citrus blend for a day or two, seared hot, and wrapped in flatbread with creamy garlic sauce, pickles, pomegranate molasses and crisped chicken skin.",
+  "servings": 10,
+  "cuisine": "Middle Eastern",
   "category": "Chicken",
   "image": "https://www.themealdb.com/images/media/meals/hcg6l91763596970.jpg",
-  "prep_minutes": 20,
-  "cook_minutes": 35,
+  "prep_minutes": 60,
+  "cook_minutes": 30,
   "ingredients": [
    {
-    "name": "chicken breast",
-    "quantity": 1000,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "garlic",
-    "quantity": 2,
-    "unit": "clove",
-    "note": "minced"
+    "name": "white pepper",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "ground fresh from peppercorns, for the spice mix"
    },
    {
     "name": "ground coriander",
     "quantity": 1,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "ground cumin",
-    "quantity": 1,
-    "unit": "tbsp",
-    "note": ""
+    "unit": "tsp",
+    "note": "for the spice mix"
    },
    {
     "name": "cardamom",
     "quantity": 1,
-    "unit": "tbsp",
-    "note": ""
+    "unit": "tsp",
+    "note": "ground green cardamom, for the spice mix"
    },
    {
-    "name": "cayenne pepper",
+    "name": "curry powder",
     "quantity": 1,
     "unit": "tsp",
-    "note": ""
+    "note": "for the spice mix"
    },
    {
-    "name": "smoked paprika",
-    "quantity": 2,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "salt",
-    "quantity": 2,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "lemon juice",
-    "quantity": 2,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "olive oil",
-    "quantity": 3,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "greek yoghurt",
+    "name": "chicken stock powder",
     "quantity": 1,
-    "unit": "cup",
-    "note": ""
+    "unit": "tsp",
+    "note": "chicken bouillon, for the spice mix"
    },
    {
-    "name": "garlic",
+    "name": "ground cloves",
     "quantity": 1,
-    "unit": "clove",
-    "note": "peeled crushed"
+    "unit": "tsp",
+    "note": "for the spice mix (transcript reads 'brown cloves')"
    },
    {
     "name": "ground cumin",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": "for the spice mix"
+   },
+   {
+    "name": "ground cinnamon",
     "quantity": 1,
     "unit": "tsp",
-    "note": ""
+    "note": "for the spice mix"
+   },
+   {
+    "name": "dried thyme",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": "ground, for the spice mix"
+   },
+   {
+    "name": "dried oregano",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": "for the spice mix"
+   },
+   {
+    "name": "aleppo pepper",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "powder (about 4 g), for the spice mix"
+   },
+   {
+    "name": "nutmeg",
+    "quantity": 1,
+    "unit": "pinch",
+    "note": "freshly ground, for the spice mix; the speaker says just a touch, so read as a pinch"
+   },
+   {
+    "name": "salt",
+    "quantity": 2.5,
+    "unit": "tbsp",
+    "note": "for the spice mix; the captions read 'appropriate amount of salt'"
+   },
+   {
+    "name": "lemon",
+    "quantity": 5,
+    "unit": "",
+    "note": "zest of 2 and juice of all 5, for the marinade"
+   },
+   {
+    "name": "orange",
+    "quantity": 1,
+    "unit": "",
+    "note": "zest and juice, for the marinade"
+   },
+   {
+    "name": "chilli paste",
+    "quantity": 1.5,
+    "unit": "tbsp",
+    "note": "shatta (Middle Eastern chilli paste), for the marinade; a light extra layer goes on each wrap, no amount given"
+   },
+   {
+    "name": "yoghurt",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": "for the marinade"
+   },
+   {
+    "name": "white vinegar",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "distilled, for the marinade"
+   },
+   {
+    "name": "garlic",
+    "quantity": 4,
+    "unit": "clove",
+    "note": "for the marinade"
+   },
+   {
+    "name": "chicken thigh",
+    "quantity": 1800,
+    "unit": "g",
+    "note": "boneless, skin-on (4 lb); skin removed and kept, thighs sliced thinly"
+   },
+   {
+    "name": "egg whites",
+    "quantity": 3,
+    "unit": "",
+    "note": "for the garlic sauce"
+   },
+   {
+    "name": "garlic",
+    "quantity": 0.75,
+    "unit": "cup",
+    "note": "peeled cloves, for the garlic sauce"
+   },
+   {
+    "name": "salt",
+    "quantity": 2.5,
+    "unit": "tsp",
+    "note": "for the garlic sauce"
    },
    {
     "name": "lemon juice",
+    "quantity": 3.5,
+    "unit": "tbsp",
+    "note": "freshly squeezed, for the garlic sauce"
+   },
+   {
+    "name": "vegetable oil",
+    "quantity": 1,
+    "unit": "cup",
+    "note": "neutral oil, for the garlic sauce; the video says 1 to 1.5 cups (360 ml) and uses about 90%"
+   },
+   {
+    "name": "beef tallow",
     "quantity": null,
     "unit": "",
-    "note": "a splash"
+    "note": "for frying: just enough to coat the pan"
+   },
+   {
+    "name": "dill pickles",
+    "quantity": null,
+    "unit": "",
+    "note": "to serve: baby dills cut into thin spears, six or seven per sandwich"
+   },
+   {
+    "name": "pita bread",
+    "quantity": 10,
+    "unit": "",
+    "note": "one flatbread per sandwich (yield 10); saj or shrak if you can find it, otherwise pita, never tortillas; the captions garble its name"
+   },
+   {
+    "name": "pomegranate molasses",
+    "quantity": null,
+    "unit": "",
+    "note": "to serve: a light drizzle in each wrap and on top"
    }
   ],
   "steps": [
    {
-    "text": "Start by cutting your chicken up into reasonably small slices. Grab your ziplock bag and dump the freshly sliced chicken inside.",
+    "text": "Grind the white peppercorns fine, then mix with the coriander, cardamom, curry powder, chicken stock powder, cloves, cumin, cinnamon, thyme, oregano, Aleppo pepper, a touch of nutmeg and the salt to make the spice mix.",
     "minutes": null
    },
    {
-    "text": "Add garlic, coriander, cumin, cardomom, cayenne pepper, paprika, salt, pepper, lemon juice and olive oil to the bag. Close the bag and mix thoroughly. Place in fridge for 10-12 hours (shorter is fine but longer is better).",
-    "minutes": 600
+    "text": "Blend the zest of 2 lemons and the juice of 5, the zest and juice of the orange, shatta, yoghurt, vinegar, 4 garlic cloves and all the spice mix on high until smooth, about a minute. Taste it and check the seasoning before using.",
+    "minutes": 1
    },
    {
-    "text": "Once ready to cook, heat your fry pan to medium-high and add a tiny bit of olive oil. Fry one side of all of your flatbreads until slightly toasty. Remove from pan, add enough oil to coat the fry pan.",
+    "text": "Take the skin off the chicken thighs and keep it. Trim off the fat and chill the thighs in the freezer for about half an hour so they slice easily.",
+    "minutes": 30
+   },
+   {
+    "text": "Slice the chilled thighs very thinly into strips, around 1/4 inch (6 mm) thick; a few thinner pieces will crisp up nicely.",
     "minutes": null
    },
    {
-    "text": "Put crumble fries into air fryer on 180 for 15 minutes shaking occasionally.",
-    "minutes": 15
+    "text": "Coat the chicken and the skins in the marinade (start with half and add more if needed), cover and refrigerate for at least a day, ideally 2 days.",
+    "minutes": 1440
    },
    {
-    "text": "The pan should be pretty hot by now, add the chicken in 2 batches (unless you have a big fry pan) to avoid overcrowding. The chicken should get a nice sear and darker colour which is perfect.",
+    "text": "Pat the marinated skins dry and lay them flat in a cold 12-inch non-stick pan over medium-low heat, pressing them down, for about 10 minutes until crisp. Or layer them between sprayed parchment, press under a second tray and bake at about 190°C for 10 to 15 minutes.",
+    "minutes": 10
+   },
+   {
+    "text": "While the skins crisp, heat a pan over medium-high heat with just enough beef tallow to coat it. Sear the chicken in batches, about 1 to 1.5 minutes a side, then keep it warm on a tray and save the pan juices.",
+    "minutes": 2
+   },
+   {
+    "text": "For the garlic sauce, blend the egg whites with the garlic on a high setting until frothy and smooth, so no chunks of garlic remain.",
     "minutes": null
    },
    {
-    "text": "Cook for a further 5-8 minutes or until cooked through. Repeat with next chicken batch.",
-    "minutes": 8
-   },
-   {
-    "text": "While chicken is cooking, place your Greek yoghurt into a bowl. Combine garlic, finely chopped mint and parsley, squeeze or so of lemon and cumin. Combine and add salt to taste.",
+    "text": "Move it to a food processor and add the salt and lemon juice. With the motor running, drizzle in the oil in the thinnest stream until the sauce emulsifies and turns thick and creamy.",
     "minutes": null
    },
    {
-    "text": "In a small bowl, combine 1tsp garlic powder, paprika, cumin, onion powder, oregano, dried parsley, cayenne pepper (optional) mix and leave aside for fries.",
+    "text": "Lay out a flatbread and spread it with garlic sauce, a light layer of shatta and a drizzle of pomegranate molasses. Cover with thin baby dill pickle spears, pile on the chicken and crumble over some chicken skin crisps, then wrap it tightly.",
     "minutes": null
    },
    {
-    "text": "Season fries immediately once cooked and add salt to taste.",
-    "minutes": null
+    "text": "Lightly dip the wrap in the chicken juices, then sear in a large pan with beef tallow until golden on both sides, 1 to 2 minutes a side.",
+    "minutes": 2
    },
    {
-    "text": "Once the chicken is complete, serve immediately by laying out your flatbread, spreading the sauce evenly over the bread, add lettuce, onion, tomato, fries, chicken, feta and more sauce on top. Serve immediately.",
+    "text": "Wrap it in parchment or foil, then top with a dollop of garlic sauce, a sliver of crispy skin and a light drizzle of pomegranate molasses.",
     "minutes": null
    }
   ]
