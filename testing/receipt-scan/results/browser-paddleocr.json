@@ -1,0 +1,1635 @@
+{
+ "reader": "PaddleOCR PP-OCRv4 (public/receipt-ocr.mjs) + src/receipt-text.ts",
+ "items": 0.8723587642942481,
+ "prices": 0.9881730469965765,
+ "rows": [
+  {
+   "photo": "coles-bentleigh-2021.jpg",
+   "ms": 637,
+   "items": 0.9,
+   "prices": 1,
+   "weighed": "2/2",
+   "totalRead": true,
+   "check": {
+    "sum_cents": 7032,
+    "matches": true
+   },
+   "checkRight": false,
+   "missed": [
+    "Philly cream cheese block lactose free 250g",
+    "Don skinless frankfurts (per kg)"
+   ],
+   "wrongPrice": [],
+   "extra": [
+    "philadelphia block lactose (*PHILY BLOCK LACTOSE 250GRAM)",
+    "d l don skinless (*D/L DON SKINLESS FRA PERKG)"
+   ],
+   "lines": [
+    {
+     "text": "COLES CRAB MEAT 170GRAM",
+     "name": "crab meat",
+     "qty": 1,
+     "price_cents": 350,
+     "size": {
+      "quantity": 170,
+      "unit": "g"
+     },
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "*ST DALFOUR SBERRY SP 284GRAM",
+     "name": "strawberries",
+     "qty": 1,
+     "price_cents": 300,
+     "size": {
+      "quantity": 284,
+      "unit": "g"
+     },
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "COLES PEACH SLICES 410GRAM",
+     "name": "peach",
+     "qty": 1,
+     "price_cents": 200,
+     "size": {
+      "quantity": 410,
+      "unit": "g"
+     },
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "MAYVERS HAZELNUT CAC240GRAM",
+     "name": "hazelnuts",
+     "qty": 1,
+     "price_cents": 850,
+     "size": {
+      "quantity": 240,
+      "unit": "g"
+     },
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "*PHILY BLOCK LACTOSE 250GRAM",
+     "name": "philadelphia block lactose",
+     "qty": 1,
+     "price_cents": 370,
+     "size": {
+      "quantity": 250,
+      "unit": "g"
+     },
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "WR ALMOND SPREAD 250GRAM",
+     "name": "almond spread",
+     "qty": 1,
+     "price_cents": 800,
+     "size": {
+      "quantity": 250,
+      "unit": "g"
+     },
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "TIRAMISU POT 2PACK",
+     "name": "tiramisu pot",
+     "qty": 1,
+     "price_cents": 500,
+     "size": {
+      "quantity": 2,
+      "unit": ""
+     },
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "%POCKY CHOCO STICKS 47GRAM",
+     "name": "pocky choco sticks",
+     "qty": 1,
+     "price_cents": 180,
+     "size": {
+      "quantity": 47,
+      "unit": "g"
+     },
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "AFOURER MANDARINS PERKG 0.531kg NET @$2.70/kg",
+     "name": "afourer mandarins",
+     "qty": 1,
+     "price_cents": 143,
+     "size": null,
+     "by_weight": true,
+     "grams": 531
+    },
+    {
+     "text": "*%UNCLE TOBYS LE SNAK 132GRAM",
+     "name": "uncle tobys le snak",
+     "qty": 1,
+     "price_cents": 300,
+     "size": {
+      "quantity": 132,
+      "unit": "g"
+     },
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "%PRINGLES POTATO CHIP 53GRAM",
+     "name": "potato chips",
+     "qty": 1,
+     "price_cents": 190,
+     "size": {
+      "quantity": 53,
+      "unit": "g"
+     },
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "*CHOBANI FLIP LIMITED 140GRAM",
+     "name": "yoghurt",
+     "qty": 1,
+     "price_cents": 200,
+     "size": {
+      "quantity": 140,
+      "unit": "g"
+     },
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "RICO PEARS PERKG 0.251kg NET @$3.90/kg",
+     "name": "pear",
+     "qty": 1,
+     "price_cents": 98,
+     "size": null,
+     "by_weight": true,
+     "grams": 251
+    },
+    {
+     "text": "%PRINGLES POTATO CHIP 53GRAM",
+     "name": "potato chips",
+     "qty": 1,
+     "price_cents": 190,
+     "size": {
+      "quantity": 53,
+      "unit": "g"
+     },
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "*D/L DON SKINLESS FRA PERKG",
+     "name": "d l don skinless",
+     "qty": 1,
+     "price_cents": 178,
+     "size": null,
+     "by_weight": true,
+     "grams": null
+    },
+    {
+     "text": "%LOTTE PEPERO WHITEC 32GRAM",
+     "name": "lotte pepero whitec",
+     "qty": 1,
+     "price_cents": 160,
+     "size": {
+      "quantity": 32,
+      "unit": "g"
+     },
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "%VITTORIA BISCUITS 20OGRAM",
+     "name": "biscuits",
+     "qty": 1,
+     "price_cents": 400,
+     "size": null,
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "%ARNOTS CRACKER CHIPS 150GRAM",
+     "name": "cracker chips",
+     "qty": 1,
+     "price_cents": 450,
+     "size": {
+      "quantity": 150,
+      "unit": "g"
+     },
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "%POTTLE CHOC MACADAM PERKG",
+     "name": "chocolate",
+     "qty": 1,
+     "price_cents": 963,
+     "size": null,
+     "by_weight": true,
+     "grams": null
+    },
+    {
+     "text": "%SMITHS CHIPS 60G 60GRAM",
+     "name": "chips",
+     "qty": 1,
+     "price_cents": 210,
+     "size": {
+      "quantity": 60,
+      "unit": "g"
+     },
+     "by_weight": false,
+     "grams": null
+    }
+   ],
+   "ocr": [
+    "ColesSupermarketsAustraliaPtytd",
+    "TaxInv0iceABN:45004189708",
+    "coles",
+    "Value theAustrallanway",
+    "Store:595-CS BENTLEIGH",
+    "Store Manager: Emma",
+    "Phone:  0390842700",
+    "Served By:Leon  Receipt:7233",
+    "Register:  007",
+    "Date:  13/08/2021  Time:  15:46",
+    "$",
+    "Description",
+    "COLES CRAB MEAT 170GRAM  3.50",
+    "*ST DALFOUR SBERRY SP 284GRAM  3.00",
+    "COLES PEACH SLICES 410GRAM  2.00",
+    "MAYVERS HAZELNUT CAC240GRAM  8.50",
+    "*PHILY BLOCK LACTOSE 250GRAM  3.70",
+    "WR ALMOND SPREAD 250GRAM  8.00",
+    "TIRAMISU POT 2PACK  5.00",
+    "%POCKY CHOCO STICKS 47GRAM  1.80",
+    "AFOURER MANDARINS PERKG  1.43",
+    "0.531kg NET @$2.70/kg",
+    "*%UNCLE TOBYS LE SNAK 132GRAM  3.00",
+    "%PRINGLES POTATO CHIP 53GRAM  1.90",
+    "*CHOBANI FLIP LIMITED 140GRAM  2.00",
+    "RICO PEARS PERKG  0.98",
+    "0.251kg NET @$3.90/kg",
+    "%PRINGLES POTATO CHIP 53GRAM  1.90",
+    "*D/L DON SKINLESS FRA PERKG  1.78",
+    "%LOTTE PEPERO WHITEC 32GRAM  1.60",
+    "%VITTORIA BISCUITS 20OGRAM  4.00",
+    "%ARNOTS CRACKER CHIPS 150GRAM  4.50",
+    "%POTTLE CHOC MACADAM PERKG  9.63",
+    "%SMITHS CHIPS 60G 60GRAM  2.10",
+    "Sub Total:  $70.32",
+    "-$0.02",
+    "Rounding:",
+    "Total for 20 items:  $70.30",
+    "$70.30",
+    "Cash",
+    "GST INCLUDED IN TOTAL  $2.77",
+    "*=Specials",
+    "X= Taxable items"
+   ]
+  },
+  {
+   "photo": "coles-brighton-2020.jpg",
+   "ms": 837,
+   "items": 0.6774193548387096,
+   "prices": 0.9523809523809523,
+   "weighed": "4/6",
+   "totalRead": true,
+   "check": {
+    "sum_cents": 12662,
+    "matches": false
+   },
+   "checkRight": true,
+   "missed": [
+    "Peters Connoisseur ice cream 1L",
+    "potato salad 250g",
+    "Yumis bean chilli dip 200g",
+    "Yakult 10pk",
+    "Beechworth bee fruit honey 350g",
+    "St Dalfour wild blueberry jam 284g",
+    "salmon skin on (per kg)",
+    "Packham pears 0.606 kg",
+    "bananas 0.676 kg",
+    "Madura premium blend tea 50pk"
+   ],
+   "wrongPrice": [
+    "Goulburn Valley pears 700g: read 1.52, paid 3.7"
+   ],
+   "extra": [
+    "petersconnoisseurl litre (%PETERSCONNOISSEUR1LITRE)",
+    "salad (POTATOSALAD250GRAM)",
+    "chilli (*YUMIS BEANCHILLI 200GRAM)",
+    "drink (%YAKULT10PKDRINK65ML)",
+    "goulburnvalleypea (GOULBURNVALLEYPEA700GRAM)",
+    "madurapremiumblend (MADURAPREMIUMBLEND 50PACK)"
+   ],
+   "lines": [
+    {
+     "text": "COLES ORGANIC MILK F 1LITRE",
+     "name": "milk",
+     "qty": 1,
+     "price_cents": 880,
+     "size": {
+      "quantity": 1000,
+      "unit": "ml"
+     },
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "%PETERSCONNOISSEUR1LITRE",
+     "name": "petersconnoisseurl litre",
+     "qty": 1,
+     "price_cents": 1100,
+     "size": {
+      "quantity": 1000,
+      "unit": "ml"
+     },
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "ESKAL DY SPHERRINGS375GRAM",
+     "name": "eskal dy spherrings",
+     "qty": 1,
+     "price_cents": 680,
+     "size": {
+      "quantity": 375,
+      "unit": "g"
+     },
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "POTATOSALAD250GRAM",
+     "name": "salad",
+     "qty": 1,
+     "price_cents": 300,
+     "size": {
+      "quantity": 250,
+      "unit": "g"
+     },
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "*YUMIS BEANCHILLI 200GRAM",
+     "name": "chilli",
+     "qty": 1,
+     "price_cents": 300,
+     "size": {
+      "quantity": 200,
+      "unit": "g"
+     },
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "FLATMUSHROOMSPERKG 0.202kgNET$12.00/kg",
+     "name": "flatmushrooms",
+     "qty": 1,
+     "price_cents": 242,
+     "size": null,
+     "by_weight": true,
+     "grams": 202
+    },
+    {
+     "text": "RED GRAPESPERKG 1.040kgNET@$3.50/kg",
+     "name": "red grapes",
+     "qty": 1,
+     "price_cents": 364,
+     "size": null,
+     "by_weight": true,
+     "grams": 1040
+    },
+    {
+     "text": "SARA LEE HIGH PIE80 800GRAM",
+     "name": "pie",
+     "qty": 1,
+     "price_cents": 750,
+     "size": {
+      "quantity": 800,
+      "unit": "g"
+     },
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "BRITISHBACON200GRAM",
+     "name": "bacon",
+     "qty": 1,
+     "price_cents": 700,
+     "size": {
+      "quantity": 200,
+      "unit": "g"
+     },
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "%YAKULT10PKDRINK65ML",
+     "name": "drink",
+     "qty": 1,
+     "price_cents": 770,
+     "size": {
+      "quantity": 65,
+      "unit": "ml"
+     },
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "GOULBURNVALLEYPEA700GRAM",
+     "name": "goulburnvalleypea",
+     "qty": 1,
+     "price_cents": 370,
+     "size": {
+      "quantity": 700,
+      "unit": "g"
+     },
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "MAYVERSPEANUT BUTTE375GRAM",
+     "name": "peanut butter",
+     "qty": 1,
+     "price_cents": 500,
+     "size": {
+      "quantity": 375,
+      "unit": "g"
+     },
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "D/LDONSALAMIHUNGA PERKG",
+     "name": "d ldonsalamihunga",
+     "qty": 1,
+     "price_cents": 422,
+     "size": null,
+     "by_weight": true,
+     "grams": null
+    },
+    {
+     "text": "PINK LADY APPLESPERKG 1.061kgNET$3.50/kg",
+     "name": "apple",
+     "qty": 1,
+     "price_cents": 371,
+     "size": null,
+     "by_weight": true,
+     "grams": 1061
+    },
+    {
+     "text": "PACKHAMPEARSPERKG 0.606kgNET$2.50/kg",
+     "name": "packhampears",
+     "qty": 1,
+     "price_cents": 152,
+     "size": null,
+     "by_weight": true,
+     "grams": 606
+    },
+    {
+     "text": "BROCCOLIPERKG 0.606kgNET@$5.50/kg",
+     "name": "broccoli",
+     "qty": 1,
+     "price_cents": 333,
+     "size": null,
+     "by_weight": true,
+     "grams": 606
+    },
+    {
+     "text": "RADICCHIO LETTUCE 1EACH",
+     "name": "lettuce",
+     "qty": 1,
+     "price_cents": 390,
+     "size": null,
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "TRIMEDCELERY300GRAM",
+     "name": "celery",
+     "qty": 1,
+     "price_cents": 390,
+     "size": {
+      "quantity": 300,
+      "unit": "g"
+     },
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "JOHNWEST TUNA TENPT95GRAM",
+     "name": "tuna",
+     "qty": 1,
+     "price_cents": 300,
+     "size": {
+      "quantity": 95,
+      "unit": "g"
+     },
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "%COLES ROASTED ALMOND400GRAM",
+     "name": "almonds",
+     "qty": 1,
+     "price_cents": 700,
+     "size": {
+      "quantity": 400,
+      "unit": "g"
+     },
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "VEGEMITE220G220GRAM",
+     "name": "vegemite",
+     "qty": 1,
+     "price_cents": 400,
+     "size": {
+      "quantity": 220,
+      "unit": "g"
+     },
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "WRPREMIUMLSAMEAL350GRAM",
+     "name": "wrpremiumlsameal",
+     "qty": 1,
+     "price_cents": 500,
+     "size": {
+      "quantity": 350,
+      "unit": "g"
+     },
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "% ARNOTTS CRACKERS SES250GRAM",
+     "name": "crackers",
+     "qty": 1,
+     "price_cents": 400,
+     "size": {
+      "quantity": 250,
+      "unit": "g"
+     },
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "%9 SAKATA RICE CRACKERS 100GRAM",
+     "name": "rice crackers",
+     "qty": 1,
+     "price_cents": 200,
+     "size": {
+      "quantity": 100,
+      "unit": "g"
+     },
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "MADURAPREMIUMBLEND 50PACK",
+     "name": "madurapremiumblend",
+     "qty": 1,
+     "price_cents": 495,
+     "size": {
+      "quantity": 50,
+      "unit": ""
+     },
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "%PRETZELBOWSPERKG",
+     "name": "pretzelbows",
+     "qty": 1,
+     "price_cents": 153,
+     "size": null,
+     "by_weight": true,
+     "grams": null
+    },
+    {
+     "text": "SPINACH AND KALE 300GRAM",
+     "name": "spinach",
+     "qty": 1,
+     "price_cents": 500,
+     "size": {
+      "quantity": 300,
+      "unit": "g"
+     },
+     "by_weight": false,
+     "grams": null
+    }
+   ],
+   "ocr": [
+    "Ltd",
+    "coles",
+    "Store:7819-CS BRIGHTON",
+    "Store Manager:Angelo",
+    "Phone:  9591 6700",
+    "Served By:A  Assisted Checkout",
+    "Register:  121  Receipt:  5618",
+    "Date:  06/06/2020  Time:  10:16",
+    "$",
+    "Description",
+    "COLES ORGANIC MILK F 1LITRE  8.80",
+    "4$2.20EACH",
+    "%PETERSCONNOISSEUR1LITRE  11.00",
+    "ESKAL DY SPHERRINGS375GRAM  6.80",
+    "POTATOSALAD250GRAM  3.00",
+    "*YUMIS BEANCHILLI 200GRAM  3.00",
+    "FLATMUSHROOMSPERKG  2.42",
+    "0.202kgNET$12.00/kg",
+    "RED GRAPESPERKG  3.64",
+    "1.040kgNET@$3.50/kg",
+    "SARA LEE HIGH PIE80 800GRAM  7.50",
+    "BRITISHBACON200GRAM  7.00",
+    "%YAKULT10PKDRINK65ML  7.70",
+    "GOULBURNVALLEYPEA700GRAM  3.70",
+    "MAYVERSPEANUT BUTTE375GRAM  5.00",
+    "BEECHWORTH BEEFRUIT  350GRAM  8.  .50",
+    "ST  DALFOURWILDBBER  284GRAM  19",
+    "K  SALMONSKIN ON PERKG",
+    "D/LDONSALAMIHUNGA PERKG  4.22",
+    "PINK LADY APPLESPERKG  3.71",
+    "1.061kgNET$3.50/kg",
+    "PACKHAMPEARSPERKG  1.52",
+    "0.606kgNET$2.50/kg",
+    "BROCCOLIPERKG  3.33",
+    "0.606kgNET@$5.50/kg  2.37",
+    "BANANASPERKG",
+    "0.676kgNET$3.50/kg",
+    "RADICCHIO LETTUCE  1EACH  3.90",
+    "TRIMEDCELERY300GRAM  3.90",
+    "JOHNWEST TUNA TENPT95GRAM  3.00",
+    "2$1.50EACH",
+    "%COLES ROASTED ALMOND400GRAM  7.00",
+    "VEGEMITE220G220GRAM  4.00",
+    "WRPREMIUMLSAMEAL350GRAM  5.00",
+    "%  ARNOTTS CRACKERS SES250GRAM  4.00",
+    "%9  SAKATA RICE CRACKERS 100GRAM  2.00",
+    "MADURAPREMIUMBLEND 50PACK  4.95",
+    "%PRETZELBOWSPERKG  1.53",
+    "SPINACH AND KALE 300GRAM  5.00",
+    "Total for35items:  $157.86",
+    "$157.86",
+    "EFT",
+    "GSTI  INCLUDED IN TOTAL  $3.70",
+    "Coles  VICAU",
+    "=Specials",
+    "%=Taxable items",
+    "Total Savings  $6.44",
+    "TotalSavingsincludeanyPromotional",
+    "and Loyalty Discounts.",
+    "flybuys points as of yesterday: 30625"
+   ]
+  },
+  {
+   "photo": "r1-woolworths-au.jpg",
+   "ms": 369,
+   "items": 1,
+   "prices": 1,
+   "weighed": "2/2",
+   "totalRead": true,
+   "check": {
+    "sum_cents": 1648,
+    "matches": true
+   },
+   "checkRight": true,
+   "missed": [],
+   "wrongPrice": [],
+   "extra": [],
+   "lines": [
+    {
+     "text": "*WW SANDWICH CLASSIC EGG & LETTUCE",
+     "name": "sandwich",
+     "qty": 1,
+     "price_cents": 600,
+     "size": null,
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "APPLE PINK LADY 0.217 kg NET @ $3.90/kg",
+     "name": "apple",
+     "qty": 1,
+     "price_cents": 85,
+     "size": null,
+     "by_weight": true,
+     "grams": 217
+    },
+    {
+     "text": "MACRO ORGANC FRESH MILK LOW FAT 1L",
+     "name": "milk",
+     "qty": 1,
+     "price_cents": 220,
+     "size": {
+      "quantity": 1000,
+      "unit": "ml"
+     },
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "BANANA CAVENDISH 0.572 kg NET @ $2.50/kg",
+     "name": "banana",
+     "qty": 1,
+     "price_cents": 143,
+     "size": null,
+     "by_weight": true,
+     "grams": 572
+    },
+    {
+     "text": "*GOLDEN PIKELET BITES 16PK 140GM",
+     "name": "golden pikelet bites",
+     "qty": 1,
+     "price_cents": 399,
+     "size": {
+      "quantity": 140,
+      "unit": "g"
+     },
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "*GOLDEN PIKELETS 8 PK200GM",
+     "name": "golden pikelets",
+     "qty": 1,
+     "price_cents": 201,
+     "size": {
+      "quantity": 200,
+      "unit": "g"
+     },
+     "by_weight": false,
+     "grams": null
+    }
+   ],
+   "ocr": [
+    "Woolworths",
+    "The fresh food people",
+    "VICTORIA HARB0UR PH:0383476527",
+    "Store Manager is David",
+    "WOOLWORTHS TAX INV0ICE-ABN 88 000 014 675",
+    "*WW SANDWICH CLASSIC EGG & LETTUCE  6.00",
+    "APPLE PINK LADY",
+    "0.217 kg NET @  $3.90/kg  0.85",
+    "MACRO ORGANC FRESH MILK LOW FAT 1L  2.20",
+    "BANANA CAVENDISH",
+    "0.572 kg NET @  $2.50/kg  1.43",
+    "*GOLDEN PIKELET BITES 16PK 140GM  3.99",
+    "*GOLDEN PIKELETS 8 PK200GM  3.99",
+    "GOLDEN PANCAK OFFER  -1.98",
+    "6",
+    "SUBTOTAL  $16.48",
+    "WOOLWORTHS  3306"
+   ]
+  },
+  {
+   "photo": "r2-tesco-uk-1994.jpg",
+   "ms": 344,
+   "items": 0.9,
+   "prices": 1,
+   "weighed": "0/0",
+   "totalRead": true,
+   "check": {
+    "sum_cents": 616,
+    "matches": false
+   },
+   "checkRight": true,
+   "missed": [
+    "6 jam doughnuts (reduced)"
+   ],
+   "wrongPrice": [],
+   "extra": [],
+   "lines": [
+    {
+     "text": "6JAN DOUGHNTS",
+     "name": "doughnuts",
+     "qty": 1,
+     "price_cents": 55,
+     "size": null,
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "MLD WHT CHDR",
+     "name": "mild white cheddar",
+     "qty": 1,
+     "price_cents": 145,
+     "size": null,
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "RICH TEA",
+     "name": "tea",
+     "qty": 1,
+     "price_cents": 39,
+     "size": null,
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "CCHP COOKIE",
+     "name": "cookies",
+     "qty": 1,
+     "price_cents": 44,
+     "size": null,
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "4TEACAKES",
+     "name": "teacakes",
+     "qty": 1,
+     "price_cents": 50,
+     "size": null,
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "18 BROWN ROLLS",
+     "name": "brown rolls",
+     "qty": 1,
+     "price_cents": 85,
+     "size": null,
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "TUNA STEAKS",
+     "name": "tuna",
+     "qty": 1,
+     "price_cents": 55,
+     "size": null,
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "L/GRAIN RICE",
+     "name": "rice",
+     "qty": 1,
+     "price_cents": 64,
+     "size": null,
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "ORANGE NET",
+     "name": "orange",
+     "qty": 1,
+     "price_cents": 79,
+     "size": null,
+     "by_weight": false,
+     "grams": null
+    }
+   ],
+   "ocr": [
+    "HESCO",
+    "EVERY LITTLE HELPS",
+    "6JAM DOUGHNTS",
+    "REDUCED PRICE",
+    "6JAN DOUGHNTS",
+    "REDUCED PRICE  0.55",
+    "MLD WHT CHDR  1.45",
+    "RICH TEA  0.39",
+    "CCHP COOKIE  0.44",
+    "4TEACAKES",
+    "REDUCED PRICE  0.50",
+    "18 BROWN ROLLS",
+    "REDUCED PRICE  0.85",
+    "TUNA STEAKS  0.55",
+    "L/GRAIN RICE  0.64",
+    "ORANGE NET  0.79",
+    "TOTAL  6.71",
+    "10ITEMS",
+    "CASH  7.00",
+    "CHANGE DUE  0.29",
+    "THANK YOU",
+    "FOR SHOPPING AT TESCO",
+    "FINCHLEY BRANCH",
+    "PHONE N0.081 349 9387",
+    "19/04/9419:0401310340379",
+    "2544"
+   ]
+  },
+  {
+   "photo": "r3-italian.jpg",
+   "ms": 435,
+   "items": 1,
+   "prices": 1,
+   "weighed": "0/1",
+   "totalRead": true,
+   "check": {
+    "sum_cents": 1185,
+    "matches": true
+   },
+   "checkRight": true,
+   "missed": [],
+   "wrongPrice": [],
+   "extra": [],
+   "lines": [
+    {
+     "text": "ACQUA S.ANGELO NATUR 22,00%",
+     "name": "acqua s angelo natur",
+     "qty": 1,
+     "price_cents": 132,
+     "size": null,
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "MILK PRO PORRIDGE AV 10,00%",
+     "name": "milk",
+     "qty": 1,
+     "price_cents": 165,
+     "size": null,
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "MILK PRO PORRIDGE AV 10,00%",
+     "name": "milk",
+     "qty": 1,
+     "price_cents": 165,
+     "size": null,
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "LINDT TAVOLETTA LATT 10,00%",
+     "name": "lindt tavoletta latt",
+     "qty": 1,
+     "price_cents": 285,
+     "size": null,
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "CRIK CROK STILE FATT 10,00%",
+     "name": "crik crok stile fatt",
+     "qty": 1,
+     "price_cents": 285,
+     "size": null,
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "MELE GRANNY SMITH [C 4,00%",
+     "name": "mele granny smith c",
+     "qty": 1,
+     "price_cents": 153,
+     "size": null,
+     "by_weight": false,
+     "grams": null
+    }
+   ],
+   "ocr": [
+    "DOCUMENTO  JCOMMERCIALE",
+    "di vendita o prestazione",
+    "DESCRIZIONE  IVA  Prezzo(e)",
+    "6X0,22",
+    "ACQUA S.ANGELO NATUR  22,00%  1,32",
+    "MILK PRO PORRIDGE AV  10,00%  1,65",
+    "MILK PRO PORRIDGE AV  10,00%  1,65",
+    "LINDT TAVOLETTA LATT  10,00%  2,85",
+    "CRIK CROK STILE FATT  10,00%  2,85",
+    "0,5484kg xE2,79/kg",
+    "MELE GRANNY SMITH [C  4,00%  1,53",
+    "TOTALE COMPLESSIVO  115",
+    "di cui IVA",
+    "Pagamento elettronico  11,85",
+    "Importo pagato  11,85"
+   ]
+  },
+  {
+   "photo": "r4-polish.jpg",
+   "ms": 471,
+   "items": 0.6666666666666666,
+   "prices": 1,
+   "weighed": "0/0",
+   "totalRead": true,
+   "check": {
+    "sum_cents": 827,
+    "matches": true
+   },
+   "checkRight": false,
+   "missed": [
+    "salmon loin 100g (less 2.00 discount)"
+   ],
+   "wrongPrice": [],
+   "extra": [
+    "poledw kos (Poledw kos 100g 1 x4,99)"
+   ],
+   "lines": [
+    {
+     "text": "ChlebPszen-Zyt550g 1 x1,99",
+     "name": "chleb pszen-zyt",
+     "qty": 1,
+     "price_cents": 199,
+     "size": {
+      "quantity": 550,
+      "unit": "g"
+     },
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "Ser z.Swiat. 150g 1 x3.29",
+     "name": "ser z swiat",
+     "qty": 1,
+     "price_cents": 329,
+     "size": {
+      "quantity": 150,
+      "unit": "g"
+     },
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "Poledw kos 100g 1 x4,99",
+     "name": "poledw kos",
+     "qty": 1,
+     "price_cents": 299,
+     "size": {
+      "quantity": 100,
+      "unit": "g"
+     },
+     "by_weight": false,
+     "grams": null
+    }
+   ],
+   "ocr": [
+    "Biedronka",
+    "Codziennie niskie ceny",
+    "Sklep 5163 ul. Grabarska 2, 50-079 Wr0ctaw",
+    "Jeronino Martins Polska S.A.",
+    "ul. Zniwna 5, 62-025 Kostrzyn",
+    "NIP 779-10-11-327",
+    "2020-01-09 13:18  422351",
+    "PARAGON  FISKALNY",
+    "c",
+    "ChlebPszen-Zyt550g  1 x1,99 1,99C",
+    "Ser z.Swiat. 150g  1 x3.29 3,29C",
+    "Poledw kos 100g  1 x4,99 4,99C",
+    "Rabat  -2,00",
+    "2,99C",
+    "SPRZEDAZ OPODATKOWANA C  8,27",
+    "PTU C 5,00 %  0,39",
+    "SUMA PTU  0,39",
+    "SUMA PLN  8,27",
+    "00098 #Kasa 2 Kasjer nr 5  2020-01-09 13:18",
+    "7A867BBB57E0D223E2006F5A914C03216172E61C",
+    "E CCH 1701363955",
+    "Nr sys. 5667",
+    "Karta Uisa Debit 051  8,27 PLN",
+    "Nr transakcji:  5667",
+    "Nuner:  5163200109566702",
+    "Udzielono tacznie rabatow:  2,00",
+    "DZIEKUJEMY I ZAPRASZAMY PONOWNIE",
+    "BDO 000004585"
+   ]
+  },
+  {
+   "photo": "woolworths-chadstone-2021.jpg",
+   "ms": 351,
+   "items": 0.8571428571428571,
+   "prices": 1,
+   "weighed": "0/1",
+   "totalRead": true,
+   "check": {
+    "sum_cents": 3379,
+    "matches": false
+   },
+   "checkRight": true,
+   "missed": [
+    "purple sweet potato 0.462 kg"
+   ],
+   "wrongPrice": [],
+   "extra": [
+    "potato (Potato Sweet Purple 0.462 kg NET @$6.90/kg)"
+   ],
+   "lines": [
+    {
+     "text": "Potato Sweet Purple 0.462 kg NET @$6.90/kg",
+     "name": "potato",
+     "qty": 1,
+     "price_cents": 319,
+     "size": null,
+     "by_weight": true,
+     "grams": 462
+    },
+    {
+     "text": "#Arnotts Salada Wholemeal 250g",
+     "name": "arnotts salada wholemeal",
+     "qty": 1,
+     "price_cents": 250,
+     "size": {
+      "quantity": 250,
+      "unit": "g"
+     },
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "T2 French Ear1Grey 10pk",
+     "name": "t french earl grey",
+     "qty": 1,
+     "price_cents": 700,
+     "size": {
+      "quantity": 10,
+      "unit": ""
+     },
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "#Ritz Mini Multipack 150g",
+     "name": "ritz mini multipack",
+     "qty": 1,
+     "price_cents": 320,
+     "size": {
+      "quantity": 150,
+      "unit": "g"
+     },
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "Berry Blackberry125g P/P",
+     "name": "blackberries",
+     "qty": 1,
+     "price_cents": 650,
+     "size": {
+      "quantity": 125,
+      "unit": "g"
+     },
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "Berry Blueberry PP 200g",
+     "name": "blueberries",
+     "qty": 1,
+     "price_cents": 650,
+     "size": {
+      "quantity": 200,
+      "unit": "g"
+     },
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "Corn Cobbettes 425g P/P",
+     "name": "corn cob",
+     "qty": 1,
+     "price_cents": 490,
+     "size": {
+      "quantity": 425,
+      "unit": "g"
+     },
+     "by_weight": false,
+     "grams": null
+    }
+   ],
+   "ocr": [
+    "Woolworths",
+    "Thefreshfood people",
+    "3335 Chadstone PH:03 83476545",
+    "1341 Dandenong Road",
+    "TAX INVOICE-ABN 88 000 014 675",
+    "Potato Sweet Purple  3.19",
+    "0.462 kg NET @$6.90/kg  0.15",
+    "Hwoolworths Reusable Bag",
+    "#Arnotts Salada Wholemeal 250g  2.50",
+    "T2 French Ear1Grey 10pk  7.00",
+    "#Ritz Mini Multipack 150g  3.20",
+    "Berry Blackberry125g P/P  6.50",
+    "Berry Blueberry PP 200g  6.50",
+    "Corn Cobbettes 425g P/P  4.90",
+    "8SUBTOTAL  $33.94",
+    "Rounding  $0.01",
+    "TOTAL  $33.95",
+    "Cash  $100.00",
+    "$66.05",
+    "Change",
+    "^promotional Price",
+    "#Taxable Items  $0.53",
+    "TOTAL includes GST",
+    "TOTAL SAVINGS",
+    "$0.70",
+    "EVERYDAY REWARDS",
+    "You could have collected atleast34 points",
+    "Save money on your shopping!",
+    "Join Everyday Rewards FREE",
+    "co.au"
+   ]
+  },
+  {
+   "photo": "woolworths-chadstone-2024.jpg",
+   "ms": 561,
+   "items": 0.85,
+   "prices": 0.9411764705882353,
+   "weighed": "3/3",
+   "totalRead": true,
+   "check": {
+    "sum_cents": 9775,
+    "matches": true
+   },
+   "checkRight": false,
+   "missed": [
+    "Carmans raspberry & vanilla porridge sachets 320g",
+    "Pringles chipotle & sour cream 118g",
+    "Campos coffee capsules 10pk"
+   ],
+   "wrongPrice": [
+    "Nescafe latte coffee sachets 10pk: read 7.6, paid 3.8"
+   ],
+   "extra": [
+    "raspberry sachets (Carmans LS Rsbrry &Vanilla Sachets 320g)",
+    "sour cream (#Pringles Chipotle& Sour Cream 118g)",
+    "sachets (^Nescafe 98psF LatteCoffee Sachets 10pk)"
+   ],
+   "lines": [
+    {
+     "text": "Plum Croc Eggs Loose 0.192kg NET@$4.90/kg",
+     "name": "plum",
+     "qty": 1,
+     "price_cents": 94,
+     "size": null,
+     "by_weight": true,
+     "grams": 192
+    },
+    {
+     "text": "Nectarine Yellow Flesh 0.182kg NET@$4.50/kg",
+     "name": "nectarine",
+     "qty": 1,
+     "price_cents": 82,
+     "size": null,
+     "by_weight": true,
+     "grams": 182
+    },
+    {
+     "text": "PlumYellow 0.182kg NET@$4.90/kg",
+     "name": "plum",
+     "qty": 1,
+     "price_cents": 89,
+     "size": null,
+     "by_weight": true,
+     "grams": 182
+    },
+    {
+     "text": "#Arnotts Salada Original 250g",
+     "name": "arnotts salada original",
+     "qty": 1,
+     "price_cents": 400,
+     "size": {
+      "quantity": 250,
+      "unit": "g"
+     },
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "Carmans LS Rsbrry &Vanilla Sachets 320g",
+     "name": "raspberry sachets",
+     "qty": 1,
+     "price_cents": 690,
+     "size": {
+      "quantity": 320,
+      "unit": "g"
+     },
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "Lian Congee Bowl Chicken 60g",
+     "name": "congee",
+     "qty": 1,
+     "price_cents": 350,
+     "size": {
+      "quantity": 60,
+      "unit": "g"
+     },
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "Instant Congee Cup 55g Vegetable",
+     "name": "congee",
+     "qty": 1,
+     "price_cents": 300,
+     "size": {
+      "quantity": 55,
+      "unit": "g"
+     },
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "Live Well Cleanse Tea Bags 18pk",
+     "name": "tea",
+     "qty": 1,
+     "price_cents": 850,
+     "size": {
+      "quantity": 18,
+      "unit": ""
+     },
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "#Pringles Chipotle& Sour Cream 118g",
+     "name": "sour cream",
+     "qty": 1,
+     "price_cents": 550,
+     "size": {
+      "quantity": 118,
+      "unit": "g"
+     },
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "^Nescafe 98psF LatteCoffee Sachets 10pk",
+     "name": "sachets",
+     "qty": 1,
+     "price_cents": 380,
+     "size": {
+      "quantity": 10,
+      "unit": ""
+     },
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "Dilmah Tea Bags Cup Extra Strength 50pk",
+     "name": "tea",
+     "qty": 1,
+     "price_cents": 480,
+     "size": {
+      "quantity": 50,
+      "unit": ""
+     },
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "Live Well Sleep Tea Bags 20 Pack",
+     "name": "tea",
+     "qty": 1,
+     "price_cents": 850,
+     "size": {
+      "quantity": 20,
+      "unit": ""
+     },
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "La Zuppa Roasted Pumpkin Soup 540g",
+     "name": "pumpkin soup",
+     "qty": 1,
+     "price_cents": 550,
+     "size": {
+      "quantity": 540,
+      "unit": "g"
+     },
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "WW Beef Jerky Original 180g",
+     "name": "beef jerky",
+     "qty": 1,
+     "price_cents": 1000,
+     "size": {
+      "quantity": 180,
+      "unit": "g"
+     },
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "^JW Tuna Slice In 0live 0il 125g",
+     "name": "tuna",
+     "qty": 1,
+     "price_cents": 300,
+     "size": {
+      "quantity": 125,
+      "unit": "g"
+     },
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "^Campos Superior Capsules 10pk",
+     "name": "coffee pods",
+     "qty": 1,
+     "price_cents": 760,
+     "size": {
+      "quantity": 10,
+      "unit": ""
+     },
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "LOr Espresso Supremo 10pk",
+     "name": "espresso",
+     "qty": 1,
+     "price_cents": 750,
+     "size": {
+      "quantity": 10,
+      "unit": ""
+     },
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "Grape Black 400g",
+     "name": "grape",
+     "qty": 1,
+     "price_cents": 550,
+     "size": {
+      "quantity": 400,
+      "unit": "g"
+     },
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "^NandosVeganPerinaisePeri Peri Hild 265g",
+     "name": "nandos vegan perinaise peri",
+     "qty": 1,
+     "price_cents": 400,
+     "size": {
+      "quantity": 265,
+      "unit": "g"
+     },
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "Mango Calypso",
+     "name": "mango",
+     "qty": 1,
+     "price_cents": 300,
+     "size": null,
+     "by_weight": false,
+     "grams": null
+    }
+   ],
+   "ocr": [
+    "woolworths",
+    "The fresh food peple",
+    "3335 Chadstone PH:03 8347 6545",
+    "1341 Dandenong Road",
+    "TAX INV0ICE-ABN88000014675",
+    "Plum Croc Eggs Loose",
+    "0.192kg NET@$4.90/kg  0.94",
+    "Nectarine Yellow Flesh",
+    "0.182kg NET@$4.50/kg  0.82",
+    "PlumYellow",
+    "0.182kg NET@$4.90/kg  0.89",
+    "#Arnotts Salada Original 250g  4.00",
+    "Carmans LS Rsbrry &Vanilla Sachets 320g  6.90",
+    "#Woolworths Paper Bag",
+    "Qty  2@$0.25  each  0.50",
+    "Lian Congee Bowl Chicken 60g  3.50",
+    "Instant Congee Cup 55g Vegetable  3.00",
+    "Live Well Cleanse Tea Bags 18pk  8.50",
+    "#Pringles Chipotle& Sour Cream 118g  5.50",
+    "^Nescafe 98psF LatteCoffee Sachets 10pk  3.80",
+    "Dilmah Tea Bags Cup Extra Strength 50pk  4.80",
+    "Live Well Sleep Tea Bags 20 Pack  8.50",
+    "La Zuppa Roasted Pumpkin Soup 540g  5.50",
+    "WW Beef Jerky Original 180g  10.00",
+    "^JW Tuna Slice In 0live 0il 125g  3.00",
+    "^Campos Superior Capsules 10pk  7.60",
+    "LOr Espresso Supremo 10pk  7.50",
+    "Grape Black 400g  5.50",
+    "^NandosVeganPerinaisePeri Peri Hild 265g  4.00",
+    "Mango Calypso  3.00",
+    "22 SUBTOTAL  $97.75",
+    "$97.75",
+    "0TAL",
+    "Cash  $100.00",
+    "Change",
+    "$2.25",
+    "^Promotional Price",
+    "#Taxable Items",
+    "TOTAL includes GST  $0.91",
+    "You saved $7.30",
+    "EVERYDAY REWARDS",
+    "You could have collected at least 98 points",
+    "Save money on your shopping!",
+    "Join Everyday Rewards FREE"
+   ]
+  },
+  {
+   "photo": "woolworths-qv-salad.jpg",
+   "ms": 391,
+   "items": 1,
+   "prices": 1,
+   "weighed": "0/0",
+   "totalRead": true,
+   "check": {
+    "sum_cents": 842,
+    "matches": true
+   },
+   "checkRight": true,
+   "missed": [],
+   "wrongPrice": [],
+   "extra": [],
+   "lines": [
+    {
+     "text": "CLASSIC TABOULEH SALAD SHALL",
+     "name": "salad",
+     "qty": 1,
+     "price_cents": 400,
+     "size": null,
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "RIVERINA FEITA CHSE AUST REDUCED FAT KG",
+     "name": "feta",
+     "qty": 1,
+     "price_cents": 93,
+     "size": null,
+     "by_weight": true,
+     "grams": null
+    },
+    {
+     "text": "VAL VERDE LENTILS 400G",
+     "name": "val verde lentils",
+     "qty": 1,
+     "price_cents": 149,
+     "size": {
+      "quantity": 400,
+      "unit": "g"
+     },
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "GOLDEN CIRCLE BEETS BABY WHOLE 450G",
+     "name": "beetroot",
+     "qty": 1,
+     "price_cents": 200,
+     "size": {
+      "quantity": 450,
+      "unit": "g"
+     },
+     "by_weight": false,
+     "grams": null
+    }
+   ],
+   "ocr": [
+    "the fresh food people",
+    "Woolworths",
+    "Queen Victoria PH:(03) 8347-6524",
+    "Store Manager: STEPHEN",
+    "WOOLWORTHS TAX INV0ICE-ABN 88 000 014 675",
+    "CLASSIC TABOULEH SALAD SHALL  4.00",
+    "RIVERINA FEITA CHSE AUST REDUCED FAT KG  0.93",
+    "VAL VERDE LENTILS 400G  1.49",
+    "GOLDEN CIRCLE BEETS BABY WHOLE 450G  2.00",
+    "4",
+    "SUBTOTAL  $8.42",
+    "WOOLWORTHS  3304",
+    "QUEEN VIC VLG  VIC",
+    "MERCH ID:611000603003304",
+    "TERM ID:  W3304079",
+    "CARD...  .9062T",
+    "Visa Credit  CREDIT",
+    "AID  A0000000031010",
+    "ARQC  75F79B0D4E7COFC1",
+    "PURCHASE  $8.42",
+    "TOTAL  $8.42",
+    "APPROVED  00",
+    "08/09/1515:25  002814",
+    "TOTAL  $8.42",
+    "EFT  $8.42",
+    "CHANGE  $0.00",
+    "OTHER SAVINGS  0.45",
+    "*******8 HORE SAVINGS EVERYDAY 88*888",
+    "TOTAL SAVINGS $  0.45"
+   ]
+  }
+ ]
+}

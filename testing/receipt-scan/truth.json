@@ -223,5 +223,661 @@
     "price": 2.99
    }
   ]
+ },
+ "coles-brighton-2020.jpg": {
+  "total": 157.86,
+  "lines": [
+   {
+    "item": "organic milk 1L (4 @ 2.20)",
+    "keys": [
+     "milk"
+    ],
+    "price": 8.8
+   },
+   {
+    "item": "Peters Connoisseur ice cream 1L",
+    "keys": [
+     "ice cream"
+    ],
+    "price": 11.0
+   },
+   {
+    "item": "Eskal herrings 375g",
+    "keys": [
+     "herring"
+    ],
+    "price": 6.8
+   },
+   {
+    "item": "potato salad 250g",
+    "keys": [
+     "potato salad"
+    ],
+    "price": 3.0
+   },
+   {
+    "item": "Yumis bean chilli dip 200g",
+    "keys": [
+     "dip",
+     "bean"
+    ],
+    "price": 3.0
+   },
+   {
+    "item": "flat mushrooms 0.202 kg",
+    "keys": [
+     "mushroom"
+    ],
+    "price": 2.42,
+    "grams": 202
+   },
+   {
+    "item": "red grapes 1.040 kg",
+    "keys": [
+     "grape"
+    ],
+    "price": 3.64,
+    "grams": 1040
+   },
+   {
+    "item": "Sara Lee apple pie 800g",
+    "keys": [
+     "pie"
+    ],
+    "price": 7.5
+   },
+   {
+    "item": "British bacon 200g",
+    "keys": [
+     "bacon"
+    ],
+    "price": 7.0
+   },
+   {
+    "item": "Yakult 10pk",
+    "keys": [
+     "yakult",
+     "probiotic",
+     "yoghurt drink",
+     "milk drink"
+    ],
+    "price": 7.7
+   },
+   {
+    "item": "Goulburn Valley pears 700g",
+    "keys": [
+     "pear"
+    ],
+    "price": 3.7
+   },
+   {
+    "item": "Mayvers peanut butter 375g",
+    "keys": [
+     "peanut butter"
+    ],
+    "price": 5.0
+   },
+   {
+    "item": "Beechworth bee fruit honey 350g",
+    "keys": [
+     "honey"
+    ],
+    "price": 8.5
+   },
+   {
+    "item": "St Dalfour wild blueberry jam 284g",
+    "keys": [
+     "jam",
+     "spread",
+     "blueberr"
+    ],
+    "price": 3.0
+   },
+   {
+    "item": "salmon skin on (per kg)",
+    "keys": [
+     "salmon"
+    ],
+    "price": 17.37
+   },
+   {
+    "item": "Don Hungarian salami (per kg)",
+    "keys": [
+     "salami"
+    ],
+    "price": 4.22
+   },
+   {
+    "item": "Pink Lady apples 1.061 kg",
+    "keys": [
+     "apple"
+    ],
+    "price": 3.71,
+    "grams": 1061
+   },
+   {
+    "item": "Packham pears 0.606 kg",
+    "keys": [
+     "pear"
+    ],
+    "price": 1.52,
+    "grams": 606
+   },
+   {
+    "item": "broccoli 0.606 kg",
+    "keys": [
+     "broccoli"
+    ],
+    "price": 3.33,
+    "grams": 606
+   },
+   {
+    "item": "bananas 0.676 kg",
+    "keys": [
+     "banana"
+    ],
+    "price": 2.37,
+    "grams": 676
+   },
+   {
+    "item": "radicchio lettuce",
+    "keys": [
+     "radicchio",
+     "lettuce"
+    ],
+    "price": 3.9
+   },
+   {
+    "item": "trimmed celery 300g",
+    "keys": [
+     "celery"
+    ],
+    "price": 3.9
+   },
+   {
+    "item": "John West tuna tempters 95g (2 @ 1.50)",
+    "keys": [
+     "tuna"
+    ],
+    "price": 3.0
+   },
+   {
+    "item": "roasted almonds 400g",
+    "keys": [
+     "almond"
+    ],
+    "price": 7.0
+   },
+   {
+    "item": "Vegemite 220g",
+    "keys": [
+     "vegemite",
+     "yeast spread"
+    ],
+    "price": 4.0
+   },
+   {
+    "item": "LSA meal 350g",
+    "keys": [
+     "lsa",
+     "linseed",
+     "meal"
+    ],
+    "price": 5.0
+   },
+   {
+    "item": "Arnotts sesame crackers 250g",
+    "keys": [
+     "cracker"
+    ],
+    "price": 4.0
+   },
+   {
+    "item": "Sakata rice crackers 100g",
+    "keys": [
+     "rice cracker",
+     "cracker"
+    ],
+    "price": 2.0
+   },
+   {
+    "item": "Madura premium blend tea 50pk",
+    "keys": [
+     "tea"
+    ],
+    "price": 4.95
+   },
+   {
+    "item": "pretzel bows (per kg)",
+    "keys": [
+     "pretzel"
+    ],
+    "price": 1.53
+   },
+   {
+    "item": "spinach and kale 300g",
+    "keys": [
+     "spinach",
+     "kale"
+    ],
+    "price": 5.0
+   }
+  ]
+ },
+ "coles-bentleigh-2021.jpg": {
+  "total": 70.3,
+  "lines": [
+   {
+    "item": "crab meat 170g",
+    "keys": [
+     "crab"
+    ],
+    "price": 3.5
+   },
+   {
+    "item": "St Dalfour strawberry spread 284g",
+    "keys": [
+     "jam",
+     "spread",
+     "strawberr"
+    ],
+    "price": 3.0
+   },
+   {
+    "item": "peach slices 410g",
+    "keys": [
+     "peach"
+    ],
+    "price": 2.0
+   },
+   {
+    "item": "Mayvers hazelnut cacao spread 240g",
+    "keys": [
+     "hazelnut",
+     "spread"
+    ],
+    "price": 8.5
+   },
+   {
+    "item": "Philly cream cheese block lactose free 250g",
+    "keys": [
+     "cream cheese"
+    ],
+    "price": 3.7
+   },
+   {
+    "item": "almond spread 250g",
+    "keys": [
+     "almond"
+    ],
+    "price": 8.0
+   },
+   {
+    "item": "tiramisu pots 2pk",
+    "keys": [
+     "tiramisu"
+    ],
+    "price": 5.0
+   },
+   {
+    "item": "Pocky chocolate sticks 47g",
+    "keys": [
+     "pocky",
+     "chocolate",
+     "biscuit"
+    ],
+    "price": 1.8
+   },
+   {
+    "item": "Afourer mandarins 0.531 kg",
+    "keys": [
+     "mandarin"
+    ],
+    "price": 1.43,
+    "grams": 531
+   },
+   {
+    "item": "Uncle Tobys Le Snak 132g",
+    "keys": [
+     "snack",
+     "cracker",
+     "le snak"
+    ],
+    "price": 3.0
+   },
+   {
+    "item": "Pringles potato chips 53g",
+    "keys": [
+     "chip",
+     "crisp",
+     "pringles"
+    ],
+    "price": 1.9
+   },
+   {
+    "item": "Chobani Flip yoghurt 140g",
+    "keys": [
+     "yoghurt",
+     "yogurt"
+    ],
+    "price": 2.0
+   },
+   {
+    "item": "Rico pears 0.251 kg",
+    "keys": [
+     "pear"
+    ],
+    "price": 0.98,
+    "grams": 251
+   },
+   {
+    "item": "Pringles potato chips 53g",
+    "keys": [
+     "chip",
+     "crisp",
+     "pringles"
+    ],
+    "price": 1.9
+   },
+   {
+    "item": "Don skinless frankfurts (per kg)",
+    "keys": [
+     "frankfurt",
+     "sausage",
+     "hot dog"
+    ],
+    "price": 1.78
+   },
+   {
+    "item": "Lotte Pepero white chocolate 32g",
+    "keys": [
+     "pepero",
+     "chocolate",
+     "biscuit"
+    ],
+    "price": 1.6
+   },
+   {
+    "item": "Vittoria biscuits 200g",
+    "keys": [
+     "biscuit"
+    ],
+    "price": 4.0
+   },
+   {
+    "item": "Arnotts cracker chips 150g",
+    "keys": [
+     "cracker",
+     "chip"
+    ],
+    "price": 4.5
+   },
+   {
+    "item": "Pottle chocolate macadamias (per kg)",
+    "keys": [
+     "macadamia",
+     "chocolate"
+    ],
+    "price": 9.63
+   },
+   {
+    "item": "Smiths chips 60g",
+    "keys": [
+     "chip",
+     "crisp"
+    ],
+    "price": 2.1
+   }
+  ]
+ },
+ "woolworths-chadstone-2021.jpg": {
+  "total": 33.95,
+  "lines": [
+   {
+    "item": "purple sweet potato 0.462 kg",
+    "keys": [
+     "sweet potato"
+    ],
+    "price": 3.19,
+    "grams": 462
+   },
+   {
+    "item": "Arnotts Salada wholemeal 250g",
+    "keys": [
+     "cracker",
+     "salada"
+    ],
+    "price": 2.5
+   },
+   {
+    "item": "T2 French Earl Grey tea 10pk",
+    "keys": [
+     "tea",
+     "earl grey"
+    ],
+    "price": 7.0
+   },
+   {
+    "item": "Ritz mini multipack 150g",
+    "keys": [
+     "cracker",
+     "ritz"
+    ],
+    "price": 3.2
+   },
+   {
+    "item": "blackberries 125g",
+    "keys": [
+     "blackberr"
+    ],
+    "price": 6.5
+   },
+   {
+    "item": "blueberries 200g",
+    "keys": [
+     "blueberr"
+    ],
+    "price": 6.5
+   },
+   {
+    "item": "corn cobbettes 425g",
+    "keys": [
+     "corn"
+    ],
+    "price": 4.9
+   }
+  ]
+ },
+ "woolworths-chadstone-2024.jpg": {
+  "total": 97.75,
+  "lines": [
+   {
+    "item": "Croc Eggs plums 0.192 kg",
+    "keys": [
+     "plum"
+    ],
+    "price": 0.94,
+    "grams": 192
+   },
+   {
+    "item": "yellow nectarine 0.182 kg",
+    "keys": [
+     "nectarine"
+    ],
+    "price": 0.82,
+    "grams": 182
+   },
+   {
+    "item": "yellow plum 0.182 kg",
+    "keys": [
+     "plum"
+    ],
+    "price": 0.89,
+    "grams": 182
+   },
+   {
+    "item": "Arnotts Salada original 250g",
+    "keys": [
+     "cracker",
+     "salada"
+    ],
+    "price": 4.0
+   },
+   {
+    "item": "Carmans raspberry & vanilla porridge sachets 320g",
+    "keys": [
+     "oat",
+     "porridge"
+    ],
+    "price": 6.9
+   },
+   {
+    "item": "Lian congee bowl chicken 60g",
+    "keys": [
+     "congee"
+    ],
+    "price": 3.5
+   },
+   {
+    "item": "instant congee cup vegetable 55g",
+    "keys": [
+     "congee"
+    ],
+    "price": 3.0
+   },
+   {
+    "item": "Live Well cleanse tea bags 18pk",
+    "keys": [
+     "tea"
+    ],
+    "price": 8.5
+   },
+   {
+    "item": "Pringles chipotle & sour cream 118g",
+    "keys": [
+     "chip",
+     "crisp",
+     "pringles"
+    ],
+    "price": 5.5
+   },
+   {
+    "item": "Nescafe latte coffee sachets 10pk",
+    "keys": [
+     "coffee",
+     "latte"
+    ],
+    "price": 3.8
+   },
+   {
+    "item": "Dilmah extra strength tea bags 50pk",
+    "keys": [
+     "tea"
+    ],
+    "price": 4.8
+   },
+   {
+    "item": "Live Well sleep tea bags 20pk",
+    "keys": [
+     "tea"
+    ],
+    "price": 8.5
+   },
+   {
+    "item": "La Zuppa roasted pumpkin soup 540g",
+    "keys": [
+     "soup"
+    ],
+    "price": 5.5
+   },
+   {
+    "item": "beef jerky 180g",
+    "keys": [
+     "jerky"
+    ],
+    "price": 10.0
+   },
+   {
+    "item": "John West tuna slice in olive oil 125g",
+    "keys": [
+     "tuna"
+    ],
+    "price": 3.0
+   },
+   {
+    "item": "Campos coffee capsules 10pk",
+    "keys": [
+     "coffee"
+    ],
+    "price": 7.6
+   },
+   {
+    "item": "L'Or espresso capsules 10pk",
+    "keys": [
+     "coffee",
+     "espresso"
+    ],
+    "price": 7.5
+   },
+   {
+    "item": "black grapes 400g",
+    "keys": [
+     "grape"
+    ],
+    "price": 5.5
+   },
+   {
+    "item": "Nando's vegan perinaise 265g",
+    "keys": [
+     "mayo",
+     "perinaise",
+     "sauce"
+    ],
+    "price": 4.0
+   },
+   {
+    "item": "Calypso mango",
+    "keys": [
+     "mango"
+    ],
+    "price": 3.0
+   }
+  ]
+ },
+ "woolworths-qv-salad.jpg": {
+  "total": 8.42,
+  "lines": [
+   {
+    "item": "classic tabouleh salad small",
+    "keys": [
+     "tabouleh",
+     "tabbouleh",
+     "salad"
+    ],
+    "price": 4.0
+   },
+   {
+    "item": "Riverina reduced fat fetta (per kg)",
+    "keys": [
+     "feta",
+     "fetta"
+    ],
+    "price": 0.93
+   },
+   {
+    "item": "Val Verde lentils 400g",
+    "keys": [
+     "lentil"
+    ],
+    "price": 1.49
+   },
+   {
+    "item": "Golden Circle whole baby beets 450g",
+    "keys": [
+     "beet"
+    ],
+    "price": 2.0
+   }
+  ]
  }
 }

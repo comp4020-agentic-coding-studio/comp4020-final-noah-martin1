@@ -62,7 +62,7 @@ const cents = (v: unknown): number | null => {
 };
 
 const toBaseUnit = (q: number, u: string): { quantity: number; unit: string } =>
-  u === "KG" ? { quantity: q * 1000, unit: "g" } : u === "G" || u === "GM" ? { quantity: q, unit: "g" } : u === "ML" ? { quantity: q, unit: "ml" } : { quantity: q * 1000, unit: "ml" };
+  u === "KG" ? { quantity: q * 1000, unit: "g" } : u === "G" || u === "GM" || u.startsWith("GRAM") ? { quantity: q, unit: "g" } : u === "ML" ? { quantity: q, unit: "ml" } : { quantity: q * 1000, unit: "ml" };
 
 // Pack size printed in the line: "2L", "1.5 L", "500G", "140GM", "1KG",
 // "375ML", "6PK", "12 PACK", "X6", and a multipack "375ML X 10" (3.75 L in
@@ -71,7 +71,8 @@ const toBaseUnit = (q: number, u: string): { quantity: number; unit: string } =>
 // "LGE" or "LOOSE" are not sizes.
 export function packSize(text: string): { quantity: number; unit: string } | null {
   const t = ` ${text.toUpperCase().replace(/(\d),(\d)/g, "$1.$2")} `;
-  const unitMatch = /(\d+(?:\.\d+)?)\s?(KG|GM|G|ML|L|LT|LTR)(?=[\s\/@x×]|$)/.exec(t);
+  // Coles spells units out: "170GRAM", "1LITRE"
+  const unitMatch = /(\d+(?:\.\d+)?)\s?(KG|GRAMS?|GM|G|ML|LITRES?|LITERS?|L|LT|LTR)(?=[\s\/@x×]|$)/.exec(t);
   // a multiplier either side of the size: "X 10" / "×10" or "10 X" (not
   // "x E 2,79/kg", which is a price per kilo)
   const times = /\b(\d{1,3})\s?(?:X|×)\s?(?=\d+(?:\.\d+)?\s?(?:KG|GM|G|ML|L)\b)/.exec(t) ?? /(?:\bX|×)\s?(\d{1,3})\b(?!\s?(?:KG|GM|G|ML|L|\.)\b)/.exec(t);

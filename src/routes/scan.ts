@@ -5,8 +5,11 @@
 //             the browser posts what it found here for review
 //   barcode   the camera or a typed number, looked up in Open Food Facts
 //   receipt   uploaded to the server's model, which transcribes each line;
-//             sizes come from the printed text and lines are checked
-//             against the receipt total by the app, not the model
+//             or, with no server model (the deployed site), read in the
+//             person's own browser by a small text reader (PaddleOCR) that
+//             posts the printed lines here. Either way, sizes come from the
+//             printed text and lines are checked against the receipt total
+//             by the app, not a model
 //
 // Models only suggest. Nothing is saved until the person ticks a row and
 // submits it, and every row is editable. A scan job is its uploader's alone:
@@ -22,6 +25,9 @@ import { prefillFor } from "../scan-prefill.ts";
 import { catalogueHas, learnedNames, mergeScans, parseScan, rememberCorrection, resolveName, SCAN_PROMPT, scanConfig, spellingCandidates, type Resolved } from "../fridge-scan.ts";
 import { aheadOf, createJob, finishReview, jobFor, jobResult, type JobKind, type ResultRow } from "../scan-jobs.ts";
 import { barcodeRow, lookupBarcode, LookupUnavailable, validBarcode } from "../barcode.ts";
+import { receiptResult } from "../scan-jobs.ts";
+import { parseReceiptText } from "../receipt-text.ts";
+import { loadProducts } from "../products.ts";
 import type { Route } from "../server.ts";
 import { errors, icon, page, pageHeader, subnav } from "../views/layout.ts";
 import { addPersonalItem, parseItem } from "./pantry.ts";
@@ -197,7 +203,8 @@ function tabs(current: Tab): Html {
     ...(server ? [{ href: "/pantry/scan", label: "Photo" }] : []),
     { href: "/pantry/scan/device", label: server ? "On this device" : "Photo" },
     { href: "/pantry/scan/barcode", label: "Barcode" },
-    ...(server ? [{ href: "/pantry/scan/receipt", label: "Receipt" }] : []),
+    // with no server model the receipt is read in the browser instead
+    { href: "/pantry/scan/receipt", label: "Receipt" },
   ];
   const hrefs: Record<Tab, string> = { photo: "/pantry/scan", device: "/pantry/scan/device", barcode: "/pantry/scan/barcode", receipt: "/pantry/scan/receipt" };
   return html`<div class="subnav-scan">${subnav("Ways to scan", items, hrefs[current])}</div>`;
@@ -257,8 +264,33 @@ function scanPage(ctx: Ctx, problem = "", status = 200) {
 }
 
 function receiptPage(ctx: Ctx, problem = "", status = 200) {
-  if (!scanConfig()) return devicePage(ctx, "Reading receipts needs the vision model on the server, which this one doesn't have.", 503);
-  return hub(ctx, "receipt", "Read a receipt", "Photograph your shopping receipt and Larder lists what you bought, with the prices you paid. You check every line before it's added.", uploadForm("receipt"), { problem, status, script: "scan-receipt-camera.mjs" });
+  const lede = "Photograph your shopping receipt and Larder lists what you bought, with the prices you paid. You check every line before it's added.";
+  if (!scanConfig()) return hub(ctx, "receipt", "Read a receipt", lede, deviceReceiptForm(), { problem, status, script: "scan-receipt-camera.mjs" });
+  return hub(ctx, "receipt", "Read a receipt", lede, uploadForm("receipt"), { problem, status, script: "scan-receipt-camera.mjs" });
+}
+
+// The receipt read in the browser (public/receipt-ocr-worker.mjs): the same
+// camera and file input as the upload form, but the photo stays on the
+// device; only the printed lines it reads are posted, to /pantry/scan/receipt/text.
+// Without JavaScript there's nothing to read with, so the page says so.
+function deviceReceiptForm(): Html {
+  return html`<form method="post" action="/pantry/scan/receipt/text" class="panel stack scan-upload" data-scan-form data-receipt-device>
+    ${receiptCamera()}
+    <label class="field"><span>Receipt photo</span>
+      <input type="file" accept="image/jpeg,image/png,image/webp" capture="environment" data-receipt-file /></label>
+    <p class="muted small">Lay the receipt flat in good light and fill the frame with it. It's read on this device, so the photo isn't uploaded. The reader is about 17 MB, downloaded once when you first open this page.</p>
+    <div class="scan-progress" data-receipt-progress hidden>
+      <p class="scan-progress-label" data-receipt-label role="status" aria-live="polite">Starting…</p>
+      <progress max="100" data-receipt-bar aria-label="Reading progress"></progress>
+    </div>
+    <noscript><p>Reading a receipt needs JavaScript. The <a href="/pantry/scan/barcode">barcode form</a> and the <a href="/pantry#add">add form</a> work without it.</p></noscript>
+    <div data-receipt-lines></div>
+    <input type="hidden" name="seconds" data-receipt-seconds />
+    <div class="form-actions">
+      <a class="button button-ghost" href="/pantry">Back to my kitchen</a>
+      <button class="button" type="submit" data-scan-submit data-receipt-read disabled>${icon("spark", 16)} Read receipt</button>
+    </div>
+  </form>`;
 }
 
 // The in-browser scan: the page itself loads the model and does the work.
@@ -376,6 +408,25 @@ export const routes: Route[] = [
   { method: "POST", path: "/pantry/scan", auth: true, handler: (ctx) => upload(ctx, "photo") },
   { method: "GET", path: "/pantry/scan/receipt", auth: true, handler: (ctx) => receiptPage(ctx) },
   { method: "POST", path: "/pantry/scan/receipt", auth: true, handler: (ctx) => upload(ctx, "receipt") },
+  {
+    // the printed lines a browser read off a receipt (deviceReceiptForm);
+    // what was bought is decided here, by the same parsing and total check
+    // as a server reading, so a page can post nothing a receipt couldn't say
+    method: "POST",
+    path: "/pantry/scan/receipt/text",
+    auth: true,
+    handler: async (ctx) => {
+      const form = await ctx.form();
+      const lines = form.getAll("line").slice(0, 400).map((l) => l.slice(0, 200));
+      const seconds = Math.max(0, Math.min(Number(form.get("seconds")) || 0, 3600));
+      const learned = learnedNames(ctx.user!.id);
+      const catalogue = spellingCandidates(ctx.user!.id);
+      const known = [...new Set([...Object.keys(loadProducts().products), ...catalogue])];
+      const result = receiptResult(parseReceiptText(lines, known), learned, seconds * 1000, catalogue);
+      logActivity({ actor: ctx.user, action: "pantry.scan", subject: "receipt-device", detail: { lines: lines.length, found: result.rows.length, seconds } });
+      return reviewPage(ctx, suggestionsFrom(ctx.user!.id, result.rows.slice(0, MAX_ROWS)), { seconds: result.seconds, what: "receipt", receipt: result.receipt });
+    },
+  },
   { method: "GET", path: "/pantry/scan/device", auth: true, handler: (ctx) => devicePage(ctx) },
   { method: "GET", path: "/pantry/scan/barcode", auth: true, handler: (ctx) => barcodePage(ctx) },
   {

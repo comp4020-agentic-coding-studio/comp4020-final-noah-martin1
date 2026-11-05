@@ -3,6 +3,7 @@ import { describe, expect, it } from "vitest";
 import { barcodeRow, lookupBarcode, validBarcode } from "../src/barcode.ts";
 import { lineQuantity, packSize, parseReceipt, weighed } from "../src/receipt-scan.ts";
 import { receiptResult } from "../src/scan-jobs.ts";
+import { foodName, parseReceiptText, splitPrice } from "../src/receipt-text.ts";
 import { registered } from "./helpers.ts";
 
 describe("reading a receipt", () => {
@@ -134,6 +135,101 @@ describe("reading a receipt", () => {
   });
 });
 
+// The receipt read in the browser: the text reader's printed lines (copied
+// from its output on the real receipts in testing/receipt-scan) parsed by
+// plain code, with no model naming anything.
+describe("reading a receipt from its printed text", () => {
+  const known = ["milk", "banana", "apple", "bacon", "peanut butter", "potato", "tuna", "olive oil", "blackberries", "sour cream", "cream cheese", "sweet potato", "beef", "pumpkin", "crab meat"];
+
+  it("pairs weights, counts and discounts with their item, and finds the total", () => {
+    const r = parseReceiptText([
+      "WOOLWORTHS TAX INV0ICE-ABN 88 000 014 675",
+      "*WW SANDWICH CLASSIC EGG & LETTUCE  6.00",
+      "APPLE PINK LADY",
+      "0.217 kg NET @  $3.90/kg  0.85",
+      "MACRO ORGANC FRESH MILK LOW FAT 1L  2.20",
+      "BANANA CAVENDISH",
+      "0.572 kg NET @  $2.50/kg  1.43",
+      "*GOLDEN PIKELET BITES 16PK 140GM  3.99",
+      "*GOLDEN PIKELETS 8 PK200GM  3.99",
+      "GOLDEN PANCAK OFFER  -1.98",
+      "6  SUBTOTAL  $16.48",
+    ], known);
+    expect(r.lines.map((l) => [l.name, l.price_cents, lineQuantity(l)])).toEqual([
+      // made with egg, not a dozen eggs
+      ["sandwich", 600, { quantity: "1", unit: "" }],
+      ["apple", 85, { quantity: "217", unit: "g" }],
+      ["milk", 220, { quantity: "1000", unit: "ml" }],
+      ["banana", 143, { quantity: "572", unit: "g" }],
+      // a 140 g pack of 16; the offer comes off the pikelets above it
+      ["golden pikelet bites", 399, { quantity: "140", unit: "g" }],
+      ["golden pikelets", 201, { quantity: "200", unit: "g" }],
+    ]);
+    expect(r.total_cents).toBe(1648);
+    expect(r.check).toEqual({ sum_cents: 1648, matches: true });
+  });
+
+  it("finds the food in words the printer ran together, and an ingredient made into something else isn't that ingredient", () => {
+    const name = (t: string) => foodName(t, known).name;
+    expect(name("BRITISHBACON200GRAM")).toBe("bacon");
+    expect(name("MAYVERSPEANUT BUTTE375GRAM")).toBe("peanut butter");
+    expect(name("%PRINGLES POTATO CHIP 53GRAM")).toBe("potato chips");
+    expect(name("WW Beef Jerky Original 180g")).toBe("beef jerky");
+    expect(name("La Zuppa Roasted Pumpkin Soup 540g")).toBe("pumpkin soup");
+    // the food first, what it's in after
+    expect(name("^JW Tuna Slice In 0live 0il 125g")).toBe("tuna");
+    expect(name("Berry Blackberry125g P/P")).toBe("blackberries");
+    // not "potato" from "pot", not "pea" from "peach"
+    expect(name("TIRAMISU POT 2PACK")).not.toBe("potato");
+    // nothing known: the printed words, without sizes or store names
+    expect(name("COLES CRAB MEAT 170GRAM")).toBe("crab meat");
+    expect(name("Grape Black 400g")).toBe("grape");
+  });
+
+  it("a shopping bag counts toward the total but isn't food; tea bags are food", () => {
+    const r = parseReceiptText([
+      "#Woolworths Paper Bag",
+      "Qty  2@$0.25  each  0.50",
+      "Live Well Cleanse Tea Bags 18pk  8.50",
+      "22SUBTOTAL  $9.00",
+    ], known);
+    expect(r.lines.map((l) => l.name)).toEqual(["tea"]);
+    expect(r.other_cents).toBe(50);
+    expect(r.check).toEqual({ sum_cents: 900, matches: true });
+  });
+
+  it("a misread price is flagged by the total, not trusted", () => {
+    // the printer's price column sat half a line high on this receipt, so
+    // the bag's $2.50 was read beside the crackers
+    const r = parseReceiptText([
+      "Potato Sweet Purple  3.19",
+      "0.462 kg NET @$6.90/kg  0.15",
+      "Hwoolworths Reusable Bag",
+      "#Arnotts Salada Wholemeal 250g  2.50",
+      "8SUBTOTAL  $33.94",
+      "TOTAL  $33.95",
+    ], known);
+    expect(r.total_cents).toBe(3395);
+    expect(r.check?.matches).toBe(false);
+    expect(receiptResult(r, new Map(), 1000).rows.every((row) => row.confidence === "low")).toBe(true);
+  });
+
+  it("reads European receipts' decimal commas, a Polish discount and a reduced price", () => {
+    expect(splitPrice("ACQUA S.ANGELO NATUR 22,00% 1,32")).toEqual({ text: "ACQUA S.ANGELO NATUR 22,00%", price_cents: 132 });
+    expect(splitPrice("Poledw kos 100g C 1 x4,99 4,99C").price_cents).toBe(499);
+    const r = parseReceiptText(["Ser z.Swiat. 150g L 1 x3.29 3,290", "Poledw kos 100g C 1 x4,99 4,99C", "Rabat -2,00", "2,99C", "SUMA PLN 8,27"], known);
+    expect(r.lines.map((l) => l.price_cents)).toEqual([329, 299]);
+    const t = parseReceiptText(["6JAN DOUGHNTS", "REDUCED PRICE  0.55", "TUNA STEAKS  0.55", "TOTAL  1.10"], known);
+    expect(t.lines.map((l) => [l.name, l.price_cents])).toEqual([[expect.stringMatching(/doughn/), 55], ["tuna", 55]]);
+    expect(t.check?.matches).toBe(true);
+  });
+
+  it("stops at the total, so payment and change lines are never items", () => {
+    const r = parseReceiptText(["MILK 2L  3.10", "TOTAL  $3.10", "Cash  $5.00", "Change  $1.90", "BANANA  1.00"], known);
+    expect(r.lines.map((l) => l.name)).toEqual(["milk"]);
+  });
+});
+
 describe("barcodes", () => {
   it("accepts only codes whose check digit is right", () => {
     expect(validBarcode("3017620422003")).toBe("3017620422003");
@@ -187,13 +283,38 @@ describe("scan pages and background jobs over HTTP", () => {
   it("the receipt page's camera starts hidden, leaving the plain upload form for no-script and no-camera browsers", async () => {
     const { client } = await registered();
     const res = await client.get("/pantry/scan/receipt");
-    // a server without a model sends people to the other ways to scan
-    if (res.status === 503) return;
+    expect(res.status).toBe(200);
     const doc = new JSDOM(await res.text()).window.document;
     expect(doc.querySelector("[data-receipt-camera]")?.hasAttribute("hidden")).toBe(true);
     expect(doc.querySelector("[data-receipt-start]")?.hasAttribute("hidden")).toBe(true);
-    expect(doc.querySelector("form[data-scan-form] input[type=file][name=photo]")).not.toBeNull();
     expect(doc.querySelector("script[src='/assets/scan-receipt-camera.mjs']")).not.toBeNull();
+    // with a server model the photo is uploaded; without one (the deployed
+    // site) it's read on the device and only its text is posted
+    const device = doc.querySelector("form[data-receipt-device]");
+    if (device) {
+      expect(device.getAttribute("action")).toBe("/pantry/scan/receipt/text");
+      expect(device.querySelector("input[type=file]:not([name])")).not.toBeNull();
+    } else expect(doc.querySelector("form[data-scan-form] input[type=file][name=photo]")).not.toBeNull();
+  });
+
+  it("the printed lines a browser read off a receipt become a checked review, decided by the server", async () => {
+    const { client } = await registered();
+    const res = await client.post("/pantry/scan/receipt/text", {
+      line: ["MACRO ORGANC FRESH MILK LOW FAT 1L  2.20", "BANANA CAVENDISH", "0.572 kg NET @  $2.50/kg  1.43", "#Woolworths Reusable Bag  0.25", "SUBTOTAL  $3.88"],
+      seconds: "2",
+    });
+    expect(res.status).toBe(200);
+    const doc = new JSDOM(await res.text()).window.document;
+    const rows = [...doc.querySelectorAll(".scan-row")].map((li) => ({
+      name: (li.querySelector("input[name^='name_']") as HTMLInputElement).value,
+      qty: (li.querySelector("input[name^='quantity_']") as HTMLInputElement).value,
+      price: (li.querySelector("input[name^='price_']") as HTMLInputElement).value,
+    })).filter((r) => r.name);
+    expect(rows).toEqual([{ name: "milk", qty: "1000", price: "2.20" }, { name: "banana", qty: "572", price: "1.43" }]);
+    expect(doc.querySelector(".scan-check-ok")?.textContent).toMatch(/add up to the receipt's total of \$3\.88/);
+    // nothing is saved by reading
+    const pantry = new JSDOM(await (await client.get("/pantry")).text()).window.document;
+    expect(pantry.querySelector(".empty-title")?.textContent).toMatch(/pantry is empty/);
   });
 
   it("the barcode form works without the camera and refuses a bad code before any lookup", async () => {
@@ -238,6 +359,9 @@ describe("scan pages and background jobs over HTTP", () => {
       expect(res.status).toBe(303);
       expect(res.headers.get("location")).toMatch(/^\/login/);
     }
+    // and can't post a receipt's text
+    const posted = await fetch(new URL("/pantry/scan/receipt/text", base), { method: "POST", body: new URLSearchParams({ line: "MILK 2L 3.10" }), redirect: "manual" });
+    expect(posted.status).not.toBe(200);
   });
 });
 

@@ -139,16 +139,21 @@ untickable row and nothing is saved until you press Add:
   gives the product and its exact pack size. Not every product is in it.
 - **Photo on this device.** Qwen3-VL 2B runs in your browser on WebGPU (1.4 GB
   the first time). Your photo stays on your device.
+- **Receipt on this device.** PaddleOCR (about 14 MB, cached after the first
+  visit) reads the printed lines in your browser, in a worker; the camera
+  takes the photo itself once the receipt is held still. Only the text is
+  posted, and the server decides what was bought with plain code
+  (`src/receipt-text.ts`): pack sizes and weights from the printed text,
+  food names matched to ingredients the app knows, and the prices checked
+  against the receipt's total, every line starting unticked when they don't
+  add up. This is what the deployed site uses.
 - **Photo or receipt on the server.** Only on a self-hosted install with a
   local vision model (Ollama, `VISION_URL`); the deployed 256 MB machine can't
-  run one, so these tabs don't appear there. Scans run in the background with
-  a progress bar. For a receipt the model reads the lines; pack sizes and
-  weights come from the printed text, and the app checks the prices against
-  the receipt's total, starting every line unticked when they don't add up.
+  run one. Scans run in the background with a progress bar.
 
-The models suggest names; matching a name to an ingredient, sizes, and the
-total check are plain code. Measured accuracy, photo by photo and receipt by
-receipt, is in `testing/fridge-scan/RESULTS.md`.
+The models suggest names or read text; matching a name to an ingredient,
+sizes, and the total check are plain code. Measured accuracy, photo by photo
+and receipt by receipt, is in `testing/results.md`.
 
 ## Not built yet (on purpose)
 

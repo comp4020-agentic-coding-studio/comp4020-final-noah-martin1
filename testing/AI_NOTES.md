@@ -78,8 +78,45 @@ photo-to-pantry scan. Results and photos are in `fridge-scan/`.
 - The same 2B model in the browser (transformers.js 4.3.2) can't read
   receipts at any precision: q4f16 got 5% of names, fp16 (4.73 GB) 33%, no
   prices right. Image token counts matched Ollama's, so it isn't resolution
-  or compression. Fridge photos were fine. Don't ship browser receipt reading
-  on this stack without retesting a newer library or model.
+  or compression. Fridge photos were fine. Receipts in the browser are read
+  with OCR instead (below).
+
+## Receipts in the browser (OCR, no model)
+
+- A receipt is printed text, so OCR plus plain-code parsing beats a vision
+  model: PaddleOCR PP-OCRv4 + `src/receipt-text.ts` named 87% of items and
+  got 99% of prices on 9 receipts, against 74% / 87% for Qwen3-VL 8B, in
+  ~1.5 s instead of 20–60 s.
+- Tesseract (tesseract.js 7) is fine on flat scans but poor on phone photos
+  of crumpled receipts on a textured bench (29% of prices on one Coles
+  photo): the background turns into junk text. Adaptive thresholding and
+  upscaling didn't fix it. PaddleOCR's DB detector ignores the background.
+- `@gutenye/ocr-browser` needs a 10 MB OpenCV build and a DOM canvas, so it
+  can't run in a worker. `public/receipt-ocr.mjs` reimplements its geometry
+  (connected regions, min-area rect, unclip, bilinear crop) in ~200 lines
+  and scores identically. Its node build's `detect()` returns `{ texts }`,
+  not an array; an error inside its minified opencv.js prints the whole
+  file, hiding the message, so wrap calls in your own try/catch.
+- Models and runtime from jsDelivr: `@gutenye/ocr-models@1.4.2/assets/`
+  (det 4.3 MB + rec 9.8 MB brotli) and `onnxruntime-web@1.30.0/dist/`
+  (`ort.wasm.min.mjs` + `ort-wasm-simd-threaded.wasm`, 2.7 MB). Set
+  `numThreads = 1`: threads need cross-origin isolation the site lacks.
+- Group OCR boxes into lines by following each box's own slope to the
+  nearest box on its right, not by level height: on curled paper a price
+  drifts onto the next item's height.
+- Coles prints "170GRAM", "1LITRE", "PERKG" run onto names, and weighed
+  prices on the name line; Woolworths prints the weighed price on the weight
+  line and produce kind-first ("Plum Yellow", "Berry Blackberry"). Some
+  thermal printers put the whole price column half a line high; a global
+  "shift prices down" fix broke other receipts, so leave it to the total
+  check.
+- Real Australian receipt photos with an open licence: Openverse
+  (`api.openverse.org/v1/images/?q=coles receipt`) finds a Melbourne
+  Flickr user's CC BY-NC phone photos of recent Coles and Woolworths
+  receipts. Wikimedia Commons has only one Australian supermarket receipt.
+- The parser was tuned on these nine receipts; add new ones to
+  `testing/receipt-scan/` (with truth.json) before tuning further, or the
+  rules will just fit the test set.
 
 ## Barcodes
 

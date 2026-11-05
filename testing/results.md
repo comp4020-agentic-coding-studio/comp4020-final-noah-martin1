@@ -10,7 +10,8 @@ Everything runs locally: the models through Ollama on the server (or in the visi
 |---|---|---|---|
 | Fridge / pantry photo (Qwen3-VL 8B, tiled) | finds 78% of the items a careful person sees; 86% of its suggestions are right | 81 s a photo on average (39–178 s), in the background | ticks off wrong items; checks the prefilled size, price and date |
 | Barcode (camera) | read 8 of 9 real product photos, never a wrong code; product found for 6 of 8 | about 12 ms a camera frame to decode, about 0.45 s to look up | checks the row; prices and dates are prefilled |
-| Receipt (Qwen3-VL 8B) | names 74% of items right; every price it matched was right to the cent | 9–22 s a receipt, in the background; the camera takes the photo itself about 0.5 s after the receipt is held still | checks names; the total check flags a misread price |
+| Receipt, read in the browser (PaddleOCR + plain-code parser) | names 87% of items right; 99% of their prices right to the cent (9 receipts, 6 Australian) | about 1.5–2 s a receipt in Chrome once the 14 MB reader is cached; the camera takes the photo itself about 1 s after the receipt is held still | checks names; the total check flags a misread price |
+| Receipt, server model (Qwen3-VL 8B) | names 74% of items right; 87% of their prices right (same 9 receipts) | 21–67 s a receipt, in the background | as above; only on a self-hosted install |
 
 ## 1. Fridge and pantry photos
 
@@ -66,16 +67,42 @@ Full results: [`barcode-scan/results.json`](barcode-scan/results.json), from `sc
 
 ## 3. Receipts
 
-Full report: the receipts section of [`fridge-scan/RESULTS.md`](fridge-scan/RESULTS.md), photos in [`receipt-scan/`](receipt-scan/). Four real receipts: Woolworths (Australia, with weighed fruit and a promotional discount), Tesco (UK, 1994), an Italian one (decimal commas, a weighed line) and a Polish one (a discount line).
+Photos in [`receipt-scan/`](receipt-scan/), with the items and prices on each written down by hand in [`receipt-scan/truth.json`](receipt-scan/truth.json) (each receipt's lines add up to its printed total). Nine real receipts:
 
-| Model | Item names right | Prices right (of matched items) | Total check right | Time a receipt |
+- **Five phone photos of Australian supermarket receipts** (Coles Brighton and Bentleigh, Woolworths Chadstone twice and Queen Victoria; Melbourne, 2015–2024): 20 and 31-item receipts, crumpled and curled paper, a granite or glass bench showing through, and on one, the printer's price column sitting half a line above the names.
+- **The original four:** Woolworths (weighed fruit, a promotional discount), Tesco (UK, 1994), Italian (decimal commas) and Polish (a discount line).
+
+### The live site reads receipts in the browser
+
+The deployed site has no server model, and the in-browser vision model can't read receipts (5% of names; see below). So receipts are now read differently: **a text reader runs in the browser and plain code decides what was bought.**
+
+1. **Reading the print:** PaddleOCR's PP-OCRv4 detector and recogniser (about 14 MB, from jsDelivr, cached after the first visit) on onnxruntime-web, in a worker so the camera and page stay smooth (`public/receipt-ocr.mjs`, `public/receipt-ocr-worker.mjs`). Only WebAssembly is needed, not WebGPU, so it works in any current browser. The photo never leaves the device; only the printed lines are posted.
+2. **Deciding what was bought:** `src/receipt-text.ts`, no model. It pairs weights, "2 @ $1.50" counts, discounts and "REDUCED PRICE" lines with their item, stops at the total, and counts shopping bags towards the total but not as food. A food's name is the ingredient the app already knows that the printed words contain, found even in words the printer ran together ("BRITISHBACON200GRAM" is bacon), after receipt abbreviations are spelled out ("CHSE" cheese, "SBERRY" strawberry). A food made into something else is that product: POTATO CHIP is potato chips, BEEF JERKY is beef jerky, an EGG & LETTUCE SANDWICH is a sandwich, not a dozen eggs.
+3. **Then the same review as the server reading:** sizes from the printed text (Coles' "170GRAM" and "1LITRE" now included), the check against the printed total, and price and expiry prefill.
+
+Measured by `scripts/eval-receipt-ocr.ts`, which runs the same `receipt-ocr.mjs` in node on the same model files ([`results/browser-paddleocr.json`](receipt-scan/results/browser-paddleocr.json)), against the server model on the same nine receipts:
+
+| Reader | Item names right | Prices right (of matched items) | Time a receipt |
+|---|---|---|---|
+| **In the browser: PaddleOCR + parser** | **87%** (Australian: 88%) | **99%** (Australian: 98%) | 0.3–0.8 s in node; 1.5–2 s in Chrome |
+| Server: Qwen3-VL 8B | 74% | 87% | 21–67 s |
+| In the browser: Qwen3-VL 2B (original four only) | 5% | 0% | 30–60 s |
+
+- **Choosing the text reader:** on the same receipts, Tesseract (tesseract.js 7) read 66% of the item prices into its text, and 29% on the crumpled Coles receipt, where the bench's texture became junk text. Cleaning the image up first didn't fix it. PaddleOCR read 92% (98% on the Australian phone photos), so it was chosen. The app's own plain-JavaScript port (`receipt-ocr.mjs`, no OpenCV) reads exactly as well as the PaddleOCR JavaScript package it replaced, a little faster.
+- **What's left is names, not prices.** Lines that only name a brand (PETERS CONNOISSEUR, YAKULT, MADURA) can't be matched to a food without a product database, so they come through with their printed words for the person to rename; the app remembers the rename for their next receipt. The weakest receipt is the crumpled 31-item Coles one (68% of names), where the reader pairs a few names with the next line's price at the folds.
+- **The total check works as intended.** On every receipt where the prices add up, they really do add up; where the reader misplaced a price (the half-line-high price column; a fold), the lines don't add up to the total, the review says so, and every line starts unticked.
+- **First visit:** the reader downloads while the person lines up the photo (on a fast connection it's ready before they are). In the test it took about 70 s on a slow link; a returning visitor has it cached. On a connection the browser marks as data-saving or 2G, the download waits until a photo is taken.
+- **End to end** in headless Chrome at phone size, on a server with no model like the deployed site: with the fake camera playing a receipt, the photo was taken by itself 1 s after the camera opened and the review was showing 2.5 s after that, with the total check passed. From a chosen file, a 20-item Coles receipt went to its review in 3.3 s, every price right and every Coles pack size read.
+
+The server model is still used on a self-hosted install that has one; there the earlier results stand:
+
+| Model (original four receipts) | Item names right | Prices right (of matched items) | Total check right | Time a receipt |
 |---|---|---|---|---|
 | Qwen3-VL 8B | 74% | 100% | 3 of 4 | 9–22 s |
 | Qwen3-VL 2B | 72% | 100% | 3 of 4 | 11–16 s |
 
-- **Prices are reliable; names less so.** Every price the models matched to an item was right to the cent, after discounts, and weighed items come through as grams. Names are where they slip: "mild white chocolate" for MLD WHT CHDR, "pancake mix" for pikelets.
+- **Prices are reliable; names less so.** Every price the models matched to an item was right to the cent, after discounts, and weighed items come through as grams. Names are where they slip: "mild white chocolate" for MLD WHT CHDR, "pancake mix" for pikelets. On the new crumpled Australian photos the 8B model did worse (58–85% of names, and it couldn't read either Coles total).
 - **The total check:** the app adds the prices and compares them with the receipt's printed total. A mismatch is flagged and every line arrives unticked.
-- **In the browser** the 2B model can't read receipts (5% of names), so receipts need the server model. The deployed site, which has none, says so and offers the barcode scanner.
 
 ### Taking the photo automatically
 
@@ -99,4 +126,5 @@ Measured by `scripts/eval-receipt-camera.ts` on 95 camera-like frames built from
 
 - **A real phone.** All camera tests used Chrome's fake camera at phone size. Real camera noise, autofocus hunting and hand tremble may need the stillness and sharpness thresholds tuning (they're named constants in `public/receipt-frame.mjs`, each with the measurement it came from).
 - **Learning from corrections.** When someone renames a scanned item, the next scan uses their name. It works and is tested, but how much it improves a person's second and third scans hasn't been measured.
-- **More receipts and photos.** Four receipts and twelve fridge photos are enough to compare models and catch failures, not to quote tight percentages.
+- **More receipts and photos.** Nine receipts and twelve fridge photos are enough to compare readers and catch failures, not to quote tight percentages. The receipt parser was tuned on these nine, so expect a little lower on new ones; ALDI and IGA receipts haven't been tried.
+- **Reading receipts on a phone.** The in-browser reader was timed on the M4 in Chrome; a mid-range phone will be slower (the reading is single-threaded WebAssembly).
