@@ -879,5 +879,106 @@
     "price": 2.0
    }
   ]
+ },
+ "costco-moorabbin-2023.jpg": {
+  "total": 204.4,
+  "lines": [
+   {
+    "item": "soy sauce 2L (less 2.00 TPD)",
+    "keys": [
+     "soy sauce"
+    ],
+    "price": 9.49
+   },
+   {
+    "item": "pork spare ribs (less 6.00 TPD)",
+    "keys": [
+     "pork"
+    ],
+    "price": 24.12
+   },
+   {
+    "item": "Qukes baby cucumbers",
+    "keys": [
+     "cucumber",
+     "qukes"
+    ],
+    "price": 9.99
+   },
+   {
+    "item": "dragon fruit 8pk",
+    "keys": [
+     "dragon"
+    ],
+    "price": 34.99
+   },
+   {
+    "item": "Health Attack crispy fruit",
+    "keys": [
+     "fruit",
+     "hlth"
+    ],
+    "price": 12.99
+   },
+   {
+    "item": "Popcorners 24pk (less 4.10 TPD)",
+    "keys": [
+     "popcorn"
+    ],
+    "price": 16.89
+   },
+   {
+    "item": "Glico Pocky duo",
+    "keys": [
+     "pocky",
+     "biscuit",
+     "chocolate"
+    ],
+    "price": 12.99
+   },
+   {
+    "item": "Dawn dish liquid 2.66L (less 3.00 TPD) - not food",
+    "keys": [
+     "dawn",
+     "dish"
+    ],
+    "price": 12.99
+   },
+   {
+    "item": "Kirkland organic seaweed",
+    "keys": [
+     "seaweed"
+    ],
+    "price": 14.99
+   },
+   {
+    "item": "karaage chicken",
+    "keys": [
+     "chicken"
+    ],
+    "price": 28.99
+   },
+   {
+    "item": "cauliflower blossom",
+    "keys": [
+     "cauli"
+    ],
+    "price": 6.99
+   },
+   {
+    "item": "purple broccolini",
+    "keys": [
+     "broccolini"
+    ],
+    "price": 7.99
+   },
+   {
+    "item": "DJ&A strawberry 100g (dried)",
+    "keys": [
+     "strawberr"
+    ],
+    "price": 10.99
+   }
+  ]
  }
 }

@@ -224,6 +224,39 @@ describe("reading a receipt from its printed text", () => {
     expect(t.check?.matches).toBe(true);
   });
 
+  // the reader's lines from a real Costco receipt (testing/receipt-scan)
+  it("reads Costco's layout: the name on one line, its price on the next, instant savings as a trailing minus", () => {
+    const r = parseReceiptText([
+      "TAX INVOICE（$）",
+      "P2 Member 99",
+      "SOY SAUCE2L",
+      "15795  1x  11.49  11.49Z",
+      "TPDKIKK  SOY  SAUCE",
+      "155735  1×  2.00  2.00-Z",
+      "PORK SPARE  RIBS",
+      "13211  1×  30.12  30.12Z",
+      "DAWN DISH LIQ2.66L",
+      "130425  1×  15.99  15.99A",
+      "TPD-DAWN PLAT 2.66",
+      "156039  1x  3.00  3.00-A",
+      "POPCORNERS 24PK",
+      "50064  2×  20.99  41.98A",
+      "￥TOTAL(INCL GST）  94.58",
+      "AMOUNT:$94.58",
+    ], [...known, "soy sauce", "pork ribs"]);
+    expect(r.lines.map((l) => [l.name, l.price_cents, l.qty])).toEqual([
+      ["soy sauce", 949, 1],
+      ["pork ribs", 3012, 1],
+      // the "2.66" in a name with a price line under it is a size, not a price
+      ["dawn dish liq", 1299, 1],
+      ["popcorners", 4198, 2],
+    ]);
+    expect(r.lines[0].size).toEqual({ quantity: 2000, unit: "ml" });
+    // the savings come off before the check, so it adds up
+    expect(r.total_cents).toBe(9458);
+    expect(r.check).toEqual({ sum_cents: 9458, matches: true });
+  });
+
   it("stops at the total, so payment and change lines are never items", () => {
     const r = parseReceiptText(["MILK 2L  3.10", "TOTAL  $3.10", "Cash  $5.00", "Change  $1.90", "BANANA  1.00"], known);
     expect(r.lines.map((l) => l.name)).toEqual(["milk"]);

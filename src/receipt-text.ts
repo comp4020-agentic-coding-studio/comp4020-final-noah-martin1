@@ -16,9 +16,11 @@
 import { packSize, weighed, type Receipt, type ReceiptLine } from "./receipt-scan.ts";
 
 // A price at the end of a line: "3.99", "$16.48", "1,65", "2,99C" (Polish
-// tax letter), "2.00^" or "2.00%" (promotion marks), "-1.98" (a discount).
-// The Polish tax letter after a price is sometimes read as a 0 ("3,290").
-const PRICE_END = /(-?)\$?\s?(\d{1,4})[.,](\d{2})(?:[0C]|\s*[A-Z^%*#])?\s*$/;
+// tax letter), "11.49 Z" (Costco's), "2.00^" or "2.00%" (promotion marks),
+// "-1.98" or Costco's "2.00-Z" (a discount). The Polish tax letter after a
+// price is sometimes read as a 0 ("3,290"). Never a number glued to a word
+// ("DISH LIQ2.66L" is a size).
+const PRICE_END = /(?<![A-Za-z])(-?)\$?\s?(\d{1,4})[.,](\d{2})(-?)(?:[0C]|\s*[A-Z^%*#])?\s*$/;
 
 // Lines that are never an item: headers, totals, payment, tax, store details.
 const NOT_ITEM = /\b(sub\s?-?total|total|totale|suma|sum|gst|tax|iva|ptu|vat|change|cash|eft|eftpos|visa|mastercard|card|credit|debit|amex|paypass|tap|purchase|approved|rounding|balance|tender|paid|pagato|pagamento|importo|rewards?|points|flybuys|savings?|saved|abn|invoice|receipt|register|store|manager|phone|served|date|time|merch|term|aid|arqc|items?\b(?!\s*\w)|thank|welcome|sprzedaz|opodatkowana|kasa|kasjer|transakcji|numer|nip|paragon|documento|commerciale|descrizione|prezzo|specials|taxable|promotional|everyday|description)\b/i;
@@ -32,6 +34,8 @@ const ABBREVIATIONS: Record<string, string> = {
   ff: "full fat", lf: "low fat", rf: "reduced fat", skm: "skim", bttr: "butter", butte: "butter",
   yog: "yoghurt", yogh: "yoghurt", yght: "yoghurt", grk: "greek", veg: "vegetable", vegs: "vegetables",
   chkn: "chicken", chick: "chicken", brst: "breast", thgh: "thigh", mnce: "mince", bf: "beef", prk: "pork",
+  // Costco: "QUKES" baby cucumbers, "CAULI", "KS" Kirkland Signature
+  qukes: "cucumber", cauli: "cauliflower", ks: "", kirkland: "",
   sausg: "sausages", saus: "sausages", tom: "tomato", toms: "tomatoes",
   potat: "potato", mush: "mushrooms", mshrm: "mushrooms", cap: "capsicum", caps: "capsicum", brocc: "broccoli",
   lett: "lettuce", cuc: "cucumber", cucumb: "cucumber", avo: "avocado", avos: "avocados", bana: "banana",
@@ -108,8 +112,21 @@ export function splitPrice(line: string): TextLine {
   const t = line.replace(/\s+/g, " ").trim();
   const m = PRICE_END.exec(t);
   if (!m) return { text: t, price_cents: null };
+  // a letter straight after the number that's a unit, not a tax mark:
+  // "2.66L", "1.5KG"
+  if (/^\s*(?:L|KG|G|ML)\b/i.test(t.slice(m.index + m[0].length - (m[0].length - m[0].trimEnd().length)).replace(/^[-\d.,$\s]+/, "")) && /\d[LGK]$/i.test(t.trimEnd().replace(/-$/, ""))) return { text: t, price_cents: null };
   const cents = Number(m[2]) * 100 + Number(m[3]);
-  return { text: t.slice(0, m.index).trim(), price_cents: m[1] === "-" ? -cents : cents };
+  return { text: t.slice(0, m.index).trim(), price_cents: m[1] === "-" || m[4] === "-" ? -cents : cents };
+}
+
+// A line of only numbers ending in a price: Costco's "15795 1x 11.49
+// 11.49 Z" under the item's name (item number, count, unit price, price).
+// The count, when printed, is how many were bought.
+export function priceOnlyLine(text: string): { qty: number } | null {
+  const t = text.replace(/\s+/g, " ").trim();
+  if (!t || /[a-z]{2}/i.test(t.replace(/\b\d+\s?[x×]\b/gi, ""))) return null;
+  const q = /\b(\d{1,3})\s?[x×](?=\s|$)/i.exec(t);
+  return { qty: q ? Number(q[1]) : 1 };
 }
 
 // The printed total: the "TOTAL" line's amount (also "Total for 35 items",
@@ -121,7 +138,10 @@ export function findTotal(lines: string[]): number | null {
     const { text, price_cents } = splitPrice(raw);
     if (price_cents === null || price_cents <= 0) continue;
     if (/(?:\b|\d)sub\s?-?total\b/i.test(text)) subtotal ??= price_cents;
-    else if (/\b(total|totale|suma pln|importo pagato)\b/i.test(text) && !/\b(gst|savings?|iva|ptu|tax|includes?)\b/i.test(text)) total ??= price_cents;
+    // "TOTAL(INCL GST)" is the total; "GST INCLUDED IN TOTAL" and "TOTAL
+    // includes GST" are the tax in it, which read GST before the total or
+    // say what the total includes
+    else if (/\b(total|totale|suma pln|importo pagato)\b/i.test(text) && !/\b(savings?|iva|ptu)\b|\b(?:gst|tax)\b.*\btotal|total\s+includes?\b/i.test(text)) total ??= price_cents;
   }
   return total ?? subtotal;
 }
@@ -174,7 +194,10 @@ export function foodName(printed: string, known: string[]): { name: string; know
     // a plural name matches its singular on the receipt ("blackberries" in
     // "Berry Blackberry", "tomatoes" in "TOMATO")
     const one = k.replace(/ies$/, "y").replace(/(o|ch|sh|x)es$/, "$1").replace(/([^s])s$/, "$1");
-    const m = new RegExp(`(^|[^a-z])(?:${escapeRe(k)}|${escapeRe(one)})(?:es|s)?($|[^a-z])`).exec(words);
+    // one extra printed word may sit inside a two-word name ("PORK SPARE
+    // RIBS" is pork ribs, "CHICKEN BREAST FILLET" not), in order
+    const gap = (n: string) => n.split(" ").length === 2 ? `|${escapeRe(n.split(" ")[0])} [a-z]+ ${escapeRe(n.split(" ")[1])}` : "";
+    const m = new RegExp(`(^|[^a-z])(?:${escapeRe(k)}|${escapeRe(one)}${gap(k)}${gap(one)})(?:es|s)?($|[^a-z])`).exec(words);
     if (m) at = letterAt(m.index + m[1].length);
     // inside run-together text, for names long enough not to turn up by
     // accident ("pot" is never found in "potato"); receipts cut a long name
@@ -280,6 +303,18 @@ export function parseReceiptText(lines: string[], known: string[]): Receipt {
       }
       continue;
     }
+    // a line of only numbers and a price: the price line of the name above
+    // it (Costco). A discount there ("TPD SPARE RIB" / "156465 1x 6.00
+    // 6.00-Z") comes off the item before that name.
+    const bare = price_cents !== null ? priceOnlyLine(text) : null;
+    if (bare && pendingName) {
+      if (price_cents! < 0) {
+        if (prev?.price_cents != null && prev.price_cents + price_cents! >= 0) prev.price_cents += price_cents!;
+      } else if (isBag(pendingName)) other_cents += price_cents!;
+      else items.push({ ...line(pendingName, pendingName, price_cents!, known, null), qty: bare.qty });
+      pendingName = null;
+      continue;
+    }
     // a discount: off the item above
     if (price_cents !== null && price_cents < 0) {
       if (prev?.price_cents != null && prev.price_cents + price_cents >= 0) prev.price_cents += price_cents;
@@ -300,11 +335,14 @@ export function parseReceiptText(lines: string[], known: string[]): Receipt {
       pendingName = null;
       continue;
     }
-    if (price_cents === null) {
-      // a name whose price is on the next line (weighed produce, a
-      // "REDUCED PRICE" line, a Polish price line); an earlier pending name
-      // with no price at all was a header
-      pendingName = text;
+    // a name whose price is on the next line (weighed produce, a "REDUCED
+    // PRICE" line, a Polish or Costco price line); an earlier pending name
+    // with no price at all was a header. A number at the end of a name with
+    // a price line under it is part of the name ("TPD-DAWN PLAT 2.66")
+    const nextLine = lines[i + 1] ? splitPrice(lines[i + 1]) : null;
+    const priceBelow = nextLine?.price_cents != null && priceOnlyLine(nextLine.text) && !weighed(nextLine.text);
+    if (price_cents === null || priceBelow) {
+      pendingName = price_cents === null ? text : lines[i].replace(/\s+/g, " ").trim();
       continue;
     }
     pendingName = null;
@@ -324,7 +362,9 @@ export function parseReceiptText(lines: string[], known: string[]): Receipt {
 }
 
 function line(nameText: string, printed: string, price_cents: number, known: string[], grams: number | null): ReceiptLine {
-  const clean = nameText.replace(/^[^a-z0-9]+/i, "").trim();
+  // marks before the name, and an item number printed in front of it
+  // ("15989 KS TISSUE" on US Costco receipts)
+  const clean = nameText.replace(/^[^a-z0-9]+/i, "").replace(/^\d{4,}\s+(?=[a-z])/i, "").trim();
   const { name } = foodName(clean, known);
   const w = grams !== null ? { grams } : weighed(printed);
   const size = w ? null : packSize(printed);

@@ -97,7 +97,7 @@ const avg = (k: "items" | "prices", f = (_: string) => true) => {
   const rs = rows.filter((r) => f(r.photo));
   return rs.reduce((a, r) => a + r[k], 0) / rs.length;
 };
-const au = (p: string) => /^(r1|coles|woolworths)/.test(p);
+const au = (p: string) => /^(r1|coles|woolworths|costco)/.test(p);
 console.log(`\nall ${rows.length}: items ${Math.round(avg("items") * 100)}%  prices ${Math.round(avg("prices") * 100)}%`);
 console.log(`Australian (${rows.filter((r) => au(r.photo)).length}): items ${Math.round(avg("items", au) * 100)}%  prices ${Math.round(avg("prices", au) * 100)}%`);
 mkdirSync(join(dir, "results"), { recursive: true });

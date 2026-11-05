@@ -114,9 +114,19 @@ photo-to-pantry scan. Results and photos are in `fridge-scan/`.
   (`api.openverse.org/v1/images/?q=coles receipt`) finds a Melbourne
   Flickr user's CC BY-NC phone photos of recent Coles and Woolworths
   receipts. Wikimedia Commons has only one Australian supermarket receipt.
-- The parser was tuned on these nine receipts; add new ones to
-  `testing/receipt-scan/` (with truth.json) before tuning further, or the
-  rules will just fit the test set.
+- Each store has its own layout and the parser is rules per layout. The
+  first version failed outright on the user's Costco receipt (2 of 13
+  items): Costco prints name / "item# 1x unit-price price TAXLETTER" on
+  two lines and instant savings as "TPD ..." / "2.00-Z" (minus after the
+  number). Before claiming a store works, get a real receipt from it into
+  `testing/receipt-scan/` with truth.json and run
+  `OCR=saved ... scripts/eval-receipt-ocr.ts` (rescoring) after each rule.
+  Openverse has a CC BY-NC Costco Moorabbin receipt from the same Melbourne
+  photographer.
+- A size glued to a name ("DISH LIQ2.66L") or ending a name line
+  ("TPD-DAWN PLAT 2.66") isn't a price: a price can't follow letters
+  directly, and a name line with a numbers-only price line under it is
+  still waiting for its price.
 
 ## Barcodes
 

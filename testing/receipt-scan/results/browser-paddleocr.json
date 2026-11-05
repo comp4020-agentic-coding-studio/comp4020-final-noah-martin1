@@ -1,11 +1,11 @@
 {
  "reader": "PaddleOCR PP-OCRv4 (public/receipt-ocr.mjs) + src/receipt-text.ts",
- "items": 0.8723587642942481,
- "prices": 0.9881730469965765,
+ "items": 0.8851228878648232,
+ "prices": 0.9893557422969188,
  "rows": [
   {
    "photo": "coles-bentleigh-2021.jpg",
-   "ms": 637,
+   "ms": 638,
    "items": 0.9,
    "prices": 1,
    "weighed": "2/2",
@@ -299,7 +299,7 @@
   },
   {
    "photo": "coles-brighton-2020.jpg",
-   "ms": 837,
+   "ms": 853,
    "items": 0.6774193548387096,
    "prices": 0.9523809523809523,
    "weighed": "4/6",
@@ -698,8 +698,210 @@
    ]
   },
   {
+   "photo": "costco-moorabbin-2023.jpg",
+   "ms": 668,
+   "items": 1,
+   "prices": 1,
+   "weighed": "0/0",
+   "totalRead": true,
+   "check": {
+    "sum_cents": 20440,
+    "matches": true
+   },
+   "checkRight": true,
+   "missed": [],
+   "wrongPrice": [],
+   "extra": [],
+   "lines": [
+    {
+     "text": "SOY SAUCE2L",
+     "name": "soy sauce",
+     "qty": 1,
+     "price_cents": 949,
+     "size": {
+      "quantity": 2000,
+      "unit": "ml"
+     },
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "PORK SPARE RIBS",
+     "name": "pork ribs",
+     "qty": 1,
+     "price_cents": 2412,
+     "size": null,
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "QUKES",
+     "name": "cucumber",
+     "qty": 1,
+     "price_cents": 999,
+     "size": null,
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "DRAGONFRUIT 8PK",
+     "name": "dragonfruit",
+     "qty": 1,
+     "price_cents": 3499,
+     "size": {
+      "quantity": 8,
+      "unit": ""
+     },
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "HLTH ATTK CRPY FRT",
+     "name": "hlth attk crpy frt",
+     "qty": 1,
+     "price_cents": 1299,
+     "size": null,
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "POPCORNERS 24PK",
+     "name": "popcorners",
+     "qty": 1,
+     "price_cents": 1689,
+     "size": {
+      "quantity": 24,
+      "unit": ""
+     },
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "GLICO POCKY DUO",
+     "name": "glico pocky duo",
+     "qty": 1,
+     "price_cents": 1299,
+     "size": null,
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "DAWN DISH LIQ2.66L",
+     "name": "dawn dish liq",
+     "qty": 1,
+     "price_cents": 1299,
+     "size": {
+      "quantity": 2660,
+      "unit": "ml"
+     },
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "KS ORGANIC SEAWEED",
+     "name": "organic seaweed",
+     "qty": 1,
+     "price_cents": 1499,
+     "size": null,
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "KARA-AGE CHICKEN",
+     "name": "chicken",
+     "qty": 1,
+     "price_cents": 2899,
+     "size": null,
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "CAULI BLOSSOM",
+     "name": "cauliflower blossom",
+     "qty": 1,
+     "price_cents": 699,
+     "size": null,
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "PURPLE BROCCOLINI",
+     "name": "broccolini",
+     "qty": 1,
+     "price_cents": 799,
+     "size": null,
+     "by_weight": false,
+     "grams": null
+    },
+    {
+     "text": "DJ&A S/BERRY 100G",
+     "name": "strawberries",
+     "qty": 1,
+     "price_cents": 1099,
+     "size": {
+      "quantity": 100,
+      "unit": "g"
+     },
+     "by_weight": false,
+     "grams": null
+    }
+   ],
+   "ocr": [
+    "OSTCO",
+    "EWHOLESALE",
+    "Chfle",
+    "Phone:（03）95527700",
+    "ABN No:57104012893",
+    "TAX INVOICE（$）",
+    "P2 Member 99",
+    "SOY SAUCE2L",
+    "15795  1x  11.49  11.49Z",
+    "TPDKIKK  SOY  SAUCE",
+    "155735  1×  2.00  2.00-Z",
+    "PORK SPARE  RIBS",
+    "13211  1×  30.12  30.12Z",
+    "TPD SPARE RIB",
+    "156465  1x  6.00  6.00-Z",
+    "QUKES",
+    "11386  1x  9.99  9.99Z",
+    "DRAGONFRUIT 8PK",
+    "142565K  1x  34.99  34.99Z",
+    "HLTH ATTK CRPY FRT",
+    "34460  1x  12.99  12.99Z",
+    "POPCORNERS 24PK",
+    "50064  1×  20.99  20.99A",
+    "POPCORNERS 24PK",
+    "156887  1x  4.10  4.10-A",
+    "GLICO POCKY DUO",
+    "141709  1×  12.99  12.99A",
+    "DAWN DISH LIQ2.66L",
+    "130425  1×  15.99  15.99A",
+    "TPD-DAWN PLAT 2.66",
+    "156039  1x  3.00  3.00-A",
+    "KS ORGANIC SEAWEED",
+    "1269099  1x  14.99  14.99Z",
+    "KARA-AGE  CHICKEN",
+    "92116  1x  28.99  28.99Z",
+    "CAULI  BLOSSOM",
+    "113380  1×  6.99  6.99Z",
+    "PURPLE  BROCCOLINI",
+    "153778  1×  7.99  7.99Z",
+    "DJ&A  S/BERRY  100G",
+    "116152  1×  10.99  10.99A",
+    "￥TOTAL(INCL GST）  204.40",
+    "XXXXXXXXXXXX9862  SCANNED",
+    "Seq#:14596  APP#:021479",
+    "Shop Card  Resp:\"Approved",
+    "AMOUNT:$100.00",
+    "REMAINING BALANCE:$O.00",
+    "100.00",
+    "Shop Card",
+    "COMMONWEALTH BANK EFTPOS"
+   ]
+  },
+  {
    "photo": "r1-woolworths-au.jpg",
-   "ms": 369,
+   "ms": 347,
    "items": 1,
    "prices": 1,
    "weighed": "2/2",
@@ -928,7 +1130,7 @@
   },
   {
    "photo": "r3-italian.jpg",
-   "ms": 435,
+   "ms": 401,
    "items": 1,
    "prices": 1,
    "weighed": "0/1",
@@ -1017,7 +1219,7 @@
   },
   {
    "photo": "r4-polish.jpg",
-   "ms": 471,
+   "ms": 466,
    "items": 0.6666666666666666,
    "prices": 1,
    "weighed": "0/0",
@@ -1105,7 +1307,7 @@
   },
   {
    "photo": "woolworths-chadstone-2021.jpg",
-   "ms": 351,
+   "ms": 366,
    "items": 0.8571428571428571,
    "prices": 1,
    "weighed": "0/1",
@@ -1240,7 +1442,7 @@
   },
   {
    "photo": "woolworths-chadstone-2024.jpg",
-   "ms": 561,
+   "ms": 568,
    "items": 0.85,
    "prices": 0.9411764705882353,
    "weighed": "3/3",
@@ -1542,7 +1744,7 @@
   },
   {
    "photo": "woolworths-qv-salad.jpg",
-   "ms": 391,
+   "ms": 380,
    "items": 1,
    "prices": 1,
    "weighed": "0/0",
