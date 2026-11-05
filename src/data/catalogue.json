@@ -54705,82 +54705,104 @@
  },
  {
   "source": "themealdb:52900",
-  "title": "Madeira Cake",
-  "description": "A British sweet made with self-raising flour, lemon and mixed peel — serves 8, about an hour start to finish.",
-  "servings": 8,
+  "title": "Madeira cake",
+  "description": "A light but sturdy vanilla Madeira sponge, baked as four 8-inch layers. It is the base for sugarpasted layer cakes.",
+  "servings": 20,
   "cuisine": "British",
   "category": "Dessert",
   "image": "https://www.themealdb.com/images/media/meals/urtqut1511723591.jpg",
-  "prep_minutes": 10,
-  "cook_minutes": 55,
+  "prep_minutes": 25,
+  "cook_minutes": 25,
   "ingredients": [
    {
-    "name": "butter",
-    "quantity": 175,
+    "name": "cooking spray",
+    "quantity": null,
+    "unit": "",
+    "note": "for greasing the tins; butter works too"
+   },
+   {
+    "name": "self-raising flour",
+    "quantity": 150,
     "unit": "g",
     "note": ""
    },
    {
-    "name": "sugar",
-    "quantity": 175,
+    "name": "plain flour",
+    "quantity": 460,
+    "unit": "g",
+    "note": ""
+   },
+   {
+    "name": "butter",
+    "quantity": 610,
+    "unit": "g",
+    "note": "unsalted, soft"
+   },
+   {
+    "name": "caster sugar",
+    "quantity": 610,
     "unit": "g",
     "note": ""
    },
    {
     "name": "eggs",
-    "quantity": 3,
+    "quantity": 9,
     "unit": "",
-    "note": ""
-   },
-   {
-    "name": "self-raising flour",
-    "quantity": 250,
-    "unit": "g",
-    "note": ""
+    "note": "large, free-range"
    },
    {
     "name": "milk",
     "quantity": 3,
     "unit": "tbsp",
-    "note": ""
+    "note": "whole"
    },
    {
-    "name": "lemon",
+    "name": "vanilla extract",
     "quantity": 1,
-    "unit": "",
-    "note": "zested"
-   },
-   {
-    "name": "mixed peel",
-    "quantity": null,
-    "unit": "",
-    "note": "to glaze"
+    "unit": "tsp",
+    "note": ""
    }
   ],
   "steps": [
    {
-    "text": "Pre-heat the oven to 180C/350F/Gas 4. Grease an 18cm/7in round cake tin, line the base with greaseproof paper and grease the paper.",
+    "text": "Grease four 8-inch cake tins with oil spray or butter.",
     "minutes": null
    },
    {
-    "text": "Cream the butter and sugar together in a bowl until pale and fluffy. Beat in the eggs, one at a time, beating the mixture well between each one and adding a tablespoon of the flour with the last egg to prevent the mixture curdling.",
+    "text": "Line the base of each tin with a disc of greaseproof paper.",
     "minutes": null
    },
    {
-    "text": "Sift the flour and gently fold in, with enough milk to give a mixture that falls slowly from the spoon. Fold in the lemon zest.",
+    "text": "Mix the self-raising flour and plain flour together and set them aside.",
     "minutes": null
    },
    {
-    "text": "Spoon the mixture into the prepared tin and lightly level the top. Bake on the middle shelf of the oven for 30-40 minutes, or until golden-brown on top and a skewer inserted into the centre comes out clean.",
-    "minutes": 40
+    "text": "Beat the soft butter and caster sugar in a mixer for 5 to 6 minutes, until very pale and fluffy.",
+    "minutes": 5
    },
    {
-    "text": "Remove from the oven and set aside to cool in the tin for 10 minutes, then turn it out on to a wire rack and leave to cool completely.",
-    "minutes": 10
-   },
-   {
-    "text": "To serve, decorate the cake with the candied peel.",
+    "text": "Add the eggs two at a time, mixing well between each addition, until all 9 are in.",
     "minutes": null
+   },
+   {
+    "text": "Fold in the flours by hand, or on the lowest mixer speed, only until they are just incorporated.",
+    "minutes": null
+   },
+   {
+    "text": "Mix in the milk and the vanilla extract.",
+    "minutes": null
+   },
+   {
+    "text": "Add the batter to the four tins one scoop at a time, going round the tins until it is all used.",
+    "minutes": null
+   },
+   {
+    "text": "Level the tops of all four layers with a palette knife.",
+    "minutes": null
+   },
+   {
+    "text": "Bake at 170°C for 24 to 26 minutes, until golden and a skewer comes out clean.",
+    "minutes": 24
    }
   ]
  },
@@ -58297,32 +58319,26 @@
  },
  {
   "source": "themealdb:53377",
-  "title": "Napa Cabbage with Dried Shrimp",
-  "description": "A Chinese dish of dried shrimp, chinese cabbage and spring onion — serves 2, worth the couple of hours it takes.",
+  "title": "Napa cabbage with dried shrimp",
+  "description": "A quick stir-fry of napa cabbage with dried shrimp and garlic, cooked briefly in chicken stock until tender.",
   "servings": 2,
   "cuisine": "Chinese",
   "category": "Seafood",
   "image": "https://www.themealdb.com/images/media/meals/9nh4dl1766435484.jpg",
-  "prep_minutes": 15,
-  "cook_minutes": 115,
+  "prep_minutes": 25,
+  "cook_minutes": 10,
   "ingredients": [
    {
     "name": "dried shrimp",
-    "quantity": 2,
-    "unit": "tbsp",
-    "note": ""
+    "quantity": 30,
+    "unit": "g",
+    "note": "soaked, then drained"
    },
    {
-    "name": "water",
-    "quantity": 0.75,
-    "unit": "cup",
-    "note": ""
-   },
-   {
-    "name": "chinese cabbage",
-    "quantity": 1,
-    "unit": "",
-    "note": ""
+    "name": "garlic",
+    "quantity": 4,
+    "unit": "clove",
+    "note": "chopped"
    },
    {
     "name": "vegetable oil",
@@ -58331,107 +58347,69 @@
     "note": ""
    },
    {
-    "name": "spring onion",
-    "quantity": 4,
-    "unit": "",
-    "note": "chopped"
+    "name": "chinese cabbage",
+    "quantity": 500,
+    "unit": "g",
+    "note": "napa cabbage (wombok)"
    },
    {
-    "name": "ginger",
-    "quantity": 1,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "soy sauce",
-    "quantity": 1,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "water",
-    "quantity": 1,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "cornflour",
-    "quantity": 2,
-    "unit": "tsp",
-    "note": ""
+    "name": "chicken stock",
+    "quantity": 120,
+    "unit": "ml",
+    "note": "or water"
    },
    {
     "name": "salt",
-    "quantity": 1,
+    "quantity": 0.25,
     "unit": "tsp",
-    "note": ""
+    "note": "adjust to taste"
    },
    {
-    "name": "black pepper",
-    "quantity": 0.5,
+    "name": "white pepper",
+    "quantity": 0.25,
     "unit": "tsp",
     "note": ""
    }
   ],
   "steps": [
    {
-    "text": "Dried shrimp gives this Chinese dish a punch of salty umami flavor. You can find it at an Asian grocery store in the frozen or refrigerated section. Look for small-sized dried shrimp, about a 1/4-inch in size.",
+    "text": "Soak the dried shrimp in water for about 20 minutes.",
+    "minutes": 20
+   },
+   {
+    "text": "Meanwhile, chop the garlic.",
     "minutes": null
    },
    {
-    "text": "If you use medium or large dried shrimp, hydrate the shrimp with more water (1 cup for medium-sized shrimp, 1 1/4 cup for large) and for longer time (45 to 60 minutes), then chop it up into smaller 1/4-inch chunks.",
-    "minutes": 60
-   },
-   {
-    "text": "To make this recipe vegetarian, omit the dried shrimp and use four or five dried shiitake mushrooms, rehydrated, and sliced thin.",
+    "text": "Chop the napa cabbage into pieces.",
     "minutes": null
    },
    {
-    "text": "Place the dried shrimp in a small bowl and pour the boiling water over it. Cover with a small plate and let sit for 30 minutes so the shrimp can rehydrate. The shrimp will be lighter in color and plump up slightly.",
-    "minutes": 30
-   },
-   {
-    "text": "Meanwhile, split the napa cabbage in half lengthwise. Rinse the cabbage and shake it dry. Cut out the core of the cabbage and discard.",
+    "text": "Heat the oil in a pan over medium heat.",
     "minutes": null
    },
    {
-    "text": "Set out two large bowls. Cut the remaining cabbage into 1-inch pieces, putting the thicker white pieces at the bottom of the cabbage into one bowl and the top thinner leafy green pieces into the other bowl.",
+    "text": "Drain the shrimp, add them to the pan with the garlic and fry for 1 to 2 minutes, until slightly brown.",
+    "minutes": 1
+   },
+   {
+    "text": "Add the cabbage to the pan.",
     "minutes": null
    },
    {
-    "text": "Once the shrimp has rehydrated, drain it and discard the liquid.",
+    "text": "Pour in the chicken stock (water works if you have none).",
     "minutes": null
    },
    {
-    "text": "In a large wok or skillet over high heat add the peanut oil, swirling it around to coat the pan.",
+    "text": "Cover the pan and cook for 5 to 8 minutes, until the cabbage is tender.",
+    "minutes": 5
+   },
+   {
+    "text": "Add the salt and white pepper.",
     "minutes": null
    },
    {
-    "text": "Heat until the oil looks shimmering hot, then carefully add the scallions, ginger, and rehydrated shrimp, paying specially attention as the wet ingredients may cause the hot oil to splatter.",
-    "minutes": null
-   },
-   {
-    "text": "Toss with a spatula until the scallions are bright green and the entire mixture is fragrant, about 1 minute.",
-    "minutes": null
-   },
-   {
-    "text": "Add the thicker white part of the napa cabbage to the pan and lower the heat to medium high.",
-    "minutes": null
-   },
-   {
-    "text": "Continue to cook and stir for 3 to 4 minutes, or until the edges of the cabbage pieces start to look slightly translucent but the center of the cabbage pieces are still opaque white.",
-    "minutes": 4
-   },
-   {
-    "text": "Reduce the heat to medium low and add the leafy green pieces of cabbage into the pan. Cook until the leaves are wilted, about 2 minutes.",
-    "minutes": 2
-   },
-   {
-    "text": "In a small bowl, combine the soy sauce, cold water, and cornstarch, stirring to make a slurry. Then pour over the cabbage and continue to cook and stir until a sauce has thickened slightly to the consistency of whole milk.",
-    "minutes": null
-   },
-   {
-    "text": "Season the stir fry with salt and pepper, then taste and add more salt and pepper if you wish. The cabbage will be translucent and silky looking, with specks of dried shrimp all over.",
+    "text": "Taste and adjust the seasoning, because the dried shrimp can be quite salty.",
     "minutes": null
    }
   ]

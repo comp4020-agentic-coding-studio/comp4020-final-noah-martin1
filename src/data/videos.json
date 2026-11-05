@@ -542,12 +542,10 @@
   "transcribed": true
  },
  "themealdb:52858": {
-  "videoId": "tspdJ6hxqnc",
-  "title": "The Best New York Cheesecake Recipe | Emojoie Cuisine",
-  "channel": "Emojoie",
+  "videoId": null,
+  "checked": "2026-11-05",
   "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "reason": "Emojoie tspdJ6hxqnc (The Best New York Cheesecake Recipe) is the right dish but the video is music-only (local speech check found no narration) and its description gives ingredient amounts for an 18 cm cake with no method and no linked written recipe, so no step can be verified. The earlier replacement candidate, Preppy Kitchen tpsywnPNDsw ('EASY Cheesecake Recipe'), is a plain baked graham-crust cheesecake that is not presented as a New York cheesecake: its description has no amounts and only links a recipe page that refuses automated fetching, although its narration does give amounts. It was not adopted as a replacement."
  },
  "themealdb:52883": {
   "videoId": "vIG37JV393Y",
@@ -1211,7 +1209,7 @@
   "videoId": "Oqg_cO4s8ik",
   "title": "Bigos - Polish Hunter's Stew Recipe",
   "channel": "Food Wishes",
-  "checked": "2026-11-04",
+  "checked": "2026-11-05",
   "status": "verified",
   "transcribed": true
  },
@@ -1277,7 +1275,7 @@
   "videoId": "bvrUPtEs_Uk",
   "title": "Bolani with Potato Filling",
   "channel": "My Food Twist",
-  "checked": "2026-11-04",
+  "checked": "2026-11-05",
   "status": "verified",
   "transcribed": true
  },
@@ -1461,7 +1459,7 @@
   "videoId": "eIDgcvpAvf8",
   "title": "How to make Restaurant Style Cacik - Turkish Tzatziki",
   "channel": "Middle Eats",
-  "checked": "2026-11-04",
+  "checked": "2026-11-05",
   "status": "verified",
   "transcribed": true
  },
@@ -1475,7 +1473,7 @@
   "videoId": "n1fRCk-zTRM",
   "title": "Jamaican Callaloo and Saltfish Recipe | Traditional Recipe",
   "channel": "Cooking With Janiel",
-  "checked": "2026-11-04",
+  "checked": "2026-11-05",
   "status": "verified",
   "transcribed": true
  },
@@ -1575,7 +1573,7 @@
   "videoId": "3kSZ3h6l_Uk",
   "title": "How To Make Ćevapi (Skinless Sausages)",
   "channel": "Henrys HowTos",
-  "checked": "2026-11-04",
+  "checked": "2026-11-05",
   "status": "verified",
   "transcribed": true
  },
@@ -1647,7 +1645,7 @@
   "videoId": "8T56NEzLR3k",
   "title": "🇧🇧 Bajan Chefette Roti 🇧🇧 ⎜Copycat Recipe",
   "channel": "Everything Paulette",
-  "checked": "2026-11-04",
+  "checked": "2026-11-05",
   "status": "verified",
   "transcribed": true
  },
@@ -1677,7 +1675,7 @@
   "videoId": "Efw7ujc1gQ4",
   "title": "My Popular Chicken Enchilada Casserole // It will become your favorite ❤️❤️",
   "channel": "Rachel's Step by Step",
-  "checked": "2026-11-04",
+  "checked": "2026-11-05",
   "status": "verified",
   "transcribed": true
  },
@@ -1685,7 +1683,7 @@
   "videoId": "KV3Hp6loLUs",
   "title": "61g Protein Meal Prep For The Week | Chicken Fajita Mac & Cheese",
   "channel": "Chef Jack Ovens",
-  "checked": "2026-11-04",
+  "checked": "2026-11-05",
   "status": "verified",
   "transcribed": true
  },
@@ -1713,7 +1711,7 @@
   "videoId": "M0xfKeBmhiA",
   "title": "Chicken Lollipop & Restaurant Style Drums of Heaven | होटल जैसे चिकन लॉलीपॉप | Chef Sanjyot Keer",
   "channel": "Your Food Lab",
-  "checked": "2026-11-04",
+  "checked": "2026-11-05",
   "status": "verified",
   "transcribed": true
  },
@@ -1721,7 +1719,7 @@
   "videoId": "zVSGabEbDJ8",
   "title": "Restaurant Style Chicken Mandi Recipe by Food Fusion",
   "channel": "Food Fusion",
-  "checked": "2026-11-04",
+  "checked": "2026-11-05",
   "status": "verified",
   "transcribed": true
  },
@@ -1763,7 +1761,7 @@
  },
  "themealdb:53186": {
   "videoId": null,
-  "checked": "2026-11-04",
+  "checked": "2026-11-05",
   "status": "rejected",
   "reason": "Two searches (chicken with saffron, raisins and pine nuts, in English and via Spain on a Fork) found no video of this dish: results were Gulf kabsa, pilaf and other unrelated rice or chicken dishes, and the second search returned nothing. Transcripts are blocked so a possible unwritten video could not be checked."
  },
@@ -1883,7 +1881,7 @@
  },
  "themealdb:53101": {
   "videoId": null,
-  "checked": "2026-11-04",
+  "checked": "2026-11-05",
   "status": "rejected",
   "reason": "The video on record (Gordana's Kitchen 8TzqUo8PCLg) has subtitles disabled by the channel, so there is no transcript, and its description lists ingredients for a large 17x12 in sponge (and a chocolate-butter coating, 'bake at 375 F for 25-27 minutes') but no method for mixing, coating or rolling in coconut. The one replacement tried, The Cake Mistress lamingtons (fLK4JebABEg), links a recipe page that returned unrelated casino spam instead of a recipe, so it has no usable evidence either."
  },
@@ -1933,7 +1931,7 @@
  },
  "themealdb:53159": {
   "videoId": null,
-  "checked": "2026-11-04",
+  "checked": "2026-11-05",
   "status": "rejected",
   "reason": "No video of this dish with a verifiable recipe: the only one with a written recipe, Recipe30's Spanish omelette (GDryfdmWaO8, embeddable), cooks a different dish, a thick tortilla española of slowly oil-poached onion, potato and chorizo with thyme in 8 eggs, rested and flipped (serves 4, no cheese, no parsley), not the quick folded chorizo, potato and cheddar omelette for 2. Closer candidates have no usable recipe: Scrumdiddlyumptious qx0JrySSO4M (tortilla with chorizo and cheese, 12 potatoes and 12 eggs, ingredient list but no method), Delicious Adventures K2Ba5BWYXUU (chorizo omelette, no cheese, ingredient list but no method), Babee Daniel 9Lv0_Prtl-Y (no potato, no amounts). Transcripts blocked."
  },
@@ -2177,7 +2175,7 @@
   "videoId": "HVcLHMAy1ks",
   "title": "How to Make Crispy Fried Eggplant",
   "channel": "The Cooking Foodie",
-  "checked": "2026-11-04",
+  "checked": "2026-11-05",
   "status": "verified",
   "transcribed": true
  },
@@ -2305,7 +2303,7 @@
   "videoId": "6L_hbxqcUbA",
   "title": "Dulce de Leche Cheesecake",
   "channel": "GOYA Foods",
-  "checked": "2026-11-04",
+  "checked": "2026-11-05",
   "status": "verified",
   "transcribed": true
  },
@@ -2421,7 +2419,7 @@
   "videoId": "lQzOBhuEri0",
   "title": "Beef Empanadas",
   "channel": "RecipeTin Eats",
-  "checked": "2026-11-04",
+  "checked": "2026-11-05",
   "status": "verified",
   "transcribed": true
  },
@@ -2469,7 +2467,7 @@
   "videoId": "lQsdyE07njo",
   "title": "FAINÁ Clásica y con Cebolla de Verdeo (sin TACC)",
   "channel": "El Pastificio de Nicola",
-  "checked": "2026-11-04",
+  "checked": "2026-11-05",
   "status": "verified",
   "transcribed": true
  },
@@ -2499,7 +2497,7 @@
  },
  "themealdb:53092": {
   "videoId": null,
-  "checked": "2026-11-04",
+  "checked": "2026-11-05",
   "status": "rejected",
   "reason": "Unverifiable as this video's own recipe. Its only evidence is the description: a pasted third-party recipe (impersonal wording, a nutrition block, and a single link to relaxbuddy.com, now a parked domain for sale). The same ingredients and directions appear on recipe-aggregator sites (bonapetite.com, posted by 'Oscar'; they trace to an Allrecipes member recipe), and a different channel's video (Kina Shuford, HGaLOvz24v8) carries the identical ingredient list. Text pasted under unrelated videos says nothing about what this 67-second video shows, the channel (Vegan Food Recipes) credits no one, and the transcript is blocked. No other embeddable video of this exact olive-oil-only dish with a written recipe was found (the others add tomatoes or onion)."
  },
@@ -2531,7 +2529,7 @@
   "videoId": "JtABFzmN-UA",
   "title": "Firni Recipe (Afghan Custard) | My Afghan Kitchen",
   "channel": "MyAfghanKitchen",
-  "checked": "2026-11-04",
+  "checked": "2026-11-05",
   "status": "verified",
   "transcribed": true
  },
@@ -2621,7 +2619,7 @@
  },
  "themealdb:52996": {
   "videoId": null,
-  "checked": "2026-11-04",
+  "checked": "2026-11-05",
   "status": "rejected",
   "reason": "No verifiable video of this dish: the two candidates with written recipes cannot be used (Carlsbad Cravings gzHWTyBYijY playable_in_embed False; Cooking With Tammy FWieMMCx9mA playable_in_embed False and a different dish, a bacon-and-cheese casserole bake). Embeddable videos of the right dish do exist (Flavorful Eats With Joy qT6XNOL7dek, Shyanne Peters sR94TvwD6BE, Jill's Comfort Zone CtRDeobzbWo) but their descriptions give no ingredients, amounts or method and transcripts are blocked, so nothing in them can be verified; retry with a transcript when YouTube allows it."
  },
@@ -2663,7 +2661,7 @@
   "videoId": "420Cr63_dHo",
   "title": "Cream Cheese Danish Recipe with Berries",
   "channel": "Natashas Kitchen",
-  "checked": "2026-11-04",
+  "checked": "2026-11-05",
   "status": "verified",
   "transcribed": true
  },
@@ -2839,7 +2837,7 @@
   "videoId": "1BBpia_8870",
   "title": "Nova Scotia Vegetable \"Hodge Podge\"",
   "channel": "BillCooks!",
-  "checked": "2026-11-04",
+  "checked": "2026-11-05",
   "status": "verified",
   "transcribed": true
  },
@@ -2855,7 +2853,7 @@
   "videoId": "hbrK8FZJJAw",
   "title": "Honey Balsamic Chicken Is A Dinnertime Winner",
   "channel": "Scrumdiddlyumptious",
-  "checked": "2026-11-04",
+  "checked": "2026-11-05",
   "status": "verified",
   "transcribed": true
  },
@@ -2999,7 +2997,7 @@
   "videoId": "N270k22MPWk",
   "title": "Jamaican Festival Dumplings",
   "channel": "Racquel’s Caribbean Cuisine",
-  "checked": "2026-11-04",
+  "checked": "2026-11-05",
   "status": "verified",
   "transcribed": true
  },
@@ -3035,7 +3033,7 @@
   "videoId": "TpWfGFwP8xk",
   "title": "Jamaican Easter Bun, Spice Bun, Moist & Delicious.",
   "channel": "Racquel’s Caribbean Cuisine",
-  "checked": "2026-11-04",
+  "checked": "2026-11-05",
   "status": "verified",
   "transcribed": true
  },
@@ -3087,7 +3085,7 @@
  },
  "themealdb:53220": {
   "videoId": null,
-  "checked": "2026-11-04",
+  "checked": "2026-11-05",
   "status": "rejected",
   "reason": "Candidate lrcUixJEPK0 (Halal Chef) cannot be embedded; NfxGIj3H6xc (The White Plate) is a traditional chicken kabsa (spices, tomato, dried limes) with captions disabled and a description that lists ingredients but only chapter headings for the method. No verifiable video of this exact variant (chicken, rice, capsicum, mushroom, sweetcorn, carrot, raisins) was found, so the recipe is left unchanged."
  },
@@ -3142,12 +3140,10 @@
   "checked": "2026-10-20"
  },
  "themealdb:52974": {
-  "videoId": "u_OSIChzuL0",
-  "title": "Recipe Tunisian Lamb with Saffron (Keleya Zaara)",
-  "channel": "Kirstie Bevan",
+  "videoId": null,
+  "checked": "2026-11-05",
   "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "reason": "Kirstie Bevan u_OSIChzuL0 (Tunisian Lamb with Saffron, Keleya Zaara) is the right dish but the video is music-only (local speech check found no narration) and its description lists ingredients with amounts but no method and links no written recipe, so the steps cannot be verified. A search found no other Keleya Zaara video."
  },
  "themealdb:52813": {
   "videoId": null,
@@ -3209,7 +3205,7 @@
   "videoId": "pNHAHjVb7pc",
   "title": "How to Make Homemade Glazed Doughnuts",
   "channel": "America's Test Kitchen",
-  "checked": "2026-11-04",
+  "checked": "2026-11-05",
   "status": "verified",
   "transcribed": true
  },
@@ -3225,7 +3221,7 @@
   "videoId": "skAdl3Bf08E",
   "title": "How To Make Kumpir | Turkish Version Humble Baked Potato Recipe With A Special Cooking Technique!",
   "channel": "Refika's Kitchen",
-  "checked": "2026-11-04",
+  "checked": "2026-11-05",
   "status": "verified",
   "transcribed": true
  },
@@ -3293,7 +3289,7 @@
   "videoId": "mhAO4P5QHZA",
   "title": "Uzbek Pilaf, Fragrant and Flavorful One Pot Rice with Lamb",
   "channel": "Hungry Man Kitchen",
-  "checked": "2026-11-04",
+  "checked": "2026-11-05",
   "status": "verified",
   "transcribed": true
  },
@@ -3337,7 +3333,7 @@
  },
  "themealdb:52987": {
   "videoId": null,
-  "checked": "2026-11-04",
+  "checked": "2026-11-05",
   "status": "rejected",
   "reason": "Two searches (lasagna sandwiches with bacon, tomato and mozzarella) returned only grilled-cheese roundups, lasagne and white-sauce videos; no video of this dish (a toasted bacon, tomato and mozzarella sandwich with an oregano sour cream spread) was found."
  },
@@ -3403,9 +3399,9 @@
   "videoId": "-YDh4WEmK_E",
   "title": "The Best Madeira Cake Recipe | Cupcake Jemma",
   "channel": "CupcakeJemma",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-11-05",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53472": {
   "videoId": null,
@@ -3423,7 +3419,7 @@
   "videoId": "fdTDfK1Qqtg",
   "title": "Ma'amoul Date Cookies Ramazan Special Recipe by Food Fusion",
   "channel": "Food Fusion",
-  "checked": "2026-11-04",
+  "checked": "2026-11-05",
   "status": "verified",
   "transcribed": true
  },
@@ -3457,7 +3453,7 @@
   "videoId": "81Otv2657Ac",
   "title": "Grilling The Argentine Flank Steak Pizza (Matambre a La Pizza) 🇦🇷🍕",
   "channel": "Argentine Asado",
-  "checked": "2026-11-04",
+  "checked": "2026-11-05",
   "status": "verified",
   "transcribed": true
  },
@@ -3496,12 +3492,10 @@
   "transcribed": true
  },
  "themealdb:53048": {
-  "videoId": "pOJEmDBgtSk",
-  "title": "Mee Goreng Mamak Daging Ori Style Penang | Sedap Sungguh Baq Hang",
-  "channel": "Che Nom",
+  "videoId": null,
+  "checked": "2026-11-05",
   "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "reason": "Che Nom pOJEmDBgtSk is mee goreng mamak with boiled beef, from-scratch prawn fritters and a peanut-chilli paste. It is the right dish, but it can't make a usable recipe: the Malay narration and description give amounts only for the fritter batter and the paste, and none for the main noodle stir-fry ingredients (tofu, potato, beef, mustard greens, tomato, bean sprouts, fritters), with noodles only as '2 handfuls'. No written recipe page is linked, and the old catalogue recipe (prawns, no beef) differs from what the video cooks."
  },
  "themealdb:53086": {
   "videoId": "GSvFVBpqMKI",
@@ -3581,7 +3575,7 @@
  },
  "themealdb:53029": {
   "videoId": null,
-  "checked": "2026-11-04",
+  "checked": "2026-11-05",
   "status": "rejected",
   "reason": "Two candidates checked, neither verifiable: Anwar's Kitchen 0TqTZo0htbQ cooks molokhia with chicken and gives vague amounts (no chicken weight, no molokhia amount, 'bunch of few pies', no written recipe); Australian Beef & Lamb yIg8YMlbv-A is a lamb version whose description has an ingredient list but no method, its linked recipe page (bit.ly) failed with an expired SSL certificate, and its transcript could not be fetched (IpBlocked)."
  },
@@ -3619,7 +3613,7 @@
   "videoId": "FZPWOxr8mKc",
   "title": "Mutabbaq Recipe - Saudi Street Food Mutabbaq recipe to make delicious mutabbaq at home",
   "channel": "Asaan Recipes",
-  "checked": "2026-11-04",
+  "checked": "2026-11-05",
   "status": "verified",
   "transcribed": true
  },
@@ -3635,9 +3629,9 @@
   "videoId": "Fj0JALB4_5k",
   "title": "Napa Cabbage With Dried Shrimp Stir Fry",
   "channel": "Busy Daddy Cooks",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-11-05",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53347": {
   "videoId": "6WpzVZrOwIs",
@@ -3679,7 +3673,7 @@
   "videoId": "dGdYCCqGhUk",
   "title": "Norwegian Potato Lefse Recipe",
   "channel": "Scandinavian Cookbook",
-  "checked": "2026-11-04",
+  "checked": "2026-11-05",
   "status": "verified",
   "transcribed": true
  },
@@ -3699,7 +3693,7 @@
  },
  "themealdb:53501": {
   "videoId": null,
-  "checked": "2026-11-04",
+  "checked": "2026-11-05",
   "status": "rejected",
   "reason": "Two searches found no verifiable Num Pang video: Sandwiches of History (dTRngtyPu7g) has no recipe in its description and its transcript fetch was IpBlocked; K's Kitchen (hmRZ8wgpJvQ) lists ingredients without amounts and covers pate sandwiches, not chicken. Recipe left unchanged."
  },
@@ -3733,7 +3727,7 @@
   "videoId": "Z4HDhqCuJe4",
   "title": "How to Make OSSO BUCO like an Italian | The Ultimate OSSOBUCO Recipe",
   "channel": "Vincenzo's Plate",
-  "checked": "2026-11-04",
+  "checked": "2026-11-05",
   "status": "verified",
   "transcribed": true
  },
@@ -3805,7 +3799,7 @@
   "videoId": "dO93NKM6T5Q",
   "title": "Pastel de Choclo - Chilean Beef and Corn Casserole",
   "channel": "RecipeTin Eats",
-  "checked": "2026-11-04",
+  "checked": "2026-11-05",
   "status": "verified",
   "transcribed": true
  },
@@ -3891,7 +3885,7 @@
  },
  "themealdb:53039": {
   "videoId": null,
-  "checked": "2026-11-04",
+  "checked": "2026-11-05",
   "status": "rejected",
   "reason": "Two candidates checked, neither verifiable: Judy Ann's Kitchen GkQ5jl8Sg5s has a garbled, mostly [Music] auto-transcript with only a few marinade amounts and none for the chicken or slaw, and no written recipe in the description; Jamie Oliver tl5Jx0o5F_k (a different dish: griddled chicken with sweet potato fries and salsas) has no written recipe in the description and its transcript was blocked (IpBlocked). The top result Halal Chef 9e1GNh7qhac is not embeddable."
  },
@@ -4017,7 +4011,7 @@
   "videoId": "acbXJfr_qS0",
   "title": "Portuguese Fish Stew (Caldeirada de Peixe)",
   "channel": "Skinny Spatula",
-  "checked": "2026-11-04",
+  "checked": "2026-11-05",
   "status": "verified",
   "transcribed": true
  },
@@ -4137,7 +4131,7 @@
   "videoId": "hpapqEeb36k",
   "title": "Pumpkin Pie - You Suck at Cooking (episode 68)",
   "channel": "You Suck At Cooking",
-  "checked": "2026-11-04",
+  "checked": "2026-11-05",
   "status": "verified",
   "transcribed": true
  },
@@ -4163,7 +4157,7 @@
  },
  "themealdb:53383": {
   "videoId": null,
-  "checked": "2026-11-04",
+  "checked": "2026-11-05",
   "status": "rejected",
   "reason": "Searched for a ramen noodle bowl with a boiled egg. Just One Cookbook's ramen-egg video covers only the marinated egg, and the other results were different dishes. Of the two checked, Souped Up Recipes' Yang Chun Mian (9f5iUsFWqoo) is a plain scallion-and-lard noodle soup with no egg, and Break the Spice's spicy ramen (CltUZnoUDFM) has transcripts disabled and a description with ingredients but no method, so neither can be verified as this dish."
  },
@@ -4227,7 +4221,7 @@
   "videoId": "PLtgZQO0IBU",
   "title": "RIBOLLITA TOSCANA - RICETTA PERFETTA!💚🌿🥄",
   "channel": "Giallozafferano recipes",
-  "checked": "2026-11-04",
+  "checked": "2026-11-05",
   "status": "verified",
   "transcribed": true
  },
@@ -4247,7 +4241,7 @@
  },
  "themealdb:52942": {
   "videoId": null,
-  "checked": "2026-11-04",
+  "checked": "2026-11-05",
   "status": "rejected",
   "reason": "No verifiable video of this dish: TZHFgCAW4pA (Vegan Recipes, vegan paella) is embeddable and lists full amounts, but its description has no method and it cooks artichokes, red and yellow capsicum, peas and tomato, not roast fennel and aubergine, so it is a different paella; transcripts blocked. Searches turned up no roast fennel and aubergine paella video."
  },
@@ -4301,7 +4295,7 @@
   "videoId": "M9ukcPTuQQk",
   "title": "Ropa Vieja Recipe (Cuban Shredded Beef) | Easy & Flavorful",
   "channel": "Chili Pepper Madness",
-  "checked": "2026-11-04",
+  "checked": "2026-11-05",
   "status": "verified",
   "transcribed": true
  },
@@ -4437,13 +4431,13 @@
   "videoId": "02udm9FW9w8",
   "title": "Authentic Spanish Seafood Fideuà Recipe from Valencia",
   "channel": "Spain on a Fork",
-  "checked": "2026-11-04",
+  "checked": "2026-11-05",
   "status": "verified",
   "transcribed": true
  },
  "themealdb:53167": {
   "videoId": null,
-  "checked": "2026-11-04",
+  "checked": "2026-11-05",
   "status": "rejected",
   "reason": "Transcripts blocked; description has no method. The video on record (Island Vibe Cooking Dr8Nsod20yg) is a Haitian-style shrimp rice with creole and Old Bay seasoning, jasmine rice and butter (no chorizo, leek, fish stock or peas), and its description has an ingredient list with no method and no water amount beyond 'double the water'; its transcript could not be fetched. One search for a better video of the chorizo, leek and fish-stock seafood rice found no matching candidate with a written recipe."
  },
@@ -4518,12 +4512,10 @@
   "transcribed": true
  },
  "themealdb:53375": {
-  "videoId": "RmbTaEqabN4",
-  "title": "Snow Peas and Shrimp! Super Easy Recipe!",
-  "channel": "Pheatz Kitchen",
+  "videoId": null,
+  "checked": "2026-11-05",
   "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "reason": "Pheatz Kitchen RmbTaEqabN4 (Snow Peas and Shrimp) is the right dish but a different recipe (300 g shrimp, 100 g snow peas, oyster sauce, onion; no sherry or stock). The video is music-only (local speech check found no narration) and its description lists ingredients (several without amounts) but no method and no linked recipe, so the steps cannot be verified."
  },
  "themealdb:53374": {
   "videoId": "j54Af9gBmzo",
@@ -4627,7 +4619,7 @@
   "videoId": "YGiiWcMJF_Y",
   "title": "Carters' Christmas | Dutch Pea Soup (Snert)",
   "channel": "Simon James Carter",
-  "checked": "2026-11-04",
+  "checked": "2026-11-05",
   "status": "verified",
   "transcribed": true
  },
@@ -4647,9 +4639,9 @@
  },
  "themealdb:53181": {
   "videoId": null,
-  "status": "unavailable",
-  "reason": "TheMealDB lists no video for this meal",
-  "checked": "2026-10-20"
+  "checked": "2026-11-05",
+  "status": "rejected",
+  "reason": "Pete's Pans dIK6d-A61AI (Alubias con Chorizo) is white beans with chorizo, cured pork belly and a ham bone in a tomato sofrito, with no chicken, potato, spinach or pinto beans, so it is a different dish from this recipe. Its narration also gives no amounts for the beans, chorizo or pork, and the description has only product links."
  },
  "themealdb:53164": {
   "videoId": "fKqSOn5NCrk",
@@ -4661,19 +4653,19 @@
  },
  "themealdb:53155": {
   "videoId": null,
-  "checked": "2026-11-04",
+  "checked": "2026-11-05",
   "status": "rejected",
   "reason": "No candidate found: searches for a Spanish chicken pie with a potato topping, tomatoes, peppers and olives returned only different dishes (The Spanish Radish yWtLsojo-9E is a puff-pastry chicken and leek pie with Serrano ham; RecipeTin Eats KBd1K7RoVJ0 is a duchess potato chicken and mushroom pie; Backyard Chef V5BWStRs0OY is a one-tray chicken and potato bake) and none was checked as a match."
  },
  "themealdb:53163": {
   "videoId": null,
-  "checked": "2026-11-04",
+  "checked": "2026-11-05",
   "status": "rejected",
   "reason": "No video of this dish found: the only Spain on a Fork result, 8wjcluXZ9C4 (Easy to Make Homemade Fig Bread), has a written recipe but is a baked fig, almond, walnut and flour loaf, not rolled fig and almond balls in sesame seeds, so it is a different dish. Other results were chocolate-covered figs and cakes."
  },
  "themealdb:53183": {
   "videoId": null,
-  "checked": "2026-11-04",
+  "checked": "2026-11-05",
   "status": "rejected",
   "reason": "No video of this dish found: searches for Spanish meatballs with clams, chorizo and squid returned only other seafood dishes (RecipeTin Eats W03VoDcQ0dk Spanish seafood stew, Spain on a Fork FFAWo5VS56c seafood stew, paellas, clams with chorizo), none with meatballs, so none was checked further."
  },
@@ -4703,7 +4695,7 @@
  },
  "themealdb:53175": {
   "videoId": null,
-  "checked": "2026-11-04",
+  "checked": "2026-11-05",
   "status": "rejected",
   "reason": "Only candidate D35ByGgKNaY (Yummy123, Spanish Slow Roast Lamb, embeddable) is a different dish (lamb on potatoes with wine and garlic, no butter beans, peppers or olives) and its description lists ingredients with no amounts for lamb, olive oil or rosemary and gives no method; transcripts are blocked, so it cannot be verified. Other results were non-Spanish or bean-less lamb recipes."
  },
@@ -4715,7 +4707,7 @@
  },
  "themealdb:53142": {
   "videoId": null,
-  "checked": "2026-11-04",
+  "checked": "2026-11-05",
   "status": "rejected",
   "reason": "No verifiable video of this dish: the only close result t82zQKP_mvQ (NEW TECH GUY) is a gadget video with a quick curry-spiced omelette in a grilled tortilla wrap with bacon, mushrooms and cheese (a different dish) and no amounts or method in its description. Banglar Rannaghor RR5JDE5z8MQ (masala Spanish omelette) has no written recipe in its description; transcripts are blocked."
  },
@@ -4737,7 +4729,7 @@
   "videoId": "6yumsoxThMI",
   "title": "Spinach & Ricotta Cannelloni",
   "channel": "RecipeTin Eats",
-  "checked": "2026-11-04",
+  "checked": "2026-11-05",
   "status": "verified",
   "transcribed": true
  },
@@ -4859,7 +4851,7 @@
   "videoId": "YMxWsxXkW7s",
   "title": "Stuffed Grape Leaves/ Vegetarian Armenian Best Stuffed grape leaves Dolma ملفوف ورق العنب دولمة",
   "channel": "Nora’s International Cooking",
-  "checked": "2026-11-04",
+  "checked": "2026-11-05",
   "status": "verified",
   "transcribed": true
  },
@@ -4875,7 +4867,7 @@
   "videoId": "SxVKYZi0p3g",
   "title": "Classic Canadian Sugar Pie",
   "channel": "Sassy Kate and Wren",
-  "checked": "2026-11-04",
+  "checked": "2026-11-05",
   "status": "verified",
   "transcribed": true
  },
@@ -4981,7 +4973,7 @@
  },
  "themealdb:53447": {
   "videoId": null,
-  "checked": "2026-11-04",
+  "checked": "2026-11-05",
   "status": "rejected",
   "reason": "Only two candidates checked. 74TLHzb5aQQ (German Recipes) has a transcript but gives no weight for the beef and no amounts for the vegetables or horseradish sauce ('a couple of liters', 'one and four onions'), and no written recipe is linked. hy45iCblTno (DW Food) is a Vienna restaurant feature with no recipe amounts. Neither can support a full recipe, so the recipe is left unchanged."
  },
@@ -5019,7 +5011,7 @@
   "videoId": "PdGMnAt2sRY",
   "title": "BEST EGYPTIAN FALAFEL EVER",
   "channel": "Middle Eats",
-  "checked": "2026-11-04",
+  "checked": "2026-11-05",
   "status": "verified",
   "transcribed": true
  },
@@ -5041,7 +5033,7 @@
   "videoId": "sinI-D-vhKU",
   "title": "MOUTH-WATERING Albanian casserole with tender lamb meat | TAVE KOSI Recipe",
   "channel": "United Cuisines",
-  "checked": "2026-11-04",
+  "checked": "2026-11-05",
   "status": "verified",
   "transcribed": true
  },
@@ -5233,7 +5225,7 @@
   "videoId": "rlgWknBomDQ",
   "title": "Torrijas Recipe - Spanish Cinnamon Toast",
   "channel": "Spain on a Fork",
-  "checked": "2026-11-04",
+  "checked": "2026-11-05",
   "status": "verified",
   "transcribed": true
  },
@@ -5284,12 +5276,10 @@
   "reason": "The replacement (Roaming taste, 'How to bake British Treacle Tart', about 600 views, a small personal channel adapted from Saveur) was not accepted as a reputable source: its written recipe is internally inconsistent on filling amounts (cream '18 grams / 3 tablespoons', about 18 g versus 45 g; golden syrup '454 grams / 1 cup', which differ), gives no temperature for the final filling bake, and the original Sorted video's recipe page is a 404 with no recipe in its description. No verifiable video of this dish remains."
  },
  "themealdb:53416": {
-  "videoId": "Ro-S7zlFvN4",
-  "title": "Andorra - Trinxat…Around the World - Episode 4 #shorts",
-  "channel": "Food with George",
+  "videoId": null,
+  "checked": "2026-11-05",
   "status": "rejected",
-  "reason": "video title doesn't match the dish",
-  "checked": "2026-10-20"
+  "reason": "Eat World hMu7_RqhXGM (Potato, Cabbage And Bacon Pancake, Trinxat) is the right dish and its description lists amounts, but captions are disabled, the audio has no narration (local speech check found none) and the description's method is only a chapter list ('Cooking veggies', 'Mashing veggies', 'Shaping Trinxat'), so the steps cannot be verified. The other candidate, Spanish Homemade in Barcelona q53BnSsCWu0, has no recipe in its description."
  },
  "themealdb:52975": {
   "videoId": "C5n1fN8TGHs",
@@ -5549,7 +5539,7 @@
   "videoId": "lOmM8ks2Uj8",
   "title": "وصفة البيض اليمنية بالجبن السائل (لحسة) فطور سهل ولذيذ! How to make the perfect Yemeni egg breakfast",
   "channel": "مطبخنا اليمني Our Yemeni Kitchen",
-  "checked": "2026-11-04",
+  "checked": "2026-11-05",
   "status": "verified",
   "transcribed": true
  },
@@ -5557,7 +5547,7 @@
   "videoId": "nUvIJqhq0KQ",
   "title": "How To Make Yorkshire Puddings | Jamie Oliver",
   "channel": "Jamie Oliver",
-  "checked": "2026-11-04",
+  "checked": "2026-11-05",
   "status": "verified",
   "transcribed": true
  },
