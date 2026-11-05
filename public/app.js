@@ -149,8 +149,9 @@ if (grid && searchForm instanceof HTMLFormElement) {
       grid.innerHTML = markup;
       skeletons.forEach((s) => grid.append(s));
       revealImages(grid);
-      const n = Number(res.headers.get("x-result-count") ?? 0);
-      if (count) count.textContent = `${n} recipe${n === 1 ? "" : "s"}`;
+      // the server's own wording: "392 recipes · showing 200"
+      // (encoded: a header can't carry the "·")
+      if (count) count.textContent = decodeURIComponent(res.headers.get("x-result-count") ?? "");
       const q = new URL(url, location.href).searchParams.get("q");
       if (heading && q) heading.textContent = `Results for “${q}”`;
       if (push) history.pushState({}, "", url);

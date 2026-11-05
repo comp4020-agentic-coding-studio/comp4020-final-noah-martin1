@@ -8,6 +8,7 @@ import { checkImage, loadImage, MAX_IMAGE_BYTES, ownedImage, readMultipart, save
 import { estimate, perServing, priceReference } from "../nutrition.ts";
 import {
   COURSES,
+  countVisibleRecipes,
   cuisines,
   deleteRecipe,
   getRecipe,
@@ -181,9 +182,9 @@ function chip(label: string, href: string, on: boolean, dot?: string): Html {
   return html`<a class="rx-chip" href="${href}" aria-pressed="${on ? "true" : "false"}" data-filter>${dot ? html`<span class="dot" style="--chip: ${dot}"></span>` : ""}${label}</a>`;
 }
 
-function results(ctx: Ctx, s: BrowseState): { recipes: Recipe[]; grid: Html } {
+function results(ctx: Ctx, s: BrowseState): { recipes: Recipe[]; total: number; grid: Html } {
   const viewer = ctx.user?.id ?? null;
-  const recipes = listVisibleRecipes(viewer, {
+  const filters = {
     authorId: s.mine ? viewer! : undefined,
     query: s.q,
     tag: s.tag === "quick" ? undefined : s.tag,
@@ -191,8 +192,10 @@ function results(ctx: Ctx, s: BrowseState): { recipes: Recipe[]; grid: Html } {
     course: s.course,
     cuisine: s.cuisine,
     video: s.video,
-    order: s.mine && !s.q ? "newest" : "featured",
-  });
+  };
+  const recipes = listVisibleRecipes(viewer, { ...filters, order: s.mine && !s.q ? "newest" : "featured" });
+  // the list stops at 200; the count is every match
+  const total = recipes.length < 200 ? recipes.length : countVisibleRecipes(viewer, filters);
   const lines = ingredientsFor(recipes.map((r) => r.id));
   const live = liveCooksFor(recipes.map((r) => r.title));
   const tiles = recipes.map((r, i) => {
@@ -206,12 +209,17 @@ function results(ctx: Ctx, s: BrowseState): { recipes: Recipe[]; grid: Html } {
         <p>${s.mine && !s.q && !s.tag ? "Write down something you cook often — it gets nutrition and cost worked out automatically." : "Try an ingredient you have, like “eggs” or “chickpeas”, or clear a filter."}</p>
         ${s.mine ? html`<a class="button" href="/recipes/new">${icon("plus", 16)} Write a recipe</a>` : html`<a class="button button-ghost" href="/recipes">Clear filters</a>`}
       </div>`;
-  return { recipes, grid };
+  return { recipes, total, grid };
+}
+
+// "392 recipes", and when the grid stops short, how many it shows
+export function resultCount(total: number, shown: number): string {
+  return `${total} recipe${total === 1 ? "" : "s"}${shown < total ? ` · showing ${shown}` : ""}`;
 }
 
 function browsePage(ctx: Ctx): Html {
   const s = browseState(ctx);
-  const { recipes, grid } = results(ctx, s);
+  const { recipes, total, grid } = results(ctx, s);
   const filtered = !!(s.q || s.tag || s.course || s.cuisine || s.video);
   const topCuisines = cuisines().slice(0, 9);
   const heading = s.mine
@@ -269,7 +277,7 @@ function browsePage(ctx: Ctx): Html {
 
     <div class="rx-meta-row">
       <h2 data-results-heading>${heading}</h2>
-      <span class="muted" data-results-count>${recipes.length} recipe${recipes.length === 1 ? "" : "s"}${filtered ? "" : " · photos from TheMealDB"}</span>
+      <span class="muted" data-results-count>${resultCount(total, recipes.length)}${filtered ? "" : " · photos from TheMealDB"}</span>
     </div>
     <div class="rx-grid" data-recipe-grid aria-live="polite">
       ${grid}
@@ -781,10 +789,10 @@ export const routes: Route[] = [
       // live search swaps just the grid, without a page load
       if (ctx.url.searchParams.get("partial") === "1") {
         const s = browseState(ctx);
-        const { recipes, grid } = results(ctx, s);
+        const { recipes, total, grid } = results(ctx, s);
         return {
           status: 200,
-          headers: { "content-type": "text/html; charset=utf-8", "x-result-count": String(recipes.length) },
+          headers: { "content-type": "text/html; charset=utf-8", "x-result-count": encodeURIComponent(resultCount(total, recipes.length)) },
           body: grid.value,
         };
       }

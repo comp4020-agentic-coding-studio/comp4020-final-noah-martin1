@@ -29,8 +29,18 @@ describe("recipes", () => {
   it("search matches ingredients as well as titles", async () => {
     const res = await new Client().get("/recipes?q=chickpeas&partial=1");
     expect(res.status).toBe(200);
-    expect(Number(res.headers.get("x-result-count"))).toBeGreaterThan(0);
+    expect(parseInt(decodeURIComponent(res.headers.get("x-result-count") ?? ""), 10)).toBeGreaterThan(0);
     expect(await res.text()).toMatch(/Falafel|Fajitas|Koshari/);
+  });
+
+  it("the result count is every match, not just the 200 the grid shows", async () => {
+    const res = await new Client().get("/recipes?video=1&partial=1");
+    const count = decodeURIComponent(res.headers.get("x-result-count") ?? "");
+    const tiles = (await res.text()).match(/class="rx-tile"/g)?.length ?? 0;
+    const total = parseInt(count, 10);
+    expect(total).toBeGreaterThanOrEqual(tiles);
+    // more matches than the grid holds: the count says how many it shows
+    if (total > tiles) expect(count).toContain(`showing ${tiles}`);
   });
 
   it("a private recipe never shows up in someone else's browse or search", async () => {

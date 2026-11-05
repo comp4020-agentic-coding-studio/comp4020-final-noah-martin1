@@ -169,6 +169,35 @@ export function cuisines(): string[] {
 // Recipes the viewer may see, newest first. Visibility comes from
 // visibility.ts; the filters here only narrow what is already allowed.
 export function listVisibleRecipes(viewerId: number | null, opts: ListOptions = {}): Recipe[] {
+  const { where, params } = visibleWhere(viewerId, opts);
+  // "featured": photographed recipes first, then a stable shuffle so the
+  // browse page doesn't read as an alphabetical list
+  let order =
+    opts.order === "featured"
+      ? "(r.image_url IS NULL), ((r.id * 2654435761) % 1000), r.id"
+      : "r.created_at DESC, r.id DESC";
+  // a search ranks title matches first, then photographed recipes
+  const orderParams: string[] = [];
+  if (opts.query && opts.order !== "newest") {
+    order = `(r.title NOT LIKE ?), (r.image_url IS NULL), r.title`;
+    orderParams.push(`%${opts.query}%`);
+  }
+  return all<Record<string, unknown>>(
+    `${SELECT} WHERE ${where.join(" AND ")} ORDER BY ${order} LIMIT ?`,
+    ...params,
+    ...orderParams,
+    opts.limit ?? 200,
+  ).map(hydrate);
+}
+
+// How many recipes the same filters match, past any list limit: the browse
+// page shows at most 200 but says how many there are.
+export function countVisibleRecipes(viewerId: number | null, opts: ListOptions = {}): number {
+  const { where, params } = visibleWhere(viewerId, opts);
+  return one<{ n: number }>(`SELECT COUNT(*) AS n FROM recipes r WHERE ${where.join(" AND ")}`, ...params)!.n;
+}
+
+function visibleWhere(viewerId: number | null, opts: ListOptions): { where: string[]; params: (number | string)[] } {
   const vis = visibleRecipeSql(viewerId);
   const where = [vis.where];
   const params: (number | string)[] = [...vis.params];
@@ -177,7 +206,8 @@ export function listVisibleRecipes(viewerId: number | null, opts: ListOptions = 
     params.push(opts.authorId);
   }
   if (opts.authorIds !== undefined) {
-    if (!opts.authorIds.length) return [];
+    // nobody to list: match nothing
+    if (!opts.authorIds.length) return { where: ["0"], params: [] };
     where.push(`r.author_id IN (${opts.authorIds.map(() => "?").join(", ")})`);
     params.push(...opts.authorIds);
   }
@@ -216,26 +246,7 @@ export function listVisibleRecipes(viewerId: number | null, opts: ListOptions = 
     );
     params.push(opts.maxMinutes);
   }
-  params.push(opts.limit ?? 200);
-  // "featured": photographed recipes first, then a stable shuffle so the
-  // browse page doesn't read as an alphabetical list
-  let order =
-    opts.order === "featured"
-      ? "(r.image_url IS NULL), ((r.id * 2654435761) % 1000), r.id"
-      : "r.created_at DESC, r.id DESC";
-  // a search ranks title matches first, then photographed recipes
-  const orderParams: string[] = [];
-  if (opts.query && opts.order !== "newest") {
-    order = `(r.title NOT LIKE ?), (r.image_url IS NULL), r.title`;
-    orderParams.push(`%${opts.query}%`);
-  }
-  const limit = params.pop()!;
-  return all<Record<string, unknown>>(
-    `${SELECT} WHERE ${where.join(" AND ")} ORDER BY ${order} LIMIT ?`,
-    ...params,
-    ...orderParams,
-    limit,
-  ).map(hydrate);
+  return { where, params };
 }
 
 export function parseRecipeForm(form: URLSearchParams): { input: RecipeInput; problems: string[] } {
