@@ -1597,17 +1597,15 @@
   "videoId": "UphcO5hC9rU",
   "title": "How to make Cheese Borek- Easy Cheese Borek recipe with phyllo dough- Crispy!",
   "channel": "Nora’s International Cooking",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-11-05",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53442": {
-  "videoId": "_RC2m-VGdP0",
-  "title": "Mozzarella Cheese Sticks With Cheetos Crunchy #cooking  #food #recipe",
-  "channel": "Cuisine Share",
+  "videoId": null,
+  "checked": "2026-11-05",
   "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "reason": "The current video (_RC2m-VGdP0, Cuisine Share) is a 12-second wordless clip of mozzarella sticks coated in crushed Cheetos: no narration, no amounts and no method, and a different dish from this dough-wrapped fried cheese stick. One search for an Aruban dough-wrapped cheese stick returned only breaded mozzarella-stick videos (Epicurious, Brian Lagerstrom, Tasty and others), none of this dish, so there is no video to verify against."
  },
  "themealdb:52898": {
   "videoId": "i_zemP3yBKw",
@@ -1626,12 +1624,12 @@
   "transcribed": true
  },
  "themealdb:52846": {
-  "videoId": "bXKWu4GojNI",
-  "title": "Chicken & mushroom hot-pot",
-  "channel": "Foodiful",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "videoId": "Uarle_Sp2xc",
+  "title": "Chicken & Mushroom Hotpot| Chicken Recipe",
+  "channel": "Moms Favourite Recipes",
+  "checked": "2026-11-05",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:52796": {
   "videoId": "qCIbq8HywpQ",
@@ -1650,12 +1648,12 @@
   "transcribed": true
  },
  "themealdb:52934": {
-  "videoId": "emfm6TwsVhg",
-  "title": "\"Poulet Basquaise\". Traditional French Chicken Recipe.Take. 2 #SRP",
-  "channel": "Scott Rea",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "videoId": "u6lqCt_-pck",
+  "title": "A one-pan crisp-skin chicken Basquaise recipe with peppers and chilies!",
+  "channel": "Recipe30",
+  "checked": "2026-11-05",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:52956": {
   "videoId": "sNRC2gL-XOw",
@@ -1797,9 +1795,9 @@
   "videoId": "MNrNHToyvtI",
   "title": "Ginger and Chili Lamb Chops",
   "channel": "Vijaya Selvaraju",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "checked": "2026-11-05",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53365": {
   "videoId": "1FBQAGZ570g",
@@ -1832,12 +1830,10 @@
   "checked": "2026-10-20"
  },
  "themealdb:53063": {
-  "videoId": "0PXbbL1QdaA",
-  "title": "Chivito Uruguayo. Clásico y Popular by Hugo Soca.",
-  "channel": "Día de Cocina",
+  "videoId": null,
+  "checked": "2026-11-05",
   "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "reason": "Current video (0PXbbL1QdaA, Día de Cocina, Hugo Soca's chivito) is the right dish but its transcript and description give amounts for only some items (4 small steaks, 2 tomatoes, 2 slices of ham): no amounts for the bread, bacon, mozzarella, sandwich cheese, egg, lettuce or mayonnaise. Replacements checked have no usable amounts either: Yamandu's Kitchen (kFwBafPE63o, homemade-bread version) lists only 3 steaks and 100 g mozzarella; Ardito's Kitchen (iyWrVdwXSBs) states none and its description only points to the blog's home page for amounts (no recipe page saved), and Guru'Guay (VTcRZANmFKM) states none and its linked page has no recipe."
  },
  "themealdb:52856": {
   "videoId": "2BVEt7JSsPc",
@@ -1992,12 +1988,12 @@
   "transcribed": true
  },
  "themealdb:53462": {
-  "videoId": "LZ6ra2I0Edo",
-  "title": "Cinnamon roll cookies! Full recipe on my Instagram @Tabiibakes #baking #cookies #cinnamonroll",
-  "channel": "Tabi",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "videoId": "ZVJ9inKoWWM",
+  "title": "How to Make Cinnamon Roll Cookies",
+  "channel": "The Stay At Home Chef",
+  "checked": "2026-11-05",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:52840": {
   "videoId": null,
@@ -2108,12 +2104,12 @@
   "transcribed": true
  },
  "themealdb:53350": {
-  "videoId": "Bxjz-q2hioA",
-  "title": "How to make Jamaican Corned Beef & Cabbage! | Deddy's Kitchen",
-  "channel": "Deddy's Kitchen",
-  "status": "rejected",
-  "checked": "2026-10-20",
-  "reason": "not yet checked against the recipe; only its title matched"
+  "videoId": "w5JIiV5Czeg",
+  "title": "Quick Caribbean Corned Beef With Cabbage Recipe.",
+  "channel": "caribbeanpot",
+  "checked": "2026-11-05",
+  "status": "verified",
+  "transcribed": true
  },
  "themealdb:53096": {
   "videoId": "SPr_UnCrYPg",

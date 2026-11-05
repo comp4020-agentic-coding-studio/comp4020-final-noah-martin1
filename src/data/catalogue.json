@@ -26193,83 +26193,115 @@
  {
   "source": "themealdb:53290",
   "title": "Cheese Borek",
-  "description": "An Algerian side of cayenne pepper, gouda and swiss cheese — makes 12, on the table in about 45 minutes.",
+  "description": "A crisp tray of layered phyllo with a mozzarella, Mexican cheese and feta filling flecked with parsley and spring onion, brushed with a warm milk, butter and egg mix and baked until golden.",
   "servings": 12,
   "cuisine": "Algerian",
   "category": "Side",
-  "image": "https://www.themealdb.com/images/media/meals/oal8x31764119345.jpg",
-  "prep_minutes": 15,
-  "cook_minutes": 30,
+  "image": "https://i.ytimg.com/vi/UphcO5hC9rU/hq1.jpg",
+  "prep_minutes": 30,
+  "cook_minutes": 35,
   "ingredients": [
    {
-    "name": "eggs",
+    "name": "mozzarella",
     "quantity": 1,
-    "unit": "",
-    "note": "beaten"
+    "unit": "cup",
+    "note": "for the filling"
+   },
+   {
+    "name": "shredded mexican cheese",
+    "quantity": 1,
+    "unit": "cup",
+    "note": "for the filling"
+   },
+   {
+    "name": "feta",
+    "quantity": 1,
+    "unit": "cup",
+    "note": "for the filling; the video uses akawi cheese and says feta works too"
    },
    {
     "name": "parsley",
     "quantity": 1,
     "unit": "bunch",
-    "note": ""
+    "note": "1 cup chopped (about 60 g), for the filling"
    },
    {
-    "name": "garlic",
-    "quantity": 2,
-    "unit": "clove",
-    "note": "minced"
-   },
-   {
-    "name": "cayenne pepper",
-    "quantity": 0.75,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "gouda",
-    "quantity": 170,
+    "name": "spring onion",
+    "quantity": 50,
     "unit": "g",
-    "note": ""
+    "note": "1/2 cup chopped green onions, about 50 g, for the filling"
    },
    {
-    "name": "swiss cheese",
-    "quantity": 170,
-    "unit": "g",
-    "note": ""
+    "name": "black pepper",
+    "quantity": 1,
+    "unit": "pinch",
+    "note": "for the filling"
    },
    {
-    "name": "filo pastry",
-    "quantity": 12,
-    "unit": "",
-    "note": ""
+    "name": "salt",
+    "quantity": 1,
+    "unit": "pinch",
+    "note": "optional, skip if the cheeses are salty"
+   },
+   {
+    "name": "chilli flakes",
+    "quantity": 1,
+    "unit": "pinch",
+    "note": "optional"
+   },
+   {
+    "name": "milk",
+    "quantity": 1,
+    "unit": "cup",
+    "note": "warm, for the milk and egg mix"
    },
    {
     "name": "butter",
-    "quantity": 1.5,
+    "quantity": 0.5,
     "unit": "cup",
-    "note": ""
+    "note": "melted and warm, for the milk and egg mix and the tray"
+   },
+   {
+    "name": "eggs",
+    "quantity": 2,
+    "unit": "",
+    "note": "at room temperature, for the milk and egg mix"
+   },
+   {
+    "name": "filo pastry",
+    "quantity": 1,
+    "unit": "pack",
+    "note": "thawed overnight in the fridge"
    }
   ],
   "steps": [
    {
-    "text": "In a medium bowl, whisk together egg, parsley, garlic and crushed red pepper. Mix in Gouda and Emmentaler.",
+    "text": "Mix the mozzarella, Mexican cheese, feta, chopped parsley and spring onion with a pinch of black pepper, and the optional salt and chilli flakes. Set the filling aside, or chill it.",
     "minutes": null
    },
    {
-    "text": "One sheet at a time, place phyllo dough on a flat surface and brush with about 1 tablespoon butter. Cut lengthwise into 4 strips. Place a rounded teaspoon of the egg mixture at one end of each strip.",
+    "text": "Whisk the warm milk, melted butter and eggs together and set aside. Keep the eggs at room temperature so the mix stays warm.",
     "minutes": null
    },
    {
-    "text": "Fold corner of strip over the filling, forming a triangular fold. Continue folding the length of the strip in triangular folds to form a small stuffed triangle. Repeat with remaining phyllo dough.",
+    "text": "Thaw the phyllo in the fridge overnight, then leave it out for an hour before using. Butter the baking tray and keep the sheets covered as you work so they don't dry out.",
     "minutes": null
    },
    {
-    "text": "Preheat oven to 180°C (350°F) (175 degrees C). Lightly butter a large baking sheet.",
+    "text": "Lay the phyllo one sheet at a time, spooning some of the milk mix between sheets. After 4 sheets, spread on half the cheese filling, keeping it about 1/2 inch (1 cm) from the edges.",
     "minutes": null
    },
    {
-    "text": "Arrange stuffed phyllo triangles in a single layer on the prepared baking sheet. Bake in the preheated oven 30 minutes, or until lightly browned. Serve warm.",
-    "minutes": 30
+    "text": "Add 5 more sheets with the milk mix, then the rest of the cheese, and repeat with more phyllo sheets on top to finish.",
+    "minutes": null
+   },
+   {
+    "text": "Cut into pieces, lifting the knife between cuts so it doesn't drag the pastry. Press the edges closed toward the inside and pour any leftover milk mix over the top.",
+    "minutes": null
+   },
+   {
+    "text": "Bake in a preheated oven at 180°C (350°F) for about 35 minutes until golden, turning the tray around after 15 minutes so it browns evenly.",
+    "minutes": 35
    }
   ]
  },
@@ -26685,113 +26717,129 @@
  {
   "source": "themealdb:52846",
   "title": "Chicken & mushroom Hotpot",
-  "description": "A British stew of chicken, mushrooms and sweetcorn — serves 4, about an hour start to finish.",
+  "description": "Chicken thigh pieces, shallots, carrots, celery and mushrooms in a thyme gravy under overlapping sliced potatoes, baked until the edges turn golden and finished with parsley.",
   "servings": 4,
   "cuisine": "British",
   "category": "Chicken",
   "image": "https://www.themealdb.com/images/media/meals/uuuspp1511297945.jpg",
-  "prep_minutes": 15,
-  "cook_minutes": 50,
+  "prep_minutes": 20,
+  "cook_minutes": 75,
   "ingredients": [
    {
-    "name": "butter",
-    "quantity": 50,
+    "name": "chicken thigh",
+    "quantity": 515,
     "unit": "g",
-    "note": ""
+    "note": "fillets, each cut into 3 pieces"
    },
    {
-    "name": "onion",
-    "quantity": 1,
+    "name": "shallot",
+    "quantity": 2,
     "unit": "",
-    "note": "chopped"
+    "note": "chopped; the recipe says 2–3"
+   },
+   {
+    "name": "carrot",
+    "quantity": 250,
+    "unit": "g",
+    "note": "sliced"
+   },
+   {
+    "name": "celery",
+    "quantity": 1,
+    "unit": "stick",
+    "note": "sliced"
    },
    {
     "name": "mushrooms",
-    "quantity": 100,
+    "quantity": 150,
     "unit": "g",
-    "note": ""
+    "note": "halved"
    },
    {
-    "name": "plain flour",
-    "quantity": 40,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "stock cube",
+    "name": "thyme",
     "quantity": 1,
-    "unit": "",
-    "note": ""
+    "unit": "tbsp",
+    "note": "fresh, chopped"
    },
    {
-    "name": "nutmeg",
-    "quantity": 1,
-    "unit": "pinch",
-    "note": ""
-   },
-   {
-    "name": "mustard powder",
-    "quantity": 1,
-    "unit": "pinch",
-    "note": ""
-   },
-   {
-    "name": "chicken",
-    "quantity": 250,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "sweetcorn",
+    "name": "gravy granules",
     "quantity": 2,
-    "unit": "handful",
+    "unit": "tbsp",
+    "note": "level, reduced-salt"
+   },
+   {
+    "name": "tomato paste",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "level; the UK 'tomato purée' is concentrated tomato paste"
+   },
+   {
+    "name": "worcestershire sauce",
+    "quantity": 2,
+    "unit": "tsp",
     "note": ""
    },
    {
     "name": "potato",
-    "quantity": 2,
-    "unit": "",
-    "note": "large"
+    "quantity": 500,
+    "unit": "g",
+    "note": "peeled weight, cut into even slices"
    },
    {
     "name": "butter",
     "quantity": 1,
-    "unit": "knob",
-    "note": ""
+    "unit": "tsp",
+    "note": "level, for brushing the potatoes"
+   },
+   {
+    "name": "olive oil",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "for brushing the potatoes"
+   },
+   {
+    "name": "parsley",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "fresh flat-leaf, chopped, to serve"
    }
   ],
   "steps": [
    {
-    "text": "Heat oven to 200C/180C fan/gas 6. Put the butter in a medium-size saucepan and place over a medium heat. Add the onion and leave to cook for 5 mins, stirring occasionally. Add the mushrooms to the saucepan with the onions.",
-    "minutes": 5
-   },
-   {
-    "text": "Once the onion and mushrooms are almost cooked, stir in the flour – this will make a thick paste called a roux. If you are using a stock cube, crumble the cube into the roux now and stir well.",
+    "text": "Preheat the oven to 190°C (170°C fan).",
     "minutes": null
    },
    {
-    "text": "Put the roux over a low heat and stir continuously for 2 mins – this will cook the flour and stop the sauce from having a floury taste.",
-    "minutes": 2
-   },
-   {
-    "text": "Take the roux off the heat. Slowly add the fresh stock, if using, or pour in 500ml water if you’ve used a stock cube, stirring all the time. Once all the liquid has been added, season with pepper, a pinch of nutmeg and mustard powder.",
+    "text": "Cut each chicken thigh into 3 pieces and put them in a casserole dish with the shallots, carrots, celery, mushrooms and thyme.",
     "minutes": null
    },
    {
-    "text": "Put the saucepan back onto a medium heat and slowly bring it to the boil, stirring all the time. Once the sauce has thickened, place on a very low heat. Add the cooked chicken and vegetables to the sauce and stir well.",
+    "text": "Dissolve the gravy granules in 450 ml freshly boiled water, then stir in the tomato paste and Worcestershire sauce.",
     "minutes": null
    },
    {
-    "text": "Grease a medium-size ovenproof pie dish with a little butter and pour in the chicken and mushroom filling.",
+    "text": "Pour the gravy into the casserole so it reaches the top of the meat and vegetables, adding more water if needed.",
     "minutes": null
    },
    {
-    "text": "Carefully lay the potatoes on top of the hot-pot filling, overlapping them slightly, almost like a pie top.",
+    "text": "Cut the potatoes into even slices and lay them on top, overlapping them evenly.",
     "minutes": null
    },
    {
-    "text": "Brush the potatoes with a little melted butter and cook in the oven for about 35 mins. The hot-pot is ready once the potatoes are cooked and golden brown.",
-    "minutes": 35
+    "text": "Cover with a lid or foil and bake for 50 minutes.",
+    "minutes": 50
+   },
+   {
+    "text": "Mix the butter and olive oil and brush it over the potatoes.",
+    "minutes": null
+   },
+   {
+    "text": "Return to the oven uncovered for 20–30 minutes, until the edges of the potatoes turn golden.",
+    "minutes": 20
+   },
+   {
+    "text": "Scatter the chopped parsley on top to serve.",
+    "minutes": null
    }
   ]
  },
@@ -27172,29 +27220,53 @@
  {
   "source": "themealdb:52934",
   "title": "Chicken Basquaise",
-  "description": "A French dish of chicken, chorizo and red onion — serves 8, worth the couple of hours it takes.",
-  "servings": 8,
+  "description": "Floured chicken pieces browned in a pot, then baked skin-up in a sauce of red onion, peppers, garlic, canned tomato, white wine and stock, served over rice pilaf or couscous.",
+  "servings": 4,
   "cuisine": "French",
   "category": "Chicken",
-  "image": "https://www.themealdb.com/images/media/meals/wruvqv1511880994.jpg",
-  "prep_minutes": 25,
-  "cook_minutes": 75,
+  "image": "https://recipe30.com/wp-content/uploads/2022/07/Poulet-Basquaise.jpg",
+  "prep_minutes": 20,
+  "cook_minutes": 40,
   "ingredients": [
    {
-    "name": "chicken",
-    "quantity": 1500,
-    "unit": "g",
-    "note": ""
+    "name": "plain flour",
+    "quantity": 1,
+    "unit": "tbsp",
+    "note": "for coating the chicken"
    },
    {
-    "name": "butter",
-    "quantity": 25,
-    "unit": "g",
-    "note": ""
+    "name": "cayenne pepper",
+    "quantity": 0.5,
+    "unit": "tsp",
+    "note": "or piment d'Espelette, for coating the chicken"
+   },
+   {
+    "name": "salt",
+    "quantity": null,
+    "unit": "",
+    "note": "to taste, in the flour coating and the sauce"
+   },
+   {
+    "name": "black pepper",
+    "quantity": null,
+    "unit": "",
+    "note": "to taste, in the flour coating and the sauce"
+   },
+   {
+    "name": "chicken",
+    "quantity": 1,
+    "unit": "",
+    "note": "large whole chicken, cut into 8 pieces"
    },
    {
     "name": "olive oil",
-    "quantity": 6,
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": "plus a little more if needed for the vegetables"
+   },
+   {
+    "name": "butter",
+    "quantity": 1,
     "unit": "tbsp",
     "note": ""
    },
@@ -27202,127 +27274,97 @@
     "name": "red onion",
     "quantity": 2,
     "unit": "",
-    "note": "sliced"
-   },
-   {
-    "name": "capsicum",
-    "quantity": 3,
-    "unit": "",
-    "note": "large"
-   },
-   {
-    "name": "chorizo",
-    "quantity": 130,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "sun-dried tomatoes",
-    "quantity": 8,
-    "unit": "",
-    "note": ""
+    "note": "thinly sliced"
    },
    {
     "name": "garlic",
-    "quantity": 6,
+    "quantity": 3,
     "unit": "clove",
-    "note": "sliced"
+    "note": "minced"
    },
    {
-    "name": "basmati rice",
-    "quantity": 300,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "tomato puree",
-    "quantity": null,
+    "name": "capsicum",
+    "quantity": 2,
     "unit": "",
-    "note": "a drizzle"
+    "note": "red and yellow, sliced"
    },
    {
-    "name": "paprika",
-    "quantity": 0.5,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "bay leaf",
-    "quantity": 4,
-    "unit": "",
-    "note": ""
-   },
-   {
-    "name": "thyme",
+    "name": "white wine",
     "quantity": 1,
-    "unit": "handful",
+    "unit": "cup",
     "note": ""
    },
    {
     "name": "chicken stock",
-    "quantity": 350,
-    "unit": "ml",
-    "note": ""
+    "quantity": 1,
+    "unit": "cup",
+    "note": "or make your own"
    },
    {
-    "name": "dry white wine",
-    "quantity": 180,
+    "name": "canned tomatoes",
+    "quantity": 400,
     "unit": "g",
+    "note": "peeled"
+   },
+   {
+    "name": "bay leaf",
+    "quantity": 1,
+    "unit": "leaf",
     "note": ""
    },
    {
-    "name": "lemon",
-    "quantity": 2,
-    "unit": "",
-    "note": ""
+    "name": "parsley",
+    "quantity": 3,
+    "unit": "sprig",
+    "note": "flat-leaf, finely chopped"
    },
    {
-    "name": "black olives",
-    "quantity": 100,
-    "unit": "g",
-    "note": ""
-   },
-   {
-    "name": "salt",
+    "name": "rice",
     "quantity": null,
     "unit": "",
-    "note": "to serve"
-   },
-   {
-    "name": "black pepper",
-    "quantity": null,
-    "unit": "",
-    "note": "to serve"
+    "note": "rice pilaf, to serve (optional)"
    }
   ],
   "steps": [
    {
-    "text": "Preheat the oven to 180°C/Gas mark 4. Have the chicken joints ready to cook. Heat the butter and 3 tbsp olive oil in a flameproof casserole or large frying pan.",
+    "text": "Mix the flour, piment d'Espelette (or cayenne), salt and pepper. Coat the chicken pieces well in it so all the mixture is used.",
     "minutes": null
    },
    {
-    "text": "Brown the chicken pieces in batches on both sides, seasoning them with salt and pepper as you go. Don't crowd the pan - fry the chicken in small batches, removing the pieces to kitchen paper as they are done.",
+    "text": "Heat the olive oil in a large heavy pot over medium-high heat, then add the butter and let it foam.",
     "minutes": null
    },
    {
-    "text": "Add a little more olive oil to the casserole and fry the onions over a medium heat for 10 minutes, stirring frequently, until softened but not browned. Add the rest of the oil, then the peppers and cook for another 5 minutes.",
-    "minutes": 10
-   },
-   {
-    "text": "Add the chorizo, sun-dried tomatoes and garlic and cook for 2-3 minutes. Add the rice, stirring to ensure it is well coated in the oil. Stir in the tomato paste, paprika, bay leaves and chopped thyme. Pour in the stock and wine.",
-    "minutes": 3
-   },
-   {
-    "text": "When the liquid starts to bubble, turn the heat down to a gentle simmer. Press the rice down into the liquid if it isn't already submerged and place the chicken on top. Add the lemon wedges and olives around the chicken.",
+    "text": "Brown the chicken skin-side down, flip, and cook the other side only 30 seconds. Set the chicken aside on a plate.",
     "minutes": null
    },
    {
-    "text": "Cover and cook in the oven for 50 minutes. The rice should be cooked but still have some bite, and the chicken should have juices that run clear when pierced in the thickest part with a knife.",
-    "minutes": 50
+    "text": "In the same pot over medium heat, adding a little more oil if needed, cook the sliced onion, garlic and sliced peppers for about 6 minutes.",
+    "minutes": 6
    },
    {
-    "text": "If not, cook for another 5 minutes and check again.",
-    "minutes": 5
+    "text": "Deglaze with the white wine and reduce until almost dry.",
+    "minutes": null
+   },
+   {
+    "text": "Add the chicken stock, canned tomatoes and bay leaf, season with salt and pepper, and bring to a simmer.",
+    "minutes": null
+   },
+   {
+    "text": "Nestle the chicken and its juices into the liquid, leaving the skin exposed so it crisps.",
+    "minutes": null
+   },
+   {
+    "text": "Bake at 180°C for 20–25 minutes.",
+    "minutes": 20
+   },
+   {
+    "text": "Lift the chicken out onto warmed plates.",
+    "minutes": null
+   },
+   {
+    "text": "Taste the sauce for seasoning, stir in the chopped parsley (or sprinkle it on top), then pour the sauce and stewed peppers around the chicken, ideally over rice pilaf or couscous.",
+    "minutes": null
    }
   ]
  },
@@ -29866,65 +29908,85 @@
  {
   "source": "themealdb:53265",
   "title": "Chilli ginger lamb chops",
-  "description": "A Turkish dish of lamb chops, chilli powder and ground cumin — serves 4, ready in under half an hour.",
-  "servings": 4,
-  "cuisine": "Turkish",
+  "description": "Lamb chops rubbed with a fresh ginger and green chilli paste, black pepper, salt and lime juice, marinated briefly and pan-fried hot until charred and juicy.",
+  "servings": 3,
+  "cuisine": "Indian",
   "category": "Lamb",
   "image": "https://www.themealdb.com/images/media/meals/8xuvhj1763794991.jpg",
-  "prep_minutes": 10,
+  "prep_minutes": 25,
   "cook_minutes": 5,
   "ingredients": [
-   {
-    "name": "garlic",
-    "quantity": 4,
-    "unit": "clove",
-    "note": "crushed"
-   },
    {
     "name": "ginger",
     "quantity": 1,
     "unit": "tbsp",
-    "note": ""
+    "note": "fresh, finely grated"
    },
    {
-    "name": "lemon juice",
-    "quantity": 1,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "olive oil",
-    "quantity": 1,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "chilli powder",
-    "quantity": 0.5,
-    "unit": "tsp",
-    "note": ""
-   },
-   {
-    "name": "ground cumin",
-    "quantity": 1,
-    "unit": "tsp",
-    "note": ""
+    "name": "green chilli",
+    "quantity": 3,
+    "unit": "",
+    "note": "Thai chillies, finely minced"
    },
    {
     "name": "lamb chops",
-    "quantity": 8,
+    "quantity": 6,
     "unit": "",
     "note": ""
+   },
+   {
+    "name": "salt",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": ""
+   },
+   {
+    "name": "black pepper",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": ""
+   },
+   {
+    "name": "lime",
+    "quantity": 0.5,
+    "unit": "",
+    "note": "juice only"
+   },
+   {
+    "name": "vegetable oil",
+    "quantity": 4,
+    "unit": "tbsp",
+    "note": "canola or vegetable, for frying"
    }
   ],
   "steps": [
    {
-    "text": "Put the garlic in a bowl with the ginger, lemon juice, oil, spices and seasoning. Blitz with a hand blender until smooth, then use to coat the lamb chops on both sides. Leave to marinate in the fridge for a couple of hours or overnight.",
+    "text": "Finely mince the green chillies, add the grated ginger on top and chop them together into a paste.",
     "minutes": null
    },
    {
-    "text": "Heat a barbecue until hot. Barbecue the chops over the coals for 3 mins on each side until cooked but still pink and juicy in the centre.",
-    "minutes": 3
+    "text": "Season the lamb chops with salt and black pepper.",
+    "minutes": null
+   },
+   {
+    "text": "Add the ginger-chilli paste and lime juice and massage it into the meat so every part is covered.",
+    "minutes": null
+   },
+   {
+    "text": "Leave the chops to marinate for about 15 minutes.",
+    "minutes": 15
+   },
+   {
+    "text": "Heat the oil in a large frying pan over medium-high heat until very hot.",
+    "minutes": null
+   },
+   {
+    "text": "Add the chops spread out, without crowding the pan, and cook for 2 1/2 minutes on each side, until charred and caramelised.",
+    "minutes": 5
+   },
+   {
+    "text": "Rest the chops for about 5 minutes so the juices settle, then serve.",
+    "minutes": 5
    }
   ]
  },
@@ -32675,92 +32737,152 @@
  {
   "source": "themealdb:53462",
   "title": "Cinnamon Roll Cookies",
-  "description": "A Belgian sweet made with cinnamon — makes 12, on the table in about 45 minutes.",
-  "servings": 12,
-  "cuisine": "Belgian",
+  "description": "Sugar-cookie dough with cream cheese, rolled around a cinnamon brown-sugar butter, chilled, sliced and baked, then drizzled with a cream cheese glaze.",
+  "servings": 24,
+  "cuisine": "American",
   "category": "Dessert",
   "image": "https://www.themealdb.com/images/media/meals/txce0y1782494894.jpg",
-  "prep_minutes": 10,
-  "cook_minutes": 35,
+  "prep_minutes": 150,
+  "cook_minutes": 10,
   "ingredients": [
    {
-    "name": "plain flour",
-    "quantity": 250,
-    "unit": "g",
-    "note": ""
-   },
-   {
     "name": "butter",
-    "quantity": 180,
-    "unit": "g",
-    "note": ""
+    "quantity": 1.625,
+    "unit": "cup",
+    "note": "salted, softened: 1 cup in the dough, 1/2 cup in the filling, 2 tbsp in the glaze"
    },
    {
     "name": "sugar",
-    "quantity": 85,
-    "unit": "g",
-    "note": ""
+    "quantity": 1.25,
+    "unit": "cup",
+    "note": "granulated, for the dough"
+   },
+   {
+    "name": "cream cheese",
+    "quantity": 6,
+    "unit": "tbsp",
+    "note": "softened: 1/4 cup in the dough, 2 tbsp in the glaze"
+   },
+   {
+    "name": "corn syrup",
+    "quantity": 2,
+    "unit": "tbsp",
+    "note": "optional; keeps the cookies soft, the video says it can be skipped"
+   },
+   {
+    "name": "vanilla extract",
+    "quantity": 1.5,
+    "unit": "tsp",
+    "note": "1 tsp in the dough, 1/2 tsp in the glaze"
+   },
+   {
+    "name": "almond extract",
+    "quantity": 0.25,
+    "unit": "tsp",
+    "note": "for the dough"
    },
    {
     "name": "eggs",
     "quantity": 1,
     "unit": "",
-    "note": "medium"
+    "note": "large, for the dough"
+   },
+   {
+    "name": "plain flour",
+    "quantity": 3,
+    "unit": "cup",
+    "note": "for the dough, plus a little for the bench"
+   },
+   {
+    "name": "baking powder",
+    "quantity": 1,
+    "unit": "tsp",
+    "note": "for the dough"
    },
    {
     "name": "salt",
-    "quantity": 1,
-    "unit": "pinch",
-    "note": ""
+    "quantity": 0.75,
+    "unit": "tsp",
+    "note": "for the dough"
    },
    {
-    "name": "cinnamon",
-    "quantity": 2,
+    "name": "bicarbonate of soda",
+    "quantity": 0.25,
     "unit": "tsp",
-    "note": ""
+    "note": "for the dough"
    },
    {
     "name": "brown sugar",
-    "quantity": 30,
-    "unit": "g",
-    "note": ""
+    "quantity": 1,
+    "unit": "cup",
+    "note": "for the filling"
+   },
+   {
+    "name": "ground cinnamon",
+    "quantity": 2,
+    "unit": "tsp",
+    "note": "for the filling"
+   },
+   {
+    "name": "icing sugar",
+    "quantity": 1,
+    "unit": "cup",
+    "note": "for the glaze"
+   },
+   {
+    "name": "milk",
+    "quantity": 1.5,
+    "unit": "tbsp",
+    "note": "for the glaze"
    }
   ],
   "steps": [
    {
-    "text": "In a large bowl, combine the butter and caster sugar until creamy. Add the egg and a pinch of salt.",
+    "text": "Beat 1 cup butter, 1 1/4 cups sugar and 1/4 cup cream cheese in a stand mixer until smooth and creamy, 1 1/2 to 2 minutes. Mix in the egg, corn syrup, 1 tsp vanilla and the almond extract for about 30 seconds.",
     "minutes": null
    },
    {
-    "text": "Stir into a buttery mixture. Add the sifted flour.",
+    "text": "Add the flour, baking powder, salt and bicarbonate of soda and mix into a dough, scraping the bowl so it all comes together.",
     "minutes": null
    },
    {
-    "text": "Whisk well. You should end up with a smooth dough. Cover it with a piece of plastic wrap and put the dough in the fridge for 15 minutes to chill and set.",
-    "minutes": 15
+    "text": "Divide the dough in two, wrap each piece in plastic wrap and chill for 1 hour.",
+    "minutes": 60
    },
    {
-    "text": "In the meantime combine the cassonade (or brown sugar) and the cinnamon.",
+    "text": "For the filling, beat 1/2 cup butter with the brown sugar and cinnamon for about 2 minutes into a spreadable paste.",
     "minutes": null
    },
    {
-    "text": "Transfer the dough onto a floured surface and knead it for a minute. Add extra flour if necessary. Roll the dough out gently into a nice rectangle. It should be about ⅕-inch (5 mm) thick. Sprinkle with the sugary cinnamon mixture.",
+    "text": "On a lightly floured bench, roll one dough ball into a rectangle about 20 cm wide and 30–38 cm long (8 x 12–15 in), just longer than a sheet of paper.",
     "minutes": null
    },
    {
-    "text": "Carefully start rolling the dough up. If it is too sticky, put it in the fridge again for a couple of minutes. Wrap it up tightly in plastic wrap.",
+    "text": "Spread half the filling over it, leaving a bare strip along the far long edge so the roll can seal itself. Roll it up tightly from the filled long edge into a log and wrap it in plastic wrap. Repeat with the second piece of dough.",
     "minutes": null
    },
    {
-    "text": "Put it in the fridge for 30 minutes to chill and set. After that, remove the cling film and cut the dough roll into even slices.",
-    "minutes": 30
+    "text": "Chill both logs for 1 hour.",
+    "minutes": 60
    },
    {
-    "text": "Place the slices on a baking paper lined baking tray. Bake the cookies in a preheated oven at 356°F (180°C) for 14 to 16 minutes.",
-    "minutes": 16
+    "text": "Preheat the oven to 190°C (375°F) and line a baking tray with baking paper.",
+    "minutes": null
    },
    {
-    "text": "Let the baked cinnamon roll cookies cool down fully before eating or wrapping them up.",
+    "text": "Trim the ends off each log and slice it into cookies about 2.5 cm (1 in) thick, 12 per log. Place them on the tray.",
+    "minutes": null
+   },
+   {
+    "text": "Bake for about 10 minutes, then leave on the tray 2–3 minutes before moving to a rack to cool completely.",
+    "minutes": 10
+   },
+   {
+    "text": "For the glaze, whip 2 tbsp butter and 2 tbsp cream cheese for about 1 minute until fluffy, then mix in 1/2 tsp vanilla and slowly 1 cup icing sugar. Thin with 1 1/2 tbsp milk.",
+    "minutes": null
+   },
+   {
+    "text": "Drizzle the glaze over the cooled cookies.",
     "minutes": null
    }
   ]
@@ -34595,98 +34717,102 @@
  },
  {
   "source": "themealdb:53350",
-  "title": "Corned Beef and Cabbage – Jamaican Style",
-  "description": "A Jamaican dish of corned beef, cabbage and capsicum — serves 2, on the table in about 45 minutes.",
-  "servings": 2,
-  "cuisine": "Jamaican",
+  "title": "Corned beef and cabbage – Caribbean style",
+  "description": "Onion, garlic, scallion and thyme sweated in olive oil, then shredded cabbage and a can of corned beef stirred through with a little scotch bonnet for a ten-minute pan dish.",
+  "servings": 3,
+  "cuisine": "Caribbean",
   "category": "Beef",
   "image": "https://www.themealdb.com/images/media/meals/kdz63q1764793442.jpg",
-  "prep_minutes": 15,
-  "cook_minutes": 15,
+  "prep_minutes": 10,
+  "cook_minutes": 10,
   "ingredients": [
    {
     "name": "olive oil",
-    "quantity": 1,
-    "unit": "tbsp",
-    "note": ""
-   },
-   {
-    "name": "cabbage",
-    "quantity": 0.5,
+    "quantity": null,
     "unit": "",
-    "note": ""
-   },
-   {
-    "name": "capsicum",
-    "quantity": 1,
-    "unit": "",
-    "note": "chopped"
+    "note": "a little, for frying; vegetable oil also works"
    },
    {
     "name": "onion",
-    "quantity": 1,
+    "quantity": 0.5,
     "unit": "",
-    "note": "chopped"
+    "note": "sliced"
    },
    {
     "name": "garlic",
     "quantity": 2,
     "unit": "clove",
-    "note": "minced"
-   },
-   {
-    "name": "corned beef",
-    "quantity": 335,
-    "unit": "g",
     "note": ""
    },
    {
-    "name": "tomato",
-    "quantity": 2,
+    "name": "seasoning pepper",
+    "quantity": 1,
     "unit": "",
-    "note": "chopped"
+    "note": "pimento pepper, mild, chopped; optional"
+   },
+   {
+    "name": "spring onion",
+    "quantity": 1,
+    "unit": "",
+    "note": "scallion, chopped"
    },
    {
     "name": "thyme",
-    "quantity": 2,
-    "unit": "sprig",
-    "note": ""
+    "quantity": null,
+    "unit": "",
+    "note": "a little fresh, broken up; optional"
    },
    {
-    "name": "tomato ketchup",
-    "quantity": 1,
-    "unit": "tbsp",
-    "note": ""
+    "name": "cabbage",
+    "quantity": 2,
+    "unit": "cup",
+    "note": "chopped, more or less shredded"
    },
    {
     "name": "salt",
     "quantity": null,
     "unit": "",
-    "note": "to taste"
+    "note": "a little, to taste; the corned beef is already salty"
    },
    {
     "name": "black pepper",
     "quantity": null,
     "unit": "",
     "note": "to taste"
+   },
+   {
+    "name": "scotch bonnet",
+    "quantity": 0.25,
+    "unit": "",
+    "note": "sliced, seeds removed; optional"
+   },
+   {
+    "name": "corned beef",
+    "quantity": 1,
+    "unit": "can",
+    "note": "good-quality canned corned beef"
    }
   ],
   "steps": [
    {
-    "text": "Heat olive oil in a skillet or Dutch pot over medium-high heat. Add onion and green pepper and sauté for about 3-5 minutes. Add garlic and stir for about 1 minute.",
-    "minutes": 5
-   },
-   {
-    "text": "Add shredded cabbage and stir. Cook for about about 3-5 minutes, stirring often until softened.",
-    "minutes": 5
-   },
-   {
-    "text": "Add corned beef, Roma tomatoes, and thyme and stir. Add ketchup and scotch bonnet pepper sauce and stir. Reduce heat and cook on medium for about 3-5 minutes, until the corned beef is heated through. Remove from heat.",
-    "minutes": 5
-   },
-   {
-    "text": "Serve with white rice, bread, or on its own.",
+    "text": "Heat a pan over medium-high heat and add a little olive oil.",
     "minutes": null
+   },
+   {
+    "text": "Add the sliced onion, garlic, seasoning pepper, chopped scallion and a little thyme. Turn the heat to low and sweat for about 3 minutes.",
+    "minutes": 3
+   },
+   {
+    "text": "Stir in the chopped cabbage and turn the heat up to medium-low. Leave the pan uncovered so the cabbage wilts but keeps a slight crunch.",
+    "minutes": null
+   },
+   {
+    "text": "After about a minute, season with a little salt and black pepper (go light, the corned beef is salty) and add the sliced scotch bonnet. Cook 3–4 minutes more.",
+    "minutes": 3
+   },
+   {
+    "text": "Add the corned beef, break it up and toss everything together until heated through, about 4 minutes, then turn off the heat.",
+    "minutes": 4
    }
   ]
  },
