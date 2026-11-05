@@ -3090,6 +3090,23 @@ fieldset.bare.inline {
   gap: 30px 20px;
 }
 
+/* below the recipe grid: a link to the next page of recipes */
+.rx-more {
+  display: flex;
+  justify-content: center;
+  margin: 28px 0 8px;
+}
+
+.rx-more .button[aria-busy="true"] {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+/* where the link lands without the script: clear of the floating header */
+.rx-tile[id^="more-"] {
+  scroll-margin-top: 120px;
+}
+
 .rx-tile {
   position: relative;
   display: flex;
@@ -3309,6 +3326,12 @@ fieldset.bare.inline {
 }
 
 [data-recipe-grid][aria-busy="true"] .rx-tile:not(.rx-skeleton) {
+  display: none;
+}
+
+/* the loading outlines take no room unless results are loading: they sat
+   blank under every list */
+[data-recipe-grid]:not([aria-busy="true"]) .rx-skeleton {
   display: none;
 }
 

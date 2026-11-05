@@ -72,10 +72,10 @@ export function amount(quantity: number | null, unit: string): string {
 
 // A photo tile, IMDb-poster style: image, a couple of glass badges, then the
 // title and quick facts beneath.
-export function recipeTile(r: Recipe, opts: { i?: number; live?: number; costCents?: number; kcal?: number } = {}): Html {
+export function recipeTile(r: Recipe, opts: { i?: number; live?: number; costCents?: number; kcal?: number; id?: string } = {}): Html {
   const minutes = totalMinutes(r);
   const [fallback] = tone(r.title);
-  return html`<a class="rx-tile" href="/recipes/${r.id}" style="--i: ${Math.min(opts.i ?? 0, 24)}">
+  return html`<a class="rx-tile" href="/recipes/${r.id}"${opts.id ? html` id="${opts.id}"` : ""} style="--i: ${Math.min(opts.i ?? 0, 24)}">
     <div class="rx-photo">
       ${r.image_url
         ? sized(r.image_url, "medium") === r.image_url
@@ -149,7 +149,11 @@ interface BrowseState {
   cuisine: string;
   video: boolean;
   mine: boolean;
+  // how many pages of PAGE recipes to show (Show more adds one)
+  pages: number;
 }
+
+const PAGE = 200;
 
 function browseState(ctx: Ctx): BrowseState {
   const p = ctx.url.searchParams;
@@ -162,6 +166,7 @@ function browseState(ctx: Ctx): BrowseState {
     cuisine: (p.get("cuisine") ?? "").slice(0, 40),
     video: p.get("video") === "1",
     mine: p.get("tab") === "mine" && !!ctx.user,
+    pages: Math.min(Math.max(Number.parseInt(p.get("pages") ?? "1", 10) || 1, 1), 20),
   };
 }
 
@@ -174,6 +179,7 @@ function hrefWith(s: BrowseState, change: Partial<BrowseState>): string {
   if (next.tag) p.set("tag", next.tag);
   if (next.cuisine) p.set("cuisine", next.cuisine);
   if (next.video) p.set("video", "1");
+  if (next.pages > 1) p.set("pages", String(next.pages));
   const qs = p.toString();
   return qs ? `/recipes?${qs}` : "/recipes";
 }
@@ -182,7 +188,8 @@ function chip(label: string, href: string, on: boolean, dot?: string): Html {
   return html`<a class="rx-chip" href="${href}" aria-pressed="${on ? "true" : "false"}" data-filter>${dot ? html`<span class="dot" style="--chip: ${dot}"></span>` : ""}${label}</a>`;
 }
 
-function results(ctx: Ctx, s: BrowseState): { recipes: Recipe[]; total: number; grid: Html } {
+// `from`: only the recipes after this many (the tiles a "Show more" adds)
+function results(ctx: Ctx, s: BrowseState, from = 0): { recipes: Recipe[]; total: number; grid: Html } {
   const viewer = ctx.user?.id ?? null;
   const filters = {
     authorId: s.mine ? viewer! : undefined,
@@ -193,16 +200,20 @@ function results(ctx: Ctx, s: BrowseState): { recipes: Recipe[]; total: number; 
     cuisine: s.cuisine,
     video: s.video,
   };
-  const recipes = listVisibleRecipes(viewer, { ...filters, order: s.mine && !s.q ? "newest" : "featured" });
-  // the list stops at 200; the count is every match
-  const total = recipes.length < 200 ? recipes.length : countVisibleRecipes(viewer, filters);
+  const shown = s.pages * PAGE;
+  const recipes = listVisibleRecipes(viewer, { ...filters, order: s.mine && !s.q ? "newest" : "featured", limit: shown - from, offset: from });
+  // the grid stops at `shown`; the count is every match
+  const total = from + recipes.length < shown ? from + recipes.length : countVisibleRecipes(viewer, filters);
   const lines = ingredientsFor(recipes.map((r) => r.id));
   const live = liveCooksFor(recipes.map((r) => r.title));
   const tiles = recipes.map((r, i) => {
+    i += from;
     const n = perServing(estimate(lines.get(r.id) ?? []), r.servings);
-    return recipeTile(r, { i, live: live.get(r.title), costCents: n.counted >= 2 ? n.costCents : undefined });
+    // the first tile of each later page is where Show more lands without the script
+    const id = i > 0 && i % PAGE === 0 ? `more-${i}` : undefined;
+    return recipeTile(r, { i, id, live: live.get(r.title), costCents: n.counted >= 2 ? n.costCents : undefined });
   });
-  const grid = recipes.length
+  const grid = recipes.length || from > 0
     ? html`${tiles}`
     : html`<div class="empty rx-empty">
         <p class="empty-title">${s.mine && !s.q && !s.tag ? "Your cookbook is empty" : "Nothing matches that"}</p>
@@ -210,6 +221,14 @@ function results(ctx: Ctx, s: BrowseState): { recipes: Recipe[]; total: number; 
         ${s.mine ? html`<a class="button" href="/recipes/new">${icon("plus", 16)} Write a recipe</a>` : html`<a class="button button-ghost" href="/recipes">Clear filters</a>`}
       </div>`;
   return { recipes, total, grid };
+}
+
+// A link to the same list one page longer; with the script it fetches just
+// the next page into the grid instead (public/app.js)
+function showMore(s: BrowseState, shown: number, total: number): Html {
+  if (shown >= total) return html``;
+  const next = Math.min(PAGE, total - shown);
+  return html`<div class="rx-more"><a class="button button-soft" href="${hrefWith(s, { pages: s.pages + 1 })}#more-${shown}" data-show-more data-from="${shown}">Show ${next} more</a></div>`;
 }
 
 // "392 recipes", and when the grid stops short, how many it shows
@@ -221,6 +240,8 @@ function browsePage(ctx: Ctx): Html {
   const s = browseState(ctx);
   const { recipes, total, grid } = results(ctx, s);
   const filtered = !!(s.q || s.tag || s.course || s.cuisine || s.video);
+  // filters start the list again from the top
+  const f = { ...s, pages: 1 };
   const topCuisines = cuisines().slice(0, 9);
   const heading = s.mine
     ? "Your recipes"
@@ -266,13 +287,13 @@ function browsePage(ctx: Ctx): Html {
     </section>
 
     <nav class="rx-filters" aria-label="Filter recipes">
-      ${chip("All", hrefWith(s, { course: "", tag: "", cuisine: "", video: false }), !s.course && !s.tag && !s.cuisine && !s.video)}
-      ${COURSES.map((c) => chip(c.label, hrefWith(s, { course: s.course === c.key ? "" : c.key }), s.course === c.key))}
+      ${chip("All", hrefWith(f, { course: "", tag: "", cuisine: "", video: false }), !s.course && !s.tag && !s.cuisine && !s.video)}
+      ${COURSES.map((c) => chip(c.label, hrefWith(f, { course: s.course === c.key ? "" : c.key }), s.course === c.key))}
       <span class="rx-divider" aria-hidden="true"></span>
-      ${chip("Has video", hrefWith(s, { video: !s.video }), s.video, "var(--rose)")}
-      ${QUICK_FILTERS.map((f) => chip(f.label, hrefWith(s, { tag: s.tag === f.key ? "" : f.key }), s.tag === f.key, f.dot))}
+      ${chip("Has video", hrefWith(f, { video: !s.video }), s.video, "var(--rose)")}
+      ${QUICK_FILTERS.map((q) => chip(q.label, hrefWith(f, { tag: s.tag === q.key ? "" : q.key }), s.tag === q.key, q.dot))}
       <span class="rx-divider" aria-hidden="true"></span>
-      ${topCuisines.map((c) => chip(c, hrefWith(s, { cuisine: s.cuisine === c ? "" : c }), s.cuisine === c))}
+      ${topCuisines.map((c) => chip(c, hrefWith(f, { cuisine: s.cuisine === c ? "" : c }), s.cuisine === c))}
     </nav>
 
     <div class="rx-meta-row">
@@ -282,7 +303,8 @@ function browsePage(ctx: Ctx): Html {
     <div class="rx-grid" data-recipe-grid aria-live="polite">
       ${grid}
       ${skeletons(10)}
-    </div>`;
+    </div>
+    <div data-show-more-slot>${showMore(s, recipes.length, total)}</div>`;
 }
 
 /* ---------------- detail ---------------- */
@@ -789,10 +811,18 @@ export const routes: Route[] = [
       // live search swaps just the grid, without a page load
       if (ctx.url.searchParams.get("partial") === "1") {
         const s = browseState(ctx);
-        const { recipes, total, grid } = results(ctx, s);
+        // "Show more": only the tiles after the ones already on the page
+        const from = Math.min(Math.max(Number.parseInt(ctx.url.searchParams.get("from") ?? "0", 10) || 0, 0), (s.pages - 1) * PAGE);
+        const { recipes, total, grid } = results(ctx, s, from);
+        const shown = from + recipes.length;
         return {
           status: 200,
-          headers: { "content-type": "text/html; charset=utf-8", "x-result-count": encodeURIComponent(resultCount(total, recipes.length)) },
+          headers: {
+            "content-type": "text/html; charset=utf-8",
+            "x-result-count": encodeURIComponent(resultCount(total, shown)),
+            // the next Show more link, or nothing when the list is complete
+            "x-show-more": encodeURIComponent(showMore(s, shown, total).value),
+          },
           body: grid.value,
         };
       }

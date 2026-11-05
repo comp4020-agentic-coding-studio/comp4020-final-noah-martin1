@@ -158,6 +158,8 @@ interface ListOptions {
   excludeId?: number;
   order?: "newest" | "featured";
   limit?: number;
+  // skip this many first: the browse page's "Show more"
+  offset?: number;
 }
 
 export function cuisines(): string[] {
@@ -183,10 +185,11 @@ export function listVisibleRecipes(viewerId: number | null, opts: ListOptions = 
     orderParams.push(`%${opts.query}%`);
   }
   return all<Record<string, unknown>>(
-    `${SELECT} WHERE ${where.join(" AND ")} ORDER BY ${order} LIMIT ?`,
+    `${SELECT} WHERE ${where.join(" AND ")} ORDER BY ${order} LIMIT ? OFFSET ?`,
     ...params,
     ...orderParams,
     opts.limit ?? 200,
+    opts.offset ?? 0,
   ).map(hydrate);
 }
 

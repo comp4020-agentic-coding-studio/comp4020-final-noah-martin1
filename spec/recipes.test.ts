@@ -43,6 +43,32 @@ describe("recipes", () => {
     if (total > tiles) expect(count).toContain(`showing ${tiles}`);
   });
 
+  it("Show more lists the rest of the recipes, with or without the script", async () => {
+    const guest = new Client();
+    // links, not titles: two recipes can share a name
+    const tiles = (doc: Document) => [...doc.querySelectorAll<HTMLAnchorElement>("a.rx-tile")].map((a) => a.getAttribute("href"));
+    // catalogue mains: only the catalogue sets a course, so recipes other
+    // specs publish meanwhile can't shift this list between requests
+    const first = new JSDOM(await (await guest.get("/recipes?course=main")).text()).window.document;
+    const total = parseInt(first.querySelector("[data-results-count]")!.textContent!, 10);
+    const link = first.querySelector<HTMLAnchorElement>("[data-show-more]");
+    if (total <= 200) return expect(link).toBeNull();
+    expect(tiles(first)).toHaveLength(200);
+
+    // the plain link: the same list a page longer, landing on the first new tile
+    const href = link!.getAttribute("href")!;
+    const longer = new JSDOM(await (await guest.get(href)).text()).window.document;
+    expect(tiles(longer)).toHaveLength(Math.min(total, 400));
+    expect(longer.getElementById(href.split("#")[1])).not.toBeNull();
+
+    // the script's fetch: only the new tiles, none repeated
+    const next = await guest.get(`${href.split("#")[0]}&partial=1&from=${link!.dataset.from}`);
+    const added = tiles(new JSDOM(`<div>${await next.text()}</div>`).window.document);
+    expect(added).toHaveLength(Math.min(total, 400) - 200);
+    expect(added.filter((t) => tiles(first).includes(t))).toEqual([]);
+    expect(decodeURIComponent(next.headers.get("x-result-count") ?? "")).toContain(`${total} recipes`);
+  });
+
   it("a private recipe never shows up in someone else's browse or search", async () => {
     const author = await registered("author");
     const title = `Secret sauce ${author.username}`;

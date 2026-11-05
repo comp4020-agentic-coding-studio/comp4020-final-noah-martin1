@@ -130,6 +130,7 @@ if (grid && searchForm instanceof HTMLFormElement) {
   const input = searchForm.querySelector('input[type="search"]');
   const count = document.querySelector("[data-results-count]");
   const heading = document.querySelector("[data-results-heading]");
+  const moreSlot = document.querySelector("[data-show-more-slot]");
   let pending = null;
   let timer = 0;
 
@@ -152,6 +153,7 @@ if (grid && searchForm instanceof HTMLFormElement) {
       // the server's own wording: "392 recipes · showing 200"
       // (encoded: a header can't carry the "·")
       if (count) count.textContent = decodeURIComponent(res.headers.get("x-result-count") ?? "");
+      if (moreSlot) moreSlot.innerHTML = decodeURIComponent(res.headers.get("x-show-more") ?? "");
       const q = new URL(url, location.href).searchParams.get("q");
       if (heading && q) heading.textContent = `Results for “${q}”`;
       if (push) history.pushState({}, "", url);
@@ -179,6 +181,41 @@ if (grid && searchForm instanceof HTMLFormElement) {
     load(urlFromForm(), true);
   });
   window.addEventListener("popstate", () => location.reload());
+
+  // Show more: the next page of tiles is added below the ones already shown,
+  // keeping the place on the page; the link itself works without this
+  moreSlot?.addEventListener("click", async (event) => {
+    const link = event.target instanceof Element ? event.target.closest("[data-show-more]") : null;
+    if (!(link instanceof HTMLAnchorElement)) return;
+    event.preventDefault();
+    if (link.getAttribute("aria-busy") === "true") return;
+    link.setAttribute("aria-busy", "true");
+    const label = link.textContent;
+    link.textContent = "Loading…";
+    const next = new URL(link.href, location.href);
+    next.hash = "";
+    const partial = new URL(next);
+    partial.searchParams.set("partial", "1");
+    partial.searchParams.set("from", link.dataset.from ?? "0");
+    try {
+      const res = await fetch(partial);
+      if (!res.ok) throw new Error(String(res.status));
+      const holder = document.createElement("div");
+      holder.innerHTML = await res.text();
+      const skeletons = grid.querySelector(".rx-skeleton");
+      const added = [...holder.children];
+      added.forEach((tile) => grid.insertBefore(tile, skeletons));
+      revealImages(grid);
+      if (count) count.textContent = decodeURIComponent(res.headers.get("x-result-count") ?? "");
+      moreSlot.innerHTML = decodeURIComponent(res.headers.get("x-show-more") ?? "");
+      // the address remembers how far the list goes, for Back and reload
+      history.replaceState({}, "", next);
+      // keyboard and screen-reader users land on the first new recipe
+      added[0]?.focus?.({ preventScroll: true });
+    } catch {
+      location.href = link.href;
+    }
+  });
 }
 
 // Servings scaler on a recipe page: every amount rescales in place.
