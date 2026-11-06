@@ -1,6 +1,39 @@
 # FOCUS MODE, COMPLETE THE FOLLOWING TASKS:
 
- ## TASK 1, REAL LIFE FRIDGE/PANTRY IMAGE CATEGORISING AND PROCESSING TO VIRTUAL FRIDGE/PANTRY
+
+## ITERATE OVER THIS TASK UNITL COMPLETE
+
+## TASK 1, CHECK INGREDIENT DATABASE TO FIX MEAL PLANNING
+
+## 1. Active Task Intent
+- **Goal:** Have as many ingredients as possible linked to a price from either Aldi woolworths or coles. Currently meal suggestions are suggesting "cheap" meals - not because they are cheap but because some ingredients are missing from the total price causing the price to be significantly lower than what it should be. For example Tavë Kosi Baked Lamb and Yogurt - doesnt have the price for lamb shoulder which is ~ $30 from woolworths and is saying total cost of meal is $5.50 at checkout.
+   
+- **Features to achieve / implement:**
+- Go through each current ingredient in the system and find a referenced price from either woolworths coles or aldi. IF uable to find the exact item find something similar - mention this on the recipe.
+- Make sure the "ingredients used" and "recipe uses" are either better defined or renamed to avoid confusion. curreltly they are different prices and I dont know why.
+- assume water is always avaliable - some recipes call for water and it says water is missing from my ingredients.
+- Since we are building a database of pricing, when someone is creating a recipe and they are using an ingredient that larder doesnt know the price of - prompt the author to provide a price. For every other item that we have on the database - mention its price and allow it to be corrected by the user.
+
+- **Things to explore** 
+
+1. Following along with this topic, I cant see a "search by what you have" filter on the recipe page. - it says "Search by dish or by what's already in the fridge." but i cant see how to seach by what i have. Fix that. - include receipes that are missing 1 or 2 ingredients - however provide them last.
+
+- **Credit Allocation:** This task implements multiple features that need careful consideration and testing to be functional - allocate $60
+
+- **Double-Check Rule:** check every ingredient item for its reference on one of the large supermarket chains. If it doesnt exist (they dont sell it) and a reasonable similar item doesnt exist, find a price online and provide it as an estimate. For example a niche asian supermarket item.
+
+## 2. Active Technical Constraints
+- **Database Rules:** Avoid duplicate pricing for items - this means items that are the same thing but under different names (unless they are different products - have different wepages on the same supermarket platform). This is something that needs to be checked before added to the database.
+- **AI Advisory Invariant:** Keep code updates deterministic. Models may map names or parse transcript text, but application logic remains the source of truth.
+- **Verification Command:** Run `pnpm check` and your recipe test specs locally to ensure nothing is broken after an iteration.
+
+## 3. Project References
+- For long-term non-negotiable rules, full git/testing workflows, layout styles, and HTML escaping instructions, refer to `@ARCHITECTURAL_GUIDELINES.md`. Ignore them during transcript extraction unless actively modifying code infrastructure.
+
+
+# BELOW IS COMMENTED OUT OLD TASKS, PLEASE IGNORE:
+
+ <!--## TASK 1, INTEGRATE REVIEWS INTO RECIPES.
 
 ## 1. Active Task Intent
 - **Goal:** Create and integrate a review feature for the web app. Users should be able to write reviews and their presence remains persistent on the web app's recipe. Users can write reviews for reciepes which can then be liked and replied to by other users. As users are actively writing comments this should be seen by others as 3 animated dots. 
@@ -34,8 +67,7 @@
 - For long-term non-negotiable rules, full git/testing workflows, layout styles, and HTML escaping instructions, refer to `@ARCHITECTURAL_GUIDELINES.md`. Ignore them during transcript extraction unless actively modifying code infrastructure.
 
 
-# BELOW IS COMMENTED OUT OLD TASKS, PLEASE IGNORE:
-<!-- ## TASK 1, REAL LIFE FRIDGE/PANTRY IMAGE CATEGORISING AND PROCESSING TO VIRTUAL FRIDGE/PANTRY
+ ## TASK 1, REAL LIFE FRIDGE/PANTRY IMAGE CATEGORISING AND PROCESSING TO VIRTUAL FRIDGE/PANTRY
 
 ## 1. Active Task Intent
 - **Goal:** Evaluate, select, and integrate the highest-performing **locally hostable Vision-Language Model (VLM) or Object Detection framework** capable of parsing real-life fridge and pantry images. The objective is to maximise automated item identification and classification while minimising friction during the virtual inventory "add item" workflow.
