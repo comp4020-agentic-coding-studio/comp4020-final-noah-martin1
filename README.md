@@ -155,13 +155,26 @@ The models suggest names or read text; matching a name to an ingredient,
 sizes, and the total check are plain code. Measured accuracy, photo by photo
 and receipt by receipt, is in `testing/results.md`.
 
+Recipes have **reviews** at the foot of the page: a 1–5 star rating (the
+average sits by the byline), words, up to four photos and links to other
+recipes, with replies and likes. Others see "Sam is writing…" with three
+dots while someone types, and new reviews arrive without a reload. Reviews
+follow the recipe's visibility, including their photos. Anyone can filter by
+stars, photos or language. A review in another language can be translated
+into English in the browser (a small Opus-MT model per language, about 110 MB
+the first time, run only when you press Translate), shown beside the
+original and labelled as a machine's; languages with no good model aren't
+offered. Everyone picks a cooking character as their picture in Settings.
+Deleting your account (Settings) removes your recipes, pantry and plans but
+leaves your reviews of others' recipes, without your name or picture.
+
 ## Not built yet (on purpose)
 
 The globe mixes real live cooks with a layer of demo cooks so it's never
 empty; the demo layer is tagged and sits under a "preview with sample data"
 banner (a test checks real sessions carry no caveat). There's no shopping
 list export. Nutrition is an estimate from a built-in food table, and shelf
-prices are read when the refresh script runs, not continuously. Q&A translation is shown only for demo cooks. Each would add scope
+prices are read when the refresh script runs, not continuously. Live-cooking Q&A translation is shown only for demo cooks (reviews translate for real). Each would add scope
 without making the core loop (know what you have, cook it, share it) better.
 
 ## Sources

@@ -121,4 +121,9 @@ export const ACTION_LABEL: Record<string, string> = {
   "household.create": "Started a household",
   "household.leave": "Left a household",
   "friends.remove": "Removed a friend",
+  "review.post": "Reviewed a recipe",
+  "review.edit": "Edited a review",
+  "review.reply": "Replied to a review",
+  "review.delete": "Deleted a review",
+  "account.delete": "Deleted their account",
 };

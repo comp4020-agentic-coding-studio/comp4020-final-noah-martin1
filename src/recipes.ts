@@ -9,6 +9,7 @@ export interface Recipe {
   author_id: number;
   author_username: string;
   author_name: string;
+  author_avatar: string | null;
   title: string;
   description: string;
   servings: number;
@@ -82,7 +83,7 @@ export interface RecipeInput {
   image_url?: string;
 }
 
-const SELECT = `SELECT r.*, u.username AS author_username, u.display_name AS author_name,
+const SELECT = `SELECT r.*, u.username AS author_username, u.display_name AS author_name, u.avatar AS author_avatar,
   (SELECT COUNT(*) FROM recipe_ingredients ri WHERE ri.recipe_id = r.id) AS ingredient_count,
   (SELECT COUNT(*) FROM recipe_steps rs WHERE rs.recipe_id = r.id) AS step_count,
   COALESCE(r.cook_minutes, (SELECT COALESCE(SUM(est_minutes), 0) FROM recipe_steps rs WHERE rs.recipe_id = r.id)) AS cook_minutes

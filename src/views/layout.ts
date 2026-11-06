@@ -1,3 +1,4 @@
+import { character, characterSvg } from "../avatars.ts";
 import { initials } from "../format.ts";
 import { type Html, html, raw } from "../html.ts";
 import type { Ctx } from "../http.ts";
@@ -37,6 +38,14 @@ const ICONS: Record<string, string> = {
   basket: '<path d="M4 9.5h16l-1.6 9a2 2 0 0 1-2 1.5H7.6a2 2 0 0 1-2-1.5L4 9.5Z"/><path d="m8.5 9.5 3-5.5M15.5 9.5l-3-5.5"/>',
   print: '<path d="M7 9V4h10v5"/><rect x="4" y="9" width="16" height="7.5" rx="2"/><path d="M7 14h10v6H7z"/>',
   camera: '<path d="M4 8.5a2 2 0 0 1 2-2h2l1.5-2h5l1.5 2h2a2 2 0 0 1 2 2V18a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z"/><circle cx="12" cy="13" r="3.5"/>',
+  user: '<circle cx="12" cy="8.5" r="3.6"/><path d="M5 20c.8-3.8 3.7-6 7-6s6.2 2.2 7 6"/>',
+  reply: '<path d="M10 7 5 12l5 5"/><path d="M5 12h9a5 5 0 0 1 5 5v1"/>',
+  star: '<path d="m12 4 2.4 5 5.4.6-4 3.8 1.1 5.4L12 16.1 7.1 18.8l1.1-5.4-4-3.8 5.4-.6Z"/>',
+  image: '<rect x="3.5" y="5" width="17" height="14" rx="2"/><circle cx="9" cy="10" r="1.6"/><path d="m4 17 5-4.5 3.5 3 3-2.5L20 17"/>',
+  link: '<path d="M10 14a4 4 0 0 0 5.7 0l2.8-2.8a4 4 0 0 0-5.7-5.7L11.5 6.8"/><path d="M14 10a4 4 0 0 0-5.7 0l-2.8 2.8a4 4 0 0 0 5.7 5.7l1.3-1.3"/>',
+  translate: '<path d="M4 6h9M8.5 4v2M6 6c.6 3 2.5 5.4 5 6.6M11 6c-.7 3.4-2.8 6.2-6 7.6"/><path d="m13 20 3.5-8 3.5 8M14.2 17.3h4.6"/>',
+  trash: '<path d="M5 7h14M10 7V5h4v2M7 7l1 12.5a1.5 1.5 0 0 0 1.5 1.5h5a1.5 1.5 0 0 0 1.5-1.5L17 7"/>',
+  edit: '<path d="M14.5 5.5 18.5 9.5 9 19H5v-4Z"/><path d="m12.5 7.5 4 4"/>',
 };
 
 export function icon(name: string, size = 20): Html {
@@ -61,7 +70,13 @@ export function tone(name: string): [string, string] {
   return AVATAR_TONES[h % AVATAR_TONES.length];
 }
 
-export function avatar(name: string, size: "sm" | "md" | "lg" = "md"): Html {
+// A person's badge: their chosen cooking character (src/avatars.ts), else
+// their initials on a colour from their name. `name` null is a deleted
+// account: a plain mark, no initials, no character.
+export function avatar(name: string | null, size: "sm" | "md" | "lg" = "md", key: string | null = null): Html {
+  if (name === null) return html`<span class="avatar avatar-${size} avatar-gone" aria-hidden="true">${icon("user", size === "lg" ? 30 : size === "sm" ? 14 : 18)}</span>`;
+  const c = character(key);
+  if (c) return html`<span class="avatar avatar-${size} avatar-char" style="--av: ${c.wash}" aria-hidden="true">${characterSvg(c)}</span>`;
   const [bg, ink] = tone(name);
   return html`<span class="avatar avatar-${size}" style="--av: ${bg}; --av-ink: ${ink}" aria-hidden="true">${initials(name)}</span>`;
 }
@@ -191,7 +206,7 @@ export function appPage(ctx: Ctx, { title, active, body, mainClass, headExtra }:
           )}
         </nav>
         <div class="sidebar-foot">
-          <a class="me" href="/u/${user.username}">${avatar(user.display_name, "sm")}<span><strong>${user.display_name}</strong><small>@${user.username}</small></span></a>
+          <a class="me" href="/u/${user.username}">${avatar(user.display_name, "sm", user.avatar)}<span><strong>${user.display_name}</strong><small>@${user.username}</small></span></a>
           ${themeToggle()}
           <a class="icon-button" href="/settings" title="Settings" aria-label="Settings" ${active === "settings" ? raw('aria-current="page"') : ""}>${icon("settings")}</a>
           <form method="post" action="/logout">
@@ -201,7 +216,7 @@ export function appPage(ctx: Ctx, { title, active, body, mainClass, headExtra }:
       </aside>
       <header class="topbar">
         ${brand()}
-        <span class="topbar-actions">${themeToggle()}<a class="me" href="/u/${user.username}" aria-label="Your profile">${avatar(user.display_name, "sm")}</a></span>
+        <span class="topbar-actions">${themeToggle()}<a class="me" href="/u/${user.username}" aria-label="Your profile">${avatar(user.display_name, "sm", user.avatar)}</a></span>
       </header>
       <main id="main" class="main ${mainClass ?? ""}">
         ${flash(ctx)}

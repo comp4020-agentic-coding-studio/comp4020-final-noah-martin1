@@ -4,6 +4,7 @@ export interface Person {
   id: number;
   username: string;
   display_name: string;
+  avatar?: string | null;
 }
 
 export interface Friendship {
@@ -17,7 +18,7 @@ function pair(a: number, b: number): [number, number] {
 }
 
 export function findUser(username: string): Person | undefined {
-  return one<Person>("SELECT id, username, display_name FROM users WHERE username = ?", username.toLowerCase());
+  return one<Person>("SELECT id, username, display_name, avatar FROM users WHERE username = ?", username.toLowerCase());
 }
 
 export function friendship(a: number, b: number): Friendship | undefined {
@@ -71,7 +72,7 @@ export interface Connection extends Person {
 
 export function connections(me: number): Connection[] {
   return all<Connection>(
-    `SELECT u.id, u.username, u.display_name, f.status, f.requested_by,
+    `SELECT u.id, u.username, u.display_name, u.avatar, f.status, f.requested_by,
             COALESCE(f.responded_at, f.created_at) AS since
      FROM friendships f JOIN users u ON u.id = CASE WHEN f.user_a = ? THEN f.user_b ELSE f.user_a END
      WHERE f.user_a = ? OR f.user_b = ?
@@ -85,7 +86,7 @@ export function connections(me: number): Connection[] {
 export function searchPeople(me: number, query: string): Person[] {
   const q = `%${query.toLowerCase()}%`;
   return all<Person>(
-    `SELECT id, username, display_name FROM users
+    `SELECT id, username, display_name, avatar FROM users
      WHERE id != ? AND (username LIKE ? OR lower(display_name) LIKE ?)
      ORDER BY username LIMIT 20`,
     me,

@@ -5,6 +5,8 @@ export interface User {
   id: number;
   username: string;
   display_name: string;
+  // a cooking character key (src/avatars.ts), or null for initials
+  avatar: string | null;
 }
 
 export interface Ctx {

@@ -157,3 +157,23 @@ Things learned the hard way while matching catalogue recipes to YouTube videos.
   and save Opus for coordination.
 - Measured over this session: about $0.30 per verified recipe all in
   (transcription, review and coordination), at a 70-75% hit rate.
+
+# AI notes: recipe reviews
+
+- Deleting a user was impossible before migration 012: `activity_log`'s
+  append-only trigger (006) refused the UPDATE that `ON DELETE SET NULL`
+  makes on its actor column, and `inventory_items.added_by` /
+  `calendar_entries.planned_by` (001) have no ON DELETE at all. 012 narrows
+  the trigger to allow only clearing the actor; `src/account.ts` deletes or
+  reassigns the 001 rows first. Any new table referencing users needs an
+  explicit ON DELETE, or account deletion breaks again.
+- `recipe_images` rows cascade with their uploader, so anything meant to
+  outlive an account (review photos) needs its own table.
+- Browser translation: only per-language Opus-MT models
+  (`Xenova/opus-mt-<lang>-en`, ~110 MB, q8, WASM) are both small and
+  usable. `opus-mt-mul-en` mistranslates badly; M2M100/NLLB are good but
+  600–900 MB. There's no direct model for Greek, Portuguese or Tagalog.
+  Numbers in `testing/review-translate/RESULTS.md`.
+- Live review events reuse the live-cooking pattern: an in-process
+  EventEmitter plus an SSE stream per recipe page (one Fly machine). Filter
+  typing names per connection, or writers see their own dots.

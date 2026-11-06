@@ -27,7 +27,7 @@ function action(username: string, verb: string, label: string, kind = "button-gh
 
 function personRow(p: Person, meta: Html | string, actions: Html): Html {
   return html`<li class="person">
-    ${avatar(p.display_name)}
+    ${avatar(p.display_name, "md", p.avatar ?? null)}
     <div class="grow">
       <a href="/u/${p.username}" class="person-name">${p.display_name}</a>
       <small class="muted">@${p.username} · ${meta}</small>

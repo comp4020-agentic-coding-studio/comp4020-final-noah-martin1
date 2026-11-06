@@ -91,10 +91,14 @@ const MAX_MULTIPART = MAX_IMAGE_BYTES + 256 * 1024;
 
 export interface Multipart {
   fields: URLSearchParams;
+  // the last file sent under each field name
   files: Map<string, { filename: string; bytes: Buffer }>;
+  // every file, in order, for a field that takes several
+  fileList: { name: string; filename: string; bytes: Buffer }[];
 }
 
-export async function readMultipart(req: IncomingMessage): Promise<Multipart> {
+// `maxBytes`: the whole body's limit, larger for a form taking several photos
+export async function readMultipart(req: IncomingMessage, maxBytes = MAX_MULTIPART): Promise<Multipart> {
   const type = req.headers["content-type"] ?? "";
   const boundary = /boundary=(?:"([^"]+)"|([^;]+))/i.exec(type);
   if (!boundary) throw new HttpError(400, "That form couldn't be read.");
@@ -102,13 +106,14 @@ export async function readMultipart(req: IncomingMessage): Promise<Multipart> {
   let size = 0;
   for await (const chunk of req) {
     size += (chunk as Buffer).length;
-    if (size > MAX_MULTIPART) throw new HttpError(413, "That photo is over 5 MB. Try a smaller one.");
+    if (size > maxBytes) throw new HttpError(413, maxBytes > MAX_MULTIPART ? "Those photos are too large together. Try fewer or smaller ones." : "That photo is over 5 MB. Try a smaller one.");
     chunks.push(chunk as Buffer);
   }
   const body = Buffer.concat(chunks);
   const delim = Buffer.from(`--${boundary[1] ?? boundary[2]}`);
   const fields = new URLSearchParams();
   const files = new Map<string, { filename: string; bytes: Buffer }>();
+  const fileList: Multipart["fileList"] = [];
   let start = body.indexOf(delim);
   while (start >= 0) {
     const next = body.indexOf(delim, start + delim.length);
@@ -123,11 +128,15 @@ export async function readMultipart(req: IncomingMessage): Promise<Multipart> {
       const filename = /filename="([^"]*)"/i.exec(head)?.[1];
       if (name !== undefined) {
         if (filename !== undefined) {
-          if (content.length) files.set(name, { filename, bytes: Buffer.from(content) });
+          if (content.length) {
+            const f = { filename, bytes: Buffer.from(content) };
+            files.set(name, f);
+            fileList.push({ name, ...f });
+          }
         } else fields.append(name, content.toString("utf8"));
       }
     }
     start = next;
   }
-  return { fields, files };
+  return { fields, files, fileList };
 }

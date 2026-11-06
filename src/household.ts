@@ -33,6 +33,7 @@ export interface Member {
   id: number;
   username: string;
   display_name: string;
+  avatar?: string | null;
   role: Role;
   joined_at: string;
 }
@@ -54,7 +55,7 @@ export function isMember(userId: number, householdId: number): boolean {
 
 export function members(householdId: number): Member[] {
   return all<Member>(
-    `SELECT u.id, u.username, u.display_name, m.role, m.joined_at
+    `SELECT u.id, u.username, u.display_name, u.avatar, m.role, m.joined_at
      FROM household_members m JOIN users u ON u.id = m.user_id
      WHERE m.household_id = ?
      ORDER BY m.role = 'owner' DESC, m.joined_at, u.id`,

@@ -108,7 +108,7 @@ function shell(ctx: Ctx, house: House, people: Member[], path: string, title: st
     <div class="hh-hero-text">
       <p class="eyebrow">Household</p>
       <h1>${house.name}</h1>
-      <p class="lede hh-lede"><span class="avatars">${people.map((m) => avatar(m.display_name, "sm"))}</span>
+      <p class="lede hh-lede"><span class="avatars">${people.map((m) => avatar(m.display_name, "sm", m.avatar ?? null))}</span>
         <span>${nameList(me, people)} · one pantry, one calendar, one shopping list</span></p>
     </div>
     <div class="hh-hero-side">
@@ -322,7 +322,7 @@ function membersCard(house: House, people: Member[], me: number): Html {
     <header class="panel-head"><h2 class="panel-title" id="mem-h">${icon("users", 16)} Who lives here</h2><a href="/household/members">Manage →</a></header>
     <ul class="people hh-people">
       ${people.map(
-        (m) => html`<li class="person">${avatar(m.display_name)}<div class="grow"><a class="person-name" href="/u/${m.username}">${m.id === me ? `${m.display_name} (you)` : m.display_name}</a><small class="muted">${m.role === "owner" ? "Owner" : "Member"} · joined ${ago(m.joined_at)}</small></div></li>`,
+        (m) => html`<li class="person">${avatar(m.display_name, "md", m.avatar ?? null)}<div class="grow"><a class="person-name" href="/u/${m.username}">${m.id === me ? `${m.display_name} (you)` : m.display_name}</a><small class="muted">${m.role === "owner" ? "Owner" : "Member"} · joined ${ago(m.joined_at)}</small></div></li>`,
       )}
     </ul>
     <div class="hh-invite-mini">
@@ -767,7 +767,7 @@ function membersPage(ctx: Ctx, problem: string | null = null, status = 200) {
         <h2 class="panel-title" id="ml-h">${icon("users", 16)} Members <span class="count">${people.length}</span></h2>
         <ul class="people">
           ${people.map(
-            (m) => html`<li class="person">${avatar(m.display_name)}<div class="grow"><a class="person-name" href="/u/${m.username}">${m.display_name}${m.id === me ? " (you)" : ""}</a><small class="muted">@${m.username} · joined ${ago(m.joined_at)}</small></div>
+            (m) => html`<li class="person">${avatar(m.display_name, "md", m.avatar ?? null)}<div class="grow"><a class="person-name" href="/u/${m.username}">${m.display_name}${m.id === me ? " (you)" : ""}</a><small class="muted">@${m.username} · joined ${ago(m.joined_at)}</small></div>
               <span class="badge ${m.role === "owner" ? "" : "badge-private"}">${m.role === "owner" ? "Owner" : "Member"}</span></li>`,
           )}
         </ul>

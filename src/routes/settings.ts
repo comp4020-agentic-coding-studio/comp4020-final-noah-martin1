@@ -1,16 +1,18 @@
-import { hashPassword, verifyPassword } from "../auth.ts";
+import { destroySession, hashPassword, verifyPassword } from "../auth.ts";
+import { deleteAccount, deletionPreview } from "../account.ts";
+import { CHARACTERS, characterSvg, isCharacter } from "../avatars.ts";
 import { one, run } from "../db.ts";
 import { DEMO_USERNAMES } from "../demo.ts";
 import { DIETARY_TAGS } from "../format.ts";
 import { html, raw } from "../html.ts";
-import { type Ctx, htmlReply, redirect, setFlash } from "../http.ts";
+import { cookie, type Ctx, htmlReply, isHttps, parseCookies, redirect, setFlash } from "../http.ts";
 import { ACTION_LABEL, activityFor, logActivity } from "../activity.ts";
 import { CITIES, CITY_BY_KEY } from "../live.ts";
 import { prefsFor } from "../prefs.ts";
 
 const REGIONS = [...new Set(CITIES.map((c) => c.region))];
 import type { Route } from "../server.ts";
-import { errors, page, pageHeader } from "../views/layout.ts";
+import { avatar, errors, page, pageHeader } from "../views/layout.ts";
 
 const VIS = [
   ["public", "Public"],
@@ -18,7 +20,24 @@ const VIS = [
   ["private", "Only me"],
 ] as const;
 
-function settingsPage(ctx: Ctx, problems: string[] = [], passwordProblems: string[] = [], status = 200) {
+// The cooking characters to choose from, plus plain initials: radio buttons,
+// so the picker works by keyboard and without a script.
+function avatarPicker(ctx: Ctx): ReturnType<typeof html> {
+  const user = ctx.user!;
+  return html`<fieldset class="field avatar-pick"><legend>Your picture</legend>
+    <p class="muted small">Shown beside your name on reviews, your profile and around Larder.</p>
+    <div class="avatar-grid">
+      <label class="avatar-option"><input type="radio" name="avatar" value="" ${user.avatar ? "" : raw("checked")} />
+        <span class="avatar-tile">${avatar(user.display_name, "lg")}<span>Initials</span></span></label>
+      ${CHARACTERS.map(
+        (c) => html`<label class="avatar-option"><input type="radio" name="avatar" value="${c.key}" ${user.avatar === c.key ? raw("checked") : ""} />
+          <span class="avatar-tile"><span class="avatar avatar-lg avatar-char" style="--av: ${c.wash}" aria-hidden="true">${characterSvg(c)}</span><span>${c.name}</span></span></label>`,
+      )}
+    </div>
+  </fieldset>`;
+}
+
+function settingsPage(ctx: Ctx, problems: string[] = [], passwordProblems: string[] = [], status = 200, deleteProblems: string[] = []) {
   const user = ctx.user!;
   const prefs = prefsFor(user.id);
   const budget = prefs.weekly_budget_cents === null ? "" : (prefs.weekly_budget_cents / 100).toFixed(2);
@@ -27,7 +46,7 @@ function settingsPage(ctx: Ctx, problems: string[] = [], passwordProblems: strin
     ${pageHeader("Settings", "Your profile, what you eat, what you spend, and who sees what by default.")}
     <div class="settings">
       <nav class="settings-nav" aria-label="Settings sections">
-        <a href="#profile">Profile</a><a href="#food">Food & budget</a><a href="#privacy">Privacy</a><a href="#live">Cooking live</a><a href="#activity">Your activity</a><a href="#account">Account</a>
+        <a href="#profile">Profile</a><a href="#food">Food & budget</a><a href="#privacy">Privacy</a><a href="#live">Cooking live</a><a href="#activity">Your activity</a><a href="#account">Account</a><a href="#delete">Delete account</a>
       </nav>
       <div class="side-stack">
         <form method="post" action="/settings" class="side-stack">
@@ -36,6 +55,7 @@ function settingsPage(ctx: Ctx, problems: string[] = [], passwordProblems: strin
             <h2 class="panel-title">Profile</h2>
             <label class="field"><span>Display name</span><input name="display_name" required maxlength="40" value="${user.display_name}" /></label>
             <label class="field"><span>Username</span><input value="@${user.username}" disabled /><small>Usernames can't be changed — friends find you by it.</small></label>
+            ${avatarPicker(ctx)}
           </section>
           <section class="panel stack" id="food">
             <h2 class="panel-title">Food & budget</h2>
@@ -93,9 +113,32 @@ function settingsPage(ctx: Ctx, problems: string[] = [], passwordProblems: strin
           <label class="field"><span>New password</span><input type="password" name="next" required minlength="8" autocomplete="new-password" /></label>
           <div><button class="button button-ghost" type="submit">Update password</button></div>
         </form>
+
+        ${deleteSection(ctx, deleteProblems)}
       </div>
     </div>`;
   return htmlReply(page(ctx, { title: "Settings", active: "settings", body }), status);
+}
+
+// Deleting the account: what goes and what stays, said plainly, and the
+// password to confirm. Demo accounts are shared and can't be deleted.
+function deleteSection(ctx: Ctx, problems: string[]) {
+  const user = ctx.user!;
+  if (DEMO_USERNAMES.includes(user.username.toLowerCase())) {
+    return html`<section class="panel stack" id="delete"><h2 class="panel-title">Delete account</h2><p class="muted">Demo accounts are shared, so they can't be deleted.</p></section>`;
+  }
+  const p = deletionPreview(user.id);
+  return html`<form method="post" action="/settings/delete" class="panel stack danger-zone" id="delete" data-confirm="Delete your Larder account for good? This can't be undone.">
+    <h2 class="panel-title">Delete account</h2>
+    ${errors(problems)}
+    <ul class="delete-list">
+      <li><strong>Deleted:</strong> your ${p.recipes ? `${p.recipes} recipe${p.recipes === 1 ? "" : "s"} (and reviews of them), ` : ""}pantry, planned meals, friends and live sessions.</li>
+      ${p.reviewsKept ? html`<li><strong>Kept without your name or picture:</strong> your ${p.reviewsKept} review${p.reviewsKept === 1 ? "" : "s"} and repl${p.reviewsKept === 1 ? "y" : "ies"} on other people's recipes. Delete any you don't want left first.</li>` : html`<li>Reviews you write on other people's recipes stay, shown as from a deleted account.</li>`}
+      ${p.household ? html`<li>You'll leave <strong>${p.household}</strong>; what you added to its pantry and calendar stays with the household.</li>` : ""}
+    </ul>
+    <label class="field"><span>Your password, to confirm</span><input type="password" name="password" required autocomplete="current-password" /></label>
+    <div><button class="button button-danger" type="submit">Delete my account</button></div>
+  </form>`;
 }
 
 export const routes: Route[] = [
@@ -112,6 +155,8 @@ export const routes: Route[] = [
       const servings = Number(form.get("default_servings") ?? 2);
       const budgetRaw = (form.get("weekly_budget") ?? "").trim().replace(/^\$/, "");
       const visibility = form.get("default_visibility") ?? "friends";
+      // "" is initials; anything else must be one of the characters
+      const avatarRaw = form.has("avatar") ? (form.get("avatar") ?? "") : (ctx.user!.avatar ?? "");
 
       const problems: string[] = [];
       if (!displayName || displayName.length > 40) problems.push("Display name is required (up to 40 characters).");
@@ -122,6 +167,7 @@ export const routes: Route[] = [
         else budgetCents = Math.round(Number(budgetRaw) * 100);
       }
       if (!VIS.some(([v]) => v === visibility)) problems.push("Choose a default visibility.");
+      if (avatarRaw !== "" && !isCharacter(avatarRaw)) problems.push("Choose one of the pictures, or initials.");
       // the live section is only changed when the form that shows it is sent
       const before = prefsFor(ctx.user!.id);
       const liveFields = form.get("live_fields") === "1";
@@ -132,8 +178,8 @@ export const routes: Route[] = [
 
       run(
         `UPDATE users SET display_name = ?, dietary_prefs = ?, dislikes = ?, default_servings = ?,
-         weekly_budget_cents = ?, default_visibility = ?, auto_live = ?, live_city = ? WHERE id = ?`,
-        displayName, JSON.stringify(diet), dislikes, servings, budgetCents, visibility, autoLive ? 1 : 0, liveCity, ctx.user!.id,
+         weekly_budget_cents = ?, default_visibility = ?, auto_live = ?, live_city = ?, avatar = ? WHERE id = ?`,
+        displayName, JSON.stringify(diet), dislikes, servings, budgetCents, visibility, autoLive ? 1 : 0, liveCity, avatarRaw || null, ctx.user!.id,
       );
       logActivity({
         actor: ctx.user,
@@ -167,6 +213,29 @@ export const routes: Route[] = [
       run("UPDATE users SET password_hash = ? WHERE id = ?", await hashPassword(next), ctx.user!.id);
       setFlash(ctx, "Password updated.");
       return redirect("/settings");
+    },
+  },
+  {
+    method: "POST",
+    path: "/settings/delete",
+    auth: true,
+    handler: async (ctx) => {
+      const user = ctx.user!;
+      if (DEMO_USERNAMES.includes(user.username.toLowerCase())) return settingsPage(ctx, [], [], 403, ["Demo accounts are shared, so they can't be deleted."]);
+      const password = (await ctx.form()).get("password") ?? "";
+      const row = one<{ password_hash: string }>("SELECT password_hash FROM users WHERE id = ?", user.id)!;
+      if (!(await verifyPassword(password, row.password_hash))) {
+        logActivity({ actor: user, action: "account.delete", outcome: "denied", detail: { reason: "wrong password" } });
+        return settingsPage(ctx, [], [], 422, ["That password isn't right, so nothing was deleted."]);
+      }
+      // logged before the row goes; the log keeps that it happened, its
+      // actor set to null by the delete, and nothing naming them
+      logActivity({ actor: user, action: "account.delete" });
+      const summary = deleteAccount(user.id);
+      destroySession(parseCookies(ctx.req.headers.cookie).sid);
+      ctx.setCookies.push(cookie("sid", "", { maxAge: 0, secure: isHttps(ctx.req) }));
+      setFlash(ctx, `Your account is deleted.${summary.reviewsKept ? ` ${summary.reviewsKept} review${summary.reviewsKept === 1 ? "" : "s"} you wrote stay${summary.reviewsKept === 1 ? "s" : ""}, without your name.` : ""}`);
+      return redirect("/");
     },
   },
 ];

@@ -14,6 +14,7 @@ import {
   HttpError,
   htmlReply,
   isHttps,
+  json,
   parseCookies,
   readForm,
   type Reply,
@@ -37,6 +38,7 @@ import { routes as plannerRoutes } from "./routes/planner.ts";
 import { routes as profileRoutes } from "./routes/profile.ts";
 import { routes as readmeRoutes } from "./routes/readme.ts";
 import { routes as recipeRoutes } from "./routes/recipes.ts";
+import { routes as reviewRoutes } from "./routes/reviews.ts";
 import { routes as scanRoutes } from "./routes/scan.ts";
 import { routes as scheduleRoutes } from "./routes/schedule.ts";
 import { routes as settingsRoutes } from "./routes/settings.ts";
@@ -62,6 +64,8 @@ function compile(path: string): RegExp {
 const table = [
   ...homeRoutes,
   ...authRoutes,
+  // before the recipe routes' /recipes/:id/..., none of which they shadow
+  ...reviewRoutes,
   ...recipeRoutes,
   ...cookRoutes,
   // before the pantry's /pantry/:id, which would otherwise swallow /pantry/scan
@@ -146,7 +150,22 @@ async function handle(ctx: Ctx): Promise<Reply> {
     pathMatched = true;
     if (route.method !== ctx.method) continue;
     if (route.auth && !ctx.user) {
-      return redirect(`/login?next=${encodeURIComponent(ctx.url.pathname + ctx.url.search)}`);
+      // a page's script asking for JSON gets an answer it can act on (its
+      // session ran out), not a sign-in page it would read as success
+      if ((ctx.req.headers.accept ?? "").includes("application/json")) return json({ error: "You've been signed out. Sign in again to continue.", problem: "signed-out" }, 401);
+      // after signing in, back to the page: for a form post that's the page
+      // the form was on (its address answers POST only), when it's ours
+      let back = ctx.url.pathname + ctx.url.search;
+      if (ctx.method === "POST") {
+        back = "/";
+        try {
+          const from = new URL(ctx.req.headers.referer ?? "");
+          if (from.host === ctx.req.headers.host) back = from.pathname + from.search;
+        } catch {
+          // no referrer, or not a URL: home
+        }
+      }
+      return redirect(`/login?next=${encodeURIComponent(back)}`);
     }
     ctx.params = { ...m.groups };
     return await route.handler(ctx);

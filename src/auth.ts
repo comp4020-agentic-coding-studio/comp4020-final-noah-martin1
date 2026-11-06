@@ -36,7 +36,7 @@ export function userForSession(token: string | undefined): User | null {
   if (!token) return null;
   return (
     one<User>(
-      `SELECT u.id, u.username, u.display_name FROM auth_sessions s
+      `SELECT u.id, u.username, u.display_name, u.avatar FROM auth_sessions s
        JOIN users u ON u.id = s.user_id
        WHERE s.token = ? AND s.expires_at > datetime('now')`,
       token,

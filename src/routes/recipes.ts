@@ -33,6 +33,8 @@ import type { Route } from "../server.ts";
 import { canSeeRecipe } from "../visibility.ts";
 import { avatar, errors, icon, page, pageHeader, tone } from "../views/layout.ts";
 import { liveCooksFor } from "./global.ts";
+import { ownReview, parseFilters, reviewsFor, summaryFor, typingOn, getReview } from "../reviews.ts";
+import { type ComposerState, ratingBadge, reviewsSection } from "../views/reviews.ts";
 
 const VISIBILITY_LABEL = { public: "Public", friends: "Friends", private: "Only me" } as const;
 
@@ -512,8 +514,38 @@ function videoCard(recipe: Recipe): Html {
   </section>`;
 }
 
-function recipeDetail(ctx: Ctx, recipe: Recipe): Html {
+// The reviews at the foot of the page: filtered and sorted from the
+// address, "Show more" by `shown`, and the viewer's own review in the box.
+function reviewsPart(ctx: Ctx, recipe: Recipe, composer?: ComposerState): { section: Html; badge: Html } {
+  const viewer = ctx.user?.id ?? null;
+  const filters = parseFilters(ctx.url.searchParams);
+  const shown = Math.min(Math.max(Number.parseInt(ctx.url.searchParams.get("shown") ?? "20", 10) || 20, 20), 200);
+  const summary = summaryFor(recipe.id);
+  const { reviews, total } = reviewsFor(recipe.id, viewer, filters, shown);
+  const mineRow = viewer !== null ? ownReview(recipe.id, viewer) : undefined;
+  const mine = mineRow ? getReview(mineRow.id, viewer) ?? null : null;
+  return {
+    section: reviewsSection(ctx, recipe, { summary, reviews, total, filters, mine, typing: typingOn(recipe.id, viewer), composer, shown: Math.min(shown, total) }),
+    badge: ratingBadge(summary),
+  };
+}
+
+// The recipe page again with a refused review's words kept in the box.
+export function renderReviewsPage(ctx: Ctx, recipe: Recipe, composer: ComposerState, status: number) {
+  return htmlReply(
+    page(ctx, {
+      title: recipe.title,
+      active: "recipes",
+      body: recipeDetail(ctx, recipe, composer),
+      headExtra: html`<script type="module" src="/assets/assistant.mjs"></script><script type="module" src="/assets/reviews.mjs"></script>`,
+    }),
+    status,
+  );
+}
+
+function recipeDetail(ctx: Ctx, recipe: Recipe, composer?: ComposerState): Html {
   const lines = recipeIngredients(recipe.id);
+  const rv = reviewsPart(ctx, recipe, composer);
   const steps = recipeSteps(recipe.id);
   const mine = ctx.user?.id === recipe.author_id;
   const live = liveCooksFor([recipe.title]).get(recipe.title) ?? 0;
@@ -550,7 +582,7 @@ function recipeDetail(ctx: Ctx, recipe: Recipe): Html {
         </div>
         <h1>${recipe.title}</h1>
         ${recipe.description ? html`<p class="lede">${recipe.description}</p>` : ""}
-        <p class="rd-byline">${avatar(recipe.author_name, "sm")} <span>Recipe by <a href="/u/${recipe.author_username}">${recipe.author_name}</a></span></p>
+        <p class="rd-byline">${avatar(recipe.author_name, "sm", recipe.author_avatar)} <span>Recipe by <a href="/u/${recipe.author_username}">${recipe.author_name}</a></span>${rv.badge}</p>
         <dl class="rd-times">
           <div class="rd-time"><dt>${icon("leaf", 14)} Prep</dt><dd>${recipe.prep_minutes ? html`${recipe.prep_minutes}<small>min</small>` : "—"}</dd></div>
           <div class="rd-time"><dt>${icon("flame", 14)} Cook</dt><dd>${cook ? (cook >= 60 ? duration(cook) : html`${cook}<small>min</small>`) : "—"}</dd></div>
@@ -608,6 +640,8 @@ function recipeDetail(ctx: Ctx, recipe: Recipe): Html {
         ${askCard(ctx, recipe, lines)}
       </div>
     </div>
+
+    ${rv.section}
 
     ${more.length + fill.length
       ? html`<section class="more-like">
@@ -858,7 +892,7 @@ export const routes: Route[] = [
           title: recipe.title,
           active: "recipes",
           body: recipeDetail(ctx, recipe),
-          headExtra: html`<script type="module" src="/assets/assistant.mjs"></script>`,
+          headExtra: html`<script type="module" src="/assets/assistant.mjs"></script><script type="module" src="/assets/reviews.mjs"></script>`,
         }),
       );
     },

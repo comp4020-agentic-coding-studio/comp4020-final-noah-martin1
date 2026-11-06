@@ -37,7 +37,7 @@ export const routes: Route[] = [
 
       const body = html`
         <header class="profile-head">
-          ${avatar(person.display_name, "lg")}
+          ${avatar(person.display_name, "lg", person.avatar ?? null)}
           <div class="grow">
             <h1>${person.display_name}</h1>
             <p class="muted">@${person.username}</p>
