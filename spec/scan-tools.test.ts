@@ -488,8 +488,12 @@ describe("prefill never suggests a different food's price", () => {
 
   it("marks a price from a listing that isn't quite the food as rough", async () => {
     const { prefillFor } = await import("../src/scan-prefill.ts");
-    const k = prefillFor(0, "tomato ketchup", 1);
-    if (k.price) expect(k.note).toMatch(/^roughly /);
+    // sriracha has no listing of its own: it's priced as chilli sauce
+    const k = prefillFor(0, "sriracha", 1);
+    expect(k.price).not.toBe("");
+    expect(k.note).toMatch(/^roughly /);
+    // a food's own checked listing isn't rough
+    expect(prefillFor(0, "tomato ketchup", 1).note).not.toMatch(/^roughly /);
   });
 });
 

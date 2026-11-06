@@ -93,7 +93,8 @@ Some of "good" is enforced by tests in `spec/` that run against the live app:
   stock subtracted, and 200 g of flour from an empty pantry is a whole bag;
   checkout cost and the value the recipes use are shown apart, a price you
   paid is never replaced by a higher shelf price, and unknown prices are
-  never treated as free
+  never treated as free: a recipe names any ingredient it couldn't price and
+  the planner never offers such a meal as cheap
 - expired food gets one grace day ("Do you still have this?") and then
   leaves the kitchen by itself; it stops counting as stock on the day after
   its date
@@ -175,6 +176,17 @@ labelled "Sample" under a preview banner. Their writers are placeholder
 accounts that can't sign in, have no profile and can't be found
 (`src/sample-reviews.ts`).
 
+Each recipe's **What it costs** card shows three numbers, each named for
+what it is: *cost to make* (the value of what goes in the dish, which "per
+serve" divides), *at the checkout* (the whole packs you'd buy from an empty
+kitchen) and, signed in, *after your pantry*. Stand-ins are listed with why
+("no store sells monkfish"), and any ingredient with no price is named, so a
+total is never quietly short. Writing a recipe, each ingredient shows what
+it's priced at and asks what you paid when there's no price; your price
+then prices your own recipes and shopping. **From my kitchen** on Recipes
+lists what you can cook from what you have, then what's missing one
+ingredient, then two, saying what's missing.
+
 ## Not built yet (on purpose)
 
 The globe mixes real live cooks with a layer of demo cooks so it's never
@@ -210,13 +222,16 @@ without making the core loop (know what you have, cook it, share it) better.
   reference values, with dry goods at uncooked values. 94.6% of ingredient
   lines in the catalogue are counted; "salt to taste" can't be. Every figure
   is labelled an estimate.
-- **Prices:** Woolworths and ALDI shelf prices, pack sizes and product links
-  in `src/data/products.json`, read by `scripts/refresh-prices.ts` from
-  Woolworths' public product search and ALDI's category pages (paths their
-  robots.txt allows) and stamped with when they were read; every price says
-  so, and none is called live. 504 dated reference prices in
-  `src/data/prices.json` cover consumption estimates and gaps. The rules are
-  in `docs/product/pricing.md`.
+- **Prices:** every catalogue ingredient has a checked price source in
+  `src/data/price-sources.json`: a Woolworths or ALDI product reviewed by
+  hand as that food in the form recipes use it (fresh garlic, not minced
+  jars), a labelled stand-in when neither store sells it ("priced as white
+  fish fillets"), another ingredient it's bought as (egg yolks as eggs), or a
+  dated estimate from a named shop for niche food (dried shrimp from an Asian
+  grocer). Tap water is free. Shelf prices were read from Woolworths' public
+  product search and ALDI's category pages (paths their robots.txt allows)
+  and are stamped with when they were read; none is called live. The rules
+  are in `docs/product/pricing.md`.
 - **Videos:** YouTube cooking videos with the channel named on every recipe
   page. For each one, the recipe was transcribed from the video's transcript or
   the creator's own written recipe and checked again by a second pass on 21

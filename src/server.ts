@@ -36,6 +36,7 @@ import { routes as householdRoutes } from "./routes/household.ts";
 import { routes as liveRoutes } from "./routes/live.ts";
 import { routes as pantryRoutes } from "./routes/pantry.ts";
 import { routes as plannerRoutes } from "./routes/planner.ts";
+import { routes as priceRoutes } from "./routes/prices.ts";
 import { routes as profileRoutes } from "./routes/profile.ts";
 import { routes as readmeRoutes } from "./routes/readme.ts";
 import { routes as recipeRoutes } from "./routes/recipes.ts";
@@ -81,6 +82,7 @@ const table = [
   ...globalRoutes,
   ...scheduleRoutes,
   ...plannerRoutes,
+  ...priceRoutes,
   ...settingsRoutes,
   ...readmeRoutes,
   ...adminRoutes,

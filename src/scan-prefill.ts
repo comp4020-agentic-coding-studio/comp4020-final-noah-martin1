@@ -10,7 +10,7 @@ import { normaliseIngredient, one } from "./db.ts";
 import { addDays, today } from "./format.ts";
 import { conversionFor } from "./nutrition.ts";
 import { fromProduct, packOptions, type PackOption } from "./pricing.ts";
-import { loadProducts, productsFor } from "./products.ts";
+import { loadProducts, priceSourceFor, productsFor } from "./products.ts";
 import { shelfLife } from "./shelf-life.ts";
 
 export interface Prefill {
@@ -142,9 +142,22 @@ export function prefillFor(userId: number, name: string, count: number | null): 
   const id = one<{ id: number }>("SELECT id FROM ingredients WHERE name = ?", normaliseIngredient(name))?.id ?? -1;
   const cooked = COOKED.test(name.toLowerCase());
   // a listing has to name the food: the shared catalogue's loose matching
-  // (fine for costing "basil" in a recipe) would offer basil pesto here
-  let opts = cooked ? [] : packOptions(userId, id, name).filter((o) => o.kind === "user" || namesIt(name, o.product));
+  // (fine for costing "basil" in a recipe) would offer basil pesto here.
+  // Products checked by hand for this food (src/data/price-sources.json)
+  // are already like for like, and a stand-in or estimate isn't offered as
+  // the scanned food's own pack.
+  const found = priceSourceFor(name);
+  const curated = found?.source;
+  // its own checked products: exact. Bought as another food (sriracha as
+  // chilli sauce) or a stand-in: only roughly this food's pack.
+  const checked = !!curated?.products?.length && !found?.via.length;
+  const standIn = !!found?.via.length || !!curated?.similar;
+  let opts = cooked ? [] : packOptions(userId, id, name).filter((o) => o.kind === "user" || (checked ? o.kind === "retailer" : namesIt(name, o.product)));
   let rough = false;
+  if (!cooked && !opts.length && standIn) {
+    opts = packOptions(userId, id, name).filter((o) => o.kind === "retailer" || o.kind === "reference");
+    rough = opts.length > 0;
+  }
   if (!cooked && !opts.length) {
     opts = roughly(name);
     rough = opts.length > 0;

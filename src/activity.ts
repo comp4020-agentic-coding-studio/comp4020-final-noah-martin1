@@ -96,6 +96,7 @@ export const ACTION_LABEL: Record<string, string> = {
   "recipe.create": "Wrote a recipe",
   "recipe.update": "Edited a recipe",
   "recipe.delete": "Deleted a recipe",
+  "price.record": "Recorded a price",
   "recipe.image_rejected": "Recipe photo rejected",
   "pantry.add": "Added to the kitchen",
   "pantry.update": "Updated a kitchen item",

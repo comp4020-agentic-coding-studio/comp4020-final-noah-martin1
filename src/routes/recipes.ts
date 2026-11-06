@@ -14,6 +14,7 @@ import {
   getRecipe,
   hasShownVideo,
   ingredientsFor,
+  kitchenMatches,
   listVisibleRecipes,
   pantryMatch,
   parseRecipeForm,
@@ -26,7 +27,8 @@ import {
   totalMinutes,
 } from "../recipes.ts";
 import { prefsFor } from "../prefs.ts";
-import { recipePurchase } from "../pricing.ts";
+import { costToMake, recipePurchase } from "../pricing.ts";
+import { priceNote } from "../price-notes.ts";
 import { usableStock } from "../shopping.ts";
 import { packLine } from "./shopping.ts";
 import type { Route } from "../server.ts";
@@ -74,7 +76,7 @@ export function amount(quantity: number | null, unit: string): string {
 
 // A photo tile, IMDb-poster style: image, a couple of glass badges, then the
 // title and quick facts beneath.
-export function recipeTile(r: Recipe, opts: { i?: number; live?: number; costCents?: number; kcal?: number; id?: string; stars?: { average: number; count: number } } = {}): Html {
+export function recipeTile(r: Recipe, opts: { i?: number; live?: number; costCents?: number; kcal?: number; id?: string; stars?: { average: number; count: number }; kitchen?: { have: number; need: number; missing: string[] } } = {}): Html {
   const minutes = totalMinutes(r);
   const [fallback] = tone(r.title);
   return html`<a class="rx-tile" href="/recipes/${r.id}"${opts.id ? html` id="${opts.id}"` : ""} style="--i: ${Math.min(opts.i ?? 0, 24)}">
@@ -99,6 +101,11 @@ export function recipeTile(r: Recipe, opts: { i?: number; live?: number; costCen
         ${minutes ? html`<span>${icon("clock", 13)}${duration(minutes)}</span>` : ""}
         ${r.cuisine ? html`<span>${r.cuisine}</span>` : html`<span>by ${r.author_name.split(" ")[0]}</span>`}
       </div>
+      ${opts.kitchen
+        ? html`<p class="rx-kitchen ${opts.kitchen.missing.length ? "rx-kitchen-short" : "rx-kitchen-all"}">${opts.kitchen.missing.length
+            ? html`Need ${opts.kitchen.missing.join(" and ")}`
+            : html`${icon("check", 12)} You have all ${opts.kitchen.need}`}</p>`
+        : ""}
     </div>
   </a>`;
 }
@@ -153,6 +160,9 @@ interface BrowseState {
   video: boolean;
   // best reviewed first, only recipes with reviews
   rated: boolean;
+  // what the viewer can cook from their kitchen (signed in): nothing
+  // missing first, then one, then two
+  have: boolean;
   mine: boolean;
   // how many pages of PAGE recipes to show (Show more adds one)
   pages: number;
@@ -171,6 +181,7 @@ function browseState(ctx: Ctx): BrowseState {
     cuisine: (p.get("cuisine") ?? "").slice(0, 40),
     video: p.get("video") === "1",
     rated: p.get("rated") === "1",
+    have: p.get("have") === "1" && !!ctx.user,
     mine: p.get("tab") === "mine" && !!ctx.user,
     pages: Math.min(Math.max(Number.parseInt(p.get("pages") ?? "1", 10) || 1, 1), 20),
   };
@@ -186,6 +197,7 @@ function hrefWith(s: BrowseState, change: Partial<BrowseState>): string {
   if (next.cuisine) p.set("cuisine", next.cuisine);
   if (next.video) p.set("video", "1");
   if (next.rated) p.set("rated", "1");
+  if (next.have) p.set("have", "1");
   if (next.pages > 1) p.set("pages", String(next.pages));
   const qs = p.toString();
   return qs ? `/recipes?${qs}` : "/recipes";
@@ -210,25 +222,41 @@ function results(ctx: Ctx, s: BrowseState, from = 0): { recipes: Recipe[]; total
   };
   const shown = s.pages * PAGE;
   const order = s.rated ? "rating" : s.mine && !s.q ? "newest" : "featured";
-  const recipes = listVisibleRecipes(viewer, { ...filters, order, limit: shown - from, offset: from });
+  // from my kitchen: ranked by what's missing, every match counted
+  const matches = s.have && viewer !== null ? kitchenMatches(viewer, filters) : null;
+  const recipes = matches
+    ? matches.slice(from, shown).map((m) => m.recipe)
+    : listVisibleRecipes(viewer, { ...filters, order, limit: shown - from, offset: from });
+  const missingFor = new Map((matches ?? []).map((m) => [m.recipe.id, m]));
   // the grid stops at `shown`; the count is every match
-  const total = from + recipes.length < shown ? from + recipes.length : countVisibleRecipes(viewer, filters);
+  const total = matches ? matches.length : from + recipes.length < shown ? from + recipes.length : countVisibleRecipes(viewer, filters);
   const lines = ingredientsFor(recipes.map((r) => r.id));
   const live = liveCooksFor(recipes.map((r) => r.title));
   const stars = averagesFor(recipes.map((r) => r.id));
   const tiles = recipes.map((r, i) => {
     i += from;
-    const n = perServing(estimate(lines.get(r.id) ?? []), r.servings);
+    const made = costToMake((lines.get(r.id) ?? []).filter((l) => !l.optional), `${r.id}@${r.updated_at}`);
     // the first tile of each later page is where Show more lands without the script
     const id = i > 0 && i % PAGE === 0 ? `more-${i}` : undefined;
-    return recipeTile(r, { i, id, live: live.get(r.title), costCents: n.counted >= 2 ? n.costCents : undefined, stars: stars.get(r.id) });
+    const m = missingFor.get(r.id);
+    // a per-serve price only when nothing in the recipe is unpriced, so a
+    // tile never reads cheap because something was left out
+    const perServe = made.cents > 0 && !made.unpriced.length ? made.cents / Math.max(1, r.servings) : undefined;
+    const tile = recipeTile(r, { i, id, live: live.get(r.title), costCents: perServe, stars: stars.get(r.id), kitchen: m ? { have: m.have, need: m.need, missing: m.missing } : undefined });
+    // a heading where the number missing changes: "You have everything", "Missing one"...
+    // the one before, which on a "Show more" page is the last one already shown
+    const prev = i > 0 ? (i > from ? missingFor.get(recipes[i - from - 1].id) : matches?.[i - 1]) : undefined;
+    if (m && (i === 0 || (prev && prev.missing.length !== m.missing.length))) {
+      return html`<p class="rx-group" role="heading" aria-level="3">${m.missing.length === 0 ? "You have everything" : m.missing.length === 1 ? "Missing one ingredient" : "Missing two"}</p>${tile}`;
+    }
+    return tile;
   });
   const grid = recipes.length || from > 0
     ? html`${tiles}`
     : html`<div class="empty rx-empty">
-        <p class="empty-title">${s.mine && !s.q && !s.tag ? "Your cookbook is empty" : "Nothing matches that"}</p>
-        <p>${s.mine && !s.q && !s.tag ? "Write down something you cook often — it gets nutrition and cost worked out automatically." : s.rated ? "None of these have reviews yet. Cook one and be the first to rate it." : "Try an ingredient you have, like “eggs” or “chickpeas”, or clear a filter."}</p>
-        ${s.mine ? html`<a class="button" href="/recipes/new">${icon("plus", 16)} Write a recipe</a>` : html`<a class="button button-ghost" href="/recipes">Clear filters</a>`}
+        <p class="empty-title">${s.have ? "Nothing you can cook yet" : s.mine && !s.q && !s.tag ? "Your cookbook is empty" : "Nothing matches that"}</p>
+        <p>${s.have ? "Add what's in your fridge and pantry, and the recipes you can make (or nearly make) show up here." : s.mine && !s.q && !s.tag ? "Write down something you cook often — it gets nutrition and cost worked out automatically." : s.rated ? "None of these have reviews yet. Cook one and be the first to rate it." : "Try an ingredient you have, like “eggs” or “chickpeas”, or clear a filter."}</p>
+        ${s.have ? html`<a class="button" href="/pantry">${icon("pantry", 16)} Open my kitchen</a>` : s.mine ? html`<a class="button" href="/recipes/new">${icon("plus", 16)} Write a recipe</a>` : html`<a class="button button-ghost" href="/recipes">Clear filters</a>`}
       </div>`;
   return { recipes, total, grid };
 }
@@ -249,13 +277,15 @@ export function resultCount(total: number, shown: number): string {
 function browsePage(ctx: Ctx): Html {
   const s = browseState(ctx);
   const { recipes, total, grid } = results(ctx, s);
-  const filtered = !!(s.q || s.tag || s.course || s.cuisine || s.video || s.rated);
+  const filtered = !!(s.q || s.tag || s.course || s.cuisine || s.video || s.rated || s.have);
   // filters start the list again from the top
   const f = { ...s, pages: 1 };
   const topCuisines = cuisines().slice(0, 9);
   const heading = s.mine
     ? "Your recipes"
-    : s.q
+    : s.have
+      ? s.q ? `From your kitchen: “${s.q}”` : "From your kitchen"
+      : s.q
       ? `Results for “${s.q}”`
       : s.course
         ? COURSES.find((c) => c.key === s.course)!.label
@@ -294,16 +324,18 @@ function browsePage(ctx: Ctx): Html {
         ${s.cuisine ? html`<input type="hidden" name="cuisine" value="${s.cuisine}" />` : ""}
         ${s.video ? html`<input type="hidden" name="video" value="1" />` : ""}
         ${s.rated ? html`<input type="hidden" name="rated" value="1" />` : ""}
+        ${s.have ? html`<input type="hidden" name="have" value="1" />` : ""}
         <input type="search" name="q" value="${s.q}" placeholder="Try “pad thai”, “eggs” or “chickpeas”" aria-label="Search recipes" autocomplete="off" />
         <button class="button" type="submit">Search</button>
       </form>
     </section>
 
     <nav class="rx-filters" aria-label="Filter recipes">
-      ${chip("All", hrefWith(f, { course: "", tag: "", cuisine: "", video: false, rated: false }), !s.course && !s.tag && !s.cuisine && !s.video && !s.rated)}
+      ${chip("All", hrefWith(f, { course: "", tag: "", cuisine: "", video: false, rated: false, have: false }), !s.course && !s.tag && !s.cuisine && !s.video && !s.rated && !s.have)}
       ${COURSES.map((c) => chip(c.label, hrefWith(f, { course: s.course === c.key ? "" : c.key }), s.course === c.key))}
       <span class="rx-divider" aria-hidden="true"></span>
-      ${chip("Top rated", hrefWith(f, { rated: !s.rated }), s.rated, "var(--butter-ink)")}
+      ${ctx.user ? chip("From my kitchen", hrefWith(f, { have: !s.have, rated: false }), s.have, "var(--accent)") : ""}
+      ${chip("Top rated", hrefWith(f, { rated: !s.rated, have: false }), s.rated, "var(--butter-ink)")}
       ${chip("Has video", hrefWith(f, { video: !s.video }), s.video, "var(--rose)")}
       ${QUICK_FILTERS.map((q) => chip(q.label, hrefWith(f, { tag: s.tag === q.key ? "" : q.key }), s.tag === q.key, q.dot))}
       <span class="rx-divider" aria-hidden="true"></span>
@@ -331,33 +363,66 @@ function checkedLabel(): string {
   return label ? `, checked ${label}` : "";
 }
 
-// What it would cost at the checkout to cook the recipe as written, after the
-// viewer's usable pantry (an empty one for visitors): whole packs, through
-// the shopping list's engine.
+// What the recipe costs, in three numbers that are each named for what they
+// are (docs/ARCHITECTURAL_GUIDELINES.md, "Pricing and budgeting"):
+//   Cost to make   the value of the amounts the recipe uses: the same for
+//                  everyone, and what "per serve" divides
+//   At the checkout, from an empty kitchen   whole packs to buy owning nothing
+//   At the checkout, after your pantry       whole packs after what you hold
+// Every stand-in, estimate or ingredient with no price is named underneath,
+// so a total is never quietly short (a lamb shoulder left out made a lamb
+// bake read $5.50).
 function purchaseCard(ctx: Ctx, recipe: Recipe, lines: RecipeIngredient[]): Html {
   const viewer = ctx.user?.id ?? null;
+  const empty = recipePurchase(viewer, lines, 1, [], recipe.title);
+  const used = { costCents: empty.consumptionCents };
   const stock = viewer === null ? [] : usableStock("user", viewer);
-  const plan = recipePurchase(viewer, lines, 1, stock, recipe.title);
-  const priced = plan.toBuy.filter((l) => l.pack);
+  const mine = viewer === null ? null : recipePurchase(viewer, lines, 1, stock, recipe.title);
+  const required = lines.filter((l) => !l.optional);
+  // how each ingredient is priced, when it's anything other than plainly
+  const notes = new Map<string, string>();
+  for (const l of required) {
+    const n = priceNote(l.name);
+    if (n.note && !notes.has(l.name)) notes.set(l.name, n.note);
+  }
+  const unpriced = [...new Set(empty.toBuy.filter((l) => !l.pack && !l.sharesPack && l.toBuy !== null && l.consumptionCents === null).map((l) => l.name))];
+  const plan = mine ?? empty;
+  const packs = (p: typeof empty) => p.toBuy.filter((l) => l.pack).length;
   return html`<section class="rd-card rd-buy" aria-labelledby="buy-h">
-    <div class="rd-card-head"><h2 id="buy-h">To cook it as written</h2><span class="muted small">${recipe.servings} serves</span></div>
-    <dl class="shop-split">
-      <div><dt>At the checkout</dt><dd class="mono" data-recipe-purchase="${plan.purchaseCents}">${money(plan.purchaseCents)}</dd><small>${priced.length} whole pack${priced.length === 1 ? "" : "s"}${viewer ? ", after your pantry" : ""}</small></div>
-      <div><dt>Recipe uses</dt><dd class="mono">${money(plan.consumptionCents)}</dd><small>the share of those packs in the dish</small></div>
+    <div class="rd-card-head"><h2 id="buy-h">What it costs</h2><span class="muted small">as written, ${recipe.servings} serves</span></div>
+    <dl class="cost-split">
+      <div><dt>Cost to make</dt><dd class="mono" data-scale-cost data-base="${Math.round(used.costCents)}">${money(Math.round(used.costCents))}</dd>
+        <small>the value of what goes in the dish</small></div>
+      <div><dt>At the checkout</dt><dd class="mono" data-recipe-purchase="${empty.purchaseCents}">${money(empty.purchaseCents)}</dd>
+        <small>${packs(empty)} whole pack${packs(empty) === 1 ? "" : "s"}, from an empty kitchen</small></div>
+      ${mine
+        ? html`<div class="cost-mine"><dt>After your pantry</dt><dd class="mono" data-recipe-purchase-mine="${mine.purchaseCents}">${money(mine.purchaseCents)}</dd>
+            <small>${mine.covered.length ? `you have ${mine.covered.length} of ${mine.covered.length + mine.toBuy.length}` : "you have none of it yet"}</small></div>`
+        : ""}
     </dl>
+    <p class="estimate-note">Cost to make counts only what the recipe uses; at the checkout you buy whole packs, so it's more, and the rest stays in your kitchen.${viewer ? "" : html` <a href="/register">Join free</a> to see it after what you already have.`}</p>
     ${plan.toBuy.length
-      ? html`<details class="rd-buy-list"><summary>What you'd buy</summary><ul class="shop-list">${plan.toBuy.map(
+      ? html`<details class="rd-buy-list"><summary>What you'd buy${mine ? "" : ""}</summary><ul class="shop-list">${plan.toBuy.map(
           (l) => html`<li class="shop-line"><span class="mono qty">${l.toBuy === null ? "some" : qty(l.toBuy, l.unit === "each" ? "" : l.unit)}</span><span class="grow"><span class="item-name">${l.name}</span>${packLine(l.pack, l.consumptionCents, l.sharesPack, l.unitClash)}</span><span class="hh-line-price mono">${l.pack ? money(l.pack.costCents) : l.sharesPack ? "incl." : "—"}</span></li>`,
         )}</ul></details>`
       : html`<p class="estimate-note">Your pantry covers everything.</p>`}
-    ${plan.unpriced ? html`<p class="estimate-note">${plan.unpriced} ingredient${plan.unpriced === 1 ? " has" : "s have"} no pack price, so ${plan.unpriced === 1 ? "it isn't" : "they aren't"} in the checkout total.</p>` : ""}
-    ${viewer ? "" : html`<p class="estimate-note"><a href="/register">Join free</a> and this counts what's already in your kitchen.</p>`}
+    ${notes.size
+      ? html`<details class="rd-price-notes"><summary>${notes.size} priced as something close</summary><ul>${[...notes].map(([name, note]) => html`<li><strong>${name}</strong>: ${note}</li>`)}</ul></details>`
+      : ""}
+    ${unpriced.length
+      ? html`<p class="rd-unpriced" role="note">${icon("alert", 14)} No price yet for ${listNames(unpriced)}, so ${unpriced.length === 1 ? "it isn't" : "they aren't"} in these totals.</p>`
+      : ""}
   </section>`;
 }
 
-function nutritionCard(lines: RecipeIngredient[], servings: number): Html {
+function listNames(names: string[]): string {
+  return names.length <= 1 ? (names[0] ?? "") : `${names.slice(0, -1).join(", ")} and ${names.at(-1)}`;
+}
+
+function nutritionCard(recipe: Recipe, lines: RecipeIngredient[], servings: number): Html {
   const total = estimate(lines);
   const n = perServing(total, servings);
+  const made = costToMake(lines.filter((l) => !l.optional), `${recipe.id}@${recipe.updated_at}`);
   const kcal = Math.round(n.kcal);
   const pK = n.protein * 4;
   const cK = n.carbs * 4;
@@ -395,10 +460,10 @@ function nutritionCard(lines: RecipeIngredient[], servings: number): Html {
       </ul>
     </div>
     <div class="cost-row">
-      <div><small>Cost per serve</small><strong>${money(Math.round(n.costCents))}</strong></div>
-      <div style="text-align: right"><small>Ingredients used</small><strong data-scale-cost data-base="${Math.round(total.costCents)}">${money(Math.round(total.costCents))}</strong></div>
+      <div><small>Cost per serve</small><strong>${money(Math.round(made.cents / Math.max(1, servings)))}${made.unpriced.length ? "+" : ""}</strong></div>
+      <div style="text-align: right"><small>Cost to make</small><strong>${money(made.cents)}${made.unpriced.length ? "+" : ""}</strong></div>
     </div>
-    <p class="estimate-note">The value of the amounts the recipe uses, from ${total.counted} of ${total.total} ingredients at dated ALDI and Woolworths reference prices${checkedLabel()}. It's not what you'd spend at the shop: packs come whole (see “To cook it as written”). Seasonings to taste aren't counted.</p>
+    <p class="estimate-note">Nutrition from ${total.counted} of ${total.total} ingredients; cost from the Woolworths and ALDI prices${checkedLabel()} (see “What it costs”). Seasonings to taste aren't counted.</p>
   </section>`;
 }
 
@@ -619,7 +684,7 @@ function recipeDetail(ctx: Ctx, recipe: Recipe, composer?: ComposerState): Html 
         ${ingredientsCard(ctx, recipe, lines)}
       </aside>
       <aside class="rd-side rd-side-b">
-        ${nutritionCard(lines, recipe.servings)}
+        ${nutritionCard(recipe, lines, recipe.servings)}
         ${purchaseCard(ctx, recipe, lines)}
         ${planCard(ctx, recipe)}
       </aside>
@@ -675,6 +740,7 @@ function ingredientRow(i: number, ing?: RecipeInput["ingredients"][number]): Htm
     <input name="ing_name" placeholder="Ingredient" aria-label="Ingredient" list="ingredient-catalog" value="${ing?.name ?? ""}" class="grow" />
     <label class="check-inline" title="Optional ingredient"><input type="checkbox" name="ing_optional" value="${i}" ${ing?.optional ? raw("checked") : ""} /> <span>Optional</span></label>
     <button type="button" class="icon-button" data-remove-row aria-label="Remove ingredient">×</button>
+    <p class="price-hint" data-price-hint aria-live="polite" hidden></p>
   </div>`;
 }
 
@@ -792,6 +858,7 @@ function recipeForm(ctx: Ctx, input: Partial<RecipeInput>, problems: string[], r
             </div>
             <template data-template="ingredients">${ingredientRow(0)}</template>
             <button type="button" class="button button-soft" data-add-row="ingredients">${icon("plus", 16)} Add ingredient</button>
+            <p class="muted small" data-price-help>Each ingredient shows what Larder prices it at. If it has no price, or the price is wrong, add what you paid: it prices your recipes and shopping.</p>
             <datalist id="ingredient-catalog">${catalog.map((c) => html`<option value="${c}"></option>`)}</datalist>
           </section>
 

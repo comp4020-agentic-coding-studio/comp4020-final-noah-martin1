@@ -98,6 +98,9 @@ export interface Costed {
   // the part of toBuyCents that is an estimate for unpriced lines
   estimatedCents: number;
   unpriced: number;
+  // ingredients with no price of any kind (not even an estimate): a recipe
+  // with any is never ranked on cost
+  noPrice: number;
   // consumption cost of what the dish uses beyond the pantry
   usesCents: number;
   held: string[];
@@ -137,8 +140,14 @@ export function costLines(
   const needs: Need[] = required.map((l) => ({ ingredient_id: l.ingredient_id, name: l.name, category: "", quantity: scale(l).quantity, unit: l.unit, meal: "" }));
   const plan = purchasePlan(needs, stock, options);
   const coveredIds = new Set(plan.covered.map((c) => c.ingredient_id));
+  // what it costs to make, by the same engine as the checkout, from an
+  // empty kitchen (src/pricing.ts costToMake), so a meal is never "cheap"
+  // because something in it had no price
+  const made = purchasePlan(needs, [], options);
+  const noPrice = made.toBuy.filter((l) => !l.pack && !l.sharesPack && l.toBuy !== null && l.consumptionCents === null).length;
   return {
-    fullCents: Math.round(full.costCents),
+    fullCents: made.consumptionCents,
+    noPrice,
     toBuyCents: plan.purchaseCents + plan.unpricedEstCents,
     estimatedCents: plan.unpricedEstCents,
     unpriced: plan.unpriced,
@@ -253,7 +262,7 @@ export function candidatesFor(k: Kitchen): Candidate[] {
     const names = ls.map((l) => l.name.toLowerCase());
     if (avoid.some((a) => names.some((n) => n.includes(a)))) continue;
     const cost = costLines(ls, servingsFactor(k.prefs, recipe.servings), k.stock, k.options);
-    if (cost.counted < 2 || cost.fullCents <= 0) continue;
+    if (cost.counted < 2 || cost.fullCents <= 0 || cost.noPrice > 0) continue;
     out.push({
       recipe,
       lines: ls,

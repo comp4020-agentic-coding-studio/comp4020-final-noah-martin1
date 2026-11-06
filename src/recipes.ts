@@ -2,6 +2,7 @@ import { all, ingredientId, one, run, transaction } from "./db.ts";
 import { stockParams, stockSql } from "./expiry.ts";
 import { DIETARY_TAGS } from "./format.ts";
 import { parseYouTubeId } from "./videos.ts";
+import { priceSources } from "./products.ts";
 import { visibleRecipeSql } from "./visibility.ts";
 
 export interface Recipe {
@@ -387,6 +388,53 @@ export interface PantryMatch {
   missing: number;
 }
 
+// Ingredients everyone always has (tap water), by id: never "missing".
+export function alwaysHeldIds(): number[] {
+  const names = Object.entries(priceSources()).filter(([, s]) => s.free).map(([n]) => n);
+  if (!names.length) return [];
+  return all<{ id: number }>(`SELECT id FROM ingredients WHERE name IN (${names.map(() => "?").join(", ")})`, ...names).map((r) => r.id);
+}
+
+// Seasonings and water a recipe can assume are in any kitchen: they never
+// make a recipe "missing" something.
+export const STAPLES = new Set(["water", "salt", "pepper", "black pepper", "sea salt", "salt and pepper", "ice", "boiling water", "cold water", "warm water"]);
+
+export interface KitchenMatch {
+  recipe: Recipe;
+  // required, non-staple ingredients: held, and the ones still to get
+  have: number;
+  need: number;
+  missing: string[];
+}
+
+// Recipes the viewer can cook from what they have: every required
+// ingredient held first, then those missing one, then two (no more), most
+// held first within each. Staples and water don't count. Visibility, and
+// any other filters, as listVisibleRecipes.
+export function kitchenMatches(viewerId: number, opts: ListOptions = {}, maxMissing = 2): KitchenMatch[] {
+  const { have } = pantryMatch(viewerId, []);
+  if (!have.size) return [];
+  const pool = listVisibleRecipes(viewerId, { ...opts, limit: 5000, offset: 0 });
+  const lines = ingredientsFor(pool.map((r) => r.id));
+  const out: KitchenMatch[] = [];
+  for (const r of pool) {
+    const seen = new Set<number>();
+    const required = (lines.get(r.id) ?? []).filter((l) => {
+      if (l.optional || STAPLES.has(l.name) || seen.has(l.ingredient_id)) return false;
+      seen.add(l.ingredient_id);
+      return true;
+    });
+    if (!required.length) continue;
+    const held = required.filter((l) => have.has(l.ingredient_id));
+    // nothing from the kitchen in it isn't "cooking with what you have"
+    if (!held.length) continue;
+    const missing = required.filter((l) => !have.has(l.ingredient_id)).map((l) => l.name);
+    if (missing.length > maxMissing) continue;
+    out.push({ recipe: r, have: held.length, need: required.length, missing });
+  }
+  return out.sort((a, b) => a.missing.length - b.missing.length || b.have - a.have || b.have / b.need - a.have / a.need || a.recipe.title.localeCompare(b.recipe.title));
+}
+
 export function pantryMatch(viewerId: number, ingredients: Pick<RecipeIngredient, "ingredient_id" | "optional">[]): PantryMatch {
   const held = all<{ ingredient_id: number }>(
     `SELECT ingredient_id FROM inventory_items
@@ -394,7 +442,7 @@ export function pantryMatch(viewerId: number, ingredients: Pick<RecipeIngredient
     viewerId,
     ...stockParams(),
   );
-  const have = new Set(held.map((h) => h.ingredient_id));
+  const have = new Set([...held.map((h) => h.ingredient_id), ...alwaysHeldIds()]);
   const missing = ingredients.filter((i) => !i.optional && !have.has(i.ingredient_id)).length;
   return { have, missing };
 }

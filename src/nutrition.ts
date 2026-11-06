@@ -1,4 +1,5 @@
 import { readFileSync } from "node:fs";
+import { equivalentProducts, isFree, priceSources, priceSourceFor, unitPrice } from "./products.ts";
 
 // Automatic nutrition and cost for any recipe, the catalogue's and the ones
 // people write themselves. Nutrition is per 100 g (kcal, protein, carbs,
@@ -606,6 +607,55 @@ const CUP_GRAMS: Record<string, number> = {
   "digestive biscuits": 100, "chocolate sandwich biscuits": 100, "mixed peel": 150, "glacé cherries": 160,
 };
 
+// Grams per millilitre of solids measured by the spoon or cup, so "3 tbsp
+// butter" can be bought from a 250 g block and "1 tsp salt" from a 1 kg
+// pack. Standard kitchen weights (USDA FoodData Central household measures,
+// King Arthur's ingredient weight chart): a teaspoon of salt is about 6 g,
+// of a ground spice 2-2.5 g, of a seed 2-3 g. A food with a cup weight above
+// gets its density from that (cup grams ÷ 250 ml). Pastes and spreads are
+// near water but listed where they differ.
+const SPOON_DENSITY: Record<string, number> = {
+  salt: 1.2, "sea salt": 1.2, "sea salt flakes": 0.6, "celery salt": 1.1, "garlic salt": 1.1, "onion salt": 1.1,
+  "black pepper": 0.46, "white pepper": 0.5, "cayenne pepper": 0.5, "chilli powder": 0.54, "chilli flakes": 0.36,
+  "red chilli flakes": 0.36, paprika: 0.46, "smoked paprika": 0.46, "sweet paprika": 0.46, "ground cumin": 0.42,
+  "cumin seeds": 0.42, "ground coriander": 0.36, "coriander seeds": 0.36, turmeric: 0.6, cinnamon: 0.52,
+  "ground cinnamon": 0.52, "ground ginger": 0.36, "ground cloves": 0.42, cloves: 0.42, "ground nutmeg": 0.44,
+  nutmeg: 0.44, allspice: 0.38, "mixed spice": 0.4, "garam masala": 0.4, "curry powder": 0.42, "garlic powder": 0.62,
+  "onion powder": 0.48, "mustard powder": 0.5, "fennel seeds": 0.4, "caraway seeds": 0.42, "sesame seed": 0.6,
+  oregano: 0.2, "dried oregano": 0.2, "dried basil": 0.14, "dried thyme": 0.28, "dried parsley": 0.1, "dried mint": 0.2,
+  "dried dill": 0.2, "mixed herbs": 0.2, "all-purpose seasoning": 0.6, "cream of tartar": 0.6, "baking powder": 0.92,
+  "bicarbonate of soda": 0.92, "custard powder": 0.6, "cocoa powder": 0.34, "instant coffee": 0.3, gelatine: 0.62,
+  "ras el hanout": 0.4, sumac: 0.5, "chinese five spice powder": 0.4, "cardamom": 0.4, "fenugreek": 0.74,
+  // threads, loosely packed: a quarter teaspoon is about 0.1 g
+  saffron: 0.08,
+  honey: 1.42, "golden syrup": 1.4, molasses: 1.4, "maple syrup": 1.32, "peanut butter": 1.08, tahini: 1.0,
+  "tomato paste": 1.1, "tomato puree": 1.05, mayonnaise: 0.92, mustard: 1.05, "dijon mustard": 1.05, horseradish: 1.0,
+  "thai red curry paste": 1.0, "thai green curry paste": 1.0, "red curry paste": 1.0, capers: 0.6, "pickled ginger": 0.7,
+  "fried onions": 0.24, "shortening": 0.82, "lime zest": 0.4, "lemon zest": 0.4, "orange zest": 0.4,
+  parsley: 0.24, dill: 0.24, coriander: 0.24, "cherry tomatoes": 0.6, "baby potatoes": 0.6, "white onion": 0.64,
+  "cooked white rice": 0.7, peanuts: 0.58, cashews: 0.56, "pine nuts": 0.54,
+};
+
+// Conversions the food table above doesn't give, so an amount in one unit
+// can be bought in another: liquids weighed in grams (grams per ml, USDA
+// FoodData Central: vinegars and thin sauces about 1.0, evaporated milk
+// 1.07, sugar syrups 1.37-1.45) and things counted by the piece but sold by
+// weight or volume (grams or ml in one: a nori sheet 2.3 g, a scallop 20 g,
+// a Mars bar 47 g, a scoop of ice cream 70 g, a tea bag 2 g brewing 220 ml).
+const EXTRA_CONVERSIONS: Record<string, { density?: number; each?: number }> = {
+  "evaporated milk": { density: 1.07 }, "sweetened condensed milk": { density: 1.3 }, "sherry vinegar": { density: 1.01 },
+  "balsamic vinegar": { density: 1.06 }, "white wine vinegar": { density: 1.01 }, "red wine vinegar": { density: 1.01 },
+  "rice vinegar": { density: 1.01 }, vinegar: { density: 1.01 }, "apple cider vinegar": { density: 1.01 },
+  "golden syrup": { density: 1.42 }, molasses: { density: 1.45 }, "maple syrup": { density: 1.37 }, honey: { density: 1.42 },
+  "corn syrup": { density: 1.37 }, "tomato sauce": { density: 1.1 }, "soy sauce": { density: 1.15 },
+  "fish sauce": { density: 1.2 }, "worcestershire sauce": { density: 1.1 }, "oyster sauce": { density: 1.25 },
+  "hoisin sauce": { density: 1.2 }, "kecap manis": { density: 1.3 }, "chilli sauce": { density: 1.1 },
+  "sun-dried tomato oil": { density: 0.92 }, "dulce de leche": { density: 1.3 }, espresso: { density: 1.0 },
+  "black tea": { each: 220 }, nori: { each: 2.3 }, scallops: { each: 20 }, "mars bar": { each: 47 },
+  "ice cream": { density: 0.55 }, "turkish delight": { each: 15 }, candlenuts: { each: 4 }, crackers: { each: 4 },
+  "wholemeal crackers": { each: 10 }, "bread and butter pickle": { each: 8 }, "food colouring": { density: 1.0 },
+};
+
 export interface IngredientLine {
   name: string;
   quantity: number | null;
@@ -635,8 +685,13 @@ function bestKey(n: string, keys: string[], table: Record<string, unknown>, cach
 }
 
 function lookup(name: string): Ref | undefined {
-  const key = bestKey(name.toLowerCase().trim(), KEYS, FOODS, keyCache);
-  return key ? FOODS[key] : undefined;
+  const n = name.toLowerCase().trim();
+  const key = bestKey(n, KEYS, FOODS, keyCache);
+  const ref = key ? FOODS[key] : undefined;
+  const extra = EXTRA_CONVERSIONS[n];
+  if (!extra) return ref;
+  // the food's own numbers win; the extra table fills what it lacks
+  return ref ? { ...ref, density: ref.density ?? extra.density, each: ref.each ?? extra.each } : undefined;
 }
 
 function priceOf(name: string): Price | undefined {
@@ -648,10 +703,18 @@ function priceOf(name: string): Price | undefined {
 // count. Only what the food table states for it: a density is given only for
 // liquids whose density is listed, and a weight per item only where one is.
 // Callers must not convert without these (CLAUDE.md pricing rules).
-export function conversionFor(name: string): { density?: number; each?: number; cupGrams?: number } {
-  const ref = lookup(name);
-  const cup = CUP_GRAMS[name.toLowerCase().trim()];
-  return { density: ref?.density, each: ref?.each, cupGrams: cup };
+export function conversionFor(name: string): { density?: number; each?: number; cupGrams?: number; spoonGrams?: number } {
+  const n = name.toLowerCase().trim();
+  // the food's own row, or (for a food with no nutrition row, like nori)
+  // just the conversions listed for it
+  const ref = lookup(name) ?? EXTRA_CONVERSIONS[n];
+  const cup = CUP_GRAMS[n];
+  // a solid measured by the spoon or cup weighs its listed spoon weight, or
+  // its cup weight spread over 250 ml: grams per ml of *measure*, used only
+  // to weigh a spoon or cup amount. It is not a density: flour is never sold
+  // or bought by the litre.
+  const spoon = ref?.density ? undefined : (SPOON_DENSITY[n] ?? (cup ? cup / 250 : undefined));
+  return { density: ref?.density, each: ref?.each, cupGrams: cup, spoonGrams: spoon };
 }
 
 // The reference price row for an ingredient, with its source text, so the
@@ -680,18 +743,24 @@ export function gramsOf(line: IngredientLine): number | null {
   const ref = lookup(line.name);
   const name = line.name.toLowerCase();
   const unit = line.unit.toLowerCase();
+  // a spoon or cup of a solid weighs what pricing weighs it at
+  // (conversionFor's spoon weight), so the nutrition card and the checkout
+  // agree; millilitres and litres stay liquid measures
+  const density = ref?.density;
+  const spoon = density ? undefined : SPOON_DENSITY[name.trim()];
   if (unit === "" || unit === "each") return ref?.each ? line.quantity * ref.each : null;
   // a pinch of saffron is a few threads, not a pinch of salt
   if (unit === "pinch" && name === "saffron") return line.quantity * 0.05;
   if (unit === "cup" && CUP_GRAMS[name]) return line.quantity * CUP_GRAMS[name];
   if (unit in LEAFY_GRAMS && LEAFY.test(name)) return line.quantity * LEAFY_GRAMS[unit];
-  if (unit === "dash" && DASH_ML.test(name)) return line.quantity * 3 * (ref?.density ?? 1);
+  if (unit === "dash" && DASH_ML.test(name)) return line.quantity * 3 * (density ?? 1);
   if (unit === "stick" && ref?.each && !/butter/.test(name)) return line.quantity * ref.each;
   if (unit === "knob" && /ginger|galangal/.test(name)) return line.quantity * 10;
-  if (unit in ML_PER) return line.quantity * ML_PER[unit] * (ref?.density ?? 1);
+  if (spoon && (unit === "tsp" || unit === "tbsp" || unit === "cup")) return line.quantity * ML_PER[unit] * spoon;
+  if (unit in ML_PER) return line.quantity * ML_PER[unit] * (density ?? 1);
   if (unit in GRAMS_PER) return line.quantity * GRAMS_PER[unit];
   if (unit === "kg") return line.quantity * 1000;
-  if (unit === "l") return line.quantity * 1000 * (ref?.density ?? 1);
+  if (unit === "l") return line.quantity * 1000 * (density ?? 1);
   return null;
 }
 
@@ -700,29 +769,80 @@ export interface Nutrition {
   protein: number;
   carbs: number;
   fat: number;
-  // whole recipe, cents
+  // whole recipe, cents: the value of the amounts used
   costCents: number;
-  // how many ingredient lines fed the numbers, out of how many
+  // how many ingredient lines fed the nutrition numbers, out of how many
   counted: number;
   total: number;
+  // lines whose cost is in costCents (water counts: it's free), and the
+  // names of the lines with an amount that couldn't be priced
+  priced: number;
+  unpricedNames: string[];
+}
+
+// What a gram (or millilitre) of an ingredient costs to use, in cents, and
+// where that rate comes from: a curated estimate, the dated reference price,
+// or the cheapest like-for-like supermarket product (the same products the
+// checkout buys). Null when nothing prices it.
+export function useRate(name: string): { centsPerGram: number; kind: "free" | "estimate" | "reference" | "product" } | null {
+  if (isFree(name)) return { centsPerGram: 0, kind: "free" };
+  // a curated ingredient bought as another (monkfish as white fish, egg
+  // yolks as eggs): that one's rate, times how much of it this takes
+  const n = name.toLowerCase().trim();
+  const link = priceSources()[n]?.from;
+  if (link) {
+    const parent = useRate(link.ingredient);
+    if (!parent) return null;
+    // a link measured by the piece ("each") prices a piece from the parent's
+    // grams per piece: an egg yolk is one egg's worth
+    if (link.unit === "each") {
+      const g = gramsOf({ name: link.ingredient, quantity: link.parent, unit: "" });
+      const each = gramsOf({ name, quantity: 1, unit: "" });
+      if (g === null || !each) return null;
+      return { centsPerGram: (parent.centsPerGram * g) / each, kind: parent.kind };
+    }
+    return { centsPerGram: parent.centsPerGram * link.parent, kind: parent.kind };
+  }
+  const curated = priceSourceFor(name)?.source;
+  if (curated?.estimate) return { centsPerGram: curated.estimate.centsPer100 / 100, kind: "estimate" };
+  // checked supermarket products first: they're what the checkout buys
+  const byWeight = equivalentProducts(name)
+    .filter((p) => p.available && (p.perKgCents || p.size.unit === "g" || p.size.unit === "ml"))
+    .map((p) => unitPrice(p))
+    .sort((a, b) => a - b);
+  if (curated && (curated.products?.length || curated.similar?.products.length) && byWeight.length) return { centsPerGram: byWeight[0], kind: "product" };
+  const ref = priceOf(name);
+  if (ref) return { centsPerGram: ref.cents / 100, kind: "reference" };
+  if (byWeight.length) return { centsPerGram: byWeight[0], kind: "product" };
+  return null;
 }
 
 export function estimate(lines: IngredientLine[]): Nutrition {
-  const out: Nutrition = { kcal: 0, protein: 0, carbs: 0, fat: 0, costCents: 0, counted: 0, total: lines.length };
+  const out: Nutrition = { kcal: 0, protein: 0, carbs: 0, fat: 0, costCents: 0, counted: 0, total: lines.length, priced: 0, unpricedNames: [] };
   for (const line of lines) {
     const ref = lookup(line.name);
     const g = gramsOf(line);
+    // cost: by weight at the ingredient's use rate (no amount, "to taste",
+    // is left out of both cost and the unpriced list)
+    if (g !== null) {
+      const rate = useRate(line.name);
+      if (rate) {
+        const cap = PACK_CENTS[line.name.toLowerCase()];
+        const cents = rate.centsPerGram * g;
+        out.costCents += cap === undefined ? cents : Math.min(cap, cents);
+        out.priced++;
+      } else if (!out.unpricedNames.includes(line.name)) out.unpricedNames.push(line.name);
+    } else if (line.quantity !== null && line.quantity > 0 && !isFree(line.name) && !out.unpricedNames.includes(line.name)) {
+      // an amount that can't be weighed ("2 pieces" of something with no
+      // known weight): not priced, and said so
+      out.unpricedNames.push(line.name);
+    }
     if (!ref || g === null) continue;
     const k = g / 100;
     out.kcal += ref.kcal * k;
     out.protein += ref.p * k;
     out.carbs += ref.c * k;
     out.fat += ref.f * k;
-    const price = priceOf(line.name);
-    if (price) {
-      const cap = PACK_CENTS[line.name.toLowerCase()];
-      out.costCents += cap === undefined ? price.cents * k : Math.min(cap, price.cents * k);
-    }
     out.counted++;
   }
   return out;

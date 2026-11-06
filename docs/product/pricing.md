@@ -1,24 +1,72 @@
 # Pricing and budgeting
 
 How Larder works out what food costs. The rules live in `src/pricing.ts`
-(package purchases), `src/products.ts` (retailer listings) and
-`src/nutrition.ts` (reference prices and conversions); every page that shows
-a price calls them rather than doing its own arithmetic. Tests:
-`spec/pricing.test.ts`, `spec/products.test.ts`, `spec/shopping.test.ts`.
+(package purchases and cost to make), `src/products.ts` (retailer listings
+and the checked price sources) and `src/nutrition.ts` (reference prices and
+conversions); every page that shows a price calls them rather than doing its
+own arithmetic. Tests: `spec/pricing.test.ts`, `spec/products.test.ts`,
+`spec/shopping.test.ts`, `spec/price-sources.test.ts`.
 
 ## The quantities, kept apart
 
 | Concept | Meaning | Where it's shown |
 | --- | --- | --- |
-| Consumption cost | The value of the amount a recipe uses, at a reference or pack rate | Recipe "Per serve" card; "Used by these meals" on the shopping list |
-| Cost per serve | Consumption cost of the recipe batch ÷ its servings | Recipe tiles and "Per serve" |
+| Cost to make (consumption cost) | The value of the amounts a recipe uses, from an empty kitchen, each at the rate of the pack the checkout would buy (`costToMake`) | Recipe "What it costs" and "Per serve"; "Used by these meals" on the shopping list |
+| Cost per serve | Cost to make ÷ the recipe's servings | Recipe tiles and "Per serve" |
 | Purchase quantity | What's still needed after usable pantry stock, summed across every planned meal | Shopping list amounts |
 | Package purchase | Whole packs covering the purchase quantity: `ceil(need / pack size)` | Each shopping line ("1 × White Mill Plain Flour 2kg") |
-| Checkout cost | What those packs cost | "At the checkout" on the shopping list, calendar budget, home, household ticker, recipe "To cook it as written" |
+| Checkout cost | What those packs cost | "At the checkout" on the shopping list, calendar budget, home, household ticker |
+| At the checkout, from an empty kitchen | Whole packs for the recipe as written, owning nothing | Recipe "What it costs" |
+| At the checkout, after your pantry | Whole packs after your usable stock (signed in) | Recipe "What it costs" |
 | Budget total | Compared against **checkout cost** everywhere | Shopping list, calendar, home, household |
 
 200 g of flour with none at home buys the whole bag ($2.39 for 2 kg at ALDI)
 and uses $0.24 of it. Holding 500 g buys nothing.
+
+Cost to make and the checkout come from the same engine, so they never
+disagree about what an ingredient costs; they differ only in whole packs and
+your pantry. A total that leaves out an ingredient with no price at all
+shows a "+" and the recipe names the ingredient; a tile shows no per-serve
+price, and the planner never ranks such a meal on cost (a lamb bake with no
+lamb once read $5.50).
+
+## Where each ingredient's price comes from
+
+`src/data/price-sources.json` holds, for every catalogue ingredient, one of:
+
+- **products**: Woolworths or ALDI products checked by hand to be that food,
+  in the form recipes use it (fresh garlic, not a jar of minced garlic), by
+  store product code. A piece cut to no fixed weight ("Lamb Shoulder Roast
+  1.1kg - 1.7kg", $18/kg) is bought whole at its middle weight and used at
+  its price per kilogram.
+- **similar**: the nearest product when the stores don't sell the food, with
+  a note the recipe shows ("No store sells monkfish: priced as white fish
+  fillets").
+- **from**: bought as another ingredient, with how much of it one unit takes
+  (two egg yolks buy a carton of eggs; a teaspoon of zest is a third of a
+  lemon; flank steak at 1.3 times a stewing cut). The same food under two
+  names is one entry and a link, so no product prices two names.
+- **estimate**: a dated price from a named shop for food neither store sells
+  (dried shrimp from an Asian grocer), with its pack, always labelled as an
+  estimate.
+- **reference**: the dated reference shelf price, for fresh produce whose
+  listings were all jars or tins.
+- **free**: tap water: never bought, never missing from a pantry.
+
+`scripts/build-price-sources.ts` builds the file from reviewed decisions and
+refuses to write it if a product prices two names, a link ends at an
+unpriced ingredient, or a stand-in has no note. `spec/price-sources.test.ts`
+checks the same rules on the committed file, and that every catalogue
+ingredient has a source.
+
+## Prices people give
+
+Writing a recipe, each ingredient shows what Larder prices it at (the
+product, or the stand-in and why), asks "what did you pay?" when there's no
+price, and takes a correction (`/prices`). A price someone gives is theirs:
+it prices their own recipes and shopping (like a price recorded from a
+pantry item) and is logged (`price.record`) so corrections can be reviewed
+into the shared data. It never changes anyone else's prices by itself.
 
 ## Steps (src/pricing.ts `purchasePlan`)
 
@@ -91,6 +139,5 @@ read, the previous file stays in place and its read date shows its age.
   member prices and stock levels at a particular store aren't known.
 - Loose produce sold per kilogram has no fixed pack; it's priced by weight
   only where a dated per-kg reference exists.
-- About a quarter of catalogue ingredients have no like-for-like listing
-  (bay leaves, fresh tomatoes, pecans); those use the reference estimate or
-  stay unpriced.
+- A handful of counted things with no weight per piece (half a breadfruit,
+  a pack of vinaigrette) can't be turned into a pack; the recipe names them.

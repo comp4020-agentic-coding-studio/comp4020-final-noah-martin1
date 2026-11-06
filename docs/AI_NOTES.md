@@ -177,3 +177,30 @@ Things learned the hard way while matching catalogue recipes to YouTube videos.
 - Live review events reuse the live-cooking pattern: an in-process
   EventEmitter plus an SSE stream per recipe page (one Fly machine). Filter
   typing names per connection, or writers see their own dots.
+
+# AI notes: ingredient prices
+
+- Woolworths' edge blocks an IP after roughly 900 search requests at
+  2 a second in one sitting: every page, robots.txt and the API answered
+  "Access Denied" for the rest of the session (2026-11-06). Gather in one
+  slow pass (one request a second or slower) and keep every result, so a
+  block doesn't cost the data. Coles' robots.txt disallows `/search/`.
+- The old refresh kept the top 4 search hits per ingredient name. Bare names
+  bring junk to the top: "bay leaf" found spray paint and bath mats,
+  "aubergine" cushions, "saffron" perfume, "lamb shoulder" a plush bag, so
+  405 of 749 ingredients had nothing to buy. Search the Australian name
+  ("eggplant", "zucchini", "dried bay leaves", "lamb shoulder roast").
+- The word-matching filter (`isEquivalent`) can't be trusted alone: it
+  priced fresh garlic as minced garlic jars, tomatoes as tins, "tomato sauce"
+  as truss tomatoes, cherries as cherry cola. Every product in
+  `src/data/price-sources.json` was checked by a reviewer against how the
+  recipes use the ingredient (`USED AS` lines). Sonnet reviewers did 100
+  ingredients each in about 3 minutes; their "unsure" lists were worth
+  reading (goat priced as lamb, vegan Worcestershire as the anchovy one).
+- A shelf price for a weight range ("1.1kg - 1.7kg") is the heaviest piece's
+  price; use the CupString per-kg figure at the middle weight.
+- Keying duplicate checks on stockcode missed products that came from
+  products.json (ALDI has no stockcode): key on the product URL.
+- `scripts/build-price-sources.ts` rebuilds the file from the reviewed
+  decisions; `scripts/price-audit.ts` runs every catalogue ingredient
+  through the real engine and counts what can't be bought.

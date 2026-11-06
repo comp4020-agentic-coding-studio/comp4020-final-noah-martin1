@@ -14,9 +14,22 @@ export interface Product {
   name: string;
   url: string;
   priceCents: number;
+  // contents of one pack. A piece sold by weight ("Lamb Shoulder Roast 1.1kg
+  // - 1.7kg", loose produce) has perKg instead and is bought by the gram.
   size: { amount: number; unit: SizeUnit };
+  // the shelf price per kilogram, for an item sold by weight: a whole piece
+  // of no fixed weight (bought whole at its middle weight, size) or, when
+  // loose, bought by the gram
+  perKgCents?: number;
+  loose?: boolean;
   checkedAt: string;
   available: boolean;
+  // the store's product code, so a refresh re-reads this exact product
+  stockcode?: number;
+  // what one counted piece amounts to when recipes measure it another way:
+  // a tea bag brews 220 ml, a coffee pod 40 ml, a pot of living dill gives
+  // about 30 g of leaves. Checked by hand in src/data/price-sources.json.
+  each?: { amount: number; unit: SizeUnit };
 }
 
 export interface ProductStats {
@@ -38,6 +51,7 @@ export interface ProductData {
 
 const NUM = "(\\d+(?:\\.\\d+)?)";
 const MASS_VOL: Record<string, { mult: number; unit: SizeUnit }> = {
+  mg: { mult: 0.001, unit: "g" },
   g: { mult: 1, unit: "g" },
   kg: { mult: 1000, unit: "g" },
   ml: { mult: 1, unit: "ml" },
@@ -50,17 +64,17 @@ export function parseSize(text: string): { amount: number; unit: SizeUnit } | nu
   const t = text.toLowerCase().replace(/,/g, "").trim();
   if (!t) return null;
   if (/\b(per|\/)\s*(kg|100g|g)\b/.test(t) || /\bper kg\b/.test(t)) return null;
-  const multi = new RegExp(`${NUM}\\s*(?:x|×)\\s*${NUM}\\s*(kg|g|ml|l)\\b`).exec(t);
+  const multi = new RegExp(`${NUM}\\s*(?:x|×)\\s*${NUM}\\s*(kg|mg|g|ml|l)\\b`).exec(t);
   if (multi) {
     const u = MASS_VOL[multi[3]];
     const amount = Number(multi[1]) * Number(multi[2]) * u.mult;
     return amount > 0 ? { amount: Math.round(amount * 100) / 100, unit: u.unit } : null;
   }
-  const single = new RegExp(`${NUM}\\s*(kg|g|ml|l)\\b`).exec(t);
+  const single = new RegExp(`${NUM}\\s*(kg|mg|g|ml|l)\\b`).exec(t);
   if (single) {
     const u = MASS_VOL[single[2]];
     const amount = Number(single[1]) * u.mult;
-    return amount > 0 ? { amount: Math.round(amount * 100) / 100, unit: u.unit } : null;
+    return amount > 0 ? { amount: Math.round(amount * 1000) / 1000, unit: u.unit } : null;
   }
   if (/\bdozen\b/.test(t)) return { amount: 12, unit: "each" };
   const pack = new RegExp(`${NUM}\\s*(?:pack|pk|pieces?|pcs|ea|each|count|ct)\\b`).exec(t);
@@ -121,8 +135,37 @@ export function matchesIngredient(ingredient: string, productName: string): bool
   return true;
 }
 
+// A shelf "unit price" ("$18.00 / 1KG", "$1.50 / 10G", "$0.40 / 100ML") as
+// cents per kilogram, for a product sold by weight. Null for per-item or
+// per-litre prices: those don't price a weight.
+export function perKgFromCup(cup: string): number | null {
+  const m = /\$\s*([\d,]+(?:\.\d+)?)\s*\/\s*(\d+(?:\.\d+)?)\s*(KG|G)\b/i.exec(cup);
+  if (!m) return null;
+  const cents = Number(m[1].replace(/,/g, "")) * 100;
+  const grams = Number(m[2]) * (m[3].toUpperCase() === "KG" ? 1000 : 1);
+  return grams > 0 ? Math.round((cents * 1000) / grams) : null;
+}
+
+// "1.1kg - 1.7kg": a piece cut to no fixed weight, priced by the kilogram.
+export function isWeightRange(size: string): boolean {
+  return /\d\s*(kg|g)\s*-\s*\d/i.test(size);
+}
+
+// The middle of a weight range in grams ("1.1kg - 1.7kg" -> 1400), the
+// weight a shopper can expect to take home; null when it isn't a range.
+export function rangeMidGrams(size: string): number | null {
+  const m = /(\d+(?:\.\d+)?)\s*(kg|g)?\s*-\s*(\d+(?:\.\d+)?)\s*(kg|g)\b/i.exec(size);
+  if (!m) return null;
+  const hiUnit = m[4].toLowerCase();
+  const loUnit = (m[2] ?? m[4]).toLowerCase();
+  const lo = Number(m[1]) * (loUnit === "kg" ? 1000 : 1);
+  const hi = Number(m[3]) * (hiUnit === "kg" ? 1000 : 1);
+  return lo > 0 && hi >= lo ? Math.round((lo + hi) / 2) : null;
+}
+
 // Price per gram, per ml or per item: for comparing like with like.
-export function unitPrice(p: Pick<Product, "priceCents" | "size">): number {
+export function unitPrice(p: Pick<Product, "priceCents" | "size" | "perKgCents">): number {
+  if (p.perKgCents) return p.perKgCents / 1000;
   return p.priceCents / p.size.amount;
 }
 
@@ -145,9 +188,77 @@ export function loadProducts(): ProductData {
   return cache;
 }
 
-// Products for an ingredient: its own key, then the plural or singular, then
-// the longest stored key that appears in the name as whole words.
+/* ---------------- curated price sources ---------------- */
+
+// src/data/price-sources.json: for each ingredient, the supermarket products
+// checked by hand as the same food (by store product code, so a refresh
+// re-reads exactly those), or what it is priced as when no store sells it:
+//   products  like-for-like products at Woolworths or ALDI
+//   similar   the nearest product a store sells, with a note the recipe shows
+//             ("Woolworths doesn't sell monkfish: priced as basa fillets")
+//   from      priced as another ingredient ("egg yolks" as "eggs", one each)
+//   estimate  a dated price per 100 g from a named source, for food neither
+//             store sells (a niche Asian grocery item), shown as an estimate
+//   free      tap water: always to hand, never bought or missing
+// Checked so one product isn't priced under two names (spec/price-sources.test.ts).
+export interface PriceSource {
+  products?: Product[];
+  similar?: { note: string; products: Product[] };
+  // priced as another ingredient: one `unit` of this (an egg yolk, a
+  // teaspoon of zest) takes `parent` of that one's base unit (1 egg, a third
+  // of a lemon). `unit` is "each", "g" or "ml".
+  from?: { ingredient: string; unit: SizeUnit; parent: number; note?: string };
+  // a dated price from a named source outside Woolworths and ALDI (an Asian
+  // grocer's dried shrimp), with the pack it was read from so the checkout
+  // can buy one; always shown as an estimate
+  estimate?: { centsPer100: number; pack?: { amount: number; unit: SizeUnit; priceCents: number }; product?: string; url?: string; source: string; checked: string };
+  // priced only from its dated reference shelf price (src/data/prices.json),
+  // never from searched listings: fresh produce whose listings were jars or
+  // tins (fresh garlic isn't a jar of minced garlic)
+  reference?: boolean;
+  free?: boolean;
+}
+
+let sources: Record<string, PriceSource> | null = null;
+
+export function priceSources(): Record<string, PriceSource> {
+  if (sources) return sources;
+  const file = new URL("./data/price-sources.json", import.meta.url);
+  sources = existsSync(file) ? (JSON.parse(readFileSync(file, "utf8")) as Record<string, PriceSource>) : {};
+  return sources;
+}
+
+// The curated source for an ingredient name, following "from" links (at most
+// a few deep, never in a loop). Exact names only: curated entries are keyed
+// by the catalogue's canonical ingredient names.
+export function priceSourceFor(ingredientName: string): { key: string; source: PriceSource; via: string[] } | null {
+  const all = priceSources();
+  let key = ingredientName.toLowerCase().trim().replace(/\s+/g, " ");
+  const via: string[] = [];
+  for (let i = 0; i < 4; i++) {
+    const s = all[key];
+    if (!s) return null;
+    if (!s.from) return { key, source: s, via };
+    via.push(key);
+    key = s.from.ingredient;
+  }
+  return null;
+}
+
+// Tap water: never bought, never missing from a pantry.
+export function isFree(ingredientName: string): boolean {
+  return !!priceSourceFor(ingredientName)?.source.free;
+}
+
+// Products for an ingredient: the curated products first (or the similar
+// product standing in for it), then the searched listings by its own key,
+// then the plural or singular, then the longest stored key that appears in
+// the name as whole words.
 export function productsFor(ingredientName: string): Product[] {
+  const curated = priceSourceFor(ingredientName);
+  if (curated?.source.products?.length) return curated.source.products;
+  if (curated?.source.similar?.products.length) return curated.source.similar.products;
+  if (curated && (curated.source.estimate || curated.source.free || curated.source.reference)) return [];
   const data = loadProducts();
   const n = ingredientName.toLowerCase().trim().replace(/\s+/g, " ");
   if (!n) return [];
@@ -301,7 +412,14 @@ export function isEquivalent(ingredient: string, productName: string): boolean {
   return true;
 }
 
-// The products that are fair like-for-like buys for this ingredient.
+// The products that are fair like-for-like buys for this ingredient. Curated
+// products were checked by hand, so they aren't run through the word rules
+// (a curated "Hoyt's Bay Leaves" for "bay leaf" is right even though "leaves"
+// is a form word).
 export function equivalentProducts(ingredientName: string): Product[] {
+  const curated = priceSourceFor(ingredientName);
+  if (curated?.source.products?.length) return curated.source.products;
+  if (curated?.source.similar?.products.length) return curated.source.similar.products;
+  if (curated && (curated.source.estimate || curated.source.free || curated.source.reference)) return [];
   return productsFor(ingredientName).filter((p) => isEquivalent(ingredientName, p.name));
 }

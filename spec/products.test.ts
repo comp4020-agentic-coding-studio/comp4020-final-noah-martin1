@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { dataAge, loadProducts, matchesIngredient, parseSize, productsFor, equivalentProducts, isEquivalent } from "../src/products.ts";
+import { dataAge, loadProducts, matchesIngredient, parseSize, priceSourceFor, productsFor, equivalentProducts, isEquivalent } from "../src/products.ts";
 
 describe("parseSize", () => {
   it("normalises mass and volume", () => {
@@ -42,7 +42,8 @@ describe("matchesIngredient", () => {
 
 describe("productsFor", () => {
   const data = loadProducts();
-  const key = Object.keys(data.products).find((k) => !k.endsWith("s") && data.products[k].length);
+  // a searched key with no hand-checked entry (those come first; see below)
+  const key = Object.keys(data.products).find((k) => !k.endsWith("s") && data.products[k].length && !priceSourceFor(k));
   it("finds by exact key, plural and a longer name containing the key", () => {
     expect(productsFor("no such ingredient xyz")).toEqual([]);
     expect(productsFor("")).toEqual([]);

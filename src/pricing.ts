@@ -1,7 +1,7 @@
 import { all, one, run } from "./db.ts";
 import { addDays, today } from "./format.ts";
 import { conversionFor, estimate, gramsOf, referencePrice } from "./nutrition.ts";
-import { equivalentProducts, type Product, type SizeUnit } from "./products.ts";
+import { equivalentProducts, isFree, priceSources, type Product, type SizeUnit } from "./products.ts";
 
 // What groceries cost, kept as distinct quantities (CLAUDE.md, "Pricing and
 // budgeting", and docs/product/pricing.md):
@@ -39,6 +39,12 @@ export function toBase(amount: number, unit: string, name: string): Amount | nul
   if (u in MASS) return { amount: amount * MASS[u], unit: "g", approx: false };
   const conv = conversionFor(name);
   if (u === "cup" && conv.cupGrams) return { amount: amount * conv.cupGrams, unit: "g", approx: false };
+  // a spoon or cup of a solid sold by weight (butter, salt, a spice): its
+  // listed spoon weight, as the kitchen measures it. Only spoon and cup
+  // measures; a solid is never read from millilitres or litres.
+  if ((u === "tsp" || u === "tbsp" || u === "cup") && conv.spoonGrams) {
+    return { amount: amount * VOLUME[u] * conv.spoonGrams, unit: "g", approx: true };
+  }
   if (u in VOLUME) return { amount: amount * VOLUME[u], unit: "ml", approx: false };
   if (COUNT.has(u)) return { amount, unit: "each", approx: false };
   const g = gramsOf({ name, quantity: amount, unit: u });
@@ -51,6 +57,14 @@ export function toBase(amount: number, unit: string, name: string): Amount | nul
 export function convert(a: Amount, to: SizeUnit, name: string): Amount | null {
   if (a.unit === to) return a;
   const { density, each } = conversionFor(name);
+  // a volume of a solid sold by weight (a cup of olives, four tablespoons of
+  // jam): weighed as the kitchen measures it, through the food table, and
+  // marked approximate. Only this way round: a weight is never turned into
+  // litres, so a solid is never bought by the litre.
+  if (a.unit === "ml" && to === "g" && !density) {
+    const g = gramsOf({ name, quantity: a.amount, unit: "ml" });
+    return g === null ? null : { amount: g, unit: "g", approx: true };
+  }
   const grams = a.unit === "g" ? a.amount : a.unit === "ml" ? (density ? a.amount * density : null) : each ? a.amount * each : null;
   if (grams === null) return null;
   const out = to === "g" ? grams : to === "ml" ? (density ? grams / density : null) : each ? grams / each : null;
@@ -84,6 +98,8 @@ export function optionLabel(o: PackOption): string {
     const stale = o.checked.slice(0, 10) < addDays(today(), -FRESH_DAYS);
     return `${o.retailer} shelf price, checked ${o.checked.slice(0, 10)}${stale ? " (may have changed)" : ""}`;
   }
+  // a dated price from a named shop outside Woolworths and ALDI
+  if (o.retailer && !/^(ALDI|Woolworths)$/.test(o.retailer)) return `Estimate from ${o.retailer}, checked ${o.checked.slice(0, 10)}`;
   return `Reference shelf price, checked ${o.checked}`;
 }
 
@@ -101,6 +117,9 @@ const PIECE_GRAMS: [RegExp, RegExp, number][] = [
   [/\bbunch\b/i, /spring onion|shallot/i, 100],
   [/\bbunch\b/i, /kale|silverbeet|chard/i, 250],
   [/\bbunch\b/i, /asparagus/i, 200],
+  [/\bbunch\b/i, /broccolini/i, 175],
+  [/\bbunch\b/i, /rhubarb/i, 500],
+  [/\bliving herbs?\b/i, /./, 30],
   [/\bbunch\b/i, /radish/i, 250],
   [/\bbunch\b/i, /celery/i, 600],
   [/\bheart\b/i, /celery/i, 400],
@@ -115,17 +134,25 @@ function pieceGrams(name: string): number | null {
 }
 
 export function fromProduct(p: Product): PackOption {
-  const piece = p.size?.unit === "each" && p.size.amount === 1 ? pieceGrams(p.name) : null;
-  return {
-    kind: "retailer",
+  const base = {
+    kind: "retailer" as const,
     retailer: RETAILER_NAME[p.retailer] ?? p.retailer,
     product: p.name,
     url: p.url,
-    priceCents: p.priceCents,
-    size: piece ? { amount: piece, unit: "g" } : p.size,
     checked: p.checkedAt,
     available: p.available,
   };
+  // sold loose (thawed squid "per 250g"): bought by the gram at its price
+  // per kilogram. A whole piece of no fixed weight (a lamb shoulder roast)
+  // is a pack of its middle weight instead, bought whole.
+  if (p.loose && p.perKgCents) return { ...base, priceCents: p.perKgCents, size: null };
+  // a counted pack whose piece is measured another way in recipes (tea bags
+  // in millilitres brewed, a bunch in grams): the pack in that unit
+  if (p.each && p.size.unit === "each") {
+    return { ...base, priceCents: p.priceCents, size: { amount: p.size.amount * p.each.amount, unit: p.each.unit } };
+  }
+  const piece = p.size?.unit === "each" && p.size.amount === 1 ? pieceGrams(p.name) : null;
+  return { ...base, priceCents: p.priceCents, size: piece ? { amount: piece, unit: "g" } : p.size };
 }
 
 function parseSizeText(text: string): { amount: number; unit: SizeUnit } | null {
@@ -175,6 +202,10 @@ interface UserPriceRow {
 // person paid (newest per pack size), current retailer listings, and the
 // dated reference shelf price. Recommendation happens in choosePack.
 export function packOptions(who: number | number[] | null, ingredientIdNum: number, name: string): PackOption[] {
+  // an ingredient taken from another (egg yolks from eggs, zest from a
+  // lemon) is bought as that one: its packs, counted in this one's units
+  const derived = priceSources()[name.toLowerCase().trim()]?.from;
+  if (derived) return derivedOptions(derived, ingredientIdNum, who);
   const out: PackOption[] = [];
   const users = who === null ? [] : Array.isArray(who) ? who : [who];
   if (users.length) {
@@ -201,9 +232,39 @@ export function packOptions(who: number | number[] | null, ingredientIdNum: numb
     }
   }
   for (const p of equivalentProducts(name)) if (p.available) out.push(fromProduct(p));
+  // a dated estimate from another shop, with its pack (never a shelf price here)
+  const est = priceSources()[name.toLowerCase().trim()]?.estimate;
+  if (est?.pack) {
+    out.push({ kind: "reference", retailer: est.source, product: est.product ?? name, url: est.url ?? null, priceCents: est.pack.priceCents, size: { amount: est.pack.amount, unit: est.pack.unit }, checked: est.checked, available: true });
+  }
   const ref = referenceOption(name);
   // the dated reference is only a fallback once real listings exist
   if (ref && !out.some((o) => o.kind === "retailer")) out.push(ref);
+  return out;
+}
+
+// The parent's packs, sized in the derived ingredient's unit: a dozen eggs
+// is twelve egg yolks; a lemon (one each) is three teaspoons (15 ml) of zest
+// when a teaspoon takes a third of a lemon.
+function derivedOptions(from: { ingredient: string; unit: SizeUnit; parent: number; note?: string }, _id: number, who: number | number[] | null): PackOption[] {
+  const parentId = one<{ id: number }>("SELECT id FROM ingredients WHERE name = ?", from.ingredient)?.id ?? -1;
+  const out: PackOption[] = [];
+  for (const o of packOptions(who, parentId, from.ingredient)) {
+    // bought by weight: a gram of this costs `parent` grams' worth of that
+    if (o.size === null) {
+      if (from.unit !== "g") continue;
+      out.push({ ...o, product: from.note ? `${o.product} (${from.note})` : o.product, priceCents: Math.round(o.priceCents * from.parent) });
+      continue;
+    }
+    // the parent pack in the unit this one is measured in (a pumpkin sold
+    // "each" weighs 1 kg, so it's 1000 g of pumpkin puree; a dozen eggs is
+    // twelve), then how many of this it makes
+    const inParent = convert({ amount: o.size.amount, unit: o.size.unit, approx: false }, from.unit, from.ingredient);
+    if (!inParent || from.parent <= 0) continue;
+    const derivedAmount = inParent.amount / from.parent;
+    const unit: SizeUnit = from.unit;
+    out.push({ ...o, product: from.note ? `${o.product} (${from.note})` : o.product, size: { amount: Math.round(derivedAmount * 1000) / 1000, unit } });
+  }
   return out;
 }
 
@@ -372,6 +433,14 @@ export function purchasePlan(needs: Need[], stock: Stock[], optionsFor: (ingredi
   // lines with amounts first, so a "to taste" line can share their pack
   const ordered = [...groups.values()].sort((a, b) => Number(a.line.need === null) - Number(b.line.need === null));
   for (const { line, base, rawUnit } of ordered) {
+    // tap water is always to hand: never bought, never missing
+    if (isFree(line.name)) {
+      line.have = line.need ?? 0;
+      line.toBuy = 0;
+      line.consumptionCents = 0;
+      covered.push(line);
+      continue;
+    }
     const held = pool.get(line.ingredient_id) ?? [];
     if (line.need === null) {
       line.have = held.reduce((s, h) => s + h.quantity, 0);
@@ -523,8 +592,65 @@ export function recordPaidPrice(
   return true;
 }
 
+// A price someone gives for an ingredient while writing a recipe ("I paid
+// $4 for 500 g"): kept as theirs, like a pantry price, so their recipes and
+// shopping use it. Replaces their earlier price for the same pack size.
+// Returns false when the amount can't be read as a fixed pack.
+export function recordPrice(userId: number, ingredientIdNum: number, input: { name: string; quantity: number; unit: string; price_cents: number; store: string }): boolean {
+  if (!(input.price_cents > 0) || !(input.quantity > 0)) return false;
+  const size = toBase(input.quantity, input.unit, input.name);
+  if (!size || size.approx) return false;
+  run(
+    "DELETE FROM user_prices WHERE user_id = ? AND ingredient_id = ? AND inventory_item_id IS NULL AND size_unit = ? AND size_amount = ?",
+    userId,
+    ingredientIdNum,
+    size.unit,
+    size.amount,
+  );
+  run(
+    `INSERT INTO user_prices (user_id, ingredient_id, price_cents, size_amount, size_unit, retailer, product)
+     VALUES (?, ?, ?, ?, ?, ?, ?)`,
+    userId,
+    ingredientIdNum,
+    input.price_cents,
+    size.amount,
+    size.unit,
+    input.store,
+    input.name,
+  );
+  return true;
+}
+
 export function userPriceCount(userId: number): number {
   return one<{ n: number }>("SELECT COUNT(*) AS n FROM user_prices WHERE user_id = ?", userId)?.n ?? 0;
+}
+
+/* ---------------- what a recipe costs to make ---------------- */
+
+// The value of what a recipe uses, from an empty kitchen: each line at the
+// rate of the pack the checkout would buy (or its dated reference or
+// estimate), the same engine as the checkout so the two never disagree
+// about what an ingredient costs. "Cost per serve" divides this. Lines with
+// no price at all are named, never counted as free. Cached per recipe while
+// the price data is the same (it only changes on a deploy).
+export interface MakeCost {
+  cents: number;
+  unpriced: string[];
+}
+
+const makeCache = new Map<string, MakeCost>();
+
+export function costToMake(lines: { ingredient_id: number; name: string; quantity: number | null; unit: string; optional: number }[], key?: string): MakeCost {
+  const k = key ?? null;
+  if (k !== null) {
+    const hit = makeCache.get(k);
+    if (hit) return hit;
+  }
+  const plan = recipePurchase(null, lines, 1, [], "");
+  const unpriced = [...new Set(plan.toBuy.filter((l) => !l.pack && !l.sharesPack && l.toBuy !== null && l.consumptionCents === null).map((l) => l.name))];
+  const out = { cents: plan.consumptionCents, unpriced };
+  if (k !== null && makeCache.size < 5000) makeCache.set(k, out);
+  return out;
 }
 
 /* ---------------- a recipe's purchase cost ---------------- */

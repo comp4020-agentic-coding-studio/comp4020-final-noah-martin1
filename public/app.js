@@ -96,6 +96,115 @@ document.addEventListener("click", (event) => {
   }
 });
 
+// Recipe editor: what each ingredient is priced at, under its row, with a
+// way to add a price when there isn't one or correct it when it's wrong.
+// Everything from the server goes in as text, never as markup.
+(() => {
+  const rows = document.querySelector('[data-rows="ingredients"]');
+  if (!rows) return;
+  const cache = new Map();
+  const timers = new WeakMap();
+  const STORES = ["Woolworths", "ALDI", "Coles", "IGA", "Other"];
+
+  function el(tag, props = {}, ...kids) {
+    const n = document.createElement(tag);
+    Object.assign(n, props);
+    n.append(...kids.filter((k) => k !== null && k !== undefined));
+    return n;
+  }
+
+  function priceForm(row, name, hint) {
+    const form = el("form", { className: "price-form" });
+    const price = el("input", { name: "price", inputMode: "decimal", placeholder: "4.50", required: true, ariaLabel: `Price paid for ${name}` });
+    const qty = el("input", { name: "quantity", inputMode: "decimal", placeholder: "500", required: true, ariaLabel: "How much was in the pack" });
+    const unit = el("select", { name: "unit", ariaLabel: "Pack unit" }, ...["g", "kg", "ml", "l", "each"].map((u) => el("option", { value: u, textContent: u === "l" ? "L" : u })));
+    const store = el("select", { name: "store", ariaLabel: "Shop" }, el("option", { value: "", textContent: "Shop" }), ...STORES.map((s) => el("option", { value: s, textContent: s })));
+    const save = el("button", { type: "submit", className: "button button-small", textContent: "Save price" });
+    const cancel = el("button", { type: "button", className: "link-button", textContent: "Cancel" });
+    const msg = el("span", { className: "price-form-msg", role: "status" });
+    form.append(el("span", { textContent: "$" }), price, el("span", { textContent: "for" }), qty, unit, store, save, cancel, msg);
+    cancel.addEventListener("click", () => render(row, hint));
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      save.disabled = true;
+      msg.textContent = "Saving…";
+      const body = new URLSearchParams({ name, price: price.value, quantity: qty.value, unit: unit.value, store: store.value });
+      try {
+        const res = await fetch("/prices", { method: "POST", headers: { accept: "application/json" }, body });
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.error || "Couldn't save that price.");
+        cache.set(name, data.hint);
+        render(row, data.hint, `Saved. Your price is used for your recipes and shopping.`);
+      } catch (err) {
+        msg.textContent = err.message;
+        save.disabled = false;
+      }
+    });
+    return form;
+  }
+
+  function render(row, hint, flash) {
+    const slot = row.querySelector("[data-price-hint]");
+    if (!slot) return;
+    slot.replaceChildren();
+    if (!hint || !hint.name || hint.kind === "none") {
+      slot.hidden = true;
+      return;
+    }
+    slot.hidden = false;
+    // a price you gave is known, whatever Larder had
+    slot.dataset.kind = hint.yours ? "yours" : hint.kind;
+    const action = el("button", { type: "button", className: "link-button" });
+    if (hint.kind === "free") {
+      slot.append("Always to hand: not priced.");
+      return;
+    }
+    if (hint.kind === "unknown" && !hint.yours) {
+      slot.append(el("strong", { textContent: "No price yet." }), " What did you pay? ");
+      action.textContent = "Add a price";
+    } else {
+      const what = hint.yours ? `Your price: ${hint.yours.text}` : `${hint.perText ?? "Priced"}${hint.label ? ` · ${hint.label}` : ""}`;
+      slot.append(hint.url ? el("a", { href: hint.url, target: "_blank", rel: "noopener noreferrer", textContent: what }) : what);
+      if (hint.note && !hint.yours) slot.append(el("span", { className: "price-hint-note", textContent: ` ${hint.note}` }));
+      slot.append(" ");
+      action.textContent = "Not right? Correct it";
+    }
+    action.addEventListener("click", () => {
+      slot.replaceChildren(priceForm(row, hint.name, hint));
+      slot.querySelector("input")?.focus();
+    });
+    slot.append(action);
+    if (flash) slot.append(el("span", { className: "price-form-msg", textContent: ` ${flash}` }));
+  }
+
+  async function lookup(row) {
+    const input = row.querySelector('input[name="ing_name"]');
+    const name = (input?.value ?? "").trim().toLowerCase().replace(/\s+/g, " ");
+    if (name.length < 2) return render(row, null);
+    if (cache.has(name)) return render(row, cache.get(name));
+    try {
+      const res = await fetch(`/prices/hint?name=${encodeURIComponent(name)}`, { headers: { accept: "application/json" } });
+      if (!res.ok) return;
+      const hint = await res.json();
+      cache.set(name, hint);
+      // still the same name once it arrives
+      if ((input.value ?? "").trim().toLowerCase().replace(/\s+/g, " ") === name) render(row, hint);
+    } catch {
+      // offline: no hint, the editor still works
+    }
+  }
+
+  rows.addEventListener("input", (event) => {
+    const input = event.target;
+    if (!(input instanceof HTMLInputElement) || input.name !== "ing_name") return;
+    const row = input.closest("[data-row]");
+    clearTimeout(timers.get(row));
+    timers.set(row, setTimeout(() => lookup(row), 350));
+  });
+  // prices for ingredients already filled in (editing a recipe)
+  rows.querySelectorAll("[data-row]").forEach((row) => lookup(row));
+})();
+
 // Close an open meal menu when clicking elsewhere or pressing Escape.
 document.addEventListener("click", (event) => {
   document.querySelectorAll("details.meal-menu[open]").forEach((menu) => {

@@ -1262,8 +1262,64 @@ input[type="radio"] {
 
 .row-editor {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 8px;
+}
+
+/* under an ingredient: what Larder prices it at, or a way to add a price */
+.price-hint {
+  flex: 1 1 100%;
+  margin: -2px 0 2px;
+  padding-left: 2px;
+  font-size: 12.5px;
+  line-height: 1.45;
+  color: var(--ink-3);
+}
+
+.price-hint a {
+  color: var(--ink-2);
+}
+
+.price-hint strong {
+  color: var(--peach-ink);
+}
+
+.price-hint[data-kind="unknown"] {
+  color: var(--peach-ink);
+}
+
+.price-hint-note {
+  color: var(--ink-3);
+}
+
+.price-hint .link-button {
+  font-size: 12.5px;
+}
+
+.price-form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+
+.price-form input {
+  width: 76px;
+  height: 32px;
+  padding: 0 10px;
+  font-size: 13px;
+}
+
+.price-form select {
+  height: 32px;
+  padding: 0 8px;
+  font-size: 13px;
+}
+
+.price-form-msg {
+  font-size: 12.5px;
+  color: var(--ink-2);
 }
 
 .w-qty {
@@ -3419,6 +3475,38 @@ fieldset.bare.inline {
 
 .rx-scroller::-webkit-scrollbar {
   display: none;
+}
+
+/* "From my kitchen": what each recipe still needs, and a heading where the
+   number missing changes */
+.rx-kitchen {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 6px;
+  font-size: 12.5px;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.rx-kitchen-all {
+  color: var(--good);
+}
+
+.rx-kitchen-short {
+  color: var(--peach-ink);
+}
+
+.rx-group {
+  grid-column: 1 / -1;
+  margin: 8px 0 -6px;
+  font-size: 14px;
+  font-weight: 650;
+  color: var(--ink-2);
+}
+
+.rx-group:first-child {
+  margin-top: 0;
 }
 
 .rx-scroller .rx-tile {
@@ -13518,6 +13606,79 @@ form[data-hh-busy] button {
 .shop-why {
   color: var(--ink-2);
 }
+/* a recipe's costs: cost to make, at the checkout, after your pantry */
+.cost-split {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 120px), 1fr));
+  gap: 14px;
+  margin: 4px 0 10px;
+}
+
+.cost-split div {
+  display: grid;
+  align-content: start;
+  gap: 2px;
+}
+
+.cost-split dt {
+  font-size: 12.5px;
+  color: var(--ink-2);
+}
+
+.cost-split dd {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.cost-split small {
+  color: var(--ink-3);
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+.cost-split .cost-mine dd {
+  color: var(--accent);
+}
+
+.rd-price-notes {
+  margin-top: 10px;
+  font-size: 13px;
+  color: var(--ink-2);
+}
+
+.rd-price-notes summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.rd-price-notes ul {
+  display: grid;
+  gap: 6px;
+  margin-top: 8px;
+  padding-left: 18px;
+  line-height: 1.45;
+}
+
+.rd-unpriced {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  margin-top: 12px;
+  padding: 10px 12px;
+  border-radius: var(--radius-sm);
+  background: var(--peach);
+  color: var(--peach-ink);
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.rd-unpriced .icon {
+  flex: none;
+  margin-top: 2px;
+}
+
 .shop-split {
   display: grid;
   grid-template-columns: 1fr 1fr;
