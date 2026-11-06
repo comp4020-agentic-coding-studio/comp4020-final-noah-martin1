@@ -93,8 +93,9 @@ Pricing is a core business rule. Keep the following concepts distinct:
 
 Rules:
 
-- Do not present ingredient consumption cost or cost per serving as if it were the amount the user must spend at the supermarket.
+- Do not present ingredient consumption cost or cost per serving as if it were the amount the user must spend at the supermarket - unless user doesnt have ingredients in their inventory - for which they would need to spend at the supermarket.
 - Calculate consumption cost from the recipe quantity used and the price of a compatible reference quantity or package.
+- make a distinction between the cost from supermarket if no items are currently owned and the cost of the recipe from the current users inventory.
 - Calculate recipe cost from its ingredient consumption costs. Calculate cost per serving from the appropriate recipe batch cost and batch yield.
 - Calculate shopping requirements by aggregating ingredient needs across the relevant planned meals, then subtracting eligible personal or household pantry stock according to the feature's rules.
 - Determine package purchases from the remaining quantity, package sizes, available purchasing options, and package prices. Where purchases must be made in whole packages, round up to the required number of packages.
@@ -209,6 +210,7 @@ These are product goals. Before changing a feature, inspect its current implemen
 - Cooking mode should present one step at a time and support relevant timers and serving information.
 - A recipe being cooked should use the application's recipe data so its ingredients, nutrition estimates, and costs can be calculated consistently.
 - If users need to cook a recipe that is not in the database, support creating a recipe where that capability exists. Do not claim automatic nutrition or pricing is accurate when required data is missing.
+- reciepes should have reviews with star ratings, replies, likes, linked other recipes and attached images
 
 ### Pantry and expiry
 
@@ -216,6 +218,7 @@ These are product goals. Before changing a feature, inspect its current implemen
 - Support shared pantry functionality for households.
 - Use pantry stock consistently when calculating missing shopping requirements.
 - Support relevant expiry reminders, use-soon suggestions, and meal associations without inventing quantities or expiry dates.
+- support eases of item addition - including: fidge and pantry image processing, barcode scanning and receipt scanning.
 
 ### Calendar and meal planning
 
