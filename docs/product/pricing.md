@@ -97,7 +97,11 @@ never more than the dinners priced one by one; the planner keeps each draft
 week under the budget on that basis. It also aims to spend it: each night
 leans toward its share (budget ÷ nights), then dinners are traded up while
 the pooled week still fits, so a $100 week comes to nearly $100, never more
-(`spec/planner-budget.test.ts`). Only real meals are suggested: a recipe
+(`spec/planner-budget.test.ts`). With "Share ingredients across the
+week", each dinner is priced at what it adds to the week's shop after the
+nights before it (the olive oil Monday buys costs Tuesday nothing), so the
+dinners add up to the week's total, and dinners that reuse what other nights
+buy rank higher. Only real meals are suggested: a recipe
 that's a condiment, preserve, dip or bread on its own (TheMealDB files
 sauerkraut and jams as mains) is left out (`isMeal` in src/recipes.ts).
 

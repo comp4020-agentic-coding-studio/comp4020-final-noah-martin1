@@ -622,6 +622,7 @@ function quickAdd(s: CalState, userId: number, returnTo: string): Html {
 
 const INTEREST_ICON: Record<InterestKey, string> = {
   budget: "basket",
+  share: "shopping",
   mix: "bolt",
   lessmeat: "leaf",
   usuals: "heart",
@@ -634,6 +635,7 @@ const DEFAULT_INTERESTS: InterestKey[] = ["budget", "mix", "fridge"];
 
 const HOW: Record<InterestKey, string> = {
   budget: "A hard ceiling: the dinners' cost to buy (after your pantry) never adds up past it. Pricier picks are swapped for cheaper ones, and a night is left open rather than going over.",
+  share: "Ingredients are bought once for the week: if Monday's dinner buys the olive oil, Tuesday's doesn't pay for it again. Each dinner shows what it adds to the week's shop, and dinners that reuse what other nights buy rank higher.",
   mix: "No two nights in a row share a cuisine or a main protein.",
   lessmeat: "At most two dinners with meat; meat-free nights get a lift.",
   usuals: "Recipes you've planned or cooked before rank first, most-made first.",
@@ -732,7 +734,9 @@ function planResult(s: CalState, plan: Plan, p: PlanParams, returnTo: string): H
           <a class="cal-pick-photo" href="/recipes/${pick.recipe.id}" tabindex="-1" aria-hidden="true">
             ${thumb(pick.recipe.image_url, pick.recipe.title)}
             <span class="cal-pick-day">${weekday(d)} ${shortDate(d)}</span>
-            <span class="cal-pick-cost">${money(pick.toBuyCents)}<small> on its own</small></span>
+            ${pick.addsCents !== null
+              ? html`<span class="cal-pick-cost" title="${money(pick.toBuyCents)} bought on its own">${money(pick.addsCents)}<small> adds to the week</small></span>`
+              : html`<span class="cal-pick-cost">${money(pick.toBuyCents)}<small> on its own</small></span>`}
           </a>
           <div class="cal-pick-body">
             <h3><a href="/recipes/${pick.recipe.id}">${pick.recipe.title}</a></h3>

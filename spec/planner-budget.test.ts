@@ -76,6 +76,29 @@ describe("planning a week to a budget", () => {
     expect(big).toBeGreaterThan(small * 2);
   });
 
+  it("sharing ingredients: each dinner's price is what it adds, and they add up to the week", () => {
+    const share = (budget: number, seed: number) =>
+      generatePlan(empty, { from: addDays(today(), 1), nights: 5, budgetCents: budget * 100, interests: new Set(["budget", "share"]), seed, keep: [], exclude: [] });
+    for (const seed of [1, 2]) {
+      const p = share(100, seed);
+      expect(p.picks.length).toBeGreaterThan(0);
+      const sum = p.picks.reduce((s, x) => s + (x.addsCents ?? NaN), 0);
+      expect(sum).toBe(p.totalCents);
+      expect(p.totalCents).toBeLessThanOrEqual(10000);
+      // a later night reusing what an earlier one bought costs less than on its own
+      expect(p.picks.some((x) => x.addsCents! < x.toBuyCents)).toBe(true);
+    }
+    // without it, each dinner is priced on its own
+    expect(plan(100, 1).picks.every((x) => x.addsCents === null)).toBe(true);
+  });
+
+  it("from an empty kitchen, sharing fits more dinner into the same budget", () => {
+    const share = generatePlan(empty, { from: addDays(today(), 1), nights: 5, budgetCents: 4500, interests: new Set(["budget", "share"]), seed: 1, keep: [], exclude: [] });
+    const alone = plan(45, 1, empty);
+    expect(share.totalCents).toBeLessThanOrEqual(4500);
+    expect(share.picks.length).toBeGreaterThanOrEqual(alone.picks.length);
+  });
+
   it("never suggests something that isn't a meal", () => {
     for (const seed of [1, 2, 3, 4, 5, 6]) {
       for (const pick of plan(60, seed).picks) expect(isMeal(pick.recipe.title), pick.recipe.title).toBe(true);

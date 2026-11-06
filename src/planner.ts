@@ -15,6 +15,7 @@ import { canSeeRecipe, friendIds } from "./visibility.ts";
 
 export const INTERESTS = [
   { key: "budget", label: "for the week" },
+  { key: "share", label: "Share ingredients across the week" },
   { key: "mix", label: "Mix it up each day" },
   { key: "lessmeat", label: "Limit meat" },
   { key: "usuals", label: "My usuals" },
@@ -358,6 +359,9 @@ function expiresLabel(slotDate: string, expiry: string): string {
 interface Scoring {
   req: PlanRequest;
   k: Kitchen;
+  // what this dinner costs in its night: on its own, or (sharing) what it
+  // adds to the week's shopping given the other nights
+  costOf: (c: Candidate) => number;
   // the budget spread evenly over the nights, when budget was chosen
   pace: number | null;
   month: number;
@@ -383,14 +387,21 @@ function scoreAt(c: Candidate, slot: Slot, ctx: Scoring): { score: number; reaso
   // dinner near the night's share of it (budget ÷ nights) scores best; far
   // under it gives the week less than was set aside, and over it squeezes
   // the other nights (worse). Without a budget, a light touch toward cheap.
+  const cost = ctx.costOf(c);
   if (on.has("budget") && pace) {
-    const ratio = c.cost.toBuyCents / pace;
+    const ratio = cost / pace;
     score += ratio <= 1 ? 1.5 - 2 * (1 - ratio) : 1.5 - 3.5 * (ratio - 1);
     if (ratio >= 0.7 && ratio <= 1.15) {
-      reasons.push({ text: `${money(c.cost.toBuyCents)} to buy, about your ${money(pace)} a night`, weight: 1.4 });
+      // sharing: the card already says what it adds, so no second figure
+      reasons.push({ text: on.has("share") ? `About your ${money(pace)} a night` : `${money(cost)} to buy, about your ${money(pace)} a night`, weight: 1.4 });
     }
   } else {
-    score -= (0.3 * c.cost.toBuyCents) / 1500;
+    score -= (0.3 * cost) / 1500;
+  }
+  // sharing: a dinner that reuses what other nights buy (the olive oil, the
+  // rice) adds less to the week
+  if (on.has("share") && c.cost.toBuyCents - cost >= 150) {
+    reasons.push({ text: `Shares ${money(c.cost.toBuyCents - cost)} of ingredients with other nights`, weight: 1.3 });
   }
 
   // the fridge: coverage, and soon-to-expire items used before they turn
@@ -477,6 +488,9 @@ export interface PlanPick {
   date: string;
   recipe: Recipe;
   toBuyCents: number;
+  // sharing: what this dinner adds to the week's shop after the nights
+  // before it (they add up to the week's total); null when not sharing
+  addsCents: number | null;
   fullCents: number;
   reasons: string[];
   meat: boolean;
@@ -543,9 +557,40 @@ export function generatePlan(userId: number, req: PlanRequest): Plan {
       (enforce === null || c.cost.toBuyCents <= enforce),
   );
 
+  // what the week costs at the checkout, shared ingredients bought once
+  const pooled = (picks: (Candidate | undefined)[]) =>
+    weekPurchase(
+      picks.filter((c): c is Candidate => !!c).map((c) => ({ lines: c.lines, factor: servingsFactor(k.prefs, c.recipe.servings), title: c.recipe.title })),
+      k.stock,
+      k.options,
+    ).purchaseCents;
+  // sharing: what a dinner adds to the other nights' shopping (olive oil the
+  // first night buys costs the second nothing). Cached per set of other nights.
+  const sharing = req.interests.has("share");
+  const marginalCache = new Map<string, number>();
+  let others: (Candidate | undefined)[] = [];
+  let othersKey = "";
+  let othersCost = 0;
+  const setOthers = (picks: (Candidate | undefined)[], except: number) => {
+    if (!sharing) return;
+    others = picks.filter((_, j) => j !== except);
+    othersKey = others.map((c) => c?.recipe.id ?? 0).sort().join(",");
+    othersCost = pooled(others);
+  };
+  const costOf = (c: Candidate) => {
+    if (!sharing) return c.cost.toBuyCents;
+    const key = `${othersKey}|${c.recipe.id}`;
+    let v = marginalCache.get(key);
+    if (v === undefined) {
+      v = Math.max(0, pooled([...others, c]) - othersCost);
+      if (marginalCache.size < 50000) marginalCache.set(key, v);
+    }
+    return v;
+  };
   const scoring: Scoring = {
     req,
     k,
+    costOf,
     pace,
     month,
     seasonal: new Map(all_.map((c) => [c.recipe.id, seasonalIn(c.names, month)])),
@@ -588,6 +633,7 @@ export function generatePlan(userId: number, req: PlanRequest): Plan {
     if (fixed[i]) continue;
     const slot = slotFor(i, chosen);
     const taken = used(chosen, i);
+    setOthers(chosen, i);
     let best: { c: Candidate; s: number } | undefined;
     for (const c of pool) {
       if (isUsed(taken, c)) continue;
@@ -611,6 +657,7 @@ export function generatePlan(userId: number, req: PlanRequest): Plan {
         if (!current || fixed[i]) continue;
         const slot = slotFor(i, chosen);
         const taken = used(chosen, i);
+        setOthers(chosen, i);
         const currentScore = scoreAt(current, slot, scoring).score;
         for (const c of pool) {
           if (isUsed(taken, c) || c.cost.toBuyCents >= current.cost.toBuyCents) continue;
@@ -656,14 +703,7 @@ export function generatePlan(userId: number, req: PlanRequest): Plan {
     // most for the least lost (a cheap night becomes a better one), until
     // no trade fits. Never over the ceiling: each trade is checked against it.
     // room is measured on what the week really costs at the checkout, with
-    // shared ingredients bought once (weekPurchase), which is the figure
-    // shown against the budget
-    const pooled = (picks: (Candidate | undefined)[]) =>
-      weekPurchase(
-        picks.filter((c): c is Candidate => !!c).map((c) => ({ lines: c.lines, factor: servingsFactor(k.prefs, c.recipe.servings), title: c.recipe.title })),
-        k.stock,
-        k.options,
-      ).purchaseCents;
+    // shared ingredients bought once (pooled), the figure shown against it
     // trades that would tip the pooled week over, so they aren't tried again
     const tipped = new Set<string>();
     for (let guard = 0; guard < 40; guard++) {
@@ -675,9 +715,11 @@ export function generatePlan(userId: number, req: PlanRequest): Plan {
         if (!current || fixed[i]) continue;
         const slot = slotFor(i, chosen);
         const taken = used(chosen, i);
+        setOthers(chosen, i);
         const currentScore = scoreAt(current, slot, scoring).score;
+        const currentCost = costOf(current);
         for (const c of pool) {
-          const extra = c.cost.toBuyCents - current.cost.toBuyCents;
+          const extra = costOf(c) - currentCost;
           if (extra <= 0 || extra > room || isUsed(taken, c) || tipped.has(`${i}:${c.recipe.id}`)) continue;
           const s = scoreAt(c, slot, scoring).score;
           if (s === -Infinity) continue;
@@ -705,16 +747,27 @@ export function generatePlan(userId: number, req: PlanRequest): Plan {
   // reasons are worked out once more against the final neighbours
   const picks: PlanPick[] = [];
   const open: string[] = [];
+  // sharing: each night's share, in date order, so they add up to the week
+  let before = 0;
+  const earlier: Candidate[] = [];
   dates.forEach((date, i) => {
     const c = chosen[i];
     if (!c) {
       open.push(date);
       return;
     }
+    let adds: number | null = null;
+    if (sharing) {
+      earlier.push(c);
+      const now = pooled(earlier);
+      adds = now - before;
+      before = now;
+    }
+    setOthers(chosen, i);
     const { reasons } = scoreAt(c, slotFor(i, chosen), scoring);
     const texts = reasons.map((r) => r.text);
     if (!texts.length) texts.push(c.cost.held.length ? `You already have ${listNames(c.cost.held.slice(0, 2))}` : c.recipe.cuisine ? `A ${c.recipe.cuisine} dinner for a change` : "A good all-rounder");
-    picks.push({ date, recipe: c.recipe, toBuyCents: c.cost.toBuyCents, fullCents: c.cost.fullCents, reasons: texts.slice(0, 2), meat: c.meat });
+    picks.push({ date, recipe: c.recipe, toBuyCents: c.cost.toBuyCents, addsCents: adds, fullCents: c.cost.fullCents, reasons: texts.slice(0, 2), meat: c.meat });
   });
 
   // bought together, shared ingredients are pooled: never more than the sum
