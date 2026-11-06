@@ -137,6 +137,7 @@ interface EventRow {
   id: number;
   actor_id: number | null;
   actor_name: string | null;
+  actor_avatar: string | null;
   kind: EventKind;
   subject: string;
   recipe_id: number | null;
@@ -155,6 +156,7 @@ export interface Activity {
   // "You" for the viewer, otherwise the actor's display name
   who: string;
   name: string;
+  avatar: string | null;
   text: string;
   recipeId: number | null;
   nudge: boolean;
@@ -219,7 +221,7 @@ function describe(e: EventRow, viewerId: number): string | null {
 export function houseActivity(viewerId: number, opts: { limit?: number; since?: number } = {}): Activity[] {
   const house = requireHouse(viewerId);
   const rows = all<EventRow>(
-    `SELECT e.id, e.actor_id, u.display_name AS actor_name, e.kind, e.subject, e.recipe_id, e.ref_date, e.for_user,
+    `SELECT e.id, e.actor_id, u.display_name AS actor_name, u.avatar AS actor_avatar, e.kind, e.subject, e.recipe_id, e.ref_date, e.for_user,
             e.created_at, r.title, r.author_id, r.visibility
      FROM household_events e
      LEFT JOIN users u ON u.id = e.actor_id
@@ -241,6 +243,7 @@ export function houseActivity(viewerId: number, opts: { limit?: number; since?: 
       actorId: e.actor_id,
       who: e.actor_id === viewerId ? "You" : (e.actor_name ?? "Someone"),
       name: e.actor_name ?? "Someone",
+      avatar: e.actor_avatar,
       text,
       recipeId: e.kind === "nudge" || e.kind === "planned" ? e.recipe_id : null,
       nudge: e.kind === "nudge",
@@ -439,6 +442,7 @@ export function parseItem(form: URLSearchParams): { input: ItemInput; values: Re
 export interface Claim {
   user_id: number;
   name: string;
+  avatar: string | null;
   at: string;
 }
 
@@ -461,13 +465,14 @@ export interface HouseItem {
 interface ItemRow extends Omit<HouseItem, "tonight"> {
   claim_user: number | null;
   claim_name: string | null;
+  claim_avatar: string | null;
   claim_date: string | null;
   claim_at: string | null;
 }
 
 const ITEM_SELECT = `SELECT it.id, it.ingredient_id, i.name, i.category, it.quantity, it.unit, it.expiry_date, it.price_cents,
     it.added_by, u.display_name AS added_by_name, it.added_at,
-    c.claimed_by AS claim_user, cu.display_name AS claim_name, c.for_date AS claim_date, c.claimed_at AS claim_at
+    c.claimed_by AS claim_user, cu.display_name AS claim_name, cu.avatar AS claim_avatar, c.for_date AS claim_date, c.claimed_at AS claim_at
   FROM inventory_items it
   JOIN ingredients i ON i.id = it.ingredient_id
   JOIN users u ON u.id = it.added_by
@@ -475,10 +480,10 @@ const ITEM_SELECT = `SELECT it.id, it.ingredient_id, i.name, i.category, it.quan
   LEFT JOIN users cu ON cu.id = c.claimed_by`;
 
 function hydrateItem(r: ItemRow): HouseItem {
-  const { claim_user, claim_name, claim_date, claim_at, ...rest } = r;
+  const { claim_user, claim_name, claim_avatar, claim_date, claim_at, ...rest } = r;
   return {
     ...rest,
-    tonight: claim_user !== null ? { user_id: claim_user, name: claim_name ?? "Someone", for_date: claim_date!, at: claim_at! } : null,
+    tonight: claim_user !== null ? { user_id: claim_user, name: claim_name ?? "Someone", avatar: claim_avatar, for_date: claim_date!, at: claim_at! } : null,
   };
 }
 
@@ -672,6 +677,7 @@ export interface HouseEntry {
   status: "planned" | "live" | "completed" | "cancelled";
   planned_by: number;
   planner_name: string;
+  planner_avatar: string | null;
   author_id: number;
   visibility: string;
 }
@@ -682,7 +688,7 @@ export function houseEntries(viewerId: number, from: string, to: string): { entr
   const house = requireHouse(viewerId);
   const rows = all<HouseEntry>(
     `SELECT c.id, c.date, c.meal, c.recipe_id, r.title, r.image_url, r.servings, c.status, c.planned_by,
-            u.display_name AS planner_name, r.author_id, r.visibility
+            u.display_name AS planner_name, u.avatar AS planner_avatar, r.author_id, r.visibility
      FROM calendar_entries c JOIN recipes r ON r.id = c.recipe_id JOIN users u ON u.id = c.planned_by
      WHERE c.owner_type = 'household' AND c.owner_id = ? AND c.date BETWEEN ? AND ?
      ORDER BY c.date, CASE c.meal WHEN 'breakfast' THEN 0 WHEN 'lunch' THEN 1 ELSE 2 END, c.id`,
@@ -699,7 +705,7 @@ function houseEntry(viewerId: number, entryId: number): HouseEntry & { house: Ho
   const row = Number.isInteger(entryId)
     ? one<HouseEntry>(
         `SELECT c.id, c.date, c.meal, c.recipe_id, r.title, r.image_url, r.servings, c.status, c.planned_by,
-                u.display_name AS planner_name, r.author_id, r.visibility
+                u.display_name AS planner_name, u.avatar AS planner_avatar, r.author_id, r.visibility
          FROM calendar_entries c JOIN recipes r ON r.id = c.recipe_id JOIN users u ON u.id = c.planned_by
          WHERE c.id = ? AND c.owner_type = 'household' AND c.owner_id = ?`,
         entryId,
@@ -852,11 +858,11 @@ export function houseShopping(viewerId: number): HouseList {
   const members = all<{ user_id: number }>("SELECT user_id FROM household_members WHERE household_id = ?", house.id).map((m) => m.user_id);
   const plan = purchasePlan(needs, usableStock("household", house.id), (id, name) => packOptions(members, id, name));
   const claims = new Map<number, Claim>();
-  for (const c of all<{ ingredient_id: number; claimed_by: number; display_name: string; claimed_at: string }>(
-    `SELECT c.ingredient_id, c.claimed_by, u.display_name, c.claimed_at
+  for (const c of all<{ ingredient_id: number; claimed_by: number; display_name: string; avatar: string | null; claimed_at: string }>(
+    `SELECT c.ingredient_id, c.claimed_by, u.display_name, u.avatar, c.claimed_at
      FROM shopping_claims c JOIN users u ON u.id = c.claimed_by WHERE c.household_id = ?`,
     house.id,
-  )) claims.set(c.ingredient_id, { user_id: c.claimed_by, name: c.display_name, at: c.claimed_at });
+  )) claims.set(c.ingredient_id, { user_id: c.claimed_by, name: c.display_name, avatar: c.avatar, at: c.claimed_at });
 
   let claimedCents = 0;
   let claimedLines = 0;

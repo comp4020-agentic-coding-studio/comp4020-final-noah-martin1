@@ -64,6 +64,7 @@ export function entriesBetween(viewerId: number, ownerId: number, from: string, 
 export interface FriendMeal extends CalendarEntry {
   username: string;
   display_name: string;
+  avatar: string | null;
   created_at: string;
 }
 
@@ -72,7 +73,7 @@ export function friendMeals(viewerId: number, friendIds: number[], from: string,
   if (!friendIds.length) return [];
   return all<FriendMeal>(
     `SELECT c.id, c.owner_id, c.date, c.meal, c.recipe_id, r.title, c.status, c.shared, c.created_at,
-            r.author_id AS recipe_author_id, r.visibility AS recipe_visibility, u.username, u.display_name,
+            r.author_id AS recipe_author_id, r.visibility AS recipe_visibility, u.username, u.display_name, u.avatar,
             r.image_url, r.servings, r.cuisine
      FROM calendar_entries c JOIN recipes r ON r.id = c.recipe_id JOIN users u ON u.id = c.owner_id
      WHERE c.owner_type = 'user' AND c.shared = 1 AND c.status != 'cancelled'
@@ -275,13 +276,14 @@ interface Friend {
   id: number;
   username: string;
   display_name: string;
+  avatar: string | null;
 }
 
 function friendsOf(userId: number): Friend[] {
   const ids = friendIds(userId);
   if (!ids.length) return [];
   return all<Friend>(
-    `SELECT id, username, display_name FROM users WHERE id IN (${ids.map(() => "?").join(", ")}) ORDER BY display_name COLLATE NOCASE`,
+    `SELECT id, username, display_name, avatar FROM users WHERE id IN (${ids.map(() => "?").join(", ")}) ORDER BY display_name COLLATE NOCASE`,
     ...ids,
   );
 }
@@ -336,7 +338,7 @@ function ghostTile(m: FriendMeal, i: number): Html {
     <span class="cal-thumb">${thumb(m.image_url, m.title)}<span class="cal-kind">${MEAL_LABEL[m.meal]}</span></span>
     <span class="cal-tile-body" data-kind="${MEAL_LABEL[m.meal]}">
       <span class="cal-tile-title">${m.title}</span>
-      <span class="cal-tile-meta cal-who">${avatar(m.display_name, "sm")}<span>${firstName(m.display_name)}${m.status === "completed" ? " cooked this" : m.status === "live" ? " is cooking" : ""}</span></span>
+      <span class="cal-tile-meta cal-who">${avatar(m.display_name, "sm", m.avatar)}<span>${firstName(m.display_name)}${m.status === "completed" ? " cooked this" : m.status === "live" ? " is cooking" : ""}</span></span>
     </span>
   </a>`;
 }
@@ -408,7 +410,7 @@ function friendsBar(s: CalState, friends: Friend[], counts: Map<number, number>)
         const [bg, ink] = tone(f.display_name);
         const n = counts.get(f.id) ?? 0;
         return html`<a class="cal-fchip" href="${calHref(s, { with: next })}" data-cal-nav="overlay" aria-pressed="${on ? "true" : "false"}" style="--fr: ${bg}; --fr-ink: ${ink}">
-          ${avatar(f.display_name, "sm")}<span>${firstName(f.display_name)}</span>${on ? html`<span class="cal-fcount">${n}</span>` : ""}
+          ${avatar(f.display_name, "sm", f.avatar)}<span>${firstName(f.display_name)}</span>${on ? html`<span class="cal-fcount">${n}</span>` : ""}
         </a>`;
       })}
       ${s.with.length ? html`<a class="cal-fclear" href="${calHref(s, { with: [] })}" data-cal-nav="overlay">Clear</a>` : ""}

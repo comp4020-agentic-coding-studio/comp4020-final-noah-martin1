@@ -34,7 +34,7 @@ export function feedItem(item: FeedItem): Html {
   if (item.kind === "recipe") {
     const r = item.recipe;
     return html`<li class="feed-item">
-      ${avatar(r.author_name)}
+      ${avatar(r.author_name, "md", r.author_avatar)}
       <div class="grow">
         <p><a href="/u/${r.author_username}" class="strong">${r.author_name}</a> shared a recipe <span class="muted">· ${ago(item.at)}</span></p>
         <a class="feed-card ${r.image_url ? "feed-card-photo" : ""}" href="/recipes/${r.id}">
@@ -50,7 +50,7 @@ export function feedItem(item: FeedItem): Html {
   }
   const m = item.meal;
   return html`<li class="feed-item">
-    ${avatar(m.display_name)}
+    ${avatar(m.display_name, "md", m.avatar)}
     <div class="grow">
       <p><a href="/u/${m.username}" class="strong">${m.display_name}</a> is planning
         <a href="/recipes/${m.recipe_id}">${m.title}</a> for ${m.meal} on ${weekday(m.date)} ${shortDate(m.date)}
@@ -276,11 +276,11 @@ function dashboard(ctx: Ctx): Html {
     <header class="hm-head"><h2 id="hm-friends-h">From friends</h2><a href="/friends#activity">Friends ${icon("arrow", 14)}</a></header>
     ${feed.length
       ? html`<ul class="hm-rail">${feed.map((item) => {
-          const r = item.kind === "recipe" ? { id: item.recipe.id, title: item.recipe.title, img: item.recipe.image_url, who: item.recipe.author_name, what: "shared" }
-            : { id: item.meal.recipe_id, title: item.meal.title, img: item.meal.image_url, who: item.meal.display_name, what: `${weekday(item.meal.date)} ${item.meal.meal}` };
+          const r = item.kind === "recipe" ? { id: item.recipe.id, title: item.recipe.title, img: item.recipe.image_url, who: item.recipe.author_name, av: item.recipe.author_avatar, what: "shared" }
+            : { id: item.meal.recipe_id, title: item.meal.title, img: item.meal.image_url, who: item.meal.display_name, av: item.meal.avatar, what: `${weekday(item.meal.date)} ${item.meal.meal}` };
           return html`<li><a href="/recipes/${r.id}">
             <span class="hm-rail-img">${r.img ? html`<img src="${sized(r.img, "medium")}" alt="" loading="lazy" decoding="async" />` : html`<span>${r.title.slice(0, 1)}</span>`}</span>
-            <span class="hm-rail-who">${avatar(r.who, "sm")}<span>${r.who.split(" ")[0]} · ${r.what}</span></span>
+            <span class="hm-rail-who">${avatar(r.who, "sm", r.av)}<span>${r.who.split(" ")[0]} · ${r.what}</span></span>
             <strong>${r.title}</strong>
           </a></li>`;
         })}</ul>`
@@ -326,7 +326,7 @@ function morePage(ctx: Ctx): Html {
       <section class="panel panel-flush">
         <h2 class="panel-title more-heading">You</h2>
         <ul class="more-list">
-          <li><a href="/u/${user.username}">${avatar(user.display_name, "sm")}<span class="grow">Profile</span><span aria-hidden="true">›</span></a></li>
+          <li><a href="/u/${user.username}">${avatar(user.display_name, "sm", user.avatar)}<span class="grow">Profile</span><span aria-hidden="true">›</span></a></li>
           <li><a href="/settings">${icon("settings")}<span class="grow">Settings</span><span aria-hidden="true">›</span></a></li>
           <li><a href="/readme/">${icon("recipes")}<span class="grow">About Larder</span><span aria-hidden="true">›</span></a></li>
         </ul>

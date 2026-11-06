@@ -67,7 +67,7 @@ export function livePreviewCard(viewerId: number | null = null): Html {
     ${shown.length
       ? html`<ul class="compact-list">
           ${shown.map(
-            (s) => html`<li>${avatar(s.display_name, "sm")}<a class="grow" href="/global#live-${s.id}"><strong>${firstName(s.display_name)}</strong> is cooking ${s.recipe_title}${s.city ? html` <span class="muted">· ${s.city}</span>` : ""}</a><span class="mono muted">${s.current_step}/${s.step_count}</span></li>`,
+            (s) => html`<li>${avatar(s.display_name, "sm", s.avatar)}<a class="grow" href="/global#live-${s.id}"><strong>${firstName(s.display_name)}</strong> is cooking ${s.recipe_title}${s.city ? html` <span class="muted">· ${s.city}</span>` : ""}</a><span class="mono muted">${s.current_step}/${s.step_count}</span></li>`,
           )}
         </ul>
         ${list.length > shown.length ? html`<p class="hint">and ${list.length - shown.length} more on the globe.</p>` : ""}`
@@ -209,7 +209,9 @@ function questions(ctx: Ctx): Reply {
   return json({
     live: isLive(s),
     step: s.current_step,
-    questions: questionsFor(s.id).map((q) => ({ id: q.id, who: q.asker_name, text: q.text, answer: q.answer, when: ago(q.asked_at) })),
+    // the asker's picture as the server draws it (escaped), so a character
+    // shows the same as on a fresh load
+    questions: questionsFor(s.id).map((q) => ({ id: q.id, who: q.asker_name, avatar: avatar(q.asker_name, "sm", q.asker_avatar).value, text: q.text, answer: q.answer, when: ago(q.asked_at) })),
   });
 }
 

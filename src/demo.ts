@@ -16,7 +16,7 @@ import { saveRecipe, type RecipeInput } from "./recipes.ts";
 export const DEMO_MODE = true;
 
 // Bump to rebuild the demo kitchen on the next deploy (once).
-export const DEMO_VERSION = "2026-11-05";
+export const DEMO_VERSION = "2026-11-06";
 
 export const DEMO_LOGIN = { username: "alice", password: "password123" };
 
@@ -25,11 +25,12 @@ export const DEMO_LOGIN = { username: "alice", password: "password123" };
 // everyone else out. This holds whether or not DEMO_MODE prefills the form.
 export const DEMO_USERNAMES = ["alice", "sam", "bo", "jo"];
 
-const PEOPLE: [string, string][] = [
-  ["alice", "Alice Ng"],
-  ["sam", "Sam Patel"],
-  ["bo", "Bo Kim"],
-  ["jo", "Jo Rivera"],
+// [username, name, cooking character (src/avatars.ts)]
+const PEOPLE: [string, string, string][] = [
+  ["alice", "Alice Ng", "whisk"],
+  ["sam", "Sam Patel", "egg"],
+  ["bo", "Bo Kim", "dumpling"],
+  ["jo", "Jo Rivera", "strawberry"],
 ];
 
 // Demo recipes borrow the photo of the same dish from the catalogue
@@ -261,15 +262,15 @@ const PLAN: [string, number, "breakfast" | "lunch" | "dinner", string, number][]
 async function demoUsers(): Promise<Map<string, number>> {
   const ids = new Map<string, number>();
   let hash: string | null = null;
-  for (const [username, name] of PEOPLE) {
+  for (const [username, name, avatar] of PEOPLE) {
     const row = one<{ id: number }>("SELECT id FROM users WHERE username = ?", username);
     if (row) {
       // whatever a visitor renamed it to, it reads as the demo person again
-      run("UPDATE users SET display_name = ? WHERE id = ?", name, row.id);
+      run("UPDATE users SET display_name = ?, avatar = ? WHERE id = ?", name, avatar, row.id);
       ids.set(username, row.id);
     } else {
       hash ??= await hashPassword(DEMO_LOGIN.password);
-      ids.set(username, run("INSERT INTO users (username, display_name, password_hash) VALUES (?, ?, ?)", username, name, hash).id);
+      ids.set(username, run("INSERT INTO users (username, display_name, password_hash, avatar) VALUES (?, ?, ?, ?)", username, name, hash, avatar).id);
     }
   }
   return ids;

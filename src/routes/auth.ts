@@ -131,8 +131,9 @@ export const routes: Route[] = [
       const username = (form.get("username") ?? "").trim().toLowerCase();
       const password = form.get("password") ?? "";
       const next = form.get("next") ?? "";
+      // sample reviewers (src/sample-reviews.ts) have no password to sign in with
       const user = one<{ id: number; password_hash: string }>(
-        "SELECT id, password_hash FROM users WHERE username = ?",
+        "SELECT id, password_hash FROM users WHERE username = ? AND is_sample = 0",
         username,
       );
       if (!user || !(await verifyPassword(password, user.password_hash))) {

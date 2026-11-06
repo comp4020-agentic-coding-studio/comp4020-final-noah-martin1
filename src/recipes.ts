@@ -41,6 +41,15 @@ export function hasShownVideo(r: Pick<Recipe, "video_id" | "video_status">): boo
   return !!r.video_id && (r.video_status === "verified" || r.video_status === "user");
 }
 
+// Reviews that count towards a recipe's stars: top-level, not deleted (the
+// same rule as src/reviews.ts summaryFor).
+const STARS = "FROM reviews rv WHERE rv.recipe_id = r.id AND rv.parent_id IS NULL AND rv.deleted_at IS NULL AND rv.rating IS NOT NULL";
+export const RATED_SQL = `EXISTS (SELECT 1 ${STARS})`;
+// "Top rated" order: a Bayesian average that pulls a recipe with few reviews
+// towards 3.5 stars as if it had 4 more such reviews, so one 5-star review
+// doesn't outrank twenty that average 4.7. Then most reviewed.
+const RATING_ORDER = `((SELECT COALESCE(SUM(rv.rating), 0) ${STARS}) + 14.0) / ((SELECT COUNT(*) ${STARS}) + 4) DESC, (SELECT COUNT(*) ${STARS}) DESC, r.id`;
+
 export interface RecipeIngredient {
   ingredient_id: number;
   name: string;
@@ -156,8 +165,11 @@ interface ListOptions {
   maxMinutes?: number;
   // only recipes whose page shows a video
   video?: boolean;
+  // only recipes with at least one review
+  rated?: boolean;
   excludeId?: number;
-  order?: "newest" | "featured";
+  // "rating": best reviewed first, by RATED_SQL's score
+  order?: "newest" | "featured" | "rating";
   limit?: number;
   // skip this many first: the browse page's "Show more"
   offset?: number;
@@ -178,10 +190,12 @@ export function listVisibleRecipes(viewerId: number | null, opts: ListOptions = 
   let order =
     opts.order === "featured"
       ? "(r.image_url IS NULL), ((r.id * 2654435761) % 1000), r.id"
-      : "r.created_at DESC, r.id DESC";
+      : opts.order === "rating"
+        ? RATING_ORDER
+        : "r.created_at DESC, r.id DESC";
   // a search ranks title matches first, then photographed recipes
   const orderParams: string[] = [];
-  if (opts.query && opts.order !== "newest") {
+  if (opts.query && opts.order !== "newest" && opts.order !== "rating") {
     order = `(r.title NOT LIKE ?), (r.image_url IS NULL), r.title`;
     orderParams.push(`%${opts.query}%`);
   }
@@ -240,6 +254,7 @@ function visibleWhere(viewerId: number | null, opts: ListOptions): { where: stri
     params.push(opts.cuisine);
   }
   if (opts.video) where.push(SHOWN_VIDEO_SQL);
+  if (opts.rated) where.push(RATED_SQL);
   if (opts.excludeId !== undefined) {
     where.push("r.id != ?");
     params.push(opts.excludeId);

@@ -38,6 +38,8 @@ export interface ReviewRow {
   author_name: string | null;
   author_username: string | null;
   author_avatar: string | null;
+  // written by a sample reviewer (migration 013): shown labelled
+  author_sample: number;
   reply_to_name: string | null;
   likes: number;
   liked: number;
@@ -66,6 +68,8 @@ export interface Review extends ReviewRow {
 
 export interface Summary {
   count: number;
+  // how many of them are sample reviews (the page says so)
+  samples: number;
   average: number | null;
   // how many reviews gave each star, [1★ … 5★]
   stars: [number, number, number, number, number];
@@ -105,7 +109,7 @@ export interface Filters {
   stars?: number;
 }
 
-const ROW = `SELECT v.*, u.display_name AS author_name, u.username AS author_username, u.avatar AS author_avatar,
+const ROW = `SELECT v.*, u.display_name AS author_name, u.username AS author_username, u.avatar AS author_avatar, COALESCE(u.is_sample, 0) AS author_sample,
     ru.display_name AS reply_to_name,
     (SELECT COUNT(*) FROM review_likes l WHERE l.review_id = v.id) AS likes,
     EXISTS (SELECT 1 FROM review_likes l WHERE l.review_id = v.id AND l.user_id = ?) AS liked
@@ -242,13 +246,18 @@ export function summaryFor(recipeId: number): Summary {
      AND EXISTS (SELECT 1 FROM review_images i WHERE i.review_id = v.id)`,
     recipeId,
   )!.n;
+  const samples = one<{ n: number }>(
+    `SELECT COUNT(*) AS n FROM reviews v JOIN users u ON u.id = v.author_id
+     WHERE v.recipe_id = ? AND v.parent_id IS NULL AND v.deleted_at IS NULL AND u.is_sample = 1`,
+    recipeId,
+  )!.n;
   const languages = all<{ code: string; count: number }>(
     `SELECT lang AS code, COUNT(*) AS count FROM reviews WHERE recipe_id = ? AND parent_id IS NULL AND deleted_at IS NULL
      GROUP BY lang ORDER BY count DESC, lang`,
     recipeId,
   );
   // averaged to one decimal place, rounded half up, from whole stars
-  return { count, average: count ? Math.round((sum / count) * 10) / 10 : null, stars, with_photos, languages };
+  return { count, samples, average: count ? Math.round((sum / count) * 10) / 10 : null, stars, with_photos, languages };
 }
 
 // Star averages for many recipes at once (recipe tiles).

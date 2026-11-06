@@ -40,6 +40,9 @@ type Group = "mine" | "friends" | "live" | "demo";
 
 interface ThreadItem {
   who: string;
+  // a real asker's cooking character (src/avatars.ts); the made-up demo
+  // cooks' askers have none
+  avatar?: string | null;
   country?: string;
   text: string;
   original?: string;
@@ -52,6 +55,7 @@ export interface GlobeSession {
   kind: "live" | "demo";
   group: Group;
   cook: string;
+  avatar?: string | null;
   city: string;
   country: string;
   lat: number | null;
@@ -116,6 +120,7 @@ function realSessions(viewer: Viewer, rows: CookSession[] = openSessions().filte
       kind: "live",
       group: s.user_id === viewer.id ? "mine" : viewer.friends.has(s.user_id) ? "friends" : "live",
       cook: s.display_name,
+      avatar: s.avatar,
       city: s.city,
       country: s.country,
       lat: s.lat,
@@ -134,7 +139,7 @@ function realSessions(viewer: Viewer, rows: CookSession[] = openSessions().filte
       language: "",
       tags: s.dietary_tags,
       help: s.help_text ? { text: s.help_text } : null,
-      questions: questionsFor(s.id).map((q) => ({ who: q.asker_name, text: q.text, answer: q.answer ?? undefined, when: ago(q.asked_at) })),
+      questions: questionsFor(s.id).map((q) => ({ who: q.asker_name, avatar: q.asker_avatar, text: q.text, answer: q.answer ?? undefined, when: ago(q.asked_at) })),
       visibility: s.visibility,
       v: sessionVersion(s),
       local: localTime(s.city, s.lat, s.lng),
@@ -269,7 +274,7 @@ function threadPart(s: GlobeSession): Html {
   }
   return html`<ul class="gl-thread">${s.questions.map(
     (q) => html`<li>
-      ${avatar(q.who, "sm")}
+      ${avatar(q.who, "sm", q.avatar ?? null)}
       <div>
         <p><strong>${q.who}</strong> <span class="muted">${q.country ? `· ${q.country} ` : ""}· ${q.when}</span></p>
         <p>${q.text}</p>
@@ -320,7 +325,7 @@ function detail(s: GlobeSession, signedIn: boolean, open = false): Html {
       <div class="gl-ended" data-ended hidden><span>${icon("check", 22)}</span><p>${firstName(s.cook)} has finished cooking.</p></div>
     </div>
     <div class="gl-detail-body">
-      <p class="gl-who">${avatar(s.cook, "sm")}<span><strong>${s.group === "mine" ? "You" : s.cook}</strong> · ${place(s)}</span>${s.group === "friends" ? html`<span class="gl-tag gl-tag-friend">Friend</span>` : ""}${s.group === "mine" ? html`<span class="gl-tag gl-tag-friend">${s.visibility === "public" ? "Everyone" : s.visibility === "friends" ? "Friends only" : "Only you"}</span>` : ""}</p>
+      <p class="gl-who">${avatar(s.cook, "sm", s.avatar ?? null)}<span><strong>${s.group === "mine" ? "You" : s.cook}</strong> · ${place(s)}</span>${s.group === "friends" ? html`<span class="gl-tag gl-tag-friend">Friend</span>` : ""}${s.group === "mine" ? html`<span class="gl-tag gl-tag-friend">${s.visibility === "public" ? "Everyone" : s.visibility === "friends" ? "Friends only" : "Only you"}</span>` : ""}</p>
       <h2>${s.recipe}</h2>
       <p class="gl-meta" data-part="meta">${metaPart(s)}</p>
       <div data-part="step">${stepPart(s)}</div>

@@ -6,6 +6,7 @@ import { seedCatalogue } from "./catalogue.ts";
 import { db } from "./db.ts";
 import { seedVideos } from "./video-seed.ts";
 import { DEMO_MODE, seedDemo } from "./demo.ts";
+import { seedSampleReviews } from "./sample-reviews.ts";
 import { startExpirySweep } from "./expiry.ts";
 import { recoverJobs } from "./scan-jobs.ts";
 import {
@@ -224,6 +225,8 @@ const catalogued = seedCatalogue();
 if (catalogued) console.log(`catalogue: added or revised ${catalogued} recipes`);
 const videos = seedVideos();
 if (videos) console.log(`videos: updated ${videos} catalogue recipes`);
+const sampleReviews = seedSampleReviews();
+if (sampleReviews) console.log(`sample reviews: wrote ${sampleReviews}`);
 if (DEMO_MODE) await seedDemo();
 startExpirySweep();
 recoverJobs();

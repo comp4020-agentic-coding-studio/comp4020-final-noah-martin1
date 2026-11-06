@@ -334,10 +334,19 @@ function start() {
     el.className = "cm-q arrive";
     el.dataset.q = String(q.id);
     const head = document.createElement("header");
-    const av = document.createElement("span");
-    av.className = "avatar avatar-sm";
-    av.setAttribute("aria-hidden", "true");
-    av.textContent = q.who.split(/\s+/).map((w) => w[0] ?? "").join("").slice(0, 2).toUpperCase();
+    // the server's own avatar markup (its escaped html), else initials
+    let av;
+    if (q.avatar) {
+      const t = document.createElement("template");
+      t.innerHTML = q.avatar;
+      av = t.content.firstElementChild;
+    }
+    if (!av) {
+      av = document.createElement("span");
+      av.className = "avatar avatar-sm";
+      av.setAttribute("aria-hidden", "true");
+      av.textContent = q.who.split(/\s+/).map((w) => w[0] ?? "").join("").slice(0, 2).toUpperCase();
+    }
     const who = document.createElement("p");
     const strong = document.createElement("strong");
     strong.textContent = q.who;

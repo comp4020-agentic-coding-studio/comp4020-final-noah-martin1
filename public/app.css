@@ -14492,6 +14492,34 @@ a.rv-who:hover {
   font-weight: 600;
 }
 
+.rv-badge-sample {
+  background: var(--surface-3);
+  color: var(--ink-2);
+}
+
+.rv-section .preview-banner {
+  margin-top: 20px;
+}
+
+/* a recipe tile's star average, beside its time and cuisine */
+.rx-stars {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  color: var(--ink-2);
+  font-weight: 600;
+}
+
+.rx-stars .icon {
+  fill: var(--star);
+  stroke: var(--star);
+}
+
+.rx-stars small {
+  color: var(--ink-3);
+  font-weight: 500;
+}
+
 .rv-to {
   display: flex;
   align-items: center;

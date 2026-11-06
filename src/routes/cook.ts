@@ -194,7 +194,7 @@ function questionStack(live: CookSession | undefined, recipeId: number): Html {
   return html`<aside class="cm-qs" data-qs aria-label="Questions from watchers" aria-live="polite" ${open.length ? "" : raw("hidden")}>
     ${open.map(
       (q) => html`<article class="cm-q" data-q="${q.id}">
-        <header>${avatar(q.asker_name, "sm")}<p><strong>${q.asker_name}</strong> asks</p></header>
+        <header>${avatar(q.asker_name, "sm", q.asker_avatar)}<p><strong>${q.asker_name}</strong> asks</p></header>
         <p class="cm-q-text">${q.text}</p>
         <form method="post" action="/global/${live!.id}/answer" class="cm-q-form">
           <input type="hidden" name="question" value="${q.id}" />
@@ -251,7 +251,7 @@ export const routes: Route[] = [
           <div class="cm-tools" data-live-root data-recipe="${recipe.id}" data-session="${liveHere?.id ?? ""}" data-live-step="${liveHere?.current_step ?? 1}" data-step-count="${steps.length}" data-serves="${serves}" ${ctx.user && prefsFor(ctx.user.id).auto_live && !liveHere && !elsewhere ? raw("data-auto-live") : ""} ${ctx.user && prefsFor(ctx.user.id).auto_live ? raw("data-auto-pref") : ""}>
             ${along
               ? html`<a class="cm-along" href="/global#live-${along.id}" data-along="${along.id}" data-along-steps="${along.step_count}" title="Cooking along with ${along.display_name}">
-                  ${avatar(along.display_name, "sm")}<span><small>${along.display_name.split(" ")[0]} is on</small><b data-along-step>step ${along.current_step} of ${along.step_count}</b></span>
+                  ${avatar(along.display_name, "sm", along.avatar)}<span><small>${along.display_name.split(" ")[0]} is on</small><b data-along-step>step ${along.current_step} of ${along.step_count}</b></span>
                 </a>`
               : ""}
             ${ctx.user

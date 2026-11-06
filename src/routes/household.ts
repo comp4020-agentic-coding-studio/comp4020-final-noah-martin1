@@ -221,7 +221,7 @@ function tonightControl(i: HouseItem, me: number, returnTo: string): Html {
       <form method="post" action="/household/items/${i.id}/release" data-hh-action>${returnField(returnTo)}<button class="link-button" type="submit">Let go</button></form>`;
   }
   if (i.tonight) {
-    return html`<span class="hh-claim" style="--av: ${tone(i.tonight.name)[0]}; --av-ink: ${tone(i.tonight.name)[1]}">${avatar(i.tonight.name, "sm")} ${firstName(i.tonight.name)} is using it tonight</span>`;
+    return html`<span class="hh-claim" style="--av: ${tone(i.tonight.name)[0]}; --av-ink: ${tone(i.tonight.name)[1]}">${avatar(i.tonight.name, "sm", i.tonight.avatar)} ${firstName(i.tonight.name)} is using it tonight</span>`;
   }
   if (!isSoon(i)) return html``;
   return html`<form method="post" action="/household/items/${i.id}/tonight" data-hh-action>${returnField(returnTo)}
@@ -249,7 +249,7 @@ function activityFeed(list: Activity[]): Html {
   return html`<ul class="feed hh-feed">
     ${list.map(
       (a) => html`<li class="feed-item ${a.nudge ? "hh-nudge" : ""}">
-        ${avatar(a.name, "sm")}
+        ${avatar(a.name, "sm", a.avatar)}
         <p class="grow">${a.nudge ? html`<span class="hh-nudge-tag">${icon("spark", 12)} Unlocked</span>` : ""}<strong>${a.who}</strong> ${a.text}${a.recipeId ? html` <a class="hh-feed-link" href="/recipes/${a.recipeId}">${a.nudge ? "Cook it" : "Recipe"} →</a>` : ""}
           <span class="muted">· ${ago(a.at)}</span></p>
       </li>`,
@@ -309,7 +309,7 @@ function weekStrip(entries: HouseEntry[], me: number): Html {
           ? meals.map(
               (e) => html`<a class="hh-day-meal ${e.status === "completed" ? "is-done" : ""}" href="/recipes/${e.recipe_id}">
                 <span class="hh-day-kind">${e.meal}</span><span class="hh-day-title">${e.title}</span>
-                <span class="hh-day-who">${avatar(e.planner_name, "sm")}<span>${e.planned_by === me ? "You" : firstName(e.planner_name)}</span></span></a>`,
+                <span class="hh-day-who">${avatar(e.planner_name, "sm", e.planner_avatar)}<span>${e.planned_by === me ? "You" : firstName(e.planner_name)}</span></span></a>`,
             )
           : html`<a class="hh-day-free" href="/household/calendar?day=${d}#plan">${icon("plus", 14)}<span class="sr-only">Plan a meal for ${when(d)}</span></a>`}
       </li>`;
@@ -388,7 +388,7 @@ function overviewPage(ctx: Ctx) {
               <ul class="compact-list hh-mini-list">
                 ${o.list.toBuy.slice(0, 6).map(
                   (l) => html`<li><span class="grow"><span class="item-name">${l.name}</span><small class="muted block">${l.toBuy === null ? "some" : qty(l.toBuy, l.unit)} · ${l.meals.join(", ")}</small></span>
-                    ${l.claim ? html`<span class="hh-claim hh-claim-sm" title="${l.claim.name} is buying this">${avatar(l.claim.name, "sm")}${l.claim.user_id === me ? "You" : firstName(l.claim.name)}</span>` : html`<span class="muted small">open</span>`}</li>`,
+                    ${l.claim ? html`<span class="hh-claim hh-claim-sm" title="${l.claim.name} is buying this">${avatar(l.claim.name, "sm", l.claim.avatar)}${l.claim.user_id === me ? "You" : firstName(l.claim.name)}</span>` : html`<span class="muted small">open</span>`}</li>`,
                 )}
               </ul>
             </section>`
@@ -544,7 +544,7 @@ function houseTile(e: HouseEntry, me: number, i: number, returnTo: string): Html
       <span class="cal-thumb">${thumb(e.image_url, e.title)}<span class="cal-kind">${MEAL_LABEL[e.meal]}</span></span>
       <span class="cal-tile-body" data-kind="${MEAL_LABEL[e.meal]}">
         <span class="cal-tile-title">${e.title}</span>
-        <span class="cal-tile-meta cal-who">${avatar(e.planner_name, "sm")}<span>${e.status === "completed" ? `${who === "You" ? "You" : who} · cooked` : e.status === "cancelled" ? `${who} · skipped` : `${who} planned`}</span></span>
+        <span class="cal-tile-meta cal-who">${avatar(e.planner_name, "sm", e.planner_avatar)}<span>${e.status === "completed" ? `${who === "You" ? "You" : who} · cooked` : e.status === "cancelled" ? `${who} · skipped` : `${who} planned`}</span></span>
       </span>
     </a>
     <div class="cal-tile-tools">
@@ -677,7 +677,7 @@ function lineControl(l: HouseLine, me: number): Html {
       </span>`;
   }
   if (l.claim) {
-    return html`<span class="hh-claim">${avatar(l.claim.name, "sm")} ${firstName(l.claim.name)}'s got this</span>`;
+    return html`<span class="hh-claim">${avatar(l.claim.name, "sm", l.claim.avatar)} ${firstName(l.claim.name)}'s got this</span>`;
   }
   return html`<form method="post" action="${action("claim")}" data-hh-action><button class="button button-small button-soft hh-gotit" type="submit" aria-label="I'll buy the ${l.name}">I've got this</button></form>`;
 }

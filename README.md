@@ -166,7 +166,14 @@ the first time, run only when you press Translate), shown beside the
 original and labelled as a machine's; languages with no good model aren't
 offered. Everyone picks a cooking character as their picture in Settings.
 Deleting your account (Settings) removes your recipes, pantry and plans but
-leaves your reviews of others' recipes, without your name or picture.
+leaves your reviews of others' recipes, without your name or picture. The
+**Top rated** filter on Recipes lists reviewed recipes best first, by an
+average pulled towards 3.5 stars when there are few reviews, so one 5-star
+review doesn't outrank twenty at 4.7. Some catalogue recipes carry sample
+reviews so the feature shows before real people review much. Each is
+labelled "Sample" under a preview banner. Their writers are placeholder
+accounts that can't sign in, have no profile and can't be found
+(`src/sample-reviews.ts`).
 
 ## Not built yet (on purpose)
 

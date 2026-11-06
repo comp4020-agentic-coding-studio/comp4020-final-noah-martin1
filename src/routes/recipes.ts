@@ -33,7 +33,7 @@ import type { Route } from "../server.ts";
 import { canSeeRecipe } from "../visibility.ts";
 import { avatar, errors, icon, page, pageHeader, tone } from "../views/layout.ts";
 import { liveCooksFor } from "./global.ts";
-import { ownReview, parseFilters, reviewsFor, summaryFor, typingOn, getReview } from "../reviews.ts";
+import { averagesFor, ownReview, parseFilters, reviewsFor, summaryFor, typingOn, getReview } from "../reviews.ts";
 import { type ComposerState, ratingBadge, reviewsSection } from "../views/reviews.ts";
 
 const VISIBILITY_LABEL = { public: "Public", friends: "Friends", private: "Only me" } as const;
@@ -74,7 +74,7 @@ export function amount(quantity: number | null, unit: string): string {
 
 // A photo tile, IMDb-poster style: image, a couple of glass badges, then the
 // title and quick facts beneath.
-export function recipeTile(r: Recipe, opts: { i?: number; live?: number; costCents?: number; kcal?: number; id?: string } = {}): Html {
+export function recipeTile(r: Recipe, opts: { i?: number; live?: number; costCents?: number; kcal?: number; id?: string; stars?: { average: number; count: number } } = {}): Html {
   const minutes = totalMinutes(r);
   const [fallback] = tone(r.title);
   return html`<a class="rx-tile" href="/recipes/${r.id}"${opts.id ? html` id="${opts.id}"` : ""} style="--i: ${Math.min(opts.i ?? 0, 24)}">
@@ -95,6 +95,7 @@ export function recipeTile(r: Recipe, opts: { i?: number; live?: number; costCen
     <div class="rx-info">
       <h3>${r.title}</h3>
       <div class="rx-facts">
+        ${opts.stars ? html`<span class="rx-stars" aria-label="${opts.stars.average} out of 5 stars from ${opts.stars.count} review${opts.stars.count === 1 ? "" : "s"}">${icon("star", 13)}${opts.stars.average.toFixed(1)}<small>(${opts.stars.count})</small></span>` : ""}
         ${minutes ? html`<span>${icon("clock", 13)}${duration(minutes)}</span>` : ""}
         ${r.cuisine ? html`<span>${r.cuisine}</span>` : html`<span>by ${r.author_name.split(" ")[0]}</span>`}
       </div>
@@ -150,6 +151,8 @@ interface BrowseState {
   course: string;
   cuisine: string;
   video: boolean;
+  // best reviewed first, only recipes with reviews
+  rated: boolean;
   mine: boolean;
   // how many pages of PAGE recipes to show (Show more adds one)
   pages: number;
@@ -167,6 +170,7 @@ function browseState(ctx: Ctx): BrowseState {
     course: COURSES.some((c) => c.key === course) ? course : "",
     cuisine: (p.get("cuisine") ?? "").slice(0, 40),
     video: p.get("video") === "1",
+    rated: p.get("rated") === "1",
     mine: p.get("tab") === "mine" && !!ctx.user,
     pages: Math.min(Math.max(Number.parseInt(p.get("pages") ?? "1", 10) || 1, 1), 20),
   };
@@ -181,6 +185,7 @@ function hrefWith(s: BrowseState, change: Partial<BrowseState>): string {
   if (next.tag) p.set("tag", next.tag);
   if (next.cuisine) p.set("cuisine", next.cuisine);
   if (next.video) p.set("video", "1");
+  if (next.rated) p.set("rated", "1");
   if (next.pages > 1) p.set("pages", String(next.pages));
   const qs = p.toString();
   return qs ? `/recipes?${qs}` : "/recipes";
@@ -201,25 +206,28 @@ function results(ctx: Ctx, s: BrowseState, from = 0): { recipes: Recipe[]; total
     course: s.course,
     cuisine: s.cuisine,
     video: s.video,
+    rated: s.rated,
   };
   const shown = s.pages * PAGE;
-  const recipes = listVisibleRecipes(viewer, { ...filters, order: s.mine && !s.q ? "newest" : "featured", limit: shown - from, offset: from });
+  const order = s.rated ? "rating" : s.mine && !s.q ? "newest" : "featured";
+  const recipes = listVisibleRecipes(viewer, { ...filters, order, limit: shown - from, offset: from });
   // the grid stops at `shown`; the count is every match
   const total = from + recipes.length < shown ? from + recipes.length : countVisibleRecipes(viewer, filters);
   const lines = ingredientsFor(recipes.map((r) => r.id));
   const live = liveCooksFor(recipes.map((r) => r.title));
+  const stars = averagesFor(recipes.map((r) => r.id));
   const tiles = recipes.map((r, i) => {
     i += from;
     const n = perServing(estimate(lines.get(r.id) ?? []), r.servings);
     // the first tile of each later page is where Show more lands without the script
     const id = i > 0 && i % PAGE === 0 ? `more-${i}` : undefined;
-    return recipeTile(r, { i, id, live: live.get(r.title), costCents: n.counted >= 2 ? n.costCents : undefined });
+    return recipeTile(r, { i, id, live: live.get(r.title), costCents: n.counted >= 2 ? n.costCents : undefined, stars: stars.get(r.id) });
   });
   const grid = recipes.length || from > 0
     ? html`${tiles}`
     : html`<div class="empty rx-empty">
         <p class="empty-title">${s.mine && !s.q && !s.tag ? "Your cookbook is empty" : "Nothing matches that"}</p>
-        <p>${s.mine && !s.q && !s.tag ? "Write down something you cook often — it gets nutrition and cost worked out automatically." : "Try an ingredient you have, like “eggs” or “chickpeas”, or clear a filter."}</p>
+        <p>${s.mine && !s.q && !s.tag ? "Write down something you cook often — it gets nutrition and cost worked out automatically." : s.rated ? "None of these have reviews yet. Cook one and be the first to rate it." : "Try an ingredient you have, like “eggs” or “chickpeas”, or clear a filter."}</p>
         ${s.mine ? html`<a class="button" href="/recipes/new">${icon("plus", 16)} Write a recipe</a>` : html`<a class="button button-ghost" href="/recipes">Clear filters</a>`}
       </div>`;
   return { recipes, total, grid };
@@ -241,7 +249,7 @@ export function resultCount(total: number, shown: number): string {
 function browsePage(ctx: Ctx): Html {
   const s = browseState(ctx);
   const { recipes, total, grid } = results(ctx, s);
-  const filtered = !!(s.q || s.tag || s.course || s.cuisine || s.video);
+  const filtered = !!(s.q || s.tag || s.course || s.cuisine || s.video || s.rated);
   // filters start the list again from the top
   const f = { ...s, pages: 1 };
   const topCuisines = cuisines().slice(0, 9);
@@ -255,9 +263,11 @@ function browsePage(ctx: Ctx): Html {
           ? `${s.cuisine} recipes`
           : s.tag
             ? QUICK_FILTERS.find((f) => f.key === s.tag)?.label ?? "Recipes"
-            : s.video
-              ? "Recipes with a video"
-              : "Popular this week";
+            : s.rated
+              ? "Top rated"
+              : s.video
+                ? "Recipes with a video"
+                : "Popular this week";
   return html`
     <section class="rx-hero">
       <div class="rx-hero-row">
@@ -283,15 +293,17 @@ function browsePage(ctx: Ctx): Html {
         ${s.tag ? html`<input type="hidden" name="tag" value="${s.tag}" />` : ""}
         ${s.cuisine ? html`<input type="hidden" name="cuisine" value="${s.cuisine}" />` : ""}
         ${s.video ? html`<input type="hidden" name="video" value="1" />` : ""}
+        ${s.rated ? html`<input type="hidden" name="rated" value="1" />` : ""}
         <input type="search" name="q" value="${s.q}" placeholder="Try “pad thai”, “eggs” or “chickpeas”" aria-label="Search recipes" autocomplete="off" />
         <button class="button" type="submit">Search</button>
       </form>
     </section>
 
     <nav class="rx-filters" aria-label="Filter recipes">
-      ${chip("All", hrefWith(f, { course: "", tag: "", cuisine: "", video: false }), !s.course && !s.tag && !s.cuisine && !s.video)}
+      ${chip("All", hrefWith(f, { course: "", tag: "", cuisine: "", video: false, rated: false }), !s.course && !s.tag && !s.cuisine && !s.video && !s.rated)}
       ${COURSES.map((c) => chip(c.label, hrefWith(f, { course: s.course === c.key ? "" : c.key }), s.course === c.key))}
       <span class="rx-divider" aria-hidden="true"></span>
+      ${chip("Top rated", hrefWith(f, { rated: !s.rated }), s.rated, "var(--butter-ink)")}
       ${chip("Has video", hrefWith(f, { video: !s.video }), s.video, "var(--rose)")}
       ${QUICK_FILTERS.map((q) => chip(q.label, hrefWith(f, { tag: s.tag === q.key ? "" : q.key }), s.tag === q.key, q.dot))}
       <span class="rx-divider" aria-hidden="true"></span>

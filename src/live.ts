@@ -31,6 +31,7 @@ export interface CookSession {
   user_id: number;
   username: string;
   display_name: string;
+  avatar: string | null;
   recipe_id: number;
   recipe_title: string;
   recipe_author_id: number;
@@ -61,13 +62,14 @@ export interface Question {
   session_id: number;
   asker_id: number;
   asker_name: string;
+  asker_avatar: string | null;
   text: string;
   answer: string | null;
   asked_at: string;
   answered_at: string | null;
 }
 
-const SELECT = `SELECT s.*, u.username, u.display_name,
+const SELECT = `SELECT s.*, u.username, u.display_name, u.avatar,
     r.title AS recipe_title, r.author_id AS recipe_author_id, r.visibility AS recipe_visibility,
     r.image_url, r.cuisine, r.servings AS recipe_servings, r.dietary_tags,
     (SELECT COUNT(*) FROM cook_questions q WHERE q.session_id = s.id) AS question_count,
@@ -434,7 +436,7 @@ export function sweepExpired(): number {
 
 export function questionsFor(sessionId: number): Question[] {
   return all<Question>(
-    `SELECT q.*, u.display_name AS asker_name FROM cook_questions q JOIN users u ON u.id = q.asker_id
+    `SELECT q.*, u.display_name AS asker_name, u.avatar AS asker_avatar FROM cook_questions q JOIN users u ON u.id = q.asker_id
      WHERE q.session_id = ? ORDER BY q.id`,
     sessionId,
   );
@@ -442,7 +444,7 @@ export function questionsFor(sessionId: number): Question[] {
 
 export function getQuestion(id: number): Question | undefined {
   return one<Question>(
-    "SELECT q.*, u.display_name AS asker_name FROM cook_questions q JOIN users u ON u.id = q.asker_id WHERE q.id = ?",
+    "SELECT q.*, u.display_name AS asker_name, u.avatar AS asker_avatar FROM cook_questions q JOIN users u ON u.id = q.asker_id WHERE q.id = ?",
     id,
   );
 }

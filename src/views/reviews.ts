@@ -9,7 +9,7 @@ import type { Ctx } from "../http.ts";
 import { LANGUAGES, languageName, TRANSLATABLE } from "../language.ts";
 import type { Recipe } from "../recipes.ts";
 import { type Filters, LINKS_MAX, PHOTOS_MAX, REVIEW_MAX, type Review, type Summary } from "../reviews.ts";
-import { avatar, icon } from "./layout.ts";
+import { avatar, icon, previewBanner } from "./layout.ts";
 
 // "4.3" with its stars drawn: whole and half stars, the rest empty
 export function stars(value: number, size = 16): Html {
@@ -46,6 +46,8 @@ function body(r: Review): Html {
 
 function who(r: Review): Html {
   if (r.author_name === null) return html`<span class="rv-who rv-gone">Deleted account</span>`;
+  // a sample reviewer has no profile to link to
+  if (r.author_sample) return html`<span class="rv-who">${r.author_name}</span><span class="rv-badge rv-badge-sample" title="An example review, not written by a real person">Sample</span>`;
   return html`<a class="rv-who" href="/u/${r.author_username}">${r.author_name}</a>`;
 }
 
@@ -289,6 +291,11 @@ export function reviewsSection(
       <h2 id="reviews-h">Reviews</h2>
       ${summaryBlock(recipe, summary, f)}
     </div>
+    ${summary.samples
+      ? previewBanner("Sample reviews", summary.samples === summary.count
+          ? `The reviews here are examples, marked "Sample", written so you can see how reviews work. Add a real one below.`
+          : `${summary.samples} of these reviews are examples, marked "Sample"; the rest are from real people.`)
+      : ""}
     ${composer(ctx, recipe, data.mine, data.composer)}
     <p class="rv-typing" data-rv-typing aria-live="polite" ${data.typing.length ? "" : html`hidden`}>${typingText(data.typing)}</p>
     ${filters(recipe, summary, f)}
