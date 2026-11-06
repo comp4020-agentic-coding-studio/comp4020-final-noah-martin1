@@ -1,7 +1,41 @@
 # FOCUS MODE, COMPLETE THE FOLLOWING TASKS:
 
+ ## TASK 1, REAL LIFE FRIDGE/PANTRY IMAGE CATEGORISING AND PROCESSING TO VIRTUAL FRIDGE/PANTRY
 
-## TASK 1, REAL LIFE FRIDGE/PANTRY IMAGE CATEGORISING AND PROCESSING TO VIRTUAL FRIDGE/PANTRY
+## 1. Active Task Intent
+- **Goal:** Create and integrate a review feature for the web app. Users should be able to write reviews and their presence remains persistent on the web app's recipe. Users can write reviews for reciepes which can then be liked and replied to by other users. As users are actively writing comments this should be seen by others as 3 animated dots. 
+   
+- **Features to achieve / implement:**
+- A review / comment window within recipe pages, formatted correctly toward the bottom of the screen. rearranging of items is allowed to make the workflow right - ill check this.
+- reviews should have a like and reply feature - behaving as a comment - to make more social.
+- reviews should be allowed to add images
+- reviews should have a process for sharing / referencing other recipes
+- poeple actively writing reviews should be visible to others indicated by 3 animated dots.
+- reviews have built in translaters
+
+- **Things to explore** 
+
+1. Reviews that poeple write should post the authors name and profile image. explore pre-generated fun animated cooking related profile images - similar to the netflix profile images.
+   
+2. reviews have a x/5 star rating system and provide an average at the top
+
+3. Sort by reviews: filter reviews by either has image or language or date etc..
+
+- **Credit Allocation:** This task implements multiple features that need careful consideration and testing to be functional - allocate $60
+
+- **Double-Check Rule:** There are many small features/details for this these main feature to work, test each one independently in different contexts to ensure functionality.
+
+## 2. Active Technical Constraints
+- **Database Rules:** keep reviews and comments / replies persistent and connected to the user so that if the user account is deleted there comment remains but profile image and name is removed.
+- **AI Advisory Invariant:** Keep code updates deterministic. Models may map names or parse transcript text, but application logic remains the source of truth.
+- **Verification Command:** Run `pnpm check` and your recipe test specs locally to ensure nothing is broken after an iteration.
+
+## 3. Project References
+- For long-term non-negotiable rules, full git/testing workflows, layout styles, and HTML escaping instructions, refer to `@ARCHITECTURAL_GUIDELINES.md`. Ignore them during transcript extraction unless actively modifying code infrastructure.
+
+
+# BELOW IS COMMENTED OUT OLD TASKS, PLEASE IGNORE:
+<!-- ## TASK 1, REAL LIFE FRIDGE/PANTRY IMAGE CATEGORISING AND PROCESSING TO VIRTUAL FRIDGE/PANTRY
 
 ## 1. Active Task Intent
 - **Goal:** Evaluate, select, and integrate the highest-performing **locally hostable Vision-Language Model (VLM) or Object Detection framework** capable of parsing real-life fridge and pantry images. The objective is to maximise automated item identification and classification while minimising friction during the virtual inventory "add item" workflow.
@@ -55,4 +89,4 @@ continue this task until out of credit (assuming task 1 is complete)
 
 ## 3. Project References
 - For long-term non-negotiable rules, full git/testing workflows, layout styles, and HTML escaping instructions, refer to `@ARCHITECTURAL_GUIDELINES.md`. Ignore them during transcript extraction unless actively modifying code infrastructure. 
-
+ -->
