@@ -129,7 +129,8 @@ interface PageOptions {
   title: string;
   active?: string;
   body: Html;
-  // extra class on <main>, e.g. for full-bleed pages
+  // extra class on <main>: full-bleed pages (main-globe, main-kitchen), or a
+  // centred reading column (main-read)
   mainClass?: string;
   // extra tags for the end of <head>: a page's own module scripts, import map
   headExtra?: Html;

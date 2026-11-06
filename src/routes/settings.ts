@@ -117,7 +117,7 @@ function settingsPage(ctx: Ctx, problems: string[] = [], passwordProblems: strin
         ${deleteSection(ctx, deleteProblems)}
       </div>
     </div>`;
-  return htmlReply(page(ctx, { title: "Settings", active: "settings", body }), status);
+  return htmlReply(page(ctx, { title: "Settings", active: "settings", body, mainClass: "main-read" }), status);
 }
 
 // Deleting the account: what goes and what stays, said plainly, and the

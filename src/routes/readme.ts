@@ -28,7 +28,7 @@ export const routes: Route[] = [
       const md = await readFile(new URL("README.md", root), "utf8");
       const rendered = await marked.parse(md);
       return htmlReply(
-        page(ctx, { title: "About", body: html`<article class="prose">${raw(rendered)}</article>` }),
+        page(ctx, { title: "About", body: html`<article class="prose">${raw(rendered)}</article>`, mainClass: "main-read" }),
       );
     },
   },

@@ -492,14 +492,23 @@ input[type="date"] {
   font-size: 12px;
 }
 
+/* The page column beside the sidebar. Pages lay themselves out by the width
+   they get here (a "main" size container), not by the window: with the
+   sidebar showing, a 1000px window leaves a page less room than a phone held
+   sideways, so page layouts use @container main, never @media width. On very
+   wide screens the column grows to --main-max and sits centred in the space
+   right of the sidebar, rather than leaving a blank band on one side. */
 .main {
+  --main-max: 1880px;
+  container: main / inline-size;
   margin-left: var(--sidebar);
-  padding: 44px 52px 80px;
-  max-width: calc(1320px + var(--sidebar));
+  padding: 44px max(clamp(28px, 3.4vw, 64px), (100vw - var(--sidebar) - var(--main-max)) / 2) 80px;
 }
 
-.main-wide {
-  max-width: none;
+/* pages that are read rather than scanned (settings, the readme, the More
+   list): a comfortable measure, centred, header and all */
+.main-read {
+  --main-max: 1000px;
 }
 
 .topbar,
@@ -1199,10 +1208,35 @@ input[type="radio"] {
   padding-left: 18px;
 }
 
+/* the recipe editor: one column, centred; on a wide page the photo and
+   basics sit beside the ingredients and method */
 .form-grid {
   display: grid;
   gap: 20px;
   max-width: 880px;
+}
+
+.form-col {
+  display: grid;
+  gap: 20px;
+  align-content: start;
+  min-width: 0;
+}
+
+.form-col > .panel + .panel {
+  margin-top: 0;
+}
+
+@container main (min-width: 960px) {
+  .form-grid {
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    align-items: start;
+    max-width: 1560px;
+  }
+
+  .form-grid > .form-actions {
+    grid-column: 1 / -1;
+  }
 }
 
 .form-actions {
@@ -1939,14 +1973,19 @@ input[type="radio"] {
 
 .preview-banner {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 12px;
+  gap: 8px 12px;
   padding: 12px 18px;
   border-radius: var(--radius);
   background: var(--butter);
   font-size: 14px;
   color: var(--butter-ink);
   margin-bottom: 24px;
+}
+
+.preview-banner > span:last-child {
+  flex: 1 1 240px;
 }
 
 .preview-banner .badge {
@@ -2020,7 +2059,7 @@ input[type="radio"] {
   justify-content: space-between;
   align-items: center;
   gap: 16px;
-  max-width: 1240px;
+  max-width: calc(1640px - 2 * clamp(24px, 3vw, 48px));
   margin: 12px auto 0;
   padding: 10px 12px 10px 18px;
   border-radius: var(--pill);
@@ -2060,10 +2099,12 @@ input[type="radio"] {
   margin-left: 6px;
 }
 
+/* signed out: no sidebar, the same page layouts, so the same container */
 .public-main {
-  max-width: 1240px;
+  container: main / inline-size;
+  max-width: 1640px;
   margin: 0 auto;
-  padding: 44px 24px 96px;
+  padding: 44px clamp(24px, 3vw, 48px) 96px;
 }
 
 .hero {
@@ -2602,7 +2643,8 @@ fieldset.bare.inline {
 
 .how-steps {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  /* four across when each step gets a readable width, else two, else one */
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
   gap: 18px;
   padding: 0;
   list-style: none;
@@ -2813,6 +2855,7 @@ fieldset.bare.inline {
 /* ---------- shopping ---------- */
 
 .shop-list {
+  container: shop-list / inline-size;
   list-style: none;
   padding: 0;
 }
@@ -2832,6 +2875,25 @@ fieldset.bare.inline {
 
 .shop-line .item-name {
   display: inline;
+}
+
+/* in a narrow list (a phone, or the buy list in a recipe's side card) the
+   item and its pack take a row of their own under the amount and price,
+   rather than a sliver between them */
+@container shop-list (max-width: 480px) {
+  .shop-line {
+    flex-wrap: wrap;
+    row-gap: 4px;
+  }
+
+  .shop-line > .grow {
+    order: 1;
+    flex-basis: 100%;
+  }
+
+  .shop-line > .hh-line-price {
+    margin-left: auto;
+  }
 }
 
 .shop-line small {
@@ -3366,20 +3428,25 @@ fieldset.bare.inline {
 /* ---------- recipe detail ---------- */
 
 .rd {
-  max-width: 1180px;
+  max-width: 1680px;
+  margin-inline: auto;
 }
 
 .rd-top {
   display: grid;
   grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
-  gap: 44px;
+  gap: clamp(28px, 4cqi, 64px);
   align-items: center;
   margin-bottom: 40px;
 }
 
+/* square, but never taller than about two thirds of the screen: on a wide
+   page it crops to landscape rather than pushing everything below the fold */
 .rd-photo {
   position: relative;
   aspect-ratio: 1;
+  width: 100%;
+  max-height: min(72vh, 600px);
   border-radius: var(--radius-xl);
   overflow: hidden;
   background: var(--surface-3);
@@ -3477,19 +3544,116 @@ fieldset.bare.inline {
   margin-top: 26px;
 }
 
+/* The body of a recipe page, by the room it has (the page column, not the
+   window):
+     wide (1360+): ingredients | method | nutrition, cost and plan
+     middle:       ingredients | method, with nutrition, cost and plan side
+                   by side under the method
+     narrow (<760): one column: ingredients, method, the rest
+   Beside the method the ingredients stay in view while you read down it. */
 .rd-body {
   display: grid;
-  grid-template-columns: 380px minmax(0, 1fr);
-  gap: 28px;
+  /* the ingredient column takes about a third, 290-360px */
+  grid-template-columns: clamp(290px, 34cqi, 360px) minmax(0, 1fr);
+  grid-template-areas:
+    "a main"
+    "a b";
+  grid-template-rows: auto 1fr;
+  gap: 24px 28px;
   align-items: start;
 }
 
+.rd-side-a {
+  grid-area: a;
+  align-self: stretch;
+}
+
+.rd-side-b {
+  grid-area: b;
+}
+
+.rd-main {
+  grid-area: main;
+  min-width: 0;
+}
+
 .rd-side {
-  position: sticky;
-  top: 24px;
   display: flex;
   flex-direction: column;
   gap: 20px;
+  min-width: 0;
+}
+
+/* the ingredients card pins beside the method; a list longer than the
+   screen scrolls inside it rather than hiding its end */
+.rd-side-a > .rd-card:first-child {
+  position: sticky;
+  top: 24px;
+  max-height: calc(100vh - 48px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+}
+
+/* under the method: the nutrition, cost and plan cards two by two */
+@container main (min-width: 761px) and (max-width: 1359px) {
+  .rd-side-b {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+    align-items: start;
+  }
+}
+
+@container main (min-width: 1360px) {
+  .rd-body {
+    grid-template-columns: minmax(320px, 380px) minmax(0, 1fr) minmax(300px, 360px);
+    grid-template-areas: "a main b";
+    grid-template-rows: auto;
+  }
+
+  .rd-side-b {
+    align-self: stretch;
+  }
+
+  .rd-side-b > .rd-card:first-child {
+    position: sticky;
+    top: 24px;
+  }
+}
+
+/* one column on a tablet or a narrow window: a landscape photo, so the
+   title isn't a screen away (phones keep the square) */
+@container main (min-width: 480px) and (max-width: 760px) {
+  .rd-photo {
+    aspect-ratio: 16 / 10;
+  }
+}
+
+@container main (max-width: 760px) {
+  .rd-body {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: "a" "main" "b";
+    grid-template-rows: none;
+  }
+
+  .rd-side-a > .rd-card:first-child {
+    position: static;
+    max-height: none;
+    overflow: visible;
+  }
+
+  .rd-photo {
+    max-height: none;
+  }
+
+  .rd-top {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+  }
+
+  .rd-times {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 .rd-card {
@@ -3875,8 +4039,9 @@ fieldset.bare.inline {
 
 .cook-cta {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 20px;
+  gap: 16px 20px;
   margin-top: 28px;
   padding: 24px 26px;
   border-radius: var(--radius-xl);
@@ -3908,6 +4073,10 @@ fieldset.bare.inline {
   font-size: 14px;
   color: var(--ink-2);
   margin-top: 2px;
+}
+
+.cook-cta > div:not(.cook-cta-art) {
+  flex: 1 1 260px;
 }
 
 .cook-cta .button {
@@ -4317,15 +4486,28 @@ body.cooking {
   .rd-body {
     grid-template-columns: 1fr;
   }
+
+  .rd-body {
+    grid-template-areas: "a" "main" "b";
+  }
+
+  .rd-side,
+  .rd-side .rd-card {
+    position: static !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
 }
 
 /* ---------- responsive ---------- */
 
 @media (max-width: 1180px) {
-  .rd-body {
-    grid-template-columns: 340px minmax(0, 1fr);
+  .cm-stage {
+    grid-template-columns: minmax(0, 1fr) 300px;
   }
+}
 
+@container main (max-width: 824px) {
   .side-panel {
     grid-column: 1 / -1;
     position: static;
@@ -4352,13 +4534,6 @@ body.cooking {
     grid-column: 1 / -1;
   }
 
-  .how-steps {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .cm-stage {
-    grid-template-columns: minmax(0, 1fr) 300px;
-  }
 }
 
 @media (max-width: 900px) {
@@ -4429,28 +4604,90 @@ body.cooking {
     font-size: 28px;
   }
 
+  .public-bar {
+    margin: 8px 8px 0;
+    padding: 8px 8px 8px 14px;
+  }
+
+  .public-bar nav a {
+    white-space: nowrap;
+  }
+
+  .public-bar nav a:not(.button) {
+    padding: 8px 10px;
+  }
+
+  .public-bar nav a.hide-sm {
+    display: none;
+  }
+
+  .public-bar nav a[aria-current="page"]:not(.button) {
+    display: none;
+  }
+
+  .public-main {
+    padding: 28px 16px 72px;
+  }
+
+  .cm-stage {
+    grid-template-columns: minmax(0, 1fr);
+    padding: 0 14px;
+  }
+
+  .cm-side {
+    display: none;
+  }
+
+  .cm-bar {
+    padding: 14px;
+    flex-wrap: wrap;
+  }
+
+  .cm-title {
+    flex: 1;
+  }
+
+  .cm-progress {
+    order: 3;
+    flex-basis: 100%;
+    max-width: none;
+  }
+
+  .cm-live {
+    height: 36px;
+    padding: 0 12px;
+    font-size: 12px;
+  }
+
+  .cm-nav {
+    padding: 14px;
+  }
+
+  .cm-nav .button {
+    height: 52px;
+    padding: 0 20px;
+    flex: 1;
+  }
+
+  .cm-nav .hint {
+    display: none;
+  }
+}
+
+@container main (max-width: 868px) {
+  .button .hide-sm,
+  .hide-sm {
+    display: none;
+  }
+
   .dash,
   .feature-grid,
   .live-session,
   .split,
   .split-wide,
   .along,
-  .settings,
-  .rd-top,
-  .rd-body {
+  .settings {
     grid-template-columns: minmax(0, 1fr);
-  }
-
-  .rd-top {
-    gap: 24px;
-  }
-
-  .rd-side {
-    position: static;
-  }
-
-  .rd-times {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .settings-nav {
@@ -4506,31 +4743,6 @@ body.cooking {
     flex: 1 1 calc(100% - 80px);
   }
 
-  .public-bar {
-    margin: 8px 8px 0;
-    padding: 8px 8px 8px 14px;
-  }
-
-  .public-bar nav a {
-    white-space: nowrap;
-  }
-
-  .public-bar nav a:not(.button) {
-    padding: 8px 10px;
-  }
-
-  .public-bar nav a.hide-sm {
-    display: none;
-  }
-
-  .public-bar nav a[aria-current="page"]:not(.button) {
-    display: none;
-  }
-
-  .public-main {
-    padding: 28px 16px 72px;
-  }
-
   .rx-hero-row .page-actions {
     width: 100%;
     flex-wrap: nowrap;
@@ -4549,11 +4761,6 @@ body.cooking {
     flex-direction: column;
     align-items: flex-start;
     gap: 2px;
-  }
-
-  .button .hide-sm,
-  .hide-sm {
-    display: none;
   }
 
   .stats {
@@ -4590,53 +4797,9 @@ body.cooking {
     margin-left: 0;
     width: 100%;
   }
-
-  .cm-stage {
-    grid-template-columns: minmax(0, 1fr);
-    padding: 0 14px;
-  }
-
-  .cm-side {
-    display: none;
-  }
-
-  .cm-bar {
-    padding: 14px;
-    flex-wrap: wrap;
-  }
-
-  .cm-title {
-    flex: 1;
-  }
-
-  .cm-progress {
-    order: 3;
-    flex-basis: 100%;
-    max-width: none;
-  }
-
-  .cm-live {
-    height: 36px;
-    padding: 0 12px;
-    font-size: 12px;
-  }
-
-  .cm-nav {
-    padding: 14px;
-  }
-
-  .cm-nav .button {
-    height: 52px;
-    padding: 0 20px;
-    flex: 1;
-  }
-
-  .cm-nav .hint {
-    display: none;
-  }
 }
 
-@media (max-width: 640px) {
+@container main (max-width: 608px) {
   .table thead {
     position: absolute;
     width: 1px;
@@ -7269,7 +7432,7 @@ body.cooking {
 
 /* the first two days open their menu rightwards, into the week (phones
    use a bottom sheet instead, below) */
-@media (min-width: 901px) {
+@container main (min-width: 869px) {
   .cal-day:nth-child(-n + 2) .cal-menu .menu {
     right: auto;
     left: 0;
@@ -8484,7 +8647,7 @@ body.cooking {
 
 /* ---------- responsive ---------- */
 
-@media (max-width: 1320px) {
+@container main (max-width: 964px) {
   .cal-lower {
     grid-template-columns: minmax(0, 1fr);
   }
@@ -8496,7 +8659,7 @@ body.cooking {
   }
 }
 
-@media (max-width: 1180px) {
+@container main (max-width: 824px) {
   .cal-week {
     grid-template-columns: none;
     grid-auto-flow: column;
@@ -8519,6 +8682,24 @@ body.cooking {
 }
 
 @media (max-width: 900px) {
+  /* menus open as a sheet above the tab bar rather than inside a column */
+  .cal-menu[open] .menu {
+    position: fixed;
+    inset: auto 12px calc(96px + env(safe-area-inset-bottom)) 12px;
+    min-width: 0;
+    padding: 8px;
+    border-radius: var(--radius-lg);
+    z-index: 60;
+  }
+
+  .cal-menu .menu a,
+  .cal-menu .menu button {
+    padding: 13px 14px;
+    font-size: 14.5px;
+  }
+}
+
+@container main (max-width: 868px) {
   .cal-hero {
     gap: 18px;
     margin-bottom: 20px;
@@ -8637,22 +8818,6 @@ body.cooking {
     font-size: 0;
   }
 
-  /* menus open as a sheet above the tab bar rather than inside a column */
-  .cal-menu[open] .menu {
-    position: fixed;
-    inset: auto 12px calc(96px + env(safe-area-inset-bottom)) 12px;
-    min-width: 0;
-    padding: 8px;
-    border-radius: var(--radius-lg);
-    z-index: 60;
-  }
-
-  .cal-menu .menu a,
-  .cal-menu .menu button {
-    padding: 13px 14px;
-    font-size: 14.5px;
-  }
-
   .cal-plan-total {
     font-size: 30px;
   }
@@ -8674,6 +8839,13 @@ body.cooking {
 /* phones: the week becomes an agenda, one day under the next, each meal a
    compact row with a small photo */
 @media (max-width: 640px) {
+  .cal-menu summary {
+    background: var(--surface-2);
+    box-shadow: none;
+  }
+}
+
+@container main (max-width: 608px) {
   .cal-friends {
     flex-direction: column;
     align-items: flex-start;
@@ -8814,11 +8986,6 @@ body.cooking {
     box-shadow: none;
   }
 
-  .cal-menu summary {
-    background: var(--surface-2);
-    box-shadow: none;
-  }
-
   .cal-tile:hover {
     transform: none;
   }
@@ -8851,8 +9018,7 @@ body.cooking {
   }
 }
 
-@media (max-width: 420px) {
-
+@container main (max-width: 388px) {
   .cal-int > span,
   .cal-int-money {
     height: 40px;
@@ -9118,7 +9284,7 @@ body.cooking {
   color: var(--ink);
 }
 
-@media (max-width: 1000px) {
+@container main (max-width: 644px) {
   /* one column: requests, then search and friends, then the activity */
   .fr-layout {
     grid-template-columns: minmax(0, 1fr);
@@ -9138,7 +9304,7 @@ body.cooking {
   }
 }
 
-@media (max-width: 640px) {
+@container main (max-width: 608px) {
   .fr-how {
     grid-template-columns: minmax(0, 1fr);
   }
@@ -9561,7 +9727,13 @@ body.cooking {
     var(--surface);
 }
 
-@media (min-width: 701px) {
+/* the empty "Live now" card: words beside the button when the card itself
+   is wide enough (it shares its row with the shopping card) */
+.hm-live {
+  container: hm-live / inline-size;
+}
+
+@container hm-live (min-width: 560px) {
   .hm-live .live-card-empty {
     display: flex;
     align-items: center;
@@ -9653,7 +9825,7 @@ body.cooking {
   line-height: 1.25;
 }
 
-@media (max-width: 1100px) {
+@container main (max-width: 744px) {
   .hm-tonight,
   .hm-week,
   .hm-soon,
@@ -9690,7 +9862,7 @@ body.cooking {
   }
 }
 
-@media (max-width: 700px) {
+@container main (max-width: 668px) {
   .hm-top {
     flex-direction: column;
     align-items: flex-start;
@@ -10199,7 +10371,9 @@ body.cooking {
   margin-top: 18px;
 }
 
-@media (max-width: 1000px) {
+/* the fanned cards need about 660px beside the words; with less, they go
+   under them rather than off the edge of the page */
+@media (max-width: 1360px) {
   .ld-hero {
     grid-template-columns: 1fr;
     min-height: 0;
@@ -10210,6 +10384,9 @@ body.cooking {
   .ld-stack {
     height: 470px;
   }
+}
+
+@media (max-width: 1000px) {
 
   .ld-features {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -11430,7 +11607,7 @@ body.cooking {
   grid-template-columns: repeat(5, minmax(0, 1fr));
 }
 
-@media (max-width: 1000px) {
+@container main (max-width: 644px) {
   .more-like-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
@@ -11440,7 +11617,7 @@ body.cooking {
   }
 }
 
-@media (max-width: 640px) {
+@container main (max-width: 608px) {
   .more-like-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -12838,7 +13015,7 @@ form[data-hh-busy] button {
 
 /* -- responsive -- */
 
-@media (max-width: 1180px) {
+@container main (max-width: 824px) {
   .hh-grid {
     grid-template-columns: minmax(0, 1fr);
   }
@@ -12870,6 +13047,13 @@ form[data-hh-busy] button {
 }
 
 @media (max-width: 900px) {
+  .hh-toasts {
+    right: 16px;
+    bottom: calc(96px + env(safe-area-inset-bottom));
+  }
+}
+
+@container main (max-width: 868px) {
   .hh-doors,
   .hh-pantry-top {
     grid-template-columns: minmax(0, 1fr);
@@ -12884,17 +13068,12 @@ form[data-hh-busy] button {
     padding: 24px 22px 22px;
   }
 
-  .hh-toasts {
-    right: 16px;
-    bottom: calc(96px + env(safe-area-inset-bottom));
-  }
-
   .hh-hero {
     align-items: flex-start;
   }
 }
 
-@media (max-width: 640px) {
+@container main (max-width: 608px) {
   .hh {
     --hh-gap: 14px;
   }
@@ -13019,12 +13198,14 @@ form[data-hh-busy] button {
     margin-left: -6px;
   }
 
+  /* the item and its pack get the full width under the amount and price */
   .hh-line {
-    grid-template-columns: 64px minmax(0, 1fr) auto;
+    grid-template-columns: minmax(0, 1fr) auto;
     grid-template-areas:
-      "qty name price"
-      "act act act";
-    row-gap: 8px;
+      "qty price"
+      "name name"
+      "act act";
+    row-gap: 6px;
   }
 
   .hh-line > .qty {
@@ -13108,7 +13289,7 @@ form[data-hh-busy] button {
   grid-area: side;
 }
 
-@media (max-width: 900px) {
+@container main (max-width: 868px) {
   .hh-shop {
     grid-template-columns: minmax(0, 1fr);
     grid-template-areas: "intro" "ticker" "lines" "side";
@@ -13200,13 +13381,15 @@ form[data-hh-busy] button {
   color: inherit;
   font-weight: 650;
 }
-@media (max-width: 720px) {
+@container main (max-width: 688px) {
   .hm-suggest {
     min-height: 460px;
   }
+
   .hm-suggest-actions {
     padding: 4px 20px 20px;
   }
+
   .hm-suggest-foot {
     margin: 0 20px 20px;
   }
@@ -13337,11 +13520,26 @@ form[data-hh-busy] button {
 }
 
 /* ---------------- recipe photo field ---------------- */
+.rx-photo-field {
+  container: photo-field / inline-size;
+}
+
 .rx-photo-pick {
   display: grid;
   grid-template-columns: minmax(140px, 220px) 1fr;
   gap: 18px;
   align-items: start;
+}
+
+/* in a narrow column the help text goes under the photo, not beside it */
+@container photo-field (max-width: 520px) {
+  .rx-photo-pick {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .rx-photo-preview {
+    max-width: 260px;
+  }
 }
 .rx-photo-preview {
   aspect-ratio: 4 / 3;
@@ -13372,10 +13570,11 @@ form[data-hh-busy] button {
   color: var(--bad) !important;
   font-weight: 600;
 }
-@media (max-width: 560px) {
+@container main (max-width: 528px) {
   .rx-photo-pick {
     grid-template-columns: 1fr;
   }
+
   .shop-split {
     grid-template-columns: 1fr;
   }
@@ -13478,9 +13677,11 @@ html:not(.no-js) .no-js-only { display: none; }
 .act-new { animation: act-in 600ms var(--ease); }
 @keyframes act-in { from { background: var(--accent-soft); } }
 @media (prefers-reduced-motion: reduce) { .act-new { animation: none; } }
-@media (max-width: 720px) {
+@container main (max-width: 688px) {
   .act-row { grid-template-columns: 64px 1fr; }
+
   .act-facts { grid-column: 1 / -1; }
+
   .activity-list li { grid-template-columns: 1fr; gap: 2px; }
 }
 
@@ -13578,17 +13779,19 @@ html:not(.no-js) .no-js-only { display: none; }
   letter-spacing: -0.02em;
 }
 
-@media (max-width: 640px) {
+@container main (max-width: 608px) {
   .scan-row {
     gap: 4px 10px;
     padding: 12px;
   }
+
   /* two fields a line on a phone: the name gets its own line */
   .scan-fields.inline-form {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 10px;
   }
+
   .scan-fields .grow-2 {
     grid-column: 1 / -1;
   }
@@ -13845,7 +14048,7 @@ html:not(.no-js) .no-js-only { display: none; }
 }
 
 /* four ways to scan fit on one line at phone width */
-@media (max-width: 480px) {
+@container main (max-width: 448px) {
   .subnav-scan a {
     padding: 8px 12px;
   }
@@ -14914,36 +15117,44 @@ a.rv-who:hover {
   }
 }
 
-@media (max-width: 720px) {
+@container main (max-width: 688px) {
   .rv-section {
     padding: 22px 18px;
     margin-left: -4px;
     margin-right: -4px;
   }
+
   .rv-summary {
     grid-template-columns: 1fr;
     gap: 18px;
   }
+
   .rv-compose {
     padding: 16px;
   }
+
   .rv-replies {
     padding-left: 10px;
   }
+
   .rd-rating {
     margin-left: 0;
   }
+
   .rv {
     column-gap: 10px;
   }
+
   .rv-list > .rv > .avatar-md {
     width: 32px;
     height: 32px;
     font-size: 12px;
   }
+
   .rv-filters {
     gap: 8px;
   }
+
   .rv-photos-1 {
     grid-template-columns: 1fr;
   }

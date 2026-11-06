@@ -615,14 +615,16 @@ function recipeDetail(ctx: Ctx, recipe: Recipe, composer?: ComposerState): Html 
     </header>
 
     <div class="rd-body">
-      <aside class="rd-side">
+      <aside class="rd-side rd-side-a">
         ${ingredientsCard(ctx, recipe, lines)}
+      </aside>
+      <aside class="rd-side rd-side-b">
         ${nutritionCard(lines, recipe.servings)}
         ${purchaseCard(ctx, recipe, lines)}
         ${planCard(ctx, recipe)}
       </aside>
 
-      <div>
+      <div class="rd-main">
         <section class="rd-card" aria-labelledby="method-h">
           <div class="rd-card-head"><h2 id="method-h">Method</h2><span class="muted small">${steps.length} steps${cook ? ` · ${duration(cook)} cooking` : ""}</span></div>
           <ol class="method">
@@ -733,6 +735,7 @@ function recipeForm(ctx: Ctx, input: Partial<RecipeInput>, problems: string[], r
         ${pageHeader(editing ? "Edit recipe" : "Write a recipe", "Use the ingredient names you stock — calories, macros and cost are worked out automatically, and the recipe links to your pantry.")}
         ${errors(problems)}
         <form method="post" action="${editing ? `/recipes/${recipeId}/edit` : "/recipes/new"}" class="form-grid" enctype="multipart/form-data" data-recipe-form>
+          <div class="form-col">
           <section class="panel stack rx-photo-field" data-photo-field>
             <h2 class="panel-title">Photo</h2>
             <div class="rx-photo-pick">
@@ -779,7 +782,9 @@ function recipeForm(ctx: Ctx, input: Partial<RecipeInput>, problems: string[], r
               </div>
             </fieldset>
           </section>
+          </div>
 
+          <div class="form-col">
           <section class="panel stack">
             <h2 class="panel-title">Ingredients</h2>
             <div class="rows" data-rows="ingredients">
@@ -797,6 +802,7 @@ function recipeForm(ctx: Ctx, input: Partial<RecipeInput>, problems: string[], r
             <template data-template="steps">${stepRow()}</template>
             <button type="button" class="button button-soft" data-add-row="steps">${icon("plus", 16)} Add step</button>
           </section>
+          </div>
 
           <div class="form-actions">
             <a class="button button-ghost" href="${editing ? `/recipes/${recipeId}` : "/recipes"}">Cancel</a>

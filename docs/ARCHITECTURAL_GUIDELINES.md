@@ -61,7 +61,7 @@ For each bug fix, refinement, or feature:
 2. Test the business rule in isolation where practical, then test its integration with affected features.
 3. Run the relevant tests and `pnpm check` against a local or throwaway app instance, never the live site.
 4. If a test cannot run, state why. Do not claim that unverified behaviour has been tested.
-5. For UI changes, inspect screenshots at 1440 px and 390 px, in light and dark modes. Check interactive behaviour as well as appearance.
+5. For UI changes, inspect screenshots at 1440 px and 390 px, plus 916, 1280 and 2200 px for layout changes, in light and dark modes. Check interactive behaviour as well as appearance.
 6. Review relevant loading, empty, error, and success states.
 7. Report the root cause, the changes made, the tests run and their results, and any remaining limitations or assumptions.
 
@@ -165,13 +165,15 @@ Use Apple and Pinterest as broad visual inspiration, not as a reason to copy a s
 - Use real recipe imagery where the application has suitable, appropriately sourced images. Do not fabricate claims about image sources.
 - Use skeleton or loading states where they improve the perceived responsiveness of content-heavy views.
 - Ensure that responsive layouts remain clear and usable at both desktop and mobile sizes.
+- Lay out pages by the width of the page column, not the window: use `@container main (...)` for page layouts. With the sidebar showing, a 1000 px window leaves a page about 650 px, less than a phone held sideways. Keep `@media` width queries for the app shell, full-screen pages (cook mode, the globe, the fridge, the landing page) and things pinned to the screen. `spec/page-widths.test.ts` enforces this.
+- Use wide screens: the page column grows to `--main-max` and centres beside the sidebar; reading pages (`main-read`) keep a comfortable measure, centred.
 - Use 3D models and animation when they improve the experience, but do not let them obscure data or block essential tasks.
 
 ### UI verification
 
 For meaningful UI changes:
 
-- Take and inspect screenshots at 1440 px and 390 px.
+- Take and inspect screenshots at 1440 px and 390 px, and also at 916 px (sidebar showing, least room), 1280 px and 2200 px (ultrawide).
 - Check light and dark modes.
 - Verify the actual interaction, not just the screenshot.
 - Check loading, empty, error, and success states where relevant.

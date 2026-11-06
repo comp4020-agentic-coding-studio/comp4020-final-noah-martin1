@@ -340,7 +340,7 @@ export const routes: Route[] = [
     method: "GET",
     path: "/more",
     auth: true,
-    handler: (ctx) => htmlReply(page(ctx, { title: "More", active: "more", body: morePage(ctx) })),
+    handler: (ctx) => htmlReply(page(ctx, { title: "More", active: "more", body: morePage(ctx), mainClass: "main-read" })),
   },
   {
     method: "GET",
