@@ -94,7 +94,12 @@ into the shared data. It never changes anyone else's prices by itself.
 
 The week's calendar total pools shared ingredients the same way, so it's
 never more than the dinners priced one by one; the planner keeps each draft
-week under the budget on that basis.
+week under the budget on that basis. It also aims to spend it: each night
+leans toward its share (budget ÷ nights), then dinners are traded up while
+the pooled week still fits, so a $100 week comes to nearly $100, never more
+(`spec/planner-budget.test.ts`). Only real meals are suggested: a recipe
+that's a condiment, preserve, dip or bread on its own (TheMealDB files
+sauerkraut and jams as mains) is left out (`isMeal` in src/recipes.ts).
 
 ## Where prices come from
 

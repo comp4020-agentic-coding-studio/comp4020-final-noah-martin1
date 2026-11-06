@@ -395,6 +395,21 @@ export function alwaysHeldIds(): number[] {
   return all<{ id: number }>(`SELECT id FROM ingredients WHERE name IN (${names.map(() => "?").join(", ")})`, ...names).map((r) => r.id);
 }
 
+// A recipe filed as a main that is really something to eat with a meal: a
+// condiment, preserve, dip or bread on its own (TheMealDB files "Beetroot &
+// red cabbage sauerkraut" under Vegan and "Pumpkin Jam" under Miscellaneous,
+// which made them mains). Read from the title, and from a translation in
+// brackets ("Ají de Aguacate (Colombian Spicy Avocado Sauce)"); a dish served
+// *in* a sauce ("Pollo en Salsa", "chicken with garlic sauce") is a meal.
+const NOT_A_MEAL = /\b(sauerkraut|kimchi|pickles?|pickled [a-z ]+|chutney|relish|jam|jelly|marmalade|salsa|dip|hummus|houmous|hommus|dressing|vinaigrette|mayonnaise|mayo|aioli|pesto|gravy|stock|spice mix|seasoning|sauce|bread|yorkshire puddings?)$/i;
+const SERVED_IN = /\b(with|and|&|en|in|con|al|alla|on)\b/i;
+
+export function isMeal(title: string): boolean {
+  const outer = title.replace(/\s*\([^)]*\)\s*$/, "").trim();
+  const inner = /\(([^)]*)\)\s*$/.exec(title)?.[1]?.trim() ?? "";
+  return ![outer, inner].some((t) => t && NOT_A_MEAL.test(t) && !SERVED_IN.test(t));
+}
+
 // Seasonings and water a recipe can assume are in any kitchen: they never
 // make a recipe "missing" something.
 export const STAPLES = new Set(["water", "salt", "pepper", "black pepper", "sea salt", "salt and pepper", "ice", "boiling water", "cold water", "warm water"]);

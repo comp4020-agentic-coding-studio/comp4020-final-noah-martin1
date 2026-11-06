@@ -5,7 +5,7 @@ import { estimate } from "./nutrition.ts";
 import { type Need, type PackOption, packOptions, purchasePlan, type Stock } from "./pricing.ts";
 import { usableStock } from "./shopping.ts";
 import { type Prefs, prefsFor } from "./prefs.ts";
-import { ingredientsFor, listVisibleRecipes, pantryMatch, type Recipe, type RecipeIngredient } from "./recipes.ts";
+import { ingredientsFor, isMeal, listVisibleRecipes, pantryMatch, type Recipe, type RecipeIngredient } from "./recipes.ts";
 import { canSeeRecipe, friendIds } from "./visibility.ts";
 
 // The week planner. Deterministic on purpose (CLAUDE.md: AI is advisory
@@ -251,6 +251,7 @@ export function candidatesFor(k: Kitchen): Candidate[] {
   const recipes = listVisibleRecipes(k.userId, { limit: 5000 }).filter(
     (r) =>
       (r.course === "main" || r.course === "") &&
+      isMeal(r.title) &&
       (r.source !== null || r.author_id === k.userId || friends.has(r.author_id)) &&
       k.prefs.dietary_prefs.every((t) => r.dietary_tags.includes(t)) &&
       !avoid.some((a) => r.title.toLowerCase().includes(a)),
@@ -378,12 +379,15 @@ function scoreAt(c: Candidate, slot: Slot, ctx: Scoring): { score: number; reaso
   const affinity = c.recipe.cuisine ? (k.cuisines.get(c.recipe.cuisine) ?? 0) : 0;
   score += 0.25 * Math.min(affinity, 4);
 
-  // money: with a budget, cheaper-than-pace is rewarded; without one, a light touch
+  // money: with a budget, the week is meant to be spent, not undercut. A
+  // dinner near the night's share of it (budget ÷ nights) scores best; far
+  // under it gives the week less than was set aside, and over it squeezes
+  // the other nights (worse). Without a budget, a light touch toward cheap.
   if (on.has("budget") && pace) {
     const ratio = c.cost.toBuyCents / pace;
-    score += Math.max(-3, Math.min(1.5, 1.6 * (1 - ratio)));
-    if (c.cost.toBuyCents <= pace) {
-      reasons.push({ text: `${money(c.cost.toBuyCents)} to buy, under your ${money(pace)} a night`, weight: 1.2 + (1 - ratio) });
+    score += ratio <= 1 ? 1.5 - 2 * (1 - ratio) : 1.5 - 3.5 * (ratio - 1);
+    if (ratio >= 0.7 && ratio <= 1.15) {
+      reasons.push({ text: `${money(c.cost.toBuyCents)} to buy, about your ${money(pace)} a night`, weight: 1.4 });
     }
   } else {
     score -= (0.3 * c.cost.toBuyCents) / 1500;
@@ -645,6 +649,56 @@ export function generatePlan(userId: number, req: PlanRequest): Plan {
       });
       if (drop < 0) break;
       chosen[drop] = undefined;
+    }
+
+    // and the budget is meant to be used: while there's room, trade a
+    // dinner up for a pricier one that still fits, the trade that adds the
+    // most for the least lost (a cheap night becomes a better one), until
+    // no trade fits. Never over the ceiling: each trade is checked against it.
+    // room is measured on what the week really costs at the checkout, with
+    // shared ingredients bought once (weekPurchase), which is the figure
+    // shown against the budget
+    const pooled = (picks: (Candidate | undefined)[]) =>
+      weekPurchase(
+        picks.filter((c): c is Candidate => !!c).map((c) => ({ lines: c.lines, factor: servingsFactor(k.prefs, c.recipe.servings), title: c.recipe.title })),
+        k.stock,
+        k.options,
+      ).purchaseCents;
+    // trades that would tip the pooled week over, so they aren't tried again
+    const tipped = new Set<string>();
+    for (let guard = 0; guard < 40; guard++) {
+      const room = enforce - pooled(chosen);
+      if (room <= 0) break;
+      let bestUp: { i: number; c: Candidate; value: number } | undefined;
+      for (let i = 0; i < dates.length; i++) {
+        const current = chosen[i];
+        if (!current || fixed[i]) continue;
+        const slot = slotFor(i, chosen);
+        const taken = used(chosen, i);
+        const currentScore = scoreAt(current, slot, scoring).score;
+        for (const c of pool) {
+          const extra = c.cost.toBuyCents - current.cost.toBuyCents;
+          if (extra <= 0 || extra > room || isUsed(taken, c) || tipped.has(`${i}:${c.recipe.id}`)) continue;
+          const s = scoreAt(c, slot, scoring).score;
+          if (s === -Infinity) continue;
+          // a trade that's also a better match counts as no loss; a much
+          // worse match isn't worth the spend
+          const loss = Math.max(0, currentScore - s);
+          if (loss > 1.5) continue;
+          const value = extra / (1 + 4 * loss);
+          if (!bestUp || value > bestUp.value) bestUp = { i, c, value };
+        }
+      }
+      if (!bestUp) break;
+      // a trade judged on its own cost can still tip the pooled week over
+      // (it no longer shares a bag with another night): check, and stop
+      const trial = [...chosen];
+      trial[bestUp.i] = bestUp.c;
+      if (pooled(trial) > enforce) {
+        tipped.add(`${bestUp.i}:${bestUp.c.recipe.id}`);
+        continue;
+      }
+      chosen[bestUp.i] = bestUp.c;
     }
   }
 

@@ -1,6 +1,6 @@
 import { addDays, today } from "./format.ts";
 import { expiryState } from "./expiry.ts";
-import { ingredientsFor, listVisibleRecipes, type Recipe, type RecipeIngredient, totalMinutes } from "./recipes.ts";
+import { ingredientsFor, isMeal, listVisibleRecipes, type Recipe, type RecipeIngredient, totalMinutes } from "./recipes.ts";
 
 // What to cook now, when nothing's planned: a deterministic pick from
 // recipes the person may see, for the meal the local time calls for, using
@@ -52,8 +52,9 @@ export function validZone(zone: string | undefined): string | null {
 function fits(r: Recipe, period: Period): boolean {
   const minutes = totalMinutes(r);
   if (period === "breakfast") return r.course === "breakfast";
-  if (period === "lunch") return (r.course === "main" || r.course === "starter") && minutes > 0 && minutes <= 40;
-  if (period === "dinner") return r.course === "main" || r.course === "";
+  // lunch and dinner are meals, not a jar of sauerkraut
+  if (period === "lunch") return (r.course === "main" || r.course === "starter") && minutes > 0 && minutes <= 40 && isMeal(r.title);
+  if (period === "dinner") return (r.course === "main" || r.course === "") && isMeal(r.title);
   return (r.course === "dessert" || r.course === "starter" || r.course === "breakfast") && minutes > 0 && minutes <= 30;
 }
 
