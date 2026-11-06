@@ -3716,6 +3716,7 @@ fieldset.bare.inline {
 }
 
 .ing-list {
+  container: ing-list / inline-size;
   list-style: none;
   padding: 0;
 }
@@ -3832,6 +3833,37 @@ fieldset.bare.inline {
 .ing-flag-need {
   background: var(--peach);
   color: var(--peach-ink);
+}
+
+/* A narrow list (the recipe page's ingredient column on a mid-size screen,
+   cook mode's side panel): an ingredient with a note puts its amount and
+   have/need flag on the top line and the name and note under them at full
+   width, so the note isn't a column one word wide. A plain "160 g
+   Spaghetti" stays on one line. */
+@container ing-list (max-width: 360px) {
+  .ing-list li:has(.ing-name small) {
+    flex-wrap: wrap;
+    row-gap: 2px;
+  }
+
+  .ing-list li:has(.ing-name small) .ing-amount {
+    flex: 1 1 auto;
+  }
+
+  .ing-list li:has(.ing-name small) .ing-name {
+    order: 1;
+    flex: 1 1 100%;
+  }
+
+  /* lined up under the amount, past the tick (20px and the 12px gap) */
+  .ing-list li:has(.ing-check):has(.ing-name small) .ing-name {
+    padding-left: 32px;
+  }
+
+  .ing-list li:has(.ing-name small) .ing-flag {
+    align-self: flex-start;
+  }
+}
 }
 
 /* nutrition: soft rings, Apple-Health-like */
