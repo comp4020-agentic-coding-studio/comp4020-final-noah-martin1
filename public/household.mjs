@@ -10,6 +10,8 @@
 //   submit in the background and swap the result in, so the page doesn't jump.
 // - Copy buttons for the invite code.
 
+import { t } from "./i18n.mjs";
+
 const root = document.querySelector("[data-hh-root]");
 const reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
 
@@ -22,9 +24,9 @@ document.querySelectorAll("[data-copy]").forEach((button) => {
   button.addEventListener("click", async () => {
     try {
       await navigator.clipboard.writeText(button.dataset.copy);
-      button.textContent = "Copied";
+      button.textContent = t("Copied");
     } catch {
-      button.textContent = "Select and copy";
+      button.textContent = t("Select and copy");
     }
     setTimeout(() => (button.textContent = label), 1800);
   });
