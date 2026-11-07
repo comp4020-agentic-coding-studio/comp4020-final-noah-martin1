@@ -84,7 +84,7 @@ function cityOptions(): Html {
 function goLive(ctx: Ctx, recipe: Recipe, serves: number, elsewhere: CookSession | undefined, entryId: number | null): Html {
   const prefs = prefsFor(ctx.user!.id);
   const allowed = { public: recipe.visibility === "public", friends: recipe.visibility !== "private", private: true };
-  const wanted = allowed[prefs.default_visibility] ? prefs.default_visibility : recipe.visibility === "private" ? "private" : "friends";
+  const wanted = allowed[prefs.live_visibility] ? prefs.live_visibility : recipe.visibility === "private" ? "private" : "friends";
   const choice = (value: "public" | "friends" | "private", label: string, hint: string) =>
     html`<label class="cm-seg ${allowed[value] ? "" : "disabled"}">
       <input type="radio" name="visibility" value="${value}" ${value === wanted ? raw("checked") : ""} ${allowed[value] ? "" : raw("disabled")} />

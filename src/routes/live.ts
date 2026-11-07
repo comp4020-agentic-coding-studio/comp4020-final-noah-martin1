@@ -127,7 +127,7 @@ function s_city(place: { city: string }): string {
 }
 
 // Cook mode opened: go live automatically, unless the person turned that
-// off. Never wider than they've chosen: their default visibility, narrowed
+// off. Never wider than they've chosen: their live visibility, narrowed
 // to the recipe's; on the map only at the city they last picked by hand,
 // otherwise listed but not pinned. Already live with this recipe: nothing.
 async function auto(ctx: Ctx): Promise<Reply> {
@@ -147,7 +147,7 @@ async function auto(ctx: Ctx): Promise<Reply> {
   const serves = Number.isInteger(servesIn) && servesIn >= 1 && servesIn <= 50 ? servesIn : recipe.servings;
   const c = CITY_BY_KEY.get(prefs.live_city);
   const place = c ? { city: c.name, country: c.country, lat: c.lat, lng: c.lng } : { city: "", country: "", lat: null, lng: null };
-  const { id, visibility } = startSession(user.id, { recipe, stepCount: steps.length, serves, visibility: prefs.default_visibility, place });
+  const { id, visibility } = startSession(user.id, { recipe, stepCount: steps.length, serves, visibility: prefs.live_visibility, place });
   const at = Number(form.get("step"));
   if (Number.isInteger(at) && at > 1 && at <= steps.length) advanceStep(id, user.id, at);
   const s = getSession(id)!;

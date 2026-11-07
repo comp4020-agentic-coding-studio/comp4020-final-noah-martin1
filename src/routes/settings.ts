@@ -21,6 +21,13 @@ const VIS = [
   ["private", "Only me"],
 ] as const;
 
+// who can watch you cook live: everyone by default
+const LIVE_VIS = [
+  ["public", "Everyone"],
+  ["friends", "Friends"],
+  ["private", "Only me"],
+] as const;
+
 // The cooking characters to choose from, plus plain initials: radio buttons,
 // so the picker works by keyboard and without a script.
 function avatarPicker(ctx: Ctx): ReturnType<typeof html> {
@@ -85,8 +92,14 @@ function settingsPage(ctx: Ctx, problems: string[] = [], passwordProblems: strin
           <section class="panel stack" id="live">
             <h2 class="panel-title">${t("Cooking live")}</h2>
             <input type="hidden" name="live_fields" value="1" />
+            <fieldset class="field"><legend>${t("Who can watch you cook")}</legend>
+              <div class="segmented">${LIVE_VIS.map(
+                ([v, label]) => html`<label><input type="radio" name="live_visibility" value="${v}" ${prefs.live_visibility === v ? raw("checked") : ""} /><span>${t(label)}</span></label>`,
+              )}</div>
+              <small>${t("Never wider than the recipe allows: cooking a private recipe stays private.")}</small>
+            </fieldset>
             <label class="check-inline"><input type="checkbox" name="auto_live" value="1" ${prefs.auto_live ? raw("checked") : ""} /> <span>${t("Go live automatically when I start cooking")}</span></label>
-            <p class="muted small">${t("Your pan appears for {who} (your default above, never wider than the recipe allows) and you can turn it off with one tap while cooking. Untick to never start live by yourself.", { who: prefs.default_visibility === "public" ? t("everyone on the globe") : prefs.default_visibility === "friends" ? t("your friends") : t("only you") })}</p>
+            <p class="muted small">${t("Your pan appears for {who} and you can turn it off with one tap while cooking. Untick to never start live by yourself.", { who: prefs.live_visibility === "public" ? t("everyone on the globe") : prefs.live_visibility === "friends" ? t("your friends") : t("only you") })}</p>
             <label class="field"><span>${t("Where an automatic session appears")}</span>
               <select name="live_city">
                 <option value="" ${prefs.live_city === "" ? raw("selected") : ""}>${t("Not on the map (listed only)")}</option>
@@ -174,13 +187,15 @@ export const routes: Route[] = [
       const liveFields = form.get("live_fields") === "1";
       const autoLive = liveFields ? form.get("auto_live") === "1" : before.auto_live;
       const liveCity = liveFields ? (form.get("live_city") ?? "") : before.live_city;
+      const liveVisibility = liveFields ? (form.get("live_visibility") ?? before.live_visibility) : before.live_visibility;
+      if (!LIVE_VIS.some(([v]) => v === liveVisibility)) problems.push(t("Choose who can watch you cook."));
       if (liveCity !== "" && !CITY_BY_KEY.has(liveCity)) problems.push(t("Choose a city from the list, or not on the map."));
       if (problems.length) return settingsPage(ctx, problems, [], 422);
 
       run(
         `UPDATE users SET display_name = ?, dietary_prefs = ?, dislikes = ?, default_servings = ?,
-         weekly_budget_cents = ?, default_visibility = ?, auto_live = ?, live_city = ?, avatar = ? WHERE id = ?`,
-        displayName, JSON.stringify(diet), dislikes, servings, budgetCents, visibility, autoLive ? 1 : 0, liveCity, avatarRaw || null, ctx.user!.id,
+         weekly_budget_cents = ?, default_visibility = ?, live_visibility = ?, auto_live = ?, live_city = ?, avatar = ? WHERE id = ?`,
+        displayName, JSON.stringify(diet), dislikes, servings, budgetCents, visibility, liveVisibility, autoLive ? 1 : 0, liveCity, avatarRaw || null, ctx.user!.id,
       );
       logActivity({
         actor: ctx.user,
@@ -188,6 +203,7 @@ export const routes: Route[] = [
         detail: {
           budget_changed: budgetCents !== before.weekly_budget_cents,
           visibility,
+          live_visibility: liveVisibility,
           auto_live: autoLive,
           live_city: liveCity || "none",
         },

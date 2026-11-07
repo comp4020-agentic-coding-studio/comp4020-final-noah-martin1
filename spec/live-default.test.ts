@@ -3,9 +3,11 @@ import { describe, expect, it } from "vitest";
 import { befriend, Client, createRecipe, registered } from "./helpers.ts";
 
 // Cooking is live by default: opening cook mode starts a session (the page
-// posts /live/auto), never wider than the person's default visibility or
-// the recipe's, on the map only at a city they chose themselves. A setting
-// turns it off for good; a button turns it off for this session.
+// posts /live/auto) that everyone can watch, unless the person chose a
+// narrower audience for live, and never wider than the recipe's own
+// visibility; on the map only at a city they chose themselves. A setting
+// turns it off for good; a button turns it off for this session. Who sees
+// the recipes you write is a separate choice, friends by default.
 
 type Person = { client: Client; username: string };
 
@@ -33,7 +35,7 @@ async function globeIds(client: Client): Promise<string[]> {
 async function settings(p: Person, fields: Record<string, string>) {
   const page = new JSDOM(await (await p.client.get("/settings")).text()).window.document;
   const name = (page.querySelector("input[name=display_name]") as HTMLInputElement).value;
-  return p.client.post("/settings", { display_name: name, default_servings: "2", weekly_budget: "", default_visibility: "friends", live_fields: "1", ...fields });
+  return p.client.post("/settings", { display_name: name, default_servings: "2", weekly_budget: "", default_visibility: "friends", live_visibility: "public", live_fields: "1", ...fields });
 }
 
 describe("live cooking by default", () => {
@@ -47,7 +49,7 @@ describe("live cooking by default", () => {
     expect(page.querySelector("form[action='/live/start']")).not.toBeNull();
   });
 
-  it("starts a session at the person's default visibility, listed but not on the map", async () => {
+  it("starts a session everyone can watch by default, listed but not on the map", async () => {
     const cook = await registered("cook");
     const friend = await registered("friend");
     const stranger = await registered("stranger");
@@ -55,12 +57,12 @@ describe("live cooking by default", () => {
     const id = await createRecipe(cook.client, `Auto vis ${cook.username}`, "public");
     const r = await postJson(cook.client, "/live/auto", { recipe_id: String(id), serves: "2" });
     expect(r.status).toBe(200);
-    expect(r.body).toMatchObject({ ok: true, visibility: "friends", city: "" });
+    expect(r.body).toMatchObject({ ok: true, visibility: "public", city: "" });
     const sid = String(r.body.id);
-    // default visibility is friends: a friend sees it, a stranger and a guest don't
+    // live is for everyone by default: a friend, a stranger and a guest all see it
     expect(await globeIds(friend.client)).toContain(sid);
-    expect(await globeIds(stranger.client)).not.toContain(sid);
-    expect(await globeIds(new Client())).not.toContain(sid);
+    expect(await globeIds(stranger.client)).toContain(sid);
+    expect(await globeIds(new Client())).toContain(sid);
     // the page now shows it live, with a working off switch
     const page = new JSDOM(await (await cook.client.get(`/recipes/${id}/cook`)).text()).window.document;
     expect(page.querySelector("[data-live-banner]")?.textContent).toMatch(/You're live/);
@@ -85,11 +87,11 @@ describe("live cooking by default", () => {
     await postJson(cook.client, `/live/${first.body.id}/end`);
   });
 
-  it("never shows a private recipe more widely, even with a public default", async () => {
+  it("never shows a private recipe more widely, even with live open to everyone", async () => {
     const cook = await registered("cook");
     const friend = await registered("friend");
     await befriend(cook, friend);
-    await settings(cook, { default_visibility: "public", auto_live: "1" });
+    await settings(cook, { live_visibility: "public", auto_live: "1" });
     const id = await createRecipe(cook.client, `Auto private ${cook.username}`, "private");
     const r = await postJson(cook.client, "/live/auto", { recipe_id: String(id) });
     expect(r.body).toMatchObject({ ok: true, visibility: "private" });
@@ -133,6 +135,45 @@ describe("live cooking by default", () => {
     // and turning it back on works too
     await settings(cook, { default_visibility: "friends", auto_live: "1" });
     expect((await postJson(cook.client, "/live/auto", { recipe_id: String(id) })).body).toMatchObject({ ok: true });
+  });
+
+  it("a friends-only recipe goes live to friends only, never to everyone", async () => {
+    const cook = await registered("cook");
+    const friend = await registered("friend");
+    const stranger = await registered("stranger");
+    await befriend(cook, friend);
+    const id = await createRecipe(cook.client, `Auto friends recipe ${cook.username}`, "friends");
+    const r = await postJson(cook.client, "/live/auto", { recipe_id: String(id) });
+    expect(r.body).toMatchObject({ ok: true, visibility: "friends" });
+    expect(await globeIds(friend.client)).toContain(String(r.body.id));
+    expect(await globeIds(stranger.client)).not.toContain(String(r.body.id));
+    expect(await globeIds(new Client())).not.toContain(String(r.body.id));
+    await postJson(cook.client, `/live/${r.body.id}/end`);
+  });
+
+  it("who can watch is its own setting: narrowing it narrows live, and recipes stay friends-only by default", async () => {
+    const cook = await registered("cook");
+    const stranger = await registered("stranger");
+    // a new account: live open to everyone, new recipes friends-only
+    let page = new JSDOM(await (await cook.client.get("/settings")).text()).window.document;
+    expect((page.querySelector("input[name=live_visibility][value=public]") as HTMLInputElement).checked).toBe(true);
+    expect((page.querySelector("input[name=default_visibility][value=friends]") as HTMLInputElement).checked).toBe(true);
+    const fresh = new JSDOM(await (await cook.client.get("/recipes/new")).text()).window.document;
+    expect((fresh.querySelector("input[name=visibility][value=friends]") as HTMLInputElement | null)?.checked).toBe(true);
+    // the cook-mode sheet starts on the same choice
+    const id = await createRecipe(cook.client, `Auto narrow ${cook.username}`, "public");
+    const sheet = new JSDOM(await (await cook.client.get(`/recipes/${id}/cook`)).text()).window.document;
+    expect((sheet.querySelector("form[action='/live/start'] input[name=visibility][value=public]") as HTMLInputElement).checked).toBe(true);
+    // narrowed to friends, and it persists
+    expect((await settings(cook, { live_visibility: "friends", auto_live: "1" })).status).toBe(200);
+    page = new JSDOM(await (await cook.client.get("/settings")).text()).window.document;
+    expect((page.querySelector("input[name=live_visibility][value=friends]") as HTMLInputElement).checked).toBe(true);
+    const r = await postJson(cook.client, "/live/auto", { recipe_id: String(id) });
+    expect(r.body).toMatchObject({ ok: true, visibility: "friends" });
+    expect(await globeIds(stranger.client)).not.toContain(String(r.body.id));
+    await postJson(cook.client, `/live/${r.body.id}/end`);
+    // nonsense is refused
+    expect((await settings(cook, { live_visibility: "everyone-ish" })).status).toBe(422);
   });
 
   it("guests and hidden recipes can't auto-start", async () => {
