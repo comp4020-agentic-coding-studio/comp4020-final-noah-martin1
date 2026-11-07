@@ -3,6 +3,7 @@ import { all, ingredientId, normaliseIngredient, one, run, transaction } from ".
 import { addDays, money, parseIsoDate, qty, SOON_DAYS, shortDate, today, weekday } from "./format.ts";
 import { listedParams, listedSql, stockParams, stockSql } from "./expiry.ts";
 import { HttpError } from "./http.ts";
+import { lang, langTag, t } from "./i18n.ts";
 import { type Need, packOptions, type PlanLine, purchasePlan } from "./pricing.ts";
 import { usableStock } from "./shopping.ts";
 import { catalogueByTitle, getRecipe, ingredientsFor } from "./recipes.ts";
@@ -167,52 +168,73 @@ const FULL_DAYS: Record<string, string> = {
   Mon: "Monday", Tue: "Tuesday", Wed: "Wednesday", Thu: "Thursday", Fri: "Friday", Sat: "Saturday", Sun: "Sunday",
 };
 
-function dayName(iso: string | null): string {
-  if (!iso) return "the";
-  if (iso === today()) return "tonight's";
-  if (iso === addDays(today(), 1)) return "tomorrow's";
-  return `${FULL_DAYS[weekday(iso)] ?? weekday(iso)}'s`;
+// "Sam and Bo", "You, Sam and Bo": English as the site always wrote it,
+// other languages their own way (Intl).
+export function andList(names: string[]): string {
+  if (lang() !== "en") return new Intl.ListFormat(langTag(), { type: "conjunction" }).format(names);
+  if (names.length <= 1) return names.join("");
+  return `${names.slice(0, -1).join(", ")} and ${names.at(-1)}`;
+}
+
+type Say = (english: string, vars?: Record<string, string>) => string;
+
+// "added eggs, so tomorrow's Pad Thai is now fully covered…"
+function coveredLine(say: Say, item: string, recipe: string, iso: string | null): string {
+  if (!iso) return say("added {item}, so the {recipe} is now fully covered by the house pantry", { item, recipe });
+  if (iso === today()) return say("added {item}, so tonight's {recipe} is now fully covered by the house pantry", { item, recipe });
+  if (iso === addDays(today(), 1)) return say("added {item}, so tomorrow's {recipe} is now fully covered by the house pantry", { item, recipe });
+  const day = lang() === "en" ? (FULL_DAYS[weekday(iso)] ?? weekday(iso)) : new Intl.DateTimeFormat(langTag(), { weekday: "long" }).format(parseIsoDate(iso)!);
+  return say("added {item}, so {day}'s {recipe} is now fully covered by the house pantry", { item, day, recipe });
 }
 
 // "dinner today", "lunch on Thu 15 Oct"
 function slot(meal: string, iso: string | null): string {
-  if (!iso) return meal;
-  const day = iso === today() ? "today" : iso === addDays(today(), 1) ? "tomorrow" : `on ${weekday(iso)} ${shortDate(iso)}`;
-  return `${meal || "a meal"} ${day}`.trim();
+  if (!iso) return t(meal);
+  const m = meal ? t(meal) : t("a meal");
+  if (iso === today()) return t("{meal} today", { meal: m });
+  if (iso === addDays(today(), 1)) return t("{meal} tomorrow", { meal: m });
+  return t("{meal} on {date}", { meal: m, date: `${weekday(iso)} ${shortDate(iso)}` });
 }
 
 // One line of plain text per event, worded for the person reading it. A
 // recipe the reader can't see is never named.
 function describe(e: EventRow, viewerId: number): string | null {
   const seen = e.recipe_id !== null && e.title !== null && canSeeRecipe(viewerId, { author_id: e.author_id!, visibility: e.visibility! });
-  const title = seen ? e.title! : "a meal";
+  const title = seen ? e.title! : t("a meal");
   const when = slot(e.subject, e.ref_date);
-  // every line reads after either a name or "You", so no verb agrees with a person
+  // every line reads after either a name or "You", so no verb agrees with a
+  // person in English. A language whose verbs do agree (Spanish) gives the
+  // reader's own lines their own form, keyed "You …" (src/i18n/household.ts);
+  // English and the others use the one line for everyone.
+  const self = e.actor_id === viewerId;
+  const say: Say = (english, vars) => {
+    const mine = `You ${english}`;
+    return self && t(mine) !== mine ? t(mine, vars) : t(english, vars);
+  };
+  const s = e.subject;
   switch (e.kind) {
-    case "created": return `started the household${e.subject ? ` “${e.subject}”` : ""}`;
-    case "joined": return "joined the household";
-    case "left": return "left the household";
-    case "renamed": return `renamed the house to “${e.subject}”`;
-    case "code": return "made a new invite code (the old one stopped working)";
-    case "budget": return e.subject ? `set the weekly house budget to ${e.subject}` : "cleared the weekly house budget";
-    case "added": return `added ${e.subject} to the house pantry`;
-    case "moved": return `moved ${e.subject} from their own pantry into the house`;
-    case "updated": return `updated ${e.subject}`;
-    case "removed": return `took ${e.subject} out of the house pantry`;
-    case "bought": return `bought ${e.subject} for the house`;
-    case "planned": return `planned ${title} for ${when}`;
-    case "cooked": return `cooked ${title} for the house`;
-    case "skipped": return `skipped ${title} (${when})`;
-    case "unplanned": return `took ${title} off the house calendar (${when})`;
-    case "claimed": return `claimed ${e.subject} on the shopping list`;
-    case "unclaimed": return `put ${e.subject} back on the list for anyone to buy`;
-    case "tonight": return `called the ${e.subject} for tonight, before it goes off`;
-    case "released": return `let go of the ${e.subject}, so it's up for grabs again`;
+    case "created": return e.subject ? say("started the household “{name}”", { name: s }) : say("started the household");
+    case "joined": return say("joined the household");
+    case "left": return say("left the household");
+    case "renamed": return say("renamed the house to “{name}”", { name: s });
+    case "code": return say("made a new invite code (the old one stopped working)");
+    case "budget": return e.subject ? say("set the weekly house budget to {amount}", { amount: s }) : say("cleared the weekly house budget");
+    case "added": return say("added {item} to the house pantry", { item: s });
+    case "moved": return say("moved {item} from their own pantry into the house", { item: s });
+    case "updated": return say("updated {item}", { item: s });
+    case "removed": return say("took {item} out of the house pantry", { item: s });
+    case "bought": return say("bought {item} for the house", { item: s });
+    case "planned": return say("planned {recipe} for {when}", { recipe: title, when });
+    case "cooked": return say("cooked {recipe} for the house", { recipe: title });
+    case "skipped": return say("skipped {recipe} ({when})", { recipe: title, when });
+    case "unplanned": return say("took {recipe} off the house calendar ({when})", { recipe: title, when });
+    case "claimed": return say("claimed {item} on the shopping list", { item: s });
+    case "unclaimed": return say("put {item} back on the list for anyone to buy", { item: s });
+    case "tonight": return say("called the {item} for tonight, before it goes off", { item: s });
+    case "released": return say("let go of the {item}, so it's up for grabs again", { item: s });
     case "nudge":
       if (!seen) return null;
-      return e.for_user === null
-        ? `added ${e.subject}, so ${dayName(e.ref_date)} ${title} is now fully covered by the house pantry`
-        : `added ${e.subject}, so you can now make ${title}`;
+      return e.for_user === null ? coveredLine(say, s, title, e.ref_date) : say("added {item}, so you can now make {recipe}", { item: s, recipe: title });
   }
 }
 
@@ -241,7 +263,7 @@ export function houseActivity(viewerId: number, opts: { limit?: number; since?: 
       id: e.id,
       kind: e.kind,
       actorId: e.actor_id,
-      who: e.actor_id === viewerId ? "You" : (e.actor_name ?? "Someone"),
+      who: e.actor_id === viewerId ? t("You") : (e.actor_name ?? t("Someone")),
       name: e.actor_name ?? "Someone",
       avatar: e.actor_avatar,
       text,
@@ -417,17 +439,17 @@ export function parseItem(form: URLSearchParams): { input: ItemInput; values: Re
     price: (form.get("price") ?? "").trim().replace(/^\$/, ""),
   };
   const problems: string[] = [];
-  if (!values.name || values.name.length > 80) problems.push("Name the item (up to 80 characters).");
+  if (!values.name || values.name.length > 80) problems.push(t("Name the item (up to 80 characters)."));
   const quantity = Number(values.quantity);
   if (values.quantity === "" || !Number.isFinite(quantity) || quantity < 0 || quantity > 100000) {
-    problems.push("Quantity must be a number of zero or more.");
+    problems.push(t("Quantity must be a number of zero or more."));
   }
-  if (values.expiry_date && !parseIsoDate(values.expiry_date)) problems.push("Expiry must be a valid date.");
+  if (values.expiry_date && !parseIsoDate(values.expiry_date)) problems.push(t("Expiry must be a valid date."));
   let price_cents: number | null = null;
   if (values.price !== "") {
     const dollars = Number(values.price);
     if (!/^\d+(\.\d{1,2})?$/.test(values.price) || !Number.isFinite(dollars) || dollars > 10000) {
-      problems.push("Price must be a dollar amount like 4.50.");
+      problems.push(t("Price must be a dollar amount like 4.50."));
     } else {
       price_cents = Math.round(dollars * 100);
     }
@@ -483,7 +505,7 @@ function hydrateItem(r: ItemRow): HouseItem {
   const { claim_user, claim_name, claim_avatar, claim_date, claim_at, ...rest } = r;
   return {
     ...rest,
-    tonight: claim_user !== null ? { user_id: claim_user, name: claim_name ?? "Someone", avatar: claim_avatar, for_date: claim_date!, at: claim_at! } : null,
+    tonight: claim_user !== null ? { user_id: claim_user, name: claim_name ?? t("Someone"), avatar: claim_avatar, for_date: claim_date!, at: claim_at! } : null,
   };
 }
 
@@ -725,15 +747,16 @@ export type PlanResult = { ok: true; title: string } | { ok: false; problem: str
 export function planHouseMeal(viewerId: number, recipeId: number, date: string, meal: string): PlanResult {
   const house = requireHouse(viewerId);
   const recipe = Number.isInteger(recipeId) ? getRecipe(recipeId) : undefined;
-  if (!recipe || !canSeeRecipe(viewerId, recipe)) return { ok: false, problem: "That recipe doesn't exist." };
-  if (!parseIsoDate(date)) return { ok: false, problem: "Pick a valid day." };
-  if (!(MEALS as readonly string[]).includes(meal)) return { ok: false, problem: "Pick breakfast, lunch or dinner." };
+  if (!recipe || !canSeeRecipe(viewerId, recipe)) return { ok: false, problem: t("That recipe doesn't exist.") };
+  if (!parseIsoDate(date)) return { ok: false, problem: t("Pick a valid day.") };
+  if (!(MEALS as readonly string[]).includes(meal)) return { ok: false, problem: t("Pick breakfast, lunch or dinner.") };
   const blind = members(house.id).filter((m) => !canSeeRecipe(m.id, recipe));
   if (blind.length) {
-    const names = blind.map((m) => m.display_name.split(/\s+/)[0]).join(" and ");
+    const first = blind.map((m) => m.display_name.split(/\s+/)[0]);
+    const names = lang() === "en" ? first.join(" and ") : andList(first);
     return {
       ok: false,
-      problem: `${names} can't open “${recipe.title}”, so it can't go on the house calendar. Pick a public recipe, or make this one visible to them first.`,
+      problem: t("{names} can't open “{recipe}”, so it can't go on the house calendar. Pick a public recipe, or make this one visible to them first.", { names, recipe: recipe.title }),
     };
   }
   transaction(() => {
