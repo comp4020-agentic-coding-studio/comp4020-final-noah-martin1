@@ -1,5 +1,6 @@
 import { addDays, today } from "../format.ts";
 import { html } from "../html.ts";
+import { t } from "../i18n.ts";
 import { HttpError, htmlReply } from "../http.ts";
 import { findUser, friendship } from "../friends.ts";
 import { listVisibleRecipes } from "../recipes.ts";
@@ -25,13 +26,13 @@ export const routes: Route[] = [
       let relation = html``;
       if (viewer && !self) {
         if (!f) {
-          relation = html`<form method="post" action="/friends/${person.username}/request"><button class="button" type="submit">Add friend</button></form>`;
+          relation = html`<form method="post" action="/friends/${person.username}/request"><button class="button" type="submit">${t("Add friend")}</button></form>`;
         } else if (f.status === "accepted") {
-          relation = html`<span class="pill pill-fresh">Friends</span>`;
+          relation = html`<span class="pill pill-fresh">${t("Friends")}</span>`;
         } else if (f.requested_by === viewer.id) {
-          relation = html`<span class="pill pill-none">Request sent</span>`;
+          relation = html`<span class="pill pill-none">${t("Request sent")}</span>`;
         } else {
-          relation = html`<form method="post" action="/friends/${person.username}/accept"><button class="button" type="submit">Accept request</button></form>`;
+          relation = html`<form method="post" action="/friends/${person.username}/accept"><button class="button" type="submit">${t("Accept request")}</button></form>`;
         }
       }
 
@@ -42,21 +43,21 @@ export const routes: Route[] = [
             <h1>${person.display_name}</h1>
             <p class="muted">@${person.username}</p>
           </div>
-          <div class="page-actions">${self ? html`<a class="button button-ghost" href="/recipes/new">New recipe</a>` : relation}</div>
+          <div class="page-actions">${self ? html`<a class="button button-ghost" href="/recipes/new">${t("New recipe")}</a>` : relation}</div>
         </header>
 
         <section class="section">
-          <h2 class="section-title">Cooking this week</h2>
+          <h2 class="section-title">${t("Cooking this week")}</h2>
           ${meals.length
             ? html`<div class="meal-list">${meals.map((m) => mealChip(m, false))}</div>`
-            : html`<p class="muted">${self ? "Nothing planned in the next 7 days." : "Nothing shared with you for the next 7 days."}</p>`}
+            : html`<p class="muted">${self ? t("Nothing planned in the next 7 days.") : t("Nothing shared with you for the next 7 days.")}</p>`}
         </section>
 
         <section class="section">
-          <h2 class="section-title">Recipes <span class="count">${recipes.length}</span></h2>
+          <h2 class="section-title">${t("Recipes")} <span class="count">${recipes.length}</span></h2>
           ${recipes.length
             ? html`<div class="rx-grid">${recipes.map((r) => recipeCard(r))}</div>`
-            : empty("No recipes to show", self ? "Recipes you write appear here." : "This person hasn't shared any recipes with you.")}
+            : empty(t("No recipes to show"), self ? t("Recipes you write appear here.") : t("This person hasn't shared any recipes with you."))}
         </section>`;
       return htmlReply(page(ctx, { title: person.display_name, body }));
     },

@@ -9,6 +9,7 @@
 
 import { EventEmitter } from "node:events";
 import { all, one, run, transaction } from "./db.ts";
+import { t } from "./i18n.ts";
 import { detectLanguage } from "./language.ts";
 import { getRecipe, type Recipe } from "./recipes.ts";
 import { canSeeRecipe } from "./visibility.ts";
@@ -300,19 +301,29 @@ export type Problem =
   | "not-yours"
   | "deleted";
 
-export const PROBLEM_TEXT: Record<Problem, string> = {
-  "not-found": "That review isn't there any more.",
-  empty: "Write a few words first.",
-  "too-long": `Keep it under ${REVIEW_MAX} characters.`,
-  "no-rating": "Choose a star rating from 1 to 5.",
-  "own-recipe": "You can't rate your own recipe, but you can reply to reviews of it.",
-  "too-soon": "You're posting very fast. Wait a few seconds and try again.",
-  "too-many-photos": `Add up to ${PHOTOS_MAX} photos.`,
-  "bad-photo": "One of those photos couldn't be attached. Upload it again.",
-  "too-many-links": `Link up to ${LINKS_MAX} recipes.`,
-  "not-yours": "Only the person who wrote that can change it.",
-  deleted: "That review was deleted, so it can't be replied to or liked.",
+// What each problem says, in English with its limit as {n} (the key for
+// src/i18n/reviews.ts); problemText() gives it in the visitor's language.
+const PROBLEM_LINE: Record<Problem, [string, number?]> = {
+  "not-found": ["That review isn't there any more."],
+  empty: ["Write a few words first."],
+  "too-long": ["Keep it under {n} characters.", REVIEW_MAX],
+  "no-rating": ["Choose a star rating from 1 to 5."],
+  "own-recipe": ["You can't rate your own recipe, but you can reply to reviews of it."],
+  "too-soon": ["You're posting very fast. Wait a few seconds and try again."],
+  "too-many-photos": ["Add up to {n} photos.", PHOTOS_MAX],
+  "bad-photo": ["One of those photos couldn't be attached. Upload it again."],
+  "too-many-links": ["Link up to {n} recipes.", LINKS_MAX],
+  "not-yours": ["Only the person who wrote that can change it."],
+  deleted: ["That review was deleted, so it can't be replied to or liked."],
 };
+
+// A problem as the person reads it; any other text (already worded for
+// them) is passed through as it is.
+export function problemText(problem: Problem | string): string {
+  if (!Object.hasOwn(PROBLEM_LINE, problem)) return problem;
+  const [line, n] = PROBLEM_LINE[problem as Problem];
+  return t(line, n === undefined ? undefined : { n });
+}
 
 export interface WriteInput {
   body: string;

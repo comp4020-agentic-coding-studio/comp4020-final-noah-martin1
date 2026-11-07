@@ -5,8 +5,19 @@
 // English in a worker. Everything here is an enhancement: each action is a
 // plain form or link that works without this script.
 
+import { locale, t, tn } from "./i18n.mjs";
+
 const section = document.querySelector("[data-rv-section]");
 if (section) start(section);
+
+// a review language's name in the page's language ("Spanish", "西班牙语")
+function languageLabel(code) {
+  try {
+    return new Intl.DisplayNames([locale], { type: "language" }).of(code) ?? code;
+  } catch {
+    return code;
+  }
+}
 
 function start(section) {
   const recipe = section.dataset.recipe;
@@ -24,7 +35,7 @@ function start(section) {
       // a non-JSON answer (an error or sign-in page): never a success
     }
     if (!res.ok || res.redirected || data === null) {
-      const msg = data?.error || (res.status === 401 || res.redirected ? "You've been signed out. Sign in again (copy your text first)." : res.status === 429 ? "You're posting very fast. Wait a few seconds." : "That didn't work. Check your connection and try again.");
+      const msg = data?.error || (res.status === 401 || res.redirected ? t("You've been signed out. Sign in again (copy your text first).") : res.status === 429 ? t("You're posting very fast. Wait a few seconds.") : t("That didn't work. Check your connection and try again."));
       throw Object.assign(new Error(msg), { status: res.status });
     }
     return data;
@@ -107,13 +118,13 @@ function start(section) {
       return;
     }
     const first = (n) => n.split(" ")[0];
-    const label = names.length === 1 ? `${first(names[0])} is writing` : names.length === 2 ? `${first(names[0])} and ${first(names[1])} are writing` : `${names.length} people are writing`;
+    const label = names.length === 1 ? t("{name} is writing…", { name: first(names[0]) }) : names.length === 2 ? t("{a} and {b} are writing…", { a: first(names[0]), b: first(names[1]) }) : t("{n} people are writing…", { n: names.length });
     const dots = document.createElement("span");
     dots.className = "ask-typing";
     dots.setAttribute("aria-hidden", "true");
     dots.append(document.createElement("i"), document.createElement("i"), document.createElement("i"));
     const text = document.createElement("span");
-    text.textContent = `${label}…`;
+    text.textContent = label;
     typingLine.replaceChildren(dots, text);
     typingLine.hidden = false;
   }
@@ -134,7 +145,7 @@ function start(section) {
       bar.addEventListener("click", () => reloadList(true));
       section.querySelector("[data-rv-filters]")?.before(bar) ?? list()?.before(bar);
     }
-    bar.textContent = `${pendingNew} new review${pendingNew === 1 ? "" : "s"} · Show`;
+    bar.textContent = tn(pendingNew, "{n} new review · Show", "{n} new reviews · Show");
   }
 
   // the list (and summary) again from the server, keeping the filters.
@@ -294,17 +305,17 @@ function start(section) {
     const btn = form.querySelector("[type=submit]");
     if (btn.disabled) return;
     if (!form.querySelector("input[name=rating]:checked")) {
-      errorBox(form).textContent = "Choose a star rating from 1 to 5.";
+      errorBox(form).textContent = t("Choose a star rating from 1 to 5.");
       form.querySelector("input[name=rating]")?.focus();
       return;
     }
     if (form.querySelector("[data-rv-photos] .is-uploading")) {
-      errorBox(form).textContent = "Wait for the photos to finish uploading.";
+      errorBox(form).textContent = t("Wait for the photos to finish uploading.");
       return;
     }
     btn.disabled = true;
     const label = btn.textContent;
-    btn.textContent = "Posting…";
+    btn.textContent = t("Posting…");
     try {
       const data = new URLSearchParams();
       for (const [k, v] of new FormData(form)) if (typeof v === "string") data.append(k, v);
@@ -351,9 +362,9 @@ function start(section) {
     if (allReplies) {
       e.preventDefault();
       const id = allReplies.dataset.rvAllReplies;
-      allReplies.textContent = "Loading…";
+      allReplies.textContent = t("Loading…");
       const res = await fetch(`${base}/${id}?partial=replies`);
-      if (!res.ok) return void (allReplies.textContent = "Couldn't load the replies. Try again.");
+      if (!res.ok) return void (allReplies.textContent = t("Couldn't load the replies. Try again."));
       const thread = section.querySelector(`[data-rv-thread="${id}"]`);
       thread.querySelector(".rv-replies").innerHTML = await res.text();
       thread.classList.add("is-expanded");
@@ -364,7 +375,7 @@ function start(section) {
     const more = e.target.closest("[data-rv-more]");
     if (more) {
       e.preventDefault();
-      more.textContent = "Loading…";
+      more.textContent = t("Loading…");
       const url = new URL(more.href, location.href);
       url.hash = "";
       const res = await fetch(url, { headers: { accept: "text/html" } });
@@ -442,7 +453,7 @@ function start(section) {
     const btn = form.querySelector("[type=submit]");
     if (btn.disabled) return;
     if (form.querySelector("[data-rv-photos] .is-uploading")) {
-      errorBox(form).textContent = "Wait for the photos to finish uploading.";
+      errorBox(form).textContent = t("Wait for the photos to finish uploading.");
       return;
     }
     btn.disabled = true;
@@ -544,9 +555,9 @@ function start(section) {
   async function upload(attach, file) {
     const status = attach.querySelector("[data-rv-attach-status]");
     const holder = attach.querySelector("[data-rv-photos]");
-    if (holder.querySelectorAll(".rv-thumb").length >= 4) return say(status, "Up to 4 photos.", true);
-    if (!/^image\/(jpeg|png|webp)$/.test(file.type)) return say(status, `${file.name} isn't a JPEG, PNG or WebP photo.`, true);
-    if (file.size > 5 * 1024 * 1024) return say(status, `${file.name} is over 5 MB.`, true);
+    if (holder.querySelectorAll(".rv-thumb").length >= 4) return say(status, t("Up to 4 photos."), true);
+    if (!/^image\/(jpeg|png|webp)$/.test(file.type)) return say(status, t("{file} isn't a JPEG, PNG or WebP photo.", { file: file.name }), true);
+    if (file.size > 5 * 1024 * 1024) return say(status, t("{file} is over 5 MB.", { file: file.name }), true);
     const thumb = document.createElement("span");
     thumb.className = "rv-thumb is-uploading";
     const img = document.createElement("img");
@@ -556,12 +567,12 @@ function start(section) {
     x.type = "button";
     x.className = "rv-thumb-x";
     x.dataset.rvUnphoto = "";
-    x.setAttribute("aria-label", "Remove photo");
+    x.setAttribute("aria-label", t("Remove photo"));
     x.textContent = "×";
     thumb.append(img, x);
     holder.append(thumb);
     updatePhotoTool(attach);
-    say(status, "Uploading…");
+    say(status, t("Uploading…"));
     try {
       const res = await post("/reviews/photos", file, { headers: { "content-type": file.type } });
       const keep = document.createElement("input");
@@ -617,7 +628,7 @@ function start(section) {
               li.addEventListener("click", () => chooseLink(attach, li));
               return li;
             })
-          : [Object.assign(document.createElement("li"), { className: "rv-linkpick-none", textContent: "No recipes match." })]),
+          : [Object.assign(document.createElement("li"), { className: "rv-linkpick-none", textContent: t("No recipes match.") })]),
       );
     }, 200);
   }
@@ -646,8 +657,8 @@ function start(section) {
   function chooseLink(attach, li) {
     const status = attach.querySelector("[data-rv-attach-status]");
     const holder = attach.querySelector("[data-rv-links]");
-    if (holder.querySelector(`input[value="${li.dataset.id}"]`)) return say(status, "Already linked.");
-    if (holder.querySelectorAll(".rv-linkchip").length >= 3) return say(status, "Link up to 3 recipes.", true);
+    if (holder.querySelector(`input[value="${li.dataset.id}"]`)) return say(status, t("Already linked."));
+    if (holder.querySelectorAll(".rv-linkchip").length >= 3) return say(status, t("Link up to {n} recipes.", { n: 3 }), true);
     const chip = document.createElement("span");
     chip.className = "rv-linkchip";
     const name = document.createElement("span");
@@ -655,7 +666,7 @@ function start(section) {
     const keep = Object.assign(document.createElement("input"), { type: "hidden", name: "link", value: li.dataset.id });
     const x = Object.assign(document.createElement("button"), { type: "button", textContent: "×" });
     x.dataset.rvUnlink = "";
-    x.setAttribute("aria-label", `Remove link to ${li.dataset.title}`);
+    x.setAttribute("aria-label", t("Remove link to {title}", { title: li.dataset.title }));
     chip.append(name, keep, x);
     holder.append(chip);
     attach.querySelector("[data-rv-linkpick]").hidden = true;
@@ -687,7 +698,7 @@ function start(section) {
       }
     });
     worker.addEventListener("error", () => {
-      for (const j of waiting.values()) j.fail("the translator couldn't start in this browser");
+      for (const j of waiting.values()) j.fail(t("the translator couldn't start in this browser"));
       waiting.clear();
       worker = null;
     });
@@ -721,7 +732,7 @@ function start(section) {
       out.replaceChildren();
       const tag = document.createElement("span");
       tag.className = "rv-mt-tag";
-      tag.textContent = "Machine translation · may be inaccurate";
+      tag.textContent = t("Machine translation · may be inaccurate");
       out.append(tag);
       for (const para of text.split(/\n{2,}/)) {
         const p = document.createElement("p");
@@ -730,19 +741,19 @@ function start(section) {
       }
       out.hidden = false;
       original.classList.add("is-translated");
-      label.textContent = "Show original only";
+      label.textContent = t("Show original only");
     };
     const id = li.dataset.rv;
     if (cache.has(id)) return show(cache.get(id));
     btn.disabled = true;
     const lang = btn.dataset.lang;
     out.hidden = false;
-    out.textContent = "Starting the translator…";
+    out.textContent = t("Starting the translator…");
     const job = ++next;
     waiting.set(job, {
       lang,
-      progress: (a, b) => (out.textContent = `Downloading the ${label.textContent.replace(/^Translate from /, "")} translator: ${Math.round((a / b) * 100)}% of ${Math.round(b / 1e6)} MB. This happens once per language.`),
-      working: () => (out.textContent = "Translating…"),
+      progress: (a, b) => (out.textContent = t("Downloading the {language} translator: {pct}% of {mb} MB. This happens once per language.", { language: languageLabel(lang), pct: Math.round((a / b) * 100), mb: Math.round(b / 1e6) })),
+      working: () => (out.textContent = t("Translating…")),
       done: (text) => {
         cache.set(id, text);
         btn.disabled = false;
@@ -750,7 +761,7 @@ function start(section) {
       },
       fail: (msg) => {
         btn.disabled = false;
-        out.textContent = `Couldn't translate: ${msg}.`;
+        out.textContent = t("Couldn't translate: {reason}.", { reason: msg });
       },
     });
     const text = [...original.querySelectorAll("p")].map((p) => p.innerText).join("\n\n");

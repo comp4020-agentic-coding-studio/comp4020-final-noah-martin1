@@ -10,6 +10,7 @@ import {
 import { one, run } from "../db.ts";
 import { DEMO_LOGIN, DEMO_MODE, DEMO_USERNAMES } from "../demo.ts";
 import { html } from "../html.ts";
+import { t, th } from "../i18n.ts";
 import { type Ctx, cookie, htmlReply, isHttps, parseCookies, redirect, setFlash } from "../http.ts";
 import type { Route } from "../server.ts";
 import { errors, publicPage } from "../views/layout.ts";
@@ -38,39 +39,39 @@ function authForm(
   if (demo) values = { ...values, username: DEMO_LOGIN.username };
   return htmlReply(
     publicPage(ctx, {
-      title: isRegister ? "Create account" : "Sign in",
+      title: isRegister ? t("Create account") : t("Sign in"),
       body: html`<section class="auth">
         <div class="auth-card">
-          <p class="eyebrow">${isRegister ? "Join Larder" : "Welcome back"}</p>
-          <h1>${isRegister ? "Create your account" : "Sign in"}</h1>
+          <p class="eyebrow">${isRegister ? t("Join Larder") : t("Welcome back")}</p>
+          <h1>${isRegister ? t("Create your account") : t("Sign in")}</h1>
           ${errors(problems)}
-          ${demo ? html`<p class="demo-note">Demo account filled in — just press <strong>Sign in</strong> to look around as Alice.</p>` : ""}
+          ${demo ? html`<p class="demo-note">${th("Demo account filled in — just press {button} to look around as Alice.", { button: html`<strong>${t("Sign in")}</strong>` })}</p>` : ""}
           <form method="post" action="/${mode}" class="stack">
             <input type="hidden" name="next" value="${next}" />
             ${isRegister
               ? html`<label class="field">
-                  <span>Display name</span>
+                  <span>${t("Display name")}</span>
                   <input name="display_name" required maxlength="40" autocomplete="name" value="${values.display_name ?? ""}" />
                 </label>`
               : ""}
             <label class="field">
-              <span>Username</span>
+              <span>${t("Username")}</span>
               <input name="username" required autocomplete="username" autocapitalize="none" spellcheck="false"
                 ${isRegister ? html`pattern="[a-z0-9_]{3,24}" maxlength="24"` : ""} value="${values.username ?? ""}" />
-              ${isRegister ? html`<small>3–24 characters: lowercase letters, numbers, underscores.</small>` : ""}
+              ${isRegister ? html`<small>${t("3–24 characters: lowercase letters, numbers, underscores.")}</small>` : ""}
             </label>
             <label class="field">
-              <span>Password</span>
+              <span>${t("Password")}</span>
               <input type="password" name="password" required ${isRegister ? html`minlength="8"` : ""}
                 autocomplete="${isRegister ? "new-password" : "current-password"}" ${demo ? html`value="${DEMO_LOGIN.password}"` : ""} />
-              ${isRegister ? html`<small>At least 8 characters.</small>` : ""}
+              ${isRegister ? html`<small>${t("At least 8 characters.")}</small>` : ""}
             </label>
-            <button class="button button-block" type="submit">${isRegister ? "Create account" : "Sign in"}</button>
+            <button class="button button-block" type="submit">${isRegister ? t("Create account") : t("Sign in")}</button>
           </form>
           <p class="auth-switch">
             ${isRegister
-              ? html`Already have an account? <a href="/login">Sign in</a>`
-              : html`New here? <a href="/register">Create an account</a>`}
+              ? html`${t("Already have an account?")} <a href="/login">${t("Sign in")}</a>`
+              : html`${t("New here?")} <a href="/register">${t("Create an account")}</a>`}
           </p>
         </div>
       </section>`,
@@ -96,13 +97,13 @@ export const routes: Route[] = [
       const values = { username, display_name: displayName, next: form.get("next") ?? "" };
 
       const problems: string[] = [];
-      if (!USERNAME.test(username)) problems.push("Username must be 3–24 lowercase letters, numbers or underscores.");
-      if (!displayName || displayName.length > 40) problems.push("Display name is required (up to 40 characters).");
-      if (password.length < 8) problems.push("Password must be at least 8 characters.");
+      if (!USERNAME.test(username)) problems.push(t("Username must be 3–24 lowercase letters, numbers or underscores."));
+      if (!displayName || displayName.length > 40) problems.push(t("Display name is required (up to 40 characters)."));
+      if (password.length < 8) problems.push(t("Password must be at least 8 characters."));
       // the demo names belong to the seeded shared accounts, whose passwords
       // can't change, so a person never registers one of them
       if (!problems.length && (DEMO_USERNAMES.includes(username) || one("SELECT 1 FROM users WHERE username = ?", username))) {
-        problems.push("That username is taken.");
+        problems.push(t("That username is taken."));
       }
       if (problems.length) return authForm(ctx, "register", values, problems, 422);
 
@@ -114,7 +115,7 @@ export const routes: Route[] = [
       );
       signIn(ctx, id);
       logActivity({ actor: { id, username }, action: "auth.register" });
-      setFlash(ctx, `Welcome to Larder, ${displayName}.`);
+      setFlash(ctx, t("Welcome to Larder, {name}.", { name: displayName }));
       return redirect(safeNext(values.next));
     },
   },
@@ -139,7 +140,7 @@ export const routes: Route[] = [
       if (!user || !(await verifyPassword(password, user.password_hash))) {
         // the name tried, never the password; unknown names are cut short
         logActivity({ action: "auth.login_failed", outcome: "denied", subject: username.slice(0, 24), detail: { known_user: !!user } });
-        return authForm(ctx, "login", { username, next }, ["Username or password is incorrect."], 401);
+        return authForm(ctx, "login", { username, next }, [t("Username or password is incorrect.")], 401);
       }
       signIn(ctx, user.id);
       logActivity({ actor: { id: user.id, username }, action: "auth.login" });
@@ -153,7 +154,7 @@ export const routes: Route[] = [
       if (ctx.user) logActivity({ actor: ctx.user, action: "auth.logout" });
       destroySession(parseCookies(ctx.req.headers.cookie).sid);
       ctx.setCookies.push(cookie("sid", "", { maxAge: 0, secure: isHttps(ctx.req) }));
-      setFlash(ctx, "Signed out.");
+      setFlash(ctx, t("Signed out."));
       return redirect("/");
     },
   },

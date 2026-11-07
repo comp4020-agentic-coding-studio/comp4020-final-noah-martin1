@@ -10,6 +10,7 @@
 import { logActivity } from "../activity.ts";
 import { checkImage, MAX_IMAGE_BYTES, readMultipart } from "../images.ts";
 import { html } from "../html.ts";
+import { t } from "../i18n.ts";
 import { type Ctx, HttpError, htmlReply, json, redirect, setFlash, type Reply } from "../http.ts";
 import { listVisibleRecipes, type Recipe } from "../recipes.ts";
 import {
@@ -20,7 +21,7 @@ import {
   PHOTOS_MAX,
   photoFor,
   type Problem,
-  PROBLEM_TEXT,
+  problemText,
   repliesFor,
   reviewBus,
   type ReviewEvent,
@@ -62,7 +63,7 @@ function jsonAware(route: Route): Route {
       try {
         return await handler(ctx);
       } catch (err) {
-        if (err instanceof NotFoundJson) return json({ error: "There's no recipe at this address.", problem: "not-found" }, 404);
+        if (err instanceof NotFoundJson) return json({ error: t("There's no recipe at this address."), problem: "not-found" }, 404);
         throw err;
       }
     },
@@ -98,12 +99,12 @@ const ids = (v: string[]) => [...new Set(v.map(Number).filter((n) => Number.isSa
 // like the script's. A bad one stops the post with its reason.
 function storeFiles(ctx: Ctx, files: Buffer[]): { ids: number[] } | { problem: string } {
   const out: number[] = [];
-  if (files.length > PHOTOS_MAX) return { problem: `Add up to ${PHOTOS_MAX} photos.` };
+  if (files.length > PHOTOS_MAX) return { problem: problemText("too-many-photos") };
   for (const bytes of files) {
     const allowed = photoAllowance(ctx.user!.id);
-    if (allowed !== "ok") return { problem: ALLOWANCE_TEXT[allowed] };
+    if (allowed !== "ok") return { problem: t(ALLOWANCE_TEXT[allowed]) };
     const check = checkImage(bytes);
-    if (!check.ok) return { problem: check.problem.replace("of the dish", "") };
+    if (!check.ok) return { problem: t(check.problem.replace("of the dish", "")) };
     out.push(savePhoto(ctx.user!.id, bytes, check.mime, check.width, check.height));
   }
   return { ids: out };
@@ -115,7 +116,7 @@ const ALLOWANCE_TEXT = {
 };
 
 function problemReply(ctx: Ctx, recipe: Recipe, problem: Problem | string, state: ComposerState, status = 422): Reply {
-  const text = problem in PROBLEM_TEXT ? PROBLEM_TEXT[problem as Problem] : problem;
+  const text = problemText(problem);
   const code = problem === "not-found" ? 404 : problem === "too-soon" ? 429 : problem === "not-yours" ? 403 : status;
   if (wantsJson(ctx)) return json({ error: text, problem }, code);
   if (problem === "not-found") throw new HttpError(404, text);
@@ -257,7 +258,7 @@ const table: Route[] = [
       }
       logActivity({ actor: ctx.user, action: r.edited ? "review.edit" : "review.post", subject: recipe.title, detail: { recipe: recipe.id, review: r.id, photos: photoIds.length, links: linkIds.length } });
       if (wantsJson(ctx)) return json({ id: r.id, edited: r.edited });
-      setFlash(ctx, r.edited ? "Your review is updated." : "Thanks! Your review is posted.");
+      setFlash(ctx, r.edited ? t("Your review is updated.") : t("Thanks! Your review is posted."));
       return back(recipe, `rv-${r.id}`);
     },
   },
@@ -270,7 +271,7 @@ const table: Route[] = [
       const recipe = recipeOr404(ctx);
       const to = getReview(reviewId(ctx), ctx.user!.id);
       if (!to || to.recipe_id !== recipe.id || to.deleted_at) throw new HttpError(404, "That review isn't there any more.");
-      return htmlReply(page(ctx, { title: `Reply · ${recipe.title}`, active: "recipes", body: html`${pageHeader(`Reply to ${to.author_name ?? "a review"}`, recipe.title)}
+      return htmlReply(page(ctx, { title: `${t("Reply")} · ${recipe.title}`, active: "recipes", body: html`${pageHeader(replyHeading(to.author_name), recipe.title)}
         <section class="panel stack rv-page"><ol class="rv-list">${reviewItem(ctx, recipe, { ...to, replies: [], reply_count: 0 }, { reply: !!to.parent_id })}</ol>${replyForm(ctx, recipe, to)}</section>` }));
     },
   },
@@ -293,9 +294,9 @@ const table: Route[] = [
       const r = writeReply(recipe.id, ctx.user!.id, toId, { body, photoIds, linkIds });
       setTyping(recipe.id, ctx.user!.id, "", false);
       if (!r.ok) {
-        if (wantsJson(ctx)) return json({ error: PROBLEM_TEXT[r.problem], problem: r.problem }, r.problem === "not-found" ? 404 : r.problem === "too-soon" ? 429 : 422);
-        if (r.problem === "not-found") throw new HttpError(404, PROBLEM_TEXT[r.problem]);
-        return replyAgain(ctx, recipe, toId, body, PROBLEM_TEXT[r.problem]);
+        if (wantsJson(ctx)) return json({ error: problemText(r.problem), problem: r.problem }, r.problem === "not-found" ? 404 : r.problem === "too-soon" ? 429 : 422);
+        if (r.problem === "not-found") throw new HttpError(404, problemText(r.problem));
+        return replyAgain(ctx, recipe, toId, body, problemText(r.problem));
       }
       logActivity({ actor: ctx.user, action: "review.reply", subject: recipe.title, detail: { recipe: recipe.id, review: r.id, parent: r.parentId } });
       if (wantsJson(ctx)) return json({ id: r.id, parentId: r.parentId, html: reviewItem(ctx, recipe, getReview(r.id, ctx.user!.id)!, { reply: true }).value });
@@ -312,8 +313,8 @@ const table: Route[] = [
       if (!r || r.recipe_id !== recipe.id || r.deleted_at) throw new HttpError(404, "That review isn't there any more.");
       // a review is edited in the box at the top of the reviews
       if (!r.parent_id) return redirect(`/recipes/${recipe.id}#write`);
-      if (r.author_id !== ctx.user!.id) throw new HttpError(403, PROBLEM_TEXT["not-yours"]);
-      return htmlReply(page(ctx, { title: `Edit reply · ${recipe.title}`, active: "recipes", body: html`${pageHeader("Edit your reply", recipe.title)}
+      if (r.author_id !== ctx.user!.id) throw new HttpError(403, problemText("not-yours"));
+      return htmlReply(page(ctx, { title: `${t("Edit reply")} · ${recipe.title}`, active: "recipes", body: html`${pageHeader(t("Edit your reply"), recipe.title)}
         <section class="panel stack rv-page">${replyForm(ctx, recipe, r, { editing: r.id, body: r.body })}</section>` }));
     },
   },
@@ -327,11 +328,11 @@ const table: Route[] = [
       const body = (await readPosted(ctx)).fields.get("body") ?? "";
       const r = editReply(recipe.id, ctx.user!.id, id, body);
       if (!r.ok) {
-        if (wantsJson(ctx)) return json({ error: PROBLEM_TEXT[r.problem] }, r.problem === "not-found" ? 404 : r.problem === "not-yours" ? 403 : 422);
-        if (r.problem === "not-found") throw new HttpError(404, PROBLEM_TEXT[r.problem]);
-        if (r.problem === "not-yours") throw new HttpError(403, PROBLEM_TEXT[r.problem]);
+        if (wantsJson(ctx)) return json({ error: problemText(r.problem) }, r.problem === "not-found" ? 404 : r.problem === "not-yours" ? 403 : 422);
+        if (r.problem === "not-found") throw new HttpError(404, problemText(r.problem));
+        if (r.problem === "not-yours") throw new HttpError(403, problemText(r.problem));
         const to = getReview(id, ctx.user!.id)!;
-        return htmlReply(page(ctx, { title: "Edit reply", active: "recipes", body: html`${pageHeader("Edit your reply", recipe.title)}<section class="panel stack rv-page">${replyForm(ctx, recipe, to, { editing: id, body, problem: PROBLEM_TEXT[r.problem] })}</section>` }), 422);
+        return htmlReply(page(ctx, { title: t("Edit reply"), active: "recipes", body: html`${pageHeader(t("Edit your reply"), recipe.title)}<section class="panel stack rv-page">${replyForm(ctx, recipe, to, { editing: id, body, problem: problemText(r.problem) })}</section>` }), 422);
       }
       logActivity({ actor: ctx.user, action: "review.edit", subject: recipe.title, detail: { recipe: recipe.id, review: id } });
       if (wantsJson(ctx)) return json({ id, html: reviewItem(ctx, recipe, getReview(id, ctx.user!.id)!, { reply: true }).value });
@@ -347,12 +348,12 @@ const table: Route[] = [
       const id = reviewId(ctx);
       const r = deleteReview(recipe.id, ctx.user!.id, id);
       if (!r.ok) {
-        if (wantsJson(ctx)) return json({ error: PROBLEM_TEXT[r.problem] }, r.problem === "not-found" ? 404 : 403);
-        throw new HttpError(r.problem === "not-found" ? 404 : 403, PROBLEM_TEXT[r.problem]);
+        if (wantsJson(ctx)) return json({ error: problemText(r.problem) }, r.problem === "not-found" ? 404 : 403);
+        throw new HttpError(r.problem === "not-found" ? 404 : 403, problemText(r.problem));
       }
       logActivity({ actor: ctx.user, action: "review.delete", subject: recipe.title, detail: { recipe: recipe.id, review: id, kept: r.removed === "content" } });
       if (wantsJson(ctx)) return json({ removed: r.removed });
-      setFlash(ctx, "Deleted.");
+      setFlash(ctx, t("Deleted."));
       return back(recipe, "reviews");
     },
   },
@@ -365,9 +366,9 @@ const table: Route[] = [
       const id = reviewId(ctx);
       const r = toggleLike(recipe.id, ctx.user!.id, id);
       if (!r.ok) {
-        if (wantsJson(ctx)) return json({ error: PROBLEM_TEXT[r.problem] }, r.problem === "not-found" ? 404 : 422);
-        if (r.problem === "not-found") throw new HttpError(404, PROBLEM_TEXT[r.problem]);
-        setFlash(ctx, PROBLEM_TEXT[r.problem]);
+        if (wantsJson(ctx)) return json({ error: problemText(r.problem) }, r.problem === "not-found" ? 404 : 422);
+        if (r.problem === "not-found") throw new HttpError(404, problemText(r.problem));
+        setFlash(ctx, problemText(r.problem));
         return back(recipe, `rv-${id}`);
       }
       if (wantsJson(ctx)) return json({ liked: r.liked, likes: r.likes });
@@ -385,12 +386,12 @@ const table: Route[] = [
       if (!r || r.recipe_id !== recipe.id || r.parent_id) throw new HttpError(404, "That review isn't there any more.");
       const all = repliesFor(r.id, ctx.user?.id ?? null);
       // a deleted review's thread, without saying whose it was
-      const heading = r.deleted_at ? "A deleted review" : `${r.author_name ?? "A deleted account"}'s review`;
+      const heading = r.deleted_at ? t("A deleted review") : r.author_name === null ? t("A deleted account's review") : t("{name}'s review", { name: r.author_name });
       if (ctx.url.searchParams.get("partial") === "replies") {
         return { status: 200, headers: { "content-type": "text/html; charset=utf-8" }, body: html`${all.map((x) => reviewItem(ctx, recipe, x, { reply: true }))}`.value };
       }
-      return htmlReply(page(ctx, { title: `Review · ${recipe.title}`, active: "recipes", body: html`${pageHeader(heading, recipe.title)}
-        <p><a href="/recipes/${recipe.id}#reviews">← Back to ${recipe.title}</a></p>
+      return htmlReply(page(ctx, { title: `${t("Review")} · ${recipe.title}`, active: "recipes", body: html`${pageHeader(heading, recipe.title)}
+        <p><a href="/recipes/${recipe.id}#reviews">${t("← Back to {title}", { title: recipe.title })}</a></p>
         <section class="rv-section"><ol class="rv-list">${reviewItem(ctx, recipe, { ...r, replies: all, reply_count: all.length })}</ol></section>` }));
     },
   },
@@ -404,14 +405,14 @@ const table: Route[] = [
       let size = 0;
       for await (const chunk of ctx.req) {
         size += (chunk as Buffer).length;
-        if (size > MAX_IMAGE_BYTES) return json({ error: "That photo is over 5 MB. Try a smaller one." }, 413);
+        if (size > MAX_IMAGE_BYTES) return json({ error: t("That photo is over 5 MB. Try a smaller one.") }, 413);
         chunks.push(chunk as Buffer);
       }
       const bytes = Buffer.concat(chunks);
       const allowed = photoAllowance(ctx.user!.id);
-      if (allowed !== "ok") return json({ error: ALLOWANCE_TEXT[allowed] }, 429);
+      if (allowed !== "ok") return json({ error: t(ALLOWANCE_TEXT[allowed]) }, 429);
       const check = checkImage(bytes);
-      if (!check.ok) return json({ error: check.problem.replace(" of the dish", "") }, 422);
+      if (!check.ok) return json({ error: t(check.problem.replace(" of the dish", "")) }, 422);
       const id = savePhoto(ctx.user!.id, bytes, check.mime, check.width, check.height);
       return json({ id, url: `/reviews/photos/${id}`, width: check.width, height: check.height });
     },
@@ -437,11 +438,16 @@ const table: Route[] = [
 
 export const routes: Route[] = table.map(jsonAware);
 
+// "Reply to Sam", or to a review whose writer's account is gone
+function replyHeading(name: string | null): string {
+  return name === null ? t("Reply to a review") : t("Reply to {name}", { name });
+}
+
 function replyAgain(ctx: Ctx, recipe: Recipe, toId: number, body: string, problem: string): Reply {
   const to = getReview(toId, ctx.user!.id);
   if (!to || to.recipe_id !== recipe.id) throw new HttpError(404, "That review isn't there any more.");
   return htmlReply(
-    page(ctx, { title: `Reply · ${recipe.title}`, active: "recipes", body: html`${pageHeader(`Reply to ${to.author_name ?? "a review"}`, recipe.title)}
+    page(ctx, { title: `${t("Reply")} · ${recipe.title}`, active: "recipes", body: html`${pageHeader(replyHeading(to.author_name), recipe.title)}
       <section class="panel stack rv-page">${replyForm(ctx, recipe, to, { body, problem })}</section>` }),
     422,
   );

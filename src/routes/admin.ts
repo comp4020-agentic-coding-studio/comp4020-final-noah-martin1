@@ -1,5 +1,6 @@
 import { ACTION_LABEL, type ActivityRow, recentActivity } from "../activity.ts";
 import { type Html, html, raw } from "../html.ts";
+import { t, th } from "../i18n.ts";
 import { type Ctx, HttpError, htmlReply, json } from "../http.ts";
 import type { Route } from "../server.ts";
 import { page, pageHeader } from "../views/layout.ts";
@@ -24,7 +25,7 @@ function rowJson(a: ActivityRow) {
   } catch {
     // stored as written; never fails the feed
   }
-  return { id: a.id, at: a.at, who: a.username ?? "system", action: a.action, label: ACTION_LABEL[a.action] ?? a.action, outcome: a.outcome, subject: a.subject, detail };
+  return { id: a.id, at: a.at, who: a.username ?? "system", action: a.action, label: a.action in ACTION_LABEL ? t(ACTION_LABEL[a.action]) : a.action, outcome: a.outcome, subject: a.subject, detail };
 }
 
 function row(a: ReturnType<typeof rowJson>): Html {
@@ -32,7 +33,7 @@ function row(a: ReturnType<typeof rowJson>): Html {
   return html`<li class="act-row act-${a.outcome}" data-id="${a.id}">
     <time class="mono" datetime="${a.at}">${a.at.slice(11, 19)}</time>
     <span class="act-who">${a.who}</span>
-    <span class="act-what">${a.label}${a.subject ? html` <strong>${a.subject}</strong>` : ""}${a.outcome !== "ok" ? html` <span class="pill pill-${a.outcome === "failed" ? "expired" : "soon"}">${a.outcome}</span>` : ""}</span>
+    <span class="act-what">${a.label}${a.subject ? html` <strong>${a.subject}</strong>` : ""}${a.outcome !== "ok" ? html` <span class="pill pill-${a.outcome === "failed" ? "expired" : "soon"}">${t(a.outcome)}</span>` : ""}</span>
     <code class="act-facts">${a.action}${facts ? ` ${facts}` : ""}</code>
   </li>`;
 }
@@ -46,11 +47,11 @@ export const routes: Route[] = [
       requireAdmin(ctx);
       const rows = recentActivity(100).map(rowJson);
       const body = html`
-        ${pageHeader("Activity", "Who did what, as the server recorded it. New entries appear as they happen.")}
+        ${pageHeader(t("Activity"), t("Who did what, as the server recorded it. New entries appear as they happen."))}
         <section class="panel panel-flush">
           <ol class="act-list" data-activity data-since="${rows.at(-1)?.id ?? 0}" aria-live="polite">${rows.map(row)}</ol>
         </section>
-        <p class="muted small">Also in <code>fly logs</code> (one JSON line per event) and <code>node scripts/activity.ts --follow</code>.</p>
+        <p class="muted small">${th("Also in {logs} (one JSON line per event) and {script}.", { logs: html`<code>fly logs</code>`, script: html`<code>node scripts/activity.ts --follow</code>` })}</p>
         <script type="module">${raw(`
           const list = document.querySelector("[data-activity]");
           let since = Number(list.dataset.since) || 0;
@@ -76,7 +77,7 @@ export const routes: Route[] = [
           }
           tick();
         `)}</script>`;
-      return htmlReply(page(ctx, { title: "Activity", body }));
+      return htmlReply(page(ctx, { title: t("Activity"), body }));
     },
   },
   {

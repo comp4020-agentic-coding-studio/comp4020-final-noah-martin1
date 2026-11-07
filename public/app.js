@@ -3,6 +3,13 @@
 document.documentElement.classList.remove("no-js");
 document.documentElement.classList.add("js");
 
+// A line of the interface in the page's language (window.__t, set in the
+// head; English, the key, is the fallback), with {name} gaps filled.
+const tr = (s, v) => {
+  const out = (window.__t || ((x) => x))(s);
+  return v ? out.replace(/\{(\w+)\}/g, (m, k) => (k in v ? String(v[k]) : m)) : out;
+};
+
 // The language picker sends itself as soon as a language is chosen (its
 // button is for when there's no JavaScript).
 document.addEventListener("change", (event) => {
@@ -123,26 +130,26 @@ document.addEventListener("click", (event) => {
 
   function priceForm(row, name, hint) {
     const form = el("form", { className: "price-form" });
-    const price = el("input", { name: "price", inputMode: "decimal", placeholder: "4.50", required: true, ariaLabel: `Price paid for ${name}` });
-    const qty = el("input", { name: "quantity", inputMode: "decimal", placeholder: "500", required: true, ariaLabel: "How much was in the pack" });
-    const unit = el("select", { name: "unit", ariaLabel: "Pack unit" }, ...["g", "kg", "ml", "l", "each"].map((u) => el("option", { value: u, textContent: u === "l" ? "L" : u })));
-    const store = el("select", { name: "store", ariaLabel: "Shop" }, el("option", { value: "", textContent: "Shop" }), ...STORES.map((s) => el("option", { value: s, textContent: s })));
-    const save = el("button", { type: "submit", className: "button button-small", textContent: "Save price" });
-    const cancel = el("button", { type: "button", className: "link-button", textContent: "Cancel" });
+    const price = el("input", { name: "price", inputMode: "decimal", placeholder: "4.50", required: true, ariaLabel: tr("Price paid for {name}", { name }) });
+    const qty = el("input", { name: "quantity", inputMode: "decimal", placeholder: "500", required: true, ariaLabel: tr("How much was in the pack") });
+    const unit = el("select", { name: "unit", ariaLabel: tr("Pack unit") }, ...["g", "kg", "ml", "l", "each"].map((u) => el("option", { value: u, textContent: u === "l" ? "L" : u === "each" ? tr("each") : u })));
+    const store = el("select", { name: "store", ariaLabel: tr("Shop") }, el("option", { value: "", textContent: tr("Shop") }), ...STORES.map((s) => el("option", { value: s, textContent: s === "Other" ? tr("Other") : s })));
+    const save = el("button", { type: "submit", className: "button button-small", textContent: tr("Save price") });
+    const cancel = el("button", { type: "button", className: "link-button", textContent: tr("Cancel") });
     const msg = el("span", { className: "price-form-msg", role: "status" });
-    form.append(el("span", { textContent: "$" }), price, el("span", { textContent: "for" }), qty, unit, store, save, cancel, msg);
+    form.append(el("span", { textContent: "$" }), price, el("span", { textContent: tr("for") }), qty, unit, store, save, cancel, msg);
     cancel.addEventListener("click", () => render(row, hint));
     form.addEventListener("submit", async (event) => {
       event.preventDefault();
       save.disabled = true;
-      msg.textContent = "Saving…";
+      msg.textContent = tr("Saving…");
       const body = new URLSearchParams({ name, price: price.value, quantity: qty.value, unit: unit.value, store: store.value });
       try {
         const res = await fetch("/prices", { method: "POST", headers: { accept: "application/json" }, body });
         const data = await res.json();
-        if (!res.ok) throw new Error(data.error || "Couldn't save that price.");
+        if (!res.ok) throw new Error(data.error || tr("Couldn't save that price."));
         cache.set(name, data.hint);
-        render(row, data.hint, `Saved. Your price is used for your recipes and shopping.`);
+        render(row, data.hint, tr("Saved. Your price is used for your recipes and shopping."));
       } catch (err) {
         msg.textContent = err.message;
         save.disabled = false;
@@ -164,18 +171,18 @@ document.addEventListener("click", (event) => {
     slot.dataset.kind = hint.yours ? "yours" : hint.kind;
     const action = el("button", { type: "button", className: "link-button" });
     if (hint.kind === "free") {
-      slot.append("Always to hand: not priced.");
+      slot.append(tr("Always to hand: not priced."));
       return;
     }
     if (hint.kind === "unknown" && !hint.yours) {
-      slot.append(el("strong", { textContent: "No price yet." }), " What did you pay? ");
-      action.textContent = "Add a price";
+      slot.append(el("strong", { textContent: tr("No price yet.") }), ` ${tr("What did you pay?")} `);
+      action.textContent = tr("Add a price");
     } else {
-      const what = hint.yours ? `Your price: ${hint.yours.text}` : `${hint.perText ?? "Priced"}${hint.label ? ` · ${hint.label}` : ""}`;
+      const what = hint.yours ? tr("Your price: {price}", { price: hint.yours.text }) : `${hint.perText ?? tr("Priced")}${hint.label ? ` · ${hint.label}` : ""}`;
       slot.append(hint.url ? el("a", { href: hint.url, target: "_blank", rel: "noopener noreferrer", textContent: what }) : what);
       if (hint.note && !hint.yours) slot.append(el("span", { className: "price-hint-note", textContent: ` ${hint.note}` }));
       slot.append(" ");
-      action.textContent = "Not right? Correct it";
+      action.textContent = tr("Not right? Correct it");
     }
     action.addEventListener("click", () => {
       slot.replaceChildren(priceForm(row, hint.name, hint));
@@ -272,7 +279,7 @@ if (grid && searchForm instanceof HTMLFormElement) {
       if (count) count.textContent = decodeURIComponent(res.headers.get("x-result-count") ?? "");
       if (moreSlot) moreSlot.innerHTML = decodeURIComponent(res.headers.get("x-show-more") ?? "");
       const q = new URL(url, location.href).searchParams.get("q");
-      if (heading && q) heading.textContent = `Results for “${q}”`;
+      if (heading && q) heading.textContent = tr("Results for “{q}”", { q });
       if (push) history.pushState({}, "", url);
     } catch (err) {
       if (err.name !== "AbortError") location.href = url;
@@ -308,7 +315,7 @@ if (grid && searchForm instanceof HTMLFormElement) {
     if (link.getAttribute("aria-busy") === "true") return;
     link.setAttribute("aria-busy", "true");
     const label = link.textContent;
-    link.textContent = "Loading…";
+    link.textContent = tr("Loading…");
     const next = new URL(link.href, location.href);
     next.hash = "";
     const partial = new URL(next);
@@ -403,7 +410,7 @@ document.querySelectorAll("[data-cook-mode]").forEach((root) => {
     if (next) {
       next.hidden = at === steps.length;
       const text = next.querySelector("[data-next-label]");
-      if (text) text.textContent = at === steps.length - 1 ? "Finish" : "Next step";
+      if (text) text.textContent = at === steps.length - 1 ? tr("Finish") : tr("Next step");
     }
     if (prev) prev.disabled = at === 0;
   }
@@ -440,7 +447,7 @@ document.addEventListener("click", (event) => {
   const tick = () => {
     const m = Math.floor(left / 60);
     const s = String(left % 60).padStart(2, "0");
-    text.textContent = left > 0 ? `${m}:${s} left` : "Time's up!";
+    text.textContent = left > 0 ? tr("{time} left", { time: `${m}:${s}` }) : tr("Time's up!");
     if (left-- <= 0) {
       clearInterval(id);
       navigator.vibrate?.([200, 100, 200]);
@@ -550,28 +557,28 @@ document.querySelector("[data-print]")?.addEventListener("click", () => window.p
   input.addEventListener("change", () => {
     const file = input.files && input.files[0];
     if (!file) return;
-    if (!/^image\/(jpeg|png|webp)$/.test(file.type)) return say("That file isn't a JPEG, PNG or WebP photo.", true);
-    if (file.size > 5 * 1024 * 1024) return say("That photo is over 5 MB. Try a smaller one.", true);
+    if (!/^image\/(jpeg|png|webp)$/.test(file.type)) return say(tr("That file isn't a JPEG, PNG or WebP photo."), true);
+    if (file.size > 5 * 1024 * 1024) return say(tr("That photo is over 5 MB. Try a smaller one."), true);
     const url = URL.createObjectURL(file);
     preview.innerHTML = "";
     const img = document.createElement("img");
     img.src = url;
-    img.alt = "The photo you chose";
+    img.alt = tr("The photo you chose");
     preview.append(img);
     preview.classList.add("is-loading");
-    say("Uploading…");
+    say(tr("Uploading…"));
     uploading = fetch("/images", { method: "POST", body: file, headers: { "content-type": file.type, accept: "application/json" } })
       .then(async (res) => {
         const body = await res.json().catch(() => ({}));
-        if (!res.ok) throw new Error(body.error || "That photo couldn't be uploaded.");
+        if (!res.ok) throw new Error(body.error || tr("That photo couldn't be uploaded."));
         ref.value = body.url;
         input.required = false;
-        say(`Photo added (${body.width} × ${body.height}).`);
+        say(tr("Photo added ({width} × {height}).", { width: body.width, height: body.height }));
         return true;
       })
       .catch((err) => {
         ref.value = ref.defaultValue;
-        say(err.message === "Failed to fetch" ? "Couldn't reach Larder. The photo will upload with the form instead." : err.message, true);
+        say(err.message === "Failed to fetch" ? tr("Couldn't reach Larder. The photo will upload with the form instead.") : err.message, true);
         return false;
       })
       .finally(() => preview.classList.remove("is-loading"));
