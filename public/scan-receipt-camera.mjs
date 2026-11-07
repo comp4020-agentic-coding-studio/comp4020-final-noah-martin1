@@ -10,6 +10,9 @@
 // the photo, from the camera or the file input, is read on this device by
 // receipt-ocr-worker.mjs, and only the printed lines are posted.
 import "./scan.mjs";
+import { t } from "./i18n.mjs";
+// receipt-frame.mjs gives its hints in English (it's also measured in node,
+// with no page to translate for); they're translated here, as they're shown
 import { CROP, grey, motion, receiptLayout, sharpness, SIZE, watcher } from "./receipt-frame.mjs";
 
 const root = document.querySelector("[data-receipt-camera]");
@@ -33,7 +36,7 @@ function onDevice(form) {
     else bar.value = pct;
   };
   if (typeof Worker === "undefined" || typeof WebAssembly === "undefined" || typeof OffscreenCanvas === "undefined") {
-    say("This browser can't read receipts. Try a recent Chrome, Edge, Safari or Firefox, or use the barcode scanner.", 0);
+    say(t("This browser can't read receipts. Try a recent Chrome, Edge, Safari or Firefox, or use the barcode scanner."), 0);
     file.disabled = true;
     return null;
   }
@@ -50,12 +53,12 @@ function onDevice(form) {
         const m = e.data;
         if (m.type === "download") {
           downloading = m.loaded < m.total;
-          if (busy && m.total) say(`Downloading the reader: ${(m.loaded / 1e6).toFixed(1)} of ${(m.total / 1e6).toFixed(1)} MB. This only happens once.`, (m.loaded / m.total) * 100);
+          if (busy && m.total) say(t("Downloading the reader: {done} of {total} MB. This only happens once.", { done: (m.loaded / 1e6).toFixed(1), total: (m.total / 1e6).toFixed(1) }), (m.loaded / m.total) * 100);
         } else if (m.type === "ready") {
           downloading = false;
           resolve();
         } else if (m.type === "progress") {
-          if (busy) say(`Reading your receipt: ${m.done} of ${m.total} lines.`, (m.done / m.total) * 100);
+          if (busy) say(t("Reading your receipt: {done} of {total} lines.", { done: m.done, total: m.total }), (m.done / m.total) * 100);
         } else if (m.type === "result") pending.get(m.id)?.resolve(m);
         else if (m.type === "error") {
           for (const p of pending.values()) p.reject(new Error(m.message));
@@ -85,24 +88,24 @@ function onDevice(form) {
     go.disabled = true;
     file.disabled = true;
     form.classList.remove("is-camera");
-    say(downloading ? "Downloading the reader…" : "Starting the reader…", null);
+    say(downloading ? t("Downloading the reader…") : t("Starting the reader…"), null);
     box.scrollIntoView({ block: "center", behavior: "smooth" });
     const started = performance.now();
     try {
       await load();
       const id = ++next;
-      say("Reading your receipt…", null);
+      say(t("Reading your receipt…"), null);
       const result = await new Promise((resolve, reject) => {
         pending.set(id, { resolve, reject });
         worker.postMessage({ type: "read", id, blob });
       });
       pending.delete(id);
-      say("Done. Opening the review…", 100);
+      say(t("Done. Opening the review…"), 100);
       holder.replaceChildren(...result.lines.map((l) => Object.assign(document.createElement("input"), { type: "hidden", name: "line", value: l })));
       form.querySelector("[data-receipt-seconds]").value = String(Math.round((performance.now() - started) / 1000));
       form.submit();
     } catch (err) {
-      say(`The receipt couldn't be read: ${err.message}. Try again, or use the barcode scanner or the add form.`, 0);
+      say(t("The receipt couldn't be read: {reason}. Try again, or use the barcode scanner or the add form.", { reason: err.message }), 0);
       busy = false;
       file.disabled = false;
       go.disabled = !file.files?.length;
@@ -179,7 +182,8 @@ function start() {
       hold.style.strokeDashoffset = String(100 - r.progress * 100);
       root.classList.toggle("is-ready", r.progress > 0);
       if (r.capture) return capture(true);
-      if (hint.textContent !== r.hint) hint.textContent = r.hint;
+      const said = t(r.hint);
+      if (hint.textContent !== said) hint.textContent = said;
     }
     timer = setTimeout(look, 150);
   }
@@ -190,7 +194,7 @@ function start() {
     clearTimeout(timer);
     navigator.vibrate?.(60);
     root.classList.add("is-taken");
-    hint.textContent = auto ? "Got it. Sending your receipt…" : "Sending your receipt…";
+    hint.textContent = auto ? t("Got it. Sending your receipt…") : t("Sending your receipt…");
     shoot.disabled = true;
     const full = document.createElement("canvas");
     // at most 2000 px on the long side: plenty for the model, under the
@@ -226,8 +230,8 @@ function start() {
       startBtn.disabled = false;
       startNote.hidden = false;
       startNote.textContent = err?.name === "NotAllowedError"
-        ? "The camera wasn't allowed. Choose a photo below instead."
-        : "No camera could be opened. Choose a photo below instead.";
+        ? t("The camera wasn't allowed. Choose a photo below instead.")
+        : t("No camera could be opened. Choose a photo below instead.");
       return;
     }
     video.srcObject = stream;
@@ -237,7 +241,7 @@ function start() {
     form.classList.add("is-camera");
     prev = null;
     watch.reset();
-    hint.textContent = "Fill the frame with the receipt, flat and in good light.";
+    hint.textContent = t("Fill the frame with the receipt, flat and in good light.");
     form.scrollIntoView({ block: "start", behavior: "smooth" });
     look();
   }

@@ -36,6 +36,7 @@ import * as THREE from "three";
 import { RoomEnvironment } from "three/addons/environments/RoomEnvironment.js";
 import { RoundedBoxGeometry } from "three/addons/geometries/RoundedBoxGeometry.js";
 import { buildModel } from "./kitchen-models.mjs";
+import { t } from "./i18n.mjs";
 
 const root = document.querySelector("[data-scan-guide]");
 const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -798,7 +799,7 @@ function start(kind) {
     root.classList.toggle("paused", p);
     if (toggle) {
       toggle.setAttribute("aria-pressed", String(p));
-      toggle.setAttribute("aria-label", p ? "Play the animation" : "Pause the animation");
+      toggle.setAttribute("aria-label", p ? t("Play the animation") : t("Pause the animation"));
     }
     p ? stop() : play();
   }

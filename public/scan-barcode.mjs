@@ -4,6 +4,7 @@
 // asked for. Each code read is looked up on the server and added to a
 // basket; the basket goes to the usual review form. The typed-number form
 // needs no script at all and is always there.
+import { t } from "./i18n.mjs";
 
 const POLYFILL = "https://cdn.jsdelivr.net/npm/barcode-detector@3.2.2/dist/es/ponyfill.js";
 const FORMATS = ["ean_13", "ean_8", "upc_a", "upc_e"];
@@ -70,25 +71,25 @@ async function start() {
   }
 
   async function lookup(code) {
-    status.textContent = `Looking up ${code}…`;
+    status.textContent = t("Looking up {code}…", { code });
     try {
       const res = await fetch(`/pantry/scan/barcode/lookup?code=${encodeURIComponent(code)}`, { headers: { accept: "application/json" } });
       const body = await res.json();
       if (!res.ok) {
-        status.textContent = body.error ?? "That barcode couldn't be looked up.";
+        status.textContent = body.error ?? t("That barcode couldn't be looked up.");
         seen.delete(code);
         return;
       }
       if (body.found) {
         const p = body.product;
         add(code, `${p.name}${p.quantity ? ` · ${p.quantity} ${p.unit}` : ""}`, true);
-        status.textContent = `Added ${p.name}. Scan the next one.`;
+        status.textContent = t("Added {name}. Scan the next one.", { name: p.name });
       } else {
-        add(code, `${code}: not in the database; add it by hand on the next page`, false);
-        status.textContent = "Not found. Scan the next one, or add that item by hand.";
+        add(code, t("{code}: not in the database; add it by hand on the next page", { code }), false);
+        status.textContent = t("Not found. Scan the next one, or add that item by hand.");
       }
     } catch {
-      status.textContent = "Can't reach Larder right now. Try that barcode again.";
+      status.textContent = t("Can't reach Larder right now. Try that barcode again.");
       seen.delete(code);
     }
   }
@@ -101,8 +102,8 @@ async function start() {
     } catch (err) {
       stream?.getTracks().forEach((t) => t.stop());
       status.textContent = err?.name === "NotAllowedError" || err?.name === "NotFoundError"
-        ? "The camera couldn't be opened. Type the number below instead."
-        : "The barcode reader couldn't load. Type the number below instead.";
+        ? t("The camera couldn't be opened. Type the number below instead.")
+        : t("The barcode reader couldn't load. Type the number below instead.");
       camera.hidden = false;
       video.hidden = true;
       startBtn.disabled = false;

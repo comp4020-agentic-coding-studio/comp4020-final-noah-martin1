@@ -5,6 +5,7 @@
 // same way it does its own, then shows the usual review form.
 
 import { tilesFor } from "./scan-tiles.mjs";
+import { t } from "./i18n.mjs";
 
 const root = document.querySelector("[data-device-scan]");
 if (root) start();
@@ -49,7 +50,7 @@ async function start() {
         const m = e.data;
         if (m.type === "download") {
           const pct = m.total ? (m.loaded / m.total) * 100 : 0;
-          say(`Downloading the model: ${(m.loaded / 1e9).toFixed(2)} of ${(m.total / 1e9).toFixed(2)} GB. This only happens once.`, pct);
+          say(t("Downloading the model: {done} of {total} GB. This only happens once.", { done: (m.loaded / 1e9).toFixed(2), total: (m.total / 1e9).toFixed(2) }), pct);
         } else if (m.type === "ready") resolve();
         else if (m.type === "result") pending.get(m.id)?.resolve(m.reply);
         else if (m.type === "error") {
@@ -58,7 +59,7 @@ async function start() {
         }
       });
     });
-    say("Starting the model…", null);
+    say(t("Starting the model…"), null);
     worker.postMessage({ type: "load" });
     return loaded;
   }
@@ -97,10 +98,10 @@ async function start() {
       const parts = await views(f);
       const replies = [];
       for (let i = 0; i < parts.length; i++) {
-        say(`Looking at your photo: ${i} of ${parts.length} views done.`, (i / parts.length) * 100);
+        say(t("Looking at your photo: {step} of {steps} views done.", { step: i, steps: parts.length }), (i / parts.length) * 100);
         replies.push(await ask(parts[i], i));
       }
-      say("Done. Opening the review…", 100);
+      say(t("Done. Opening the review…"), 100);
       const holder = form.querySelector("[data-device-replies]");
       for (const r of replies) {
         const input = document.createElement("input");
@@ -112,7 +113,7 @@ async function start() {
       form.querySelector("[data-device-seconds]").value = String(Math.round((performance.now() - started) / 1000));
       form.submit();
     } catch (err) {
-      say(`The scan stopped: ${err.message}. You can try again, or use the barcode scanner or the add form.`, 0);
+      say(t("The scan stopped: {reason}. You can try again, or use the barcode scanner or the add form.", { reason: err.message }), 0);
       go.disabled = false;
       file.disabled = false;
       loaded = null;

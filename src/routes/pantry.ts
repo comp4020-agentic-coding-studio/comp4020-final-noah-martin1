@@ -2,6 +2,7 @@ import { all, catalogFor, ingredientId, one, run } from "../db.ts";
 import { addDays, daysBetween, freshness, money, parseIsoDate, qty, shortDate, today, weekday } from "../format.ts";
 import { type Html, html, raw } from "../html.ts";
 import { type Ctx, HttpError, htmlReply, redirect, setFlash } from "../http.ts";
+import { t, tn } from "../i18n.ts";
 import { logActivity } from "../activity.ts";
 import { expiryState, listedParams, listedSql, removalDate } from "../expiry.ts";
 import { shelfware } from "../kitchen.ts";
@@ -45,8 +46,8 @@ export function graceItems(items: InventoryItem[]): InventoryItem[] {
 // The label an item wears: an expired item someone kept says so.
 export function itemFreshness(it: Pick<InventoryItem, "expiry_date" | "kept_at">): { state: "expired" | "soon" | "fresh" | "none" | "kept"; label: string } {
   const f = freshness(it.expiry_date);
-  if (f.state === "expired" && it.kept_at) return { state: "kept", label: "Past date · kept" };
-  if (f.state === "expired") return { state: "expired", label: `${f.label} · still have it?` };
+  if (f.state === "expired" && it.kept_at) return { state: "kept", label: t("Past date · kept") };
+  if (f.state === "expired") return { state: "expired", label: t("{label} · still have it?", { label: f.label }) };
   return f;
 }
 
@@ -79,9 +80,9 @@ function upcomingUses(userId: number, ingredientIds: number[]): Map<number, { da
 }
 
 function inDays(days: number): string {
-  if (days < 14) return `${days} days left`;
-  if (days < 60) return `about ${Math.round(days / 7)} weeks left`;
-  return `about ${Math.round(days / 30)} months left`;
+  if (days < 14) return t("{n} days left", { n: days });
+  if (days < 60) return t("about {n} weeks left", { n: Math.round(days / 7) });
+  return t("about {n} months left", { n: Math.round(days / 30) });
 }
 
 // What the 3D scene draws: one entry per item, with its container and the
@@ -106,7 +107,8 @@ function scenePayload(userId: number, items: InventoryItem[]): string {
       model: ware.model,
       tint: ware.tint,
       look: ware.look,
-      uses: (uses.get(it.ingredient_id) ?? []).map((u) => ({ ...u, day: `${weekday(u.date)} ${shortDate(u.date)}` })),
+      // the meal ("dinner") as the visitor's language names it
+      uses: (uses.get(it.ingredient_id) ?? []).map((u) => ({ ...u, meal: t(u.meal), day: `${weekday(u.date)} ${shortDate(u.date)}` })),
     };
   });
   return JSON.stringify(data).replace(/</g, "\\u003c");
@@ -133,17 +135,17 @@ export function parseItem(form: URLSearchParams, suffix = ""): { input: ItemInpu
     price: get("price").replace(/^\$/, ""),
   };
   const problems: string[] = [];
-  if (!values.name || values.name.length > 80) problems.push("Name the item (up to 80 characters).");
+  if (!values.name || values.name.length > 80) problems.push(t("Name the item (up to 80 characters)."));
   const quantity = Number(values.quantity);
   if (values.quantity === "" || !Number.isFinite(quantity) || quantity < 0 || quantity > 100000) {
-    problems.push("Quantity must be a number of zero or more.");
+    problems.push(t("Quantity must be a number of zero or more."));
   }
-  if (values.expiry_date && !parseIsoDate(values.expiry_date)) problems.push("Expiry must be a valid date.");
+  if (values.expiry_date && !parseIsoDate(values.expiry_date)) problems.push(t("Expiry must be a valid date."));
   let price_cents: number | null = null;
   if (values.price !== "") {
     const dollars = Number(values.price);
     if (!/^\d+(\.\d{1,2})?$/.test(values.price) || !Number.isFinite(dollars) || dollars > 10000) {
-      problems.push("Price must be a dollar amount like 4.50.");
+      problems.push(t("Price must be a dollar amount like 4.50."));
     } else {
       price_cents = Math.round(dollars * 100);
     }
@@ -163,15 +165,15 @@ export function parseItem(form: URLSearchParams, suffix = ""): { input: ItemInpu
 
 function itemFields(values: Record<string, string>, idPrefix: string): Html {
   return html`
-    <label class="field grow-2"><span>Item</span>
-      <input id="${idPrefix}-name" name="name" required maxlength="80" list="ingredient-catalog" placeholder="e.g. eggs" value="${values.name ?? ""}" /></label>
-    <label class="field"><span>Qty</span>
+    <label class="field grow-2"><span>${t("Item")}</span>
+      <input id="${idPrefix}-name" name="name" required maxlength="80" list="ingredient-catalog" placeholder="${t("e.g. eggs")}" value="${values.name ?? ""}" /></label>
+    <label class="field"><span>${t("Qty")}</span>
       <input name="quantity" required inputmode="decimal" placeholder="12" value="${values.quantity ?? ""}" /></label>
-    <label class="field"><span>Unit</span>
-      <input name="unit" maxlength="20" placeholder="g, ml, pack" value="${values.unit ?? ""}" /></label>
-    <label class="field"><span>Expires</span>
+    <label class="field"><span>${t("Unit")}</span>
+      <input name="unit" maxlength="20" placeholder="${t("g, ml, pack")}" value="${values.unit ?? ""}" /></label>
+    <label class="field"><span>${t("Expires")}</span>
       <input name="expiry_date" type="date" value="${values.expiry_date ?? ""}" /></label>
-    <label class="field"><span>Price paid</span>
+    <label class="field"><span>${t("Price paid")}</span>
       <span class="input-prefix"><span>$</span><input name="price" inputmode="decimal" placeholder="0.00" value="${values.price ?? ""}" /></span></label>`;
 }
 
@@ -181,21 +183,25 @@ export function gracePrompt(items: InventoryItem[], returnTo = "/pantry"): Html 
   const due = graceItems(items);
   if (!due.length) return html``;
   return html`<section class="panel grace" id="still-have" aria-labelledby="grace-h">
-    <h2 class="panel-title" id="grace-h">Do you still have ${due.length === 1 ? "this" : "these"}?</h2>
-    <p class="muted small">${due.length === 1 ? "It" : "They"} passed ${due.length === 1 ? "its" : "their"} expiry date yesterday. Unless you say you still have ${due.length === 1 ? "it" : "them"}, ${due.length === 1 ? "it leaves" : "they leave"} your kitchen tomorrow, and ${due.length === 1 ? "isn't" : "aren't"} counted for recipes or shopping in the meantime.</p>
+    <h2 class="panel-title" id="grace-h">${tn(due.length, "Do you still have this?", "Do you still have these?")}</h2>
+    <p class="muted small">${tn(
+      due.length,
+      "It passed its expiry date yesterday. Unless you say you still have it, it leaves your kitchen tomorrow, and isn't counted for recipes or shopping in the meantime.",
+      "They passed their expiry date yesterday. Unless you say you still have them, they leave your kitchen tomorrow, and aren't counted for recipes or shopping in the meantime.",
+    )}</p>
     <ul class="grace-list">
       ${due.map(
         (it) => html`<li>
-          <span class="grow"><span class="item-name">${it.name}</span> <small class="muted">${qty(it.quantity, it.unit)} · expired ${shortDate(it.expiry_date!)} · removed ${weekday(removalDate(it.expiry_date!))} ${shortDate(removalDate(it.expiry_date!))} if not kept</small></span>
+          <span class="grow"><span class="item-name">${it.name}</span> <small class="muted">${t("{qty} · expired {date} · removed {day} if not kept", { qty: qty(it.quantity, it.unit), date: shortDate(it.expiry_date!), day: `${weekday(removalDate(it.expiry_date!))} ${shortDate(removalDate(it.expiry_date!))}` })}</small></span>
           <form method="post" action="/pantry/${it.id}/keep" class="grace-form">
             <input type="hidden" name="return_to" value="${returnTo}" />
-            <label class="sr-only" for="grace-date-${it.id}">New expiry date for ${it.name} (optional)</label>
+            <label class="sr-only" for="grace-date-${it.id}">${t("New expiry date for {name} (optional)", { name: it.name })}</label>
             <input id="grace-date-${it.id}" type="date" name="expiry_date" min="${today()}" />
-            <button class="button button-small" type="submit">I still have it</button>
+            <button class="button button-small" type="submit">${t("I still have it")}</button>
           </form>
           <form method="post" action="/pantry/${it.id}/gone">
             <input type="hidden" name="return_to" value="${returnTo}" />
-            <button class="button button-small button-ghost" type="submit">It's gone</button>
+            <button class="button button-small button-ghost" type="submit">${t("It's gone")}</button>
           </form>
         </li>`,
       )}
@@ -209,12 +215,17 @@ export function gracePrompt(items: InventoryItem[], returnTo = "/pantry"): Html 
 function scanNotice(userId: number): Html {
   const jobs = recentJobs(userId);
   if (!jobs.length) return html``;
-  return html`<ul class="kx-scans" aria-label="Your scans">
+  return html`<ul class="kx-scans" aria-label="${t("Your scans")}">
     ${jobs.map((j) => {
-      const what = j.kind === "receipt" ? "Receipt" : "Photo scan";
+      const receipt = j.kind === "receipt";
+      const going = receipt
+        ? t("Receipt in progress")
+        : j.status === "running"
+          ? t("Photo scan in progress ({step} of {steps})", { step: j.step, steps: j.steps })
+          : t("Photo scan in progress");
       return j.status === "done"
-        ? html`<li class="kx-scan-ready">${icon("check", 14)} <a href="/pantry/scan/jobs/${j.id}/review">${what} ready to check</a></li>`
-        : html`<li>${icon("spark", 14)} <a href="/pantry/scan/jobs/${j.id}">${what} in progress${j.status === "running" && j.kind !== "receipt" ? ` (${j.step} of ${j.steps})` : ""}</a></li>`;
+        ? html`<li class="kx-scan-ready">${icon("check", 14)} <a href="/pantry/scan/jobs/${j.id}/review">${receipt ? t("Receipt ready to check") : t("Photo scan ready to check")}</a></li>`
+        : html`<li>${icon("spark", 14)} <a href="/pantry/scan/jobs/${j.id}">${going}</a></li>`;
     })}
   </ul>`;
 }
@@ -237,48 +248,48 @@ function pantryPage(ctx: Ctx, values: Record<string, string> = {}, problems: str
   const body = html`
     <section class="kx" data-kitchen data-view="fridge">
       <header class="kx-hero">
-        <p class="eyebrow">Your kitchen</p>
-        <h1><span class="kx-title" data-kx-title>Fridge</span></h1>
-        <p class="lede">Hover anything to lift it off the shelf and see when it goes off and which meals it's for; click or tap to keep it open.</p>
+        <p class="eyebrow">${t("Your kitchen")}</p>
+        <h1><span class="kx-title" data-kx-title>${t("Fridge")}</span></h1>
+        <p class="lede">${t("Hover anything to lift it off the shelf and see when it goes off and which meals it's for; click or tap to keep it open.")}</p>
         <dl class="kx-stats">
-          <div><dt>Items</dt><dd>${items.length}</dd></div>
-          <div class="${counts.soon ? "kx-warn" : ""}"><dt>Use soon</dt><dd>${counts.soon}</dd></div>
-          <div class="${counts.expired ? "kx-bad" : ""}"><dt>Expired</dt><dd>${counts.expired}</dd></div>
-          <div><dt>Stock value</dt><dd>${money(value)}</dd></div>
+          <div><dt>${t("Items")}</dt><dd>${items.length}</dd></div>
+          <div class="${counts.soon ? "kx-warn" : ""}"><dt>${t("Use soon")}</dt><dd>${counts.soon}</dd></div>
+          <div class="${counts.expired ? "kx-bad" : ""}"><dt>${t("Expired")}</dt><dd>${counts.expired}</dd></div>
+          <div><dt>${t("Stock value")}</dt><dd>${money(value)}</dd></div>
         </dl>
-        <p class="kx-actions"><a class="button kx-add-btn" href="#add" data-kx-add>${icon("plus", 16)} Add an item</a>
-          <a class="button button-soft kx-scan-btn" href="/pantry/scan">${icon("spark", 16)} <span class="kx-scan-label">Scan a photo</span></a></p>
+        <p class="kx-actions"><a class="button kx-add-btn" href="#add" data-kx-add>${icon("plus", 16)} ${t("Add an item")}</a>
+          <a class="button button-soft kx-scan-btn" href="/pantry/scan">${icon("spark", 16)} <span class="kx-scan-label">${t("Scan a photo")}</span></a></p>
         ${scanNotice(user.id)}
       </header>
 
       <div class="kx-stage" data-kx-stage>
-        <canvas aria-label="3D view of your fridge and pantry. Every item is also listed in the table below."></canvas>
+        <canvas aria-label="${t("3D view of your fridge and pantry. Every item is also listed in the table below.")}"></canvas>
         <div class="kx-loading" aria-hidden="true"><span></span></div>
-        <div class="kx-switch" role="group" aria-label="Show">
-          <button type="button" class="kx-arrow kx-arrow-prev" data-kx-go="fridge" aria-label="Show the fridge">${icon("back", 18)}</button>
+        <div class="kx-switch" role="group" aria-label="${t("Show")}">
+          <button type="button" class="kx-arrow kx-arrow-prev" data-kx-go="fridge" aria-label="${t("Show the fridge")}">${icon("back", 18)}</button>
           <span class="kx-dots" aria-hidden="true"><i data-dot="fridge"></i><i data-dot="pantry"></i></span>
-          <button type="button" class="kx-arrow kx-arrow-next" data-kx-go="pantry" aria-label="Show the pantry">${icon("arrow", 18)}</button>
+          <button type="button" class="kx-arrow kx-arrow-next" data-kx-go="pantry" aria-label="${t("Show the pantry")}">${icon("arrow", 18)}</button>
         </div>
         <p class="kx-toast" data-kx-toast role="status"></p>
-        <p class="kx-place-label" aria-hidden="true"><span data-kx-count-fridge>${inFridge} in the fridge</span><span data-kx-count-pantry>${items.length - inFridge} in the pantry</span></p>
+        <p class="kx-place-label" aria-hidden="true"><span data-kx-count-fridge>${t("{n} in the fridge", { n: inFridge })}</span><span data-kx-count-pantry>${t("{n} in the pantry", { n: items.length - inFridge })}</span></p>
       </div>
 
       <aside class="kx-panel" data-kx-panel hidden aria-live="polite">
-        <button class="kx-close" type="button" data-kx-close aria-label="Close">${icon("close", 18)}</button>
+        <button class="kx-close" type="button" data-kx-close aria-label="${t("Close")}">${icon("close", 18)}</button>
         <div data-kx-panel-body></div>
         <form method="post" action="/pantry" class="kx-add-form" data-kx-add-form hidden>
-          <p class="kx-panel-kind">Just been shopping?</p>
-          <h2>Add an item</h2>
-          <p class="kx-panel-qty">It finds its own spot: a fridge shelf, the door, the crisper or the pantry.</p>
+          <p class="kx-panel-kind">${t("Just been shopping?")}</p>
+          <h2>${t("Add an item")}</h2>
+          <p class="kx-panel-qty">${t("It finds its own spot: a fridge shelf, the door, the crisper or the pantry.")}</p>
           <div data-kx-add-errors></div>
           <div class="kx-fields">${itemFields({}, "kx")}</div>
-          <div class="kx-quick" role="group" aria-label="Expires in">
-            <span>Expires in</span>
-            ${[[3, "3 days"], [7, "1 week"], [14, "2 weeks"], [30, "1 month"]].map(
-              ([days, label]) => html`<button type="button" data-days="${days}" aria-pressed="false">${label}</button>`,
+          <div class="kx-quick" role="group" aria-label="${t("Expires in")}">
+            <span>${t("Expires in")}</span>
+            ${([[3, "3 days"], [7, "1 week"], [14, "2 weeks"], [30, "1 month"]] as const).map(
+              ([days, label]) => html`<button type="button" data-days="${days}" aria-pressed="false">${t(label)}</button>`,
             )}
           </div>
-          <button class="button button-block" type="submit">${icon("plus", 16)} Add to my kitchen</button>
+          <button class="button button-block" type="submit">${icon("plus", 16)} ${t("Add to my kitchen")}</button>
         </form>
       </aside>
     </section>
@@ -287,11 +298,11 @@ function pantryPage(ctx: Ctx, values: Record<string, string> = {}, problems: str
     ${gracePrompt(items)}
 
     <section class="panel kx-add" id="add">
-      <h2 class="panel-title">Add an item</h2>
+      <h2 class="panel-title">${t("Add an item")}</h2>
       ${errors(problems)}
       <form method="post" action="/pantry" class="inline-form">
         ${itemFields(values, "add")}
-        <button class="button" type="submit">${icon("plus", 16)} Add</button>
+        <button class="button" type="submit">${icon("plus", 16)} ${t("Add")}</button>
       </form>
       <datalist id="ingredient-catalog">${catalog.map((c) => html`<option value="${c}"></option>`)}</datalist>
     </section>
@@ -300,7 +311,7 @@ function pantryPage(ctx: Ctx, values: Record<string, string> = {}, problems: str
       ? html`<section class="panel panel-flush">
           <div class="table-wrap">
             <table class="table">
-              <thead><tr><th scope="col">Item</th><th scope="col" class="num">Qty</th><th scope="col">Expiry</th><th scope="col" class="num">Price</th><th scope="col"><span class="sr-only">Actions</span></th></tr></thead>
+              <thead><tr><th scope="col">${t("Item")}</th><th scope="col" class="num">${t("Qty")}</th><th scope="col">${t("Expiry")}</th><th scope="col" class="num">${t("Price")}</th><th scope="col"><span class="sr-only">${t("Actions")}</span></th></tr></thead>
               <tbody>
                 ${items.map((it) => {
                   const f = itemFreshness(it);
@@ -317,19 +328,19 @@ function pantryPage(ctx: Ctx, values: Record<string, string> = {}, problems: str
                           },
                           `edit-${it.id}`,
                         )}
-                        <a class="button button-ghost" href="/pantry">Cancel</a>
-                        <button class="button" type="submit">Save</button>
+                        <a class="button button-ghost" href="/pantry">${t("Cancel")}</a>
+                        <button class="button" type="submit">${t("Save")}</button>
                       </form></td></tr>`;
                   }
                   return html`<tr class="row-${f.state}" id="item-${it.id}">
-                    <td><span class="item-name">${it.name}</span><small class="muted">${it.category}</small></td>
+                    <td><span class="item-name">${it.name}</span><small class="muted">${t(it.category)}</small></td>
                     <td class="num mono">${qty(it.quantity, it.unit)}</td>
                     <td><span class="pill pill-${f.state}">${f.label}</span></td>
                     <td class="num mono">${money(it.price_cents)}</td>
                     <td class="row-actions">
-                      <a class="link-button" href="/pantry?edit=${it.id}">Edit</a>
-                      <form method="post" action="/pantry/${it.id}/delete" data-confirm="Remove ${it.name} from your pantry?">
-                        <button class="link-button danger" type="submit">Remove</button>
+                      <a class="link-button" href="/pantry?edit=${it.id}">${t("Edit")}</a>
+                      <form method="post" action="/pantry/${it.id}/delete" data-confirm="${t("Remove {name} from your pantry?", { name: it.name })}">
+                        <button class="link-button danger" type="submit">${t("Remove")}</button>
                       </form>
                     </td>
                   </tr>`;
@@ -338,12 +349,12 @@ function pantryPage(ctx: Ctx, values: Record<string, string> = {}, problems: str
             </table>
           </div>
         </section>`
-      : empty("Your pantry is empty", "Add what you have — expiry dates drive the “use soon” list, and prices feed recipe cost estimates.")}
+      : empty(t("Your pantry is empty"), t("Add what you have — expiry dates drive the “use soon” list, and prices feed recipe cost estimates."))}
     `;
 
   return htmlReply(
     page(ctx, {
-      title: "Fridge & pantry",
+      title: t("Fridge & pantry"),
       active: "pantry",
       body,
       mainClass: "main-kitchen",
@@ -407,7 +418,7 @@ export const routes: Route[] = [
       const { input, values, problems } = parseItem(await ctx.form());
       if (problems.length) return pantryPage(ctx, values, problems, 422);
       addPersonalItem(ctx.user!, input, "form");
-      setFlash(ctx, `Added ${input.name}.`);
+      setFlash(ctx, t("Added {name}.", { name: input.name }));
       return redirect("/pantry");
     },
   },
@@ -435,7 +446,7 @@ export const routes: Route[] = [
       );
       recordPaidPrice(ctx.user!.id, ing, id, input);
       logActivity({ actor: ctx.user, action: "pantry.update", subject: input.name, detail: { item: id, expiry: input.expiry_date } });
-      setFlash(ctx, `Updated ${input.name}.`);
+      setFlash(ctx, t("Updated {name}.", { name: input.name }));
       return redirect("/pantry");
     },
   },
@@ -448,7 +459,7 @@ export const routes: Route[] = [
       const name = itemName(id);
       run("UPDATE inventory_items SET removed_at = datetime('now'), removed_reason = 'gone' WHERE id = ?", id);
       logActivity({ actor: ctx.user, action: "pantry.remove", subject: name, detail: { item: id } });
-      setFlash(ctx, "Item removed.");
+      setFlash(ctx, t("Item removed."));
       return redirect("/pantry");
     },
   },
@@ -465,7 +476,7 @@ export const routes: Route[] = [
       const name = itemName(id);
       if (date) {
         if (!parseIsoDate(date) || date < today()) {
-          setFlash(ctx, "A new expiry date has to be today or later.");
+          setFlash(ctx, t("A new expiry date has to be today or later."));
           return redirect(back(form));
         }
         run("UPDATE inventory_items SET expiry_date = ?, kept_at = NULL, updated_at = datetime('now') WHERE id = ?", date, id);
@@ -473,7 +484,7 @@ export const routes: Route[] = [
         run("UPDATE inventory_items SET kept_at = datetime('now'), updated_at = datetime('now') WHERE id = ?", id);
       }
       logActivity({ actor: ctx.user, action: "pantry.keep", subject: name, detail: { item: id, new_expiry: date || null } });
-      setFlash(ctx, date ? `Kept ${name} — it now expires ${shortDate(date)}.` : `Kept ${name}. It won't be removed automatically.`);
+      setFlash(ctx, date ? t("Kept {name} — it now expires {date}.", { name, date: shortDate(date) }) : t("Kept {name}. It won't be removed automatically.", { name }));
       return redirect(back(form));
     },
   },
@@ -487,7 +498,7 @@ export const routes: Route[] = [
       const name = itemName(id);
       run("UPDATE inventory_items SET removed_at = datetime('now'), removed_reason = 'gone' WHERE id = ?", id);
       logActivity({ actor: ctx.user, action: "pantry.gone", subject: name, detail: { item: id } });
-      setFlash(ctx, `Removed ${name}.`);
+      setFlash(ctx, t("Removed {name}.", { name }));
       return redirect(back(form));
     },
   },
