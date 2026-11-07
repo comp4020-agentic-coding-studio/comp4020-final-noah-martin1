@@ -15622,3 +15622,10 @@ a.rv-who:hover {
     padding: 12px 14px;
   }
 }
+
+/* Capitalising a label ("vegetarian" → "Vegetarian") is an English habit;
+   translations arrive cased the way their language writes them, and title
+   case reads wrongly in Spanish (and means nothing in Chinese or Hindi). */
+html:not([lang^="en"]) :is(.tag, .meal-kind, .kx-panel h2, .kx-use-meal, .cal-add-btn, .hm-chip, .hm-tonight-meta, .hm-soon-name, .hm-rail-who) {
+  text-transform: none;
+}

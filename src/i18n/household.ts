@@ -249,7 +249,7 @@ const part: Part = {
     "serves {n}": "{n} 人份",
     "Add {recipe} to {day} {meal}": "把{recipe}加到{day}{meal}",
     "Nothing everyone here can open matches “{q}”. Try an ingredient, like “eggs” or “chickpeas”.":
-      "没有大家都能打开的食谱匹配“{q}”。试试搜索食材，比如“鸡蛋”或“鹰嘴豆”。",
+      "没有大家都能打开的食谱匹配“{q}”。试试搜索食材，比如“eggs”或“chickpeas”。",
     "No recipes to suggest yet.": "暂时没有可推荐的食谱。",
     "You've got this": "你来买",
     "Bought it": "已买到",
@@ -672,7 +672,7 @@ const part: Part = {
     "serves {n}": "{n} raciones",
     "Add {recipe} to {day} {meal}": "Añadir {recipe} a {day}, {meal}",
     "Nothing everyone here can open matches “{q}”. Try an ingredient, like “eggs” or “chickpeas”.":
-      "Nada que todos aquí puedan abrir coincide con “{q}”. Prueba con un ingrediente, como “huevos” o “garbanzos”.",
+      "Nada que todos aquí puedan abrir coincide con “{q}”. Prueba con un ingrediente, como “eggs” o “chickpeas”.",
     "No recipes to suggest yet.": "Aún no hay recetas que sugerir.",
     "You've got this": "Te encargas tú",
     "Bought it": "Ya lo compré",
@@ -1073,7 +1073,7 @@ const part: Part = {
     "serves {n}": "{n} लोगों के लिए",
     "Add {recipe} to {day} {meal}": "{recipe} जोड़ें ({day}, {meal})",
     "Nothing everyone here can open matches “{q}”. Try an ingredient, like “eggs” or “chickpeas”.":
-      "“{q}” से मेल खाती ऐसी कोई रेसिपी नहीं जिसे यहाँ सब खोल सकें। कोई सामग्री आज़माएँ, जैसे “अंडे” या “छोले”।",
+      "“{q}” से मेल खाती ऐसी कोई रेसिपी नहीं जिसे यहाँ सब खोल सकें। कोई सामग्री आज़माएँ, जैसे “eggs” या “chickpeas”।",
     "No recipes to suggest yet.": "अभी सुझाने के लिए कोई रेसिपी नहीं है।",
     "You've got this": "आपके ज़िम्मे",
     "Bought it": "खरीद लिया",
