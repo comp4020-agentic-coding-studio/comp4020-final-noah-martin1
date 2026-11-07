@@ -2,6 +2,8 @@
 // works without this file; with it, weeks, friend overlays and planner
 // changes swap in place (no page reload), and quick add searches as you type.
 
+import { t } from "./i18n.mjs";
+
 const root = document.documentElement;
 root.classList.add("cal-js");
 const reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -136,14 +138,17 @@ function syncChoice() {
   const day = panel.querySelector("[data-quick-day]");
   const meal = panel.querySelector("[data-quick-meal]");
   const share = panel.querySelector("[data-quick-share]");
-  const dayLabel = day?.selectedOptions[0]?.textContent?.trim().replace(/^Today .*/, "Today") ?? "";
+  // "Today 8 Nov" reads as just "Today" beside the meal
+  const today = t("Today");
+  const option = day?.selectedOptions[0]?.textContent?.trim() ?? "";
+  const dayLabel = option.startsWith(`${today} `) ? today : option;
   panel.querySelectorAll('[data-sync="day"]').forEach((i) => (i.value = day.value));
   panel.querySelectorAll('[data-sync="meal"]').forEach((i) => (i.value = meal.value));
   panel.querySelectorAll('[data-sync="share"]').forEach((i) => (i.value = share?.checked ? "1" : "0"));
-  panel.querySelectorAll("[data-when]").forEach((el) => (el.textContent = `${dayLabel}, ${meal.value}`));
+  panel.querySelectorAll("[data-when]").forEach((el) => (el.textContent = t("{day}, {meal}", { day: dayLabel, meal: t(meal.value) })));
   panel.querySelectorAll(".cal-add-btn").forEach((b) => {
-    const title = b.closest(".cal-result")?.querySelector(".cal-result-title")?.textContent ?? "this";
-    b.setAttribute("aria-label", `Add ${title} to ${day.selectedOptions[0]?.textContent?.trim()} ${meal.value}`);
+    const title = b.closest(".cal-result")?.querySelector(".cal-result-title")?.textContent ?? t("this");
+    b.setAttribute("aria-label", t("Add {title} to {day} {meal}", { title, day: day.selectedOptions[0]?.textContent?.trim(), meal: t(meal.value) }));
   });
 }
 
@@ -174,16 +179,16 @@ async function searchNow() {
 }
 
 document.addEventListener("input", (event) => {
-  const t = event.target;
-  if (t instanceof HTMLInputElement && t.matches("[data-quick-q]")) {
+  const target = event.target;
+  if (target instanceof HTMLInputElement && target.matches("[data-quick-q]")) {
     clearTimeout(searchTimer);
     searchTimer = setTimeout(searchNow, 220);
   }
 });
 
 document.addEventListener("change", (event) => {
-  const t = event.target;
-  if (t instanceof Element && t.matches("[data-quick-day], [data-quick-meal], [data-quick-share]")) syncChoice();
+  const target = event.target;
+  if (target instanceof Element && target.matches("[data-quick-day], [data-quick-meal], [data-quick-share]")) syncChoice();
 });
 
 // After a week change, the quick-add form follows: its day list and the
