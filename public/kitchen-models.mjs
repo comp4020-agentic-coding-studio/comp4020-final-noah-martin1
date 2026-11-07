@@ -1773,9 +1773,11 @@ function pouch(item) {
   // round window onto what's inside under the name
   const w = 0.2;
   const h = 0.3;
+  // how much of its depth the pouch keeps at height y (it pinches towards the seal)
+  const keep = (y) => 1 - 0.6 * Math.max(0, y / h - 0.2);
   const body = new THREE.Mesh(new RoundedBoxGeometry(w, h, 0.08, 3, 0.03), mat(col, { roughness: 0.4, clearcoat: 0.4 }));
   const pos = body.geometry.attributes.position;
-  for (let i = 0; i < pos.count; i++) pos.setZ(i, pos.getZ(i) * (1 - 0.6 * Math.max(0, (pos.getY(i) + h / 2) / h - 0.2)));
+  for (let i = 0; i < pos.count; i++) pos.setZ(i, pos.getZ(i) * keep(pos.getY(i) + h / 2));
   body.geometry.computeVertexNormals();
   g.add(at(body, 0, h / 2, 0));
   g.add(at(new THREE.Mesh(new THREE.BoxGeometry(w * 0.96, 0.008, 0.04), mat(shade(col, 0.7))), 0, h - 0.03, 0));
@@ -1785,9 +1787,14 @@ function pouch(item) {
   g.add(at(win, 0, 0.085, 0.0395));
   const bits = matte(shade(contents, 0.8));
   for (let k = 0; k < 7; k++) g.add(at(new THREE.Mesh(new THREE.SphereGeometry(0.009, 6, 5), bits), Math.cos(k * 2.4) * 0.028, 0.085 + Math.sin(k * 2.4) * 0.028, 0.04));
+  // the label lies on the pouch's face, following it as it pinches in
+  // towards the seal (a flat card tilted to roughly match sank its top edge
+  // into the pouch and cut the name off)
   const label = flatLabel(nameOf(item), "#ffffff", w * 0.9, 0.11);
-  label.rotation.x = -0.13;
-  g.add(at(label, 0, 0.19, 0.03));
+  const lp = label.geometry.attributes.position;
+  for (let i = 0; i < lp.count; i++) lp.setZ(i, 0.04 * keep(0.19 + lp.getY(i)) + 0.0015);
+  label.geometry.computeVertexNormals();
+  g.add(at(label, 0, 0.19, 0));
   return [g, w + 0.03];
 }
 
