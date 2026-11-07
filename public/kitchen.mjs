@@ -16,6 +16,7 @@ import { OutlinePass } from "three/addons/postprocessing/OutlinePass.js";
 import { OutputPass } from "three/addons/postprocessing/OutputPass.js";
 import { dropFor, fitScale, fitsPlan, frontToBack, inLarderDoor, larderLevelFor, liftFor, newLane, orderStack, planLane, rotatedExtent, shelfFor, takeSlot } from "./kitchen-layout.mjs";
 import { PRODUCE, buildModel } from "./kitchen-models.mjs";
+import { t } from "./i18n.mjs";
 
 const root = document.querySelector("[data-kitchen]");
 const stage = root?.querySelector("[data-kx-stage]");
@@ -826,7 +827,7 @@ function start() {
       for (const h of pickables) if (h.userData.item.place === "pantry") h.userData.landAt = keep ? -9 : now + 1.25 + h.userData.delay * 0.6;
     }
     root.dataset.view = next;
-    root.querySelector("[data-kx-title]").textContent = next === "fridge" ? "Fridge" : "Pantry";
+    root.querySelector("[data-kx-title]").textContent = next === "fridge" ? t("Fridge") : t("Pantry");
     buildBrowse();
     history.replaceState(null, "", next === "pantry" ? "#pantry" : location.pathname + location.search);
     // an open item would be left behind; the add form comes along
@@ -834,7 +835,7 @@ function start() {
   }
   root.querySelectorAll("[data-kx-go]").forEach((b) => b.addEventListener("click", () => go(b.dataset.kxGo)));
   root.dataset.view = view;
-  root.querySelector("[data-kx-title]").textContent = view === "fridge" ? "Fridge" : "Pantry";
+  root.querySelector("[data-kx-title]").textContent = view === "fridge" ? t("Fridge") : t("Pantry");
   window.addEventListener("keydown", (e) => {
     if (e.key === "Escape") closePanel();
     if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement || e.target instanceof HTMLSelectElement) return;
@@ -983,7 +984,7 @@ function start() {
   const browse = document.createElement("div");
   browse.className = "kx-browse";
   browse.setAttribute("role", "group");
-  browse.setAttribute("aria-label", "Items in view. Press Enter to open one.");
+  browse.setAttribute("aria-label", t("Items in view. Press Enter to open one."));
   stage.append(browse);
   function buildBrowse() {
     browse.replaceChildren(
@@ -1031,33 +1032,33 @@ function start() {
     const freshClass = { expired: "kx-pill-bad", soon: "kx-pill-warn", fresh: "kx-pill-good", kept: "", none: "" }[it.fresh] ?? "";
     // the grace day: ask, right here, whether it's still in the kitchen
     const grace = it.grace
-      ? `<div class="kx-grace" role="group" aria-label="Do you still have ${esc(it.name)}?">
-          <p><strong>Do you still have this?</strong> It passed its date. Unless you keep it, it leaves your kitchen on ${esc(it.grace.removes)}.</p>
+      ? `<div class="kx-grace" role="group" aria-label="${esc(t("Do you still have {name}?", { name: it.name }))}">
+          <p><strong>${esc(t("Do you still have this?"))}</strong> ${esc(t("It passed its date. Unless you keep it, it leaves your kitchen on {date}.", { date: it.grace.removes }))}</p>
           <div class="kx-grace-actions">
-            <form method="post" action="/pantry/${it.id}/keep"><input type="hidden" name="return_to" value="/pantry" /><button class="button button-small" type="submit">I still have it</button></form>
-            <form method="post" action="/pantry/${it.id}/gone"><input type="hidden" name="return_to" value="/pantry" /><button class="button button-small button-ghost" type="submit">It's gone</button></form>
+            <form method="post" action="/pantry/${it.id}/keep"><input type="hidden" name="return_to" value="/pantry" /><button class="button button-small" type="submit">${esc(t("I still have it"))}</button></form>
+            <form method="post" action="/pantry/${it.id}/gone"><input type="hidden" name="return_to" value="/pantry" /><button class="button button-small button-ghost" type="submit">${esc(t("It's gone"))}</button></form>
           </div>
         </div>`
       : "";
     panelBody.innerHTML = `
-      <p class="kx-panel-kind">${esc(it.place === "fridge" ? "In the fridge" : "In the pantry")}</p>
+      <p class="kx-panel-kind">${esc(it.place === "fridge" ? t("In the fridge") : t("In the pantry"))}</p>
       <h2>${esc(it.name)}</h2>
-      <p class="kx-panel-qty">${esc(it.qty)}${it.price ? ` · paid ${esc(it.price)}` : ""}</p>
+      <p class="kx-panel-qty">${esc(it.qty)}${it.price ? ` · ${esc(t("paid {price}", { price: it.price }))}` : ""}</p>
       <div class="kx-expiry ${freshClass}">
-        <span class="kx-expiry-label">${it.fresh === "none" ? "No expiry date" : it.fresh === "expired" || it.fresh === "kept" ? "Expired" : "Use by"}</span>
+        <span class="kx-expiry-label">${esc(it.fresh === "none" ? t("No expiry date") : it.fresh === "expired" || it.fresh === "kept" ? t("Expired") : t("Use by"))}</span>
         <strong>${esc(it.expiry ?? "—")}</strong>
         <span class="kx-expiry-note">${esc(it.freshLabel)}</span>
       </div>
       ${grace}
-      <h3>Planned for</h3>
+      <h3>${esc(t("Planned for"))}</h3>
       ${it.uses.length
         ? `<ul class="kx-uses">${it.uses
             .map((u) => `<li><a href="/recipes/${u.recipe_id}"><span class="kx-use-day">${esc(u.day)}</span><span class="kx-use-meal">${esc(u.meal)}</span><strong>${esc(u.title)}</strong></a></li>`)
             .join("")}</ul>`
-        : `<p class="kx-empty">Not in any planned meal yet. <a href="/recipes?q=${encodeURIComponent(it.name)}">Find a recipe that uses it →</a></p>`}
+        : `<p class="kx-empty">${esc(t("Not in any planned meal yet."))} <a href="/recipes?q=${encodeURIComponent(it.name)}">${esc(t("Find a recipe that uses it →"))}</a></p>`}
       <div class="kx-panel-actions">
-        <a class="button button-soft button-small" href="/pantry?edit=${it.id}#item-${it.id}">Edit</a>
-        <a class="button button-ghost button-small" href="/calendar">Open calendar</a>
+        <a class="button button-soft button-small" href="/pantry?edit=${it.id}#item-${it.id}">${esc(t("Edit"))}</a>
+        <a class="button button-ghost button-small" href="/calendar">${esc(t("Open calendar"))}</a>
       </div>`;
     panelBody.classList.remove("swap");
     void panelBody.offsetWidth;
@@ -1169,12 +1170,27 @@ function start() {
     toastTimer = setTimeout(() => toast.classList.remove("show"), 3600);
   }
 
+  // where an item landed, said whole so each language can order it its own
+  // way; the lane names are the English keys ("on the top shelf")
+  const PLACED = {
+    "in the fridge door": "Added {name} in the fridge door.",
+    "in the crisper": "Added {name} in the crisper.",
+    "on the bottom shelf": "Added {name} on the bottom shelf.",
+    "on the middle shelf": "Added {name} on the middle shelf.",
+    "on the top shelf": "Added {name} on the top shelf.",
+    "in a pantry door rack": "Added {name} in a pantry door rack.",
+    "on the pantry floor": "Added {name} on the pantry floor.",
+    "on the cold slate shelf": "Added {name} on the cold slate shelf.",
+    "on the bottom pantry shelf": "Added {name} on the bottom pantry shelf.",
+    "on the middle pantry shelf": "Added {name} on the middle pantry shelf.",
+    "on the top pantry shelf": "Added {name} on the top pantry shelf.",
+  };
   const where = (h) => h.userData.lane?.name ?? "in the fridge door";
 
   function arrive(item) {
     const h = shelve(item);
     if (!h) {
-      say(`Added ${item.name}. The shelves are full, so it's in the list below.`);
+      say(t("Added {name}. The shelves are full, so it's in the list below.", { name: item.name }));
       return;
     }
     const away = item.place !== view;
@@ -1189,7 +1205,8 @@ function start() {
       arrivals.delete(h);
       syncOutline();
     }, away ? 3400 : 2600);
-    say(`Added ${item.name} ${where(h)}.`);
+    const spot = where(h);
+    say(PLACED[spot] ? t(PLACED[spot], { name: item.name }) : `Added ${item.name} ${spot}.`);
   }
 
   // the stats, the counts under the switcher and everything below the scene
