@@ -1,7 +1,39 @@
 # FOCUS MODE, COMPLETE THE FOLLOWING TASKS:
 
 
-## ITERATE OVER THIS TASK UNITL COMPLETE
+
+## TASK 1, IMPROVE AND CREATE MORE 3D MODELS FOR ITEMS IN FRIDGE/PANTRY
+
+## 1. Active Task Intent
+- **Goal:** Find the most common ingredients used in the recipes, you dont have to add 3d models for all of them, but all of the common ones. If its a rare item I can expect it to be categorised as a simialr 3d model. 
+   
+- **Features to achieve / implement:**
+- Go through each current ingredient in the system and find a referenced image / model and create a model for this ingredient. If its a rare ingredient its ok to reuse a 3d model of a similar product - to reduce overhead.
+- Check that each model fits in the fridge / pantry correctly that is: the size is appropriate and it doesnt clip through other objects / hides or is hidden by other objects.
+- check that the 3d model actually looks like the ingredient.
+- check that I can actually click on the model in the fridge and it behaves as it should.
+
+- **Things to explore** 
+
+1. Some items can resued 3D models of similar items but check that the items are actually similar. For example: peanut butter is using a 3d model of a stick of butter when it should be a jar with a peanut icon on the front.
+   
+- **Credit Allocation:** This task involves modelling and testing which needs to be done right and with careful consideration to be functional - allocate $90
+
+- **Double-Check Rule:** WE WANT ITEMS TO BE DISTINGUISABLE FROM THEIR 3D MODEL - This is the whole point of this data representation - if you dont know what it is by a screenshot of the fridge/ pantry screen make it more recognisable. Do this: test it by screenshotting the fridge and checking what you see with what is actually there.
+
+## 2. Active Technical Constraints
+- **Database Rules:** Avoid duplicate models, if separate ingeredients share a indistinguishable model, remove one.
+- **AI Advisory Invariant:** Keep code updates deterministic. Models may map names or parse transcript text, but application logic remains the source of truth.
+- **Verification Command:** Run `pnpm check` and your recipe test specs locally to ensure nothing is broken after an iteration.
+
+## 3. Project References
+- For long-term non-negotiable rules, full git/testing workflows, layout styles, and HTML escaping instructions, refer to `@ARCHITECTURAL_GUIDELINES.md`. Ignore them during transcript extraction unless actively modifying code infrastructure.
+
+
+
+# BELOW IS COMMENTED OUT OLD TASKS, PLEASE IGNORE:
+
+ <!--## ITERATE OVER THIS TASK UNITL COMPLETE
 
 ## TASK 1, CHECK INGREDIENT DATABASE TO FIX MEAL PLANNING
 
@@ -31,9 +63,9 @@
 - For long-term non-negotiable rules, full git/testing workflows, layout styles, and HTML escaping instructions, refer to `@ARCHITECTURAL_GUIDELINES.md`. Ignore them during transcript extraction unless actively modifying code infrastructure.
 
 
-# BELOW IS COMMENTED OUT OLD TASKS, PLEASE IGNORE:
 
- <!--## TASK 1, INTEGRATE REVIEWS INTO RECIPES.
+
+## TASK 1, INTEGRATE REVIEWS INTO RECIPES.
 
 ## 1. Active Task Intent
 - **Goal:** Create and integrate a review feature for the web app. Users should be able to write reviews and their presence remains persistent on the web app's recipe. Users can write reviews for reciepes which can then be liked and replied to by other users. As users are actively writing comments this should be seen by others as 3 animated dots. 
