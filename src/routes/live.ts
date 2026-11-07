@@ -1,5 +1,6 @@
 import { ago } from "../format.ts";
 import { type Html, html } from "../html.ts";
+import { t, th } from "../i18n.ts";
 import { type Ctx, HttpError, json, type Reply, redirect, setFlash } from "../http.ts";
 import {
   advanceStep,
@@ -11,6 +12,7 @@ import {
   liveSessions,
   openSessionFor,
   placeFromForm,
+  placeLabel,
   questionsFor,
   setHelp,
   startSession,
@@ -63,17 +65,17 @@ export function livePreviewCard(viewerId: number | null = null): Html {
     .sort((a, b) => Number(friends.has(b.user_id)) - Number(friends.has(a.user_id)));
   const shown = list.slice(0, 3);
   return html`<section class="panel live-card">
-    <header class="panel-head"><h2 class="panel-title"><span class="live-dot" aria-hidden="true"></span> Live now</h2><a href="/global">Globe →</a></header>
+    <header class="panel-head"><h2 class="panel-title"><span class="live-dot" aria-hidden="true"></span> ${t("Live now")}</h2><a href="/global">${t("Globe →")}</a></header>
     ${shown.length
       ? html`<ul class="compact-list">
           ${shown.map(
-            (s) => html`<li>${avatar(s.display_name, "sm", s.avatar)}<a class="grow" href="/global#live-${s.id}"><strong>${firstName(s.display_name)}</strong> is cooking ${s.recipe_title}${s.city ? html` <span class="muted">· ${s.city}</span>` : ""}</a><span class="mono muted">${s.current_step}/${s.step_count}</span></li>`,
+            (s) => html`<li>${avatar(s.display_name, "sm", s.avatar)}<a class="grow" href="/global#live-${s.id}">${th("{name} is cooking {recipe}", { name: html`<strong>${firstName(s.display_name)}</strong>`, recipe: s.recipe_title })}${s.city ? html` <span class="muted">· ${placeLabel(s.city)}</span>` : ""}</a><span class="mono muted">${s.current_step}/${s.step_count}</span></li>`,
           )}
         </ul>
-        ${list.length > shown.length ? html`<p class="hint">and ${list.length - shown.length} more on the globe.</p>` : ""}`
+        ${list.length > shown.length ? html`<p class="hint">${t("and {n} more on the globe.", { n: list.length - shown.length })}</p>` : ""}`
       : html`<div class="live-card-empty">
-          <p class="muted">Nobody's cooking live right now. Start any recipe and tap <strong>Go live</strong> — friends see your pan on the globe and can ask you questions as you go.</p>
-          <a class="button button-ghost button-block" href="/global">${icon("global", 16)} Open the live globe</a>
+          <p class="muted">${th("Nobody's cooking live right now. Start any recipe and tap {golive} — friends see your pan on the globe and can ask you questions as you go.", { golive: html`<strong>${t("Go live")}</strong>` })}</p>
+          <a class="button button-ghost button-block" href="/global">${icon("global", 16)} ${t("Open the live globe")}</a>
         </div>`}
   </section>`;
 }
@@ -90,18 +92,18 @@ async function start(ctx: Ctx): Promise<Reply> {
     setFlash(ctx, message);
     return redirect(back);
   };
-  if (!steps.length) return fail("This recipe has no steps to cook through yet.");
+  if (!steps.length) return fail(t("This recipe has no steps to cook through yet."));
 
   const visibility = form.get("visibility") as Visibility;
-  if (!["public", "friends", "private"].includes(visibility)) return fail("Choose who can watch.");
+  if (!["public", "friends", "private"].includes(visibility)) return fail(t("Choose who can watch."));
   const servesIn = Number(form.get("serves"));
   const serves = Number.isInteger(servesIn) && servesIn >= 1 && servesIn <= 50 ? servesIn : recipe.servings;
   const city = form.get("city") ?? "";
   const where = form.get("where");
   if (where !== "near" && city === "none") form.set("where", "none");
-  else if (where !== "near" && where !== "none" && !CITY_BY_KEY.has(city)) return fail("Choose a city, or “Don't show me on the map”.");
+  else if (where !== "near" && where !== "none" && !CITY_BY_KEY.has(city)) return fail(t("Choose a city, or “Don't show me on the map”."));
   const place = placeFromForm(form);
-  if (!place) return fail("We couldn't read that location. Choose a city instead.");
+  if (!place) return fail(t("We couldn't read that location. Choose a city instead."));
 
   const { id, visibility: stored, replaced } = startSession(user.id, { recipe, stepCount: steps.length, serves, visibility, place });
   // the city someone picks is where an automatic session appears next time
@@ -116,7 +118,7 @@ async function start(ctx: Ctx): Promise<Reply> {
   if (wantsJson(ctx)) {
     return json({ ok: true, id: s.id, step: s.current_step, visibility: stored, city: s.city, globe: `/global#live-${s.id}` });
   }
-  setFlash(ctx, stored === "public" ? "You're live on the globe." : stored === "friends" ? "You're live — friends can watch." : "You're live, just for you.");
+  setFlash(ctx, stored === "public" ? t("You're live on the globe.") : stored === "friends" ? t("You're live — friends can watch.") : t("You're live, just for you."));
   return redirect(`${back}?serves=${serves}`);
 }
 
@@ -184,7 +186,7 @@ async function end(ctx: Ctx): Promise<Reply> {
     logActivity({ actor: ctx.user, action: "live.end", subject: before.recipe_title, detail: { session: id, reason: form.get("reason") ?? "ended", step: before.current_step, steps: before.step_count } });
   }
   if (wantsJson(ctx)) return json({ ok: true });
-  setFlash(ctx, "Live session ended.");
+  setFlash(ctx, t("Live session ended."));
   return redirect(returnTo(form, "/global"));
 }
 
@@ -196,7 +198,7 @@ async function help(ctx: Ctx): Promise<Reply> {
     if (wantsJson(ctx)) return json({ error: "not-found" }, 404);
     throw notFound();
   }
-  const message = r.ok ? ((form.get("text") ?? "").trim() ? "Help request shared with everyone watching." : "Help request cleared.") : r.problem === "ended" ? "That session has ended." : "Keep it under 280 characters.";
+  const message = r.ok ? ((form.get("text") ?? "").trim() ? t("Help request shared with everyone watching.") : t("Help request cleared.")) : r.problem === "ended" ? t("That session has ended.") : t("Keep it under {max} characters.", { max: 280 });
   if (wantsJson(ctx)) return json(r.ok ? { ok: true } : { error: r.problem, message }, r.ok ? 200 : 422);
   setFlash(ctx, message);
   return redirect(returnTo(form, "/global"));

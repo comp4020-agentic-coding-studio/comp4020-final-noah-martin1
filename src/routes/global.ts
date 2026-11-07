@@ -3,6 +3,7 @@ import { randomBytes } from "node:crypto";
 import type { IncomingMessage, ServerResponse } from "node:http";
 import { ago, sized } from "../format.ts";
 import { type Html, html, raw } from "../html.ts";
+import { lang, langTag, t, th } from "../i18n.ts";
 import { type Ctx, HttpError, htmlReply, json, type Reply, redirect, setFlash } from "../http.ts";
 import { type LocalTime, localTime, MEAL_LABEL } from "../localtime.ts";
 import {
@@ -14,6 +15,7 @@ import {
   type LiveEvent,
   liveBus,
   liveSessions as openSessions,
+  placeLabel,
   publicLiveCounts,
   QUESTION_MAX,
   questionsFor,
@@ -190,7 +192,7 @@ function demoSessions(viewerId: number | null, now = new Date()): GlobeSession[]
       language: s.language,
       tags: r.dietary_tags,
       help: s.helpRequest ? { text: s.helpRequest.text, original: s.helpRequest.original } : null,
-      questions: s.questions as SampleGlobalSession["questions"],
+      questions: (s.questions as SampleGlobalSession["questions"]).map((q) => ({ ...q, when: sampleWhen(q.when) })),
       visibility: "public",
       v: "demo",
       local,
@@ -198,6 +200,27 @@ function demoSessions(viewerId: number | null, now = new Date()): GlobeSession[]
     out.push(withPantry(g, viewerId, ing));
   }
   return out;
+}
+
+// The sample cooks' "4 min ago" is written in English; say it in the page's
+// language ("just now" is in the frame's table).
+function sampleWhen(when: string): string {
+  const m = /^(\d+) min ago$/.exec(when);
+  return m ? t("{n} min ago", { n: Number(m[1]) }) : t(when);
+}
+
+// The sample cooks' languages are English names ("Italian"). Other languages
+// take the platform's own name for them rather than a table line, since a
+// word like "Italian" is also a cuisine.
+const LANGUAGE_CODES: Record<string, string> = {
+  Arabic: "ar", English: "en", French: "fr", Hebrew: "he", Italian: "it", Japanese: "ja", Kannada: "kn",
+  Portuguese: "pt", Spanish: "es", Thai: "th", Vietnamese: "vi", Yoruba: "yo", Zulu: "zu",
+};
+
+function languageLabel(name: string): string {
+  const code = LANGUAGE_CODES[name];
+  if (lang() === "en" || !code) return name;
+  return new Intl.DisplayNames([langTag()], { type: "language" }).of(code) ?? name;
 }
 
 function allSessions(viewer: Viewer, now?: Date): GlobeSession[] {
@@ -218,19 +241,20 @@ function pct(s: GlobeSession): number {
 
 function tag(s: GlobeSession): Html {
   return s.kind === "live"
-    ? html`<span class="gl-tag gl-tag-live">Live</span>`
-    : html`<span class="gl-tag gl-tag-demo" title="Sample data">Demo</span>`;
+    ? html`<span class="gl-tag gl-tag-live">${t("Live")}</span>`
+    : html`<span class="gl-tag gl-tag-demo" title="${t("Sample data")}">${t("Demo")}</span>`;
 }
 
 // "7:42 pm there" with a "dinner" pill, kept ticking by the page (data-local holds the
 // zone's offset from UTC in minutes)
 function clock(s: GlobeSession, withMeal = true): Html {
   if (!s.local) return html``;
-  return html`<span class="gl-local gl-local-${s.local.meal}" data-local="${s.local.offset}" ${withMeal ? raw("data-meal") : ""}><time>${s.local.time}</time>${withMeal ? html` there <span>${MEAL_LABEL[s.local.meal]}</span>` : ""}</span>`;
+  const time = html`<time>${s.local.time}</time>`;
+  return html`<span class="gl-local gl-local-${s.local.meal}" data-local="${s.local.offset}" ${withMeal ? raw("data-meal") : ""}>${withMeal ? html`${th("{time} there", { time })} <span>${t(MEAL_LABEL[s.local.meal])}</span>` : time}</span>`;
 }
 
 function place(s: GlobeSession): string {
-  return s.city ? (s.country && !s.city.startsWith("near ") ? `${s.city}, ${s.country}` : s.city) : "Location not shared";
+  return s.city ? (s.country && !s.city.startsWith("near ") ? `${s.city}, ${s.country}` : placeLabel(s.city)) : t("Location not shared");
 }
 
 function row(s: GlobeSession): Html {
@@ -239,38 +263,38 @@ function row(s: GlobeSession): Html {
       <span class="gl-thumb">${s.image ? html`<img src="${sized(s.image, "small")}" alt="" loading="lazy" />` : html`<span class="gl-thumb-fallback">${s.recipe.slice(0, 1)}</span>`}<span class="live-dot"></span></span>
       <span class="gl-row-text">
         <strong>${s.recipe}</strong>
-        <small>${s.group === "mine" ? "You" : firstName(s.cook)} · ${s.city || "on the move"}${s.local ? html` · ${clock(s, false)}` : ""}</small>
-        <span class="gl-row-step"><span class="progress" style="--p: ${pct(s)}%"><span></span></span><em>Step ${s.step}/${s.steps.length}</em></span>
+        <small>${s.group === "mine" ? t("You") : firstName(s.cook)} · ${s.city ? placeLabel(s.city) : t("on the move")}${s.local ? html` · ${clock(s, false)}` : ""}</small>
+        <span class="gl-row-step"><span class="progress" style="--p: ${pct(s)}%"><span></span></span><em>${t("Step {n}/{total}", { n: s.step, total: s.steps.length })}</em></span>
       </span>
-      <span class="gl-row-side">${tag(s)}${s.help ? html`<span class="gl-help-dot" title="Asking for help">?</span>` : ""}</span>
+      <span class="gl-row-side">${tag(s)}${s.help ? html`<span class="gl-help-dot" title="${t("Asking for help")}">?</span>` : ""}</span>
     </button>
   </li>`;
 }
 
 function metaPart(s: GlobeSession): Html {
-  return html`${s.local ? html`<span>${icon("clock", 14)} ${clock(s)}</span>` : ""}<span>${icon("users", 14)} Cooking for ${s.serves}</span><span>${icon("live", 14)} <b data-watch-count="${s.id}">${s.watching}</b> watching</span>${s.cuisine ? html`<span>${s.cuisine}</span>` : ""}`;
+  return html`${s.local ? html`<span>${icon("clock", 14)} ${clock(s)}</span>` : ""}<span>${icon("users", 14)} ${t("Cooking for {n}", { n: s.serves })}</span><span>${icon("live", 14)} ${th("{n} watching", { n: html`<b data-watch-count="${s.id}">${s.watching}</b>` })}</span>${s.cuisine ? html`<span>${s.cuisine}</span>` : ""}`;
 }
 
 function stepPart(s: GlobeSession): Html {
   return html`<div class="gl-step">
-    <div class="gl-step-head"><span class="cm-step-num">Step ${s.step} of ${s.steps.length}</span><span class="progress" style="--p: ${pct(s)}%"><span></span></span></div>
+    <div class="gl-step-head"><span class="cm-step-num">${t("Step {n} of {total}", { n: s.step, total: s.steps.length })}</span><span class="progress" style="--p: ${pct(s)}%"><span></span></span></div>
     <p>${s.steps[s.step - 1] ?? ""}</p>
-    ${s.steps[s.step] ? html`<small>Next: ${s.steps[s.step]}</small>` : html`<small>Last step — nearly there.</small>`}
+    ${s.steps[s.step] ? html`<small>${t("Next: {step}", { step: s.steps[s.step] })}</small>` : html`<small>${t("Last step — nearly there.")}</small>`}
   </div>`;
 }
 
 function helpPart(s: GlobeSession): Html {
   if (!s.help) return html``;
   return html`<div class="gl-help">
-    <p class="gl-help-label">${icon("bolt", 14)} ${s.group === "mine" ? "You're" : `${firstName(s.cook)} is`} asking for help</p>
+    <p class="gl-help-label">${icon("bolt", 14)} ${s.group === "mine" ? t("You're asking for help") : t("{name} is asking for help", { name: firstName(s.cook) })}</p>
     <p>${s.help.text}</p>
-    ${s.help.original ? html`<p class="gl-original">Translated from ${s.language} · <span>“${s.help.original}”</span></p>` : ""}
+    ${s.help.original ? html`<p class="gl-original">${th("Translated from {language} · {original}", { language: languageLabel(s.language), original: html`<span>“${s.help.original}”</span>` })}</p>` : ""}
   </div>`;
 }
 
 function threadPart(s: GlobeSession): Html {
   if (!s.questions.length) {
-    return html`<p class="muted small gl-thread-empty">${s.group === "mine" ? "No questions yet. They'll pop up in cook mode as they arrive." : "No questions yet — ask the first one."}</p>`;
+    return html`<p class="muted small gl-thread-empty">${s.group === "mine" ? t("No questions yet. They'll pop up in cook mode as they arrive.") : t("No questions yet — ask the first one.")}</p>`;
   }
   return html`<ul class="gl-thread">${s.questions.map(
     (q) => html`<li>
@@ -278,8 +302,8 @@ function threadPart(s: GlobeSession): Html {
       <div>
         <p><strong>${q.who}</strong> <span class="muted">${q.country ? `· ${q.country} ` : ""}· ${q.when}</span></p>
         <p>${q.text}</p>
-        ${q.original ? html`<p class="gl-original">Translated · “${q.original}”</p>` : ""}
-        ${q.answer ? html`<p class="gl-answer"><strong>${s.group === "mine" ? "You" : firstName(s.cook)}:</strong> ${q.answer}</p>` : s.kind === "live" ? html`<p class="gl-awaiting">Waiting for ${s.group === "mine" ? "your" : `${firstName(s.cook)}'s`} answer…</p>` : ""}
+        ${q.original ? html`<p class="gl-original">${t("Translated · “{original}”", { original: q.original })}</p>` : ""}
+        ${q.answer ? html`<p class="gl-answer"><strong>${t("{name}:", { name: s.group === "mine" ? t("You") : firstName(s.cook) })}</strong> ${q.answer}</p>` : s.kind === "live" ? html`<p class="gl-awaiting">${s.group === "mine" ? t("Waiting for your answer…") : t("Waiting for {name}'s answer…", { name: firstName(s.cook) })}</p>` : ""}
       </div>
     </li>`,
   )}</ul>`;
@@ -289,25 +313,25 @@ function askBox(s: GlobeSession, signedIn: boolean): Html {
   if (s.kind === "demo") {
     return html`<form class="gl-ask" data-ask>
         <fieldset disabled class="bare">
-          <input placeholder="Demo cooks can't answer — ask someone tagged Live" aria-label="Ask a question" />
-          <button class="button button-small" type="button">Ask</button>
+          <input placeholder="${t("Demo cooks can't answer — ask someone tagged Live")}" aria-label="${t("Ask a question")}" />
+          <button class="button button-small" type="button">${t("Ask")}</button>
         </fieldset>
       </form>
-      <p class="estimate-note">For demo cooks, questions are shown translated into your language with the original beneath.</p>`;
+      <p class="estimate-note">${t("For demo cooks, questions are shown translated into your language with the original beneath.")}</p>`;
   }
   if (s.group === "mine") {
-    return html`<p class="gl-mine-note">This is you. Questions arrive in cook mode, where you can answer with one thumb.</p>`;
+    return html`<p class="gl-mine-note">${t("This is you. Questions arrive in cook mode, where you can answer with one thumb.")}</p>`;
   }
   if (!signedIn) {
     return html`<div class="gl-ask gl-ask-guest">
-      <p>Watching is free. <strong>Sign in to ask ${firstName(s.cook)} a question</strong>, like “can I use butter instead?”</p>
-      <a class="button button-small" href="/login?next=${encodeURIComponent(`/global#live-${s.id}`)}">Sign in to ask</a>
+      <p>${th("Watching is free. {signin}, like “can I use butter instead?”", { signin: html`<strong>${t("Sign in to ask {name} a question", { name: firstName(s.cook) })}</strong>` })}</p>
+      <a class="button button-small" href="/login?next=${encodeURIComponent(`/global#live-${s.id}`)}">${t("Sign in to ask")}</a>
     </div>`;
   }
   return html`<form class="gl-ask" method="post" action="/global/${s.id}/ask" data-ask="${s.id}">
       <div class="gl-ask-row">
-        <input name="text" maxlength="${QUESTION_MAX}" required autocomplete="off" placeholder="Ask ${firstName(s.cook)}, e.g. “can I use butter instead?”" aria-label="Ask ${firstName(s.cook)} a question" />
-        <button class="button button-small" type="submit">Ask</button>
+        <input name="text" maxlength="${QUESTION_MAX}" required autocomplete="off" placeholder="${t("Ask {name}, e.g. “can I use butter instead?”", { name: firstName(s.cook) })}" aria-label="${t("Ask {name} a question", { name: firstName(s.cook) })}" />
+        <button class="button button-small" type="submit">${t("Ask")}</button>
       </div>
       <p class="gl-ask-status" data-ask-status role="status"></p>
     </form>`;
@@ -318,35 +342,35 @@ function detail(s: GlobeSession, signedIn: boolean, open = false): Html {
   return html`<article class="gl-detail gl-detail-${s.kind}" data-detail="${s.id}" ${open ? "" : raw("hidden")}>
     <div class="gl-detail-photo">
       ${s.image ? html`<img src="${s.image}" alt="${s.recipe}" loading="lazy" />` : html`<div class="gl-photo-fallback"><span>${s.recipe.slice(0, 1)}</span></div>`}
-      <button class="gl-close" type="button" data-close aria-label="Close">${icon("close", 18)}</button>
+      <button class="gl-close" type="button" data-close aria-label="${t("Close")}">${icon("close", 18)}</button>
       ${s.kind === "live"
-        ? html`<span class="rx-glass rx-glass-live"><span class="live-dot"></span>Live · started ${s.started}</span>`
-        : html`<span class="rx-glass gl-glass-demo">Demo cook · sample data</span>`}
-      <div class="gl-ended" data-ended hidden><span>${icon("check", 22)}</span><p>${firstName(s.cook)} has finished cooking.</p></div>
+        ? html`<span class="rx-glass rx-glass-live"><span class="live-dot"></span>${t("Live · started {when}", { when: s.started })}</span>`
+        : html`<span class="rx-glass gl-glass-demo">${t("Demo cook · sample data")}</span>`}
+      <div class="gl-ended" data-ended hidden><span>${icon("check", 22)}</span><p>${t("{name} has finished cooking.", { name: firstName(s.cook) })}</p></div>
     </div>
     <div class="gl-detail-body">
-      <p class="gl-who">${avatar(s.cook, "sm", s.avatar ?? null)}<span><strong>${s.group === "mine" ? "You" : s.cook}</strong> · ${place(s)}</span>${s.group === "friends" ? html`<span class="gl-tag gl-tag-friend">Friend</span>` : ""}${s.group === "mine" ? html`<span class="gl-tag gl-tag-friend">${s.visibility === "public" ? "Everyone" : s.visibility === "friends" ? "Friends only" : "Only you"}</span>` : ""}</p>
+      <p class="gl-who">${avatar(s.cook, "sm", s.avatar ?? null)}<span><strong>${s.group === "mine" ? t("You") : s.cook}</strong> · ${place(s)}</span>${s.group === "friends" ? html`<span class="gl-tag gl-tag-friend">${t("Friend")}</span>` : ""}${s.group === "mine" ? html`<span class="gl-tag gl-tag-friend">${s.visibility === "public" ? t("Everyone") : s.visibility === "friends" ? t("Friends only") : t("Only you")}</span>` : ""}</p>
       <h2>${s.recipe}</h2>
       <p class="gl-meta" data-part="meta">${metaPart(s)}</p>
       <div data-part="step">${stepPart(s)}</div>
       <div data-part="help">${helpPart(s)}</div>
 
       <details class="gl-ings">
-        <summary>Ingredients <span class="muted">${s.ingredients.length}${s.have !== undefined ? html` · you have ${s.have}` : ""}</span></summary>
+        <summary>${t("Ingredients")} <span class="muted">${s.ingredients.length}${s.have !== undefined ? html` · ${t("you have {n}", { n: s.have })}` : ""}</span></summary>
         <ul class="ing-list">${s.ingredients.map((i) => html`<li><span class="ing-amount">${i.amount}</span><span class="ing-name">${i.name}</span></li>`)}</ul>
       </details>
 
-      <section class="gl-qa" aria-label="Questions">
-        <h3>Questions</h3>
+      <section class="gl-qa" aria-label="${t("Questions")}">
+        <h3>${t("Questions")}</h3>
         <div data-part="thread">${threadPart(s)}</div>
         ${askBox(s, signedIn)}
       </section>
 
       <div class="gl-actions">
         ${s.group === "mine"
-          ? html`<a class="button button-accent" href="/recipes/${s.recipeId}/cook?serves=${s.serves}">${icon("cook", 16)} Back to cook mode</a>`
-          : html`<a class="button button-accent" href="${along}">${icon("cook", 16)} Cook along</a>`}
-        <a class="button button-ghost" href="/recipes/${s.recipeId}">View recipe</a>
+          ? html`<a class="button button-accent" href="/recipes/${s.recipeId}/cook?serves=${s.serves}">${icon("cook", 16)} ${t("Back to cook mode")}</a>`
+          : html`<a class="button button-accent" href="${along}">${icon("cook", 16)} ${t("Cook along")}</a>`}
+        <a class="button button-ghost" href="/recipes/${s.recipeId}">${t("View recipe")}</a>
       </div>
     </div>
   </article>`;
@@ -392,7 +416,7 @@ const GROUP_HEAD: Record<Group, string> = {
 function group(key: Group, sessions: GlobeSession[], extra?: Html): Html {
   const list = sessions.filter((s) => s.group === key);
   return html`<section class="gl-group gl-group-${key}" data-group="${key}" ${list.length || extra ? "" : raw("hidden")}>
-    <h3 class="gl-group-head">${key === "friends" ? html`<span class="gl-friend-dot" aria-hidden="true"></span>` : ""}${GROUP_HEAD[key]}${key === "demo" ? html` <span class="gl-tag gl-tag-demo">Sample data</span>` : html` <span class="gl-count" data-group-count>${list.length || ""}</span>`}</h3>
+    <h3 class="gl-group-head">${key === "friends" ? html`<span class="gl-friend-dot" aria-hidden="true"></span>` : ""}${t(GROUP_HEAD[key])}${key === "demo" ? html` <span class="gl-tag gl-tag-demo">${t("Sample data")}</span>` : html` <span class="gl-count" data-group-count>${list.length || ""}</span>`}</h3>
     <ul class="gl-list" data-list="${key}">${list.map(row)}</ul>
     ${extra ?? ""}
   </section>`;
@@ -411,48 +435,48 @@ function globePage(ctx: Ctx): Html {
   const liveEmpty = html`<div class="gl-cta" data-live-empty ${real.length ? raw("hidden") : ""}>
     <span class="gl-cta-art" aria-hidden="true">${icon("cook", 22)}</span>
     <div>
-      <p><strong>No one's live right now.</strong> Open any recipe, tap <em>Start cooking</em>, then <em>Go live</em> — your pan lands on this globe while you cook.</p>
+      <p>${th("{none} Open any recipe, tap {start}, then {golive} — your pan lands on this globe while you cook.", { none: html`<strong>${t("No one's live right now.")}</strong>`, start: html`<em>${t("Start cooking")}</em>`, golive: html`<em>${t("Go live")}</em>` })}</p>
       ${signedIn
-        ? html`<a class="button button-small button-accent" href="/recipes">${icon("search", 14)} Find something to cook</a>`
-        : html`<a class="button button-small button-accent" href="/register">Join free to go live</a>`}
+        ? html`<a class="button button-small button-accent" href="/recipes">${icon("search", 14)} ${t("Find something to cook")}</a>`
+        : html`<a class="button button-small button-accent" href="/register">${t("Join free to go live")}</a>`}
     </div>
   </div>`;
 
   return html`
     <section class="gl" data-gl data-stream="/global/stream" ${signedIn ? raw("data-signed-in") : ""}>
       <div class="gl-stage" data-globe data-textures="/assets/textures/">
-        <canvas aria-label="Globe of people cooking live around the world. Use the list to browse sessions."></canvas>
+        <canvas aria-label="${t("Globe of people cooking live around the world. Use the list to browse sessions.")}"></canvas>
         <div class="gl-pins" data-pins aria-hidden="false"></div>
-        <div class="gl-zoom" role="group" aria-label="Zoom">
-          <button type="button" data-zoom="in" aria-label="Zoom in">${icon("plus", 18)}</button>
-          <button type="button" data-zoom="out" aria-label="Zoom out"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14"/></svg></button>
-          <button type="button" data-zoom="reset" aria-label="Show the whole globe">${icon("global", 18)}</button>
+        <div class="gl-zoom" role="group" aria-label="${t("Zoom")}">
+          <button type="button" data-zoom="in" aria-label="${t("Zoom in")}">${icon("plus", 18)}</button>
+          <button type="button" data-zoom="out" aria-label="${t("Zoom out")}"><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14"/></svg></button>
+          <button type="button" data-zoom="reset" aria-label="${t("Show the whole globe")}">${icon("global", 18)}</button>
         </div>
         <div class="gl-loading" aria-hidden="true"><span></span></div>
       </div>
 
       <header class="gl-hero">
-        <p class="eyebrow"><span class="live-dot"></span> <span><b data-stat="live">${real.length}</b> cooking live${demo.length ? ` · ${demo.length} demo cooks` : ""}</span></p>
-        <h1>Cooking, live,<br />all over the world.</h1>
-        <p class="lede">Spin the globe and tap a pan to see what someone's making, the step they're on, and ask them anything. Friends show up first.</p>
-        <p class="gl-daylight" data-daylight>${icon("clock", 14)} <span class="gl-daylight-long">The globe is lit as it is right now: day where the sun is up, city lights where it's night, so you can see who's cooking lunch and who's cooking dinner.</span><span class="gl-daylight-short">Lit live: lunch in daylight, dinner by city lights</span></p>
+        <p class="eyebrow"><span class="live-dot"></span> <span>${th("{n} cooking live", { n: html`<b data-stat="live">${real.length}</b>` })}${demo.length ? ` · ${t("{n} demo cooks", { n: demo.length })}` : ""}</span></p>
+        <h1>${th("Cooking, live,{br}all over the world.", { br: html`<br />` })}</h1>
+        <p class="lede">${t("Spin the globe and tap a pan to see what someone's making, the step they're on, and ask them anything. Friends show up first.")}</p>
+        <p class="gl-daylight" data-daylight>${icon("clock", 14)} <span class="gl-daylight-long">${t("The globe is lit as it is right now: day where the sun is up, city lights where it's night, so you can see who's cooking lunch and who's cooking dinner.")}</span><span class="gl-daylight-short">${t("Lit live: lunch in daylight, dinner by city lights")}</span></p>
         <dl class="gl-stats">
-          <div><dt>Live now</dt><dd data-stat="live">${real.length}</dd></div>
-          <div><dt>Countries</dt><dd>${countries}</dd></div>
-          <div><dt>Asking for help</dt><dd data-stat="help">${helping}</dd></div>
+          <div><dt>${t("Live now")}</dt><dd data-stat="live">${real.length}</dd></div>
+          <div><dt>${t("Countries")}</dt><dd>${countries}</dd></div>
+          <div><dt>${t("Asking for help")}</dt><dd data-stat="help">${helping}</dd></div>
         </dl>
       </header>
 
-      <aside class="gl-panel" aria-label="Live sessions">
-        <div class="gl-filters" role="group" aria-label="Filter live cooks">
-          <button class="rx-chip" type="button" data-filter="all" aria-pressed="true">All</button>
-          ${signedIn ? html`<button class="rx-chip" type="button" data-filter="friends" aria-pressed="false"><span class="dot" style="--chip: var(--lavender)"></span>Friends</button>` : ""}
-          ${signedIn ? html`<button class="rx-chip" type="button" data-filter="fridge" aria-pressed="false"><span class="dot" style="--chip: var(--sage)"></span>From my fridge</button>` : ""}
-          <button class="rx-chip" type="button" data-filter="help" aria-pressed="false"><span class="dot" style="--chip: var(--peach)"></span>Needs help</button>
-          <button class="rx-chip" type="button" data-filter="vegetarian" aria-pressed="false"><span class="dot" style="--chip: var(--butter)"></span>Vegetarian</button>
-          <label class="gl-cuisine"><span class="sr-only">Cuisine</span>
+      <aside class="gl-panel" aria-label="${t("Live sessions")}">
+        <div class="gl-filters" role="group" aria-label="${t("Filter live cooks")}">
+          <button class="rx-chip" type="button" data-filter="all" aria-pressed="true">${t("All")}</button>
+          ${signedIn ? html`<button class="rx-chip" type="button" data-filter="friends" aria-pressed="false"><span class="dot" style="--chip: var(--lavender)"></span>${t("Friends")}</button>` : ""}
+          ${signedIn ? html`<button class="rx-chip" type="button" data-filter="fridge" aria-pressed="false"><span class="dot" style="--chip: var(--sage)"></span>${t("From my fridge")}</button>` : ""}
+          <button class="rx-chip" type="button" data-filter="help" aria-pressed="false"><span class="dot" style="--chip: var(--peach)"></span>${t("Needs help")}</button>
+          <button class="rx-chip" type="button" data-filter="vegetarian" aria-pressed="false"><span class="dot" style="--chip: var(--butter)"></span>${t("Vegetarian")}</button>
+          <label class="gl-cuisine"><span class="sr-only">${t("Cuisine")}</span>
             <select data-cuisine>
-              <option value="">Any cuisine</option>
+              <option value="">${t("Any cuisine")}</option>
               ${cuisines.map((c) => html`<option value="${c}">${c}</option>`)}
             </select>
           </label>
@@ -462,29 +486,29 @@ function globePage(ctx: Ctx): Html {
           ${group("friends", sessions)}
           ${group("live", sessions, liveEmpty)}
           ${group("demo", sessions)}
-          <p class="gl-empty muted small" data-gl-empty hidden>No one matching that is cooking right now.</p>
+          <p class="gl-empty muted small" data-gl-empty hidden>${t("No one matching that is cooking right now.")}</p>
         </div>
         ${signedIn
-          ? html`<p class="estimate-note">“From my fridge” shows cooks making something you have at least half the ingredients for.</p>`
-          : html`<p class="estimate-note">Watching needs no account. <a href="/register">Join free</a> to ask questions, filter by your fridge and go live yourself.</p>`}
+          ? html`<p class="estimate-note">${t("“From my fridge” shows cooks making something you have at least half the ingredients for.")}</p>`
+          : html`<p class="estimate-note">${th("Watching needs no account. {join} to ask questions, filter by your fridge and go live yourself.", { join: html`<a href="/register">${t("Join free")}</a>` })}</p>`}
         <p class="gl-conn" data-conn hidden></p>
       </aside>
 
       <div class="gl-details" data-gl-details>${sessions.map((s) => detail(s, signedIn))}</div>
 
       <div class="gl-foot">
-        ${previewBanner("Demo cooks", "Cooks tagged “Demo” are sample data so the globe is never empty; anyone tagged “Live” is a real person cooking right now. The recipes are real either way.")}
+        ${previewBanner(t("Demo cooks"), t("Cooks tagged “Demo” are sample data so the globe is never empty; anyone tagged “Live” is a real person cooking right now. The recipes are real either way."))}
         <section class="gl-how">
-          <h2>How to appear on the globe</h2>
+          <h2>${t("How to appear on the globe")}</h2>
           <ol class="how-steps">
-            <li><strong>Pick a recipe</strong> from the catalogue — or write your own, and its nutrition and cost are worked out for you.</li>
-            <li><strong>Start cooking and tap Go live.</strong> Choose who sees you (everyone, friends, or just you) and a city. We never store more than a rough area.</li>
-            <li><strong>Each step you tap through</strong> shows here within a second, so watchers always see where you're up to.</li>
-            <li><strong>Watchers ask questions</strong> — “can I swap the butter for oil?” — and you answer from cook mode with one thumb.</li>
+            <li>${th("{lead} from the catalogue — or write your own, and its nutrition and cost are worked out for you.", { lead: html`<strong>${t("Pick a recipe")}</strong>` })}</li>
+            <li>${th("{lead} Choose who sees you (everyone, friends, or just you) and a city. We never store more than a rough area.", { lead: html`<strong>${t("Start cooking and tap Go live.")}</strong>` })}</li>
+            <li>${th("{lead} shows here within a second, so watchers always see where you're up to.", { lead: html`<strong>${t("Each step you tap through")}</strong>` })}</li>
+            <li>${th("{lead} — “can I swap the butter for oil?” — and you answer from cook mode with one thumb.", { lead: html`<strong>${t("Watchers ask questions")}</strong>` })}</li>
           </ol>
           <div class="gl-how-actions">
-            <a class="button button-accent" href="/recipes">${icon("cook", 16)} Find a recipe to cook</a>
-            ${signedIn ? html`<a class="button button-ghost" href="/friends">${icon("friends", 16)} Add friends to see them first</a>` : html`<a class="button button-ghost" href="/register">Join free</a>`}
+            <a class="button button-accent" href="/recipes">${icon("cook", 16)} ${t("Find a recipe to cook")}</a>
+            ${signedIn ? html`<a class="button button-ghost" href="/friends">${icon("friends", 16)} ${t("Add friends to see them first")}</a>` : html`<a class="button button-ghost" href="/register">${t("Join free")}</a>`}
           </div>
         </section>
       </div>
@@ -541,9 +565,9 @@ function soloPage(ctx: Ctx): Reply {
     if (!s) throw new HttpError(404, "That cooking session has ended or never existed.");
     return htmlReply(
       page(ctx, {
-        title: `${firstName(s.cook)} is cooking ${s.recipe}`,
+        title: t("{name} is cooking {recipe}", { name: firstName(s.cook), recipe: s.recipe }),
         active: "global",
-        body: html`<div class="gl-solo">${previewBanner("Demo cook", "A sample live session; the recipe is real.")}${detail(s, !!ctx.user, true)}</div>`,
+        body: html`<div class="gl-solo">${previewBanner(t("Demo cook"), t("A sample live session; the recipe is real."))}${detail(s, !!ctx.user, true)}</div>`,
       }),
     );
   }
@@ -551,14 +575,14 @@ function soloPage(ctx: Ctx): Reply {
   if (!isLive(s)) {
     return htmlReply(
       page(ctx, {
-        title: `${firstName(s.display_name)} finished cooking`,
+        title: t("{name} finished cooking", { name: firstName(s.display_name) }),
         active: "global",
         body: html`<div class="gl-solo"><section class="gl-finished">
           <span class="gl-cta-art" aria-hidden="true">${icon("check", 26)}</span>
-          <p class="eyebrow">Session ended</p>
-          <h1>${s.user_id === viewer.id ? "You" : firstName(s.display_name)} cooked ${s.recipe_title}</h1>
-          <p class="lede">This live session has finished. The recipe is still here to cook yourself.</p>
-          <div class="gl-actions"><a class="button button-accent" href="/recipes/${s.recipe_id}/cook">${icon("cook", 16)} Cook it yourself</a><a class="button button-ghost" href="/global">See who's live</a></div>
+          <p class="eyebrow">${t("Session ended")}</p>
+          <h1>${s.user_id === viewer.id ? t("You cooked {recipe}", { recipe: s.recipe_title }) : t("{name} cooked {recipe}", { name: firstName(s.display_name), recipe: s.recipe_title })}</h1>
+          <p class="lede">${t("This live session has finished. The recipe is still here to cook yourself.")}</p>
+          <div class="gl-actions"><a class="button button-accent" href="/recipes/${s.recipe_id}/cook">${icon("cook", 16)} ${t("Cook it yourself")}</a><a class="button button-ghost" href="/global">${t("See who's live")}</a></div>
         </section></div>`,
       }),
     );
@@ -566,10 +590,10 @@ function soloPage(ctx: Ctx): Reply {
   const [g] = realSessions(viewer, [s]);
   return htmlReply(
     page(ctx, {
-      title: `${g.group === "mine" ? "You're" : `${firstName(g.cook)} is`} cooking ${g.recipe}`,
+      title: g.group === "mine" ? t("You're cooking {recipe}", { recipe: g.recipe }) : t("{name} is cooking {recipe}", { name: firstName(g.cook), recipe: g.recipe }),
       active: "global",
       body: html`<div class="gl-solo" data-gl data-solo data-stream="/global/stream?only=${g.id}">
-          <a class="gl-solo-back" href="/global#live-${g.id}">${icon("global", 16)} See on the globe</a>
+          <a class="gl-solo-back" href="/global#live-${g.id}">${icon("global", 16)} ${t("See on the globe")}</a>
           ${detail(g, !!ctx.user, true)}
         </div>
         <script type="application/json" id="globe-data">${scriptJson([marker(g)])}</script>
@@ -582,7 +606,7 @@ const ASK_MESSAGES: Record<string, string> = {
   ended: "That session has just finished, so the cook can't answer now.",
   own: "This is your own session — questions come to you here.",
   empty: "Type a question first.",
-  "too-long": `Keep it under ${QUESTION_MAX} characters.`,
+  "too-long": "Keep it under {max} characters.",
   "too-soon": "Give the cook a moment — you can ask again in a few seconds.",
 };
 
@@ -596,12 +620,13 @@ async function ask(ctx: Ctx): Promise<Reply> {
   if (!r.ok) {
     if (r.problem === "not-found") throw new HttpError(404, "That cooking session has ended or never existed.");
     const status = r.problem === "ended" ? 410 : r.problem === "too-soon" ? 429 : 422;
-    if (wantsJson(ctx)) return json({ error: r.problem, message: ASK_MESSAGES[r.problem] }, status);
-    setFlash(ctx, ASK_MESSAGES[r.problem]);
+    const message = t(ASK_MESSAGES[r.problem], { max: QUESTION_MAX });
+    if (wantsJson(ctx)) return json({ error: r.problem, message }, status);
+    setFlash(ctx, message);
     return redirect(`/global/${s.id}`);
   }
   if (wantsJson(ctx)) return json({ ok: true, card: cardFor(viewer, getSession(s.id)!, true) });
-  setFlash(ctx, `Asked ${firstName(s.display_name)}. Their answer will appear here.`);
+  setFlash(ctx, t("Asked {name}. Their answer will appear here.", { name: firstName(s.display_name) }));
   return redirect(`/global/${s.id}`);
 }
 
@@ -612,13 +637,13 @@ async function answer(ctx: Ctx): Promise<Reply> {
   logActivity({ actor: ctx.user, action: "live.answer", outcome: r.ok ? "ok" : "denied", detail: { session: id, question: Number(form.get("question")) || null, problem: r.ok ? null : r.problem } });
   if (!r.ok) {
     if (r.problem === "not-found") throw new HttpError(404, "That cooking session has ended or never existed.");
-    const message = r.problem === "ended" ? "This session has ended." : r.problem === "empty" ? "Type an answer first." : `Keep it under ${QUESTION_MAX} characters.`;
+    const message = r.problem === "ended" ? t("This session has ended.") : r.problem === "empty" ? t("Type an answer first.") : t("Keep it under {max} characters.", { max: QUESTION_MAX });
     if (wantsJson(ctx)) return json({ error: r.problem, message }, r.problem === "ended" ? 410 : 422);
     setFlash(ctx, message);
     return redirect(returnTo(form, `/global/${id}`));
   }
   if (wantsJson(ctx)) return json({ ok: true, question: { id: r.question.id, answer: r.question.answer } });
-  setFlash(ctx, "Answer sent.");
+  setFlash(ctx, t("Answer sent."));
   return redirect(returnTo(form, `/global/${id}`));
 }
 
@@ -765,7 +790,7 @@ export const routes: Route[] = [
   {
     method: "GET",
     path: "/global",
-    handler: (ctx) => htmlReply(page(ctx, { title: "Live around the world", active: "global", body: globePage(ctx), mainClass: "main-globe" })),
+    handler: (ctx) => htmlReply(page(ctx, { title: t("Live around the world"), active: "global", body: globePage(ctx), mainClass: "main-globe" })),
   },
   { method: "GET", path: "/global/stream", handler: stream },
   {

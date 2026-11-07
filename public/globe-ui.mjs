@@ -4,6 +4,7 @@
 // with DOM events: globe:select / globe:cluster (from it) and globe:focus /
 // globe:filter / globe:upsert / globe:remove (to it). Also runs the single
 // session page (/global/:id), which has a card but no globe.
+import { t } from "./i18n.mjs";
 import { tickClocks } from "./localclock.mjs";
 
 const root = document.querySelector("[data-gl]");
@@ -290,11 +291,11 @@ function start() {
       // the browser retries a dropped stream itself; a refused one (too many
       // connections, a deploy) needs us to come back later, gently
       if (es.readyState === EventSource.CLOSED) {
-        setConn("Live updates paused — reconnecting…");
+        setConn(t("Live updates paused — reconnecting…"));
         retryTimer = setTimeout(connect, backoff);
         backoff = Math.min(backoff * 2, 60000);
       } else {
-        setConn("Reconnecting to live updates…");
+        setConn(t("Reconnecting to live updates…"));
       }
     };
   }
@@ -324,15 +325,15 @@ function start() {
       const body = await res.json().catch(() => ({}));
       if (res.ok) {
         input.value = "";
-        if (status) status.textContent = "Sent — the answer will appear here.";
+        if (status) status.textContent = t("Sent — the answer will appear here.");
         if (body.card) upsert(body.card);
       } else if (res.status === 404) {
         remove(id, "ended");
       } else if (status) {
-        status.textContent = body.message ?? "That didn't send. Try again in a moment.";
+        status.textContent = body.message ?? t("That didn't send. Try again in a moment.");
       }
     } catch {
-      if (status) status.textContent = "You seem to be offline. Try again in a moment.";
+      if (status) status.textContent = t("You seem to be offline. Try again in a moment.");
     } finally {
       button.disabled = false;
     }
@@ -344,6 +345,11 @@ function start() {
   // each cook's local time ("7:42 pm · dinner") ticks over on the minute
   const tick = () => {
     tickClocks(root);
+    // the clock writes its meal in English ("dinner"); say it in the page's language
+    root.querySelectorAll(".gl-local[data-meal] > span").forEach((el) => {
+      const meal = t(el.textContent);
+      if (el.textContent !== meal) el.textContent = meal;
+    });
     setTimeout(tick, 60000 - (Date.now() % 60000) + 50);
   };
   setTimeout(tick, 60000 - (Date.now() % 60000) + 50);
