@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 // @ts-expect-error plain browser module, no type declarations
-import { dropFor, fitScale, liftFor, newLane, orderStack, rotatedExtent, takeSlot } from "../public/kitchen-layout.mjs";
+import { dropFor, fitScale, fitsPlan, frontToBack, liftFor, newLane, orderStack, planLane, rotatedExtent, shelfFor, takeSlot } from "../public/kitchen-layout.mjs";
 
 // The geometry behind the 3D fridge and pantry: where items may stand, and
 // which one a pointer means. Pure functions, so these run without a browser.
@@ -114,5 +114,84 @@ describe("kitchen layout: picking overlapping items", () => {
 
   it("no hits, no stack", () => {
     expect(orderStack([])).toEqual([]);
+  });
+});
+
+type Slot = { x: number; z: number; row: number; index: number } | null;
+
+describe("kitchen layout: setting out a whole shelf so nothing hides", () => {
+  const shelf = () => newLane({ xMin: -0.8, xMax: 0.8, zNear: -0.16, zFar: -0.82, free: 0.6 });
+  const sizes = [0.3, 0.32, 0.28, 0.35, 0.3, 0.33, 0.29, 0.3].map((w, i) => ({ w, d: 0.2 + (i % 3) * 0.05 }));
+
+  it("every slot is on the shelf, and no two items overlap", () => {
+    const ln = shelf();
+    const slots: Slot[] = planLane(ln, sizes);
+    expect(slots.every(Boolean)).toBe(true);
+    const placed = slots.map((s, i) => ({ ...s!, ...sizes[i] }));
+    for (const p of placed) {
+      expect(p.x - p.w / 2).toBeGreaterThanOrEqual(ln.xMin - 0.011);
+      expect(p.x + p.w / 2).toBeLessThanOrEqual(ln.xMax + 0.011);
+      expect(p.z + p.d / 2).toBeLessThanOrEqual(ln.zNear + 1e-9);
+      expect(p.z - p.d / 2).toBeGreaterThanOrEqual(ln.zFar - 1e-9);
+    }
+    for (const a of placed) {
+      for (const b of placed) {
+        if (a === b) continue;
+        const overlapX = Math.abs(a.x - b.x) < (a.w + b.w) / 2 - 1e-9;
+        const overlapZ = Math.abs(a.z - b.z) < (a.d + b.d) / 2 - 1e-9;
+        expect(overlapX && overlapZ).toBe(false);
+      }
+    }
+  });
+
+  it("the front row is spread across the shelf, and the back row stands in the gaps between front items", () => {
+    const slots: Slot[] = planLane(shelf(), sizes);
+    const front = slots.filter((s) => s!.row === 0).map((s) => s!.x).sort((a, b) => a - b);
+    const back = slots.filter((s) => s!.row === 1).map((s) => s!.x).sort((a, b) => a - b);
+    expect(front.length).toBeGreaterThan(2);
+    expect(front[0]).toBeLessThan(-0.4);
+    expect(front[front.length - 1]).toBeGreaterThan(0.4);
+    // as many back items as there are gaps each stand in one, well clear of the front centres
+    const inGap = back.filter((x) => Math.min(...front.map((f) => Math.abs(f - x))) > 0.1);
+    expect(inGap.length).toBeGreaterThanOrEqual(Math.min(back.length, front.length - 1));
+  });
+
+  it("a deep item in front blocks only what stands right behind it", () => {
+    const ln = newLane({ xMin: 0, xMax: 1, zNear: 0, zFar: -0.5, free: 1 });
+    // a deep loaf on the left, shallow tins on the right, then a deep basket that must go behind the tins
+    const slots: Slot[] = planLane(ln, [{ w: 0.4, d: 0.35 }, { w: 0.15, d: 0.1 }, { w: 0.15, d: 0.1 }, { w: 0.3, d: 0.3 }]);
+    expect(slots[3]).not.toBeNull();
+    expect(slots[3]!.x - 0.15).toBeGreaterThanOrEqual(0.4);
+  });
+
+  it("fitsPlan says whether a shelf holds the lot, without changing the shelf", () => {
+    const ln = shelf();
+    expect(fitsPlan(ln, sizes)).toBe(true);
+    expect(fitsPlan(ln, [...sizes, ...sizes, ...sizes])).toBe(false);
+    expect(ln.n).toBe(0);
+  });
+
+  it("an item added afterwards still finds free room, and never on top of a planned one", () => {
+    const ln = shelf();
+    const slots: Slot[] = planLane(ln, sizes.slice(0, 3));
+    const extra: Slot = takeSlot(ln, 0.2, 0.15);
+    expect(extra).not.toBeNull();
+    for (const [i, s] of slots.entries()) {
+      const overlapX = Math.abs(s!.x - extra!.x) < (sizes[i].w + 0.2) / 2 - 1e-9;
+      const overlapZ = Math.abs(s!.z - extra!.z) < (sizes[i].d + 0.15) / 2 - 1e-9;
+      expect(overlapX && overlapZ).toBe(false);
+    }
+  });
+
+  it("shortest first: the front row takes the short things, so the tall ones behind still show", () => {
+    const items = [{ n: "milk", h: 0.6 }, { n: "butter", h: 0.09 }, { n: "yoghurt", h: 0.17 }, { n: "cheese", h: 0.09 }];
+    const sorted: typeof items = frontToBack(items, (i: (typeof items)[number]) => i.h);
+    expect(sorted.map((i) => i.n)).toEqual(["butter", "cheese", "yoghurt", "milk"]);
+  });
+
+  it("a fridge is stocked the usual way: meat at the bottom, dairy in the middle, the rest up top", () => {
+    expect(shelfFor("tray")).toBe(0);
+    for (const m of ["eggs", "cheese", "tub", "butter"]) expect(shelfFor(m)).toBe(1);
+    for (const m of ["milk", "jar", "bottle"]) expect(shelfFor(m)).toBe(2);
   });
 });

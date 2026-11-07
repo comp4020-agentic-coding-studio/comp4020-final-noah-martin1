@@ -105,6 +105,7 @@ function scenePayload(userId: number, items: InventoryItem[]): string {
       place: ware.place,
       model: ware.model,
       tint: ware.tint,
+      look: ware.look,
       uses: (uses.get(it.ingredient_id) ?? []).map((u) => ({ ...u, day: `${weekday(u.date)} ${shortDate(u.date)}` })),
     };
   });

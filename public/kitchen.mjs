@@ -1,7 +1,8 @@
 // The fridge and pantry: a 3D kitchen built from the person's own inventory.
 // A double-door fridge (doors swing open when the page loads) and an open oak
-// shelf beside it; the arrow slides the camera between them. Every item is a
-// procedural container (carton, jar, tub, tray, tin...) chosen server-side in
+// shelf beside it; the arrow slides the camera between them. Every item is
+// drawn as itself (a lemon, a tray of mince, a jar of peanut butter) by
+// public/kitchen-models.mjs, from a model and look chosen server-side in
 // src/kitchen.ts. Hover lifts an item off its shelf with an outline; click
 // opens the side panel with its expiry and the meals it's planned for.
 // Progressive: without WebGL the table below the scene lists everything.
@@ -12,7 +13,8 @@ import { EffectComposer } from "three/addons/postprocessing/EffectComposer.js";
 import { RenderPass } from "three/addons/postprocessing/RenderPass.js";
 import { OutlinePass } from "three/addons/postprocessing/OutlinePass.js";
 import { OutputPass } from "three/addons/postprocessing/OutputPass.js";
-import { dropFor, fitScale, liftFor, newLane, orderStack, rotatedExtent, takeSlot } from "./kitchen-layout.mjs";
+import { dropFor, fitScale, fitsPlan, frontToBack, liftFor, newLane, orderStack, planLane, rotatedExtent, shelfFor, takeSlot } from "./kitchen-layout.mjs";
+import { PRODUCE, buildModel } from "./kitchen-models.mjs";
 
 const root = document.querySelector("[data-kitchen]");
 const stage = root?.querySelector("[data-kx-stage]");
@@ -171,10 +173,15 @@ function start() {
     edge.position.set(0, y - 0.012, -0.06);
     fridge.add(edge);
   }
-  // crisper drawer: frosted front panel, sitting on the cavity floor
-  const crisper = new THREE.Mesh(new RoundedBoxGeometry(W - 0.08, 0.5, 0.04, 3, 0.02), new THREE.MeshPhysicalMaterial({ color: 0xeef5f2, roughness: 0.35, transmission: 0.5, transparent: true, opacity: 0.7, thickness: 0.02 }));
+  // crisper drawer, sitting on the cavity floor: a clear front with a frosted
+  // band along its top edge and a handle, so the produce inside shows
+  const crisperGlass = new THREE.MeshPhysicalMaterial({ color: 0xe4f2ee, roughness: 0.1, transparent: true, opacity: 0.16, clearcoat: 1, depthWrite: false });
+  const crisper = new THREE.Mesh(new RoundedBoxGeometry(W - 0.08, 0.5, 0.03, 3, 0.012), crisperGlass);
   crisper.position.set(0, FOOT + T + 0.25, -0.08);
   fridge.add(crisper);
+  const crisperBand = new THREE.Mesh(new RoundedBoxGeometry(W - 0.08, 0.07, 0.034, 2, 0.012), new THREE.MeshPhysicalMaterial({ color: 0xeef5f2, roughness: 0.35, transparent: true, opacity: 0.85 }));
+  crisperBand.position.set(0, FOOT + T + 0.465, -0.08);
+  fridge.add(crisperBand);
 
   // interior light: a warm strip at the top. On in dark mode (it's night,
   // you've opened the fridge), almost off in daylight.
@@ -322,258 +329,10 @@ function start() {
     pantry.add(leaf);
   }
 
-  /* ---------- containers ---------- */
-  const tintMat = new Map();
-  const tinted = (hex, opts = {}) => {
-    const k = hex + JSON.stringify(opts);
-    if (!tintMat.has(k)) tintMat.set(k, new THREE.MeshPhysicalMaterial({ color: new THREE.Color(hex), roughness: 0.45, clearcoat: 0.35, ...opts }));
-    return tintMat.get(k);
-  };
-  const white = new THREE.MeshPhysicalMaterial({ color: 0xfbfaf7, roughness: 0.4, clearcoat: 0.3 });
-  const clearGlass = new THREE.MeshPhysicalMaterial({ color: 0xffffff, roughness: 0.05, transmission: 0.9, thickness: 0.05, ior: 1.5, transparent: true, opacity: 0.6 });
-  const tin = new THREE.MeshPhysicalMaterial({ color: 0xd9dcde, metalness: 0.85, roughness: 0.28 });
-  const paper = new THREE.MeshStandardMaterial({ color: 0xe8d6b8, roughness: 0.9 });
-  const lathe = (pts, mat, seg = 32) => new THREE.Mesh(new THREE.LatheGeometry(pts.map(([x, y]) => new THREE.Vector2(x, y)), seg), mat);
-
-  // each builder returns a group sitting on y = 0, plus its footprint width
-  const BUILD = {
-    milk(t) {
-      const g = new THREE.Group();
-      const body = new THREE.Mesh(new RoundedBoxGeometry(0.26, 0.5, 0.26, 3, 0.02), white);
-      body.position.y = 0.25;
-      const label = new THREE.Mesh(new RoundedBoxGeometry(0.262, 0.22, 0.262, 2, 0.015), tinted(t));
-      label.position.y = 0.22;
-      const roof = new THREE.Mesh(new THREE.CylinderGeometry(0.0, 0.185, 0.12, 4, 1), white);
-      roof.rotation.y = Math.PI / 4;
-      roof.scale.set(1, 1, 0.98);
-      roof.position.y = 0.56;
-      const cap = new THREE.Mesh(new THREE.CylinderGeometry(0.035, 0.035, 0.04, 16), tinted(t, { roughness: 0.3 }));
-      cap.position.set(0.05, 0.6, 0.05);
-      g.add(body, label, roof, cap);
-      return [g, 0.3];
-    },
-    juice(t) {
-      const g = new THREE.Group();
-      const body = new THREE.Mesh(new RoundedBoxGeometry(0.24, 0.62, 0.16, 3, 0.03), tinted(t, { roughness: 0.35, clearcoat: 0.8 }));
-      body.position.y = 0.31;
-      const band = new THREE.Mesh(new RoundedBoxGeometry(0.242, 0.18, 0.162, 2, 0.02), white);
-      band.position.y = 0.36;
-      const cap = new THREE.Mesh(new THREE.CylinderGeometry(0.045, 0.045, 0.06, 18), tinted("#f39a6b", { roughness: 0.3 }));
-      cap.position.set(0, 0.65, 0.0);
-      const orange = new THREE.Mesh(new THREE.SphereGeometry(0.05, 16, 12), tinted("#f6a04d"));
-      orange.position.set(0, 0.36, 0.085);
-      orange.scale.z = 0.3;
-      g.add(body, band, cap, orange);
-      return [g, 0.28];
-    },
-    bottle(t) {
-      const g = new THREE.Group();
-      const pts = [[0, 0], [0.085, 0], [0.095, 0.02], [0.095, 0.34], [0.075, 0.42], [0.032, 0.5], [0.03, 0.6], [0, 0.6]];
-      const glassBody = lathe(pts, new THREE.MeshPhysicalMaterial({ color: new THREE.Color(t).lerp(new THREE.Color(0x6b4a2a), 0.45), roughness: 0.08, transmission: 0.55, thickness: 0.2, transparent: true, opacity: 0.85, ior: 1.5 }));
-      const label = new THREE.Mesh(new THREE.CylinderGeometry(0.097, 0.097, 0.14, 32, 1, true), tinted(t, { side: THREE.DoubleSide }));
-      label.position.y = 0.2;
-      const cap = new THREE.Mesh(new THREE.CylinderGeometry(0.034, 0.034, 0.05, 16), tinted("#2f3437", { metalness: 0.5, roughness: 0.3 }));
-      cap.position.y = 0.62;
-      g.add(glassBody, label, cap);
-      return [g, 0.22];
-    },
-    jar(t) {
-      const g = new THREE.Group();
-      const pts = [[0, 0], [0.1, 0], [0.115, 0.02], [0.115, 0.2], [0.098, 0.23], [0.098, 0.25], [0, 0.25]];
-      const contents = lathe(pts.map(([x, y]) => [x * 0.94, y * 0.88]), tinted(t, { roughness: 0.5 }));
-      contents.position.y = 0.01;
-      const jarGlass = lathe(pts, clearGlass);
-      const lid = new THREE.Mesh(new THREE.CylinderGeometry(0.105, 0.105, 0.05, 32), tinted("#e9c46a", { metalness: 0.6, roughness: 0.3 }));
-      lid.position.y = 0.27;
-      const label = new THREE.Mesh(new THREE.CylinderGeometry(0.117, 0.117, 0.09, 32, 1, true), white);
-      label.position.y = 0.11;
-      g.add(contents, jarGlass, label, lid);
-      return [g, 0.26];
-    },
-    tub(t) {
-      const g = new THREE.Group();
-      const body = lathe([[0, 0], [0.12, 0], [0.145, 0.16], [0, 0.16]], white);
-      const label = lathe([[0.122, 0.03], [0.142, 0.14]], tinted(t, { side: THREE.DoubleSide }));
-      const lid = new THREE.Mesh(new THREE.CylinderGeometry(0.152, 0.152, 0.03, 32), tinted(t, { roughness: 0.35 }));
-      lid.position.y = 0.17;
-      g.add(body, label, lid);
-      return [g, 0.32];
-    },
-    butter(t) {
-      const g = new THREE.Group();
-      const block = new THREE.Mesh(new RoundedBoxGeometry(0.28, 0.09, 0.13, 3, 0.02), tinted("#f7e7a6", { roughness: 0.5 }));
-      block.position.y = 0.045;
-      const wrap = new THREE.Mesh(new RoundedBoxGeometry(0.2, 0.092, 0.132, 2, 0.02), tinted(t));
-      wrap.position.set(0.04, 0.046, 0);
-      g.add(block, wrap);
-      return [g, 0.32];
-    },
-    eggs() {
-      const g = new THREE.Group();
-      const tray = new THREE.Mesh(new RoundedBoxGeometry(0.52, 0.08, 0.2, 3, 0.03), paper);
-      tray.position.y = 0.04;
-      g.add(tray);
-      const shell = new THREE.MeshPhysicalMaterial({ color: 0xf3dcc4, roughness: 0.55, clearcoat: 0.15 });
-      for (let i = 0; i < 6; i++) {
-        const egg = new THREE.Mesh(new THREE.SphereGeometry(0.045, 20, 16), shell);
-        egg.scale.y = 1.28;
-        egg.position.set(-0.2 + (i % 3) * 0.2 * 1.0 + (i >= 3 ? 0 : 0), 0.11, i < 3 ? -0.045 : 0.045);
-        egg.position.x = -0.18 + (i % 3) * 0.18;
-        g.add(egg);
-      }
-      return [g, 0.56];
-    },
-    cheese(t) {
-      const g = new THREE.Group();
-      const shape = new THREE.Shape();
-      shape.moveTo(0, 0);
-      shape.lineTo(0.32, -0.06);
-      shape.lineTo(0.32, 0.12);
-      shape.closePath();
-      const wedge = new THREE.Mesh(new THREE.ExtrudeGeometry(shape, { depth: 0.12, bevelEnabled: true, bevelSize: 0.01, bevelThickness: 0.01, bevelSegments: 2 }), tinted("#f6d36b", { roughness: 0.55 }));
-      wedge.rotation.x = -Math.PI / 2;
-      wedge.position.set(-0.16, 0.0, 0.03);
-      const rind = new THREE.Mesh(new THREE.BoxGeometry(0.02, 0.13, 0.19), tinted(t));
-      rind.position.set(0.17, 0.065, -0.0);
-      g.add(wedge, rind);
-      // a few holes, for the cartoon of it
-      for (const [x, z] of [[0.02, 0.0], [0.1, 0.04]]) {
-        const hole = new THREE.Mesh(new THREE.SphereGeometry(0.018, 10, 8), tinted("#e7b94c"));
-        hole.position.set(x, 0.13, z);
-        hole.scale.y = 0.3;
-        g.add(hole);
-      }
-      return [g, 0.36];
-    },
-    tray(t, item) {
-      const g = new THREE.Group();
-      const base = new THREE.Mesh(new RoundedBoxGeometry(0.4, 0.05, 0.26, 3, 0.02), white);
-      base.position.y = 0.025;
-      const fish = /salmon|fish|prawn/.test(item.name);
-      const meatCol = fish ? "#f4a07d" : /tofu/.test(item.name) ? "#f3ead2" : "#e9867a";
-      const cut = new THREE.Mesh(new RoundedBoxGeometry(0.3, 0.06, 0.18, 3, 0.03), tinted(meatCol, { roughness: 0.5, clearcoat: 0.6 }));
-      cut.position.y = 0.075;
-      const film = new THREE.Mesh(new RoundedBoxGeometry(0.4, 0.07, 0.26, 3, 0.025), new THREE.MeshPhysicalMaterial({ color: 0xffffff, roughness: 0.05, transmission: 0.9, transparent: true, opacity: 0.35, thickness: 0.01 }));
-      film.position.y = 0.06;
-      const sticker = new THREE.Mesh(new RoundedBoxGeometry(0.1, 0.005, 0.07, 1, 0.002), tinted(t));
-      sticker.position.set(0.1, 0.098, 0.05);
-      g.add(base, cut, film, sticker);
-      return [g, 0.44];
-    },
-    veg(t, item) {
-      const g = new THREE.Group();
-      const n = item.name;
-      const colour = /lemon/.test(n) ? "#f4d75e" : /lime|avocado|cucumber|zucchini|broccoli/.test(n) ? "#86b76c" : /capsicum|tomato|chilli/.test(n) ? "#e8604c" : /carrot|orange|pumpkin/.test(n) ? "#f29a4a" : /onion/.test(n) ? "#d9a26b" : /garlic/.test(n) ? "#f4ece0" : /potato|ginger/.test(n) ? "#d2b07a" : /mushroom/.test(n) ? "#d9c7b0" : /banana/.test(n) ? "#f4d75e" : t;
-      const count = /garlic|ginger/.test(n) ? 1 : 3;
-      if (/carrot/.test(n)) {
-        for (let i = 0; i < 3; i++) {
-          const c = new THREE.Mesh(new THREE.ConeGeometry(0.035, 0.32, 14), tinted(colour));
-          c.rotation.z = Math.PI / 2;
-          c.rotation.y = (i - 1) * 0.12;
-          c.position.set((i - 1) * 0.015, 0.035, (i - 1) * 0.078);
-          const top = new THREE.Mesh(new THREE.ConeGeometry(0.03, 0.08, 6), tinted("#7fb08a"));
-          top.rotation.z = -Math.PI / 2;
-          top.position.set(0.19 + (i - 1) * 0.015, 0.035, (i - 1) * 0.078 + (i - 1) * 0.022);
-          g.add(c, top);
-        }
-        return [g, 0.4];
-      }
-      for (let i = 0; i < count; i++) {
-        const r = /garlic/.test(n) ? 0.08 : 0.075;
-        const v = new THREE.Mesh(new THREE.SphereGeometry(r, 24, 18), tinted(colour, { roughness: 0.4, clearcoat: 0.5 }));
-        v.scale.set(1, /lemon|lime/.test(n) ? 0.82 : /onion|garlic/.test(n) ? 0.9 : 0.95, /lemon/.test(n) ? 0.82 : 1);
-        v.position.set((i - (count - 1) / 2) * 0.15, r * 0.95, i === 1 ? 0.05 : -0.02);
-        if (/capsicum/.test(n)) v.scale.set(1.05, 1.1, 1.05);
-        g.add(v);
-        const stalk = new THREE.Mesh(new THREE.CylinderGeometry(0.008, 0.012, 0.04, 6), tinted(/onion|garlic/.test(n) ? "#cdb38c" : "#6f9a5d"));
-        stalk.position.set(v.position.x, r * 1.85, v.position.z);
-        g.add(stalk);
-      }
-      return [g, Math.max(0.2, count * 0.15)];
-    },
-    leafy(t) {
-      const g = new THREE.Group();
-      const bag = new THREE.Mesh(new RoundedBoxGeometry(0.28, 0.34, 0.12, 3, 0.05), new THREE.MeshPhysicalMaterial({ color: 0xffffff, roughness: 0.1, transmission: 0.8, transparent: true, opacity: 0.45, thickness: 0.02 }));
-      bag.position.y = 0.17;
-      g.add(bag);
-      for (let i = 0; i < 9; i++) {
-        const leaf = new THREE.Mesh(new THREE.SphereGeometry(0.06, 12, 10), tinted(i % 2 ? "#79b07a" : "#5f9e6a", { roughness: 0.6 }));
-        leaf.scale.set(1, 0.55, 0.35);
-        leaf.position.set((i % 3 - 1) * 0.07, 0.06 + Math.floor(i / 3) * 0.09, (i % 2 - 0.5) * 0.03);
-        leaf.rotation.z = (i % 3 - 1) * 0.6;
-        g.add(leaf);
-      }
-      const tag = new THREE.Mesh(new RoundedBoxGeometry(0.12, 0.06, 0.005, 1, 0.002), tinted(t));
-      tag.position.set(0, 0.26, 0.062);
-      g.add(tag);
-      return [g, 0.3];
-    },
-    can(t) {
-      const g = new THREE.Group();
-      const body = new THREE.Mesh(new THREE.CylinderGeometry(0.075, 0.075, 0.2, 32), tin);
-      body.position.y = 0.1;
-      const label = new THREE.Mesh(new THREE.CylinderGeometry(0.0765, 0.0765, 0.15, 32, 1, true), tinted(t, { side: THREE.DoubleSide }));
-      label.position.y = 0.1;
-      const rim = new THREE.Mesh(new THREE.TorusGeometry(0.072, 0.006, 8, 32), tin);
-      rim.rotation.x = Math.PI / 2;
-      rim.position.y = 0.2;
-      g.add(body, label, rim);
-      return [g, 0.18];
-    },
-    box(t) {
-      const g = new THREE.Group();
-      const box = new THREE.Mesh(new RoundedBoxGeometry(0.28, 0.42, 0.1, 2, 0.01), tinted(t, { roughness: 0.55 }));
-      box.position.y = 0.21;
-      const window_ = new THREE.Mesh(new RoundedBoxGeometry(0.16, 0.14, 0.004, 2, 0.01), clearGlass);
-      window_.position.set(0, 0.2, 0.051);
-      const stripe = new THREE.Mesh(new RoundedBoxGeometry(0.282, 0.05, 0.102, 1, 0.005), white);
-      stripe.position.y = 0.36;
-      g.add(box, window_, stripe);
-      return [g, 0.3];
-    },
-    sack(t) {
-      const g = new THREE.Group();
-      const pts = [[0, 0], [0.12, 0], [0.14, 0.05], [0.13, 0.3], [0.11, 0.36], [0.09, 0.38], [0, 0.38]];
-      const bag = lathe(pts, paper, 6);
-      bag.rotation.y = Math.PI / 6;
-      bag.scale.z = 0.62;
-      const label = new THREE.Mesh(new RoundedBoxGeometry(0.16, 0.12, 0.005, 1, 0.003), tinted(t));
-      label.position.set(0, 0.18, 0.083);
-      const fold = new THREE.Mesh(new RoundedBoxGeometry(0.2, 0.04, 0.1, 2, 0.01), paper);
-      fold.position.y = 0.38;
-      g.add(bag, label, fold);
-      return [g, 0.3];
-    },
-    loaf() {
-      const g = new THREE.Group();
-      const loaf = new THREE.Mesh(new RoundedBoxGeometry(0.42, 0.2, 0.2, 4, 0.08), tinted("#d9a464", { roughness: 0.75 }));
-      loaf.position.y = 0.1;
-      for (let i = 0; i < 3; i++) {
-        const score = new THREE.Mesh(new THREE.BoxGeometry(0.015, 0.01, 0.16), tinted("#f3d9a7"));
-        score.position.set(-0.1 + i * 0.1, 0.2, 0);
-        score.rotation.y = 0.5;
-        g.add(score);
-      }
-      g.add(loaf);
-      return [g, 0.46];
-    },
-    spice(t) {
-      const g = new THREE.Group();
-      const body = new THREE.Mesh(new THREE.CylinderGeometry(0.045, 0.045, 0.16, 24), clearGlass);
-      body.position.y = 0.08;
-      const fillCol = new THREE.Mesh(new THREE.CylinderGeometry(0.04, 0.04, 0.12, 24), tinted(t === "#bfe3cf" ? "#d4a24c" : "#c86b3c", { roughness: 0.8 }));
-      fillCol.position.y = 0.065;
-      const cap = new THREE.Mesh(new THREE.CylinderGeometry(0.047, 0.047, 0.04, 24), tinted("#2f3437", { roughness: 0.4 }));
-      cap.position.y = 0.18;
-      g.add(fillCol, body, cap);
-      return [g, 0.12];
-    },
-  };
-
   /* ---------- place items on shelves ---------- */
   // Fridge zones: crisper (produce), three glass shelves, door bins
-  // (bottles/juice/milk/butter/eggs go in the door when they fit).
-  const DOOR_MODELS = new Set(["juice", "bottle", "butter"]);
+  // (milk, juice, bottles, jars, tins and butter go in the door while it has room).
+  const DOOR_MODELS = new Set(["milk", "juice", "cream", "bottle", "jar", "can", "butter"]);
   const fridgeItems = items.filter((i) => i.place === "fridge");
   const pantryItems = items.filter((i) => i.place === "pantry");
   const pickables = [];
@@ -583,10 +342,10 @@ function start() {
   // so the shelves pack by the real size rather than a hand-typed width.
   const sizes = new Map();
   function measure(item) {
-    const key = item.model + (item.model === "veg" || item.model === "tray" ? `|${item.name}` : "");
+    const key = item.model + JSON.stringify(item.look ?? {});
     let m = sizes.get(key);
     if (!m) {
-      const [g] = (BUILD[item.model] ?? BUILD.jar)(item.tint, item);
+      const [g] = buildModel(item);
       const size = new THREE.Box3().setFromObject(g).getSize(new THREE.Vector3());
       m = { w: size.x, d: size.z, h: size.y };
       sizes.set(key, m);
@@ -600,8 +359,7 @@ function start() {
   // shrunk a little if the shelf above would otherwise cut through it.
   // `free` is the headroom above the shelf.
   function addItem(item, parent, x, y, z, rotY = 0, free = Infinity) {
-    const builder = BUILD[item.model] ?? BUILD.jar;
-    const [raw] = builder(item.tint, item);
+    const [raw] = buildModel(item);
     const meshes = [];
     raw.traverse((o) => {
       if (o.isMesh) {
@@ -677,29 +435,62 @@ function start() {
     h.userData.lane = ln;
     return h;
   }
-  // Lay a list out over several lanes: each item tries its preferred lane
-  // first, then the rest in turn. One that fits nowhere stays in the list
-  // below the scene rather than being squeezed in.
+  // Lay a list out over several lanes. First each item is given a lane: its
+  // own if there's room, and only once everything has had its own does what
+  // didn't fit take room on the nearest level that has it (so a crowded meat
+  // shelf can't push the milk out, and potatoes that miss the bench go to
+  // the bottom shelf, not the top). Then each lane is set out whole
+  // (kitchen-layout.mjs planLane): shortest in front, spread evenly, the
+  // taller ones standing in the gaps behind. Room is judged by the same plan,
+  // so what's given a lane gets a spot on it. One that fits nowhere stays in
+  // the list below the scene rather than being squeezed in.
   function layAll(list, lanes, preferred) {
-    for (const [i, item] of list.entries()) {
-      const from = preferred(item, i);
-      const order = lanes.map((_, k) => lanes[(from + k) % lanes.length]);
-      const ln = order.find((l) => fitsLane(item, l));
-      if (ln) place(item, ln);
+    const into = new Map(lanes.map((ln) => [ln, []]));
+    const ordered = (ln, extra) => frontToBack([...into.get(ln), extra], (item) => measure(item).h);
+    const take = (item, ln) => {
+      if (fitScale(measure(item).h, ln.free) < 0.8 || !fitsPlan(ln, ordered(ln, item).map(spot))) return false;
+      into.get(ln).push(item);
+      return true;
+    };
+    const left = list.filter((item, i) => !take(item, lanes[preferred(item, i)]));
+    for (const item of left) {
+      const from = preferred(item, list.indexOf(item));
+      [...lanes].sort((a, b) => Math.abs(lanes.indexOf(a) - from) - Math.abs(lanes.indexOf(b) - from)).find((ln) => take(item, ln));
+    }
+    for (const ln of lanes) {
+      const items = frontToBack(into.get(ln), (item) => measure(item).h);
+      const spots = items.map(spot);
+      planLane(ln, spots).forEach((slot, i) => {
+        const h = addItem(items[i], ln.parent, slot.x, ln.y, slot.z, spots[i].rot, ln.free);
+        h.userData.delay = slot.index * 0.06 + slot.row * 0.1;
+        h.userData.lane = ln;
+      });
     }
   }
   // door bins: alternate left and right doors, three bins each. The bin's base
   // is a thin tray, so an item stands on its top face, with the next bin's
   // tray as the ceiling.
+  // Each bin is packed by width, one row from the hinge side, so it holds as
+  // many as fit; bins fill alternately left and right, bottom up, tall things
+  // first to the bottom bins where the swing shows them whole. Items are
+  // turned round to face out of the door (labels towards the room) and a
+  // little more towards the camera.
   let bi = 0;
   const BIN_FLOOR = 0.0075;
+  const BIN_W = doorW - 0.28;
+  const binOrder = [0, 1, 2].flatMap((k) => doors.map((door) => ({ door, bin: door.bins[k], used: 0 })));
   function placeInDoor(item) {
-    if (bi >= 12) return null;
-    const door = doors[bi % 2];
-    const bin = door.bins[Math.floor(bi / 2) % 3];
-    const slot = Math.floor(bi / 6);
-    const x = -0.18 + slot * 0.32;
-    const h = addItem(item, bin, x * -door.side, BIN_FLOOR + 0.0005, -0.02, door.side * 0.2, 0.68);
+    const m = measure(item);
+    const turn = Math.PI + 0.35;
+    const w = rotatedExtent(m.w, m.d, turn).x;
+    if (m.h * fitScale(m.h, 0.68) < m.h * 0.8) return null;
+    const spot = binOrder.find((b) => b.used + w <= BIN_W);
+    if (!spot) return null;
+    const { door, bin } = spot;
+    // from the hinge side inward
+    const x = (-BIN_W / 2 + spot.used + w / 2) * -door.side;
+    spot.used += w + 0.03;
+    const h = addItem(item, bin, x, BIN_FLOOR + 0.0005, -0.02, Math.PI + door.side * 0.35, 0.68);
     h.userData.delay = 0.3 + bi * 0.05;
     bi++;
     return h;
@@ -707,28 +498,45 @@ function start() {
 
   // sort: door candidates first to the door; produce to the crisper; the rest
   // onto the shelves (tall things where there's headroom, the rest spread out)
-  const doorQueue = fridgeItems.filter((i) => DOOR_MODELS.has(i.model));
-  const crisperQueue = fridgeItems.filter((i) => i.model === "veg" || i.model === "leafy");
-  let shelfQueue = fridgeItems.filter((i) => !DOOR_MODELS.has(i.model) && i.model !== "veg" && i.model !== "leafy");
+  // Herbs stand in their glass of water on a shelf, not lying in the drawer.
+  const crisperModel = (i) => PRODUCE.has(i.model) && i.model !== "herbs";
+  const doorQueue = [...fridgeItems.filter((i) => DOOR_MODELS.has(i.model))].sort((a, b) => measure(b).h - measure(a).h);
+  const crisperQueue = fridgeItems.filter(crisperModel);
+  let shelfQueue = fridgeItems.filter((i) => !DOOR_MODELS.has(i.model) && !crisperModel(i));
 
   const overflow = doorQueue.filter((item) => !placeInDoor(item));
   shelfQueue = [...shelfQueue, ...overflow];
 
-  // crisper: produce sits on the drawer's floor, just behind its frosted front
+  // crisper: produce sits on the drawer's floor, behind its clear front
   const crisperLane = lane("in the crisper", fridge, -W / 2 + 0.14, W / 2 - 0.14, DRAWER_TOP, -0.16, -0.82, SHELVES[0] - 0.02 - DRAWER_TOP);
+  // as many as the drawer holds, shortest first (they fill its front row and
+  // the rest stand in the gaps behind)
+  const inCrisper = [];
   const overCrisper = [];
-  for (const item of crisperQueue) if (!place(item, crisperLane)) overCrisper.push(item);
-  // shelves: spread the rest across the three shelves, tallest at the top
+  for (const item of frontToBack(crisperQueue, (x) => measure(x).h)) {
+    const fits = fitScale(measure(item).h, crisperLane.free) >= 0.8 && fitsPlan(crisperLane, frontToBack([...inCrisper, item], (x) => measure(x).h).map(spot));
+    (fits ? inCrisper : overCrisper).push(item);
+  }
+  layAll(inCrisper, [crisperLane], () => 0);
+  // shelves: meat and fish on the bottom, dairy in the middle, tall cartons
+  // and the rest up top (src/kitchen-layout.mjs shelfFor); produce the
+  // crisper couldn't take comes last, into whatever room is left
   const SHELF_NAMES = ["bottom", "middle", "top"];
   const CEILING = FOOT + T + H - 0.06;
   const shelfLanes = SHELVES.map((y, si) =>
     lane(`on the ${SHELF_NAMES[si]} shelf`, fridge, -W / 2 + 0.12, W / 2 - 0.12, y + 0.002, -0.17, -0.84, (si < 2 ? SHELVES[si + 1] - 0.02 : CEILING) - (y + 0.002)),
   );
-  layAll([...shelfQueue, ...overCrisper], shelfLanes, (item, i) => (measure(item).h > 0.45 ? 2 : i % 3));
+  // herbs in their glass and produce the crisper couldn't take go up top,
+  // never down by the raw meat
+  const shelfOf = (item) => (PRODUCE.has(item.model) ? 2 : shelfFor(item.model));
+  layAll([...shelfQueue, ...overCrisper], shelfLanes, shelfOf);
 
-  // pantry shelves: heavy things low (sacks, cans), jars and boxes up high
-  const order = { sack: 0, can: 1, veg: 1, loaf: 2, box: 2, bottle: 3, jar: 3, spice: 4 };
-  const sortedPantry = [...pantryItems].sort((a, b) => (order[a.model] ?? 3) - (order[b.model] ?? 3));
+  // pantry levels, as a pantry is kept: on the bench the heavy bags of
+  // flour, sugar and rice beside the vegetable basket; tins, cartons and the
+  // bread on the bottom shelf; jars, packets and pouches in the middle;
+  // bottles and the spice rack up top
+  const order = { sack: 0, potato: 0, onion: 0, pumpkin: 0, pineapple: 0, banana: 0, garlic: 1, ginger: 1, can: 1, carton: 1, loaf: 1, jar: 2, box: 2, pouch: 2, bar: 2, bottle: 3, spice: 3 };
+  const sortedPantry = [...pantryItems].sort((a, b) => (order[a.model] ?? 2) - (order[b.model] ?? 2));
   const PANTRY_NAMES = ["on the pantry bench", "on the bottom pantry shelf", "on the middle pantry shelf", "on the top pantry shelf"];
   const BOARD_TOP = 0.035;
   const pantryTops = [0.68, ...PANTRY_SHELVES.map((y) => y + BOARD_TOP)];
@@ -744,7 +552,7 @@ function start() {
       si < 3 ? PANTRY_SHELVES[si] - BOARD_TOP - y - 0.0015 : Infinity,
     ),
   );
-  const pantryStart = (item) => Math.round(((order[item.model] ?? 3) * 3) / 4);
+  const pantryStart = (item) => order[item.model] ?? 2;
   layAll(sortedPantry, pantryLanes, pantryStart);
 
   // Somewhere for an item added from the panel, by the same rules: door
@@ -762,8 +570,7 @@ function start() {
       }
       // produce goes in the crisper while it has room in either row (its
       // frosted front hides both alike); the rest to the emptiest shelf
-      const produce = item.model === "veg" || item.model === "leafy";
-      if (produce && fits(crisperLane)) return place(item, crisperLane);
+      if (crisperModel(item) && fits(crisperLane)) return place(item, crisperLane);
       const ln = pick([...shelfLanes].sort((a, b) => a.x - b.x));
       return ln ? place(item, ln) : null;
     }
@@ -896,19 +703,21 @@ function start() {
   }
   function pick(cx, cy) {
     const stack = stackAt(cx, cy);
-    // a lifted item keeps the pointer while it stays over its own box, so the
-    // hover doesn't flutter at its edges as it rises
-    if (hovered && stack.includes(hovered) && !stack.slice(0, stack.indexOf(hovered)).some((h) => h.userData.item.id !== hovered.userData.item.id && exactFirst(h, cx, cy))) return hovered;
+    // A lifted item keeps the pointer while it's over the still box round
+    // where it stood, so the hover doesn't flutter as it rises, and lifting
+    // it doesn't hand the pointer to whatever it uncovered behind it. Only
+    // something really in front of that box (nearer the eye) takes over.
+    if (hovered && stack.includes(hovered)) {
+      const box = raycaster.intersectObject(hovered.userData.hit, false)[0];
+      const nearer = box && stack.some((h) => h !== hovered && exactHit(h) !== null && exactHit(h) < box.distance);
+      if (box && !nearer) return hovered;
+    }
     return stack[0] ?? null;
   }
-  // true when the ray meets this item's own meshes (not just its padded box)
-  function exactFirst(h, cx, cy) {
-    const r = canvas.getBoundingClientRect();
-    pointer.set(((cx - r.left) / r.width) * 2 - 1, -((cy - r.top) / r.height) * 2 + 1);
-    raycaster.setFromCamera(pointer, camera);
-    return raycaster.intersectObjects(h.userData.meshes, false).length > 0;
+  // how far along the current ray this item's own meshes are (null: missed)
+  function exactHit(h) {
+    return raycaster.intersectObjects(h.userData.meshes, false)[0]?.distance ?? null;
   }
-
   let peekTimer = 0;
   let leaveTimer = 0;
   function setHover(h) {
@@ -959,7 +768,10 @@ function start() {
     const stack = stackAt(e.clientX, e.clientY);
     const again = lastClick && Math.hypot(lastClick.x - e.clientX, lastClick.y - e.clientY) < 8 && stack.includes(selected);
     lastClick = { x: e.clientX, y: e.clientY };
-    const h = again && stack.length > 1 ? stack[(stack.indexOf(selected) + 1) % stack.length] : stack[0];
+    // what's lifted and outlined under the pointer is what you meant, even
+    // though lifting it uncovered whatever stands behind it
+    const lifted = e.pointerType !== "touch" && hovered && pick(e.clientX, e.clientY) === hovered ? hovered : null;
+    const h = again && stack.length > 1 ? stack[(stack.indexOf(selected) + 1) % stack.length] : (lifted ?? stack[0]);
     if (h) openPanel(h, true);
     else {
       lastClick = null;
@@ -1337,6 +1149,35 @@ function start() {
     },
     ids: () => pickables.map((h) => h.userData.item.id),
     doors: () => doorSwing,
+    // How much of an item you can see: of the points on screen where the
+    // camera would see it, the share where nothing else is in front (glass,
+    // film and the clear crisper front don't count; you see through them).
+    seen(id) {
+      const h = itemsById.get(id);
+      if (!h) return null;
+      camera.updateMatrixWorld();
+      const box = new THREE.Box3().setFromObject(h.userData.mesh);
+      const corners = [0, 1, 2, 3, 4, 5, 6, 7].map((k) => new THREE.Vector3(k & 1 ? box.max.x : box.min.x, k & 2 ? box.max.y : box.min.y, k & 4 ? box.max.z : box.min.z).project(camera));
+      const [x0, x1] = [Math.min(...corners.map((c) => c.x)), Math.max(...corners.map((c) => c.x))];
+      const [y0, y1] = [Math.min(...corners.map((c) => c.y)), Math.max(...corners.map((c) => c.y))];
+      const opaque = (o) => o.isMesh && o.visible && o.material.visible !== false && !(o.material.transparent && o.material.opacity < 0.6);
+      const solids = [];
+      scene.traverse((o) => opaque(o) && solids.push(o));
+      let mine = 0;
+      let shown = 0;
+      const N = 14;
+      for (let i = 0; i < N; i++) {
+        for (let j = 0; j < N; j++) {
+          pointer.set(x0 + ((x1 - x0) * (i + 0.5)) / N, y0 + ((y1 - y0) * (j + 0.5)) / N);
+          raycaster.setFromCamera(pointer, camera);
+          if (!raycaster.intersectObjects(h.userData.meshes.filter(opaque), false).length) continue;
+          mine++;
+          const first = raycaster.intersectObjects(solids, false)[0];
+          if (first && h.userData.meshes.includes(first.object)) shown++;
+        }
+      }
+      return mine ? shown / mine : 0;
+    },
   };
   const clock = new THREE.Clock();
   // the doors swing open as the page arrives (items then pop onto shelves),
