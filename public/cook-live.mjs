@@ -134,14 +134,25 @@ function start() {
     bannerText.append(strong, ` ${text}`);
     if (offForm) offForm.hidden = true;
   }
+  // Turning live off: the page lets go of the session at once, before the
+  // server answers. The stream can announce the end first, and if the page
+  // still held the session it would take that for live dropping out and go
+  // live again (with automatic live on).
+  async function turnOff() {
+    const id = session;
+    if (id === null) return;
+    retried = true;
+    done("ended");
+    await post(`/live/${id}/end`, { reason: "ended" }).catch(() => null);
+  }
   offForm?.addEventListener("submit", async (e) => {
     e.preventDefault();
     if (session === null) return;
-    await post(`/live/${session}/end`, { reason: "ended" }).catch(() => null);
-    done("ended");
+    const off = turnOff();
     showOff(t("You turned it off. Watchers no longer see your steps; keep cooking."));
     restoreGoLive();
     say(t("Live is off for this session."));
+    await off;
   });
 
   // the Go live sheet, kept so it can come back after turning live off
@@ -317,9 +328,9 @@ function start() {
   onair?.querySelector("[data-end-form]")?.addEventListener("submit", async (e) => {
     e.preventDefault();
     if (session === null) return;
-    await post(`/live/${session}/end`, { reason: "ended" }).catch(() => null);
-    done("ended");
+    const off = turnOff();
     say(t("Live session ended. You can keep cooking."));
+    await off;
   });
 
   // close a sheet on Escape or a tap outside it
