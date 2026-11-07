@@ -1,6 +1,7 @@
 import { all } from "./db.ts";
 import { stockParams, stockSql } from "./expiry.ts";
-import { addDays, daysBetween, money, parseIsoDate, today, weekday } from "./format.ts";
+import { addDays, daysBetween, money, monthName, parseIsoDate, today, weekday } from "./format.ts";
+import { t, tn } from "./i18n.ts";
 import { estimate } from "./nutrition.ts";
 import { type Need, type PackOption, packOptions, purchasePlan, type Stock } from "./pricing.ts";
 import { usableStock } from "./shopping.ts";
@@ -29,8 +30,6 @@ export type InterestKey = (typeof INTERESTS)[number]["key"];
 export function isInterest(s: string): s is InterestKey {
   return INTERESTS.some((i) => i.key === s);
 }
-
-const MONTH_NAMES = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
 // What's in season in Australia (southern hemisphere), month by month, from
 // state seasonal-produce guides. Deliberately short: common produce that the
@@ -349,11 +348,13 @@ function titleKey(title: string): string {
 
 function listNames(names: string[]): string {
   if (names.length <= 1) return names.join("");
-  return `${names.slice(0, -1).join(", ")} and ${names.at(-1)}`;
+  return t("{items} and {last}", { items: names.slice(0, -1).join(", "), last: names.at(-1)! });
 }
 
-function expiresLabel(slotDate: string, expiry: string): string {
-  return daysBetween(slotDate, expiry) === 0 ? "the day it expires" : `before it expires ${weekday(expiry)}`;
+function usesBeforeExpiry(name: string, slotDate: string, expiry: string): string {
+  return daysBetween(slotDate, expiry) === 0
+    ? t("Uses your {item} the day it expires", { item: name })
+    : t("Uses your {item} before it expires {day}", { item: name, day: weekday(expiry) });
 }
 
 interface Scoring {
@@ -393,7 +394,10 @@ function scoreAt(c: Candidate, slot: Slot, ctx: Scoring): { score: number; reaso
     score += ratio <= 1 ? 1.5 - 2 * (1 - ratio) : 1.5 - 3.5 * (ratio - 1);
     if (ratio >= 0.7 && ratio <= 1.15) {
       // sharing: the card already says what it adds, so no second figure
-      reasons.push({ text: on.has("share") ? `About your ${money(pace)} a night` : `${money(cost)} to buy, about your ${money(pace)} a night`, weight: 1.4 });
+      reasons.push({
+        text: on.has("share") ? t("About your {amount} a night", { amount: money(pace) }) : t("{cost} to buy, about your {amount} a night", { cost: money(cost), amount: money(pace) }),
+        weight: 1.4,
+      });
     }
   } else {
     score -= (0.3 * cost) / 1500;
@@ -401,7 +405,7 @@ function scoreAt(c: Candidate, slot: Slot, ctx: Scoring): { score: number; reaso
   // sharing: a dinner that reuses what other nights buy (the olive oil, the
   // rice) adds less to the week
   if (on.has("share") && c.cost.toBuyCents - cost >= 150) {
-    reasons.push({ text: `Shares ${money(c.cost.toBuyCents - cost)} of ingredients with other nights`, weight: 1.3 });
+    reasons.push({ text: t("Shares {amount} of ingredients with other nights", { amount: money(c.cost.toBuyCents - cost) }), weight: 1.3 });
   }
 
   // the fridge: coverage, and soon-to-expire items used before they turn
@@ -418,8 +422,8 @@ function scoreAt(c: Candidate, slot: Slot, ctx: Scoring): { score: number; reaso
       score += Math.max(0.6, 3 - 0.6 * days);
       if (!urgent || days < urgent.days) urgent = { name: e.name, expiry: e.expiry, days };
     }
-    if (urgent) reasons.push({ text: `Uses your ${urgent.name} ${expiresLabel(slot.date, urgent.expiry)}`, weight: 5 - urgent.days * 0.5 });
-    else if (c.cost.held.length) reasons.push({ text: `You already have ${listNames(c.cost.held.slice(0, 2))}`, weight: 1 + coverage * 2 });
+    if (urgent) reasons.push({ text: usesBeforeExpiry(urgent.name, slot.date, urgent.expiry), weight: 5 - urgent.days * 0.5 });
+    else if (c.cost.held.length) reasons.push({ text: t("You already have {items}", { items: listNames(c.cost.held.slice(0, 2)) }), weight: 1 + coverage * 2 });
   }
 
   if (on.has("mix") && slot.neighbours.length) {
@@ -436,8 +440,9 @@ function scoreAt(c: Candidate, slot: Slot, ctx: Scoring): { score: number; reaso
     }
     const before = slot.neighbours.find((n) => n.date < slot.date);
     if (!clashes && before) {
-      const what = before.cuisine || (before.protein !== "veg" ? before.protein : "");
-      reasons.push({ text: what ? `A change from ${weekday(before.date)}'s ${what}` : "Different from the night before", weight: 0.9 });
+      // a cuisine is the recipe's own word; a protein is the planner's
+      const what = before.cuisine || (before.protein !== "veg" ? t(before.protein) : "");
+      reasons.push({ text: what ? t("A change from {day}'s {what}", { day: weekday(before.date), what }) : t("Different from the night before"), weight: 0.9 });
     }
   } else if (c.recipe.cuisine && slot.neighbours.some((n) => n.cuisine === c.recipe.cuisine)) {
     score -= 0.5;
@@ -445,16 +450,19 @@ function scoreAt(c: Candidate, slot: Slot, ctx: Scoring): { score: number; reaso
 
   if (on.has("lessmeat") && !c.meat) {
     score += 1.2;
-    reasons.push({ text: "Meat-free night", weight: 0.8 });
+    reasons.push({ text: t("Meat-free night"), weight: 0.8 });
   }
 
   if (on.has("usuals")) {
     if (c.history > 0) {
       score += 2.5 + 0.6 * Math.min(c.history, 4);
-      reasons.push({ text: `One of your usuals, planned ${c.history}×`, weight: 3 + c.history * 0.2 });
+      reasons.push({ text: t("One of your usuals, planned {n}×", { n: c.history }), weight: 3 + c.history * 0.2 });
     } else if (affinity > 0) {
       score += 0.5;
-      reasons.push({ text: affinity >= 3 ? `You often cook ${c.recipe.cuisine}` : `More of the ${c.recipe.cuisine} food you've planned before`, weight: 1 });
+      reasons.push({
+        text: affinity >= 3 ? t("You often cook {cuisine}", { cuisine: c.recipe.cuisine }) : t("More of the {cuisine} food you've planned before", { cuisine: c.recipe.cuisine }),
+        weight: 1,
+      });
     }
   }
 
@@ -462,8 +470,8 @@ function scoreAt(c: Candidate, slot: Slot, ctx: Scoring): { score: number; reaso
     score += 0.3;
     if (c.recipe.cuisine && affinity === 0 && k.cuisines.size) {
       score += 0.5;
-      reasons.push({ text: `New to you, and a cuisine you haven't planned`, weight: 1.6 });
-    } else reasons.push({ text: "New to you", weight: 1.1 });
+      reasons.push({ text: t("New to you, and a cuisine you haven't planned"), weight: 1.6 });
+    } else reasons.push({ text: t("New to you"), weight: 1.1 });
   }
 
   if (on.has("season")) {
@@ -472,8 +480,9 @@ function scoreAt(c: Candidate, slot: Slot, ctx: Scoring): { score: number; reaso
       score += 0.9 * Math.min(inSeason.length, 3);
       const shown = inSeason.slice(0, 2);
       const label = listNames(shown);
+      const vars = { items: `${label[0].toUpperCase()}${label.slice(1)}`, month: monthName(new Date(2000, month, 1)) };
       reasons.push({
-        text: `${label[0].toUpperCase()}${label.slice(1)} ${shown.length > 1 || /s$/.test(shown[0]) ? "are" : "is"} in season in ${MONTH_NAMES[month]}`,
+        text: shown.length > 1 || /s$/.test(shown[0]) ? t("{items} are in season in {month}", vars) : t("{items} is in season in {month}", vars),
         weight: 1.3 + inSeason.length * 0.3,
       });
     }
@@ -766,7 +775,15 @@ export function generatePlan(userId: number, req: PlanRequest): Plan {
     setOthers(chosen, i);
     const { reasons } = scoreAt(c, slotFor(i, chosen), scoring);
     const texts = reasons.map((r) => r.text);
-    if (!texts.length) texts.push(c.cost.held.length ? `You already have ${listNames(c.cost.held.slice(0, 2))}` : c.recipe.cuisine ? `A ${c.recipe.cuisine} dinner for a change` : "A good all-rounder");
+    if (!texts.length) {
+      texts.push(
+        c.cost.held.length
+          ? t("You already have {items}", { items: listNames(c.cost.held.slice(0, 2)) })
+          : c.recipe.cuisine
+            ? t("A {cuisine} dinner for a change", { cuisine: c.recipe.cuisine })
+            : t("A good all-rounder"),
+      );
+    }
     picks.push({ date, recipe: c.recipe, toBuyCents: c.cost.toBuyCents, addsCents: adds, fullCents: c.cost.fullCents, reasons: texts.slice(0, 2), meat: c.meat });
   });
 
@@ -778,12 +795,23 @@ export function generatePlan(userId: number, req: PlanRequest): Plan {
     k.options,
   );
   const totalCents = week.purchaseCents;
-  if (week.estimatedCents) notes.push(`Includes about ${money(week.estimatedCents)} of estimates for ${week.unpriced} ingredient${week.unpriced === 1 ? "" : "s"} with no pack price.`);
-  if (!pool.length) notes.push("Nothing in the catalogue fits your diet and dislikes together. Loosen one in settings to get suggestions.");
+  if (week.estimatedCents) {
+    notes.push(
+      tn(week.unpriced, "Includes about {amount} of estimates for {n} ingredient with no pack price.", "Includes about {amount} of estimates for {n} ingredients with no pack price.", {
+        amount: money(week.estimatedCents),
+      }),
+    );
+  }
+  if (!pool.length) notes.push(t("Nothing in the catalogue fits your diet and dislikes together. Loosen one in settings to get suggestions."));
   else if (open.length && enforce !== null) {
-    notes.push(`Only ${picks.length} dinner${picks.length === 1 ? "" : "s"} fit in ${money(enforce)}, so ${open.length === 1 ? "one night is" : `${open.length} nights are`} left open.`);
-  } else if (open.length) notes.push(`${open.length === 1 ? "One night" : `${open.length} nights`} had no recipe left that fits.`);
-  if (dates.length < req.nights) notes.push(`Only ${dates.length} free night${dates.length === 1 ? "" : "s"} in the next three weeks.`);
+    const vars = { n: picks.length, budget: money(enforce), open: open.length };
+    notes.push(
+      open.length === 1
+        ? t(picks.length === 1 ? "Only {n} dinner fit in {budget}, so one night is left open." : "Only {n} dinners fit in {budget}, so one night is left open.", vars)
+        : t(picks.length === 1 ? "Only {n} dinner fit in {budget}, so {open} nights are left open." : "Only {n} dinners fit in {budget}, so {open} nights are left open.", vars),
+    );
+  } else if (open.length) notes.push(tn(open.length, "One night had no recipe left that fits.", "{n} nights had no recipe left that fits."));
+  if (dates.length < req.nights) notes.push(tn(dates.length, "Only {n} free night in the next three weeks.", "Only {n} free nights in the next three weeks."));
 
   return { dates, picks, open, totalCents, budgetCents: enforce, notes, candidateCount: pool.length };
 }

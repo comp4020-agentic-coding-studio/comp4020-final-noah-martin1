@@ -6,6 +6,7 @@
 // costs and can correct it. Deterministic: read from src/data/price-sources.json,
 // the searched listings and the dated reference prices, never from a model.
 
+import { t } from "./i18n.ts";
 import { useRate } from "./nutrition.ts";
 import { equivalentProducts, isFree, priceSources, priceSourceFor, type Product, unitPrice } from "./products.ts";
 
@@ -26,7 +27,7 @@ export interface PriceNote {
 const STORE: Record<string, string> = { woolworths: "Woolworths", aldi: "ALDI" };
 
 export function priceNote(name: string): PriceNote {
-  if (isFree(name)) return { kind: "free", label: "free (tap water)", note: null, centsPer100: 0, url: null };
+  if (isFree(name)) return { kind: "free", label: t("free (tap water)"), note: null, centsPer100: 0, url: null };
   const curated = priceSourceFor(name);
   const rate = useRate(name);
   const per100 = rate ? Math.round(rate.centsPerGram * 100 * 100) / 100 : null;
@@ -35,22 +36,22 @@ export function priceNote(name: string): PriceNote {
   // fish): its own note says why, when it has one
   if (curated?.via.length) {
     const own = priceSources()[curated.via[0]]?.from;
-    return { kind: "from", label: `bought as ${own?.ingredient ?? curated.key}`, note: own?.note && !/^bought as /i.test(own.note) ? own.note : null, centsPer100: per100, url: null };
+    return { kind: "from", label: t("bought as {item}", { item: own?.ingredient ?? curated.key }), note: own?.note && !/^bought as /i.test(own.note) ? own.note : null, centsPer100: per100, url: null };
   }
   if (s?.similar?.products.length) {
     const p = cheapest(s.similar.products);
     return { kind: "similar", label: `${STORE[p.retailer] ?? p.retailer}: ${p.name}`, note: s.similar.note, centsPer100: per100, url: p.url };
   }
   if (s?.estimate) {
-    return { kind: "estimate", label: "estimate", note: `Estimate: ${s.estimate.source} (${s.estimate.checked}).`, centsPer100: per100, url: null };
+    return { kind: "estimate", label: t("estimate"), note: t("Estimate: {source} ({checked}).", { source: s.estimate.source, checked: s.estimate.checked }), centsPer100: per100, url: null };
   }
   const products = equivalentProducts(name).filter((p) => p.available);
   if (products.length) {
     const p = cheapest(products);
     return { kind: "product", label: `${STORE[p.retailer] ?? p.retailer}: ${p.name}`, note: null, centsPer100: per100, url: p.url };
   }
-  if (rate) return { kind: "reference", label: "dated reference price", note: null, centsPer100: per100, url: null };
-  return { kind: "unknown", label: "no price known", note: null, centsPer100: null, url: null };
+  if (rate) return { kind: "reference", label: t("dated reference price"), note: null, centsPer100: per100, url: null };
+  return { kind: "unknown", label: t("no price known"), note: null, centsPer100: null, url: null };
 }
 
 function cheapest(list: Product[]): Product {

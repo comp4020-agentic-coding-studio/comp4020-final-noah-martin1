@@ -1,5 +1,6 @@
 import { all, one, run } from "./db.ts";
 import { addDays, today } from "./format.ts";
+import { t } from "./i18n.ts";
 import { conversionFor, estimate, gramsOf, referencePrice } from "./nutrition.ts";
 import { equivalentProducts, isFree, priceSources, type Product, type SizeUnit } from "./products.ts";
 
@@ -93,14 +94,15 @@ export interface PackOption {
 export const FRESH_DAYS = 3;
 
 export function optionLabel(o: PackOption): string {
-  if (o.kind === "user") return `Your price${o.retailer ? ` at ${o.retailer}` : ""}, recorded ${o.checked.slice(0, 10)}`;
+  const vars = { store: o.retailer, date: o.checked.slice(0, 10) };
+  if (o.kind === "user") return o.retailer ? t("Your price at {store}, recorded {date}", vars) : t("Your price, recorded {date}", vars);
   if (o.kind === "retailer") {
     const stale = o.checked.slice(0, 10) < addDays(today(), -FRESH_DAYS);
-    return `${o.retailer} shelf price, checked ${o.checked.slice(0, 10)}${stale ? " (may have changed)" : ""}`;
+    return stale ? t("{store} shelf price, checked {date} (may have changed)", vars) : t("{store} shelf price, checked {date}", vars);
   }
   // a dated price from a named shop outside Woolworths and ALDI
-  if (o.retailer && !/^(ALDI|Woolworths)$/.test(o.retailer)) return `Estimate from ${o.retailer}, checked ${o.checked.slice(0, 10)}`;
-  return `Reference shelf price, checked ${o.checked}`;
+  if (o.retailer && !/^(ALDI|Woolworths)$/.test(o.retailer)) return t("Estimate from {store}, checked {date}", vars);
+  return t("Reference shelf price, checked {date}", { date: o.checked });
 }
 
 const RETAILER_NAME: Record<string, string> = { woolworths: "Woolworths", aldi: "ALDI" };
@@ -310,11 +312,17 @@ function rank(o: PackOption): number {
 function reason(best: PackChoice, all: PackChoice[]): string {
   const others = all.filter((c) => c !== best && c.option.retailer !== best.option.retailer);
   const next = others[0];
-  const where = best.option.kind === "user" ? "the price you paid" : best.option.retailer;
-  if (!next) return all.length > 1 ? `Cheapest of ${all.length} options` : `Only option found`;
+  const where = best.option.kind === "user" ? t("the price you paid") : best.option.retailer;
+  if (!next) return all.length > 1 ? t("Cheapest of {n} options", { n: all.length }) : t("Only option found");
   const saving = next.costCents - best.costCents;
-  if (saving > 0) return `Cheapest: ${where} saves $${(saving / 100).toFixed(2)} over ${next.option.kind === "user" ? "your price" : next.option.retailer} for the same amount`;
-  return `Same cost as ${next.option.retailer}; less left over`;
+  if (saving > 0) {
+    return t("Cheapest: {where} saves {amount} over {other} for the same amount", {
+      where,
+      amount: `$${(saving / 100).toFixed(2)}`,
+      other: next.option.kind === "user" ? t("your price") : next.option.retailer,
+    });
+  }
+  return t("Same cost as {store}; less left over", { store: next.option.retailer });
 }
 
 /* ---------------- a shopping plan ---------------- */
@@ -523,7 +531,7 @@ export function purchasePlan(needs: Need[], stock: Stock[], optionsFor: (ingredi
     } else if (line.toBuy === null) {
       const singles = options.filter((o) => o.size !== null).sort((a, b) => a.priceCents - b.priceCents);
       if (singles[0]) {
-        line.pack = { option: singles[0], count: 1, costCents: singles[0].priceCents, leftover: 0, why: "The recipe gives no amount, so one pack" };
+        line.pack = { option: singles[0], count: 1, costCents: singles[0].priceCents, leftover: 0, why: t("The recipe gives no amount, so one pack") };
         line.alternatives = [line.pack];
       }
     }

@@ -10,6 +10,7 @@ import { logActivity } from "../activity.ts";
 import { ingredientId, normaliseIngredient, one } from "../db.ts";
 import { money } from "../format.ts";
 import { type Ctx, json, type Reply, redirect, setFlash } from "../http.ts";
+import { t } from "../i18n.ts";
 import { priceNote } from "../price-notes.ts";
 import { recordPrice } from "../pricing.ts";
 import type { Route } from "../server.ts";
@@ -60,9 +61,18 @@ export function hintFor(userId: number, raw: string): Hint | null {
     label: n.label,
     note: n.note,
     per100: n.centsPer100,
-    perText: n.kind === "free" ? "free" : n.centsPer100 !== null && unit ? `${money(Math.max(1, Math.round(n.centsPer100)))} per 100 ${unit}` : null,
+    perText: n.kind === "free" ? t("free") : n.centsPer100 !== null && unit ? t("{price} per 100 {unit}", { price: money(Math.max(1, Math.round(n.centsPer100))), unit }) : null,
     url: n.url,
-    yours: mine ? { text: `${money(mine.price_cents)} for ${mine.size_amount} ${mine.size_unit === "each" ? "" : mine.size_unit}${mine.retailer ? ` at ${mine.retailer}` : ""}`.replace(/\s+/g, " ") } : null,
+    yours: mine
+      ? {
+          text: t(mine.retailer ? "{price} for {amount} {unit} at {store}" : "{price} for {amount} {unit}", {
+            price: money(mine.price_cents),
+            amount: mine.size_amount,
+            unit: mine.size_unit === "each" ? "" : mine.size_unit,
+            store: mine.retailer,
+          }).replace(/\s+/g, " "),
+        }
+      : null,
   };
 }
 
@@ -95,16 +105,16 @@ export const routes: Route[] = [
         setFlash(ctx, error);
         return redirect(backTo(ctx));
       };
-      if (name.length < 2) return fail("Which ingredient is this price for?");
-      if (!(price > 0) || price > 1000) return fail("Enter the price you paid, like 4.50.");
-      if (!(quantity > 0) || quantity > 100000) return fail("Enter how much was in the pack, like 500.");
-      if (!["g", "kg", "ml", "l", "each", ""].includes(unit)) return fail("Choose g, kg, ml, L or each for the pack.");
+      if (name.length < 2) return fail(t("Which ingredient is this price for?"));
+      if (!(price > 0) || price > 1000) return fail(t("Enter the price you paid, like 4.50."));
+      if (!(quantity > 0) || quantity > 100000) return fail(t("Enter how much was in the pack, like 500."));
+      if (!["g", "kg", "ml", "l", "each", ""].includes(unit)) return fail(t("Choose g, kg, ml, L or each for the pack."));
       const id = ingredientId(name);
       const ok = recordPrice(ctx.user!.id, id, { name, quantity, unit: unit === "each" ? "" : unit, price_cents: Math.round(price * 100), store });
-      if (!ok) return fail("That pack size couldn't be read. Use g, kg, ml, L or each.");
+      if (!ok) return fail(t("That pack size couldn't be read. Use g, kg, ml, L or each."));
       logActivity({ actor: ctx.user, action: "price.record", subject: name, detail: { price_cents: Math.round(price * 100), quantity, unit, store } });
       if (wantsJson) return json({ ok: true, hint: hintFor(ctx.user!.id, name) });
-      setFlash(ctx, `Saved: ${money(Math.round(price * 100))} for ${quantity} ${unit} of ${name}.`);
+      setFlash(ctx, t("Saved: {price} for {quantity} {unit} of {name}.", { price: money(Math.round(price * 100)), quantity, unit, name }));
       return redirect(backTo(ctx));
     },
   },

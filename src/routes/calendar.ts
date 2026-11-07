@@ -1,8 +1,9 @@
 import { logActivity } from "../activity.ts";
 import { all, one, run, transaction } from "../db.ts";
-import { addDays, money, parseIsoDate, shortDate, sized, today, weekday, weekStart } from "../format.ts";
+import { addDays, money, monthName, monthYear, parseIsoDate, shortDate, sized, today, weekday, weekStart } from "../format.ts";
 import { type Html, html, raw } from "../html.ts";
 import { type Ctx, HttpError, htmlReply, redirect, setFlash } from "../http.ts";
+import { lang, langTag, t, th, tn } from "../i18n.ts";
 import {
   cachedOptions,
   type Costed,
@@ -43,7 +44,27 @@ export interface CalendarEntry {
 const MEALS = ["breakfast", "lunch", "dinner"] as const;
 type Meal = (typeof MEALS)[number];
 const STATUSES = ["planned", "completed", "cancelled"] as const;
-const MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+// "Sat 7 Nov", for labels that name a day
+function dayLabel(d: string): string {
+  return `${weekday(d)} ${shortDate(d)}`;
+}
+
+// A day for screen readers ("Mon 2 November") and a day's initial for the
+// spend bars: English keeps the site's own forms, other languages use their
+// own (Intl), since the first character of "周一" or "सोम" isn't a day.
+const dayFmts = new Map<string, Intl.DateTimeFormat>();
+function dayFmt(opts: Intl.DateTimeFormatOptions): Intl.DateTimeFormat {
+  const key = langTag() + JSON.stringify(opts);
+  let f = dayFmts.get(key);
+  if (!f) dayFmts.set(key, (f = new Intl.DateTimeFormat(langTag(), opts)));
+  return f;
+}
+
+function fullDay(d: string): string {
+  const date = parseIsoDate(d)!;
+  return lang() === "en" ? `${weekday(d)} ${date.getDate()} ${monthName(date)}` : dayFmt({ weekday: "short", day: "numeric", month: "long" }).format(date);
+}
 
 // A person's calendar entries between two dates, filtered to what the viewer
 // may see (all of them when viewer and owner are the same person).
@@ -87,11 +108,11 @@ export function friendMeals(viewerId: number, friendIds: number[], from: string,
 
 export function mealChip(e: CalendarEntry, editable: boolean, returnTo = ""): Html {
   return html`<div class="meal meal-${e.status}">
-    <span class="meal-kind">${e.meal}</span>
+    <span class="meal-kind">${t(e.meal)}</span>
     <a href="/recipes/${e.recipe_id}" class="meal-title">${e.title}</a>
     <span class="meal-meta">
-      ${e.status !== "planned" ? html`<span class="pill pill-${e.status === "completed" ? "fresh" : "none"}">${e.status}</span>` : ""}
-      ${e.shared ? html`<span class="muted" title="Shared with friends">Shared</span>` : html`<span class="muted">Private</span>`}
+      ${e.status !== "planned" ? html`<span class="pill pill-${e.status === "completed" ? "fresh" : "none"}">${t(e.status)}</span>` : ""}
+      ${e.shared ? html`<span class="muted" title="${t("Shared with friends")}">${t("Shared")}</span>` : html`<span class="muted">${t("Private")}</span>`}
     </span>
     ${editable ? entryMenu(e, returnTo, "meal-menu") : ""}
   </div>`;
@@ -99,14 +120,14 @@ export function mealChip(e: CalendarEntry, editable: boolean, returnTo = ""): Ht
 
 function entryMenu(e: CalendarEntry, returnTo: string, cls: string): Html {
   return html`<details class="${cls}">
-    <summary aria-label="Change ${e.title} on ${weekday(e.date)} ${shortDate(e.date)}">•••</summary>
+    <summary aria-label="${t("Change {title} on {day}", { title: e.title, day: dayLabel(e.date) })}">•••</summary>
     <div class="menu">
-      ${e.status === "planned" ? html`<a href="/recipes/${e.recipe_id}/cook?entry=${e.id}">Cook now</a>` : ""}
+      ${e.status === "planned" ? html`<a href="/recipes/${e.recipe_id}/cook?entry=${e.id}">${t("Cook now")}</a>` : ""}
       ${STATUSES.filter((s) => s !== e.status).map(
-        (s) => html`<form method="post" action="/calendar/${e.id}/status"><input type="hidden" name="status" value="${s}" /><input type="hidden" name="return_to" value="${returnTo}" /><button type="submit">${s === "completed" ? "Mark as cooked" : s === "cancelled" ? "Skip this meal" : "Back to planned"}</button></form>`,
+        (s) => html`<form method="post" action="/calendar/${e.id}/status"><input type="hidden" name="status" value="${s}" /><input type="hidden" name="return_to" value="${returnTo}" /><button type="submit">${t(s === "completed" ? "Mark as cooked" : s === "cancelled" ? "Skip this meal" : "Back to planned")}</button></form>`,
       )}
-      <form method="post" action="/calendar/${e.id}/share"><input type="hidden" name="return_to" value="${returnTo}" /><button type="submit">${e.shared ? "Make private" : "Share with friends"}</button></form>
-      <form method="post" action="/calendar/${e.id}/delete"><input type="hidden" name="return_to" value="${returnTo}" /><button type="submit" class="danger">Remove</button></form>
+      <form method="post" action="/calendar/${e.id}/share"><input type="hidden" name="return_to" value="${returnTo}" /><button type="submit">${t(e.shared ? "Make private" : "Share with friends")}</button></form>
+      <form method="post" action="/calendar/${e.id}/delete"><input type="hidden" name="return_to" value="${returnTo}" /><button type="submit" class="danger">${t("Remove")}</button></form>
     </div>
   </details>`;
 }
@@ -312,21 +333,21 @@ const STATUS_LABEL: Record<string, string> = { completed: "Cooked", cancelled: "
 function tile(e: CalendarEntry, cost: Costed | undefined, i: number, returnTo: string): Html {
   return html`<article class="cal-tile cal-${e.status}" style="--i: ${i}" data-entry="${e.id}" data-date="${e.date}" data-recipe="${e.recipe_id}">
     <a class="cal-tile-link" href="/recipes/${e.recipe_id}">
-      <span class="cal-thumb">${thumb(e.image_url, e.title)}<span class="cal-kind">${MEAL_LABEL[e.meal]}</span></span>
-      <span class="cal-tile-body" data-kind="${MEAL_LABEL[e.meal]}">
+      <span class="cal-thumb">${thumb(e.image_url, e.title)}<span class="cal-kind">${t(MEAL_LABEL[e.meal])}</span></span>
+      <span class="cal-tile-body" data-kind="${t(MEAL_LABEL[e.meal])}">
         <span class="cal-tile-title">${e.title}</span>
         <span class="cal-tile-meta">
           ${e.status !== "planned"
-            ? html`<span class="cal-status">${e.status === "completed" ? icon("check", 12) : ""}${STATUS_LABEL[e.status]}</span>`
+            ? html`<span class="cal-status">${e.status === "completed" ? icon("check", 12) : ""}${t(STATUS_LABEL[e.status])}</span>`
             : cost && cost.counted
-              ? html`<span class="mono" title="Bought on its own: whole packs after your pantry">${cost.toBuyCents ? money(cost.toBuyCents) : "In pantry"}</span>`
+              ? html`<span class="mono" title="${t("Bought on its own: whole packs after your pantry")}">${cost.toBuyCents ? money(cost.toBuyCents) : t("In pantry")}</span>`
               : ""}
-          ${e.shared ? html`<span class="cal-shared" title="Shared with friends">${icon("users", 13)}<span class="sr-only">Shared with friends</span></span>` : ""}
+          ${e.shared ? html`<span class="cal-shared" title="${t("Shared with friends")}">${icon("users", 13)}<span class="sr-only">${t("Shared with friends")}</span></span>` : ""}
         </span>
       </span>
     </a>
     <div class="cal-tile-tools">
-      ${e.status === "planned" ? html`<a class="cal-cook" href="/recipes/${e.recipe_id}/cook?entry=${e.id}" aria-label="Cook ${e.title} now">${icon("flame", 13)}<span>Cook</span></a>` : ""}
+      ${e.status === "planned" ? html`<a class="cal-cook" href="/recipes/${e.recipe_id}/cook?entry=${e.id}" aria-label="${t("Cook {title} now", { title: e.title })}">${icon("flame", 13)}<span>${t("Cook")}</span></a>` : ""}
       ${entryMenu(e, returnTo, "meal-menu cal-menu")}
     </div>
   </article>`;
@@ -335,20 +356,20 @@ function tile(e: CalendarEntry, cost: Costed | undefined, i: number, returnTo: s
 function ghostTile(m: FriendMeal, i: number): Html {
   const [bg, ink] = tone(m.display_name);
   return html`<a class="cal-tile cal-ghost" href="/recipes/${m.recipe_id}" style="--i: ${i}; --fr: ${bg}; --fr-ink: ${ink}" data-friend="${m.username}" data-date="${m.date}" data-recipe="${m.recipe_id}">
-    <span class="cal-thumb">${thumb(m.image_url, m.title)}<span class="cal-kind">${MEAL_LABEL[m.meal]}</span></span>
-    <span class="cal-tile-body" data-kind="${MEAL_LABEL[m.meal]}">
+    <span class="cal-thumb">${thumb(m.image_url, m.title)}<span class="cal-kind">${t(MEAL_LABEL[m.meal])}</span></span>
+    <span class="cal-tile-body" data-kind="${t(MEAL_LABEL[m.meal])}">
       <span class="cal-tile-title">${m.title}</span>
-      <span class="cal-tile-meta cal-who">${avatar(m.display_name, "sm", m.avatar)}<span>${firstName(m.display_name)}${m.status === "completed" ? " cooked this" : m.status === "live" ? " is cooking" : ""}</span></span>
+      <span class="cal-tile-meta cal-who">${avatar(m.display_name, "sm", m.avatar)}<span>${m.status === "completed" ? t("{name} cooked this", { name: firstName(m.display_name) }) : m.status === "live" ? t("{name} is cooking", { name: firstName(m.display_name) }) : firstName(m.display_name)}</span></span>
     </span>
   </a>`;
 }
 
 function draftTile(p: Plan["picks"][number], i: number): Html {
   return html`<a class="cal-tile cal-draft" href="/recipes/${p.recipe.id}" style="--i: ${i}">
-    <span class="cal-thumb">${thumb(p.recipe.image_url, p.recipe.title)}<span class="cal-kind">Draft</span></span>
-    <span class="cal-tile-body" data-kind="Suggested dinner">
+    <span class="cal-thumb">${thumb(p.recipe.image_url, p.recipe.title)}<span class="cal-kind">${t("Draft")}</span></span>
+    <span class="cal-tile-body" data-kind="${t("Suggested dinner")}">
       <span class="cal-tile-title">${p.recipe.title}</span>
-      <span class="cal-tile-meta"><span class="mono">${money(p.toBuyCents)}</span><span>suggested</span></span>
+      <span class="cal-tile-meta"><span class="mono">${money(p.toBuyCents)}</span><span>${t("suggested")}</span></span>
     </span>
   </a>`;
 }
@@ -361,12 +382,12 @@ function header(s: CalState, summary: Html): Html {
   const isMonth = s.view === "month";
   const m = parseIsoDate(s.month)!;
   const title = isMonth
-    ? `${MONTHS[m.getMonth()]} ${m.getFullYear()}`
+    ? monthYear(m)
     : now >= s.start && now <= end
-      ? "This week"
+      ? t("This week")
       : addDays(s.start, -7) <= now && now < s.start
-        ? "Next week"
-        : `Week of ${shortDate(s.start)}`;
+        ? t("Next week")
+        : t("Week of {date}", { date: shortDate(s.start) });
   const prevMonth = new Date(m.getFullYear(), m.getMonth() - 1, 1);
   const nextMonth = new Date(m.getFullYear(), m.getMonth() + 1, 1);
   const ym = (d: Date) => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-01`;
@@ -376,19 +397,19 @@ function header(s: CalState, summary: Html): Html {
   const weekOfMonth = s.month.slice(0, 7) === now.slice(0, 7) ? weekStart(now) : weekStart(s.month);
   return html`<header class="cal-hero" data-cal-region="head">
     <div class="cal-hero-text">
-      <p class="eyebrow">Meal calendar</p>
+      <p class="eyebrow">${t("Meal calendar")}</p>
       <h1>${title}</h1>
-      <p class="lede">${isMonth ? html`${MONTHS[m.getMonth()]} at a glance. Pick a day to plan it.` : html`${shortDate(s.start)} – ${shortDate(end)} · ${summary}`}</p>
+      <p class="lede">${isMonth ? t("{month} at a glance. Pick a day to plan it.", { month: monthName(m) }) : html`${shortDate(s.start)} – ${shortDate(end)} · ${summary}`}</p>
     </div>
     <div class="cal-controls">
-      <nav class="cal-seg" aria-label="Calendar view">
-        <a href="${calHref(s, { view: "week", start: weekOfMonth })}" data-cal-nav ${!isMonth ? raw('aria-current="page"') : ""}>Week</a>
-        <a href="${calHref(s, { view: "month", month: `${s.start.slice(0, 7)}-01` })}" data-cal-nav ${isMonth ? raw('aria-current="page"') : ""}>Month</a>
+      <nav class="cal-seg" aria-label="${t("Calendar view")}">
+        <a href="${calHref(s, { view: "week", start: weekOfMonth })}" data-cal-nav ${!isMonth ? raw('aria-current="page"') : ""}>${t("Week")}</a>
+        <a href="${calHref(s, { view: "month", month: `${s.start.slice(0, 7)}-01` })}" data-cal-nav ${isMonth ? raw('aria-current="page"') : ""}>${t("Month")}</a>
       </nav>
-      <nav class="cal-pager" aria-label="${isMonth ? "Months" : "Weeks"}">
-        <a class="cal-round" href="${prev}" data-cal-nav data-dir="prev" aria-label="Previous ${isMonth ? "month" : "week"}">${icon("back", 16)}</a>
-        <a class="cal-today" href="${todayHref}" data-cal-nav>Today</a>
-        <a class="cal-round" href="${next}" data-cal-nav data-dir="next" aria-label="Next ${isMonth ? "month" : "week"}">${icon("arrow", 16)}</a>
+      <nav class="cal-pager" aria-label="${t(isMonth ? "Months" : "Weeks")}">
+        <a class="cal-round" href="${prev}" data-cal-nav data-dir="prev" aria-label="${t(isMonth ? "Previous month" : "Previous week")}">${icon("back", 16)}</a>
+        <a class="cal-today" href="${todayHref}" data-cal-nav>${t("Today")}</a>
+        <a class="cal-round" href="${next}" data-cal-nav data-dir="next" aria-label="${t(isMonth ? "Next month" : "Next week")}">${icon("arrow", 16)}</a>
       </nav>
     </div>
   </header>`;
@@ -397,13 +418,13 @@ function header(s: CalState, summary: Html): Html {
 function friendsBar(s: CalState, friends: Friend[], counts: Map<number, number>): Html {
   if (!friends.length) {
     return html`<div class="cal-friends" data-cal-region="friends">
-      <span class="cal-label">${icon("users", 16)} Overlay friends</span>
-      <p class="cal-friends-empty">When friends share planned meals, you can lay their week over yours here. <a href="/friends">Find friends →</a></p>
+      <span class="cal-label">${icon("users", 16)} ${t("Overlay friends")}</span>
+      <p class="cal-friends-empty">${t("When friends share planned meals, you can lay their week over yours here.")} <a href="/friends">${t("Find friends →")}</a></p>
     </div>`;
   }
   return html`<div class="cal-friends" data-cal-region="friends">
-    <span class="cal-label">${icon("users", 16)} Overlay friends</span>
-    <div class="cal-fchips" role="group" aria-label="Show a friend's shared meals on your calendar">
+    <span class="cal-label">${icon("users", 16)} ${t("Overlay friends")}</span>
+    <div class="cal-fchips" role="group" aria-label="${t("Show a friend's shared meals on your calendar")}">
       ${friends.map((f) => {
         const on = s.with.includes(f.username.toLowerCase());
         const next = on ? s.with.filter((u) => u !== f.username.toLowerCase()) : [...s.with, f.username.toLowerCase()];
@@ -413,7 +434,7 @@ function friendsBar(s: CalState, friends: Friend[], counts: Map<number, number>)
           ${avatar(f.display_name, "sm", f.avatar)}<span>${firstName(f.display_name)}</span>${on ? html`<span class="cal-fcount">${n}</span>` : ""}
         </a>`;
       })}
-      ${s.with.length ? html`<a class="cal-fclear" href="${calHref(s, { with: [] })}" data-cal-nav="overlay">Clear</a>` : ""}
+      ${s.with.length ? html`<a class="cal-fclear" href="${calHref(s, { with: [] })}" data-cal-nav="overlay">${t("Clear")}</a>` : ""}
     </div>
   </div>`;
 }
@@ -425,32 +446,44 @@ function budgetCard(userId: number, days: string[], money_: Money, returnTo: str
   const over = budget !== null && spend > budget;
   const peak = Math.max(1, ...days.map((d) => money_.byDay.get(d) ?? 0));
   const now = today();
-  return html`<section class="cal-budget" data-cal-region="budget" aria-label="Week budget">
+  return html`<section class="cal-budget" data-cal-region="budget" aria-label="${t("Week budget")}">
     <div class="cal-budget-main">
-      <p class="cal-label">${icon("basket", 16)} This week's shop</p>
-      <p class="cal-big"><span class="tnum">${money(spend)}</span> <small>at the checkout</small></p>
+      <p class="cal-label">${icon("basket", 16)} ${t("This week's shop")}</p>
+      <p class="cal-big"><span class="tnum">${money(spend)}</span> <small>${t("at the checkout")}</small></p>
       ${budget !== null
-        ? html`<div class="cal-meter ${over ? "cal-meter-over" : ""}" role="meter" aria-label="Planned spend against your weekly budget" aria-valuemin="0" aria-valuemax="${budget}" aria-valuenow="${Math.min(spend, budget)}" aria-valuetext="${money(spend)} of ${money(budget)}"><span style="--p: ${pct}%"></span></div>
-            <p class="cal-budget-note">${over ? html`<strong class="cal-over">${money(spend - budget)} over</strong>` : html`<strong>${money(budget - spend)} left</strong>`} of ${money(budget)} budget</p>`
-        : html`<p class="cal-budget-note">No weekly budget set yet. Add one and the planner keeps every week under it.</p>`}
+        ? html`<div class="cal-meter ${over ? "cal-meter-over" : ""}" role="meter" aria-label="${t("Planned spend against your weekly budget")}" aria-valuemin="0" aria-valuemax="${budget}" aria-valuenow="${Math.min(spend, budget)}" aria-valuetext="${t("{spend} of {budget}", { spend: money(spend), budget: money(budget) })}"><span style="--p: ${pct}%"></span></div>
+            <p class="cal-budget-note">${th("{amount} of {budget} budget", {
+              amount: over
+                ? html`<strong class="cal-over">${t("{amount} over", { amount: money(spend - budget) })}</strong>`
+                : html`<strong>${t("{amount} left", { amount: money(budget - spend) })}</strong>`,
+              budget: money(budget),
+            })}</p>`
+        : html`<p class="cal-budget-note">${t("No weekly budget set yet. Add one and the planner keeps every week under it.")}</p>`}
     </div>
-    <ol class="cal-bars" aria-label="Spend by day">
+    <ol class="cal-bars" aria-label="${t("Spend by day")}">
       ${days.map((d) => {
         const v = money_.byDay.get(d) ?? 0;
-        return html`<li class="${d === now ? "is-today" : ""}" title="${weekday(d)} ${shortDate(d)}: uses ${money(v)} of groceries">
+        return html`<li class="${d === now ? "is-today" : ""}" title="${t("{day}: uses {amount} of groceries", { day: dayLabel(d), amount: money(v) })}">
           <span class="cal-bar-val mono">${v ? `$${Math.round(v / 100)}` : ""}</span>
           <span class="cal-bar"><span style="--h: ${v ? Math.max(6, Math.round((v / peak) * 100)) : 0}%"></span></span>
-          <span class="cal-bar-day">${weekday(d).slice(0, 1)}<span class="sr-only">${weekday(d).slice(1)} ${money(v)}</span></span>
+          <span class="cal-bar-day">${lang() === "en"
+            ? html`${weekday(d).slice(0, 1)}<span class="sr-only">${weekday(d).slice(1)} ${money(v)}</span>`
+            : html`<span aria-hidden="true">${dayFmt({ weekday: "narrow" }).format(parseIsoDate(d)!)}</span><span class="sr-only">${weekday(d)} ${money(v)}</span>`}</span>
         </li>`;
       })}
     </ol>
     <form class="cal-budget-form" method="post" action="/calendar/budget">
       <input type="hidden" name="return_to" value="${returnTo}" />
-      <label class="field"><span>Weekly budget</span>
-        <span class="input-prefix"><span>$</span><input name="weekly_budget" inputmode="decimal" placeholder="e.g. 100" value="${budget === null ? "" : (budget / 100).toFixed(2)}" aria-label="Weekly grocery budget in dollars" /></span></label>
-      <button class="button button-small button-soft" type="submit">Save</button>
+      <label class="field"><span>${t("Weekly budget")}</span>
+        <span class="input-prefix"><span>$</span><input name="weekly_budget" inputmode="decimal" placeholder="${t("e.g. 100")}" value="${budget === null ? "" : (budget / 100).toFixed(2)}" aria-label="${t("Weekly grocery budget in dollars")}" /></span></label>
+      <button class="button button-small button-soft" type="submit">${t("Save")}</button>
     </form>
-    <p class="cal-fine">The whole packs this week's planned meals need, scaled to ${prefsFor(userId).default_servings} serves, after what's in your pantry, with shared ingredients bought once (the same total as your <a href="/shopping">shopping list</a>). The meals themselves use ${money(money_.usesCents)} of it; daily bars show what each day uses.${money_.estimatedCents ? ` Includes about ${money(money_.estimatedCents)} of estimates for ${money_.unpriced} item${money_.unpriced === 1 ? "" : "s"} with no pack price.` : ""} Shelf prices from Woolworths and ALDI as last read, and prices you paid; not live.</p>
+    <p class="cal-fine">${th("The whole packs this week's planned meals need, scaled to {serves} serves, after what's in your pantry, with shared ingredients bought once (the same total as your {list}).", {
+      serves: prefsFor(userId).default_servings,
+      list: html`<a href="/shopping">${t("shopping list")}</a>`,
+    })} ${t("The meals themselves use {amount} of it; daily bars show what each day uses.", { amount: money(money_.usesCents) })}${money_.estimatedCents
+      ? ` ${tn(money_.unpriced, "Includes about {amount} of estimates for {n} item with no pack price.", "Includes about {amount} of estimates for {n} items with no pack price.", { amount: money(money_.estimatedCents) })}`
+      : ""} ${t("Shelf prices from Woolworths and ALDI as last read, and prices you paid; not live.")}</p>
   </section>`;
 }
 
@@ -483,13 +516,15 @@ function weekGrid(
       return html`<section class="cal-day ${d === now ? "is-today" : ""} ${d < now ? "is-past" : ""}" style="--tint: var(${DAY_TINTS[di]}); --d: ${di}" aria-labelledby="day-${d}">
         <header class="cal-day-head">
           <span class="cal-dow">${weekday(d)}</span>
-          <span class="cal-dnum" id="day-${d}"><span class="sr-only">${weekday(d)} </span>${date.getDate()}<span class="sr-only"> ${MONTHS[date.getMonth()]}</span></span>
+          <span class="cal-dnum" id="day-${d}">${lang() === "en"
+            ? html`<span class="sr-only">${weekday(d)} </span>${date.getDate()}<span class="sr-only"> ${monthName(date)}</span>`
+            : html`<span aria-hidden="true">${date.getDate()}</span><span class="sr-only">${fullDay(d)}</span>`}</span>
         </header>
         <div class="cal-day-body">
           ${items.map((it) => it.render())}
-          <a class="cal-add" href="${calHref(s, {}, "")}&day=${d}#quick-add" data-quick-open="${d}" aria-label="Add a meal on ${weekday(d)} ${shortDate(d)}">${icon("plus", 15)}<span>${items.length ? "Add" : "Add a meal"}</span></a>
+          <a class="cal-add" href="${calHref(s, {}, "")}&day=${d}#quick-add" data-quick-open="${d}" aria-label="${t("Add a meal on {day}", { day: dayLabel(d) })}">${icon("plus", 15)}<span>${t(items.length ? "Add" : "Add a meal")}</span></a>
         </div>
-        <footer class="cal-day-foot" title="What this day's meals use beyond your pantry (a share of the packs bought for the week)"><span>Uses</span><span class="mono">${spend ? money(spend) : "—"}</span></footer>
+        <footer class="cal-day-foot" title="${t("What this day's meals use beyond your pantry (a share of the packs bought for the week)")}"><span>${t("Uses")}</span><span class="mono">${spend ? money(spend) : "—"}</span></footer>
       </section>`;
     })}
   </div>`;
@@ -503,7 +538,7 @@ function monthGrid(s: CalState, entries: CalendarEntry[], ghosts: FriendMeal[], 
   const weeks = Math.ceil((Math.round((parseIsoDate(last)!.getTime() - parseIsoDate(s.start)!.getTime()) / 86_400_000) + 1) / 7);
   const cells = Array.from({ length: weeks * 7 }, (_, i) => addDays(s.start, i));
   return html`<div class="cal-month-wrap" data-cal-region="grid">
-    <div class="cal-month-head" aria-hidden="true">${["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"].map((d) => html`<span>${d}</span>`)}</div>
+    <div class="cal-month-head" aria-hidden="true">${Array.from({ length: 7 }, (_, i) => html`<span>${weekday(addDays(s.start, i))}</span>`)}</div>
     <ol class="cal-month" style="--rows: ${weeks}">
       ${cells.map((d, i) => {
         const inMonth = d.slice(0, 7) === s.month.slice(0, 7);
@@ -514,11 +549,14 @@ function monthGrid(s: CalState, entries: CalendarEntry[], ghosts: FriendMeal[], 
         const spend = money_.byDay.get(d) ?? 0;
         const date = parseIsoDate(d)!;
         return html`<li class="cal-mcell ${inMonth ? "" : "is-out"} ${d === now ? "is-today" : ""} ${d < now ? "is-past" : ""}" style="--i: ${i}">
-          <a href="${calHref(s, { view: "week", start: weekStart(d) })}" data-cal-nav aria-label="${weekday(d)} ${date.getDate()} ${MONTHS[date.getMonth()]}: ${own.length ? `${own.length} meal${own.length === 1 ? "" : "s"}` : "nothing planned"}${theirs.length ? `, ${theirs.length} from friends` : ""}">
+          <a href="${calHref(s, { view: "week", start: weekStart(d) })}" data-cal-nav aria-label="${t("{day}: {meals}", {
+            day: fullDay(d),
+            meals: `${own.length ? tn(own.length, "{n} meal", "{n} meals") : t("nothing planned")}${theirs.length ? t(", {n} from friends", { n: theirs.length }) : ""}`,
+          })}">
             <span class="cal-mtop"><span class="cal-mnum">${date.getDate()}</span>${spend ? html`<span class="cal-mspend mono">$${Math.round(spend / 100)}</span>` : ""}</span>
             <span class="cal-mlist">
               ${shown.map((e) => html`<span class="cal-mpill ${e.status === "completed" ? "is-done" : ""}">${photo(e.image_url, "small") ? html`<img src="${photo(e.image_url, "small")}" alt="" loading="lazy" />` : html`<span class="cal-mdot" style="--fr: ${tone(e.title)[0]}; --fr-ink: ${tone(e.title)[1]}">${e.title.slice(0, 1)}</span>`}<span>${e.title}</span></span>`)}
-              ${more > 0 ? html`<span class="cal-mmore">+${more} more</span>` : ""}
+              ${more > 0 ? html`<span class="cal-mmore">${t("+{n} more", { n: more })}</span>` : ""}
             </span>
             ${theirs.length
               ? html`<span class="cal-mfriends">${[...new Map(theirs.map((g) => [g.username, g])).values()].slice(0, 4).map((g) => {
@@ -541,7 +579,7 @@ function hiddenNav(s: CalState): Html {
 }
 
 function quickChoices(userId: number, q: string): { recipes: Recipe[]; heading: string } {
-  if (q) return { recipes: listVisibleRecipes(userId, { query: q, limit: 8 }), heading: `Results for “${q}”` };
+  if (q) return { recipes: listVisibleRecipes(userId, { query: q, limit: 8 }), heading: t("Results for “{q}”", { q }) };
   // no search yet: your usuals first, then photographed catalogue mains
   const usual = all<{ recipe_id: number }>(
     `SELECT recipe_id FROM calendar_entries WHERE owner_type = 'user' AND owner_id = ? AND status != 'cancelled'
@@ -553,7 +591,7 @@ function quickChoices(userId: number, q: string): { recipes: Recipe[]; heading: 
   const featured = listVisibleRecipes(userId, { course: "main", order: "featured", limit: 24 }).filter(
     (r) => r.source !== null && !usual.some((u) => u.id === r.id),
   );
-  return { recipes: [...usual, ...featured].slice(0, 8), heading: usual.length ? "Your usuals and some ideas" : "Ideas to start with" };
+  return { recipes: [...usual, ...featured].slice(0, 8), heading: t(usual.length ? "Your usuals and some ideas" : "Ideas to start with") };
 }
 
 function quickResults(s: CalState, userId: number, returnTo: string): Html {
@@ -562,7 +600,7 @@ function quickResults(s: CalState, userId: number, returnTo: string): Html {
   const stock = usableStock("user", userId);
   const options = cachedOptions(userId);
   const lines = ingredientsFor(recipes.map((r) => r.id));
-  const when = `${s.day === today() ? "Today" : `${weekday(s.day)} ${shortDate(s.day)}`}, ${s.meal}`;
+  const when = t("{day}, {meal}", { day: s.day === today() ? t("Today") : dayLabel(s.day), meal: t(s.meal) });
   return html`<div class="cal-results" data-quick-results aria-live="polite">
     <p class="cal-results-head"><span>${heading}</span><span class="cal-when">${icon("calendar", 13)}<span data-when>${when}</span></span></p>
     ${recipes.length
@@ -573,7 +611,7 @@ function quickResults(s: CalState, userId: number, returnTo: string): Html {
             <a class="cal-result-photo" href="/recipes/${r.id}" tabindex="-1" aria-hidden="true">${thumb(r.image_url, r.title, "small")}</a>
             <span class="cal-result-text">
               <a class="cal-result-title" href="/recipes/${r.id}">${r.title}</a>
-              <span class="cal-result-meta">${[minutes ? duration(minutes) : "", r.cuisine || (r.author_id === userId ? "Yours" : `by ${firstName(r.author_name)}`), c.counted >= 2 ? `${c.toBuyCents ? `${money(c.toBuyCents)} to buy` : "all in your pantry"}` : ""].filter(Boolean).join(" · ")}</span>
+              <span class="cal-result-meta">${[minutes ? duration(minutes) : "", r.cuisine || (r.author_id === userId ? t("Yours") : t("by {name}", { name: firstName(r.author_name) })), c.counted >= 2 ? `${c.toBuyCents ? t("{amount} to buy", { amount: money(c.toBuyCents) }) : t("all in your pantry")}` : ""].filter(Boolean).join(" · ")}</span>
             </span>
             <form method="post" action="/calendar" class="cal-result-add">
               <input type="hidden" name="recipe_id" value="${r.id}" />
@@ -581,11 +619,11 @@ function quickResults(s: CalState, userId: number, returnTo: string): Html {
               <input type="hidden" name="meal" value="${s.meal}" data-sync="meal" />
               ${s.share ? html`<input type="hidden" name="shared" value="1" data-sync="share" />` : html`<input type="hidden" name="shared" value="0" data-sync="share" />`}
               <input type="hidden" name="return_to" value="${returnTo}" />
-              <button class="cal-add-btn" type="submit" aria-label="Add ${r.title} to ${weekday(s.day)} ${shortDate(s.day)} ${s.meal}">${icon("plus", 14)}<span>Add</span></button>
+              <button class="cal-add-btn" type="submit" aria-label="${t("Add {title} to {day} {meal}", { title: r.title, day: dayLabel(s.day), meal: t(s.meal) })}">${icon("plus", 14)}<span>${t("Add")}</span></button>
             </form>
           </li>`;
         })}</ul>`
-      : html`<p class="cal-results-empty">Nothing matches “${s.q}”. Try an ingredient you have, like “eggs” or “chickpeas”.</p>`}
+      : html`<p class="cal-results-empty">${t("Nothing matches “{q}”. Try an ingredient you have, like “eggs” or “chickpeas”.", { q: s.q })}</p>`}
   </div>`;
 }
 
@@ -598,20 +636,20 @@ function quickAdd(s: CalState, userId: number, returnTo: string): Html {
   return html`<section class="cal-panel cal-quick" id="quick-add" data-cal-region="quick" data-quick aria-labelledby="quick-title">
     <header class="cal-panel-head">
       <span class="cal-panel-icon" style="--tint: var(--sky); --tint-ink: var(--sky-ink)">${icon("search", 18)}</span>
-      <div><h2 id="quick-title">Quick add</h2><p>Search Larder's recipes, pick a day and drop it in.</p></div>
+      <div><h2 id="quick-title">${t("Quick add")}</h2><p>${t("Search Larder's recipes, pick a day and drop it in.")}</p></div>
     </header>
     <form class="cal-quick-form" method="get" action="/calendar#quick-add" role="search" data-quick-form>
       ${hiddenNav(s)}
-      <label class="cal-search">${icon("search", 18)}<span class="sr-only">Search recipes</span>
-        <input type="search" name="q" value="${s.q}" placeholder="Search “curry”, “eggs”, “pasta”…" autocomplete="off" data-quick-q /></label>
+      <label class="cal-search">${icon("search", 18)}<span class="sr-only">${t("Search recipes")}</span>
+        <input type="search" name="q" value="${s.q}" placeholder="${t("Search “curry”, “eggs”, “pasta”…")}" autocomplete="off" data-quick-q /></label>
       <div class="cal-quick-when">
-        <label class="field"><span>Day</span>
-          <select name="day" data-quick-day>${days.map((d) => html`<option value="${d}" ${d === s.day ? raw("selected") : ""}>${d === now ? "Today" : weekday(d)} ${shortDate(d)}</option>`)}</select></label>
-        <label class="field"><span>Meal</span>
-          <select name="meal" data-quick-meal>${MEALS.map((m) => html`<option value="${m}" ${m === s.meal ? raw("selected") : ""}>${MEAL_LABEL[m]}</option>`)}</select></label>
+        <label class="field"><span>${t("Day")}</span>
+          <select name="day" data-quick-day>${days.map((d) => html`<option value="${d}" ${d === s.day ? raw("selected") : ""}>${d === now ? t("Today") : weekday(d)} ${shortDate(d)}</option>`)}</select></label>
+        <label class="field"><span>${t("Meal")}</span>
+          <select name="meal" data-quick-meal>${MEALS.map((m) => html`<option value="${m}" ${m === s.meal ? raw("selected") : ""}>${t(MEAL_LABEL[m])}</option>`)}</select></label>
         <input type="hidden" name="share" value="0" />
-        <label class="check-inline cal-share"><input type="checkbox" name="share" value="1" ${s.share ? raw("checked") : ""} data-quick-share /> <span>Share with friends</span></label>
-        <button class="button button-small" type="submit">Search</button>
+        <label class="check-inline cal-share"><input type="checkbox" name="share" value="1" ${s.share ? raw("checked") : ""} data-quick-share /> <span>${t("Share with friends")}</span></label>
+        <button class="button button-small" type="submit">${t("Search")}</button>
       </div>
     </form>
     ${quickResults(s, userId, returnTo)}
@@ -652,38 +690,47 @@ function plannerPanel(s: CalState, userId: number, plan: Plan | null, returnTo: 
   const budgetValue = (budgetCents / 100).toFixed(2).replace(/\.00$/, "");
   const nights = p?.nights ?? 5;
   const from = p?.from ?? planStart(s.start, today());
+  // one whole sentence per case, so each language can order it its own way
+  const fill = { day: dayLabel(from), diet: prefs.dietary_prefs.map((x) => t(x)).join(", "), dislikes: prefs.dislikes };
+  const fills = prefs.dietary_prefs.length
+    ? prefs.dislikes
+      ? t("Larder fills your free dinners from {day} using what's in your pantry and what you've cooked before, keeping to your diet ({diet}) and skipping {dislikes}.", fill)
+      : t("Larder fills your free dinners from {day} using what's in your pantry and what you've cooked before, keeping to your diet ({diet}).", fill)
+    : prefs.dislikes
+      ? t("Larder fills your free dinners from {day} using what's in your pantry and what you've cooked before and skipping {dislikes}.", fill)
+      : t("Larder fills your free dinners from {day} using what's in your pantry and what you've cooked before.", fill);
   return html`<section class="cal-panel cal-planner" id="plan" data-cal-region="plan" aria-labelledby="plan-title">
     <div class="cal-planner-intro">
       <header class="cal-panel-head">
         <span class="cal-panel-icon" style="--tint: var(--lavender); --tint-ink: var(--lavender-ink)">${icon("planner", 18)}</span>
-        <div><h2 id="plan-title">Plan my week for me</h2>
-          <p>Choose what matters this week. Larder fills your free dinners from ${weekday(from)} ${shortDate(from)} using what's in your pantry and what you've cooked before${prefs.dietary_prefs.length ? html`, keeping to your diet (${prefs.dietary_prefs.join(", ")})` : ""}${prefs.dislikes ? html` and skipping ${prefs.dislikes}` : ""}.</p></div>
+        <div><h2 id="plan-title">${t("Plan my week for me")}</h2>
+          <p>${t("Choose what matters this week.")} ${fills}</p></div>
       </header>
       <form class="cal-plan-form" method="get" action="/calendar#plan" data-plan-form>
         ${hiddenNav(s)}
         <input type="hidden" name="plan" value="1" />
         <input type="hidden" name="from" value="${from}" />
         <fieldset class="cal-interests">
-          <legend class="sr-only">What matters this week</legend>
+          <legend class="sr-only">${t("What matters this week")}</legend>
           <div class="cal-int cal-int-money">
-            <label class="cal-amt"><span aria-hidden="true">$</span><input name="budget" inputmode="decimal" value="${budgetValue}" aria-label="Budget for the week, in dollars" /></label>
-            <label class="cal-int-toggle"><input type="checkbox" name="i" value="budget" ${chosen.has("budget") ? raw("checked") : ""} /><span>for the week</span></label>
+            <label class="cal-amt"><span aria-hidden="true">$</span><input name="budget" inputmode="decimal" value="${budgetValue}" aria-label="${t("Budget for the week, in dollars")}" /></label>
+            <label class="cal-int-toggle"><input type="checkbox" name="i" value="budget" ${chosen.has("budget") ? raw("checked") : ""} /><span>${t("for the week")}</span></label>
           </div>
           ${INTERESTS.filter((x) => x.key !== "budget").map(
-            (x) => html`<label class="cal-int"><input type="checkbox" name="i" value="${x.key}" ${chosen.has(x.key) ? raw("checked") : ""} /><span>${icon(INTEREST_ICON[x.key], 15)}${x.label}</span></label>`,
+            (x) => html`<label class="cal-int"><input type="checkbox" name="i" value="${x.key}" ${chosen.has(x.key) ? raw("checked") : ""} /><span>${icon(INTEREST_ICON[x.key], 15)}${t(x.label)}</span></label>`,
           )}
         </fieldset>
         <div class="cal-plan-go">
-          <label class="field cal-nights"><span>Dinners</span>
-            <select name="nights">${[3, 4, 5, 6, 7].map((n) => html`<option value="${n}" ${n === nights ? raw("selected") : ""}>${n} dinners</option>`)}</select></label>
-          <button class="button button-accent" type="submit">${icon("planner", 16)} ${plan ? "Plan again" : "Plan my week"}</button>
+          <label class="field cal-nights"><span>${t("Dinners")}</span>
+            <select name="nights">${[3, 4, 5, 6, 7].map((n) => html`<option value="${n}" ${n === nights ? raw("selected") : ""}>${t("{n} dinners", { n })}</option>`)}</select></label>
+          <button class="button button-accent" type="submit">${icon("planner", 16)} ${t(plan ? "Plan again" : "Plan my week")}</button>
         </div>
       </form>
       <details class="cal-how">
-        <summary>How picks are made</summary>
-        <p>Fixed rules decide every pick, so the same choices give the same week; no AI chooses what you eat. Only recipes you can see, that fit every diet tag you follow and avoid your dislikes, are considered. Then each choice you tick adds a rule:</p>
-        <dl>${INTERESTS.map((x) => html`<div><dt>${x.key === "budget" ? "$ for the week" : x.label}</dt><dd>${HOW[x.key]}</dd></div>`)}</dl>
-        <p>Each dinner's cost is the whole packs it needs bought on its own, after your pantry, scaled to the ${prefs.default_servings} serves you cook for; the week's total pools shared ingredients, so it's never more than the dinners added up. Your past weeks also give cuisines you plan often a small lift.</p>
+        <summary>${t("How picks are made")}</summary>
+        <p>${t("Fixed rules decide every pick, so the same choices give the same week; no AI chooses what you eat. Only recipes you can see, that fit every diet tag you follow and avoid your dislikes, are considered. Then each choice you tick adds a rule:")}</p>
+        <dl>${INTERESTS.map((x) => html`<div><dt>${x.key === "budget" ? t("$ for the week") : t(x.label)}</dt><dd>${t(HOW[x.key])}</dd></div>`)}</dl>
+        <p>${t("Each dinner's cost is the whole packs it needs bought on its own, after your pantry, scaled to the {serves} serves you cook for; the week's total pools shared ingredients, so it's never more than the dinners added up. Your past weeks also give cuisines you plan often a small lift.", { serves: prefs.default_servings })}</p>
       </details>
     </div>
     ${plan && p ? planResult(s, plan, p, returnTo) : ""}
@@ -701,21 +748,24 @@ function planResult(s: CalState, plan: Plan, p: PlanParams, returnTo: string): H
   return html`<div class="cal-plan" data-total-cents="${plan.totalCents}" data-budget-cents="${plan.budgetCents ?? ""}">
     <div class="cal-plan-summary">
       <div class="cal-plan-sum-text">
-        <p class="cal-label">Your draft week</p>
-        <p class="cal-plan-total"><span class="tnum">${money(plan.totalCents)}</span> <small>at the checkout for ${plan.picks.length} dinner${plan.picks.length === 1 ? "" : "s"}</small></p>
+        <p class="cal-label">${t("Your draft week")}</p>
+        <p class="cal-plan-total"><span class="tnum">${money(plan.totalCents)}</span> <small>${tn(plan.picks.length, "at the checkout for {n} dinner", "at the checkout for {n} dinners")}</small></p>
         ${plan.budgetCents !== null
-          ? html`<div class="cal-meter cal-meter-plan" role="meter" aria-label="Draft week cost against budget" aria-valuemin="0" aria-valuemax="${plan.budgetCents}" aria-valuenow="${plan.totalCents}" aria-valuetext="${money(plan.totalCents)} of ${money(plan.budgetCents)}"><span style="--p: ${pct}%"></span></div>
-              <p class="cal-budget-note"><strong>${money(plan.budgetCents - plan.totalCents)} under</strong> your ${money(plan.budgetCents)}</p>`
-          : html`<p class="cal-budget-note">Tick “for the week” to keep it under a budget.</p>`}
+          ? html`<div class="cal-meter cal-meter-plan" role="meter" aria-label="${t("Draft week cost against budget")}" aria-valuemin="0" aria-valuemax="${plan.budgetCents}" aria-valuenow="${plan.totalCents}" aria-valuetext="${t("{spend} of {budget}", { spend: money(plan.totalCents), budget: money(plan.budgetCents) })}"><span style="--p: ${pct}%"></span></div>
+              <p class="cal-budget-note">${th("{under} your {budget}", {
+                under: html`<strong>${t("{amount} under", { amount: money(plan.budgetCents - plan.totalCents) })}</strong>`,
+                budget: money(plan.budgetCents),
+              })}</p>`
+          : html`<p class="cal-budget-note">${t("Tick “for the week” to keep it under a budget.")}</p>`}
       </div>
       <div class="cal-plan-actions">
-        <a class="button button-ghost button-small" href="${shuffle}" data-cal-nav="plan">${icon("bolt", 15)} Shuffle</a>
+        <a class="button button-ghost button-small" href="${shuffle}" data-cal-nav="plan">${icon("bolt", 15)} ${t("Shuffle")}</a>
         ${plan.picks.length
           ? html`<form method="post" action="/calendar/plan" class="cal-accept">
               ${plan.picks.map((x) => html`<input type="hidden" name="pick" value="${x.date}|${x.recipe.id}" />`)}
               <input type="hidden" name="return_to" value="${returnTo}" />
-              <label class="check-inline"><input type="checkbox" name="shared" value="1" checked /> <span>Share</span></label>
-              <button class="button" type="submit">${icon("check", 16)} Add all to calendar</button>
+              <label class="check-inline"><input type="checkbox" name="shared" value="1" checked /> <span>${t("Share")}</span></label>
+              <button class="button" type="submit">${icon("check", 16)} ${t("Add all to calendar")}</button>
             </form>`
           : ""}
       </div>
@@ -726,8 +776,8 @@ function planResult(s: CalState, plan: Plan, p: PlanParams, returnTo: string): H
         const pick = plan.picks.find((x) => x.date === d);
         if (!pick) {
           return html`<li class="cal-pick cal-pick-open" style="--i: ${i}">
-            <span class="cal-pick-day">${weekday(d)} ${shortDate(d)}</span>
-            <p>Left open${plan.budgetCents !== null ? " to stay in budget" : ""}.</p>
+            <span class="cal-pick-day">${dayLabel(d)}</span>
+            <p>${t(plan.budgetCents !== null ? "Left open to stay in budget." : "Left open.")}</p>
           </li>`;
         }
         return html`<li class="cal-pick" style="--i: ${i}" data-pick-recipe="${pick.recipe.id}" data-pick-date="${d}" data-cost-cents="${pick.toBuyCents}">
@@ -735,13 +785,13 @@ function planResult(s: CalState, plan: Plan, p: PlanParams, returnTo: string): H
             ${thumb(pick.recipe.image_url, pick.recipe.title)}
             <span class="cal-pick-day">${weekday(d)} ${shortDate(d)}</span>
             ${pick.addsCents !== null
-              ? html`<span class="cal-pick-cost" title="${money(pick.toBuyCents)} bought on its own">${money(pick.addsCents)}<small> adds to the week</small></span>`
-              : html`<span class="cal-pick-cost">${money(pick.toBuyCents)}<small> on its own</small></span>`}
+              ? html`<span class="cal-pick-cost" title="${t("{amount} bought on its own", { amount: money(pick.toBuyCents) })}">${money(pick.addsCents)}<small> ${t("adds to the week")}</small></span>`
+              : html`<span class="cal-pick-cost">${money(pick.toBuyCents)}<small> ${t("on its own")}</small></span>`}
           </a>
           <div class="cal-pick-body">
             <h3><a href="/recipes/${pick.recipe.id}">${pick.recipe.title}</a></h3>
             <ul class="cal-why">${pick.reasons.map((r) => html`<li>${r}</li>`)}</ul>
-            <a class="cal-swap" href="${swapHref(i)}" data-cal-nav="plan" aria-label="Swap ${pick.recipe.title} for something else">${icon("bolt", 13)} Swap</a>
+            <a class="cal-swap" href="${swapHref(i)}" data-cal-nav="plan" aria-label="${t("Swap {title} for something else", { title: pick.recipe.title })}">${icon("bolt", 13)} ${t("Swap")}</a>
           </div>
         </li>`;
       })}
@@ -785,7 +835,7 @@ function calendarPage(ctx: Ctx, s: CalState): Html {
   const weekDays = Array.from({ length: 7 }, (_, i) => addDays(s.start, i));
   const weekEntries = entries.filter((e) => e.date >= weekDays[0] && e.date <= weekDays[6] && e.status !== "cancelled");
   const weekSpend = s.view === "month" ? 0 : money_.totalCents;
-  const summary = html`${weekEntries.length} meal${weekEntries.length === 1 ? "" : "s"} planned${weekSpend ? html` · ${money(weekSpend)} at the checkout` : ""}${ghosts.length ? html` · ${ghosts.length} from friends` : ""}`;
+  const summary = html`${tn(weekEntries.length, "{n} meal planned", "{n} meals planned")}${weekSpend ? html` · ${t("{amount} at the checkout", { amount: money(weekSpend) })}` : ""}${ghosts.length ? html` · ${t("{n} from friends", { n: ghosts.length })}` : ""}`;
   // the budget card always speaks for one week: the one shown, or this week in month view
   const budgetDays = s.view === "month" ? Array.from({ length: 7 }, (_, i) => addDays(weekStart(s.month.slice(0, 7) === now.slice(0, 7) ? now : s.month), i)) : weekDays;
   const budgetMoney: Money =
@@ -797,8 +847,8 @@ function calendarPage(ctx: Ctx, s: CalState): Html {
     ${header(s, summary)}
     <div class="cal-top">
       ${friendsBar(s, friends, counts)}
-      <a class="button button-ghost button-small cal-jump" href="#plan">${icon("planner", 15)} Plan my week</a>
-      <a class="button button-small cal-jump" href="${calHref(s)}&day=${s.day}#quick-add" data-quick-open="${s.day}">${icon("plus", 15)} Quick add</a>
+      <a class="button button-ghost button-small cal-jump" href="#plan">${icon("planner", 15)} ${t("Plan my week")}</a>
+      <a class="button button-small cal-jump" href="${calHref(s)}&day=${s.day}#quick-add" data-quick-open="${s.day}">${icon("plus", 15)} ${t("Quick add")}</a>
     </div>
     ${s.view === "month" ? monthGrid(s, entries, ghosts, money_) : weekGrid(s, entries, ghosts, plan?.picks ?? [], money_, returnTo)}
     <div class="cal-lower">
@@ -857,7 +907,7 @@ export const routes: Route[] = [
       }
       return htmlReply(
         page(ctx, {
-          title: "Calendar",
+          title: t("Calendar"),
           active: "calendar",
           body: calendarPage(ctx, s),
           headExtra: html`<script type="module" src="/assets/calendar.mjs"></script>`,
@@ -889,7 +939,7 @@ export const routes: Route[] = [
         form.get("shared") === "1" ? 1 : 0,
       );
       logActivity({ actor: ctx.user, action: "calendar.plan", subject: recipe.title, detail: { recipe: recipe.id, date, meal, shared: form.get("shared") === "1" } });
-      setFlash(ctx, `Planned ${recipe.title} for ${weekday(date)} ${shortDate(date)}.`);
+      setFlash(ctx, t("Planned {title} for {day}.", { title: recipe.title, day: dayLabel(date) }));
       return redirect(backTo(form, date));
     },
   },
@@ -926,7 +976,7 @@ export const routes: Route[] = [
       });
       const first = picks.map((p) => p.date).sort()[0];
       logActivity({ actor: ctx.user, action: "calendar.plan", subject: `${picks.length} dinners from the planner`, detail: { count: picks.length, from: first } });
-      setFlash(ctx, `Added ${picks.length} dinner${picks.length === 1 ? "" : "s"} to your calendar. Your shopping list is updated.`);
+      setFlash(ctx, tn(picks.length, "Added {n} dinner to your calendar. Your shopping list is updated.", "Added {n} dinners to your calendar. Your shopping list is updated."));
       return redirect(backTo(form, first));
     },
   },
@@ -943,7 +993,7 @@ export const routes: Route[] = [
       if (raw !== "" && cents === null) throw new HttpError(422, "Budget must be a dollar amount like 80 or 80.50.");
       run("UPDATE users SET weekly_budget_cents = ? WHERE id = ?", cents, ctx.user!.id);
       logActivity({ actor: ctx.user, action: "settings.update", subject: "weekly budget", detail: { budget_cents: cents } });
-      setFlash(ctx, cents === null ? "Weekly budget cleared." : `Weekly budget set to ${money(cents)}.`);
+      setFlash(ctx, cents === null ? t("Weekly budget cleared.") : t("Weekly budget set to {amount}.", { amount: money(cents) }));
       return redirect(back(form));
     },
   },
@@ -981,7 +1031,7 @@ export const routes: Route[] = [
       const form = await ctx.form();
       logActivity({ actor: ctx.user, action: "calendar.remove", subject: entryTitle(id), detail: { entry: id } });
       run("DELETE FROM calendar_entries WHERE id = ?", id);
-      setFlash(ctx, "Removed from calendar.");
+      setFlash(ctx, t("Removed from calendar."));
       return redirect(back(form));
     },
   },
