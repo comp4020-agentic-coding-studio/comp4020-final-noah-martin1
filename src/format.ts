@@ -1,3 +1,5 @@
+import { lang, langTag, t } from "./i18n.ts";
+
 // Display helpers shared by the views. Dates are ISO yyyy-mm-dd strings
 // throughout; "today" is the server's local date (Fly region: Sydney).
 
@@ -50,23 +52,45 @@ export function weekStart(iso: string): string {
   return isoDate(d);
 }
 
+// Dates in the visitor's language (src/i18n.ts): English keeps the site's
+// own short forms ("7 Nov", "Sat"); other languages use their own (Intl).
+const fmtCache = new Map<string, Intl.DateTimeFormat>();
+function fmt(opts: Intl.DateTimeFormatOptions): Intl.DateTimeFormat {
+  const key = langTag() + JSON.stringify(opts);
+  let f = fmtCache.get(key);
+  if (!f) fmtCache.set(key, (f = new Intl.DateTimeFormat(langTag(), opts)));
+  return f;
+}
+
 const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 const DAYS = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
 export function shortDate(iso: string): string {
   const d = parseIsoDate(iso);
-  return d ? `${d.getDate()} ${MONTHS[d.getMonth()]}` : iso;
+  if (!d) return iso;
+  return lang() === "en" ? `${d.getDate()} ${MONTHS[d.getMonth()]}` : fmt({ day: "numeric", month: "short" }).format(d);
 }
 
 export function weekday(iso: string): string {
   const d = parseIsoDate(iso);
-  return d ? DAYS[d.getDay()] : "";
+  if (!d) return "";
+  return lang() === "en" ? DAYS[d.getDay()] : fmt({ weekday: "short" }).format(d);
+}
+
+// a month's full name ("November"), and with its year ("November 2026")
+export function monthName(d: Date): string {
+  return fmt({ month: "long" }).format(d);
+}
+
+export function monthYear(d: Date): string {
+  return fmt({ month: "long", year: "numeric" }).format(d);
 }
 
 // "2026-10" → "Oct 2026", for when a reference price was checked
 export function monthLabel(ym: string): string {
   const [y, m] = ym.split("-").map(Number);
-  return y && m >= 1 && m <= 12 ? `${MONTHS[m - 1]} ${y}` : "";
+  if (!(y && m >= 1 && m <= 12)) return "";
+  return lang() === "en" ? `${MONTHS[m - 1]} ${y}` : fmt({ month: "short", year: "numeric" }).format(new Date(y, m - 1, 1));
 }
 
 export type Freshness = "expired" | "soon" | "fresh" | "none";
@@ -74,11 +98,11 @@ export type Freshness = "expired" | "soon" | "fresh" | "none";
 export const SOON_DAYS = 3;
 
 export function freshness(expiry: string | null): { state: Freshness; label: string } {
-  if (!expiry) return { state: "none", label: "No date" };
+  if (!expiry) return { state: "none", label: t("No date") };
   const days = daysBetween(today(), expiry);
-  if (days < 0) return { state: "expired", label: days === -1 ? "Expired yesterday" : `Expired ${-days}d ago` };
-  if (days === 0) return { state: "soon", label: "Expires today" };
-  if (days <= SOON_DAYS) return { state: "soon", label: `${days}d left` };
+  if (days < 0) return { state: "expired", label: days === -1 ? t("Expired yesterday") : t("Expired {n}d ago", { n: -days }) };
+  if (days === 0) return { state: "soon", label: t("Expires today") };
+  if (days <= SOON_DAYS) return { state: "soon", label: t("{n}d left", { n: days }) };
   return { state: "fresh", label: shortDate(expiry) };
 }
 
@@ -86,12 +110,12 @@ export function freshness(expiry: string | null): { state: Freshness; label: str
 export function ago(sqliteUtc: string): string {
   const then = new Date(sqliteUtc.replace(" ", "T") + "Z").getTime();
   const mins = Math.max(0, Math.round((Date.now() - then) / 60_000));
-  if (mins < 1) return "just now";
-  if (mins < 60) return `${mins}m ago`;
+  if (mins < 1) return t("just now");
+  if (mins < 60) return t("{n}m ago", { n: mins });
   const hours = Math.round(mins / 60);
-  if (hours < 24) return `${hours}h ago`;
+  if (hours < 24) return t("{n}h ago", { n: hours });
   const days = Math.round(hours / 24);
-  return days < 30 ? `${days}d ago` : shortDate(sqliteUtc.slice(0, 10));
+  return days < 30 ? t("{n}d ago", { n: days }) : shortDate(sqliteUtc.slice(0, 10));
 }
 
 export function initials(name: string): string {

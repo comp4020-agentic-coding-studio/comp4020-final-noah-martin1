@@ -6,7 +6,8 @@ import { prefsFor } from "../prefs.ts";
 import { type Recipe, recipeIngredients, recipeSteps, type RecipeIngredient } from "../recipes.ts";
 import type { Route } from "../server.ts";
 import { canSeeSession } from "../visibility.ts";
-import { avatar, icon, VIEW_TRANSITIONS } from "../views/layout.ts";
+import { langTag } from "../i18n.ts";
+import { avatar, i18nBoot, icon, VIEW_TRANSITIONS } from "../views/layout.ts";
 import { amount, duration, visibleRecipe } from "./recipes.ts";
 
 // Cook mode: the phone-on-the-bench view. One big step at a time, scaled
@@ -48,12 +49,13 @@ const BURST: [number, number, string, number][] = Array.from({ length: 18 }, (_,
 });
 
 function shell(ctx: Ctx, title: string, body: Html): Html {
-  return html`<html lang="en-AU" class="no-js">
+  return html`<html lang="${langTag()}" class="no-js">
     <head>
       <meta charset="utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
       <meta name="theme-color" content="#f7f5f1" />
       ${VIEW_TRANSITIONS}
+      ${i18nBoot()}
       <title>${title} · Larder</title>
       ${raw(`<script>try{var t=localStorage.getItem("larder-theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script>`)}
       <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />

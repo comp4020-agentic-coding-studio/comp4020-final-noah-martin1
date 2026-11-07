@@ -450,6 +450,62 @@ input[type="date"] {
   background: color-mix(in srgb, var(--surface) 70%, transparent);
 }
 
+/* the language picker: a quiet select with the translate icon; the button
+   is for when there's no JavaScript (app.js sends the form on change) */
+.lang-picker {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+  color: var(--ink-2);
+}
+
+.lang-picker select {
+  min-width: 0;
+  max-width: 100%;
+  padding: 6px 28px 6px 10px;
+  border: 1px solid var(--line);
+  border-radius: var(--pill);
+  background-color: transparent;
+  color: var(--ink);
+  font: 500 13px/1.2 var(--font);
+}
+
+.js .lang-picker [data-lang-go] {
+  display: none;
+}
+
+.sidebar-foot .lang-picker {
+  flex-basis: 100%;
+  padding: 2px 6px 6px;
+}
+
+.sidebar-foot .lang-picker select {
+  flex: 1;
+}
+
+.more-lang {
+  padding: 14px 16px;
+}
+
+.more-lang .lang-picker select {
+  flex: 1;
+  padding-block: 10px;
+  font-size: 15px;
+}
+
+/* the signed-out bar is tight on a phone: the icon alone says what it is */
+@media (max-width: 560px) {
+  .public-bar .lang-picker > .icon {
+    display: none;
+  }
+
+  .public-bar .lang-picker select {
+    padding: 6px 22px 6px 8px;
+    font-size: 12px;
+  }
+}
+
 /* name on its own line so it's never cut to an initial; the three buttons
    sit in a quiet row beneath */
 .sidebar-foot .me {

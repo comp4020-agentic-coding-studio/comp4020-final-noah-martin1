@@ -1,6 +1,14 @@
 // Progressive enhancement only: every page works without this file.
 
 document.documentElement.classList.remove("no-js");
+document.documentElement.classList.add("js");
+
+// The language picker sends itself as soon as a language is chosen (its
+// button is for when there's no JavaScript).
+document.addEventListener("change", (event) => {
+  const select = event.target instanceof HTMLSelectElement ? event.target : null;
+  if (select?.closest("[data-lang-picker]")) select.form?.requestSubmit();
+});
 
 // The browser's time zone, so "what to cook now" means breakfast at 8 am
 // where you are. Only the zone name ("Australia/Sydney"); nothing finer.

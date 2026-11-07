@@ -25,6 +25,7 @@ import {
   text,
 } from "./http.ts";
 import { html } from "./html.ts";
+import { isLang, langFor, t, withLang } from "./i18n.ts";
 import { routes as adminRoutes } from "./routes/admin.ts";
 import { routes as authRoutes } from "./routes/auth.ts";
 import { routes as calendarRoutes } from "./routes/calendar.ts";
@@ -86,6 +87,25 @@ const table = [
   ...settingsRoutes,
   ...readmeRoutes,
   ...adminRoutes,
+  // the language picker: remembered for a year in this browser, then back
+  // to the page it was used on
+  {
+    method: "POST" as const,
+    path: "/lang",
+    handler: async (ctx: Ctx) => {
+      const form = await ctx.form();
+      const l = form.get("lang");
+      if (isLang(l)) ctx.setCookies.push(cookie("lang", l, { maxAge: 31_536_000, secure: isHttps(ctx.req) }));
+      let back = "/";
+      try {
+        const from = new URL(ctx.req.headers.referer ?? "");
+        if (from.host === ctx.req.headers.host) back = from.pathname + from.search;
+      } catch {
+        // no referrer, or not a URL: home
+      }
+      return redirect(back);
+    },
+  },
 ].map((r) => ({ ...r, regex: compile(r.path) }));
 
 const STATIC_TYPES: Record<string, string> = {
@@ -121,15 +141,15 @@ async function serveStatic(pathname: string): Promise<Reply | null> {
 }
 
 function errorPage(ctx: Ctx, status: number, message: string): Reply {
-  const title = status === 404 ? "Not found" : status === 403 ? "Not allowed" : "Something went wrong";
+  const title = status === 404 ? t("Not found") : status === 403 ? t("Not allowed") : t("Something went wrong");
   return htmlReply(
     page(ctx, {
       title,
       body: html`<section class="error-page">
-        <p class="eyebrow">Error ${status}</p>
+        <p class="eyebrow">${t("Error {status}", { status })}</p>
         <h1>${title}</h1>
-        <p class="lede">${message}</p>
-        <a class="button" href="/">Back home</a>
+        <p class="lede">${t(message)}</p>
+        <a class="button" href="/">${t("Back home")}</a>
       </section>`,
     }),
     status,
@@ -199,18 +219,20 @@ const server = createServer(async (req, res) => {
   // a flash message is shown once
   if (ctx.flash) ctx.setCookies.push(cookie("flash", "", { maxAge: 0, secure: isHttps(req) }));
 
-  let reply: Reply;
-  try {
-    reply = await handle(ctx);
-  } catch (err) {
-    if (err instanceof HttpError) {
-      reply = errorPage(ctx, err.status, err.message);
-    } else {
-      console.error(JSON.stringify({ level: "error", event: "request.failed", method: ctx.method, path: ctx.url.pathname, who: ctx.user ? `${ctx.user.username}#${ctx.user.id}` : "guest", error: err instanceof Error ? err.message : String(err) }));
-      console.error(err);
-      reply = errorPage(ctx, 500, "The server hit an error. It has been logged.");
+  // the whole reply, error pages too, in the visitor's language
+  const reply: Reply = await withLang(langFor(req, cookies.lang), async () => {
+    try {
+      return await handle(ctx);
+    } catch (err) {
+      if (err instanceof HttpError) {
+        return errorPage(ctx, err.status, err.message);
+      } else {
+        console.error(JSON.stringify({ level: "error", event: "request.failed", method: ctx.method, path: ctx.url.pathname, who: ctx.user ? `${ctx.user.username}#${ctx.user.id}` : "guest", error: err instanceof Error ? err.message : String(err) }));
+        console.error(err);
+        return errorPage(ctx, 500, "The server hit an error. It has been logged.");
+      }
     }
-  }
+  });
   // a redirect carries a flash set during this request; don't clear it
   if (reply.status === 303) ctx.setCookies = ctx.setCookies.filter((c) => !c.startsWith("flash=;"));
   send(res, reply, ctx.setCookies);

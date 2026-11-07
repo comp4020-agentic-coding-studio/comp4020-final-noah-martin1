@@ -7,7 +7,7 @@ import { duration, recipeTile as recipeTileFor } from "./recipes.ts";
 import type { Route } from "../server.ts";
 import { friendIds } from "../visibility.ts";
 import { prefsFor } from "../prefs.ts";
-import { avatar, empty, icon, NAV_GROUPS, page, pageHeader, publicPage } from "../views/layout.ts";
+import { avatar, empty, icon, langPicker, NAV_GROUPS, page, pageHeader, publicPage } from "../views/layout.ts";
 import { shoppingList } from "../shopping.ts";
 import { entriesBetween, type FriendMeal, friendMeals, mealChip } from "./calendar.ts";
 import { gracePrompt, type InventoryItem, personalInventory } from "./pantry.ts";
@@ -331,6 +331,7 @@ function morePage(ctx: Ctx): Html {
           <li><a href="/readme/">${icon("recipes")}<span class="grow">About Larder</span><span aria-hidden="true">›</span></a></li>
         </ul>
       </section>
+      <section class="panel more-lang">${langPicker("more")}</section>
       <form method="post" action="/logout"><button class="button button-ghost button-block" type="submit">${icon("logout", 16)} Sign out</button></form>
     </div>`;
 }

@@ -2,6 +2,7 @@ import { character, characterSvg } from "../avatars.ts";
 import { initials } from "../format.ts";
 import { type Html, html, raw } from "../html.ts";
 import type { Ctx } from "../http.ts";
+import { clientTable, lang, langTag, t, UI_LANGUAGES } from "../i18n.ts";
 
 // 20px stroke icons, drawn on a 24 grid so they stay crisp at 1px strokes.
 const ICONS: Record<string, string> = {
@@ -153,6 +154,15 @@ export const VIEW_TRANSITIONS = raw(
   `<style>@view-transition{navigation:auto}@media (prefers-reduced-motion:reduce){@view-transition{navigation:none}}</style>`,
 );
 
+// The browser's scripts look their lines up through window.__t, set here
+// before any of them run (public/i18n.mjs, app.js); the table is only the
+// lines this language translates, as JSON, never markup.
+export function i18nBoot(): Html {
+  return html`<script type="application/json" id="i18n">${raw(clientTable())}</script>${raw(
+    `<script>(function(){var m={};try{m=JSON.parse(document.getElementById("i18n").textContent)}catch(e){}window.__t=function(s){return m[s]||s}})()</script>`,
+  )}`;
+}
+
 function head(title: string, extra?: Html): Html {
   return html`<head>
     <meta charset="utf-8" />
@@ -161,6 +171,7 @@ function head(title: string, extra?: Html): Html {
     <meta name="theme-color" content="#1a1714" media="(prefers-color-scheme: dark)" />
     ${THEME_BOOT}
     ${VIEW_TRANSITIONS}
+    ${i18nBoot()}
     <title>${title} · Larder</title>
     <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -175,10 +186,24 @@ function head(title: string, extra?: Html): Html {
 
 // Light / dark / follow-the-system, cycled by app.js and remembered per browser.
 export function themeToggle(): Html {
-  return html`<button class="icon-button theme-toggle" type="button" data-theme-toggle aria-label="Switch colour theme" title="Theme">
+  return html`<button class="icon-button theme-toggle" type="button" data-theme-toggle aria-label="${t("Switch colour theme")}" title="${t("Theme")}">
     <svg class="icon theme-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M4.6 4.6l1.4 1.4M18 18l1.4 1.4M2.5 12h2M19.5 12h2M4.6 19.4 6 18M18 6l1.4-1.4"/></svg>
     <svg class="icon theme-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z"/></svg>
   </button>`;
+}
+
+// The language picker: a plain form (it works without JavaScript; app.js
+// sends it as soon as a language is picked and hides the button).
+export function langPicker(where: string): Html {
+  const id = `lang-${where}`;
+  return html`<form class="lang-picker" method="post" action="/lang" data-lang-picker>
+    <label class="sr-only" for="${id}">${t("Language")}</label>
+    ${icon("translate", 18)}
+    <select id="${id}" name="lang" lang="">
+      ${UI_LANGUAGES.map((u) => html`<option value="${u.code}" lang="${u.tag}" ${u.code === lang() ? raw("selected") : ""}>${u.name}</option>`)}
+    </select>
+    <button class="button button-small button-ghost" type="submit" data-lang-go>${t("Change")}</button>
+  </form>`;
 }
 
 function flash(ctx: Ctx): Html {
@@ -193,40 +218,41 @@ function brand(): Html {
 export function appPage(ctx: Ctx, { title, active, body, mainClass, headExtra }: PageOptions): Html {
   const user = ctx.user!;
   const link = (n: NavItem) =>
-    html`<a href="${n.href}" class="nav-link ${n.phase ? "nav-soon" : ""}" ${n.key === active ? raw('aria-current="page"') : ""}>${icon(n.key)}<span>${n.label}</span>${n.phase ? html`<small>${n.phase}</small>` : ""}</a>`;
+    html`<a href="${n.href}" class="nav-link ${n.phase ? "nav-soon" : ""}" ${n.key === active ? raw('aria-current="page"') : ""}>${icon(n.key)}<span>${t(n.label)}</span>${n.phase ? html`<small>${t(n.phase)}</small>` : ""}</a>`;
   // on phones, sections without their own tab light up "More"
   const tabActive = TABS.some((t) => t.key === active) ? active : "more";
   const tab = (n: NavItem) =>
-    html`<a href="${n.href}" class="nav-link" ${n.key === tabActive ? raw('aria-current="page"') : ""}>${icon(n.key)}<span>${n.label}</span></a>`;
-  return html`<html lang="en-AU">
+    html`<a href="${n.href}" class="nav-link" ${n.key === tabActive ? raw('aria-current="page"') : ""}>${icon(n.key)}<span>${t(n.label)}</span></a>`;
+  return html`<html lang="${langTag()}">
     ${head(title, headExtra)}
     <body class="app">
-      <a class="skip" href="#main">Skip to content</a>
+      <a class="skip" href="#main">${t("Skip to content")}</a>
       <aside class="sidebar">
         ${brand()}
-        <nav aria-label="Main">
+        <nav aria-label="${t("Main")}">
           ${NAV_GROUPS.map(
-            (g) => html`${g.heading ? html`<p class="nav-heading">${g.heading}</p>` : ""}${g.items.map(link)}`,
+            (g) => html`${g.heading ? html`<p class="nav-heading">${t(g.heading)}</p>` : ""}${g.items.map(link)}`,
           )}
         </nav>
         <div class="sidebar-foot">
+          ${langPicker("side")}
           <a class="me" href="/u/${user.username}">${avatar(user.display_name, "sm", user.avatar)}<span><strong>${user.display_name}</strong><small>@${user.username}</small></span></a>
           ${themeToggle()}
-          <a class="icon-button" href="/settings" title="Settings" aria-label="Settings" ${active === "settings" ? raw('aria-current="page"') : ""}>${icon("settings")}</a>
+          <a class="icon-button" href="/settings" title="${t("Settings")}" aria-label="${t("Settings")}" ${active === "settings" ? raw('aria-current="page"') : ""}>${icon("settings")}</a>
           <form method="post" action="/logout">
-            <button class="icon-button" type="submit" title="Sign out" aria-label="Sign out">${icon("logout")}</button>
+            <button class="icon-button" type="submit" title="${t("Sign out")}" aria-label="${t("Sign out")}">${icon("logout")}</button>
           </form>
         </div>
       </aside>
       <header class="topbar">
         ${brand()}
-        <span class="topbar-actions">${themeToggle()}<a class="me" href="/u/${user.username}" aria-label="Your profile">${avatar(user.display_name, "sm", user.avatar)}</a></span>
+        <span class="topbar-actions">${themeToggle()}<a class="me" href="/u/${user.username}" aria-label="${t("Your profile")}">${avatar(user.display_name, "sm", user.avatar)}</a></span>
       </header>
       <main id="main" class="main ${mainClass ?? ""}">
         ${flash(ctx)}
         ${body}
       </main>
-      <nav class="tabbar" aria-label="Main (mobile)">
+      <nav class="tabbar" aria-label="${t("Main (mobile)")}">
         ${TABS.map(tab)}
       </nav>
     </body>
@@ -237,20 +263,21 @@ export function appPage(ctx: Ctx, { title, active, body, mainClass, headExtra }:
 // that work without an account (recipes, the global live map, /readme/).
 export function publicPage(ctx: Ctx, { title, body, active, mainClass, headExtra }: PageOptions): Html {
   const link = (key: string, href: string, label: string, cls = "") =>
-    html`<a href="${href}" class="${cls}" ${active === key ? raw('aria-current="page"') : ""}>${label}</a>`;
-  return html`<html lang="en-AU">
+    html`<a href="${href}" class="${cls}" ${active === key ? raw('aria-current="page"') : ""}>${t(label)}</a>`;
+  return html`<html lang="${langTag()}">
     ${head(title, headExtra)}
     <body class="public">
-      <a class="skip" href="#main">Skip to content</a>
+      <a class="skip" href="#main">${t("Skip to content")}</a>
       <header class="public-bar">
         ${brand()}
-        <nav aria-label="Site">
+        <nav aria-label="${t("Site")}">
           ${link("recipes", "/recipes", "Recipes")}
           ${link("global", "/global", "Live now", "hide-sm")}
           ${link("about", "/readme/", "About", "hide-sm")}
+          ${langPicker("bar")}
           ${themeToggle()}
           ${link("login", "/login", "Sign in")}
-          <a class="button button-small" href="/register">Join free</a>
+          <a class="button button-small" href="/register">${t("Join free")}</a>
         </nav>
       </header>
       <main id="main" class="public-main ${mainClass ?? ""}">
@@ -279,7 +306,7 @@ export function pageHeader(title: string, subtitle?: string | Html, actions?: Ht
 export function previewBanner(phase: string, what: string): Html {
   return html`<div class="preview-banner" role="note">
     <span class="badge">${phase}</span>
-    <span>Preview with sample data. ${what}</span>
+    <span>${t("Preview with sample data.")} ${what}</span>
   </div>`;
 }
 
@@ -301,7 +328,7 @@ export function empty(title: string, body: string, action?: Html): Html {
 export function errors(list: string[]): Html {
   if (!list.length) return html``;
   return html`<div class="form-errors" role="alert">
-    <p>Please fix the following:</p>
+    <p>${t("Please fix the following:")}</p>
     <ul>${list.map((e) => html`<li>${e}</li>`)}</ul>
   </div>`;
 }
