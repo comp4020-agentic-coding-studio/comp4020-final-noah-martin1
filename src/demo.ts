@@ -1,5 +1,6 @@
 // The demo kitchen markers are pointed at: alice, sam, bo and jo, one
-// password, friends and a shared household. While DEMO_MODE is on the
+// password, friends and a shared household; and kai, on their own, with a
+// fridge and pantry stocked full to show off the 3D kitchen. While DEMO_MODE is on the
 // sign-in form is prefilled with alice. The accounts are shared, so when
 // DEMO_VERSION changes their content is rebuilt once: their own recipes,
 // pantries, calendars and household go back to a tidy, current week, and
@@ -16,14 +17,14 @@ import { saveRecipe, type RecipeInput } from "./recipes.ts";
 export const DEMO_MODE = true;
 
 // Bump to rebuild the demo kitchen on the next deploy (once).
-export const DEMO_VERSION = "2026-11-06";
+export const DEMO_VERSION = "2026-11-07";
 
 export const DEMO_LOGIN = { username: "alice", password: "password123" };
 
 // The seeded accounts all share DEMO_LOGIN's password and markers are told
 // to use them, so none may have its password changed: one change would lock
 // everyone else out. This holds whether or not DEMO_MODE prefills the form.
-export const DEMO_USERNAMES = ["alice", "sam", "bo", "jo"];
+export const DEMO_USERNAMES = ["alice", "sam", "bo", "jo", "kai"];
 
 // [username, name, cooking character (src/avatars.ts)]
 const PEOPLE: [string, string, string][] = [
@@ -31,6 +32,7 @@ const PEOPLE: [string, string, string][] = [
   ["sam", "Sam Patel", "egg"],
   ["bo", "Bo Kim", "dumpling"],
   ["jo", "Jo Rivera", "strawberry"],
+  ["kai", "Kai Morgan", "carrot"],
 ];
 
 // Demo recipes borrow the photo of the same dish from the catalogue
@@ -245,6 +247,101 @@ const PANTRY: Record<string, [string, number, string, number | null, number | nu
   ],
   bo: [["chicken thigh", 500, "g", 2, 650]],
   jo: [["avocado", 2, "", 3, 300]],
+  // a fridge and larder stocked full: every shelf, the crisper, the door
+  // bins and the spice racks have something on them, and it all fits
+  // without anything hiding (checked by screenshot; see the 3D kitchen notes)
+  kai: [
+    // fridge door
+    ["milk", 2000, "ml", 7, 339],
+    ["orange juice", 2000, "ml", 9, 450],
+    ["cream", 600, "ml", 8, 520],
+    ["butter", 250, "g", 40, 399],
+    ["pesto", 190, "g", 20, 400],
+    // dairy shelf
+    ["eggs", 12, "", 16, 670],
+    ["greek yoghurt", 1000, "g", 2, 420],
+    ["cheddar cheese", 500, "g", 30, 650],
+    ["parmesan", 200, "g", 45, 690],
+    ["mozzarella", 250, "g", 10, 450],
+    ["hummus", 200, "g", 6, 300],
+    // meat and fish
+    ["firm tofu", 450, "g", 12, 280],
+    ["chicken breast", 600, "g", 2, 660],
+    ["beef mince", 500, "g", 3, 770],
+    ["bacon", 250, "g", 9, 440],
+    ["salmon fillet", 400, "g", 1, 1360],
+    ["prawns", 500, "g", 4, 1750],
+    ["sausages", 550, "g", 6, 650],
+    // produce
+    ["lemon", 3, "", 18, 414],
+    ["lime", 2, "", 14, 412],
+    ["tomato", 4, "", 6, 388],
+    ["capsicum", 2, "", 9, 300],
+    ["carrot", 1000, "g", 21, 250],
+    ["broccoli", 1, "", 5, 300],
+    ["mushrooms", 250, "g", 4, 400],
+    ["baby spinach", 120, "g", 3, 300],
+    ["avocado", 2, "", 4, 400],
+    ["red chilli", 3, "", 10, 150],
+    ["spring onion", 1, "bunch", 7, 250],
+    ["strawberries", 250, "g", 3, 450],
+    ["coriander", 1, "bunch", 5, 300],
+    ["basil", 1, "bunch", 5, 300],
+    ["ginger", 100, "g", 20, 330],
+    // larder: bottles up top
+    ["olive oil", 750, "ml", null, 1100],
+    ["soy sauce", 500, "ml", null, 380],
+    ["fish sauce", 250, "ml", null, 420],
+    ["balsamic vinegar", 500, "ml", null, 450],
+    ["red wine", 750, "ml", null, 1200],
+    ["maple syrup", 250, "ml", null, 900],
+    ["sweet chilli sauce", 500, "ml", null, 350],
+    ["sriracha", 435, "ml", null, 550],
+    // jars
+    ["honey", 500, "g", null, 650],
+    ["peanut butter", 375, "g", 200, 450],
+    ["jam", 500, "g", 180, 400],
+    ["dijon mustard", 200, "g", 250, 350],
+    ["tomato paste", 140, "g", 300, 150],
+    ["kimchi", 400, "g", 40, 700],
+    ["dark chocolate", 200, "g", 200, 400],
+    // packets
+    ["spaghetti", 500, "g", 400, 200],
+    ["penne", 500, "g", 400, 200],
+    ["rolled oats", 1500, "g", 200, 320],
+    ["rice noodles", 400, "g", 300, 280],
+    ["red lentils", 500, "g", 300, 320],
+    ["cornflour", 300, "g", 400, 250],
+    ["almonds", 400, "g", 150, 900],
+    // the cold slate shelf
+    ["canned tomatoes", 400, "g", 600, 120],
+    ["coconut milk", 400, "ml", 500, 200],
+    ["chickpeas", 400, "g", 600, 120],
+    ["black beans", 400, "g", 600, 150],
+    ["chicken stock", 1000, "ml", 300, 350],
+    ["sourdough bread", 1, "loaf", 3, 700],
+    ["garlic", 1, "bulb", 40, 150],
+    ["banana", 5, "", 4, 350],
+    // the floor
+    ["plain flour", 2000, "g", 300, 239],
+    ["sugar", 2000, "g", 500, 300],
+    ["rice", 2000, "g", 500, 450],
+    ["onion", 1000, "g", 40, 300],
+    ["red onion", 3, "", 30, 250],
+    ["potato", 2000, "g", 30, 450],
+    ["sweet potato", 1000, "g", 20, 400],
+    // the door racks
+    ["sesame oil", 150, "ml", null, 450],
+    ["salt", 500, "g", null, 150],
+    ["black pepper", 50, "g", null, 350],
+    ["ground cumin", 50, "g", null, 250],
+    ["paprika", 50, "g", null, 250],
+    ["cinnamon", 50, "g", null, 250],
+    ["ground turmeric", 50, "g", null, 250],
+    ["chilli flakes", 30, "g", null, 250],
+    ["dried oregano", 15, "g", null, 250],
+    ["vanilla extract", 50, "ml", null, 650],
+  ],
 };
 
 // Their own week: [who, days from today, meal, recipe title, shared]
@@ -309,14 +406,14 @@ export async function seedDemo(version = DEMO_VERSION): Promise<boolean> {
   if (built === version && present) return false;
   const ids = await demoUsers();
   const id = (u: string) => ids.get(u)!;
-  const [alice, sam, bo, jo] = DEMO_USERNAMES.map(id);
+  const [alice, sam, bo, jo, kai] = DEMO_USERNAMES.map(id);
 
   friends(alice, sam, true);
   friends(bo, alice, true);
   friends(jo, alice, false); // left pending, so Alice has a request to answer
 
   resetHouseholdDemo();
-  transaction(() => clearDemo([alice, sam, bo, jo]));
+  transaction(() => clearDemo([alice, sam, bo, jo, kai]));
   // saveRecipe runs its own transaction, so recipes go in one at a time
   const recipeIds = new Map<string, number>();
   for (const { author, photo, ...r } of RECIPES) {
@@ -353,6 +450,6 @@ export async function seedDemo(version = DEMO_VERSION): Promise<boolean> {
     version,
   );
   const left = all<{ n: number }>(`SELECT COUNT(*) AS n FROM recipes WHERE author_id IN (?, ?, ?, ?)`, alice, sam, bo, jo)[0].n;
-  console.log(`demo kitchen rebuilt (version ${version}): ${left} recipes for alice, sam, bo, jo`);
+  console.log(`demo kitchen rebuilt (version ${version}): ${left} recipes for alice, sam, bo, jo; ${PANTRY.kai.length} items in kai's kitchen`);
   return true;
 }

@@ -1,8 +1,9 @@
 import { describe, expect, it } from "vitest";
 import { all, one, run } from "../src/db.ts";
-import { seedDemo } from "../src/demo.ts";
+import { DEMO_USERNAMES, seedDemo } from "../src/demo.ts";
 import { seedCatalogue } from "../src/catalogue.ts";
 import { addDays, today } from "../src/format.ts";
+import { shelfware } from "../src/kitchen.ts";
 
 // The demo accounts are shared, so a visitor can add anything to them. Each
 // boot rebuilds their content; these hold on this file's own throwaway
@@ -67,5 +68,20 @@ describe("refreshing the shared demo kitchen", () => {
     const meals = one<{ n: number }>("SELECT COUNT(*) AS n FROM calendar_entries WHERE owner_type = 'household' AND owner_id = ?", houses[0].id)!.n;
     expect(meals).toBe(5);
     expect(one<{ n: number }>("SELECT COUNT(*) AS n FROM inventory_items WHERE owner_type = 'household' AND owner_id NOT IN (SELECT id FROM households)")!.n).toBe(0);
+  });
+
+  it("kai's kitchen is stocked full, fridge and pantry, and it's a shared (protected) demo account", async () => {
+    await seedDemo("test-v7");
+    const kai = userId("kai");
+    const names = all<{ name: string; category: string }>(
+      "SELECT g.name, g.category FROM inventory_items i JOIN ingredients g ON g.id = i.ingredient_id WHERE i.owner_type = 'user' AND i.owner_id = ?",
+      kai,
+    );
+    const places = names.map((r) => shelfware(r.name, r.category).place);
+    expect(places.filter((p) => p === "fridge").length).toBeGreaterThanOrEqual(30);
+    expect(places.filter((p) => p === "pantry").length).toBeGreaterThanOrEqual(40);
+    expect(DEMO_USERNAMES).toContain("kai");
+    // every item has a price, so the stock value means something
+    expect(one<{ n: number }>("SELECT COUNT(*) AS n FROM inventory_items WHERE owner_type = 'user' AND owner_id = ? AND price_cents IS NULL", kai)!.n).toBe(0);
   });
 });
