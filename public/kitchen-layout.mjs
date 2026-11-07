@@ -1,4 +1,4 @@
-// Pure geometry for the 3D fridge and pantry: where an item may stand on a
+// Pure geometry for the 3D fridge and larder: where an item may stand on a
 // shelf, how much headroom it has, and which item a pointer means when
 // several overlap. No three.js here, so spec/kitchen-layout.test.ts can test
 // the rules directly; public/kitchen.mjs draws what these decide.
@@ -176,6 +176,21 @@ export function fitsPlan(lane, sizes) {
 const SHELF_OF = { tray: 0, eggs: 1, cheese: 1, tub: 1, butter: 1, cream: 1, milk: 2, juice: 2 };
 export function shelfFor(model) {
   return SHELF_OF[model] ?? 2;
+}
+
+// Which level of the larder an item belongs on, the way a larder is kept:
+// the heavy sacks, potatoes and onions on the floor (0); tins, cartons,
+// bread, garlic and ginger on the cold slate shelf (1); packets on the shelf
+// above (2); jars of preserves above that (3); bottles up top (4).
+const LEVEL_OF = { sack: 0, potato: 0, onion: 0, pumpkin: 0, pineapple: 0, can: 1, carton: 1, loaf: 1, garlic: 1, ginger: 1, banana: 1, butter: 1, box: 2, pouch: 2, jar: 3, bar: 3, bottle: 4, spice: 4 };
+export function larderLevelFor(model) {
+  return LEVEL_OF[model] ?? 3;
+}
+
+// Spices and little bottles (vanilla, sesame oil) stand in the racks on the
+// backs of the larder doors; anything taller wouldn't fit under the next rack.
+export function inLarderDoor(model, height) {
+  return model === "spice" || (model === "bottle" && height <= 0.32);
 }
 
 // The order to set a shelf's items down in: shortest first, so they take the

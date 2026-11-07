@@ -1,6 +1,7 @@
 // The fridge and pantry: a 3D kitchen built from the person's own inventory.
-// A double-door fridge (doors swing open when the page loads) and an open oak
-// shelf beside it; the arrow slides the camera between them. Every item is
+// A double-door fridge and, past a low sideboard, an old-fashioned larder
+// cupboard; the arrow slides the camera between them, and each one's doors
+// close behind you as the other's open ahead. Every item is
 // drawn as itself (a lemon, a tray of mince, a jar of peanut butter) by
 // public/kitchen-models.mjs, from a model and look chosen server-side in
 // src/kitchen.ts. Hover lifts an item off its shelf with an outline; click
@@ -13,7 +14,7 @@ import { EffectComposer } from "three/addons/postprocessing/EffectComposer.js";
 import { RenderPass } from "three/addons/postprocessing/RenderPass.js";
 import { OutlinePass } from "three/addons/postprocessing/OutlinePass.js";
 import { OutputPass } from "three/addons/postprocessing/OutputPass.js";
-import { dropFor, fitScale, fitsPlan, frontToBack, liftFor, newLane, orderStack, planLane, rotatedExtent, shelfFor, takeSlot } from "./kitchen-layout.mjs";
+import { dropFor, fitScale, fitsPlan, frontToBack, inLarderDoor, larderLevelFor, liftFor, newLane, orderStack, planLane, rotatedExtent, shelfFor, takeSlot } from "./kitchen-layout.mjs";
 import { PRODUCE, buildModel } from "./kitchen-models.mjs";
 
 const root = document.querySelector("[data-kitchen]");
@@ -129,7 +130,6 @@ function start() {
   });
   const glassEdge = new THREE.MeshStandardMaterial({ color: 0xd8e4e4, roughness: 0.3 });
   const binMat = new THREE.MeshPhysicalMaterial({ color: 0xe4f1ee, roughness: 0.1, transparent: true, opacity: 0.38, clearcoat: 1, depthWrite: false });
-  const oak = new THREE.MeshStandardMaterial({ color: 0xc89a6a, roughness: 0.62, map: woodTexture() });
   const brass = new THREE.MeshPhysicalMaterial({ color: 0xc9a46a, metalness: 0.9, roughness: 0.3 });
 
   /* ---------- the fridge ---------- */
@@ -261,72 +261,236 @@ function start() {
     doors.push({ side, hinge, slab, bins });
   }
 
-  /* ---------- the pantry: open oak shelving on the wall ---------- */
-  const PX = 5.6; // pantry centre x
+  /* ---------- the pantry: an old-fashioned larder cupboard ---------- */
+  // A tall painted larder the height of the fridge, so the two read as a
+  // pair: a cornice and a plinth, two panelled doors with pierced zinc vents
+  // (a larder breathes), brass knobs and hinges. Inside: boarded walls, pine
+  // shelves with scalloped paper edging, a cold slate shelf, and spice racks
+  // on the backs of the doors. The doors open as you arrive and close
+  // behind you when you go back to the fridge.
+  const PX = 5.6; // larder centre x
   const pantry = new THREE.Group();
   pantry.position.set(PX, 0, 0);
   scene.add(pantry);
-  const PW = 2.9, PD = 0.5;
-  const PANTRY_SHELVES = [1.3, 1.98, 2.66];
-  const LED_OFF = new THREE.Color(0xd8cfc3);
-  const LED_ON = new THREE.Color(0xfff1d6);
-  const ledMat = new THREE.MeshBasicMaterial({ color: LED_OFF });
-  const shelfLights = [];
-  for (const y of PANTRY_SHELVES) {
-    const board = new THREE.Mesh(new RoundedBoxGeometry(PW, 0.07, PD, 3, 0.02), oak);
-    board.position.set(0, y, -0.6 + PD / 2);
-    board.castShadow = true;
-    board.receiveShadow = true;
-    pantry.add(board);
-    // a warm LED strip tucked under the front lip: on at night
-    const led = new THREE.Mesh(new THREE.BoxGeometry(PW - 0.2, 0.012, 0.02), ledMat);
-    led.position.set(0, y - 0.042, -0.6 + PD - 0.06);
-    pantry.add(led);
-    // two soft downlights per strip wash the shelf below in warm light
-    for (const sx of [-PW / 4, PW / 4]) {
-      const wash = new THREE.SpotLight(0xffd29a, 0, 1.6, 1.15, 0.9, 1.2);
-      wash.position.set(PX + sx, y - 0.05, -0.6 + PD - 0.1);
-      wash.target.position.set(PX + sx, y - 0.8, -0.55);
-      scene.add(wash, wash.target);
-      shelfLights.push(wash);
+  const LW = 2.0; // inside width
+  const LT = 0.07; // carcass wall thickness
+  const LF = 0.3; // front face z (the wall is at -0.62)
+  const LB = -0.52; // inside face of the back boards
+  const L_FLOOR = 0.16; // top of the larder's floor
+  const L_CEIL = 2.8; // underside of its top
+  const SLATE = 0.7; // top of the cold slate shelf
+  const L_SHELVES = [1.2, 1.64, 2.06]; // tops of the pine shelves above it
+  const SHELF_FRONT = 0.13; // the shelves stop short of the door racks
+  // an old duck-egg blue-grey, so the larder stands out from the cream wall
+  // as a piece of furniture and sits well beside the sage fridge
+  const paint = new THREE.MeshPhysicalMaterial({ color: 0x8fa9ae, roughness: 0.55, clearcoat: 0.15, clearcoatRoughness: 0.5 });
+  const plinthPaint = new THREE.MeshStandardMaterial({ color: 0x5f6f72, roughness: 0.7 });
+  const pine = new THREE.MeshStandardMaterial({ color: 0xe6c697, roughness: 0.6, map: woodTexture() });
+  const slate = new THREE.MeshStandardMaterial({ color: 0xffffff, roughness: 0.42, map: slateTexture() });
+  // the boarded inside, in a pale limewash; it glows a little when the
+  // larder's bulb is on, like the fridge's liner
+  const boardTex = boardTexture("#e3ebe5");
+  const boardMats = [];
+  const boards = (rx) => {
+    const map = boardTex.clone();
+    map.repeat.set(rx, 1);
+    map.needsUpdate = true;
+    const m = new THREE.MeshStandardMaterial({ color: 0xffffff, roughness: 0.85, map, emissive: 0xffe6c4, emissiveIntensity: 0 });
+    boardMats.push(m);
+    return m;
+  };
+  const part = (parent, w, h, d, x, y, z, m, r = 0.012) => {
+    const mesh = new THREE.Mesh(new RoundedBoxGeometry(w, h, d, 2, Math.min(r, w / 2.01, h / 2.01, d / 2.01)), m);
+    mesh.position.set(x, y, z);
+    mesh.castShadow = true;
+    mesh.receiveShadow = true;
+    parent.add(mesh);
+    return mesh;
+  };
+  const OW = LW + 2 * LT; // outside width
+  const LD = LF - (LB - 0.06); // outside depth, back boards included
+  const LZ = LF - LD / 2; // its middle
+  // carcass: sides, back, floor, top, then the cornice and a recessed plinth
+  for (const s of [-1, 1]) part(pantry, LT, 2.84, LD, s * (LW / 2 + LT / 2), 1.54, LZ, paint, 0.01);
+  part(pantry, LW, 2.76, 0.06, 0, 1.5, LB - 0.03, boards(2), 0.004);
+  for (const s of [-1, 1]) part(pantry, 0.012, L_CEIL - L_FLOOR, LF - LB, s * (LW / 2 - 0.006), (L_CEIL + L_FLOOR) / 2, (LF + LB) / 2, boards(0.8), 0.003);
+  part(pantry, LW, 0.04, LF - LB, 0, L_FLOOR - 0.02, (LF + LB) / 2, boards(2), 0.004);
+  part(pantry, OW, 0.16, LD, 0, L_CEIL + 0.08, LZ, paint, 0.01);
+  part(pantry, OW + 0.06, 0.05, LD + 0.04, 0, 2.985, LZ + 0.02, paint, 0.012);
+  part(pantry, OW + 0.14, 0.06, LD + 0.08, 0, 3.04, LZ + 0.04, paint, 0.02);
+  part(pantry, OW + 0.2, 0.04, LD + 0.11, 0, 3.09, LZ + 0.055, paint, 0.015);
+  part(pantry, OW - 0.08, 0.12, LD - 0.1, 0, 0.06, LZ - 0.05, plinthPaint, 0.01);
+  part(pantry, OW, 0.04, LD, 0, 0.12, LZ, paint, 0.008);
+  // the cold slate shelf, and three pine shelves, each with a strip of
+  // scalloped paper pinned along its front
+  const shelfDepth = SHELF_FRONT - LB;
+  part(pantry, LW - 0.004, 0.05, shelfDepth, 0, SLATE - 0.025, (SHELF_FRONT + LB) / 2, slate, 0.006);
+  const edging = new THREE.MeshStandardMaterial({ map: edgingTexture(LW), alphaTest: 0.5, side: THREE.DoubleSide, roughness: 0.85 });
+  for (const y of L_SHELVES) {
+    part(pantry, LW - 0.004, 0.04, shelfDepth, 0, y - 0.02, (SHELF_FRONT + LB) / 2, pine, 0.008);
+    const strip = new THREE.Mesh(new THREE.PlaneGeometry(LW - 0.01, 0.052), edging);
+    strip.position.set(0, y - 0.022, SHELF_FRONT + 0.004);
+    pantry.add(strip);
+  }
+  // a caged bulb on the inside of the top rail: on when the doors are open,
+  // warm and bright at night (it's dark; you've opened the larder)
+  const lampMat = new THREE.MeshBasicMaterial({ color: 0xffe2b0 });
+  const lamp = new THREE.Group();
+  lamp.position.set(0, L_CEIL, LF - 0.09);
+  pantry.add(lamp);
+  const globe = new THREE.Mesh(new THREE.SphereGeometry(0.038, 16, 12), lampMat);
+  globe.position.y = -0.075;
+  lamp.add(globe);
+  const rose = new THREE.Mesh(new THREE.CylinderGeometry(0.04, 0.045, 0.025, 20), brass);
+  rose.position.y = -0.012;
+  lamp.add(rose);
+  for (let k = 0; k < 3; k++) {
+    const wire = new THREE.Mesh(new THREE.TorusGeometry(0.05, 0.0035, 6, 24), brass);
+    wire.position.y = -0.075;
+    wire.rotation.y = (k * Math.PI) / 3;
+    lamp.add(wire);
+  }
+  const larderBulb = new THREE.PointLight(0xffd39c, 0, 3.4, 1.5);
+  larderBulb.position.set(0, L_CEIL - 0.18, 0.0);
+  pantry.add(larderBulb);
+  const larderGlow = new THREE.SpotLight(0xffd6a0, 0, 7, 0.95, 0.85, 1.4);
+  larderGlow.position.set(0, 1.9, -0.25);
+  larderGlow.target.position.set(0, 0.1, 2.6);
+  pantry.add(larderGlow, larderGlow.target);
+
+  // the doors: hinged at the outer edges like the fridge's, each a painted
+  // slab with a raised frame, a fielded panel below and a pierced zinc vent
+  // above, a brass knob by the meeting edge and brass hinges; inside,
+  // boards and three spice racks with a brass rail
+  const L_DOOR_W = LW / 2 + LT;
+  const L_DOOR_T = 0.05;
+  const L_DOOR_H = 2.81; // from y 0.13 up to just under the cornice
+  const RACK_D = 0.14;
+  const RACK_W = L_DOOR_W - 0.25;
+  const zinc = new THREE.MeshStandardMaterial({ map: zincTexture(), metalness: 0.55, roughness: 0.42, side: THREE.DoubleSide });
+  const larderDoors = [];
+  for (const side of [-1, 1]) {
+    const hinge = new THREE.Group();
+    hinge.position.set(side * (LW / 2 + LT), 0.13, LF);
+    pantry.add(hinge);
+    const slab = new THREE.Group();
+    slab.position.set((-side * L_DOOR_W) / 2, 0, L_DOOR_T / 2);
+    hinge.add(slab);
+    const dw = L_DOOR_W - 0.006;
+    part(slab, dw, L_DOOR_H, L_DOOR_T, 0, L_DOOR_H / 2, 0, paint, 0.01);
+    const STILE = 0.11;
+    const MID = 2.06; // the middle rail: vent above, panel below
+    const fz = L_DOOR_T / 2 + 0.006;
+    for (const [w, h, x, y] of [
+      [STILE, L_DOOR_H, -dw / 2 + STILE / 2, L_DOOR_H / 2],
+      [STILE, L_DOOR_H, dw / 2 - STILE / 2, L_DOOR_H / 2],
+      [dw, 0.16, 0, 0.08],
+      [dw, 0.11, 0, MID],
+      [dw, 0.11, 0, L_DOOR_H - 0.055],
+    ]) part(slab, w, h, 0.012, x, y, fz, paint, 0.004);
+    const inner = dw - 2 * STILE;
+    const panelLo = 0.16, panelHi = MID - 0.055;
+    part(slab, inner - 0.05, panelHi - panelLo - 0.05, 0.01, 0, (panelLo + panelHi) / 2, L_DOOR_T / 2 + 0.005, paint, 0.008);
+    const ventLo = MID + 0.055, ventHi = L_DOOR_H - 0.11;
+    for (const face of [1, -1]) {
+      const vent = new THREE.Mesh(new THREE.PlaneGeometry(inner - 0.02, ventHi - ventLo - 0.02), zinc);
+      vent.position.set(0, (ventLo + ventHi) / 2, face * (L_DOOR_T / 2 + 0.0015));
+      if (face < 0) vent.rotation.y = Math.PI;
+      slab.add(vent);
     }
-    // slim brass brackets under each end
-    for (const sx of [-PW / 2 + 0.3, PW / 2 - 0.3]) {
-      const br = new THREE.Mesh(new THREE.BoxGeometry(0.03, 0.22, PD * 0.8), brass);
-      br.position.set(sx, y - 0.14, -0.6 + PD * 0.42);
-      br.castShadow = true;
-      pantry.add(br);
+    // the boarded back of the door
+    const back = new THREE.Mesh(new THREE.PlaneGeometry(dw - 0.04, L_DOOR_H - 0.04), boards(1.05));
+    back.rotation.y = Math.PI;
+    back.position.set(0, L_DOOR_H / 2, -L_DOOR_T / 2 - 0.0008);
+    back.receiveShadow = true;
+    slab.add(back);
+    // knob on the meeting stile, and three hinge knuckles on the outer edge
+    const kx = -side * (dw / 2 - STILE / 2);
+    const knobRose = new THREE.Mesh(new THREE.CylinderGeometry(0.03, 0.03, 0.008, 20), brass);
+    knobRose.rotation.x = Math.PI / 2;
+    knobRose.position.set(kx, 1.42, L_DOOR_T / 2 + 0.016);
+    const knobNeck = new THREE.Mesh(new THREE.CylinderGeometry(0.011, 0.014, 0.035, 12), brass);
+    knobNeck.rotation.x = Math.PI / 2;
+    knobNeck.position.set(kx, 1.42, L_DOOR_T / 2 + 0.035);
+    const knob = new THREE.Mesh(new THREE.SphereGeometry(0.03, 20, 14), brass);
+    knob.position.set(kx, 1.42, L_DOOR_T / 2 + 0.06);
+    knob.castShadow = true;
+    slab.add(knobRose, knobNeck, knob);
+    for (const y of [0.3, 1.4, 2.5]) {
+      const knuckle = new THREE.Mesh(new THREE.CylinderGeometry(0.014, 0.014, 0.1, 12), brass);
+      knuckle.position.set(0, y, L_DOOR_T * 0.55);
+      hinge.add(knuckle);
+    }
+    // spice racks: a pine ledge, end cheeks and a brass rail along the front
+    const racks = [];
+    for (const ry of [0.82, 1.29, 1.76]) {
+      const rack = new THREE.Group();
+      rack.position.set(0, ry, -L_DOOR_T / 2);
+      slab.add(rack);
+      part(rack, RACK_W, 0.014, RACK_D, 0, 0.007, -RACK_D / 2, pine, 0.004);
+      for (const ex of [-RACK_W / 2, RACK_W / 2]) part(rack, 0.014, 0.075, RACK_D, ex, 0.037, -RACK_D / 2, pine, 0.004);
+      const rail = new THREE.Mesh(new THREE.CylinderGeometry(0.0065, 0.0065, RACK_W, 10), brass);
+      rail.rotation.z = Math.PI / 2;
+      rail.position.set(0, 0.042, -RACK_D + 0.008);
+      rack.add(rail);
+      racks.push(rack);
+    }
+    larderDoors.push({ side, hinge, slab, racks });
+  }
+
+  /* ---------- between them: a low painted sideboard ---------- */
+  // Kept low, under the headline, so the wall above stays quiet for the
+  // text; it ties the fridge and the larder into one kitchen as the camera
+  // slides between them. Nothing on it is food, so nothing on it is clickable.
+  const sideboard = new THREE.Group();
+  sideboard.position.set(2.78, 0, 0);
+  scene.add(sideboard);
+  part(sideboard, 1.72, 0.08, 0.46, 0, 0.04, -0.37, plinthPaint, 0.01);
+  part(sideboard, 1.8, 0.7, 0.52, 0, 0.43, -0.34, paint, 0.015);
+  part(sideboard, 1.9, 0.05, 0.58, 0, 0.805, -0.32, pine, 0.012);
+  for (const sx of [-0.44, 0.44]) {
+    part(sideboard, 0.8, 0.2, 0.014, sx, 0.66, -0.077, paint, 0.005);
+    part(sideboard, 0.8, 0.36, 0.014, sx, 0.3, -0.077, paint, 0.005);
+    for (const ky of [0.66, 0.33]) {
+      const k = new THREE.Mesh(new THREE.SphereGeometry(0.022, 14, 10), brass);
+      k.position.set(sx + (ky > 0.5 ? 0 : -Math.sign(sx) * 0.3), ky, -0.055);
+      sideboard.add(k);
     }
   }
-  // a low oak cabinet below, with a stone top, so the shelves feel grounded
-  const cabinet = new THREE.Mesh(new RoundedBoxGeometry(PW + 0.2, 0.62, 0.7, 3, 0.03), new THREE.MeshStandardMaterial({ color: 0xf6f1ea, roughness: 0.55 }));
-  cabinet.position.set(0, 0.31, -0.6 + 0.35);
-  cabinet.castShadow = true;
-  cabinet.receiveShadow = true;
-  pantry.add(cabinet);
-  const top = new THREE.Mesh(new RoundedBoxGeometry(PW + 0.3, 0.06, 0.76, 3, 0.02), new THREE.MeshPhysicalMaterial({ color: 0xece6dd, roughness: 0.25, clearcoat: 0.6 }));
-  top.position.set(0, 0.65, -0.6 + 0.36);
-  top.castShadow = true;
-  top.receiveShadow = true;
-  pantry.add(top);
-  for (const sx of [-0.8, 0.8]) {
-    const knob = new THREE.Mesh(new THREE.SphereGeometry(0.03, 16, 12), brass);
-    knob.position.set(sx, 0.42, 0.11);
-    pantry.add(knob);
-  }
-  // a little potted herb for life
-  const pot = new THREE.Mesh(new THREE.CylinderGeometry(0.14, 0.11, 0.24, 24), new THREE.MeshStandardMaterial({ color: 0xe9b9a2, roughness: 0.8 }));
-  pot.position.set(PW / 2 - 0.25, 0.8, -0.3);
+  // a potted herb and a stoneware crock of wooden spoons, kept short so they
+  // stay clear of the headline above
+  const pot = new THREE.Mesh(new THREE.CylinderGeometry(0.13, 0.1, 0.22, 24), new THREE.MeshStandardMaterial({ color: 0xe2ad94, roughness: 0.8 }));
+  pot.position.set(0.55, 0.94, -0.3);
   pot.castShadow = true;
-  pantry.add(pot);
+  sideboard.add(pot);
+  const leafMat = new THREE.MeshStandardMaterial({ color: 0x7fb08a, roughness: 0.7 });
   for (let k = 0; k < 9; k++) {
-    const leaf = new THREE.Mesh(new THREE.SphereGeometry(0.09, 12, 10), new THREE.MeshStandardMaterial({ color: 0x7fb08a, roughness: 0.7 }));
+    const leaf = new THREE.Mesh(new THREE.SphereGeometry(0.085, 12, 10), leafMat);
     const a = k * 2.4;
     leaf.scale.set(1, 0.55, 0.7);
-    leaf.position.set(PW / 2 - 0.25 + Math.cos(a) * 0.1, 0.98 + (k % 3) * 0.07, -0.3 + Math.sin(a) * 0.1);
-    leaf.rotation.set(Math.random(), a, 0.5);
+    leaf.position.set(0.55 + Math.cos(a) * 0.1, 1.1 + (k % 3) * 0.065, -0.3 + Math.sin(a) * 0.1);
+    leaf.rotation.set(k * 0.7, a, 0.5);
     leaf.castShadow = true;
-    pantry.add(leaf);
+    sideboard.add(leaf);
+  }
+  const crockMat = new THREE.MeshPhysicalMaterial({ color: 0xe0d5bf, roughness: 0.35, clearcoat: 0.6 });
+  const crock = new THREE.Mesh(new THREE.CylinderGeometry(0.085, 0.08, 0.22, 24), crockMat);
+  crock.position.set(-0.5, 0.94, -0.33);
+  crock.castShadow = true;
+  const band = new THREE.Mesh(new THREE.CylinderGeometry(0.087, 0.087, 0.03, 24), new THREE.MeshStandardMaterial({ color: 0x4f6f8c, roughness: 0.5 }));
+  band.position.set(-0.5, 0.99, -0.33);
+  sideboard.add(crock, band);
+  for (const [dx, dz, tilt] of [[-0.03, 0.01, 0.12], [0.03, -0.02, -0.1], [0.0, 0.03, 0.02]]) {
+    const spoon = new THREE.Group();
+    spoon.position.set(-0.5 + dx, 0.88, -0.33 + dz);
+    spoon.rotation.z = tilt;
+    const handle = new THREE.Mesh(new THREE.CylinderGeometry(0.008, 0.01, 0.34, 8), pine);
+    handle.position.y = 0.17;
+    const bowl = new THREE.Mesh(new THREE.SphereGeometry(0.03, 12, 8), pine);
+    bowl.scale.set(1, 1.5, 0.45);
+    bowl.position.y = 0.37;
+    spoon.add(handle, bowl);
+    sideboard.add(spoon);
   }
 
   /* ---------- place items on shelves ---------- */
@@ -531,28 +695,44 @@ function start() {
   const shelfOf = (item) => (PRODUCE.has(item.model) ? 2 : shelfFor(item.model));
   layAll([...shelfQueue, ...overCrisper], shelfLanes, shelfOf);
 
-  // pantry levels, as a pantry is kept: on the bench the heavy bags of
-  // flour, sugar and rice beside the vegetable basket; tins, cartons and the
-  // bread on the bottom shelf; jars, packets and pouches in the middle;
-  // bottles and the spice rack up top
-  const order = { sack: 0, potato: 0, onion: 0, pumpkin: 0, pineapple: 0, banana: 0, garlic: 1, ginger: 1, can: 1, carton: 1, loaf: 1, jar: 2, box: 2, pouch: 2, bar: 2, bottle: 3, spice: 3 };
-  const sortedPantry = [...pantryItems].sort((a, b) => (order[a.model] ?? 2) - (order[b.model] ?? 2));
-  const PANTRY_NAMES = ["on the pantry bench", "on the bottom pantry shelf", "on the middle pantry shelf", "on the top pantry shelf"];
-  const BOARD_TOP = 0.035;
-  const pantryTops = [0.68, ...PANTRY_SHELVES.map((y) => y + BOARD_TOP)];
-  const pantryLanes = pantryTops.map((y, si) =>
-    lane(
-      PANTRY_NAMES[si],
-      pantry,
-      -PW / 2 + 0.15,
-      si === 0 ? PW / 2 - 0.55 : PW / 2 - 0.15,
-      y + 0.0015,
-      -0.12,
-      -0.58,
-      si < 3 ? PANTRY_SHELVES[si] - BOARD_TOP - y - 0.0015 : Infinity,
-    ),
-  );
-  const pantryStart = (item) => order[item.model] ?? 2;
+  // the larder door racks: spices and little bottles, packed by width from
+  // the hinge side, the eye-level racks first, alternating doors; turned to
+  // face out of the door and a little towards the camera, as in the fridge
+  const RACK_FLOOR = 0.0145;
+  const RACK_FREE = 0.43;
+  const IN_RACK = "in a pantry door rack";
+  const rackOrder = [1, 0, 2].flatMap((k) => larderDoors.map((door) => ({ door, rack: door.racks[k], used: 0 })));
+  let ri = 0;
+  function placeInRack(item) {
+    const m = measure(item);
+    if (!inLarderDoor(item.model, m.h)) return null;
+    const turn = Math.PI + 0.35;
+    const e = rotatedExtent(m.w, m.d, turn);
+    // (jars and tins are round, so turning them doesn't make them deeper)
+    if (Math.max(m.w, m.d) > RACK_D - 0.01) return null;
+    const spot = rackOrder.find((r) => r.used + e.x <= RACK_W - 0.04);
+    if (!spot) return null;
+    const { door, rack } = spot;
+    const x = (-(RACK_W - 0.04) / 2 + spot.used + e.x / 2) * -door.side;
+    spot.used += e.x + 0.025;
+    const h = addItem(item, rack, x, RACK_FLOOR, -RACK_D / 2 - 0.004, Math.PI + door.side * 0.35, RACK_FREE);
+    h.userData.delay = 0.25 + ri * 0.04;
+    h.userData.lane = { name: IN_RACK };
+    ri++;
+    return h;
+  }
+  // larder levels (kitchen-layout.mjs larderLevelFor): sacks and roots on
+  // the floor, tins, cartons and bread on the cold slate, packets, then jars,
+  // then bottles; spices in the door racks while they have room, the rest
+  // up top with the bottles
+  const PANTRY_NAMES = ["on the pantry floor", "on the cold slate shelf", "on the bottom pantry shelf", "on the middle pantry shelf", "on the top pantry shelf"];
+  const levelTops = [L_FLOOR, SLATE, ...L_SHELVES];
+  const ceilings = [SLATE - 0.05, L_SHELVES[0] - 0.04, L_SHELVES[1] - 0.04, L_SHELVES[2] - 0.04, L_CEIL - 0.13];
+  const pantryLanes = levelTops.map((y, si) => lane(PANTRY_NAMES[si], pantry, -LW / 2 + 0.06, LW / 2 - 0.06, y + 0.0015, SHELF_FRONT - 0.015, LB + 0.015, ceilings[si] - y - 0.0015));
+  const pantryStart = (item) => larderLevelFor(item.model);
+  const rackQueue = [...pantryItems].sort((a, b) => measure(a).h - measure(b).h);
+  const onRack = new Set(rackQueue.filter((item) => placeInRack(item)));
+  const sortedPantry = pantryItems.filter((i) => !onRack.has(i)).sort((a, b) => pantryStart(a) - pantryStart(b));
   layAll(sortedPantry, pantryLanes, pantryStart);
 
   // Somewhere for an item added from the panel, by the same rules: door
@@ -574,6 +754,8 @@ function start() {
       const ln = pick([...shelfLanes].sort((a, b) => a.x - b.x));
       return ln ? place(item, ln) : null;
     }
+    const rack = placeInRack(item);
+    if (rack) return rack;
     const want = pantryStart(item);
     const ln = pick([...pantryLanes].sort((a, b) => Math.abs(pantryLanes.indexOf(a) - want) - Math.abs(pantryLanes.indexOf(b) - want)));
     return ln ? place(item, ln) : null;
@@ -610,11 +792,15 @@ function start() {
   composer.addPass(new OutputPass());
 
   /* ---------- views: camera framing for fridge and pantry ---------- */
+  // the larder is the fridge's size and opens the same way, so it's framed
+  // the same; the slide between them is a straight track along the kitchen
   const VIEWS = {
     fridge: { pos: new THREE.Vector3(0.1, 2.05, 7.9), look: new THREE.Vector3(0.0, 1.55, -0.35) },
-    pantry: { pos: new THREE.Vector3(PX + 0.1, 2.05, 7.0), look: new THREE.Vector3(PX, 1.7, -0.35) },
+    pantry: { pos: new THREE.Vector3(PX + 0.1, 2.05, 7.9), look: new THREE.Vector3(PX, 1.55, -0.35) },
   };
   let view = location.hash === "#pantry" ? "pantry" : "fridge";
+  // whether the larder's items have landed yet (they do the first time it opens)
+  let larderStocked = view === "pantry";
   const camPos = VIEWS[view].pos.clone();
   const camLook = VIEWS[view].look.clone();
   let travel = null; // { from, to, fromLook, toLook, t }
@@ -629,11 +815,15 @@ function start() {
     if (next === view && !travel) return;
     view = next;
     openTarget = next === "fridge" ? 1 : 0;
+    larderTarget = next === "pantry" ? 1 : 0;
     travel = { from: camPos.clone(), to: VIEWS[next].pos.clone(), fromLook: camLook.clone(), toLook: VIEWS[next].look.clone(), t: 0 };
-    // the pantry's jars land again as you arrive, just before the slide ends
-    if (next === "pantry" && !keep) {
+    // the first time the larder opens, its jars land on their shelves as the
+    // doors swing back (like the fridge's on arrival); adding an item skips
+    // that, so the new arrival is the only thing that drops in
+    if (next === "pantry" && !larderStocked) {
+      larderStocked = true;
       const now = clock.elapsedTime;
-      for (const h of pickables) if (h.parent === pantry) h.userData.landAt = now + 0.75 + h.userData.delay * 0.6;
+      for (const h of pickables) if (h.userData.item.place === "pantry") h.userData.landAt = keep ? -9 : now + 1.25 + h.userData.delay * 0.6;
     }
     root.dataset.view = next;
     root.querySelector("[data-kx-title]").textContent = next === "fridge" ? "Fridge" : "Pantry";
@@ -673,9 +863,11 @@ function start() {
   let selected = null;
   let pinned = false; // a click or tap keeps the panel; hover alone only peeks
   let lastPoint = null;
-  // how far the fridge doors have swung (0 shut, 1 open): items behind a shut
-  // door can't be reached, so the pointer never lights up something it can't see
+  // how far the fridge and larder doors have swung (0 shut, 1 open): items
+  // behind a shut door can't be reached, so the pointer never lights up
+  // something it can't see
   let doorSwing = 0;
+  let larderSwing = 0;
   const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)");
   const wideScreen = window.matchMedia("(min-width: 901px)");
 
@@ -688,7 +880,7 @@ function start() {
     const r = canvas.getBoundingClientRect();
     pointer.set(((cx - r.left) / r.width) * 2 - 1, -((cy - r.top) / r.height) * 2 + 1);
     raycaster.setFromCamera(pointer, camera);
-    const mine = pickables.filter((p) => p.userData.item.place === "pantry" || doorSwing > 0.3);
+    const mine = pickables.filter((p) => (p.userData.item.place === "pantry" ? larderSwing : doorSwing) > 0.3);
     const exact = new Map();
     for (const h of raycaster.intersectObjects(mine.flatMap((p) => p.userData.meshes), false)) {
       const id = h.object.userData.itemId;
@@ -848,7 +1040,7 @@ function start() {
         </div>`
       : "";
     panelBody.innerHTML = `
-      <p class="kx-panel-kind">${esc(it.place === "fridge" ? "In the fridge" : "On the shelf")}</p>
+      <p class="kx-panel-kind">${esc(it.place === "fridge" ? "In the fridge" : "In the pantry")}</p>
       <h2>${esc(it.name)}</h2>
       <p class="kx-panel-qty">${esc(it.qty)}${it.price ? ` · paid ${esc(it.price)}` : ""}</p>
       <div class="kx-expiry ${freshClass}">
@@ -988,8 +1180,9 @@ function start() {
     const away = item.place !== view;
     if (away) go(item.place, true);
     else buildBrowse();
-    // arriving at the fridge, wait for the doors to swing most of the way
-    h.userData.landAt = clock.elapsedTime + (!away ? 0.15 : item.place === "fridge" ? 1.45 : 0.95);
+    // arriving at the fridge or the larder, wait for its doors to swing most
+    // of the way
+    h.userData.landAt = clock.elapsedTime + (!away ? 0.15 : item.place === "fridge" ? 1.45 : 1.75);
     arrivals.add(h);
     syncOutline();
     setTimeout(() => {
@@ -1119,7 +1312,7 @@ function start() {
     VIEWS.fridge.pos.z = narrow ? 9.6 : Math.max(7.9, 12.0 / camera.aspect);
     // on a phone the doors swing a little less wide (~110°) so both stay in frame
     openAngle = narrow ? 1.92 : 2.18;
-    VIEWS.pantry.pos.z = narrow ? 8.8 : 7.0;
+    VIEWS.pantry.pos.z = VIEWS.fridge.pos.z;
     if (!travel) camPos.z = VIEWS[view].pos.z;
     camera.updateProjectionMatrix();
   }
@@ -1149,6 +1342,7 @@ function start() {
     },
     ids: () => pickables.map((h) => h.userData.item.id),
     doors: () => doorSwing,
+    larderDoors: () => larderSwing,
     // How much of an item you can see: of the points on screen where the
     // camera would see it, the share where nothing else is in front (glass,
     // film and the clear crisper front don't count; you see through them).
@@ -1185,6 +1379,9 @@ function start() {
   // you come back. Starting on the pantry, they stay shut until you visit.
   let openTarget = view === "fridge" ? 1 : 0;
   let opening = reduce ? openTarget : 0;
+  // the larder's doors the same way: open on arrival, shut when you leave
+  let larderTarget = view === "pantry" ? 1 : 0;
+  let larderOpening = reduce ? larderTarget : 0;
   stage.classList.add("ready");
 
   function frame() {
@@ -1202,6 +1399,16 @@ function start() {
     // each door turns outward about its hinge: left door anticlockwise seen
     // from above (negative y), right door clockwise
     for (const d of doors) d.hinge.rotation.y = d.side * swing * openAngle;
+    // the larder's doors: they start to open as the camera nears (so you
+    // arrive to them swinging back, not to a shut cupboard) and shut a beat
+    // after it leaves, on the same soft-close curve
+    const nearLarder = !travel || view !== "pantry" || travel.t > 0.4;
+    if (reduce) larderOpening = larderTarget;
+    else if (larderOpening < larderTarget && nearLarder) larderOpening = Math.min(larderTarget, larderOpening + dt / 1.5);
+    else if (larderOpening > larderTarget && (!travel || travel.t > 0.12)) larderOpening = Math.max(larderTarget, larderOpening - dt / 0.85);
+    const lswing = easeInOut(Math.max(0, (larderOpening - 0.06) / 0.94));
+    larderSwing = lswing;
+    for (const d of larderDoors) d.hinge.rotation.y = d.side * lswing * openAngle;
 
     // fridge light: fades up as the doors open; brighter at night
     lightLevel += (lightTarget - lightLevel) * Math.min(1, dt * 3);
@@ -1210,17 +1417,21 @@ function start() {
     liner.emissiveIntensity = lit * (dark ? 0.32 : 0.06);
     glowSpot.intensity = lit * (dark ? 22 : 4);
     strip.material.color.setScalar(0.75 + lit * 0.25).multiply(new THREE.Color(0xfff6e4));
-    // pantry under-shelf strips follow the same night level, no door needed
-    const night = Math.max(0, (lightLevel - 0.15) / 0.85);
-    for (const l of shelfLights) l.intensity = night * 3.2;
-    ledMat.color.copy(LED_OFF).lerp(LED_ON, night);
+    // the larder's bulb, the same way: on as its doors open, warmer at night
+    const llit = lightLevel * lswing;
+    larderBulb.intensity = llit * 5;
+    larderGlow.intensity = llit * (dark ? 16 : 2.5);
+    for (const m of boardMats) m.emissiveIntensity = llit * (dark ? 0.2 : 0.03);
+    lampMat.color.setScalar(0.62 + llit * 0.38).multiply(new THREE.Color(0xffe2b0));
 
-    // camera travel between fridge and pantry, eased, with a soft arc
+    // camera travel between fridge and larder, eased, with a soft arc: it
+    // steps back a little mid-slide, like walking across the kitchen, so the
+    // sideboard between them passes by and both doors stay in frame
     if (travel) {
-      travel.t = Math.min(1, travel.t + dt / (reduce ? 0.01 : 1.15));
+      travel.t = Math.min(1, travel.t + dt / (reduce ? 0.01 : 1.5));
       const k = easeInOut(travel.t);
       camPos.lerpVectors(travel.from, travel.to, k);
-      camPos.z += Math.sin(k * Math.PI) * 1.4; // pull back mid-slide, like a dolly
+      camPos.z += Math.sin(k * Math.PI) * 1.1;
       camLook.lerpVectors(travel.fromLook, travel.toLook, k);
       if (travel.t >= 1) travel = null;
     }
@@ -1240,7 +1451,7 @@ function start() {
     // settle; then lift on hover / selection
     for (const h of pickables) {
       const u = h.userData;
-      if (u.landAt === null) u.landAt = (h.parent === pantry ? 0.25 : 0.55) + u.delay;
+      if (u.landAt === null) u.landAt = (u.item.place === "pantry" ? 0.75 : 0.55) + u.delay;
       const land = reduce ? null : landing(t - u.landAt, u);
       u.entered = land ? land.entered : 1;
       u.hover += ((h === hovered ? 1 : 0) - u.hover) * Math.min(1, dt * 10);
@@ -1273,7 +1484,7 @@ function start() {
 
     // the scene moving under a still pointer (doors swinging, the panel
     // nudging the camera) changes what's beneath it: look again
-    if (lastPoint && (travel || Math.abs(shiftTarget - shift) > 0.002 || (opening > 0 && opening < 1))) {
+    if (lastPoint && (travel || Math.abs(shiftTarget - shift) > 0.002 || (opening > 0 && opening < 1) || (larderOpening > 0 && larderOpening < 1))) {
       setHover(pick(lastPoint.x, lastPoint.y));
     }
 
@@ -1336,6 +1547,131 @@ function woodTexture() {
   const t = new THREE.CanvasTexture(c);
   t.colorSpace = THREE.SRGBColorSpace;
   t.wrapS = t.wrapT = THREE.RepeatWrapping;
+  t.anisotropy = 4;
+  return t;
+}
+
+// Blue-grey slate for the larder's cold shelf: a cool wash with faint
+// cleavage streaks, so it reads as stone against the pine.
+function slateTexture() {
+  const c = document.createElement("canvas");
+  c.width = 512;
+  c.height = 128;
+  const g = c.getContext("2d");
+  g.fillStyle = "#5d6670";
+  g.fillRect(0, 0, 512, 128);
+  for (let i = 0; i < 90; i++) {
+    const y = Math.random() * 128;
+    const l = 70 + Math.random() * 40;
+    g.strokeStyle = `rgba(${l + 10}, ${l + 18}, ${l + 28}, ${0.06 + Math.random() * 0.1})`;
+    g.lineWidth = 0.6 + Math.random() * 2.4;
+    g.beginPath();
+    g.moveTo(0, y);
+    g.bezierCurveTo(170, y + Math.random() * 6 - 3, 340, y + Math.random() * 6 - 3, 512, y + Math.random() * 4 - 2);
+    g.stroke();
+  }
+  const t = new THREE.CanvasTexture(c);
+  t.colorSpace = THREE.SRGBColorSpace;
+  t.anisotropy = 4;
+  return t;
+}
+
+// Tongue-and-groove boards for the inside of the larder, upright, in a pale
+// limewash `tone`; `repeat.x` on a clone sets how many boards show.
+function boardTexture(tone) {
+  const c = document.createElement("canvas");
+  c.width = 512;
+  c.height = 256;
+  const g = c.getContext("2d");
+  g.fillStyle = tone;
+  g.fillRect(0, 0, 512, 256);
+  const n = 6;
+  for (let i = 0; i < n; i++) {
+    const x = (i * 512) / n;
+    g.fillStyle = `rgba(255, 255, 255, ${0.05 + (i % 3) * 0.03})`;
+    g.fillRect(x + 4, 0, 512 / n - 8, 256);
+    for (let k = 0; k < 6; k++) {
+      g.strokeStyle = `rgba(120, 110, 90, ${0.03 + Math.random() * 0.04})`;
+      g.lineWidth = 1;
+      g.beginPath();
+      const xx = x + 8 + Math.random() * (512 / n - 16);
+      g.moveTo(xx, 0);
+      g.bezierCurveTo(xx + 3, 90, xx - 3, 170, xx + 1, 256);
+      g.stroke();
+    }
+    // the groove between boards: a shadow line with a highlight beside it
+    g.fillStyle = "rgba(80, 74, 62, 0.35)";
+    g.fillRect(x, 0, 3, 256);
+    g.fillStyle = "rgba(255, 255, 255, 0.35)";
+    g.fillRect(x + 3, 0, 1.5, 256);
+  }
+  const t = new THREE.CanvasTexture(c);
+  t.colorSpace = THREE.SRGBColorSpace;
+  t.wrapS = t.wrapT = THREE.RepeatWrapping;
+  t.anisotropy = 4;
+  return t;
+}
+
+// The pierced zinc of a larder door's vent: a grid of small holes punched in
+// a pattern of diamonds, dark where they let the dark inside show through.
+function zincTexture() {
+  const c = document.createElement("canvas");
+  c.width = 256;
+  c.height = 256;
+  const g = c.getContext("2d");
+  g.fillStyle = "#b9bcb8";
+  g.fillRect(0, 0, 256, 256);
+  const step = 16;
+  for (let y = step / 2; y < 256; y += step) {
+    for (let x = step / 2; x < 256; x += step) {
+      const cx = (x / step) % 4, cy = (y / step) % 4;
+      const big = Math.abs(cx - 1.5) + Math.abs(cy - 1.5) < 1.6;
+      g.fillStyle = "#3a3a36";
+      g.beginPath();
+      g.arc(x, y, big ? 3.4 : 2, 0, Math.PI * 2);
+      g.fill();
+      g.fillStyle = "rgba(255, 255, 255, 0.35)";
+      g.beginPath();
+      g.arc(x + 0.8, y + (big ? 3.6 : 2.3), big ? 1.6 : 1, 0, Math.PI);
+      g.fill();
+    }
+  }
+  const t = new THREE.CanvasTexture(c);
+  t.colorSpace = THREE.SRGBColorSpace;
+  t.wrapS = t.wrapT = THREE.RepeatWrapping;
+  t.repeat.set(2.2, 1.8);
+  t.anisotropy = 4;
+  return t;
+}
+
+// Scalloped shelf paper pinned along the front of each larder shelf: a
+// cream strip with a printed sprig line, its lower edge cut in scallops
+// (transparent between them), for a shelf `width` wide.
+function edgingTexture(width) {
+  const scallops = Math.round(width / 0.06);
+  const c = document.createElement("canvas");
+  c.width = 1024;
+  c.height = 64;
+  const g = c.getContext("2d");
+  const sw = 1024 / scallops;
+  g.fillStyle = "#f7efdd";
+  g.beginPath();
+  g.moveTo(0, 0);
+  g.lineTo(1024, 0);
+  g.lineTo(1024, 34);
+  for (let i = scallops; i > 0; i--) g.arc((i - 0.5) * sw, 34, sw / 2, 0, Math.PI, false);
+  g.closePath();
+  g.fill();
+  // a red rule and a row of small printed dots, like old larder paper
+  g.fillStyle = "#b8483e";
+  g.fillRect(0, 8, 1024, 3);
+  for (let i = 0; i < scallops; i++) {
+    g.beginPath();
+    g.arc((i + 0.5) * sw, 30, 3.2, 0, Math.PI * 2);
+    g.fill();
+  }
+  const t = new THREE.CanvasTexture(c);
+  t.colorSpace = THREE.SRGBColorSpace;
   t.anisotropy = 4;
   return t;
 }

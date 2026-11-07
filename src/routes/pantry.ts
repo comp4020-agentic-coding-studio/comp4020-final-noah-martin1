@@ -260,7 +260,7 @@ function pantryPage(ctx: Ctx, values: Record<string, string> = {}, problems: str
           <button type="button" class="kx-arrow kx-arrow-next" data-kx-go="pantry" aria-label="Show the pantry">${icon("arrow", 18)}</button>
         </div>
         <p class="kx-toast" data-kx-toast role="status"></p>
-        <p class="kx-place-label" aria-hidden="true"><span data-kx-count-fridge>${inFridge} in the fridge</span><span data-kx-count-pantry>${items.length - inFridge} on the shelves</span></p>
+        <p class="kx-place-label" aria-hidden="true"><span data-kx-count-fridge>${inFridge} in the fridge</span><span data-kx-count-pantry>${items.length - inFridge} in the pantry</span></p>
       </div>
 
       <aside class="kx-panel" data-kx-panel hidden aria-live="polite">

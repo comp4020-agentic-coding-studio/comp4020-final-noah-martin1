@@ -1,8 +1,8 @@
 import { describe, expect, it } from "vitest";
 // @ts-expect-error plain browser module, no type declarations
-import { dropFor, fitScale, fitsPlan, frontToBack, liftFor, newLane, orderStack, planLane, rotatedExtent, shelfFor, takeSlot } from "../public/kitchen-layout.mjs";
+import { dropFor, fitScale, fitsPlan, frontToBack, inLarderDoor, larderLevelFor, liftFor, newLane, orderStack, planLane, rotatedExtent, shelfFor, takeSlot } from "../public/kitchen-layout.mjs";
 
-// The geometry behind the 3D fridge and pantry: where items may stand, and
+// The geometry behind the 3D fridge and larder: where items may stand, and
 // which one a pointer means. Pure functions, so these run without a browser.
 
 describe("kitchen layout: items stay on their shelf", () => {
@@ -193,5 +193,39 @@ describe("kitchen layout: setting out a whole shelf so nothing hides", () => {
     expect(shelfFor("tray")).toBe(0);
     for (const m of ["eggs", "cheese", "tub", "butter"]) expect(shelfFor(m)).toBe(1);
     for (const m of ["milk", "jar", "bottle"]) expect(shelfFor(m)).toBe(2);
+  });
+});
+
+describe("the larder is kept the way a larder is", () => {
+  it("heavy things low, tins and bread on the cold slate, packets, then jars, bottles up top", () => {
+    for (const m of ["sack", "potato", "onion", "pumpkin"]) expect(larderLevelFor(m)).toBe(0);
+    for (const m of ["can", "carton", "loaf", "garlic"]) expect(larderLevelFor(m)).toBe(1);
+    for (const m of ["box", "pouch"]) expect(larderLevelFor(m)).toBe(2);
+    expect(larderLevelFor("jar")).toBe(3);
+    expect(larderLevelFor("bottle")).toBe(4);
+    // anything unexpected sits at eye level, where it's seen
+    expect(larderLevelFor("something new")).toBe(3);
+  });
+
+  it("only spices and little bottles go in the door racks; a tall bottle wouldn't fit under the next rack", () => {
+    expect(inLarderDoor("spice", 0.22)).toBe(true);
+    expect(inLarderDoor("bottle", 0.3)).toBe(true);
+    expect(inLarderDoor("bottle", 0.47)).toBe(false);
+    for (const m of ["jar", "can", "pouch", "box"]) expect(inLarderDoor(m, 0.2)).toBe(false);
+  });
+
+  it("each larder shelf holds a full row of its usual things without hiding any", () => {
+    // the slate shelf: 2.0 m inside less its margins, 0.58 m deep, with tins
+    // in front and cartons behind
+    const slate = newLane({ xMin: -0.94, xMax: 0.94, zNear: 0.115, zFar: -0.505, free: 0.45 });
+    const sizes = [...Array(6)].map(() => ({ w: 0.15, d: 0.15 })).concat([...Array(4)].map(() => ({ w: 0.17, d: 0.1 })));
+    const slots = planLane(slate, sizes);
+    expect(slots.every(Boolean)).toBe(true);
+    // a back-row carton stands in a gap between the tins, where it shows
+    const front = slots.filter((s: Slot) => s!.row === 0);
+    for (const b of slots.filter((s: Slot) => s!.row === 1)) {
+      const covered = front.some((f: Slot) => Math.abs(f!.x - b!.x) < (0.15 + 0.17) / 2 - 0.08);
+      expect(covered).toBe(false);
+    }
   });
 });
