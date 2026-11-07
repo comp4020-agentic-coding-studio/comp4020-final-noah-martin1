@@ -5,6 +5,19 @@ import type { Part } from "../i18n.ts";
 
 const part: Part = {
   zh: {
+    // src/suggest.ts
+    "Uses your {a} before it goes off": "趁{a}还没坏，用掉它",
+    "Uses your {a} and {b} before they go off": "趁{a}和{b}还没坏，用掉它们",
+    "Uses {n} thing you already have": "用到你已有的 {n} 样食材",
+    "Uses {n} things you already have": "用到你已有的 {n} 样食材",
+    "Something simple for breakfast": "简单的早餐",
+    "Something simple for lunch": "简单的午餐",
+    "Something simple for dinner": "简单的晚餐",
+    "Something simple for a late-night snack": "简单的宵夜",
+    "Nothing for breakfast uses what's in your kitchen yet, so here's a simple one": "还没有早餐能用上你厨房里的东西，先来个简单的",
+    "Nothing for lunch uses what's in your kitchen yet, so here's a simple one": "还没有午餐能用上你厨房里的东西，先来个简单的",
+    "Nothing for dinner uses what's in your kitchen yet, so here's a simple one": "还没有晚餐能用上你厨房里的东西，先来个简单的",
+    "Nothing for a late-night snack uses what's in your kitchen yet, so here's a simple one": "还没有宵夜能用上你厨房里的东西，先来个简单的",
     // src/format.ts, src/server.ts
     "No date": "无日期",
     "Expired yesterday": "昨天过期",
@@ -56,6 +69,19 @@ const part: Part = {
     "Please fix the following:": "请修正以下问题：",
   },
   es: {
+    // src/suggest.ts
+    "Uses your {a} before it goes off": "Aprovecha tu {a} antes de que se eche a perder",
+    "Uses your {a} and {b} before they go off": "Aprovecha tu {a} y tu {b} antes de que se echen a perder",
+    "Uses {n} thing you already have": "Usa {n} cosa que ya tienes",
+    "Uses {n} things you already have": "Usa {n} cosas que ya tienes",
+    "Something simple for breakfast": "Algo sencillo para desayunar",
+    "Something simple for lunch": "Algo sencillo para comer",
+    "Something simple for dinner": "Algo sencillo para cenar",
+    "Something simple for a late-night snack": "Algo sencillo para picar de noche",
+    "Nothing for breakfast uses what's in your kitchen yet, so here's a simple one": "Ningún desayuno usa aún lo que tienes en la cocina, así que aquí va uno sencillo",
+    "Nothing for lunch uses what's in your kitchen yet, so here's a simple one": "Ninguna comida usa aún lo que tienes en la cocina, así que aquí va una sencilla",
+    "Nothing for dinner uses what's in your kitchen yet, so here's a simple one": "Ninguna cena usa aún lo que tienes en la cocina, así que aquí va una sencilla",
+    "Nothing for a late-night snack uses what's in your kitchen yet, so here's a simple one": "Ningún picoteo nocturno usa aún lo que tienes en la cocina, así que aquí va uno sencillo",
     // src/format.ts, src/server.ts
     "No date": "Sin fecha",
     "Expired yesterday": "Caducó ayer",
@@ -107,6 +133,19 @@ const part: Part = {
     "Please fix the following:": "Corrige lo siguiente:",
   },
   hi: {
+    // src/suggest.ts
+    "Uses your {a} before it goes off": "आपका {a} ख़राब होने से पहले इस्तेमाल करता है",
+    "Uses your {a} and {b} before they go off": "आपके {a} और {b} ख़राब होने से पहले इस्तेमाल करता है",
+    "Uses {n} thing you already have": "आपके पास पहले से मौजूद {n} चीज़ इस्तेमाल करता है",
+    "Uses {n} things you already have": "आपके पास पहले से मौजूद {n} चीज़ें इस्तेमाल करता है",
+    "Something simple for breakfast": "नाश्ते के लिए कुछ आसान",
+    "Something simple for lunch": "दोपहर के खाने के लिए कुछ आसान",
+    "Something simple for dinner": "रात के खाने के लिए कुछ आसान",
+    "Something simple for a late-night snack": "देर रात के नाश्ते के लिए कुछ आसान",
+    "Nothing for breakfast uses what's in your kitchen yet, so here's a simple one": "अभी कोई नाश्ता आपकी रसोई की चीज़ों से नहीं बनता, तो यह रहा कुछ आसान",
+    "Nothing for lunch uses what's in your kitchen yet, so here's a simple one": "अभी कोई दोपहर का खाना आपकी रसोई की चीज़ों से नहीं बनता, तो यह रहा कुछ आसान",
+    "Nothing for dinner uses what's in your kitchen yet, so here's a simple one": "अभी कोई रात का खाना आपकी रसोई की चीज़ों से नहीं बनता, तो यह रहा कुछ आसान",
+    "Nothing for a late-night snack uses what's in your kitchen yet, so here's a simple one": "अभी देर रात का कोई नाश्ता आपकी रसोई की चीज़ों से नहीं बनता, तो यह रहा कुछ आसान",
     // src/format.ts, src/server.ts
     "No date": "कोई तारीख नहीं",
     "Expired yesterday": "कल एक्सपायर हुआ",

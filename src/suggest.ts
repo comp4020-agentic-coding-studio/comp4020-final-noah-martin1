@@ -1,5 +1,6 @@
 import { addDays, today } from "./format.ts";
 import { expiryState } from "./expiry.ts";
+import { t, tn } from "./i18n.ts";
 import { ingredientsFor, isMeal, listVisibleRecipes, type Recipe, type RecipeIngredient, totalMinutes } from "./recipes.ts";
 
 // What to cook now, when nothing's planned: a deterministic pick from
@@ -14,6 +15,20 @@ export const PERIOD_LABEL: Record<Period, string> = {
   lunch: "lunch",
   dinner: "dinner",
   late: "a late-night snack",
+};
+
+// why a plain idea was picked, a whole sentence per meal
+const SIMPLE: Record<Period, string> = {
+  breakfast: "Something simple for breakfast",
+  lunch: "Something simple for lunch",
+  dinner: "Something simple for dinner",
+  late: "Something simple for a late-night snack",
+};
+const NOTHING_YET: Record<Period, string> = {
+  breakfast: "Nothing for breakfast uses what's in your kitchen yet, so here's a simple one",
+  lunch: "Nothing for lunch uses what's in your kitchen yet, so here's a simple one",
+  dinner: "Nothing for dinner uses what's in your kitchen yet, so here's a simple one",
+  late: "Nothing for a late-night snack uses what's in your kitchen yet, so here's a simple one",
 };
 
 export function periodAt(hour: number): Period {
@@ -137,16 +152,19 @@ export function suggestNow(viewerId: number, items: KitchenItem[], hour: number,
   }
   if (!best && held.size) {
     const plain = suggestNow(viewerId, [], hour, opts);
-    if (plain) plain.reason = `Nothing for ${PERIOD_LABEL[period]} uses what's in your kitchen yet, so here's a simple one`;
+    if (plain) plain.reason = t(NOTHING_YET[period]);
     return plain;
   }
   if (!best) return null;
   const s = best.s;
   const urgent = s.uses.filter((u) => u.expiry !== null && u.expiry <= soon);
+  // (a whole sentence each, so every language can put it its own way)
   s.reason = s.fromKitchen
     ? urgent.length
-      ? `Uses your ${urgent.slice(0, 2).map((u) => u.name).join(" and ")} before ${urgent.length === 1 ? "it goes" : "they go"} off`
-      : `Uses ${s.uses.length} thing${s.uses.length === 1 ? "" : "s"} you already have`
-    : `Something simple for ${PERIOD_LABEL[period]}`;
+      ? urgent.length === 1
+        ? t("Uses your {a} before it goes off", { a: urgent[0].name })
+        : t("Uses your {a} and {b} before they go off", { a: urgent[0].name, b: urgent[1].name })
+      : tn(s.uses.length, "Uses {n} thing you already have", "Uses {n} things you already have")
+    : t(SIMPLE[period]);
   return s;
 }

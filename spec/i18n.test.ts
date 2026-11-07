@@ -35,6 +35,18 @@ describe("translation tables", () => {
     }
   });
 
+  it("say the same line the same way wherever it appears", () => {
+    for (const l of LANGS) {
+      const seen = new Map<string, string>();
+      for (const part of allParts()) {
+        for (const [en, tr] of Object.entries(part[l])) {
+          if (seen.has(en)) expect(tr, `${l}: ${en}`).toBe(seen.get(en));
+          seen.set(en, tr);
+        }
+      }
+    }
+  });
+
   it("fall back to the English for a line with no translation", () => {
     expect(withLang("zh", () => t("A sentence nobody translated"))).toBe("A sentence nobody translated");
     expect(withLang("es", () => t("Hello {name}", { name: "Kai" }))).toBe("Hello Kai");
