@@ -340,6 +340,24 @@ describe("scan pages and background jobs over HTTP", () => {
     }
   });
 
+  it("each way to scan shows what to photograph: a picture for sighted people, the same in words for everyone", async () => {
+    const { client } = await registered();
+    const pages = { "/pantry/scan/device": "fridge", "/pantry/scan/barcode": "barcode", "/pantry/scan/receipt": "receipt" };
+    for (const [path, kind] of Object.entries(pages)) {
+      const doc = new JSDOM(await (await client.get(path)).text()).window.document;
+      const guide = doc.querySelector(`figure[data-scan-guide='${kind}']`);
+      expect(guide, path).not.toBeNull();
+      // the animation is decoration over the caption, which says it all
+      expect(guide!.querySelector("canvas")?.getAttribute("aria-hidden")).toBe("true");
+      expect(guide!.querySelector("figcaption")?.textContent?.trim().length).toBeGreaterThan(30);
+      // it can be paused (WCAG 2.2.2), with a button that says what it does
+      const toggle = guide!.querySelector("button[data-scan-guide-toggle]");
+      expect(toggle?.getAttribute("aria-label")).toMatch(/pause/i);
+      expect(toggle?.getAttribute("aria-pressed")).toBe("false");
+      expect(doc.querySelector("script[src='/assets/scan-guide.mjs']")).not.toBeNull();
+    }
+  });
+
   it("the receipt page's camera starts hidden, leaving the plain upload form for no-script and no-camera browsers", async () => {
     const { client } = await registered();
     const res = await client.get("/pantry/scan/receipt");

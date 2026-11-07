@@ -15431,3 +15431,96 @@ a.rv-who:hover {
     transform: none;
   }
 }
+
+/* ---------- scan guide: a looping 3D "this is what to photograph" ---------- */
+/* public/scan-guide.mjs draws into the canvas. The stage keeps its shape
+   before the script runs (so nothing jumps), and without WebGL it folds
+   away, leaving the caption. */
+.scan-guide {
+  margin: 0 0 16px;
+}
+
+.scan-guide-stage {
+  position: relative;
+  aspect-ratio: 16 / 7;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: linear-gradient(180deg, var(--bg-tint), var(--surface-2));
+  box-shadow: var(--shadow-sm);
+}
+
+.scan-guide-stage canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 500ms var(--ease);
+}
+
+.scan-guide.ready canvas {
+  opacity: 1;
+}
+
+.scan-guide.no-3d .scan-guide-stage {
+  display: none;
+}
+
+.scan-guide figcaption {
+  margin: 10px 4px 0;
+  color: var(--ink-2);
+  font-size: 15px;
+  line-height: 1.45;
+  text-wrap: pretty;
+}
+
+/* pause / play, quiet in the corner */
+.scan-guide-toggle {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border: 0;
+  border-radius: var(--pill);
+  background: var(--glass);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: var(--ink-2);
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 200ms var(--ease), color 150ms var(--ease);
+}
+
+.scan-guide.ready .scan-guide-toggle {
+  opacity: 0.85;
+}
+
+.scan-guide-toggle:hover,
+.scan-guide-toggle:focus-visible {
+  opacity: 1;
+  color: var(--ink);
+}
+
+.scan-guide-play,
+.scan-guide.paused .scan-guide-pause {
+  display: none;
+}
+
+.scan-guide.paused .scan-guide-play {
+  display: inline-flex;
+}
+
+.scan-guide-pause {
+  display: inline-flex;
+}
+
+/* a phone-width page column: taller, so the phone and its subject both
+   read at a glance */
+@container main (max-width: 640px) {
+  .scan-guide-stage {
+    aspect-ratio: 4 / 3;
+  }
+}

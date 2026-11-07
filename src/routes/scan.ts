@@ -210,14 +210,42 @@ function tabs(current: Tab): Html {
   return html`<div class="subnav-scan">${subnav("Ways to scan", items, hrefs[current])}</div>`;
 }
 
-function hub(ctx: Ctx, tab: Tab, title: string, lede: string, content: Html, opts: { problem?: string; status?: number; script?: string } = {}) {
+// What to photograph, shown before anything else on each way to scan: a
+// short looping 3D scene (public/scan-guide.mjs) seen over your shoulder as
+// you take the photo, and the same in a sentence under it. The canvas is a
+// picture only; the caption is what a screen reader hears, and it's all
+// that shows without WebGL.
+type Guide = "fridge" | "receipt" | "barcode";
+const GUIDE_CAPTIONS: Record<Guide, string> = {
+  fridge: "Open the fridge or pantry, step back until all of it fits on your screen, and take the photo.",
+  receipt: "Lay the receipt flat in good light and hold your phone straight above it, so the receipt fills the screen.",
+  barcode: "Turn the packet round to its barcode and hold your phone a hand's width away, square on to it.",
+};
+
+function scanGuide(kind: Guide): Html {
+  return html`<figure class="scan-guide" data-scan-guide="${kind}">
+    <div class="scan-guide-stage">
+      <canvas aria-hidden="true"></canvas>
+      <button type="button" class="scan-guide-toggle" data-scan-guide-toggle aria-pressed="false" aria-label="Pause the animation">
+        <span class="scan-guide-pause" aria-hidden="true">${icon("pause", 14)}</span><span class="scan-guide-play" aria-hidden="true">${icon("play", 14)}</span>
+      </button>
+    </div>
+    <figcaption>${GUIDE_CAPTIONS[kind]}</figcaption>
+  </figure>`;
+}
+
+const THREE_IMPORTS = html`<script type="importmap">${raw(JSON.stringify({ imports: { three: "/assets/vendor/three.module.min.js", "three/addons/": "/assets/vendor/addons/" } }))}</script>`;
+
+function hub(ctx: Ctx, tab: Tab, title: string, lede: string, content: Html, opts: { problem?: string; status?: number; script?: string; guide?: Guide } = {}) {
   const body = html`
     ${pageHeader(title, lede)}
     ${tabs(tab)}
     ${opts.problem ? errors([opts.problem]) : ""}
+    ${opts.guide ? scanGuide(opts.guide) : ""}
     ${content}`;
+  const guideScripts = opts.guide ? html`${THREE_IMPORTS}<script type="module" src="/assets/scan-guide.mjs"></script>` : "";
   return htmlReply(
-    page(ctx, { title, active: "pantry", body, headExtra: html`<script type="module" src="/assets/${opts.script ?? "scan.mjs"}"></script>` }),
+    page(ctx, { title, active: "pantry", body, headExtra: html`${guideScripts}<script type="module" src="/assets/${opts.script ?? "scan.mjs"}"></script>` }),
     opts.status ?? 200,
   );
 }
@@ -230,7 +258,7 @@ function uploadForm(kind: JobKind): Html {
       <input type="file" name="photo" accept="image/jpeg,image/png,image/webp" capture="environment" required /></label>
     <p class="muted small">${receipt
       ? "Lay the receipt flat in good light and fill the frame with it. Long receipts read best in two photos, top half then bottom."
-      : "Best results: one shelf or door at a time, in good light, labels facing out."} The scan runs in the background: you can leave the page and come back to it.</p>
+      : "Best results: the whole fridge or pantry in one photo, doors open, in good light, labels facing out."} The scan runs in the background: you can leave the page and come back to it.</p>
     <div class="form-actions">
       <a class="button button-ghost" href="/pantry">Back to my kitchen</a>
       <button class="button" type="submit" data-scan-submit>${icon("spark", 16)} ${receipt ? "Read receipt" : "Scan photo"}</button>
@@ -260,13 +288,13 @@ function receiptCamera(): Html {
 
 function scanPage(ctx: Ctx, problem = "", status = 200) {
   if (!scanConfig()) return devicePage(ctx, problem, status);
-  return hub(ctx, "photo", "Scan your fridge or pantry", "Take a photo of a shelf and Larder suggests what's on it. You check every item before it's added.", uploadForm("photo"), { problem, status });
+  return hub(ctx, "photo", "Scan your fridge or pantry", "Take a photo of your open fridge or pantry and Larder suggests what's in it. You check every item before it's added.", uploadForm("photo"), { problem, status, guide: "fridge" });
 }
 
 function receiptPage(ctx: Ctx, problem = "", status = 200) {
   const lede = "Photograph your shopping receipt and Larder lists what you bought, with the prices you paid. You check every line before it's added.";
-  if (!scanConfig()) return hub(ctx, "receipt", "Read a receipt", lede, deviceReceiptForm(), { problem, status, script: "scan-receipt-camera.mjs" });
-  return hub(ctx, "receipt", "Read a receipt", lede, uploadForm("receipt"), { problem, status, script: "scan-receipt-camera.mjs" });
+  if (!scanConfig()) return hub(ctx, "receipt", "Read a receipt", lede, deviceReceiptForm(), { problem, status, script: "scan-receipt-camera.mjs", guide: "receipt" });
+  return hub(ctx, "receipt", "Read a receipt", lede, uploadForm("receipt"), { problem, status, script: "scan-receipt-camera.mjs", guide: "receipt" });
 }
 
 // The receipt read in the browser (public/receipt-ocr-worker.mjs): the same
@@ -319,7 +347,7 @@ function devicePage(ctx: Ctx, problem = "", status = 200) {
       <button class="button" type="button" data-device-start hidden>${icon("spark", 16)} Scan photo</button>
     </div>
   </section>`;
-  return hub(ctx, "device", "Scan on this device", "Photograph a shelf and a model running in your browser suggests what's on it. You check every item before it's added.", content, { problem, status, script: "scan-device.mjs" });
+  return hub(ctx, "device", "Scan on this device", "Photograph your open fridge or pantry and a model running in your browser suggests what's in it. You check every item before it's added.", content, { problem, status, script: "scan-device.mjs", guide: "fridge" });
 }
 
 function barcodePage(ctx: Ctx, problem = "", status = 200, code = "") {
@@ -344,7 +372,7 @@ function barcodePage(ctx: Ctx, problem = "", status = 200, code = "") {
       </form>
     </div>
   </section>`;
-  return hub(ctx, "barcode", "Scan barcodes", "Scan the packets and tins you've bought, one after another, then check and add them in one go.", content, { problem, status, script: "scan-barcode.mjs" });
+  return hub(ctx, "barcode", "Scan barcodes", "Scan the packets and tins you've bought, one after another, then check and add them in one go.", content, { problem, status, script: "scan-barcode.mjs", guide: "barcode" });
 }
 
 function progressPage(ctx: Ctx, id: number) {
