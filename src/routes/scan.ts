@@ -210,11 +210,11 @@ function tabs(current: Tab): Html {
   return html`<div class="subnav-scan">${subnav("Ways to scan", items, hrefs[current])}</div>`;
 }
 
-// What to photograph, shown before anything else on each way to scan: a
-// short looping 3D scene (public/scan-guide.mjs) seen over your shoulder as
-// you take the photo, and the same in a sentence under it. The canvas is a
-// picture only; the caption is what a screen reader hears, and it's all
-// that shows without WebGL.
+// What to photograph, in a small card beside the form (above it, as a
+// slim row, on a phone): a short looping 3D scene (public/scan-guide.mjs)
+// of a hand taking the photo, and the same in a sentence beside it. The
+// canvas is a picture only; the caption is what a screen reader hears, and
+// it's all that shows without WebGL.
 type Guide = "fridge" | "receipt" | "barcode";
 const GUIDE_CAPTIONS: Record<Guide, string> = {
   fridge: "Open the fridge or pantry, step back until all of it fits on your screen, and take the photo.",
@@ -241,8 +241,7 @@ function hub(ctx: Ctx, tab: Tab, title: string, lede: string, content: Html, opt
     ${pageHeader(title, lede)}
     ${tabs(tab)}
     ${opts.problem ? errors([opts.problem]) : ""}
-    ${opts.guide ? scanGuide(opts.guide) : ""}
-    ${content}`;
+    ${opts.guide ? html`<div class="scan-layout">${scanGuide(opts.guide)}<div class="scan-task">${content}</div></div>` : content}`;
   const guideScripts = opts.guide ? html`${THREE_IMPORTS}<script type="module" src="/assets/scan-guide.mjs"></script>` : "";
   return htmlReply(
     page(ctx, { title, active: "pantry", body, headExtra: html`${guideScripts}<script type="module" src="/assets/${opts.script ?? "scan.mjs"}"></script>` }),
