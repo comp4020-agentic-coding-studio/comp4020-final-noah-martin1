@@ -632,7 +632,10 @@ export function userPriceCount(userId: number): number {
 // estimate), the same engine as the checkout so the two never disagree
 // about what an ingredient costs. "Cost per serve" divides this. Lines with
 // no price at all are named, never counted as free. Cached per recipe while
-// the price data is the same (it only changes on a deploy).
+// the price data is the same (it only changes on a deploy). The cache key
+// carries the lines themselves as well as the caller's key: a deleted
+// recipe's id can be reused, within the same second of updated_at, by a new
+// recipe with different ingredients, and that one mustn't get the old cost.
 export interface MakeCost {
   cents: number;
   unpriced: string[];
@@ -641,7 +644,7 @@ export interface MakeCost {
 const makeCache = new Map<string, MakeCost>();
 
 export function costToMake(lines: { ingredient_id: number; name: string; quantity: number | null; unit: string; optional: number }[], key?: string): MakeCost {
-  const k = key ?? null;
+  const k = key === undefined ? null : `${key}|${lines.map((l) => `${l.ingredient_id}:${l.quantity ?? ""}${l.unit}`).join(",")}`;
   if (k !== null) {
     const hit = makeCache.get(k);
     if (hit) return hit;

@@ -1,7 +1,7 @@
 import { JSDOM } from "jsdom";
 import { describe, expect, it } from "vitest";
 import { seedCatalogue } from "../src/catalogue.ts";
-import { all, one } from "../src/db.ts";
+import { all, ingredientId, one } from "../src/db.ts";
 import { type PriceSource, priceSources } from "../src/products.ts";
 import { choosePack, costToMake, packOptions, recipePurchase, toBase } from "../src/pricing.ts";
 import { ingredientsFor } from "../src/recipes.ts";
@@ -112,6 +112,14 @@ describe("coverage of the catalogue", () => {
       if (made.unpriced.length) short++;
     }
     expect(short / recipes.length).toBeLessThan(0.08);
+  });
+
+  it("a reused recipe id (same second, new ingredients) never gets the old recipe's cached cost", () => {
+    const egg = { ingredient_id: ingredientId("eggs"), name: "eggs", quantity: 2, unit: "", optional: 0 };
+    const odd = { ingredient_id: ingredientId("zzcache unknownium"), name: "zzcache unknownium", quantity: 10, unit: "g", optional: 0 };
+    const key = "999999@2026-01-01 00:00:00";
+    expect(costToMake([egg], key).unpriced).toEqual([]);
+    expect(costToMake([egg, odd], key).unpriced).toEqual(["zzcache unknownium"]);
   });
 
   it("Tavë Kosi buys a whole lamb shoulder roast, not a lamb bake with no lamb", () => {
