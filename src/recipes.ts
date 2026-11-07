@@ -4,6 +4,7 @@ import { DIETARY_TAGS } from "./format.ts";
 import { parseYouTubeId } from "./videos.ts";
 import { priceSources } from "./products.ts";
 import { visibleRecipeSql } from "./visibility.ts";
+import { lang, langTag, t } from "./i18n.ts";
 
 export interface Recipe {
   id: number;
@@ -66,6 +67,13 @@ export const COURSES = [
   { key: "starter", label: "Starters & sides" },
   { key: "dessert", label: "Desserts" },
 ] as const;
+
+// "eggs, spinach and feta", joined the way the page's language joins a list
+// (English as it always was: commas, then "and").
+export function andList(names: string[]): string {
+  if (lang() !== "en") return new Intl.ListFormat(langTag(), { type: "conjunction" }).format(names);
+  return names.length <= 1 ? (names[0] ?? "") : `${names.slice(0, -1).join(", ")} and ${names.at(-1)}`;
+}
 
 export function totalMinutes(r: Pick<Recipe, "prep_minutes" | "cook_minutes">): number {
   return (r.prep_minutes ?? 0) + r.cook_minutes;
@@ -277,10 +285,10 @@ export function parseRecipeForm(form: URLSearchParams): { input: RecipeInput; pr
   const visibility = form.get("visibility") as Recipe["visibility"];
   const tags = form.getAll("tags").filter((t) => (DIETARY_TAGS as readonly string[]).includes(t));
 
-  if (!title || title.length > 120) problems.push("Give the recipe a title (up to 120 characters).");
-  if (description.length > 2000) problems.push("Keep the description under 2000 characters.");
-  if (!Number.isInteger(servings) || servings < 1 || servings > 50) problems.push("Servings must be a whole number from 1 to 50.");
-  if (!["public", "friends", "private"].includes(visibility)) problems.push("Choose who can see this recipe.");
+  if (!title || title.length > 120) problems.push(t("Give the recipe a title (up to 120 characters)."));
+  if (description.length > 2000) problems.push(t("Keep the description under 2000 characters."));
+  if (!Number.isInteger(servings) || servings < 1 || servings > 50) problems.push(t("Servings must be a whole number from 1 to 50."));
+  if (!["public", "friends", "private"].includes(visibility)) problems.push(t("Choose who can see this recipe."));
 
   const names = form.getAll("ing_name");
   const qtys = form.getAll("ing_qty");
@@ -293,11 +301,11 @@ export function parseRecipeForm(form: URLSearchParams): { input: RecipeInput; pr
     const q = (qtys[i] ?? "").trim();
     const quantity = q === "" ? null : Number(q);
     if (quantity !== null && (!Number.isFinite(quantity) || quantity < 0)) {
-      problems.push(`Quantity for "${name}" must be a positive number.`);
+      problems.push(t('Quantity for "{name}" must be a positive number.', { name }));
     }
     ingredients.push({ name: name.slice(0, 80), quantity, unit: (units[i] ?? "").trim().slice(0, 20), optional: optionals.has(String(i)) });
   });
-  if (!ingredients.length) problems.push("Add at least one ingredient.");
+  if (!ingredients.length) problems.push(t("Add at least one ingredient."));
 
   const stepTexts = form.getAll("step_text");
   const stepMins = form.getAll("step_minutes");
@@ -308,11 +316,11 @@ export function parseRecipeForm(form: URLSearchParams): { input: RecipeInput; pr
     const m = (stepMins[i] ?? "").trim();
     const est = m === "" ? null : Number(m);
     if (est !== null && (!Number.isInteger(est) || est < 0 || est > 1440)) {
-      problems.push(`Step ${steps.length + 1}: minutes must be a whole number.`);
+      problems.push(t("Step {n}: minutes must be a whole number.", { n: steps.length + 1 }));
     }
     steps.push({ text: text.slice(0, 1000), est_minutes: est });
   });
-  if (!steps.length) problems.push("Add at least one step.");
+  if (!steps.length) problems.push(t("Add at least one step."));
 
   // Optional. Blank clears it; anything else must be a YouTube video address.
   let video_id: string | null | undefined;
@@ -321,7 +329,7 @@ export function parseRecipeForm(form: URLSearchParams): { input: RecipeInput; pr
     if (raw === "") video_id = null;
     else {
       video_id = parseYouTubeId(raw);
-      if (!video_id) problems.push("The video link must be a YouTube video address, like https://www.youtube.com/watch?v=…");
+      if (!video_id) problems.push(t("The video link must be a YouTube video address, like https://www.youtube.com/watch?v=…"));
     }
   }
 

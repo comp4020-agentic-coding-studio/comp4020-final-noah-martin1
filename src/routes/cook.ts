@@ -6,7 +6,7 @@ import { prefsFor } from "../prefs.ts";
 import { type Recipe, recipeIngredients, recipeSteps, type RecipeIngredient } from "../recipes.ts";
 import type { Route } from "../server.ts";
 import { canSeeSession } from "../visibility.ts";
-import { langTag } from "../i18n.ts";
+import { langTag, t, th, tn } from "../i18n.ts";
 import { avatar, i18nBoot, icon, VIEW_TRANSITIONS } from "../views/layout.ts";
 import { amount, duration, visibleRecipe } from "./recipes.ts";
 
@@ -74,7 +74,7 @@ const REGIONS = [...new Set(CITIES.map((c) => c.region))];
 
 function cityOptions(): Html {
   return html`${REGIONS.map(
-    (region) => html`<optgroup label="${region}">${CITIES.filter((c) => c.region === region).map(
+    (region) => html`<optgroup label="${t(region)}">${CITIES.filter((c) => c.region === region).map(
       (c) => html`<option value="${c.key}">${c.name}${c.country !== c.name ? `, ${c.country}` : ""}</option>`,
     )}</optgroup>`,
   )}`;
@@ -88,10 +88,10 @@ function goLive(ctx: Ctx, recipe: Recipe, serves: number, elsewhere: CookSession
   const choice = (value: "public" | "friends" | "private", label: string, hint: string) =>
     html`<label class="cm-seg ${allowed[value] ? "" : "disabled"}">
       <input type="radio" name="visibility" value="${value}" ${value === wanted ? raw("checked") : ""} ${allowed[value] ? "" : raw("disabled")} />
-      <span><strong>${label}</strong><small>${hint}</small></span>
+      <span><strong>${t(label)}</strong><small>${t(hint)}</small></span>
     </label>`;
   return html`<details class="cm-golive" data-golive>
-    <summary class="cm-live cm-live-go">${icon("live", 16)} <span>Go live</span></summary>
+    <summary class="cm-live cm-live-go">${icon("live", 16)} <span>${t("Go live")}</span></summary>
     <form class="cm-sheet" method="post" action="/live/start" data-golive-form>
       <input type="hidden" name="recipe_id" value="${recipe.id}" />
       <input type="hidden" name="serves" value="${serves}" />
@@ -103,43 +103,43 @@ function goLive(ctx: Ctx, recipe: Recipe, serves: number, elsewhere: CookSession
       <header class="cm-sheet-head">
         <span class="cm-sheet-art" aria-hidden="true"><span class="live-dot"></span></span>
         <div>
-          <h2>Cook live</h2>
-          <p>Your pan appears on the live globe while you cook. Watchers see the step you're on and can ask you questions.</p>
+          <h2>${t("Cook live")}</h2>
+          <p>${t("Your pan appears on the live globe while you cook. Watchers see the step you're on and can ask you questions.")}</p>
         </div>
       </header>
 
       <fieldset class="cm-field">
-        <legend>Who can watch</legend>
+        <legend>${t("Who can watch")}</legend>
         <div class="cm-segs">
           ${choice("public", "Everyone", "On the globe")}
           ${choice("friends", "Friends", "Friends only")}
           ${choice("private", "Just me", "Practice run")}
         </div>
         ${recipe.visibility !== "public"
-          ? html`<p class="cm-note">This recipe is ${recipe.visibility === "friends" ? "friends-only" : "private"}, so ${recipe.visibility === "friends" ? "only friends" : "only you"} can watch you cook it.</p>`
+          ? html`<p class="cm-note">${recipe.visibility === "friends" ? t("This recipe is friends-only, so only friends can watch you cook it.") : t("This recipe is private, so only you can watch you cook it.")}</p>`
           : ""}
       </fieldset>
 
       <fieldset class="cm-field">
-        <legend>Where you appear</legend>
+        <legend>${t("Where you appear")}</legend>
         <div class="cm-where">
-          <label class="cm-select"><span class="sr-only">City</span>
+          <label class="cm-select"><span class="sr-only">${t("City")}</span>
             <select name="city" data-city required>
-              <option value="" disabled selected>Choose a city…</option>
+              <option value="" disabled selected>${t("Choose a city…")}</option>
               ${cityOptions()}
-              <optgroup label="Privacy"><option value="none">Don't show me on the map</option></optgroup>
+              <optgroup label="${t("Privacy")}"><option value="none">${t("Don't show me on the map")}</option></optgroup>
             </select>
           </label>
-          <button class="button button-soft button-small cm-locate" type="button" data-locate hidden>${icon("global", 14)} Use my location</button>
+          <button class="button button-soft button-small cm-locate" type="button" data-locate hidden>${icon("global", 14)} ${t("Use my location")}</button>
         </div>
-        <p class="cm-note" data-where-note>City-level only: we store a city centre, or your position rounded to about 10 km. Never your address.</p>
+        <p class="cm-note" data-where-note>${t("City-level only: we store a city centre, or your position rounded to about 10 km. Never your address.")}</p>
       </fieldset>
 
-      ${elsewhere ? html`<p class="cm-note cm-note-warn">You're live with ${elsewhere.recipe_title} right now. Going live here ends that session.</p>` : ""}
+      ${elsewhere ? html`<p class="cm-note cm-note-warn">${t("You're live with {title} right now. Going live here ends that session.", { title: elsewhere.recipe_title })}</p>` : ""}
 
       <div class="cm-sheet-actions">
-        <button class="button button-accent" type="submit">${icon("live", 16)} Go live</button>
-        <p class="cm-note">Ends when you finish, after 3 hours, or after 45 minutes with this page closed.</p>
+        <button class="button button-accent" type="submit">${icon("live", 16)} ${t("Go live")}</button>
+        <p class="cm-note">${t("Ends when you finish, after 3 hours, or after 45 minutes with this page closed.")}</p>
       </div>
     </form>
   </details>`;
@@ -150,17 +150,23 @@ function goLive(ctx: Ctx, recipe: Recipe, serves: number, elsewhere: CookSession
 // unless you turned that off in settings.
 function liveBanner(userId: number, live: CookSession | undefined, recipe: Recipe): Html {
   const prefs = prefsFor(userId);
-  const who = (v: string) => (v === "public" ? "everyone on the globe" : v === "friends" ? "your friends" : "only you");
+  // a whole sentence for each audience, so every language can say it its own way
+  const follow = (v: string, where: string) =>
+    v === "public"
+      ? t("everyone on the globe can follow your steps · {where}.", { where })
+      : v === "friends"
+        ? t("your friends can follow your steps · {where}.", { where })
+        : t("only you can follow your steps · {where}.", { where });
   return html`<div class="cm-banner ${live ? "is-live" : ""}" data-live-banner role="status" aria-live="polite">
     <span class="cm-banner-dot" aria-hidden="true"></span>
     <p class="cm-banner-text" data-live-banner-text>${live
-      ? html`<strong>You're live</strong> — ${who(live.visibility)} can follow your steps${live.city ? html` · ${live.city}` : " · not on the map"}.`
+      ? html`<strong>${t("You're live")}</strong> — ${follow(live.visibility, live.city || t("not on the map"))}`
       : prefs.auto_live
-        ? html`<strong>Not live.</strong> <span class="no-js-only">Tap Go live to share your steps.</span><span class="js-only">Going live…</span>`
-        : html`<strong>Not live.</strong> Automatic live is off in <a href="/settings#live">settings</a>.`}</p>
+        ? html`<strong>${t("Not live.")}</strong> <span class="no-js-only">${t("Tap Go live to share your steps.")}</span><span class="js-only">${t("Going live…")}</span>`
+        : html`<strong>${t("Not live.")}</strong> ${th("Automatic live is off in {settings}.", { settings: html`<a href="/settings#live">${t("settings")}</a>` })}`}</p>
     <form method="post" action="/live/${live?.id ?? 0}/end" data-live-off ${live ? "" : raw("hidden")}>
       <input type="hidden" name="return_to" value="/recipes/${recipe.id}/cook" />
-      <button class="button button-small cm-banner-off" type="submit" aria-label="Turn live off for this cooking session">Turn live off</button>
+      <button class="button button-small cm-banner-off" type="submit" aria-label="${t("Turn live off for this cooking session")}">${t("Turn live off")}</button>
     </form>
   </div>`;
 }
@@ -170,20 +176,20 @@ function liveBanner(userId: number, live: CookSession | undefined, recipe: Recip
 function onAir(live: CookSession | undefined, recipeId: number): Html {
   const id = live?.id ?? "";
   return html`<details class="cm-onair" data-onair ${live ? "" : raw("hidden")}>
-    <summary class="cm-live cm-live-on"><span class="live-dot"></span> <span>Live</span><span class="cm-onair-sep" aria-hidden="true">·</span><span><b data-watchers>0</b> watching</span></summary>
+    <summary class="cm-live cm-live-on"><span class="live-dot"></span> <span>${t("Live")}</span><span class="cm-onair-sep" aria-hidden="true">·</span><span>${th("{n} watching", { n: html`<b data-watchers>0</b>` })}</span></summary>
     <div class="cm-sheet cm-sheet-small">
-      <p class="cm-onair-who" data-onair-who>${live ? (live.visibility === "public" ? "Everyone can watch" : live.visibility === "friends" ? "Friends can watch" : "Only you can see this") : ""}${live?.city ? ` · ${live.city}` : ""}</p>
-      <a class="button button-soft button-block" href="/global#live-${id}" data-onair-globe>${icon("global", 16)} See yourself on the globe</a>
+      <p class="cm-onair-who" data-onair-who>${live ? t(live.visibility === "public" ? "Everyone can watch" : live.visibility === "friends" ? "Friends can watch" : "Only you can see this") : ""}${live?.city ? ` · ${live.city}` : ""}</p>
+      <a class="button button-soft button-block" href="/global#live-${id}" data-onair-globe>${icon("global", 16)} ${t("See yourself on the globe")}</a>
       <form class="cm-help" method="post" action="/live/${id}/help" data-help-form>
-        <label class="field"><span>Stuck? Ask everyone watching</span>
-          <input name="text" maxlength="${QUESTION_MAX}" placeholder="e.g. My sauce split — how do I save it?" value="${live?.help_text ?? ""}" autocomplete="off" />
+        <label class="field"><span>${t("Stuck? Ask everyone watching")}</span>
+          <input name="text" maxlength="${QUESTION_MAX}" placeholder="${t("e.g. My sauce split — how do I save it?")}" value="${live?.help_text ?? ""}" autocomplete="off" />
         </label>
         <input type="hidden" name="return_to" value="/recipes/${recipeId}/cook" />
-        <button class="button button-small button-ghost" type="submit">${live?.help_text ? "Update" : "Ask for help"}</button>
+        <button class="button button-small button-ghost" type="submit">${live?.help_text ? t("Update") : t("Ask for help")}</button>
       </form>
       <form method="post" action="/live/${id}/end" data-end-form>
         <input type="hidden" name="return_to" value="/recipes/${recipeId}" />
-        <button class="button button-danger button-block" type="submit">End live session</button>
+        <button class="button button-danger button-block" type="submit">${t("End live session")}</button>
       </form>
     </div>
   </details>`;
@@ -193,20 +199,20 @@ function onAir(live: CookSession | undefined, recipeId: number): Html {
 // can clear with a quick reply.
 function questionStack(live: CookSession | undefined, recipeId: number): Html {
   const open = live ? questionsFor(live.id).filter((q) => q.answer === null) : [];
-  return html`<aside class="cm-qs" data-qs aria-label="Questions from watchers" aria-live="polite" ${open.length ? "" : raw("hidden")}>
+  return html`<aside class="cm-qs" data-qs aria-label="${t("Questions from watchers")}" aria-live="polite" ${open.length ? "" : raw("hidden")}>
     ${open.map(
       (q) => html`<article class="cm-q" data-q="${q.id}">
-        <header>${avatar(q.asker_name, "sm", q.asker_avatar)}<p><strong>${q.asker_name}</strong> asks</p></header>
+        <header>${avatar(q.asker_name, "sm", q.asker_avatar)}<p>${th("{name} asks", { name: html`<strong>${q.asker_name}</strong>` })}</p></header>
         <p class="cm-q-text">${q.text}</p>
         <form method="post" action="/global/${live!.id}/answer" class="cm-q-form">
           <input type="hidden" name="question" value="${q.id}" />
           <input type="hidden" name="return_to" value="/recipes/${recipeId}/cook" />
           <div class="cm-q-quick">
-            <button type="submit" name="text" value="Yes, that works!">Yes, that works</button>
-            <button type="submit" name="text" value="I wouldn't — it changes the dish.">I wouldn't</button>
-            <button type="submit" name="text" value="Not sure — give it a go!">Not sure, try it</button>
+            <button type="submit" name="text" value="Yes, that works!">${t("Yes, that works")}</button>
+            <button type="submit" name="text" value="I wouldn't — it changes the dish.">${t("I wouldn't")}</button>
+            <button type="submit" name="text" value="Not sure — give it a go!">${t("Not sure, try it")}</button>
           </div>
-          <div class="cm-q-row"><input name="text" maxlength="${QUESTION_MAX}" placeholder="Or type an answer…" aria-label="Answer ${q.asker_name}" autocomplete="off" /><button class="button button-small" type="submit">Send</button></div>
+          <div class="cm-q-row"><input name="text" maxlength="${QUESTION_MAX}" placeholder="${t("Or type an answer…")}" aria-label="${t("Answer {name}", { name: q.asker_name })}" autocomplete="off" /><button class="button button-small" type="submit">${t("Send")}</button></div>
         </form>
       </article>`,
     )}
@@ -247,33 +253,33 @@ export const routes: Route[] = [
 
       const body = html`<div class="cookmode" data-cook-mode data-steps="${steps.length}">
         <header class="cm-bar">
-          <a class="cm-close" href="/recipes/${recipe.id}" aria-label="Leave cook mode">${icon("close", 20)}</a>
-          <div class="cm-title"><small>Cooking${scale !== 1 ? ` for ${serves}` : ""}</small><strong>${recipe.title}</strong></div>
+          <a class="cm-close" href="/recipes/${recipe.id}" aria-label="${t("Leave cook mode")}">${icon("close", 20)}</a>
+          <div class="cm-title"><small>${scale !== 1 ? t("Cooking for {n}", { n: serves }) : t("Cooking")}</small><strong>${recipe.title}</strong></div>
           <div class="cm-progress" aria-hidden="true">${steps.map((_, i) => html`<span class="${i === 0 ? "on" : ""}"></span>`)}</div>
           <div class="cm-tools" data-live-root data-recipe="${recipe.id}" data-session="${liveHere?.id ?? ""}" data-live-step="${liveHere?.current_step ?? 1}" data-step-count="${steps.length}" data-serves="${serves}" ${ctx.user && prefsFor(ctx.user.id).auto_live && !liveHere && !elsewhere ? raw("data-auto-live") : ""} ${ctx.user && prefsFor(ctx.user.id).auto_live ? raw("data-auto-pref") : ""}>
             ${along
-              ? html`<a class="cm-along" href="/global#live-${along.id}" data-along="${along.id}" data-along-steps="${along.step_count}" title="Cooking along with ${along.display_name}">
-                  ${avatar(along.display_name, "sm", along.avatar)}<span><small>${along.display_name.split(" ")[0]} is on</small><b data-along-step>step ${along.current_step} of ${along.step_count}</b></span>
+              ? html`<a class="cm-along" href="/global#live-${along.id}" data-along="${along.id}" data-along-steps="${along.step_count}" title="${t("Cooking along with {name}", { name: along.display_name })}">
+                  ${avatar(along.display_name, "sm", along.avatar)}<span><small>${t("{name} is on", { name: along.display_name.split(" ")[0] })}</small><b data-along-step>${t("step {n} of {total}", { n: along.current_step, total: along.step_count })}</b></span>
                 </a>`
               : ""}
             ${ctx.user
               ? html`${onAir(liveHere, recipe.id)}${liveHere ? "" : goLive(ctx, recipe, serves, elsewhere, entry?.id ?? null)}`
-              : html`<a class="cm-live cm-live-go" href="/login?next=${encodeURIComponent(`/recipes/${recipe.id}/cook`)}" title="Sign in to cook live">${icon("live", 16)} <span>Go live</span></a>`}
+              : html`<a class="cm-live cm-live-go" href="/login?next=${encodeURIComponent(`/recipes/${recipe.id}/cook`)}" title="${t("Sign in to cook live")}">${icon("live", 16)} <span>${t("Go live")}</span></a>`}
           </div>
         </header>
 
         <div class="cm-stage">
           ${ctx.user ? liveBanner(ctx.user.id, liveHere, recipe) : ""}
           <section class="cm-card" aria-live="polite">
-            <p class="cm-lookback" data-lookback hidden>Looking back · watchers still see step <b data-lookback-step></b></p>
+            <p class="cm-lookback" data-lookback hidden>${th("Looking back · watchers still see step {n}", { n: html`<b data-lookback-step></b>` })}</p>
             <ol class="cm-steps">
               ${steps.map((s, i) => {
                 const uses = mentioned(s.text, lines);
                 return html`<li class="cm-step ${i === 0 ? "current" : ""}" data-step="${s.step_number}">
-                  <span class="cm-step-num">Step ${s.step_number} of ${steps.length}</span>
+                  <span class="cm-step-num">${t("Step {n} of {total}", { n: s.step_number, total: steps.length })}</span>
                   <p>${s.text}</p>
                   ${uses.length ? html`<div class="cm-step-ings">${uses.map((u) => html`<span>${u.quantity !== null ? html`<b>${scaled(u)}</b>` : ""} ${u.name}</span>`)}</div>` : ""}
-                  ${s.est_minutes ? html`<button class="timer-chip" type="button" data-timer="${s.est_minutes * 60}">${icon("timer", 18)} <span>Start ${duration(s.est_minutes)} timer</span></button>` : ""}
+                  ${s.est_minutes ? html`<button class="timer-chip" type="button" data-timer="${s.est_minutes * 60}">${icon("timer", 18)} <span>${t("Start {time} timer", { time: duration(s.est_minutes) })}</span></button>` : ""}
                 </li>`;
               })}
             </ol>
@@ -282,30 +288,30 @@ export const routes: Route[] = [
                 ${icon("check", 40)}
                 <span class="cm-burst" aria-hidden="true">${BURST.map(([x, y, c, r]) => html`<i style="--x: ${x}px; --y: ${y}px; --c: var(--${c}); --r: ${r}deg"></i>`)}</span>
               </div>
-              <h2>Dinner's ready.</h2>
-              <p>Enjoy every bite of your ${recipe.title.toLowerCase()}.</p>
-              <p class="cm-done-live" data-done-live hidden>Your live session has ended — thanks for cooking with everyone.</p>
+              <h2>${t("Dinner's ready.")}</h2>
+              <p>${t("Enjoy every bite of your {dish}.", { dish: recipe.title.toLowerCase() })}</p>
+              <p class="cm-done-live" data-done-live hidden>${t("Your live session has ended — thanks for cooking with everyone.")}</p>
               <div class="rd-actions">
                 ${entry
                   ? html`<form method="post" action="/calendar/${entry.id}/status">
                       <input type="hidden" name="status" value="completed" />
                       <input type="hidden" name="return_to" value="/calendar" />
-                      <button class="button button-large button-accent" type="submit">Mark as cooked</button>
+                      <button class="button button-large button-accent" type="submit">${t("Mark as cooked")}</button>
                     </form>`
                   : ""}
-                <a class="button button-large button-ghost" href="/recipes/${recipe.id}">Back to recipe</a>
+                <a class="button button-large button-ghost" href="/recipes/${recipe.id}">${t("Back to recipe")}</a>
               </div>
-              ${ctx.user ? html`<p class="estimate-note">Used something up? <a href="/pantry">Update your fridge</a> so tomorrow's plans stay right.</p>` : html`<p class="estimate-note"><a href="/register">Join free</a> to keep a fridge that knows what this used.</p>`}
+              ${ctx.user ? html`<p class="estimate-note">${th("Used something up? {link} so tomorrow's plans stay right.", { link: html`<a href="/pantry">${t("Update your fridge")}</a>` })}</p>` : html`<p class="estimate-note">${th("{join} to keep a fridge that knows what this used.", { join: html`<a href="/register">${t("Join free")}</a>` })}</p>`}
             </div>
           </section>
 
           <aside class="cm-side">
             <section class="rd-card">
-              <h2>Ingredients${scale !== 1 ? ` · ×${Math.round(scale * 100) / 100}` : ""}</h2>
+              <h2>${t("Ingredients")}${scale !== 1 ? ` · ×${Math.round(scale * 100) / 100}` : ""}</h2>
               <ul class="ing-list">
                 ${lines.map(
                   (l) => html`<li>
-                    <label class="ing-check"><input type="checkbox" aria-label="Got ${l.name}" />${icon("check", 12)}</label>
+                    <label class="ing-check"><input type="checkbox" aria-label="${t("Got {name}", { name: l.name })}" />${icon("check", 12)}</label>
                     <span class="ing-amount">${scaled(l)}</span>
                     <span class="ing-name">${l.name}${l.note ? html`<small>${l.note}</small>` : ""}</span>
                   </li>`,
@@ -313,14 +319,14 @@ export const routes: Route[] = [
               </ul>
             </section>
             <section class="rd-card">
-              <h2>Cooking for</h2>
+              <h2>${t("Cooking for")}</h2>
               ${liveHere
-                ? html`<p class="muted small">Cooking for ${serves} — set when you went live.</p>`
+                ? html`<p class="muted small">${t("Cooking for {n} — set when you went live.", { n: serves })}</p>`
                 : html`<form method="get" action="/recipes/${recipe.id}/cook" class="servings" style="width: 100%; justify-content: space-between">
                     ${entry ? html`<input type="hidden" name="entry" value="${entry.id}" />` : ""}
-                    <a href="/recipes/${recipe.id}/cook?serves=${Math.max(1, serves - 1)}${entry ? `&entry=${entry.id}` : ""}" aria-label="Fewer">−</a>
-                    <output><span>${serves}</span> ${serves === 1 ? "person" : "people"}</output>
-                    <a href="/recipes/${recipe.id}/cook?serves=${Math.min(50, serves + 1)}${entry ? `&entry=${entry.id}` : ""}" aria-label="More">+</a>
+                    <a href="/recipes/${recipe.id}/cook?serves=${Math.max(1, serves - 1)}${entry ? `&entry=${entry.id}` : ""}" aria-label="${t("Fewer")}">−</a>
+                    <output>${th(serves === 1 ? "{n} person" : "{n} people", { n: html`<span>${serves}</span>` })}</output>
+                    <a href="/recipes/${recipe.id}/cook?serves=${Math.min(50, serves + 1)}${entry ? `&entry=${entry.id}` : ""}" aria-label="${t("More")}">+</a>
                   </form>`}
             </section>
           </aside>
@@ -330,12 +336,12 @@ export const routes: Route[] = [
         <div class="cm-toast ${ctx.flash ? "good" : ""}" data-cm-toast role="status" ${ctx.flash ? "" : raw("hidden")}>${ctx.flash ?? ""}</div>
 
         <nav class="cm-nav">
-          <button class="button button-ghost" type="button" data-step-prev>${icon("back", 18)} Back</button>
-          <p class="hint"><kbd>←</kbd> <kbd>→</kbd> to move between steps</p>
-          <button class="button" type="button" data-step-next><span data-next-label>Next step</span> ${icon("arrow", 18)}</button>
+          <button class="button button-ghost" type="button" data-step-prev>${icon("back", 18)} ${t("Back")}</button>
+          <p class="hint"><kbd>←</kbd> <kbd>→</kbd> ${t("to move between steps")}</p>
+          <button class="button" type="button" data-step-next><span data-next-label>${t("Next step")}</span> ${icon("arrow", 18)}</button>
         </nav>
       </div>`;
-      return htmlReply(shell(ctx, `Cook ${recipe.title}`, body));
+      return htmlReply(shell(ctx, t("Cook {title}", { title: recipe.title }), body));
     },
   },
 ];

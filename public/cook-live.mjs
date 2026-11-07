@@ -3,6 +3,7 @@
 // to answer with one thumb, and the friend you're cooking along with. The
 // step-by-step view itself is app.js; this watches it rather than changing
 // it, so cook mode works exactly the same when nobody is live.
+import { t } from "./i18n.mjs";
 const box = document.querySelector("[data-live-root]");
 const mode = document.querySelector("[data-cook-mode]");
 
@@ -72,10 +73,10 @@ function start() {
       pending = pending.then(async () => {
         try {
           const r = await post(`/live/${id}/step`, { step: String(target) }, { keepalive: true });
-          if (r.status === 410 || r.status === 404) return lost("Your live session ended, so watchers no longer see your steps.");
+          if (r.status === 410 || r.status === 404) return lost(t("Your live session ended, so watchers no longer see your steps."));
           if (r.body.step) liveStep = Math.max(liveStep, r.body.step);
         } catch {
-          say("Couldn't reach Larder — watchers will catch up on your next step.", "warn");
+          say(t("Couldn't reach Larder — watchers will catch up on your next step."), "warn");
           liveStep = Math.min(liveStep, target - 1);
         }
       });
@@ -106,14 +107,19 @@ function start() {
   const banner = document.querySelector("[data-live-banner]");
   const bannerText = banner?.querySelector("[data-live-banner-text]");
   const offForm = banner?.querySelector("[data-live-off]");
-  const WHO = { public: "everyone on the globe", friends: "your friends", private: "only you" };
+  // a whole sentence for each audience, so every language can say it its own way
+  const FOLLOW = {
+    public: "everyone on the globe can follow your steps · {where}.",
+    friends: "your friends can follow your steps · {where}.",
+    private: "only you can follow your steps · {where}.",
+  };
   function showLive(info) {
     if (!banner) return;
     banner.classList.add("is-live");
     bannerText.innerHTML = "";
     const strong = document.createElement("strong");
-    strong.textContent = "You're live";
-    bannerText.append(strong, ` — ${WHO[info.visibility] ?? "your friends"} can follow your steps · ${info.city || "not on the map"}.`);
+    strong.textContent = t("You're live");
+    bannerText.append(strong, ` — ${t(FOLLOW[info.visibility] ?? FOLLOW.friends, { where: info.city || t("not on the map") })}`);
     if (offForm) {
       offForm.hidden = false;
       offForm.action = `/live/${info.id}/end`;
@@ -124,7 +130,7 @@ function start() {
     banner.classList.remove("is-live");
     bannerText.innerHTML = "";
     const strong = document.createElement("strong");
-    strong.textContent = "Not live.";
+    strong.textContent = t("Not live.");
     bannerText.append(strong, ` ${text}`);
     if (offForm) offForm.hidden = true;
   }
@@ -133,9 +139,9 @@ function start() {
     if (session === null) return;
     await post(`/live/${session}/end`, { reason: "ended" }).catch(() => null);
     done("ended");
-    showOff("You turned it off. Watchers no longer see your steps; keep cooking.");
+    showOff(t("You turned it off. Watchers no longer see your steps; keep cooking."));
     restoreGoLive();
-    say("Live is off for this session.");
+    say(t("Live is off for this session."));
   });
 
   // the Go live sheet, kept so it can come back after turning live off
@@ -162,7 +168,7 @@ function start() {
       onair.querySelector("[data-end-form]")?.setAttribute("action", `/live/${id}/end`);
       const who = onair.querySelector("[data-onair-who]");
       if (who) {
-        const v = info.visibility === "public" ? "Everyone can watch" : info.visibility === "friends" ? "Friends can watch" : "Only you can see this";
+        const v = t(info.visibility === "public" ? "Everyone can watch" : info.visibility === "friends" ? "Friends can watch" : "Only you can see this");
         who.textContent = info.city ? `${v} · ${info.city}` : v;
       }
     }
@@ -176,8 +182,8 @@ function start() {
     box.dataset.session = "";
     stream?.close();
     clearInterval(beatTimer);
-    if (reason === "finished") showOff("Your live session ended when you finished. Thanks for cooking with everyone.");
-    else if (reason === "lost") showOff("Your live session ended.");
+    if (reason === "finished") showOff(t("Your live session ended when you finished. Thanks for cooking with everyone."));
+    else if (reason === "lost") showOff(t("Your live session ended."));
     if (onair) onair.hidden = true;
     if (lookback) lookback.hidden = true;
     const note = document.querySelector("[data-done-live]");
@@ -212,11 +218,11 @@ function start() {
     city?.addEventListener("change", () => {
       where.value = city.value === "none" ? "none" : "city";
       lat.value = lng.value = "";
-      if (note) note.textContent = city.value === "none" ? "You'll be listed with the other cooks, but not pinned on the map." : defaultNote;
+      if (note) note.textContent = city.value === "none" ? t("You'll be listed with the other cooks, but not pinned on the map.") : defaultNote;
     });
     locate?.addEventListener("click", () => {
       locate.disabled = true;
-      if (note) note.textContent = "Asking your browser for your location…";
+      if (note) note.textContent = t("Asking your browser for your location…");
       navigator.geolocation.getCurrentPosition(
         (pos) => {
           // rounded here and again on the server: about 10 km, never closer
@@ -227,11 +233,11 @@ function start() {
           city.value = "";
           locate.disabled = false;
           locate.classList.add("on");
-          if (note) note.textContent = `Using your rough location (${lat.value}, ${lng.value}) — rounded to about 10 km.`;
+          if (note) note.textContent = t("Using your rough location ({lat}, {lng}) — rounded to about 10 km.", { lat: lat.value, lng: lng.value });
         },
         () => {
           locate.disabled = false;
-          if (note) note.textContent = "No location shared — choose a city instead.";
+          if (note) note.textContent = t("No location shared — choose a city instead.");
         },
         { enableHighAccuracy: false, timeout: 10000, maximumAge: 600000 },
       );
@@ -241,7 +247,7 @@ function start() {
       e.preventDefault();
       if (where.value === "city" && !city.value) {
         city.focus();
-        if (note) note.textContent = "Choose a city first, or “Don't show me on the map”.";
+        if (note) note.textContent = t("Choose a city first, or “Don't show me on the map”.");
         return;
       }
       const fields = new FormData(form);
@@ -251,14 +257,14 @@ function start() {
       try {
         const r = await post("/live/start", fields);
         if (!r.ok) {
-          say(r.body.error ?? "Couldn't go live just now. Try again in a moment.", "warn");
+          say(r.body.error ?? t("Couldn't go live just now. Try again in a moment."), "warn");
           return;
         }
         liveStep = r.body.step ?? 1;
         goneLive(r.body.id, r.body);
-        say(r.body.visibility === "public" ? "You're live on the globe." : r.body.visibility === "friends" ? "You're live — friends can watch." : "You're live, just for you.", "good");
+        say(t(r.body.visibility === "public" ? "You're live on the globe." : r.body.visibility === "friends" ? "You're live — friends can watch." : "You're live, just for you."), "good");
       } catch {
-        say("You seem to be offline. Try again in a moment.", "warn");
+        say(t("You seem to be offline. Try again in a moment."), "warn");
       } finally {
         button.disabled = false;
       }
@@ -277,16 +283,16 @@ function start() {
         if (r.ok && r.body.ok) {
           liveStep = r.body.step ?? 1;
           goneLive(r.body.id, r.body);
-          if (!r.body.already) say(r.body.visibility === "public" ? "You're live on the globe. Turn it off any time." : r.body.visibility === "friends" ? "You're live for friends. Turn it off any time." : "You're live, just for you.", "good");
-        } else if (r.body.reason === "elsewhere") showOff(`You're live with ${r.body.elsewhere} in another tab.`);
-        else showOff(r.body.reason === "off" ? "Automatic live is off in settings." : "Tap Go live to share your steps.");
+          if (!r.body.already) say(t(r.body.visibility === "public" ? "You're live on the globe. Turn it off any time." : r.body.visibility === "friends" ? "You're live for friends. Turn it off any time." : "You're live, just for you."), "good");
+        } else if (r.body.reason === "elsewhere") showOff(t("You're live with {title} in another tab.", { title: r.body.elsewhere }));
+        else showOff(t(r.body.reason === "off" ? "Automatic live is off in settings." : "Tap Go live to share your steps."));
       })
-      .catch(() => showOff("Couldn't reach Larder to go live. Tap Go live to try again."));
+      .catch(() => showOff(t("Couldn't reach Larder to go live. Tap Go live to try again.")));
   }
   if (box.hasAttribute("data-auto-live") && session === null) {
     autoStart();
-  } else if (session === null && banner && bannerText.textContent.includes("Going live")) {
-    showOff("Tap Go live to share your steps.");
+  } else if (session === null && banner && bannerText.querySelector(".js-only")) {
+    showOff(t("Tap Go live to share your steps."));
   }
 
   // Leaving cook mode ends the session, so nobody's left "live" on the globe
@@ -304,8 +310,8 @@ function start() {
     if (session === null) return;
     const f = e.currentTarget;
     const r = await post(`/live/${session}/help`, new FormData(f)).catch(() => null);
-    if (!r) return say("You seem to be offline.", "warn");
-    say(r.ok ? (f.querySelector("input[name=text]").value.trim() ? "Asked everyone watching." : "Help request cleared.") : r.body.message ?? "That didn't send.", r.ok ? "good" : "warn");
+    if (!r) return say(t("You seem to be offline."), "warn");
+    say(r.ok ? t(f.querySelector("input[name=text]").value.trim() ? "Asked everyone watching." : "Help request cleared.") : r.body.message ?? t("That didn't send."), r.ok ? "good" : "warn");
     if (r.ok) onair.open = false;
   });
   onair?.querySelector("[data-end-form]")?.addEventListener("submit", async (e) => {
@@ -313,7 +319,7 @@ function start() {
     if (session === null) return;
     await post(`/live/${session}/end`, { reason: "ended" }).catch(() => null);
     done("ended");
-    say("Live session ended. You can keep cooking.");
+    say(t("Live session ended. You can keep cooking."));
   });
 
   // close a sheet on Escape or a tap outside it
@@ -350,7 +356,9 @@ function start() {
     const who = document.createElement("p");
     const strong = document.createElement("strong");
     strong.textContent = q.who;
-    who.append(strong, " asks");
+    // "{name} asks": the name goes where the language puts it
+    const [before, after] = t("{name} asks").split("{name}");
+    who.append(before ?? "", strong, after ?? "");
     head.append(av, who);
     const text = document.createElement("p");
     text.className = "cm-q-text";
@@ -371,7 +379,7 @@ function start() {
       b.type = "submit";
       b.name = "text";
       b.value = value;
-      b.textContent = label;
+      b.textContent = t(label);
       quick.append(b);
     }
     const rowEl = document.createElement("div");
@@ -379,13 +387,13 @@ function start() {
     const input = document.createElement("input");
     input.name = "text";
     input.maxLength = 280;
-    input.placeholder = "Or type an answer…";
+    input.placeholder = t("Or type an answer…");
     input.autocomplete = "off";
-    input.setAttribute("aria-label", `Answer ${q.who}`);
+    input.setAttribute("aria-label", t("Answer {name}", { name: q.who }));
     const send = document.createElement("button");
     send.className = "button button-small";
     send.type = "submit";
-    send.textContent = "Send";
+    send.textContent = t("Send");
     rowEl.append(input, send);
     f.append(hidden, quick, rowEl);
     el.append(head, text, f);
@@ -407,7 +415,7 @@ function start() {
       for (const q of body.questions) if (q.answer) qs.querySelector(`[data-q="${q.id}"]`)?.remove();
       qs.hidden = !qs.querySelector("[data-q]");
       if (announce && fresh.length) {
-        say(fresh.length === 1 ? `${fresh[0].who} asked a question` : `${fresh.length} new questions`, "good");
+        say(fresh.length === 1 ? t("{name} asked a question", { name: fresh[0].who }) : t("{n} new questions", { n: fresh.length }), "good");
         navigator.vibrate?.(60);
       }
     } catch {
@@ -439,13 +447,13 @@ function start() {
           card.remove();
           qs.hidden = !qs.querySelector("[data-q]");
         }, 320);
-        say("Answer sent.", "good");
+        say(t("Answer sent."), "good");
       } else {
-        say(r.body.message ?? "That didn't send.", "warn");
+        say(r.body.message ?? t("That didn't send."), "warn");
         f.querySelectorAll("button").forEach((b) => (b.disabled = false));
       }
     } catch {
-      say("You seem to be offline. Try again in a moment.", "warn");
+      say(t("You seem to be offline. Try again in a moment."), "warn");
       f.querySelectorAll("button").forEach((b) => (b.disabled = false));
     }
   });
@@ -457,7 +465,7 @@ function start() {
     stream = new EventSource(`/global/stream?only=${session}`);
     stream.addEventListener("sync", (e) => {
       const mine = JSON.parse(e.data).sessions.find((s) => Number(s.id) === session);
-      if (!mine) return lost("Your live session has ended.");
+      if (!mine) return lost(t("Your live session has ended."));
       setWatchers(mine.w);
       loadQuestions(false);
     });
@@ -470,7 +478,7 @@ function start() {
       if (Number(ev.id) === session) setWatchers(ev.n);
     });
     stream.addEventListener("end", (e) => {
-      if (Number(JSON.parse(e.data).id) === session && !ended) lost("Your live session has ended.");
+      if (Number(JSON.parse(e.data).id) === session && !ended) lost(t("Your live session has ended."));
     });
   }
 
@@ -493,7 +501,7 @@ function start() {
       if (session === null || ended) return;
       try {
         const r = await post(`/live/${session}/heartbeat`, {});
-        if (r.status === 410 || r.status === 404) lost("Your live session timed out. Go live again any time.");
+        if (r.status === 410 || r.status === 404) lost(t("Your live session timed out. Go live again any time."));
       } catch {
         // offline: try again next time
       }
@@ -510,13 +518,13 @@ function start() {
       try {
         const res = await fetch(`/global/${id}/card`, { headers: { accept: "application/json" } });
         if (!res.ok) {
-          label.textContent = "finished cooking";
+          label.textContent = t("finished cooking");
           along.classList.add("ended");
           es.close();
           return;
         }
         const card = await res.json();
-        label.textContent = `step ${card.marker.step} of ${card.marker.steps}`;
+        label.textContent = t("step {n} of {total}", { n: card.marker.step, total: card.marker.steps });
         along.classList.remove("tick");
         void along.offsetWidth;
         along.classList.add("tick");
@@ -526,7 +534,7 @@ function start() {
     };
     es.addEventListener("upsert", update);
     es.addEventListener("end", () => {
-      label.textContent = "finished cooking";
+      label.textContent = t("finished cooking");
       along.classList.add("ended");
       es.close();
     });

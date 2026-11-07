@@ -2,6 +2,7 @@ import { type Answer, answerFor, suggestions } from "../assistant.ts";
 import { all, catalogFor } from "../db.ts";
 import { DIETARY_TAGS, money, monthLabel, qty, sized, today } from "../format.ts";
 import { type Html, html, raw } from "../html.ts";
+import { t, th, tn } from "../i18n.ts";
 import { logActivity } from "../activity.ts";
 import { type Ctx, HttpError, htmlReply, json, redirect, setFlash, text } from "../http.ts";
 import { checkImage, loadImage, MAX_IMAGE_BYTES, ownedImage, readMultipart, saveImage } from "../images.ts";
@@ -18,6 +19,7 @@ import {
   listVisibleRecipes,
   pantryMatch,
   parseRecipeForm,
+  andList,
   type Recipe,
   type RecipeIngredient,
   type RecipeInput,
@@ -41,15 +43,15 @@ import { type ComposerState, ratingBadge, reviewsSection } from "../views/review
 const VISIBILITY_LABEL = { public: "Public", friends: "Friends", private: "Only me" } as const;
 
 export function visibilityBadge(v: Recipe["visibility"]): Html {
-  return html`<span class="badge badge-${v}">${VISIBILITY_LABEL[v]}</span>`;
+  return html`<span class="badge badge-${v}">${t(VISIBILITY_LABEL[v])}</span>`;
 }
 
 export function duration(minutes: number): string {
   if (minutes <= 0) return "—";
-  if (minutes < 60) return `${minutes} min`;
+  if (minutes < 60) return t("{n} min", { n: minutes });
   const h = Math.floor(minutes / 60);
   const m = minutes % 60;
-  return m ? `${h} hr ${m}` : `${h} hr`;
+  return m ? t("{h} hr {m}", { h, m }) : t("{h} hr", { h });
 }
 
 // Kitchen-friendly amounts: ⅓ cup, 1½ tbsp, 250 g.
@@ -87,24 +89,24 @@ export function recipeTile(r: Recipe, opts: { i?: number; live?: number; costCen
           : html`<img src="${sized(r.image_url, "medium")}" srcset="${sized(r.image_url, "medium")} 350w, ${sized(r.image_url, "large")} 500w, ${r.image_url} 700w" sizes="(max-width: 900px) 45vw, 240px" alt="" loading="lazy" decoding="async" />`
         : html`<div class="rx-photo-fallback" style="--fallback: ${fallback}"><span>${r.title.slice(0, 1)}</span></div>`}
       <div class="rx-badges">
-        ${opts.live ? html`<span class="rx-glass rx-glass-live"><span class="live-dot"></span>${opts.live} cooking</span>` : html`<span></span>`}
-        ${r.visibility !== "public" ? html`<span class="rx-glass">${VISIBILITY_LABEL[r.visibility]}</span>` : ""}
+        ${opts.live ? html`<span class="rx-glass rx-glass-live"><span class="live-dot"></span>${t("{n} cooking", { n: opts.live })}</span>` : html`<span></span>`}
+        ${r.visibility !== "public" ? html`<span class="rx-glass">${t(VISIBILITY_LABEL[r.visibility])}</span>` : ""}
       </div>
       ${opts.costCents !== undefined && opts.costCents > 0
-        ? html`<span class="rx-glass rx-price">${money(Math.round(opts.costCents))}<small>/serve</small></span>`
+        ? html`<span class="rx-glass rx-price">${money(Math.round(opts.costCents))}<small>${t("/serve")}</small></span>`
         : ""}
     </div>
     <div class="rx-info">
       <h3>${r.title}</h3>
       <div class="rx-facts">
-        ${opts.stars ? html`<span class="rx-stars" aria-label="${opts.stars.average} out of 5 stars from ${opts.stars.count} review${opts.stars.count === 1 ? "" : "s"}">${icon("star", 13)}${opts.stars.average.toFixed(1)}<small>(${opts.stars.count})</small></span>` : ""}
+        ${opts.stars ? html`<span class="rx-stars" aria-label="${tn(opts.stars.count, "{avg} out of 5 stars from {n} review", "{avg} out of 5 stars from {n} reviews", { avg: opts.stars.average })}">${icon("star", 13)}${opts.stars.average.toFixed(1)}<small>(${opts.stars.count})</small></span>` : ""}
         ${minutes ? html`<span>${icon("clock", 13)}${duration(minutes)}</span>` : ""}
-        ${r.cuisine ? html`<span>${r.cuisine}</span>` : html`<span>by ${r.author_name.split(" ")[0]}</span>`}
+        ${r.cuisine ? html`<span>${r.cuisine}</span>` : html`<span>${t("by {name}", { name: r.author_name.split(" ")[0] })}</span>`}
       </div>
       ${opts.kitchen
         ? html`<p class="rx-kitchen ${opts.kitchen.missing.length ? "rx-kitchen-short" : "rx-kitchen-all"}">${opts.kitchen.missing.length
-            ? html`Need ${opts.kitchen.missing.join(" and ")}`
-            : html`${icon("check", 12)} You have all ${opts.kitchen.need}`}</p>`
+            ? t("Need {items}", { items: andList(opts.kitchen.missing) })
+            : html`${icon("check", 12)} ${t("You have all {n}", { n: opts.kitchen.need })}`}</p>`
         : ""}
     </div>
   </a>`;
@@ -121,7 +123,7 @@ function skeletons(n: number): Html {
 
 function parseId(ctx: Ctx): number {
   const id = Number(ctx.params.id);
-  if (!Number.isInteger(id) || id < 1) throw new HttpError(404, "There's no recipe at this address.");
+  if (!Number.isInteger(id) || id < 1) throw new HttpError(404, t("There's no recipe at this address."));
   return id;
 }
 
@@ -130,14 +132,14 @@ function parseId(ctx: Ctx): number {
 export function visibleRecipe(ctx: Ctx): Recipe {
   const recipe = getRecipe(parseId(ctx));
   if (!recipe || !canSeeRecipe(ctx.user?.id ?? null, recipe)) {
-    throw new HttpError(404, "There's no recipe at this address.");
+    throw new HttpError(404, t("There's no recipe at this address."));
   }
   return recipe;
 }
 
 function ownRecipe(ctx: Ctx): Recipe {
   const recipe = visibleRecipe(ctx);
-  if (recipe.author_id !== ctx.user!.id) throw new HttpError(403, "Only the author can change this recipe.");
+  if (recipe.author_id !== ctx.user!.id) throw new HttpError(403, t("Only the author can change this recipe."));
   return recipe;
 }
 
@@ -247,16 +249,16 @@ function results(ctx: Ctx, s: BrowseState, from = 0): { recipes: Recipe[]; total
     // the one before, which on a "Show more" page is the last one already shown
     const prev = i > 0 ? (i > from ? missingFor.get(recipes[i - from - 1].id) : matches?.[i - 1]) : undefined;
     if (m && (i === 0 || (prev && prev.missing.length !== m.missing.length))) {
-      return html`<p class="rx-group" role="heading" aria-level="3">${m.missing.length === 0 ? "You have everything" : m.missing.length === 1 ? "Missing one ingredient" : "Missing two"}</p>${tile}`;
+      return html`<p class="rx-group" role="heading" aria-level="3">${t(m.missing.length === 0 ? "You have everything" : m.missing.length === 1 ? "Missing one ingredient" : "Missing two")}</p>${tile}`;
     }
     return tile;
   });
   const grid = recipes.length || from > 0
     ? html`${tiles}`
     : html`<div class="empty rx-empty">
-        <p class="empty-title">${s.have ? "Nothing you can cook yet" : s.mine && !s.q && !s.tag ? "Your cookbook is empty" : "Nothing matches that"}</p>
-        <p>${s.have ? "Add what's in your fridge and pantry, and the recipes you can make (or nearly make) show up here." : s.mine && !s.q && !s.tag ? "Write down something you cook often — it gets nutrition and cost worked out automatically." : s.rated ? "None of these have reviews yet. Cook one and be the first to rate it." : "Try an ingredient you have, like “eggs” or “chickpeas”, or clear a filter."}</p>
-        ${s.have ? html`<a class="button" href="/pantry">${icon("pantry", 16)} Open my kitchen</a>` : s.mine ? html`<a class="button" href="/recipes/new">${icon("plus", 16)} Write a recipe</a>` : html`<a class="button button-ghost" href="/recipes">Clear filters</a>`}
+        <p class="empty-title">${t(s.have ? "Nothing you can cook yet" : s.mine && !s.q && !s.tag ? "Your cookbook is empty" : "Nothing matches that")}</p>
+        <p>${t(s.have ? "Add what's in your fridge and pantry, and the recipes you can make (or nearly make) show up here." : s.mine && !s.q && !s.tag ? "Write down something you cook often — it gets nutrition and cost worked out automatically." : s.rated ? "None of these have reviews yet. Cook one and be the first to rate it." : "Try an ingredient you have, like “eggs” or “chickpeas”, or clear a filter.")}</p>
+        ${s.have ? html`<a class="button" href="/pantry">${icon("pantry", 16)} ${t("Open my kitchen")}</a>` : s.mine ? html`<a class="button" href="/recipes/new">${icon("plus", 16)} ${t("Write a recipe")}</a>` : html`<a class="button button-ghost" href="/recipes">${t("Clear filters")}</a>`}
       </div>`;
   return { recipes, total, grid };
 }
@@ -266,12 +268,12 @@ function results(ctx: Ctx, s: BrowseState, from = 0): { recipes: Recipe[]; total
 function showMore(s: BrowseState, shown: number, total: number): Html {
   if (shown >= total) return html``;
   const next = Math.min(PAGE, total - shown);
-  return html`<div class="rx-more"><a class="button button-soft" href="${hrefWith(s, { pages: s.pages + 1 })}#more-${shown}" data-show-more data-from="${shown}">Show ${next} more</a></div>`;
+  return html`<div class="rx-more"><a class="button button-soft" href="${hrefWith(s, { pages: s.pages + 1 })}#more-${shown}" data-show-more data-from="${shown}">${t("Show {n} more", { n: next })}</a></div>`;
 }
 
 // "392 recipes", and when the grid stops short, how many it shows
 export function resultCount(total: number, shown: number): string {
-  return `${total} recipe${total === 1 ? "" : "s"}${shown < total ? ` · showing ${shown}` : ""}`;
+  return `${tn(total, "{n} recipe", "{n} recipes")}${shown < total ? ` · ${t("showing {n}", { n: shown })}` : ""}`;
 }
 
 function browsePage(ctx: Ctx): Html {
@@ -282,37 +284,37 @@ function browsePage(ctx: Ctx): Html {
   const f = { ...s, pages: 1 };
   const topCuisines = cuisines().slice(0, 9);
   const heading = s.mine
-    ? "Your recipes"
+    ? t("Your recipes")
     : s.have
-      ? s.q ? `From your kitchen: “${s.q}”` : "From your kitchen"
+      ? s.q ? t("From your kitchen: “{q}”", { q: s.q }) : t("From your kitchen")
       : s.q
-      ? `Results for “${s.q}”`
+      ? t("Results for “{q}”", { q: s.q })
       : s.course
-        ? COURSES.find((c) => c.key === s.course)!.label
+        ? t(COURSES.find((c) => c.key === s.course)!.label)
         : s.cuisine
-          ? `${s.cuisine} recipes`
+          ? t("{cuisine} recipes", { cuisine: s.cuisine })
           : s.tag
-            ? QUICK_FILTERS.find((f) => f.key === s.tag)?.label ?? "Recipes"
+            ? t(QUICK_FILTERS.find((f) => f.key === s.tag)?.label ?? "Recipes")
             : s.rated
-              ? "Top rated"
+              ? t("Top rated")
               : s.video
-                ? "Recipes with a video"
-                : "Popular this week";
+                ? t("Recipes with a video")
+                : t("Popular this week");
   return html`
     <section class="rx-hero">
       <div class="rx-hero-row">
         <div>
-          <p class="eyebrow">Recipes</p>
-          <h1>What are we cooking?</h1>
-          <p class="lede">Search by dish or by what's already in the fridge. Every recipe works out its own nutrition and cost, and cooks one step at a time.</p>
+          <p class="eyebrow">${t("Recipes")}</p>
+          <h1>${t("What are we cooking?")}</h1>
+          <p class="lede">${t("Search by dish or by what's already in the fridge. Every recipe works out its own nutrition and cost, and cooks one step at a time.")}</p>
         </div>
         <div class="page-actions">
           ${ctx.user
-            ? html`<nav class="tabs" aria-label="Recipe lists">
-                <a class="tab" href="${hrefWith(s, { mine: false })}" ${!s.mine ? raw('aria-current="page"') : ""}>Discover</a>
-                <a class="tab" href="${hrefWith(s, { mine: true })}" ${s.mine ? raw('aria-current="page"') : ""}>My recipes</a>
+            ? html`<nav class="tabs" aria-label="${t("Recipe lists")}">
+                <a class="tab" href="${hrefWith(s, { mine: false })}" ${!s.mine ? raw('aria-current="page"') : ""}>${t("Discover")}</a>
+                <a class="tab" href="${hrefWith(s, { mine: true })}" ${s.mine ? raw('aria-current="page"') : ""}>${t("My recipes")}</a>
               </nav>
-              <a class="button" href="/recipes/new" aria-label="New recipe">${icon("plus", 16)} <span class="hide-sm">New recipe</span></a>`
+              <a class="button" href="/recipes/new" aria-label="${t("New recipe")}">${icon("plus", 16)} <span class="hide-sm">${t("New recipe")}</span></a>`
             : ""}
         </div>
       </div>
@@ -325,26 +327,26 @@ function browsePage(ctx: Ctx): Html {
         ${s.video ? html`<input type="hidden" name="video" value="1" />` : ""}
         ${s.rated ? html`<input type="hidden" name="rated" value="1" />` : ""}
         ${s.have ? html`<input type="hidden" name="have" value="1" />` : ""}
-        <input type="search" name="q" value="${s.q}" placeholder="Try “pad thai”, “eggs” or “chickpeas”" aria-label="Search recipes" autocomplete="off" />
-        <button class="button" type="submit">Search</button>
+        <input type="search" name="q" value="${s.q}" placeholder="${t("Try “pad thai”, “eggs” or “chickpeas”")}" aria-label="${t("Search recipes")}" autocomplete="off" />
+        <button class="button" type="submit">${t("Search")}</button>
       </form>
     </section>
 
-    <nav class="rx-filters" aria-label="Filter recipes">
-      ${chip("All", hrefWith(f, { course: "", tag: "", cuisine: "", video: false, rated: false, have: false }), !s.course && !s.tag && !s.cuisine && !s.video && !s.rated && !s.have)}
-      ${COURSES.map((c) => chip(c.label, hrefWith(f, { course: s.course === c.key ? "" : c.key }), s.course === c.key))}
+    <nav class="rx-filters" aria-label="${t("Filter recipes")}">
+      ${chip(t("All"), hrefWith(f, { course: "", tag: "", cuisine: "", video: false, rated: false, have: false }), !s.course && !s.tag && !s.cuisine && !s.video && !s.rated && !s.have)}
+      ${COURSES.map((c) => chip(t(c.label), hrefWith(f, { course: s.course === c.key ? "" : c.key }), s.course === c.key))}
       <span class="rx-divider" aria-hidden="true"></span>
-      ${ctx.user ? chip("From my kitchen", hrefWith(f, { have: !s.have, rated: false }), s.have, "var(--accent)") : ""}
-      ${chip("Top rated", hrefWith(f, { rated: !s.rated, have: false }), s.rated, "var(--butter-ink)")}
-      ${chip("Has video", hrefWith(f, { video: !s.video }), s.video, "var(--rose)")}
-      ${QUICK_FILTERS.map((q) => chip(q.label, hrefWith(f, { tag: s.tag === q.key ? "" : q.key }), s.tag === q.key, q.dot))}
+      ${ctx.user ? chip(t("From my kitchen"), hrefWith(f, { have: !s.have, rated: false }), s.have, "var(--accent)") : ""}
+      ${chip(t("Top rated"), hrefWith(f, { rated: !s.rated, have: false }), s.rated, "var(--butter-ink)")}
+      ${chip(t("Has video"), hrefWith(f, { video: !s.video }), s.video, "var(--rose)")}
+      ${QUICK_FILTERS.map((q) => chip(t(q.label), hrefWith(f, { tag: s.tag === q.key ? "" : q.key }), s.tag === q.key, q.dot))}
       <span class="rx-divider" aria-hidden="true"></span>
       ${topCuisines.map((c) => chip(c, hrefWith(f, { cuisine: s.cuisine === c ? "" : c }), s.cuisine === c))}
     </nav>
 
     <div class="rx-meta-row">
       <h2 data-results-heading>${heading}</h2>
-      <span class="muted" data-results-count>${resultCount(total, recipes.length)}${filtered ? "" : " · photos from TheMealDB"}</span>
+      <span class="muted" data-results-count>${resultCount(total, recipes.length)}${filtered ? "" : ` · ${t("photos from TheMealDB")}`}</span>
     </div>
     <div class="rx-grid" data-recipe-grid aria-live="polite">
       ${grid}
@@ -360,7 +362,7 @@ const MACRO_COLOURS = { protein: "#e9a07a", carbs: "#e8c76a", fat: "#a99be0" };
 // "checked Oct 2026", from the newest month in the price table
 function checkedLabel(): string {
   const label = monthLabel(priceReference().checked);
-  return label ? `, checked ${label}` : "";
+  return label ? t(", checked {date}", { date: label }) : "";
 }
 
 // What the recipe costs, in three numbers that are each named for what they
@@ -389,34 +391,30 @@ function purchaseCard(ctx: Ctx, recipe: Recipe, lines: RecipeIngredient[]): Html
   const plan = mine ?? empty;
   const packs = (p: typeof empty) => p.toBuy.filter((l) => l.pack).length;
   return html`<section class="rd-card rd-buy" aria-labelledby="buy-h">
-    <div class="rd-card-head"><h2 id="buy-h">What it costs</h2><span class="muted small">as written, ${recipe.servings} serves</span></div>
+    <div class="rd-card-head"><h2 id="buy-h">${t("What it costs")}</h2><span class="muted small">${tn(recipe.servings, "as written, {n} serve", "as written, {n} serves")}</span></div>
     <dl class="cost-split">
-      <div><dt>Cost to make</dt><dd class="mono" data-scale-cost data-base="${Math.round(used.costCents)}">${money(Math.round(used.costCents))}</dd>
-        <small>the value of what goes in the dish</small></div>
-      <div><dt>At the checkout</dt><dd class="mono" data-recipe-purchase="${empty.purchaseCents}">${money(empty.purchaseCents)}</dd>
-        <small>${packs(empty)} whole pack${packs(empty) === 1 ? "" : "s"}, from an empty kitchen</small></div>
+      <div><dt>${t("Cost to make")}</dt><dd class="mono" data-scale-cost data-base="${Math.round(used.costCents)}">${money(Math.round(used.costCents))}</dd>
+        <small>${t("the value of what goes in the dish")}</small></div>
+      <div><dt>${t("At the checkout")}</dt><dd class="mono" data-recipe-purchase="${empty.purchaseCents}">${money(empty.purchaseCents)}</dd>
+        <small>${tn(packs(empty), "{n} whole pack, from an empty kitchen", "{n} whole packs, from an empty kitchen")}</small></div>
       ${mine
-        ? html`<div class="cost-mine"><dt>After your pantry</dt><dd class="mono" data-recipe-purchase-mine="${mine.purchaseCents}">${money(mine.purchaseCents)}</dd>
-            <small>${mine.covered.length ? `you have ${mine.covered.length} of ${mine.covered.length + mine.toBuy.length}` : "you have none of it yet"}</small></div>`
+        ? html`<div class="cost-mine"><dt>${t("After your pantry")}</dt><dd class="mono" data-recipe-purchase-mine="${mine.purchaseCents}">${money(mine.purchaseCents)}</dd>
+            <small>${mine.covered.length ? t("you have {n} of {total}", { n: mine.covered.length, total: mine.covered.length + mine.toBuy.length }) : t("you have none of it yet")}</small></div>`
         : ""}
     </dl>
-    <p class="estimate-note">Cost to make counts only what the recipe uses; at the checkout you buy whole packs, so it's more, and the rest stays in your kitchen.${viewer ? "" : html` <a href="/register">Join free</a> to see it after what you already have.`}</p>
+    <p class="estimate-note">${t("Cost to make counts only what the recipe uses; at the checkout you buy whole packs, so it's more, and the rest stays in your kitchen.")}${viewer ? "" : html` ${th("{join} to see it after what you already have.", { join: html`<a href="/register">${t("Join free")}</a>` })}`}</p>
     ${plan.toBuy.length
-      ? html`<details class="rd-buy-list"><summary>What you'd buy${mine ? "" : ""}</summary><ul class="shop-list">${plan.toBuy.map(
-          (l) => html`<li class="shop-line"><span class="mono qty">${l.toBuy === null ? "some" : qty(l.toBuy, l.unit === "each" ? "" : l.unit)}</span><span class="grow"><span class="item-name">${l.name}</span>${packLine(l.pack, l.consumptionCents, l.sharesPack, l.unitClash)}</span><span class="hh-line-price mono">${l.pack ? money(l.pack.costCents) : l.sharesPack ? "incl." : "—"}</span></li>`,
+      ? html`<details class="rd-buy-list"><summary>${t("What you'd buy")}</summary><ul class="shop-list">${plan.toBuy.map(
+          (l) => html`<li class="shop-line"><span class="mono qty">${l.toBuy === null ? t("some") : qty(l.toBuy, l.unit === "each" ? "" : l.unit)}</span><span class="grow"><span class="item-name">${l.name}</span>${packLine(l.pack, l.consumptionCents, l.sharesPack, l.unitClash)}</span><span class="hh-line-price mono">${l.pack ? money(l.pack.costCents) : l.sharesPack ? t("incl.") : "—"}</span></li>`,
         )}</ul></details>`
-      : html`<p class="estimate-note">Your pantry covers everything.</p>`}
+      : html`<p class="estimate-note">${t("Your pantry covers everything.")}</p>`}
     ${notes.size
-      ? html`<details class="rd-price-notes"><summary>${notes.size} priced as something close</summary><ul>${[...notes].map(([name, note]) => html`<li><strong>${name}</strong>: ${note}</li>`)}</ul></details>`
+      ? html`<details class="rd-price-notes"><summary>${t("{n} priced as something close", { n: notes.size })}</summary><ul>${[...notes].map(([name, note]) => html`<li><strong>${name}</strong>: ${note}</li>`)}</ul></details>`
       : ""}
     ${unpriced.length
-      ? html`<p class="rd-unpriced" role="note">${icon("alert", 14)} No price yet for ${listNames(unpriced)}, so ${unpriced.length === 1 ? "it isn't" : "they aren't"} in these totals.</p>`
+      ? html`<p class="rd-unpriced" role="note">${icon("alert", 14)} ${tn(unpriced.length, "No price yet for {names}, so it isn't in these totals.", "No price yet for {names}, so they aren't in these totals.", { names: andList(unpriced) })}</p>`
       : ""}
   </section>`;
-}
-
-function listNames(names: string[]): string {
-  return names.length <= 1 ? (names[0] ?? "") : `${names.slice(0, -1).join(", ")} and ${names.at(-1)}`;
 }
 
 function nutritionCard(recipe: Recipe, lines: RecipeIngredient[], servings: number): Html {
@@ -444,12 +442,12 @@ function nutritionCard(recipe: Recipe, lines: RecipeIngredient[], servings: numb
     return arc;
   });
   const macro = (label: string, grams: number, key: keyof typeof MACRO_COLOURS, daily: number) =>
-    html`<li class="macro" style="--c: ${MACRO_COLOURS[key]}"><i></i><span>${label}</span><b>${Math.round(grams)} g</b>
+    html`<li class="macro" style="--c: ${MACRO_COLOURS[key]}"><i></i><span>${t(label)}</span><b>${Math.round(grams)} g</b>
       <span class="meter"><span style="--p: ${Math.min(100, Math.round((grams / daily) * 100))}%"></span></span></li>`;
   return html`<section class="rd-card" aria-labelledby="nutrition-h">
-    <div class="rd-card-head"><h2 id="nutrition-h">Per serve</h2><span class="muted small">estimated</span></div>
+    <div class="rd-card-head"><h2 id="nutrition-h">${t("Per serve")}</h2><span class="muted small">${t("estimated")}</span></div>
     <div class="nutri">
-      <div class="nutri-ring" role="img" aria-label="${kcal} calories per serve">
+      <div class="nutri-ring" role="img" aria-label="${t("{n} calories per serve", { n: kcal })}">
         ${raw(`<svg viewBox="0 0 116 116"><circle class="track" cx="58" cy="58" r="46"/>${arcs.join("")}</svg>`)}
         <div class="nutri-center"><strong data-scale-kcal>${kcal}</strong><span>kcal</span></div>
       </div>
@@ -460,10 +458,10 @@ function nutritionCard(recipe: Recipe, lines: RecipeIngredient[], servings: numb
       </ul>
     </div>
     <div class="cost-row">
-      <div><small>Cost per serve</small><strong>${money(Math.round(made.cents / Math.max(1, servings)))}${made.unpriced.length ? "+" : ""}</strong></div>
-      <div style="text-align: right"><small>Cost to make</small><strong>${money(made.cents)}${made.unpriced.length ? "+" : ""}</strong></div>
+      <div><small>${t("Cost per serve")}</small><strong>${money(Math.round(made.cents / Math.max(1, servings)))}${made.unpriced.length ? "+" : ""}</strong></div>
+      <div style="text-align: right"><small>${t("Cost to make")}</small><strong>${money(made.cents)}${made.unpriced.length ? "+" : ""}</strong></div>
     </div>
-    <p class="estimate-note">Nutrition from ${total.counted} of ${total.total} ingredients; cost from the Woolworths and ALDI prices${checkedLabel()} (see “What it costs”). Seasonings to taste aren't counted.</p>
+    <p class="estimate-note">${t("Nutrition from {n} of {total} ingredients; cost from the Woolworths and ALDI prices{checked} (see “What it costs”). Seasonings to taste aren't counted.", { n: total.counted, total: total.total, checked: checkedLabel() })}</p>
   </section>`;
 }
 
@@ -471,26 +469,26 @@ function ingredientsCard(ctx: Ctx, recipe: Recipe, lines: RecipeIngredient[]): H
   const match = ctx.user ? pantryMatch(ctx.user.id, lines) : null;
   return html`<section class="rd-card" aria-labelledby="ingredients-h">
     <div class="rd-card-head">
-      <h2 id="ingredients-h">Ingredients</h2>
+      <h2 id="ingredients-h">${t("Ingredients")}</h2>
       <div class="servings" data-servings data-base="${recipe.servings}">
-        <button type="button" data-servings-step="-1" aria-label="Fewer servings">−</button>
-        <output aria-live="polite"><span data-servings-value>${recipe.servings}</span> serves</output>
-        <button type="button" data-servings-step="1" aria-label="More servings">+</button>
+        <button type="button" data-servings-step="-1" aria-label="${t("Fewer servings")}">−</button>
+        <output aria-live="polite">${th("{n} serves", { n: html`<span data-servings-value>${recipe.servings}</span>` })}</output>
+        <button type="button" data-servings-step="1" aria-label="${t("More servings")}">+</button>
       </div>
     </div>
     <ul class="ing-list">
       ${lines.map((ing) => {
         const have = match?.have.has(ing.ingredient_id);
         return html`<li>
-          <label class="ing-check"><input type="checkbox" aria-label="Got ${ing.name}" />${icon("check", 12)}</label>
+          <label class="ing-check"><input type="checkbox" aria-label="${t("Got {name}", { name: ing.name })}" />${icon("check", 12)}</label>
           <span class="ing-amount" data-qty="${ing.quantity ?? ""}" data-unit="${ing.unit}">${amount(ing.quantity, ing.unit)}</span>
-          <span class="ing-name">${ing.name}${ing.note || ing.optional ? html`<small>${[ing.note, ing.optional && !/serve|garnish/.test(ing.note) ? "optional" : ""].filter(Boolean).join(" · ")}</small>` : ""}</span>
-          ${match && !ing.optional ? html`<span class="ing-flag ${have ? "ing-flag-have" : "ing-flag-need"}">${have ? "Have" : "Need"}</span>` : ""}
+          <span class="ing-name">${ing.name}${ing.note || ing.optional ? html`<small>${[ing.note, ing.optional && !/serve|garnish/.test(ing.note) ? t("optional") : ""].filter(Boolean).join(" · ")}</small>` : ""}</span>
+          ${match && !ing.optional ? html`<span class="ing-flag ${have ? "ing-flag-have" : "ing-flag-need"}">${have ? t("Have") : t("Need")}</span>` : ""}
         </li>`;
       })}
     </ul>
     ${match
-      ? html`<p class="estimate-note">${match.missing === 0 ? "You have everything for this one." : `You're missing ${match.missing} ingredient${match.missing === 1 ? "" : "s"}.`}</p>`
+      ? html`<p class="estimate-note">${match.missing === 0 ? t("You have everything for this one.") : tn(match.missing, "You're missing {n} ingredient.", "You're missing {n} ingredients.")}</p>`
       : ""}
   </section>`;
 }
@@ -498,23 +496,23 @@ function ingredientsCard(ctx: Ctx, recipe: Recipe, lines: RecipeIngredient[]): H
 function planCard(ctx: Ctx, recipe: Recipe): Html {
   if (!ctx.user) {
     return html`<section class="rd-card">
-      <h2 style="font-size: 18px; margin-bottom: 8px">Save it for later</h2>
-      <p class="muted small" style="margin-bottom: 16px">With a free account you can add this to your meal calendar, see what's already in your pantry and cook live with friends.</p>
-      <a class="button button-block" href="/register">Join free</a>
+      <h2 style="font-size: 18px; margin-bottom: 8px">${t("Save it for later")}</h2>
+      <p class="muted small" style="margin-bottom: 16px">${t("With a free account you can add this to your meal calendar, see what's already in your pantry and cook live with friends.")}</p>
+      <a class="button button-block" href="/register">${t("Join free")}</a>
     </section>`;
   }
   return html`<section class="rd-card">
-    <h2 style="font-size: 18px; margin-bottom: 14px">Add to my calendar</h2>
+    <h2 style="font-size: 18px; margin-bottom: 14px">${t("Add to my calendar")}</h2>
     <form method="post" action="/calendar" class="plan-form">
       <input type="hidden" name="recipe_id" value="${recipe.id}" />
       <input type="hidden" name="return_to" value="/recipes/${recipe.id}" />
       <div class="field-pair">
-        <label class="field"><span>Date</span><input type="date" name="date" required value="${today()}" /></label>
-        <label class="field"><span>Meal</span>
-          <select name="meal"><option value="dinner">Dinner</option><option value="lunch">Lunch</option><option value="breakfast">Breakfast</option></select></label>
+        <label class="field"><span>${t("Date")}</span><input type="date" name="date" required value="${today()}" /></label>
+        <label class="field"><span>${t("Meal")}</span>
+          <select name="meal"><option value="dinner">${t("Dinner")}</option><option value="lunch">${t("Lunch")}</option><option value="breakfast">${t("Breakfast")}</option></select></label>
       </div>
-      <label class="check-inline"><input type="checkbox" name="shared" value="1" checked /> <span>Share with friends</span></label>
-      <button class="button button-soft button-block" type="submit">${icon("calendar", 16)} Add to calendar</button>
+      <label class="check-inline"><input type="checkbox" name="shared" value="1" checked /> <span>${t("Share with friends")}</span></label>
+      <button class="button button-soft button-block" type="submit">${icon("calendar", 16)} ${t("Add to calendar")}</button>
     </form>
   </section>`;
 }
@@ -548,20 +546,20 @@ function askCard(ctx: Ctx, recipe: Recipe, lines: RecipeIngredient[]): Html {
   const answer = q ? answerFor(recipe, lines, q, ctx.user?.id ?? null) : null;
   return html`<section class="rd-card ask" id="ask" aria-labelledby="ask-h" data-ask="${recipe.id}">
     <div class="rd-card-head">
-      <h2 id="ask-h"><span class="ask-spark" aria-hidden="true">${icon("spark", 16)}</span>Ask a question</h2>
+      <h2 id="ask-h"><span class="ask-spark" aria-hidden="true">${icon("spark", 16)}</span>${t("Ask a question")}</h2>
     </div>
     <form class="ask-form" method="get" action="/recipes/${recipe.id}#ask" data-ask-form>
-      <label class="sr-only" for="ask-q">Your question</label>
-      <input id="ask-q" name="ask" maxlength="200" autocomplete="off" placeholder="Swap an ingredient, feed 6…" value="${q}" />
-      <button class="button button-small" type="submit">Ask</button>
+      <label class="sr-only" for="ask-q">${t("Your question")}</label>
+      <input id="ask-q" name="ask" maxlength="200" autocomplete="off" placeholder="${t("Swap an ingredient, feed 6…")}" value="${q}" />
+      <button class="button button-small" type="submit">${t("Ask")}</button>
     </form>
-    <div class="ask-chips">${suggestions(lines).map((s) => html`<button type="button" class="rx-chip" data-ask-chip>${s}</button>`)}</div>
+    <div class="ask-chips">${suggestions(lines).map((s) => html`<button type="button" class="rx-chip" data-ask-chip="${s.q}">${s.label}</button>`)}</div>
     <div class="ask-answer" aria-live="polite" data-ask-answer ${answer ? "" : raw("hidden")}>${answer ? answerBody(answer) : ""}</div>
     <div class="ask-ai" data-ask-ai hidden>
       <button type="button" class="ask-ai-toggle" data-ask-ai-toggle aria-pressed="false">
-        <span class="ask-ai-dot"></span><span data-ask-ai-label>Say it in plain words with the on-device assistant</span>
+        <span class="ask-ai-dot"></span><span data-ask-ai-label>${t("Say it in plain words with the on-device assistant")}</span>
       </button>
-      <p class="ask-ai-note muted small">A small free model (Qwen2.5 0.5B, about 1 GB, downloaded once and cached) runs on your device's GPU. Nothing you type leaves this device for it, and it only rewords the checked answer above.</p>
+      <p class="ask-ai-note muted small">${t("A small free model (Qwen2.5 0.5B, about 1 GB, downloaded once and cached) runs on your device's GPU. Nothing you type leaves this device for it, and it only rewords the checked answer above.")}</p>
     </div>
   </section>`;
 }
@@ -575,19 +573,19 @@ function videoCard(recipe: Recipe): Html {
   if (id && hasShownVideo(recipe)) {
     const watch = `https://www.youtube.com/watch?v=${id}`;
     return html`<section class="rd-card rd-video" aria-labelledby="video-h">
-      <div class="rd-card-head"><h2 id="video-h">Watch it made</h2></div>
+      <div class="rd-card-head"><h2 id="video-h">${t("Watch it made")}</h2></div>
       <div class="rd-video-frame">
-        <iframe src="https://www.youtube-nocookie.com/embed/${id}" title="${recipe.video_title ?? `Video for ${recipe.title}`}" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>
+        <iframe src="https://www.youtube-nocookie.com/embed/${id}" title="${recipe.video_title ?? t("Video for {title}", { title: recipe.title })}" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>
       </div>
       <p class="estimate-note">${recipe.video_status === "verified"
-        ? html`Video${recipe.video_channel ? html` by ${recipe.video_channel}` : ""}. The ingredients and steps above were transcribed from it (its transcript or the creator's written recipe) and checked a second time against that source · ${recipe.video_checked ?? ""}. Amounts are converted to metric.`
-        : html`Added by the recipe's author — not checked against the recipe.`}
-        <a href="${watch}" rel="noopener noreferrer" target="_blank">Can't see it? Open on YouTube</a></p>
+        ? html`${recipe.video_channel ? t("Video by {channel}.", { channel: recipe.video_channel }) : t("Video.")} ${t("The ingredients and steps above were transcribed from it (its transcript or the creator's written recipe) and checked a second time against that source · {date}. Amounts are converted to metric.", { date: recipe.video_checked ?? "" })}`
+        : t("Added by the recipe's author — not checked against the recipe.")}
+        <a href="${watch}" rel="noopener noreferrer" target="_blank">${t("Can't see it? Open on YouTube")}</a></p>
     </section>`;
   }
   return html`<section class="rd-card rd-video" aria-labelledby="video-h">
-    <div class="rd-card-head"><h2 id="video-h">Watch it made</h2></div>
-    <p class="muted small">No matching video available for this recipe.</p>
+    <div class="rd-card-head"><h2 id="video-h">${t("Watch it made")}</h2></div>
+    <p class="muted small">${t("No matching video available for this recipe.")}</p>
   </section>`;
 }
 
@@ -642,37 +640,37 @@ function recipeDetail(ctx: Ctx, recipe: Recipe, composer?: ComposerState): Html 
   const [fallback] = tone(recipe.title);
 
   return html`<article class="rd">
-    <nav class="crumbs" aria-label="Breadcrumb"><a href="/recipes">Recipes</a><span>/</span>${recipe.cuisine ? html`<a href="/recipes?cuisine=${encodeURIComponent(recipe.cuisine)}">${recipe.cuisine}</a><span>/</span>` : ""}<span>${recipe.title}</span></nav>
+    <nav class="crumbs" aria-label="${t("Breadcrumb")}"><a href="/recipes">${t("Recipes")}</a><span>/</span>${recipe.cuisine ? html`<a href="/recipes?cuisine=${encodeURIComponent(recipe.cuisine)}">${recipe.cuisine}</a><span>/</span>` : ""}<span>${recipe.title}</span></nav>
 
     <header class="rd-top">
       <div class="rd-photo">
         ${recipe.image_url
           ? html`<img src="${recipe.image_url}" alt="${recipe.title}" />`
           : html`<div class="rx-photo-fallback" style="--fallback: ${fallback}"><span>${recipe.title.slice(0, 1)}</span></div>`}
-        ${live ? html`<div class="rx-badges"><span class="rx-glass rx-glass-live"><span class="live-dot"></span>${live} cooking now</span><span></span></div>` : ""}
+        ${live ? html`<div class="rx-badges"><span class="rx-glass rx-glass-live"><span class="live-dot"></span>${t("{n} cooking now", { n: live })}</span><span></span></div>` : ""}
       </div>
       <div class="rd-head">
         <div class="tags">
           ${recipe.visibility !== "public" ? visibilityBadge(recipe.visibility) : ""}
           ${recipe.cuisine ? html`<span class="tag" style="background: var(--peach); color: var(--peach-ink)">${recipe.cuisine}</span>` : ""}
-          ${recipe.dietary_tags.map((t) => html`<span class="tag">${t}</span>`)}
+          ${recipe.dietary_tags.map((tag) => html`<span class="tag">${t(tag)}</span>`)}
         </div>
         <h1>${recipe.title}</h1>
         ${recipe.description ? html`<p class="lede">${recipe.description}</p>` : ""}
-        <p class="rd-byline">${avatar(recipe.author_name, "sm", recipe.author_avatar)} <span>Recipe by <a href="/u/${recipe.author_username}">${recipe.author_name}</a></span>${rv.badge}</p>
+        <p class="rd-byline">${avatar(recipe.author_name, "sm", recipe.author_avatar)} <span>${th("Recipe by {name}", { name: html`<a href="/u/${recipe.author_username}">${recipe.author_name}</a>` })}</span>${rv.badge}</p>
         <dl class="rd-times">
-          <div class="rd-time"><dt>${icon("leaf", 14)} Prep</dt><dd>${recipe.prep_minutes ? html`${recipe.prep_minutes}<small>min</small>` : "—"}</dd></div>
-          <div class="rd-time"><dt>${icon("flame", 14)} Cook</dt><dd>${cook ? (cook >= 60 ? duration(cook) : html`${cook}<small>min</small>`) : "—"}</dd></div>
-          <div class="rd-time"><dt>${icon("users", 14)} Serves</dt><dd>${recipe.servings}</dd></div>
-          <div class="rd-time"><dt>${icon("check", 14)} Steps</dt><dd>${steps.length}</dd></div>
+          <div class="rd-time"><dt>${icon("leaf", 14)} ${t("Prep")}</dt><dd>${recipe.prep_minutes ? html`${recipe.prep_minutes}<small>${t("min")}</small>` : "—"}</dd></div>
+          <div class="rd-time"><dt>${icon("flame", 14)} ${t("Cook")}</dt><dd>${cook ? (cook >= 60 ? duration(cook) : html`${cook}<small>${t("min")}</small>`) : "—"}</dd></div>
+          <div class="rd-time"><dt>${icon("users", 14)} ${t("Serves")}</dt><dd>${recipe.servings}</dd></div>
+          <div class="rd-time"><dt>${icon("check", 14)} ${t("Steps")}</dt><dd>${steps.length}</dd></div>
         </dl>
         <div class="rd-actions">
-          <a class="button button-large button-accent" href="/recipes/${recipe.id}/cook">${icon("cook", 18)} Start cooking</a>
-          <button class="button button-large button-ghost" type="button" data-print>${icon("print", 18)} Print</button>
+          <a class="button button-large button-accent" href="/recipes/${recipe.id}/cook">${icon("cook", 18)} ${t("Start cooking")}</a>
+          <button class="button button-large button-ghost" type="button" data-print>${icon("print", 18)} ${t("Print")}</button>
           ${mine
-            ? html`<a class="button button-large button-ghost" href="/recipes/${recipe.id}/edit">Edit</a>
-                <form method="post" action="/recipes/${recipe.id}/delete" data-confirm="Delete this recipe? Planned meals using it are removed too.">
-                  <button class="button button-large button-danger" type="submit">Delete</button>
+            ? html`<a class="button button-large button-ghost" href="/recipes/${recipe.id}/edit">${t("Edit")}</a>
+                <form method="post" action="/recipes/${recipe.id}/delete" data-confirm="${t("Delete this recipe? Planned meals using it are removed too.")}">
+                  <button class="button button-large button-danger" type="submit">${t("Delete")}</button>
                 </form>`
             : ""}
         </div>
@@ -691,14 +689,14 @@ function recipeDetail(ctx: Ctx, recipe: Recipe, composer?: ComposerState): Html 
 
       <div class="rd-main">
         <section class="rd-card" aria-labelledby="method-h">
-          <div class="rd-card-head"><h2 id="method-h">Method</h2><span class="muted small">${steps.length} steps${cook ? ` · ${duration(cook)} cooking` : ""}</span></div>
+          <div class="rd-card-head"><h2 id="method-h">${t("Method")}</h2><span class="muted small">${tn(steps.length, "{n} step", "{n} steps")}${cook ? ` · ${t("{time} cooking", { time: duration(cook) })}` : ""}</span></div>
           <ol class="method">
             ${steps.map(
               (s) => html`<li>
                 <span class="method-num">${s.step_number}</span>
                 <div>
                   <p>${s.text}</p>
-                  ${s.est_minutes ? html`<button class="timer-chip" type="button" data-timer="${s.est_minutes * 60}">${icon("timer", 14)} <span>${duration(s.est_minutes)} timer</span></button>` : ""}
+                  ${s.est_minutes ? html`<button class="timer-chip" type="button" data-timer="${s.est_minutes * 60}">${icon("timer", 14)} <span>${t("{time} timer", { time: duration(s.est_minutes) })}</span></button>` : ""}
                 </div>
               </li>`,
             )}
@@ -710,10 +708,10 @@ function recipeDetail(ctx: Ctx, recipe: Recipe, composer?: ComposerState): Html 
         <section class="cook-cta">
           <div class="cook-cta-art">${icon("cook", 32)}</div>
           <div>
-            <h3>Phone on the bench?</h3>
-            <p>Cook mode shows one big step at a time, with timers. ${recipe.visibility === "public" ? "Go live and cooks around the world can follow along and answer questions." : ""}</p>
+            <h3>${t("Phone on the bench?")}</h3>
+            <p>${t("Cook mode shows one big step at a time, with timers.")} ${recipe.visibility === "public" ? t("Go live and cooks around the world can follow along and answer questions.") : ""}</p>
           </div>
-          <a class="button button-large" href="/recipes/${recipe.id}/cook">Cook step by step ${icon("arrow", 18)}</a>
+          <a class="button button-large" href="/recipes/${recipe.id}/cook">${t("Cook step by step")} ${icon("arrow", 18)}</a>
         </section>
 
         ${askCard(ctx, recipe, lines)}
@@ -724,7 +722,7 @@ function recipeDetail(ctx: Ctx, recipe: Recipe, composer?: ComposerState): Html 
 
     ${more.length + fill.length
       ? html`<section class="more-like">
-          <div class="rx-meta-row"><h2>You might also like</h2><a class="muted small" href="/recipes${recipe.course ? `?course=${recipe.course}` : ""}">See all →</a></div>
+          <div class="rx-meta-row"><h2>${t("You might also like")}</h2><a class="muted small" href="/recipes${recipe.course ? `?course=${recipe.course}` : ""}">${t("See all →")}</a></div>
           <div class="rx-grid more-like-grid">${[...more, ...fill].slice(0, 5).map((r, i) => recipeTile(r, { i }))}</div>
         </section>`
       : ""}
@@ -735,11 +733,11 @@ function recipeDetail(ctx: Ctx, recipe: Recipe, composer?: ComposerState): Html 
 
 function ingredientRow(i: number, ing?: RecipeInput["ingredients"][number]): Html {
   return html`<div class="row-editor" data-row>
-    <input name="ing_qty" inputmode="decimal" placeholder="Qty" aria-label="Quantity" value="${ing?.quantity ?? ""}" class="w-qty" />
-    <input name="ing_unit" placeholder="Unit" aria-label="Unit" value="${ing?.unit ?? ""}" class="w-unit" />
-    <input name="ing_name" placeholder="Ingredient" aria-label="Ingredient" list="ingredient-catalog" value="${ing?.name ?? ""}" class="grow" />
-    <label class="check-inline" title="Optional ingredient"><input type="checkbox" name="ing_optional" value="${i}" ${ing?.optional ? raw("checked") : ""} /> <span>Optional</span></label>
-    <button type="button" class="icon-button" data-remove-row aria-label="Remove ingredient">×</button>
+    <input name="ing_qty" inputmode="decimal" placeholder="${t("Qty")}" aria-label="${t("Quantity")}" value="${ing?.quantity ?? ""}" class="w-qty" />
+    <input name="ing_unit" placeholder="${t("Unit")}" aria-label="${t("Unit")}" value="${ing?.unit ?? ""}" class="w-unit" />
+    <input name="ing_name" placeholder="${t("Ingredient")}" aria-label="${t("Ingredient")}" list="ingredient-catalog" value="${ing?.name ?? ""}" class="grow" />
+    <label class="check-inline" title="${t("Optional ingredient")}"><input type="checkbox" name="ing_optional" value="${i}" ${ing?.optional ? raw("checked") : ""} /> <span>${t("Optional")}</span></label>
+    <button type="button" class="icon-button" data-remove-row aria-label="${t("Remove ingredient")}">×</button>
     <p class="price-hint" data-price-hint aria-live="polite" hidden></p>
   </div>`;
 }
@@ -747,9 +745,9 @@ function ingredientRow(i: number, ing?: RecipeInput["ingredients"][number]): Htm
 function stepRow(step?: RecipeInput["steps"][number]): Html {
   return html`<div class="row-editor step-editor" data-row>
     <span class="step-num" aria-hidden="true"></span>
-    <textarea name="step_text" rows="2" placeholder="Describe this step" aria-label="Step" class="grow">${step?.text ?? ""}</textarea>
-    <input name="step_minutes" inputmode="numeric" placeholder="Min" aria-label="Minutes" value="${step?.est_minutes ?? ""}" class="w-qty" />
-    <button type="button" class="icon-button" data-remove-row aria-label="Remove step">×</button>
+    <textarea name="step_text" rows="2" placeholder="${t("Describe this step")}" aria-label="${t("Step")}" class="grow">${step?.text ?? ""}</textarea>
+    <input name="step_minutes" inputmode="numeric" placeholder="${t("Min")}" aria-label="${t("Minutes")}" value="${step?.est_minutes ?? ""}" class="w-qty" />
+    <button type="button" class="icon-button" data-remove-row aria-label="${t("Remove step")}">×</button>
   </div>`;
 }
 
@@ -773,14 +771,14 @@ async function readRecipeForm(ctx: Ctx, existing?: Recipe): Promise<{ input: Rec
     const check = checkImage(file.bytes);
     if (check.ok) parsed.input.image_url = saveImage(user.id, file.bytes, check);
     else {
-      parsed.problems.push(check.problem);
+      parsed.problems.push(t(check.problem));
       logActivity({ actor: user, action: "recipe.image_rejected", outcome: "denied", subject: parsed.input.title, detail: { reason: check.problem, bytes: file.bytes.length } });
     }
   } else if (ref && ownedImage(user.id, ref)) parsed.input.image_url = ref;
   else if (ref && existing && ref === existing.image_url) parsed.input.image_url = ref;
-  else if (ref) parsed.problems.push("That photo couldn't be found. Choose it again.");
+  else if (ref) parsed.problems.push(t("That photo couldn't be found. Choose it again."));
   if (!parsed.input.image_url && !existing?.image_url) {
-    if (!parsed.problems.some((p) => /photo/i.test(p))) parsed.problems.push("Add a photo of the dish. Every recipe needs one.");
+    if (!parsed.problems.some((p) => /photo/i.test(p))) parsed.problems.push(t("Add a photo of the dish. Every recipe needs one."));
   }
   return parsed;
 }
@@ -794,56 +792,56 @@ function recipeForm(ctx: Ctx, input: Partial<RecipeInput>, problems: string[], r
   const editing = recipeId !== undefined;
   return htmlReply(
     page(ctx, {
-      title: editing ? "Edit recipe" : "New recipe",
+      title: editing ? t("Edit recipe") : t("New recipe"),
       active: "recipes",
       body: html`
-        <nav class="crumbs" aria-label="Breadcrumb"><a href="/recipes">Recipes</a><span>/</span><span>${editing ? "Edit" : "New recipe"}</span></nav>
-        ${pageHeader(editing ? "Edit recipe" : "Write a recipe", "Use the ingredient names you stock — calories, macros and cost are worked out automatically, and the recipe links to your pantry.")}
+        <nav class="crumbs" aria-label="${t("Breadcrumb")}"><a href="/recipes">${t("Recipes")}</a><span>/</span><span>${editing ? t("Edit") : t("New recipe")}</span></nav>
+        ${pageHeader(editing ? t("Edit recipe") : t("Write a recipe"), t("Use the ingredient names you stock — calories, macros and cost are worked out automatically, and the recipe links to your pantry."))}
         ${errors(problems)}
         <form method="post" action="${editing ? `/recipes/${recipeId}/edit` : "/recipes/new"}" class="form-grid" enctype="multipart/form-data" data-recipe-form>
           <div class="form-col">
           <section class="panel stack rx-photo-field" data-photo-field>
-            <h2 class="panel-title">Photo</h2>
+            <h2 class="panel-title">${t("Photo")}</h2>
             <div class="rx-photo-pick">
               <div class="rx-photo-preview" data-photo-preview>
                 ${input.image_url
-                  ? html`<img src="${input.image_url}" alt="The recipe's photo" />`
-                  : html`<span class="rx-photo-empty">${icon("plus", 22)}<span>No photo yet</span></span>`}
+                  ? html`<img src="${input.image_url}" alt="${t("The recipe's photo")}" />`
+                  : html`<span class="rx-photo-empty">${icon("plus", 22)}<span>${t("No photo yet")}</span></span>`}
               </div>
               <div class="stack">
-                <label class="field"><span>${input.image_url ? "Replace the photo" : "Photo of the dish"} <small class="muted">(required)</small></span>
+                <label class="field"><span>${input.image_url ? t("Replace the photo") : t("Photo of the dish")} <small class="muted">${t("(required)")}</small></span>
                   <input type="file" name="image" accept="image/jpeg,image/png,image/webp" data-photo-input ${input.image_url ? "" : raw("required")} aria-describedby="photo-help" /></label>
                 <input type="hidden" name="image_ref" value="${input.image_url ?? ""}" data-photo-ref />
-                <p class="muted small" id="photo-help" data-photo-status aria-live="polite">JPEG, PNG or WebP, up to 5 MB, at least 200 × 150 pixels. Use your own photo of the dish.</p>
+                <p class="muted small" id="photo-help" data-photo-status aria-live="polite">${t("JPEG, PNG or WebP, up to 5 MB, at least 200 × 150 pixels. Use your own photo of the dish.")}</p>
               </div>
             </div>
           </section>
           <section class="panel stack">
-            <h2 class="panel-title">Basics</h2>
-            <label class="field"><span>Title</span>
-              <input name="title" required maxlength="120" value="${input.title ?? ""}" placeholder="e.g. Nonna's Sunday ragu" /></label>
-            <label class="field"><span>Description</span>
-              <textarea name="description" rows="3" maxlength="2000" placeholder="What makes it good, in a sentence or two">${input.description ?? ""}</textarea></label>
+            <h2 class="panel-title">${t("Basics")}</h2>
+            <label class="field"><span>${t("Title")}</span>
+              <input name="title" required maxlength="120" value="${input.title ?? ""}" placeholder="${t("e.g. Nonna's Sunday ragu")}" /></label>
+            <label class="field"><span>${t("Description")}</span>
+              <textarea name="description" rows="3" maxlength="2000" placeholder="${t("What makes it good, in a sentence or two")}">${input.description ?? ""}</textarea></label>
             <div class="field-row">
-              <label class="field"><span>Serves</span>
+              <label class="field"><span>${t("Serves")}</span>
                 <input name="servings" type="number" min="1" max="50" required value="${input.servings ?? prefs.default_servings}" /></label>
               <fieldset class="field">
-                <legend>Who can see it</legend>
+                <legend>${t("Who can see it")}</legend>
                 <div class="segmented">
                   ${(["public", "friends", "private"] as const).map(
-                    (v) => html`<label><input type="radio" name="visibility" value="${v}" ${v === vis ? raw("checked") : ""} /><span>${VISIBILITY_LABEL[v]}</span></label>`,
+                    (v) => html`<label><input type="radio" name="visibility" value="${v}" ${v === vis ? raw("checked") : ""} /><span>${t(VISIBILITY_LABEL[v])}</span></label>`,
                   )}
                 </div>
               </fieldset>
             </div>
-            <label class="field"><span>YouTube video (optional)</span>
+            <label class="field"><span>${t("YouTube video (optional)")}</span>
               <input name="video_url" type="url" maxlength="200" inputmode="url" placeholder="https://www.youtube.com/watch?v=…" value="${input.video_id ? `https://www.youtube.com/watch?v=${input.video_id}` : ""}" />
-              <small>Shown on the recipe page, labelled as yours. Make sure it's the same dish.</small></label>
+              <small>${t("Shown on the recipe page, labelled as yours. Make sure it's the same dish.")}</small></label>
             <fieldset class="field">
-              <legend>Dietary tags</legend>
+              <legend>${t("Dietary tags")}</legend>
               <div class="chips">
                 ${DIETARY_TAGS.map(
-                  (t) => html`<label class="chip"><input type="checkbox" name="tags" value="${t}" ${input.dietary_tags?.includes(t) ? raw("checked") : ""} /><span>${t}</span></label>`,
+                  (tag) => html`<label class="chip"><input type="checkbox" name="tags" value="${tag}" ${input.dietary_tags?.includes(tag) ? raw("checked") : ""} /><span>${t(tag)}</span></label>`,
                 )}
               </div>
             </fieldset>
@@ -852,28 +850,28 @@ function recipeForm(ctx: Ctx, input: Partial<RecipeInput>, problems: string[], r
 
           <div class="form-col">
           <section class="panel stack">
-            <h2 class="panel-title">Ingredients</h2>
+            <h2 class="panel-title">${t("Ingredients")}</h2>
             <div class="rows" data-rows="ingredients">
               ${ingredients.map((ing, i) => ingredientRow(i, ing))}
             </div>
             <template data-template="ingredients">${ingredientRow(0)}</template>
-            <button type="button" class="button button-soft" data-add-row="ingredients">${icon("plus", 16)} Add ingredient</button>
-            <p class="muted small" data-price-help>Each ingredient shows what Larder prices it at. If it has no price, or the price is wrong, add what you paid: it prices your recipes and shopping.</p>
+            <button type="button" class="button button-soft" data-add-row="ingredients">${icon("plus", 16)} ${t("Add ingredient")}</button>
+            <p class="muted small" data-price-help>${t("Each ingredient shows what Larder prices it at. If it has no price, or the price is wrong, add what you paid: it prices your recipes and shopping.")}</p>
             <datalist id="ingredient-catalog">${catalog.map((c) => html`<option value="${c}"></option>`)}</datalist>
           </section>
 
           <section class="panel stack">
-            <h2 class="panel-title">Method</h2>
-            <p class="muted small" style="margin-top: -8px">Keep each step to a sentence or two — cook mode shows them one at a time.</p>
+            <h2 class="panel-title">${t("Method")}</h2>
+            <p class="muted small" style="margin-top: -8px">${t("Keep each step to a sentence or two — cook mode shows them one at a time.")}</p>
             <div class="rows steps-rows" data-rows="steps">${steps.map((s) => stepRow(s))}</div>
             <template data-template="steps">${stepRow()}</template>
-            <button type="button" class="button button-soft" data-add-row="steps">${icon("plus", 16)} Add step</button>
+            <button type="button" class="button button-soft" data-add-row="steps">${icon("plus", 16)} ${t("Add step")}</button>
           </section>
           </div>
 
           <div class="form-actions">
-            <a class="button button-ghost" href="${editing ? `/recipes/${recipeId}` : "/recipes"}">Cancel</a>
-            <button class="button" type="submit">${editing ? "Save changes" : "Publish recipe"}</button>
+            <a class="button button-ghost" href="${editing ? `/recipes/${recipeId}` : "/recipes"}">${t("Cancel")}</a>
+            <button class="button" type="submit">${editing ? t("Save changes") : t("Publish recipe")}</button>
           </div>
         </form>`,
     }),
@@ -895,16 +893,16 @@ export const routes: Route[] = [
         size += (chunk as Buffer).length;
         if (size > MAX_IMAGE_BYTES) {
           logActivity({ actor: ctx.user, action: "recipe.image_rejected", outcome: "denied", detail: { reason: "too large" } });
-          return json({ error: "That photo is over 5 MB. Try a smaller one." }, 413);
+          return json({ error: t("That photo is over 5 MB. Try a smaller one.") }, 413);
         }
         chunks.push(chunk as Buffer);
       }
       const bytes = Buffer.concat(chunks);
-      if (!type.startsWith("image/")) return json({ error: "That file isn't a JPEG, PNG or WebP photo." }, 415);
+      if (!type.startsWith("image/")) return json({ error: t("That file isn't a JPEG, PNG or WebP photo.") }, 415);
       const check = checkImage(bytes);
       if (!check.ok) {
         logActivity({ actor: ctx.user, action: "recipe.image_rejected", outcome: "denied", detail: { reason: check.problem, bytes: bytes.length } });
-        return json({ error: check.problem }, 422);
+        return json({ error: t(check.problem) }, 422);
       }
       return json({ url: saveImage(ctx.user!.id, bytes, check), width: check.width, height: check.height });
     },
@@ -915,7 +913,7 @@ export const routes: Route[] = [
     handler: (ctx) => {
       const id = Number(ctx.params.id);
       const img = Number.isSafeInteger(id) ? loadImage(id) : undefined;
-      if (!img) throw new HttpError(404, "There's no image at this address.");
+      if (!img) throw new HttpError(404, t("There's no image at this address."));
       return {
         status: 200,
         headers: { "content-type": img.mime, "cache-control": "public, max-age=31536000, immutable", "x-content-type-options": "nosniff" },
@@ -945,7 +943,7 @@ export const routes: Route[] = [
           body: grid.value,
         };
       }
-      return htmlReply(page(ctx, { title: "Recipes", active: "recipes", body: browsePage(ctx) }));
+      return htmlReply(page(ctx, { title: t("Recipes"), active: "recipes", body: browsePage(ctx) }));
     },
   },
   {
@@ -963,7 +961,7 @@ export const routes: Route[] = [
       if (problems.length) return recipeForm(ctx, input, problems, undefined, 422);
       const id = saveRecipe(ctx.user!.id, input);
       logActivity({ actor: ctx.user, action: "recipe.create", subject: input.title, detail: { recipe: id, visibility: input.visibility, ingredients: input.ingredients.length, steps: input.steps.length } });
-      setFlash(ctx, "Recipe published.");
+      setFlash(ctx, t("Recipe published."));
       return redirect(`/recipes/${id}`);
     },
   },
@@ -989,7 +987,7 @@ export const routes: Route[] = [
     handler: (ctx) => {
       const recipe = visibleRecipe(ctx);
       const q = (ctx.url.searchParams.get("q") ?? "").slice(0, 200);
-      if (!q.trim()) return text("Ask a question.", 400);
+      if (!q.trim()) return text(t("Ask a question."), 400);
       const a = answerFor(recipe, recipeIngredients(recipe.id), q, ctx.user?.id ?? null);
       return {
         status: 200,
@@ -1023,7 +1021,7 @@ export const routes: Route[] = [
       if (problems.length) return recipeForm(ctx, { ...input, image_url: input.image_url ?? recipe.image_url ?? undefined }, problems, recipe.id, 422);
       saveRecipe(ctx.user!.id, input, recipe.id);
       logActivity({ actor: ctx.user, action: "recipe.update", subject: input.title, detail: { recipe: recipe.id, visibility: input.visibility, photo_changed: !!input.image_url && input.image_url !== recipe.image_url } });
-      setFlash(ctx, "Recipe saved.");
+      setFlash(ctx, t("Recipe saved."));
       return redirect(`/recipes/${recipe.id}`);
     },
   },
@@ -1035,7 +1033,7 @@ export const routes: Route[] = [
       const recipe = ownRecipe(ctx);
       deleteRecipe(recipe.id, ctx.user!.id);
       logActivity({ actor: ctx.user, action: "recipe.delete", subject: recipe.title, detail: { recipe: recipe.id } });
-      setFlash(ctx, `Deleted “${recipe.title}”.`);
+      setFlash(ctx, t("Deleted “{title}”.", { title: recipe.title }));
       return redirect("/recipes");
     },
   },

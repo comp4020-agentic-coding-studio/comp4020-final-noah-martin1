@@ -3,6 +3,7 @@
 // a small free model running in this browser rewords those facts into a
 // friendly sentence or two. The model never replaces the checked answer: it
 // appears under it, labelled, and if it fails to load nothing is lost.
+import { t } from "./i18n.mjs";
 
 const card = document.querySelector("[data-ask]");
 if (card) init(card);
@@ -60,8 +61,10 @@ function init(card) {
   });
   card.querySelectorAll("[data-ask-chip]").forEach((b) =>
     b.addEventListener("click", () => {
+      // the box shows the chip's words; the server is asked the question it
+      // understands (English, the chip's data-ask-chip)
       input.value = b.textContent;
-      ask(b.textContent);
+      ask(b.dataset.askChip || b.textContent);
     }),
   );
 
@@ -111,14 +114,14 @@ function init(card) {
 
   function start() {
     if (worker) return;
-    setState("loading", "Fetching the assistant… 0%");
+    setState("loading", t("Fetching the assistant… {pct}%", { pct: 0 }));
     worker = new Worker("/assets/assistant-worker.mjs", { type: "module" });
     worker.addEventListener("message", (e) => {
       const m = e.data;
-      if (m.type === "progress") setState("loading", `Fetching the assistant… ${Math.round(m.pct)}%`);
+      if (m.type === "progress") setState("loading", t("Fetching the assistant… {pct}%", { pct: Math.round(m.pct) }));
       if (m.type === "ready") {
         ready = true;
-        setState("on", "On-device assistant on");
+        setState("on", t("On-device assistant on"));
         if (lastFacts) reword();
       }
       if (m.type === "token") {
@@ -135,7 +138,7 @@ function init(card) {
       }
       if (m.type === "error") {
         busy = false;
-        setState("error", m.message === "no-webgpu" ? "This browser can't run the on-device assistant. The checked answer above is complete on its own." : "The assistant couldn't start on this device. The checked answer above still stands.");
+        setState("error", m.message === "no-webgpu" ? t("This browser can't run the on-device assistant. The checked answer above is complete on its own.") : t("The assistant couldn't start on this device. The checked answer above still stands."));
         out.querySelector(".ask-ai-reply")?.remove();
         worker?.terminate();
         worker = null;
@@ -151,7 +154,9 @@ function init(card) {
     out.querySelector(".ask-ai-reply")?.remove();
     const box = document.createElement("div");
     box.className = "ask-ai-reply streaming";
-    box.innerHTML = `<small>On-device assistant · rewording the facts above</small><span></span>`;
+    const note = document.createElement("small");
+    note.textContent = t("On-device assistant · rewording the facts above");
+    box.append(note, document.createElement("span"));
     out.append(box);
     worker.postMessage({ type: "ask", question: lastQ, facts: lastFacts.facts, headline: lastFacts.headline, lines: lastFacts.lines });
   }
@@ -163,7 +168,7 @@ function init(card) {
       ready = false;
       busy = false;
       out.querySelector(".ask-ai-reply")?.remove();
-      setState("off", "Say it in plain words with the on-device assistant");
+      setState("off", t("Say it in plain words with the on-device assistant"));
       try {
         localStorage.removeItem("larder-ai");
       } catch {}
