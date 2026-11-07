@@ -1,5 +1,6 @@
 import { EventEmitter } from "node:events";
 import { all, one, run, transaction } from "./db.ts";
+import { t } from "./i18n.ts";
 import { canSeeRecipe, canSeeSession, type Visibility } from "./visibility.ts";
 
 // Live cook sessions: someone cooking a recipe one step at a time, seen by
@@ -285,6 +286,13 @@ export function nearestCity(lat: number, lng: number): City | undefined {
 }
 
 export type Place = { city: string; country: string; lat: number | null; lng: number | null };
+
+// A stored place as the page says it: "near Rome" (a rounded device
+// location) is kept in English in the database, so only its "near" is
+// translated here; city names stay as they are.
+export function placeLabel(city: string): string {
+  return city.startsWith("near ") ? t("near {city}", { city: city.slice(5) }) : city;
+}
 
 // Where the cook appears, from the go-live form: a listed city, rounded
 // device coordinates, or nowhere on the map (still listed).

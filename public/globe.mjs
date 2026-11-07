@@ -5,9 +5,15 @@
 // this script.
 import * as THREE from "three";
 import { RoomEnvironment } from "three/addons/environments/RoomEnvironment.js";
+import { t } from "./i18n.mjs";
 import { localAt } from "./localclock.mjs";
 
 const RADIUS = 1;
+
+// The page's data is language-neutral ("You", "near Rome", "dinner"); say it
+// in the page's language only where it's shown.
+const cookName = (s) => (s.group === "mine" ? t("You") : s.cook);
+const placeName = (city) => (city.startsWith("near ") ? t("near {city}", { city: city.slice(5) }) : city);
 const root = document.querySelector("[data-globe]");
 const data = JSON.parse(document.getElementById("globe-data")?.textContent ?? "[]");
 
@@ -936,13 +942,13 @@ function start() {
     const strong = document.createElement("strong");
     const small = document.createElement("small");
     if (c) {
-      const places = [...new Set(c.members.map((x) => x.userData.session.city).filter(Boolean))];
-      strong.textContent = `${c.members.length} people cooking`;
-      small.textContent = `${places.slice(0, 3).join(" · ")}${places.length > 3 ? ` +${places.length - 3}` : ""} — click to zoom in`;
+      const places = [...new Set(c.members.map((x) => x.userData.session.city).filter(Boolean))].map(placeName);
+      strong.textContent = t("{n} people cooking", { n: c.members.length });
+      small.textContent = t("{places} — click to zoom in", { places: `${places.slice(0, 3).join(" · ")}${places.length > 3 ? ` +${places.length - 3}` : ""}` });
     } else {
       strong.textContent = u.session.recipe;
       const local = typeof u.session.offset === "number" ? localAt(u.session.offset) : null;
-      small.textContent = `${u.session.cook}${u.session.city ? ` · ${u.session.city}` : ""}${local ? ` · ${local.label}, ${local.time}` : ""} · step ${u.session.step}/${u.session.steps}`;
+      small.textContent = `${cookName(u.session)}${u.session.city ? ` · ${placeName(u.session.city)}` : ""}${local ? ` · ${t("{meal}, {time}", { meal: t(local.label), time: local.time })}` : ""} · ${t("step {n}/{total}", { n: u.session.step, total: u.session.steps })}`;
     }
     tip.append(strong, small);
     tip.hidden = false;
@@ -1088,12 +1094,12 @@ function start() {
     const c = u.cluster;
     if (c && !c.spread && m === c.rep) {
       const friends = c.members.filter((x) => x.userData.session.group === "friends" || x.userData.session.group === "mine");
-      const who = friends.length ? `${friends[0].userData.session.cook}${c.members.length > 1 ? ` +${c.members.length - 1}` : ""}` : `${c.members.length} cooking`;
+      const who = friends.length ? `${cookName(friends[0].userData.session)}${c.members.length > 1 ? ` +${c.members.length - 1}` : ""}` : t("{n} cooking", { n: c.members.length });
       return { key: `c:${c.id}:${who}`, text: who, cls: `gl-pin gl-pin-cluster${friends.length ? " gl-pin-friendly" : ""}` };
     }
-    if (u.session.group === "mine") return { key: "mine", text: "You", cls: "gl-pin gl-pin-mine" };
+    if (u.session.group === "mine") return { key: "mine", text: t("You"), cls: "gl-pin gl-pin-mine" };
     if (u.session.group === "friends") return { key: `f:${u.session.cook}`, text: u.session.cook, cls: "gl-pin gl-pin-friend" };
-    if (u.session.kind === "live" && !(c && !c.spread)) return { key: "live", text: "Live", cls: "gl-pin gl-pin-live" };
+    if (u.session.kind === "live" && !(c && !c.spread)) return { key: "live", text: t("Live"), cls: "gl-pin gl-pin-live" };
     return null;
   }
 
