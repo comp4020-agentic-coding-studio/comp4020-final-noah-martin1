@@ -1,8 +1,36 @@
 # FOCUS MODE, COMPLETE THE FOLLOWING TASKS:
 
+## TASK 1, IMPROVE VISUAL GUIDANCE FOR SACNNING IMAGES FOR INGREDIENT ADDITIONS
+
+## 1. Active Task Intent
+- **Goal:** Currently when a user wants to scan an image to either process an image of their fridge, pantry (or larder), reciept, or barcode, they are presented with a screen that simply says, "Scan on this device" and below it: a button that says "choose image". Which is very uninspiring and doesnt give direction for what they should take a photo of (what the webpage expects). The goal is to provide visually inspiring visual direction with 3d modelling to improve this.
+   
+- **Features to achieve / implement:**
+- for each scanning option create a 3d animation that loops and provides text for what the user should do. Im thinking the perspective from the users shoulder where the user aims their phone at the fridge and you can see the fridge or pantry in the phone camera screen, then they click the take photo button. - demonstrating that theyre taking a photo of their fridge as a whole
+- For the recipe I want it to follow the same vibe, have the animation of the shoulder pov, a user with their arm extended holding their camera above a reciept on a bench and taking a photo.
+- For the barcode - again same style - shoulder pov, user extending arm, flippimng over a ceral box and taking a photo of the barcode on the back.
 
 
-## TASK 1, IMPROVE AND CREATE MORE 3D MODELS FOR ITEMS IN FRIDGE/PANTRY
+- **Things to explore** 
+
+1. I want these animations/ models to look the same quality and theme as the fridge and pantry. High quality modelling with smooth movement. I want the animation to be looped but not too short or the looping animation will put off the user. Try to make the direction as simple as possible and understandable so that no instruction text is needed.
+   
+- **Credit Allocation:** This task involves modelling and testing which needs to be done right and with careful consideration to be functional - allocate $90
+
+- **Double-Check Rule:** FOR EACH ANIMATION DOUBLE CHECK THE MODEL IS CONSISTENT AND IS NOT BUGGED - I dont want clipping or floating objects - find a real life reference animation / video if you have to compare. Screenshot and analyse each one.
+
+## 2. Active Technical Constraints
+- **AI Advisory Invariant:** Keep code updates deterministic. Models may map names or parse transcript text, but application logic remains the source of truth.
+- **Verification Command:** Run `pnpm check` and your recipe test specs locally to ensure nothing is broken after an iteration.
+
+## 3. Project References
+- For long-term non-negotiable rules, full git/testing workflows, layout styles, and HTML escaping instructions, refer to `@ARCHITECTURAL_GUIDELINES.md`. Ignore them during transcript extraction unless actively modifying code infrastructure.
+
+
+
+# BELOW IS COMMENTED OUT OLD TASKS, PLEASE IGNORE:
+
+ <!--## TASK 1, IMPROVE AND CREATE MORE 3D MODELS FOR ITEMS IN FRIDGE/PANTRY
 
 ## 1. Active Task Intent
 - **Goal:** Find the most common ingredients used in the recipes, you dont have to add 3d models for all of them, but all of the common ones. If its a rare item I can expect it to be categorised as a simialr 3d model. 
@@ -31,9 +59,7 @@
 
 
 
-# BELOW IS COMMENTED OUT OLD TASKS, PLEASE IGNORE:
-
- <!--## ITERATE OVER THIS TASK UNITL COMPLETE
+## ITERATE OVER THIS TASK UNITL COMPLETE
 
 ## TASK 1, CHECK INGREDIENT DATABASE TO FIX MEAL PLANNING
 
