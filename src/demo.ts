@@ -1,6 +1,7 @@
 // The demo kitchen markers are pointed at: alice, sam, bo and jo, one
-// password, friends and a shared household; and kai, on their own, with a
-// fridge and pantry stocked full to show off the 3D kitchen. While DEMO_MODE is on the
+// password, friends and a shared household, alice and sam with full
+// kitchens; and kai, on their own, with a fridge and pantry stocked full to
+// show off the 3D kitchen. While DEMO_MODE is on the
 // sign-in form is prefilled with alice. The accounts are shared, so when
 // DEMO_VERSION changes their content is rebuilt once: their own recipes,
 // pantries, calendars and household go back to a tidy, current week, and
@@ -17,7 +18,7 @@ import { saveRecipe, type RecipeInput } from "./recipes.ts";
 export const DEMO_MODE = true;
 
 // Bump to rebuild the demo kitchen on the next deploy (once).
-export const DEMO_VERSION = "2026-11-07";
+export const DEMO_VERSION = "2026-11-08";
 
 export const DEMO_LOGIN = { username: "alice", password: "password123" };
 
@@ -207,43 +208,180 @@ const RECIPES: DemoRecipe[] = [
 // (null = none), cents]. Dates are from today, so "use soon" is always
 // current; one item each is near its date so the reminders show something.
 const PANTRY: Record<string, [string, number, string, number | null, number | null][]> = {
+  // alice and sam: fridges and larders as full as kai's (the same models,
+  // in the same slots, so nothing hides), each stocked for what they cook.
+  // alice: Thai and comfort food (pad thai, pumpkin soup, curry, pancakes)
   alice: [
-    ["eggs", 10, "", 9, 650],
-    ["firm tofu", 300, "g", 5, 350],
-    ["rice noodles", 400, "g", 200, 280],
-    ["fish sauce", 250, "ml", null, 420],
-    ["lime", 3, "", 10, 240],
-    ["banana", 4, "", 2, 280],
-    ["rolled oats", 750, "g", 120, 199],
+    // fridge door
     ["milk", 2000, "ml", 6, 310],
+    ["orange juice", 2000, "ml", 8, 450],
+    ["cream", 300, "ml", 9, 320],
     ["butter", 250, "g", 30, 450],
-    ["honey", 500, "g", null, 650],
+    ["sweet chilli sauce", 500, "ml", null, 350],
+    // dairy shelf
+    ["eggs", 10, "", 9, 650],
     ["greek yoghurt", 1000, "g", 6, 550],
     ["cheddar cheese", 500, "g", 21, 900],
-    ["pumpkin", 1200, "g", 12, 400],
-    ["coconut milk", 400, "ml", 500, 200],
+    ["parmesan", 200, "g", 40, 690],
+    ["mozzarella", 250, "g", 8, 450],
+    // meat and fish
+    ["firm tofu", 300, "g", 5, 350],
+    ["chicken thigh", 600, "g", 2, 780],
+    ["prawns", 500, "g", 3, 1750],
     ["salmon fillet", 300, "g", 1, 1100],
+    ["bacon", 250, "g", 10, 440],
+    // produce
+    ["lime", 3, "", 10, 240],
+    ["lemon", 3, "", 14, 240],
     ["capsicum", 2, "", 8, 300],
     ["carrot", 5, "", 18, 200],
-    ["lemon", 3, "", 14, 240],
-    ["onion", 4, "", 30, 260],
-    ["garlic", 1, "bulb", 40, 150],
-    ["potato", 2000, "g", 30, 450],
-    ["spaghetti", 500, "g", 400, 200],
-    ["rice", 1000, "g", 400, 300],
-    ["plain flour", 1000, "g", 300, 180],
+    ["broccoli", 1, "", 4, 300],
+    ["bean sprouts", 250, "g", 3, 250],
+    ["baby spinach", 120, "g", 4, 300],
+    ["spring onion", 1, "bunch", 6, 250],
+    ["coriander", 1, "bunch", 4, 300],
+    ["basil", 1, "bunch", 5, 300],
+    ["red chilli", 3, "", 9, 150],
+    ["ginger", 100, "g", 18, 300],
+    ["strawberries", 250, "g", 3, 450],
+    ["mushrooms", 250, "g", 5, 400],
+    ["cherry tomatoes", 250, "g", 5, 400],
+    ["blueberries", 125, "g", 4, 500],
+    // larder: bottles
     ["olive oil", 750, "ml", null, 1200],
     ["soy sauce", 500, "ml", null, 380],
+    ["fish sauce", 250, "ml", null, 420],
+    ["sesame oil", 150, "ml", null, 450],
+    ["maple syrup", 250, "ml", null, 900],
+    ["sriracha", 435, "ml", null, 550],
+    ["oyster sauce", 500, "ml", null, 400],
+    ["hoisin sauce", 250, "ml", null, 350],
+    ["rice vinegar", 500, "ml", null, 300],
+    // jars
+    ["honey", 500, "g", null, 650],
+    ["peanut butter", 375, "g", 200, 450],
+    ["jam", 500, "g", 180, 400],
+    ["tomato paste", 140, "g", 300, 150],
+    ["dark chocolate", 200, "g", 200, 400],
+    // packets
+    ["rice noodles", 400, "g", 200, 280],
+    ["egg noodles", 450, "g", 300, 250],
+    ["spaghetti", 500, "g", 400, 200],
+    ["rolled oats", 750, "g", 120, 199],
+    ["cornflour", 300, "g", 400, 250],
+    ["almonds", 400, "g", 150, 900],
+    // the cold slate shelf
+    ["coconut milk", 400, "ml", 500, 200],
+    ["coconut cream", 400, "ml", 500, 250],
+    ["canned tomatoes", 400, "g", 600, 120],
+    ["chickpeas", 400, "g", 600, 120],
+    ["chicken stock", 1000, "ml", 300, 350],
+    ["sourdough bread", 1, "loaf", 3, 700],
+    ["garlic", 1, "bulb", 40, 150],
+    ["banana", 4, "", 2, 280],
+    // the floor
+    ["pumpkin", 1200, "g", 12, 400],
+    ["plain flour", 1000, "g", 300, 180],
+    ["sugar", 1000, "g", 500, 200],
+    ["rice", 1000, "g", 400, 300],
+    ["onion", 4, "", 30, 260],
+    ["potato", 2000, "g", 30, 450],
+    ["sweet potato", 1000, "g", 20, 400],
+    // the door racks
+    ["salt", 500, "g", null, 150],
+    ["black pepper", 50, "g", null, 350],
     ["ground cumin", 50, "g", null, 250],
     ["paprika", 50, "g", null, 250],
+    ["cinnamon", 50, "g", null, 250],
+    ["chilli flakes", 30, "g", null, 250],
+    ["vanilla extract", 50, "ml", null, 650],
   ],
+  // sam: Indian and Middle Eastern (dal, shakshuka, curries, flatbreads)
   sam: [
+    // fridge door
+    ["milk", 1000, "ml", 5, 190],
+    ["orange juice", 1000, "ml", 7, 300],
+    ["butter", 250, "g", 35, 450],
+    ["hummus", 200, "g", 6, 300],
+    ["pesto", 190, "g", 18, 400],
+    // dairy shelf
     ["eggs", 6, "", 8, 450],
-    ["red lentils", 500, "g", 300, 320],
-    ["ginger", 100, "g", 14, 200],
-    ["ground turmeric", 50, "g", null, 250],
-    ["onion", 3, "", 25, 200],
+    ["yoghurt", 1000, "g", 7, 480],
+    ["paneer", 200, "g", 9, 550],
+    ["feta", 200, "g", 14, 500],
+    ["cheddar cheese", 250, "g", 25, 500],
+    ["halloumi", 200, "g", 20, 600],
+    // meat
+    ["lamb mince", 500, "g", 2, 900],
+    ["chicken drumsticks", 1000, "g", 3, 800],
+    ["sausages", 550, "g", 6, 650],
+    ["chicken breast", 500, "g", 2, 650],
+    // produce
     ["capsicum", 1, "", 3, 150],
+    ["tomato", 5, "", 5, 450],
+    ["cherry tomatoes", 250, "g", 5, 400],
+    ["cucumber", 1, "", 6, 150],
+    ["aubergine", 1, "", 6, 350],
+    ["courgette", 2, "", 7, 300],
+    ["spinach", 250, "g", 3, 350],
+    ["green beans", 250, "g", 5, 350],
+    ["red chilli", 4, "", 10, 150],
+    ["ginger", 100, "g", 14, 200],
+    ["coriander", 1, "bunch", 4, 300],
+    ["mint", 1, "bunch", 5, 300],
+    ["parsley", 1, "bunch", 5, 300],
+    ["lemon", 4, "", 16, 300],
+    ["avocado", 2, "", 4, 400],
+    // larder: bottles
+    ["olive oil", 750, "ml", null, 1100],
+    ["balsamic vinegar", 500, "ml", null, 450],
+    ["sweet chilli sauce", 500, "ml", null, 350],
+    ["red wine", 750, "ml", null, 1400],
+    ["apple cider vinegar", 500, "ml", null, 400],
+    ["soy sauce", 250, "ml", null, 280],
+    // jars
+    ["ghee", 400, "g", null, 900],
+    ["coconut oil", 300, "ml", null, 800],
+    ["tahini", 300, "g", 200, 650],
+    ["honey", 500, "g", null, 650],
+    ["tomato paste", 140, "g", 300, 150],
+    ["dijon mustard", 200, "g", 250, 350],
+    // packets
+    ["red lentils", 500, "g", 300, 320],
+    ["basmati rice", 2000, "g", 400, 700],
+    ["penne", 500, "g", 400, 200],
+    ["almonds", 200, "g", 150, 500],
+    ["couscous", 500, "g", 400, 300],
+    ["quinoa", 400, "g", 300, 600],
+    ["dates", 250, "g", 180, 500],
+    ["pistachios", 200, "g", 150, 800],
+    // the cold slate shelf
+    ["canned tomatoes", 400, "g", 600, 120],
+    ["chickpeas", 400, "g", 600, 120],
+    ["coconut milk", 400, "ml", 500, 200],
+    ["black beans", 400, "g", 600, 150],
+    ["pita bread", 1, "pack", 4, 350],
+    ["garlic", 2, "bulb", 40, 300],
+    ["banana", 3, "", 3, 210],
+    // the floor
+    ["onion", 3, "", 25, 200],
+    ["red onion", 3, "", 30, 250],
+    ["potato", 1000, "g", 30, 300],
+    ["sweet potato", 1000, "g", 20, 400],
+    ["plain flour", 1000, "g", 300, 180],
+    ["sugar", 1000, "g", 500, 200],
+    // the door racks
+    ["ground turmeric", 50, "g", null, 250],
+    ["ground cumin", 50, "g", null, 250],
+    ["garam masala", 50, "g", null, 300],
+    ["cardamom", 30, "g", null, 450],
+    ["chilli powder", 50, "g", null, 250],
+    ["curry powder", 50, "g", null, 250],
+    ["paprika", 50, "g", null, 250],
+    ["cinnamon", 50, "g", null, 250],
+    ["sumac", 40, "g", null, 450],
+    ["salt", 500, "g", null, 150],
+    ["black pepper", 50, "g", null, 350],
   ],
   bo: [["chicken thigh", 500, "g", 2, 650]],
   jo: [["avocado", 2, "", 3, 300]],
@@ -450,6 +588,6 @@ export async function seedDemo(version = DEMO_VERSION): Promise<boolean> {
     version,
   );
   const left = all<{ n: number }>(`SELECT COUNT(*) AS n FROM recipes WHERE author_id IN (?, ?, ?, ?)`, alice, sam, bo, jo)[0].n;
-  console.log(`demo kitchen rebuilt (version ${version}): ${left} recipes for alice, sam, bo, jo; ${PANTRY.kai.length} items in kai's kitchen`);
+  console.log(`demo kitchen rebuilt (version ${version}): ${left} recipes for alice, sam, bo, jo; ${PANTRY.alice.length}, ${PANTRY.sam.length} and ${PANTRY.kai.length} items in alice's, sam's and kai's kitchens`);
   return true;
 }
