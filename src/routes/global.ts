@@ -453,7 +453,7 @@ function globePage(ctx: Ctx): Html {
           <button type="button" data-zoom="reset" aria-label="${t("Show the whole globe")}">${icon("global", 18)}</button>
         </div>
         <div class="gl-loading" aria-hidden="true"><span></span></div>
-        ${scrollMore("#how", t("How to appear on the globe, below"), "gl-more")}
+        ${scrollMore("#how", t("How to appear on the globe, below"), "gl-more", "arrows")}
       </div>
 
       <header class="gl-hero">
