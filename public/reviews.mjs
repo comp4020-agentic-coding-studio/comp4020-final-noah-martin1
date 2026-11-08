@@ -49,18 +49,31 @@ function start(section) {
 
   /* ---------- typing: tell others while I write ---------- */
 
+  // Someone writing pauses to think, so the dots stay up for a while after
+  // the last key (PAUSE_MS) rather than flickering off mid-sentence. While
+  // they do, the page keeps the server's note fresh (it forgets after 8 s).
+  // Clearing the box, posting or leaving takes them down at once.
+  const PAUSE_MS = 5000;
+  const REFRESH_MS = 3000;
   let typingOn = false;
   let lastSent = 0;
   let idleTimer = 0;
+  let keepTimer = 0;
   function sendTyping(on) {
     if (!signedIn) return;
     const now = Date.now();
-    // "on" at most every 3 s (the server forgets after 8 s); "off" at once
-    if (on && typingOn && now - lastSent < 3000) return;
+    // "on" at most every 3 s; "off" at once
+    if (on && typingOn && now - lastSent < REFRESH_MS) return;
     if (!on && !typingOn) return;
     typingOn = on;
     lastSent = now;
     fetch(`${base}/typing`, { method: "POST", body: new URLSearchParams({ on: on ? "1" : "0" }), keepalive: !on }).catch(() => {});
+  }
+  function stopTyping() {
+    clearTimeout(idleTimer);
+    clearInterval(keepTimer);
+    keepTimer = 0;
+    sendTyping(false);
   }
   section.addEventListener("input", (e) => {
     if (!e.target.matches("[data-rv-body]")) return;
@@ -68,11 +81,17 @@ function start(section) {
     const count = box.closest("form")?.querySelector("[data-rv-count-chars]");
     if (count) count.textContent = `${box.value.length} / ${box.maxLength}`;
     clearTimeout(idleTimer);
-    if (!box.value.trim()) return sendTyping(false);
+    if (!box.value.trim()) return stopTyping();
     sendTyping(true);
-    idleTimer = setTimeout(() => sendTyping(false), 4000);
+    // through a pause, keep the note fresh so the dots don't drop early
+    keepTimer ||= setInterval(() => sendTyping(true), REFRESH_MS);
+    idleTimer = setTimeout(stopTyping, PAUSE_MS);
   });
-  addEventListener("pagehide", () => sendTyping(false));
+  // posting a review or reply ends it straight away
+  section.addEventListener("submit", (e) => {
+    if (e.target.querySelector?.("[data-rv-body]")) stopTyping();
+  });
+  addEventListener("pagehide", () => stopTyping());
 
   /* ---------- live: others' reviews, likes and typing ---------- */
 
