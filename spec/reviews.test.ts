@@ -569,8 +569,14 @@ describe("deleting an account", () => {
     expect(li.querySelector(":scope > .avatar-gone")).not.toBeNull();
     expect(li.textContent).not.toContain("Lee Leaver");
     expect(d.querySelector("[data-rv-average]")?.textContent).toBe("5.0");
-    // their own recipe went, with the reviews on it
-    expect((await reader.client.get(`/recipes/${theirs}`)).status).toBe(404);
+    // their own recipe went, with the reviews on it. (SQLite can hand a freed
+    // id to the next new recipe, and specs run side by side, so "gone" means
+    // that address no longer shows the leaver's recipe, not that it's empty.)
+    const after = await reader.client.get(`/recipes/${theirs}`);
+    if (after.status !== 404) {
+      const shown = new JSDOM(await after.text()).window.document.querySelector("h1")?.textContent ?? "";
+      expect(shown).not.toContain(`Leaver's own ${leaver.username}`);
+    }
     expect((await reader.client.get(`/recipes/${id}/reviews/${readerReview}`)).status).toBe(404);
     // the review can still be replied to and liked
     expect((await postJson(reader, `/recipes/${id}/reviews/${review}/like`)).body).toEqual({ liked: true, likes: 1 });
