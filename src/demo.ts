@@ -1,8 +1,8 @@
 // The demo kitchen markers are pointed at: alice, sam, bo and jo, one
 // password, friends and a shared household, alice and sam with full
 // kitchens; and kai, on their own, with a fridge and pantry stocked full to
-// show off the 3D kitchen. While DEMO_MODE is on the
-// sign-in form is prefilled with alice. The accounts are shared, so when
+// show off the 3D kitchen. The sign-in form starts empty; markers type the
+// account in from the README. The accounts are shared, so when
 // DEMO_VERSION changes their content is rebuilt once: their own recipes,
 // pantries, calendars and household go back to a tidy, current week, and
 // anything a visitor added while signed in as them is cleared. Nobody else's
@@ -24,7 +24,7 @@ export const DEMO_LOGIN = { username: "alice", password: "password123" };
 
 // The seeded accounts all share DEMO_LOGIN's password and markers are told
 // to use them, so none may have its password changed: one change would lock
-// everyone else out. This holds whether or not DEMO_MODE prefills the form.
+// everyone else out.
 export const DEMO_USERNAMES = ["alice", "sam", "bo", "jo", "kai"];
 
 // [username, name, cooking character (src/avatars.ts)]

@@ -8,9 +8,9 @@ import {
   verifyPassword,
 } from "../auth.ts";
 import { one, run } from "../db.ts";
-import { DEMO_LOGIN, DEMO_MODE, DEMO_USERNAMES } from "../demo.ts";
+import { DEMO_USERNAMES } from "../demo.ts";
 import { html } from "../html.ts";
-import { t, th } from "../i18n.ts";
+import { t } from "../i18n.ts";
 import { type Ctx, cookie, htmlReply, isHttps, parseCookies, redirect, setFlash } from "../http.ts";
 import type { Route } from "../server.ts";
 import { errors, publicPage } from "../views/layout.ts";
@@ -34,9 +34,6 @@ function authForm(
 ) {
   const isRegister = mode === "register";
   const next = values.next ?? ctx.url.searchParams.get("next") ?? "";
-  // temporary: a fresh sign-in form arrives filled with the demo account
-  const demo = DEMO_MODE && !isRegister && values.username === undefined;
-  if (demo) values = { ...values, username: DEMO_LOGIN.username };
   return htmlReply(
     publicPage(ctx, {
       title: isRegister ? t("Create account") : t("Sign in"),
@@ -45,7 +42,6 @@ function authForm(
           <p class="eyebrow">${isRegister ? t("Join Larder") : t("Welcome back")}</p>
           <h1>${isRegister ? t("Create your account") : t("Sign in")}</h1>
           ${errors(problems)}
-          ${demo ? html`<p class="demo-note">${th("Demo account filled in — just press {button} to look around as Alice.", { button: html`<strong>${t("Sign in")}</strong>` })}</p>` : ""}
           <form method="post" action="/${mode}" class="stack">
             <input type="hidden" name="next" value="${next}" />
             ${isRegister
@@ -63,7 +59,7 @@ function authForm(
             <label class="field">
               <span>${t("Password")}</span>
               <input type="password" name="password" required ${isRegister ? html`minlength="8"` : ""}
-                autocomplete="${isRegister ? "new-password" : "current-password"}" ${demo ? html`value="${DEMO_LOGIN.password}"` : ""} />
+                autocomplete="${isRegister ? "new-password" : "current-password"}" />
               ${isRegister ? html`<small>${t("At least 8 characters.")}</small>` : ""}
             </label>
             <button class="button button-block" type="submit">${isRegister ? t("Create account") : t("Sign in")}</button>

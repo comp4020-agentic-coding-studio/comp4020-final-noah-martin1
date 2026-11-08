@@ -4,11 +4,12 @@ import { Client } from "./helpers.ts";
 // TEMPORARY, like DEMO_MODE in src/demo.ts: delete this file when demo mode
 // is switched off.
 describe("demo account", () => {
-  it("the sign-in form arrives filled in, and signing in with it works", async () => {
+  it("the sign-in form starts empty, and the demo account signs in", async () => {
     const client = new Client();
     const form = await (await client.get("/login")).text();
-    expect(form).toMatch(/name="username"[^>]*value="alice"/);
-    expect(form).toMatch(/name="password"[^>]*value="password123"/);
+    expect(form).toMatch(/name="username"[^>]*value=""/);
+    expect(form).not.toContain("password123");
+    expect(form).not.toMatch(/name="password"[^>]*value=/);
 
     const res = await client.post("/login", { username: "alice", password: "password123" });
     expect(res.finalUrl).toBe("/");
