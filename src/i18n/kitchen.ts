@@ -5,6 +5,8 @@ import type { Part } from "../i18n.ts";
 // what the server writes into pages
 const part: Part = {
   zh: {
+    "Every item, as a list, below": "下方是所有物品的列表",
+    "Add an item, below": "在下方添加物品",
     // src/routes/pantry.ts
     "Past date · kept": "已过期 · 保留",
     "{label} · still have it?": "{label} · 还在吗？",
@@ -244,6 +246,8 @@ const part: Part = {
     "The product database didn't answer. Type the item instead.": "商品数据库没有响应。请改为手动输入。",
   },
   es: {
+    "Every item, as a list, below": "Todos los productos, en una lista, más abajo",
+    "Add an item, below": "Añade un producto más abajo",
     // src/routes/pantry.ts
     "Past date · kept": "Caducado · guardado",
     "{label} · still have it?": "{label} · ¿todavía lo tienes?",
@@ -483,6 +487,8 @@ const part: Part = {
     "The product database didn't answer. Type the item instead.": "La base de datos de productos no respondió. Escribe el artículo a mano.",
   },
   hi: {
+    "Every item, as a list, below": "नीचे सभी चीज़ों की सूची",
+    "Add an item, below": "नीचे कोई चीज़ जोड़ें",
     // src/routes/pantry.ts
     "Past date · kept": "तारीख निकल गई · रखा गया",
     "{label} · still have it?": "{label} · क्या अभी भी है?",

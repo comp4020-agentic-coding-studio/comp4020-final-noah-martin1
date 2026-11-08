@@ -271,6 +271,7 @@ function pantryPage(ctx: Ctx, values: Record<string, string> = {}, problems: str
           <button type="button" class="kx-arrow kx-arrow-next" data-kx-go="pantry" aria-label="${t("Show the pantry")}">${icon("arrow", 18)}</button>
         </div>
         <p class="kx-toast" data-kx-toast role="status"></p>
+        <a class="kx-more" href="#${items.length ? "items" : "add"}" data-kx-more aria-label="${t(items.length ? "Every item, as a list, below" : "Add an item, below")}"><span class="kx-more-mouse" aria-hidden="true"><i></i></span><span class="kx-more-chev" aria-hidden="true"></span></a>
         <p class="kx-place-label" aria-hidden="true"><span data-kx-count-fridge>${t("{n} in the fridge", { n: inFridge })}</span><span data-kx-count-pantry>${t("{n} in the pantry", { n: items.length - inFridge })}</span></p>
       </div>
 
@@ -308,7 +309,7 @@ function pantryPage(ctx: Ctx, values: Record<string, string> = {}, problems: str
     </section>
 
     ${items.length
-      ? html`<section class="panel panel-flush">
+      ? html`<section class="panel panel-flush" id="items">
           <div class="table-wrap">
             <table class="table">
               <thead><tr><th scope="col">${t("Item")}</th><th scope="col" class="num">${t("Qty")}</th><th scope="col">${t("Expiry")}</th><th scope="col" class="num">${t("Price")}</th><th scope="col"><span class="sr-only">${t("Actions")}</span></th></tr></thead>
