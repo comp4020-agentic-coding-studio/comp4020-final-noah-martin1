@@ -6309,6 +6309,16 @@ body.cooking {
   animation-play-state: paused;
 }
 
+/* clicked once: it's been seen, so it stops moving and stays solid */
+.scroll-more.used :is(.scroll-more-arrows i, .scroll-more-mouse i, .scroll-more-chev) {
+  animation: none;
+  opacity: 1;
+}
+
+.scroll-more.used .scroll-more-mouse i {
+  transform: translateY(4px);
+}
+
 .scroll-more.away {
   opacity: 0;
   transform: translateY(8px);

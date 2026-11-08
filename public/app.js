@@ -11,10 +11,22 @@ const tr = (s, v) => {
 };
 
 // A full-screen page's "more below" cue (the kitchen, the globe) steps
-// aside once the page is scrolled, and comes back at the top.
+// aside once the page is scrolled, and comes back at the top. Once it's
+// been clicked it's done its job of being noticed: it stops moving and
+// stays a plain, solid button, remembered per browser for that page.
 (() => {
   const more = document.querySelector("[data-scroll-more]");
   if (!more) return;
+  const key = `larder-more-used:${location.pathname}`;
+  try {
+    if (localStorage.getItem(key)) more.classList.add("used");
+  } catch {}
+  more.addEventListener("click", () => {
+    more.classList.add("used");
+    try {
+      localStorage.setItem(key, "1");
+    } catch {}
+  });
   const update = () => more.classList.toggle("away", window.scrollY > 40);
   window.addEventListener("scroll", update, { passive: true });
   update();
