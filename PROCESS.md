@@ -2,75 +2,46 @@
 
 ## From brief to plan
 
-I wanted to build something useful rather than decorative, so I brainstormed
-problems where several people act on the same state. I settled on cooking: a
-shared pantry goes stale, recipes are worth sharing, and "who's cooking right
-now" is real-time by nature. When the agent kept pushing a minimal version, I
-pushed back and had it plan the full platform instead. That plan lives in
-`CLAUDE.md`, with each phase mapped to a crit.
-
-## Harness
-
-`CLAUDE.md` starts with rules the agent must follow. Never break the two
-baked-in checks. Every visibility decision goes through one file. Escape all
-HTML. Never edit a shipped migration. Previews must say they're previews.
-Each invariant in the plan has a matching test in `spec/`, so the plan, the
-tests and the README make the same claims.
+I wanted to build something useful rather than decorative, so I brainstormed problems where several people act on the same state. I settled on cooking - a shared fridge and pantry goes stale, recipes are worth sharing, and "who's cooking right now" is real-time by nature. Going back and forth with Claude, it kept narrowing the idea down to smaller tasks instead of committing to a large project, so I pushed back and had it plan the full platform. In hindsight I think this is related to the credit allowance - I've learnt that Claude often checks its own credit balance and keeps its tasks within those bounds, which is why every task I wrote later gives it a budget.
 
 ## Stack
 
-Node 24 runs TypeScript directly, with no build step and no framework.
-SQLite sits on the Fly volume, which suits one machine with one disk. Pages
-are server-rendered and work without JavaScript. WebSockets come in crit 9.
-I kept it small so it fits the 256 MB machine and stays easy to reason about.
+I kept the stack small so it fits the 256MB Fly machine and stays easy to reason about. Node 24 runs TypeScript directly with no build step or framework, and SQLite sits on the Fly volume since there is one machine with one disk. For real-time I used server-sent events rather than WebSockets - updates only need to go from the server to the browser, and with one machine the open connections can just sit in memory. The trade-off of having no framework is that HTML escaping and visibility checks are hand-written, so both became non-negotiable rules in the guidelines.
+
+The machine is also far too small for a vision model, so scanning runs in the user's browser instead. The cost is a 1.37GB first download for the photo model and less accuracy than the 8B model I tested ([`762ea33`](https://github.com/comp4020-agentic-coding-studio/comp4020-final-noah-martin1/commit/762ea33)).
+
+## Harness
+
+The harness has evolved into three files - `CLAUDE.md` for the current task, `docs/ARCHITECTURAL_GUIDELINES.md` for what the app is and must never break, and `AI_NOTES.md` for what the agent learned doing the work. I have really tried exploring a hierarchy for where rules, information and discussion sit.
+
+**A skeleton** ([`8603fd4`](https://github.com/comp4020-agentic-coding-studio/comp4020-final-noah-martin1/commit/8603fd4)). I began with `CLAUDE.md` as a skeleton of the project timeline, as I didn't want Claude trying to create a full blown project in the first prompt - I wanted it to consider each phase carefully so at the end it would all come together. I think there is value in giving Claude your future intentions, as it reduces the agent making its own decisions based on the (intentional) gaps in the project. I gave little visual direction since this step was for brainstorming.
+
+**The real outline** ([`a295293`](https://github.com/comp4020-agentic-coding-studio/comp4020-final-noah-martin1/commit/a295293)). From here I rewrote it, putting together the features I had brainstormed from the skeleton - looking for what was missing and what works. This was the true outline, with detailed visual instructions and examples. I find spreading out first stage features like this useful as I'm not treading on Claude's feet with rules that are too restrictive for early development, and using Opus at extra high effort let it iterate over its own decisions. As I went I added rules ([`bc61ddc`](https://github.com/comp4020-agentic-coding-studio/comp4020-final-noah-martin1/commit/bc61ddc)), many of which have changed since.
+
+**Structure** ([`6fe91ba`](https://github.com/comp4020-agentic-coding-studio/comp4020-final-noah-martin1/commit/6fe91ba)). With the first stage essentially done, I rewrote it again to build on each feature and hone in on what's important. Each feature became its own heading (before, each was a dot point under one heading) with its main principles underneath, and rules that had been listed in an arbitrary order turned into sections such as "Testing and acceptance criteria" and "Recipe catalogue and external pricing" so their relevance was clearer.
+
+**The split** ([`e9e00c1`](https://github.com/comp4020-agentic-coding-studio/comp4020-final-noah-martin1/commit/e9e00c1)). By now the priority had moved from feature implementation to testing and bug / logic fixes, and `CLAUDE.md` was ~300 lines long. Claude tends to weigh instructions at the end of a file more (the "final word" effect), so the easy option was to keep appending tasks to the bottom - which is what Claude does itself - but that lowers the weight of everything before it. Instead I moved the entire file to `ARCHITECTURAL_GUIDELINES.md` to give its instructions more equal precedence. Its value now is in defining the web app rather than build instructions. That freed `CLAUDE.md` to focus Claude on a single task, specifying what went wrong and going into more detail.
+
+## One task at a time
+
+Each task roughly follows the same structure - Active Task Intent, Active Technical Constraints, Logging learning achievements and Project References. Project References points Claude to the guidelines for questions more general to the project, and gives it an overview if the session restarts. Two lines in the intent ended up doing a lot of the work. A double-check rule says what "checked" means for that task. A credit allocation says how much Claude should spend - selecting the model and effort with /model helps too, but when you give Claude a budget it delegates certain jobs to certain models. On the video task `AI_NOTES.md` logs Sonnet transcribing a recipe for about $0.16 against $1.10 on Opus with similar quality once reviewed, so Opus was saved for coordination.
+
+The first task in this format was matching YouTube videos to each recipe. Claude had found videos with the same title but hadn't checked their content, so the video and the method didn't match up. I wrote the task per video / per recipe / per job to encourage concurrency, so it could run multiple agents at once, each referring to the same instruction. Getting it to write into `AI_NOTES.md` proved helpful straight away - YouTube blocked transcripts from my IP, and the notes record the workaround of downloading the audio and transcribing it with a local ML program ([`0709736`](https://github.com/comp4020-agentic-coding-studio/comp4020-final-noah-martin1/commit/0709736)). When a task is done I comment it out, tell Claude to ignore it, and sometimes add to the guidelines ([`8b7ad56`](https://github.com/comp4020-agentic-coding-studio/comp4020-final-noah-martin1/commit/8b7ad56)).
+
+## Asking for evidence, not just a pass
+
+One of the last notable harness decisions was asking Claude to put its evidence / testing / results in a directory for me to review ([`d780856`](https://github.com/comp4020-agentic-coding-studio/comp4020-final-noah-martin1/commit/d780856)). The task was a fridge/pantry photo, receipt and barcode scanner, which needed a browser capable ML model with its accuracy and precision checked. I wanted the findings as a report, and as notes on what went wrong and the challenges it faced ([`762ea33`](https://github.com/comp4020-agentic-coding-studio/comp4020-final-noah-martin1/commit/762ea33)), so I could weigh up the pros and cons myself and give input to move forward. Ultimately this is an extension of when I first asked for a completion report: completion report -> AI_NOTES -> testing and results report. While Claude is good at its own reasoning, many of its decisions were difficult logically or subjectively, and sometimes wrong. There is a lot of value in understanding where Claude is struggling and recommending what to do instead.
+
+## Corrections that stay
+
+When Claude got something wrong I tried to get the fix into a test or the notes rather than just retrying, so the next session couldn't make the same mistake. Pricing a handful of coriander as ten bunches is now a test ([`4022152`](https://github.com/comp4020-agentic-coding-studio/comp4020-final-noah-martin1/commit/4022152)), and so is a scan pricing fried chicken as raw wings ([`0e73d55`](https://github.com/comp4020-agentic-coding-studio/comp4020-final-noah-martin1/commit/0e73d55)). Transcribers inventing amounts to pass the validator became a rule in every transcription brief ([`69781e7`](https://github.com/comp4020-agentic-coding-studio/comp4020-final-noah-martin1/commit/69781e7)).
 
 ## Workflow
 
-I used plan mode first, approved the plan, then let the agent build each
-slice end to end. I checked the work three ways: `pnpm check` (48 tests
-against the running app and the Docker image), screenshots at desktop and
-phone widths in light and dark mode, and clicking through with demo data. The
-tests caught a privacy bug where the autocomplete leaked other users'
-ingredient names. When I asked for every feature to have a page, real pages
-were built where the data already existed (shopping list, settings, cook
-mode), and the rest became previews with sample data.
+From the harness, the workflow becomes creating a task in `CLAUDE.md` and referencing the guidelines for general context. Later on each task is committed before the work starts, so you can see the brief before the code that answers it ([`9c555e8...4b10a24`](https://github.com/comp4020-agentic-coding-studio/comp4020-final-noah-martin1/compare/9c555e8...4b10a24)). For bigger jobs Claude splits the work across background agents in their own worktrees, and each branch is read before it's merged ([`ec9bee6`](https://github.com/comp4020-agentic-coding-studio/comp4020-final-noah-martin1/commit/ec9bee6)).
 
-## Making it real
+A lot of the work has been testing that the web app makes sense and finding tasks for the AI to improve it. Small tasks work in the prompt text box, others become `CLAUDE.md` tasks.
 
-For the last stretch I rewrote the brief in `CLAUDE.md` page by page (the
-globe, the calendar, the fridge and pantry, recipes) and asked for every
-preview to become a working feature. The agent split the work: separate
-background agents built live cooking, the household and the recipe catalogue
-in parallel, each owning its own files and migration, while the main session
-built the 3D kitchen, merged the planner and schedule into the calendar,
-folded the feed into Friends, and redesigned the home and landing pages. Each
-agent reported back with what it tested; the main session ran `pnpm check`
-after every merge.
+## Readings
 
-The AI is deliberately small. Answers come from rules over your data, and a
-free model running in the browser only rewords them. Testing several models
-and precisions showed the small ones invent swaps, so the page drops any
-reply that names a food the checked answer didn't.
-
-Every visual change was screenshotted at desktop and phone width, light and
-dark, and compared against the brief's "Apple / Pinterest" bar. Screenshots
-caught a side panel covering the fridge, an outline invisible on cream,
-mobile overflow in the top bar, and a page transition that only worked on
-some pages because the opt-in loaded too late.
-
-## Refining it (crit 10)
-
-The last stretch was a list of ten fixes and features. I asked for them in
-one go and for the agent to follow `CLAUDE.md` without checking back. It
-split the work: background agents in their own worktrees took the 3D fridge,
-the recipe videos and the retailer product scrape, each with a fixed
-interface to code against, while the main session rebuilt pricing around
-whole-pack purchases and added expiry, photos, live-by-default, home
-suggestions and the activity log. Every agent's branch was read before it
-was merged, and that review caught the scraped data's weak point: a
-"contains the word" match that offered lemon-pepper tuna for lemons and bath
-mats for bay leaves. A like-for-like rule with its own tests fixed it.
-Screenshots at both widths caught a live banner that broke the cook page's
-grid on phones, and an unreadable suggestion over bright photos. A spec that
-only failed at one UTC hour got pushed once; since then every commit waits
-for the full check to pass.
+I came to the readings late, while rewriting the README, so they didn't shape the first plan. Robin Sloan's "An app can be a home-cooked meal" made me realise Larder has grown well past a home-cooked app - it's still made for a household, but its size is why the harness and tests matter. Clay Shirky's "Situated Software" put a name to something the guidelines already do - housemates are trusted and strangers on the globe aren't, so only what you'd happily share goes public. You'd tell anyone what you're cooking, but what's in your fridge and who you live with stays with your housemates.

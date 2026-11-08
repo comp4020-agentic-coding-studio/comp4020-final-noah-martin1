@@ -1,258 +1,97 @@
 # Larder
 
-**For markers: no setup needed.** For two people, sign in as `alice` in one
-Chrome profile and `sam` in the other (password `password123` for both).
-They're friends and housemates in a shared household, with a stocked pantry,
-recipes and planned meals. Or register your own accounts with any username
-and password. Please don't change the demo accounts' passwords, since other
-markers use them.
+**For markers: no setup needed.** Sign in as `alice` in one Chrome profile and
+`sam` in the other (password `password123` for both; please don't change it,
+other markers use these accounts). They share a household with a stocked
+kitchen; you can also register your own.
 
-- **Multi-user:** in Household → Shared shopping, press "I've got this" on an
-  item as alice; sam sees it claimed.
-- **Real-time:** open a public recipe and press "Cook step by step" (this goes
-  live); in the other profile, follow it from the Live globe as the steps
-  change.
-- **Persistence:** add a pantry item, then reload or sign out and back in.
-- **Optional, scanning** (Fridge → Scan a photo): Barcode and Photo work here.
-  The photo scan runs a model in your browser and downloads about 1.4 GB the
-  first time. Receipt reading needs a local model this server can't run, so
-  it's off here; its results are in `testing/fridge-scan/RESULTS.md`.
+- **Real-time:** as alice, open a public recipe and press **Cook step by
+  step**; as sam, follow that pan from **Live globe** while the steps move. Or
+  start writing a review: the other profile sees the typing, then the review.
+- **Multi-user:** in **Household → Shared shopping**, press **I've got this**
+  as alice; sam's list shows it claimed.
+- **Persists:** add something in **Fridge & pantry**, sign out, come back
+  tomorrow.
+- **Scanning (optional):** **Fridge & pantry → Scan a photo**. Everything is
+  read in your browser; the photo model is a 1.4 GB download.
 
-Larder is a shared kitchen for people who cook together. Your fridge and
-pantry are a 3D kitchen of what you actually have, with expiry dates and what
-you paid. Recipes know what's in that kitchen, work out their own nutrition and
-cost, and cook one step at a time. A meal calendar can plan a costed week for
-you, show what friends are cooking, and turn into a shopping list priced
-against your budget. When you cook, you can go live: your pan appears on a
-globe, and anyone who's allowed to can follow your steps and ask you
-questions. Housemates can share one pantry, calendar and shopping list, claim
-what they'll buy, and race to use what's about to go off. Browsing recipes,
-cooking them and watching the globe need no account.
-
-## The problem
-
-Food goes off because nobody remembered it was there. Two housemates plan
-around the same last eggs. A recipe looks cheap until you count what you'd
-have to buy. The information that would fix all of this (what's in the
-kitchen, what it cost, what everyone is planning) usually lives in people's
-heads, so it can't be shared and it goes stale.
+Larder is a shared kitchen for a household. The fridge and pantry are a 3D
+model of what you actually have, with dates and what you paid. Recipes know
+what's in it and what's missing, the calendar plans a costed week, and
+housemates split one shopping list. When you cook you can go live, and friends or anyone
+can follow your steps on a globe.
 
 ## What "good" means here
 
-**Truthful about the kitchen.** A recipe page says which ingredients you
-actually hold (fresh, not expired), how many you're missing, and what those
-would cost at the prices *you* last paid. That comes from plain arithmetic
-over your pantry, never from a guess. The on-device model can reword an
-answer, but it can't change the maths.
+Food goes off because nobody remembered it was there, and two housemates plan
+around the same last eggs. What would fix that lives in people's heads, where
+it can't be shared and goes stale. Larder is good if a household trusts it over their memory, which
+asks four things of it:
 
-**Private by default, shared on purpose.** A recipe is public, friends-only or
-just yours. A planned meal is shared or private. A friendship only exists once
-both people have agreed. Someone who isn't your friend sees none of your
-friends-only recipes, your pantry or your calendar, and a hidden recipe looks
-the same as one that doesn't exist.
+- **Truthful about the kitchen.** What you hold, what's missing and what it
+  costs come from arithmetic over your own data. An unknown price is named,
+  never counted as free. AI may reword an answer or suggest a name; it never
+  decides one.
+- **Private by default, shared on purpose.** Recipes and meals are friends-only by default; cooking live is for everyone unless you narrow it. A friendship needs both people. Something
+  you can't see looks the same as something that doesn't exist.
+- **Present, not loud.** You see a housemate claim the milk, or a friend's pan
+  move on the globe, as it happens, and nothing pings you outside the app.
+- **Nothing lost, nobody left out.** One database on the server's volume
+  survives restarts and redeploys, and every page works without JavaScript,
+  by keyboard and at phone width.
 
-**Works for everyone at the table.** Every page works without JavaScript and
-with only a keyboard, at phone width, in light and dark mode. Forms keep what
-you typed when they reject it and say why.
+## What I read
 
-**Nothing is lost.** Everything lives in one SQLite database on the server's
-persistent volume, so it survives restarts and redeploys.
+Robin Sloan's
+["An app can be a home-cooked meal"](https://www.robinsloan.com/notes/home-cooked-app/)
+(2020) is about a messaging app he built for his family of four, replacing one
+whose whole value was a quiet sense that the others were there. Larder takes
+both ideas: the household is the user, not a market, and a claimed item or a
+housemate typing tells you the house is alive without asking for a reply. It
+departs from his simplicity. A kitchen is only useful with quantities, dates
+and prices, so Larder is large where his app is tiny, and that size is what
+`spec/` is for.
 
-## Checked vs judged
+Clay Shirky's
+["Situated Software"](https://gwern.net/doc/technology/2004-03-30-shirky-situatedsoftware.html)
+(2004) argues that software built for one group can rely on its "existing
+social fabric" instead of code: a group-buying tool can flag an unpaid share
+and leave the chasing to the group, where a web-scale app would need escrow.
+Larder does this inside a household, where **I've got this** is a promise
+between housemates. But public recipes and the globe reach strangers who share
+no fabric, so at that edge the software enforces: every visibility decision
+goes through one file, and only a city-level location is ever stored. Situated
+inside, enforced at the edge.
 
-Some of "good" is enforced by tests in `spec/` that run against the live app:
+## Checked, measured, judged
 
-- signing in, signing out, duplicate usernames, and protected pages
-- a friend request can't be accepted by the person who sent it
-- strangers get a 404 for friends-only and private recipes, and a shared meal
-  never leaks the title of a recipe the viewer isn't allowed to see
-- pantry quantities and prices can't be negative or nonsense, and one person
-  can't see or change another's pantry
-- the shopping list is planned meals minus fresh pantry stock: expired items
-  and cancelled meals don't count
-- forms posted from another site are refused
-- anyone can browse, search and cook public recipes without an account,
-  private recipes never show up in the results, and changing the servings
-  scales every quantity
-- a live cook session is never seen more widely than its own setting or its
-  recipe: friends-only reaches friends, private reaches only the cook, and the
-  live stream only tells each viewer about sessions they may see
-- while live, the step only moves forward, only the cook can move or end it,
-  going live again ends the last session, and only a city-level location is
-  ever stored
-- the week planner keeps to the budget, gives the same week for the same
-  choices, and "add all" plans only for the person who asked and re-checks
-  every recipe; a friend overlaid on the calendar shows only their shared meals
-- "ask about this recipe" answers from checked facts (a substitution table,
-  the pantry, scaling), says so when it has no answer, works without
-  JavaScript, and never reveals a private recipe or someone else's pantry
-- a household is its members and no one else: outsiders get a 404 for every
-  household page and write, a person is in one household at a time, a new
-  invite code stops the old one working, and the last one out closes it
-- the shopping list buys whole packs: needs are summed across meals, usable
-  stock subtracted, and 200 g of flour from an empty pantry is a whole bag;
-  checkout cost and the value the recipes use are shown apart, a price you
-  paid is never replaced by a higher shelf price, and unknown prices are
-  never treated as free: a recipe names any ingredient it couldn't price and
-  the planner never offers such a meal as cheap
-- expired food gets one grace day ("Do you still have this?") and then
-  leaves the kitchen by itself; it stops counting as stock on the day after
-  its date
-- every recipe someone writes has a photo, checked by its bytes, on every
-  way of saving it
-- a catalogue recipe shows a video only if its recipe was transcribed from
-  that video, and the "Has video" filter lists exactly the recipes whose page
-  shows one (never a private recipe to someone who can't open it); a revised
-  catalogue recipe updates in place on the next boot,
-  keeping its id, but not while someone is cooking it; plant foods named after
-  dairy ("vegan butter", "coconut milk", "butter beans") don't cost a recipe
-  its vegan tag
-- cook mode goes live by default within your own visibility setting, never
-  on the map unless you picked a city, and turns off with one tap or for good
-  in settings
-- the server logs who did what (never passwords or what people typed), and
-  each person sees their own trail in settings
-- in a household only items about to go off can be claimed for "use tonight",
-  each shopping item has one claimer at a time, a house meal must be a recipe
-  every member can open, and adding stock that completes a planned meal
-  nudges the house
+- **Checked** by `spec/`, against the running app, and a failing check blocks
+  the deploy: the kitchen's arithmetic (`pricing`, `shopping`, `expiry`,
+  `planner-budget`), privacy at every edge (`visibility`, `household`, `live`,
+  `reviews`), AI staying advisory (`assistant`, `scan-tools`), and a restart
+  keeping what visitors added (`demo-refresh`). The rules the agent works under
+  are in
+  [`docs/ARCHITECTURAL_GUIDELINES.md`](https://github.com/comp4020-agentic-coding-studio/comp4020-final-noah-martin1/blob/main/docs/ARCHITECTURAL_GUIDELINES.md).
+- **Measured**, not pass or fail: how well scanning works, photo by photo and
+  receipt by receipt, in `testing/results.md`. Receipts read in the browser
+  name 91% of items correctly.
+- **Judged:** whether pages feel calm and clear, and whether the 3D kitchen is
+  a pleasure to use, from screenshots at phone and desktop widths, in light and
+  dark, against the visual direction in the guidelines.
 
-Other parts can only be judged: whether the pages are clear and calm, whether
-the 3D kitchen and the globe are a pleasure to use, whether the calendar is
-pleasant to plan with.
+## Not built, on purpose
 
-## AI, and where it stops
-
-The week planner and "ask about this recipe" both work out their answers with
-plain rules over your data. An optional on-device model (Qwen2.5 0.5B, free,
-Apache-2.0, downloaded once and run on your GPU with WebGPU) can reword an
-answer into a friendly sentence. It never replaces the checked answer: its
-reply appears underneath, labelled, and is thrown away if it names a food the
-facts didn't, repeats itself, or just echoes the answer. Nothing you type
-leaves your device for it, and every page works without it.
-
-Adding to the pantry can start from a scan (Fridge → Scan a photo). Every
-scan ends at the same review form, where each suggestion is an editable,
-untickable row and nothing is saved until you press Add:
-
-- **Barcode.** The camera (or a typed number, checked by its GS1 check digit)
-  is looked up in [Open Food Facts](https://world.openfoodfacts.org), which
-  gives the product and its exact pack size. Not every product is in it.
-- **Photo on this device.** Qwen3-VL 2B runs in your browser on WebGPU (1.4 GB
-  the first time). Your photo stays on your device.
-- **Receipt on this device.** PaddleOCR (about 14 MB, cached after the first
-  visit) reads the printed lines in your browser, in a worker; the camera
-  takes the photo itself once the receipt is held still. Only the text is
-  posted, and the server decides what was bought with plain code
-  (`src/receipt-text.ts`): pack sizes and weights from the printed text,
-  food names matched to ingredients the app knows, and the prices checked
-  against the receipt's total, every line starting unticked when they don't
-  add up. This is what the deployed site uses.
-- **Photo or receipt on the server.** Only on a self-hosted install with a
-  local vision model (Ollama, `VISION_URL`); the deployed 256 MB machine can't
-  run one. Scans run in the background with a progress bar.
-
-The models suggest names or read text; matching a name to an ingredient,
-sizes, and the total check are plain code. Measured accuracy, photo by photo
-and receipt by receipt, is in `testing/results.md`.
-
-Recipes have **reviews** at the foot of the page: a 1–5 star rating (the
-average sits by the byline), words, up to four photos and links to other
-recipes, with replies and likes. Others see "Sam is writing…" with three
-dots while someone types, and new reviews arrive without a reload. Reviews
-follow the recipe's visibility, including their photos. Anyone can filter by
-stars, photos or language. A review in another language can be translated
-into English in the browser (a small Opus-MT model per language, about 110 MB
-the first time, run only when you press Translate), shown beside the
-original and labelled as a machine's; languages with no good model aren't
-offered. Everyone picks a cooking character as their picture in Settings.
-Deleting your account (Settings) removes your recipes, pantry and plans but
-leaves your reviews of others' recipes, without your name or picture. The
-**Top rated** filter on Recipes lists reviewed recipes best first, by an
-average pulled towards 3.5 stars when there are few reviews, so one 5-star
-review doesn't outrank twenty at 4.7. Some catalogue recipes carry sample
-reviews so the feature shows before real people review much. Each is
-labelled "Sample" under a preview banner. Their writers are placeholder
-accounts that can't sign in, have no profile and can't be found
-(`src/sample-reviews.ts`).
-
-Each recipe's **What it costs** card shows three numbers, each named for
-what it is: *cost to make* (the value of what goes in the dish, which "per
-serve" divides), *at the checkout* (the whole packs you'd buy from an empty
-kitchen) and, signed in, *after your pantry*. Stand-ins are listed with why
-("no store sells monkfish"), and any ingredient with no price is named, so a
-total is never quietly short. Writing a recipe, each ingredient shows what
-it's priced at and asks what you paid when there's no price; your price
-then prices your own recipes and shopping. **From my kitchen** on Recipes
-lists what you can cook from what you have, then what's missing one
-ingredient, then two, saying what's missing.
-
-## Not built yet (on purpose)
-
-The globe mixes real live cooks with a layer of demo cooks so it's never
-empty; the demo layer is tagged and sits under a "preview with sample data"
-banner (a test checks real sessions carry no caveat). There's no shopping
-list export. Nutrition is an estimate from a built-in food table, and shelf
-prices are read when the refresh script runs, not continuously. Live-cooking Q&A translation is shown only for demo cooks (reviews translate for real). Each would add scope
-without making the core loop (know what you have, cook it, share it) better.
+No notifications outside the app, no followers (a friendship is mutual or it
+isn't there) and no shopping-list export, because none of them makes the core
+loop of knowing what you have, cooking it and sharing it any better. Kept
+honest instead: nutrition is an estimate, shelf prices are dated rather than
+live, and the globe's demo cooks sit under a preview banner.
 
 ## Sources
 
-- **Recipes and photos:** [TheMealDB](https://www.themealdb.com/)'s free
-  public API. The shared catalogue (`src/data/catalogue.json`) is 757 recipes
-  from 62 cuisines, each with its TheMealDB photo and a `themealdb:<id>` key.
-  Meals without a photo, with fewer than 4 ingredients or 2 usable steps, or
-  duplicated were left out (33 in all). Ingredient names, amounts and steps
-  were cleaned into metric units and short steps; brand names in titles were
-  made generic. 51 of them were since rewritten to match their
-  video (see Recipe videos).
-- **Recipe videos:** a catalogue recipe shows a video only when its
-  ingredients and steps were transcribed from that video and then checked a
-  second time against the same source. The source is the video's own
-  transcript, or the creator's written recipe for that video (linked from its
-  description), or a full recipe in the description. Where TheMealDB's video
-  had no amounts or was a different dish, a video of the same dish with a
-  written recipe replaced it. Amounts are converted to metric. A title match
-  alone (`scripts/fetch-videos.ts`) only finds candidates and never shows a
-  video. Every other recipe says no matching video is available, and keeps
-  TheMealDB's text. A video an author adds themselves is labelled as theirs and
-  not checked.
-- **Nutrition:** calories, protein, carbs and fat per 100 g for about 500
-  ingredients (`src/nutrition.ts`), rounded from USDA FoodData Central
-  reference values, with dry goods at uncooked values. 94.6% of ingredient
-  lines in the catalogue are counted; "salt to taste" can't be. Every figure
-  is labelled an estimate.
-- **Prices:** every catalogue ingredient has a checked price source in
-  `src/data/price-sources.json`: a Woolworths or ALDI product reviewed by
-  hand as that food in the form recipes use it (fresh garlic, not minced
-  jars), a labelled stand-in when neither store sells it ("priced as white
-  fish fillets"), another ingredient it's bought as (egg yolks as eggs), or a
-  dated estimate from a named shop for niche food (dried shrimp from an Asian
-  grocer). Tap water is free. Shelf prices were read from Woolworths' public
-  product search and ALDI's category pages (paths their robots.txt allows)
-  and are stamped with when they were read; none is called live. The rules
-  are in `docs/product/pricing.md`.
-- **Videos:** YouTube cooking videos with the channel named on every recipe
-  page. For each one, the recipe was transcribed from the video's transcript or
-  the creator's own written recipe and checked again by a second pass on 21
-  October 2026 (`src/data/videos.json`, `transcribed: true`). 51
-  recipes have one; the rest say no matching video is available.
-- **Logs:** `activity_log` in the database and one JSON line per event on
-  stdout (`fly logs`); `node scripts/activity.ts --follow` reads it, and
-  accounts in `ADMIN_USERNAMES` get a live feed at `/admin/activity`.
-- **Globe:** NASA imagery, all public domain, from
-  [NASA Visible Earth](https://visibleearth.nasa.gov/): Blue Marble Next
-  Generation (October, topography and bathymetry; Reto Stöckli, NASA Earth
-  Observatory) by day, Black Marble 2016 city lights by night, GEBCO_08
-  elevation for the relief, and the Blue Marble cloud composite.
-  `scripts/build-earth.py` turns the downloads into the WebP textures in
-  `public/textures/`. The sun's position comes from the standard
-  low-precision solar formulas, so day, night and dusk sit where they really
-  are right now; each cook's local time uses their city's IANA time zone.
-  Drawn with [three.js](https://threejs.org/) (MIT, licence in
-  `public/vendor/THREE-LICENSE`).
-- **On-device assistant:** [Qwen2.5-0.5B-Instruct](https://huggingface.co/Qwen/Qwen2.5-0.5B-Instruct)
-  (Apache-2.0) via [transformers.js](https://github.com/huggingface/transformers.js)
-  (Apache-2.0), loaded only when a visitor switches it on.
-- **Live locations:** about 90 built-in city centres; a browser location is
-  rounded to 0.1° (about 11 km) before it's stored.
+Data from [TheMealDB](https://www.themealdb.com/) (recipes), USDA FoodData
+Central (nutrition), [Open Food Facts](https://world.openfoodfacts.org)
+(barcodes) and [NASA Visible Earth](https://visibleearth.nasa.gov/) (the
+globe), drawn with [three.js](https://threejs.org/); every model runs in your
+browser. Full provenance, and every claim the tests check, are in
+[`docs/details.md`](https://github.com/comp4020-agentic-coding-studio/comp4020-final-noah-martin1/blob/main/docs/details.md).
