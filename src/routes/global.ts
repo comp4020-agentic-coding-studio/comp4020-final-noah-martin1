@@ -17,9 +17,13 @@ import {
   liveSessions as openSessions,
   placeLabel,
   publicLiveCounts,
+  liveTypingFor,
   QUESTION_MAX,
   questionsFor,
   sessionVersion,
+  setLiveTyping,
+  type TypingEvent,
+  typingBus,
 } from "../live.ts";
 import { catalogueByTitle, ingredientsFor, pantryMatch, type RecipeIngredient, recipeSteps } from "../recipes.ts";
 import { GLOBAL_SESSIONS, type SampleGlobalSession } from "../samples.ts";
@@ -363,6 +367,7 @@ function detail(s: GlobeSession, signedIn: boolean, open = false): Html {
       <section class="gl-qa" aria-label="${t("Questions")}">
         <h3>${t("Questions")}</h3>
         <div data-part="thread">${threadPart(s)}</div>
+        <p class="gl-typing" data-typing="${s.id}" role="status" hidden></p>
         ${askBox(s, signedIn)}
       </section>
 
@@ -720,6 +725,27 @@ liveBus.on("event", (e: LiveEvent) => {
   if (!live) for (const c of conns.values()) if (c.watching === e.sessionId) c.watching = null;
 });
 
+// Who's writing a question or an answer: each connection that can see the
+// session hears the names it should (liveTypingFor decides: the cook sees
+// askers, an asker sees the cook answering), never its own.
+typingBus.on("typing", (e: TypingEvent) => {
+  const s = getSession(e.sessionId);
+  if (!s || !isLive(s)) return;
+  for (const c of conns.values()) {
+    if (c.only !== null && c.only !== e.sessionId) continue;
+    if (!c.known.has(s.id) || !canSeeSession(c.viewerId, s)) continue;
+    send(c, "typing", { id: String(s.id), who: liveTypingFor(s.id, c.viewerId) });
+  }
+});
+
+// Someone writing a question (a watcher) or an answer (the cook).
+async function typing(ctx: Ctx): Promise<Reply> {
+  const form = await ctx.form();
+  const id = realId(ctx.params.id);
+  const ok = id !== null && setLiveTyping(id, ctx.user!.id, ctx.user!.display_name, form.get("on") === "1");
+  return ok ? json({ ok: true }) : json({ error: "not-found" }, 404);
+}
+
 setInterval(() => {
   for (const c of conns.values()) if (!c.res.destroyed) c.res.write(": ping\n\n");
 }, HEARTBEAT_MS).unref();
@@ -762,6 +788,11 @@ function stream(ctx: Ctx): Reply {
       const list = openSessions().filter((s) => (only === null || s.id === only) && see(s));
       for (const s of list) c.known.add(s.id);
       send(c, "sync", { sessions: list.map((s) => ({ id: String(s.id), v: sessionVersion(s), w: watcherCount(s.id, s.user_id) })) });
+      // anyone already writing to a session this viewer can see
+      for (const s of list) {
+        const who = liveTypingFor(s.id, viewerId);
+        if (who.length) send(c, "typing", { id: String(s.id), who });
+      }
     },
   };
 }
@@ -823,4 +854,5 @@ export const routes: Route[] = [
   },
   { method: "POST", path: "/global/:id/ask", auth: true, handler: ask },
   { method: "POST", path: "/global/:id/answer", auth: true, handler: answer },
+  { method: "POST", path: "/global/:id/typing", auth: true, handler: typing },
 ];

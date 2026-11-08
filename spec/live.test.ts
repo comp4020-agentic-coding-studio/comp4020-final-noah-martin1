@@ -277,6 +277,65 @@ describe("live cooking: questions", () => {
   });
 });
 
+describe("live cooking: who's typing", () => {
+  // The cook sees a watcher writing a question; a watcher sees the cook
+  // writing an answer only once they've asked something (it's their
+  // question); nobody who can't see a session can send or hear its dots.
+  type Ev = { event: string; data: Record<string, unknown> };
+  const whoOn = (id: number) => (e: Ev) => e.event === "typing" && e.data.id === String(id);
+  const names = (e: Ev | undefined) => ((e?.data.who as { name: string; role: string }[] | undefined) ?? []).map((w) => `${w.role}:${w.name}`);
+  const lastTyping = (seen: Ev[], id: number) => seen.filter(whoOn(id)).at(-1);
+
+  it("the cook sees someone asking, and the asker sees the cook answering", async () => {
+    const cook = await registered("cook");
+    const asker = await registered("asker");
+    const id = await goLive(cook, await createRecipe(cook.client, `Typing ${cook.username}`, "public"), "public");
+
+    // the asker starts writing: the cook's stream says so
+    const cookStream = await cook.client.get(`/global/stream?only=${id}`);
+    const cookSees = readEvents(cookStream, 4000, (e) => whoOn(id)(e) && names(e).some((n) => n.startsWith("asking:")));
+    expect((await postJson(asker.client, `/global/${id}/typing`, { on: "1" })).status).toBe(200);
+    expect(names(lastTyping(await cookSees, id))).toEqual([expect.stringMatching(/^asking:Test asker_/)]);
+
+    // sending the question takes the asker's dots down at once
+    const cookStream2 = await cook.client.get(`/global/stream?only=${id}`);
+    const cleared = readEvents(cookStream2, 4000, (e) => whoOn(id)(e) && names(e).length === 0);
+    expect((await postJson(asker.client, `/global/${id}/ask`, { text: "Can I use butter?" })).status).toBe(200);
+    expect(names(lastTyping(await cleared, id))).toEqual([]);
+
+    // the cook writes an answer: the asker hears it
+    const askerStream = await asker.client.get(`/global/stream?only=${id}`);
+    const askerSees = readEvents(askerStream, 4000, (e) => whoOn(id)(e) && names(e).length > 0);
+    expect((await postJson(cook.client, `/global/${id}/typing`, { on: "1" })).status).toBe(200);
+    expect(names(lastTyping(await askerSees, id))).toEqual([expect.stringMatching(/^answering:Test cook_/)]);
+    await postJson(cook.client, `/global/${id}/typing`, { on: "0" });
+    await postJson(cook.client, `/live/${id}/end`);
+  });
+
+  it("a watcher who hasn't asked anything doesn't see the cook answering", async () => {
+    const cook = await registered("cook");
+    const lurker = await registered("lurker");
+    const id = await goLive(cook, await createRecipe(cook.client, `Typing quiet ${cook.username}`, "public"), "public");
+    const lurkerStream = await lurker.client.get(`/global/stream?only=${id}`);
+    const lurkerSaw = readEvents(lurkerStream, 2000, (e) => whoOn(id)(e) && names(e).length > 0);
+    await postJson(cook.client, `/global/${id}/typing`, { on: "1" });
+    expect((await lurkerSaw).some((e) => whoOn(id)(e) && names(e).length > 0)).toBe(false);
+    await postJson(cook.client, `/global/${id}/typing`, { on: "0" });
+    await postJson(cook.client, `/live/${id}/end`);
+  });
+
+  it("nobody can send or hear dots on a session they can't see", async () => {
+    const cook = await registered("cook");
+    const stranger = await registered("stranger");
+    const id = await goLive(cook, await createRecipe(cook.client, `Typing friends ${cook.username}`, "public"), "friends");
+    expect((await postJson(stranger.client, `/global/${id}/typing`, { on: "1" })).status).toBe(404);
+    expect((await new Client().post(`/global/${id}/typing`, { on: "1" })).finalUrl).toMatch(/^\/login/);
+    await postJson(cook.client, `/live/${id}/end`);
+    // and once it's ended, not even a friend could
+    expect((await postJson(cook.client, `/global/${id}/typing`, { on: "1" })).status).toBe(404);
+  });
+});
+
 describe("live cooking: one page", () => {
   it("the old live pages point at the globe", async () => {
     const res = await fetch(new URL("/live", new Client().base), { redirect: "manual" });

@@ -6,6 +6,7 @@
 // session page (/global/:id), which has a card but no globe.
 import { t } from "./i18n.mjs";
 import { tickClocks } from "./localclock.mjs";
+import { typingLine, typingNote } from "./typing-note.mjs";
 
 const root = document.querySelector("[data-gl]");
 const stage = document.querySelector("[data-globe]");
@@ -286,6 +287,11 @@ function start() {
       const { id, n } = JSON.parse(e.data);
       setWatchers(id, n);
     });
+    // the cook writing an answer to a question you asked
+    es.addEventListener("typing", (e) => {
+      const { id, who } = JSON.parse(e.data);
+      typingLine(root.querySelector(`[data-typing="${id}"]`), who, t);
+    });
     es.onerror = () => {
       connId = null;
       // the browser retries a dropped stream itself; a refused one (too many
@@ -310,6 +316,15 @@ function start() {
   });
 
   /* ---------- asking a question ---------- */
+  // the cook sees "Sam is asking…" while you write (and a moment after)
+  let askingIn = null;
+  const asking = typingNote(() => (askingIn ? `/global/${askingIn}/typing` : null));
+  root.addEventListener("input", (e) => {
+    const form = e.target.closest?.("form[data-ask]");
+    if (!form || e.target.name !== "text" || !form.dataset.ask) return;
+    askingIn = form.dataset.ask;
+    asking.input(e.target);
+  });
   root.addEventListener("submit", async (e) => {
     const form = e.target;
     if (!(form instanceof HTMLFormElement) || !form.matches("[data-ask]")) return;
@@ -325,6 +340,7 @@ function start() {
       const body = await res.json().catch(() => ({}));
       if (res.ok) {
         input.value = "";
+        asking.stop();
         if (status) status.textContent = t("Sent — the answer will appear here.");
         if (body.card) upsert(body.card);
       } else if (res.status === 404) {

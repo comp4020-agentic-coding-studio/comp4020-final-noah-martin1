@@ -333,6 +333,7 @@ export const routes: Route[] = [
         </div>
 
         ${questionStack(liveHere, recipe.id)}
+        <p class="cm-typing" data-cm-typing role="status" hidden></p>
         <div class="cm-toast ${ctx.flash ? "good" : ""}" data-cm-toast role="status" ${ctx.flash ? "" : raw("hidden")}>${ctx.flash ?? ""}</div>
 
         <nav class="cm-nav">

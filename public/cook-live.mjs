@@ -4,6 +4,7 @@
 // step-by-step view itself is app.js; this watches it rather than changing
 // it, so cook mode works exactly the same when nobody is live.
 import { t } from "./i18n.mjs";
+import { typingLine, typingNote } from "./typing-note.mjs";
 const box = document.querySelector("[data-live-root]");
 const mode = document.querySelector("[data-cook-mode]");
 
@@ -192,6 +193,7 @@ function start() {
     session = null;
     box.dataset.session = "";
     stream?.close();
+    typingLine(document.querySelector("[data-cm-typing]"), [], t);
     clearInterval(beatTimer);
     if (reason === "finished") showOff(t("Your live session ended when you finished. Thanks for cooking with everyone."));
     else if (reason === "lost") showOff(t("Your live session ended."));
@@ -434,10 +436,17 @@ function start() {
     }
   }
 
+  // the people who asked see "Kai is answering…" while you type a reply
+  const typingEl = document.querySelector("[data-cm-typing]");
+  const answering = typingNote(() => (session !== null && !ended ? `/global/${session}/typing` : null));
+  qs?.addEventListener("input", (e) => {
+    if (e.target.matches?.(".cm-q-row input")) answering.input(e.target);
+  });
   qs?.addEventListener("submit", async (e) => {
     const f = e.target;
     if (!(f instanceof HTMLFormElement)) return;
     e.preventDefault();
+    answering.stop();
     const fields = new FormData(f, e.submitter ?? undefined);
     // the Send button carries the typed answer; a quick reply its own text
     const typed = f.querySelector(".cm-q-row input");
@@ -490,6 +499,11 @@ function start() {
     });
     stream.addEventListener("end", (e) => {
       if (Number(JSON.parse(e.data).id) === session && !ended) lost(t("Your live session has ended."));
+    });
+    // a watcher writing you a question
+    stream.addEventListener("typing", (e) => {
+      const ev = JSON.parse(e.data);
+      if (Number(ev.id) === session) typingLine(typingEl, ev.who, t);
     });
   }
 

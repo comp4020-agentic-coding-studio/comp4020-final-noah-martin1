@@ -442,6 +442,9 @@ export default part;
 // what this area's browser scripts show (public/*.mjs), sent to the page
 export const browser: Part = {
   zh: {
+    "{name} is answering…": "{name}正在回答…",
+    "{name} is asking…": "{name}正在提问…",
+    "{n} people are asking…": "{n}人正在提问…",
     // public/globe.mjs
     "You": "你",
     "Live": "直播",
@@ -466,6 +469,9 @@ export const browser: Part = {
     "You seem to be offline. Try again in a moment.": "你似乎处于离线状态，请稍后再试。",
   },
   es: {
+    "{name} is answering…": "{name} está respondiendo…",
+    "{name} is asking…": "{name} está preguntando…",
+    "{n} people are asking…": "{n} personas están preguntando…",
     // public/globe.mjs
     "You": "Tú",
     "Live": "En directo",
@@ -490,6 +496,9 @@ export const browser: Part = {
     "You seem to be offline. Try again in a moment.": "Parece que no tienes conexión. Inténtalo de nuevo en un momento.",
   },
   hi: {
+    "{name} is answering…": "{name} जवाब दे रहे हैं…",
+    "{name} is asking…": "{name} सवाल पूछ रहे हैं…",
+    "{n} people are asking…": "{n} लोग सवाल पूछ रहे हैं…",
     // public/globe.mjs
     "You": "आप",
     "Live": "लाइव",

@@ -478,8 +478,76 @@ export function askQuestion(sessionId: number, askerId: number, text: string): A
   const { id } = run("INSERT INTO cook_questions (session_id, asker_id, text) VALUES (?, ?, ?)", s.id, askerId, clean);
   logEvent(s.id, "question", askerId, s.current_step, String(id));
   publish({ kind: "question", sessionId: s.id, questionId: id });
+  setLiveTyping(s.id, askerId, "", false);
   return { ok: true, question: getQuestion(id)! };
 }
+
+/* ---------------- who's typing a question or an answer ---------------- */
+
+// A watcher writing a question shows the cook "Sam is asking…"; the cook
+// writing an answer shows the people who asked "Kai is answering…". The page
+// refreshes its note every few seconds while someone writes (and for a few
+// seconds after, so a pause to think doesn't flicker it off); it's
+// forgotten after LIVE_TYPING_TTL_MS without one, or when they send, clear
+// the box or leave. Held in memory: it's only ever "right now".
+export const LIVE_TYPING_TTL_MS = 8000;
+type Typer = { name: string; role: "asking" | "answering"; until: number };
+const liveTyping = new Map<number, Map<number, Typer>>();
+
+export type TypingEvent = { sessionId: number };
+export const typingBus = new EventEmitter();
+typingBus.setMaxListeners(0);
+
+function prune(sessionId: number, now: number): boolean {
+  const m = liveTyping.get(sessionId);
+  if (!m) return false;
+  let changed = false;
+  for (const [uid, t] of m) if (t.until <= now) (m.delete(uid), (changed = true));
+  if (!m.size) liveTyping.delete(sessionId);
+  return changed;
+}
+
+// Who `viewerId` should see typing on a session: the cook sees everyone
+// asking; anyone else sees the cook answering, but only once they've asked
+// that cook something in this session (it's their question being answered).
+// Nobody sees their own dots.
+export function liveTypingFor(sessionId: number, viewerId: number | null, now = Date.now()): { name: string; role: Typer["role"] }[] {
+  prune(sessionId, now);
+  const m = liveTyping.get(sessionId);
+  const s = m && getSession(sessionId);
+  if (!m || !s || viewerId === null) return [];
+  if (viewerId === s.user_id) return [...m].filter(([uid, t]) => uid !== viewerId && t.role === "asking").map(([, t]) => ({ name: t.name, role: t.role }));
+  const asked = one("SELECT 1 FROM cook_questions WHERE session_id = ? AND asker_id = ?", sessionId, viewerId);
+  if (!asked) return [];
+  const cook = m.get(s.user_id);
+  return cook && cook.role === "answering" ? [{ name: cook.name, role: cook.role }] : [];
+}
+
+// Someone starts or stops writing on a session they may write on: a watcher
+// who can see it (asking), or its cook (answering). False if they may not.
+export function setLiveTyping(sessionId: number, userId: number, name: string, on: boolean, now = Date.now()): boolean {
+  const s = getSession(sessionId);
+  if (!s || !isLive(s) || !canSeeSession(userId, s)) return false;
+  const role: Typer["role"] = s.user_id === userId ? "answering" : "asking";
+  let m = liveTyping.get(sessionId);
+  const before = JSON.stringify([...(m ?? [])].map(([u, t]) => [u, t.role]));
+  if (on) {
+    if (!m) liveTyping.set(sessionId, (m = new Map()));
+    m.set(userId, { name, role, until: now + LIVE_TYPING_TTL_MS });
+  } else m?.delete(userId);
+  if (m && !m.size) liveTyping.delete(sessionId);
+  prune(sessionId, now);
+  const after = JSON.stringify([...(liveTyping.get(sessionId) ?? [])].map(([u, t]) => [u, t.role]));
+  if (after !== before) typingBus.emit("typing", { sessionId } satisfies TypingEvent);
+  return true;
+}
+
+// Typers whose tab closed without saying so: announced as gone.
+const typingSweep = setInterval(() => {
+  const now = Date.now();
+  for (const id of [...liveTyping.keys()]) if (prune(id, now)) typingBus.emit("typing", { sessionId: id } satisfies TypingEvent);
+}, 2000);
+typingSweep.unref();
 
 export type AnswerResult = { ok: true; question: Question } | { ok: false; problem: "not-found" | "ended" | "empty" | "too-long" };
 
@@ -495,6 +563,7 @@ export function answerQuestion(sessionId: number, userId: number | null, questio
   run("UPDATE cook_sessions SET active_at = datetime('now') WHERE id = ?", sessionId);
   logEvent(sessionId, "answer", userId, null, String(q.id));
   publish({ kind: "answer", sessionId, questionId: q.id });
+  setLiveTyping(sessionId, userId!, "", false);
   return { ok: true, question: getQuestion(q.id)! };
 }
 

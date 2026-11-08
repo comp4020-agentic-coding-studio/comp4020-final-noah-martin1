@@ -11776,6 +11776,44 @@ body.cooking {
   display: none;
 }
 
+/* "Sam is asking…": a small pill over the step, where the question card
+   will arrive (it shows before the first question, when the stack is empty) */
+.cm-typing {
+  position: fixed;
+  right: 28px;
+  bottom: 64px;
+  z-index: 71;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: var(--pill);
+  background: var(--glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: var(--shadow);
+  font-size: 13px;
+  color: var(--ink-2);
+}
+
+.cm-typing[hidden] {
+  display: none;
+}
+
+/* "Kai is answering…" under the questions on the globe */
+.gl-typing {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 8px 0 0;
+  font-size: 13px;
+  color: var(--ink-2);
+}
+
+.gl-typing[hidden] {
+  display: none;
+}
+
 .cm-q {
   padding: 16px;
   border-radius: var(--radius-lg);
@@ -11952,6 +11990,11 @@ body.cooking {
     bottom: 96px;
     width: auto;
     max-height: 50vh;
+  }
+
+  .cm-typing {
+    right: 14px;
+    bottom: 56px;
   }
 
   .cm-toast {
