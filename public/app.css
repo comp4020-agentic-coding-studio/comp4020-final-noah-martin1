@@ -6199,13 +6199,12 @@ body.cooking {
 }
 
 /* "there's more below": a mouse with its wheel rolling down and a chevron
-   nudging after it, in the corner the hero and the switch leave free. It
-   fades once the page is scrolled (kitchen.mjs) and is still for reduced
-   motion; it's also a link to the list for keyboard and screen readers. */
-.kx-more {
+   nudging after it, over a full-screen scene (the kitchen, the globe), in
+   the spot that page leaves free. No words: it steps aside once the page is
+   scrolled (app.js), and is still for reduced motion; it's also a link to
+   what's below, labelled for screen readers. Each page places it. */
+.scroll-more {
   position: absolute;
-  left: 48px;
-  bottom: 36px;
   z-index: 4;
   display: grid;
   justify-items: center;
@@ -6217,12 +6216,12 @@ body.cooking {
   transition: opacity 420ms var(--ease), transform 420ms var(--ease), color 160ms var(--ease);
 }
 
-.kx-more:hover,
-.kx-more:focus-visible {
+.scroll-more:hover,
+.scroll-more:focus-visible {
   color: var(--ink);
 }
 
-.kx-more-mouse {
+.scroll-more-mouse {
   position: relative;
   width: 22px;
   height: 34px;
@@ -6231,7 +6230,7 @@ body.cooking {
   opacity: 0.8;
 }
 
-.kx-more-mouse i {
+.scroll-more-mouse i {
   position: absolute;
   left: 50%;
   top: 6px;
@@ -6240,44 +6239,65 @@ body.cooking {
   margin-left: -2px;
   border-radius: 2px;
   background: currentColor;
-  animation: kx-wheel 2.4s var(--ease) infinite;
+  animation: scroll-wheel 2.4s var(--ease) infinite;
 }
 
-.kx-more-chev {
+.scroll-more-chev {
   width: 9px;
   height: 9px;
   border-right: 2px solid currentColor;
   border-bottom: 2px solid currentColor;
   transform: rotate(45deg);
   opacity: 0.55;
-  animation: kx-chev 2.4s var(--ease) infinite;
+  animation: scroll-chev 2.4s var(--ease) infinite;
 }
 
 /* the wheel: shown at the top, rolls down, fades, and is back at the top
    before the next roll (visible for most of the loop, so the shape reads) */
-@keyframes kx-wheel {
+@keyframes scroll-wheel {
   0%, 20% { transform: translateY(0); opacity: 1; }
   60% { transform: translateY(10px); opacity: 0; }
   61% { transform: translateY(0); opacity: 0; }
   80%, 100% { transform: translateY(0); opacity: 1; }
 }
 
-@keyframes kx-chev {
+@keyframes scroll-chev {
   0%, 30% { transform: translateY(0) rotate(45deg); opacity: 0.25; }
   55% { transform: translateY(4px) rotate(45deg); opacity: 0.8; }
   80%, 100% { transform: translateY(0) rotate(45deg); opacity: 0.25; }
 }
 
-/* gone once you've scrolled, or while an item is open */
-.kx-more.away,
+.scroll-more.away {
+  opacity: 0;
+  transform: translateY(8px);
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-more-mouse i,
+  .scroll-more-chev {
+    animation: none;
+  }
+
+  .scroll-more-mouse i {
+    transform: translateY(4px);
+  }
+}
+
+/* the kitchen: under the headline (left of the fridge/pantry switch); on a
+   phone, to the right above the switch, which owns the bottom with the tab
+   bar. Hidden while an item is open. */
+.kx-more {
+  left: 48px;
+  bottom: 36px;
+}
+
 .kx.panel-open .kx-more {
   opacity: 0;
   transform: translateY(8px);
   pointer-events: none;
 }
 
-/* on a phone the switch and tab bar own the bottom: the cue sits to the
-   right, above the switch's row */
 @media (max-width: 900px) {
   .kx-more {
     left: auto;
@@ -6287,20 +6307,32 @@ body.cooking {
     gap: 4px;
   }
 
-  .kx-more-mouse {
+  .kx-more .scroll-more-mouse {
     width: 18px;
     height: 28px;
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .kx-more-mouse i,
-  .kx-more-chev {
-    animation: none;
-  }
+/* the globe: centred under it, clear of the zoom buttons and the session
+   panel. On a phone the session list already peeks up from below, which
+   says the same thing, so no cue there. */
+.gl-more {
+  left: 50%;
+  bottom: 24px;
+  translate: -50% 0;
+  /* it sits on the globe's shadow: a frosted pill like the zoom buttons'
+     keeps it legible in both themes */
+  padding: 9px 11px 7px;
+  background: var(--glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: var(--shadow-sm);
+  color: var(--ink-2);
+}
 
-  .kx-more-mouse i {
-    transform: translateY(4px);
+@media (max-width: 900px) {
+  .gl-more {
+    display: none;
   }
 }
 

@@ -317,6 +317,13 @@ export function subnav(label: string, items: { href: string; label: string }[], 
   </nav>`;
 }
 
+// "There's more below" over a full-screen scene: a small scrolling-mouse
+// animation, no words (public/app.css .scroll-more), and a link to what's
+// below for keyboards and screen readers. `cls` places it for its page.
+export function scrollMore(href: string, label: string, cls: string): Html {
+  return html`<a class="scroll-more ${cls}" href="${href}" data-scroll-more aria-label="${label}"><span class="scroll-more-mouse" aria-hidden="true"><i></i></span><span class="scroll-more-chev" aria-hidden="true"></span></a>`;
+}
+
 export function empty(title: string, body: string, action?: Html): Html {
   return html`<div class="empty">
     <p class="empty-title">${title}</p>

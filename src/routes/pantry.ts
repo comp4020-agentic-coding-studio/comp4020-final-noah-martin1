@@ -9,7 +9,7 @@ import { shelfware } from "../kitchen.ts";
 import { recordPaidPrice } from "../pricing.ts";
 import { recentJobs } from "../scan-jobs.ts";
 import type { Route } from "../server.ts";
-import { empty, errors, icon, page } from "../views/layout.ts";
+import { empty, errors, icon, page, scrollMore } from "../views/layout.ts";
 
 export interface InventoryItem {
   id: number;
@@ -271,7 +271,7 @@ function pantryPage(ctx: Ctx, values: Record<string, string> = {}, problems: str
           <button type="button" class="kx-arrow kx-arrow-next" data-kx-go="pantry" aria-label="${t("Show the pantry")}">${icon("arrow", 18)}</button>
         </div>
         <p class="kx-toast" data-kx-toast role="status"></p>
-        <a class="kx-more" href="#${items.length ? "items" : "add"}" data-kx-more aria-label="${t(items.length ? "Every item, as a list, below" : "Add an item, below")}"><span class="kx-more-mouse" aria-hidden="true"><i></i></span><span class="kx-more-chev" aria-hidden="true"></span></a>
+        ${scrollMore(items.length ? "#items" : "#add", t(items.length ? "Every item, as a list, below" : "Add an item, below"), "kx-more")}
         <p class="kx-place-label" aria-hidden="true"><span data-kx-count-fridge>${t("{n} in the fridge", { n: inFridge })}</span><span data-kx-count-pantry>${t("{n} in the pantry", { n: items.length - inFridge })}</span></p>
       </div>
 

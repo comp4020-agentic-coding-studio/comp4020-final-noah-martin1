@@ -10,10 +10,10 @@ const tr = (s, v) => {
   return v ? out.replace(/\{(\w+)\}/g, (m, k) => (k in v ? String(v[k]) : m)) : out;
 };
 
-// The kitchen's "more below" cue steps aside once the page is scrolled,
-// and comes back at the top.
+// A full-screen page's "more below" cue (the kitchen, the globe) steps
+// aside once the page is scrolled, and comes back at the top.
 (() => {
-  const more = document.querySelector("[data-kx-more]");
+  const more = document.querySelector("[data-scroll-more]");
   if (!more) return;
   const update = () => more.classList.toggle("away", window.scrollY > 40);
   window.addEventListener("scroll", update, { passive: true });

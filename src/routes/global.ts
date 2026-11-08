@@ -25,7 +25,7 @@ import { catalogueByTitle, ingredientsFor, pantryMatch, type RecipeIngredient, r
 import { GLOBAL_SESSIONS, type SampleGlobalSession } from "../samples.ts";
 import type { Route } from "../server.ts";
 import { canSeeSession, friendIds, sessionViewer } from "../visibility.ts";
-import { avatar, icon, page, previewBanner } from "../views/layout.ts";
+import { avatar, icon, page, previewBanner, scrollMore } from "../views/layout.ts";
 import { amount } from "./recipes.ts";
 
 // The live globe: everyone cooking right now that the viewer may see, pinned
@@ -453,6 +453,7 @@ function globePage(ctx: Ctx): Html {
           <button type="button" data-zoom="reset" aria-label="${t("Show the whole globe")}">${icon("global", 18)}</button>
         </div>
         <div class="gl-loading" aria-hidden="true"><span></span></div>
+        ${scrollMore("#how", t("How to appear on the globe, below"), "gl-more")}
       </div>
 
       <header class="gl-hero">
@@ -498,7 +499,7 @@ function globePage(ctx: Ctx): Html {
 
       <div class="gl-foot">
         ${previewBanner(t("Demo cooks"), t("Cooks tagged “Demo” are sample data so the globe is never empty; anyone tagged “Live” is a real person cooking right now. The recipes are real either way."))}
-        <section class="gl-how">
+        <section class="gl-how" id="how">
           <h2>${t("How to appear on the globe")}</h2>
           <ol class="how-steps">
             <li>${th("{lead} from the catalogue — or write your own, and its nutrition and cost are worked out for you.", { lead: html`<strong>${t("Pick a recipe")}</strong>` })}</li>

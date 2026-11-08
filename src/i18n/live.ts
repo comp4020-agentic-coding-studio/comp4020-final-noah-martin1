@@ -5,6 +5,7 @@ import type { Part } from "../i18n.ts";
 // what the server writes into pages
 const part: Part = {
   zh: {
+    "How to appear on the globe, below": "下方说明如何出现在地球上",
     // src/routes/global.ts
     "Sample data": "示例数据",
     "Demo": "演示",
@@ -148,6 +149,7 @@ const part: Part = {
     "That session has ended.": "这场直播已结束。",
   },
   es: {
+    "How to appear on the globe, below": "Cómo aparecer en el globo, más abajo",
     // src/routes/global.ts
     "Sample data": "Datos de ejemplo",
     "Demo": "Demo",
@@ -291,6 +293,7 @@ const part: Part = {
     "That session has ended.": "Esa sesión ha terminado.",
   },
   hi: {
+    "How to appear on the globe, below": "ग्लोब पर कैसे दिखें, नीचे देखें",
     // src/routes/global.ts
     "Sample data": "नमूना डेटा",
     "Demo": "डेमो",
